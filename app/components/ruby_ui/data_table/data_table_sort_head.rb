@@ -33,7 +33,7 @@ module RubyUI
     end
 
     def next_params
-      next_dir = {nil => "asc", "asc" => "desc", "desc" => nil}[current_direction]
+      next_dir = { nil => "asc", "asc" => "desc", "desc" => nil }[current_direction]
       base = @query.except(@sort_param, @direction_param, @page_param)
       next_dir ? base.merge(@sort_param => @column_key.to_s, @direction_param => next_dir) : base
     end

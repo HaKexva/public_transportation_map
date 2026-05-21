@@ -9,7 +9,7 @@ module RubyUI
     private
 
     def default_attrs
-      {class: "flex items-center justify-between gap-4 py-2"}
+      { class: "flex items-center justify-between gap-4 py-2" }
     end
   end
 end

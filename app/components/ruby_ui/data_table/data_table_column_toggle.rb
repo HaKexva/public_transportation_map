@@ -55,7 +55,7 @@ module RubyUI
     def default_attrs
       {
         class: "relative",
-        data: {controller: "ruby-ui--data-table-column-visibility"}
+        data: { controller: "ruby-ui--data-table-column-visibility" }
       }
     end
   end

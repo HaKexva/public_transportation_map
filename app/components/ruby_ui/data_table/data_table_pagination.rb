@@ -89,7 +89,7 @@ module RubyUI
 
     def windowed_pages
       return (1..total).to_a if total <= 7
-      pages = [1]
+      pages = [ 1 ]
       pages << :gap if current - @window > 2
       ((current - @window)..(current + @window)).each { |p| pages << p if p > 1 && p < total }
       pages << :gap if current + @window < total - 1
