@@ -18,7 +18,7 @@ module RubyUI
     def default_attrs
       {
         class: "text-sm text-muted-foreground",
-        data: {"ruby-ui--data-table-target": "selectionSummary"}
+        data: { "ruby-ui--data-table-target": "selectionSummary" }
       }
     end
   end

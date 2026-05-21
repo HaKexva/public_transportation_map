@@ -19,7 +19,7 @@ module RubyUI
     private
 
     def default_attrs
-      {data: {controller: "ruby-ui--masked-input"}}
+      { data: { controller: "ruby-ui--masked-input" } }
     end
   end
 end

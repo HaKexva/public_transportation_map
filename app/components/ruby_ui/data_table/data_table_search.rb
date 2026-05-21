@@ -14,7 +14,7 @@ module RubyUI
     end
 
     def view_template
-      form_attrs = {method: "get", action: @path}
+      form_attrs = { method: "get", action: @path }
       form_attrs[:data] = form_data
 
       form(**attrs.merge(form_attrs)) do
@@ -51,7 +51,7 @@ module RubyUI
     end
 
     def default_attrs
-      {class: "max-w-sm flex-1"}
+      { class: "max-w-sm flex-1" }
     end
   end
 end

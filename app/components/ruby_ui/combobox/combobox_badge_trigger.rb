@@ -10,7 +10,7 @@ module RubyUI
 
     def view_template(&)
       div(**attrs) do
-        div(data: {ruby_ui__combobox_target: "badgeContainer"}, class: "hidden")
+        div(data: { ruby_ui__combobox_target: "badgeContainer" }, class: "hidden")
         input(
           type: "text",
           class: "flex-1 min-w-8 bg-transparent border-0 px-0 outline-none focus:ring-0 placeholder:text-muted-foreground text-sm",

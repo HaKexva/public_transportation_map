@@ -28,7 +28,7 @@ module RubyUI
       {
         type: "button",
         class: "ml-auto shrink-0 rounded-sm text-muted-foreground hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring hidden",
-        aria: {label: "Clear selection"},
+        aria: { label: "Clear selection" },
         data: {
           ruby_ui__combobox_target: "clearButton",
           # JS implementation in combobox_controller.js

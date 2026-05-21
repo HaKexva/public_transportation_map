@@ -10,7 +10,7 @@ module RubyUI
     end
 
     def view_template(&block)
-      form_attrs = {action: @action, method: @method}
+      form_attrs = { action: @action, method: @method }
       form_attrs[:id] = @id if @id
       form(**form_attrs, **attrs) do
         input(type: "hidden", name: "authenticity_token", value: csrf_token)

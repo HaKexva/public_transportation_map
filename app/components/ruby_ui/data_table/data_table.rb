@@ -22,7 +22,7 @@ module RubyUI
     def default_attrs
       {
         class: "w-full space-y-4",
-        data: {controller: "ruby-ui--data-table"}
+        data: { controller: "ruby-ui--data-table" }
       }
     end
   end
