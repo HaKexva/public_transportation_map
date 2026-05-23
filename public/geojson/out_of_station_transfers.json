@@ -1,0 +1,38 @@
+[
+  {
+    "id": "banqiao_out_of_station",
+    "label": "板橋站外轉乘",
+    "routes": [ "bannan", "circular" ],
+    "endpoints": [
+      { "route_id": "bannan", "ref": "BL07", "name": "板橋" },
+      { "route_id": "circular", "ref": "Y16", "name": "板橋" }
+    ]
+  },
+  {
+    "id": "xinpu_out_of_station",
+    "label": "新埔／新埔民生站外轉乘",
+    "routes": [ "bannan", "circular" ],
+    "endpoints": [
+      { "route_id": "bannan", "ref": "BL08", "name": "新埔" },
+      { "route_id": "circular", "ref": "Y17", "name": "新埔民生" }
+    ]
+  },
+  {
+    "id": "shisizhang_out_of_station",
+    "label": "十四張站外轉乘",
+    "routes": [ "circular", "ankeng_lrt" ],
+    "endpoints": [
+      { "route_id": "circular", "ref": "Y08", "name": "十四張" },
+      { "route_id": "ankeng_lrt", "ref": "K09", "name": "十四張" }
+    ]
+  },
+  {
+    "id": "hongshulin_out_of_station",
+    "label": "紅樹林站外轉乘",
+    "routes": [ "tamsui_xinyi", "danhai_lrt" ],
+    "endpoints": [
+      { "route_id": "tamsui_xinyi", "ref": "R27", "name": "紅樹林" },
+      { "route_id": "danhai_lrt", "ref": "V01", "name": "紅樹林" }
+    ]
+  }
+]
