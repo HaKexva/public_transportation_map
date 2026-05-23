@@ -59,7 +59,7 @@ bin/dev
 By default the app listens on [http://127.0.0.1:3000](http://127.0.0.1:3000). To use another port:
 
 ```bash
-PORT=3100 bin/dev
+PORT=3000 bin/dev
 ```
 
 Open the root URL in your browser. If styles or the map look wrong after pulling changes, hard-refresh (Cmd+Shift+R) and confirm `bin/dev` is running (not `bin/rails server` alone — Tailwind must compile `app/assets/builds/tailwind.css`).

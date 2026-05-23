@@ -1,0 +1,100 @@
+{
+  "taipei_metro": [
+    {
+      "id": "wenhu_line",
+      "file": "/geojson/taipei_metro/wenhu_line.geojson",
+      "name": "文湖線",
+      "name_en": "Wenhu Line",
+      "ref": "BR",
+      "color": "#A74C00"
+    },
+    {
+      "id": "tamsui_xinyi",
+      "file": "/geojson/taipei_metro/tamsui_xinyi.geojson",
+      "name": "淡水信義線",
+      "name_en": "Tamsui–Xinyi Line",
+      "ref": "R",
+      "color": "#E3002C"
+    },
+    {
+      "id": "xinbeitou_branch",
+      "file": "/geojson/taipei_metro/xinbeitou_branch.geojson",
+      "name": "新北投支線",
+      "name_en": "Xinbeitou Branch",
+      "ref": "R",
+      "color": "#F890A5",
+      "branch_of": "tamsui_xinyi"
+    },
+    {
+      "id": "bannan",
+      "file": "/geojson/taipei_metro/bannan.geojson",
+      "name": "板南線",
+      "name_en": "Bannan Line",
+      "ref": "BL",
+      "color": "#007EC7"
+    },
+    {
+      "id": "songshan_xindian",
+      "file": "/geojson/taipei_metro/songshan_xindian.geojson",
+      "name": "松山新店線",
+      "name_en": "Songshan–Xindian Line",
+      "ref": "G",
+      "color": "#008659"
+    },
+    {
+      "id": "xiaobitan_branch",
+      "file": "/geojson/taipei_metro/xiaobitan_branch.geojson",
+      "name": "小碧潭支線",
+      "name_en": "Xiaobitan Branch",
+      "ref": "G",
+      "color": "#CEDC00",
+      "branch_of": "songshan_xindian"
+    },
+    {
+      "id": "zhonghe_xinlu",
+      "file": "/geojson/taipei_metro/zhonghe_xinlu.geojson",
+      "name": "中和新蘆線",
+      "name_en": "Zhonghe–Xinlu Line",
+      "ref": "O",
+      "color": "#F8B61C"
+    },
+    {
+      "id": "circular",
+      "file": "/geojson/taipei_metro/circular.geojson",
+      "name": "環狀線",
+      "name_en": "Circular Line",
+      "ref": "Y",
+      "color": "#FEDB00"
+    }
+  ],
+  "new_taipei_metro": [
+    {
+      "id": "danhai_lrt",
+      "file": "/geojson/new_taipei_metro/danhai_lrt.geojson",
+      "name": "淡海輕軌",
+      "name_en": "Danhai LRT",
+      "ref": "V",
+      "color": "#ED6B46"
+    },
+    {
+      "id": "ankeng_lrt",
+      "file": "/geojson/new_taipei_metro/ankeng_lrt.geojson",
+      "name": "安坑輕軌",
+      "name_en": "Ankeng LRT",
+      "ref": "K",
+      "color": "#C3B091"
+    }
+  ],
+  "taoyuan_metro": [
+    {
+      "id": "airport_mrt",
+      "file": "/geojson/taoyuan_metro/airport_mrt.geojson",
+      "name": "機場捷運",
+      "name_en": "Taoyuan Airport MRT",
+      "ref": "A",
+      "color": "#6A2C91"
+    }
+  ],
+  "taichung_metro": [],
+  "kaohsiung_metro": []
+}

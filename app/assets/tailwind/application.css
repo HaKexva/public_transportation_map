@@ -1,8 +1,25 @@
 @import "tailwindcss";
 
+/* Transfer station markers on the Leaflet map (two line colors in one ellipse) */
+.leaflet-div-icon.transfer-station-icon {
+  background: transparent;
+  border: none;
+}
 
-@import "../../../vendor/javascript/tw-animate-css.js";
+.transfer-station-marker {
+  display: flex;
+  width: 18px;
+  height: 12px;
+  overflow: hidden;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 25%);
+}
 
+.transfer-station-marker__half {
+  flex: 1 1 50%;
+  min-width: 0;
+}
 
 @custom-variant dark (&:is(.dark *));
 
@@ -148,4 +165,49 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Leaflet map */
+.leaflet-container {
+  height: 100% !important;
+  width: 100% !important;
+  z-index: 0;
+  background: #e4e4e7;
+}
+
+#taiwan-region-map {
+  position: absolute;
+  inset: 0;
+  height: 100dvh;
+  width: 100%;
+}
+
+.theme-toggle-button {
+  display: inline-flex;
+  height: 2rem;
+  width: 2rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: calc(var(--radius) - 2px);
+  color: var(--muted-foreground);
+  transition: color 150ms, opacity 150ms, background-color 150ms, box-shadow 150ms;
+}
+
+.theme-toggle-button:hover {
+  color: var(--foreground);
+}
+
+.theme-toggle-button[aria-pressed="false"] {
+  opacity: 0.55;
+}
+
+.theme-toggle-button[aria-pressed="false"]:hover {
+  opacity: 1;
+}
+
+.theme-toggle-button[aria-pressed="true"] {
+  background: var(--background);
+  color: var(--foreground);
+  opacity: 1;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.08);
 }

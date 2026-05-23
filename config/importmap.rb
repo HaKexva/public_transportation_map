@@ -16,7 +16,10 @@ pin "@popperjs/core", to: "https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/+e
 
 pin "motion", to: "https://cdn.jsdelivr.net/npm/motion@11.11.17/+esm"
 
-pin "chart.js" # @4.5.1
+pin "chart", to: "chart.umd.js" # @4.5.1 standalone bundle
+pin "chart.js", to: "chart.umd.js"
+pin "chart.js/auto", to: "chart.umd.js"
 pin "@kurkle/color", to: "@kurkle--color.js" # @0.3.4
 pin "embla-carousel" # @8.6.0
 pin "fuse.js" # @7.3.0
+pin "leaflet", to: "leaflet.js"
