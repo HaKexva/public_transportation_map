@@ -10,8 +10,9 @@ class DashboardTest < ApplicationSystemTestCase
     assert_selector ".leaflet-container", wait: 5
     assert_selector "#map-legend", text: "圖例"
     assert_text "台灣大眾運輸地圖"
-    assert_text "普通車", visible: :all
-    assert_text "直達車停靠站", visible: :all
+    legend = find("#map-legend", visible: :all)
+    assert_includes legend.text, "普通車"
+    assert_includes legend.text, "直達車停靠站"
     assert_button "顯示全部捷運"
     assert_button "重設視角"
   end
