@@ -34,5 +34,41 @@
       { "route_id": "tamsui_xinyi", "ref": "R27", "name": "紅樹林" },
       { "route_id": "danhai_lrt", "ref": "V01", "name": "紅樹林" }
     ]
+  },
+  {
+    "id": "xinbei_industrial_park_out_of_station",
+    "label": "新北產業園區站外轉乘",
+    "routes": [ "circular", "airport_mrt" ],
+    "endpoints": [
+      { "route_id": "circular", "ref": "Y20", "name": "新北產業園區" },
+      { "route_id": "airport_mrt", "ref": "A3", "name": "新北產業園區" }
+    ]
+  },
+  {
+    "id": "airport_mrt_beimen_out_of_station",
+    "label": "機場捷運台北車站／北門站外轉乘",
+    "routes": [ "airport_mrt", "songshan_xindian" ],
+    "endpoints": [
+      { "route_id": "airport_mrt", "ref": "A1", "name": "台北車站" },
+      { "route_id": "songshan_xindian", "ref": "G13", "name": "北門" }
+    ]
+  },
+  {
+    "id": "airport_mrt_taipei_main_out_of_station",
+    "label": "機場捷運台北車站／捷運台北車站站外轉乘",
+    "routes": [ "airport_mrt", "tamsui_xinyi" ],
+    "endpoints": [
+      { "route_id": "airport_mrt", "ref": "A1", "name": "台北車站" },
+      { "route_id": "tamsui_xinyi", "ref": "R10", "name": "台北車站" }
+    ]
+  },
+  {
+    "id": "sanchong_out_of_station",
+    "label": "三重站外轉乘",
+    "routes": [ "airport_mrt", "zhonghe_xinlu" ],
+    "endpoints": [
+      { "route_id": "airport_mrt", "ref": "A2", "name": "三重" },
+      { "route_id": "zhonghe_xinlu", "ref": "O15", "name": "三重" }
+    ]
   }
 ]

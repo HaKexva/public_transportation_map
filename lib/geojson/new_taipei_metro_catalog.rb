@@ -9,7 +9,7 @@ module Geojson
         name_en: "Danhai LRT",
         ref: "V",
         color: "#ED6B46",
-        relation_ids: [ 9154523 ],
+        relation_ids: [ 9154523, 13611116 ],
         station_ref_prefix: "V"
       ),
       MetroLine.new_taipei(

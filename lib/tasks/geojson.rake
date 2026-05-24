@@ -20,6 +20,12 @@ namespace :geojson do
       system_id: "taoyuan_metro",
       lines: Geojson::TaoyuanMetroCatalog::LINES
     )
+    Geojson::AirportMrtExpressBuilder.build!
+  end
+
+  desc "Rebuild Airport MRT express GeoJSON from the main airport line"
+  task airport_mrt_express: :environment do
+    Geojson::AirportMrtExpressBuilder.build!
   end
 
   desc "Rebuild 文湖線 GeoJSON from OpenStreetMap track geometry"
