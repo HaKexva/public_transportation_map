@@ -8,19 +8,32 @@ module Views
         super()
       end
 
-      LAYERS = [
-        { id: "bus", label: "公車", color: "#2563eb", badge: :blue, description: "市區公車與公路客運" },
-        { id: "train", label: "火車", color: "#dc2626", badge: :red, description: "台鐵路網" },
-        { id: "hsr", label: "高鐵", color: "#9333ea", badge: :purple, description: "台灣高鐵" },
-        { id: "ferry", label: "渡輪", color: "#0891b2", badge: :cyan, description: "渡輪與離島航線" }
+      COMING_SOON_LAYERS = [
+        { label: "公車", color: "#2563eb" },
+        { label: "台鐵", color: "#dc2626" },
+        { label: "高鐵", color: "#9333ea" },
+        { label: "渡輪", color: "#0891b2" }
       ].freeze
 
       METRO_SYSTEMS = [
-        { id: "taipei_metro", label: "台北捷運", color: "#A74C00", badge: :amber, description: "勾選要顯示的路線" },
-        { id: "new_taipei_metro", label: "新北捷運", color: "#E95A0C", badge: :orange, description: "淡海輕軌、安坑輕軌、環狀線" },
-        { id: "taoyuan_metro", label: "桃園捷運", color: "#6A2C91", badge: :purple, description: "機場捷運" },
+        { id: "taipei_metro", label: "台北捷運", color: "#A74C00", badge: :amber, description: "7 條路線" },
+        { id: "new_taipei_metro", label: "新北捷運", color: "#E95A0C", badge: :orange, description: "淡海、安坑輕軌" },
+        { id: "taoyuan_metro", label: "桃園捷運", color: "#0073B7", badge: :blue, description: "機場捷運" },
         { id: "taichung_metro", label: "台中捷運", color: "#8FC31F", badge: :lime, description: "綠線" },
-        { id: "kaohsiung_metro", label: "高雄捷運", color: "#F5C200", badge: :yellow, description: "紅線、橘線、環狀輕軌" }
+        { id: "kaohsiung_metro", label: "高雄捷運", color: "#F5C200", badge: :yellow, description: "紅線、橘線" }
+      ].freeze
+
+      LEGEND_LINES = [
+        { label: "普通車", note: "藍色實線", style: :solid, color: "#0073B7" },
+        { label: "直達車", note: "紫色虛線（與普通車並排）", style: :dashed, color: "#6A2C91" },
+        { label: "站外轉乘", note: "灰色虛線連接", color: "#525252", style: :dashed }
+      ].freeze
+
+      LEGEND_MARKERS = [
+        { label: "一般站", type: :station, color: "#666666" },
+        { label: "轉乘站", type: :transfer, colors: [ "#E3002C", "#A74C00" ] },
+        { label: "站外轉乘站", type: :out_of_station, color: "#0073B7" },
+        { label: "直達車停靠站", type: :express, color: "#6A2C91" }
       ].freeze
 
       def view_template
@@ -33,85 +46,204 @@ module Views
             aria: { label: "Map of Taiwan, Penghu, Kinmen, and Matsu" }
           )
           render_layers_panel
+          render_map_legend
         end
       end
 
       private
 
-      def render_layers_panel
-        div(class: "pointer-events-none absolute inset-y-4 left-4 z-[1000] flex w-80 max-w-[calc(100%-2rem)] flex-col") do
+      def render_map_legend
+        div(
+          id: "map-legend",
+          class: "pointer-events-none absolute bottom-4 right-4 z-[1000] flex max-w-[calc(100%-2rem)] justify-end map-ui-panel--collapsed sm:left-auto sm:inset-x-auto",
+          role: "region",
+          aria: { label: "圖例" },
+          data: { map_target: "legendPanel" }
+        ) do
           render RubyUI::Card.new(
-            class: "pointer-events-auto flex max-h-full flex-col overflow-hidden border-border/60 bg-background/95 shadow-2xl backdrop-blur-md"
+            class: "map-ui-panel pointer-events-auto w-64 max-w-[calc(100vw-2rem)] border-border/60 bg-background/95 shadow-2xl backdrop-blur-md sm:w-64"
           ) do
-            render_header
-            render RubyUI::Separator.new
-            render_layer_controls
-            render RubyUI::Separator.new
-            render_footer
+            div(class: "map-ui-panel__header flex items-start justify-between gap-2 px-4 pt-4") do
+              div(class: "space-y-0.5") do
+                render RubyUI::CardTitle.new(class: "text-sm") { "圖例" }
+                render RubyUI::CardDescription.new(class: "text-xs") { "路線與車站符號" }
+              end
+              button(
+                type: "button",
+                class: "map-ui-panel__toggle",
+                aria: { label: "展開圖例", expanded: false },
+                data: { action: "click->map#toggleLegendPanel" }
+              ) { render_collapse_icon }
+            end
+
+            div(class: "map-ui-panel__body") do
+              render RubyUI::CardContent.new(class: "space-y-3 pt-3 pb-4") do
+                render_legend_section("路線", LEGEND_LINES) { |item| render_legend_line_item(item) }
+                render_legend_section("車站", LEGEND_MARKERS) { |item| render_legend_marker_item(item) }
+              end
+            end
+          end
+        end
+      end
+
+      def render_legend_section(title, items, &block)
+        div(class: "space-y-2") do
+          render RubyUI::Text.new(as: "p", size: "1", weight: "muted", class: "uppercase tracking-wide") { title }
+          div(class: "space-y-2") do
+            items.each { |item| block.call(item) }
+          end
+        end
+      end
+
+      def render_legend_line_item(item)
+        div(class: "flex items-center gap-3") do
+          span(
+            class: legend_line_swatch_classes(item[:style]),
+            style: "--legend-line-color: #{item[:color]}",
+            aria: { hidden: true }
+          )
+          div(class: "min-w-0") do
+            render RubyUI::Text.new(as: "p", size: "2", class: "font-medium leading-tight") { item[:label] }
+            render RubyUI::Text.new(as: "p", size: "1", weight: "muted", class: "leading-tight") { item[:note] }
+          end
+        end
+      end
+
+      def render_legend_marker_item(item)
+        div(class: "flex items-center gap-3") do
+          span(class: "flex size-7 shrink-0 items-center justify-center", aria: { hidden: true }) do
+            render_legend_marker_swatch(item)
+          end
+          render RubyUI::Text.new(as: "p", size: "2", class: "font-medium leading-tight") { item[:label] }
+        end
+      end
+
+      def render_legend_marker_swatch(item)
+        case item[:type]
+        when :station
+          span(class: "map-legend-station", style: "background-color: #{item[:color]}")
+        when :transfer
+          left, right = item[:colors]
+          div(class: "transfer-station-marker map-legend-transfer-marker", aria: { hidden: true }) do
+            div(class: "transfer-station-marker__half", style: "background-color: #{left}")
+            div(class: "transfer-station-marker__half", style: "background-color: #{right}")
+          end
+        when :out_of_station
+          div(
+            class: "out-of-station-marker map-legend-out-of-station-marker",
+            style: "background-color: #{item[:color]}",
+            aria: { hidden: true }
+          )
+        when :express
+          div(class: "express-stop-marker", style: "background-color: #{item[:color]}", aria: { hidden: true })
+        end
+      end
+
+      def legend_line_swatch_classes(style)
+        base = "map-legend-line shrink-0"
+        style == :dashed ? "#{base} map-legend-line--dashed" : "#{base} map-legend-line--solid"
+      end
+
+      def render_layers_panel
+        div(
+          class: "pointer-events-none absolute inset-y-4 left-4 z-[1001] flex w-[min(100%,20rem)] flex-col",
+          data: { map_target: "layersPanel" }
+        ) do
+          render RubyUI::Card.new(
+            class: "map-ui-panel pointer-events-auto flex max-h-full flex-col overflow-hidden border-border/60 bg-background/95 shadow-2xl backdrop-blur-md"
+          ) do
+            div(class: "map-ui-panel__header") do
+              render_header
+            end
+            div(class: "map-ui-panel__body flex min-h-0 flex-1 flex-col overflow-hidden") do
+              render RubyUI::Separator.new
+              render_layer_controls
+              render RubyUI::Separator.new
+              render_footer
+            end
           end
         end
       end
 
       def render_header
-        render RubyUI::CardHeader.new(class: "space-y-4 pb-4") do
+        render RubyUI::CardHeader.new(class: "space-y-3 pb-3") do
           div(class: "flex items-start justify-between gap-3") do
-            div(class: "space-y-1.5") do
+            div(class: "space-y-1") do
               div(class: "flex items-center gap-2") do
                 render_map_icon
-                render RubyUI::CardTitle.new(class: "text-lg") { "Public Transit Map" }
+                render RubyUI::CardTitle.new(class: "text-lg leading-tight") { "台灣大眾運輸地圖" }
               end
-              render RubyUI::CardDescription.new { "台灣與離島大眾運輸地圖" }
+              render RubyUI::CardDescription.new(class: "text-xs") { "Taiwan Public Transit Map" }
             end
-            render_theme_toggle
+            div(class: "flex shrink-0 items-center gap-1") do
+              render_theme_toggle
+              button(
+                type: "button",
+                class: "map-ui-panel__toggle",
+                aria: { label: "收合圖層面板", expanded: true },
+                data: { action: "click->map#toggleLayersPanel" }
+              ) { render_collapse_icon }
+            end
+          end
+          render RubyUI::Text.new(as: "p", size: "1", weight: "muted", class: "rounded-md bg-muted/60 px-2.5 py-2 leading-relaxed") do
+            "勾選捷運路線即可顯示。點擊車站可查看站名與轉乘資訊。"
           end
         end
       end
 
       def render_layer_controls
-        render RubyUI::CardContent.new(class: "flex-1 overflow-y-auto py-4") do
-          render RubyUI::Text.new(as: "p", size: "2", weight: "muted", class: "mb-3 px-1 uppercase tracking-wide") do
-            "交通圖層"
+        render RubyUI::CardContent.new(class: "flex-1 overflow-y-auto py-3") do
+          render RubyUI::Text.new(as: "p", size: "1", weight: "muted", class: "mb-2 px-2 uppercase tracking-wide") do
+            "捷運路線"
           end
-          div(class: "flex flex-col gap-1") do
-            LAYERS.each { |layer| render_layer_toggle(layer) }
-            render_metro_collapsible
+          div(class: "flex flex-col gap-1 px-1") do
+            render_metro_all_toggle
+            active_metro_systems.each { |system| render_metro_system(system) }
+          end
+          render_coming_soon_layers
+        end
+      end
+
+      def active_metro_systems
+        METRO_SYSTEMS.select { |system| @routes_manifest.fetch(system[:id], []).any? }
+      end
+
+      def render_coming_soon_layers
+        div(class: "mt-4 px-2") do
+          render RubyUI::Text.new(as: "p", size: "1", weight: "muted", class: "mb-2 uppercase tracking-wide") do
+            "即將推出"
+          end
+          div(class: "flex flex-wrap gap-1.5") do
+            COMING_SOON_LAYERS.each do |layer|
+              span(
+                class: "inline-flex items-center gap-1.5 rounded-full border border-border/60 bg-muted/40 px-2.5 py-1 text-xs text-muted-foreground"
+              ) do
+                span(class: "size-2 shrink-0 rounded-full", style: "background-color: #{layer[:color]}")
+                plain layer[:label]
+              end
+            end
           end
         end
       end
 
       def render_footer
-        render RubyUI::CardFooter.new(class: "flex-col items-stretch gap-3 bg-muted/20 pt-4") do
-          render RubyUI::Alert.new do
-            render_info_icon
-            render RubyUI::AlertTitle.new { "圖層提示" }
-            render RubyUI::AlertDescription.new do
-              plain "可勾選個別路線，或使用「重設」一次顯示全部捷運路線。支線會隨主線一併顯示。站外轉乘（如十四張、紅樹林、板橋、三重、新北產業園區、機場捷運台北車站）在兩條路線都開啟時會以虛線連接。"
-            end
+        render RubyUI::CardFooter.new(class: "flex-col items-stretch gap-2 bg-muted/20 px-4 pt-3 pb-4") do
+          div(class: "grid grid-cols-2 gap-2") do
+            render RubyUI::Button.new(
+              variant: :default,
+              size: :sm,
+              class: "w-full",
+              data: { action: "click->map#showAllMetro" }
+            ) { "顯示全部捷運" }
+            render RubyUI::Button.new(
+              variant: :outline,
+              size: :sm,
+              class: "w-full",
+              data: { action: "click->map#resetViewport" }
+            ) { "重設視角" }
           end
-          render RubyUI::Button.new(
-            variant: :outline,
-            size: :sm,
-            class: "w-full",
-            data: { action: "click->map#resetView" }
-          ) { "重設地圖視角" }
-        end
-      end
-
-      def render_metro_collapsible
-        render RubyUI::Collapsible.new(open: true, class: "mt-1 rounded-lg border border-border/60 bg-muted/20") do
-          render RubyUI::CollapsibleTrigger.new(
-            class: "flex w-full cursor-pointer items-center justify-between gap-2 rounded-lg px-3 py-2.5 text-sm font-semibold hover:bg-accent/50"
-          ) do
-            span(class: "flex items-center gap-2") do
-              span(class: "size-2.5 shrink-0 rounded-full bg-amber-600")
-              plain "捷運"
-            end
-            render_chevron_icon
-          end
-
-          render RubyUI::CollapsibleContent.new(class: "space-y-0.5 px-1 pb-2") do
-            render_metro_all_toggle
-            METRO_SYSTEMS.each { |system| render_metro_system(system) }
+          render RubyUI::Text.new(as: "p", size: "1", weight: "muted", class: "leading-relaxed") do
+            "站外轉乘（如三重）需同時開啟兩條路線，會以灰色虛線連接不同站體。"
           end
         end
       end
@@ -124,9 +256,8 @@ module Views
             color: "#A74C00",
             badge: :amber,
             badge_label: "全部",
-            description: "一次顯示所有城市捷運路線"
+            description: "一次顯示所有已收錄路線"
           },
-          nested: true,
           stimulus_action: "change->map#toggleAllMetro"
         )
       end
@@ -135,36 +266,32 @@ module Views
         [
           "peer h-4 w-4 shrink-0 rounded-sm border border-input ring-offset-background accent-primary",
           "disabled:cursor-not-allowed disabled:opacity-50",
-          "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-        ]
+          "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+          "relative z-10"
+        ].join(" ")
       end
 
       def render_metro_system(system)
-        routes = @routes_manifest.fetch(system[:id], [])
-
         render RubyUI::Collapsible.new(
           open: system[:id] == "taipei_metro",
-          class: "rounded-lg border border-border/40 bg-background/50"
+          class: "rounded-lg border border-border/40 bg-muted/20"
         ) do
           render RubyUI::CollapsibleTrigger.new(
-            class: "flex w-full cursor-pointer items-center justify-between gap-2 rounded-lg px-2 py-2 text-sm font-medium hover:bg-accent/50"
+            class: "flex w-full cursor-pointer items-center justify-between gap-2 rounded-lg px-2.5 py-2 text-sm font-medium hover:bg-accent/50"
           ) do
-            span(class: "flex min-w-0 items-center gap-2") do
-              span(class: "size-2.5 shrink-0 rounded-full", style: "background-color: #{system[:color]}")
-              plain system[:label]
+            span(class: "flex min-w-0 flex-col items-start gap-0.5 text-left") do
+              span(class: "flex items-center gap-2") do
+                span(class: "size-2.5 shrink-0 rounded-full", style: "background-color: #{system[:color]}")
+                plain system[:label]
+              end
+              render RubyUI::Text.new(as: "span", size: "1", weight: "muted") { system[:description] }
             end
             render_chevron_icon
           end
 
           render RubyUI::CollapsibleContent.new(class: "space-y-0.5 px-1 pb-2") do
-            if routes.empty?
-              render RubyUI::Text.new(as: "p", size: "1", weight: "muted", class: "px-2 py-1.5") do
-                "路線資料準備中"
-              end
-            else
-              render_metro_system_toggle(system)
-              main_routes(system[:id]).each { |route| render_route_toggle(route, system:) }
-            end
+            render_metro_system_toggle(system)
+            main_routes(system[:id]).each { |route| render_route_toggle(route, system:) }
           end
         end
       end
@@ -196,10 +323,13 @@ module Views
 
       def render_route_toggle(route, system:)
         branches = branch_routes_for(route["id"], system_id: system[:id])
-        description = route["name_en"].to_s
+        description = route["name_en"].presence
         if branches.any?
           branch_names = branches.map { |branch| branch["name"] }.join("、")
-          description = "#{description}（含#{branch_names}）"
+          description = [ description, "含 #{branch_names}" ].compact.join(" · ")
+        end
+        if route["id"] == "airport_mrt"
+          description = [ description, "普通車藍線／直達車紫虛線並排" ].compact.join(" · ")
         end
 
         render_layer_toggle(
@@ -234,7 +364,7 @@ module Views
         checkbox_data[:map_layer_param] = layer[:id] if stimulus_action == "change->map#toggleLayer"
         checkbox_data[:map_metro_system_param] = metro_system_param if metro_system_param
 
-        div(class: "rounded-lg py-1 transition-colors hover:bg-accent/50 #{padding}") do
+        div(class: "rounded-lg py-1.5 transition-colors hover:bg-accent/50 #{padding}") do
           div(class: "flex items-center justify-between gap-3") do
             div(class: "flex min-w-0 flex-1 items-center gap-3") do
               input(
@@ -355,6 +485,22 @@ module Views
           class: "size-4"
         ) do |s|
           s.path(d: "M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z")
+        end
+      end
+
+      def render_collapse_icon
+        svg(
+          xmlns: "http://www.w3.org/2000/svg",
+          viewbox: "0 0 24 24",
+          fill: "none",
+          stroke: "currentColor",
+          stroke_width: "2",
+          stroke_linecap: "round",
+          stroke_linejoin: "round",
+          class: "size-4"
+        ) do |s|
+          s.path(d: "M18 6 6 18")
+          s.path(d: "m6 6 12 12")
         end
       end
 
