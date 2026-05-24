@@ -17,7 +17,7 @@ module Views
 
       METRO_SYSTEMS = [
         { id: "taipei_metro", label: "台北捷運", color: "#A74C00", badge: :amber, description: "勾選要顯示的路線" },
-        { id: "new_taipei_metro", label: "新北捷運", color: "#E95A0C", badge: :orange, description: "淡海輕軌、安坑輕軌" },
+        { id: "new_taipei_metro", label: "新北捷運", color: "#E95A0C", badge: :orange, description: "淡海輕軌、安坑輕軌、環狀線" },
         { id: "taoyuan_metro", label: "桃園捷運", color: "#6A2C91", badge: :purple, description: "機場捷運" },
         { id: "taichung_metro", label: "台中捷運", color: "#8FC31F", badge: :lime, description: "綠線" },
         { id: "kaohsiung_metro", label: "高雄捷運", color: "#F5C200", badge: :yellow, description: "紅線、橘線、環狀輕軌" }
@@ -60,7 +60,7 @@ module Views
                 render_map_icon
                 render RubyUI::CardTitle.new(class: "text-lg") { "Public Transit Map" }
               end
-              render RubyUI::CardDescription.new { "台灣與離島大眾運輸網站" }
+              render RubyUI::CardDescription.new { "台灣與離島大眾運輸地圖" }
             end
             render_theme_toggle
           end
@@ -85,7 +85,7 @@ module Views
             render_info_icon
             render RubyUI::AlertTitle.new { "圖層提示" }
             render RubyUI::AlertDescription.new do
-              plain "可勾選個別路線，或使用「重設」一次顯示全部捷運路線。支線會隨主線一併顯示。"
+              plain "可勾選個別路線，或使用「重設」一次顯示全部捷運路線。支線會隨主線一併顯示。站外轉乘（如十四張、紅樹林、板橋、三重、新北產業園區、機場捷運台北車站）在兩條路線都開啟時會以虛線連接。"
             end
           end
           render RubyUI::Button.new(
@@ -93,7 +93,7 @@ module Views
             size: :sm,
             class: "w-full",
             data: { action: "click->map#resetView" }
-          ) { "重設：顯示全部路線" }
+          ) { "重設地圖視角" }
         end
       end
 

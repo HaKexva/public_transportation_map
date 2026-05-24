@@ -37,6 +37,7 @@ export default class extends Controller {
     this.routeTracksByRouteId = {}
     this.branchesByMain = {}
     this.outOfStationTransfers = []
+    this.outOfStationEndpointKeys = new Set()
     this.stationCoordinatesByKey = {}
     this.mapReady = false
     this.setLayerControlsDisabled(true)
@@ -58,6 +59,7 @@ export default class extends Controller {
     this.routeTracksByRouteId = {}
     this.branchesByMain = {}
     this.outOfStationTransfers = []
+    this.outOfStationEndpointKeys = new Set()
     this.stationCoordinatesByKey = {}
   }
 
@@ -150,10 +152,28 @@ export default class extends Controller {
       if (!response.ok) throw new Error("out-of-station transfers missing")
 
       this.outOfStationTransfers = await response.json()
+      this.outOfStationEndpointKeys = this.buildOutOfStationEndpointKeys(this.outOfStationTransfers)
     } catch (error) {
       console.error("Failed to load out-of-station transfers", error)
       this.outOfStationTransfers = []
+      this.outOfStationEndpointKeys = new Set()
     }
+  }
+
+  buildOutOfStationEndpointKeys(transfers) {
+    const keys = new Set()
+
+    transfers.forEach((transfer) => {
+      transfer.endpoints?.forEach((endpoint) => {
+        if (!endpoint.route_id || !endpoint.ref) return
+
+        this.transferStationRefs(endpoint.ref).forEach((stationRef) => {
+          keys.add(this.stationKey(endpoint.route_id, stationRef))
+        })
+      })
+    })
+
+    return keys
   }
 
   async loadRoutesManifest() {
@@ -397,7 +417,10 @@ export default class extends Controller {
       if (!ref || !coordinates) return
 
       const latlng = L.latLng(coordinates[1], coordinates[0])
-      this.stationCoordinatesByKey[this.stationKey(routeId, ref)] = latlng
+
+      this.transferStationRefs(ref).forEach((stationRef) => {
+        this.stationCoordinatesByKey[this.stationKey(routeId, stationRef)] = latlng
+      })
     })
   }
 
@@ -406,7 +429,17 @@ export default class extends Controller {
   }
 
   stationLatLng(routeId, ref) {
-    return this.stationCoordinatesByKey[this.stationKey(routeId, ref)]
+    if (!routeId || !ref) return null
+
+    const direct = this.stationCoordinatesByKey[this.stationKey(routeId, ref)]
+    if (direct) return direct
+
+    for (const stationRef of this.transferStationRefs(ref)) {
+      const latlng = this.stationCoordinatesByKey[this.stationKey(routeId, stationRef)]
+      if (latlng) return latlng
+    }
+
+    return null
   }
 
   updateOutOfStationTransfers() {
@@ -426,10 +459,10 @@ export default class extends Controller {
 
       if (latlngs.length < 2) return
 
-      const line = L.polyline(latlngs, {
-        color: "#525252",
-        weight: 3,
-        opacity: 0.85,
+      const line = L.polyline(this.outOfStationTransferLatLngs(latlngs), {
+        color: "#404040",
+        weight: 4,
+        opacity: 0.9,
         dashArray: "8 10",
         lineCap: "round"
       })
@@ -441,11 +474,10 @@ export default class extends Controller {
       group.addLayer(line)
     })
 
-    if (group.getLayers().length > 0 && !this.map.hasLayer(group)) {
-      group.addTo(this.map)
-    }
-
-    if (group.getLayers().length === 0 && this.map.hasLayer(group)) {
+    if (group.getLayers().length > 0) {
+      if (!this.map.hasLayer(group)) group.addTo(this.map)
+      group.bringToFront()
+    } else if (this.map.hasLayer(group)) {
       this.map.removeLayer(group)
     }
   }
@@ -627,9 +659,9 @@ export default class extends Controller {
     this.indexStationCoordinates(route.id, data)
 
     const geoLayer = L.geoJSON(data, {
-      style: (feature) => this.styleForFeature(feature, color),
-      pointToLayer: (feature, latlng) => this.stationMarker(feature, latlng, color, routeRef),
-      onEachFeature: (feature, layer) => this.bindFeaturePopup(feature, layer)
+      style: (feature) => this.styleForFeature(feature, color, route),
+      pointToLayer: (feature, latlng) => this.stationMarker(feature, latlng, color, routeRef, route.id),
+      onEachFeature: (feature, layer) => this.bindFeaturePopup(feature, layer, route.id)
     })
 
     if (!this.isLayerGenerationCurrent(layerId, generation) || !this.layerVisible[layerId]) return
@@ -637,15 +669,20 @@ export default class extends Controller {
     group.addLayer(geoLayer)
   }
 
-  styleForFeature(feature, color) {
+  styleForFeature(feature, color, route = null) {
     if (feature.geometry?.type !== "LineString" && feature.geometry?.type !== "MultiLineString") {
       return {}
     }
 
+    const isExpress = feature.properties?.feature_type === "express_route" ||
+      feature.properties?.service_type === "express" ||
+      route?.id === "airport_mrt_express"
+
     return {
-      color,
-      weight: 5,
-      opacity: 0.9,
+      color: feature.properties?.color || color,
+      weight: isExpress ? 4 : 5,
+      opacity: isExpress ? 1 : 0.9,
+      dashArray: isExpress ? "10 8" : null,
       lineCap: "round",
       lineJoin: "round"
     }
@@ -741,10 +778,44 @@ export default class extends Controller {
     return window.L.latLng(start.lat + t * dy, start.lng + t * dx)
   }
 
-  stationMarker(feature, latlng, color, routeRef) {
+  outOfStationTransferLatLngs(latlngs) {
+    if (latlngs.length !== 2) return latlngs
+
+    const [start, end] = latlngs
+    if (start.distanceTo(end) >= 80) return latlngs
+
+    const midLat = (start.lat + end.lat) / 2
+    const midLng = (start.lng + end.lng) / 2
+    const deltaLat = end.lat - start.lat
+    const deltaLng = end.lng - start.lng
+    const length = Math.hypot(deltaLat, deltaLng) || 1
+    const bulgeScale = 0.00045
+
+    const bulge = window.L.latLng(
+      midLat + (-deltaLng / length) * bulgeScale,
+      midLng + (deltaLat / length) * bulgeScale
+    )
+
+    return [ start, bulge, end ]
+  }
+
+  isOutOfStationEndpoint(routeId, ref) {
+    if (!routeId || !ref) return false
+
+    return this.transferStationRefs(ref).some((stationRef) => {
+      return this.outOfStationEndpointKeys?.has(this.stationKey(routeId, stationRef))
+    })
+  }
+
+  stationMarker(feature, latlng, color, routeRef, routeId) {
     const L = window.L
 
     if (feature.properties?.feature_type !== "station") return L.marker(latlng)
+
+    if (feature.properties?.express_service) {
+      const lineColor = feature.properties?.color || color
+      return this.expressStopMarkerAt(latlng, lineColor)
+    }
 
     const stationRefs = this.transferStationRefs(feature.properties?.ref)
 
@@ -761,8 +832,11 @@ export default class extends Controller {
 
     const stationRef = stationRefs[0]
     const linePrefix = this.linePrefixForStationRef(stationRef) || routeRef
-    const position = this.snapToTracks(latlng, linePrefix)
     const lineColor = feature.properties?.color || this.colorForStationRef(stationRef) || color
+    const outOfStation = this.isOutOfStationEndpoint(routeId, feature.properties?.ref)
+    const position = outOfStation ? latlng : this.snapToTracks(latlng, linePrefix)
+
+    if (outOfStation) return this.outOfStationMarkerAt(position, lineColor)
 
     return this.circleMarkerAt(position, lineColor)
   }
@@ -825,6 +899,43 @@ export default class extends Controller {
     return false
   }
 
+  expressStopMarkerAt(latlng, color) {
+    const L = window.L
+    const safeColor = color || "#666666"
+    const html = [
+      '<div class="express-stop-marker" aria-hidden="true" style="background-color:',
+      safeColor,
+      '"></div>'
+    ].join("")
+
+    return L.marker(latlng, {
+      icon: L.divIcon({
+        className: "express-stop-station-icon",
+        html,
+        iconSize: [ 18, 18 ],
+        iconAnchor: [ 9, 9 ]
+      }),
+      zIndexOffset: 550
+    })
+  }
+
+  outOfStationMarkerAt(latlng, color) {
+    const L = window.L
+    const safeColor = color || "#666666"
+
+    const html = `<div class="out-of-station-marker" aria-hidden="true" style="background-color:${safeColor}"></div>`
+
+    return L.marker(latlng, {
+      icon: L.divIcon({
+        className: "out-of-station-station-icon",
+        html,
+        iconSize: [ 16, 16 ],
+        iconAnchor: [ 8, 8 ]
+      }),
+      zIndexOffset: 600
+    })
+  }
+
   circleMarkerAt(latlng, color) {
     const L = window.L
 
@@ -838,7 +949,7 @@ export default class extends Controller {
     })
   }
 
-  bindFeaturePopup(feature, layer) {
+  bindFeaturePopup(feature, layer, routeId) {
     const name = feature.properties?.name
     if (!name) return
 
@@ -846,7 +957,13 @@ export default class extends Controller {
     const line = feature.properties?.line
     const label = ref ? `${ref} ${name}` : name
     const subtitle = line ? `<br><span style="opacity:0.8">${line}</span>` : ""
-    const popup = `<strong>${label}</strong>${subtitle}`
+    const transferNote = this.isOutOfStationEndpoint(routeId, ref)
+      ? `<br><span style="opacity:0.8">站外轉乘</span>`
+      : ""
+    const expressNote = feature.properties?.express_service
+      ? `<br><span style="opacity:0.8">直達車停靠</span>`
+      : ""
+    const popup = `<strong>${label}</strong>${subtitle}${transferNote}${expressNote}`
 
     layer.bindPopup(popup)
   }

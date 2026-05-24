@@ -40,6 +40,22 @@ class DashboardTest < ApplicationSystemTestCase
     assert_selector ".leaflet-overlay-pane path.leaflet-interactive", wait: 10, minimum: 2
   end
 
+  test "shows Beitou as a transfer station when Tamsui-Xinyi is toggled" do
+    visit root_path
+
+    within "#taiwan-region-map" do
+      assert_selector ".leaflet-tile-pane", wait: 10
+    end
+
+    page.execute_script(<<~JS)
+      const checkbox = document.getElementById("layer-tamsui_xinyi")
+      checkbox.checked = true
+      checkbox.dispatchEvent(new Event("change", { bubbles: true }))
+    JS
+
+    assert_selector ".transfer-station-marker", wait: 10, minimum: 1
+  end
+
   test "shows all Taipei Metro lines when the system checkbox is toggled" do
     visit root_path
 
@@ -52,6 +68,87 @@ class DashboardTest < ApplicationSystemTestCase
 
     assert_predicate find("#layer-wenhu_line", visible: :all), :checked?
     assert_predicate find("#layer-tamsui_xinyi", visible: :all), :checked?
+  end
+
+  test "shows out-of-station transfer link between circular and ankeng at Shisizhang" do
+    visit root_path
+
+    within "#taiwan-region-map" do
+      assert_selector ".leaflet-tile-pane", wait: 10
+    end
+
+    page.execute_script(<<~JS)
+      const show = (id) => {
+        const checkbox = document.getElementById(`layer-${id}`)
+        checkbox.checked = true
+        checkbox.dispatchEvent(new Event("change", { bubbles: true }))
+      }
+      show("circular")
+      show("ankeng_lrt")
+    JS
+
+    assert_selector ".leaflet-overlay-pane path.leaflet-interactive", wait: 10, minimum: 2
+  end
+
+  test "shows out-of-station transfer link between circular and airport mrt at Xinbei Industrial Park" do
+    visit root_path
+
+    within "#taiwan-region-map" do
+      assert_selector ".leaflet-tile-pane", wait: 10
+    end
+
+    page.execute_script(<<~JS)
+      const show = (id) => {
+        const checkbox = document.getElementById(`layer-${id}`)
+        checkbox.checked = true
+        checkbox.dispatchEvent(new Event("change", { bubbles: true }))
+      }
+      show("circular")
+      show("airport_mrt")
+    JS
+
+    assert_selector ".leaflet-overlay-pane path.leaflet-interactive", wait: 10, minimum: 2
+  end
+
+  test "shows out-of-station transfer links from airport mrt taipei main to beimen and mrt taipei main" do
+    visit root_path
+
+    within "#taiwan-region-map" do
+      assert_selector ".leaflet-tile-pane", wait: 10
+    end
+
+    page.execute_script(<<~JS)
+      const show = (id) => {
+        const checkbox = document.getElementById(`layer-${id}`)
+        checkbox.checked = true
+        checkbox.dispatchEvent(new Event("change", { bubbles: true }))
+      }
+      show("airport_mrt")
+      show("songshan_xindian")
+      show("tamsui_xinyi")
+    JS
+
+    assert_selector ".leaflet-overlay-pane path.leaflet-interactive", wait: 10, minimum: 2
+  end
+
+  test "shows out-of-station transfer link between airport mrt and zhonghe xinlu at Sanchong" do
+    visit root_path
+
+    within "#taiwan-region-map" do
+      assert_selector ".leaflet-tile-pane", wait: 10
+    end
+
+    page.execute_script(<<~JS)
+      const show = (id) => {
+        const checkbox = document.getElementById(`layer-${id}`)
+        checkbox.checked = true
+        checkbox.dispatchEvent(new Event("change", { bubbles: true }))
+      }
+      show("airport_mrt")
+      show("zhonghe_xinlu")
+    JS
+
+    assert_selector ".leaflet-overlay-pane path.leaflet-interactive", wait: 10, minimum: 2
   end
 
   test "shows Danhai LRT when the line checkbox is toggled" do
@@ -68,5 +165,22 @@ class DashboardTest < ApplicationSystemTestCase
     JS
 
     assert_selector ".leaflet-overlay-pane path.leaflet-interactive", wait: 10, minimum: 1
+  end
+
+  test "shows airport mrt express line and stops with the main airport line" do
+    visit root_path
+
+    within "#taiwan-region-map" do
+      assert_selector ".leaflet-tile-pane", wait: 10
+    end
+
+    page.execute_script(<<~JS)
+      const checkbox = document.getElementById("layer-airport_mrt")
+      checkbox.checked = true
+      checkbox.dispatchEvent(new Event("change", { bubbles: true }))
+    JS
+
+    assert_selector ".leaflet-overlay-pane path.leaflet-interactive", wait: 10, minimum: 2
+    assert_selector ".express-stop-marker", wait: 10, minimum: 1
   end
 end
