@@ -21,6 +21,32 @@
   min-width: 0;
 }
 
+.leaflet-div-icon.express-stop-station-icon {
+  background: transparent;
+  border: none;
+}
+
+.express-stop-marker {
+  width: 14px;
+  height: 14px;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 25%);
+}
+
+.leaflet-div-icon.out-of-station-station-icon {
+  background: transparent;
+  border: none;
+}
+
+.out-of-station-marker {
+  width: 14px;
+  height: 14px;
+  border: 2.5px dashed #404040;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 25%);
+}
+
 @custom-variant dark (&:is(.dark *));
 
 :root {

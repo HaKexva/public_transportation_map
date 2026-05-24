@@ -15,12 +15,12 @@ module Geojson
     def build!
       route_features = []
 
-      @line.relation_ids.each do |relation_id|
+      @line.relation_ids.each_with_index do |relation_id, relation_index|
         ways = OsmRouteExtractor.new(relation_id: relation_id).fetch_way_elements
         next if ways.empty?
 
         OsmRouteExtractor.new(relation_id: relation_id).stitch_line_strings(ways).each_with_index do |coordinates, index|
-          route_features << route_feature(coordinates, branch_index: index)
+          route_features << route_feature(coordinates, branch_index: index, relation_index: relation_index)
         end
       end
 
@@ -150,9 +150,8 @@ module Geojson
       [ prefix, numeric.to_i, suffix ]
     end
 
-    def route_feature(coordinates, branch_index: 0)
-      name = @line.name
-      name = "#{name} (#{branch_index + 1})" if @line.relation_ids.length > 1
+    def route_feature(coordinates, branch_index: 0, relation_index: 0)
+      name = route_segment_name(relation_index, branch_index)
 
       {
         type: "Feature",
@@ -168,6 +167,18 @@ module Geojson
           coordinates: coordinates
         }
       }
+    end
+
+    def route_segment_name(relation_index, branch_index)
+      if @line.slug == "danhai_lrt"
+        segment = %w[綠山線 藍海線][relation_index]
+        return "#{@line.name}（#{segment}）" if segment
+      end
+
+      name = @line.name
+      name = "#{name} (#{branch_index + 1})" if @line.relation_ids.length > 1
+
+      name
     end
 
     def station_features(stations)
