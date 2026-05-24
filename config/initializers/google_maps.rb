@@ -9,8 +9,11 @@ module GoogleMaps
   REGION = "TW"
 
   def self.api_key
-    ENV["GOOGLE_MAPS_API_KEY"].presence ||
-      Rails.application.credentials.dig(:google_maps, :api_key)
+    return ENV["GOOGLE_MAPS_API_KEY"] if ENV["GOOGLE_MAPS_API_KEY"].present?
+
+    Rails.application.credentials.dig(:google_maps, :api_key)
+  rescue ActiveSupport::MessageEncryptor::InvalidMessage
+    nil
   end
 
   def self.configured?

@@ -8,6 +8,13 @@ Bundler.require(*Rails.groups)
 
 module PublicTransportationMap
   class Application < Rails::Application
+    config.before_configuration do
+      if ENV["SECRET_KEY_BASE"].to_s != ""
+        config.secret_key_base = ENV["SECRET_KEY_BASE"]
+        config.require_master_key = false
+      end
+    end
+
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 8.1
 

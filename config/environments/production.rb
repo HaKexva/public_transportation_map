@@ -4,7 +4,10 @@ Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Prefer SECRET_KEY_BASE on hosts like Railway so boot does not depend on credentials.
-  config.secret_key_base = ENV["SECRET_KEY_BASE"] if ENV["SECRET_KEY_BASE"].present?
+  if ENV["SECRET_KEY_BASE"].present?
+    config.secret_key_base = ENV["SECRET_KEY_BASE"]
+    config.require_master_key = false
+  end
 
   # Code is not reloaded between requests.
   config.enable_reloading = false
