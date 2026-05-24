@@ -16,3 +16,8 @@ Rails.autoloaders.main.push_dir(
 
 # Allow using RubyUI::ComponentName instead RubyUI::ComponentName::ComponentName
 Rails.autoloaders.main.collapse(Rails.root.join("app/components/ruby_ui/*"))
+
+# Generator stubs under docs/ use non-Zeitwerk module names; not used in production.
+Rails.autoloaders.main.ignore(
+  Rails.root.join("app/components/ruby_ui/docs")
+)
