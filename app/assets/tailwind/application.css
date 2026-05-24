@@ -26,12 +26,17 @@
   border: none;
 }
 
+.leaflet-pane path.airport-mrt-express-line {
+  filter: drop-shadow(0 0 1.5px #ffffff) drop-shadow(0 0 1.5px #ffffff);
+  pointer-events: visibleStroke;
+}
+
 .express-stop-marker {
-  width: 14px;
-  height: 14px;
-  border: 2px solid #ffffff;
+  width: 18px;
+  height: 18px;
+  border: 3px solid #ffffff;
   border-radius: 50%;
-  box-shadow: 0 1px 3px rgb(0 0 0 / 25%);
+  box-shadow: 0 0 0 1px rgb(106 44 145 / 55%), 0 1px 4px rgb(0 0 0 / 30%);
 }
 
 .leaflet-div-icon.out-of-station-station-icon {
@@ -45,6 +50,93 @@
   border: 2.5px dashed #404040;
   border-radius: 50%;
   box-shadow: 0 1px 3px rgb(0 0 0 / 25%);
+}
+
+.out-of-station-transfer-line {
+  pointer-events: visibleStroke;
+}
+
+.map-legend-line {
+  display: block;
+  width: 2.75rem;
+  border-radius: 9999px;
+}
+
+.map-legend-line--solid {
+  height: 0.35rem;
+  background-color: var(--legend-line-color);
+}
+
+.map-legend-line--dashed {
+  height: 0;
+  border-top: 0.35rem dashed var(--legend-line-color);
+  background: transparent;
+}
+
+.map-legend-parallel-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  width: 2.75rem;
+}
+
+.map-legend-station {
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 25%);
+}
+
+.map-legend-transfer-marker {
+  width: 1.25rem;
+  height: 0.85rem;
+}
+
+.map-legend-out-of-station-marker {
+  width: 1rem;
+  height: 1rem;
+}
+
+.map-ui-panel__toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  color: var(--muted-foreground);
+  transition: background-color 150ms ease, color 150ms ease;
+}
+
+.map-ui-panel__toggle:hover {
+  background-color: var(--accent);
+  color: var(--foreground);
+}
+
+.map-ui-panel--collapsed .map-ui-panel__body {
+  display: none;
+}
+
+.map-ui-panel--collapsed .map-ui-panel__header {
+  padding-bottom: 1rem;
+}
+
+#map-legend.map-ui-panel--collapsed {
+  width: auto;
+}
+
+#map-legend.map-ui-panel--collapsed .map-ui-panel {
+  width: auto;
+}
+
+.leaflet-container {
+  background: #e8edf2;
+}
+
+.dark .leaflet-container {
+  background: #0f172a;
 }
 
 @custom-variant dark (&:is(.dark *));

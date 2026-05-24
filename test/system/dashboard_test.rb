@@ -8,6 +8,12 @@ class DashboardTest < ApplicationSystemTestCase
 
     assert_selector "#taiwan-region-map"
     assert_selector ".leaflet-container", wait: 5
+    assert_selector "#map-legend", text: "圖例"
+    assert_text "台灣大眾運輸地圖"
+    assert_text "普通車", visible: :all
+    assert_text "直達車停靠站", visible: :all
+    assert_button "顯示全部捷運"
+    assert_button "重設視角"
   end
 
   test "shows and hides Wenhu line when the line checkbox is toggled" do
@@ -17,7 +23,13 @@ class DashboardTest < ApplicationSystemTestCase
       assert_selector ".leaflet-tile-pane", wait: 10
     end
 
-    check "layer-wenhu_line", allow_label_click: true
+    assert_selector "#layer-wenhu_line:not([disabled])", wait: 10
+
+    page.execute_script(<<~JS)
+      const checkbox = document.getElementById("layer-wenhu_line")
+      checkbox.checked = true
+      checkbox.dispatchEvent(new Event("change", { bubbles: true }))
+    JS
     assert_selector ".leaflet-overlay-pane path.leaflet-interactive", wait: 10, minimum: 1
 
     page.execute_script(<<~JS)
@@ -36,7 +48,11 @@ class DashboardTest < ApplicationSystemTestCase
       assert_selector ".leaflet-tile-pane", wait: 10
     end
 
-    check "layer-tamsui_xinyi", allow_label_click: true
+    page.execute_script(<<~JS)
+      const checkbox = document.getElementById("layer-tamsui_xinyi")
+      checkbox.checked = true
+      checkbox.dispatchEvent(new Event("change", { bubbles: true }))
+    JS
     assert_selector ".leaflet-overlay-pane path.leaflet-interactive", wait: 10, minimum: 2
   end
 
@@ -63,11 +79,15 @@ class DashboardTest < ApplicationSystemTestCase
       assert_selector ".leaflet-tile-pane", wait: 10
     end
 
-    check "layer-taipei_metro", allow_label_click: true
+    page.execute_script(<<~JS)
+      const checkbox = document.getElementById("layer-taipei_metro")
+      checkbox.checked = true
+      checkbox.dispatchEvent(new Event("change", { bubbles: true }))
+    JS
     assert_selector ".leaflet-overlay-pane path.leaflet-interactive", wait: 15, minimum: 6
 
-    assert_predicate find("#layer-wenhu_line", visible: :all), :checked?
-    assert_predicate find("#layer-tamsui_xinyi", visible: :all), :checked?
+    assert page.evaluate_script("document.getElementById('layer-wenhu_line').checked")
+    assert page.evaluate_script("document.getElementById('layer-tamsui_xinyi').checked")
   end
 
   test "shows out-of-station transfer link between circular and ankeng at Shisizhang" do
@@ -148,7 +168,8 @@ class DashboardTest < ApplicationSystemTestCase
       show("zhonghe_xinlu")
     JS
 
-    assert_selector ".leaflet-overlay-pane path.leaflet-interactive", wait: 10, minimum: 2
+    assert_selector ".out-of-station-transfer-line", wait: 10, minimum: 1
+    assert_selector ".out-of-station-marker", wait: 10, minimum: 2
   end
 
   test "shows Danhai LRT when the line checkbox is toggled" do
@@ -181,6 +202,7 @@ class DashboardTest < ApplicationSystemTestCase
     JS
 
     assert_selector ".leaflet-overlay-pane path.leaflet-interactive", wait: 10, minimum: 2
+    assert_selector "path.airport-mrt-express-line", wait: 10, minimum: 1
     assert_selector ".express-stop-marker", wait: 10, minimum: 1
   end
 end

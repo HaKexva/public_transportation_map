@@ -8,7 +8,7 @@ module Geojson
         name: "機場捷運",
         name_en: "Taoyuan Airport MRT",
         ref: "A",
-        color: "#6A2C91",
+        color: "#0073B7",
         relation_ids: [ 6937083 ],
         station_ref_prefix: "A"
       )
