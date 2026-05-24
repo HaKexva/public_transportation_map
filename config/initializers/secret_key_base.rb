@@ -4,15 +4,14 @@
 # Production (Railway): set SECRET_KEY_BASE — do not rely on credentials after key rotation.
 # Development/test: tmp/local_secret.txt
 
-# Docker asset precompile (see Dockerfile); Rails generates a throwaway key.
-return if ENV["SECRET_KEY_BASE_DUMMY"].present?
-
 if ENV["SECRET_KEY_BASE"].present?
   Rails.application.config.secret_key_base = ENV["SECRET_KEY_BASE"]
   return
 end
 
-if Rails.env.production?
+# Dockerfile: SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile
+# Rails.configuration.secret_key_base then uses a throwaway key — do not raise here.
+if Rails.env.production? && ENV["SECRET_KEY_BASE_DUMMY"].blank?
   raise <<~ERROR
     Missing SECRET_KEY_BASE in production.
 
