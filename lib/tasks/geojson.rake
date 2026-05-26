@@ -28,6 +28,14 @@ namespace :geojson do
     Geojson::AirportMrtExpressBuilder.build!
   end
 
+  desc "Rebuild other transit line GeoJSON files from OpenStreetMap"
+  task other: :environment do
+    Geojson::MetroSystemImporter.import!(
+      system_id: "other",
+      lines: Geojson::OtherTransitCatalog::LINES
+    )
+  end
+
   desc "Rebuild 文湖線 GeoJSON from OpenStreetMap track geometry"
   task wenhu: :environment do
     line = Geojson::TaipeiMetroCatalog::LINES.find { |entry| entry.slug == "wenhu_line" }

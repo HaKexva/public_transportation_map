@@ -8,6 +8,7 @@ module Geojson
     :ref,
     :color,
     :relation_ids,
+    :way_ids,
     :station_ref_prefix,
     :branch_of,
     :system_id,
@@ -15,7 +16,7 @@ module Geojson
     :network_name,
     :osm_networks
   ) do
-    def self.taipei(slug:, name:, name_en:, ref:, color:, relation_ids:, station_ref_prefix:, branch_of: nil)
+    def self.taipei(slug:, name:, name_en:, ref:, color:, relation_ids:, station_ref_prefix:, branch_of: nil, way_ids: nil)
       new(
         slug: slug,
         name: name,
@@ -23,6 +24,7 @@ module Geojson
         ref: ref,
         color: color,
         relation_ids: relation_ids,
+        way_ids: way_ids || [],
         station_ref_prefix: station_ref_prefix,
         branch_of: branch_of,
         system_id: "taipei_metro",
@@ -32,7 +34,7 @@ module Geojson
       )
     end
 
-    def self.new_taipei(slug:, name:, name_en:, ref:, color:, relation_ids:, station_ref_prefix:, branch_of: nil)
+    def self.new_taipei(slug:, name:, name_en:, ref:, color:, relation_ids:, station_ref_prefix:, branch_of: nil, way_ids: nil)
       new(
         slug: slug,
         name: name,
@@ -40,6 +42,7 @@ module Geojson
         ref: ref,
         color: color,
         relation_ids: relation_ids,
+        way_ids: way_ids || [],
         station_ref_prefix: station_ref_prefix,
         branch_of: branch_of,
         system_id: "new_taipei_metro",
@@ -49,7 +52,7 @@ module Geojson
       )
     end
 
-    def self.taoyuan(slug:, name:, name_en:, ref:, color:, relation_ids:, station_ref_prefix:, branch_of: nil, osm_networks: nil)
+    def self.taoyuan(slug:, name:, name_en:, ref:, color:, relation_ids:, station_ref_prefix:, branch_of: nil, osm_networks: nil, way_ids: nil)
       new(
         slug: slug,
         name: name,
@@ -57,12 +60,31 @@ module Geojson
         ref: ref,
         color: color,
         relation_ids: relation_ids,
+        way_ids: way_ids || [],
         station_ref_prefix: station_ref_prefix,
         branch_of: branch_of,
         system_id: "taoyuan_metro",
         output_subdir: "taoyuan_metro",
         network_name: "桃園捷運",
         osm_networks: osm_networks || [ "桃園捷運", "桃園機場捷運" ]
+      )
+    end
+
+    def self.other(slug:, name:, name_en:, ref:, color:, station_ref_prefix:, relation_ids: nil, way_ids: nil, branch_of: nil)
+      new(
+        slug: slug,
+        name: name,
+        name_en: name_en,
+        ref: ref,
+        color: color,
+        relation_ids: relation_ids || [],
+        way_ids: way_ids || [],
+        station_ref_prefix: station_ref_prefix,
+        branch_of: branch_of,
+        system_id: "other",
+        output_subdir: "other",
+        network_name: "其他",
+        osm_networks: []
       )
     end
   end

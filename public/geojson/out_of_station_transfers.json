@@ -70,5 +70,14 @@
       { "route_id": "airport_mrt", "ref": "A2", "name": "三重" },
       { "route_id": "zhonghe_xinlu", "ref": "O15", "name": "三重" }
     ]
+  },
+  {
+    "id": "taipei_zoo_out_of_station",
+    "label": "動物園站外轉乘",
+    "routes": [ "wenhu_line", "maokong_gondola" ],
+    "endpoints": [
+      { "route_id": "wenhu_line", "ref": "BR01", "name": "動物園" },
+      { "route_id": "maokong_gondola", "ref": "G1", "name": "動物園" }
+    ]
   }
 ]

@@ -1,0 +1,272 @@
+{
+  "type": "FeatureCollection",
+  "name": "其他貓空纜車",
+  "properties": {
+    "source": "Track geometry from OpenStreetMap ways 71266575. © OpenStreetMap contributors, ODbL.",
+    "network": "其他",
+    "ref": "MG",
+    "osm_relations": [],
+    "osm_ways": [
+      71266575
+    ]
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "MG",
+        "name": "貓空纜車",
+        "name_en": "Maokong Gondola",
+        "color": "#00AFE2"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            121.5762884,
+            24.9959573
+          ],
+          [
+            121.5764986,
+            24.9958314
+          ],
+          [
+            121.5781417,
+            24.9948469
+          ],
+          [
+            121.5803525,
+            24.9935224
+          ],
+          [
+            121.5821913,
+            24.9924207
+          ],
+          [
+            121.5826604,
+            24.9921397
+          ],
+          [
+            121.5829967,
+            24.9919382
+          ],
+          [
+            121.5833446,
+            24.9918027
+          ],
+          [
+            121.5849141,
+            24.9911818
+          ],
+          [
+            121.5859615,
+            24.9907709
+          ],
+          [
+            121.5870497,
+            24.9903315
+          ],
+          [
+            121.5873538,
+            24.9902114
+          ],
+          [
+            121.5874945,
+            24.9901573
+          ],
+          [
+            121.5876652,
+            24.9900906
+          ],
+          [
+            121.5882656,
+            24.9898513
+          ],
+          [
+            121.5896147,
+            24.9893206
+          ],
+          [
+            121.5915661,
+            24.9885518
+          ],
+          [
+            121.5921198,
+            24.9883301
+          ],
+          [
+            121.5921614,
+            24.9882953
+          ],
+          [
+            121.5921605,
+            24.9882437
+          ],
+          [
+            121.5920752,
+            24.9879173
+          ],
+          [
+            121.591818,
+            24.986963
+          ],
+          [
+            121.5910668,
+            24.984174200000002
+          ],
+          [
+            121.5900472,
+            24.9803516
+          ],
+          [
+            121.5899791,
+            24.9801046
+          ],
+          [
+            121.5897641,
+            24.9793099
+          ],
+          [
+            121.5896828,
+            24.9789312
+          ],
+          [
+            121.5896128,
+            24.9786047
+          ],
+          [
+            121.5895792,
+            24.9783842
+          ],
+          [
+            121.5892688,
+            24.976368
+          ],
+          [
+            121.58887,
+            24.9737357
+          ],
+          [
+            121.5885478,
+            24.9716331
+          ],
+          [
+            121.5882348,
+            24.9695437
+          ],
+          [
+            121.5881712,
+            24.9691386
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "G1",
+        "name": "動物園",
+        "line": "貓空纜車",
+        "color": "#00AFE2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5762884,
+          24.9959573
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "angle_station",
+        "ref": "G2",
+        "name": "轉角一",
+        "line": "貓空纜車",
+        "color": "#00AFE2",
+        "note": "不提供載客服務",
+        "passenger_service": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5829967,
+          24.9919382
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "G3",
+        "name": "動物園南",
+        "line": "貓空纜車",
+        "color": "#00AFE2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5874945,
+          24.9901573
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "angle_station",
+        "ref": "G4",
+        "name": "轉角二",
+        "line": "貓空纜車",
+        "color": "#00AFE2",
+        "note": "不提供載客服務",
+        "passenger_service": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5921614,
+          24.9882953
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "G5",
+        "name": "指南宮",
+        "line": "貓空纜車",
+        "color": "#00AFE2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5896828,
+          24.9789312
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "G6",
+        "name": "貓空",
+        "line": "貓空纜車",
+        "color": "#00AFE2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5881712,
+          24.9691386
+        ]
+      }
+    }
+  ]
+}

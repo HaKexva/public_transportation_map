@@ -4,6 +4,17 @@ require "json"
 
 module Geojson
   class MetroLineBuilder
+    # Taoyuan Airport skytrain: two terminals, each direction numbers from its departure terminal.
+    SKYTRAIN_TERMINALS = [
+      { ref: "ST01", name: "第一航廈", name_en: "Terminal 1", lon: 121.2380095, lat: 25.0798462 },
+      { ref: "ST02", name: "第二航廈", name_en: "Terminal 2", lon: 121.2336320, lat: 25.0764579 }
+    ].freeze
+
+    SKYTRAIN_RELATION_META = {
+      17_666_637 => { segment: "outbound", label: "往程", start_ref: "ST01", end_ref: "ST02" },
+      17_666_651 => { segment: "inbound", label: "返程", start_ref: "ST02", end_ref: "ST01" }
+    }.freeze
+
     def self.build!(line)
       new(line).build!
     end
@@ -13,16 +24,7 @@ module Geojson
     end
 
     def build!
-      route_features = []
-
-      @line.relation_ids.each_with_index do |relation_id, relation_index|
-        ways = OsmRouteExtractor.new(relation_id: relation_id).fetch_way_elements
-        next if ways.empty?
-
-        OsmRouteExtractor.new(relation_id: relation_id).stitch_line_strings(ways).each_with_index do |coordinates, index|
-          route_features << route_feature(coordinates, branch_index: index, relation_index: relation_index)
-        end
-      end
+      route_features = build_route_features
 
       raise "No track geometry for #{@line.slug}" if route_features.empty?
 
@@ -31,11 +33,12 @@ module Geojson
         type: "FeatureCollection",
         name: "#{@line.network_name}#{@line.name}",
         properties: {
-          source: "Track geometry from OpenStreetMap route relations #{@line.relation_ids.join(', ')}. © OpenStreetMap contributors, ODbL.",
+          source: geometry_source_note,
           network: @line.network_name,
           ref: @line.ref,
-          osm_relations: @line.relation_ids
-        },
+          osm_relations: @line.relation_ids,
+          osm_ways: @line.way_ids
+        }.compact,
         features: route_features + station_features(stations)
       }
 
@@ -52,7 +55,56 @@ module Geojson
       Rails.root.join("public/geojson", @line.output_subdir)
     end
 
+    def build_route_features
+      route_features = []
+
+      @line.relation_ids.each_with_index do |relation_id, relation_index|
+        ways = OsmRouteExtractor.new(relation_id: relation_id).fetch_way_elements
+        next if ways.empty?
+
+        OsmRouteExtractor.new(relation_id: relation_id).stitch_line_strings(ways).each_with_index do |coordinates, index|
+          route_features << route_feature(coordinates, branch_index: index, relation_index: relation_index)
+        end
+      end
+
+      @line.way_ids.each_with_index do |way_id, way_index|
+        ways = OsmRouteExtractor.fetch_way_elements(way_id)
+        next if ways.empty?
+
+        stitcher = OsmRouteExtractor.new(relation_id: @line.relation_ids.first || 0)
+        stitcher.stitch_line_strings(ways).each_with_index do |coordinates, index|
+          route_features << route_feature(coordinates, branch_index: index, relation_index: way_index)
+        end
+      end
+
+      route_features
+    end
+
+    def geometry_source_note
+      parts = []
+      parts << "route relations #{@line.relation_ids.join(', ')}" if @line.relation_ids.any?
+      parts << "ways #{@line.way_ids.join(', ')}" if @line.way_ids.any?
+
+      "Track geometry from OpenStreetMap #{parts.join(' and ')}. © OpenStreetMap contributors, ODbL."
+    end
+
     def fetch_stations_for_line
+      if @line.slug == "taoyuan_airport_skytrain"
+        return fetch_skytrain_stations
+      end
+
+      if @line.slug == "maokong_gondola"
+        return fetch_maokong_gondola_stations
+      end
+
+      if @line.system_id == "other"
+        return fetch_other_stations
+      end
+
+      if @line.slug == "danhai_lrt"
+        return fetch_danhai_stations
+      end
+
       unless @line.system_id == "taipei_metro"
         return merge_stations(stations_from_relations, default_stations)
       end
@@ -114,6 +166,52 @@ module Geojson
       end.sort_by { |station| station_sort_key(station[:ref]) }
     end
 
+    def fetch_maokong_gondola_stations
+      stations = @line.way_ids.flat_map do |way_id|
+        OsmRouteExtractor.fetch_aerialway_stations_for_way(
+          way_id,
+          ref_prefix: @line.station_ref_prefix,
+          include_angle_stations: true
+        )
+      end
+
+      merge_stations([], stations.map { |station| enrich_maokong_station(station) })
+        .sort_by { |station| maokong_station_sort_key(station[:ref]) }
+    end
+
+    def enrich_maokong_station(station)
+      return station unless station[:angle_station] || station[:name].match?(/轉角/)
+
+      station.merge(
+        angle_station: true,
+        passenger_service: false,
+        note: "不提供載客服務"
+      )
+    end
+
+    def maokong_station_sort_key(ref)
+      match = ref.to_s.match(/G(\d+)/i)
+      match ? match[1].to_i : 99
+    end
+
+    def fetch_other_stations
+      stations = @line.relation_ids.flat_map do |relation_id|
+        OsmRouteExtractor.new(relation_id: relation_id).fetch_stations_from_relation(
+          allow_missing_ref: true,
+          ref_prefix: @line.station_ref_prefix
+        )
+      end
+
+      @line.way_ids.each do |way_id|
+        stations = merge_stations(
+          stations,
+          OsmRouteExtractor.fetch_aerialway_stations_for_way(way_id, ref_prefix: @line.station_ref_prefix)
+        )
+      end
+
+      merge_stations([], stations)
+    end
+
     def stations_from_relations
       @line.relation_ids.flat_map do |relation_id|
         OsmRouteExtractor.new(relation_id: relation_id).fetch_stations_from_relation
@@ -152,6 +250,7 @@ module Geojson
 
     def route_feature(coordinates, branch_index: 0, relation_index: 0)
       name = route_segment_name(relation_index, branch_index)
+      segment = danhai_segment_key(relation_index) || skytrain_segment_key(relation_index)
 
       {
         type: "Feature",
@@ -160,8 +259,9 @@ module Geojson
           ref: @line.ref,
           name: name,
           name_en: @line.name_en,
-          color: @line.color
-        },
+          color: danhai_segment_color(segment) || @line.color,
+          segment: segment
+        }.compact,
         geometry: {
           type: "LineString",
           coordinates: coordinates
@@ -175,10 +275,111 @@ module Geojson
         return "#{@line.name}（#{segment}）" if segment
       end
 
+      if @line.slug == "taoyuan_airport_skytrain"
+        relation_id = @line.relation_ids[relation_index]
+        meta = SKYTRAIN_RELATION_META[relation_id]
+        if meta
+          name = "#{@line.name}（#{meta[:label]}）"
+          return "#{name} (#{branch_index + 1})" if branch_index.positive?
+
+          return name
+        end
+      end
+
       name = @line.name
       name = "#{name} (#{branch_index + 1})" if @line.relation_ids.length > 1
 
       name
+    end
+
+    def fetch_skytrain_stations
+      SKYTRAIN_TERMINALS.map do |terminal|
+        terminal.merge(
+          line: @line.name,
+          color: @line.color,
+          note: skytrain_station_note(terminal[:ref])
+        )
+      end
+    end
+
+    def skytrain_station_note(ref)
+      case ref
+      when "ST01" then "往程起點 · 返程終點"
+      when "ST02" then "往程終點 · 返程起點"
+      end
+    end
+
+    def skytrain_segment_key(relation_index)
+      return nil unless @line.slug == "taoyuan_airport_skytrain"
+
+      relation_id = @line.relation_ids[relation_index]
+      SKYTRAIN_RELATION_META[relation_id]&.fetch(:segment)
+    end
+
+    def fetch_danhai_stations
+      stations_by_ref = {}
+
+      @line.relation_ids.each_with_index do |relation_id, relation_index|
+        extractor = OsmRouteExtractor.new(relation_id: relation_id)
+        relation_stations = extractor.fetch_stations_from_relation
+
+        if relation_index.zero?
+          relation_stations = merge_stations(
+            relation_stations,
+            extractor.fetch_stations(ref_prefix: @line.station_ref_prefix)
+          )
+        end
+
+        relation_stations.each { |station| stations_by_ref[station[:ref]] ||= station }
+      end
+
+      NewTaipeiMetroCatalog::DANHAI_FALLBACK_STATIONS.each do |station|
+        stations_by_ref[station[:ref]] ||= station
+      end
+
+      expand_danhai_stations(stations_by_ref.values)
+    end
+
+    def expand_danhai_stations(stations)
+      stations.sort_by { |station| danhai_station_sort_key(station[:ref]) }.flat_map do |station|
+        ref = station[:ref]
+
+        if NewTaipeiMetroCatalog::DANHAI_SHARED_STATION_REFS.include?(ref)
+          [
+            danhai_station_for_segment(station, "lushan"),
+            danhai_station_for_segment(station, "lanhai")
+          ]
+        elsif NewTaipeiMetroCatalog::DANHAI_LANHAI_ONLY_STATION_REFS.include?(ref)
+          [ danhai_station_for_segment(station, "lanhai") ]
+        else
+          [ danhai_station_for_segment(station, "lushan") ]
+        end
+      end
+    end
+
+    def danhai_station_for_segment(station, segment)
+      line_label = segment == "lushan" ? "綠山線" : "藍海線"
+
+      station.merge(
+        segment: segment,
+        color: danhai_segment_color(segment),
+        line: "淡海輕軌（#{line_label}）"
+      )
+    end
+
+    def danhai_station_sort_key(ref)
+      match = ref.to_s.match(/V(\d+)/i)
+      match ? match[1].to_i : 99
+    end
+
+    def danhai_segment_key(relation_index)
+      return nil unless @line.slug == "danhai_lrt"
+
+      %w[lushan lanhai][relation_index]
+    end
+
+    def danhai_segment_color(_segment)
+      @line.color if @line.slug == "danhai_lrt"
     end
 
     def station_features(stations)
@@ -186,16 +387,20 @@ module Geojson
         next if station[:name].blank?
 
         ref = TaipeiMetroCatalog::TRANSFER_STATION_REFS_BY_NAME[station[:name]] || station[:ref]
+        angle_station = station[:angle_station] || station[:name].match?(/轉角/)
 
         {
           type: "Feature",
           properties: {
-            feature_type: "station",
+            feature_type: angle_station ? "angle_station" : "station",
             ref: ref,
             name: station[:name],
-            line: @line.name,
-            color: @line.color
-          },
+            line: station[:line] || @line.name,
+            color: station[:color] || @line.color,
+            segment: station[:segment],
+            note: station[:note],
+            passenger_service: station[:passenger_service]
+          }.compact,
           geometry: {
             type: "Point",
             coordinates: [ station[:lon], station[:lat] ]
