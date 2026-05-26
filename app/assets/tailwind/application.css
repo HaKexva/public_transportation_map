@@ -26,8 +26,15 @@
   border: none;
 }
 
+.leaflet-pane path.airport-mrt-commuter-line {
+  stroke: #0073b7 !important;
+  stroke-dasharray: none !important;
+  pointer-events: visibleStroke;
+}
+
 .leaflet-pane path.airport-mrt-express-line {
-  filter: drop-shadow(0 0 1.5px #ffffff) drop-shadow(0 0 1.5px #ffffff);
+  stroke: #6a2c91 !important;
+  stroke-dasharray: none !important;
   pointer-events: visibleStroke;
 }
 
@@ -50,6 +57,25 @@
   border: 2.5px dashed #404040;
   border-radius: 50%;
   box-shadow: 0 1px 3px rgb(0 0 0 / 25%);
+}
+
+.leaflet-div-icon.angle-station-icon {
+  background: transparent;
+  border: none;
+}
+
+.angle-station-marker {
+  width: 12px;
+  height: 12px;
+  border: 2.5px solid #00afe2;
+  background-color: #ffffff;
+  transform: rotate(45deg);
+  box-shadow: 0 0 0 1px rgb(255 255 255 / 90%), 0 1px 3px rgb(0 0 0 / 25%);
+}
+
+.map-legend-angle-station-marker {
+  width: 12px;
+  height: 12px;
 }
 
 .out-of-station-transfer-line {
@@ -76,8 +102,12 @@
 .map-legend-parallel-lines {
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
+  gap: 0.28rem;
   width: 2.75rem;
+}
+
+.map-legend-parallel-lines .map-legend-line--solid {
+  height: 0.3rem;
 }
 
 .map-legend-station {
@@ -107,7 +137,7 @@
   height: 2rem;
   border-radius: 0.5rem;
   color: var(--muted-foreground);
-  transition: background-color 150ms ease, color 150ms ease;
+  transition: background-color 150ms ease, color 150ms ease, transform 150ms ease;
 }
 
 .map-ui-panel__toggle:hover {
@@ -115,12 +145,38 @@
   color: var(--foreground);
 }
 
+.map-ui-panel__toggle:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+.map-ui-panel__chevron {
+  transition: transform 200ms ease;
+}
+
+[data-map-target="legendPanel"]:not(.map-ui-panel--collapsed) .map-ui-panel__chevron,
+[data-map-target="layersPanel"]:not(.map-ui-panel--collapsed) .map-ui-panel__chevron {
+  transform: rotate(180deg);
+}
+
 .map-ui-panel--collapsed .map-ui-panel__body {
   display: none;
 }
 
-.map-ui-panel--collapsed .map-ui-panel__header {
+.map-ui-panel--collapsed > .map-ui-panel > .map-ui-panel__header {
   padding-bottom: 1rem;
+}
+
+/* Legend stays on the right; layer panel stays on the left */
+.map-legend-panel {
+  position: fixed;
+  top: 5.5rem;
+  right: 1rem;
+  bottom: auto;
+  left: auto;
+  z-index: 1000;
+  width: auto;
+  max-width: min(16rem, calc(100vw - 2rem));
 }
 
 #map-legend.map-ui-panel--collapsed {
@@ -131,12 +187,16 @@
   width: auto;
 }
 
-.leaflet-container {
-  background: #e8edf2;
+#map-legend:not(.map-ui-panel--collapsed) .map-ui-panel__body {
+  max-height: min(40vh, 16rem);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in oklch, var(--border) 80%, transparent) transparent;
 }
 
-.dark .leaflet-container {
-  background: #0f172a;
+.map-legend-section + .map-legend-section {
+  border-top: 1px solid color-mix(in oklch, var(--border) 70%, transparent);
+  padding-top: 0.75rem;
 }
 
 @custom-variant dark (&:is(.dark *));

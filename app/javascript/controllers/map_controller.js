@@ -1,3 +1,4 @@
+// airport-mrt-colors-v3: commuter #0073B7, express #6A2C91, solid parallel tracks
 import { Controller } from "@hotwired/stimulus"
 
 const LEAFLET_BOUNDS = [ [ 21.85, 118.15 ], [ 26.45, 122.25 ] ]
@@ -13,9 +14,13 @@ const LAYER_COLORS = {
 
 const MAX_SNAP_DISTANCE_METERS = 350
 
-const EXPRESS_LINE_COLOR = "#6A2C91"
-const AIRPORT_MRT_LOCAL_OFFSET_METERS = -16
-const AIRPORT_MRT_EXPRESS_OFFSET_METERS = 16
+const AIRPORT_MRT_COMMUTER_COLOR = "#0073B7"
+const AIRPORT_MRT_BRAND_COLOR = "#6A2C91"
+const EXPRESS_LINE_COLOR = AIRPORT_MRT_BRAND_COLOR
+const AIRPORT_MRT_EXPRESS_STOP_REFS = new Set([ "A1", "A3", "A8", "A12", "A13", "A18", "A21" ])
+const DANHAI_LRT_COLOR = "#ED6B46"
+const PARALLEL_TRACK_HALF_OFFSET_PX = 6
+const PARALLEL_TRACK_ROUTE_IDS = new Set([ "airport_mrt", "airport_mrt_express", "danhai_lrt" ])
 
 const METRO_SYSTEM_IDS = [
   "taipei_metro",
@@ -52,6 +57,10 @@ export default class extends Controller {
 
   disconnect() {
     if (this.resizeHandler) window.removeEventListener("resize", this.resizeHandler)
+    if (this.parallelTracksRefreshTimer) clearTimeout(this.parallelTracksRefreshTimer)
+    if (this.map && this.refreshParallelTracksOnZoom) {
+      this.map.off("zoomend", this.refreshParallelTracksOnZoom)
+    }
     this.themeObserver?.disconnect()
     this.themeObserver = null
     this.map?.remove()
@@ -112,8 +121,12 @@ export default class extends Controller {
     this.outOfStationTransferPane = "outOfStationTransfers"
 
     const expressPane = this.map.createPane("expressRoutes")
-    expressPane.style.zIndex = 620
+    expressPane.style.zIndex = 610
     this.expressRoutePane = "expressRoutes"
+
+    const commuterPane = this.map.createPane("commuterRoutes")
+    commuterPane.style.zIndex = 630
+    this.commuterRoutePane = "commuterRoutes"
 
     this.outOfStationTransferGroup = L.featureGroup().addTo(this.map)
 
@@ -125,6 +138,8 @@ export default class extends Controller {
 
     this.map.fitBounds(LEAFLET_BOUNDS)
     this.map.zoomControl.setPosition("topright")
+    this.refreshParallelTracksOnZoom = () => this.scheduleParallelTracksRefresh()
+    this.map.on("zoomend", this.refreshParallelTracksOnZoom)
 
     this.resizeHandler = () => this.map?.invalidateSize(true)
     requestAnimationFrame(this.resizeHandler)
@@ -134,6 +149,7 @@ export default class extends Controller {
 
     this.mapReady = true
     this.setLayerControlsDisabled(false)
+    this.syncPanelToggleStates()
   }
 
   allLayerIds() {
@@ -250,7 +266,7 @@ export default class extends Controller {
         if (!routesByLineRef[route.ref]) routesByLineRef[route.ref] = []
         routesByLineRef[route.ref].push(route)
 
-        if (!route.branch_of) colorsByPrefix[route.ref] = route.color
+        if (!route.branch_of) colorsByPrefix[route.ref] = this.routeDisplayColor(route) || route.color
       })
     })
 
@@ -277,12 +293,33 @@ export default class extends Controller {
     if (!this.hasLayersPanelTarget) return
 
     this.layersPanelTarget.classList.toggle("map-ui-panel--collapsed")
+    this.syncPanelToggleState(this.layersPanelTarget)
   }
 
   toggleLegendPanel() {
     if (!this.hasLegendPanelTarget) return
 
     this.legendPanelTarget.classList.toggle("map-ui-panel--collapsed")
+    this.syncPanelToggleState(this.legendPanelTarget)
+  }
+
+  syncPanelToggleState(panel) {
+    const button = panel?.querySelector(".map-ui-panel__toggle")
+    if (!button) return
+
+    const collapsed = panel.classList.contains("map-ui-panel--collapsed")
+    const isLegend = panel === this.legendPanelTarget
+    const label = isLegend
+      ? (collapsed ? "展開圖例" : "收合圖例")
+      : (collapsed ? "展開圖層面板" : "收合圖層面板")
+
+    button.setAttribute("aria-expanded", (!collapsed).toString())
+    button.setAttribute("aria-label", label)
+  }
+
+  syncPanelToggleStates() {
+    if (this.hasLayersPanelTarget) this.syncPanelToggleState(this.layersPanelTarget)
+    if (this.hasLegendPanelTarget) this.syncPanelToggleState(this.legendPanelTarget)
   }
 
   basemapUrl() {
@@ -756,8 +793,16 @@ export default class extends Controller {
     const routes = metroRoutes.length > 0 ? metroRoutes : (this.routesManifest[layerId] || [])
     if (routes.length === 0) return
 
-    const loads = routes.map((route) => this.addRouteToGroup(route, layerId, generation))
-    const results = await Promise.allSettled(loads)
+    const results = []
+
+    for (const route of routes) {
+      try {
+        await this.addRouteToGroup(route, layerId, generation)
+        results.push({ status: "fulfilled" })
+      } catch (reason) {
+        results.push({ status: "rejected", reason })
+      }
+    }
 
     if (!this.isLayerGenerationCurrent(layerId, generation)) return
 
@@ -780,28 +825,74 @@ export default class extends Controller {
     const group = this.layerGroups[layerId]
     if (!group) return
 
-    const color = route.color || LAYER_COLORS[layerId] || "#666666"
+    const color = this.routeDisplayColor(route) || LAYER_COLORS[layerId] || "#666666"
     const routeRef = route.ref
     const displayData = this.displayGeoJSON(data, route)
+    const renderData = this.geoJSONForMapRender(displayData, route)
 
     this.cacheRouteTracks(route.id, displayData)
     this.indexStationCoordinates(route.id, displayData)
 
-    const geoLayer = L.geoJSON(displayData, {
+    const geoLayer = L.geoJSON(renderData, {
       style: (feature) => this.styleForFeature(feature, color, route),
       pointToLayer: (feature, latlng) => this.stationMarker(feature, latlng, color, routeRef, route.id),
-      onEachFeature: (feature, layer) => this.bindFeaturePopup(feature, layer, route.id)
+      onEachFeature: (feature, layer) => {
+        if (route.id === "airport_mrt" || route.id === "airport_mrt_express") {
+          const lineStyle = this.styleForFeature(feature, color, route)
+          if (lineStyle.color && typeof layer.setStyle === "function") layer.setStyle(lineStyle)
+        }
+
+        this.bindFeaturePopup(feature, layer, route.id)
+      }
     })
 
     if (!this.isLayerGenerationCurrent(layerId, generation) || !this.layerVisible[layerId]) return
 
     group.addLayer(geoLayer)
 
-    if (route.id === "airport_mrt_express") {
-      geoLayer.eachLayer((layer) => {
-        if (typeof layer.bringToFront === "function") layer.bringToFront()
-      })
+    if (layerId === "airport_mrt") this.bringAirportMrtCommuterLinesToFront(group)
+  }
+
+  geoJSONForMapRender(data, route) {
+    if (route?.id !== "airport_mrt_express") return data
+
+    return {
+      ...data,
+      features: (data.features || []).filter((feature) => feature.properties?.feature_type !== "station")
     }
+  }
+
+  bringAirportMrtCommuterLinesToFront(group) {
+    group.eachLayer((container) => {
+      if (typeof container.eachLayer !== "function") return
+
+      container.eachLayer((layer) => {
+        const path = layer._path || layer.getElement?.()
+        if (path?.classList?.contains("airport-mrt-commuter-line") && typeof layer.bringToFront === "function") {
+          layer.bringToFront()
+        }
+      })
+    })
+  }
+
+  isAirportMrtExpressStop(ref) {
+    return ref && AIRPORT_MRT_EXPRESS_STOP_REFS.has(ref)
+  }
+
+  isAirportMrtExpressTransferStation(routeId, ref) {
+    if (!this.isAirportMrtExpressStop(ref)) return false
+
+    return routeId === "airport_mrt" || routeId === "airport_mrt_express"
+  }
+
+  routeDisplayColor(route) {
+    if (!route) return null
+
+    if (route.id === "airport_mrt") return AIRPORT_MRT_COMMUTER_COLOR
+    if (route.id === "airport_mrt_express") return EXPRESS_LINE_COLOR
+    if (route.id === "danhai_lrt") return DANHAI_LRT_COLOR
+
+    return route.color || null
   }
 
   styleForFeature(feature, color, route = null) {
@@ -818,21 +909,52 @@ export default class extends Controller {
         pane: this.expressRoutePane,
         className: "airport-mrt-express-line",
         color: EXPRESS_LINE_COLOR,
-        weight: 9,
+        weight: 6,
         opacity: 1,
-        dashArray: "18 10",
+        lineCap: "round",
+        lineJoin: "round"
+      }
+    }
+
+    if (route?.id === "airport_mrt") {
+      return {
+        pane: this.commuterRoutePane,
+        className: "airport-mrt-commuter-line",
+        color: AIRPORT_MRT_COMMUTER_COLOR,
+        weight: 6,
+        opacity: 0.95,
+        lineCap: "round",
+        lineJoin: "round"
+      }
+    }
+
+    if (route?.id === "danhai_lrt") {
+      return {
+        color: DANHAI_LRT_COLOR,
+        weight: 6,
+        opacity: 0.95,
         lineCap: "round",
         lineJoin: "round"
       }
     }
 
     return {
-      color: feature.properties?.color || color,
+      color: feature.properties?.color || this.routeDisplayColor(route) || color,
       weight: 5,
       opacity: 0.9,
       lineCap: "round",
       lineJoin: "round"
     }
+  }
+
+  stationColorForRoute(routeId, feature, stationRef, fallbackColor) {
+    if (routeId === "airport_mrt") return AIRPORT_MRT_COMMUTER_COLOR
+    if (routeId === "airport_mrt_express") {
+      return feature.properties?.express_service ? EXPRESS_LINE_COLOR : AIRPORT_MRT_COMMUTER_COLOR
+    }
+    if (routeId === "danhai_lrt") return DANHAI_LRT_COLOR
+
+    return feature.properties?.color || this.colorForStationRef(stationRef) || fallbackColor
   }
 
   visibleRouteLayerIds() {
@@ -867,22 +989,163 @@ export default class extends Controller {
     return lines
   }
 
-  airportMrtOffsetMeters(routeId) {
-    if (routeId === "airport_mrt") return AIRPORT_MRT_LOCAL_OFFSET_METERS
-    if (routeId === "airport_mrt_express") return AIRPORT_MRT_EXPRESS_OFFSET_METERS
+  routeUsesParallelTracks(route) {
+    return PARALLEL_TRACK_ROUTE_IDS.has(route?.id)
+  }
 
-    return 0
+  scheduleParallelTracksRefresh() {
+    if (this.parallelTracksRefreshTimer) clearTimeout(this.parallelTracksRefreshTimer)
+
+    this.parallelTracksRefreshTimer = setTimeout(() => {
+      this.parallelTracksRefreshTimer = null
+      this.refreshVisibleParallelLayers()
+    }, 80)
+  }
+
+  async refreshVisibleParallelLayers() {
+    if (!this.mapReady || !this.map) return
+
+    const layerIds = this.visibleRouteLayerIds().filter((layerId) => {
+      return this.routesToLoad(layerId).some((route) => this.routeUsesParallelTracks(route))
+    })
+
+    for (const layerId of layerIds) {
+      const generation = this.bumpLayerGeneration(layerId)
+      const group = this.layerGroups[layerId]
+      if (!group) continue
+
+      group.clearLayers()
+
+      try {
+        await this.loadLayer(layerId, generation)
+      } catch (error) {
+        console.warn("Failed to refresh parallel tracks for", layerId, error)
+        continue
+      }
+
+      if (!this.isLayerGenerationCurrent(layerId, generation) || !this.layerVisible[layerId]) continue
+
+      if (group.getLayers().length > 0) {
+        if (!this.map.hasLayer(group)) group.addTo(this.map)
+        if (layerId === "airport_mrt") this.bringAirportMrtCommuterLinesToFront(group)
+      }
+
+    }
+
+    if (layerIds.length > 0) {
+      this.reindexVisibleStationCoordinates()
+      this.updateOutOfStationTransfers()
+    }
+  }
+
+  metersPerPixelAt(lat) {
+    const zoom = this.map?.getZoom() ?? 10
+    const safeLat = Math.max(-85, Math.min(85, lat))
+
+    return 40075016.686 * Math.cos(safeLat * Math.PI / 180) / (256 * Math.pow(2, zoom))
+  }
+
+  centerLatOfGeoJSON(data) {
+    for (const feature of data.features || []) {
+      const coordinates = feature.geometry?.coordinates
+      if (feature.geometry?.type === "LineString" && coordinates?.length >= 2) {
+        const mid = coordinates[Math.floor(coordinates.length / 2)]
+        return mid[1]
+      }
+
+      if (feature.geometry?.type === "Point" && coordinates?.length >= 2) {
+        return coordinates[1]
+      }
+    }
+
+    return 25.05
+  }
+
+  parallelHalfOffsetMeters(data) {
+    const lat = this.centerLatOfGeoJSON(data)
+
+    return this.metersPerPixelAt(lat) * PARALLEL_TRACK_HALF_OFFSET_PX
+  }
+
+  referenceRouteLine(route, data) {
+    if (route.id === "airport_mrt_express") {
+      const mainRoute = this.findRoute("airport_mrt")
+      const mainFile = mainRoute?.file || mainRoute?.url
+      const mainData = mainFile ? this.geoJSONDataByUrl[mainFile] : null
+
+      if (mainData) {
+        const mainLine = this.routeLineCoordinates(mainData)
+        if (mainLine.length >= 2) return mainLine
+      }
+    }
+
+    return this.routeLineCoordinates(data)
+  }
+
+  danhaiRouteLineForSegment(data, segment) {
+    for (const feature of data.features || []) {
+      if (feature.properties?.feature_type !== "route") continue
+      if (feature.properties?.segment !== segment) continue
+
+      const coordinates = feature.geometry?.coordinates
+      if (feature.geometry?.type === "LineString" && coordinates?.length >= 2) return coordinates
+    }
+
+    return []
+  }
+
+  parallelOffsetMetersForFeature(route, feature, halfOffset) {
+    const featureType = feature.properties?.feature_type
+    if (featureType !== "route" && featureType !== "station") return null
+
+    if (route.id === "airport_mrt") return -halfOffset
+    if (route.id === "airport_mrt_express") return halfOffset
+
+    if (route.id === "danhai_lrt") {
+      const segment = feature.properties?.segment
+      if (segment === "lushan") return -halfOffset
+      if (segment === "lanhai") return halfOffset
+    }
+
+    return null
+  }
+
+  bearingLineForFeature(route, feature, data, referenceLine) {
+    if (route.id === "airport_mrt" || route.id === "airport_mrt_express") {
+      return referenceLine.length >= 2 ? referenceLine : this.coordinatesFromFeature(feature)
+    }
+
+    if (feature.properties?.segment) {
+      const segmentLine = this.danhaiRouteLineForSegment(data, feature.properties.segment)
+      if (segmentLine.length >= 2) return segmentLine
+    }
+
+    return this.coordinatesFromFeature(feature) || referenceLine
+  }
+
+  coordinatesFromFeature(feature) {
+    const coordinates = feature.geometry?.coordinates
+    if (feature.geometry?.type === "LineString" && coordinates?.length >= 2) return coordinates
+
+    return []
   }
 
   displayGeoJSON(data, route) {
-    const offset = this.airportMrtOffsetMeters(route?.id)
-    if (!offset) return data
+    if (!route || !this.routeUsesParallelTracks(route)) return data
 
-    const routeLine = this.routeLineCoordinates(data)
+    const referenceLine = this.referenceRouteLine(route, data)
+    const halfOffset = this.parallelHalfOffsetMeters(data)
 
     return {
       ...data,
-      features: (data.features || []).map((feature) => this.offsetFeatureCoordinates(feature, offset, routeLine))
+      features: (data.features || []).map((feature) => {
+        const offset = this.parallelOffsetMetersForFeature(route, feature, halfOffset)
+        if (!offset) return feature
+
+        const bearingLine = this.bearingLineForFeature(route, feature, data, referenceLine)
+
+        return this.offsetFeatureCoordinates(feature, offset, bearingLine)
+      })
     }
   }
 
@@ -1115,13 +1378,31 @@ export default class extends Controller {
   stationMarker(feature, latlng, color, routeRef, routeId) {
     const L = window.L
 
-    if (feature.properties?.feature_type !== "station") return L.marker(latlng)
+    if (feature.properties?.feature_type !== "station" && feature.properties?.feature_type !== "angle_station") {
+      return L.marker(latlng)
+    }
+
+    if (feature.properties?.feature_type === "angle_station" || feature.properties?.passenger_service === false) {
+      const lineColor = feature.properties?.color || this.routeDisplayColor(this.findRoute(routeId)) || color
+      const linePrefix = this.linePrefixForStationRef(feature.properties?.ref) || routeRef
+      const position = this.snapToTracks(latlng, linePrefix)
+
+      return this.angleStationMarkerAt(position, lineColor)
+    }
+
+    const stationRef = feature.properties?.ref
+
+    if (this.isAirportMrtExpressTransferStation(routeId, stationRef)) {
+      const position = this.snapToRouteTracks(latlng, "airport_mrt")
+
+      return this.transferStationMarkerAt(position, [ AIRPORT_MRT_COMMUTER_COLOR, EXPRESS_LINE_COLOR ])
+    }
 
     if (feature.properties?.express_service) {
       return this.expressStopMarkerAt(latlng, EXPRESS_LINE_COLOR)
     }
 
-    const stationRefs = this.transferStationRefs(feature.properties?.ref)
+    const stationRefs = this.transferStationRefs(stationRef)
 
     if (stationRefs.length > 1) {
       const lineColors = stationRefs
@@ -1134,10 +1415,10 @@ export default class extends Controller {
       return this.transferStationMarkerAt(position, lineColors)
     }
 
-    const stationRef = stationRefs[0]
-    const linePrefix = this.linePrefixForStationRef(stationRef) || routeRef
-    const lineColor = feature.properties?.color || this.colorForStationRef(stationRef) || color
-    const outOfStation = this.isOutOfStationEndpoint(routeId, feature.properties?.ref)
+    const primaryStationRef = stationRefs[0]
+    const linePrefix = this.linePrefixForStationRef(primaryStationRef) || routeRef
+    const lineColor = this.stationColorForRoute(routeId, feature, primaryStationRef, color)
+    const outOfStation = this.isOutOfStationEndpoint(routeId, stationRef)
     const usesRouteTrackSnap = routeId === "airport_mrt" || routeId === "airport_mrt_express"
     const position = outOfStation
       ? latlng
@@ -1190,22 +1471,29 @@ export default class extends Controller {
 
     const routes = this.routesByLineRef[prefix] || []
     if (routes.length === 0) return null
-    if (routes.length === 1) return routes[0].color
+
+    if (prefix === "A") {
+      const airportRoute = routes.find((route) => route.id === "airport_mrt")
+      if (airportRoute) return AIRPORT_MRT_COMMUTER_COLOR
+    }
+
+    if (routes.length === 1) return this.routeDisplayColor(routes[0]) || routes[0].color
 
     const mainRoute = routes.find((route) => !route.branch_of)
     const branchRoute = routes.find((route) => route.branch_of)
 
     if (this.isBranchStationRef(stationRef, prefix)) {
-      return branchRoute?.color || mainRoute?.color
+      return this.routeDisplayColor(branchRoute) || branchRoute?.color || this.routeDisplayColor(mainRoute) || mainRoute?.color
     }
 
-    return mainRoute?.color || routes[0].color
+    return this.routeDisplayColor(mainRoute) || mainRoute?.color || routes[0].color
   }
 
   isBranchStationRef(stationRef, linePrefix) {
-    if (stationRef.endsWith("A")) return true
+    if (!stationRef || !linePrefix) return false
+    if (linePrefix === "A") return false
 
-    return false
+    return /^[A-Z]+\d+A$/.test(stationRef)
   }
 
   expressStopMarkerAt(latlng, color) {
@@ -1225,6 +1513,22 @@ export default class extends Controller {
         iconAnchor: [ 11, 11 ]
       }),
       zIndexOffset: 700
+    })
+  }
+
+  angleStationMarkerAt(latlng, color) {
+    const L = window.L
+    const safeColor = color || "#00AFE2"
+    const html = `<div class="angle-station-marker" aria-hidden="true" style="border-color:${safeColor}"></div>`
+
+    return L.marker(latlng, {
+      icon: L.divIcon({
+        className: "angle-station-icon",
+        html,
+        iconSize: [ 18, 18 ],
+        iconAnchor: [ 9, 9 ]
+      }),
+      zIndexOffset: 550
     })
   }
 
@@ -1269,10 +1573,19 @@ export default class extends Controller {
     const transferNote = this.isOutOfStationEndpoint(routeId, ref)
       ? `<br><span style="opacity:0.8">站外轉乘</span>`
       : ""
-    const expressNote = feature.properties?.express_service
-      ? `<br><span style="opacity:0.8">直達車停靠</span>`
+    const expressNote = this.isAirportMrtExpressStop(ref) && (routeId === "airport_mrt" || routeId === "airport_mrt_express")
+      ? `<br><span style="opacity:0.8">普通車／直達車交會</span>`
+      : feature.properties?.express_service
+        ? `<br><span style="opacity:0.8">直達車停靠</span>`
+        : ""
+    const directionNote = feature.properties?.note && feature.properties?.passenger_service !== false
+      ? `<br><span style="opacity:0.8">${feature.properties.note}</span>`
       : ""
-    const popup = `<strong>${label}</strong>${subtitle}${transferNote}${expressNote}`
+    const noPassengerServiceNote = feature.properties?.feature_type === "angle_station" ||
+      feature.properties?.passenger_service === false
+      ? `<br><span style="opacity:0.8">不提供載客服務</span>`
+      : ""
+    const popup = `<strong>${label}</strong>${subtitle}${noPassengerServiceNote}${directionNote}${transferNote}${expressNote}`
 
     layer.bindPopup(popup)
   }

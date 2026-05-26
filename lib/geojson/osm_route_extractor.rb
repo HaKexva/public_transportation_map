@@ -11,8 +11,87 @@ module Geojson
       "https://overpass-api.de/api/interpreter"
     ].freeze
 
+    def self.fetch_way_elements(way_id)
+      new(relation_id: nil).fetch_way_by_id(way_id)
+    end
+
+    def self.fetch_aerialway_stations_for_way(way_id, ref_prefix:, include_angle_stations: false)
+      new(relation_id: nil).fetch_aerialway_stations_for_way(
+        way_id,
+        ref_prefix: ref_prefix,
+        include_angle_stations: include_angle_stations
+      )
+    end
+
     def initialize(relation_id:)
       @relation_id = relation_id
+    end
+
+    def fetch_way_by_id(way_id)
+      query = <<~QL.squish
+        [out:json][timeout:90];
+        way(#{way_id});
+        out geom;
+      QL
+
+      post_overpass(query).fetch("elements", []).select { |element| element["type"] == "way" && element["geometry"] }
+    end
+
+    def fetch_aerialway_stations_for_way(way_id, ref_prefix:, include_angle_stations: false)
+      query = <<~QL.squish
+        [out:json][timeout:90];
+        way(#{way_id});
+        node(w);
+        out;
+      QL
+
+      stations = []
+      index = 1
+
+      post_overpass(query).fetch("elements", []).each do |element|
+        next unless element["type"] == "node"
+
+        tags = element["tags"] || {}
+        name = tags["name:zh"].presence || tags["name"]
+        next if name.blank?
+
+        next if tags["aerialway"] == "pylon" && !tags.key?("aerialway:station") && tags["public_transport"] != "station"
+
+        if name.match?(/轉角|Angle Station/i)
+          next unless include_angle_stations
+
+          stations << {
+            ref: tags["ref"].presence || format("%s-A%02d", ref_prefix, index),
+            name: name,
+            lon: element["lon"],
+            lat: element["lat"],
+            angle_station: true,
+            passenger_service: false
+          }
+          index += 1
+          next
+        end
+
+        station_tags = %w[station stop_position]
+        is_station = tags["aerialway"] == "station" ||
+          tags["public_transport"].in?(station_tags) ||
+          tags["railway"] == "station" ||
+          name.match?(/站|Station/i)
+
+        next unless is_station
+
+        ref = tags["ref"].presence || format("%s%02d", ref_prefix, index)
+        index += 1
+
+        stations << {
+          ref: ref,
+          name: name,
+          lon: element["lon"],
+          lat: element["lat"]
+        }
+      end
+
+      stations
     end
 
     def fetch_way_elements
@@ -65,15 +144,19 @@ module Geojson
       parse_station_elements(post_overpass(query))
     end
 
-    def fetch_stations_from_relation(allow_missing_ref: false)
+    def fetch_stations_from_relation(allow_missing_ref: false, ref_prefix: nil)
       query = <<~QL.squish
         [out:json][timeout:90];
         relation(#{@relation_id});
-        node(r:"stop");
+        node(r);
         out;
       QL
 
-      parse_station_elements(post_overpass(query), allow_missing_ref: allow_missing_ref)
+      parse_station_elements(
+        post_overpass(query),
+        allow_missing_ref: allow_missing_ref,
+        ref_prefix: ref_prefix
+      )
     end
 
     def fetch_named_stops_from_relation
@@ -100,8 +183,9 @@ module Geojson
       end
     end
 
-    def parse_station_elements(response, allow_missing_ref: false)
+    def parse_station_elements(response, allow_missing_ref: false, ref_prefix: nil)
       stations = {}
+      generated_index = 1
 
       response.fetch("elements", []).each do |element|
         next unless element["type"] == "node"
@@ -110,10 +194,18 @@ module Geojson
         name = tags["name:zh"].presence || tags["name"]
         ref = tags["ref"].presence
 
-        next if ref.blank? && !allow_missing_ref
-        next if ref.blank?
+        if ref.blank?
+          next unless allow_missing_ref && name.present? && ref_prefix.present?
 
+          ref = format("%s%02d", ref_prefix, generated_index)
+          generated_index += 1
+        end
+
+        next if ref.blank?
         next if stations.key?(ref)
+
+        role = tags["public_transport"] || tags["railway"] || tags["aerialway"]
+        next if allow_missing_ref && name.blank? && role != "stop"
 
         stations[ref] = {
           ref: ref,

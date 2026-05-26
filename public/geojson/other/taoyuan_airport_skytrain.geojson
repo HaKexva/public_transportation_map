@@ -1,0 +1,272 @@
+{
+  "type": "FeatureCollection",
+  "name": "其他桃園機場南北側電車",
+  "properties": {
+    "source": "Track geometry from OpenStreetMap route relations 17666637, 17666651. © OpenStreetMap contributors, ODbL.",
+    "network": "其他",
+    "ref": "ST",
+    "osm_relations": [
+      17666637,
+      17666651
+    ],
+    "osm_ways": []
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "ST",
+        "name": "桃園機場南北側電車（往程）",
+        "name_en": "Taoyuan Airport Skytrain",
+        "color": "#4F46E5",
+        "segment": "outbound"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            121.2334829,
+            25.0764197
+          ],
+          [
+            121.2341376,
+            25.0769213
+          ],
+          [
+            121.2355514,
+            25.078025
+          ],
+          [
+            121.236953,
+            25.0791275
+          ],
+          [
+            121.2371298,
+            25.0792503
+          ],
+          [
+            121.2372602,
+            25.0793392
+          ],
+          [
+            121.237366,
+            25.0794164
+          ],
+          [
+            121.2376055,
+            25.0796065
+          ],
+          [
+            121.2382094,
+            25.080096
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "ST",
+        "name": "桃園機場南北側電車（往程） (2)",
+        "name_en": "Taoyuan Airport Skytrain",
+        "color": "#4F46E5",
+        "segment": "outbound"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            121.2335,
+            25.0764062
+          ],
+          [
+            121.233672,
+            25.076539
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "ST",
+        "name": "桃園機場南北側電車（往程） (3)",
+        "name_en": "Taoyuan Airport Skytrain",
+        "color": "#4F46E5",
+        "segment": "outbound"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            121.2377218,
+            25.079659
+          ],
+          [
+            121.2382097,
+            25.0800512
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "ST",
+        "name": "桃園機場南北側電車（返程）",
+        "name_en": "Taoyuan Airport Skytrain",
+        "color": "#4F46E5",
+        "segment": "inbound"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            121.23823,
+            25.0799459
+          ],
+          [
+            121.2376645,
+            25.0795237
+          ],
+          [
+            121.2375054,
+            25.0794155
+          ],
+          [
+            121.2373074,
+            25.0793067
+          ],
+          [
+            121.237077,
+            25.0791573
+          ],
+          [
+            121.2369536,
+            25.0790837
+          ],
+          [
+            121.2367405,
+            25.078917
+          ],
+          [
+            121.2350374,
+            25.0775732
+          ],
+          [
+            121.2343394,
+            25.0770225
+          ],
+          [
+            121.2342736,
+            25.0769559
+          ],
+          [
+            121.2341881,
+            25.0768637
+          ],
+          [
+            121.2341136,
+            25.0767812
+          ],
+          [
+            121.2339994,
+            25.0766704
+          ],
+          [
+            121.2335548,
+            25.0763378
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "ST",
+        "name": "桃園機場南北側電車（返程） (2)",
+        "name_en": "Taoyuan Airport Skytrain",
+        "color": "#4F46E5",
+        "segment": "inbound"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            121.2335354,
+            25.07636
+          ],
+          [
+            121.2337272,
+            25.0764959
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "ST",
+        "name": "桃園機場南北側電車（返程） (3)",
+        "name_en": "Taoyuan Airport Skytrain",
+        "color": "#4F46E5",
+        "segment": "inbound"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            121.2377491,
+            25.0796277
+          ],
+          [
+            121.2382225,
+            25.0799884
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "ST01",
+        "name": "第一航廈",
+        "line": "桃園機場南北側電車",
+        "color": "#4F46E5",
+        "note": "往程起點 · 返程終點"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.2380095,
+          25.0798462
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "ST02",
+        "name": "第二航廈",
+        "line": "桃園機場南北側電車",
+        "color": "#4F46E5",
+        "note": "往程終點 · 返程起點"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.233632,
+          25.0764579
+        ]
+      }
+    }
+  ]
+}
