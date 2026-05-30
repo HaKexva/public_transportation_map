@@ -1,13 +1,14 @@
 {
   "type": "FeatureCollection",
-  "name": "台北捷運板南線",
+  "name": "臺北捷運板南線",
   "properties": {
     "source": "Track geometry from OpenStreetMap route relations 9437776. © OpenStreetMap contributors, ODbL.",
     "network": "臺北捷運",
     "ref": "BL",
     "osm_relations": [
       9437776
-    ]
+    ],
+    "osm_ways": []
   },
   "features": [
     {
@@ -1639,8 +1640,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.462992,
-          25.0144988
+          121.463675,
+          25.014281
         ]
       }
     },
@@ -1860,8 +1861,42 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.6172189,
-          25.0545687
+          121.6172911,
+          25.054646
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "G12;BL11",
+        "name": "西門",
+        "line": "板南線",
+        "color": "#007EC7"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5086081,
+          25.0427128
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "R10;BL12",
+        "name": "台北車站",
+        "line": "板南線",
+        "color": "#007EC7"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5174745,
+          25.0462432
         ]
       }
     }

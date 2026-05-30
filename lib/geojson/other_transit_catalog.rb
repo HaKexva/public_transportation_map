@@ -18,7 +18,8 @@ module Geojson
         name_en: "Taoyuan Airport Skytrain",
         ref: "ST",
         color: "#4F46E5",
-        relation_ids: [ 17666637, 17666651 ],
+        relation_ids: [],
+        way_ids: [ 256726319, 256726320 ],
         station_ref_prefix: "ST"
       ),
       MetroLine.other(

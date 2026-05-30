@@ -3,6 +3,25 @@
 require "application_system_test_case"
 
 class DashboardTest < ApplicationSystemTestCase
+  test "filters sidebar routes from the search box" do
+    visit root_path
+
+    assert_selector "#layer-search", wait: 10
+    assert_selector "#layer-wenhu_line", visible: :all
+    assert_selector "#layer-circular", visible: :all
+
+    fill_in "layer-search", with: "環狀"
+
+    assert_selector "#layer-circular", visible: :all
+    assert_no_selector "#layer-wenhu_line", visible: :visible
+
+    page.execute_script(<<~JS)
+      document.querySelector('[data-map-target="layerSearchClear"]').click()
+    JS
+
+    assert_selector "#layer-wenhu_line", visible: :all
+  end
+
   test "shows the map on the home page" do
     visit root_path
 
@@ -131,7 +150,50 @@ class DashboardTest < ApplicationSystemTestCase
       show("ankeng_lrt")
     JS
 
-    assert_selector ".leaflet-overlay-pane path.leaflet-interactive", wait: 10, minimum: 2
+    assert_selector ".out-of-station-transfer-line", wait: 10, minimum: 1
+    assert_selector ".out-of-station-marker", wait: 10, minimum: 2
+  end
+
+  test "shows Shisizhang out-of-station transfer when new taipei metro system is toggled" do
+    visit root_path
+
+    within "#taiwan-region-map" do
+      assert_selector ".leaflet-tile-pane", wait: 10
+    end
+
+    page.execute_script(<<~JS)
+      const checkbox = document.getElementById("layer-new_taipei_metro")
+      checkbox.checked = true
+      checkbox.dispatchEvent(new Event("change", { bubbles: true }))
+    JS
+
+    assert page.evaluate_script("document.getElementById('layer-circular').checked")
+    assert page.evaluate_script("document.getElementById('layer-ankeng_lrt').checked")
+    assert_selector ".leaflet-overlay-pane path.leaflet-interactive", wait: 20, minimum: 3
+    assert_selector ".out-of-station-transfer-line", wait: 15, minimum: 1, visible: :all
+    assert_selector ".out-of-station-marker", wait: 10, minimum: 2
+  end
+
+  test "shows out-of-station transfer link between bannan and circular at Banqiao" do
+    visit root_path
+
+    within "#taiwan-region-map" do
+      assert_selector ".leaflet-tile-pane", wait: 10
+    end
+
+    page.execute_script(<<~JS)
+      const show = (id) => {
+        const checkbox = document.getElementById(`layer-${id}`)
+        checkbox.checked = true
+        checkbox.dispatchEvent(new Event("change", { bubbles: true }))
+      }
+      show("bannan")
+      show("circular")
+    JS
+
+    assert_selector ".out-of-station-transfer-line", wait: 10, minimum: 1
+    assert_selector ".out-of-station-transfer-line--fare-discount", wait: 10, minimum: 1
+    assert_selector ".out-of-station-marker", wait: 10, minimum: 2
   end
 
   test "shows out-of-station transfer link between circular and airport mrt at Xinbei Industrial Park" do
@@ -151,7 +213,8 @@ class DashboardTest < ApplicationSystemTestCase
       show("airport_mrt")
     JS
 
-    assert_selector ".leaflet-overlay-pane path.leaflet-interactive", wait: 10, minimum: 2
+    assert_selector ".out-of-station-transfer-line", wait: 10, minimum: 1
+    assert_selector ".out-of-station-marker", wait: 10, minimum: 2
   end
 
   test "shows out-of-station transfer links from airport mrt taipei main to beimen and mrt taipei main" do
@@ -190,6 +253,27 @@ class DashboardTest < ApplicationSystemTestCase
       }
       show("airport_mrt")
       show("zhonghe_xinlu")
+    JS
+
+    assert_selector ".out-of-station-transfer-line", wait: 10, minimum: 1
+    assert_selector ".out-of-station-marker", wait: 10, minimum: 2
+  end
+
+  test "shows out-of-station transfer link between tamsui xinyi and danhai lrt at Hongshulin" do
+    visit root_path
+
+    within "#taiwan-region-map" do
+      assert_selector ".leaflet-tile-pane", wait: 10
+    end
+
+    page.execute_script(<<~JS)
+      const show = (id) => {
+        const checkbox = document.getElementById(`layer-${id}`)
+        checkbox.checked = true
+        checkbox.dispatchEvent(new Event("change", { bubbles: true }))
+      }
+      show("tamsui_xinyi")
+      show("danhai_lrt")
     JS
 
     assert_selector ".out-of-station-transfer-line", wait: 10, minimum: 1
@@ -246,9 +330,10 @@ class DashboardTest < ApplicationSystemTestCase
       checkbox.dispatchEvent(new Event("change", { bubbles: true }))
     JS
 
-    assert_selector ".leaflet-overlay-pane path.leaflet-interactive", wait: 10, minimum: 2
+    assert_selector "path.airport-mrt-commuter-line", wait: 10, minimum: 1
     assert_selector "path.airport-mrt-express-line", wait: 10, minimum: 1
     assert_selector ".transfer-station-marker", wait: 10, minimum: 1
+    assert_selector ".leaflet-stationMarkers-pane .leaflet-interactive", wait: 10, minimum: 1
   end
 
   test "airport mrt layer toggle uses commuter blue" do
@@ -301,8 +386,10 @@ class DashboardTest < ApplicationSystemTestCase
 
     commuter_z = page.evaluate_script("document.querySelector('.leaflet-commuterRoutes-pane')?.style.zIndex")
     express_z = page.evaluate_script("document.querySelector('.leaflet-expressRoutes-pane')?.style.zIndex")
-    assert commuter_z.present? && express_z.present?
+    station_z = page.evaluate_script("document.querySelector('.leaflet-stationMarkers-pane')?.style.zIndex")
+    assert commuter_z.present? && express_z.present? && station_z.present?
     assert commuter_z.to_i > express_z.to_i, "expected commuter pane (z=#{commuter_z}) above express pane (z=#{express_z})"
+    assert station_z.to_i > commuter_z.to_i, "expected station pane (z=#{station_z}) above commuter pane (z=#{commuter_z})"
   end
 
   test "airport mrt express line renders as solid purple" do

@@ -1,13 +1,14 @@
 {
   "type": "FeatureCollection",
-  "name": "台北捷運環狀線",
+  "name": "臺北捷運環狀線",
   "properties": {
     "source": "Track geometry from OpenStreetMap route relations 3322093. © OpenStreetMap contributors, ODbL.",
     "network": "臺北捷運",
     "ref": "Y",
     "osm_relations": [
       3322093
-    ]
+    ],
+    "osm_ways": []
   },
   "features": [
     {
@@ -1281,8 +1282,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.5416433,
-          24.9829231
+          121.5414862,
+          24.9829263
         ]
       }
     },
@@ -1349,8 +1350,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.5057084,
-          24.9934156
+          121.5053774,
+          24.9936008
         ]
       }
     },
@@ -1460,7 +1461,7 @@
       "type": "Feature",
       "properties": {
         "feature_type": "station",
-        "ref": "Y18",
+        "ref": "O17;Y18",
         "name": "頭前庄",
         "line": "環狀線",
         "color": "#FEDB00"
@@ -1468,8 +1469,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.4603359,
-          25.0399005
+          121.4608616,
+          25.0397007
         ]
       }
     },

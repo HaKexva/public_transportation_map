@@ -3,8 +3,8 @@
 module Geojson
   module NewTaipeiMetroCatalog
     DANHAI_COLOR = "#ED6B46"
-    # 紅樹林～淡海新市鎮：綠山／藍海共用同一軌道區段
-    DANHAI_SHARED_STATION_REFS = (1..10).map { |index| format("V%02d", index) }.freeze
+    # 紅樹林～濱海沙崙：綠山／藍海重疊區（新北捷運班距重疊區 V01–V09）
+    DANHAI_SHARED_STATION_REFS = (1..9).map { |index| format("V%02d", index) }.freeze
     DANHAI_LANHAI_ONLY_STATION_REFS = %w[V26 V27 V28].freeze
     # OSM relations often omit these; keep official stops for map labels and transfers.
     DANHAI_FALLBACK_STATIONS = [

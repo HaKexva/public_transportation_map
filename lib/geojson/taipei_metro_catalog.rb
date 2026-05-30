@@ -21,13 +21,17 @@ module Geojson
       "新北產業園區" => "Y20"
     }.freeze
 
-    # Combined refs for in-station transfers (shown as two-color markers).
-    TRANSFER_STATION_REFS_BY_NAME = {
-      "大坪林" => "G04;Y07",
-      "七張" => "G03;G03A",
-      "北投" => "R22;R22A",
-      "景安" => "O02;Y11"
+    # Same-system in-station transfers (shown as two-color markers).
+    # lon/lat: single point between line geometries at the transfer concourse.
+    IN_STATION_TRANSFERS_BY_NAME = {
+      "大坪林" => { combined_ref: "G04;Y07", lon: 121.5414862, lat: 24.9829263 },
+      "七張" => { combined_ref: "G03;G03A", lon: 121.5429203, lat: 24.9750221 },
+      "北投" => { combined_ref: "R22;R22A", lon: 121.4985934, lat: 25.1319307 },
+      "景安" => { combined_ref: "O02;Y11", lon: 121.5053774, lat: 24.9936008 },
+      "頭前庄" => { combined_ref: "O17;Y18", lon: 121.4608616, lat: 25.0397007 }
     }.freeze
+
+    TRANSFER_STATION_REFS_BY_NAME = IN_STATION_TRANSFERS_BY_NAME.transform_values { |entry| entry[:combined_ref] }.freeze
 
     LINES = [
       MetroLine.taipei(

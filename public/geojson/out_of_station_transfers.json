@@ -1,6 +1,47 @@
 [
   {
-    "id": "banqiao_out_of_station",
+    "id": "hongshulin_passage",
+    "kind": "passage",
+    "label": "紅樹林聯通道轉乘",
+    "routes": [ "tamsui_xinyi", "danhai_lrt" ],
+    "endpoints": [
+      { "route_id": "tamsui_xinyi", "ref": "R27", "name": "紅樹林" },
+      { "route_id": "danhai_lrt", "ref": "V01", "name": "紅樹林" }
+    ]
+  },
+  {
+    "id": "xinbei_industrial_park_passage",
+    "kind": "passage",
+    "label": "新北產業園區聯通道轉乘",
+    "routes": [ "circular", "airport_mrt" ],
+    "endpoints": [
+      { "route_id": "circular", "ref": "Y20", "name": "新北產業園區" },
+      { "route_id": "airport_mrt", "ref": "A3", "name": "新北產業園區" }
+    ]
+  },
+  {
+    "id": "sanchong_passage",
+    "kind": "passage",
+    "label": "三重聯通道轉乘",
+    "routes": [ "zhonghe_xinlu", "airport_mrt" ],
+    "endpoints": [
+      { "route_id": "zhonghe_xinlu", "ref": "O15", "name": "三重" },
+      { "route_id": "airport_mrt", "ref": "A2", "name": "三重" }
+    ]
+  },
+  {
+    "id": "shisizhang_passage",
+    "kind": "passage",
+    "label": "十四張聯通道轉乘",
+    "routes": [ "circular", "ankeng_lrt" ],
+    "endpoints": [
+      { "route_id": "circular", "ref": "Y08", "name": "十四張" },
+      { "route_id": "ankeng_lrt", "ref": "K09", "name": "十四張" }
+    ]
+  },
+  {
+    "id": "banqiao_fare_discount",
+    "kind": "fare_discount",
     "label": "板橋站外轉乘",
     "routes": [ "bannan", "circular" ],
     "endpoints": [
@@ -9,7 +50,8 @@
     ]
   },
   {
-    "id": "xinpu_out_of_station",
+    "id": "xinpu_fare_discount",
+    "kind": "fare_discount",
     "label": "新埔／新埔民生站外轉乘",
     "routes": [ "bannan", "circular" ],
     "endpoints": [
@@ -18,34 +60,8 @@
     ]
   },
   {
-    "id": "shisizhang_out_of_station",
-    "label": "十四張站外轉乘",
-    "routes": [ "circular", "ankeng_lrt" ],
-    "endpoints": [
-      { "route_id": "circular", "ref": "Y08", "name": "十四張" },
-      { "route_id": "ankeng_lrt", "ref": "K09", "name": "十四張" }
-    ]
-  },
-  {
-    "id": "hongshulin_out_of_station",
-    "label": "紅樹林站外轉乘",
-    "routes": [ "tamsui_xinyi", "danhai_lrt" ],
-    "endpoints": [
-      { "route_id": "tamsui_xinyi", "ref": "R27", "name": "紅樹林" },
-      { "route_id": "danhai_lrt", "ref": "V01", "name": "紅樹林" }
-    ]
-  },
-  {
-    "id": "xinbei_industrial_park_out_of_station",
-    "label": "新北產業園區站外轉乘",
-    "routes": [ "circular", "airport_mrt" ],
-    "endpoints": [
-      { "route_id": "circular", "ref": "Y20", "name": "新北產業園區" },
-      { "route_id": "airport_mrt", "ref": "A3", "name": "新北產業園區" }
-    ]
-  },
-  {
-    "id": "airport_mrt_beimen_out_of_station",
+    "id": "airport_mrt_beimen_fare_discount",
+    "kind": "fare_discount",
     "label": "機場捷運台北車站／北門站外轉乘",
     "routes": [ "airport_mrt", "songshan_xindian" ],
     "endpoints": [
@@ -54,7 +70,8 @@
     ]
   },
   {
-    "id": "airport_mrt_taipei_main_out_of_station",
+    "id": "airport_mrt_taipei_main_fare_discount",
+    "kind": "fare_discount",
     "label": "機場捷運台北車站／捷運台北車站站外轉乘",
     "routes": [ "airport_mrt", "tamsui_xinyi" ],
     "endpoints": [
@@ -63,16 +80,8 @@
     ]
   },
   {
-    "id": "sanchong_out_of_station",
-    "label": "三重站外轉乘",
-    "routes": [ "airport_mrt", "zhonghe_xinlu" ],
-    "endpoints": [
-      { "route_id": "airport_mrt", "ref": "A2", "name": "三重" },
-      { "route_id": "zhonghe_xinlu", "ref": "O15", "name": "三重" }
-    ]
-  },
-  {
-    "id": "taipei_zoo_out_of_station",
+    "id": "taipei_zoo_fare_discount",
+    "kind": "fare_discount",
     "label": "動物園站外轉乘",
     "routes": [ "wenhu_line", "maokong_gondola" ],
     "endpoints": [

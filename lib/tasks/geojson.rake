@@ -41,4 +41,9 @@ namespace :geojson do
     line = Geojson::TaipeiMetroCatalog::LINES.find { |entry| entry.slug == "wenhu_line" }
     Geojson::MetroLineBuilder.build!(line)
   end
+
+  desc "Write metro depot markers JSON from catalog"
+  task depots: :environment do
+    Geojson::MetroDepotCatalog.write_json!
+  end
 end

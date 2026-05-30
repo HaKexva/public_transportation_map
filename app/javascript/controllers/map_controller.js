@@ -19,6 +19,15 @@ const AIRPORT_MRT_BRAND_COLOR = "#6A2C91"
 const EXPRESS_LINE_COLOR = AIRPORT_MRT_BRAND_COLOR
 const AIRPORT_MRT_EXPRESS_STOP_REFS = new Set([ "A1", "A3", "A8", "A12", "A13", "A18", "A21" ])
 const DANHAI_LRT_COLOR = "#ED6B46"
+const DANHAI_SHARED_STATION_REFS = new Set(
+  Array.from({ length: 9 }, (_, index) => `V${String(index + 1).padStart(2, "0")}`)
+)
+const OUT_OF_STATION_MARKER_COLOR = "#737373"
+const TRANSFER_LINE_COLOR = "#525252"
+const TRANSFER_LINE_COLOR_FARE_DISCOUNT = "#3a3a3a"
+const FARE_DISCOUNT_TRACK_OFFSET_METERS = 7
+const TRANSFER_LINE_WEIGHT = 5
+const FARE_DISCOUNT_LINE_OFFSET_METERS = 3.5
 const PARALLEL_TRACK_HALF_OFFSET_PX = 6
 const PARALLEL_TRACK_ROUTE_IDS = new Set([ "airport_mrt", "airport_mrt_express", "danhai_lrt" ])
 
@@ -31,7 +40,18 @@ const METRO_SYSTEM_IDS = [
 ]
 
 export default class extends Controller {
-  static targets = [ "map", "layerCheckbox", "layersPanel", "legendPanel" ]
+  static targets = [
+    "map",
+    "layerCheckbox",
+    "layersPanel",
+    "legendPanel",
+    "layerSearchInput",
+    "layerSearchItem",
+    "layerSearchGroup",
+    "layerSearchEmpty",
+    "layerSearchMuted",
+    "layerSearchClear"
+  ]
 
   connect() {
     if (this.map) return
@@ -48,6 +68,8 @@ export default class extends Controller {
     this.branchesByMain = {}
     this.outOfStationTransfers = []
     this.outOfStationEndpointKeys = new Set()
+    this.transferKindByEndpointKey = new Map()
+    this.metroDepots = []
     this.stationCoordinatesByKey = {}
     this.mapReady = false
     this.themeObserver = null
@@ -78,6 +100,8 @@ export default class extends Controller {
     this.branchesByMain = {}
     this.outOfStationTransfers = []
     this.outOfStationEndpointKeys = new Set()
+    this.transferKindByEndpointKey = new Map()
+    this.metroDepots = []
     this.stationCoordinatesByKey = {}
   }
 
@@ -114,7 +138,11 @@ export default class extends Controller {
 
     this.watchThemeChanges()
 
-    await Promise.all([ this.loadRoutesManifest(), this.loadOutOfStationTransfers() ])
+    await Promise.all([
+      this.loadRoutesManifest(),
+      this.loadOutOfStationTransfers(),
+      this.loadMetroDepots()
+    ])
 
     const transferPane = this.map.createPane("outOfStationTransfers")
     transferPane.style.zIndex = 650
@@ -128,7 +156,13 @@ export default class extends Controller {
     commuterPane.style.zIndex = 630
     this.commuterRoutePane = "commuterRoutes"
 
+    const stationPane = this.map.createPane("stationMarkers")
+    stationPane.style.zIndex = 640
+    this.stationMarkerPane = "stationMarkers"
+
     this.outOfStationTransferGroup = L.featureGroup().addTo(this.map)
+    this.inStationTransferGroup = L.featureGroup().addTo(this.map)
+    this.metroDepotGroup = L.featureGroup().addTo(this.map)
 
     this.allLayerIds().forEach((layerId) => {
       this.layerGroups[layerId] = L.featureGroup()
@@ -188,10 +222,12 @@ export default class extends Controller {
 
       this.outOfStationTransfers = await response.json()
       this.outOfStationEndpointKeys = this.buildOutOfStationEndpointKeys(this.outOfStationTransfers)
+      this.transferKindByEndpointKey = this.buildTransferKindByEndpointKey(this.outOfStationTransfers)
     } catch (error) {
       console.error("Failed to load out-of-station transfers", error)
       this.outOfStationTransfers = []
       this.outOfStationEndpointKeys = new Set()
+      this.transferKindByEndpointKey = new Map()
     }
   }
 
@@ -209,6 +245,44 @@ export default class extends Controller {
     })
 
     return keys
+  }
+
+  buildTransferKindByEndpointKey(transfers) {
+    const kindByKey = new Map()
+
+    transfers.forEach((transfer) => {
+      const kind = this.transferKind(transfer)
+      transfer.endpoints?.forEach((endpoint) => {
+        if (!endpoint.route_id || !endpoint.ref) return
+
+        this.transferStationRefs(endpoint.ref).forEach((stationRef) => {
+          kindByKey.set(this.stationKey(endpoint.route_id, stationRef), kind)
+        })
+      })
+    })
+
+    return kindByKey
+  }
+
+  transferKind(transfer) {
+    return transfer?.kind === "passage" ? "passage" : "fare_discount"
+  }
+
+  transferNoteForKind(kind) {
+    if (kind === "passage") return "聯通道轉乘"
+    return "站外轉乘（優惠）"
+  }
+
+  async loadMetroDepots() {
+    try {
+      const response = await fetch("/geojson/metro_depots.json", { cache: "no-store" })
+      if (!response.ok) throw new Error("metro depots missing")
+
+      this.metroDepots = await response.json()
+    } catch (error) {
+      console.error("Failed to load metro depots", error)
+      this.metroDepots = []
+    }
   }
 
   async loadRoutesManifest() {
@@ -320,6 +394,76 @@ export default class extends Controller {
   syncPanelToggleStates() {
     if (this.hasLayersPanelTarget) this.syncPanelToggleState(this.layersPanelTarget)
     if (this.hasLegendPanelTarget) this.syncPanelToggleState(this.legendPanelTarget)
+  }
+
+  filterLayers() {
+    if (!this.hasLayerSearchInputTarget) return
+
+    const query = this.normalizeSearchQuery(this.layerSearchInputTarget.value)
+    const hasQuery = query.length > 0
+    let visibleItemCount = 0
+
+    this.layerSearchItemTargets.forEach((item) => {
+      const text = this.normalizeSearchQuery(item.dataset.searchText || "")
+      const match = !hasQuery || text.includes(query)
+
+      item.classList.toggle("hidden", !match)
+      if (match) visibleItemCount += 1
+    })
+
+    this.layerSearchGroupTargets.forEach((group) => {
+      const groupText = this.normalizeSearchQuery(group.dataset.searchText || "")
+      const groupMatch = hasQuery && groupText.includes(query)
+      const childMatch = hasQuery && Array.from(
+        group.querySelectorAll("[data-map-target=\"layerSearchItem\"]")
+      ).some((item) => !item.classList.contains("hidden"))
+      const visible = !hasQuery || groupMatch || childMatch
+
+      group.classList.toggle("hidden", !visible)
+
+      if (hasQuery && (groupMatch || childMatch)) this.openLayerSearchGroup(group)
+    })
+
+    if (this.hasLayerSearchMutedTarget) {
+      this.layerSearchMutedTargets.forEach((element) => {
+        element.classList.toggle("hidden", hasQuery)
+      })
+    }
+
+    if (this.hasLayerSearchClearTarget) {
+      this.layerSearchClearTarget.classList.toggle("hidden", !hasQuery)
+    }
+
+    if (this.hasLayerSearchEmptyTarget) {
+      const showEmpty = hasQuery && visibleItemCount === 0 &&
+        this.layerSearchGroupTargets.every((group) => group.classList.contains("hidden"))
+
+      this.layerSearchEmptyTarget.classList.toggle("hidden", !showEmpty)
+    }
+  }
+
+  clearLayerSearch() {
+    if (!this.hasLayerSearchInputTarget) return
+
+    this.layerSearchInputTarget.value = ""
+    this.filterLayers()
+    this.layerSearchInputTarget.focus()
+  }
+
+  normalizeSearchQuery(value) {
+    return value.trim().toLowerCase().replace(/\s+/g, " ")
+  }
+
+  openLayerSearchGroup(group) {
+    const collapsible = group.querySelector("[data-controller~=\"ruby-ui--collapsible\"]")
+    if (!collapsible) return
+
+    const controller = this.application.getControllerForElementAndIdentifier(
+      collapsible,
+      "ruby-ui--collapsible"
+    )
+
+    controller?.open()
   }
 
   basemapUrl() {
@@ -619,21 +763,200 @@ export default class extends Controller {
 
       if (latlngs.length < 2) return
 
-      const line = L.polyline(this.outOfStationTransferLatLngs(latlngs), {
-        pane: this.outOfStationTransferPane,
-        className: "out-of-station-transfer-line",
-        color: "#525252",
-        weight: 6,
-        opacity: 0.95,
-        dashArray: "10 8",
-        lineCap: "round"
+      const kind = this.transferKind(transfer)
+      const layers = this.transferConnectionLayers(latlngs, kind)
+
+      layers.forEach((layer) => {
+        if (transfer.label) {
+          layer.bindPopup(this.transferPopupHtml(transfer.label, kind))
+        }
+        group.addLayer(layer)
       })
+    })
 
-      if (transfer.label) {
-        line.bindPopup(`<strong>${transfer.label}</strong><br><span style="opacity:0.8">站外轉乘</span>`)
+    if (group.getLayers().length > 0) {
+      if (!this.map.hasLayer(group)) group.addTo(this.map)
+      group.bringToFront()
+    } else if (this.map.hasLayer(group)) {
+      this.map.removeLayer(group)
+    }
+
+    this.updateInStationTransferMarkers()
+    this.updateMetroDepots()
+  }
+
+  updateMetroDepots() {
+    const L = window.L
+    const group = this.metroDepotGroup
+
+    if (!group || !this.map) return
+
+    group.clearLayers()
+
+    this.metroDepots.forEach((depot) => {
+      if (depot.lon == null || depot.lat == null) return
+      if (!depot.routes?.some((routeId) => this.layerVisible[routeId])) return
+
+      const color = this.depotDisplayColor(depot) || "#64748B"
+      const raw = L.latLng(depot.lat, depot.lon)
+      const snapped = this.snapDepotToVisibleTracks(raw, depot)
+      const marker = this.metroDepotMarkerAt(snapped, color)
+
+      const gradeNote = depot.grade ? `<br><span style="opacity:0.8">${depot.grade}機廠</span>` : ""
+      const routeNames = this.depotRouteNames(depot)
+      const routeNote = routeNames.length > 0 ? `<br><span style="opacity:0.8">服務路線：${routeNames.join("、")}</span>` : ""
+
+      marker.bindPopup(
+        `<strong>${depot.name}</strong>${gradeNote}${routeNote}<br><span style="opacity:0.8">車輛基地（不提供載客）</span>`
+      )
+
+      group.addLayer(marker)
+    })
+
+    if (group.getLayers().length > 0) {
+      if (!this.map.hasLayer(group)) group.addTo(this.map)
+      group.bringToFront()
+    } else if (this.map.hasLayer(group)) {
+      this.map.removeLayer(group)
+    }
+  }
+
+  snapDepotToVisibleTracks(latlng, depot) {
+    if (!latlng) return latlng
+
+    const candidates = (depot?.routes || []).filter(Boolean)
+    if (candidates.length === 0) return latlng
+
+    const visible = candidates.filter((routeId) => this.layerVisible[routeId])
+    const ordered = [ ...visible, ...candidates.filter((routeId) => !visible.includes(routeId)) ]
+
+    let best = latlng
+    let bestDistance = Infinity
+
+    ordered.forEach((routeId) => {
+      const snapped = this.snapToRouteTracksForDepot(latlng, routeId)
+      const distance = latlng.distanceTo(snapped)
+
+      if (distance < bestDistance) {
+        bestDistance = distance
+        best = snapped
       }
+    })
 
-      group.addLayer(line)
+    return best
+  }
+
+  snapToRouteTracksForDepot(latlng, routeId) {
+    const lines = this.routeTracksByRouteId[routeId] || []
+    if (lines.length === 0) return latlng
+
+    return this.nearestPointOnLines(latlng, lines)
+  }
+
+  depotDisplayColor(depot) {
+    for (const routeId of depot.routes || []) {
+      if (!this.layerVisible[routeId]) continue
+      const color = this.routeDisplayColor(this.findRoute(routeId))
+      if (color) return color
+    }
+
+    for (const routeId of depot.routes || []) {
+      const color = this.routeDisplayColor(this.findRoute(routeId))
+      if (color) return color
+    }
+
+    return null
+  }
+
+  depotRouteNames(depot) {
+    return (depot.routes || [])
+      .map((routeId) => this.findRoute(routeId)?.name)
+      .filter(Boolean)
+  }
+
+  metroDepotMarkerAt(latlng, color) {
+    const L = window.L
+    const safeColor = color || "#64748B"
+    const html = `<div class="metro-depot-marker" aria-hidden="true" style="--depot-color:${safeColor}"></div>`
+
+    return L.marker(latlng, {
+      icon: L.divIcon({
+        className: "metro-depot-icon",
+        html,
+        iconSize: [ 16, 16 ],
+        iconAnchor: [ 8, 8 ]
+      }),
+      pane: this.stationMarkerPane,
+      zIndexOffset: 430
+    })
+  }
+
+  isInStationTransferRef(ref) {
+    return this.transferStationRefs(ref).length > 1
+  }
+
+  hiddenStationMarker(latlng) {
+    const L = window.L
+
+    return L.circleMarker(latlng, {
+      radius: 0,
+      opacity: 0,
+      fillOpacity: 0,
+      interactive: false,
+      pane: this.stationMarkerPane
+    })
+  }
+
+  updateInStationTransferMarkers() {
+    const L = window.L
+    const group = this.inStationTransferGroup
+
+    if (!group || !this.map) return
+
+    group.clearLayers()
+
+    const transfersByKey = new Map()
+
+    this.visibleRouteLayerIds().forEach((layerId) => {
+      this.routesToLoad(layerId).forEach((route) => {
+        if (!this.layerVisible[route.id]) return
+
+        const file = route.file || route.url
+        const data = file ? this.geoJSONDataByUrl[file] : null
+        if (!data) return
+
+        const displayData = this.displayGeoJSON(data, route)
+
+        ;(displayData.features || []).forEach((feature) => {
+          if (feature.properties?.feature_type !== "station") return
+
+          const ref = feature.properties?.ref
+          if (!this.isInStationTransferRef(ref)) return
+
+          const key = this.transferStationRefs(ref).slice().sort().join(";")
+          if (!transfersByKey.has(key)) transfersByKey.set(key, feature)
+        })
+      })
+    })
+
+    transfersByKey.forEach((feature) => {
+      const ref = feature.properties?.ref
+      const name = feature.properties?.name
+      const stationRefs = this.transferStationRefs(ref)
+      const coordinates = feature.geometry?.coordinates
+      if (!coordinates) return
+
+      const latlng = L.latLng(coordinates[1], coordinates[0])
+      const lineColors = stationRefs
+        .map((stationRef) => this.colorForStationRef(stationRef) || feature.properties?.color)
+        .slice(0, 2)
+      const snapPrefix = this.linePrefixForStationRef(stationRefs[0])
+      const position = this.snapToTracks(latlng, snapPrefix)
+      const marker = this.transferStationMarkerAt(position, lineColors)
+      const label = ref ? `${ref} ${name}` : name
+
+      marker.bindPopup(`<strong>${label}</strong><br><span style="opacity:0.8">站內轉乘</span>`)
+      group.addLayer(marker)
     })
 
     if (group.getLayers().length > 0) {
@@ -827,15 +1150,22 @@ export default class extends Controller {
 
     const color = this.routeDisplayColor(route) || LAYER_COLORS[layerId] || "#666666"
     const routeRef = route.ref
+    this.enrichTerminalStationRoles(data, route)
     const displayData = this.displayGeoJSON(data, route)
     const renderData = this.geoJSONForMapRender(displayData, route)
 
     this.cacheRouteTracks(route.id, displayData)
-    this.indexStationCoordinates(route.id, displayData)
+    this.indexStationCoordinates(route.id, renderData)
 
     const geoLayer = L.geoJSON(renderData, {
       style: (feature) => this.styleForFeature(feature, color, route),
-      pointToLayer: (feature, latlng) => this.stationMarker(feature, latlng, color, routeRef, route.id),
+      pointToLayer: (feature, latlng) => {
+        if (this.isInStationTransferRef(feature.properties?.ref)) {
+          return this.hiddenStationMarker(latlng)
+        }
+
+        return this.stationMarker(feature, latlng, color, routeRef, route.id)
+      },
       onEachFeature: (feature, layer) => {
         if (route.id === "airport_mrt" || route.id === "airport_mrt_express") {
           const lineStyle = this.styleForFeature(feature, color, route)
@@ -853,13 +1183,117 @@ export default class extends Controller {
     if (layerId === "airport_mrt") this.bringAirportMrtCommuterLinesToFront(group)
   }
 
-  geoJSONForMapRender(data, route) {
-    if (route?.id !== "airport_mrt_express") return data
+  enrichTerminalStationRoles(data, route) {
+    const passengerStations = (data.features || []).filter((feature) => {
+      return feature.properties?.feature_type === "station" &&
+        feature.properties?.passenger_service !== false
+    })
 
-    return {
-      ...data,
-      features: (data.features || []).filter((feature) => feature.properties?.feature_type !== "station")
+    if (passengerStations.length === 0) return
+
+    const assignRole = (feature, role) => {
+      feature.properties = { ...feature.properties, station_role: role }
     }
+
+    if (route?.id === "danhai_lrt") {
+      [ "lushan", "lanhai" ].forEach((segment) => {
+        const segmentStations = passengerStations.filter((feature) => feature.properties?.segment === segment)
+        if (segmentStations.length === 0) return
+
+        assignRole(segmentStations[0], "origin")
+        if (segmentStations.length > 1) {
+          assignRole(segmentStations[segmentStations.length - 1], "destination")
+        }
+      })
+      return
+    }
+
+    assignRole(passengerStations[0], "origin")
+    if (passengerStations.length > 1) {
+      assignRole(passengerStations[passengerStations.length - 1], "destination")
+    }
+  }
+
+  isTerminalStation(feature) {
+    const role = feature?.properties?.station_role
+    return role === "origin" || role === "destination"
+  }
+
+  terminalStationLabel(feature) {
+    const role = feature?.properties?.station_role
+    if (role === "origin") return "起點"
+    if (role === "destination") return "終點"
+    return null
+  }
+
+  geoJSONForMapRender(data, route) {
+    let features = data.features || []
+
+    if (route?.id === "danhai_lrt") {
+      features = this.deduplicateDanhaiStationFeatures(features)
+    }
+
+    if (route?.id === "airport_mrt_express") {
+      features = features.filter((feature) => feature.properties?.feature_type !== "station")
+    }
+
+    return { ...data, features }
+  }
+
+  deduplicateDanhaiStationFeatures(features) {
+    const stationsByRef = new Map()
+    const output = []
+
+    features.forEach((feature) => {
+      if (feature.properties?.feature_type !== "station") {
+        output.push(feature)
+        return
+      }
+
+      const ref = feature.properties?.ref
+      if (!ref || !DANHAI_SHARED_STATION_REFS.has(ref)) {
+        output.push(feature)
+        return
+      }
+
+      const existing = stationsByRef.get(ref)
+      if (!existing) {
+        const segments = feature.properties?.segment ? [ feature.properties.segment ] : []
+        stationsByRef.set(ref, {
+          ...feature,
+          properties: {
+            ...feature.properties,
+            danhai_segments: segments
+          }
+        })
+        return
+      }
+
+      const segments = existing.properties.danhai_segments || []
+      const segment = feature.properties?.segment
+      if (segment && !segments.includes(segment)) segments.push(segment)
+      existing.properties.danhai_segments = segments
+
+      const [ lng, lat ] = feature.geometry?.coordinates || []
+      const [ existingLng, existingLat ] = existing.geometry?.coordinates || []
+      if (lng == null || lat == null || existingLng == null || existingLat == null) return
+
+      existing.geometry = {
+        type: "Point",
+        coordinates: [ (existingLng + lng) / 2, (existingLat + lat) / 2 ]
+      }
+    })
+
+    return output.concat(Array.from(stationsByRef.values()))
+  }
+
+  danhaiLineLabel(feature) {
+    const segments = feature.properties?.danhai_segments
+    if (!segments || segments.length === 0) return feature.properties?.line
+
+    const labels = segments.map((segment) => (segment === "lushan" ? "綠山線" : "藍海線"))
+
+    return `淡海輕軌（${labels.join("／")}）`
   }
 
   bringAirportMrtCommuterLinesToFront(group) {
@@ -990,7 +1424,15 @@ export default class extends Controller {
   }
 
   routeUsesParallelTracks(route) {
-    return PARALLEL_TRACK_ROUTE_IDS.has(route?.id)
+    if (!PARALLEL_TRACK_ROUTE_IDS.has(route?.id)) return false
+
+    // Danhai LRT: zoomed out should read as a single line.
+    if (route?.id === "danhai_lrt") {
+      const zoom = this.map?.getZoom() ?? 12
+      return zoom >= 13
+    }
+
+    return true
   }
 
   scheduleParallelTracksRefresh() {
@@ -1035,6 +1477,7 @@ export default class extends Controller {
     if (layerIds.length > 0) {
       this.reindexVisibleStationCoordinates()
       this.updateOutOfStationTransfers()
+      this.updateMetroDepots()
     }
   }
 
@@ -1346,12 +1789,68 @@ export default class extends Controller {
     return window.L.latLng(start.lat + t * dy, start.lng + t * dx)
   }
 
+  transferConnectionLayers(latlngs, kind) {
+    const L = window.L
+    const path = this.outOfStationTransferLatLngs(latlngs)
+    if (kind === "passage") {
+      return [
+        L.polyline(path, {
+          pane: this.outOfStationTransferPane,
+          color: TRANSFER_LINE_COLOR,
+          weight: 5,
+          opacity: 0.95,
+          lineCap: "round",
+          lineJoin: "round",
+          className: "out-of-station-transfer-line out-of-station-transfer-line--passage",
+          dashArray: "12 8"
+        })
+      ]
+    }
+
+    const coordinates = path.map((latlng) => [ latlng.lng, latlng.lat ])
+    const offsets = [ FARE_DISCOUNT_TRACK_OFFSET_METERS, -FARE_DISCOUNT_TRACK_OFFSET_METERS ]
+    const layers = []
+
+    offsets.forEach((offset) => {
+      const offsetCoords = this.offsetLineStringCoordinates(coordinates, offset)
+      const offsetPath = offsetCoords.map(([ lng, lat ]) => L.latLng(lat, lng))
+
+      // Light casing improves contrast on both light and dark basemaps.
+      layers.push(L.polyline(offsetPath, {
+        pane: this.outOfStationTransferPane,
+        color: "#ffffff",
+        weight: 9,
+        opacity: 0.88,
+        lineCap: "round",
+        lineJoin: "round",
+        className: "out-of-station-transfer-line out-of-station-transfer-line--fare-discount-casing",
+        dashArray: "14 7"
+      }))
+
+      layers.push(L.polyline(offsetPath, {
+        pane: this.outOfStationTransferPane,
+        color: TRANSFER_LINE_COLOR_FARE_DISCOUNT,
+        weight: 6,
+        opacity: 1,
+        lineCap: "round",
+        lineJoin: "round",
+        className: "out-of-station-transfer-line out-of-station-transfer-line--fare-discount",
+        dashArray: "14 7"
+      }))
+    })
+
+    return layers
+  }
+
+  transferPopupHtml(label, kind) {
+    const note = this.transferNoteForKind(kind)
+    return `<strong>${label}</strong><br><span style="opacity:0.8">${note}</span>`
+  }
+
   outOfStationTransferLatLngs(latlngs) {
     if (latlngs.length !== 2) return latlngs
 
     const [start, end] = latlngs
-    if (start.distanceTo(end) >= 80) return latlngs
-
     const midLat = (start.lat + end.lat) / 2
     const midLng = (start.lng + end.lng) / 2
     const deltaLat = end.lat - start.lat
@@ -1403,18 +1902,6 @@ export default class extends Controller {
     }
 
     const stationRefs = this.transferStationRefs(stationRef)
-
-    if (stationRefs.length > 1) {
-      const lineColors = stationRefs
-        .map((stationRef) => this.colorForStationRef(stationRef) || feature.properties?.color || color)
-        .slice(0, 2)
-
-      const snapPrefix = this.linePrefixForStationRef(stationRefs[0]) || routeRef
-      const position = this.snapToTracks(latlng, snapPrefix)
-
-      return this.transferStationMarkerAt(position, lineColors)
-    }
-
     const primaryStationRef = stationRefs[0]
     const linePrefix = this.linePrefixForStationRef(primaryStationRef) || routeRef
     const lineColor = this.stationColorForRoute(routeId, feature, primaryStationRef, color)
@@ -1428,7 +1915,27 @@ export default class extends Controller {
 
     if (outOfStation) return this.outOfStationMarkerAt(position, lineColor)
 
+    if (this.isTerminalStation(feature)) return this.terminalMarkerAt(position, lineColor)
+
     return this.circleMarkerAt(position, lineColor)
+  }
+
+  terminalMarkerAt(latlng, color) {
+    const L = window.L
+    const safeColor = color || "#666666"
+    const size = Math.max(this.stationMarkerRadius() + 6, 14)
+    const html = `<div class="terminal-station-marker" aria-hidden="true" style="--terminal-line-color:${safeColor}"></div>`
+
+    return L.marker(latlng, {
+      icon: L.divIcon({
+        className: "terminal-station-icon",
+        html,
+        iconSize: [ size, size ],
+        iconAnchor: [ size / 2, size / 2 ]
+      }),
+      pane: this.stationMarkerPane,
+      zIndexOffset: 520
+    })
   }
 
   transferStationMarkerAt(latlng, colors) {
@@ -1451,6 +1958,7 @@ export default class extends Controller {
         iconSize: [ 20, 14 ],
         iconAnchor: [ 10, 7 ]
       }),
+      pane: this.stationMarkerPane,
       zIndexOffset: 500
     })
   }
@@ -1512,6 +2020,7 @@ export default class extends Controller {
         iconSize: [ 22, 22 ],
         iconAnchor: [ 11, 11 ]
       }),
+      pane: this.stationMarkerPane,
       zIndexOffset: 700
     })
   }
@@ -1528,37 +2037,49 @@ export default class extends Controller {
         iconSize: [ 18, 18 ],
         iconAnchor: [ 9, 9 ]
       }),
+      pane: this.stationMarkerPane,
       zIndexOffset: 550
     })
   }
 
-  outOfStationMarkerAt(latlng, color) {
+  outOfStationMarkerAt(latlng, _color) {
     const L = window.L
-    const safeColor = color || "#666666"
 
-    const html = `<div class="out-of-station-marker" aria-hidden="true" style="background-color:${safeColor}"></div>`
+    const html = `<div class="out-of-station-marker" aria-hidden="true" style="background-color:${OUT_OF_STATION_MARKER_COLOR}"></div>`
 
     return L.marker(latlng, {
       icon: L.divIcon({
         className: "out-of-station-station-icon",
         html,
-        iconSize: [ 16, 16 ],
-        iconAnchor: [ 8, 8 ]
+        iconSize: [ 18, 18 ],
+        iconAnchor: [ 9, 9 ]
       }),
+      pane: this.stationMarkerPane,
       zIndexOffset: 600
     })
+  }
+
+  stationMarkerRadius() {
+    const zoom = this.map?.getZoom() ?? 12
+
+    if (zoom <= 10) return 4
+    if (zoom <= 12) return 5
+    if (zoom <= 14) return 7
+
+    return 8
   }
 
   circleMarkerAt(latlng, color) {
     const L = window.L
 
     return L.circleMarker(latlng, {
-      radius: 8,
+      radius: this.stationMarkerRadius(),
       fillColor: color,
       color: "#ffffff",
       weight: 2,
       opacity: 1,
-      fillOpacity: 0.95
+      fillOpacity: 0.95,
+      pane: this.stationMarkerPane
     })
   }
 
@@ -1567,16 +2088,26 @@ export default class extends Controller {
     if (!name) return
 
     const ref = feature.properties?.ref
-    const line = feature.properties?.line
+    const line = routeId === "danhai_lrt" ? this.danhaiLineLabel(feature) : feature.properties?.line
     const label = ref ? `${ref} ${name}` : name
     const subtitle = line ? `<br><span style="opacity:0.8">${line}</span>` : ""
-    const transferNote = this.isOutOfStationEndpoint(routeId, ref)
-      ? `<br><span style="opacity:0.8">站外轉乘</span>`
-      : ""
+    const terminalLabel = this.terminalStationLabel(feature)
+    const terminalNote = terminalLabel ? `<br><span style="opacity:0.8">${terminalLabel}</span>` : ""
+    const transferKind = ref ? this.transferKindByEndpointKey?.get(this.stationKey(routeId, ref)) : null
+    const transferNote = transferKind
+      ? `<br><span style="opacity:0.8">${this.transferNoteForKind(transferKind)}</span>`
+      : this.isOutOfStationEndpoint(routeId, ref)
+        ? `<br><span style="opacity:0.8">站外轉乘</span>`
+        : ""
     const expressNote = this.isAirportMrtExpressStop(ref) && (routeId === "airport_mrt" || routeId === "airport_mrt_express")
       ? `<br><span style="opacity:0.8">普通車／直達車交會</span>`
       : feature.properties?.express_service
         ? `<br><span style="opacity:0.8">直達車停靠</span>`
+        : ""
+    const boardingAreaNote = feature.properties?.boarding_area === "secured"
+      ? `<br><span style="opacity:0.8">管制區內搭乘</span>`
+      : feature.properties?.boarding_area === "public"
+        ? `<br><span style="opacity:0.8">管制區外搭乘</span>`
         : ""
     const directionNote = feature.properties?.note && feature.properties?.passenger_service !== false
       ? `<br><span style="opacity:0.8">${feature.properties.note}</span>`
@@ -1585,7 +2116,7 @@ export default class extends Controller {
       feature.properties?.passenger_service === false
       ? `<br><span style="opacity:0.8">不提供載客服務</span>`
       : ""
-    const popup = `<strong>${label}</strong>${subtitle}${noPassengerServiceNote}${directionNote}${transferNote}${expressNote}`
+    const popup = `<strong>${label}</strong>${subtitle}${terminalNote}${boardingAreaNote}${noPassengerServiceNote}${directionNote}${transferNote}${expressNote}`
 
     layer.bindPopup(popup)
   }

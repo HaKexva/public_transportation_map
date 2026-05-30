@@ -24,8 +24,8 @@ module Views
       }.freeze
 
       METRO_SYSTEMS = [
-        { id: "taipei_metro", label: "台北捷運", color: "#A74C00", badge: :amber, description: "7 條路線" },
-        { id: "new_taipei_metro", label: "新北捷運", color: "#E95A0C", badge: :orange, description: "淡海、安坑輕軌" },
+        { id: "taipei_metro", label: "台北捷運", color: "#A74C00", badge: :amber, description: "6 條路線" },
+        { id: "new_taipei_metro", label: "新北捷運", color: "#E95A0C", badge: :orange, description: "環狀線、淡海與安坑輕軌" },
         { id: "taoyuan_metro", label: "桃園捷運", color: "#0073B7", badge: :blue, description: "機場捷運（藍／紫雙線）" },
         { id: "taichung_metro", label: "台中捷運", color: "#8FC31F", badge: :lime, description: "綠線" },
         { id: "kaohsiung_metro", label: "高雄捷運", color: "#F5C200", badge: :yellow, description: "紅線、橘線" }
@@ -44,15 +44,23 @@ module Views
           style: :parallel,
           colors: [ "#ED6B46", "#ED6B46" ]
         },
-        { label: "站外轉乘", note: "灰色虛線連接", color: "#525252", style: :dashed }
+        { label: "聯通道轉乘", note: "單灰色虛線", color: "#525252", style: :dashed },
+        { label: "站外轉乘（優惠）", note: "雙灰色虛線（較粗）", color: "#3a3a3a", style: :dashed_double }
       ].freeze
 
       LEGEND_MARKERS = [
         { label: "一般站", type: :station, color: "#666666" },
+        { label: "起迄站", type: :terminal, color: "#A74C00" },
         { label: "轉乘站", type: :transfer, colors: [ "#E3002C", "#A74C00" ] },
-        { label: "站外轉乘站", type: :out_of_station, color: "#525252" },
+        { label: "機廠", type: :depot, color: "#64748B" },
+        { label: "站外轉乘站", type: :out_of_station, color: "#737373" },
         { label: "轉角站（不提供載客服務）", type: :angle_station, color: "#00AFE2" },
-        { label: "快慢車交會站", type: :airport_mrt_transfer, colors: [ "#0073B7", "#6A2C91" ] }
+        {
+          label: "快慢車交會站",
+          type: :airport_mrt_transfer,
+          colors: [ "#0073B7", "#6A2C91" ],
+          note: "A18、A21 僅環北直達部分班次停靠"
+        }
       ].freeze
 
       def view_template
@@ -119,6 +127,8 @@ module Views
           span(class: "flex w-11 shrink-0 items-center justify-center", aria: { hidden: true }) do
             if item[:style] == :parallel
               render_legend_parallel_lines(item[:colors])
+            elsif item[:style] == :dashed_double
+              render_legend_double_dashed(item[:color])
             else
               span(
                 class: legend_line_swatch_classes(item[:style]),
@@ -128,7 +138,9 @@ module Views
           end
           div(class: "min-w-0") do
             render RubyUI::Text.new(as: "p", size: "2", class: "font-medium leading-tight") { item[:label] }
-            render RubyUI::Text.new(as: "p", size: "1", weight: "muted", class: "leading-tight") { item[:note] }
+            if item[:note]
+              render RubyUI::Text.new(as: "p", size: "1", weight: "muted", class: "leading-tight") { item[:note] }
+            end
           end
         end
       end
@@ -144,12 +156,28 @@ module Views
         end
       end
 
+      def render_legend_double_dashed(color)
+        div(class: "map-legend-parallel-lines map-legend-parallel-lines--fare-discount", aria: { hidden: true }) do
+          2.times do
+            span(
+              class: "map-legend-line map-legend-line--dashed",
+              style: "--legend-line-color: #{color}"
+            )
+          end
+        end
+      end
+
       def render_legend_marker_item(item)
         div(class: "flex items-center gap-3") do
           span(class: "flex w-11 shrink-0 items-center justify-center", aria: { hidden: true }) do
             render_legend_marker_swatch(item)
           end
-          render RubyUI::Text.new(as: "p", size: "2", class: "font-medium leading-tight") { item[:label] }
+          div(class: "min-w-0") do
+            render RubyUI::Text.new(as: "p", size: "2", class: "font-medium leading-tight") { item[:label] }
+            if item[:note]
+              render RubyUI::Text.new(as: "p", size: "1", weight: "muted", class: "leading-tight") { item[:note] }
+            end
+          end
         end
       end
 
@@ -157,12 +185,24 @@ module Views
         case item[:type]
         when :station
           span(class: "map-legend-station", style: "background-color: #{item[:color]}")
+        when :terminal
+          div(
+            class: "terminal-station-marker map-legend-terminal-marker",
+            style: "--terminal-line-color: #{item[:color]}",
+            aria: { hidden: true }
+          )
         when :transfer
           left, right = item[:colors]
           div(class: "transfer-station-marker map-legend-transfer-marker", aria: { hidden: true }) do
             div(class: "transfer-station-marker__half", style: "background-color: #{left}")
             div(class: "transfer-station-marker__half", style: "background-color: #{right}")
           end
+        when :depot
+          div(
+            class: "metro-depot-marker map-legend-depot-marker",
+            style: "--depot-color: #{item[:color]}",
+            aria: { hidden: true }
+          )
         when :out_of_station
           div(
             class: "out-of-station-marker map-legend-out-of-station-marker",
@@ -237,10 +277,13 @@ module Views
 
       def render_layer_controls
         render RubyUI::CardContent.new(class: "flex-1 overflow-y-auto py-3") do
-          render RubyUI::Text.new(as: "p", size: "1", weight: "muted", class: "mb-3 rounded-md bg-muted/60 px-2.5 py-2 leading-relaxed") do
-            "勾選路線即可顯示（捷運、其他）。點擊車站可查看站名與轉乘資訊。"
+          div(data: { map_target: "layerSearchMuted" }) do
+            render RubyUI::Text.new(as: "p", size: "1", weight: "muted", class: "mb-3 rounded-md bg-muted/60 px-2.5 py-2 leading-relaxed") do
+              "勾選路線即可顯示（捷運、其他）。點擊車站可查看站名與轉乘資訊。"
+            end
           end
-          render RubyUI::Text.new(as: "p", size: "1", weight: "muted", class: "mb-2 px-2 uppercase tracking-wide") do
+          render_layer_search
+          render RubyUI::Text.new(as: "p", size: "1", weight: "muted", class: "mb-2 px-2 uppercase tracking-wide", data: { map_target: "layerSearchMuted" }) do
             "捷運路線"
           end
           div(class: "flex flex-col gap-1 px-1") do
@@ -263,8 +306,14 @@ module Views
       def render_other_routes
         return if other_routes.empty?
 
-        div(class: "mt-4 px-1") do
-          render RubyUI::Text.new(as: "p", size: "1", weight: "muted", class: "mb-2 px-2 uppercase tracking-wide") do
+        div(
+          class: "mt-4 px-1",
+          data: {
+            map_target: "layerSearchGroup",
+            search_text: other_routes_search_text
+          }
+        ) do
+          render RubyUI::Text.new(as: "p", size: "1", weight: "muted", class: "mb-2 px-2 uppercase tracking-wide", data: { map_target: "layerSearchMuted" }) do
             "其他"
           end
           div(class: "flex flex-col gap-1") do
@@ -274,7 +323,7 @@ module Views
       end
 
       def render_coming_soon_layers
-        div(class: "mt-4 px-2") do
+        div(class: "mt-4 px-2", data: { map_target: "layerSearchMuted" }) do
           render RubyUI::Text.new(as: "p", size: "1", weight: "muted", class: "mb-2 uppercase tracking-wide") do
             "即將推出"
           end
@@ -308,7 +357,7 @@ module Views
             ) { "重設視角" }
           end
           render RubyUI::Text.new(as: "p", size: "1", weight: "muted", class: "leading-relaxed") do
-            "站外轉乘（如三重）需同時開啟兩條路線，會以灰色虛線連接不同站體。"
+            "不同捷運系統之間的轉乘皆為站外轉乘；需同時開啟兩條路線，會以灰色虛線連接各系統站體（如十四張：環狀線 Y08 與安坑輕軌 K09）。"
           end
         end
       end
@@ -336,10 +385,53 @@ module Views
         ].join(" ")
       end
 
+      def render_layer_search
+        div(class: "layer-search sticky top-0 z-10 mb-3 space-y-2 bg-background/95 px-1 pb-1 backdrop-blur-sm") do
+          label(for: "layer-search", class: "sr-only") { "搜尋路線" }
+          div(class: "relative") do
+            span(class: "pointer-events-none absolute inset-y-0 left-2.5 flex items-center text-muted-foreground", aria: { hidden: true }) do
+              render_search_icon
+            end
+            input(
+              type: "search",
+              id: "layer-search",
+              placeholder: "搜尋路線、代碼…",
+              autocomplete: "off",
+              class: [
+                "flex h-8 w-full rounded-md border border-border bg-background/80 py-1 pl-8 pr-8 text-sm shadow-xs",
+                "placeholder:text-muted-foreground",
+                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50 focus-visible:border-ring"
+              ].join(" "),
+              data: {
+                map_target: "layerSearchInput",
+                action: "input->map#filterLayers search->map#filterLayers keydown.esc->map#clearLayerSearch"
+              }
+            )
+            button(
+              type: "button",
+              class: "absolute inset-y-0 right-1 hidden rounded-md px-2 text-xs text-muted-foreground hover:bg-accent hover:text-foreground",
+              aria: { label: "清除搜尋" },
+              data: {
+                map_target: "layerSearchClear",
+                action: "click->map#clearLayerSearch"
+              }
+            ) { "清除" }
+          end
+          p(
+            class: "hidden px-2 text-xs text-muted-foreground",
+            data: { map_target: "layerSearchEmpty" }
+          ) { "找不到符合的路線" }
+        end
+      end
+
       def render_metro_system(system)
         render RubyUI::Collapsible.new(
           open: system[:id] == "taipei_metro",
-          class: "rounded-lg border border-border/40 bg-muted/20"
+          class: "rounded-lg border border-border/40 bg-muted/20",
+          data: {
+            map_target: "layerSearchGroup",
+            search_text: metro_system_search_text(system)
+          }
         ) do
           render RubyUI::CollapsibleTrigger.new(
             class: "flex w-full cursor-pointer items-center justify-between gap-2 rounded-lg px-2.5 py-2 text-sm font-medium hover:bg-accent/50"
@@ -438,7 +530,13 @@ module Views
         checkbox_data[:map_layer_param] = layer[:id] if stimulus_action == "change->map#toggleLayer"
         checkbox_data[:map_metro_system_param] = metro_system_param if metro_system_param
 
-        div(class: "rounded-lg py-1.5 transition-colors hover:bg-accent/50 #{padding}") do
+        div(
+          class: "rounded-lg py-1.5 transition-colors hover:bg-accent/50 #{padding}",
+          data: {
+            map_target: "layerSearchItem",
+            search_text: layer_search_text(layer)
+          }
+        ) do
           div(class: "flex items-center justify-between gap-3") do
             div(class: "flex min-w-0 flex-1 items-center gap-3") do
               input(
@@ -461,6 +559,39 @@ module Views
             render RubyUI::Badge.new(variant: layer[:badge], size: :sm) { badge_label }
           end
         end
+      end
+
+      def layer_search_text(layer)
+        [
+          layer[:label],
+          layer[:description],
+          layer[:badge_label],
+          layer[:id]&.tr("_", " ")
+        ].compact.join(" ")
+      end
+
+      def metro_system_search_text(system)
+        routes = main_routes(system[:id])
+        texts = [ system[:label], system[:description], system[:id] ]
+
+        routes.each do |route|
+          texts.push(route["name"], route["name_en"], route["ref"], route["id"])
+          branch_routes_for(route["id"], system_id: system[:id]).each do |branch|
+            texts.push(branch["name"], branch["name_en"], branch["ref"], branch["id"])
+          end
+        end
+
+        texts.compact.join(" ")
+      end
+
+      def other_routes_search_text
+        texts = [ OTHER_SYSTEM[:label], OTHER_SYSTEM[:description], "other" ]
+
+        other_routes.each do |route|
+          texts.push(route["name"], route["name_en"], route["ref"], route["id"])
+        end
+
+        texts.compact.join(" ")
       end
 
       def render_theme_toggle
@@ -487,6 +618,22 @@ module Views
               action: "click->ruby-ui--theme-toggle#setDarkTheme"
             }
           ) { render_moon_icon }
+        end
+      end
+
+      def render_search_icon
+        svg(
+          xmlns: "http://www.w3.org/2000/svg",
+          viewbox: "0 0 24 24",
+          fill: "none",
+          stroke: "currentColor",
+          stroke_width: "2",
+          stroke_linecap: "round",
+          stroke_linejoin: "round",
+          class: "size-3.5"
+        ) do |s|
+          s.circle(cx: "11", cy: "11", r: "8")
+          s.path(d: "m21 21-4.3-4.3")
         end
       end
 

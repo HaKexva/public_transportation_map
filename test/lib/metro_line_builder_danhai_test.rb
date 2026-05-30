@@ -26,5 +26,11 @@ class MetroLineBuilderDanhaiTest < ActiveSupport::TestCase
     assert_includes station_refs, "V03"
     assert_includes station_refs, "V11"
     assert_includes station_refs, "V27"
+
+    v10_segments = stations
+      .select { |feature| feature.dig("properties", "ref") == "V10" }
+      .map { |feature| feature.dig("properties", "segment") }
+
+    assert_equal [ "lushan" ], v10_segments.sort, "V10 should only be on 綠山線"
   end
 end

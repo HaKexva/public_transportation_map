@@ -21,31 +21,42 @@ class MetroLineBuilderMaokongTest < ActiveSupport::TestCase
 end
 
 class MetroLineBuilderSkytrainTest < ActiveSupport::TestCase
-  test "skytrain geojson uses terminal refs ST01 and ST02" do
+  test "skytrain geojson has separate north and south boarding stations" do
     path = Rails.root.join("public/geojson/other/taoyuan_airport_skytrain.geojson")
     skip "run bin/rails geojson:other first" unless path.exist?
 
     data = JSON.parse(path.read)
     stations = data["features"].select { |feature| feature.dig("properties", "feature_type") == "station" }
 
-    assert_equal 2, stations.length
+    assert_equal 4, stations.length
 
-    by_ref = stations.to_h { |feature| [ feature.dig("properties", "ref"), feature.dig("properties", "name") ] }
-    assert_equal "第一航廈", by_ref["ST01"]
-    assert_equal "第二航廈", by_ref["ST02"]
-    assert_not_includes by_ref.keys, "Skytrain"
+    by_ref = stations.index_by { |feature| feature.dig("properties", "ref") }
+    assert_equal "第一航廈（北側）", by_ref["ST1N"].dig("properties", "name")
+    assert_equal "第二航廈（北側）", by_ref["ST2N"].dig("properties", "name")
+    assert_equal "第一航廈（南側）", by_ref["ST1S"].dig("properties", "name")
+    assert_equal "第二航廈（南側）", by_ref["ST2S"].dig("properties", "name")
+
+    assert_equal "secured", by_ref["ST1N"].dig("properties", "boarding_area")
+    assert_equal "secured", by_ref["ST2N"].dig("properties", "boarding_area")
+    assert_equal "public", by_ref["ST1S"].dig("properties", "boarding_area")
+    assert_equal "public", by_ref["ST2S"].dig("properties", "boarding_area")
+    assert_not_includes by_ref.keys, "ST01"
   end
 
-  test "skytrain route segments are labeled outbound and inbound" do
+  test "skytrain route segments distinguish north secured and south public tracks" do
     path = Rails.root.join("public/geojson/other/taoyuan_airport_skytrain.geojson")
     skip "run bin/rails geojson:other first" unless path.exist?
 
     data = JSON.parse(path.read)
-    route_names = data["features"]
-      .select { |feature| feature.dig("properties", "feature_type") == "route" }
-      .map { |feature| feature.dig("properties", "name") }
+    routes = data["features"].select { |feature| feature.dig("properties", "feature_type") == "route" }
 
-    assert route_names.any? { |name| name.include?("往程") }
-    assert route_names.any? { |name| name.include?("返程") }
+    segments = routes.map { |feature| feature.dig("properties", "segment") }.uniq.sort
+    assert_equal %w[north south], segments
+
+    north_names = routes.select { |r| r.dig("properties", "segment") == "north" }.map { |r| r.dig("properties", "name") }
+    south_names = routes.select { |r| r.dig("properties", "segment") == "south" }.map { |r| r.dig("properties", "name") }
+
+    assert north_names.all? { |name| name.include?("北側") && name.include?("管制區內") }
+    assert south_names.all? { |name| name.include?("南側") && name.include?("管制區外") }
   end
 end

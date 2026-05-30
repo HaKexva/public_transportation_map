@@ -4,16 +4,71 @@ require "json"
 
 module Geojson
   class MetroLineBuilder
-    # Taoyuan Airport skytrain: two terminals, each direction numbers from its departure terminal.
-    SKYTRAIN_TERMINALS = [
-      { ref: "ST01", name: "第一航廈", name_en: "Terminal 1", lon: 121.2380095, lat: 25.0798462 },
-      { ref: "ST02", name: "第二航廈", name_en: "Terminal 2", lon: 121.2336320, lat: 25.0764579 }
+    # North track: secured area only. South track: public (non-secured) boarding.
+    # Sources: taoyuan-airport.com/skytrain, Wikipedia PMS.
+    SKYTRAIN_TRACKS = [
+      { way_id: 256726319, segment: "north", label: "北側", boarding_area: "secured" },
+      { way_id: 256726320, segment: "south", label: "南側", boarding_area: "public" }
     ].freeze
 
-    SKYTRAIN_RELATION_META = {
-      17_666_637 => { segment: "outbound", label: "往程", start_ref: "ST01", end_ref: "ST02" },
-      17_666_651 => { segment: "inbound", label: "返程", start_ref: "ST02", end_ref: "ST01" }
+    # OSM ways 256726319 / 256726320 (cached for offline rebuild).
+    SKYTRAIN_TRACK_FALLBACKS = {
+      256726319 => [
+        [ 121.2334829, 25.0764197 ], [ 121.2341376, 25.0769213 ], [ 121.2355514, 25.078025 ],
+        [ 121.236953, 25.0791275 ], [ 121.2371298, 25.0792503 ], [ 121.2372602, 25.0793392 ],
+        [ 121.237366, 25.0794164 ], [ 121.2376055, 25.0796065 ], [ 121.2382094, 25.080096 ]
+      ],
+      256726320 => [
+        [ 121.23823, 25.0799459 ], [ 121.2376645, 25.0795237 ], [ 121.2375054, 25.0794155 ],
+        [ 121.2373074, 25.0793067 ], [ 121.237077, 25.0791573 ], [ 121.2369536, 25.0790837 ],
+        [ 121.2367405, 25.078917 ], [ 121.2350374, 25.0775732 ], [ 121.2343394, 25.0770225 ],
+        [ 121.2342736, 25.0769559 ], [ 121.2341881, 25.0768637 ], [ 121.2341136, 25.0767812 ],
+        [ 121.2339994, 25.0766704 ], [ 121.2335548, 25.0763378 ]
+      ]
     }.freeze
+
+    SKYTRAIN_BOARDING_STATIONS = [
+      {
+        ref: "ST1N",
+        name: "第一航廈（北側）",
+        name_en: "Terminal 1 (North)",
+        terminal: "T1",
+        track: "north",
+        lon: 121.2380095,
+        lat: 25.0798462,
+        note: "管制區內 · 2F A/B 區（近 A7、B6 登機門）"
+      },
+      {
+        ref: "ST2N",
+        name: "第二航廈（北側）",
+        name_en: "Terminal 2 (North)",
+        terminal: "T2",
+        track: "north",
+        lon: 121.23385,
+        lat: 25.07662,
+        note: "管制區內 · 2F C/D 區（近 C6、D5 登機門）"
+      },
+      {
+        ref: "ST1S",
+        name: "第一航廈（南側）",
+        name_en: "Terminal 1 (South)",
+        terminal: "T1",
+        track: "south",
+        lon: 121.23735,
+        lat: 25.07872,
+        note: "管制區外 · 1F 郵局旁（依指標前往）"
+      },
+      {
+        ref: "ST2S",
+        name: "第二航廈（南側）",
+        name_en: "Terminal 2 (South)",
+        terminal: "T2",
+        track: "south",
+        lon: 121.23363,
+        lat: 25.07646,
+        note: "管制區外 · 3F 22 號報到櫃台旁（依指標前往）"
+      }
+    ].freeze
 
     def self.build!(line)
       new(line).build!
@@ -37,7 +92,7 @@ module Geojson
           network: @line.network_name,
           ref: @line.ref,
           osm_relations: @line.relation_ids,
-          osm_ways: @line.way_ids
+          osm_ways: @line.slug == "taoyuan_airport_skytrain" ? SKYTRAIN_TRACKS.map { |t| t[:way_id] } : @line.way_ids
         }.compact,
         features: route_features + station_features(stations)
       }
@@ -56,6 +111,8 @@ module Geojson
     end
 
     def build_route_features
+      return build_skytrain_route_features if @line.slug == "taoyuan_airport_skytrain"
+
       route_features = []
 
       @line.relation_ids.each_with_index do |relation_id, relation_index|
@@ -80,12 +137,39 @@ module Geojson
       route_features
     end
 
+    def build_skytrain_route_features
+      stitcher = OsmRouteExtractor.new(relation_id: 0)
+
+      SKYTRAIN_TRACKS.flat_map.with_index do |track, track_index|
+        line_strings = skytrain_line_strings_for_track(track[:way_id], stitcher)
+        next [] if line_strings.empty?
+
+        line_strings.map.with_index do |coordinates, branch_index|
+          route_feature(coordinates, branch_index: branch_index, relation_index: track_index)
+        end
+      end
+    end
+
+    def skytrain_line_strings_for_track(way_id, stitcher)
+      ways = OsmRouteExtractor.fetch_way_elements(way_id)
+      lines = stitcher.stitch_line_strings(ways) if ways.any?
+      return lines if lines&.any?
+
+      fallback = SKYTRAIN_TRACK_FALLBACKS[way_id]
+      fallback ? [ fallback ] : []
+    rescue StandardError => error
+      Rails.logger.warn("Skytrain way #{way_id} OSM fetch failed: #{error.message}")
+      fallback = SKYTRAIN_TRACK_FALLBACKS[way_id]
+      fallback ? [ fallback ] : []
+    end
+
     def geometry_source_note
       parts = []
       parts << "route relations #{@line.relation_ids.join(', ')}" if @line.relation_ids.any?
       parts << "ways #{@line.way_ids.join(', ')}" if @line.way_ids.any?
 
-      "Track geometry from OpenStreetMap #{parts.join(' and ')}. © OpenStreetMap contributors, ODbL."
+      note = parts.any? ? "Track geometry from OpenStreetMap #{parts.join(' and ')}." : "Track geometry from OpenStreetMap ways #{SKYTRAIN_TRACKS.map { |t| t[:way_id] }.join(', ')} (with fallbacks)."
+      "#{note} © OpenStreetMap contributors, ODbL."
     end
 
     def fetch_stations_for_line
@@ -276,10 +360,9 @@ module Geojson
       end
 
       if @line.slug == "taoyuan_airport_skytrain"
-        relation_id = @line.relation_ids[relation_index]
-        meta = SKYTRAIN_RELATION_META[relation_id]
-        if meta
-          name = "#{@line.name}（#{meta[:label]}）"
+        track = SKYTRAIN_TRACKS[relation_index]
+        if track
+          name = "#{@line.name}（#{track[:label]}·#{track[:boarding_area] == 'secured' ? '管制區內' : '管制區外'}）"
           return "#{name} (#{branch_index + 1})" if branch_index.positive?
 
           return name
@@ -293,27 +376,23 @@ module Geojson
     end
 
     def fetch_skytrain_stations
-      SKYTRAIN_TERMINALS.map do |terminal|
-        terminal.merge(
-          line: @line.name,
-          color: @line.color,
-          note: skytrain_station_note(terminal[:ref])
-        )
-      end
-    end
+      SKYTRAIN_BOARDING_STATIONS.map do |station|
+        track = SKYTRAIN_TRACKS.find { |entry| entry[:segment] == station[:track] }
+        side_label = track[:label]
 
-    def skytrain_station_note(ref)
-      case ref
-      when "ST01" then "往程起點 · 返程終點"
-      when "ST02" then "往程終點 · 返程起點"
+        station.merge(
+          line: "#{@line.name}（#{side_label}）",
+          color: @line.color,
+          segment: station[:track],
+          boarding_area: track[:boarding_area]
+        )
       end
     end
 
     def skytrain_segment_key(relation_index)
       return nil unless @line.slug == "taoyuan_airport_skytrain"
 
-      relation_id = @line.relation_ids[relation_index]
-      SKYTRAIN_RELATION_META[relation_id]&.fetch(:segment)
+      SKYTRAIN_TRACKS[relation_index]&.fetch(:segment)
     end
 
     def fetch_danhai_stations
@@ -386,7 +465,11 @@ module Geojson
       stations.filter_map do |station|
         next if station[:name].blank?
 
-        ref = TaipeiMetroCatalog::TRANSFER_STATION_REFS_BY_NAME[station[:name]] || station[:ref]
+        transfer = TaipeiMetroCatalog::IN_STATION_TRANSFERS_BY_NAME[station[:name]]
+        ref = transfer&.fetch(:combined_ref) || station[:ref]
+        if transfer
+          station = station.merge(lon: transfer[:lon], lat: transfer[:lat])
+        end
         angle_station = station[:angle_station] || station[:name].match?(/轉角/)
 
         {
@@ -399,6 +482,7 @@ module Geojson
             color: station[:color] || @line.color,
             segment: station[:segment],
             note: station[:note],
+            boarding_area: station[:boarding_area],
             passenger_service: station[:passenger_service]
           }.compact,
           geometry: {

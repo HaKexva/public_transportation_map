@@ -1,13 +1,14 @@
 {
   "type": "FeatureCollection",
-  "name": "台北捷運文湖線",
+  "name": "臺北捷運文湖線",
   "properties": {
     "source": "Track geometry from OpenStreetMap route relations 447449. © OpenStreetMap contributors, ODbL.",
     "network": "臺北捷運",
     "ref": "BR",
     "osm_relations": [
       447449
-    ]
+    ],
+    "osm_ways": []
   },
   "features": [
     {
@@ -2610,23 +2611,6 @@
       "type": "Feature",
       "properties": {
         "feature_type": "station",
-        "ref": "BR10;BL15",
-        "name": "忠孝復興",
-        "line": "文湖線",
-        "color": "#A74C00"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.5437706,
-          25.0415409
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
         "ref": "BR11;G16",
         "name": "南京復興",
         "line": "文湖線",
@@ -2856,8 +2840,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.617896,
-          25.0553158
+          121.6179004,
+          25.055378
         ]
       }
     }

@@ -54,9 +54,49 @@
 .out-of-station-marker {
   width: 14px;
   height: 14px;
-  border: 2.5px dashed #404040;
+  border: 2px solid #ffffff;
   border-radius: 50%;
   box-shadow: 0 1px 3px rgb(0 0 0 / 25%);
+}
+
+.leaflet-div-icon.metro-depot-icon {
+  background: transparent;
+  border: none;
+}
+
+.metro-depot-marker {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #ffffff;
+  border-radius: 0.4rem;
+  background-color: var(--depot-color, #64748b);
+  box-shadow: 0 0 0 2px var(--depot-color, #64748b), 0 1px 4px rgb(0 0 0 / 30%);
+}
+
+.map-legend-depot-marker {
+  width: 1rem;
+  height: 1rem;
+}
+
+.leaflet-div-icon.terminal-station-icon {
+  background: transparent;
+  border: none;
+}
+
+.terminal-station-marker {
+  width: 100%;
+  height: 100%;
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+  background-color: var(--terminal-line-color, #666666);
+  box-shadow:
+    0 0 0 2px var(--terminal-line-color, #666666),
+    0 1px 4px rgb(0 0 0 / 30%);
+}
+
+.map-legend-terminal-marker {
+  width: 1.1rem;
+  height: 1.1rem;
 }
 
 .leaflet-div-icon.angle-station-icon {
@@ -80,6 +120,30 @@
 
 .out-of-station-transfer-line {
   pointer-events: visibleStroke;
+}
+
+.out-of-station-transfer-line--passage {
+  stroke: #525252;
+}
+
+.out-of-station-transfer-line--fare-discount-casing {
+  pointer-events: none;
+}
+
+.out-of-station-transfer-line--fare-discount {
+  stroke: #3a3a3a;
+}
+
+.map-legend-parallel-lines--fare-discount {
+  gap: 0.42rem;
+  width: 2.75rem;
+}
+
+.map-legend-parallel-lines--fare-discount .map-legend-line--dashed {
+  height: 0;
+  border-top-width: 0.22rem;
+  border-style: dashed;
+  border-color: var(--legend-line-color, #3a3a3a);
 }
 
 .map-legend-line {
@@ -188,7 +252,7 @@
 }
 
 #map-legend:not(.map-ui-panel--collapsed) .map-ui-panel__body {
-  max-height: min(40vh, 16rem);
+  max-height: min(62vh, 28rem);
   overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: color-mix(in oklch, var(--border) 80%, transparent) transparent;
@@ -388,4 +452,24 @@
   color: var(--foreground);
   opacity: 1;
   box-shadow: 0 1px 2px rgb(0 0 0 / 0.08);
+}
+
+/* Metro depots (機廠) */
+.leaflet-div-icon.metro-depot-icon {
+  background: transparent;
+  border: none;
+}
+
+.metro-depot-marker {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #ffffff;
+  border-radius: 0.4rem;
+  background-color: var(--depot-color, #64748b);
+  box-shadow: 0 0 0 2px var(--depot-color, #64748b), 0 1px 4px rgb(0 0 0 / 30%);
+}
+
+.map-legend-depot-marker {
+  width: 1rem;
+  height: 1rem;
 }

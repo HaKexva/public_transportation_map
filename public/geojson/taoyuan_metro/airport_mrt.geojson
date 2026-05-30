@@ -7,7 +7,8 @@
     "ref": "A",
     "osm_relations": [
       6937083
-    ]
+    ],
+    "osm_ways": []
   },
   "features": [
     {
@@ -2990,6 +2991,142 @@
       "type": "Feature",
       "properties": {
         "feature_type": "station",
+        "ref": "A2",
+        "name": "三重",
+        "line": "機場捷運",
+        "color": "#0073B7"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.482813,
+          25.0546641
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "A3",
+        "name": "新北產業園區",
+        "line": "機場捷運",
+        "color": "#0073B7"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.4589414,
+          25.061706
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "A4",
+        "name": "新莊副都心",
+        "line": "機場捷運",
+        "color": "#0073B7"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.4457893,
+          25.05921
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "A5",
+        "name": "泰山",
+        "line": "機場捷運",
+        "color": "#0073B7"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.4395522,
+          25.0532646
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "A6",
+        "name": "泰山貴和",
+        "line": "機場捷運",
+        "color": "#0073B7"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.4229634,
+          25.0333454
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "A7",
+        "name": "體育大學",
+        "line": "機場捷運",
+        "color": "#0073B7"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.3854083,
+          25.0413317
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "A8",
+        "name": "長庚醫院",
+        "line": "機場捷運",
+        "color": "#0073B7"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.3707965,
+          25.0604744
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "A9",
+        "name": "林口",
+        "line": "機場捷運",
+        "color": "#0073B7"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.3614372,
+          25.0657846
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
         "ref": "A10",
         "name": "山鼻",
         "line": "機場捷運",
@@ -3160,23 +3297,6 @@
       "type": "Feature",
       "properties": {
         "feature_type": "station",
-        "ref": "A2",
-        "name": "三重",
-        "line": "機場捷運",
-        "color": "#0073B7"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.482813,
-          25.0546641
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
         "ref": "A20",
         "name": "興南",
         "line": "機場捷運",
@@ -3221,125 +3341,6 @@
         "coordinates": [
           121.2193715,
           24.9585814
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "A3",
-        "name": "新北產業園區",
-        "line": "機場捷運",
-        "color": "#0073B7"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.4589414,
-          25.061706
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "A4",
-        "name": "新莊副都心",
-        "line": "機場捷運",
-        "color": "#0073B7"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.4457893,
-          25.05921
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "A5",
-        "name": "泰山",
-        "line": "機場捷運",
-        "color": "#0073B7"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.4395522,
-          25.0532646
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "A6",
-        "name": "泰山貴和",
-        "line": "機場捷運",
-        "color": "#0073B7"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.4229634,
-          25.0333454
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "A7",
-        "name": "體育大學",
-        "line": "機場捷運",
-        "color": "#0073B7"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.3854083,
-          25.0413317
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "A8",
-        "name": "長庚醫院",
-        "line": "機場捷運",
-        "color": "#0073B7"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.3707965,
-          25.0604744
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "A9",
-        "name": "林口",
-        "line": "機場捷運",
-        "color": "#0073B7"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.3614372,
-          25.0657846
         ]
       }
     }

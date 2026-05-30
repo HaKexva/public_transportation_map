@@ -64,15 +64,19 @@ module Geojson
       source.fetch("features").each_with_object({}) do |feature, index|
         next unless feature.dig("properties", "feature_type") == "station"
 
-        ref = feature.dig("properties", "ref")
+        ref_field = feature.dig("properties", "ref")
         coordinates = feature.dig("geometry", "coordinates")
-        next if ref.blank? || coordinates.blank?
+        next if ref_field.blank? || coordinates.blank?
 
-        index[ref] = {
-          ref: ref,
+        refs = ref_field.to_s.split(";").map(&:strip).reject(&:blank?)
+        airport_ref = refs.find { |entry| entry.start_with?("A") } || refs.first
+        station = {
+          ref: airport_ref,
           name: feature.dig("properties", "name"),
           coordinates: coordinates
         }
+
+        refs.each { |entry| index[entry] = station }
       end
     end
 
