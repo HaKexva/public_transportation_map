@@ -104,8 +104,42 @@
       "branch_of": "airport_mrt"
     }
   ],
-  "taichung_metro": [],
-  "kaohsiung_metro": [],
+  "taichung_metro": [
+    {
+      "id": "green_line",
+      "file": "/geojson/taichung_metro/green_line.geojson",
+      "name": "綠線",
+      "name_en": "Green Line",
+      "ref": "1",
+      "color": "#8FC31F"
+    }
+  ],
+  "kaohsiung_metro": [
+    {
+      "id": "red_line",
+      "file": "/geojson/kaohsiung_metro/red_line.geojson",
+      "name": "紅線",
+      "name_en": "Red Line",
+      "ref": "R",
+      "color": "#E3002C"
+    },
+    {
+      "id": "orange_line",
+      "file": "/geojson/kaohsiung_metro/orange_line.geojson",
+      "name": "橘線",
+      "name_en": "Orange Line",
+      "ref": "O",
+      "color": "#F5C200"
+    },
+    {
+      "id": "circular_lrt",
+      "file": "/geojson/kaohsiung_metro/circular_lrt.geojson",
+      "name": "環狀輕軌",
+      "name_en": "Circular Light Rail",
+      "ref": "C",
+      "color": "#ADC956"
+    }
+  ],
   "other": [
     {
       "id": "maokong_gondola",

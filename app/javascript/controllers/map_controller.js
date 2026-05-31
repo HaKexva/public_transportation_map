@@ -22,6 +22,10 @@ const DANHAI_LRT_COLOR = "#ED6B46"
 const DANHAI_SHARED_STATION_REFS = new Set(
   Array.from({ length: 9 }, (_, index) => `V${String(index + 1).padStart(2, "0")}`)
 )
+const DANHAI_LANHAI_STATION_ORDER = [ "V28", "V27", "V26" ]
+const DANHAI_SHARED_ORIGIN_REF = "V01"
+const DANHAI_LUSHAN_DESTINATION_REF = "V11"
+const DANHAI_LANHAI_DESTINATION_REF = "V26"
 const OUT_OF_STATION_MARKER_COLOR = "#737373"
 const TRANSFER_LINE_COLOR = "#525252"
 const TRANSFER_LINE_COLOR_FARE_DISCOUNT = "#3a3a3a"
@@ -30,6 +34,7 @@ const TRANSFER_LINE_WEIGHT = 5
 const FARE_DISCOUNT_LINE_OFFSET_METERS = 3.5
 const PARALLEL_TRACK_HALF_OFFSET_PX = 6
 const PARALLEL_TRACK_ROUTE_IDS = new Set([ "airport_mrt", "airport_mrt_express", "danhai_lrt" ])
+const LOOP_LINE_ROUTE_IDS = new Set([ "circular_lrt" ])
 
 const METRO_SYSTEM_IDS = [
   "taipei_metro",
@@ -1150,9 +1155,11 @@ export default class extends Controller {
 
     const color = this.routeDisplayColor(route) || LAYER_COLORS[layerId] || "#666666"
     const routeRef = route.ref
-    this.enrichTerminalStationRoles(data, route)
+    if (this.routeSkipsTerminalRoles(route)) this.clearTerminalRolesFromGeoJSON(data)
+
     const displayData = this.displayGeoJSON(data, route)
-    const renderData = this.geoJSONForMapRender(displayData, route)
+    const renderData = this.cloneGeoJSONForRender(this.geoJSONForMapRender(displayData, route))
+    this.enrichTerminalStationRoles(renderData, route)
 
     this.cacheRouteTracks(route.id, displayData)
     this.indexStationCoordinates(route.id, renderData)
@@ -1196,22 +1203,129 @@ export default class extends Controller {
     }
 
     if (route?.id === "danhai_lrt") {
-      [ "lushan", "lanhai" ].forEach((segment) => {
-        const segmentStations = passengerStations.filter((feature) => feature.properties?.segment === segment)
-        if (segmentStations.length === 0) return
-
-        assignRole(segmentStations[0], "origin")
-        if (segmentStations.length > 1) {
-          assignRole(segmentStations[segmentStations.length - 1], "destination")
-        }
-      })
+      this.assignDanhaiTerminalRoles(passengerStations, assignRole)
       return
     }
 
-    assignRole(passengerStations[0], "origin")
-    if (passengerStations.length > 1) {
-      assignRole(passengerStations[passengerStations.length - 1], "destination")
+    if (this.routeSkipsTerminalRoles(route)) {
+      this.clearTerminalStationRoles(passengerStations)
+      return
     }
+
+    const ordered = this.sortPassengerStationsByRef(passengerStations)
+
+    assignRole(ordered[0], "origin")
+    if (ordered.length > 1) {
+      assignRole(ordered[ordered.length - 1], "destination")
+    }
+  }
+
+  routeSkipsTerminalRoles(route) {
+    if (LOOP_LINE_ROUTE_IDS.has(route?.id)) return true
+
+    const source = route?.file || route?.url || ""
+    return LOOP_LINE_ROUTE_IDS.has(source.split("/").pop()?.replace(".geojson", ""))
+  }
+
+  clearTerminalRolesFromGeoJSON(data) {
+    ;(data?.features || []).forEach((feature) => this.clearTerminalStationRoles([ feature ]))
+  }
+
+  clearTerminalStationRoles(stations) {
+    stations.forEach((feature) => {
+      if (feature.properties?.station_role) delete feature.properties.station_role
+    })
+  }
+
+  cloneGeoJSONForRender(data) {
+    return {
+      ...data,
+      features: (data.features || []).map((feature) => ({
+        ...feature,
+        properties: feature.properties ? { ...feature.properties } : feature.properties
+      }))
+    }
+  }
+
+  sortPassengerStationsByRef(stations) {
+    return stations.slice().sort((left, right) => {
+      return this.compareStationRefs(left.properties?.ref, right.properties?.ref)
+    })
+  }
+
+  compareStationRefs(leftRef, rightRef) {
+    const left = this.stationRefSortKey(leftRef)
+    const right = this.stationRefSortKey(rightRef)
+
+    for (let index = 0; index < Math.max(left.length, right.length); index += 1) {
+      const leftPart = left[index]
+      const rightPart = right[index]
+
+      if (leftPart === rightPart) continue
+      if (leftPart === undefined) return -1
+      if (rightPart === undefined) return 1
+
+      if (typeof leftPart === "number" && typeof rightPart === "number") {
+        return leftPart - rightPart
+      }
+
+      return String(leftPart).localeCompare(String(rightPart))
+    }
+
+    return 0
+  }
+
+  stationRefSortKey(ref) {
+    const value = (ref || "").split(";")[0]
+    const prefix = value.match(/^[A-Z]+/)?.[0] || ""
+    const numeric = value.match(/\d+/)?.[0] || "0"
+    const suffix = value.slice(prefix.length + numeric.length)
+    const suffixRank = /^\d+[a-z]$/i.test(value) ? 0 : suffix ? 2 : 1
+
+    return [ prefix, parseInt(numeric, 10), suffixRank, suffix ]
+  }
+
+  assignDanhaiTerminalRoles(passengerStations, assignRole) {
+    passengerStations.forEach((feature) => {
+      if (feature.properties?.station_role) delete feature.properties.station_role
+    })
+
+    this.assignDanhaiTerminalRole(passengerStations, assignRole, DANHAI_SHARED_ORIGIN_REF, "origin", [ "lushan", "lanhai" ])
+    this.assignDanhaiTerminalRole(passengerStations, assignRole, DANHAI_LUSHAN_DESTINATION_REF, "destination", [ "lushan" ])
+    this.assignDanhaiTerminalRole(passengerStations, assignRole, DANHAI_LANHAI_DESTINATION_REF, "destination", [ "lanhai" ])
+  }
+
+  assignDanhaiTerminalRole(passengerStations, assignRole, ref, role, segments) {
+    passengerStations.forEach((feature) => {
+      if (feature.properties?.ref !== ref) return
+      if (!segments.some((segment) => this.danhaiFeatureOnSegment(feature, segment))) return
+
+      assignRole(feature, role)
+    })
+  }
+
+  danhaiFeatureOnSegment(feature, segment) {
+    if (feature.properties?.segment === segment) return true
+
+    return feature.properties?.danhai_segments?.includes(segment) || false
+  }
+
+  sortDanhaiSegmentStations(stations, segment) {
+    const sortKey = (ref) => {
+      if (DANHAI_SHARED_STATION_REFS.has(ref)) return parseInt(ref.slice(1), 10)
+
+      if (segment === "lanhai") {
+        const lanhaiIndex = DANHAI_LANHAI_STATION_ORDER.indexOf(ref)
+        if (lanhaiIndex >= 0) return 10 + lanhaiIndex
+      }
+
+      const match = ref.match(/V(\d+)/i)
+      return match ? parseInt(match[1], 10) : 99
+    }
+
+    return stations.slice().sort((left, right) => {
+      return sortKey(left.properties?.ref) - sortKey(right.properties?.ref)
+    })
   }
 
   isTerminalStation(feature) {
@@ -1906,7 +2020,7 @@ export default class extends Controller {
     const linePrefix = this.linePrefixForStationRef(primaryStationRef) || routeRef
     const lineColor = this.stationColorForRoute(routeId, feature, primaryStationRef, color)
     const outOfStation = this.isOutOfStationEndpoint(routeId, stationRef)
-    const usesRouteTrackSnap = routeId === "airport_mrt" || routeId === "airport_mrt_express"
+    const usesRouteTrackSnap = routeId === "airport_mrt" || routeId === "airport_mrt_express" || routeId === "circular_lrt"
     const position = outOfStation
       ? latlng
       : usesRouteTrackSnap

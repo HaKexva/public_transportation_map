@@ -42,6 +42,22 @@ namespace :geojson do
     Geojson::MetroLineBuilder.build!(line)
   end
 
+  desc "Rebuild Taichung Metro line GeoJSON files from OpenStreetMap"
+  task taichung_metro: :environment do
+    Geojson::MetroSystemImporter.import!(
+      system_id: "taichung_metro",
+      lines: Geojson::TaichungMetroCatalog::LINES
+    )
+  end
+
+  desc "Rebuild Kaohsiung Metro line GeoJSON files from OpenStreetMap"
+  task kaohsiung_metro: :environment do
+    Geojson::MetroSystemImporter.import!(
+      system_id: "kaohsiung_metro",
+      lines: Geojson::KaohsiungMetroCatalog::LINES
+    )
+  end
+
   desc "Write metro depot markers JSON from catalog"
   task depots: :environment do
     Geojson::MetroDepotCatalog.write_json!

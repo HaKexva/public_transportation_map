@@ -19,7 +19,12 @@ module Geojson
       { id: "qingpu_depot", name: "青埔機廠", routes: %w[airport_mrt], lon: 121.208, lat: 25.0086, grade: "主機廠" },
       { id: "shisizhang_depot", name: "十四張機廠", routes: %w[circular ankeng_lrt], lon: 121.5276, lat: 24.9845, grade: "輕軌" },
       { id: "ankeng_depot", name: "安坑機廠", routes: %w[ankeng_lrt], lon: 121.4860, lat: 24.9450, grade: "輕軌" },
-      { id: "danhai_depot", name: "淡海車廠", routes: %w[danhai_lrt], lon: 121.434621, lat: 25.2009501, grade: "輕軌" }
+      { id: "danhai_depot", name: "淡海車廠", routes: %w[danhai_lrt], lon: 121.434621, lat: 25.2009501, grade: "輕軌" },
+      { id: "kaohsiung_north_depot", name: "北機廠", routes: %w[red_line], lon: 120.2985, lat: 22.7885, grade: "三級" },
+      { id: "kaohsiung_south_depot", name: "南機廠", routes: %w[red_line], lon: 120.3288, lat: 22.5785, grade: "三級" },
+      { id: "kaohsiung_daliao_depot", name: "大寮機廠", routes: %w[orange_line], lon: 120.392, lat: 22.624, grade: "主機廠" },
+      { id: "kaohsiung_circular_depot", name: "前鎮機廠", routes: %w[circular_lrt], lon: 120.326042, lat: 22.608478, grade: "輕軌" },
+      { id: "kaohsiung_gushan_stabling", name: "鼓山駐車場", routes: %w[circular_lrt], lon: 120.281088, lat: 22.642035, grade: "輕軌" }
     ].freeze
 
     def self.to_json

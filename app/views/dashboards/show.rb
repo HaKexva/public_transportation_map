@@ -28,7 +28,7 @@ module Views
         { id: "new_taipei_metro", label: "新北捷運", color: "#E95A0C", badge: :orange, description: "環狀線、淡海與安坑輕軌" },
         { id: "taoyuan_metro", label: "桃園捷運", color: "#0073B7", badge: :blue, description: "機場捷運（藍／紫雙線）" },
         { id: "taichung_metro", label: "台中捷運", color: "#8FC31F", badge: :lime, description: "綠線" },
-        { id: "kaohsiung_metro", label: "高雄捷運", color: "#F5C200", badge: :yellow, description: "紅線、橘線" }
+        { id: "kaohsiung_metro", label: "高雄捷運", color: "#F5C200", badge: :yellow, description: "紅線、橘線、環狀輕軌" }
       ].freeze
 
       LEGEND_LINES = [
@@ -279,12 +279,12 @@ module Views
         render RubyUI::CardContent.new(class: "flex-1 overflow-y-auto py-3") do
           div(data: { map_target: "layerSearchMuted" }) do
             render RubyUI::Text.new(as: "p", size: "1", weight: "muted", class: "mb-3 rounded-md bg-muted/60 px-2.5 py-2 leading-relaxed") do
-              "勾選路線即可顯示（捷運、其他）。點擊車站可查看站名與轉乘資訊。"
+              "勾選路線即可顯示（捷運與輕軌、其他）。點擊車站可查看站名與轉乘資訊。"
             end
           end
           render_layer_search
           render RubyUI::Text.new(as: "p", size: "1", weight: "muted", class: "mb-2 px-2 uppercase tracking-wide", data: { map_target: "layerSearchMuted" }) do
-            "捷運路線"
+            "捷運與輕軌圖層"
           end
           div(class: "flex flex-col gap-1 px-1") do
             render_metro_all_toggle
@@ -348,7 +348,7 @@ module Views
               size: :sm,
               class: "w-full",
               data: { action: "click->map#showAllMetro" }
-            ) { "顯示全部捷運" }
+            ) { "顯示全部捷運與輕軌" }
             render RubyUI::Button.new(
               variant: :outline,
               size: :sm,
@@ -366,7 +366,7 @@ module Views
         render_layer_toggle(
           {
             id: "all_metro",
-            label: "全部捷運",
+            label: "全部捷運與輕軌",
             color: "#A74C00",
             badge: :amber,
             badge_label: "全部",
