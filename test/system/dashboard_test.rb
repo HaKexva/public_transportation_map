@@ -51,11 +51,15 @@ class DashboardTest < ApplicationSystemTestCase
       })()
     JS
     assert chevron_toggle, "legend toggle should use a chevron, not an X icon"
-    assert_button "顯示全部捷運"
+    assert_button "顯示全部捷運與輕軌"
     assert_text "其他"
-    assert_selector "#layer-maokong_gondola"
-    assert_selector "#layer-taoyuan_airport_skytrain"
-    assert_selector "#layer-sun_moon_ropeway"
+    assert_selector "#layer-maokong_gondola", visible: :all
+    assert_selector "#layer-taoyuan_airport_skytrain", visible: :all
+    assert_selector "#layer-sun_moon_ropeway", visible: :all
+    assert_selector "#layer-green_line", visible: :all
+    assert_selector "#layer-red_line", visible: :all
+    assert_selector "#layer-orange_line", visible: :all
+    assert_selector "#layer-circular_lrt", visible: :all
     assert_button "重設視角"
   end
 

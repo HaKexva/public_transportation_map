@@ -84,6 +84,8 @@ module Geojson
       raise "No track geometry for #{@line.slug}" if route_features.empty?
 
       stations = fetch_stations_for_line
+      snap_stations_to_routes!(stations, route_features)
+
       collection = {
         type: "FeatureCollection",
         name: "#{@line.network_name}#{@line.name}",
@@ -112,16 +114,35 @@ module Geojson
 
     def build_route_features
       return build_skytrain_route_features if @line.slug == "taoyuan_airport_skytrain"
+      return build_danhai_route_features if @line.slug == "danhai_lrt"
 
+      build_single_track_route_features
+    end
+
+    # Danhai has two relations (綠山／藍海); each is a distinct physical route.
+    def build_danhai_route_features
       route_features = []
 
       @line.relation_ids.each_with_index do |relation_id, relation_index|
         ways = OsmRouteExtractor.new(relation_id: relation_id).fetch_way_elements
         next if ways.empty?
 
-        OsmRouteExtractor.new(relation_id: relation_id).stitch_line_strings(ways).each_with_index do |coordinates, index|
+        stitcher = OsmRouteExtractor.new(relation_id: relation_id)
+        stitcher.stitch_line_strings(ways).each_with_index do |coordinates, index|
           route_features << route_feature(coordinates, branch_index: index, relation_index: relation_index)
         end
+      end
+
+      route_features
+    end
+
+    # Forward/back OSM relations describe the same track; keep one LineString per line.
+    def build_single_track_route_features
+      route_features = []
+      coordinates = longest_route_coordinates
+
+      if coordinates
+        route_features << route_feature(coordinates, branch_index: 0, relation_index: 0)
       end
 
       @line.way_ids.each_with_index do |way_id, way_index|
@@ -129,12 +150,28 @@ module Geojson
         next if ways.empty?
 
         stitcher = OsmRouteExtractor.new(relation_id: @line.relation_ids.first || 0)
-        stitcher.stitch_line_strings(ways).each_with_index do |coordinates, index|
-          route_features << route_feature(coordinates, branch_index: index, relation_index: way_index)
+        stitcher.stitch_line_strings(ways).each_with_index do |coords, index|
+          route_features << route_feature(coords, branch_index: index, relation_index: way_index)
         end
       end
 
       route_features
+    end
+
+    def longest_route_coordinates
+      best = nil
+
+      @line.relation_ids.each do |relation_id|
+        ways = OsmRouteExtractor.new(relation_id: relation_id).fetch_way_elements
+        next if ways.empty?
+
+        stitcher = OsmRouteExtractor.new(relation_id: relation_id)
+        stitcher.stitch_line_strings(ways).each do |chain|
+          best = chain if best.nil? || chain.length > best.length
+        end
+      end
+
+      best
     end
 
     def build_skytrain_route_features
@@ -187,6 +224,14 @@ module Geojson
 
       if @line.slug == "danhai_lrt"
         return fetch_danhai_stations
+      end
+
+      if @line.system_id == "taichung_metro"
+        return fetch_taichung_stations
+      end
+
+      if @line.system_id == "kaohsiung_metro"
+        return fetch_kaohsiung_stations
       end
 
       unless @line.system_id == "taipei_metro"
@@ -248,6 +293,63 @@ module Geojson
 
         stop.merge(ref: ref)
       end.sort_by { |station| station_sort_key(station[:ref]) }
+    end
+
+    def fetch_taichung_stations
+      stations = OsmRouteExtractor.new(relation_id: @line.relation_ids.first)
+        .fetch_stations_by_network(@line.osm_networks)
+
+      merge_stations(stations, TaichungMetroCatalog::FALLBACK_STATIONS)
+    end
+
+    def fetch_kaohsiung_stations
+      stations = merge_stations(stations_from_relations, default_stations)
+      if @line.slug == "red_line"
+        stations = merge_stations(stations, KaohsiungMetroCatalog::RED_LINE_FALLBACK_STATIONS)
+      end
+      transfers = kaohsiung_in_station_transfers_for_line
+      inject_missing_in_station_transfers!(stations, transfers)
+      apply_in_station_transfers(stations, transfers)
+    end
+
+    def kaohsiung_in_station_transfers_for_line
+      case @line.slug
+      when "circular_lrt"
+        KaohsiungMetroCatalog::CIRCULAR_LRT_IN_STATION_TRANSFERS_BY_NAME
+      when "red_line", "orange_line"
+        KaohsiungMetroCatalog::IN_STATION_TRANSFERS_BY_NAME
+      else
+        {}
+      end
+    end
+
+    def inject_missing_in_station_transfers!(stations, transfers_by_name)
+      transfers_by_name.each do |name, transfer|
+        next if stations.any? { |station| station[:name] == name }
+
+        primary_ref = transfer[:combined_ref].split(";").first
+        stations << {
+          ref: primary_ref,
+          name: name,
+          lon: transfer[:lon],
+          lat: transfer[:lat]
+        }
+      end
+
+      stations.sort_by! { |station| station_sort_key(station[:ref]) }
+    end
+
+    def apply_in_station_transfers(stations, transfers_by_name)
+      stations.map do |station|
+        transfer = transfers_by_name[station[:name]]
+        next station unless transfer
+
+        station.merge(
+          ref: transfer[:combined_ref],
+          lon: transfer[:lon],
+          lat: transfer[:lat]
+        )
+      end
     end
 
     def fetch_maokong_gondola_stations
@@ -325,11 +427,20 @@ module Geojson
     end
 
     def station_sort_key(ref)
-      prefix = ref[/\A[A-Z]+/] || ref
+      ref = ref.to_s.split(";").first
+      prefix = ref[/\A[A-Z]+/] || ""
       numeric = ref[/\d+/]
       suffix = ref.sub(/\A#{Regexp.escape(prefix)}#{numeric}/, "")
+      # Taichung 103a (北屯總站) is north of 103 (舊社) on the same number block.
+      suffix_rank = if ref.match?(/\A\d+[a-z]\z/i)
+        0
+      elsif suffix.empty?
+        1
+      else
+        2
+      end
 
-      [ prefix, numeric.to_i, suffix ]
+      [ prefix, numeric.to_i, suffix_rank, suffix ]
     end
 
     def route_feature(coordinates, branch_index: 0, relation_index: 0)
@@ -370,7 +481,7 @@ module Geojson
       end
 
       name = @line.name
-      name = "#{name} (#{branch_index + 1})" if @line.relation_ids.length > 1
+      name = "#{name} (#{branch_index + 1})" if branch_index.positive?
 
       name
     end
@@ -438,17 +549,33 @@ module Geojson
 
     def danhai_station_for_segment(station, segment)
       line_label = segment == "lushan" ? "綠山線" : "藍海線"
+      role = danhai_terminal_role(station[:ref], segment)
 
       station.merge(
         segment: segment,
         color: danhai_segment_color(segment),
-        line: "淡海輕軌（#{line_label}）"
-      )
+        line: "淡海輕軌（#{line_label}）",
+        station_role: role
+      ).compact
+    end
+
+    def danhai_terminal_role(ref, segment)
+      return "origin" if ref == NewTaipeiMetroCatalog::DANHAI_SHARED_ORIGIN_REF
+
+      case segment
+      when "lushan"
+        "destination" if ref == NewTaipeiMetroCatalog::DANHAI_LUSHAN_DESTINATION_REF
+      when "lanhai"
+        "destination" if ref == NewTaipeiMetroCatalog::DANHAI_LANHAI_DESTINATION_REF
+      end
     end
 
     def danhai_station_sort_key(ref)
+      lanhai_index = NewTaipeiMetroCatalog::DANHAI_LANHAI_STATION_ORDER.index(ref)
+      return [ 1, lanhai_index ] unless lanhai_index.nil?
+
       match = ref.to_s.match(/V(\d+)/i)
-      match ? match[1].to_i : 99
+      [ 0, match ? match[1].to_i : 99 ]
     end
 
     def danhai_segment_key(relation_index)
@@ -461,11 +588,82 @@ module Geojson
       @line.color if @line.slug == "danhai_lrt"
     end
 
+    def in_station_transfer_for(name)
+      TaipeiMetroCatalog::IN_STATION_TRANSFERS_BY_NAME[name] ||
+        KaohsiungMetroCatalog::IN_STATION_TRANSFERS_BY_NAME[name] ||
+        KaohsiungMetroCatalog::CIRCULAR_LRT_IN_STATION_TRANSFERS_BY_NAME[name]
+    end
+
+    def snap_stations_to_routes!(stations, route_features)
+      line_strings = route_features.filter_map do |feature|
+        next unless feature.dig(:properties, :feature_type) == "route"
+
+        coordinates = feature.dig(:geometry, :coordinates)
+        coordinates if coordinates.is_a?(Array) && coordinates.length >= 2
+      end
+      return if line_strings.empty?
+
+      stations.each do |station|
+        lon, lat = nearest_point_on_line_strings(station[:lon], station[:lat], line_strings)
+        station[:lon] = lon
+        station[:lat] = lat
+      end
+    end
+
+    def nearest_point_on_line_strings(lon, lat, line_strings)
+      best_lon = lon
+      best_lat = lat
+      best_distance = Float::INFINITY
+
+      line_strings.each do |coordinates|
+        coordinates.each_cons(2) do |start, finish|
+          projected_lon, projected_lat, distance = project_point_on_segment(lon, lat, start, finish)
+          next unless distance < best_distance
+
+          best_distance = distance
+          best_lon = projected_lon
+          best_lat = projected_lat
+        end
+      end
+
+      [ best_lon, best_lat ]
+    end
+
+    def project_point_on_segment(px, py, start, finish)
+      x1, y1 = start
+      x2, y2 = finish
+      dx = x2 - x1
+      dy = y2 - y1
+
+      if dx.zero? && dy.zero?
+        return [ x1, y1, haversine_meters(px, py, x1, y1) ]
+      end
+
+      t = [ [ ((px - x1) * dx + (py - y1) * dy) / ((dx * dx) + (dy * dy)), 0 ].max, 1 ].min
+      proj_x = x1 + (t * dx)
+      proj_y = y1 + (t * dy)
+
+      [ proj_x, proj_y, haversine_meters(px, py, proj_x, proj_y) ]
+    end
+
+    def haversine_meters(lon1, lat1, lon2, lat2)
+      earth_radius = 6_378_137.0
+      lat1_rad = lat1 * Math::PI / 180
+      lat2_rad = lat2 * Math::PI / 180
+      delta_lat = (lat2 - lat1) * Math::PI / 180
+      delta_lon = (lon2 - lon1) * Math::PI / 180
+
+      a = Math.sin(delta_lat / 2)**2 +
+          Math.cos(lat1_rad) * Math.cos(lat2_rad) * Math.sin(delta_lon / 2)**2
+
+      2 * earth_radius * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
+    end
+
     def station_features(stations)
       stations.filter_map do |station|
         next if station[:name].blank?
 
-        transfer = TaipeiMetroCatalog::IN_STATION_TRANSFERS_BY_NAME[station[:name]]
+        transfer = in_station_transfer_for(station[:name])
         ref = transfer&.fetch(:combined_ref) || station[:ref]
         if transfer
           station = station.merge(lon: transfer[:lon], lat: transfer[:lat])
@@ -481,6 +679,7 @@ module Geojson
             line: station[:line] || @line.name,
             color: station[:color] || @line.color,
             segment: station[:segment],
+            station_role: station[:station_role],
             note: station[:note],
             boarding_area: station[:boarding_area],
             passenger_service: station[:passenger_service]

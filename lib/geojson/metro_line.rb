@@ -70,6 +70,42 @@ module Geojson
       )
     end
 
+    def self.taichung(slug:, name:, name_en:, ref:, color:, relation_ids:, station_ref_prefix:, branch_of: nil, osm_networks: nil, way_ids: nil)
+      new(
+        slug: slug,
+        name: name,
+        name_en: name_en,
+        ref: ref,
+        color: color,
+        relation_ids: relation_ids,
+        way_ids: way_ids || [],
+        station_ref_prefix: station_ref_prefix,
+        branch_of: branch_of,
+        system_id: "taichung_metro",
+        output_subdir: "taichung_metro",
+        network_name: "臺中捷運",
+        osm_networks: osm_networks || [ "臺中捷運", "台中捷運" ]
+      )
+    end
+
+    def self.kaohsiung(slug:, name:, name_en:, ref:, color:, relation_ids:, station_ref_prefix:, branch_of: nil, osm_networks: nil, way_ids: nil)
+      new(
+        slug: slug,
+        name: name,
+        name_en: name_en,
+        ref: ref,
+        color: color,
+        relation_ids: relation_ids,
+        way_ids: way_ids || [],
+        station_ref_prefix: station_ref_prefix,
+        branch_of: branch_of,
+        system_id: "kaohsiung_metro",
+        output_subdir: "kaohsiung_metro",
+        network_name: "高雄捷運",
+        osm_networks: osm_networks || [ "高雄捷運", "高雄大眾捷運系統" ]
+      )
+    end
+
     def self.other(slug:, name:, name_en:, ref:, color:, station_ref_prefix:, relation_ids: nil, way_ids: nil, branch_of: nil)
       new(
         slug: slug,
