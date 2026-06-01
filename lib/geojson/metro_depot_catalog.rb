@@ -3,15 +3,15 @@
 require "json"
 
 module Geojson
-  # Metro maintenance depots (機廠). Catalog lon/lat are approximate hints;
-  # write_json! projects each depot onto the nearest linked route track.
+  # Metro maintenance depots (機廠). Catalog lon/lat are the facility locations.
+  # Linked routes gain depot_spur geometry when rebuilt (see MetroLineBuilder).
   module MetroDepotCatalog
     DEPOTS = [
       { id: "beitou_depot", name: "北投機廠", routes: %w[tamsui_xinyi], lon: 121.483955, lat: 25.1357899, grade: "五級" },
       { id: "xindian_depot", name: "新店機廠", routes: %w[songshan_xindian xiaobitan_branch], lon: 121.5308, lat: 24.9715, grade: "三級" },
       { id: "nangang_depot", name: "南港機廠", routes: %w[bannan], lon: 121.6075, lat: 25.0512, grade: "三級" },
       { id: "tucheng_depot", name: "土城機廠", routes: %w[bannan], lon: 121.4483, lat: 24.9910, grade: "四級" },
-      { id: "zhonghe_depot", name: "中和機廠", routes: %w[zhonghe_xinlu], lon: 121.5056, lat: 24.9958, grade: "一級" },
+      { id: "zhonghe_depot", name: "中和機廠", routes: %w[zhonghe_xinlu], lon: 121.508814, lat: 24.990250, grade: "一級" },
       { id: "xinzhuang_depot", name: "新莊機廠", routes: %w[zhonghe_xinlu], lon: 121.410, lat: 25.0215, grade: "三級" },
       { id: "luzhou_depot", name: "蘆洲機廠", routes: %w[zhonghe_xinlu], lon: 121.4670, lat: 25.0900, grade: "四級" },
       { id: "muzha_depot", name: "木柵機廠", routes: %w[wenhu_line], lon: 121.5844, lat: 25.0015, grade: "中運量" },
@@ -27,8 +27,12 @@ module Geojson
       { id: "kaohsiung_gushan_stabling", name: "鼓山駐車場", routes: %w[circular_lrt], lon: 120.281088, lat: 22.642035, grade: "輕軌" }
     ].freeze
 
+    def self.depots_for_route(route_id)
+      DEPOTS.select { |depot| depot[:routes].include?(route_id) }
+    end
+
     def self.to_json
-      DEPOTS.map { |depot| serialize_depot(snap_depot_to_routes!(depot)) }
+      DEPOTS.map { |depot| serialize_depot(depot) }
     end
 
     def self.write_json!(path: Rails.root.join("public/geojson/metro_depots.json"))
@@ -43,30 +47,27 @@ module Geojson
         routes: depot[:routes],
         lon: depot[:lon].round(6),
         lat: depot[:lat].round(6),
-        grade: depot[:grade]
-      }
+        grade: depot[:grade],
+        track_links: track_links_for_depot(depot)
+      }.compact
     end
 
-    def self.snap_depot_to_routes!(depot)
-      hint_lon = depot[:lon]
-      hint_lat = depot[:lat]
-      best_lon = hint_lon
-      best_lat = hint_lat
-      best_distance = Float::INFINITY
-
-      depot[:routes].each do |route_id|
+    def self.track_links_for_depot(depot)
+      depot[:routes].filter_map do |route_id|
         path = route_geojson_path(route_id)
         next unless path
 
-        snapped_lon, snapped_lat, distance = nearest_on_route_tracks(hint_lon, hint_lat, path)
-        next if distance >= best_distance
+        line_strings = TrackGeometry.route_line_strings_from_geojson(path)
+        next if line_strings.empty?
 
-        best_distance = distance
-        best_lon = snapped_lon
-        best_lat = snapped_lat
+        lon = depot[:lon].round(6)
+        lat = depot[:lat].round(6)
+        coordinates = TrackGeometry.spur_coordinates_for_point(lon, lat, line_strings)
+        next unless coordinates
+
+        coordinates[-1] = [ lon, lat ]
+        { route_id: route_id, coordinates: coordinates }
       end
-
-      depot.merge(lon: best_lon, lat: best_lat)
     end
 
     def self.route_geojson_path(route_id)
@@ -77,70 +78,6 @@ module Geojson
       Rails.root.join("public#{entry["file"]}")
     end
 
-    def self.nearest_on_route_tracks(lon, lat, path)
-      data = JSON.parse(path.read)
-      lines = []
-
-      data.fetch("features", []).each do |feature|
-        feature_type = feature.dig("properties", "feature_type")
-        next unless %w[route express_route].include?(feature_type)
-
-        geometry = feature["geometry"]
-        case geometry["type"]
-        when "LineString"
-          lines << geometry["coordinates"]
-        when "MultiLineString"
-          lines.concat(geometry["coordinates"])
-        end
-      end
-
-      best_distance = Float::INFINITY
-      best_lon = lon
-      best_lat = lat
-
-      lines.each do |coordinates|
-        coordinates.each_cons(2) do |start_coord, end_coord|
-          snapped_lon, snapped_lat, distance = project_on_segment(lon, lat, start_coord, end_coord)
-          next if distance >= best_distance
-
-          best_distance = distance
-          best_lon = snapped_lon
-          best_lat = snapped_lat
-        end
-      end
-
-      [ best_lon, best_lat, best_distance ]
-    end
-
-    def self.project_on_segment(lon, lat, start_coord, end_coord)
-      start_lon, start_lat = start_coord
-      end_lon, end_lat = end_coord
-      delta_lon = end_lon - start_lon
-      delta_lat = end_lat - start_lat
-
-      t = if delta_lon.zero? && delta_lat.zero?
-        0.0
-      else
-        raw = ((lon - start_lon) * delta_lon + (lat - start_lat) * delta_lat) / (delta_lon * delta_lon + delta_lat * delta_lat)
-        [ [ raw, 0.0 ].max, 1.0 ].min
-      end
-
-      snapped_lon = start_lon + (t * delta_lon)
-      snapped_lat = start_lat + (t * delta_lat)
-      distance = planar_distance_meters(lon, lat, snapped_lon, snapped_lat)
-
-      [ snapped_lon, snapped_lat, distance ]
-    end
-
-    def self.planar_distance_meters(lon_a, lat_a, lon_b, lat_b)
-      lat_mid_rad = ((lat_a + lat_b) / 2.0) * Math::PI / 180.0
-      delta_lat = (lat_b - lat_a) * 111_320.0
-      delta_lon = (lon_b - lon_a) * 111_320.0 * Math.cos(lat_mid_rad)
-
-      Math.sqrt((delta_lat * delta_lat) + (delta_lon * delta_lon))
-    end
-
-    private_class_method :serialize_depot, :snap_depot_to_routes!, :route_geojson_path,
-                         :nearest_on_route_tracks, :project_on_segment, :planar_distance_meters
+    private_class_method :serialize_depot, :track_links_for_depot, :route_geojson_path
   end
 end

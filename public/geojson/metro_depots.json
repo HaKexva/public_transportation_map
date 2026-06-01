@@ -5,9 +5,24 @@
     "routes": [
       "tamsui_xinyi"
     ],
-    "lon": 121.48363,
-    "lat": 25.13718,
-    "grade": "五級"
+    "lon": 121.483955,
+    "lat": 25.13579,
+    "grade": "五級",
+    "track_links": [
+      {
+        "route_id": "tamsui_xinyi",
+        "coordinates": [
+          [
+            121.48363016577642,
+            25.137179568623058
+          ],
+          [
+            121.483955,
+            25.13579
+          ]
+        ]
+      }
+    ]
   },
   {
     "id": "xindian_depot",
@@ -16,9 +31,24 @@
       "songshan_xindian",
       "xiaobitan_branch"
     ],
-    "lon": 121.530863,
-    "lat": 24.971616,
-    "grade": "三級"
+    "lon": 121.5308,
+    "lat": 24.9715,
+    "grade": "三級",
+    "track_links": [
+      {
+        "route_id": "songshan_xindian",
+        "coordinates": [
+          [
+            121.54140044361517,
+            24.967696992233577
+          ],
+          [
+            121.5308,
+            24.9715
+          ]
+        ]
+      }
+    ]
   },
   {
     "id": "nangang_depot",
@@ -26,9 +56,24 @@
     "routes": [
       "bannan"
     ],
-    "lon": 121.607366,
-    "lat": 25.052232,
-    "grade": "三級"
+    "lon": 121.6075,
+    "lat": 25.0512,
+    "grade": "三級",
+    "track_links": [
+      {
+        "route_id": "bannan",
+        "coordinates": [
+          [
+            121.6073663,
+            25.0522316
+          ],
+          [
+            121.6075,
+            25.0512
+          ]
+        ]
+      }
+    ]
   },
   {
     "id": "tucheng_depot",
@@ -36,9 +81,10 @@
     "routes": [
       "bannan"
     ],
-    "lon": 121.448345,
-    "lat": 24.991003,
-    "grade": "四級"
+    "lon": 121.4483,
+    "lat": 24.991,
+    "grade": "四級",
+    "track_links": []
   },
   {
     "id": "zhonghe_depot",
@@ -46,9 +92,10 @@
     "routes": [
       "zhonghe_xinlu"
     ],
-    "lon": 121.505614,
-    "lat": 24.995796,
-    "grade": "一級"
+    "lon": 121.508814,
+    "lat": 24.99025,
+    "grade": "一級",
+    "track_links": []
   },
   {
     "id": "xinzhuang_depot",
@@ -56,9 +103,10 @@
     "routes": [
       "zhonghe_xinlu"
     ],
-    "lon": 121.410012,
-    "lat": 25.021396,
-    "grade": "三級"
+    "lon": 121.41,
+    "lat": 25.0215,
+    "grade": "三級",
+    "track_links": []
   },
   {
     "id": "luzhou_depot",
@@ -66,9 +114,10 @@
     "routes": [
       "zhonghe_xinlu"
     ],
-    "lon": 121.467126,
-    "lat": 25.090268,
-    "grade": "四級"
+    "lon": 121.467,
+    "lat": 25.09,
+    "grade": "四級",
+    "track_links": []
   },
   {
     "id": "muzha_depot",
@@ -76,9 +125,24 @@
     "routes": [
       "wenhu_line"
     ],
-    "lon": 121.579853,
-    "lat": 24.998523,
-    "grade": "中運量"
+    "lon": 121.5844,
+    "lat": 25.0015,
+    "grade": "中運量",
+    "track_links": [
+      {
+        "route_id": "wenhu_line",
+        "coordinates": [
+          [
+            121.5798526,
+            24.9985232
+          ],
+          [
+            121.5844,
+            25.0015
+          ]
+        ]
+      }
+    ]
   },
   {
     "id": "neihu_depot",
@@ -86,9 +150,10 @@
     "routes": [
       "wenhu_line"
     ],
-    "lon": 121.617996,
-    "lat": 25.055366,
-    "grade": "中運量"
+    "lon": 121.618,
+    "lat": 25.0554,
+    "grade": "中運量",
+    "track_links": []
   },
   {
     "id": "qingpu_depot",
@@ -96,9 +161,24 @@
     "routes": [
       "airport_mrt"
     ],
-    "lon": 121.209143,
-    "lat": 25.007464,
-    "grade": "主機廠"
+    "lon": 121.208,
+    "lat": 25.0086,
+    "grade": "主機廠",
+    "track_links": [
+      {
+        "route_id": "airport_mrt",
+        "coordinates": [
+          [
+            121.20914344696071,
+            25.007463835553796
+          ],
+          [
+            121.208,
+            25.0086
+          ]
+        ]
+      }
+    ]
   },
   {
     "id": "shisizhang_depot",
@@ -107,9 +187,10 @@
       "circular",
       "ankeng_lrt"
     ],
-    "lon": 121.527592,
-    "lat": 24.98449,
-    "grade": "輕軌"
+    "lon": 121.5276,
+    "lat": 24.9845,
+    "grade": "輕軌",
+    "track_links": []
   },
   {
     "id": "ankeng_depot",
@@ -117,9 +198,10 @@
     "routes": [
       "ankeng_lrt"
     ],
-    "lon": 121.485986,
-    "lat": 24.945003,
-    "grade": "輕軌"
+    "lon": 121.486,
+    "lat": 24.945,
+    "grade": "輕軌",
+    "track_links": []
   },
   {
     "id": "danhai_depot",
@@ -127,9 +209,10 @@
     "routes": [
       "danhai_lrt"
     ],
-    "lon": 121.43466,
-    "lat": 25.200935,
-    "grade": "輕軌"
+    "lon": 121.434621,
+    "lat": 25.20095,
+    "grade": "輕軌",
+    "track_links": []
   },
   {
     "id": "kaohsiung_north_depot",
@@ -137,9 +220,24 @@
     "routes": [
       "red_line"
     ],
-    "lon": 120.299471,
-    "lat": 22.78861,
-    "grade": "三級"
+    "lon": 120.2985,
+    "lat": 22.7885,
+    "grade": "三級",
+    "track_links": [
+      {
+        "route_id": "red_line",
+        "coordinates": [
+          [
+            120.29947127582507,
+            22.788610427269067
+          ],
+          [
+            120.2985,
+            22.7885
+          ]
+        ]
+      }
+    ]
   },
   {
     "id": "kaohsiung_south_depot",
@@ -147,9 +245,24 @@
     "routes": [
       "red_line"
     ],
-    "lon": 120.329462,
-    "lat": 22.579063,
-    "grade": "三級"
+    "lon": 120.3288,
+    "lat": 22.5785,
+    "grade": "三級",
+    "track_links": [
+      {
+        "route_id": "red_line",
+        "coordinates": [
+          [
+            120.32946217102204,
+            22.579062610518882
+          ],
+          [
+            120.3288,
+            22.5785
+          ]
+        ]
+      }
+    ]
   },
   {
     "id": "kaohsiung_daliao_depot",
@@ -157,9 +270,24 @@
     "routes": [
       "orange_line"
     ],
-    "lon": 120.390068,
-    "lat": 22.622998,
-    "grade": "主機廠"
+    "lon": 120.392,
+    "lat": 22.624,
+    "grade": "主機廠",
+    "track_links": [
+      {
+        "route_id": "orange_line",
+        "coordinates": [
+          [
+            120.3899967,
+            22.6228029
+          ],
+          [
+            120.392,
+            22.624
+          ]
+        ]
+      }
+    ]
   },
   {
     "id": "kaohsiung_circular_depot",
@@ -169,7 +297,8 @@
     ],
     "lon": 120.326042,
     "lat": 22.608478,
-    "grade": "輕軌"
+    "grade": "輕軌",
+    "track_links": []
   },
   {
     "id": "kaohsiung_gushan_stabling",
@@ -179,6 +308,7 @@
     ],
     "lon": 120.281088,
     "lat": 22.642035,
-    "grade": "輕軌"
+    "grade": "輕軌",
+    "track_links": []
   }
 ]

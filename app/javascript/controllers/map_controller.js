@@ -3,12 +3,12 @@ import { Controller } from "@hotwired/stimulus"
 
 const LEAFLET_BOUNDS = [ [ 21.85, 118.15 ], [ 26.45, 122.25 ] ]
 
-const BASE_LAYERS = [ "bus", "train", "hsr", "ferry" ]
+const BASE_LAYERS = [ "bus", "train", "ferry" ]
 
 const LAYER_COLORS = {
   bus: "#2563eb",
   train: "#dc2626",
-  hsr: "#9333ea",
+  hsr: "#F4811A",
   ferry: "#0891b2",
 }
 
@@ -803,9 +803,9 @@ export default class extends Controller {
       if (!depot.routes?.some((routeId) => this.layerVisible[routeId])) return
 
       const color = this.depotDisplayColor(depot) || "#64748B"
-      const raw = L.latLng(depot.lat, depot.lon)
-      const snapped = this.snapDepotToVisibleTracks(raw, depot)
-      const marker = this.metroDepotMarkerAt(snapped, color)
+      const marker = this.metroDepotMarkerAt(L.latLng(depot.lat, depot.lon), color)
+
+      this.renderDepotTrackLinks(depot, color)
 
       const gradeNote = depot.grade ? `<br><span style="opacity:0.8">${depot.grade}機廠</span>` : ""
       const routeNames = this.depotRouteNames(depot)
@@ -826,36 +826,29 @@ export default class extends Controller {
     }
   }
 
-  snapDepotToVisibleTracks(latlng, depot) {
-    if (!latlng) return latlng
+  renderDepotTrackLinks(depot, color) {
+    const L = window.L
+    const group = this.metroDepotGroup
+    if (!group || !this.map) return
 
-    const candidates = (depot?.routes || []).filter(Boolean)
-    if (candidates.length === 0) return latlng
+    const links = depot.track_links || []
 
-    const visible = candidates.filter((routeId) => this.layerVisible[routeId])
-    const ordered = [ ...visible, ...candidates.filter((routeId) => !visible.includes(routeId)) ]
+    links.forEach((link) => {
+      if (!link?.route_id || !this.layerVisible[link.route_id]) return
+      if (!Array.isArray(link.coordinates) || link.coordinates.length < 2) return
 
-    let best = latlng
-    let bestDistance = Infinity
+      const latlngs = link.coordinates.map(([ lon, lat ]) => L.latLng(lat, lon))
+      const line = L.polyline(latlngs, {
+        color: color || "#64748B",
+        weight: 3,
+        opacity: 0.75,
+        dashArray: "6 6",
+        lineCap: "round",
+        lineJoin: "round"
+      })
 
-    ordered.forEach((routeId) => {
-      const snapped = this.snapToRouteTracksForDepot(latlng, routeId)
-      const distance = latlng.distanceTo(snapped)
-
-      if (distance < bestDistance) {
-        bestDistance = distance
-        best = snapped
-      }
+      group.addLayer(line)
     })
-
-    return best
-  }
-
-  snapToRouteTracksForDepot(latlng, routeId) {
-    const lines = this.routeTracksByRouteId[routeId] || []
-    if (lines.length === 0) return latlng
-
-    return this.nearestPointOnLines(latlng, lines)
   }
 
   depotDisplayColor(depot) {
@@ -1486,6 +1479,17 @@ export default class extends Controller {
       }
     }
 
+    if (feature.properties?.feature_type === "depot_spur") {
+      return {
+        color: feature.properties?.color || this.routeDisplayColor(route) || color,
+        weight: 3,
+        opacity: 0.75,
+        dashArray: "6 6",
+        lineCap: "round",
+        lineJoin: "round"
+      }
+    }
+
     return {
       color: feature.properties?.color || this.routeDisplayColor(route) || color,
       weight: 5,
@@ -1524,7 +1528,7 @@ export default class extends Controller {
 
     ;(data.features || []).forEach((feature) => {
       const featureType = feature.properties?.feature_type
-      if (featureType !== "route" && featureType !== "express_route") return
+      if (featureType !== "route" && featureType !== "express_route" && featureType !== "depot_spur") return
 
       const geometry = feature.geometry
       if (geometry?.type === "LineString") {

@@ -106,6 +106,24 @@ module Geojson
       )
     end
 
+    def self.hsr(slug:, name:, name_en:, ref:, color:, relation_ids:, station_ref_prefix:, branch_of: nil, osm_networks: nil, way_ids: nil)
+      new(
+        slug: slug,
+        name: name,
+        name_en: name_en,
+        ref: ref,
+        color: color,
+        relation_ids: relation_ids,
+        way_ids: way_ids || [],
+        station_ref_prefix: station_ref_prefix,
+        branch_of: branch_of,
+        system_id: "hsr",
+        output_subdir: "hsr",
+        network_name: "台灣高鐵",
+        osm_networks: osm_networks || [ "台灣高鐵", "THSR", "Taiwan High Speed Rail" ]
+      )
+    end
+
     def self.other(slug:, name:, name_en:, ref:, color:, station_ref_prefix:, relation_ids: nil, way_ids: nil, branch_of: nil)
       new(
         slug: slug,

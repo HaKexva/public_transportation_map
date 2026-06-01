@@ -60,6 +60,7 @@ class DashboardTest < ApplicationSystemTestCase
     assert_selector "#layer-red_line", visible: :all
     assert_selector "#layer-orange_line", visible: :all
     assert_selector "#layer-circular_lrt", visible: :all
+    assert_selector "#layer-taiwan_hsr", visible: :all
     assert_button "重設視角"
   end
 
@@ -240,6 +241,28 @@ class DashboardTest < ApplicationSystemTestCase
     JS
 
     assert_selector ".leaflet-overlay-pane path.leaflet-interactive", wait: 10, minimum: 2
+  end
+
+  test "shows out-of-station transfer link between hsr and taichung green line at HSR Taichung" do
+    visit root_path
+
+    within "#taiwan-region-map" do
+      assert_selector ".leaflet-tile-pane", wait: 10
+    end
+
+    page.execute_script(<<~JS)
+      const show = (id) => {
+        const checkbox = document.getElementById(`layer-${id}`)
+        checkbox.checked = true
+        checkbox.dispatchEvent(new Event("change", { bubbles: true }))
+      }
+      show("taiwan_hsr")
+      show("green_line")
+    JS
+
+    assert_selector ".leaflet-overlay-pane path.leaflet-interactive", wait: 20, minimum: 2
+    assert_selector ".out-of-station-transfer-line", wait: 15, minimum: 1, visible: :all
+    assert_selector ".out-of-station-marker", wait: 10, minimum: 2, visible: :all
   end
 
   test "shows out-of-station transfer link between airport mrt and zhonghe xinlu at Sanchong" do
