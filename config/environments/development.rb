@@ -61,6 +61,10 @@ Rails.application.configure do
   # Suppress logger output for asset requests.
   config.assets.quiet = true
 
+  # Avoid Chrome "preloaded but not used" warnings for Tailwind CSS (Rails sends
+  # Link: rel=preload; as=style via HTTP header while the page also has <link rel="stylesheet">).
+  config.action_view.preload_links_header = false
+
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
 

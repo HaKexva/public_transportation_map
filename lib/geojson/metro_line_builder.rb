@@ -83,8 +83,11 @@ module Geojson
 
       raise "No track geometry for #{@line.slug}" if route_features.empty?
 
+      extend_routes_for_depots!(route_features)
+
       stations = fetch_stations_for_line
-      snap_stations_to_routes!(stations, route_features)
+      apply_taichung_station_coordinates!(stations) if @line.system_id == "taichung_metro"
+      align_stations_to_routes!(stations, route_features)
 
       collection = {
         type: "FeatureCollection",
@@ -114,27 +117,47 @@ module Geojson
 
     def build_route_features
       return build_skytrain_route_features if @line.slug == "taoyuan_airport_skytrain"
-      return build_danhai_route_features if @line.slug == "danhai_lrt"
+      return build_per_relation_route_features if multi_branch_line?
 
       build_single_track_route_features
     end
 
-    # Danhai has two relations (綠山／藍海); each is a distinct physical route.
-    def build_danhai_route_features
+    # Multiple OSM relations that are separate branches (not forward/back duplicates).
+    def multi_branch_line?
+      %w[danhai_lrt zhonghe_xinlu].include?(@line.slug)
+    end
+
+    # Danhai (綠山／藍海) and 中和新蘆線 (主線／蘆洲支線) each need their own track.
+    def build_per_relation_route_features
       route_features = []
 
       @line.relation_ids.each_with_index do |relation_id, relation_index|
         ways = OsmRouteExtractor.new(relation_id: relation_id).fetch_way_elements
-        next if ways.empty?
-
         stitcher = OsmRouteExtractor.new(relation_id: relation_id)
-        stitcher.stitch_line_strings(ways).each_with_index do |coordinates, index|
+        line_strings = ways.empty? ? [] : stitcher.stitch_line_strings(ways)
+
+        if line_strings.empty?
+          line_strings = branch_track_fallback(relation_id, relation_index) || []
+        end
+
+        line_strings.each_with_index do |coordinates, index|
           route_features << route_feature(coordinates, branch_index: index, relation_index: relation_index)
         end
       end
 
       route_features
     end
+
+    def branch_track_fallback(relation_id, relation_index)
+      return nil unless @line.slug == "zhonghe_xinlu"
+
+      path = Rails.root.join("lib/geojson/fallback_tracks/zhonghe_luzhou_branch.json")
+      return nil unless relation_id == @line.relation_ids.first && path.exist?
+
+      coordinates = JSON.parse(path.read)
+      coordinates.is_a?(Array) && coordinates.any? ? [ coordinates ] : nil
+    end
+    alias build_danhai_route_features build_per_relation_route_features
 
     # Forward/back OSM relations describe the same track; keep one LineString per line.
     def build_single_track_route_features
@@ -234,6 +257,10 @@ module Geojson
         return fetch_kaohsiung_stations
       end
 
+      if @line.system_id == "hsr"
+        return fetch_hsr_stations
+      end
+
       unless @line.system_id == "taipei_metro"
         return merge_stations(stations_from_relations, default_stations)
       end
@@ -299,7 +326,92 @@ module Geojson
       stations = OsmRouteExtractor.new(relation_id: @line.relation_ids.first)
         .fetch_stations_by_network(@line.osm_networks)
 
-      merge_stations(stations, TaichungMetroCatalog::FALLBACK_STATIONS)
+      stations = merge_stations(stations, TaichungMetroCatalog::FALLBACK_STATIONS)
+      apply_taichung_station_coordinates!(stations)
+      stations
+    end
+
+    def apply_taichung_station_coordinates!(stations)
+      TaichungMetroCatalog::FALLBACK_STATIONS.each do |fallback|
+        station = stations.find do |entry|
+          entry[:ref] == fallback[:ref] || entry[:name] == fallback[:name]
+        end
+        next unless station
+
+        station.merge!(
+          lon: fallback[:lon],
+          lat: fallback[:lat],
+          name: fallback[:name],
+          position_anchored: true
+        )
+      end
+    end
+
+    def extend_routes_for_depots!(route_features)
+      line_strings = route_line_strings(route_features)
+      return if line_strings.empty?
+
+      MetroDepotCatalog.depots_for_route(@line.slug).each do |depot|
+        spur = TrackGeometry.spur_coordinates_for_point(depot[:lon], depot[:lat], line_strings)
+        next unless spur
+
+        route_features << depot_spur_feature(spur, depot)
+      end
+    end
+
+    def depot_spur_feature(coordinates, depot)
+      {
+        type: "Feature",
+        properties: {
+          feature_type: "depot_spur",
+          ref: @line.ref,
+          name: "#{depot[:name]}支線",
+          color: @line.color,
+          depot_id: depot[:id]
+        },
+        geometry: {
+          type: "LineString",
+          coordinates: coordinates
+        }
+      }
+    end
+
+    def fetch_hsr_stations
+      stations = merge_stations(stations_from_relations, default_stations)
+      stations = merge_stations(stations, HsrCatalog::FALLBACK_STATIONS)
+      normalize_hsr_station_refs!(stations)
+      apply_hsr_station_coordinates!(stations)
+      stations.sort_by! { |station| station_sort_key(station[:ref]) }
+    end
+
+    def apply_hsr_station_coordinates!(stations)
+      HsrCatalog::FALLBACK_STATIONS.each do |fallback|
+        station = stations.find do |entry|
+          entry[:ref] == fallback[:ref] || entry[:name] == fallback[:name]
+        end
+        next unless station
+
+        station.merge!(lon: fallback[:lon], lat: fallback[:lat], name: fallback[:name])
+      end
+    end
+
+    def normalize_hsr_station_refs!(stations)
+      stations.each do |station|
+        ref = hsr_ref_for_station_name(station[:name])
+        station[:ref] = ref if ref
+        station[:line] ||= @line.name
+      end
+    end
+
+    def hsr_ref_for_station_name(name)
+      return nil if name.blank?
+
+      normalized = name.to_s.gsub(/車站|站\z/, "")
+      HsrCatalog::STATION_REFS_BY_NAME.each do |station_name, ref|
+        return ref if normalized.include?(station_name) || station_name.include?(normalized)
+      end
+
+      nil
     end
 
     def fetch_kaohsiung_stations
@@ -480,6 +592,11 @@ module Geojson
         end
       end
 
+      if @line.slug == "zhonghe_xinlu"
+        segment = %w[蘆洲支線 新莊線][relation_index]
+        return "#{@line.name}（#{segment}）" if segment
+      end
+
       name = @line.name
       name = "#{name} (#{branch_index + 1})" if branch_index.positive?
 
@@ -594,39 +711,65 @@ module Geojson
         KaohsiungMetroCatalog::CIRCULAR_LRT_IN_STATION_TRANSFERS_BY_NAME[name]
     end
 
-    def snap_stations_to_routes!(stations, route_features)
-      line_strings = route_features.filter_map do |feature|
+    def route_line_strings(route_features)
+      route_features.filter_map do |feature|
         next unless feature.dig(:properties, :feature_type) == "route"
 
         coordinates = feature.dig(:geometry, :coordinates)
         coordinates if coordinates.is_a?(Array) && coordinates.length >= 2
       end
-      return if line_strings.empty?
-
-      stations.each do |station|
-        lon, lat = nearest_point_on_line_strings(station[:lon], station[:lat], line_strings)
-        station[:lon] = lon
-        station[:lat] = lat
-      end
     end
 
-    def nearest_point_on_line_strings(lon, lat, line_strings)
-      best_lon = lon
-      best_lat = lat
+    def chain_index_for_station(station, line_strings)
+      lon = station[:lon]
+      lat = station[:lat]
+      best_index = 0
       best_distance = Float::INFINITY
 
       line_strings.each do |coordinates|
-        coordinates.each_cons(2) do |start, finish|
+        coordinates.each_cons(2).with_index do |(start, finish), segment_index|
           projected_lon, projected_lat, distance = project_point_on_segment(lon, lat, start, finish)
-          next unless distance < best_distance
+          progress = segment_progress(start, finish, projected_lon, projected_lat)
+          index = segment_index + progress
 
-          best_distance = distance
-          best_lon = projected_lon
-          best_lat = projected_lat
+          if distance < best_distance
+            best_distance = distance
+            best_index = index
+          end
         end
       end
 
-      [ best_lon, best_lat ]
+      best_index
+    end
+
+    def segment_progress(start, finish, lon, lat)
+      total_dx = finish[0] - start[0]
+      total_dy = finish[1] - start[1]
+      length_squared = (total_dx * total_dx) + (total_dy * total_dy)
+      return 0 if length_squared.zero?
+
+      ((lon - start[0]) * total_dx + (lat - start[1]) * total_dy) / length_squared
+    end
+
+    def align_stations_to_routes!(stations, route_features)
+      line_strings = route_line_strings(route_features)
+      return if line_strings.empty?
+
+      stations.each do |station|
+        next if station[:position_anchored]
+
+        station[:lon], station[:lat] = TrackGeometry.align_point_to_lines(
+          station[:lon],
+          station[:lat],
+          line_strings
+        )
+      end
+    end
+
+    alias snap_stations_to_routes! align_stations_to_routes!
+
+    def nearest_point_on_line_strings(lon, lat, line_strings)
+      TrackGeometry.nearest_on_line_strings(lon, lat, line_strings).first(2)
     end
 
     def project_point_on_segment(px, py, start, finish)

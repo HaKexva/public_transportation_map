@@ -58,6 +58,14 @@ namespace :geojson do
     )
   end
 
+  desc "Rebuild Taiwan High Speed Rail GeoJSON from OpenStreetMap"
+  task hsr: :environment do
+    Geojson::MetroSystemImporter.import!(
+      system_id: "hsr",
+      lines: Geojson::HsrCatalog::LINES
+    )
+  end
+
   desc "Write metro depot markers JSON from catalog"
   task depots: :environment do
     Geojson::MetroDepotCatalog.write_json!

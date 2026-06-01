@@ -11,9 +11,16 @@ module Views
       COMING_SOON_LAYERS = [
         { label: "公車", color: "#2563eb" },
         { label: "台鐵", color: "#dc2626" },
-        { label: "高鐵", color: "#9333ea" },
         { label: "渡輪", color: "#0891b2" }
       ].freeze
+
+      HSR_SYSTEM = {
+        id: "hsr",
+        label: "高鐵",
+        color: "#F4811A",
+        badge: :orange,
+        description: "台灣高鐵（南港－左營）"
+      }.freeze
 
       OTHER_SYSTEM = {
         id: "other",
@@ -279,7 +286,7 @@ module Views
         render RubyUI::CardContent.new(class: "flex-1 overflow-y-auto py-3") do
           div(data: { map_target: "layerSearchMuted" }) do
             render RubyUI::Text.new(as: "p", size: "1", weight: "muted", class: "mb-3 rounded-md bg-muted/60 px-2.5 py-2 leading-relaxed") do
-              "勾選路線即可顯示（捷運與輕軌、其他）。點擊車站可查看站名與轉乘資訊。"
+              "勾選路線即可顯示（捷運與輕軌、高鐵、其他）。點擊車站可查看站名與轉乘資訊。"
             end
           end
           render_layer_search
@@ -290,6 +297,7 @@ module Views
             render_metro_all_toggle
             active_metro_systems.each { |system| render_metro_system(system) }
           end
+          render_hsr_routes
           render_other_routes
           render_coming_soon_layers
         end
@@ -299,8 +307,38 @@ module Views
         METRO_SYSTEMS.select { |system| @routes_manifest.fetch(system[:id], []).any? }
       end
 
+      def hsr_routes
+        @routes_manifest.fetch("hsr", [])
+      end
+
       def other_routes
         @routes_manifest.fetch("other", [])
+      end
+
+      def render_hsr_routes
+        return if hsr_routes.empty?
+
+        div(
+          class: "mt-4 px-1",
+          data: {
+            map_target: "layerSearchGroup",
+            search_text: hsr_routes_search_text
+          }
+        ) do
+          render RubyUI::Text.new(as: "p", size: "1", weight: "muted", class: "mb-2 px-2 uppercase tracking-wide", data: { map_target: "layerSearchMuted" }) do
+            "高鐵"
+          end
+          div(class: "flex flex-col gap-1") do
+            hsr_routes.each { |route| render_route_toggle(route, system: HSR_SYSTEM) }
+          end
+        end
+      end
+
+      def hsr_routes_search_text
+        [ HSR_SYSTEM[:label], HSR_SYSTEM[:description], *hsr_routes.flat_map { |route| [ route["name"], route["name_en"], route["ref"] ] } ]
+          .compact
+          .join(" ")
+          .downcase
       end
 
       def render_other_routes

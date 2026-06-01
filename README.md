@@ -11,13 +11,13 @@ An interactive map of Taiwan, Penghu, Kinmen, and Matsu with toggleable public t
   - 公車 (bus)
   - 火車 (train)
   - 捷運 (metro)
-  - 高鐵 (HSR)
-  - 渡輪 (ferry)
+  - 高鐵 (HSR) — Taiwan High Speed Rail (南港–左營, 12 stations)
+  - 渡輪 (ferry) — coming soon
 - **Light / dark theme** toggle
 - **Reset view** button to fit the default map bounds
 - No authentication — the dashboard is public
 
-> Route GeoJSON for each layer is not loaded yet. Checkboxes create empty layer groups on the map; data can be wired in later.
+> Bus, conventional rail (台鐵), and ferry layers are placeholders. Metro, HSR, and other transit lines load GeoJSON from `public/geojson/`.
 
 ## Tech stack
 
@@ -46,6 +46,12 @@ cd public_transportation_map
 bundle install
 bin/rails db:prepare
 cp .env.example .env   # optional
+```
+
+### Rebuild HSR GeoJSON from OpenStreetMap
+
+```bash
+bin/rails geojson:hsr
 ```
 
 ## Running locally
