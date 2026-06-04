@@ -79,4 +79,3 @@ module Geojson
     end
   end
 end
-
