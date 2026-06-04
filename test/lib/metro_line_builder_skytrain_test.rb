@@ -3,6 +3,23 @@
 require "test_helper"
 
 class MetroLineBuilderMaokongTest < ActiveSupport::TestCase
+  test "maokong gondola geojson lists six stops in order from zoo to maokong" do
+    path = Rails.root.join("public/geojson/other/maokong_gondola.geojson")
+    skip "run bin/rails geojson:other first" unless path.exist?
+
+    data = JSON.parse(path.read)
+    stops = data["features"].select do |feature|
+      %w[station angle_station].include?(feature.dig("properties", "feature_type"))
+    end
+
+    assert_equal 6, stops.length
+
+    ordered = stops.sort_by { |feature| feature.dig("properties", "ref").to_s }
+    assert_equal %w[G1 G2 G3 G4 G5 G6], ordered.map { |feature| feature.dig("properties", "ref") }
+    assert_equal [ "動物園", "轉角一", "動物園南", "轉角二", "指南宮", "貓空" ],
+                 ordered.map { |feature| feature.dig("properties", "name") }
+  end
+
   test "maokong gondola geojson includes two angle stations without passenger service" do
     path = Rails.root.join("public/geojson/other/maokong_gondola.geojson")
     skip "run bin/rails geojson:other first" unless path.exist?

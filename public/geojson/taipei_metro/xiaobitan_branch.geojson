@@ -258,8 +258,31 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.5305995,
-          24.9717696
+          121.5305976,
+          24.9717591
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "depot_spur",
+        "ref": "G",
+        "name": "新店機廠支線",
+        "color": "#CEDC00",
+        "depot_id": "xindian_depot"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            121.5308626,
+            24.9716157
+          ],
+          [
+            121.5308,
+            24.9715
+          ]
         ]
       }
     }

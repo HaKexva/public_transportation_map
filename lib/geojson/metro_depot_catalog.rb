@@ -8,7 +8,15 @@ module Geojson
   module MetroDepotCatalog
     DEPOTS = [
       { id: "beitou_depot", name: "北投機廠", routes: %w[tamsui_xinyi], lon: 121.483955, lat: 25.1357899, grade: "五級" },
-      { id: "xindian_depot", name: "新店機廠", routes: %w[songshan_xindian xiaobitan_branch], lon: 121.5308, lat: 24.9715, grade: "三級" },
+      {
+        id: "xindian_depot",
+        name: "新店機廠",
+        routes: %w[songshan_xindian xiaobitan_branch],
+        track_on: "xiaobitan_branch",
+        lon: 121.5308,
+        lat: 24.9715,
+        grade: "三級"
+      },
       { id: "nangang_depot", name: "南港機廠", routes: %w[bannan], lon: 121.6075, lat: 25.0512, grade: "三級" },
       { id: "tucheng_depot", name: "土城機廠", routes: %w[bannan], lon: 121.4483, lat: 24.9910, grade: "四級" },
       { id: "zhonghe_depot", name: "中和機廠", routes: %w[zhonghe_xinlu], lon: 121.508814, lat: 24.990250, grade: "一級" },
@@ -24,11 +32,23 @@ module Geojson
       { id: "kaohsiung_south_depot", name: "南機廠", routes: %w[red_line], lon: 120.3288, lat: 22.5785, grade: "三級" },
       { id: "kaohsiung_daliao_depot", name: "大寮機廠", routes: %w[orange_line], lon: 120.392, lat: 22.624, grade: "主機廠" },
       { id: "kaohsiung_circular_depot", name: "前鎮機廠", routes: %w[circular_lrt], lon: 120.326042, lat: 22.608478, grade: "輕軌" },
-      { id: "kaohsiung_gushan_stabling", name: "鼓山駐車場", routes: %w[circular_lrt], lon: 120.281088, lat: 22.642035, grade: "輕軌" }
+      { id: "kaohsiung_gushan_stabling", name: "鼓山駐車場", routes: %w[circular_lrt], lon: 120.281088, lat: 22.642035, grade: "輕軌" },
+      { id: "hsr_yanchao_depot", name: "燕巢總機廠", routes: %w[taiwan_hsr], lon: 120.361, lat: 22.773, grade: "總機廠" },
+      { id: "hsr_wuri_depot", name: "烏日維修基地", routes: %w[taiwan_hsr], lon: 120.615, lat: 24.098, grade: "維修基地" },
+      { id: "hsr_liujia_depot", name: "六家維修基地", routes: %w[taiwan_hsr], lon: 121.039, lat: 24.807, grade: "維修基地" },
+      { id: "hsr_taibao_depot", name: "太保維修基地", routes: %w[taiwan_hsr], lon: 120.332, lat: 23.459, grade: "維修基地" },
+      { id: "hsr_zuoying_depot", name: "左營維修基地", routes: %w[taiwan_hsr], lon: 120.318, lat: 22.682, grade: "維修基地" },
+      { id: "maokong_depot", name: "貓空纜車維修區", routes: %w[maokong_gondola], lon: 121.5763, lat: 24.996, grade: "維修區" },
+      { id: "skytrain_depot", name: "航廈電車維修區", routes: %w[taoyuan_airport_skytrain], lon: 121.238, lat: 25.077, grade: "維修區" },
+      { id: "sun_moon_ropeway_depot", name: "日月潭纜車維修區", routes: %w[sun_moon_ropeway], lon: 120.951, lat: 23.860, grade: "維修區" }
     ].freeze
 
     def self.depots_for_route(route_id)
-      DEPOTS.select { |depot| depot[:routes].include?(route_id) }
+      DEPOTS.select { |depot| depot_track_route_id(depot) == route_id }
+    end
+
+    def self.depot_track_route_id(depot)
+      depot[:track_on] || depot[:routes].first
     end
 
     def self.to_json
@@ -53,7 +73,9 @@ module Geojson
     end
 
     def self.track_links_for_depot(depot)
-      depot[:routes].filter_map do |route_id|
+      link_route_ids = depot[:track_on] ? Array(depot[:track_on]) : depot[:routes]
+
+      link_route_ids.filter_map do |route_id|
         path = route_geojson_path(route_id)
         next unless path
 
@@ -62,7 +84,7 @@ module Geojson
 
         lon = depot[:lon].round(6)
         lat = depot[:lat].round(6)
-        coordinates = TrackGeometry.spur_coordinates_for_point(lon, lat, line_strings)
+        coordinates = TrackGeometry.depot_link_coordinates_for_point(lon, lat, line_strings)
         next unless coordinates
 
         coordinates[-1] = [ lon, lat ]

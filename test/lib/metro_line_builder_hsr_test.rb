@@ -32,7 +32,34 @@ class MetroLineBuilderHsrTest < ActiveSupport::TestCase
 
     assert_in_delta expected[:lon], lon, 0.002
     assert_in_delta expected[:lat], lat, 0.002
+
+    %w[新竹 苗栗].each do |name|
+      station = stations.find { |f| f.dig("properties", "name") == name }
+      expected_station = Geojson::HsrCatalog::FALLBACK_STATIONS.find { |s| s[:name] == name }
+      slon, slat = station.dig("geometry", "coordinates")
+
+      assert_in_delta expected_station[:lon], slon, 0.002, "#{name} longitude"
+      assert_in_delta expected_station[:lat], slat, 0.002, "#{name} latitude"
+    end
+
     assert_equal Geojson::HsrCatalog::BRAND_COLOR, routes.first.dig("properties", "color")
+  end
+
+  test "fetch hsr stations uses catalog fallbacks exclusively" do
+    builder = Geojson::MetroLineBuilder.new(Geojson::HsrCatalog::LINES.first)
+    stations = builder.send(:fetch_hsr_stations)
+
+    assert_equal 12, stations.length
+    assert_equal Geojson::HsrCatalog::FALLBACK_STATIONS.map { |station| station[:ref] },
+                 stations.map { |station| station[:ref] }
+
+    hsinchu = stations.find { |station| station[:name] == "新竹" }
+    miaoli = stations.find { |station| station[:name] == "苗栗" }
+
+    assert_equal "05", hsinchu[:ref]
+    assert_equal "06", miaoli[:ref]
+    assert hsinchu[:lat] > miaoli[:lat], "新竹 should be north of 苗栗"
+    assert hsinchu[:lon] > miaoli[:lon], "新竹 should be east of 苗栗"
   end
 
   test "hsr station names map to ordered refs" do

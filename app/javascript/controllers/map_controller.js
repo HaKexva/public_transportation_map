@@ -33,7 +33,14 @@ const FARE_DISCOUNT_TRACK_OFFSET_METERS = 7
 const TRANSFER_LINE_WEIGHT = 5
 const FARE_DISCOUNT_LINE_OFFSET_METERS = 3.5
 const PARALLEL_TRACK_HALF_OFFSET_PX = 6
-const PARALLEL_TRACK_ROUTE_IDS = new Set([ "airport_mrt", "airport_mrt_express", "danhai_lrt" ])
+const PARALLEL_TRACK_ROUTE_IDS = new Set([
+  "airport_mrt",
+  "airport_mrt_express",
+  "danhai_lrt",
+  "taoyuan_airport_skytrain"
+])
+const SKYTRAIN_NORTH_STATION_ORDER = [ "ST1N", "ST2N" ]
+const SKYTRAIN_SOUTH_STATION_ORDER = [ "ST1S", "ST2S" ]
 const LOOP_LINE_ROUTE_IDS = new Set([ "circular_lrt" ])
 
 const METRO_SYSTEM_IDS = [
@@ -45,21 +52,36 @@ const METRO_SYSTEM_IDS = [
 ]
 
 export default class extends Controller {
+  static values = {
+    initialRouteId: String
+  }
+
   static targets = [
     "map",
     "layerCheckbox",
     "layersPanel",
-    "legendPanel",
     "layerSearchInput",
     "layerSearchItem",
     "layerSearchGroup",
     "layerSearchEmpty",
     "layerSearchMuted",
-    "layerSearchClear"
+    "layerSearchClear",
+    "routeBrowser",
+    "routeResults",
+    "routeStopsPanel",
+    "routeStopsTitle",
+    "routeStopsMeta",
+    "routeStopsList",
+    "routeStopsEmpty"
   ]
 
   connect() {
     if (this.map) return
+
+    this.initNonce = (this.initNonce || 0) + 1
+
+    this.onSplitResize = () => this.invalidateMapSize()
+    window.addEventListener("map-split:resize", this.onSplitResize)
 
     this.layerGroups = {}
     this.layerVisible = {}
@@ -76,6 +98,8 @@ export default class extends Controller {
     this.transferKindByEndpointKey = new Map()
     this.metroDepots = []
     this.stationCoordinatesByKey = {}
+    this.selectedRouteId = null
+    this.stationCoordsByRouteRef = {}
     this.mapReady = false
     this.themeObserver = null
     this.setLayerControlsDisabled(true)
@@ -83,6 +107,8 @@ export default class extends Controller {
   }
 
   disconnect() {
+    this.initNonce = (this.initNonce || 0) + 1
+    if (this.onSplitResize) window.removeEventListener("map-split:resize", this.onSplitResize)
     if (this.resizeHandler) window.removeEventListener("resize", this.resizeHandler)
     if (this.parallelTracksRefreshTimer) clearTimeout(this.parallelTracksRefreshTimer)
     if (this.map && this.refreshParallelTracksOnZoom) {
@@ -148,6 +174,7 @@ export default class extends Controller {
       this.loadOutOfStationTransfers(),
       this.loadMetroDepots()
     ])
+    if (!this.map) return
 
     const transferPane = this.map.createPane("outOfStationTransfers")
     transferPane.style.zIndex = 650
@@ -180,7 +207,7 @@ export default class extends Controller {
     this.refreshParallelTracksOnZoom = () => this.scheduleParallelTracksRefresh()
     this.map.on("zoomend", this.refreshParallelTracksOnZoom)
 
-    this.resizeHandler = () => this.map?.invalidateSize(true)
+    this.resizeHandler = () => this.invalidateMapSize()
     requestAnimationFrame(this.resizeHandler)
     setTimeout(this.resizeHandler, 100)
     setTimeout(this.resizeHandler, 500)
@@ -189,6 +216,30 @@ export default class extends Controller {
     this.mapReady = true
     this.setLayerControlsDisabled(false)
     this.syncPanelToggleStates()
+    await this.loadInitialRouteFromPage()
+  }
+
+  async loadInitialRouteFromPage() {
+    const routeId = this.initialRouteIdValue || new URLSearchParams(window.location.search).get("route")
+    if (!routeId) return
+
+    await this.openRouteDetail(routeId)
+  }
+
+  async openRouteDetail(routeId) {
+    if (!routeId) return
+
+    this.selectedRouteId = routeId
+    this.syncRouteSelectionUI()
+
+    const checkbox = this.checkboxForLayer(routeId)
+    if (!this.layerVisible[routeId]) {
+      await this.showLayer(routeId, { checkbox, fitBounds: true })
+    } else if (this.map) {
+      this.fitLayerBounds(routeId)
+    }
+
+    await this.displayRouteStops(routeId)
   }
 
   allLayerIds() {
@@ -353,13 +404,19 @@ export default class extends Controller {
   }
 
   async resetView() {
-    await this.showAllMetro()
+    await this.showAllTransit()
   }
 
   async showAllMetro() {
     if (!this.mapReady || !this.map) return
 
     await this.setAllMetroLayersVisible(true, { fitBounds: true })
+  }
+
+  async showAllTransit() {
+    if (!this.mapReady || !this.map) return
+
+    await this.setAllTransitLayersVisible(true, { fitBounds: true })
   }
 
   resetViewport() {
@@ -375,11 +432,10 @@ export default class extends Controller {
     this.syncPanelToggleState(this.layersPanelTarget)
   }
 
-  toggleLegendPanel() {
-    if (!this.hasLegendPanelTarget) return
+  invalidateMapSize() {
+    if (!this.map) return
 
-    this.legendPanelTarget.classList.toggle("map-ui-panel--collapsed")
-    this.syncPanelToggleState(this.legendPanelTarget)
+    requestAnimationFrame(() => this.map.invalidateSize(true))
   }
 
   syncPanelToggleState(panel) {
@@ -387,10 +443,7 @@ export default class extends Controller {
     if (!button) return
 
     const collapsed = panel.classList.contains("map-ui-panel--collapsed")
-    const isLegend = panel === this.legendPanelTarget
-    const label = isLegend
-      ? (collapsed ? "展開圖例" : "收合圖例")
-      : (collapsed ? "展開圖層面板" : "收合圖層面板")
+    const label = collapsed ? "展開圖層面板" : "收合圖層面板"
 
     button.setAttribute("aria-expanded", (!collapsed).toString())
     button.setAttribute("aria-label", label)
@@ -398,7 +451,6 @@ export default class extends Controller {
 
   syncPanelToggleStates() {
     if (this.hasLayersPanelTarget) this.syncPanelToggleState(this.layersPanelTarget)
-    if (this.hasLegendPanelTarget) this.syncPanelToggleState(this.legendPanelTarget)
   }
 
   filterLayers() {
@@ -425,8 +477,6 @@ export default class extends Controller {
       const visible = !hasQuery || groupMatch || childMatch
 
       group.classList.toggle("hidden", !visible)
-
-      if (hasQuery && (groupMatch || childMatch)) this.openLayerSearchGroup(group)
     })
 
     if (this.hasLayerSearchMutedTarget) {
@@ -459,16 +509,567 @@ export default class extends Controller {
     return value.trim().toLowerCase().replace(/\s+/g, " ")
   }
 
-  openLayerSearchGroup(group) {
-    const collapsible = group.querySelector("[data-controller~=\"ruby-ui--collapsible\"]")
-    if (!collapsible) return
+  stopCheckboxEvent(event) {
+    event.stopPropagation()
+  }
 
-    const controller = this.application.getControllerForElementAndIdentifier(
-      collapsible,
-      "ruby-ui--collapsible"
+  async selectRoute(event) {
+    const routeId = event.params.routeId
+    if (!routeId) return
+
+    window.location.assign(`/routes/${encodeURIComponent(routeId)}`)
+  }
+
+  syncRouteSelectionUI() {
+    if (!this.hasLayerSearchItemTarget) return
+
+    this.layerSearchItemTargets.forEach((item) => {
+      const link = item.querySelector(".route-search-item__link")
+      const routeId = link?.getAttribute("href")?.split("/").pop()
+      const selected = routeId === this.selectedRouteId
+
+      item.classList.toggle("route-search-item--selected", selected)
+      if (link) link.setAttribute("aria-current", selected ? "page" : "false")
+    })
+  }
+
+  async displayRouteStops(routeId) {
+    if (!this.hasRouteStopsListTarget) return
+
+    const route = this.findRoute(routeId)
+    let sections = []
+
+    try {
+      sections = await this.collectStationsForRoute(routeId)
+    } catch (error) {
+      console.error("Failed to load stations for route", routeId, error)
+    }
+
+    this.renderRouteStopsPanel(route, sections)
+    if (this.hasRouteBrowserTarget) this.setRouteBrowserStopsOpen(true)
+  }
+
+  async collectStationsForRoute(routeId) {
+    if (routeId === "airport_mrt") {
+      return this.collectAirportMrtStationSections()
+    }
+
+    const manifestRoute = this.findRoute(routeId)
+    const routes = this.routesToLoad(routeId)
+    const sections = []
+
+    for (const route of routes) {
+      const url = route.file || route.url
+      if (!url) continue
+
+      const data = await this.fetchGeoJSON(url)
+      sections.push(...this.buildStationSectionsFromGeoJSON(data, manifestRoute, routeId))
+    }
+
+    return this.mergeStationSections(sections)
+  }
+
+  async collectAirportMrtStationSections() {
+    const commuterRoute = this.findRoute("airport_mrt")
+    const expressRoute = this.findRoute("airport_mrt_express")
+    if (!commuterRoute?.file) return []
+
+    const commuterData = await this.fetchGeoJSON(commuterRoute.file)
+    let expressData = null
+
+    if (expressRoute?.file) {
+      expressData = await this.fetchGeoJSON(expressRoute.file)
+    }
+
+    return this.buildAirportMrtStationSections(commuterData, expressData)
+  }
+
+  buildAirportMrtStationSections(commuterGeojson, expressGeojson) {
+    const routeId = "airport_mrt"
+    const manifestRoute = this.findRoute(routeId)
+    const commuterStations = this.extractPassengerStationFeatures(commuterGeojson, routeId)
+    const orderedCommuter = this.sortStationsForRoute(
+      commuterStations,
+      manifestRoute?.ref,
+      commuterGeojson
     )
 
-    controller?.open()
+    let expressStations = []
+
+    if (expressGeojson) {
+      expressStations = this.extractPassengerStationFeatures(expressGeojson, "airport_mrt_express")
+    } else {
+      expressStations = orderedCommuter.filter((station) => this.isAirportMrtExpressStop(station.ref))
+    }
+
+    const orderedExpress = this.sortAirportMrtExpressStationsForList(expressStations)
+
+    return [
+      { label: "普通車", stations: orderedCommuter },
+      { label: "直達車", stations: orderedExpress }
+    ].filter((section) => section.stations.length > 0)
+  }
+
+  sortAirportMrtExpressStationsForList(stations) {
+    const order = Array.from(AIRPORT_MRT_EXPRESS_STOP_REFS)
+
+    return stations.slice().sort((left, right) => {
+      const leftIndex = order.indexOf(left.ref)
+      const rightIndex = order.indexOf(right.ref)
+
+      if (leftIndex >= 0 && rightIndex >= 0) return leftIndex - rightIndex
+      if (leftIndex >= 0) return -1
+      if (rightIndex >= 0) return 1
+
+      return this.compareStationRefsOnRoute(left.ref, right.ref, "A")
+    })
+  }
+
+  buildStationSectionsFromGeoJSON(geojson, manifestRoute, routeId) {
+    if (manifestRoute?.id === "danhai_lrt") {
+      return this.buildDanhaiStationSections(geojson, routeId)
+    }
+
+    if (manifestRoute?.id === "taoyuan_airport_skytrain") {
+      return this.buildSkytrainStationSections(geojson, routeId)
+    }
+
+    const stations = this.extractPassengerStationFeatures(geojson, routeId)
+    const ordered = this.sortStationsForRoute(stations, manifestRoute?.ref, geojson)
+
+    return [ { label: null, stations: ordered } ]
+  }
+
+  buildDanhaiStationSections(geojson, routeId) {
+    const stations = this.extractPassengerStationFeatures(geojson, routeId)
+
+    return [
+      { key: "lushan", label: "綠山線" },
+      { key: "lanhai", label: "藍海線" }
+    ].map(({ key, label }) => {
+      const segmentStations = stations.filter((station) => station.segment === key)
+      return { label, stations: this.sortDanhaiStationsForList(segmentStations, key) }
+    }).filter((section) => section.stations.length > 0)
+  }
+
+  buildSkytrainStationSections(geojson, routeId) {
+    const stations = this.extractPassengerStationFeatures(geojson, routeId)
+
+    return [
+      { key: "north", label: "北側（管制區內）" },
+      { key: "south", label: "南側（管制區外）" }
+    ].map(({ key, label }) => {
+      const segmentStations = stations.filter((station) => station.segment === key)
+      return { label, stations: this.sortSkytrainStationsForList(segmentStations, key) }
+    }).filter((section) => section.stations.length > 0)
+  }
+
+  sortSkytrainStationsForList(stations, segment) {
+    const order = segment === "north" ? SKYTRAIN_NORTH_STATION_ORDER : SKYTRAIN_SOUTH_STATION_ORDER
+
+    return stations.slice().sort((left, right) => {
+      const leftIndex = order.indexOf(left.ref)
+      const rightIndex = order.indexOf(right.ref)
+
+      if (leftIndex >= 0 && rightIndex >= 0) return leftIndex - rightIndex
+      if (leftIndex >= 0) return -1
+      if (rightIndex >= 0) return 1
+
+      return this.compareStationRefsOnRoute(left.ref, right.ref, "ST")
+    })
+  }
+
+  sortDanhaiStationsForList(stations, segment) {
+    const sortKey = (station) => {
+      const ref = station.ref
+      if (DANHAI_SHARED_STATION_REFS.has(ref)) return parseInt(ref.slice(1), 10)
+
+      if (segment === "lanhai") {
+        const lanhaiIndex = DANHAI_LANHAI_STATION_ORDER.indexOf(ref)
+        if (lanhaiIndex >= 0) return 10 + lanhaiIndex
+      }
+
+      const match = ref.match(/V(\d+)/i)
+      return match ? parseInt(match[1], 10) : 99
+    }
+
+    return stations.slice().sort((left, right) => sortKey(left) - sortKey(right))
+  }
+
+  extractPassengerStationFeatures(geojson, routeId) {
+    return (geojson.features || [])
+      .filter((feature) => this.isRouteStopListStation(feature, routeId))
+      .map((feature) => {
+        const ref = feature.properties?.ref || ""
+        const coords = feature.geometry?.coordinates
+        const latlng = Array.isArray(coords) && coords.length >= 2
+          ? [ coords[1], coords[0] ]
+          : null
+
+        if (ref && latlng) this.rememberStationCoords(routeId, ref, latlng)
+
+        return {
+          ref,
+          name: this.routeStopDisplayName(feature),
+          nameEn: feature.properties?.name_en,
+          segment: feature.properties?.segment,
+          latlng
+        }
+      })
+      .filter((station) => station.ref)
+  }
+
+  isRouteStopListStation(feature, routeId) {
+    if (routeId === "maokong_gondola" && feature.properties?.feature_type === "angle_station") {
+      return true
+    }
+
+    if (!this.isPassengerStationFeature(feature)) return false
+
+    const route = this.findRoute(routeId)
+    const ref = feature.properties?.ref || ""
+
+    return this.stationRefMatchesRoute(ref, route?.ref, routeId)
+  }
+
+  stationRefMatchesRoute(stationRef, routeRef, routeId) {
+    if (!stationRef) return false
+    if (!routeRef) return true
+
+    const sortKey = this.stationSortKeyForRoute(stationRef, routeRef)
+
+    if (routeRef === "MG" || routeId === "maokong_gondola") {
+      return /^G\d/i.test(sortKey)
+    }
+
+    if (routeRef === "HSR" || routeId === "taiwan_hsr") {
+      return /^\d{1,3}$/.test(sortKey)
+    }
+
+    return new RegExp(`^${routeRef}\\d`, "i").test(sortKey)
+  }
+
+  routeStopDisplayName(feature) {
+    const name = feature.properties?.name || feature.properties?.ref || ""
+    const note = feature.properties?.note
+
+    if (feature.properties?.feature_type === "angle_station" && note) {
+      return `${name}（不提供載客）`
+    }
+
+    return name
+  }
+
+  isPassengerStationFeature(feature) {
+    const type = feature.properties?.feature_type
+    if (type === "station") return true
+    if (type === "angle_station") return feature.properties?.passenger_service !== false
+
+    return false
+  }
+
+  rememberStationCoords(routeId, ref, latlng) {
+    if (!this.stationCoordsByRouteRef[routeId]) {
+      this.stationCoordsByRouteRef[routeId] = {}
+    }
+
+    this.stationCoordsByRouteRef[routeId][ref] = latlng
+  }
+
+  sortStationsForRoute(stations, routeRef, geojson) {
+    const lineStrings = this.routeLineStringsFromGeoJSON(geojson)
+
+    if (lineStrings.length > 0 && this.shouldOrderStationsAlongRoute(routeRef, stations)) {
+      return this.sortStationsAlongLineStrings(stations, lineStrings)
+    }
+
+    return stations.slice().sort((left, right) => {
+      return this.compareStationRefsOnRoute(left.ref, right.ref, routeRef)
+    })
+  }
+
+  shouldOrderStationsAlongRoute(routeRef, stations) {
+    if (!routeRef) return true
+
+    const onRoute = (ref) => this.stationRefMatchesRoute(ref, routeRef, null)
+
+    const onLineCount = stations.filter((station) => onRoute(station.ref)).length
+    const offLineCount = stations.length - onLineCount
+
+    if (offLineCount > 0 && onLineCount > 0) return true
+
+    const hasNumericRefs = stations.some((station) => /^\d/.test(station.ref))
+
+    return onLineCount === 0 && !hasNumericRefs
+  }
+
+  stationSortKeyForRoute(stationRef, routeRef) {
+    if (!stationRef) return ""
+
+    const parts = stationRef.split(";").map((part) => part.trim()).filter(Boolean)
+    if (!routeRef) return parts[0] || stationRef
+
+    if (routeRef === "MG") {
+      const gondolaPart = parts.find((part) => /^G\d/i.test(part))
+      if (gondolaPart) return gondolaPart
+    }
+
+    const routePart = parts.find((part) => new RegExp(`^${routeRef}\\d`, "i").test(part))
+    if (routePart) return routePart
+
+    if (parts.every((part) => /^\d/.test(part))) return parts[0]
+
+    return parts[0] || stationRef
+  }
+
+  compareStationRefsOnRoute(leftRef, rightRef, routeRef) {
+    const left = this.stationRefSortKey(this.stationSortKeyForRoute(leftRef, routeRef))
+    const right = this.stationRefSortKey(this.stationSortKeyForRoute(rightRef, routeRef))
+
+    for (let index = 0; index < Math.max(left.length, right.length); index += 1) {
+      const leftPart = left[index]
+      const rightPart = right[index]
+
+      if (leftPart === rightPart) continue
+      if (leftPart === undefined) return -1
+      if (rightPart === undefined) return 1
+
+      if (typeof leftPart === "number" && typeof rightPart === "number") {
+        return leftPart - rightPart
+      }
+
+      return String(leftPart).localeCompare(String(rightPart))
+    }
+
+    return String(leftRef).localeCompare(String(rightRef))
+  }
+
+  sortStationsAlongLineStrings(stations, lineStrings) {
+    const primaryLine = lineStrings.reduce((longest, current) => {
+      return current.length > longest.length ? current : longest
+    }, [])
+
+    return stations.slice().sort((left, right) => {
+      if (!left.latlng || !right.latlng) return 0
+
+      const leftIndex = this.chainIndexForPoint(left.latlng[0], left.latlng[1], primaryLine)
+      const rightIndex = this.chainIndexForPoint(right.latlng[0], right.latlng[1], primaryLine)
+      return leftIndex - rightIndex
+    })
+  }
+
+  chainIndexForPoint(lat, lon, coordinates) {
+    let bestIndex = 0
+    let bestDistance = Infinity
+
+    for (let segmentIndex = 0; segmentIndex < coordinates.length - 1; segmentIndex += 1) {
+      const start = coordinates[segmentIndex]
+      const finish = coordinates[segmentIndex + 1]
+      const projection = this.projectLonLatOnSegment(lon, lat, start, finish)
+      const index = segmentIndex + projection.progress
+
+      if (projection.distance < bestDistance) {
+        bestDistance = projection.distance
+        bestIndex = index
+      }
+    }
+
+    return bestIndex
+  }
+
+  projectLonLatOnSegment(px, py, start, finish) {
+    const [ x1, y1 ] = start
+    const [ x2, y2 ] = finish
+    const dx = x2 - x1
+    const dy = y2 - y1
+    const lengthSquared = (dx * dx) + (dy * dy)
+
+    let progress = 0
+    if (lengthSquared > 0) {
+      progress = ((px - x1) * dx + (py - y1) * dy) / lengthSquared
+      progress = Math.max(0, Math.min(1, progress))
+    }
+
+    const projectedX = x1 + (progress * dx)
+    const projectedY = y1 + (progress * dy)
+    const distance = ((px - projectedX) ** 2) + ((py - projectedY) ** 2)
+
+    return { progress, distance }
+  }
+
+  routeLineStringsFromGeoJSON(geojson) {
+    return (geojson.features || [])
+      .filter((feature) => feature.properties?.feature_type === "route")
+      .map((feature) => feature.geometry?.coordinates)
+      .filter((coordinates) => Array.isArray(coordinates) && coordinates.length >= 2)
+  }
+
+  mergeStationSections(sections) {
+    const merged = []
+    const seen = new Set()
+
+    sections.forEach((section) => {
+      const stations = []
+
+      section.stations.forEach((station) => {
+        const key = this.stationListKey(station)
+        if (seen.has(key)) return
+
+        seen.add(key)
+        stations.push(station)
+      })
+
+      if (stations.length > 0) merged.push({ label: section.label, stations })
+    })
+
+    return merged
+  }
+
+  stationListKey(station) {
+    if (station.segment) return `${station.ref}:${station.segment}`
+
+    return station.ref
+  }
+
+  renderRouteStopsPanel(route, sections) {
+    if (this.hasRouteStopsTitleTarget) {
+      this.routeStopsTitleTarget.textContent = route?.name || "路線站點"
+    }
+
+    const stationCount = sections.reduce((total, section) => total + section.stations.length, 0)
+
+    if (this.hasRouteStopsMetaTarget) {
+      const ref = route?.ref ? ` · ${route.ref}` : ""
+      this.routeStopsMetaTarget.textContent = stationCount > 0
+        ? `共 ${stationCount} 站${ref}`
+        : ""
+    }
+
+    if (!this.hasRouteStopsListTarget) return
+
+    this.routeStopsListTarget.replaceChildren()
+
+    if (stationCount === 0) {
+      if (this.hasRouteStopsEmptyTarget) this.routeStopsEmptyTarget.classList.remove("hidden")
+      return
+    }
+
+    if (this.hasRouteStopsEmptyTarget) this.routeStopsEmptyTarget.classList.add("hidden")
+
+    let sequence = 0
+
+    sections.forEach((section) => {
+      if (section.label) {
+        const heading = document.createElement("li")
+        heading.className = "route-stops-section-heading"
+        heading.textContent = section.label
+        this.routeStopsListTarget.append(heading)
+      }
+
+      section.stations.forEach((station) => {
+        sequence += 1
+        this.routeStopsListTarget.append(this.buildRouteStopItem(route, station, sequence))
+      })
+    })
+  }
+
+  formatRouteStopRef(ref, route) {
+    if (!ref) return ref
+
+    if (route?.id === "taiwan_hsr" && /^\d{1,2}$/.test(ref)) {
+      return ref.padStart(2, "0")
+    }
+
+    return ref
+  }
+
+  stationRefsForRouteStop(stationRef, route) {
+    const parts = this.transferStationRefs(stationRef)
+    if (parts.length <= 1) {
+      return { primary: stationRef, secondary: null, orderedParts: parts }
+    }
+
+    const routeRef = route?.ref
+    const routeId = route?.id
+    const primary = parts.find((ref) => this.stationRefMatchesRoute(ref, routeRef, routeId)) || parts[0]
+    const secondary = parts.find((ref) => ref !== primary) || null
+    const orderedParts = secondary ? [ primary, secondary ] : [ primary ]
+
+    return { primary, secondary, orderedParts }
+  }
+
+  buildRouteStopItem(route, station, sequence) {
+    const item = document.createElement("li")
+    const button = document.createElement("button")
+    const isTransfer = this.isInStationTransferRef(station.ref)
+    const refsForStop = this.stationRefsForRouteStop(station.ref, route)
+
+    button.type = "button"
+    button.className = "route-stop-item"
+    if (isTransfer) button.classList.add("route-stop-item--transfer")
+    button.dataset.action = "click->map#focusRouteStop"
+    button.dataset.mapRouteIdParam = route?.id || this.selectedRouteId
+    button.dataset.mapRefParam = station.ref
+
+    const indexEl = document.createElement("span")
+    indexEl.className = "route-stop-item__index"
+    indexEl.textContent = this.formatRouteStopRef(refsForStop.primary, route) || String(sequence)
+    if (isTransfer && refsForStop.primary) indexEl.title = station.ref
+
+    const swatchEl = document.createElement("span")
+    swatchEl.className = "route-stop-item__swatch"
+    swatchEl.setAttribute("aria-hidden", "true")
+    if (isTransfer) swatchEl.append(this.buildRouteStopTransferMarker(route, station.ref))
+
+    const nameEl = document.createElement("span")
+    nameEl.className = "route-stop-item__name"
+    nameEl.textContent = station.name
+
+    const refEl = document.createElement("span")
+    refEl.className = "route-stop-item__ref"
+    refEl.textContent = isTransfer ? (this.formatRouteStopRef(refsForStop.secondary, route) || "") : ""
+    if (isTransfer) refEl.title = station.ref
+
+    button.append(indexEl, swatchEl, nameEl, refEl)
+    item.append(button)
+    return item
+  }
+
+  buildRouteStopTransferMarker(route, stationRef) {
+    const marker = document.createElement("span")
+    marker.className = "route-stop-item__transfer-marker transfer-station-marker"
+
+    const { orderedParts } = this.stationRefsForRouteStop(stationRef, route)
+
+    orderedParts.slice(0, 2).forEach((part) => {
+      const half = document.createElement("span")
+      half.className = "transfer-station-marker__half"
+      half.style.backgroundColor = this.colorForStationRef(part) || "#666666"
+      marker.append(half)
+    })
+
+    return marker
+  }
+
+  setRouteBrowserStopsOpen(open) {
+    if (!this.hasRouteBrowserTarget) return
+
+    this.routeBrowserTarget.classList.toggle("route-browser--stops-open", open)
+
+    if (this.hasRouteStopsPanelTarget) {
+      this.routeStopsPanelTarget.classList.toggle("hidden", !open)
+      this.routeStopsPanelTarget.classList.toggle("flex", open)
+    }
+  }
+
+  focusRouteStop(event) {
+    const routeId = event.params.routeId
+    const ref = event.params.ref
+    const latlng = this.stationCoordsByRouteRef[routeId]?.[ref]
+
+    if (!latlng || !this.map) return
+
+    this.map.setView(latlng, Math.max(this.map.getZoom(), 14))
   }
 
   basemapUrl() {
@@ -496,14 +1097,39 @@ export default class extends Controller {
   }
 
   async setAllMetroLayersVisible(visible, { fitBounds = false } = {}) {
-    const routeIds = this.allMetroRouteIds()
+    const allMetroCheckbox = this.checkboxForLayer("all_metro")
+    if (allMetroCheckbox) allMetroCheckbox.checked = visible
+
+    await this.setRouteLayersVisible(this.allMetroRouteIds(), visible, {
+      fitBounds,
+      afterSync: () => {
+        METRO_SYSTEM_IDS.forEach((systemId) => this.syncMetroSystemCheckbox(systemId))
+        this.syncAllMetroCheckbox()
+        this.syncAllTransitCheckbox()
+      }
+    })
+  }
+
+  async setAllTransitLayersVisible(visible, { fitBounds = false } = {}) {
+    const allTransitCheckbox = this.checkboxForLayer("all_transit")
+    if (allTransitCheckbox) allTransitCheckbox.checked = visible
+
+    if (visible) {
+      const allMetroCheckbox = this.checkboxForLayer("all_metro")
+      if (allMetroCheckbox) allMetroCheckbox.checked = true
+    }
+
+    await this.setRouteLayersVisible(this.allTransitRouteIds(), visible, {
+      fitBounds,
+      afterSync: () => this.syncAllTransitCheckboxes()
+    })
+  }
+
+  async setRouteLayersVisible(routeIds, visible, { fitBounds = false, afterSync = null } = {}) {
     if (routeIds.length === 0) {
       if (!visible) this.map?.fitBounds(LEAFLET_BOUNDS)
       return
     }
-
-    const allMetroCheckbox = this.checkboxForLayer("all_metro")
-    if (allMetroCheckbox) allMetroCheckbox.checked = visible
 
     this.setLayerControlsDisabled(true)
 
@@ -513,8 +1139,7 @@ export default class extends Controller {
           await this.showLayer(routeId, { fitBounds: false })
         }
 
-        METRO_SYSTEM_IDS.forEach((systemId) => this.syncMetroSystemCheckbox(systemId))
-        this.syncAllMetroCheckbox()
+        afterSync?.()
 
         if (fitBounds) {
           this.fitVisibleRouteBounds()
@@ -524,11 +1149,12 @@ export default class extends Controller {
           this.hideLayerWithCheckbox(routeId, this.checkboxForLayer(routeId))
         })
 
-        METRO_SYSTEM_IDS.forEach((systemId) => this.syncMetroSystemCheckbox(systemId))
-        if (allMetroCheckbox) allMetroCheckbox.checked = false
+        afterSync?.()
       }
 
       this.updateOutOfStationTransfers()
+      this.updateInStationTransferMarkers()
+      this.updateMetroDepots()
     } finally {
       this.setLayerControlsDisabled(false)
     }
@@ -565,8 +1191,27 @@ export default class extends Controller {
     return ids
   }
 
+  allTransitRouteIds() {
+    return this.routeLayerIds()
+  }
+
+  transitSystemIds() {
+    return [ "hsr", "other" ]
+  }
+
   metroSystemForRoute(routeId) {
     for (const systemId of METRO_SYSTEM_IDS) {
+      if (this.mainRouteIdsForSystem(systemId).includes(routeId)) return systemId
+    }
+
+    return null
+  }
+
+  manifestSystemForRoute(routeId) {
+    const metroSystemId = this.metroSystemForRoute(routeId)
+    if (metroSystemId) return metroSystemId
+
+    for (const systemId of this.transitSystemIds()) {
       if (this.mainRouteIdsForSystem(systemId).includes(routeId)) return systemId
     }
 
@@ -591,7 +1236,17 @@ export default class extends Controller {
     const checkbox = this.checkboxForLayer("all_metro")
     if (!checkbox) return
 
-    const routeIds = this.allMetroRouteIds()
+    this.syncRouteGroupCheckbox(checkbox, this.allMetroRouteIds())
+  }
+
+  syncAllTransitCheckbox() {
+    const checkbox = this.checkboxForLayer("all_transit")
+    if (!checkbox) return
+
+    this.syncRouteGroupCheckbox(checkbox, this.allTransitRouteIds())
+  }
+
+  syncRouteGroupCheckbox(checkbox, routeIds) {
     if (routeIds.length === 0) return
 
     const allOn = routeIds.every((routeId) => this.layerVisible[routeId])
@@ -599,6 +1254,20 @@ export default class extends Controller {
 
     checkbox.checked = allOn
     checkbox.indeterminate = anyOn && !allOn
+  }
+
+  syncAllTransitCheckboxes() {
+    METRO_SYSTEM_IDS.forEach((systemId) => this.syncMetroSystemCheckbox(systemId))
+    this.transitSystemIds().forEach((systemId) => this.syncManifestSystemCheckbox(systemId))
+    this.syncAllMetroCheckbox()
+    this.syncAllTransitCheckbox()
+  }
+
+  syncManifestSystemCheckbox(systemId) {
+    const checkbox = this.checkboxForLayer(systemId)
+    if (!checkbox) return
+
+    this.syncRouteGroupCheckbox(checkbox, this.mainRouteIdsForSystem(systemId))
   }
 
   async toggleMetroSystem(event) {
@@ -636,6 +1305,7 @@ export default class extends Controller {
 
       this.syncMetroSystemCheckbox(systemId)
       this.syncAllMetroCheckbox()
+      this.syncAllTransitCheckbox()
       this.updateOutOfStationTransfers()
     } finally {
       this.setLayerControlsDisabled(false)
@@ -659,6 +1329,25 @@ export default class extends Controller {
     }
 
     await this.setAllMetroLayersVisible(visible, { fitBounds: visible })
+  }
+
+  async toggleAllTransit(event) {
+    event.preventDefault()
+
+    const checkbox = event.currentTarget
+    const visible = checkbox.checked
+
+    if (!this.mapReady || !this.map) {
+      checkbox.checked = false
+      return
+    }
+
+    if (this.allTransitRouteIds().length === 0) {
+      checkbox.checked = false
+      return
+    }
+
+    await this.setAllTransitLayersVisible(visible, { fitBounds: visible })
   }
 
   indexStationCoordinates(routeId, data) {
@@ -790,6 +1479,17 @@ export default class extends Controller {
     this.updateMetroDepots()
   }
 
+  isRouteLayerVisible(routeId) {
+    if (!routeId) return false
+    if (this.layerVisible[routeId]) return true
+
+    const route = this.findRoute(routeId)
+    if (route?.branch_of && this.layerVisible[route.branch_of]) return true
+
+    const branches = this.branchesByMain[routeId] || []
+    return branches.some((branch) => this.layerVisible[branch.id])
+  }
+
   updateMetroDepots() {
     const L = window.L
     const group = this.metroDepotGroup
@@ -800,14 +1500,14 @@ export default class extends Controller {
 
     this.metroDepots.forEach((depot) => {
       if (depot.lon == null || depot.lat == null) return
-      if (!depot.routes?.some((routeId) => this.layerVisible[routeId])) return
+      if (!depot.routes?.some((routeId) => this.isRouteLayerVisible(routeId))) return
 
       const color = this.depotDisplayColor(depot) || "#64748B"
       const marker = this.metroDepotMarkerAt(L.latLng(depot.lat, depot.lon), color)
 
       this.renderDepotTrackLinks(depot, color)
 
-      const gradeNote = depot.grade ? `<br><span style="opacity:0.8">${depot.grade}機廠</span>` : ""
+      const gradeNote = depot.grade ? `<br><span style="opacity:0.8">${this.depotGradeLabel(depot.grade)}</span>` : ""
       const routeNames = this.depotRouteNames(depot)
       const routeNote = routeNames.length > 0 ? `<br><span style="opacity:0.8">服務路線：${routeNames.join("、")}</span>` : ""
 
@@ -834,7 +1534,7 @@ export default class extends Controller {
     const links = depot.track_links || []
 
     links.forEach((link) => {
-      if (!link?.route_id || !this.layerVisible[link.route_id]) return
+      if (!link?.route_id || !this.isRouteLayerVisible(link.route_id)) return
       if (!Array.isArray(link.coordinates) || link.coordinates.length < 2) return
 
       const latlngs = link.coordinates.map(([ lon, lat ]) => L.latLng(lat, lon))
@@ -852,8 +1552,14 @@ export default class extends Controller {
   }
 
   depotDisplayColor(depot) {
+    const trackRouteId = depot.track_links?.[0]?.route_id
+    if (trackRouteId && this.isRouteLayerVisible(trackRouteId)) {
+      const color = this.routeDisplayColor(this.findRoute(trackRouteId))
+      if (color) return color
+    }
+
     for (const routeId of depot.routes || []) {
-      if (!this.layerVisible[routeId]) continue
+      if (!this.isRouteLayerVisible(routeId)) continue
       const color = this.routeDisplayColor(this.findRoute(routeId))
       if (color) return color
     }
@@ -870,6 +1576,12 @@ export default class extends Controller {
     return (depot.routes || [])
       .map((routeId) => this.findRoute(routeId)?.name)
       .filter(Boolean)
+  }
+
+  depotGradeLabel(grade) {
+    if (grade === "維修區" || grade === "維修基地" || grade === "總機廠") return grade
+
+    return `${grade}機廠`
   }
 
   metroDepotMarkerAt(latlng, color) {
@@ -978,12 +1690,18 @@ export default class extends Controller {
       }
     })
 
+    ;[ this.outOfStationTransferGroup, this.inStationTransferGroup, this.metroDepotGroup ].forEach((group) => {
+      if (group && this.map.hasLayer(group) && group.getLayers().length > 0) {
+        combined.addLayer(group)
+      }
+    })
+
     if (combined.getLayers().length === 0) return
 
     try {
       const bounds = combined.getBounds()
       if (bounds.isValid()) {
-        this.map.fitBounds(bounds.pad(0.1))
+        this.map.fitBounds(bounds.pad(0.1), { maxZoom: 11 })
       }
     } catch (error) {
       console.warn("Could not fit bounds for visible routes", error)
@@ -1017,10 +1735,15 @@ export default class extends Controller {
       this.hideLayerWithCheckbox(layerId, checkbox)
     }
 
-    const systemId = this.metroSystemForRoute(layerId)
-    if (systemId) this.syncMetroSystemCheckbox(systemId)
+    const systemId = this.manifestSystemForRoute(layerId)
+    if (systemId && METRO_SYSTEM_IDS.includes(systemId)) {
+      this.syncMetroSystemCheckbox(systemId)
+    } else if (systemId) {
+      this.syncManifestSystemCheckbox(systemId)
+    }
 
     this.syncAllMetroCheckbox()
+    this.syncAllTransitCheckbox()
     this.updateOutOfStationTransfers()
   }
 
@@ -1200,6 +1923,11 @@ export default class extends Controller {
       return
     }
 
+    if (route?.id === "taoyuan_airport_skytrain") {
+      this.assignSkytrainTerminalRoles(passengerStations, assignRole)
+      return
+    }
+
     if (this.routeSkipsTerminalRoles(route)) {
       this.clearTerminalStationRoles(passengerStations)
       return
@@ -1292,6 +2020,26 @@ export default class extends Controller {
     passengerStations.forEach((feature) => {
       if (feature.properties?.ref !== ref) return
       if (!segments.some((segment) => this.danhaiFeatureOnSegment(feature, segment))) return
+
+      assignRole(feature, role)
+    })
+  }
+
+  assignSkytrainTerminalRoles(passengerStations, assignRole) {
+    passengerStations.forEach((feature) => {
+      if (feature.properties?.station_role) delete feature.properties.station_role
+    })
+
+    this.assignSkytrainTerminalRole(passengerStations, assignRole, "ST1N", "origin", "north")
+    this.assignSkytrainTerminalRole(passengerStations, assignRole, "ST2N", "destination", "north")
+    this.assignSkytrainTerminalRole(passengerStations, assignRole, "ST1S", "origin", "south")
+    this.assignSkytrainTerminalRole(passengerStations, assignRole, "ST2S", "destination", "south")
+  }
+
+  assignSkytrainTerminalRole(passengerStations, assignRole, ref, role, segment) {
+    passengerStations.forEach((feature) => {
+      if (feature.properties?.ref !== ref) return
+      if (feature.properties?.segment !== segment) return
 
       assignRole(feature, role)
     })
@@ -1401,6 +2149,14 @@ export default class extends Controller {
     const labels = segments.map((segment) => (segment === "lushan" ? "綠山線" : "藍海線"))
 
     return `淡海輕軌（${labels.join("／")}）`
+  }
+
+  skytrainLineLabel(feature) {
+    const segment = feature.properties?.segment
+    if (segment === "north") return "桃園機場南北側電車（北側）"
+    if (segment === "south") return "桃園機場南北側電車（南側）"
+
+    return feature.properties?.line
   }
 
   bringAirportMrtCommuterLinesToFront(group) {
@@ -1544,8 +2300,8 @@ export default class extends Controller {
   routeUsesParallelTracks(route) {
     if (!PARALLEL_TRACK_ROUTE_IDS.has(route?.id)) return false
 
-    // Danhai LRT: zoomed out should read as a single line.
-    if (route?.id === "danhai_lrt") {
+    // Danhai / skytrain: zoomed out should read as a single line.
+    if (route?.id === "danhai_lrt" || route?.id === "taoyuan_airport_skytrain") {
       const zoom = this.map?.getZoom() ?? 12
       return zoom >= 13
     }
@@ -1643,7 +2399,7 @@ export default class extends Controller {
     return this.routeLineCoordinates(data)
   }
 
-  danhaiRouteLineForSegment(data, segment) {
+  routeLineForSegment(data, segment) {
     for (const feature of data.features || []) {
       if (feature.properties?.feature_type !== "route") continue
       if (feature.properties?.segment !== segment) continue
@@ -1653,6 +2409,10 @@ export default class extends Controller {
     }
 
     return []
+  }
+
+  danhaiRouteLineForSegment(data, segment) {
+    return this.routeLineForSegment(data, segment)
   }
 
   parallelOffsetMetersForFeature(route, feature, halfOffset) {
@@ -1668,6 +2428,12 @@ export default class extends Controller {
       if (segment === "lanhai") return halfOffset
     }
 
+    if (route.id === "taoyuan_airport_skytrain") {
+      const segment = feature.properties?.segment
+      if (segment === "north") return -halfOffset
+      if (segment === "south") return halfOffset
+    }
+
     return null
   }
 
@@ -1677,7 +2443,7 @@ export default class extends Controller {
     }
 
     if (feature.properties?.segment) {
-      const segmentLine = this.danhaiRouteLineForSegment(data, feature.properties.segment)
+      const segmentLine = this.routeLineForSegment(data, feature.properties.segment)
       if (segmentLine.length >= 2) return segmentLine
     }
 
@@ -1881,7 +2647,7 @@ export default class extends Controller {
       for (let index = 0; index < coordinates.length - 1; index += 1) {
         const start = window.L.latLng(coordinates[index][1], coordinates[index][0])
         const end = window.L.latLng(coordinates[index + 1][1], coordinates[index + 1][0])
-        const projected = this.projectPointOnSegment(latlng, start, end)
+        const projected = this.projectLatLngOnSegment(latlng, start, end)
         const distance = latlng.distanceTo(projected)
 
         if (distance < bestDistance) {
@@ -1894,7 +2660,7 @@ export default class extends Controller {
     return bestLatLng
   }
 
-  projectPointOnSegment(point, start, end) {
+  projectLatLngOnSegment(point, start, end) {
     const dx = end.lng - start.lng
     const dy = end.lat - start.lat
 
@@ -1988,7 +2754,33 @@ export default class extends Controller {
     if (!routeId || !ref) return false
 
     return this.transferStationRefs(ref).some((stationRef) => {
-      return this.outOfStationEndpointKeys?.has(this.stationKey(routeId, stationRef))
+      const key = this.stationKey(routeId, stationRef)
+      if (!this.outOfStationEndpointKeys?.has(key)) return false
+
+      // HSR uses numeric refs; show regular stations unless a linked metro line is also on.
+      if (routeId === "taiwan_hsr") {
+        return this.hasVisibleLinkedTransferRoute(routeId, stationRef)
+      }
+
+      return true
+    })
+  }
+
+  hasVisibleLinkedTransferRoute(routeId, stationRef) {
+    return (this.outOfStationTransfers || []).some((transfer) => {
+      if (!transfer.routes?.includes(routeId)) return false
+
+      const matchesEndpoint = transfer.endpoints?.some((endpoint) => {
+        if (endpoint.route_id !== routeId) return false
+
+        return this.transferStationRefs(endpoint.ref).includes(stationRef)
+      })
+
+      if (!matchesEndpoint) return false
+
+      return transfer.routes.some((linkedRouteId) => {
+        return linkedRouteId !== routeId && this.layerVisible[linkedRouteId]
+      })
     })
   }
 
@@ -2061,24 +2853,37 @@ export default class extends Controller {
     const [leftColor, rightColor] = colors
     const safeLeft = leftColor || "#666666"
     const safeRight = rightColor || safeLeft
+    const { width, height } = this.transferStationMarkerDimensions()
 
     const html = `
-      <div class="transfer-station-marker" aria-hidden="true">
+      <div class="transfer-station-marker" style="width:${width}px;height:${height}px" aria-hidden="true">
         <div class="transfer-station-marker__half" style="background-color:${safeLeft}"></div>
         <div class="transfer-station-marker__half" style="background-color:${safeRight}"></div>
       </div>
     `
 
+    const iconWidth = width + 4
+    const iconHeight = height + 4
+
     return L.marker(latlng, {
       icon: L.divIcon({
         className: "transfer-station-icon",
         html,
-        iconSize: [ 20, 14 ],
-        iconAnchor: [ 10, 7 ]
+        iconSize: [ iconWidth, iconHeight ],
+        iconAnchor: [ iconWidth / 2, iconHeight / 2 ]
       }),
       pane: this.stationMarkerPane,
       zIndexOffset: 500
     })
+  }
+
+  transferStationMarkerDimensions() {
+    const diameter = Math.max((this.stationMarkerRadius() * 2) + 4, 12)
+
+    return {
+      width: diameter + 2,
+      height: Math.max(Math.round(diameter * 0.68), 9)
+    }
   }
 
   transferStationRefs(ref) {
@@ -2206,7 +3011,11 @@ export default class extends Controller {
     if (!name) return
 
     const ref = feature.properties?.ref
-    const line = routeId === "danhai_lrt" ? this.danhaiLineLabel(feature) : feature.properties?.line
+    const line = routeId === "danhai_lrt"
+      ? this.danhaiLineLabel(feature)
+      : routeId === "taoyuan_airport_skytrain"
+        ? this.skytrainLineLabel(feature)
+        : feature.properties?.line
     const label = ref ? `${ref} ${name}` : name
     const subtitle = line ? `<br><span style="opacity:0.8">${line}</span>` : ""
     const terminalLabel = this.terminalStationLabel(feature)
@@ -2241,7 +3050,7 @@ export default class extends Controller {
 
   async fetchGeoJSON(url) {
     if (!this.geoJSONCache[url]) {
-      this.geoJSONCache[url] = fetch(url).then(async (response) => {
+      this.geoJSONCache[url] = fetch(url, { cache: "no-store" }).then(async (response) => {
         if (!response.ok) throw new Error(`Failed to load ${url}`)
         const data = await response.json()
         this.geoJSONDataByUrl[url] = data

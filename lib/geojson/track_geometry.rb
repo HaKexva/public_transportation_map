@@ -47,6 +47,20 @@ module Geojson
       [ [ track_lon, track_lat ], [ lon, lat ] ]
     end
 
+    # Depot spurs: long links when far from track; short links when the facility is nearby.
+    def depot_link_coordinates_for_point(lon, lat, line_strings, threshold_m: DEPOT_EXTENSION_THRESHOLD_M)
+      return nil if line_strings.empty?
+
+      track_lon, track_lat, distance = nearest_on_line_strings(lon, lat, line_strings)
+      return nil if distance <= 0.5
+
+      if distance <= threshold_m
+        [ [ track_lon, track_lat ], [ lon, lat ] ]
+      else
+        spur_coordinates_for_point(lon, lat, line_strings, threshold_m: threshold_m)
+      end
+    end
+
     def project_on_segment(lon, lat, start_coord, end_coord)
       start_lon, start_lat = start_coord
       end_lon, end_lat = end_coord

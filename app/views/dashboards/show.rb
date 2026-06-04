@@ -51,6 +51,12 @@ module Views
           style: :parallel,
           colors: [ "#ED6B46", "#ED6B46" ]
         },
+        {
+          label: "機場電車",
+          note: "北側／南側雙軌並排",
+          style: :parallel,
+          colors: [ "#4F46E5", "#4F46E5" ]
+        },
         { label: "聯通道轉乘", note: "單灰色虛線", color: "#525252", style: :dashed },
         { label: "站外轉乘（優惠）", note: "雙灰色虛線（較粗）", color: "#3a3a3a", style: :dashed_double }
       ].freeze
@@ -59,7 +65,7 @@ module Views
         { label: "一般站", type: :station, color: "#666666" },
         { label: "起迄站", type: :terminal, color: "#A74C00" },
         { label: "轉乘站", type: :transfer, colors: [ "#E3002C", "#A74C00" ] },
-        { label: "機廠", type: :depot, color: "#64748B" },
+        { label: "機廠／維修區", type: :depot, color: "#64748B" },
         { label: "站外轉乘站", type: :out_of_station, color: "#737373" },
         { label: "轉角站（不提供載客服務）", type: :angle_station, color: "#00AFE2" },
         {
@@ -71,50 +77,75 @@ module Views
       ].freeze
 
       def view_template
-        div(class: "fixed inset-0 overflow-hidden bg-background", data: { controller: "map" }) do
+        div(
+          class: "map-split-layout fixed inset-0 flex flex-col overflow-hidden bg-background md:flex-row",
+          data: { controller: "map split-pane" }
+        ) do
+          aside(
+            class: "map-split-layout__sidebar flex min-h-0 min-w-0 flex-col",
+            data: { split_pane_target: "sidebar" },
+            aria: { label: "路線圖層與圖例" }
+          ) do
+            render_layers_panel
+            div(class: "map-legend-toolbar shrink-0 border-t border-border/60 bg-background/95 px-4 py-3") do
+              render_legend_dialog
+            end
+          end
+
           div(
-            id: "taiwan-region-map",
-            class: "absolute inset-0 z-0 min-h-dvh w-full",
-            data: { map_target: "map" },
-            role: "region",
-            aria: { label: "Map of Taiwan, Penghu, Kinmen, and Matsu" }
+            class: "map-split-layout__resizer shrink-0",
+            role: "separator",
+            aria: {
+              label: "調整側欄與地圖寬度",
+              orientation: "vertical",
+              valuemin: 240,
+              valuemax: 720,
+              valuenow: 352
+            },
+            tabindex: 0,
+            data: {
+              split_pane_target: "resizer",
+              action: "pointerdown->split-pane#startDrag"
+            }
           )
-          render_layers_panel
-          render_map_legend
+
+          div(
+            class: "map-split-layout__map relative min-h-0 min-w-0 flex-1",
+            data: { split_pane_target: "mapPane" }
+          ) do
+            div(
+              id: "taiwan-region-map",
+              class: "absolute inset-0 z-0 h-full w-full",
+              data: { map_target: "map" },
+              role: "region",
+              aria: { label: "Map of Taiwan, Penghu, Kinmen, and Matsu" }
+            )
+          end
         end
       end
 
       private
 
-      def render_map_legend
-        div(
-          id: "map-legend",
-          class: "map-ui-panel--collapsed map-legend-panel pointer-events-none",
-          role: "region",
-          aria: { label: "圖例" },
-          data: { map_target: "legendPanel" }
-        ) do
-          render RubyUI::Card.new(
-            class: "map-ui-panel pointer-events-auto w-64 max-w-[calc(100vw-2rem)] border-border/60 bg-background/95 shadow-2xl backdrop-blur-md"
-          ) do
-            div(class: "map-ui-panel__header flex items-center justify-between gap-2 px-4 pt-4") do
-              div(class: "space-y-0.5") do
-                render RubyUI::CardTitle.new(class: "text-sm") { "圖例" }
-                render RubyUI::CardDescription.new(class: "text-xs") { "路線與車站符號" }
-              end
-              button(
-                type: "button",
-                class: "map-ui-panel__toggle",
-                aria: { label: "展開圖例", expanded: false, controls: "map-legend-body" },
-                data: { action: "click->map#toggleLegendPanel" }
-              ) { render_collapse_icon }
+      def render_legend_dialog
+        render RubyUI::Dialog.new do
+          render RubyUI::DialogTrigger.new do
+            render RubyUI::Button.new(
+              variant: :outline,
+              size: :sm,
+              class: "w-full",
+              id: "map-legend-trigger"
+            ) { "圖例" }
+          end
+
+          render RubyUI::DialogContent.new(size: :sm, id: "map-legend") do
+            render RubyUI::DialogHeader.new do
+              render RubyUI::DialogTitle.new { "圖例" }
+              render RubyUI::DialogDescription.new { "路線與車站符號" }
             end
 
-            div(id: "map-legend-body", class: "map-ui-panel__body") do
-              render RubyUI::CardContent.new(class: "space-y-3 pt-3 pb-4") do
-                render_legend_section("路線", LEGEND_LINES) { |item| render_legend_line_item(item) }
-                render_legend_section("車站", LEGEND_MARKERS) { |item| render_legend_marker_item(item) }
-              end
+            div(class: "map-legend-dialog__body space-y-3") do
+              render_legend_section("路線", LEGEND_LINES) { |item| render_legend_line_item(item) }
+              render_legend_section("車站", LEGEND_MARKERS) { |item| render_legend_marker_item(item) }
             end
           end
         end
@@ -131,7 +162,7 @@ module Views
 
       def render_legend_line_item(item)
         div(class: "flex items-center gap-3") do
-          span(class: "flex w-11 shrink-0 items-center justify-center", aria: { hidden: true }) do
+          span(class: "map-legend-swatch", aria: { hidden: true }) do
             if item[:style] == :parallel
               render_legend_parallel_lines(item[:colors])
             elsif item[:style] == :dashed_double
@@ -176,7 +207,7 @@ module Views
 
       def render_legend_marker_item(item)
         div(class: "flex items-center gap-3") do
-          span(class: "flex w-11 shrink-0 items-center justify-center", aria: { hidden: true }) do
+          span(class: "map-legend-swatch", aria: { hidden: true }) do
             render_legend_marker_swatch(item)
           end
           div(class: "min-w-0") do
@@ -240,11 +271,11 @@ module Views
 
       def render_layers_panel
         div(
-          class: "pointer-events-none absolute inset-y-4 left-4 z-[1001] flex w-[min(100%,20rem)] flex-col",
+          class: "map-layers-panel flex min-h-0 min-w-0 flex-1 flex-col",
           data: { map_target: "layersPanel" }
         ) do
           render RubyUI::Card.new(
-            class: "map-ui-panel pointer-events-auto flex max-h-full flex-col overflow-hidden border-border/60 bg-background/95 shadow-2xl backdrop-blur-md"
+            class: "map-ui-panel pointer-events-auto flex h-full min-h-0 flex-col overflow-hidden rounded-none border-0 border-border/60 bg-background/95 shadow-none"
           ) do
             div(class: "map-ui-panel__header") do
               render_header
@@ -283,24 +314,140 @@ module Views
       end
 
       def render_layer_controls
-        render RubyUI::CardContent.new(class: "flex-1 overflow-y-auto py-3") do
-          div(data: { map_target: "layerSearchMuted" }) do
-            render RubyUI::Text.new(as: "p", size: "1", weight: "muted", class: "mb-3 rounded-md bg-muted/60 px-2.5 py-2 leading-relaxed") do
-              "勾選路線即可顯示（捷運與輕軌、高鐵、其他）。點擊車站可查看站名與轉乘資訊。"
+        render RubyUI::CardContent.new(class: "flex min-h-0 flex-1 flex-col overflow-hidden p-0") do
+          div(class: "route-search-toolbar shrink-0 space-y-2 border-b border-border/60 px-3 py-3") do
+            render_layer_search
+            render_all_transit_toggle
+            render RubyUI::Text.new(as: "p", size: "1", weight: "muted", class: "leading-relaxed") do
+              "搜尋或點選路線進入站點頁面；勾選可在地圖上顯示。"
             end
           end
-          render_layer_search
-          render RubyUI::Text.new(as: "p", size: "1", weight: "muted", class: "mb-2 px-2 uppercase tracking-wide", data: { map_target: "layerSearchMuted" }) do
-            "捷運與輕軌圖層"
+
+          div(class: "route-results min-h-0 flex-1 overflow-y-auto px-2 py-2", data: { map_target: "routeResults" }) do
+            searchable_route_groups.each { |group| render_route_search_section(group) }
+            render_coming_soon_layers
           end
-          div(class: "flex flex-col gap-1 px-1") do
-            render_metro_all_toggle
-            active_metro_systems.each { |system| render_metro_system(system) }
-          end
-          render_hsr_routes
-          render_other_routes
-          render_coming_soon_layers
         end
+      end
+
+      def searchable_route_groups
+        groups = active_metro_systems.map do |system|
+          { system: system, routes: main_routes(system[:id]) }
+        end
+
+        groups << { system: HSR_SYSTEM, routes: hsr_routes } if hsr_routes.any?
+        groups << { system: OTHER_SYSTEM, routes: other_routes } if other_routes.any?
+        groups.reject { |group| group[:routes].empty? }
+      end
+
+      def render_route_search_section(group)
+        system = group[:system]
+        routes = group[:routes]
+
+        div(
+          class: "route-search-section mb-3",
+          data: {
+            map_target: "layerSearchGroup",
+            search_text: route_section_search_text(system, routes)
+          }
+        ) do
+          render RubyUI::Text.new(
+            as: "p",
+            size: "1",
+            weight: "muted",
+            class: "route-search-section__heading sticky top-0 z-[1] mb-1 bg-background/95 px-1 py-1 uppercase tracking-wide backdrop-blur-sm"
+          ) { system[:label] }
+
+          div(class: "flex flex-col gap-0.5") do
+            routes.each { |route| render_route_search_row(route, system:) }
+          end
+        end
+      end
+
+      def render_route_search_row(route, system:)
+        branches = branch_routes_for(route["id"], system_id: system[:id])
+        subtitle = route_row_subtitle(route, branches)
+
+        div(
+          class: "route-search-item group flex w-full items-start gap-2 rounded-lg border border-transparent px-2 py-2 transition-colors hover:border-border/60 hover:bg-accent/50",
+          data: {
+            map_target: "layerSearchItem",
+            search_text: route_search_text(route, system)
+          }
+        ) do
+          a(
+            href: route_path(route["id"]),
+            class: "route-search-item__link flex min-w-0 flex-1 items-start gap-2 text-left text-foreground no-underline",
+            data: { turbo_frame: "_top" }
+          ) do
+            span(
+              class: "mt-1.5 size-2.5 shrink-0 rounded-full",
+              style: "background-color: #{route_display_color(route)}"
+            )
+            span(class: "min-w-0 flex-1") do
+              span(class: "flex items-center gap-2") do
+                span(class: "truncate text-sm font-medium leading-tight") { route["name"] }
+                span(class: "shrink-0 rounded bg-muted px-1.5 py-0.5 text-[10px] font-medium text-muted-foreground") do
+                  route["ref"]
+                end
+              end
+              if subtitle.present?
+                render RubyUI::Text.new(as: "span", size: "1", weight: "muted", class: "mt-0.5 line-clamp-2 leading-snug") do
+                  subtitle
+                end
+              end
+            end
+          end
+
+          input(
+            type: "checkbox",
+            id: "layer-#{route['id']}",
+            class: "#{layer_checkbox_classes} mt-0.5 shrink-0",
+            disabled: true,
+            aria: { label: "在地圖顯示 #{route['name']}" },
+            data: {
+              map_target: "layerCheckbox",
+              action: "click->map#stopCheckboxEvent change->map#toggleLayer",
+              map_layer_param: route["id"]
+            }
+          )
+        end
+      end
+
+      def route_row_subtitle(route, branches)
+        parts = [ route["name_en"].presence ]
+        if branches.any?
+          parts << "含 #{branches.map { |branch| branch['name'] }.join('、')}"
+        end
+        parts << "普通車藍線／直達車紫線並排" if route["id"] == "airport_mrt"
+        parts << "綠山／藍海雙軌並排" if route["id"] == "danhai_lrt"
+        parts << "北側／南側雙軌並排" if route["id"] == "taoyuan_airport_skytrain"
+        parts.compact.join(" · ")
+      end
+
+      def route_search_text(route, system)
+        branches = branch_routes_for(route["id"], system_id: system[:id])
+        [
+          system[:label],
+          route["name"],
+          route["name_en"],
+          route["ref"],
+          route["id"]&.tr("_", " "),
+          *branches.flat_map { |branch| [ branch["name"], branch["name_en"], branch["ref"] ] }
+        ].compact.join(" ")
+      end
+
+      def route_section_search_text(system, routes)
+        texts = [ system[:label], system[:description], system[:id] ]
+
+        routes.each do |route|
+          texts.push(route["name"], route["name_en"], route["ref"], route["id"])
+          branch_routes_for(route["id"], system_id: system[:id]).each do |branch|
+            texts.push(branch["name"], branch["name_en"], branch["ref"])
+          end
+        end
+
+        texts.compact.join(" ")
       end
 
       def active_metro_systems
@@ -315,53 +462,8 @@ module Views
         @routes_manifest.fetch("other", [])
       end
 
-      def render_hsr_routes
-        return if hsr_routes.empty?
-
-        div(
-          class: "mt-4 px-1",
-          data: {
-            map_target: "layerSearchGroup",
-            search_text: hsr_routes_search_text
-          }
-        ) do
-          render RubyUI::Text.new(as: "p", size: "1", weight: "muted", class: "mb-2 px-2 uppercase tracking-wide", data: { map_target: "layerSearchMuted" }) do
-            "高鐵"
-          end
-          div(class: "flex flex-col gap-1") do
-            hsr_routes.each { |route| render_route_toggle(route, system: HSR_SYSTEM) }
-          end
-        end
-      end
-
-      def hsr_routes_search_text
-        [ HSR_SYSTEM[:label], HSR_SYSTEM[:description], *hsr_routes.flat_map { |route| [ route["name"], route["name_en"], route["ref"] ] } ]
-          .compact
-          .join(" ")
-          .downcase
-      end
-
-      def render_other_routes
-        return if other_routes.empty?
-
-        div(
-          class: "mt-4 px-1",
-          data: {
-            map_target: "layerSearchGroup",
-            search_text: other_routes_search_text
-          }
-        ) do
-          render RubyUI::Text.new(as: "p", size: "1", weight: "muted", class: "mb-2 px-2 uppercase tracking-wide", data: { map_target: "layerSearchMuted" }) do
-            "其他"
-          end
-          div(class: "flex flex-col gap-1") do
-            other_routes.each { |route| render_route_toggle(route, system: OTHER_SYSTEM) }
-          end
-        end
-      end
-
       def render_coming_soon_layers
-        div(class: "mt-4 px-2", data: { map_target: "layerSearchMuted" }) do
+        div(class: "mt-4 px-1 border-t border-border/40 pt-3", data: { map_target: "layerSearchMuted" }) do
           render RubyUI::Text.new(as: "p", size: "1", weight: "muted", class: "mb-2 uppercase tracking-wide") do
             "即將推出"
           end
@@ -379,25 +481,76 @@ module Views
       end
 
       def render_footer
-        render RubyUI::CardFooter.new(class: "flex-col items-stretch gap-2 bg-muted/20 px-4 pt-3 pb-4") do
-          div(class: "grid grid-cols-2 gap-2") do
+        render RubyUI::CardFooter.new(class: "flex flex-col bg-muted/20 p-0 md:gap-2 md:px-4 md:pt-3 md:pb-4") do
+          render_hidden_metro_system_checkboxes
+          div(class: "hidden flex-col items-stretch gap-2 md:flex") do
+            div(class: "grid grid-cols-2 gap-2") do
+              render RubyUI::Button.new(
+                variant: :default,
+                size: :sm,
+                class: "w-full",
+                data: { action: "click->map#showAllTransit" }
+              ) { "顯示全部路線" }
+              render RubyUI::Button.new(
+                variant: :outline,
+                size: :sm,
+                class: "w-full",
+                data: { action: "click->map#resetViewport" }
+              ) { "重設視角" }
+            end
             render RubyUI::Button.new(
-              variant: :default,
+              variant: :ghost,
               size: :sm,
-              class: "w-full",
+              class: "w-full text-muted-foreground",
               data: { action: "click->map#showAllMetro" }
-            ) { "顯示全部捷運與輕軌" }
-            render RubyUI::Button.new(
-              variant: :outline,
-              size: :sm,
-              class: "w-full",
-              data: { action: "click->map#resetViewport" }
-            ) { "重設視角" }
-          end
-          render RubyUI::Text.new(as: "p", size: "1", weight: "muted", class: "leading-relaxed") do
-            "不同捷運系統之間的轉乘皆為站外轉乘；需同時開啟兩條路線，會以灰色虛線連接各系統站體（如十四張：環狀線 Y08 與安坑輕軌 K09）。"
+            ) { "僅顯示捷運與輕軌" }
+            render RubyUI::Text.new(as: "p", size: "1", weight: "muted", class: "leading-relaxed") do
+              "不同捷運系統之間的轉乘皆為站外轉乘；需同時開啟兩條路線，會以灰色虛線連接各系統站體（如十四張：環狀線 Y08 與安坑輕軌 K09）。"
+            end
           end
         end
+      end
+
+      def render_hidden_metro_system_checkboxes
+        div(class: "sr-only", aria: { hidden: true }) do
+          active_metro_systems.each do |system|
+            input(
+              type: "checkbox",
+              id: "layer-#{system[:id]}",
+              data: {
+                map_target: "layerCheckbox",
+                action: "change->map#toggleMetroSystem",
+                map_metro_system_param: system[:id]
+              }
+            )
+          end
+
+          [ HSR_SYSTEM, OTHER_SYSTEM ].each do |system|
+            input(
+              type: "checkbox",
+              id: "layer-#{system[:id]}",
+              data: {
+                map_target: "layerCheckbox",
+                action: "change->map#toggleMetroSystem",
+                map_metro_system_param: system[:id]
+              }
+            )
+          end
+        end
+      end
+
+      def render_all_transit_toggle
+        render_layer_toggle(
+          {
+            id: "all_transit",
+            label: "全部路線",
+            color: "#2563EB",
+            badge: :blue,
+            badge_label: "全部",
+            description: "捷運、輕軌、高鐵與其他已收錄路線"
+          },
+          stimulus_action: "change->map#toggleAllTransit"
+        )
       end
 
       def render_metro_all_toggle
@@ -424,19 +577,19 @@ module Views
       end
 
       def render_layer_search
-        div(class: "layer-search sticky top-0 z-10 mb-3 space-y-2 bg-background/95 px-1 pb-1 backdrop-blur-sm") do
+        div(class: "layer-search") do
           label(for: "layer-search", class: "sr-only") { "搜尋路線" }
           div(class: "relative") do
-            span(class: "pointer-events-none absolute inset-y-0 left-2.5 flex items-center text-muted-foreground", aria: { hidden: true }) do
+            span(class: "pointer-events-none absolute inset-y-0 left-3 flex items-center text-muted-foreground", aria: { hidden: true }) do
               render_search_icon
             end
             input(
               type: "search",
               id: "layer-search",
-              placeholder: "搜尋路線、代碼…",
+              placeholder: "搜尋路線、代碼或站名…",
               autocomplete: "off",
               class: [
-                "flex h-8 w-full rounded-md border border-border bg-background/80 py-1 pl-8 pr-8 text-sm shadow-xs",
+                "flex h-10 w-full rounded-lg border border-border bg-background py-2 pl-9 pr-9 text-sm shadow-xs",
                 "placeholder:text-muted-foreground",
                 "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50 focus-visible:border-ring"
               ].join(" "),
@@ -528,6 +681,9 @@ module Views
         end
         if route["id"] == "danhai_lrt"
           description = [ description, "綠山／藍海雙軌並排" ].compact.join(" · ")
+        end
+        if route["id"] == "taoyuan_airport_skytrain"
+          description = [ description, "北側／南側雙軌並排" ].compact.join(" · ")
         end
 
         render_layer_toggle(

@@ -2,6 +2,16 @@
 
 module Geojson
   module OtherTransitCatalog
+    # Passenger + angle stops along the Maokong Gondola (OSM way 71266575).
+    MAOKONG_FALLBACK_STATIONS = [
+      { ref: "G1", name: "動物園", lon: 121.5762884, lat: 24.9959573 },
+      { ref: "G2", name: "轉角一", lon: 121.5829967, lat: 24.9919382, angle_station: true },
+      { ref: "G3", name: "動物園南", lon: 121.5874945, lat: 24.9901573 },
+      { ref: "G4", name: "轉角二", lon: 121.5921614, lat: 24.9882953, angle_station: true },
+      { ref: "G5", name: "指南宮", lon: 121.5896828, lat: 24.9789312 },
+      { ref: "G6", name: "貓空", lon: 121.5881712, lat: 24.9691386 }
+    ].freeze
+
     LINES = [
       MetroLine.other(
         slug: "maokong_gondola",
