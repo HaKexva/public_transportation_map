@@ -30,7 +30,7 @@ module Geojson
         system_id: "taipei_metro",
         output_subdir: "taipei_metro",
         network_name: "臺北捷運",
-        osm_networks: [ "臺北捷運" ]
+        osm_networks: [ "臺北捷運", "台北捷運", "Taipei Metro" ]
       )
     end
 
@@ -48,7 +48,7 @@ module Geojson
         system_id: "new_taipei_metro",
         output_subdir: "new_taipei_metro",
         network_name: "新北捷運",
-        osm_networks: [ "新北捷運" ]
+        osm_networks: [ "新北捷運", "New Taipei Metro" ]
       )
     end
 
@@ -66,7 +66,7 @@ module Geojson
         system_id: "taoyuan_metro",
         output_subdir: "taoyuan_metro",
         network_name: "桃園捷運",
-        osm_networks: osm_networks || [ "桃園捷運", "桃園機場捷運" ]
+        osm_networks: osm_networks || [ "桃園捷運", "桃園機場捷運", "Taoyuan Metro" ]
       )
     end
 
@@ -84,7 +84,7 @@ module Geojson
         system_id: "taichung_metro",
         output_subdir: "taichung_metro",
         network_name: "臺中捷運",
-        osm_networks: osm_networks || [ "臺中捷運", "台中捷運" ]
+        osm_networks: osm_networks || [ "臺中捷運", "台中捷運", "Taichung Metro" ]
       )
     end
 
@@ -102,7 +102,7 @@ module Geojson
         system_id: "kaohsiung_metro",
         output_subdir: "kaohsiung_metro",
         network_name: "高雄捷運",
-        osm_networks: osm_networks || [ "高雄捷運", "高雄大眾捷運系統" ]
+        osm_networks: osm_networks || [ "高雄捷運", "Kaohsiung Metro" ]
       )
     end
 
@@ -120,7 +120,7 @@ module Geojson
         system_id: "hsr",
         output_subdir: "hsr",
         network_name: "台灣高鐵",
-        osm_networks: osm_networks || [ "台灣高鐵", "THSR", "Taiwan High Speed Rail" ]
+        osm_networks: osm_networks || [ "台灣高鐵", "HSR", "THSR", "Taiwan High Speed Rail" ]
       )
     end
 
@@ -138,7 +138,7 @@ module Geojson
         system_id: "other",
         output_subdir: "other",
         network_name: "其他",
-        osm_networks: []
+        osm_networks: [ "其他", "Other" ]
       )
     end
   end

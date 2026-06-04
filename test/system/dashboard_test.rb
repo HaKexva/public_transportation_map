@@ -3,6 +3,137 @@
 require "application_system_test_case"
 
 class DashboardTest < ApplicationSystemTestCase
+  test "stacks route stops above map on narrow screens" do
+    page.driver.browser.manage.window.resize_to(390, 844)
+    visit route_path("wenhu_line")
+
+    assert_selector ".route-stop-item", minimum: 5, wait: 10
+
+    layout = page.evaluate_script(<<~JS)
+      (() => {
+        const body = document.querySelector(".route-page__body")
+        const stops = document.querySelector(".route-page__stops")
+        const map = document.querySelector(".route-page__map")
+        if (!body || !stops || !map) return null
+
+        const bodyRect = body.getBoundingClientRect()
+        const stopsRect = stops.getBoundingClientRect()
+        const mapRect = map.getBoundingClientRect()
+
+        return {
+          stopsTop: stopsRect.top <= bodyRect.top + 2,
+          mapBelowStops: mapRect.top >= stopsRect.bottom - 4,
+          stopsFullWidth: stopsRect.width >= bodyRect.width - 4
+        }
+      })()
+    JS
+
+    assert layout, "expected route page body with stops and map"
+    assert layout["stopsTop"], "expected stops on top"
+    assert layout["mapBelowStops"], "expected map below stops"
+    assert layout["stopsFullWidth"], "expected stops to span body width"
+  ensure
+    page.driver.browser.manage.window.resize_to(1400, 900)
+  end
+
+  test "navigates to dedicated route page from dashboard" do
+    visit root_path
+
+    click_link "文湖線", match: :first
+
+    assert_current_path route_path("wenhu_line")
+    assert_selector "h1", text: "文湖線", wait: 10
+    assert_selector ".route-stop-item", minimum: 5, wait: 10
+    assert_link "← 返回地圖", href: root_path
+  end
+
+  test "lists 東門 on tamsui xinyi line between 大安森林公園 and 中正紀念堂" do
+    visit route_path("tamsui_xinyi")
+    assert_selector ".route-stop-item", minimum: 10, wait: 10
+
+    names = page.all(".route-stop-item__name", minimum: 10, wait: 10).map(&:text)
+    assert_includes names, "東門"
+    assert names.index("大安森林公園") < names.index("東門")
+    assert names.index("東門") < names.index("中正紀念堂")
+  end
+
+  test "lists maokong gondola stops in line order including angle stations" do
+    visit route_path("maokong_gondola")
+    assert_selector ".route-stop-item", minimum: 4, wait: 10
+
+    names = page.all(".route-stop-item__name", minimum: 4, wait: 10).map(&:text)
+    assert_equal "動物園", names.first
+    assert_equal "貓空", names.last
+    assert_includes names, "動物園南"
+    assert_includes names, "指南宮"
+    assert_includes names, "轉角一（不提供載客）"
+    assert_includes names, "轉角二（不提供載客）"
+    assert names.index("轉角一（不提供載客）") < names.index("動物園南")
+    assert names.index("指南宮") < names.index("貓空")
+  end
+
+  test "lists 古亭 and 中正紀念堂 on songshan xindian line in order" do
+    visit route_path("songshan_xindian")
+    assert_selector ".route-stop-item", minimum: 10, wait: 10
+
+    names = page.all(".route-stop-item__name", minimum: 10, wait: 10).map(&:text)
+    assert_includes names, "古亭"
+    assert_includes names, "中正紀念堂"
+    assert names.index("台電大樓") < names.index("古亭")
+    assert names.index("古亭") < names.index("中正紀念堂")
+    assert names.index("中正紀念堂") < names.index("小南門")
+  end
+
+  test "lists 中山 松江南京 南京復興 on songshan xindian line in order" do
+    visit route_path("songshan_xindian")
+    assert_selector ".route-stop-item", minimum: 10, wait: 10
+
+    names = page.all(".route-stop-item__name", minimum: 10, wait: 10).map(&:text)
+    assert_includes names, "中山"
+    assert_includes names, "松江南京"
+    assert_includes names, "南京復興"
+    assert_not_includes names, "忠孝復興"
+    assert names.index("北門") < names.index("中山")
+    assert names.index("中山") < names.index("松江南京")
+    assert names.index("松江南京") < names.index("南京復興")
+  end
+
+  test "lists 大安 on tamsui xinyi line between 信義安和 and 大安森林公園" do
+    visit route_path("tamsui_xinyi")
+    assert_selector ".route-stop-item", minimum: 10, wait: 10
+
+    names = page.all(".route-stop-item__name", minimum: 10, wait: 10).map(&:text)
+    refs = page.all(".route-stop-item__index", minimum: 10, wait: 10).map(&:text)
+    assert_includes names, "大安"
+    assert_equal "R05", refs[names.index("大安")]
+    assert names.index("信義安和") < names.index("大安")
+    assert names.index("大安") < names.index("大安森林公園")
+  end
+
+  test "lists 忠孝復興 on wenhu line between 大安 and 南京復興" do
+    visit route_path("wenhu_line")
+    assert_selector ".route-stop-item", minimum: 10, wait: 10
+
+    names = page.all(".route-stop-item__name", minimum: 10, wait: 10).map(&:text)
+    assert_includes names, "忠孝復興"
+    assert names.index("大安") < names.index("忠孝復興")
+    assert names.index("忠孝復興") < names.index("南京復興")
+  end
+
+  test "orders zhonghe xinlu stops by line station number including transfer refs" do
+    visit route_path("zhonghe_xinlu")
+
+    assert_selector ".route-stop-item", minimum: 10, wait: 10
+
+    refs = page.all(".route-stop-item__ref", minimum: 10, wait: 10).map(&:text)
+    assert_equal "O01", refs.first
+    assert_equal "O54", refs.last
+    assert_includes refs, "BL14;O07"
+    assert_includes refs, "R13;O11"
+    assert refs.index("BL14;O07") < refs.index("O08;G15")
+    assert refs.index("R13;O11") < refs.index("O12")
+  end
+
   test "filters sidebar routes from the search box" do
     visit root_path
 
@@ -27,31 +158,39 @@ class DashboardTest < ApplicationSystemTestCase
 
     assert_selector "#taiwan-region-map"
     assert_selector ".leaflet-container", wait: 5
-    assert_selector "#map-legend", text: "圖例"
+    assert_button "圖例"
 
-    legend_on_right = page.evaluate_script(<<~JS)
+    split_layout = page.evaluate_script(<<~JS)
       (() => {
-        const legend = document.getElementById("map-legend")
-        if (!legend) return false
-        const rect = legend.getBoundingClientRect()
-        return rect.left > window.innerWidth / 2
+        const layout = document.querySelector(".map-split-layout")
+        const sidebar = document.querySelector(".map-split-layout__sidebar")
+        const map = document.getElementById("taiwan-region-map")
+        if (!layout || !sidebar || !map) return null
+
+        const layoutRect = layout.getBoundingClientRect()
+        const sidebarRect = sidebar.getBoundingClientRect()
+        const mapRect = map.getBoundingClientRect()
+
+        return {
+          sidebarLeft: sidebarRect.left <= layoutRect.left + 2,
+          mapRight: mapRect.right >= layoutRect.right - 2,
+          mapLeftOfSidebar: mapRect.left >= sidebarRect.right - 4
+        }
       })()
     JS
-    assert legend_on_right, "expected #map-legend on the right half of the viewport"
+    assert split_layout, "expected split layout with sidebar and map"
+    assert split_layout["sidebarLeft"], "expected sidebar on the left"
+    assert split_layout["mapRight"], "expected map on the right"
+    assert split_layout["mapLeftOfSidebar"], "expected map to the right of the sidebar"
+    assert_selector ".map-split-layout__resizer"
     assert_text "台灣大眾運輸地圖"
-    legend_text = page.evaluate_script("document.getElementById('map-legend')?.textContent || ''")
-    assert_includes legend_text, "普通車"
-    assert_includes legend_text, "快慢車交會站"
-
-    chevron_toggle = page.evaluate_script(<<~JS)
-      (() => {
-        const button = document.querySelector("#map-legend .map-ui-panel__toggle")
-        const paths = button?.querySelector("svg")?.querySelectorAll("path") || []
-        return paths.length === 1
-      })()
-    JS
-    assert chevron_toggle, "legend toggle should use a chevron, not an X icon"
-    assert_button "顯示全部捷運與輕軌"
+    click_button "圖例"
+    assert_selector "#map-legend", text: "圖例", wait: 5
+    assert_text "普通車"
+    assert_text "快慢車交會站"
+    assert_button "顯示全部路線"
+    assert_button "僅顯示捷運與輕軌"
+    assert_selector "#layer-all_transit", visible: :all
     assert_text "其他"
     assert_selector "#layer-maokong_gondola", visible: :all
     assert_selector "#layer-taoyuan_airport_skytrain", visible: :all
@@ -62,6 +201,59 @@ class DashboardTest < ApplicationSystemTestCase
     assert_selector "#layer-circular_lrt", visible: :all
     assert_selector "#layer-taiwan_hsr", visible: :all
     assert_button "重設視角"
+  end
+
+  test "stacks sidebar above map on narrow screens" do
+    page.driver.browser.manage.window.resize_to(390, 844)
+    visit root_path
+
+    assert_selector "#taiwan-region-map"
+    assert_selector ".leaflet-container", wait: 5
+
+    split_layout = page.evaluate_script(<<~JS)
+      (() => {
+        const layout = document.querySelector(".map-split-layout")
+        const sidebar = document.querySelector(".map-split-layout__sidebar")
+        const map = document.getElementById("taiwan-region-map")
+        if (!layout || !sidebar || !map) return null
+
+        const layoutRect = layout.getBoundingClientRect()
+        const sidebarRect = sidebar.getBoundingClientRect()
+        const mapRect = map.getBoundingClientRect()
+
+        return {
+          sidebarTop: sidebarRect.top <= layoutRect.top + 2,
+          mapBelowSidebar: mapRect.top >= sidebarRect.bottom - 4,
+          sidebarFullWidth: sidebarRect.width >= layoutRect.width - 4
+        }
+      })()
+    JS
+
+    assert split_layout, "expected split layout with sidebar and map"
+    assert split_layout["sidebarTop"], "expected sidebar on top"
+    assert split_layout["mapBelowSidebar"], "expected map below the sidebar"
+    assert split_layout["sidebarFullWidth"], "expected sidebar to span the layout width"
+    assert_no_button "顯示全部路線"
+    assert_no_button "重設視角"
+    assert_no_button "僅顯示捷運與輕軌"
+    assert_no_text "不同捷運系統之間的轉乘皆為站外轉乘"
+  ensure
+    page.driver.browser.manage.window.resize_to(1400, 900)
+  end
+
+  test "shows all transit routes when show all routes is clicked" do
+    visit root_path
+
+    within "#taiwan-region-map" do
+      assert_selector ".leaflet-tile-pane", wait: 10
+    end
+
+    click_button "顯示全部路線"
+
+    assert_selector "#layer-wenhu_line:checked", wait: 15
+    assert_selector "#layer-taiwan_hsr:checked", wait: 15
+    assert_selector "#layer-maokong_gondola:checked", wait: 15
+    assert_selector ".leaflet-overlay-pane path.leaflet-interactive", wait: 15, minimum: 5
   end
 
   test "shows and hides Wenhu line when the line checkbox is toggled" do
@@ -366,14 +558,66 @@ class DashboardTest < ApplicationSystemTestCase
   test "airport mrt layer toggle uses commuter blue" do
     visit root_path
 
-    dot = find("label[for='layer-airport_mrt'] span[style*='background-color']", visible: :all)
+    row = find("a[href='#{route_path('airport_mrt')}']", visible: :all)
+    dot = row.find("span[style*='background-color']", match: :first)
     assert_match(/rgb\(0,\s*115,\s*183\)/i, dot[:style])
+  end
+
+  test "lists taiwan hsr stops on route page and map" do
+    visit route_path("taiwan_hsr")
+    assert_selector ".route-stop-item", minimum: 12, wait: 10
+
+    names = page.all(".route-stop-item__name", minimum: 12, wait: 10).map(&:text)
+    refs = page.all(".route-stop-item__index", minimum: 12, wait: 10).map(&:text)
+    assert_equal "南港", names.first
+    assert_equal "左營", names.last
+    assert_includes names, "台中"
+    assert names.index("新竹") < names.index("苗栗"), "新竹 (05) should be north of 苗栗 (06)"
+    assert_equal "05", refs[names.index("新竹")]
+    assert_equal "06", refs[names.index("苗栗")]
+
+    visit root_path
+    find("#layer-taiwan_hsr", visible: :all).check
+    assert_selector ".leaflet-marker-icon", wait: 10, minimum: 1
+  end
+
+  test "skytrain route page lists north and south sections" do
+    visit route_path("taoyuan_airport_skytrain")
+    assert_selector ".route-stop-item", minimum: 4, wait: 10
+
+    assert_selector ".route-stops-section-heading", text: "北側（管制區內）"
+    assert_selector ".route-stops-section-heading", text: "南側（管制區外）"
+
+    names = page.all(".route-stop-item__name", minimum: 4).map(&:text)
+    assert_includes names, "第一航廈（北側）"
+    assert_includes names, "第二航廈（南側）"
+  end
+
+  test "airport mrt route page lists commuter and express sections" do
+    visit route_path("airport_mrt")
+    assert_selector ".route-stop-item", minimum: 7, wait: 10
+
+    assert_selector ".route-stops-section-heading", text: "普通車"
+    assert_selector ".route-stops-section-heading", text: "直達車"
+
+    refs = page.all(".route-stop-item__index", minimum: 7, wait: 10).map(&:text)
+    assert_equal "A1", refs.first
+    assert_includes refs, "A21"
+
+    express_heading = find(".route-stops-section-heading", text: "直達車")
+    express_section_refs = express_heading.all(
+      :xpath,
+      "./following-sibling::li[./button[contains(@class, 'route-stop-item')]]"
+    ).map { |item| item.find(".route-stop-item__index").text }
+
+    assert_equal %w[A1 A3 A8 A12 A13 A18 A21], express_section_refs
   end
 
   test "danhai lrt layer toggle uses coral line color" do
     visit root_path
 
-    dot = find("label[for='layer-danhai_lrt'] span[style*='background-color']", visible: :all)
+    row = find("a[href='#{route_path('danhai_lrt')}']", visible: :all)
+    dot = row.find("span[style*='background-color']", match: :first)
     assert_match(/rgb\(237,\s*107,\s*70\)/i, dot[:style])
   end
 

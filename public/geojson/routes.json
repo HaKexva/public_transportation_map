@@ -57,9 +57,7 @@
       "name_en": "Zhonghe–Xinlu Line",
       "ref": "O",
       "color": "#F8B61C"
-    }
-  ],
-  "new_taipei_metro": [
+    },
     {
       "id": "circular",
       "file": "/geojson/taipei_metro/circular.geojson",
@@ -67,7 +65,9 @@
       "name_en": "Circular Line",
       "ref": "Y",
       "color": "#FEDB00"
-    },
+    }
+  ],
+  "new_taipei_metro": [
     {
       "id": "danhai_lrt",
       "file": "/geojson/new_taipei_metro/danhai_lrt.geojson",
@@ -89,7 +89,7 @@
     {
       "id": "airport_mrt",
       "file": "/geojson/taoyuan_metro/airport_mrt.geojson",
-      "name": "機場捷運",
+      "name": "機場捷運普通車",
       "name_en": "Taoyuan Airport MRT",
       "ref": "A",
       "color": "#0073B7"
@@ -97,7 +97,7 @@
     {
       "id": "airport_mrt_express",
       "file": "/geojson/taoyuan_metro/airport_mrt_express.geojson",
-      "name": "機捷直達車",
+      "name": "機場捷運直達車",
       "name_en": "Airport MRT Express",
       "ref": "A",
       "color": "#6A2C91",
@@ -140,6 +140,16 @@
       "color": "#ADC956"
     }
   ],
+  "hsr": [
+    {
+      "id": "taiwan_hsr",
+      "file": "/geojson/hsr/taiwan_hsr.geojson",
+      "name": "台灣高鐵",
+      "name_en": "Taiwan High Speed Rail",
+      "ref": "HSR",
+      "color": "#F4811A"
+    }
+  ],
   "other": [
     {
       "id": "maokong_gondola",
@@ -164,16 +174,6 @@
       "name_en": "Sun Moon Lake Ropeway",
       "ref": "SM",
       "color": "#059669"
-    }
-  ],
-  "hsr": [
-    {
-      "id": "taiwan_hsr",
-      "file": "/geojson/hsr/taiwan_hsr.geojson",
-      "name": "台灣高鐵",
-      "name_en": "Taiwan High Speed Rail",
-      "ref": "HSR",
-      "color": "#F4811A"
     }
   ]
 }

@@ -30,10 +30,10 @@ module Geojson
 
       collection = {
         type: "FeatureCollection",
-        name: "桃園捷運機捷直達車",
+        name: "機場捷運直達車",
         properties: {
           source: "Derived from #{@source_path.basename}. Express stops: #{EXPRESS_STOP_REFS.join(', ')}.",
-          network: "桃園捷運",
+          network: "桃園機場捷運",
           ref: "A",
           service_type: "express"
         },
@@ -118,7 +118,7 @@ module Geojson
         properties: {
           feature_type: "express_route",
           ref: "A",
-          name: "機捷直達車",
+          name: "機場捷運直達車",
           name_en: "Airport MRT Express",
           color: COLOR,
           service_type: "express"
@@ -138,7 +138,7 @@ module Geojson
             feature_type: "station",
             ref: station[:ref],
             name: station[:name],
-            line: "機捷直達車",
+            line: "機場捷運直達車",
             color: COLOR,
             express_service: true
           },

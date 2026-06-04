@@ -36,11 +36,11 @@
     "grade": "三級",
     "track_links": [
       {
-        "route_id": "songshan_xindian",
+        "route_id": "xiaobitan_branch",
         "coordinates": [
           [
-            121.54140044361517,
-            24.967696992233577
+            121.53086260528165,
+            24.971615676564916
           ],
           [
             121.5308,
@@ -84,7 +84,21 @@
     "lon": 121.4483,
     "lat": 24.991,
     "grade": "四級",
-    "track_links": []
+    "track_links": [
+      {
+        "route_id": "bannan",
+        "coordinates": [
+          [
+            121.44834499549007,
+            24.991002575546307
+          ],
+          [
+            121.4483,
+            24.991
+          ]
+        ]
+      }
+    ]
   },
   {
     "id": "zhonghe_depot",
@@ -95,7 +109,21 @@
     "lon": 121.508814,
     "lat": 24.99025,
     "grade": "一級",
-    "track_links": []
+    "track_links": [
+      {
+        "route_id": "zhonghe_xinlu",
+        "coordinates": [
+          [
+            121.50866731246336,
+            24.989961865169192
+          ],
+          [
+            121.508814,
+            24.99025
+          ]
+        ]
+      }
+    ]
   },
   {
     "id": "xinzhuang_depot",
@@ -106,7 +134,21 @@
     "lon": 121.41,
     "lat": 25.0215,
     "grade": "三級",
-    "track_links": []
+    "track_links": [
+      {
+        "route_id": "zhonghe_xinlu",
+        "coordinates": [
+          [
+            121.41001195888725,
+            25.02139558363643
+          ],
+          [
+            121.41,
+            25.0215
+          ]
+        ]
+      }
+    ]
   },
   {
     "id": "luzhou_depot",
@@ -117,7 +159,21 @@
     "lon": 121.467,
     "lat": 25.09,
     "grade": "四級",
-    "track_links": []
+    "track_links": [
+      {
+        "route_id": "zhonghe_xinlu",
+        "coordinates": [
+          [
+            121.46712586650708,
+            25.09026798646082
+          ],
+          [
+            121.467,
+            25.09
+          ]
+        ]
+      }
+    ]
   },
   {
     "id": "muzha_depot",
@@ -153,7 +209,21 @@
     "lon": 121.618,
     "lat": 25.0554,
     "grade": "中運量",
-    "track_links": []
+    "track_links": [
+      {
+        "route_id": "wenhu_line",
+        "coordinates": [
+          [
+            121.61799550017811,
+            25.055365570662346
+          ],
+          [
+            121.618,
+            25.0554
+          ]
+        ]
+      }
+    ]
   },
   {
     "id": "qingpu_depot",
@@ -190,7 +260,34 @@
     "lon": 121.5276,
     "lat": 24.9845,
     "grade": "輕軌",
-    "track_links": []
+    "track_links": [
+      {
+        "route_id": "circular",
+        "coordinates": [
+          [
+            121.52759193290113,
+            24.984489802918677
+          ],
+          [
+            121.5276,
+            24.9845
+          ]
+        ]
+      },
+      {
+        "route_id": "ankeng_lrt",
+        "coordinates": [
+          [
+            121.52738791233307,
+            24.984245220632808
+          ],
+          [
+            121.5276,
+            24.9845
+          ]
+        ]
+      }
+    ]
   },
   {
     "id": "ankeng_depot",
@@ -201,7 +298,21 @@
     "lon": 121.486,
     "lat": 24.945,
     "grade": "輕軌",
-    "track_links": []
+    "track_links": [
+      {
+        "route_id": "ankeng_lrt",
+        "coordinates": [
+          [
+            121.48598629996721,
+            24.945003299540243
+          ],
+          [
+            121.486,
+            24.945
+          ]
+        ]
+      }
+    ]
   },
   {
     "id": "danhai_depot",
@@ -212,7 +323,21 @@
     "lon": 121.434621,
     "lat": 25.20095,
     "grade": "輕軌",
-    "track_links": []
+    "track_links": [
+      {
+        "route_id": "danhai_lrt",
+        "coordinates": [
+          [
+            121.4346598,
+            25.2009352
+          ],
+          [
+            121.434621,
+            25.20095
+          ]
+        ]
+      }
+    ]
   },
   {
     "id": "kaohsiung_north_depot",
@@ -310,5 +435,205 @@
     "lat": 22.642035,
     "grade": "輕軌",
     "track_links": []
+  },
+  {
+    "id": "hsr_yanchao_depot",
+    "name": "燕巢總機廠",
+    "routes": [
+      "taiwan_hsr"
+    ],
+    "lon": 120.361,
+    "lat": 22.773,
+    "grade": "總機廠",
+    "track_links": [
+      {
+        "route_id": "taiwan_hsr",
+        "coordinates": [
+          [
+            120.34701196223553,
+            22.766206690986262
+          ],
+          [
+            120.361,
+            22.773
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hsr_wuri_depot",
+    "name": "烏日維修基地",
+    "routes": [
+      "taiwan_hsr"
+    ],
+    "lon": 120.615,
+    "lat": 24.098,
+    "grade": "維修基地",
+    "track_links": [
+      {
+        "route_id": "taiwan_hsr",
+        "coordinates": [
+          [
+            120.61454336094572,
+            24.098045176982765
+          ],
+          [
+            120.615,
+            24.098
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hsr_liujia_depot",
+    "name": "六家維修基地",
+    "routes": [
+      "taiwan_hsr"
+    ],
+    "lon": 121.039,
+    "lat": 24.807,
+    "grade": "維修基地",
+    "track_links": [
+      {
+        "route_id": "taiwan_hsr",
+        "coordinates": [
+          [
+            121.03979880186478,
+            24.80679738523789
+          ],
+          [
+            121.039,
+            24.807
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hsr_taibao_depot",
+    "name": "太保維修基地",
+    "routes": [
+      "taiwan_hsr"
+    ],
+    "lon": 120.332,
+    "lat": 23.459,
+    "grade": "維修基地",
+    "track_links": [
+      {
+        "route_id": "taiwan_hsr",
+        "coordinates": [
+          [
+            120.323766,
+            23.4592473
+          ],
+          [
+            120.332,
+            23.459
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hsr_zuoying_depot",
+    "name": "左營維修基地",
+    "routes": [
+      "taiwan_hsr"
+    ],
+    "lon": 120.318,
+    "lat": 22.682,
+    "grade": "維修基地",
+    "track_links": [
+      {
+        "route_id": "taiwan_hsr",
+        "coordinates": [
+          [
+            120.3097976,
+            22.6892811
+          ],
+          [
+            120.318,
+            22.682
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "maokong_depot",
+    "name": "貓空纜車維修區",
+    "routes": [
+      "maokong_gondola"
+    ],
+    "lon": 121.5763,
+    "lat": 24.996,
+    "grade": "維修區",
+    "track_links": [
+      {
+        "route_id": "maokong_gondola",
+        "coordinates": [
+          [
+            121.5762884,
+            24.9959573
+          ],
+          [
+            121.5763,
+            24.996
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "skytrain_depot",
+    "name": "航廈電車維修區",
+    "routes": [
+      "taoyuan_airport_skytrain"
+    ],
+    "lon": 121.238,
+    "lat": 25.077,
+    "grade": "維修區",
+    "track_links": [
+      {
+        "route_id": "taoyuan_airport_skytrain",
+        "coordinates": [
+          [
+            121.23658452909035,
+            25.078793933997783
+          ],
+          [
+            121.238,
+            25.077
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sun_moon_ropeway_depot",
+    "name": "日月潭纜車維修區",
+    "routes": [
+      "sun_moon_ropeway"
+    ],
+    "lon": 120.951,
+    "lat": 23.86,
+    "grade": "維修區",
+    "track_links": [
+      {
+        "route_id": "sun_moon_ropeway",
+        "coordinates": [
+          [
+            120.95093067810384,
+            23.860140611265383
+          ],
+          [
+            120.951,
+            23.86
+          ]
+        ]
+      }
+    ]
   }
 ]

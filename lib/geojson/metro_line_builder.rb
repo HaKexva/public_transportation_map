@@ -295,14 +295,38 @@ module Geojson
       end
 
       if @line.slug == "songshan_xindian"
-        return stations.reject { |station| station[:ref] == "G03A" }
+        stations = reject_stray_songshan_stations(stations)
+        stations = stations.reject { |station| station[:ref] == "G03A" }
+        return apply_taipei_in_station_transfers!(stations)
       end
 
       if @line.slug == "tamsui_xinyi"
-        return stations.reject { |station| station[:ref].in?(%w[R22A]) }
+        stations = stations.reject { |station| station[:ref].in?(%w[R22A]) }
+        return apply_taipei_in_station_transfers!(stations)
       end
 
-      stations
+      apply_taipei_in_station_transfers!(stations)
+    end
+
+    def apply_taipei_in_station_transfers!(stations)
+      transfers = TaipeiMetroCatalog::IN_STATION_TRANSFERS_BY_NAME
+      inject_missing_in_station_transfers!(stations, transfers)
+      stations.replace(apply_in_station_transfers(stations, transfers))
+      reject_transfer_stations_not_on_line!(stations, transfers)
+    end
+
+    # OSM sometimes attaches other lines' stops to the Songshan–Xindian relation.
+    def reject_stray_songshan_stations(stations)
+      transfer_names = TaipeiMetroCatalog::IN_STATION_TRANSFERS_BY_NAME.keys
+
+      stations.reject do |station|
+        next false if transfer_names.include?(station[:name])
+
+        primary_ref = station[:ref].to_s.split(";").first
+        next false if primary_ref.match?(/\AG(0[1-9]|1[0-9]|03A)\z/i)
+
+        true
+      end
     end
 
     def default_stations
@@ -314,12 +338,14 @@ module Geojson
       extractor = OsmRouteExtractor.new(relation_id: @line.relation_ids.first)
       stops = extractor.fetch_named_stops_from_relation
 
-      stops.filter_map do |stop|
+      stations = stops.filter_map do |stop|
         ref = TaipeiMetroCatalog::CIRCULAR_STATION_REFS_BY_NAME[stop[:name]]
         next unless ref
 
         stop.merge(ref: ref)
       end.sort_by { |station| station_sort_key(station[:ref]) }
+
+      apply_taipei_in_station_transfers!(stations)
     end
 
     def fetch_taichung_stations
@@ -352,7 +378,7 @@ module Geojson
       return if line_strings.empty?
 
       MetroDepotCatalog.depots_for_route(@line.slug).each do |depot|
-        spur = TrackGeometry.spur_coordinates_for_point(depot[:lon], depot[:lat], line_strings)
+        spur = TrackGeometry.depot_link_coordinates_for_point(depot[:lon], depot[:lat], line_strings)
         next unless spur
 
         route_features << depot_spur_feature(spur, depot)
@@ -377,11 +403,9 @@ module Geojson
     end
 
     def fetch_hsr_stations
-      stations = merge_stations(stations_from_relations, default_stations)
-      stations = merge_stations(stations, HsrCatalog::FALLBACK_STATIONS)
-      normalize_hsr_station_refs!(stations)
-      apply_hsr_station_coordinates!(stations)
-      stations.sort_by! { |station| station_sort_key(station[:ref]) }
+      HsrCatalog::FALLBACK_STATIONS.map do |fallback|
+        fallback.merge(line: @line.name)
+      end
     end
 
     def apply_hsr_station_coordinates!(stations)
@@ -421,7 +445,8 @@ module Geojson
       end
       transfers = kaohsiung_in_station_transfers_for_line
       inject_missing_in_station_transfers!(stations, transfers)
-      apply_in_station_transfers(stations, transfers)
+      stations.replace(apply_in_station_transfers(stations, transfers))
+      reject_transfer_stations_not_on_line!(stations, transfers)
     end
 
     def kaohsiung_in_station_transfers_for_line
@@ -437,11 +462,14 @@ module Geojson
 
     def inject_missing_in_station_transfers!(stations, transfers_by_name)
       transfers_by_name.each do |name, transfer|
+        next unless in_station_transfer_applies_to_line?(transfer)
         next if stations.any? { |station| station[:name] == name }
 
-        primary_ref = transfer[:combined_ref].split(";").first
+        line_ref = transfer_ref_for_current_line(transfer[:combined_ref])
+        next unless line_ref
+
         stations << {
-          ref: primary_ref,
+          ref: line_ref,
           name: name,
           lon: transfer[:lon],
           lat: transfer[:lat]
@@ -451,10 +479,49 @@ module Geojson
       stations.sort_by! { |station| station_sort_key(station[:ref]) }
     end
 
+    def reject_transfer_stations_not_on_line!(stations, transfers_by_name)
+      stations.reject! do |station|
+        transfer = transfers_by_name[station[:name]]
+        next false unless transfer
+
+        !in_station_transfer_applies_to_line?(transfer) ||
+          transfer_ref_for_current_line(transfer[:combined_ref]).nil?
+      end
+    end
+
+    def in_station_transfer_applies_to_line?(transfer)
+      lines = transfer[:lines]
+      lines.nil? || lines.empty? || lines.include?(@line.slug)
+    end
+
+    def transfer_ref_for_current_line(combined_ref)
+      combined_ref.to_s.split(";").map(&:strip).find do |ref|
+        station_ref_belongs_to_current_line?(ref)
+      end
+    end
+
+    def station_ref_belongs_to_current_line?(ref)
+      ref_prefix = ref.to_s[/\A[A-Z]+/i]
+      return false unless ref_prefix
+
+      current_line_station_ref_prefixes.include?(ref_prefix.upcase)
+    end
+
+    def current_line_station_ref_prefixes
+      @current_line_station_ref_prefixes ||= begin
+        prefix = @line.station_ref_prefix.to_s.upcase
+        prefixes = [ prefix ].reject(&:empty?)
+        prefixes = %w[BL] if @line.slug == "bannan"
+        prefixes = %w[G] if @line.slug == "songshan_xindian" || @line.slug == "xiaobitan_branch"
+        prefixes = %w[R] if @line.slug == "tamsui_xinyi" || @line.slug == "xinbeitou_branch"
+        prefixes
+      end
+    end
+
     def apply_in_station_transfers(stations, transfers_by_name)
       stations.map do |station|
         transfer = transfers_by_name[station[:name]]
-        next station unless transfer
+        next station unless transfer && in_station_transfer_applies_to_line?(transfer)
 
         station.merge(
           ref: transfer[:combined_ref],
@@ -473,8 +540,9 @@ module Geojson
         )
       end
 
-      merge_stations([], stations.map { |station| enrich_maokong_station(station) })
-        .sort_by { |station| maokong_station_sort_key(station[:ref]) }
+      stations = merge_stations([], stations.map { |station| enrich_maokong_station(station) })
+      stations = merge_stations(stations, OtherTransitCatalog::MAOKONG_FALLBACK_STATIONS)
+      stations.sort_by { |station| maokong_station_sort_key(station[:ref]) }
     end
 
     def enrich_maokong_station(station)

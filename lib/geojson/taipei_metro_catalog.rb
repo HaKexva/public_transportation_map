@@ -28,7 +28,20 @@ module Geojson
       "七張" => { combined_ref: "G03;G03A", lon: 121.5429203, lat: 24.9750221 },
       "北投" => { combined_ref: "R22;R22A", lon: 121.4985934, lat: 25.1319307 },
       "景安" => { combined_ref: "O02;Y11", lon: 121.5053774, lat: 24.9936008 },
-      "頭前庄" => { combined_ref: "O17;Y18", lon: 121.4608616, lat: 25.0397007 }
+      "頭前庄" => { combined_ref: "O17;Y18", lon: 121.4608616, lat: 25.0397007 },
+      "板橋" => { combined_ref: "BL07;Y16", lon: 121.4645461, lat: 25.0152346, lines: %w[bannan circular] },
+      # BR10 / BL15 only — G14 is 中山 on the Songshan–Xindian line, not 忠孝復興.
+      "忠孝復興" => { combined_ref: "BR10;BL15", lon: 121.543333, lat: 25.041389 },
+      "中山" => { combined_ref: "R11;G14", lon: 121.5203914, lat: 25.0526256 },
+      "松江南京" => { combined_ref: "O08;G15", lon: 121.5330362, lat: 25.0520769 },
+      "南京復興" => { combined_ref: "BR11;G16", lon: 121.5439665, lat: 25.0519432 },
+      # OSM often omits 東門 on the Tamsui–Xinyi line; refs O06 / R07 per Taipei Metro.
+      "東門" => { combined_ref: "O06;R07", lon: 121.528611, lat: 25.033611 },
+      "古亭" => { combined_ref: "O05;G09", lon: 121.5229975, lat: 25.0264431 },
+      "中正紀念堂" => { combined_ref: "R08;G10", lon: 121.5177618, lat: 25.0333942 },
+      # 大安：文湖 BR09 與信義段 R05 轉乘。
+      "大安" => { combined_ref: "BR09;R05", lon: 121.54361, lat: 25.03306, lines: %w[wenhu_line tamsui_xinyi] },
+      "南港展覽館" => { combined_ref: "BR24;BL23", lon: 121.6175958, lat: 25.055012 }
     }.freeze
 
     TRANSFER_STATION_REFS_BY_NAME = IN_STATION_TRANSFERS_BY_NAME.transform_values { |entry| entry[:combined_ref] }.freeze

@@ -41,4 +41,39 @@ class MetroDepotCatalogTest < ActiveSupport::TestCase
       end
     end
   end
+
+  test "xindian depot connects via xiaobitan branch not songshan xindian main line" do
+    depot = Geojson::MetroDepotCatalog::DEPOTS.find { |entry| entry[:id] == "xindian_depot" }
+
+    assert_equal "xiaobitan_branch", Geojson::MetroDepotCatalog.depot_track_route_id(depot)
+
+    serialized = Geojson::MetroDepotCatalog.to_json.find { |entry| entry[:id] == "xindian_depot" }
+    assert_equal "xiaobitan_branch", serialized[:track_links].sole[:route_id]
+
+    songshan = JSON.parse(Rails.root.join("public/geojson/taipei_metro/songshan_xindian.geojson").read)
+    assert_not songshan.fetch("features").any? { |feature| feature.dig("properties", "depot_id") == "xindian_depot" }
+
+    xiaobitan = JSON.parse(Rails.root.join("public/geojson/taipei_metro/xiaobitan_branch.geojson").read)
+    spur = xiaobitan.fetch("features").find { |feature| feature.dig("properties", "depot_id") == "xindian_depot" }
+
+    assert spur, "expected 新店機廠支線 on 小碧潭支線 GeoJSON"
+    assert_equal "新店機廠支線", spur.dig("properties", "name")
+  end
+
+  test "includes hsr and other maintenance facilities" do
+    depots = Geojson::MetroDepotCatalog.to_json
+    ids = depots.map { |entry| entry[:id] }
+
+    assert_includes ids, "hsr_yanchao_depot"
+    assert_includes ids, "maokong_depot"
+    assert_includes ids, "sun_moon_ropeway_depot"
+    assert_includes ids, "skytrain_depot"
+
+    hsr = depots.find { |entry| entry[:id] == "hsr_wuri_depot" }
+    assert_equal %w[taiwan_hsr], hsr[:routes]
+    assert hsr[:track_links].any? { |link| link[:route_id] == "taiwan_hsr" }
+
+    maokong = JSON.parse(Rails.root.join("public/geojson/other/maokong_gondola.geojson").read)
+    assert maokong.fetch("features").any? { |f| f.dig("properties", "depot_id") == "maokong_depot" }
+  end
 end

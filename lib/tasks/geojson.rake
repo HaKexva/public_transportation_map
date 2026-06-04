@@ -70,4 +70,9 @@ namespace :geojson do
   task depots: :environment do
     Geojson::MetroDepotCatalog.write_json!
   end
+
+  desc "Rewrite routes.json from on-disk GeoJSON and line catalogs"
+  task routes_manifest: :environment do
+    Geojson::RoutesManifestWriter.write!
+  end
 end

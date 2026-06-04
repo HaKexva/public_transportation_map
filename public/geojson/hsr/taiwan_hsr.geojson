@@ -6166,6 +6166,121 @@
     {
       "type": "Feature",
       "properties": {
+        "feature_type": "depot_spur",
+        "ref": "HSR",
+        "name": "燕巢總機廠支線",
+        "color": "#F4811A",
+        "depot_id": "hsr_yanchao_depot"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.34701196223553,
+            22.766206690986262
+          ],
+          [
+            120.361,
+            22.773
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "depot_spur",
+        "ref": "HSR",
+        "name": "烏日維修基地支線",
+        "color": "#F4811A",
+        "depot_id": "hsr_wuri_depot"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.61454336094572,
+            24.098045176982765
+          ],
+          [
+            120.615,
+            24.098
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "depot_spur",
+        "ref": "HSR",
+        "name": "六家維修基地支線",
+        "color": "#F4811A",
+        "depot_id": "hsr_liujia_depot"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            121.03979880186478,
+            24.80679738523789
+          ],
+          [
+            121.039,
+            24.807
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "depot_spur",
+        "ref": "HSR",
+        "name": "太保維修基地支線",
+        "color": "#F4811A",
+        "depot_id": "hsr_taibao_depot"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.323766,
+            23.4592473
+          ],
+          [
+            120.332,
+            23.459
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "depot_spur",
+        "ref": "HSR",
+        "name": "左營維修基地支線",
+        "color": "#F4811A",
+        "depot_id": "hsr_zuoying_depot"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.3097976,
+            22.6892811
+          ],
+          [
+            120.318,
+            22.682
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "feature_type": "station",
         "ref": "01",
         "name": "南港",
@@ -6175,8 +6290,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.60675371345715,
-          25.053232618932764
+          121.6069,
+          25.0522
         ]
       }
     },
@@ -6192,8 +6307,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.51688168369564,
-          25.04759914598674
+          121.517,
+          25.0483
         ]
       }
     },
@@ -6209,8 +6324,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.46415963851909,
-          25.01369682101741
+          121.463675,
+          25.014281
         ]
       }
     },
@@ -6226,8 +6341,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.2148355741403,
-          25.013064046765038
+          121.2148,
+          25.0131
         ]
       }
     },
@@ -6243,8 +6358,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.0378495,
-          24.7991289
+          121.04024,
+          24.80843
         ]
       }
     },
@@ -6260,8 +6375,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          120.77662280901448,
-          24.573011260051498
+          120.82527,
+          24.60601
         ]
       }
     },
@@ -6277,8 +6392,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          120.61580467385187,
-          24.111018947016426
+          120.616,
+          24.111
         ]
       }
     },
@@ -6294,8 +6409,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          120.57424179191423,
-          23.873606633114232
+          120.574,
+          23.874
         ]
       }
     },
@@ -6311,8 +6426,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          120.41594242612807,
-          23.7360219786123
+          120.416,
+          23.736
         ]
       }
     },
@@ -6328,8 +6443,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          120.32374859534664,
-          23.4589098205858
+          120.322,
+          23.459
         ]
       }
     },
@@ -6345,8 +6460,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          120.28657336778637,
-          22.924293140931965
+          120.286,
+          22.924
         ]
       }
     },
@@ -6362,8 +6477,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          120.30710987475337,
-          22.6868733333465
+          120.307,
+          22.687
         ]
       }
     }
