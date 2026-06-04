@@ -125,13 +125,17 @@ class DashboardTest < ApplicationSystemTestCase
 
     assert_selector ".route-stop-item", minimum: 10, wait: 10
 
-    refs = page.all(".route-stop-item__ref", minimum: 10, wait: 10).map(&:text)
-    assert_equal "O01", refs.first
-    assert_equal "O54", refs.last
-    assert_includes refs, "BL14;O07"
-    assert_includes refs, "R13;O11"
-    assert refs.index("BL14;O07") < refs.index("O08;G15")
-    assert refs.index("R13;O11") < refs.index("O12")
+    indices = page.all(".route-stop-item__index", minimum: 10, wait: 10).map(&:text)
+    secondary = page.all(".route-stop-item--transfer .route-stop-item__ref", minimum: 2, wait: 10).map(&:text)
+
+    assert_equal "O01", indices.first
+    assert_equal "O54", indices.last
+    assert_includes indices, "O07"
+    assert_includes indices, "O11"
+    assert_includes secondary, "BL14"
+    assert_includes secondary, "R13"
+    assert indices.index("O07") < indices.index("O08")
+    assert indices.index("O11") < indices.index("O12")
   end
 
   test "filters sidebar routes from the search box" do
@@ -364,8 +368,8 @@ class DashboardTest < ApplicationSystemTestCase
       checkbox.dispatchEvent(new Event("change", { bubbles: true }))
     JS
 
-    assert page.evaluate_script("document.getElementById('layer-circular').checked")
-    assert page.evaluate_script("document.getElementById('layer-ankeng_lrt').checked")
+    assert_selector "#layer-circular:checked", visible: :all, wait: 15
+    assert_selector "#layer-ankeng_lrt:checked", visible: :all, wait: 15
     assert_selector ".leaflet-overlay-pane path.leaflet-interactive", wait: 20, minimum: 3
     assert_selector ".out-of-station-transfer-line", wait: 15, minimum: 1, visible: :all
     assert_selector ".out-of-station-marker", wait: 10, minimum: 2

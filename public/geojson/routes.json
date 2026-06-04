@@ -57,14 +57,6 @@
       "name_en": "Zhonghe–Xinlu Line",
       "ref": "O",
       "color": "#F8B61C"
-    },
-    {
-      "id": "circular",
-      "file": "/geojson/taipei_metro/circular.geojson",
-      "name": "環狀線",
-      "name_en": "Circular Line",
-      "ref": "Y",
-      "color": "#FEDB00"
     }
   ],
   "new_taipei_metro": [
@@ -83,13 +75,21 @@
       "name_en": "Ankeng LRT",
       "ref": "K",
       "color": "#C3B091"
+    },
+    {
+      "id": "circular",
+      "file": "/geojson/taipei_metro/circular.geojson",
+      "name": "環狀線",
+      "name_en": "Circular Line",
+      "ref": "Y",
+      "color": "#FEDB00"
     }
   ],
   "taoyuan_metro": [
     {
       "id": "airport_mrt",
       "file": "/geojson/taoyuan_metro/airport_mrt.geojson",
-      "name": "機場捷運普通車",
+      "name": "機場捷運",
       "name_en": "Taoyuan Airport MRT",
       "ref": "A",
       "color": "#0073B7"

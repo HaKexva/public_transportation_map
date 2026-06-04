@@ -16,8 +16,21 @@ module Geojson
       "other" => -> { Geojson::OtherTransitCatalog::LINES }
     }.freeze
 
+    # Circular Line geojson lives under taipei_metro/ but is grouped with 新北捷運 in the UI.
+    CIRCULAR_MANIFEST_ENTRY = {
+      id: "circular",
+      file: "/geojson/taipei_metro/circular.geojson",
+      name: "環狀線",
+      name_en: "Circular Line",
+      ref: "Y",
+      color: "#FEDB00"
+    }.freeze
+
     # Built separately from the main line (see AirportMrtExpressBuilder).
     EXTRA_MANIFEST_ENTRIES = {
+      "new_taipei_metro" => [
+        CIRCULAR_MANIFEST_ENTRY
+      ],
       "taoyuan_metro" => [
         {
           id: "airport_mrt_express",
@@ -44,6 +57,7 @@ module Geojson
 
       SYSTEMS.each do |system_id, loader|
         entries = Array(loader.call).filter_map { |line| manifest_entry(line) }
+        entries.reject! { |entry| entry[:id] == "circular" } if system_id == "taipei_metro"
         extra = EXTRA_MANIFEST_ENTRIES[system_id] || []
         extra.each do |entry|
           next if entries.any? { |existing| existing[:id] == entry[:id] }
