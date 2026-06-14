@@ -19,11 +19,8 @@ class MetroLineBuilderHsrTest < ActiveSupport::TestCase
     assert first_coord[0].between?(120.0, 122.0)
     assert first_coord[1].between?(22.0, 25.5)
 
-    refs = stations.map { |feature| feature.dig("properties", "ref") }.sort
-    assert_equal Geojson::HsrCatalog::FALLBACK_STATIONS.map { |station| station[:ref] }.sort, refs
-
-    assert_equal "01", stations.find { |f| f.dig("properties", "name") == "南港" }.dig("properties", "ref")
-    assert_equal "12", stations.find { |f| f.dig("properties", "name") == "左營" }.dig("properties", "ref")
+    assert_equal "01;980;BL22", stations.find { |f| f.dig("properties", "name") == "南港" }.dig("properties", "ref")
+    assert_equal "12;4340;R16", stations.find { |f| f.dig("properties", "name") == "左營" }.dig("properties", "ref")
     refute stations.any? { |feature| feature.dig("properties", "station_role").present? }
 
     banqiao = stations.find { |f| f.dig("properties", "name") == "板橋" }
@@ -33,14 +30,21 @@ class MetroLineBuilderHsrTest < ActiveSupport::TestCase
     assert_in_delta expected[:lon], lon, 0.002
     assert_in_delta expected[:lat], lat, 0.002
 
-    %w[新竹 苗栗].each do |name|
-      station = stations.find { |f| f.dig("properties", "name") == name }
-      expected_station = Geojson::HsrCatalog::FALLBACK_STATIONS.find { |s| s[:name] == name }
-      slon, slat = station.dig("geometry", "coordinates")
+    hsinchu = stations.find { |f| f.dig("properties", "name") == "新竹" }
+    hub = Geojson::TransitTransferCatalog::HSINCHU_HSR_HUB
+    hlon, hlat = hsinchu.dig("geometry", "coordinates")
 
-      assert_in_delta expected_station[:lon], slon, 0.002, "#{name} longitude"
-      assert_in_delta expected_station[:lat], slat, 0.002, "#{name} latitude"
-    end
+    assert_equal "05;1194", hsinchu.dig("properties", "ref")
+    assert_in_delta hub[:lon], hlon, 0.002, "新竹 longitude"
+    assert_in_delta hub[:lat], hlat, 0.002, "新竹 latitude"
+    refute_in_delta 120.971683, hlon, 0.01, "新竹 should not use downtown TRA coordinates"
+
+    miaoli = stations.find { |f| f.dig("properties", "name") == "苗栗" }
+    expected_miaoli = Geojson::HsrCatalog::FALLBACK_STATIONS.find { |s| s[:name] == "苗栗" }
+    mlon, mlat = miaoli.dig("geometry", "coordinates")
+
+    assert_in_delta expected_miaoli[:lon], mlon, 0.002, "苗栗 longitude"
+    assert_in_delta expected_miaoli[:lat], mlat, 0.002, "苗栗 latitude"
 
     assert_equal Geojson::HsrCatalog::BRAND_COLOR, routes.first.dig("properties", "color")
   end

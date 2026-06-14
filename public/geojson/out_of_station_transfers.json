@@ -148,5 +148,105 @@
       { "route_id": "taiwan_hsr", "ref": "12", "name": "左營" },
       { "route_id": "red_line", "ref": "R16", "name": "左營" }
     ]
+  },
+  {
+    "id": "tra_nangang_passage",
+    "kind": "passage",
+    "label": "台鐵南港／捷運南港聯通道轉乘",
+    "routes": [ "western_trunk_north", "bannan" ],
+    "endpoints": [
+      { "route_id": "western_trunk_north", "ref": "980", "name": "南港" },
+      { "route_id": "bannan", "ref": "BL22", "name": "南港" }
+    ]
+  },
+  {
+    "id": "tra_songshan_passage",
+    "kind": "passage",
+    "label": "台鐵松山／捷運松山聯通道轉乘",
+    "routes": [ "western_trunk_north", "songshan_xindian" ],
+    "endpoints": [
+      { "route_id": "western_trunk_north", "ref": "990", "name": "松山" },
+      { "route_id": "songshan_xindian", "ref": "G19", "name": "松山" }
+    ]
+  },
+  {
+    "id": "tra_taipei_passage",
+    "kind": "passage",
+    "label": "台鐵台北／捷運台北車站聯通道轉乘",
+    "routes": [ "western_trunk_north", "tamsui_xinyi" ],
+    "endpoints": [
+      { "route_id": "western_trunk_north", "ref": "1000", "name": "臺北" },
+      { "route_id": "tamsui_xinyi", "ref": "R10", "name": "台北車站" }
+    ]
+  },
+  {
+    "id": "tra_banqiao_passage",
+    "kind": "passage",
+    "label": "台鐵板橋／捷運板橋聯通道轉乘",
+    "routes": [ "western_trunk_north", "bannan" ],
+    "endpoints": [
+      { "route_id": "western_trunk_north", "ref": "1020", "name": "板橋" },
+      { "route_id": "bannan", "ref": "BL07", "name": "板橋" }
+    ]
+  },
+  {
+    "id": "tra_taichung_passage",
+    "kind": "passage",
+    "label": "台鐵新烏日／捷運高鐵臺中站聯通道轉乘",
+    "routes": [ "mountain_line", "green_line" ],
+    "endpoints": [
+      { "route_id": "mountain_line", "ref": "3340", "name": "新烏日" },
+      { "route_id": "green_line", "ref": "119", "name": "高鐵臺中站" }
+    ]
+  },
+  {
+    "id": "tra_kaohsiung_passage",
+    "kind": "passage",
+    "label": "台鐵高雄／捷運高雄車站聯通道轉乘",
+    "routes": [ "pingtung_line", "red_line" ],
+    "endpoints": [
+      { "route_id": "pingtung_line", "ref": "4400", "name": "高雄" },
+      { "route_id": "red_line", "ref": "R11", "name": "高雄車站" }
+    ]
+  },
+  {
+    "id": "tra_hsr_nangang_passage",
+    "kind": "passage",
+    "label": "台鐵南港／高鐵南港聯通道轉乘",
+    "routes": [ "western_trunk_north", "taiwan_hsr" ],
+    "endpoints": [
+      { "route_id": "western_trunk_north", "ref": "980", "name": "南港" },
+      { "route_id": "taiwan_hsr", "ref": "01", "name": "南港" }
+    ]
+  },
+  {
+    "id": "tra_hsr_taipei_passage",
+    "kind": "passage",
+    "label": "台鐵台北／高鐵台北聯通道轉乘",
+    "routes": [ "western_trunk_north", "taiwan_hsr" ],
+    "endpoints": [
+      { "route_id": "western_trunk_north", "ref": "1000", "name": "臺北" },
+      { "route_id": "taiwan_hsr", "ref": "02", "name": "台北" }
+    ]
+  },
+  {
+    "id": "tra_hsr_banqiao_passage",
+    "kind": "passage",
+    "label": "台鐵板橋／高鐵板橋聯通道轉乘",
+    "routes": [ "western_trunk_north", "taiwan_hsr" ],
+    "endpoints": [
+      { "route_id": "western_trunk_north", "ref": "1020", "name": "板橋" },
+      { "route_id": "taiwan_hsr", "ref": "03", "name": "板橋" }
+    ]
+  },
+  {
+    "id": "tra_hsr_taichung_passage",
+    "kind": "passage",
+    "label": "台鐵新烏日／高鐵台中聯通道轉乘",
+    "routes": [ "mountain_line", "taiwan_hsr" ],
+    "endpoints": [
+      { "route_id": "mountain_line", "ref": "3340", "name": "新烏日" },
+      { "route_id": "taiwan_hsr", "ref": "07", "name": "台中" }
+    ]
   }
 ]

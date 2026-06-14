@@ -19,16 +19,40 @@ class MetroLineBuilderTaipeiTransfersTest < ActiveSupport::TestCase
     assert_nil stations.find { |entry| entry[:name] == "景安" }
   end
 
-  test "injects 板橋 BL07 transfer on bannan when missing from OSM" do
-    line = Geojson::TaipeiMetroCatalog::LINES.find { |entry| entry.slug == "bannan" }
-    builder = Geojson::MetroLineBuilder.new(line)
-    stations = []
+  test "injects 板橋 three-line transfer on bannan but not circular" do
+    bannan = Geojson::TaipeiMetroCatalog::LINES.find { |entry| entry.slug == "bannan" }
+    circular = Geojson::TaipeiMetroCatalog::LINES.find { |entry| entry.slug == "circular" }
 
-    builder.send(:apply_taipei_in_station_transfers!, stations)
+    bannan_builder = Geojson::MetroLineBuilder.new(bannan)
+    bannan_stations = []
+    bannan_builder.send(:apply_taipei_in_station_transfers!, bannan_stations)
 
-    station = stations.find { |entry| entry[:name] == "板橋" }
+    station = bannan_stations.find { |entry| entry[:name] == "板橋" }
     assert station, "expected 板橋 on 板南線"
-    assert_equal "BL07;Y16", station[:ref]
+    assert_equal "BL07;1020;03", station[:ref]
+
+    circular_builder = Geojson::MetroLineBuilder.new(circular)
+    circular_stations = []
+    circular_builder.send(:apply_taipei_in_station_transfers!, circular_stations)
+    assert_nil circular_stations.find { |entry| entry[:name] == "板橋" }
+  end
+
+  test "banqiao stations are separate on bannan and circular geojson" do
+    bannan = JSON.parse(Rails.root.join("public/geojson/taipei_metro/bannan.geojson").read)
+    circular = JSON.parse(Rails.root.join("public/geojson/taipei_metro/circular.geojson").read)
+
+    bannan_station = bannan.fetch("features").find do |feature|
+      feature.dig("properties", "feature_type") == "station" &&
+        feature.dig("properties", "name") == "板橋"
+    end
+    circular_station = circular.fetch("features").find do |feature|
+      feature.dig("properties", "feature_type") == "station" &&
+        feature.dig("properties", "name") == "板橋"
+    end
+
+    assert_equal "BL07;1020;03", bannan_station.dig("properties", "ref")
+    assert_equal "Y16", circular_station.dig("properties", "ref")
+    refute_includes circular_station.dig("properties", "ref"), ";"
   end
 
   test "injects 忠孝復興 on bannan when missing from OSM" do
@@ -178,6 +202,20 @@ class MetroLineBuilderTaipeiTransfersTest < ActiveSupport::TestCase
       station = stations.find { |entry| entry[:name] == "大安" }
       assert station, "expected 大安 on #{slug}"
       assert_equal "BR09;R05", station[:ref]
+    end
+  end
+
+  test "injects 台北車站 transfer on tamsui xinyi and bannan lines" do
+    %w[tamsui_xinyi bannan].each do |slug|
+      line = Geojson::TaipeiMetroCatalog::LINES.find { |entry| entry.slug == slug }
+      builder = Geojson::MetroLineBuilder.new(line)
+      stations = []
+
+      builder.send(:apply_taipei_in_station_transfers!, stations)
+
+      station = stations.find { |entry| entry[:name] == "台北車站" }
+      assert station, "expected 台北車站 on #{slug}"
+      assert_equal "R10;BL12;1000;02", station[:ref]
     end
   end
 

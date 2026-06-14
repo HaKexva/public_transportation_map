@@ -156,6 +156,16 @@ module Geojson
       parse_station_elements(post_overpass(query))
     end
 
+    def fetch_tra_stations
+      query = <<~QL.squish
+        [out:json][timeout:120];
+        node["railway"~"station|halt"]["operator"~"臺灣鐵路|台灣鐵路|國營臺灣鐵路"];
+        out;
+      QL
+
+      parse_station_elements(post_overpass(query), allow_missing_ref: true, ref_prefix: "TRA")
+    end
+
     def fetch_stations_from_relation(allow_missing_ref: false, ref_prefix: nil)
       query = <<~QL.squish
         [out:json][timeout:90];

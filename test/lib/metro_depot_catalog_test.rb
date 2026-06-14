@@ -60,6 +60,31 @@ class MetroDepotCatalogTest < ActiveSupport::TestCase
     assert_equal "新店機廠支線", spur.dig("properties", "name")
   end
 
+  test "includes tra maintenance depots with track links" do
+    depots = Geojson::MetroDepotCatalog.to_json
+    ids = depots.map { |entry| entry[:id] }
+
+    %w[
+      tra_shulin_depot
+      tra_qidu_depot
+      tra_fugang_depot
+      tra_changhua_depot
+      tra_chaozhou_depot
+      tra_hualien_depot
+      tra_taitung_depot
+      tra_yilan_depot
+    ].each do |id|
+      assert_includes ids, id
+    end
+
+    shulin = depots.find { |entry| entry[:id] == "tra_shulin_depot" }
+    assert_equal %w[western_trunk_north], shulin[:routes]
+    assert shulin[:track_links].any? { |link| link[:route_id] == "western_trunk_north" }
+
+    north = JSON.parse(Rails.root.join("public/geojson/tra/western_trunk_north.geojson").read)
+    assert north.fetch("features").any? { |feature| feature.dig("properties", "depot_id") == "tra_shulin_depot" }
+  end
+
   test "includes hsr and other maintenance facilities" do
     depots = Geojson::MetroDepotCatalog.to_json
     ids = depots.map { |entry| entry[:id] }

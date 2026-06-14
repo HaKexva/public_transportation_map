@@ -13,6 +13,7 @@ module Geojson
       "taichung_metro" => -> { Geojson::TaichungMetroCatalog::LINES },
       "kaohsiung_metro" => -> { Geojson::KaohsiungMetroCatalog::LINES },
       "hsr" => -> { Geojson::HsrCatalog::LINES },
+      "tra" => -> { Geojson::TraCatalog::LINES },
       "other" => -> { Geojson::OtherTransitCatalog::LINES }
     }.freeze
 

@@ -562,6 +562,262 @@
     ]
   },
   {
+    "id": "tra_shulin_depot",
+    "name": "樹林調車場",
+    "routes": [
+      "western_trunk_north"
+    ],
+    "lon": 121.418,
+    "lat": 24.988,
+    "grade": "調車場",
+    "track_links": [
+      {
+        "route_id": "western_trunk_north",
+        "coordinates": [
+          [
+            121.41915223249241,
+            24.98568256406551
+          ],
+          [
+            121.418,
+            24.988
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tra_qidu_depot",
+    "name": "七堵機務段",
+    "routes": [
+      "western_trunk_north",
+      "yilan_line"
+    ],
+    "lon": 121.716,
+    "lat": 25.096,
+    "grade": "機務段",
+    "track_links": [
+      {
+        "route_id": "western_trunk_north",
+        "coordinates": [
+          [
+            121.71674096435204,
+            25.095012481060383
+          ],
+          [
+            121.716,
+            25.096
+          ]
+        ]
+      },
+      {
+        "route_id": "yilan_line",
+        "coordinates": [
+          [
+            121.7290072,
+            25.1084954
+          ],
+          [
+            121.716,
+            25.096
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tra_fugang_depot",
+    "name": "富岡機廠",
+    "routes": [
+      "western_trunk_north"
+    ],
+    "lon": 121.082,
+    "lat": 24.928,
+    "grade": "機廠",
+    "track_links": [
+      {
+        "route_id": "western_trunk_north",
+        "coordinates": [
+          [
+            121.0807427,
+            24.9336837
+          ],
+          [
+            121.082,
+            24.928
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tra_changhua_depot",
+    "name": "彰化機務段",
+    "routes": [
+      "mountain_line",
+      "sea_line",
+      "western_trunk_south"
+    ],
+    "lon": 120.5382,
+    "lat": 24.0816,
+    "grade": "機務段",
+    "track_links": [
+      {
+        "route_id": "mountain_line",
+        "coordinates": [
+          [
+            120.53821231249528,
+            24.081591887729385
+          ],
+          [
+            120.5382,
+            24.0816
+          ]
+        ]
+      },
+      {
+        "route_id": "sea_line",
+        "coordinates": [
+          [
+            120.53824777629654,
+            24.081645713335806
+          ],
+          [
+            120.5382,
+            24.0816
+          ]
+        ]
+      },
+      {
+        "route_id": "western_trunk_south",
+        "coordinates": [
+          [
+            120.53821323195197,
+            24.081591559441577
+          ],
+          [
+            120.5382,
+            24.0816
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tra_chaozhou_depot",
+    "name": "潮州機廠",
+    "routes": [
+      "pingtung_line",
+      "western_trunk_south"
+    ],
+    "lon": 120.542,
+    "lat": 22.5505,
+    "grade": "機廠",
+    "track_links": [
+      {
+        "route_id": "pingtung_line",
+        "coordinates": [
+          [
+            120.5362515,
+            22.5510624
+          ],
+          [
+            120.542,
+            22.5505
+          ]
+        ]
+      },
+      {
+        "route_id": "western_trunk_south",
+        "coordinates": [
+          [
+            120.3025585,
+            22.6395321
+          ],
+          [
+            120.542,
+            22.5505
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tra_hualien_depot",
+    "name": "花蓮機務段",
+    "routes": [
+      "beihui_line",
+      "taidong_line"
+    ],
+    "lon": 121.603036,
+    "lat": 23.995747,
+    "grade": "機務段",
+    "track_links": [
+      {
+        "route_id": "beihui_line",
+        "coordinates": [
+          [
+            121.60249035930757,
+            23.99601466619943
+          ],
+          [
+            121.603036,
+            23.995747
+          ]
+        ]
+      },
+      {
+        "route_id": "taidong_line",
+        "coordinates": [
+          [
+            121.6008699,
+            23.9926617
+          ],
+          [
+            121.603036,
+            23.995747
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tra_taitung_depot",
+    "name": "臺東機務分段",
+    "routes": [
+      "taidong_line"
+    ],
+    "lon": 121.122432,
+    "lat": 22.79346,
+    "grade": "機務段",
+    "track_links": []
+  },
+  {
+    "id": "tra_yilan_depot",
+    "name": "宜蘭機務分段",
+    "routes": [
+      "yilan_line"
+    ],
+    "lon": 121.762,
+    "lat": 24.751,
+    "grade": "機務段",
+    "track_links": [
+      {
+        "route_id": "yilan_line",
+        "coordinates": [
+          [
+            121.75751170447418,
+            24.75264343341411
+          ],
+          [
+            121.762,
+            24.751
+          ]
+        ]
+      }
+    ]
+  },
+  {
     "id": "maokong_depot",
     "name": "貓空纜車維修區",
     "routes": [
