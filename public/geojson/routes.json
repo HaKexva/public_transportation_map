@@ -150,6 +150,152 @@
       "color": "#F4811A"
     }
   ],
+  "tra": [
+    {
+      "id": "western_trunk_north",
+      "file": "/geojson/tra/western_trunk_north.geojson",
+      "name": "縱貫線（北段）",
+      "name_en": "Western Trunk Line (Northern Section)",
+      "ref": "WN",
+      "color": "#004B87"
+    },
+    {
+      "id": "mountain_line",
+      "file": "/geojson/tra/mountain_line.geojson",
+      "name": "山線",
+      "name_en": "Mountain Line",
+      "ref": "M",
+      "color": "#004B87"
+    },
+    {
+      "id": "sea_line",
+      "file": "/geojson/tra/sea_line.geojson",
+      "name": "海線",
+      "name_en": "Coastal Line",
+      "ref": "S",
+      "color": "#004B87"
+    },
+    {
+      "id": "western_trunk_south",
+      "file": "/geojson/tra/western_trunk_south.geojson",
+      "name": "縱貫線（南段）",
+      "name_en": "Western Trunk Line (Southern Section)",
+      "ref": "WS",
+      "color": "#004B87"
+    },
+    {
+      "id": "pingtung_line",
+      "file": "/geojson/tra/pingtung_line.geojson",
+      "name": "屏東線",
+      "name_en": "Pingtung Line",
+      "ref": "P",
+      "color": "#004B87"
+    },
+    {
+      "id": "south_link",
+      "file": "/geojson/tra/south_link.geojson",
+      "name": "南迴線",
+      "name_en": "South Link Line",
+      "ref": "SL",
+      "color": "#004B87"
+    },
+    {
+      "id": "taidong_line",
+      "file": "/geojson/tra/taidong_line.geojson",
+      "name": "臺東線",
+      "name_en": "Taitung Line",
+      "ref": "TD",
+      "color": "#004B87"
+    },
+    {
+      "id": "beihui_line",
+      "file": "/geojson/tra/beihui_line.geojson",
+      "name": "北迴線",
+      "name_en": "North-Link Line",
+      "ref": "BH",
+      "color": "#004B87"
+    },
+    {
+      "id": "yilan_line",
+      "file": "/geojson/tra/yilan_line.geojson",
+      "name": "宜蘭線",
+      "name_en": "Yilan Line",
+      "ref": "Y",
+      "color": "#004B87"
+    },
+    {
+      "id": "neiwan_line",
+      "file": "/geojson/tra/neiwan_line.geojson",
+      "name": "內灣線",
+      "name_en": "Neiwan Line",
+      "ref": "NW",
+      "color": "#004B87",
+      "branch_of": "mountain_line"
+    },
+    {
+      "id": "liujia_line",
+      "file": "/geojson/tra/liujia_line.geojson",
+      "name": "六家線",
+      "name_en": "Liujia Line",
+      "ref": "LJ",
+      "color": "#004B87",
+      "branch_of": "neiwan_line"
+    },
+    {
+      "id": "jiji_line",
+      "file": "/geojson/tra/jiji_line.geojson",
+      "name": "集集線",
+      "name_en": "Jiji Line",
+      "ref": "JJ",
+      "color": "#004B87",
+      "branch_of": "mountain_line"
+    },
+    {
+      "id": "pingxi_line",
+      "file": "/geojson/tra/pingxi_line.geojson",
+      "name": "平溪線",
+      "name_en": "Pingxi Line",
+      "ref": "PX",
+      "color": "#004B87",
+      "branch_of": "yilan_line"
+    },
+    {
+      "id": "chengzhui_line",
+      "file": "/geojson/tra/chengzhui_line.geojson",
+      "name": "成追線",
+      "name_en": "Chengzhui Line",
+      "ref": "CZ",
+      "color": "#004B87",
+      "branch_of": "mountain_line"
+    },
+    {
+      "id": "shalun_line",
+      "file": "/geojson/tra/shalun_line.geojson",
+      "name": "沙崙線",
+      "name_en": "Shalun Line",
+      "ref": "SL",
+      "color": "#004B87",
+      "branch_of": "western_trunk_south"
+    },
+    {
+      "id": "shenao_line",
+      "file": "/geojson/tra/shenao_line.geojson",
+      "name": "深澳線",
+      "name_en": "Shenao Line",
+      "ref": "SA",
+      "color": "#004B87",
+      "branch_of": "yilan_line"
+    },
+    {
+      "id": "hualien_port_line",
+      "file": "/geojson/tra/hualien_port_line.geojson",
+      "name": "花蓮臨港線",
+      "name_en": "Hualien Port Line",
+      "ref": "HP",
+      "color": "#004B87",
+      "branch_of": "beihui_line"
+    }
+  ],
   "other": [
     {
       "id": "maokong_gondola",

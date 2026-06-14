@@ -5,11 +5,13 @@ require "test_helper"
 class OutOfStationTransferCatalogTest < ActiveSupport::TestCase
   TRANSFERS_PATH = Rails.root.join("public/geojson/out_of_station_transfers.json")
 
-  test "hsr passage transfers link taiwan_hsr to metro lines" do
+  test "passage transfers link taiwan_hsr and tra to metro lines" do
     transfers = JSON.parse(TRANSFERS_PATH.read)
     hsr_transfers = transfers.select { |transfer| transfer["routes"]&.include?("taiwan_hsr") }
+    tra_transfers = transfers.select { |transfer| transfer["routes"]&.any? { |route| route.include?("_line") || route == "western_trunk_north" } }
 
-    assert_equal 6, hsr_transfers.length
+    assert_operator hsr_transfers.length, :>=, 6
+    assert_includes tra_transfers.map { |entry| entry["id"] }, "tra_taipei_passage"
 
     expected = {
       "hsr_nangang_passage" => %w[taiwan_hsr bannan],

@@ -66,6 +66,41 @@ namespace :geojson do
     )
   end
 
+  desc "Rebuild Taiwan Railway (TRA) GeoJSON from OpenStreetMap"
+  task tra: :environment do
+    Geojson::MetroSystemImporter.import!(
+      system_id: "tra",
+      lines: Geojson::TraCatalog::LINES
+    )
+  end
+
+  desc "Refresh TRA station refs/coords on existing track GeoJSON (shared numeric codes)"
+  task refresh_tra_stations: :environment do
+    Geojson::MetroLineBuilder.refresh_all_tra_stations!
+  end
+
+  desc "Apply transit transfer combined refs to on-disk station features"
+  task refresh_transfer_refs: :environment do
+    updated = Geojson::TransitTransferRefresher.refresh!
+    if updated.empty?
+      puts "No transfer refs updated."
+    else
+      updated.each { |entry| puts "Updated #{entry}" }
+    end
+  end
+
+  desc "Rebuild TRA GeoJSON using cached track fallbacks when Overpass is unavailable"
+  task tra_offline: :environment do
+    Geojson::MetroLineBuilder.offline_tra_build = true
+    Geojson::MetroLineBuilder.reset_tra_station_cache!
+    Geojson::TraCatalog::LINES.each do |line|
+      Geojson::MetroLineBuilder.build!(line)
+    rescue StandardError => error
+      warn "Skipped #{line.slug}: #{error.message}"
+    end
+    Geojson::RoutesManifestWriter.write!
+  end
+
   desc "Write metro depot markers JSON from catalog"
   task depots: :environment do
     Geojson::MetroDepotCatalog.write_json!

@@ -241,6 +241,14 @@
   padding-bottom: 1rem;
 }
 
+.route-search-section__chevron {
+  transition: transform 200ms ease;
+}
+
+.route-search-section[data-ruby-ui--collapsible-open-value="true"] .route-search-section__chevron {
+  transform: rotate(180deg);
+}
+
 .map-split-layout {
   --map-sidebar-width: 22rem;
   --map-sidebar-height: min(42vh, 22rem);
