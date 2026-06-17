@@ -26,5 +26,22 @@ class MetroLineBuilderDanhaiTest < ActiveSupport::TestCase
     assert_includes station_refs, "V03"
     assert_includes station_refs, "V11"
     assert_includes station_refs, "V27"
+
+    v10_segments = stations
+      .select { |feature| feature.dig("properties", "ref") == "V10" }
+      .map { |feature| feature.dig("properties", "segment") }
+
+    assert_equal [ "lushan" ], v10_segments.sort, "V10 should only be on 綠山線"
+
+    lanhai_stations = stations
+      .select { |feature| feature.dig("properties", "segment") == "lanhai" }
+      .map { |feature| feature.dig("properties", "ref") }
+
+    assert_equal %w[V01 V02 V03 V04 V05 V06 V07 V08 V09], lanhai_stations.first(9)
+    assert_equal %w[V26 V27 V28], lanhai_stations.select { |ref| ref.in?(%w[V28 V27 V26]) }.sort
+    assert_includes station_refs, "V28"
+
+    refute stations.any? { |feature| feature.dig("properties", "station_role").present? },
+           "routes should not mark origin/destination terminals"
   end
 end

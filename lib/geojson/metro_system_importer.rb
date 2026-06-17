@@ -14,6 +14,8 @@ module Geojson
     end
 
     def import!
+      Geojson::MetroLineBuilder.reset_tra_station_cache! if @system_id == "tra"
+
       built_lines = []
 
       @lines.each do |line|
@@ -27,8 +29,12 @@ module Geojson
         warn "Skipped #{line.slug}: #{error.message}"
       end
 
-      write_manifest!(@system_id, built_lines)
-      puts "Updated #{MANIFEST_PATH} with #{built_lines.length} #{@system_id} lines"
+      if built_lines.any?
+        write_manifest!(@system_id, built_lines)
+        puts "Updated #{MANIFEST_PATH} with #{built_lines.length} #{@system_id} lines"
+      else
+        warn "No #{@system_id} lines built; leaving routes manifest unchanged"
+      end
     end
 
     private

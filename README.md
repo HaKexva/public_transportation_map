@@ -9,15 +9,15 @@ An interactive map of Taiwan, Penghu, Kinmen, and Matsu with toggleable public t
 - Full-screen **road-only** basemap (CARTO light, no labels) centered on Taiwan and outlying islands
 - Floating **layer panel** (RubyUI) to toggle transit types:
   - 公車 (bus)
-  - 火車 (train)
+  - 火車 (TRA) — Taiwan Railway main lines and branches
   - 捷運 (metro)
-  - 高鐵 (HSR)
-  - 渡輪 (ferry)
+  - 高鐵 (HSR) — Taiwan High Speed Rail (南港–左營, 12 stations)
+  - 渡輪 (ferry) — coming soon
 - **Light / dark theme** toggle
 - **Reset view** button to fit the default map bounds
 - No authentication — the dashboard is public
 
-> Route GeoJSON for each layer is not loaded yet. Checkboxes create empty layer groups on the map; data can be wired in later.
+> Bus and ferry layers are placeholders. Metro, TRA, HSR, and other transit lines load GeoJSON from `public/geojson/`.
 
 ## Tech stack
 
@@ -46,6 +46,18 @@ cd public_transportation_map
 bundle install
 bin/rails db:prepare
 cp .env.example .env   # optional
+```
+
+### Rebuild HSR GeoJSON from OpenStreetMap
+
+```bash
+bin/rails geojson:hsr
+```
+
+### Rebuild TRA GeoJSON from OpenStreetMap
+
+```bash
+bin/rails geojson:tra
 ```
 
 ## Running locally

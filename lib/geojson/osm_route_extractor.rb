@@ -144,6 +144,28 @@ module Geojson
       parse_station_elements(post_overpass(query))
     end
 
+    def fetch_stations_by_network(networks)
+      network_filter = network_filter_clause(networks)
+
+      query = <<~QL.squish
+        [out:json][timeout:90];
+        node["railway"="station"]#{network_filter};
+        out;
+      QL
+
+      parse_station_elements(post_overpass(query))
+    end
+
+    def fetch_tra_stations
+      query = <<~QL.squish
+        [out:json][timeout:120];
+        node["railway"~"station|halt"]["operator"~"臺灣鐵路|台灣鐵路|國營臺灣鐵路"];
+        out;
+      QL
+
+      parse_station_elements(post_overpass(query), allow_missing_ref: true, ref_prefix: "TRA")
+    end
+
     def fetch_stations_from_relation(allow_missing_ref: false, ref_prefix: nil)
       query = <<~QL.squish
         [out:json][timeout:90];
@@ -246,7 +268,11 @@ module Geojson
       OVERPASS_URLS.each do |base_url|
         3.times do |attempt|
           uri = URI(base_url)
-          response = Net::HTTP.post_form(uri, "data" => query)
+          http = Net::HTTP.new(uri.host, uri.port)
+          http.use_ssl = uri.scheme == "https"
+          http.open_timeout = 30
+          http.read_timeout = 240
+          response = http.post(uri.path, URI.encode_www_form("data" => query))
 
           return JSON.parse(response.body) if response.is_a?(Net::HTTPSuccess)
 

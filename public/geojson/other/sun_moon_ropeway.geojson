@@ -69,6 +69,29 @@
     {
       "type": "Feature",
       "properties": {
+        "feature_type": "depot_spur",
+        "ref": "SM",
+        "name": "日月潭纜車維修區支線",
+        "color": "#059669",
+        "depot_id": "sun_moon_ropeway_depot"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.95093067810384,
+            23.860140611265383
+          ],
+          [
+            120.951,
+            23.86
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "feature_type": "station",
         "ref": "SM01",
         "name": "日月潭端車站",

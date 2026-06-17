@@ -1,8 +1,7 @@
 import { Controller } from "@hotwired/stimulus"
 
-// Connects to data-controller="accordion"
 export default class extends Controller {
-  static targets = ['content']
+  static targets = ["content", "trigger"]
   static values = {
     open: {
       type: Boolean,
@@ -11,17 +10,14 @@ export default class extends Controller {
   }
 
   connect() {
-    // Set the initial state of the accordion
     this.openValue ? this.open() : this.close()
   }
 
-  // Toggle the 'open' value
   toggle() {
     this.openValue = !this.openValue
   }
 
-  // Handle changes in the 'open' value
-  openValueChanged(isOpen, wasOpen) {
+  openValueChanged(isOpen) {
     if (isOpen) {
       this.open()
     } else {
@@ -29,19 +25,25 @@ export default class extends Controller {
     }
   }
 
-  // Open the accordion content
   open() {
-    if (this.hasContentTarget) {
-      this.contentTarget.classList.remove('hidden')
-      this.openValue = true
-    }
+    if (!this.hasContentTarget) return
+
+    this.contentTarget.classList.remove("hidden")
+    this.syncTriggerState(true)
   }
 
-  // Close the accordion content
   close() {
-    if (this.hasContentTarget) {
-      this.contentTarget.classList.add('hidden')
-      this.openValue = false
-    }
+    if (!this.hasContentTarget) return
+
+    this.contentTarget.classList.add("hidden")
+    this.syncTriggerState(false)
+  }
+
+  syncTriggerState(isOpen = this.openValue) {
+    if (!this.hasTriggerTarget) return
+
+    this.triggerTargets.forEach((trigger) => {
+      trigger.setAttribute("aria-expanded", isOpen.toString())
+    })
   }
 }

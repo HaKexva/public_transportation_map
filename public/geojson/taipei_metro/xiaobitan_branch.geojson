@@ -1,13 +1,14 @@
 {
   "type": "FeatureCollection",
-  "name": "台北捷運小碧潭支線",
+  "name": "臺北捷運小碧潭支線",
   "properties": {
     "source": "Track geometry from OpenStreetMap route relations 4250381. © OpenStreetMap contributors, ODbL.",
     "network": "臺北捷運",
     "ref": "G",
     "osm_relations": [
       4250381
-    ]
+    ],
+    "osm_ways": []
   },
   "features": [
     {
@@ -257,8 +258,31 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.5305995,
-          24.9717696
+          121.5305976,
+          24.9717591
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "depot_spur",
+        "ref": "G",
+        "name": "新店機廠支線",
+        "color": "#CEDC00",
+        "depot_id": "xindian_depot"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            121.5308626,
+            24.9716157
+          ],
+          [
+            121.5308,
+            24.9715
+          ]
         ]
       }
     }

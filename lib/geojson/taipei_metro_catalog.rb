@@ -2,32 +2,39 @@
 
 module Geojson
   module TaipeiMetroCatalog
-    # Official station codes for the opened Circular Line section (Y07–Y20).
-    # Source: New Taipei Metro / Taipei Metro route Y station list.
-    CIRCULAR_STATION_REFS_BY_NAME = {
-      "大坪林" => "Y07",
-      "十四張" => "Y08",
-      "秀朗橋" => "Y09",
-      "景平" => "Y10",
-      "景安" => "Y11",
-      "中和" => "Y12",
-      "橋和" => "Y13",
-      "中原" => "Y14",
-      "板新" => "Y15",
-      "板橋" => "Y16",
-      "新埔民生" => "Y17",
-      "頭前庄" => "Y18",
-      "幸福" => "Y19",
-      "新北產業園區" => "Y20"
+
+    # Same-system in-station transfers (shown as two-color markers).
+    # lon/lat: single point between line geometries at the transfer concourse.
+    IN_STATION_TRANSFERS_BY_NAME = {
+      "大坪林" => { combined_ref: "G04;Y07", lon: 121.5414862, lat: 24.9829263 },
+      "七張" => { combined_ref: "G03;G03A", lon: 121.5429203, lat: 24.9750221 },
+      "北投" => { combined_ref: "R22;R22A", lon: 121.4985934, lat: 25.1319307 },
+      "景安" => { combined_ref: "O02;Y11", lon: 121.5053774, lat: 24.9936008 },
+      "頭前庄" => { combined_ref: "O17;Y18", lon: 121.4608616, lat: 25.0397007 },
+      "板橋" => {
+        combined_ref: "BL07;1020;03",
+        lines: %w[bannan],
+        lon: 121.462992,
+        lat: 25.0144988
+      },
+      "忠孝復興" => { combined_ref: "BR10;BL15", lon: 121.543333, lat: 25.041389 },
+      "中山" => { combined_ref: "R11;G14", lon: 121.5203914, lat: 25.0526256 },
+      "松江南京" => { combined_ref: "O08;G15", lon: 121.5330362, lat: 25.0520769 },
+      "南京復興" => { combined_ref: "BR11;G16", lon: 121.5439665, lat: 25.0519432 },
+      "東門" => { combined_ref: "O06;R07", lon: 121.528611, lat: 25.033611 },
+      "古亭" => { combined_ref: "O05;G09", lon: 121.5229975, lat: 25.0264431 },
+      "中正紀念堂" => { combined_ref: "R08;G10", lon: 121.5177618, lat: 25.0333942 },
+      "大安" => { combined_ref: "BR09;R05", lon: 121.54361, lat: 25.03306 },
+      "台北車站" => {
+        combined_ref: "R10;BL12;1000;02",
+        lines: %w[tamsui_xinyi bannan],
+        lon: 121.51702320022838,
+        lat: 25.04804218211409
+      },
+      "南港展覽館" => { combined_ref: "BR24;BL23", lon: 121.6175958, lat: 25.055012 }
     }.freeze
 
-    # Combined refs for in-station transfers (shown as two-color markers).
-    TRANSFER_STATION_REFS_BY_NAME = {
-      "大坪林" => "G04;Y07",
-      "七張" => "G03;G03A",
-      "北投" => "R22;R22A",
-      "景安" => "O02;Y11"
-    }.freeze
+    TRANSFER_STATION_REFS_BY_NAME = IN_STATION_TRANSFERS_BY_NAME.transform_values { |entry| entry[:combined_ref] }.freeze
 
     LINES = [
       MetroLine.taipei(

@@ -1,13 +1,14 @@
 {
   "type": "FeatureCollection",
-  "name": "台北捷運松山新店線",
+  "name": "臺北捷運松山新店線",
   "properties": {
     "source": "Track geometry from OpenStreetMap route relations 4250357. © OpenStreetMap contributors, ODbL.",
     "network": "臺北捷運",
     "ref": "G",
     "osm_relations": [
       4250357
-    ]
+    ],
+    "osm_ways": []
   },
   "features": [
     {
@@ -1209,6 +1210,23 @@
       "type": "Feature",
       "properties": {
         "feature_type": "station",
+        "ref": "BR11;G16",
+        "name": "南京復興",
+        "line": "松山新店線",
+        "color": "#008659"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5439665,
+          25.0519432
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
         "ref": "G01",
         "name": "新店",
         "line": "松山新店線",
@@ -1217,8 +1235,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.5376308,
-          24.9580672
+          121.53758863771333,
+          24.95807943357129
         ]
       }
     },
@@ -1234,8 +1252,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.5413511,
-          24.9673862
+          121.54129579694977,
+          24.967404889127096
         ]
       }
     },
@@ -1268,8 +1286,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.5413291,
-          24.9829295
+          121.5414862,
+          24.9829263
         ]
       }
     },
@@ -1285,8 +1303,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.5408198,
-          24.992978
+          121.5407362612541,
+          24.993007525091485
         ]
       }
     },
@@ -1302,8 +1320,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.5389958,
-          25.001899
+          121.53894602007003,
+          25.001883127896136
         ]
       }
     },
@@ -1319,8 +1337,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.534264,
-          25.0149166
+          121.5341692022155,
+          25.014817314985613
         ]
       }
     },
@@ -1336,8 +1354,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.5283902,
-          25.0205325
+          121.5283319,
+          25.0204787
         ]
       }
     },
@@ -1353,8 +1371,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.5108064,
-          25.035901
+          121.51080072584718,
+          25.03588297177464
         ]
       }
     },
@@ -1370,8 +1388,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.5086081,
-          25.0427128
+          121.50875618491263,
+          25.042669902590394
         ]
       }
     },
@@ -1387,8 +1405,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.5103289,
-          25.0493991
+          121.51024548823528,
+          25.049419952941175
         ]
       }
     },
@@ -1404,8 +1422,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.5514989,
-          25.0516857
+          121.55149923937044,
+          25.05174460290443
         ]
       }
     },
@@ -1421,8 +1439,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.5643061,
-          25.0514279
+          121.56430691677458,
+          25.051460028391375
         ]
       }
     },
@@ -1430,7 +1448,7 @@
       "type": "Feature",
       "properties": {
         "feature_type": "station",
-        "ref": "G19",
+        "ref": "G19;990",
         "name": "松山",
         "line": "松山新店線",
         "color": "#008659"
@@ -1438,8 +1456,76 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.5774743,
-          25.0500706
+          121.57816703272442,
+          25.04936551944271
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "O05;G09",
+        "name": "古亭",
+        "line": "松山新店線",
+        "color": "#008659"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5229975,
+          25.0264431
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "O08;G15",
+        "name": "松江南京",
+        "line": "松山新店線",
+        "color": "#008659"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5330362,
+          25.0520769
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "R08;G10",
+        "name": "中正紀念堂",
+        "line": "松山新店線",
+        "color": "#008659"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5177618,
+          25.0333942
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "R11;G14",
+        "name": "中山",
+        "line": "松山新店線",
+        "color": "#008659"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5203914,
+          25.0526256
         ]
       }
     }
