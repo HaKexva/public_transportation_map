@@ -14,6 +14,8 @@ module Geojson
     end
 
     def import!
+      Geojson::MetroLineBuilder.reset_tra_station_cache! if @system_id == "tra"
+
       built_lines = []
 
       @lines.each do |line|

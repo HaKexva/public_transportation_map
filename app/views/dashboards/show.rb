@@ -8,11 +8,28 @@ module Views
         super()
       end
 
+      BUNDLED_ROUTE_IDS = %w[airport_mrt_express].freeze
+
       COMING_SOON_LAYERS = [
         { label: "公車", color: "#2563eb" },
-        { label: "台鐵", color: "#dc2626" },
         { label: "渡輪", color: "#0891b2" }
       ].freeze
+
+      METRO_LAYER = {
+        id: "all_metro",
+        label: "捷運",
+        color: "#A74C00",
+        badge: :amber,
+        description: "台北、新北、桃園、台中、高雄捷運與輕軌"
+      }.freeze
+
+      TRA_SYSTEM = {
+        id: "tra",
+        label: "台鐵",
+        color: "#004B87",
+        badge: :blue,
+        description: "縱貫線、山線、海線、東部幹線與支線"
+      }.freeze
 
       HSR_SYSTEM = {
         id: "hsr",
@@ -331,42 +348,141 @@ module Views
       end
 
       def searchable_route_groups
-        groups = active_metro_systems.map do |system|
-          { system: system, routes: main_routes(system[:id]) }
-        end
-
-        groups << { system: HSR_SYSTEM, routes: hsr_routes } if hsr_routes.any?
-        groups << { system: OTHER_SYSTEM, routes: other_routes } if other_routes.any?
-        groups.reject { |group| group[:routes].empty? }
+        groups = []
+        groups << { kind: :metro, system: METRO_LAYER, metro_systems: active_metro_systems } if active_metro_systems.any?
+        groups << { kind: :routes, system: TRA_SYSTEM, routes: tra_routes } if tra_routes.any?
+        groups << { kind: :routes, system: HSR_SYSTEM, routes: hsr_routes } if hsr_routes.any?
+        groups << { kind: :routes, system: OTHER_SYSTEM, routes: other_routes } if other_routes.any?
+        groups
       end
 
       def render_route_search_section(group)
+        return render_metro_layer_section(group) if group[:kind] == :metro
+
+        render_transit_layer_section(group)
+      end
+
+      def render_metro_layer_section(group)
+        system = group[:system]
+        metro_systems = group[:metro_systems]
+        section_id = "layer-section-#{system[:id]}"
+
+        render RubyUI::Collapsible.new(
+          open: false,
+          class: "route-search-section mb-3",
+          data: {
+            map_target: "layerSearchGroup",
+            search_text: metro_layer_search_text(metro_systems)
+          }
+        ) do
+          render_layer_section_trigger(system, section_id: section_id)
+
+          render RubyUI::CollapsibleContent.new(id: section_id, class: "flex flex-col gap-0.5") do
+            render_metro_all_toggle
+            metro_systems.each { |metro_system| render_metro_system_subsection(metro_system) }
+          end
+        end
+      end
+
+      def render_transit_layer_section(group)
         system = group[:system]
         routes = group[:routes]
+        section_id = "layer-section-#{system[:id]}"
 
-        div(
+        render RubyUI::Collapsible.new(
+          open: false,
           class: "route-search-section mb-3",
           data: {
             map_target: "layerSearchGroup",
             search_text: route_section_search_text(system, routes)
           }
         ) do
-          render RubyUI::Text.new(
-            as: "p",
-            size: "1",
-            weight: "muted",
-            class: "route-search-section__heading sticky top-0 z-[1] mb-1 bg-background/95 px-1 py-1 uppercase tracking-wide backdrop-blur-sm"
-          ) { system[:label] }
+          render_layer_section_trigger(system, section_id: section_id)
 
-          div(class: "flex flex-col gap-0.5") do
+          render RubyUI::CollapsibleContent.new(id: section_id, class: "flex flex-col gap-0.5") do
+            render_transit_system_all_toggle(system)
             routes.each { |route| render_route_search_row(route, system:) }
           end
         end
       end
 
+      def render_metro_system_subsection(system)
+        routes = system_routes(system[:id])
+        section_id = "layer-section-#{system[:id]}"
+
+        render RubyUI::Collapsible.new(
+          open: system[:id] == "taipei_metro",
+          class: "route-search-subsection mb-2 ml-1 border-l border-border/40 pl-2",
+          data: {
+            map_target: "layerSearchGroup",
+            search_text: metro_system_search_text(system)
+          }
+        ) do
+          render RubyUI::CollapsibleTrigger.new(
+            class: [
+              "route-search-section__trigger mb-1 flex w-full cursor-pointer items-center",
+              "justify-between gap-2 rounded-md px-1 py-1 hover:bg-accent/50"
+            ].join(" "),
+            aria: {
+              expanded: system[:id] == "taipei_metro",
+              controls: section_id,
+              label: "展開 #{system[:label]} 路線"
+            }
+          ) do
+            span(class: "flex min-w-0 items-center gap-2") do
+              span(
+                class: "size-2.5 shrink-0 rounded-full",
+                style: "background-color: #{system[:color]}"
+              )
+              render RubyUI::Text.new(as: "span", size: "2", class: "truncate font-medium leading-tight") do
+                system[:label]
+              end
+            end
+            span(class: "route-search-section__chevron shrink-0 text-muted-foreground", aria: { hidden: true }) do
+              render_chevron_icon
+            end
+          end
+
+          render RubyUI::CollapsibleContent.new(id: section_id, class: "flex flex-col gap-0.5") do
+            render_metro_system_toggle(system)
+            routes.each { |route| render_route_search_row(route, system:) }
+          end
+        end
+      end
+
+      def render_layer_section_trigger(system, section_id:)
+        render RubyUI::CollapsibleTrigger.new(
+          class: [
+            "route-search-section__trigger sticky top-0 z-[1] mb-1 flex w-full cursor-pointer items-center",
+            "justify-between gap-2 rounded-md bg-background/95 px-1 py-1 backdrop-blur-sm",
+            "hover:bg-accent/50"
+          ].join(" "),
+          aria: {
+            expanded: false,
+            controls: section_id,
+            label: "展開 #{system[:label]} 路線"
+          }
+        ) do
+          span(class: "flex min-w-0 items-center gap-2") do
+            span(
+              class: "size-2.5 shrink-0 rounded-full",
+              style: "background-color: #{system[:color]}"
+            )
+            render RubyUI::Text.new(
+              as: "span",
+              size: "1",
+              weight: "muted",
+              class: "truncate uppercase tracking-wide"
+            ) { system[:label] }
+          end
+          span(class: "route-search-section__chevron shrink-0 text-muted-foreground", aria: { hidden: true }) do
+            render_chevron_icon
+          end
+        end
+      end
+
       def render_route_search_row(route, system:)
-        branches = branch_routes_for(route["id"], system_id: system[:id])
-        subtitle = route_row_subtitle(route, branches)
+        subtitle = route_row_subtitle(route)
 
         div(
           class: "route-search-item group flex w-full items-start gap-2 rounded-lg border border-transparent px-2 py-2 transition-colors hover:border-border/60 hover:bg-accent/50",
@@ -414,11 +530,8 @@ module Views
         end
       end
 
-      def route_row_subtitle(route, branches)
+      def route_row_subtitle(route)
         parts = [ route["name_en"].presence ]
-        if branches.any?
-          parts << "含 #{branches.map { |branch| branch['name'] }.join('、')}"
-        end
         parts << "普通車藍線／直達車紫線並排" if route["id"] == "airport_mrt"
         parts << "綠山／藍海雙軌並排" if route["id"] == "danhai_lrt"
         parts << "北側／南側雙軌並排" if route["id"] == "taoyuan_airport_skytrain"
@@ -426,14 +539,12 @@ module Views
       end
 
       def route_search_text(route, system)
-        branches = branch_routes_for(route["id"], system_id: system[:id])
         [
           system[:label],
           route["name"],
           route["name_en"],
           route["ref"],
-          route["id"]&.tr("_", " "),
-          *branches.flat_map { |branch| [ branch["name"], branch["name_en"], branch["ref"] ] }
+          route["id"]&.tr("_", " ")
         ].compact.join(" ")
       end
 
@@ -442,9 +553,6 @@ module Views
 
         routes.each do |route|
           texts.push(route["name"], route["name_en"], route["ref"], route["id"])
-          branch_routes_for(route["id"], system_id: system[:id]).each do |branch|
-            texts.push(branch["name"], branch["name_en"], branch["ref"])
-          end
         end
 
         texts.compact.join(" ")
@@ -452,6 +560,10 @@ module Views
 
       def active_metro_systems
         METRO_SYSTEMS.select { |system| @routes_manifest.fetch(system[:id], []).any? }
+      end
+
+      def tra_routes
+        @routes_manifest.fetch("tra", [])
       end
 
       def hsr_routes
@@ -463,17 +575,39 @@ module Views
       end
 
       def render_coming_soon_layers
-        div(class: "mt-4 px-1 border-t border-border/40 pt-3", data: { map_target: "layerSearchMuted" }) do
-          render RubyUI::Text.new(as: "p", size: "1", weight: "muted", class: "mb-2 uppercase tracking-wide") do
-            "即將推出"
+        render RubyUI::Collapsible.new(
+          open: false,
+          class: "route-search-section mt-4 border-t border-border/40 px-1 pt-3",
+          data: { map_target: "layerSearchMuted" }
+        ) do
+          render RubyUI::CollapsibleTrigger.new(
+            class: [
+              "route-search-section__trigger mb-2 flex w-full cursor-pointer items-center justify-between gap-2",
+              "rounded-md px-1 py-1 hover:bg-accent/50"
+            ].join(" "),
+            aria: {
+              expanded: false,
+              controls: "layer-section-coming-soon",
+              label: "展開即將推出圖層"
+            }
+          ) do
+            render RubyUI::Text.new(as: "span", size: "1", weight: "muted", class: "uppercase tracking-wide") do
+              "即將推出"
+            end
+            span(class: "route-search-section__chevron shrink-0 text-muted-foreground", aria: { hidden: true }) do
+              render_chevron_icon
+            end
           end
-          div(class: "flex flex-wrap gap-1.5") do
-            COMING_SOON_LAYERS.each do |layer|
-              span(
-                class: "inline-flex items-center gap-1.5 rounded-full border border-border/60 bg-muted/40 px-2.5 py-1 text-xs text-muted-foreground"
-              ) do
-                span(class: "size-2 shrink-0 rounded-full", style: "background-color: #{layer[:color]}")
-                plain layer[:label]
+
+          render RubyUI::CollapsibleContent.new(id: "layer-section-coming-soon") do
+            div(class: "flex flex-wrap gap-1.5") do
+              COMING_SOON_LAYERS.each do |layer|
+                span(
+                  class: "inline-flex items-center gap-1.5 rounded-full border border-border/60 bg-muted/40 px-2.5 py-1 text-xs text-muted-foreground"
+                ) do
+                  span(class: "size-2 shrink-0 rounded-full", style: "background-color: #{layer[:color]}")
+                  plain layer[:label]
+                end
               end
             end
           end
@@ -482,7 +616,6 @@ module Views
 
       def render_footer
         render RubyUI::CardFooter.new(class: "flex flex-col bg-muted/20 p-0 md:gap-2 md:px-4 md:pt-3 md:pb-4") do
-          render_hidden_metro_system_checkboxes
           div(class: "hidden flex-col items-stretch gap-2 md:flex") do
             div(class: "grid grid-cols-2 gap-2") do
               render RubyUI::Button.new(
@@ -504,6 +637,14 @@ module Views
               class: "w-full text-muted-foreground",
               data: { action: "click->map#showAllMetro" }
             ) { "僅顯示捷運與輕軌" }
+            if tra_routes.any?
+              render RubyUI::Button.new(
+                variant: :ghost,
+                size: :sm,
+                class: "w-full text-muted-foreground",
+                data: { action: "click->map#showAllTra" }
+              ) { "僅顯示台鐵" }
+            end
             render RubyUI::Text.new(as: "p", size: "1", weight: "muted", class: "leading-relaxed") do
               "不同捷運系統之間的轉乘皆為站外轉乘；需同時開啟兩條路線，會以灰色虛線連接各系統站體（如十四張：環狀線 Y08 與安坑輕軌 K09）。"
             end
@@ -511,32 +652,21 @@ module Views
         end
       end
 
-      def render_hidden_metro_system_checkboxes
-        div(class: "sr-only", aria: { hidden: true }) do
-          active_metro_systems.each do |system|
-            input(
-              type: "checkbox",
-              id: "layer-#{system[:id]}",
-              data: {
-                map_target: "layerCheckbox",
-                action: "change->map#toggleMetroSystem",
-                map_metro_system_param: system[:id]
-              }
-            )
-          end
-
-          [ HSR_SYSTEM, OTHER_SYSTEM ].each do |system|
-            input(
-              type: "checkbox",
-              id: "layer-#{system[:id]}",
-              data: {
-                map_target: "layerCheckbox",
-                action: "change->map#toggleMetroSystem",
-                map_metro_system_param: system[:id]
-              }
-            )
-          end
-        end
+      def render_transit_system_all_toggle(system)
+        render_layer_toggle(
+          {
+            id: system[:id],
+            label: "顯示全部路線",
+            color: system[:color],
+            badge: system[:badge],
+            badge_label: "全部",
+            description: system[:description]
+          },
+          nested: true,
+          extra_padding: true,
+          stimulus_action: "change->map#toggleMetroSystem",
+          metro_system_param: system[:id]
+        )
       end
 
       def render_all_transit_toggle
@@ -547,7 +677,7 @@ module Views
             color: "#2563EB",
             badge: :blue,
             badge_label: "全部",
-            description: "捷運、輕軌、高鐵與其他已收錄路線"
+            description: "捷運、輕軌、台鐵、高鐵與其他已收錄路線"
           },
           stimulus_action: "change->map#toggleAllTransit"
         )
@@ -557,12 +687,14 @@ module Views
         render_layer_toggle(
           {
             id: "all_metro",
-            label: "全部捷運與輕軌",
-            color: "#A74C00",
-            badge: :amber,
+            label: "顯示全部路線",
+            color: METRO_LAYER[:color],
+            badge: METRO_LAYER[:badge],
             badge_label: "全部",
-            description: "一次顯示所有已收錄路線"
+            description: METRO_LAYER[:description]
           },
+          nested: true,
+          extra_padding: true,
           stimulus_action: "change->map#toggleAllMetro"
         )
       end
@@ -639,17 +771,13 @@ module Views
 
           render RubyUI::CollapsibleContent.new(class: "space-y-0.5 px-1 pb-2") do
             render_metro_system_toggle(system)
-            main_routes(system[:id]).each { |route| render_route_toggle(route, system:) }
+            system_routes(system[:id]).each { |route| render_route_toggle(route, system:) }
           end
         end
       end
 
-      def main_routes(system_id)
-        @routes_manifest.fetch(system_id, []).reject { |route| route["branch_of"].present? }
-      end
-
-      def branch_routes_for(main_route_id, system_id: "taipei_metro")
-        @routes_manifest.fetch(system_id, []).select { |route| route["branch_of"] == main_route_id }
+      def system_routes(system_id)
+        @routes_manifest.fetch(system_id, []).reject { |route| BUNDLED_ROUTE_IDS.include?(route["id"]) }
       end
 
       def render_metro_system_toggle(system)
@@ -670,12 +798,7 @@ module Views
       end
 
       def render_route_toggle(route, system:)
-        branches = branch_routes_for(route["id"], system_id: system[:id])
         description = route["name_en"].presence
-        if branches.any?
-          branch_names = branches.map { |branch| branch["name"] }.join("、")
-          description = [ description, "含 #{branch_names}" ].compact.join(" · ")
-        end
         if route["id"] == "airport_mrt"
           description = [ description, "普通車藍線／直達車紫線並排" ].compact.join(" · ")
         end
@@ -765,14 +888,21 @@ module Views
       end
 
       def metro_system_search_text(system)
-        routes = main_routes(system[:id])
+        routes = system_routes(system[:id])
         texts = [ system[:label], system[:description], system[:id] ]
 
         routes.each do |route|
           texts.push(route["name"], route["name_en"], route["ref"], route["id"])
-          branch_routes_for(route["id"], system_id: system[:id]).each do |branch|
-            texts.push(branch["name"], branch["name_en"], branch["ref"], branch["id"])
-          end
+        end
+
+        texts.compact.join(" ")
+      end
+
+      def metro_layer_search_text(metro_systems)
+        texts = [ METRO_LAYER[:label], METRO_LAYER[:description], "捷運", "輕軌" ]
+
+        metro_systems.each do |system|
+          texts << metro_system_search_text(system)
         end
 
         texts.compact.join(" ")

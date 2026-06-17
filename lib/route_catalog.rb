@@ -8,6 +8,7 @@ class RouteCatalog
     "taichung_metro" => "台中捷運",
     "kaohsiung_metro" => "高雄捷運",
     "hsr" => "高鐵",
+    "tra" => "台鐵",
     "other" => "其他"
   }.freeze
 

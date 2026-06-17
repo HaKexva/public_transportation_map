@@ -41,10 +41,7 @@ class MetroLineBuilderDanhaiTest < ActiveSupport::TestCase
     assert_equal %w[V26 V27 V28], lanhai_stations.select { |ref| ref.in?(%w[V28 V27 V26]) }.sort
     assert_includes station_refs, "V28"
 
-    v26 = stations.find { |feature| feature.dig("properties", "ref") == "V26" }
-    v28 = stations.find { |feature| feature.dig("properties", "ref") == "V28" }
-
-    assert_equal "destination", v26.dig("properties", "station_role"), "藍海線終點應為淡水漁人碼頭 (V26)"
-    assert_nil v28.dig("properties", "station_role"), "臺北海洋大學 (V28) 不應標示為起迄站"
+    refute stations.any? { |feature| feature.dig("properties", "station_role").present? },
+           "routes should not mark origin/destination terminals"
   end
 end

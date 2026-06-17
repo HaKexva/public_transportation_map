@@ -194,7 +194,10 @@ class DashboardTest < ApplicationSystemTestCase
     assert_text "快慢車交會站"
     assert_button "顯示全部路線"
     assert_button "僅顯示捷運與輕軌"
+    assert_selector "#layer-all_metro", visible: :all
     assert_selector "#layer-all_transit", visible: :all
+    assert_text "捷運"
+    assert_text "台鐵"
     assert_text "其他"
     assert_selector "#layer-maokong_gondola", visible: :all
     assert_selector "#layer-taoyuan_airport_skytrain", visible: :all
@@ -285,7 +288,7 @@ class DashboardTest < ApplicationSystemTestCase
     assert_no_selector ".leaflet-overlay-pane path.leaflet-interactive", wait: 5
   end
 
-  test "shows branch line with main line when Tamsui-Xinyi is toggled" do
+  test "shows only main line when Tamsui-Xinyi is toggled alone" do
     visit root_path
 
     within "#taiwan-region-map" do
@@ -297,7 +300,8 @@ class DashboardTest < ApplicationSystemTestCase
       checkbox.checked = true
       checkbox.dispatchEvent(new Event("change", { bubbles: true }))
     JS
-    assert_selector ".leaflet-overlay-pane path.leaflet-interactive", wait: 10, minimum: 2
+    assert_selector ".leaflet-overlay-pane path.leaflet-interactive", wait: 10, minimum: 1
+    refute page.evaluate_script("document.getElementById('layer-xinbeitou_branch').checked")
   end
 
   test "shows Beitou as a transfer station when Tamsui-Xinyi is toggled" do
@@ -332,6 +336,26 @@ class DashboardTest < ApplicationSystemTestCase
 
     assert page.evaluate_script("document.getElementById('layer-wenhu_line').checked")
     assert page.evaluate_script("document.getElementById('layer-tamsui_xinyi').checked")
+    assert page.evaluate_script("document.getElementById('layer-xinbeitou_branch').checked")
+    assert page.evaluate_script("document.getElementById('layer-xiaobitan_branch').checked")
+  end
+
+  test "shows all TRA lines when the system checkbox is toggled" do
+    visit root_path
+
+    within "#taiwan-region-map" do
+      assert_selector ".leaflet-tile-pane", wait: 10
+    end
+
+    page.execute_script(<<~JS)
+      const checkbox = document.getElementById("layer-tra")
+      checkbox.checked = true
+      checkbox.dispatchEvent(new Event("change", { bubbles: true }))
+    JS
+
+    assert_selector "#layer-western_trunk_north:checked", visible: :all, wait: 30
+    assert_selector "#layer-neiwan_line:checked", visible: :all, wait: 5
+    assert_selector "#layer-pingxi_line:checked", visible: :all, wait: 5
   end
 
   test "shows out-of-station transfer link between circular and ankeng at Shisizhang" do
@@ -458,7 +482,7 @@ class DashboardTest < ApplicationSystemTestCase
 
     assert_selector ".leaflet-overlay-pane path.leaflet-interactive", wait: 20, minimum: 2
     assert_selector ".out-of-station-transfer-line", wait: 15, minimum: 1, visible: :all
-    assert_selector ".out-of-station-marker", wait: 10, minimum: 2, visible: :all
+    assert_selector ".transfer-station-marker", wait: 10, minimum: 2, visible: :all
   end
 
   test "shows out-of-station transfer link between airport mrt and zhonghe xinlu at Sanchong" do

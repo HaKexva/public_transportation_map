@@ -23,9 +23,6 @@ const DANHAI_SHARED_STATION_REFS = new Set(
   Array.from({ length: 9 }, (_, index) => `V${String(index + 1).padStart(2, "0")}`)
 )
 const DANHAI_LANHAI_STATION_ORDER = [ "V28", "V27", "V26" ]
-const DANHAI_SHARED_ORIGIN_REF = "V01"
-const DANHAI_LUSHAN_DESTINATION_REF = "V11"
-const DANHAI_LANHAI_DESTINATION_REF = "V26"
 const OUT_OF_STATION_MARKER_COLOR = "#737373"
 const TRANSFER_LINE_COLOR = "#525252"
 const TRANSFER_LINE_COLOR_FARE_DISCOUNT = "#3a3a3a"
@@ -41,7 +38,74 @@ const PARALLEL_TRACK_ROUTE_IDS = new Set([
 ])
 const SKYTRAIN_NORTH_STATION_ORDER = [ "ST1N", "ST2N" ]
 const SKYTRAIN_SOUTH_STATION_ORDER = [ "ST1S", "ST2S" ]
-const LOOP_LINE_ROUTE_IDS = new Set([ "circular_lrt" ])
+const TRA_BRANCH_ROUTE_IDS = new Set([
+  "neiwan_line",
+  "liujia_line",
+  "jiji_line",
+  "pingxi_line",
+  "chengzhui_line",
+  "shalun_line",
+  "shenao_line",
+  "hualien_port_line",
+  "taichung_port_line"
+])
+const TRA_BRANCH_ROUTE_PRIORITY = {
+  neiwan_line: 1,
+  liujia_line: 2,
+  jiji_line: 1,
+  pingxi_line: 1,
+  chengzhui_line: 1,
+  shalun_line: 1,
+  shenao_line: 1,
+  hualien_port_line: 1
+}
+const BUNDLED_ROUTE_IDS = new Set([ "airport_mrt_express" ])
+const PARALLEL_ROUTE_DEPENDENTS = {
+  airport_mrt: [ "airport_mrt_express" ]
+}
+// Branch origin stations stay on the branch layer even when the parent line is visible.
+const TRA_BRANCH_JUNCTION_REFS = {
+  neiwan_line: [ "1210" ],
+  liujia_line: [ "1193" ],
+  pingxi_line: [ "7330" ],
+  chengzhui_line: [ "3350", "2260" ],
+  pingtung_line: [ "4400" ],
+  shalun_line: [ "4270" ],
+  shenao_line: [ "7360" ],
+  hualien_port_line: [ "7010" ]
+}
+// Main-line origin stations stay on their line layer when a connecting line is visible.
+const TRA_LINE_ORIGIN_REFS = {
+  pingtung_line: [ "4400" ],
+  south_link: [ "5130" ],
+  beihui_line: [ "7000" ],
+  taidong_line: [ "6000" ],
+  yilan_line: [ "920" ],
+  shenao_line: [ "7360" ],
+  neiwan_line: [ "1210" ],
+  mountain_line: [ "1250" ],
+  sea_line: [ "1250" ],
+  chengzhui_line: [ "3350" ],
+  western_trunk_south: [ "3360" ]
+}
+// Main-line stations that meet a branch at the same ref.
+const TRA_MAIN_LINE_JUNCTION_REFS = {
+  mountain_line: [ "3350" ],
+  sea_line: [ "2260" ],
+  western_trunk_south: [ "4400" ]
+}
+// Main-line terminal stations stay on their line layer when a connecting line is visible.
+const TRA_LINE_FINISH_REFS = {
+  beihui_line: [ "7130" ],
+  yilan_line: [ "7120" ],
+  mountain_line: [ "3360" ],
+  sea_line: [ "3360" ],
+  chengzhui_line: [ "2260" ],
+  western_trunk_north: [ "1250" ],
+  western_trunk_south: [ "4400" ]
+}
+
+const TRA_BRAND_COLOR = "#004B87"
 
 const METRO_SYSTEM_IDS = [
   "taipei_metro",
@@ -92,7 +156,6 @@ export default class extends Controller {
     this.lineColorsByPrefix = {}
     this.routesByLineRef = {}
     this.routeTracksByRouteId = {}
-    this.branchesByMain = {}
     this.outOfStationTransfers = []
     this.outOfStationEndpointKeys = new Set()
     this.transferKindByEndpointKey = new Map()
@@ -128,7 +191,6 @@ export default class extends Controller {
     this.lineColorsByPrefix = {}
     this.routesByLineRef = {}
     this.routeTracksByRouteId = {}
-    this.branchesByMain = {}
     this.outOfStationTransfers = []
     this.outOfStationEndpointKeys = new Set()
     this.transferKindByEndpointKey = new Map()
@@ -253,7 +315,7 @@ export default class extends Controller {
       if (!Array.isArray(routes)) return
 
       routes.forEach((route) => {
-        if (route.id && !route.branch_of) ids.push(route.id)
+        if (route.id) ids.push(route.id)
       })
     })
 
@@ -349,38 +411,32 @@ export default class extends Controller {
       const { colorsByPrefix, routesByLineRef } = this.buildLineColorMap()
       this.lineColorsByPrefix = colorsByPrefix
       this.routesByLineRef = routesByLineRef
-      this.branchesByMain = this.buildBranchesByMain()
     } catch (error) {
       console.error("Failed to load routes manifest", error)
       this.routesManifest = {}
       this.lineColorsByPrefix = {}
       this.routesByLineRef = {}
-      this.branchesByMain = {}
     }
   }
 
-  buildBranchesByMain() {
-    const branchesByMain = {}
-
-    Object.values(this.routesManifest).forEach((routes) => {
-      if (!Array.isArray(routes)) return
-
-      routes.forEach((route) => {
-        if (!route.branch_of) return
-
-        if (!branchesByMain[route.branch_of]) branchesByMain[route.branch_of] = []
-        branchesByMain[route.branch_of].push(route)
-      })
-    })
-
-    return branchesByMain
+  routesToLoad(layerId) {
+    return this.routesForLayer(layerId)
   }
 
-  routesToLoad(layerId) {
+  routesForLayer(layerId) {
     const route = this.findRoute(layerId)
-    if (!route) return []
+    if (!route) return this.routesManifest[layerId] || []
 
-    return [ route, ...(this.branchesByMain[layerId] || []) ]
+    const routes = [ route ]
+
+    ;(PARALLEL_ROUTE_DEPENDENTS[layerId] || []).forEach((dependentId) => {
+      if (this.layerVisible[dependentId]) return
+
+      const dependent = this.findRoute(dependentId)
+      if (dependent) routes.push(dependent)
+    })
+
+    return routes
   }
 
   buildLineColorMap() {
@@ -411,6 +467,12 @@ export default class extends Controller {
     if (!this.mapReady || !this.map) return
 
     await this.setAllMetroLayersVisible(true, { fitBounds: true })
+  }
+
+  async showAllTra() {
+    if (!this.mapReady || !this.map) return
+
+    await this.setAllTraLayersVisible(true, { fitBounds: true })
   }
 
   async showAllTransit() {
@@ -477,6 +539,12 @@ export default class extends Controller {
       const visible = !hasQuery || groupMatch || childMatch
 
       group.classList.toggle("hidden", !visible)
+
+      if (hasQuery && visible) {
+        this.expandLayerSearchGroup(group)
+      } else if (!hasQuery) {
+        this.collapseLayerSearchGroup(group)
+      }
     })
 
     if (this.hasLayerSearchMutedTarget) {
@@ -503,6 +571,22 @@ export default class extends Controller {
     this.layerSearchInputTarget.value = ""
     this.filterLayers()
     this.layerSearchInputTarget.focus()
+  }
+
+  expandLayerSearchGroup(group) {
+    const collapsible = this.application.getControllerForElementAndIdentifier(
+      group,
+      "ruby-ui--collapsible"
+    )
+    if (collapsible) collapsible.openValue = true
+  }
+
+  collapseLayerSearchGroup(group) {
+    const collapsible = this.application.getControllerForElementAndIdentifier(
+      group,
+      "ruby-ui--collapsible"
+    )
+    if (collapsible) collapsible.openValue = false
   }
 
   normalizeSearchQuery(value) {
@@ -744,6 +828,10 @@ export default class extends Controller {
 
     if (routeRef === "HSR" || routeId === "taiwan_hsr") {
       return /^\d{1,3}$/.test(sortKey)
+    }
+
+    if (this.isTraRoute(routeId)) {
+      return /^\d{3,4}$/.test(sortKey)
     }
 
     return new RegExp(`^${routeRef}\\d`, "i").test(sortKey)
@@ -1001,7 +1089,7 @@ export default class extends Controller {
   buildRouteStopItem(route, station, sequence) {
     const item = document.createElement("li")
     const button = document.createElement("button")
-    const isTransfer = this.isInStationTransferRef(station.ref)
+    const isTransfer = this.isInStationTransferRef(station.ref, route?.id)
     const refsForStop = this.stationRefsForRouteStop(station.ref, route)
 
     button.type = "button"
@@ -1110,6 +1198,21 @@ export default class extends Controller {
     })
   }
 
+  async setAllTraLayersVisible(visible, { fitBounds = false } = {}) {
+    this.traToggleCheckboxes().forEach((checkbox) => {
+      checkbox.checked = visible
+    })
+
+    await this.setRouteLayersVisible(this.allTraRouteIds(), visible, {
+      fitBounds,
+      afterSync: () => {
+        this.syncManifestSystemCheckbox("tra")
+        this.syncAllTraCheckbox()
+        this.syncAllTransitCheckbox()
+      }
+    })
+  }
+
   async setAllTransitLayersVisible(visible, { fitBounds = false } = {}) {
     const allTransitCheckbox = this.checkboxForLayer("all_transit")
     if (allTransitCheckbox) allTransitCheckbox.checked = visible
@@ -1175,9 +1278,9 @@ export default class extends Controller {
     return document.getElementById(`layer-${layerId}`)
   }
 
-  mainRouteIdsForSystem(systemId) {
+  routeIdsForSystem(systemId) {
     return (this.routesManifest[systemId] || [])
-      .filter((route) => route.id && !route.branch_of)
+      .filter((route) => route.id && !BUNDLED_ROUTE_IDS.has(route.id))
       .map((route) => route.id)
   }
 
@@ -1185,10 +1288,20 @@ export default class extends Controller {
     const ids = []
 
     METRO_SYSTEM_IDS.forEach((systemId) => {
-      ids.push(...this.mainRouteIdsForSystem(systemId))
+      ids.push(...this.routeIdsForSystem(systemId))
     })
 
     return ids
+  }
+
+  allTraRouteIds() {
+    return this.routeIdsForSystem("tra")
+  }
+
+  traToggleCheckboxes() {
+    return [ "all_tra", "tra" ]
+      .map((layerId) => this.checkboxForLayer(layerId))
+      .filter(Boolean)
   }
 
   allTransitRouteIds() {
@@ -1196,12 +1309,16 @@ export default class extends Controller {
   }
 
   transitSystemIds() {
-    return [ "hsr", "other" ]
+    return [ "tra", "hsr", "other" ]
+  }
+
+  isTraRoute(routeId) {
+    return (this.routesManifest.tra || []).some((route) => route.id === routeId)
   }
 
   metroSystemForRoute(routeId) {
     for (const systemId of METRO_SYSTEM_IDS) {
-      if (this.mainRouteIdsForSystem(systemId).includes(routeId)) return systemId
+      if (this.routeIdsForSystem(systemId).includes(routeId)) return systemId
     }
 
     return null
@@ -1212,7 +1329,7 @@ export default class extends Controller {
     if (metroSystemId) return metroSystemId
 
     for (const systemId of this.transitSystemIds()) {
-      if (this.mainRouteIdsForSystem(systemId).includes(routeId)) return systemId
+      if (this.routeIdsForSystem(systemId).includes(routeId)) return systemId
     }
 
     return null
@@ -1222,7 +1339,7 @@ export default class extends Controller {
     const checkbox = this.checkboxForLayer(systemId)
     if (!checkbox) return
 
-    const routeIds = this.mainRouteIdsForSystem(systemId)
+    const routeIds = this.routeIdsForSystem(systemId)
     if (routeIds.length === 0) return
 
     const allOn = routeIds.every((routeId) => this.layerVisible[routeId])
@@ -1246,6 +1363,15 @@ export default class extends Controller {
     this.syncRouteGroupCheckbox(checkbox, this.allTransitRouteIds())
   }
 
+  syncAllTraCheckbox() {
+    const routeIds = this.allTraRouteIds()
+    if (routeIds.length === 0) return
+
+    this.traToggleCheckboxes().forEach((checkbox) => {
+      this.syncRouteGroupCheckbox(checkbox, routeIds)
+    })
+  }
+
   syncRouteGroupCheckbox(checkbox, routeIds) {
     if (routeIds.length === 0) return
 
@@ -1260,6 +1386,7 @@ export default class extends Controller {
     METRO_SYSTEM_IDS.forEach((systemId) => this.syncMetroSystemCheckbox(systemId))
     this.transitSystemIds().forEach((systemId) => this.syncManifestSystemCheckbox(systemId))
     this.syncAllMetroCheckbox()
+    this.syncAllTraCheckbox()
     this.syncAllTransitCheckbox()
   }
 
@@ -1267,7 +1394,7 @@ export default class extends Controller {
     const checkbox = this.checkboxForLayer(systemId)
     if (!checkbox) return
 
-    this.syncRouteGroupCheckbox(checkbox, this.mainRouteIdsForSystem(systemId))
+    this.syncRouteGroupCheckbox(checkbox, this.routeIdsForSystem(systemId))
   }
 
   async toggleMetroSystem(event) {
@@ -1282,7 +1409,7 @@ export default class extends Controller {
       return
     }
 
-    const routeIds = this.mainRouteIdsForSystem(systemId)
+    const routeIds = this.routeIdsForSystem(systemId)
     if (routeIds.length === 0) {
       checkbox.checked = false
       return
@@ -1304,12 +1431,32 @@ export default class extends Controller {
       }
 
       this.syncMetroSystemCheckbox(systemId)
+      if (systemId === "tra") this.syncAllTraCheckbox()
       this.syncAllMetroCheckbox()
       this.syncAllTransitCheckbox()
       this.updateOutOfStationTransfers()
     } finally {
       this.setLayerControlsDisabled(false)
     }
+  }
+
+  async toggleAllTra(event) {
+    event.preventDefault()
+
+    const checkbox = event.currentTarget
+    const visible = checkbox.checked
+
+    if (!this.mapReady || !this.map) {
+      checkbox.checked = false
+      return
+    }
+
+    if (this.allTraRouteIds().length === 0) {
+      checkbox.checked = false
+      return
+    }
+
+    await this.setAllTraLayersVisible(visible, { fitBounds: visible })
   }
 
   async toggleAllMetro(event) {
@@ -1362,7 +1509,7 @@ export default class extends Controller {
 
       const latlng = L.latLng(coordinates[1], coordinates[0])
 
-      this.transferStationRefs(ref).forEach((stationRef) => {
+      this.coordinateIndexRefs(routeId, ref).forEach((stationRef) => {
         this.stationCoordinatesByKey[this.stationKey(routeId, stationRef)] = latlng
       })
     })
@@ -1387,7 +1534,7 @@ export default class extends Controller {
       ;(data.features || []).forEach((feature) => {
         if (feature.properties?.feature_type !== "station") return
 
-        this.transferStationRefs(feature.properties?.ref).forEach((stationRef) => {
+        this.coordinateIndexRefs(route.id, feature.properties?.ref).forEach((stationRef) => {
           delete this.stationCoordinatesByKey[this.stationKey(route.id, stationRef)]
         })
       })
@@ -1481,13 +1628,8 @@ export default class extends Controller {
 
   isRouteLayerVisible(routeId) {
     if (!routeId) return false
-    if (this.layerVisible[routeId]) return true
 
-    const route = this.findRoute(routeId)
-    if (route?.branch_of && this.layerVisible[route.branch_of]) return true
-
-    const branches = this.branchesByMain[routeId] || []
-    return branches.some((branch) => this.layerVisible[branch.id])
+    return Boolean(this.layerVisible[routeId])
   }
 
   updateMetroDepots() {
@@ -1573,6 +1715,8 @@ export default class extends Controller {
   }
 
   depotRouteNames(depot) {
+    if (depot.id?.startsWith("tra_")) return []
+
     return (depot.routes || [])
       .map((routeId) => this.findRoute(routeId)?.name)
       .filter(Boolean)
@@ -1580,6 +1724,7 @@ export default class extends Controller {
 
   depotGradeLabel(grade) {
     if (grade === "維修區" || grade === "維修基地" || grade === "總機廠") return grade
+    if (grade === "機務段" || grade === "調車場" || grade === "機廠") return grade
 
     return `${grade}機廠`
   }
@@ -1601,8 +1746,35 @@ export default class extends Controller {
     })
   }
 
-  isInStationTransferRef(ref) {
+  isInStationTransferRef(ref, routeId = null) {
+    if (routeId && this.isTraRoute(routeId)) {
+      return this.isTraCrossSystemTransferRef(ref)
+    }
+
     return this.transferStationRefs(ref).length > 1
+  }
+
+  isTraCrossSystemTransferRef(ref) {
+    const parts = this.transferStationRefs(ref)
+    if (parts.length <= 1) return false
+
+    const hasTra = parts.some((part) => /^\d{3,4}(-[A-Z]+)?$/.test(part))
+    const hasOther = parts.some((part) => /^[A-Z]{1,3}\d/i.test(part) || /^\d{2}$/.test(part))
+
+    return hasTra && hasOther
+  }
+
+  inStationTransferMarkerKey(ref, routeId = null) {
+    if (routeId && this.isTraRoute(routeId)) {
+      const numericRef = this.traNumericStationRef(ref)
+      if (numericRef) return `tra:${numericRef}`
+    }
+
+    return this.transferStationRefs(ref).slice().sort().join(";")
+  }
+
+  shouldShowInStationTransferMarker(ref, routeId) {
+    return this.isInStationTransferRef(ref, routeId)
   }
 
   hiddenStationMarker(latlng) {
@@ -1641,9 +1813,9 @@ export default class extends Controller {
           if (feature.properties?.feature_type !== "station") return
 
           const ref = feature.properties?.ref
-          if (!this.isInStationTransferRef(ref)) return
+          if (!this.shouldShowInStationTransferMarker(ref, route.id)) return
 
-          const key = this.transferStationRefs(ref).slice().sort().join(";")
+          const key = this.inStationTransferMarkerKey(ref, route.id)
           if (!transfersByKey.has(key)) transfersByKey.set(key, feature)
         })
       })
@@ -1733,6 +1905,9 @@ export default class extends Controller {
       await this.showLayer(layerId, { checkbox, fitBounds: true })
     } else {
       this.hideLayerWithCheckbox(layerId, checkbox)
+      if (this.isTraRoute(layerId)) {
+        void this.refreshTraSharedStationLayers()
+      }
     }
 
     const systemId = this.manifestSystemForRoute(layerId)
@@ -1740,9 +1915,11 @@ export default class extends Controller {
       this.syncMetroSystemCheckbox(systemId)
     } else if (systemId) {
       this.syncManifestSystemCheckbox(systemId)
+      if (systemId === "tra") this.syncAllTraCheckbox()
     }
 
     this.syncAllMetroCheckbox()
+    this.syncAllTraCheckbox()
     this.syncAllTransitCheckbox()
     this.updateOutOfStationTransfers()
   }
@@ -1829,9 +2006,11 @@ export default class extends Controller {
     this.updateOutOfStationTransfers()
   }
 
-  async loadLayer(layerId, generation) {
+  async loadLayer(layerId, generation, { skipTraRefresh = false } = {}) {
     const group = this.layerGroups[layerId]
     if (!group) return
+
+    this.refreshTraSharedStationOwners()
 
     const metroRoutes = this.routesToLoad(layerId)
     const routes = metroRoutes.length > 0 ? metroRoutes : (this.routesManifest[layerId] || [])
@@ -1858,6 +2037,10 @@ export default class extends Controller {
     if (group.getLayers().length === 0 && failures.length > 0) {
       throw failures[0].reason
     }
+
+    if (!skipTraRefresh && this.isTraRoute(layerId)) {
+      await this.refreshTraSharedStationLayers(layerId)
+    }
   }
 
   async addRouteToGroup(route, layerId, generation) {
@@ -1871,11 +2054,15 @@ export default class extends Controller {
 
     const color = this.routeDisplayColor(route) || LAYER_COLORS[layerId] || "#666666"
     const routeRef = route.ref
-    if (this.routeSkipsTerminalRoles(route)) this.clearTerminalRolesFromGeoJSON(data)
+    if (!this.isTraRoute(route.id)) {
+      this.clearTerminalRolesFromGeoJSON(data)
+    }
 
     const displayData = this.displayGeoJSON(data, route)
     const renderData = this.cloneGeoJSONForRender(this.geoJSONForMapRender(displayData, route))
-    this.enrichTerminalStationRoles(renderData, route)
+    if (!this.isTraRoute(route.id)) {
+      this.clearTerminalRolesFromGeoJSON(renderData)
+    }
 
     this.cacheRouteTracks(route.id, displayData)
     this.indexStationCoordinates(route.id, renderData)
@@ -1883,7 +2070,7 @@ export default class extends Controller {
     const geoLayer = L.geoJSON(renderData, {
       style: (feature) => this.styleForFeature(feature, color, route),
       pointToLayer: (feature, latlng) => {
-        if (this.isInStationTransferRef(feature.properties?.ref)) {
+        if (this.isInStationTransferRef(feature.properties?.ref, route.id)) {
           return this.hiddenStationMarker(latlng)
         }
 
@@ -1906,48 +2093,6 @@ export default class extends Controller {
     if (layerId === "airport_mrt") this.bringAirportMrtCommuterLinesToFront(group)
   }
 
-  enrichTerminalStationRoles(data, route) {
-    const passengerStations = (data.features || []).filter((feature) => {
-      return feature.properties?.feature_type === "station" &&
-        feature.properties?.passenger_service !== false
-    })
-
-    if (passengerStations.length === 0) return
-
-    const assignRole = (feature, role) => {
-      feature.properties = { ...feature.properties, station_role: role }
-    }
-
-    if (route?.id === "danhai_lrt") {
-      this.assignDanhaiTerminalRoles(passengerStations, assignRole)
-      return
-    }
-
-    if (route?.id === "taoyuan_airport_skytrain") {
-      this.assignSkytrainTerminalRoles(passengerStations, assignRole)
-      return
-    }
-
-    if (this.routeSkipsTerminalRoles(route)) {
-      this.clearTerminalStationRoles(passengerStations)
-      return
-    }
-
-    const ordered = this.sortPassengerStationsByRef(passengerStations)
-
-    assignRole(ordered[0], "origin")
-    if (ordered.length > 1) {
-      assignRole(ordered[ordered.length - 1], "destination")
-    }
-  }
-
-  routeSkipsTerminalRoles(route) {
-    if (LOOP_LINE_ROUTE_IDS.has(route?.id)) return true
-
-    const source = route?.file || route?.url || ""
-    return LOOP_LINE_ROUTE_IDS.has(source.split("/").pop()?.replace(".geojson", ""))
-  }
-
   clearTerminalRolesFromGeoJSON(data) {
     ;(data?.features || []).forEach((feature) => this.clearTerminalStationRoles([ feature ]))
   }
@@ -1968,34 +2113,6 @@ export default class extends Controller {
     }
   }
 
-  sortPassengerStationsByRef(stations) {
-    return stations.slice().sort((left, right) => {
-      return this.compareStationRefs(left.properties?.ref, right.properties?.ref)
-    })
-  }
-
-  compareStationRefs(leftRef, rightRef) {
-    const left = this.stationRefSortKey(leftRef)
-    const right = this.stationRefSortKey(rightRef)
-
-    for (let index = 0; index < Math.max(left.length, right.length); index += 1) {
-      const leftPart = left[index]
-      const rightPart = right[index]
-
-      if (leftPart === rightPart) continue
-      if (leftPart === undefined) return -1
-      if (rightPart === undefined) return 1
-
-      if (typeof leftPart === "number" && typeof rightPart === "number") {
-        return leftPart - rightPart
-      }
-
-      return String(leftPart).localeCompare(String(rightPart))
-    }
-
-    return 0
-  }
-
   stationRefSortKey(ref) {
     const value = (ref || "").split(";")[0]
     const prefix = value.match(/^[A-Z]+/)?.[0] || ""
@@ -2004,45 +2121,6 @@ export default class extends Controller {
     const suffixRank = /^\d+[a-z]$/i.test(value) ? 0 : suffix ? 2 : 1
 
     return [ prefix, parseInt(numeric, 10), suffixRank, suffix ]
-  }
-
-  assignDanhaiTerminalRoles(passengerStations, assignRole) {
-    passengerStations.forEach((feature) => {
-      if (feature.properties?.station_role) delete feature.properties.station_role
-    })
-
-    this.assignDanhaiTerminalRole(passengerStations, assignRole, DANHAI_SHARED_ORIGIN_REF, "origin", [ "lushan", "lanhai" ])
-    this.assignDanhaiTerminalRole(passengerStations, assignRole, DANHAI_LUSHAN_DESTINATION_REF, "destination", [ "lushan" ])
-    this.assignDanhaiTerminalRole(passengerStations, assignRole, DANHAI_LANHAI_DESTINATION_REF, "destination", [ "lanhai" ])
-  }
-
-  assignDanhaiTerminalRole(passengerStations, assignRole, ref, role, segments) {
-    passengerStations.forEach((feature) => {
-      if (feature.properties?.ref !== ref) return
-      if (!segments.some((segment) => this.danhaiFeatureOnSegment(feature, segment))) return
-
-      assignRole(feature, role)
-    })
-  }
-
-  assignSkytrainTerminalRoles(passengerStations, assignRole) {
-    passengerStations.forEach((feature) => {
-      if (feature.properties?.station_role) delete feature.properties.station_role
-    })
-
-    this.assignSkytrainTerminalRole(passengerStations, assignRole, "ST1N", "origin", "north")
-    this.assignSkytrainTerminalRole(passengerStations, assignRole, "ST2N", "destination", "north")
-    this.assignSkytrainTerminalRole(passengerStations, assignRole, "ST1S", "origin", "south")
-    this.assignSkytrainTerminalRole(passengerStations, assignRole, "ST2S", "destination", "south")
-  }
-
-  assignSkytrainTerminalRole(passengerStations, assignRole, ref, role, segment) {
-    passengerStations.forEach((feature) => {
-      if (feature.properties?.ref !== ref) return
-      if (feature.properties?.segment !== segment) return
-
-      assignRole(feature, role)
-    })
   }
 
   danhaiFeatureOnSegment(feature, segment) {
@@ -2092,7 +2170,131 @@ export default class extends Controller {
       features = features.filter((feature) => feature.properties?.feature_type !== "station")
     }
 
+    if (this.isTraRoute(route?.id)) {
+      features = this.filterTraSharedStationFeatures(features, route)
+    }
+
     return { ...data, features }
+  }
+
+  refreshTraSharedStationOwners() {
+    this.traStationOwnerByRef = this.buildTraStationOwnerByRef()
+  }
+
+  buildTraStationOwnerByRef() {
+    const owners = new Map()
+
+    ;(this.routesManifest.tra || []).forEach((route) => {
+      if (!this.isRouteLayerVisible(route.id)) return
+
+      const file = route.file || route.url
+      const data = file ? this.geoJSONDataByUrl[file] : null
+      if (!data) return
+
+      this.stationRefsFromGeoJSON(data).forEach((ref) => {
+        const numericRef = this.traNumericStationRef(ref)
+        if (!numericRef) return
+
+        const current = owners.get(numericRef)
+        const routePriority = this.traBranchJunctionPriority(route.id, numericRef)
+        const currentPriority = current
+          ? this.traBranchJunctionPriority(current, numericRef)
+          : Number.POSITIVE_INFINITY
+
+        if (!current || routePriority < currentPriority) {
+          owners.set(numericRef, route.id)
+        }
+      })
+    })
+
+    return owners
+  }
+
+  stationRefsFromGeoJSON(data) {
+    return (data.features || []).flatMap((feature) => {
+      if (feature.properties?.feature_type !== "station") return []
+
+      const ref = feature.properties?.ref
+      return ref ? [ ref ] : []
+    })
+  }
+
+  traRouteStationPriority(routeId) {
+    if (!TRA_BRANCH_ROUTE_IDS.has(routeId)) return 0
+
+    return TRA_BRANCH_ROUTE_PRIORITY[routeId] ?? 1
+  }
+
+  traBranchJunctionRefs(routeId) {
+    return TRA_BRANCH_JUNCTION_REFS[routeId] || []
+  }
+
+  traMainLineJunctionRefs(routeId) {
+    return TRA_MAIN_LINE_JUNCTION_REFS[routeId] || []
+  }
+
+  traLineOriginRefs(routeId) {
+    return TRA_LINE_ORIGIN_REFS[routeId] || []
+  }
+
+  traLineFinishRefs(routeId) {
+    return TRA_LINE_FINISH_REFS[routeId] || []
+  }
+
+  traBranchJunctionPriority(routeId, ref) {
+    if (this.traBranchJunctionRefs(routeId).includes(ref)) return -1
+    if (this.traLineOriginRefs(routeId).includes(ref)) return -1
+    if (this.traLineFinishRefs(routeId).includes(ref)) return -1
+    if (this.traMainLineJunctionRefs(routeId).includes(ref)) return 0
+
+    return this.traRouteStationPriority(routeId)
+  }
+
+  traNumericStationRef(ref) {
+    if (!ref) return null
+
+    const primary = ref.toString().split(";")[0].trim()
+    const junction = primary.match(/^(\d+)-[A-Z]+$/)
+    if (junction) return junction[1]
+
+    return /^\d+$/.test(primary) ? primary : null
+  }
+
+  filterTraSharedStationFeatures(features, route) {
+    const owners = this.traStationOwnerByRef || new Map()
+
+    return features.filter((feature) => {
+      if (feature.properties?.feature_type !== "station") return true
+
+      const ref = this.traNumericStationRef(feature.properties?.ref)
+      if (!ref) return true
+
+      const owner = owners.get(ref)
+      return !owner || owner === route.id
+    })
+  }
+
+  async refreshTraSharedStationLayers(justLoadedId = null) {
+    this.refreshTraSharedStationOwners()
+
+    const routeIds = (this.routesManifest.tra || [])
+      .map((route) => route.id)
+      .filter((routeId) => {
+        return routeId !== justLoadedId &&
+          this.layerVisible[routeId] &&
+          this.layerGroups[routeId]?.getLayers().length > 0
+      })
+
+    await Promise.all(routeIds.map((routeId) => this.reloadTraLayer(routeId)))
+  }
+
+  async reloadTraLayer(layerId) {
+    const generation = this.bumpLayerGeneration(layerId)
+    const group = this.layerGroups[layerId]
+    if (!group) return
+
+    group.clearLayers()
+    await this.loadLayer(layerId, generation, { skipTraRefresh: true })
   }
 
   deduplicateDanhaiStationFeatures(features) {
@@ -2892,11 +3094,54 @@ export default class extends Controller {
     return ref.split(";").map((part) => part.trim()).filter(Boolean)
   }
 
+  coordinateIndexRefs(routeId, ref) {
+    const parts = this.transferStationRefs(ref)
+    if (parts.length <= 1) return parts
+
+    if (routeId === "taiwan_hsr") {
+      return parts.filter((part) => /^\d{2}$/.test(part))
+    }
+
+    if (this.isTraRoute(routeId)) {
+      return parts.filter((part) => /^\d{3,4}(-[A-Z]+)?$/.test(part))
+    }
+
+    return parts.filter((part) => !/^\d{3,4}(-[A-Z]+)?$/.test(part) && !/^\d{2}$/.test(part))
+  }
+
   linePrefixForStationRef(stationRef) {
     return stationRef?.match(/^[A-Z]+/)?.[0] || null
   }
 
+  traRouteForLineRef(lineRef) {
+    return (this.routesManifest.tra || []).find((route) => route.ref === lineRef) || null
+  }
+
   colorForStationRef(stationRef) {
+    if (!stationRef) return null
+
+    const junction = stationRef.match(/^(\d+)-([A-Z]+)$/)
+    if (junction) {
+      const lineRef = junction[2]
+      const traRoute = this.traRouteForLineRef(lineRef)
+      if (traRoute) return this.routeDisplayColor(traRoute) || traRoute.color || TRA_BRAND_COLOR
+
+      const routes = this.routesByLineRef[lineRef] || []
+      if (routes.length > 0) return this.routeDisplayColor(routes[0]) || routes[0].color
+
+      return TRA_BRAND_COLOR
+    }
+
+    if (/^\d+$/.test(stationRef)) {
+      if (stationRef.length <= 2) {
+        const hsrRoutes = this.routesByLineRef.HSR || this.routesManifest.hsr || []
+        const hsrRoute = Array.isArray(hsrRoutes) ? hsrRoutes[0] : null
+        if (hsrRoute) return this.routeDisplayColor(hsrRoute) || hsrRoute.color || LAYER_COLORS.hsr
+      }
+
+      return TRA_BRAND_COLOR
+    }
+
     const prefix = this.linePrefixForStationRef(stationRef)
     if (!prefix) return null
 
