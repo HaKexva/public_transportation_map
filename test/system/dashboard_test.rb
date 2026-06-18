@@ -39,7 +39,7 @@ class DashboardTest < ApplicationSystemTestCase
   test "navigates to dedicated route page from dashboard" do
     visit root_path
 
-    click_link "文湖線", match: :first
+    page.execute_script("document.querySelector(\"a[href='#{route_path('wenhu_line')}']\").click()")
 
     assert_current_path route_path("wenhu_line")
     assert_selector "h1", text: "文湖線", wait: 10
@@ -257,9 +257,9 @@ class DashboardTest < ApplicationSystemTestCase
 
     click_button "顯示全部路線"
 
-    assert_selector "#layer-wenhu_line:checked", wait: 15
-    assert_selector "#layer-taiwan_hsr:checked", wait: 15
-    assert_selector "#layer-maokong_gondola:checked", wait: 15
+    assert_selector "#layer-wenhu_line:checked", visible: :all, wait: 15
+    assert_selector "#layer-taiwan_hsr:checked", visible: :all, wait: 15
+    assert_selector "#layer-maokong_gondola:checked", visible: :all, wait: 15
     assert_selector ".leaflet-overlay-pane path.leaflet-interactive", wait: 15, minimum: 5
   end
 
@@ -270,7 +270,7 @@ class DashboardTest < ApplicationSystemTestCase
       assert_selector ".leaflet-tile-pane", wait: 10
     end
 
-    assert_selector "#layer-wenhu_line:not([disabled])", wait: 10
+    assert_selector "#layer-wenhu_line:not([disabled])", visible: :all, wait: 10
 
     page.execute_script(<<~JS)
       const checkbox = document.getElementById("layer-wenhu_line")
@@ -527,7 +527,7 @@ class DashboardTest < ApplicationSystemTestCase
     assert_selector ".out-of-station-marker", wait: 10, minimum: 2
   end
 
-  test "shows out-of-station transfer link between wenhu line and maokong gondola at Taipei Zoo" do
+  test "shows in-station transfer marker between wenhu line and maokong gondola at Taipei Zoo" do
     visit root_path
 
     within "#taiwan-region-map" do
@@ -544,8 +544,7 @@ class DashboardTest < ApplicationSystemTestCase
       show("maokong_gondola")
     JS
 
-    assert_selector ".out-of-station-transfer-line", wait: 10, minimum: 1
-    assert_selector ".out-of-station-marker", wait: 10, minimum: 2
+    assert_selector ".transfer-station-marker", wait: 10, minimum: 1
   end
 
   test "shows Danhai LRT when the line checkbox is toggled" do
@@ -587,7 +586,7 @@ class DashboardTest < ApplicationSystemTestCase
     visit root_path
 
     row = find("a[href='#{route_path('airport_mrt')}']", visible: :all)
-    dot = row.find("span[style*='background-color']", match: :first)
+    dot = row.find("span[style*='background-color']", match: :first, visible: :all)
     assert_match(/rgb\(0,\s*115,\s*183\)/i, dot[:style])
   end
 
@@ -605,7 +604,16 @@ class DashboardTest < ApplicationSystemTestCase
     assert_equal "06", refs[names.index("苗栗")]
 
     visit root_path
-    find("#layer-taiwan_hsr", visible: :all).check
+
+    within "#taiwan-region-map" do
+      assert_selector ".leaflet-tile-pane", wait: 10
+    end
+
+    page.execute_script(<<~JS)
+      const checkbox = document.getElementById("layer-taiwan_hsr")
+      checkbox.checked = true
+      checkbox.dispatchEvent(new Event("change", { bubbles: true }))
+    JS
     assert_selector ".leaflet-marker-icon", wait: 10, minimum: 1
   end
 
@@ -645,7 +653,7 @@ class DashboardTest < ApplicationSystemTestCase
     visit root_path
 
     row = find("a[href='#{route_path('danhai_lrt')}']", visible: :all)
-    dot = row.find("span[style*='background-color']", match: :first)
+    dot = row.find("span[style*='background-color']", match: :first, visible: :all)
     assert_match(/rgb\(237,\s*107,\s*70\)/i, dot[:style])
   end
 

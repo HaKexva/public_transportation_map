@@ -698,8 +698,8 @@ export default class extends Controller {
     const order = Array.from(AIRPORT_MRT_EXPRESS_STOP_REFS)
 
     return stations.slice().sort((left, right) => {
-      const leftIndex = order.indexOf(left.ref)
-      const rightIndex = order.indexOf(right.ref)
+      const leftIndex = order.indexOf(this.airportMrtExpressOrderRef(left.ref))
+      const rightIndex = order.indexOf(this.airportMrtExpressOrderRef(right.ref))
 
       if (leftIndex >= 0 && rightIndex >= 0) return leftIndex - rightIndex
       if (leftIndex >= 0) return -1
@@ -707,6 +707,11 @@ export default class extends Controller {
 
       return this.compareStationRefsOnRoute(left.ref, right.ref, "A")
     })
+  }
+
+  airportMrtExpressOrderRef(ref) {
+    const parts = this.transferStationRefs(ref)
+    return parts.find((part) => AIRPORT_MRT_EXPRESS_STOP_REFS.has(part)) || parts[0] || ref
   }
 
   buildStationSectionsFromGeoJSON(geojson, manifestRoute, routeId) {
@@ -2375,7 +2380,9 @@ export default class extends Controller {
   }
 
   isAirportMrtExpressStop(ref) {
-    return ref && AIRPORT_MRT_EXPRESS_STOP_REFS.has(ref)
+    if (!ref) return false
+
+    return this.transferStationRefs(ref).some((part) => AIRPORT_MRT_EXPRESS_STOP_REFS.has(part))
   }
 
   isAirportMrtExpressTransferStation(routeId, ref) {

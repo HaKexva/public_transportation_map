@@ -80,16 +80,6 @@
     ]
   },
   {
-    "id": "taipei_zoo_fare_discount",
-    "kind": "fare_discount",
-    "label": "動物園站外轉乘",
-    "routes": [ "wenhu_line", "maokong_gondola" ],
-    "endpoints": [
-      { "route_id": "wenhu_line", "ref": "BR01", "name": "動物園" },
-      { "route_id": "maokong_gondola", "ref": "G1", "name": "動物園" }
-    ]
-  },
-  {
     "id": "hsr_nangang_passage",
     "kind": "passage",
     "label": "高鐵南港／捷運南港聯通道轉乘",
