@@ -23,11 +23,11 @@ class MetroLineBuilderTaichungTest < ActiveSupport::TestCase
 
     assert_equal 18, stations.length
     assert_includes refs, "103a"
-    assert_includes refs, "119"
+    assert_includes refs, "119;07;3340"
 
     station_refs = stations.map { |feature| feature.dig("properties", "ref") }
     assert_equal "103a", station_refs.first, "expected 北屯總站 (103a) as the northern terminus"
-    assert_equal "119", station_refs.last, "expected 高鐵臺中站 (119) as the southern terminus"
+    assert_equal "119;07;3340", station_refs.last, "expected 高鐵臺中站 (119) as the southern terminus"
   end
 
   test "all stations match catalog coordinates (OSM / Wikipedia sources)" do
@@ -38,7 +38,7 @@ class MetroLineBuilderTaichungTest < ActiveSupport::TestCase
     catalog = Geojson::TaichungMetroCatalog::FALLBACK_STATIONS.index_by { |entry| entry[:ref] }
 
     catalog.each_key do |ref|
-      feature = data["features"].find { |f| f.dig("properties", "ref") == ref }
+      feature = station_feature_for_ref(data, ref)
       assert feature, "missing station #{ref} in geojson"
 
       lon, lat = feature.dig("geometry", "coordinates")
@@ -60,7 +60,7 @@ class MetroLineBuilderTaichungTest < ActiveSupport::TestCase
 
     builder = Geojson::MetroLineBuilder.new(Geojson::TaichungMetroCatalog::LINES.first)
     stations = %w[116 117 118 119].to_h do |ref|
-      feature = data["features"].find { |f| f.dig("properties", "ref") == ref }
+      feature = station_feature_for_ref(data, ref)
       lon, lat = feature.dig("geometry", "coordinates")
       [
         ref,
@@ -103,5 +103,14 @@ class MetroLineBuilderTaichungTest < ActiveSupport::TestCase
     builder = Geojson::MetroLineBuilder.new(Geojson::TaichungMetroCatalog::LINES.first)
 
     assert_equal(-1, builder.send(:station_sort_key, "103a") <=> builder.send(:station_sort_key, "103"))
+  end
+
+  private
+
+  def station_feature_for_ref(data, ref)
+    data["features"].find do |feature|
+      feature.dig("properties", "feature_type") == "station" &&
+        feature.dig("properties", "ref").to_s.split(";").include?(ref)
+    end
   end
 end
