@@ -2,7 +2,6 @@
 
 module Geojson
   module TaipeiMetroCatalog
-
     # Same-system in-station transfers (shown as two-color markers).
     # lon/lat: single point between line geometries at the transfer concourse.
     IN_STATION_TRANSFERS_BY_NAME = {
