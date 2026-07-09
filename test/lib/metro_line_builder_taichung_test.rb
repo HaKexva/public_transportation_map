@@ -99,6 +99,18 @@ class MetroLineBuilderTaichungTest < ActiveSupport::TestCase
     assert_in_delta 24.114444, station[:lat], 0.000001
   end
 
+  test "green line includes beitun depot spur from the northern terminal" do
+    path = Rails.root.join("public/geojson/taichung_metro/green_line.geojson")
+    skip "run bin/rails geojson:taichung_metro first" unless path.exist?
+
+    data = JSON.parse(path.read)
+    spur = data.fetch("features").find { |feature| feature.dig("properties", "depot_id") == "taichung_beitun_depot" }
+
+    assert spur, "expected 北屯機廠支線 on 綠線 GeoJSON"
+    assert_equal "北屯機廠支線", spur.dig("properties", "name")
+    assert_operator spur.dig("geometry", "coordinates").length, :>=, 3
+  end
+
   test "103a sorts before 103 for taichung station numbering" do
     builder = Geojson::MetroLineBuilder.new(Geojson::TaichungMetroCatalog::LINES.first)
 

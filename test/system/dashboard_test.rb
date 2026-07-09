@@ -485,6 +485,90 @@ class DashboardTest < ApplicationSystemTestCase
     assert_selector ".transfer-station-marker", wait: 10, minimum: 2, visible: :all
   end
 
+  test "shows cross-system transfer marker at zuoying when hsr and kaohsiung red line are visible" do
+    visit root_path
+
+    within "#taiwan-region-map" do
+      assert_selector ".leaflet-tile-pane", wait: 10
+    end
+
+    page.execute_script(<<~JS)
+      const show = (id) => {
+        const checkbox = document.getElementById(`layer-${id}`)
+        checkbox.checked = true
+        checkbox.dispatchEvent(new Event("change", { bubbles: true }))
+      }
+      show("taiwan_hsr")
+      show("red_line")
+    JS
+
+    assert_selector ".out-of-station-transfer-line--passage", wait: 15, minimum: 1, visible: :all
+    assert_selector ".leaflet-stationMarkers-pane .leaflet-interactive", wait: 15, minimum: 1, visible: :all
+  end
+
+  test "shows co-located cross-system transfer ellipse at tainan when hsr and shalun line are visible" do
+    visit root_path
+
+    within "#taiwan-region-map" do
+      assert_selector ".leaflet-tile-pane", wait: 10
+    end
+
+    page.execute_script(<<~JS)
+      const show = (id) => {
+        const checkbox = document.getElementById(`layer-${id}`)
+        checkbox.checked = true
+        checkbox.dispatchEvent(new Event("change", { bubbles: true }))
+      }
+      show("taiwan_hsr")
+      show("shalun_line")
+    JS
+
+    assert_selector ".transfer-station-marker", wait: 15, minimum: 1, visible: :all
+    assert_no_selector ".out-of-station-transfer-line--passage", wait: 5
+  end
+
+  test "shows cross-route transfer link at Hamasin when circular lrt and orange line are visible" do
+    visit root_path
+
+    within "#taiwan-region-map" do
+      assert_selector ".leaflet-tile-pane", wait: 10
+    end
+
+    page.execute_script(<<~JS)
+      const show = (id) => {
+        const checkbox = document.getElementById(`layer-${id}`)
+        checkbox.checked = true
+        checkbox.dispatchEvent(new Event("change", { bubbles: true }))
+      }
+      show("circular_lrt")
+      show("orange_line")
+    JS
+
+    assert_selector ".out-of-station-transfer-line--passage", wait: 15, minimum: 1, visible: :all
+    assert_no_selector ".transfer-station-marker", wait: 5
+  end
+
+  test "shows cross-system transfer marker at kaohsiung when tra and red line are visible" do
+    visit root_path
+
+    within "#taiwan-region-map" do
+      assert_selector ".leaflet-tile-pane", wait: 10
+    end
+
+    page.execute_script(<<~JS)
+      const show = (id) => {
+        const checkbox = document.getElementById(`layer-${id}`)
+        checkbox.checked = true
+        checkbox.dispatchEvent(new Event("change", { bubbles: true }))
+      }
+      show("western_trunk_south")
+      show("red_line")
+    JS
+
+    assert_selector ".transfer-station-marker", wait: 15, minimum: 1, visible: :all
+    assert_selector ".leaflet-stationMarkers-pane .leaflet-interactive", wait: 15, minimum: 1, visible: :all
+  end
+
   test "shows out-of-station transfer link between airport mrt and zhonghe xinlu at Sanchong" do
     visit root_path
 
@@ -693,9 +777,12 @@ class DashboardTest < ApplicationSystemTestCase
 
     commuter_z = page.evaluate_script("document.querySelector('.leaflet-commuterRoutes-pane')?.style.zIndex")
     express_z = page.evaluate_script("document.querySelector('.leaflet-expressRoutes-pane')?.style.zIndex")
+    transfer_z = page.evaluate_script("document.querySelector('.leaflet-outOfStationTransfers-pane')?.style.zIndex")
     station_z = page.evaluate_script("document.querySelector('.leaflet-stationMarkers-pane')?.style.zIndex")
-    assert commuter_z.present? && express_z.present? && station_z.present?
+    assert commuter_z.present? && express_z.present? && transfer_z.present? && station_z.present?
     assert commuter_z.to_i > express_z.to_i, "expected commuter pane (z=#{commuter_z}) above express pane (z=#{express_z})"
+    assert transfer_z.to_i > commuter_z.to_i, "expected transfer pane (z=#{transfer_z}) above commuter pane (z=#{commuter_z})"
+    assert station_z.to_i > transfer_z.to_i, "expected station pane (z=#{station_z}) above transfer pane (z=#{transfer_z})"
     assert station_z.to_i > commuter_z.to_i, "expected station pane (z=#{station_z}) above commuter pane (z=#{commuter_z})"
   end
 

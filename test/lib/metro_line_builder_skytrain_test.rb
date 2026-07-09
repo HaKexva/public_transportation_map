@@ -57,6 +57,13 @@ class MetroLineBuilderSkytrainTest < ActiveSupport::TestCase
     assert_equal "secured", by_ref["ST2N"].dig("properties", "boarding_area")
     assert_equal "public", by_ref["ST1S"].dig("properties", "boarding_area")
     assert_equal "public", by_ref["ST2S"].dig("properties", "boarding_area")
+
+    refute_equal false, by_ref["ST1N"].dig("properties", "passenger_service")
+    refute_equal false, by_ref["ST2N"].dig("properties", "passenger_service")
+    assert_equal false, by_ref["ST1S"].dig("properties", "passenger_service")
+    assert_equal false, by_ref["ST2S"].dig("properties", "passenger_service")
+    assert_includes by_ref["ST1S"].dig("properties", "note"), "停駛"
+    assert_includes by_ref["ST2S"].dig("properties", "note"), "停駛"
     assert_not_includes by_ref.keys, "ST01"
   end
 

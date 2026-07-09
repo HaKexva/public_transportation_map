@@ -106,6 +106,14 @@ namespace :geojson do
     Geojson::MetroDepotCatalog.write_json!
   end
 
+  desc "Refresh cached OSM yard spur geometry for maintenance depots (requires network)"
+  task depot_spurs: :environment do
+    Geojson::DepotSpurCatalog.refresh_cache!
+    Geojson::MetroDepotCatalog.write_json!
+    updated = Geojson::DepotSpurRefresher.refresh_all!
+    puts "Updated depot spurs in #{updated.length} route files"
+  end
+
   desc "Rewrite routes.json from on-disk GeoJSON and line catalogs"
   task routes_manifest: :environment do
     Geojson::RoutesManifestWriter.write!

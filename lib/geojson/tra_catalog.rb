@@ -50,6 +50,9 @@ module Geojson
 
     GEO_CLIP_BOUNDS = {
       "western_trunk_north" => { min_lat: 24.66 },
+      # 彰化以北：山線、海線；以南：縱貫線南段。在岔點裁切避免南段軌道重疊。
+      "mountain_line" => { min_lat: WESTERN_TRUNK_JUNCTION_LAT },
+      "sea_line" => { min_lat: WESTERN_TRUNK_JUNCTION_LAT },
       "western_trunk_south" => { max_lat: WESTERN_TRUNK_JUNCTION_LAT + 0.01 }
     }.freeze
 

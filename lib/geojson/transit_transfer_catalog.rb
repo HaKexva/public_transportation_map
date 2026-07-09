@@ -3,9 +3,9 @@
 module Geojson
   # In-station transfer markers (combined refs) for TRA, HSR, other transit, and cross-system hubs.
   module TransitTransferCatalog
-    Entry = Data.define(:combined_ref, :lon, :lat)
+    Entry = Data.define(:combined_ref, :lon, :lat, :coordinates_by_ref)
 
-    TRA_BRAND_COLOR = Geojson::TraCatalog::BRAND_COLOR
+    TRANSFER_HUB_COORDINATE_MAX_M = 500
 
     NAME_ALIASES = {
       "臺北" => "台北",
@@ -110,14 +110,11 @@ module Geojson
         lat: 25.013932198858488
       },
       "桃園" => {
-        tra_ref: "1080",
-        tra_lines: %w[western_trunk_north],
         by_system: {
-          taoyuan_metro: "A18;04",
           hsr: "04;A18"
         },
-        lon: 121.3137705396601,
-        lat: 24.988747268805664
+        lon: 121.2141381,
+        lat: 25.0137163
       },
       "六家" => HSINCHU_HSR_HUB,
       "新竹" => HSINCHU_HSR_HUB,
@@ -143,8 +140,12 @@ module Geojson
           other: "G1;BR01",
           taipei_metro: "BR01;G1"
         },
-        lon: 121.5762884,
-        lat: 24.9959573
+        lon: 121.5794478,
+        lat: 24.9983168,
+        coordinates_by_ref: {
+          "BR01" => { lon: 121.5794478, lat: 24.9983168 },
+          "G1" => { lon: 121.5762884, lat: 24.9959573 }
+        }
       }
     }.freeze
 
@@ -163,12 +164,43 @@ module Geojson
           entry = transfer_for(station[:name], line: line, ref: station[:ref])
           next station unless entry
 
-          station.merge(
-            ref: ref_for_line(entry.combined_ref, line: line),
-            lon: entry.lon || station[:lon],
-            lat: entry.lat || station[:lat]
+          line_ref = ref_for_line(entry.combined_ref, line: line)
+          coords = coordinates_for_line(entry, line: line, ref: line_ref)
+          updated = station.merge(ref: line_ref)
+          hub_entry = Entry.new(
+            combined_ref: entry.combined_ref,
+            lon: coords[:lon],
+            lat: coords[:lat],
+            coordinates_by_ref: entry.coordinates_by_ref
           )
+          if should_apply_hub_coordinates?(station, hub_entry)
+            updated.merge(lon: coords[:lon], lat: coords[:lat])
+          else
+            updated
+          end
         end
+      end
+
+      def coordinates_for_line(entry, line:, ref: nil)
+        line_ref = ref || ref_for_line(entry.combined_ref, line: line)
+        by_ref = entry.coordinates_by_ref
+        if by_ref.present?
+          line_ref.to_s.split(";").each do |part|
+            coords = by_ref[part]
+            return { lon: coords[:lon], lat: coords[:lat] } if coords
+          end
+        end
+
+        { lon: entry.lon, lat: entry.lat }
+      end
+
+      def should_apply_hub_coordinates?(station, entry)
+        return false unless entry.lon && entry.lat
+        return false unless station[:lon] && station[:lat]
+
+        Geojson::TrackGeometry.planar_distance_meters(
+          station[:lon], station[:lat], entry.lon, entry.lat
+        ) <= TRANSFER_HUB_COORDINATE_MAX_M
       end
 
       def ref_for_line(combined_ref, line:)
@@ -202,6 +234,15 @@ module Geojson
         ref.to_s.split(";").first.to_s.sub(/-.*\z/, "")
       end
 
+      def hub_entry(combined_ref, entry)
+        Entry.new(
+          combined_ref: combined_ref,
+          lon: entry[:lon],
+          lat: entry[:lat],
+          coordinates_by_ref: entry[:coordinates_by_ref]
+        )
+      end
+
       def cross_system_transfer_parts?(parts)
         tra_part = parts.any? { |part| part.match?(/\A\d{3,4}(-[A-Z]+)?\z/) }
         other_part = parts.any? { |part| part.match?(/\A[A-Z]{1,3}\d/i) || part.match?(/\A\d{2}\z/) }
@@ -224,14 +265,14 @@ module Geojson
           combined_ref = entry.dig(:by_system, :tra)
           return nil unless combined_ref
 
-          return Entry.new(combined_ref: combined_ref, lon: entry[:lon], lat: entry[:lat])
+          return hub_entry(combined_ref, entry)
         end
 
         system_key = line.system_id.to_sym
         combined_ref = entry.dig(:by_system, system_key)
         return nil unless combined_ref
 
-        Entry.new(combined_ref: combined_ref, lon: entry[:lon], lat: entry[:lat])
+        hub_entry(combined_ref, entry)
       end
     end
   end

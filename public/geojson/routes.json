@@ -77,6 +77,14 @@
       "color": "#C3B091"
     },
     {
+      "id": "sanying_line",
+      "file": "/geojson/new_taipei_metro/sanying_line.geojson",
+      "name": "三鶯線",
+      "name_en": "Sanying Line",
+      "ref": "LB",
+      "color": "#6DB7D0"
+    },
+    {
       "id": "circular",
       "file": "/geojson/taipei_metro/circular.geojson",
       "name": "環狀線",
@@ -129,7 +137,7 @@
       "name": "橘線",
       "name_en": "Orange Line",
       "ref": "O",
-      "color": "#F5C200"
+      "color": "#FAA73F"
     },
     {
       "id": "circular_lrt",
@@ -147,7 +155,7 @@
       "name": "台灣高鐵",
       "name_en": "Taiwan High Speed Rail",
       "ref": "HSR",
-      "color": "#F4811A"
+      "color": "#DB5325"
     }
   ],
   "tra": [
@@ -294,6 +302,15 @@
       "ref": "HP",
       "color": "#004B87",
       "branch_of": "beihui_line"
+    },
+    {
+      "id": "taichung_port_line",
+      "file": "/geojson/tra/taichung_port_line.geojson",
+      "name": "臺中臨港線",
+      "name_en": "Taichung Port Line",
+      "ref": "TP",
+      "color": "#004B87",
+      "branch_of": "sea_line"
     }
   ],
   "other": [

@@ -7,8 +7,18 @@ module Geojson
       "美麗島" => { combined_ref: "R10;O5", lon: 120.302098, lat: 22.631357 }
     }.freeze
 
-    CIRCULAR_LRT_IN_STATION_TRANSFERS_BY_NAME = {
-      "哈瑪星" => { combined_ref: "C14;O1", lon: 120.2758388, lat: 22.6216116 }
+    CIRCULAR_LRT_IN_STATION_TRANSFERS_BY_NAME = {}.freeze
+
+    # Cross-route transfers with physically separate platforms (shown as two stations).
+    CROSS_ROUTE_TRANSFERS_BY_NAME = {
+      "哈瑪星" => {
+        combined_ref: "C14;O1",
+        lines: %w[circular_lrt orange_line],
+        coordinates_by_ref: {
+          "C14" => { lon: 120.2758505, lat: 22.6216067 },
+          "O1" => { lon: 120.2734156, lat: 22.6221059 }
+        }
+      }
     }.freeze
 
     # RK1 opened 2024-06; may be missing from OSM relation station lists.
@@ -31,7 +41,7 @@ module Geojson
         name: "橘線",
         name_en: "Orange Line",
         ref: "O",
-        color: "#F5C200",
+        color: "#FAA73F",
         relation_ids: [ 4_174_827, 6_825_570 ],
         station_ref_prefix: "O"
       ),

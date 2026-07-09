@@ -34,7 +34,7 @@ module Views
       HSR_SYSTEM = {
         id: "hsr",
         label: "高鐵",
-        color: "#F4811A",
+        color: "#DB5325",
         badge: :orange,
         description: "台灣高鐵（南港－左營）"
       }.freeze
@@ -49,10 +49,10 @@ module Views
 
       METRO_SYSTEMS = [
         { id: "taipei_metro", label: "台北捷運", color: "#A74C00", badge: :amber, description: "6 條路線" },
-        { id: "new_taipei_metro", label: "新北捷運", color: "#E95A0C", badge: :orange, description: "環狀線、淡海與安坑輕軌" },
+        { id: "new_taipei_metro", label: "新北捷運", color: "#E95A0C", badge: :orange, description: "環狀線、三鶯線、淡海與安坑輕軌" },
         { id: "taoyuan_metro", label: "桃園捷運", color: "#0073B7", badge: :blue, description: "機場捷運（藍／紫雙線）" },
         { id: "taichung_metro", label: "台中捷運", color: "#8FC31F", badge: :lime, description: "綠線" },
-        { id: "kaohsiung_metro", label: "高雄捷運", color: "#F5C200", badge: :yellow, description: "紅線、橘線、環狀輕軌" }
+        { id: "kaohsiung_metro", label: "高雄捷運", color: "#FAA73F", badge: :orange, description: "紅線、橘線、環狀輕軌" }
       ].freeze
 
       LEGEND_LINES = [
@@ -74,14 +74,14 @@ module Views
           style: :parallel,
           colors: [ "#4F46E5", "#4F46E5" ]
         },
-        { label: "聯通道轉乘", note: "單灰色虛線", color: "#525252", style: :dashed },
+        { label: "聯通道／分離式站內跨系統轉乘", note: "單灰色虛線", color: "#525252", style: :dashed },
         { label: "站外轉乘（優惠）", note: "雙灰色虛線（較粗）", color: "#3a3a3a", style: :dashed_double }
       ].freeze
 
       LEGEND_MARKERS = [
         { label: "一般站", type: :station, color: "#666666" },
         { label: "起迄站", type: :terminal, color: "#A74C00" },
-        { label: "轉乘站", type: :transfer, colors: [ "#E3002C", "#A74C00" ] },
+        { label: "轉乘站", type: :transfer, colors: [ "#E3002C", "#A74C00" ], note: "同系統站內轉乘；高鐵與台鐵共站亦同" },
         { label: "機廠／維修區", type: :depot, color: "#64748B" },
         { label: "站外轉乘站", type: :out_of_station, color: "#737373" },
         { label: "轉角站（不提供載客服務）", type: :angle_station, color: "#00AFE2" },

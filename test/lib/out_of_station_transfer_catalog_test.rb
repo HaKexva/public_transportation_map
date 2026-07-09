@@ -13,21 +13,27 @@ class OutOfStationTransferCatalogTest < ActiveSupport::TestCase
     assert_operator hsr_transfers.length, :>=, 6
     assert_includes tra_transfers.map { |entry| entry["id"] }, "tra_taipei_passage"
 
-    expected = {
+    hsr_expected = {
       "hsr_nangang_passage" => %w[taiwan_hsr bannan],
       "hsr_taipei_passage" => %w[taiwan_hsr tamsui_xinyi],
       "hsr_banqiao_passage" => %w[taiwan_hsr bannan],
-      "hsr_taoyuan_passage" => %w[taiwan_hsr airport_mrt],
       "hsr_taichung_passage" => %w[taiwan_hsr green_line],
-      "hsr_zuoying_passage" => %w[taiwan_hsr red_line]
+      "hsr_zuoying_passage" => %w[taiwan_hsr red_line],
+      "tra_hsr_taoyuan_passage" => %w[western_trunk_north taiwan_hsr]
     }
 
-    expected.each do |id, routes|
+    hsr_expected.each do |id, routes|
       transfer = hsr_transfers.find { |entry| entry["id"] == id }
       assert transfer, "expected #{id}"
       assert_equal "passage", transfer["kind"]
       assert_equal routes.sort, transfer["routes"].sort
       assert_equal 2, transfer["endpoints"].length
     end
+
+    tra_taoyuan = tra_transfers.find { |entry| entry["id"] == "tra_airport_taoyuan_passage" }
+    assert tra_taoyuan, "expected tra_airport_taoyuan_passage"
+    assert_equal "passage", tra_taoyuan["kind"]
+    assert_equal %w[airport_mrt western_trunk_north], tra_taoyuan["routes"].sort
+    assert_equal 2, tra_taoyuan["endpoints"].length
   end
 end

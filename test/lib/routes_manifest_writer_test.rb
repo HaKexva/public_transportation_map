@@ -4,7 +4,7 @@ require "test_helper"
 
 class RoutesManifestWriterTest < ActiveSupport::TestCase
   test "circular line is listed under new taipei metro not taipei metro" do
-    path = Rails.root.join("tmp/routes_manifest_test.json")
+    path = Rails.root.join("tmp", "routes_manifest_test_#{name}.json")
     Geojson::RoutesManifestWriter.write!(path: path)
 
     manifest = JSON.parse(path.read)
@@ -14,12 +14,13 @@ class RoutesManifestWriterTest < ActiveSupport::TestCase
     assert_not_includes taipei_ids, "circular"
     assert_includes new_taipei_ids, "circular"
     assert_includes new_taipei_ids, "ankeng_lrt"
+    assert_includes new_taipei_ids, "sanying_line"
   ensure
     path.delete if path.exist?
   end
 
   test "taoyuan metro manifest includes airport mrt express branch" do
-    path = Rails.root.join("tmp/routes_manifest_test.json")
+    path = Rails.root.join("tmp", "routes_manifest_test_#{name}.json")
     Geojson::RoutesManifestWriter.write!(path: path)
 
     manifest = JSON.parse(path.read)

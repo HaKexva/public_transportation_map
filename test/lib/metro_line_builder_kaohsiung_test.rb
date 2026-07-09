@@ -31,7 +31,17 @@ class MetroLineBuilderKaohsiungTest < ActiveSupport::TestCase
     circular_stations = JSON.parse(circular_path.read)["features"].select { |f| f.dig("properties", "feature_type") == "station" }
     assert circular_stations.any? { |feature| feature.dig("properties", "ref") == "C1" }
     assert circular_stations.any? { |feature| feature.dig("properties", "ref") == "C14;O1" }
+    assert orange_stations.any? { |feature| feature.dig("properties", "ref") == "C14;O1" }
     refute circular_stations.any? { |feature| feature.dig("properties", "name") == "美麗島" }
+
+    hamasing_circular = circular_stations.find { |feature| feature.dig("properties", "ref") == "C14;O1" }
+    hamasing_orange = orange_stations.find { |feature| feature.dig("properties", "ref") == "C14;O1" }
+    circular_coords = hamasing_circular.dig("geometry", "coordinates")
+    orange_coords = hamasing_orange.dig("geometry", "coordinates")
+    spread = Geojson::TrackGeometry.planar_distance_meters(
+      circular_coords[0], circular_coords[1], orange_coords[0], orange_coords[1]
+    )
+    assert spread > 150, "expected C14 and O1 platforms to be separate (was #{spread.round(1)}m apart)"
 
     refute circular_stations.any? { |feature| feature.dig("properties", "station_role").present? },
            "loop line should not mark origin/destination terminals"

@@ -4,7 +4,8 @@ require "json"
 
 module Geojson
   class MetroLineBuilder
-    # North track: secured area only. South track: public (non-secured) boarding.
+    # Each track runs a two-car train (secured + public boarding cars).
+    # Public-area cars are suspended; north secured stops remain in service.
     # Sources: taoyuan-airport.com/skytrain, Wikipedia PMS.
     SKYTRAIN_TRACKS = [
       { way_id: 256726319, segment: "north", label: "北側", boarding_area: "secured" },
@@ -56,7 +57,8 @@ module Geojson
         track: "south",
         lon: 121.23735,
         lat: 25.07872,
-        note: "管制區外 · 1F 郵局旁（依指標前往）"
+        note: "管制區外 · 1F 郵局旁（目前停駛）",
+        passenger_service: false
       },
       {
         ref: "ST2S",
@@ -66,7 +68,8 @@ module Geojson
         track: "south",
         lon: 121.23363,
         lat: 25.07646,
-        note: "管制區外 · 3F 22 號報到櫃台旁（依指標前往）"
+        note: "管制區外 · 3F 22 號報到櫃台旁（目前停駛）",
+        passenger_service: false
       }
     ].freeze
 
@@ -92,6 +95,8 @@ module Geojson
 
       raise "No track geometry for #{@line.slug}" if @route_features.empty?
 
+      clip_xiaobitan_yard_loop!(@route_features) if @line.slug == "xiaobitan_branch"
+
       extend_routes_for_depots!(@route_features)
 
       stations = fetch_stations_for_line
@@ -99,7 +104,6 @@ module Geojson
       align_stations_to_routes!(stations, @route_features)
       align_tra_junction_station!(stations) if @line.system_id == "tra"
       apply_tra_route_terminals!(@route_features, stations) if @line.system_id == "tra"
-      assign_tra_station_terminal_roles!(stations) if @line.system_id == "tra"
       reorder_tra_stations!(stations) if tra_station_ordered_line?
       stitch_tra_route_features! if @line.system_id == "tra"
 
@@ -136,7 +140,6 @@ module Geojson
       align_stations_to_routes!(stations, @route_features)
       align_tra_junction_station!(stations)
       apply_tra_route_terminals!(@route_features, stations) unless skip_tra_route_refresh_geometry_mutation?
-      assign_tra_station_terminal_roles!(stations)
       reorder_tra_stations!(stations) if tra_station_ordered_line?
       stitch_tra_route_features! unless skip_tra_route_refresh_geometry_mutation?
 
@@ -263,11 +266,12 @@ module Geojson
     TRA_CHAIN_GAP_FRAGMENT_M = 45_000
     TRA_CHAIN_GAP_STITCH_MIN_M = 400
     TRA_CHAIN_GAP_STITCH_STEP_M = 250
+    TRA_CHAIN_MAX_POINT_JUMP_M = 250
 
     def build_tra_route_features
       case @line.slug
       when "sea_line"
-        build_tra_cached_or_station_ordered_route_features(
+        build_tra_station_ordered_route_features(
           station_refs: SEA_LINE_STATION_REFS
         )
       when "mountain_line"
@@ -307,7 +311,7 @@ module Geojson
           station_refs: SHENAO_STATION_REFS
         )
       when "chengzhui_line"
-        build_tra_cached_or_station_ordered_route_features(
+        build_tra_station_ordered_route_features(
           station_refs: CHENGZHUI_STATION_REFS
         )
       when "shalun_line"
@@ -364,17 +368,32 @@ module Geojson
       chains = tra_route_chains
       return [] if chains.empty?
 
-      corridor = extract_tra_station_pair_corridor(chains, station_refs)
+      corridor = extract_tra_ordered_corridor(chains, station_refs)
       return [] unless corridor&.length.to_i >= 2
 
       finish_tra_route_feature(corridor)
     end
 
-    def build_tra_cached_or_station_ordered_route_features(station_refs:)
-      fallback = tra_track_fallback_coordinates
-      return finish_tra_route_feature(fallback.dup) if fallback
+    def extract_tra_ordered_corridor(chains, station_refs)
+      if tra_merged_ordered_corridor_line?(@line.slug)
+        merged = tra_primary_merged_chain(chains, gap_threshold_m: TRA_CHAIN_GAP_MAIN_M)
+        ordered = merged && extract_tra_station_ordered_corridor(merged, station_refs)
+        return ordered if ordered&.length.to_i >= 2
+      end
 
-      build_tra_station_ordered_route_features(station_refs: station_refs)
+      extract_tra_station_pair_corridor(chains, station_refs)
+    end
+
+    def tra_merged_ordered_corridor_line?(slug)
+      slug.in?(%w[western_trunk_south western_trunk_north pingtung_line])
+    end
+
+    def build_tra_cached_or_station_ordered_route_features(station_refs:)
+      features = build_tra_station_ordered_route_features(station_refs: station_refs)
+      return features if features.any?
+
+      fallback = tra_track_fallback_coordinates
+      finish_tra_route_feature(fallback.dup) if fallback
     end
 
     def extract_tra_station_ordered_corridor(chain, station_refs)
@@ -481,6 +500,8 @@ module Geojson
     TRA_STATION_PAIR_MAX_DETOUR_RATIO = 1.85
     TRA_STATION_PAIR_FALLBACK_DETOUR_RATIO = 2.75
     TRA_STATION_PAIR_MAX_SNAP_M = 5_000
+    TRA_STATION_PAIR_LOCAL_SNAP_M = 500
+    TRA_STATION_PAIR_ORIGIN_SNAP_M = 800
 
     def extract_tra_station_pair_corridor(chains, station_refs)
       stations = station_refs.filter_map do |ref|
@@ -493,6 +514,7 @@ module Geojson
       return nil if stations.length < 2
 
       merged_chain = tra_primary_merged_chain(chains, gap_threshold_m: TRA_CHAIN_GAP_MAIN_M)
+      merged_chain = nil if merged_chain && tra_corridor_has_long_point_jump?(merged_chain)
       combined = []
       merged_hint_idx = nil
 
@@ -509,25 +531,82 @@ module Geojson
           to_station[:lon], to_station[:lat],
           max_detour_ratio: TRA_STATION_PAIR_FALLBACK_DETOUR_RATIO
         )
-        segment ||= merged_chain && tra_corridor_segment_on_chain(
-          merged_chain,
-          from_station[:lon], from_station[:lat],
-          to_station[:lon], to_station[:lat],
-          from_index: merged_hint_idx
-        )
+
+        if segment && tra_endpoint_gap(segment.first, [ from_station[:lon], from_station[:lat] ]) > TRA_CHAIN_MAX_POINT_JUMP_M
+          segment = tra_destination_chain_segment(
+            chains,
+            from_station[:lon], from_station[:lat],
+            to_station[:lon], to_station[:lat]
+          ) || segment
+        end
+
+        if merged_chain
+          merged_segment = tra_corridor_segment_on_chain(
+            merged_chain,
+            from_station[:lon], from_station[:lat],
+            to_station[:lon], to_station[:lat],
+            from_index: merged_hint_idx
+          )
+          if merged_segment && prefer_merged_tra_corridor_segment?(
+            segment,
+            merged_segment,
+            from_station[:lon], from_station[:lat],
+            to_station[:lon], to_station[:lat]
+          )
+            segment = merged_segment
+          end
+        end
 
         return nil unless segment
+
+        segment = orient_tra_segment_between_stations!(
+          segment,
+          from_station[:lon], from_station[:lat],
+          to_station[:lon], to_station[:lat]
+        )
 
         if combined.empty?
           combined.concat(segment)
         else
-          combined.concat(segment.drop(1))
+          append_tra_corridor_segment!(combined, segment)
         end
 
         merged_hint_idx = nearest_chain_index(merged_chain, to_station[:lon], to_station[:lat]) if merged_chain
       end
 
       combined.length >= 2 ? combined : nil
+    end
+
+    def tra_destination_chain_segment(chains, from_lon, from_lat, to_lon, to_lat)
+      chains.filter_map do |chain|
+        next unless chain.length >= 2
+
+        to_idx = chain.each_index.min_by { |idx| tra_endpoint_gap(chain[idx], [ to_lon, to_lat ]) }
+        next if tra_endpoint_gap(chain[to_idx], [ to_lon, to_lat ]) > TRA_STATION_PAIR_LOCAL_SNAP_M
+
+        from_idx = chain.each_index.min_by { |idx| tra_endpoint_gap(chain[idx], [ from_lon, from_lat ]) }
+        segment = chain_segment_between(chain, from_idx, to_idx)
+        next if segment.length < 2
+        next if tra_corridor_has_long_point_jump?(segment)
+
+        orient_tra_segment_between_stations!(segment, from_lon, from_lat, to_lon, to_lat)
+      end.min_by { |segment| tra_path_length_meters(segment) }
+    end
+
+    def append_tra_corridor_segment!(combined, segment)
+      return if segment.empty?
+
+      candidates = segment.each_index.select do |idx|
+        tra_endpoint_gap(combined.last, segment[idx]) <= TRA_CHAIN_MAX_POINT_JUMP_M
+      end
+      splice_idx = if candidates.any?
+        candidates.min_by { |idx| tra_endpoint_gap(combined.last, segment[idx]) }
+      else
+        segment.each_index.min_by { |idx| tra_endpoint_gap(combined.last, segment[idx]) }
+      end
+
+      extension = segment[splice_idx..] || segment
+      combined.concat(extension)
     end
 
     def tra_corridor_segment_on_chain(chain, from_lon, from_lat, to_lon, to_lat, from_index: nil)
@@ -552,6 +631,29 @@ module Geojson
       segment
     end
 
+    TRA_CORRIDOR_CHORD_RATIO = 1.12
+
+    def prefer_merged_tra_corridor_segment?(best_segment, merged_segment, from_lon, from_lat, to_lon, to_lat)
+      return true if best_segment.nil?
+
+      straight = TrackGeometry.planar_distance_meters(from_lon, from_lat, to_lon, to_lat)
+      best_path = tra_path_length_meters(best_segment)
+      merged_path = tra_path_length_meters(merged_segment)
+      best_ratio = straight.positive? ? best_path / straight : Float::INFINITY
+      merged_ratio = straight.positive? ? merged_path / straight : Float::INFINITY
+
+      if merged_path > best_path && best_segment.length >= 10 && best_ratio <= TRA_STATION_PAIR_MAX_DETOUR_RATIO
+        return false
+      end
+
+      return true if TrackGeometry.straight_line?(best_segment)
+      return true if best_segment.length <= 5 && merged_segment.length > best_segment.length
+      return true if best_ratio < TRA_CORRIDOR_CHORD_RATIO && merged_ratio > best_ratio &&
+        merged_ratio <= TRA_STATION_PAIR_MAX_DETOUR_RATIO
+
+      merged_ratio > best_ratio && merged_ratio <= TRA_STATION_PAIR_MAX_DETOUR_RATIO
+    end
+
     def best_tra_corridor_segment_between(chains, from_lon, from_lat, to_lon, to_lat, max_detour_ratio:)
       straight = TrackGeometry.planar_distance_meters(from_lon, from_lat, to_lon, to_lat)
       return [ [ from_lon, from_lat ], [ to_lon, to_lat ] ] if straight < 50
@@ -570,13 +672,93 @@ module Geojson
 
             segment = chain_segment_between(chain, from_idx, to_idx)
             next if segment.length < 2
+            next if straight > 400 && segment.length < 3
 
+            fit = tra_segment_endpoint_fit(
+              segment,
+              from_lon, from_lat,
+              to_lon, to_lat,
+              max_from_snap_m: TRA_STATION_PAIR_ORIGIN_SNAP_M,
+              max_to_snap_m: TRA_STATION_PAIR_MAX_SNAP_M
+            )
+            next unless fit
+
+            segment = fit[:oriented]
             path = tra_path_length_meters(segment)
             ratio = straight.positive? ? path / straight : Float::INFINITY
             next if ratio > max_detour_ratio
+            next if path < straight * 0.45
+            next if tra_corridor_has_long_point_jump?(segment)
 
-            if best.nil? || path < best[:path]
-              best = { segment: segment, path: path }
+            if best.nil? || better_tra_corridor_candidate?(best, path, ratio, segment.length)
+              best = { segment: segment, path: path, ratio: ratio, points: segment.length }
+            end
+          end
+        end
+      end
+
+      single = best&.dig(:segment)
+      bridged = tra_bridged_corridor_segment_between(
+        chains, from_lon, from_lat, to_lon, to_lat, max_detour_ratio: max_detour_ratio
+      )
+      if bridged && prefer_bridged_tra_corridor_segment?(single, bridged, to_lon, to_lat)
+        bridged
+      else
+        single
+      end
+    end
+
+    def tra_bridged_corridor_segment_between(chains, from_lon, from_lat, to_lon, to_lat, max_detour_ratio:)
+      straight = TrackGeometry.planar_distance_meters(from_lon, from_lat, to_lon, to_lat)
+      return nil if straight < 50
+
+      best = nil
+
+      chains.each_with_index do |origin_chain, origin_chain_idx|
+        next if origin_chain.length < 2
+
+        from_indices = chain_indices_near(
+          origin_chain, from_lon, from_lat, TRA_STATION_PAIR_ORIGIN_SNAP_M
+        )
+        from_indices.each do |from_idx|
+          chains.each_with_index do |dest_chain, dest_chain_idx|
+            next if origin_chain_idx == dest_chain_idx
+            next if dest_chain.length < 2
+
+            to_indices = chain_indices_near(
+              dest_chain, to_lon, to_lat, TRA_STATION_PAIR_MAX_SNAP_M
+            )
+            to_indices.each do |to_idx|
+              bridge = nearest_chain_bridge_indices(
+                origin_chain, dest_chain, max_gap_m: TRA_CHAIN_GAP_MAIN_M
+              )
+              next unless bridge
+
+              leg_a = chain_segment_between(origin_chain, from_idx, bridge[:left_idx])
+              leg_b = chain_segment_between(dest_chain, bridge[:right_idx], to_idx)
+              segment = dedupe_tra_coordinates(leg_a + leg_b)
+              next if segment.length < 2
+              next if straight > 400 && segment.length < 3
+
+              fit = tra_segment_endpoint_fit(
+                segment,
+                from_lon, from_lat,
+                to_lon, to_lat,
+                max_from_snap_m: TRA_STATION_PAIR_ORIGIN_SNAP_M,
+                max_to_snap_m: TRA_STATION_PAIR_MAX_SNAP_M
+              )
+              next unless fit
+
+              segment = fit[:oriented]
+              path = tra_path_length_meters(segment)
+              ratio = straight.positive? ? path / straight : Float::INFINITY
+              next if ratio > max_detour_ratio
+              next if path < straight * 0.45
+              next if tra_corridor_has_long_point_jump?(segment)
+
+              if best.nil? || better_tra_corridor_candidate?(best, path, ratio, segment.length)
+                best = { segment: segment, path: path, ratio: ratio, points: segment.length }
+              end
             end
           end
         end
@@ -585,12 +767,120 @@ module Geojson
       best&.dig(:segment)
     end
 
+    def nearest_chain_bridge_indices(left_chain, right_chain, max_gap_m:)
+      best = nil
+
+      left_chain.each_index do |left_idx|
+        right_chain.each_index do |right_idx|
+          gap = tra_endpoint_gap(left_chain[left_idx], right_chain[right_idx])
+          next if gap > max_gap_m
+          next unless best.nil? || gap < best[:gap]
+
+          best = { left_idx: left_idx, right_idx: right_idx, gap: gap }
+        end
+      end
+
+      best
+    end
+
+    def prefer_bridged_tra_corridor_segment?(single, bridged, to_lon, to_lat)
+      return true if single.nil?
+      return false if bridged.nil?
+
+      to_gap = tra_endpoint_gap(single.last, [ to_lon, to_lat ])
+      return true if to_gap > TRA_STATION_PAIR_LOCAL_SNAP_M
+      return true if tra_corridor_has_long_straight_run?(single)
+      return true if tra_corridor_has_long_point_jump?(single)
+
+      single_path = tra_path_length_meters(single)
+      bridged_path = tra_path_length_meters(bridged)
+      bridged.length > single.length + 5 && bridged_path <= single_path * 1.15
+    end
+
+    def tra_corridor_has_long_point_jump?(segment, max_jump_m: TRA_CHAIN_MAX_POINT_JUMP_M)
+      segment.each_cons(2).any? do |start, finish|
+        TrackGeometry.planar_distance_meters(start[0], start[1], finish[0], finish[1]) > max_jump_m
+      end
+    end
+
+    def tra_corridor_has_long_straight_run?(segment, min_length_m: 1_000)
+      segment.each_index do |start_idx|
+        (start_idx + 1).upto(segment.length - 1) do |end_idx|
+          subsegment = segment[start_idx..end_idx]
+          next unless TrackGeometry.straight_line?(subsegment)
+
+          distance = TrackGeometry.planar_distance_meters(
+            subsegment.first[0], subsegment.first[1], subsegment.last[0], subsegment.last[1]
+          )
+          return true if distance >= min_length_m
+        end
+      end
+
+      false
+    end
+
+    def dedupe_tra_coordinates(coordinates)
+      coordinates.each_with_object([]) do |coordinate, unique|
+        unique << coordinate unless unique.last && same_tra_coordinate?(unique.last, coordinate)
+      end
+    end
+
+    def same_tra_coordinate?(left, right)
+      (left[0] - right[0]).abs < 0.000001 && (left[1] - right[1]).abs < 0.000001
+    end
+
+    def tra_segment_endpoint_fit(segment, from_lon, from_lat, to_lon, to_lat, max_from_snap_m:, max_to_snap_m:)
+      forward_from = tra_endpoint_gap(segment.first, [ from_lon, from_lat ])
+      forward_to = tra_endpoint_gap(segment.last, [ to_lon, to_lat ])
+      reverse_from = tra_endpoint_gap(segment.last, [ from_lon, from_lat ])
+      reverse_to = tra_endpoint_gap(segment.first, [ to_lon, to_lat ])
+
+      if forward_from + forward_to <= reverse_from + reverse_to
+        return nil if forward_from > max_from_snap_m || forward_to > max_to_snap_m
+
+        { oriented: segment, from_gap: forward_from, to_gap: forward_to }
+      else
+        return nil if reverse_from > max_from_snap_m || reverse_to > max_to_snap_m
+
+        { oriented: segment.reverse, from_gap: reverse_from, to_gap: reverse_to }
+      end
+    end
+
+    def better_tra_corridor_candidate?(current, path, ratio, points)
+      current_ratio = current[:ratio]
+      return true if ratio < current_ratio - 0.05
+      return false if ratio > current_ratio + 0.05
+
+      current_points = current[:points]
+      return true if points > current_points && points >= 4
+      return false if current_points > points && current_points >= 4
+
+      path < current[:path]
+    end
+
     def chain_indices_near(chain, lon, lat, max_distance_m)
+      local_snap = [ max_distance_m, TRA_STATION_PAIR_LOCAL_SNAP_M ].min
+      local_indices = chain.each_index.select do |index|
+        tra_endpoint_gap(chain[index], [ lon, lat ]) <= local_snap
+      end
+
+      representatives = representative_chain_indices(chain, lon, lat, local_indices)
+      return representatives if representatives.any?
+
       index = nearest_chain_index(chain, lon, lat)
       distance = tra_endpoint_gap(chain[index], [ lon, lat ])
       return [] if distance > max_distance_m
 
       [ index ]
+    end
+
+    def representative_chain_indices(chain, lon, lat, indices)
+      return [] if indices.empty?
+
+      groups = indices.slice_when { |previous, current| current - previous > 1 }.to_a
+      groups.filter_map do |group|
+        group.min_by { |index| tra_endpoint_gap(chain[index], [ lon, lat ]) }
+      end
     end
 
     def tra_path_length_meters(coordinates)
@@ -742,11 +1032,53 @@ module Geojson
       dedupe_tra_coordinates!(corridor)
       orient_tra_line!(corridor)
       clip_tra_coordinates!(corridor)
-      stitch_tra_coordinates!(corridor)
+      stitch_tra_coordinates!(corridor) unless tra_station_pair_corridor_line?
       dedupe_tra_coordinates!(corridor)
       return [] if corridor.length < 2
 
-      [ route_feature(corridor, branch_index: 0, relation_index: 0) ]
+      split_tra_corridor_at_discontinuities(corridor).map.with_index do |fragment, index|
+        trimmed = fragment.dup
+        trim_tra_corridor_endpoint_jumps!(trimmed)
+        route_feature(trimmed, branch_index: index, relation_index: 0)
+      end
+    end
+
+    def trim_tra_corridor_endpoint_jumps!(coordinates, max_jump_m: TRA_CHAIN_MAX_POINT_JUMP_M)
+      while coordinates.length > 2
+        jump = TrackGeometry.planar_distance_meters(
+          coordinates[0][0], coordinates[0][1], coordinates[1][0], coordinates[1][1]
+        )
+        break if jump <= max_jump_m
+
+        coordinates.shift
+      end
+
+      while coordinates.length > 2
+        jump = TrackGeometry.planar_distance_meters(
+          coordinates[-2][0], coordinates[-2][1], coordinates[-1][0], coordinates[-1][1]
+        )
+        break if jump <= max_jump_m
+
+        coordinates.pop
+      end
+    end
+
+    def split_tra_corridor_at_discontinuities(coordinates, max_jump_m: TRA_CHAIN_MAX_POINT_JUMP_M)
+      fragments = []
+      fragment = [ coordinates.first ]
+
+      coordinates.each_cons(2) do |start, finish|
+        jump = TrackGeometry.planar_distance_meters(start[0], start[1], finish[0], finish[1])
+        if jump > max_jump_m
+          fragments << fragment if fragment.length >= 2
+          fragment = [ finish ]
+        else
+          fragment << finish
+        end
+      end
+
+      fragments << fragment if fragment.length >= 2
+      fragments
     end
 
     def extract_tra_north_peak_corridor_if_needed(chain)
@@ -806,8 +1138,10 @@ module Geojson
     end
 
     def stitch_tra_route_features!
-      route = @route_features.find { |feature| feature.dig(:properties, :feature_type) == "route" }
-      coordinates = route&.dig(:geometry, :coordinates)
+      routes = @route_features.select { |feature| feature.dig(:properties, :feature_type) == "route" }
+      return if routes.length != 1
+
+      coordinates = routes.first.dig(:geometry, :coordinates)
       return unless coordinates.is_a?(Array) && coordinates.length >= 2
 
       stitch_tra_coordinates!(coordinates)
@@ -833,7 +1167,8 @@ module Geojson
         stitched << finish
       end
 
-      coordinates.replace(stitched)
+      densified = TrackGeometry.densify_coordinates(stitched, max_step_m: step_m)
+      coordinates.replace(densified)
     end
 
     def prune_tra_corridor_backtracks!(coordinates, tolerance_m: 120, min_detour_m: 800)
@@ -923,10 +1258,35 @@ module Geojson
 
     def tra_route_chains
       chains = tra_route_chains_by_relation.values.flat_map { |relation_chains| relation_chains }
+      chains = split_tra_chains_at_discontinuities(chains) if chains.any?
       return chains if chains.any?
 
       fallback = tra_track_fallback_coordinates
-      fallback ? [ fallback ] : []
+      fallback ? split_tra_chains_at_discontinuities([ fallback ]) : []
+    end
+
+    def split_tra_chains_at_discontinuities(chains, max_jump_m: TRA_CHAIN_MAX_POINT_JUMP_M)
+      chains.flat_map { |chain| split_tra_chain_at_discontinuities(chain, max_jump_m: max_jump_m) }
+    end
+
+    def split_tra_chain_at_discontinuities(chain, max_jump_m:)
+      return [] if chain.length < 2
+
+      fragments = []
+      fragment = [ chain.first ]
+
+      chain.each_cons(2) do |start, finish|
+        jump = TrackGeometry.planar_distance_meters(start[0], start[1], finish[0], finish[1])
+        if jump > max_jump_m
+          fragments << fragment if fragment.length >= 2
+          fragment = [ finish ]
+        else
+          fragment << finish
+        end
+      end
+
+      fragments << fragment if fragment.length >= 2
+      fragments
     end
 
     def tra_route_chains_by_relation
@@ -1034,6 +1394,12 @@ module Geojson
     def orient_tra_line!(coordinates, relation_index: 0)
       return if coordinates.length < 2
       return if @line.slug.in?(%w[yilan_line shenao_line])
+
+      partial = TRA_PARTIAL_TERMINAL_REFS[@line.slug]
+      if partial&.dig(:start) && partial[:finish]
+        orient_tra_line_by_station_terminals!(coordinates, partial[:start], partial[:finish])
+        return
+      end
 
       case tra_line_orientation(relation_index)
       when :north_to_south
@@ -1237,19 +1603,59 @@ module Geojson
       end
     end
 
+    # OSM includes 新店機廠深層存車軌；客運支線只保留爬升至小碧潭站的高架段。
+    def clip_xiaobitan_yard_loop!(route_features)
+      floor_lat = 24.9695
+      rejoin_lat = 24.9705
+
+      route_features.each do |feature|
+        next unless feature.dig(:properties, :feature_type) == "route"
+
+        coordinates = feature.dig(:geometry, :coordinates)
+        next unless coordinates.is_a?(Array) && coordinates.length >= 4
+
+        cut_start = nil
+        cut_end = nil
+        coordinates.each_with_index do |point, index|
+          next if index.zero?
+
+          if cut_start.nil? && point[1] < floor_lat && coordinates[index - 1][1] >= floor_lat
+            cut_start = index
+          elsif cut_start && cut_end.nil? && point[1] >= rejoin_lat && coordinates[index - 1][1] < rejoin_lat
+            cut_end = index
+            break
+          end
+        end
+        next unless cut_start && cut_end && cut_end > cut_start
+
+        feature[:geometry][:coordinates] = coordinates[0...cut_start] + coordinates[cut_end..]
+      end
+    end
+
     def extend_routes_for_depots!(route_features)
       line_strings = route_line_strings(route_features)
       return if line_strings.empty?
 
       MetroDepotCatalog.depots_for_route(@line.slug).each do |depot|
-        spur = TrackGeometry.depot_link_coordinates_for_point(depot[:lon], depot[:lat], line_strings)
+        facility = MetroDepotCatalog.primary_facility_coordinates(depot)
+        spur_line_strings = DepotSpurCatalog.line_strings_for_depot(depot[:id])
+        junction_hint = DepotSpurCatalog.junction_hint_for(depot[:id])
+        spur = TrackGeometry.depot_link_coordinates_for_point(
+          facility[:lon],
+          facility[:lat],
+          line_strings,
+          spur_line_strings: spur_line_strings,
+          junction_reference_lon: junction_hint&.dig(:lon),
+          junction_reference_lat: junction_hint&.dig(:lat)
+        )
         next unless spur
 
-        route_features << depot_spur_feature(spur, depot)
+        route_features << depot_spur_feature(spur, depot, facility)
       end
     end
 
-    def depot_spur_feature(coordinates, depot)
+    def depot_spur_feature(coordinates, depot, facility = nil)
+      facility ||= MetroDepotCatalog.primary_facility_coordinates(depot)
       {
         type: "Feature",
         properties: {
@@ -1445,27 +1851,6 @@ module Geojson
       ref.match?(/\A\d+\z/) ? ref : nil
     end
 
-    TRA_MAIN_LINE_TERMINAL_ROLES = {
-      "western_trunk_north" => { "900" => "origin" },
-      "yilan_line" => { "920" => "origin", "7120" => "destination" }
-    }.freeze
-
-    def assign_tra_station_terminal_roles!(stations)
-      partial = TRA_PARTIAL_TERMINAL_REFS[@line.slug]
-      main_line_roles = TRA_MAIN_LINE_TERMINAL_ROLES[@line.slug] || {}
-
-      stations.each do |station|
-        ref = canonical_tra_station_ref(station[:ref])
-        next unless ref
-
-        if (role = main_line_roles[ref])
-          station[:station_role] = role
-        elsif TraCatalog::BRANCH_SLUGS.include?(@line.slug) && partial&.dig(:finish) == ref
-          station[:station_role] = "destination"
-        end
-      end
-    end
-
     TRA_PARTIAL_TERMINAL_REFS = {
       "neiwan_line" => { start: "1210", finish: "1208" },
       "liujia_line" => { start: "1194", finish: "1193" },
@@ -1488,20 +1873,29 @@ module Geojson
     }.freeze
 
     def apply_tra_route_terminals!(route_features, stations)
-      route = route_features.find { |feature| feature.dig(:properties, :feature_type) == "route" }
-      coordinates = route&.dig(:geometry, :coordinates)
-      return unless coordinates.is_a?(Array) && coordinates.length >= 2
+      routes = route_features.select { |feature| feature.dig(:properties, :feature_type) == "route" }
+      return if routes.empty?
 
       partial = TRA_PARTIAL_TERMINAL_REFS[@line.slug]
       if partial&.dig(:start) && partial[:finish]
-        extend_tra_named_terminals_at_ends!(
-          coordinates,
-          start_ref: partial[:start],
-          finish_ref: partial[:finish],
-          stations: stations
-        )
+        routes.each_with_index do |route, index|
+          coordinates = route.dig(:geometry, :coordinates)
+          next unless coordinates.is_a?(Array) && coordinates.length >= 2
+
+          extend_tra_named_terminals_at_ends!(
+            coordinates,
+            start_ref: index.zero? ? partial[:start] : nil,
+            finish_ref: index == routes.length - 1 ? partial[:finish] : nil,
+            stations: stations
+          )
+          trim_tra_corridor_endpoint_jumps!(coordinates)
+        end
         return
       end
+
+      route = routes.first
+      coordinates = route.dig(:geometry, :coordinates)
+      return unless coordinates.is_a?(Array) && coordinates.length >= 2
 
       terminals = tra_route_oriented_terminals(stations, coordinates)
       return unless terminals
@@ -1509,6 +1903,7 @@ module Geojson
       start_station = tra_terminal_station(partial&.dig(:start)) || terminals[:start]
       finish_station = tra_terminal_station(partial&.dig(:finish)) || terminals[:finish]
       assign_tra_terminal_coords!(coordinates, start_station, finish_station)
+      trim_tra_corridor_endpoint_jumps!(coordinates)
     end
 
     def extend_tra_named_terminals!(coordinates, start_ref:, finish_ref:)
@@ -1519,13 +1914,13 @@ module Geojson
       assign_tra_terminal_coords!(coordinates, start, finish)
     end
 
-    def extend_tra_named_terminals_at_ends!(coordinates, start_ref:, finish_ref:, stations: [])
-      start = tra_aligned_terminal_station(stations, start_ref)
-      finish = tra_aligned_terminal_station(stations, finish_ref)
-      return unless start && finish
+    def extend_tra_named_terminals_at_ends!(coordinates, start_ref: nil, finish_ref: nil, stations: [])
+      start = start_ref && tra_aligned_terminal_station(stations, start_ref)
+      finish = finish_ref && tra_aligned_terminal_station(stations, finish_ref)
+      return unless start || finish
 
-      snap_tra_terminal_coordinate!(coordinates, 0, start)
-      snap_tra_terminal_coordinate!(coordinates, -1, finish)
+      snap_tra_terminal_coordinate!(coordinates, 0, start) if start
+      snap_tra_terminal_coordinate!(coordinates, -1, finish) if finish
     end
 
     def tra_aligned_terminal_station(stations, ref)
@@ -1543,7 +1938,31 @@ module Geojson
       snap_tra_terminal_coordinate!(coordinates, finish_index, finish_station) if finish_station
     end
 
+    def orient_tra_segment_between_stations!(segment, from_lon, from_lat, to_lon, to_lat)
+      return segment if segment.length < 2
+
+      oriented = segment.dup
+      first_to_from = tra_endpoint_gap(oriented.first, [ from_lon, from_lat ])
+      first_to_to = tra_endpoint_gap(oriented.first, [ to_lon, to_lat ])
+      oriented.reverse! if first_to_to + 1 < first_to_from
+
+      oriented
+    end
+
+    def orient_tra_line_by_station_terminals!(coordinates, start_ref, finish_ref)
+      start = self.class.tra_station_by_ref[start_ref]
+      finish = self.class.tra_station_by_ref[finish_ref]
+      return unless start && finish
+
+      start_at_head = tra_endpoint_gap(coordinates.first, [ start[:lon], start[:lat] ])
+      start_at_tail = tra_endpoint_gap(coordinates.last, [ start[:lon], start[:lat] ])
+      coordinates.reverse! if start_at_tail < start_at_head
+    end
+
     def tra_terminal_indexes(coordinates)
+      partial = TRA_PARTIAL_TERMINAL_REFS[@line.slug]
+      return [ 0, -1 ] if partial&.dig(:start) && partial[:finish]
+
       case tra_line_orientation(0)
       when :west_to_east
         coordinates.first[0] <= coordinates.last[0] ? [ 0, -1 ] : [ -1, 0 ]
@@ -1556,6 +1975,7 @@ module Geojson
       point = [ station[:lon], station[:lat] ]
       gap = tra_endpoint_gap(coordinates[index], point)
       return if gap > TRA_CHAIN_GAP_FRAGMENT_M
+      return if gap > TRA_CHAIN_MAX_POINT_JUMP_M
 
       coordinates[index] = point
     end
@@ -1661,6 +2081,10 @@ module Geojson
       "yilan_line" => YILAN_STATION_REFS
     }.freeze
 
+    def tra_station_pair_corridor_line?
+      tra_station_ordered_line?
+    end
+
     def tra_station_ordered_line?
       TRA_STATION_ORDERED_LINES.key?(@line.slug)
     end
@@ -1730,10 +2154,11 @@ module Geojson
       inject_missing_in_station_transfers!(stations, transfers)
       stations.replace(apply_in_station_transfers(stations, transfers))
       reject_transfer_stations_not_on_line!(stations, transfers)
+      stations
     end
 
     def kaohsiung_in_station_transfers_for_line
-      case @line.slug
+      base = case @line.slug
       when "circular_lrt"
         KaohsiungMetroCatalog::CIRCULAR_LRT_IN_STATION_TRANSFERS_BY_NAME
       when "red_line", "orange_line"
@@ -1741,6 +2166,12 @@ module Geojson
       else
         {}
       end
+
+      cross_route = KaohsiungMetroCatalog::CROSS_ROUTE_TRANSFERS_BY_NAME.select do |_name, transfer|
+        in_station_transfer_applies_to_line?(transfer)
+      end
+
+      base.merge(cross_route)
     end
 
     def inject_missing_in_station_transfers!(stations, transfers_by_name)
@@ -1751,11 +2182,12 @@ module Geojson
         line_ref = transfer_ref_for_current_line(transfer[:combined_ref])
         next unless line_ref
 
+        coords = transfer_coordinates_for_line_ref(transfer, line_ref)
         stations << {
           ref: line_ref,
           name: name,
-          lon: transfer[:lon],
-          lat: transfer[:lat]
+          lon: coords[:lon],
+          lat: coords[:lat]
         }
       end
 
@@ -1806,12 +2238,20 @@ module Geojson
         transfer = transfers_by_name[station[:name]]
         next station unless transfer && in_station_transfer_applies_to_line?(transfer)
 
+        line_ref = transfer_ref_for_current_line(transfer[:combined_ref])
+        coords = transfer_coordinates_for_line_ref(transfer, line_ref)
+
         station.merge(
           ref: transfer[:combined_ref],
-          lon: transfer[:lon],
-          lat: transfer[:lat]
+          lon: coords[:lon],
+          lat: coords[:lat]
         )
       end
+    end
+
+    def transfer_coordinates_for_line_ref(transfer, line_ref)
+      transfer.dig(:coordinates_by_ref, line_ref) ||
+        { lon: transfer[:lon], lat: transfer[:lat] }
     end
 
     def fetch_maokong_gondola_stations
@@ -1956,7 +2396,11 @@ module Geojson
     end
 
     def fetch_skytrain_stations
-      SKYTRAIN_BOARDING_STATIONS.map do |station|
+      skytrain_station_records(SKYTRAIN_BOARDING_STATIONS)
+    end
+
+    def skytrain_station_records(stations)
+      stations.map do |station|
         track = SKYTRAIN_TRACKS.find { |entry| entry[:segment] == station[:track] }
         side_label = track[:label]
 
@@ -1964,7 +2408,7 @@ module Geojson
           line: "#{@line.name}（#{side_label}）",
           color: @line.color,
           segment: station[:track],
-          boarding_area: track[:boarding_area]
+          boarding_area: station[:boarding_area] || track[:boarding_area]
         )
       end
     end
@@ -2048,12 +2492,17 @@ module Geojson
       if @line.system_id.in?(%w[taipei_metro kaohsiung_metro])
         legacy = TaipeiMetroCatalog::IN_STATION_TRANSFERS_BY_NAME[name] ||
           KaohsiungMetroCatalog::IN_STATION_TRANSFERS_BY_NAME[name] ||
-          KaohsiungMetroCatalog::CIRCULAR_LRT_IN_STATION_TRANSFERS_BY_NAME[name]
+          KaohsiungMetroCatalog::CIRCULAR_LRT_IN_STATION_TRANSFERS_BY_NAME[name] ||
+          KaohsiungMetroCatalog::CROSS_ROUTE_TRANSFERS_BY_NAME[name]
         if legacy
+          line_ref = transfer_ref_for_current_line(legacy[:combined_ref])
+          coords = transfer_coordinates_for_line_ref(legacy, line_ref)
+
           return TransitTransferCatalog::Entry.new(
             combined_ref: legacy[:combined_ref],
-            lon: legacy[:lon],
-            lat: legacy[:lat]
+            lon: coords[:lon],
+            lat: coords[:lat],
+            coordinates_by_ref: legacy[:coordinates_by_ref]
           )
         end
       end
@@ -2169,8 +2618,16 @@ module Geojson
         transfer_entry = in_station_transfer_for(station[:name], ref: original_ref)
         if transfer_entry
           ref = TransitTransferCatalog.ref_for_line(transfer_entry.combined_ref, line: @line)
-          if transfer_entry.lon && transfer_entry.lat
-            station = station.merge(lon: transfer_entry.lon, lat: transfer_entry.lat)
+          coords = TransitTransferCatalog.coordinates_for_line(transfer_entry, line: @line, ref: ref)
+          hub_entry = TransitTransferCatalog::Entry.new(
+            combined_ref: transfer_entry.combined_ref,
+            lon: coords[:lon],
+            lat: coords[:lat],
+            coordinates_by_ref: transfer_entry.coordinates_by_ref
+          )
+          if coords[:lon] && coords[:lat] &&
+              TransitTransferCatalog.should_apply_hub_coordinates?(station, hub_entry)
+            station = station.merge(lon: coords[:lon], lat: coords[:lat])
           end
         end
         angle_station = station[:angle_station] || station[:name].match?(/轉角/)

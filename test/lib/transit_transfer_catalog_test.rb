@@ -91,6 +91,20 @@ class TransitTransferCatalogTest < ActiveSupport::TestCase
     assert_equal "G1;BR01", entry.combined_ref
   end
 
+  test "uses separate coordinates for wenhu and maokong at taipei zoo" do
+    maokong = Geojson::OtherTransitCatalog::LINES.find { |entry| entry.slug == "maokong_gondola" }
+    wenhu = Geojson::TaipeiMetroCatalog::LINES.find { |entry| entry.slug == "wenhu_line" }
+    entry = Geojson::TransitTransferCatalog.transfer_for("動物園", line: maokong)
+
+    g1 = Geojson::TransitTransferCatalog.coordinates_for_line(entry, line: maokong, ref: "G1;BR01")
+    br01 = Geojson::TransitTransferCatalog.coordinates_for_line(entry, line: wenhu, ref: "BR01;G1")
+
+    assert_in_delta 121.5762884, g1[:lon], 0.0001
+    assert_in_delta 24.9959573, g1[:lat], 0.0001
+    assert_in_delta 121.5794478, br01[:lon], 0.0001
+    assert_in_delta 24.9983168, br01[:lat], 0.0001
+  end
+
   test "marks metro transfer at songshan for tra interchange" do
     line = Geojson::TaipeiMetroCatalog::LINES.find { |entry| entry.slug == "songshan_xindian" }
     entry = Geojson::TransitTransferCatalog.transfer_for("松山", line: line)

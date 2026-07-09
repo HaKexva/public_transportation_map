@@ -39,6 +39,12 @@
   pointer-events: visibleStroke;
 }
 
+.leaflet-pane path.depot-spur-line,
+.leaflet-pane path.depot-track-link {
+  stroke-dasharray: none !important;
+  pointer-events: visibleStroke;
+}
+
 .express-stop-marker {
   width: 18px;
   height: 18px;
@@ -444,6 +450,13 @@
 .route-stop-item__transfer-marker {
   width: 100%;
   height: 100%;
+}
+
+.route-stop-item__transfer-line {
+  display: block;
+  width: 100%;
+  height: 0;
+  border-top: 0.2rem dashed #525252;
 }
 
 .route-stop-item__name {

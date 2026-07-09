@@ -67,6 +67,38 @@ class MetroLineBuilderTraTest < ActiveSupport::TestCase
     end
   end
 
+  test "changhua junction keeps north lines north and south line south" do
+    junction_lat = Geojson::TraCatalog::WESTERN_TRUNK_JUNCTION_LAT
+
+    %w[mountain_line sea_line].each do |slug|
+      path = Rails.root.join("public/geojson/tra/#{slug}.geojson")
+      skip "run bin/rails geojson:tra first" unless path.exist?
+
+      coords = JSON.parse(path.read)["features"].find { |f| f.dig("properties", "feature_type") == "route" }
+        .dig("geometry", "coordinates")
+
+      refute coords.any? { |_, lat| lat < junction_lat - 0.0001 },
+             "#{slug} should not extend south of 彰化 junction"
+    end
+
+    south_path = Rails.root.join("public/geojson/tra/western_trunk_south.geojson")
+    skip "run bin/rails geojson:tra first" unless south_path.exist?
+
+    south_coords = JSON.parse(south_path.read)["features"].find { |f| f.dig("properties", "feature_type") == "route" }
+      .dig("geometry", "coordinates")
+    refute south_coords.any? { |_, lat| lat > junction_lat + 0.0001 },
+           "western trunk south should not extend north of 彰化 junction"
+
+    mountain = JSON.parse(Rails.root.join("public/geojson/tra/mountain_line.geojson").read)
+    spur_ids = mountain.fetch("features").select { |f| f.dig("properties", "feature_type") == "depot_spur" }
+      .map { |f| f.dig("properties", "depot_id") }
+    assert_equal [ "tra_changhua_depot" ], spur_ids
+    refute JSON.parse(Rails.root.join("public/geojson/tra/sea_line.geojson").read).fetch("features")
+      .any? { |f| f.dig("properties", "depot_id") == "tra_changhua_depot" }
+    refute JSON.parse(south_path.read).fetch("features")
+      .any? { |f| f.dig("properties", "depot_id") == "tra_changhua_depot" }
+  end
+
   test "sea and neiwan lines follow station order along route geometry" do
     {
       "sea_line" => 18,
@@ -227,6 +259,57 @@ class MetroLineBuilderTraTest < ActiveSupport::TestCase
       Geojson::TraCatalog::WESTERN_TRUNK_JUNCTION_LAT
     ) < 500
     assert near_changhua
+  end
+
+  test "sea line zhuifen to changhua follows inland coastal track not a chord shortcut" do
+    path = Rails.root.join("public/geojson/tra/sea_line.geojson")
+    skip "run bin/rails geojson:tra first" unless path.exist?
+
+    data = JSON.parse(path.read)
+    route = data["features"].find { |f| f.dig("properties", "feature_type") == "route" }
+    coords = route.dig("geometry", "coordinates")
+    stations = data["features"].select { |f| f.dig("properties", "feature_type") == "station" }
+    zhuifen = stations.find { |feature| feature.dig("properties", "ref") == "2260" }
+    changhua = stations.find { |feature| feature.dig("properties", "ref") == "3360" }
+    skip "sea line stations missing" unless zhuifen && changhua
+
+    zhuifen_coords = zhuifen.dig("geometry", "coordinates")
+    changhua_coords = changhua.dig("geometry", "coordinates")
+    zhuifen_idx = coords.each_with_index.min_by do |(lon, lat), _index|
+      Geojson::TrackGeometry.planar_distance_meters(lon, lat, zhuifen_coords[0], zhuifen_coords[1])
+    end[1]
+    changhua_idx = coords.each_with_index.min_by do |(lon, lat), _index|
+      Geojson::TrackGeometry.planar_distance_meters(lon, lat, changhua_coords[0], changhua_coords[1])
+    end[1]
+
+    segment = coords[[ zhuifen_idx, changhua_idx ].min..[ zhuifen_idx, changhua_idx ].max]
+    straight = Geojson::TrackGeometry.planar_distance_meters(
+      segment.first[0], segment.first[1], segment.last[0], segment.last[1]
+    )
+    path = segment.each_cons(2).sum do |(start, finish)|
+      Geojson::TrackGeometry.planar_distance_meters(start[0], start[1], finish[0], finish[1])
+    end
+    max_deviation = segment.map do |point|
+      Geojson::TrackGeometry.project_on_segment(point[0], point[1], segment.first, segment.last)[2]
+    end.max
+
+    assert segment.length >= 40, "expected detailed track geometry between 追分 and 彰化"
+    assert path / straight > 1.1, "expected coastal detour via 大肚, not a near-chord shortcut"
+    assert max_deviation > 800, "expected visible inland bend between 追分 and 彰化"
+    refute Geojson::TrackGeometry.straight_line?(segment)
+
+    longest_straight = segment.each_with_index.filter_map do |_, start_idx|
+      (start_idx + 1).upto(segment.length - 1) do |end_idx|
+        subsegment = segment[start_idx..end_idx]
+        next unless Geojson::TrackGeometry.straight_line?(subsegment)
+
+        Geojson::TrackGeometry.planar_distance_meters(
+          subsegment.first[0], subsegment.first[1], subsegment.last[0], subsegment.last[1]
+        )
+      end
+    end.max
+    assert_operator longest_straight.to_f, :<, 1_000,
+                   "expected sea line to follow track after crossing the Dadu River, not a long chord"
   end
 
   test "neiwan line geojson is continuous from hsinchu to neiwan" do
@@ -458,6 +541,12 @@ class MetroLineBuilderTraTest < ActiveSupport::TestCase
     assert_equal 2, names.length
     assert_equal "成功", names.first
     assert_equal "追分", names.last
+    refute stations.first.dig("properties", "station_role").present?,
+           "成功為山線轉轍站，不應標示起點"
+    refute stations.last.dig("properties", "station_role").present?,
+           "追分為海線轉轍站，不應標示終點"
+    assert stations.first.dig("properties", "shared_junction")
+    assert stations.last.dig("properties", "shared_junction")
 
     gaps = coords.each_cons(2).count do |(start, finish)|
       Geojson::TrackGeometry.planar_distance_meters(start[0], start[1], finish[0], finish[1]) > 2_000
@@ -474,6 +563,13 @@ class MetroLineBuilderTraTest < ActiveSupport::TestCase
     assert Geojson::TrackGeometry.planar_distance_meters(
       coords.last[0], coords.last[1], finish_coords[0], finish_coords[1]
     ) < 500
+
+    assert coords.length >= 40, "expected detailed track geometry for 成追線"
+    lon_reversals = coords.each_cons(2).count { |(start, finish)| finish[0] > start[0] + 0.0001 }
+    lat_increases = coords.each_cons(2).count { |(start, finish)| finish[1] > start[1] + 0.00001 }
+    assert lon_reversals <= 2, "expected route to head northwest from 成功 to 追分"
+    assert lat_increases >= coords.length / 3, "expected latitude to increase toward 追分"
+    refute Geojson::TrackGeometry.straight_line?(coords)
   end
 
   test "shalun line geojson is continuous from zhongzhou to shalun" do
@@ -508,27 +604,31 @@ class MetroLineBuilderTraTest < ActiveSupport::TestCase
     skip "run bin/rails geojson:tra_offline first" unless path.exist?
 
     data = JSON.parse(path.read)
-    route = data["features"].find { |f| f.dig("properties", "feature_type") == "route" }
-    coords = route.dig("geometry", "coordinates")
+    routes = data["features"].select { |f| f.dig("properties", "feature_type") == "route" }
     stations = data["features"].select { |f| f.dig("properties", "feature_type") == "station" }
     names = stations.map { |feature| feature.dig("properties", "name") }
 
     assert_equal 7, names.length
     assert_equal %w[三貂嶺 大華 十分 望古 嶺腳 平溪 菁桐], names
 
-    gaps = coords.each_cons(2).count do |(start, finish)|
-      Geojson::TrackGeometry.planar_distance_meters(start[0], start[1], finish[0], finish[1]) > 2_000
+    routes.each do |route|
+      coords = route.dig("geometry", "coordinates")
+      gaps = coords.each_cons(2).count do |(start, finish)|
+        Geojson::TrackGeometry.planar_distance_meters(start[0], start[1], finish[0], finish[1]) > 250
+      end
+      assert_equal 0, gaps, "expected no straight chord segments on #{route.dig("properties", "name")}"
     end
-    assert_equal 0, gaps
 
+    all_coords = routes.flat_map { |route| route.dig("geometry", "coordinates") }
     stations.each do |station|
       station_coords = station.dig("geometry", "coordinates")
-      snap = coords.map do |point|
+      snap = all_coords.map do |point|
         Geojson::TrackGeometry.planar_distance_meters(
           station_coords[0], station_coords[1], point[0], point[1]
         )
       end.min
-      assert snap < 100, "expected #{station.dig("properties", "name")} on track, snap=#{snap.round}m"
+      max_snap = station.dig("properties", "ref").in?(%w[7330 7336]) ? 300 : 100
+      assert snap < max_snap, "expected #{station.dig("properties", "name")} on track, snap=#{snap.round}m"
     end
   end
 
@@ -733,24 +833,15 @@ class MetroLineBuilderTraTest < ActiveSupport::TestCase
     end
   end
 
-  test "marks keelung origin and branch line terminals in geojson" do
-    {
-      "western_trunk_north" => [ [ "基隆", "origin" ] ],
-      "yilan_line" => [ [ "八堵", "origin" ], [ "蘇澳", "destination" ] ],
-      "jiji_line" => [ [ "車埕", "destination" ] ],
-      "neiwan_line" => [ [ "內灣", "destination" ] ],
-      "shenao_line" => [ [ "八斗子", "destination" ] ]
-    }.each do |slug, expectations|
+  test "tra geojson does not mark origin or destination terminals" do
+    Geojson::TraCatalog::LINES.map(&:slug).each do |slug|
       path = Rails.root.join("public/geojson/tra/#{slug}.geojson")
       skip "run bin/rails geojson:tra_offline first" unless path.exist?
 
       stations = JSON.parse(path.read)["features"].select { |f| f.dig("properties", "feature_type") == "station" }
 
-      expectations.each do |name, role|
-        station = stations.find { |feature| feature.dig("properties", "name") == name }
-        assert station, "expected #{name} on #{slug}"
-        assert_equal role, station.dig("properties", "station_role"), "#{name} on #{slug}"
-      end
+      refute stations.any? { |feature| feature.dig("properties", "station_role").present? },
+             "expected no terminal roles on #{slug}"
     end
   end
 
