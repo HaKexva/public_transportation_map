@@ -50,8 +50,13 @@ module Geojson
           next unless entry
 
           feature["properties"]["ref"] = entry.combined_ref
-          if entry.lon && entry.lat
-            feature["geometry"]["coordinates"] = [ entry.lon, entry.lat ]
+          coords = TransitTransferCatalog.coordinates_for_line(
+            entry,
+            line: line,
+            ref: TransitTransferCatalog.ref_for_line(entry.combined_ref, line: line)
+          )
+          if coords[:lon] && coords[:lat]
+            feature["geometry"]["coordinates"] = [ coords[:lon], coords[:lat] ]
           end
           updated += 1
         end
@@ -79,7 +84,8 @@ module Geojson
         TransitTransferCatalog::Entry.new(
           combined_ref: legacy[:combined_ref],
           lon: legacy[:lon],
-          lat: legacy[:lat]
+          lat: legacy[:lat],
+          coordinates_by_ref: legacy[:coordinates_by_ref]
         )
       end
 

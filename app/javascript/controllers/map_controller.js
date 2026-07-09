@@ -8,7 +8,7 @@ const BASE_LAYERS = [ "bus", "train", "ferry" ]
 const LAYER_COLORS = {
   bus: "#2563eb",
   train: "#dc2626",
-  hsr: "#F4811A",
+  hsr: "#DB5325",
   ferry: "#0891b2",
 }
 
@@ -239,7 +239,7 @@ export default class extends Controller {
     if (!this.map) return
 
     const transferPane = this.map.createPane("outOfStationTransfers")
-    transferPane.style.zIndex = 650
+    transferPane.style.zIndex = 640
     this.outOfStationTransferPane = "outOfStationTransfers"
 
     const expressPane = this.map.createPane("expressRoutes")
@@ -251,10 +251,11 @@ export default class extends Controller {
     this.commuterRoutePane = "commuterRoutes"
 
     const stationPane = this.map.createPane("stationMarkers")
-    stationPane.style.zIndex = 640
+    stationPane.style.zIndex = 650
     this.stationMarkerPane = "stationMarkers"
 
     this.outOfStationTransferGroup = L.featureGroup().addTo(this.map)
+    this.crossSystemInStationTransferGroup = L.featureGroup().addTo(this.map)
     this.inStationTransferGroup = L.featureGroup().addTo(this.map)
     this.metroDepotGroup = L.featureGroup().addTo(this.map)
 
@@ -266,8 +267,6 @@ export default class extends Controller {
 
     this.map.fitBounds(LEAFLET_BOUNDS)
     this.map.zoomControl.setPosition("topright")
-    this.refreshParallelTracksOnZoom = () => this.scheduleParallelTracksRefresh()
-    this.map.on("zoomend", this.refreshParallelTracksOnZoom)
 
     this.resizeHandler = () => this.invalidateMapSize()
     requestAnimationFrame(this.resizeHandler)
@@ -388,6 +387,7 @@ export default class extends Controller {
 
   transferNoteForKind(kind) {
     if (kind === "passage") return "聯通道轉乘"
+    if (kind === "cross_system_in_station") return "站內跨系統轉乘"
     return "站外轉乘（優惠）"
   }
 
@@ -742,14 +742,20 @@ export default class extends Controller {
   }
 
   buildSkytrainStationSections(geojson, routeId) {
-    const stations = this.extractPassengerStationFeatures(geojson, routeId)
+    const activeStations = this.extractPassengerStationFeatures(geojson, routeId)
+    const suspendedStations = this.extractSuspendedStationFeatures(geojson, routeId)
 
     return [
-      { key: "north", label: "北側（管制區內）" },
-      { key: "south", label: "南側（管制區外）" }
-    ].map(({ key, label }) => {
-      const segmentStations = stations.filter((station) => station.segment === key)
-      return { label, stations: this.sortSkytrainStationsForList(segmentStations, key) }
+      { key: "north", label: "北側（管制區內）", includeSuspended: false },
+      { key: "south", label: "南側（管制區外）", includeSuspended: true }
+    ].map(({ key, label, includeSuspended }) => {
+      const active = activeStations.filter((station) => station.segment === key)
+      const suspended = includeSuspended
+        ? suspendedStations.filter((station) => station.segment === key)
+        : []
+      const stations = [ ...active, ...suspended ]
+
+      return { label, stations: this.sortSkytrainStationsForList(stations, key) }
     }).filter((section) => section.stations.length > 0)
   }
 
@@ -783,6 +789,37 @@ export default class extends Controller {
     }
 
     return stations.slice().sort((left, right) => sortKey(left) - sortKey(right))
+  }
+
+  extractSuspendedStationFeatures(geojson, routeId) {
+    return (geojson.features || [])
+      .filter((feature) => {
+        if (feature.properties?.feature_type !== "station") return false
+        if (feature.properties?.passenger_service !== false) return false
+
+        const route = this.findRoute(routeId)
+        const ref = feature.properties?.ref || ""
+
+        return this.stationRefMatchesRoute(ref, route?.ref, routeId)
+      })
+      .map((feature) => {
+        const ref = feature.properties?.ref || ""
+        const coords = feature.geometry?.coordinates
+        const latlng = Array.isArray(coords) && coords.length >= 2
+          ? [ coords[1], coords[0] ]
+          : null
+
+        if (ref && latlng) this.rememberStationCoords(routeId, ref, latlng)
+
+        return {
+          ref,
+          name: this.routeStopDisplayName(feature),
+          nameEn: feature.properties?.name_en,
+          segment: feature.properties?.segment,
+          latlng
+        }
+      })
+      .filter((station) => station.ref)
   }
 
   extractPassengerStationFeatures(geojson, routeId) {
@@ -850,12 +887,16 @@ export default class extends Controller {
       return `${name}（不提供載客）`
     }
 
+    if (feature.properties?.passenger_service === false) {
+      return `${name}（停駛）`
+    }
+
     return name
   }
 
   isPassengerStationFeature(feature) {
     const type = feature.properties?.feature_type
-    if (type === "station") return true
+    if (type === "station") return feature.properties?.passenger_service !== false
     if (type === "angle_station") return feature.properties?.passenger_service !== false
 
     return false
@@ -1094,12 +1135,14 @@ export default class extends Controller {
   buildRouteStopItem(route, station, sequence) {
     const item = document.createElement("li")
     const button = document.createElement("button")
-    const isTransfer = this.isInStationTransferRef(station.ref, route?.id)
+    const isInSystemTransfer = this.isInSystemInStationTransferRef(station.ref, route?.id)
+    const isCrossSystemTransfer = this.isCrossSystemTransferRef(station.ref)
     const refsForStop = this.stationRefsForRouteStop(station.ref, route)
 
     button.type = "button"
     button.className = "route-stop-item"
-    if (isTransfer) button.classList.add("route-stop-item--transfer")
+    if (isInSystemTransfer) button.classList.add("route-stop-item--transfer")
+    if (isCrossSystemTransfer) button.classList.add("route-stop-item--cross-system-transfer")
     button.dataset.action = "click->map#focusRouteStop"
     button.dataset.mapRouteIdParam = route?.id || this.selectedRouteId
     button.dataset.mapRefParam = station.ref
@@ -1107,12 +1150,20 @@ export default class extends Controller {
     const indexEl = document.createElement("span")
     indexEl.className = "route-stop-item__index"
     indexEl.textContent = this.formatRouteStopRef(refsForStop.primary, route) || String(sequence)
-    if (isTransfer && refsForStop.primary) indexEl.title = station.ref
+    if (isInSystemTransfer || isCrossSystemTransfer) indexEl.title = station.ref
 
     const swatchEl = document.createElement("span")
     swatchEl.className = "route-stop-item__swatch"
     swatchEl.setAttribute("aria-hidden", "true")
-    if (isTransfer) swatchEl.append(this.buildRouteStopTransferMarker(route, station.ref))
+    if (isInSystemTransfer) {
+      swatchEl.append(this.buildRouteStopTransferMarker(route, station.ref))
+    } else if (isCrossSystemTransfer) {
+      if (this.isCoLocatedCrossSystemTransferRef(station.ref)) {
+        swatchEl.append(this.buildRouteStopTransferMarker(route, station.ref))
+      } else {
+        swatchEl.append(this.buildRouteStopCrossSystemTransferMarker())
+      }
+    }
 
     const nameEl = document.createElement("span")
     nameEl.className = "route-stop-item__name"
@@ -1120,8 +1171,8 @@ export default class extends Controller {
 
     const refEl = document.createElement("span")
     refEl.className = "route-stop-item__ref"
-    refEl.textContent = isTransfer ? (this.formatRouteStopRef(refsForStop.secondary, route) || "") : ""
-    if (isTransfer) refEl.title = station.ref
+    refEl.textContent = isInSystemTransfer ? (this.formatRouteStopRef(refsForStop.secondary, route) || "") : ""
+    if (isInSystemTransfer || isCrossSystemTransfer) refEl.title = station.ref
 
     button.append(indexEl, swatchEl, nameEl, refEl)
     item.append(button)
@@ -1141,6 +1192,12 @@ export default class extends Controller {
       marker.append(half)
     })
 
+    return marker
+  }
+
+  buildRouteStopCrossSystemTransferMarker() {
+    const marker = document.createElement("span")
+    marker.className = "route-stop-item__transfer-line"
     return marker
   }
 
@@ -1261,7 +1318,6 @@ export default class extends Controller {
       }
 
       this.updateOutOfStationTransfers()
-      this.updateInStationTransferMarkers()
       this.updateMetroDepots()
     } finally {
       this.setLayerControlsDisabled(false)
@@ -1627,6 +1683,7 @@ export default class extends Controller {
       this.map.removeLayer(group)
     }
 
+    this.updateCrossSystemInStationTransfers()
     this.updateInStationTransferMarkers()
     this.updateMetroDepots()
   }
@@ -1683,19 +1740,32 @@ export default class extends Controller {
     links.forEach((link) => {
       if (!link?.route_id || !this.isRouteLayerVisible(link.route_id)) return
       if (!Array.isArray(link.coordinates) || link.coordinates.length < 2) return
+      if (this.depotSpurInRouteGeojson(depot.id, link.route_id)) return
 
       const latlngs = link.coordinates.map(([ lon, lat ]) => L.latLng(lat, lon))
       const line = L.polyline(latlngs, {
         color: color || "#64748B",
-        weight: 3,
-        opacity: 0.75,
-        dashArray: "6 6",
+        weight: 4,
+        opacity: 0.85,
         lineCap: "round",
-        lineJoin: "round"
+        lineJoin: "round",
+        className: "depot-track-link"
       })
 
       group.addLayer(line)
     })
+  }
+
+  depotSpurInRouteGeojson(depotId, routeId) {
+    const route = this.findRoute(routeId)
+    const file = route?.file || route?.url
+    const data = file ? this.geoJSONDataByUrl[file] : null
+    if (!data?.features) return false
+
+    return data.features.some((feature) => (
+      feature.properties?.feature_type === "depot_spur" &&
+      feature.properties?.depot_id === depotId
+    ))
   }
 
   depotDisplayColor(depot) {
@@ -1752,34 +1822,190 @@ export default class extends Controller {
   }
 
   isInStationTransferRef(ref, routeId = null) {
-    if (routeId && this.isTraRoute(routeId)) {
-      return this.isTraCrossSystemTransferRef(ref)
+    return this.isInSystemInStationTransferRef(ref, routeId) || this.isCrossSystemTransferRef(ref)
+  }
+
+  isInSystemInStationTransferRef(ref, routeId = null) {
+    const parts = this.transferStationRefs(ref)
+    if (parts.length <= 1) return false
+    if (this.isAirportMrtExpressStop(ref)) return false
+    if (this.isKaohsiungCrossRouteTransferRef(ref)) return false
+
+    return this.transferSystemIds(ref).length <= 1
+  }
+
+  isCrossSystemTransferRef(ref) {
+    const parts = this.transferStationRefs(ref)
+    if (parts.length <= 1) return false
+    if (this.isAirportMrtExpressStop(ref)) return false
+
+    return this.transferSystemIds(ref).length > 1 || this.isKaohsiungCrossRouteTransferRef(ref)
+  }
+
+  // Circular LRT and Kaohsiung MRT share a system id but use separate platforms (e.g. C14/O1 哈瑪星).
+  isKaohsiungCrossRouteTransferRef(ref) {
+    const parts = this.transferStationRefs(ref)
+    if (parts.length !== 2) return false
+
+    const routeIds = new Set()
+    parts.forEach((part) => {
+      const routeId = this.routeIdForStationRefPart(part)
+      if (routeId) routeIds.add(routeId)
+    })
+
+    return routeIds.size > 1
+  }
+
+  routeIdForStationRefPart(part) {
+    if (!part) return null
+
+    for (const routes of Object.values(this.routesManifest)) {
+      if (!Array.isArray(routes)) continue
+
+      for (const route of routes) {
+        if (!this.stationRefMatchesRoute(part, route.ref, route.id)) continue
+
+        return route.id
+      }
     }
 
-    return this.transferStationRefs(ref).length > 1
+    return null
+  }
+
+  // HSR and TRA share one station building (e.g. 11/4272 台南↔沙崙, 05/1194 新竹↔六家).
+  isCoLocatedCrossSystemTransferRef(ref) {
+    if (!this.isCrossSystemTransferRef(ref)) return false
+
+    const parts = this.transferStationRefs(ref)
+    if (parts.length !== 2) return false
+
+    const hasHsr = parts.some((part) => /^\d{2}$/.test(part))
+    const hasTra = parts.some((part) => /^\d{3,4}(-[A-Z]+)?$/.test(part))
+
+    return hasHsr && hasTra
+  }
+
+  crossSystemHubSpreadMeters(endpoints) {
+    if (endpoints.length < 2) return 0
+
+    let maxDistance = 0
+
+    for (let left = 0; left < endpoints.length; left += 1) {
+      for (let right = left + 1; right < endpoints.length; right += 1) {
+        const distance = endpoints[left].latlng.distanceTo(endpoints[right].latlng)
+        if (distance > maxDistance) maxDistance = distance
+      }
+    }
+
+    return maxDistance
+  }
+
+  shouldRenderCoLocatedCrossSystemTransfer(ref, endpoints) {
+    return this.isCoLocatedCrossSystemTransferRef(ref) ||
+      this.crossSystemHubSpreadMeters(endpoints) <= 80
+  }
+
+  transferSystemIds(ref) {
+    const systemIds = new Set()
+
+    this.transferStationRefs(ref).forEach((part) => {
+      const systemId = this.systemIdForStationRefPart(part)
+      if (systemId) systemIds.add(systemId)
+    })
+
+    return Array.from(systemIds)
+  }
+
+  systemIdForStationRefPart(part) {
+    if (!part) return null
+    if (/^\d{3,4}(-[A-Z]+)?$/.test(part)) return "tra"
+    if (/^\d{2}$/.test(part)) return "hsr"
+
+    for (const routes of Object.values(this.routesManifest)) {
+      if (!Array.isArray(routes)) continue
+
+      for (const route of routes) {
+        if (!this.stationRefMatchesRoute(part, route.ref, route.id)) continue
+
+        return this.manifestSystemForRoute(route.id)
+      }
+    }
+
+    return "other"
   }
 
   isTraCrossSystemTransferRef(ref) {
-    const parts = this.transferStationRefs(ref)
-    if (parts.length <= 1) return false
-
-    const hasTra = parts.some((part) => /^\d{3,4}(-[A-Z]+)?$/.test(part))
-    const hasOther = parts.some((part) => /^[A-Z]{1,3}\d/i.test(part) || /^\d{2}$/.test(part))
-
-    return hasTra && hasOther
+    return this.isCrossSystemTransferRef(ref) &&
+      this.transferStationRefs(ref).some((part) => /^\d{3,4}(-[A-Z]+)?$/.test(part))
   }
 
   inStationTransferMarkerKey(ref, routeId = null) {
-    if (routeId && this.isTraRoute(routeId)) {
-      const numericRef = this.traNumericStationRef(ref)
-      if (numericRef) return `tra:${numericRef}`
+    const parts = this.transferStationRefs(ref)
+    const traRef = parts.find((part) => /^\d{3,4}(-[A-Z]+)?$/.test(part))
+    if (traRef) {
+      const numericRef = traRef.match(/^(\d+)/)?.[1]
+      if (numericRef) return `hub:tra:${numericRef}`
     }
 
-    return this.transferStationRefs(ref).slice().sort().join(";")
+    if (parts.length > 1) return parts.slice().sort().join(";")
+
+    if (routeId && this.isTraRoute(routeId)) {
+      const numericRef = this.traNumericStationRef(ref)
+      if (numericRef) return `hub:tra:${numericRef}`
+    }
+
+    return ref || ""
   }
 
   shouldShowInStationTransferMarker(ref, routeId) {
-    return this.isInStationTransferRef(ref, routeId)
+    return this.isInSystemInStationTransferRef(ref, routeId)
+  }
+
+  shouldHideStationForTransfer(ref, routeId = null) {
+    if (this.isInSystemInStationTransferRef(ref, routeId)) return true
+    if (!this.isCrossSystemTransferRef(ref)) return false
+
+    if (this.isKaohsiungCrossRouteTransferRef(ref)) {
+      const hubKey = this.inStationTransferMarkerKey(ref, routeId)
+      return this.crossSystemHubEndpoints(hubKey).length >= 2
+    }
+
+    if (this.isCoLocatedCrossSystemTransferRef(ref)) return true
+
+    if (this.visibleTransferSystemCount(ref) < 2) return false
+
+    const hubKey = this.inStationTransferMarkerKey(ref, routeId)
+    return this.crossSystemHubEndpoints(hubKey).length >= 2
+  }
+
+  visibleTransferSystemCount(ref) {
+    const systems = new Set()
+
+    this.transferStationRefs(ref).forEach((part) => {
+      const systemId = this.systemIdForStationRefPart(part)
+      if (!systemId || systems.has(systemId)) return
+      if (!this.isTransferSystemPartVisible(part, systemId)) return
+
+      systems.add(systemId)
+    })
+
+    return systems.size
+  }
+
+  isTransferSystemPartVisible(part, systemId) {
+    for (const routes of Object.values(this.routesManifest)) {
+      if (!Array.isArray(routes)) continue
+
+      for (const route of routes) {
+        if (this.manifestSystemForRoute(route.id) !== systemId) continue
+        if (!this.layerVisible[route.id]) continue
+        if (!this.stationRefMatchesRoute(part, route.ref, route.id)) continue
+
+        return true
+      }
+    }
+
+    return false
   }
 
   hiddenStationMarker(latlng) {
@@ -1854,6 +2080,178 @@ export default class extends Controller {
     }
   }
 
+  updateCrossSystemInStationTransfers() {
+    const L = window.L
+    const group = this.crossSystemInStationTransferGroup
+
+    if (!group || !this.map) return
+
+    group.clearLayers()
+
+    const hubsByKey = new Map()
+
+    this.visibleRouteLayerIds().forEach((layerId) => {
+      this.routesToLoad(layerId).forEach((route) => {
+        if (!this.layerVisible[route.id]) return
+
+        const file = route.file || route.url
+        const data = file ? this.geoJSONDataByUrl[file] : null
+        if (!data) return
+
+        const displayData = this.displayGeoJSON(data, route)
+
+        ;(displayData.features || []).forEach((feature) => {
+          if (feature.properties?.feature_type !== "station") return
+
+          const ref = feature.properties?.ref
+          if (!this.isCrossSystemTransferRef(ref)) return
+
+          const key = this.inStationTransferMarkerKey(ref, route.id)
+          if (!hubsByKey.has(key)) hubsByKey.set(key, feature)
+        })
+      })
+    })
+
+    hubsByKey.forEach((feature, hubKey) => {
+      const ref = feature.properties?.ref
+      const coLocatedRef = this.isCoLocatedCrossSystemTransferRef(ref)
+      const endpoints = this.crossSystemHubEndpoints(hubKey)
+
+      if (!coLocatedRef && endpoints.length < 2) return
+
+      const name = feature.properties?.name
+      const label = name || "跨系統轉乘"
+      const note = this.transferNoteForKind("cross_system_in_station")
+      const coLocated = coLocatedRef || this.crossSystemHubSpreadMeters(endpoints) <= 80
+
+      if (!coLocated && endpoints.length >= 2) {
+        for (let index = 0; index < endpoints.length - 1; index += 1) {
+          const latlngs = [ endpoints[index].latlng, endpoints[index + 1].latlng ]
+          const layers = this.transferConnectionLayers(latlngs, "passage")
+
+          layers.forEach((layer) => {
+            layer.bindPopup(`<strong>${label}</strong><br><span style="opacity:0.8">${note}</span>`)
+            group.addLayer(layer)
+          })
+        }
+      }
+
+      if (coLocated) {
+        const hubPosition = this.coLocatedCrossSystemHubPosition(feature, endpoints)
+        const lineColors = this.coLocatedCrossSystemHubColors(ref, endpoints)
+        if (hubPosition && lineColors.length > 0) {
+          const marker = this.transferStationMarkerAt(hubPosition, lineColors)
+          const popupLabel = ref ? `${ref} ${label}` : label
+
+          marker.bindPopup(`<strong>${popupLabel}</strong><br><span style="opacity:0.8">${note}</span>`)
+          group.addLayer(marker)
+        }
+      }
+    })
+
+    if (group.getLayers().length > 0) {
+      if (!this.map.hasLayer(group)) group.addTo(this.map)
+      group.bringToFront()
+    } else if (this.map.hasLayer(group)) {
+      this.map.removeLayer(group)
+    }
+  }
+
+  crossSystemHubEndpoints(hubKey) {
+    const L = window.L
+    const endpoints = []
+    const systemsSeen = new Set()
+    const routesSeen = new Set()
+
+    this.visibleRouteLayerIds().forEach((layerId) => {
+      this.routesToLoad(layerId).forEach((route) => {
+        if (!this.layerVisible[route.id]) return
+
+        const systemId = this.manifestSystemForRoute(route.id)
+        if (!systemId) return
+
+        const file = route.file || route.url
+        const data = file ? this.geoJSONDataByUrl[file] : null
+        if (!data) return
+
+        const displayData = this.displayGeoJSON(data, route)
+
+        for (const feature of displayData.features || []) {
+          if (feature.properties?.feature_type !== "station") continue
+
+          const ref = feature.properties?.ref
+          if (!this.isCrossSystemTransferRef(ref)) continue
+          if (this.inStationTransferMarkerKey(ref, route.id) !== hubKey) continue
+
+          const crossRoute = this.isKaohsiungCrossRouteTransferRef(ref)
+          const dedupeKey = crossRoute ? route.id : systemId
+          const seen = crossRoute ? routesSeen : systemsSeen
+          if (seen.has(dedupeKey)) continue
+
+          const coordinates = feature.geometry?.coordinates
+          if (!coordinates) continue
+
+          const latlng = L.latLng(coordinates[1], coordinates[0])
+          const stationRefs = this.transferStationRefs(ref)
+          const routePart = stationRefs.find((part) => this.stationRefMatchesRoute(part, route.ref, route.id)) || stationRefs[0]
+          const linePrefix = this.linePrefixForStationRef(routePart) || route.ref
+          const position = this.snapToRouteTracks(latlng, route.id) ||
+            this.snapToTracks(latlng, linePrefix) ||
+            latlng
+
+          endpoints.push({
+            systemId,
+            routeId: route.id,
+            latlng: position,
+            name: feature.properties?.name
+          })
+          seen.add(dedupeKey)
+          break
+        }
+      })
+    })
+
+    return endpoints
+  }
+
+  crossSystemHubPosition(endpoints) {
+    const L = window.L
+    if (!endpoints.length) return null
+
+    const lat = endpoints.reduce((sum, endpoint) => sum + endpoint.latlng.lat, 0) / endpoints.length
+    const lng = endpoints.reduce((sum, endpoint) => sum + endpoint.latlng.lng, 0) / endpoints.length
+
+    return L.latLng(lat, lng)
+  }
+
+  coLocatedCrossSystemHubPosition(feature, endpoints) {
+    const L = window.L
+    if (endpoints.length > 0) return this.crossSystemHubPosition(endpoints)
+
+    const coordinates = feature.geometry?.coordinates
+    if (!coordinates) return null
+
+    return L.latLng(coordinates[1], coordinates[0])
+  }
+
+  coLocatedCrossSystemHubColors(ref, endpoints) {
+    if (endpoints.length >= 2) return this.crossSystemHubLineColors(endpoints)
+
+    return this.transferStationRefs(ref)
+      .map((part) => this.colorForStationRef(part))
+      .filter(Boolean)
+      .slice(0, 2)
+  }
+
+  crossSystemHubLineColors(endpoints) {
+    return endpoints
+      .map((endpoint) => {
+        const route = this.findRoute(endpoint.routeId)
+        return this.routeDisplayColor(route)
+      })
+      .filter(Boolean)
+  }
+
   fitVisibleRouteBounds() {
     if (!this.map) return
 
@@ -1867,7 +2265,7 @@ export default class extends Controller {
       }
     })
 
-    ;[ this.outOfStationTransferGroup, this.inStationTransferGroup, this.metroDepotGroup ].forEach((group) => {
+    ;[ this.outOfStationTransferGroup, this.crossSystemInStationTransferGroup, this.inStationTransferGroup, this.metroDepotGroup ].forEach((group) => {
       if (group && this.map.hasLayer(group) && group.getLayers().length > 0) {
         combined.addLayer(group)
       }
@@ -2059,15 +2457,11 @@ export default class extends Controller {
 
     const color = this.routeDisplayColor(route) || LAYER_COLORS[layerId] || "#666666"
     const routeRef = route.ref
-    if (!this.isTraRoute(route.id)) {
-      this.clearTerminalRolesFromGeoJSON(data)
-    }
+    this.clearTerminalRolesFromGeoJSON(data)
 
     const displayData = this.displayGeoJSON(data, route)
     const renderData = this.cloneGeoJSONForRender(this.geoJSONForMapRender(displayData, route))
-    if (!this.isTraRoute(route.id)) {
-      this.clearTerminalRolesFromGeoJSON(renderData)
-    }
+    this.clearTerminalRolesFromGeoJSON(renderData)
 
     this.cacheRouteTracks(route.id, displayData)
     this.indexStationCoordinates(route.id, renderData)
@@ -2075,7 +2469,7 @@ export default class extends Controller {
     const geoLayer = L.geoJSON(renderData, {
       style: (feature) => this.styleForFeature(feature, color, route),
       pointToLayer: (feature, latlng) => {
-        if (this.isInStationTransferRef(feature.properties?.ref, route.id)) {
+        if (this.shouldHideStationForTransfer(feature.properties?.ref, route.id)) {
           return this.hiddenStationMarker(latlng)
         }
 
@@ -2153,6 +2547,8 @@ export default class extends Controller {
   }
 
   isTerminalStation(feature) {
+    if (feature?.properties?.shared_junction) return false
+
     const role = feature?.properties?.station_role
     return role === "origin" || role === "destination"
   }
@@ -2273,6 +2669,8 @@ export default class extends Controller {
 
       const ref = this.traNumericStationRef(feature.properties?.ref)
       if (!ref) return true
+
+      if (feature.properties?.shared_junction) return true
 
       const owner = owners.get(ref)
       return !owner || owner === route.id
@@ -2447,11 +2845,11 @@ export default class extends Controller {
     if (feature.properties?.feature_type === "depot_spur") {
       return {
         color: feature.properties?.color || this.routeDisplayColor(route) || color,
-        weight: 3,
-        opacity: 0.75,
-        dashArray: "6 6",
+        weight: 4,
+        opacity: 0.85,
         lineCap: "round",
-        lineJoin: "round"
+        lineJoin: "round",
+        className: "depot-spur-line"
       }
     }
 
@@ -3283,12 +3681,14 @@ export default class extends Controller {
       : feature.properties?.express_service
         ? `<br><span style="opacity:0.8">直達車停靠</span>`
         : ""
-    const boardingAreaNote = feature.properties?.boarding_area === "secured"
-      ? `<br><span style="opacity:0.8">管制區內搭乘</span>`
-      : feature.properties?.boarding_area === "public"
-        ? `<br><span style="opacity:0.8">管制區外搭乘</span>`
-        : ""
-    const directionNote = feature.properties?.note && feature.properties?.passenger_service !== false
+    const boardingAreaNote = feature.properties?.passenger_service === false
+      ? ""
+      : feature.properties?.boarding_area === "secured"
+        ? `<br><span style="opacity:0.8">管制區內搭乘</span>`
+        : feature.properties?.boarding_area === "public"
+          ? `<br><span style="opacity:0.8">管制區外搭乘</span>`
+          : ""
+    const directionNote = feature.properties?.note
       ? `<br><span style="opacity:0.8">${feature.properties.note}</span>`
       : ""
     const noPassengerServiceNote = feature.properties?.feature_type === "angle_station" ||

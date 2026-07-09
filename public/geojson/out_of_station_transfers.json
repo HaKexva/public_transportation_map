@@ -40,6 +40,26 @@
     ]
   },
   {
+    "id": "dingpu_passage",
+    "kind": "passage",
+    "label": "頂埔聯通道轉乘",
+    "routes": [ "bannan", "sanying_line" ],
+    "endpoints": [
+      { "route_id": "bannan", "ref": "BL01", "name": "頂埔" },
+      { "route_id": "sanying_line", "ref": "LB01", "name": "頂埔" }
+    ]
+  },
+  {
+    "id": "tra_sanying_yingge_passage",
+    "kind": "passage",
+    "label": "台鐵鶯歌／三鶯線鶯歌車站聯通道轉乘",
+    "routes": [ "western_trunk_north", "sanying_line" ],
+    "endpoints": [
+      { "route_id": "western_trunk_north", "ref": "1070", "name": "鶯歌" },
+      { "route_id": "sanying_line", "ref": "LB08", "name": "鶯歌車站" }
+    ]
+  },
+  {
     "id": "banqiao_fare_discount",
     "kind": "fare_discount",
     "label": "板橋站外轉乘",
@@ -110,7 +130,7 @@
     ]
   },
   {
-    "id": "hsr_taoyuan_passage",
+    "id": "hsr_airport_taoyuan_passage",
     "kind": "passage",
     "label": "高鐵桃園／機場捷運高鐵桃園站聯通道轉乘",
     "routes": [ "taiwan_hsr", "airport_mrt" ],

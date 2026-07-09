@@ -2,8 +2,8 @@
 
 module Geojson
   module HsrCatalog
-    # THSR corporate identity orange (not purple).
-    BRAND_COLOR = "#F4811A".freeze
+    # THSR corporate identity orange (deeper than #F4811A; less yellow on screen).
+    BRAND_COLOR = "#DB5325".freeze
 
     # North → south station order (Taiwan HSR).
     STATION_ORDER = [

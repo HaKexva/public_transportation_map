@@ -3,7 +3,7 @@
 require "test_helper"
 
 class MetroDepotCatalogTest < ActiveSupport::TestCase
-  test "exported depots keep catalog coordinates and expose track links when off the main line" do
+  test "exported depots use OSM facility coordinates and expose track links when off the main line" do
     catalog_by_id = Geojson::MetroDepotCatalog::DEPOTS.index_by { |depot| depot[:id] }
     depots = Geojson::MetroDepotCatalog.to_json
 
@@ -13,8 +13,9 @@ class MetroDepotCatalogTest < ActiveSupport::TestCase
       catalog = catalog_by_id[depot[:id]]
       assert catalog, "missing catalog entry for #{depot[:id]}"
 
-      assert_in_delta catalog[:lon].round(6), depot[:lon], 0.000001
-      assert_in_delta catalog[:lat].round(6), depot[:lat], 0.000001
+      facility = Geojson::MetroDepotCatalog.primary_facility_coordinates(catalog)
+      assert_in_delta facility[:lon], depot[:lon], 0.000001
+      assert_in_delta facility[:lat], depot[:lat], 0.000001
 
       nearest_distance = depot[:routes].filter_map do |route_id|
         path = Geojson::MetroDepotCatalog.send(:route_geojson_path, route_id)
@@ -36,6 +37,11 @@ class MetroDepotCatalogTest < ActiveSupport::TestCase
       if nearest_distance && nearest_distance > Geojson::TrackGeometry::DEPOT_EXTENSION_THRESHOLD_M
         assert link, "#{depot[:id]} should include a track link when >#{Geojson::TrackGeometry::DEPOT_EXTENSION_THRESHOLD_M}m from the route"
         assert link[:coordinates].length >= 2
+        assert link[:coordinates].length > 2 || nearest_distance <= Geojson::TrackGeometry::DEPOT_EXTENSION_THRESHOLD_M * 2,
+               "#{depot[:id]} should follow track geometry, not a straight shortcut"
+        refute Geojson::TrackGeometry.straight_line?(link[:coordinates]) if link[:coordinates].length > 2
+        assert link[:coordinates].length >= 3,
+               "#{depot[:id]} should follow yard track geometry, not a straight shortcut" if link[:coordinates].length > 2
         assert_in_delta depot[:lon], link[:coordinates].last[0], 0.000001
         assert_in_delta depot[:lat], link[:coordinates].last[1], 0.000001
       end
@@ -85,12 +91,27 @@ class MetroDepotCatalogTest < ActiveSupport::TestCase
     assert north.fetch("features").any? { |feature| feature.dig("properties", "depot_id") == "tra_shulin_depot" }
   end
 
+  test "includes taichung green line maintenance depot" do
+    depots = Geojson::MetroDepotCatalog.to_json
+    ids = depots.map { |entry| entry[:id] }
+
+    assert_includes ids, "taichung_beitun_depot"
+
+    beitun = depots.find { |entry| entry[:id] == "taichung_beitun_depot" }
+    assert_equal "北屯機廠", beitun[:name]
+    assert_equal %w[green_line], beitun[:routes]
+    assert_equal "五級", beitun[:grade]
+    assert beitun[:track_links].any? { |link| link[:route_id] == "green_line" }
+
+    green = JSON.parse(Rails.root.join("public/geojson/taichung_metro/green_line.geojson").read)
+    assert green.fetch("features").any? { |feature| feature.dig("properties", "depot_id") == "taichung_beitun_depot" }
+  end
+
   test "includes hsr and other maintenance facilities" do
     depots = Geojson::MetroDepotCatalog.to_json
     ids = depots.map { |entry| entry[:id] }
 
     assert_includes ids, "hsr_yanchao_depot"
-    assert_includes ids, "maokong_depot"
     assert_includes ids, "sun_moon_ropeway_depot"
     assert_includes ids, "skytrain_depot"
 
@@ -98,7 +119,36 @@ class MetroDepotCatalogTest < ActiveSupport::TestCase
     assert_equal %w[taiwan_hsr], hsr[:routes]
     assert hsr[:track_links].any? { |link| link[:route_id] == "taiwan_hsr" }
 
-    maokong = JSON.parse(Rails.root.join("public/geojson/other/maokong_gondola.geojson").read)
-    assert maokong.fetch("features").any? { |f| f.dig("properties", "depot_id") == "maokong_depot" }
+    yanchao = depots.find { |entry| entry[:id] == "hsr_yanchao_depot" }
+    assert_operator yanchao[:lat], :>, 22.7635
+    assert_operator yanchao[:lat], :<, 22.77
+
+    north_depot = depots.find { |entry| entry[:id] == "kaohsiung_north_depot" }
+    gangshan_hospital_lat = 22.7807473
+    assert_operator north_depot[:lat], :<, gangshan_hospital_lat
+    north_link = north_depot[:track_links].sole
+    assert_operator north_link[:coordinates].last[1], :<, gangshan_hospital_lat
+    refute north_link[:coordinates].any? { |lon, lat| lat > 22.785 },
+           "北機廠支線不應延伸到岡山車站以北"
+
+    zuoying = depots.find { |entry| entry[:id] == "hsr_zuoying_depot" }
+    xinzuoying_lat = 22.687543335422784
+    assert_operator zuoying[:lat], :>, xinzuoying_lat
+    zuoying_link = zuoying[:track_links].sole
+    assert_operator zuoying_link[:coordinates].last[1], :>, xinzuoying_lat
+    assert_operator zuoying_link[:coordinates].first[1], :>, xinzuoying_lat
+
+    south_depot = depots.find { |entry| entry[:id] == "kaohsiung_south_depot" }
+    caoya_lat = 22.5805475
+    caoya_lon = 120.3287686
+    south_link = south_depot[:track_links].sole
+    assert_operator south_link[:coordinates].first[1], :>, 22.578
+    assert_operator south_link[:coordinates].first[1], :<, 22.582
+    assert Geojson::TrackGeometry.planar_distance_meters(
+      south_link[:coordinates].first[0],
+      south_link[:coordinates].first[1],
+      caoya_lon,
+      caoya_lat
+    ) < 150
   end
 end

@@ -39,6 +39,15 @@ module Geojson
         color: "#C3B091",
         relation_ids: [ 15443525 ],
         station_ref_prefix: "K"
+      ),
+      MetroLine.new_taipei(
+        slug: "sanying_line",
+        name: "三鶯線",
+        name_en: "Sanying Line",
+        ref: "LB",
+        color: "#6DB7D0",
+        relation_ids: [ 5_341_250 ],
+        station_ref_prefix: "LB"
       )
     ].freeze
   end

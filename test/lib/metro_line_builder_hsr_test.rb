@@ -46,6 +46,15 @@ class MetroLineBuilderHsrTest < ActiveSupport::TestCase
     assert_in_delta expected_miaoli[:lon], mlon, 0.002, "苗栗 longitude"
     assert_in_delta expected_miaoli[:lat], mlat, 0.002, "苗栗 latitude"
 
+    taoyuan = stations.find { |f| f.dig("properties", "name") == "桃園" }
+    expected_taoyuan = Geojson::HsrCatalog::FALLBACK_STATIONS.find { |s| s[:name] == "桃園" }
+    tlon, tlat = taoyuan.dig("geometry", "coordinates")
+
+    assert_equal "04;A18", taoyuan.dig("properties", "ref")
+    assert_in_delta expected_taoyuan[:lon], tlon, 0.002, "桃園 longitude"
+    assert_in_delta expected_taoyuan[:lat], tlat, 0.002, "桃園 latitude"
+    refute_in_delta 121.3137705396601, tlon, 0.05, "桃園 should not use downtown TRA coordinates"
+
     assert_equal Geojson::HsrCatalog::BRAND_COLOR, routes.first.dig("properties", "color")
   end
 
