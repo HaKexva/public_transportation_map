@@ -185,9 +185,9 @@ module Geojson
         line_ref = ref || ref_for_line(entry.combined_ref, line: line)
         by_ref = entry.coordinates_by_ref
         if by_ref.present?
-          line_ref.to_s.split(";").each do |part|
-            coords = by_ref[part]
-            return { lon: coords[:lon], lat: coords[:lat] } if coords
+          preferred = preferred_platform_ref(line_ref, line: line, by_ref: by_ref)
+          if preferred && (coords = by_ref[preferred])
+            return { lon: coords[:lon], lat: coords[:lat] }
           end
         end
 
@@ -229,6 +229,19 @@ module Geojson
       end
 
       private
+
+      # When a combined ref like "C14;O1" is passed, pick the platform that belongs to
+      # this line (via station_ref_prefix) instead of always taking the first match.
+      def preferred_platform_ref(line_ref, line:, by_ref:)
+        parts = line_ref.to_s.split(";").map(&:strip)
+        prefix = line.station_ref_prefix.to_s.upcase
+        if prefix.present?
+          match = parts.find { |part| by_ref.key?(part) && part.to_s.upcase.start_with?(prefix) }
+          return match if match
+        end
+
+        parts.find { |part| by_ref.key?(part) }
+      end
 
       def canonical_tra_ref(ref)
         ref.to_s.split(";").first.to_s.sub(/-.*\z/, "")
