@@ -155,6 +155,11 @@ class DashboardTest < ApplicationSystemTestCase
     JS
 
     assert_selector "#layer-wenhu_line", visible: :all
+
+    fill_in "layer-search", with: "頂埔"
+
+    assert_selector "#layer-bannan", visible: :all
+    assert_no_selector "#layer-wenhu_line", visible: :visible
   end
 
   test "shows the map on the home page" do
@@ -191,14 +196,21 @@ class DashboardTest < ApplicationSystemTestCase
     click_button "圖例"
     assert_selector "#map-legend", text: "圖例", wait: 5
     assert_text "普通車"
+    assert_text "轉乘連線"
+    assert_text "聯通道／共構轉乘"
+    assert_text "站外轉乘（有優惠）"
+    assert_text "站外轉乘（無優惠）"
+    assert_text "同系統站內轉乘"
     assert_text "快慢車交會站"
-    assert_button "顯示全部路線"
-    assert_button "僅顯示捷運與輕軌"
     assert_selector "#layer-all_metro", visible: :all
-    assert_selector "#layer-all_transit", visible: :all
+    assert_no_button "僅顯示捷運與輕軌"
+    assert_no_text "全部路線"
+    assert_selector ".layer-category-chip", text: "捷運"
+    assert_selector ".layer-category-chip", text: "台鐵"
+    assert_selector ".layer-category-chip", text: "其他"
+    assert_no_selector ".layer-category-chip", text: "全部"
     assert_text "捷運"
-    assert_text "台鐵"
-    assert_text "其他"
+    assert_no_text "即將推出"
     assert_selector "#layer-maokong_gondola", visible: :all
     assert_selector "#layer-taoyuan_airport_skytrain", visible: :all
     assert_selector "#layer-sun_moon_ropeway", visible: :all
@@ -210,12 +222,15 @@ class DashboardTest < ApplicationSystemTestCase
     assert_button "重設視角"
   end
 
-  test "stacks sidebar above map on narrow screens" do
+  test "uses map-first layout with layers sheet on narrow screens" do
     page.driver.browser.manage.window.resize_to(390, 844)
     visit root_path
 
     assert_selector "#taiwan-region-map"
     assert_selector ".leaflet-container", wait: 5
+    assert_button "圖層"
+    assert_button "圖例"
+    assert_button "重設視角"
 
     split_layout = page.evaluate_script(<<~JS)
       (() => {
@@ -229,21 +244,23 @@ class DashboardTest < ApplicationSystemTestCase
         const mapRect = map.getBoundingClientRect()
 
         return {
-          sidebarTop: sidebarRect.top <= layoutRect.top + 2,
-          mapBelowSidebar: mapRect.top >= sidebarRect.bottom - 4,
-          sidebarFullWidth: sidebarRect.width >= layoutRect.width - 4
+          mapFullWidth: mapRect.width >= layoutRect.width - 4,
+          mapFullHeight: mapRect.height >= layoutRect.height - 4,
+          sidebarOffscreen: sidebarRect.top >= layoutRect.bottom - 4 || sidebarRect.bottom <= layoutRect.top + 4
         }
       })()
     JS
 
-    assert split_layout, "expected split layout with sidebar and map"
-    assert split_layout["sidebarTop"], "expected sidebar on top"
-    assert split_layout["mapBelowSidebar"], "expected map below the sidebar"
-    assert split_layout["sidebarFullWidth"], "expected sidebar to span the layout width"
-    assert_no_button "顯示全部路線"
-    assert_no_button "重設視角"
-    assert_no_button "僅顯示捷運與輕軌"
-    assert_no_text "不同捷運系統之間的轉乘皆為站外轉乘"
+    assert split_layout, "expected map-first layout"
+    assert split_layout["mapFullWidth"], "expected map to span the layout width"
+    assert split_layout["mapFullHeight"], "expected map to span the layout height"
+    assert split_layout["sidebarOffscreen"], "expected layers sheet to start off-screen"
+
+    click_button "圖層"
+    assert_selector ".map-split-layout--layers-open"
+    assert_selector "#layer-search", visible: :visible, wait: 5
+    assert_button "重設視角"
+    assert_selector "#layer-all_metro", visible: :all
   ensure
     page.driver.browser.manage.window.resize_to(1400, 900)
   end
@@ -255,7 +272,13 @@ class DashboardTest < ApplicationSystemTestCase
       assert_selector ".leaflet-tile-pane", wait: 10
     end
 
-    click_button "顯示全部路線"
+    assert_selector "#layer-wenhu_line:not([disabled])", visible: :all, wait: 10
+
+    page.execute_script(<<~JS)
+      const el = document.querySelector('[data-controller~="map"]')
+      const controller = window.Stimulus.getControllerForElementAndIdentifier(el, "map")
+      controller.showAllTransit()
+    JS
 
     assert_selector "#layer-wenhu_line:checked", visible: :all, wait: 15
     assert_selector "#layer-taiwan_hsr:checked", visible: :all, wait: 15
@@ -439,6 +462,7 @@ class DashboardTest < ApplicationSystemTestCase
     JS
 
     assert_selector ".out-of-station-transfer-line", wait: 10, minimum: 1
+    assert_selector ".out-of-station-transfer-line--passage", wait: 10, minimum: 1
     assert_selector ".out-of-station-marker", wait: 10, minimum: 2
   end
 
@@ -460,7 +484,7 @@ class DashboardTest < ApplicationSystemTestCase
       show("tamsui_xinyi")
     JS
 
-    assert_selector ".leaflet-overlay-pane path.leaflet-interactive", wait: 10, minimum: 2
+    assert_selector ".out-of-station-transfer-line--passage", wait: 15, minimum: 2, visible: :all
   end
 
   test "shows out-of-station transfer link between hsr and taichung green line at HSR Taichung" do
@@ -481,8 +505,7 @@ class DashboardTest < ApplicationSystemTestCase
     JS
 
     assert_selector ".leaflet-overlay-pane path.leaflet-interactive", wait: 20, minimum: 2
-    assert_selector ".out-of-station-transfer-line", wait: 15, minimum: 1, visible: :all
-    assert_selector ".transfer-station-marker", wait: 10, minimum: 2, visible: :all
+    assert_selector ".out-of-station-transfer-line--passage", wait: 15, minimum: 1, visible: :all
   end
 
   test "shows cross-system transfer marker at zuoying when hsr and kaohsiung red line are visible" do
@@ -506,7 +529,7 @@ class DashboardTest < ApplicationSystemTestCase
     assert_selector ".leaflet-stationMarkers-pane .leaflet-interactive", wait: 15, minimum: 1, visible: :all
   end
 
-  test "shows co-located cross-system transfer ellipse at tainan when hsr and shalun line are visible" do
+  test "shows co-located cross-system passage link at tainan when hsr and shalun line are visible" do
     visit root_path
 
     within "#taiwan-region-map" do
@@ -523,11 +546,11 @@ class DashboardTest < ApplicationSystemTestCase
       show("shalun_line")
     JS
 
-    assert_selector ".transfer-station-marker", wait: 15, minimum: 1, visible: :all
-    assert_no_selector ".out-of-station-transfer-line--passage", wait: 5
+    assert_selector ".out-of-station-transfer-line--passage", wait: 15, minimum: 1, visible: :all
+    assert_no_selector ".leaflet-overlay-pane .transfer-station-marker", wait: 5
   end
 
-  test "shows cross-route transfer link at Hamasin when circular lrt and orange line are visible" do
+  test "shows walk transfer link at Hamasin when circular lrt and orange line are visible" do
     visit root_path
 
     within "#taiwan-region-map" do
@@ -544,11 +567,11 @@ class DashboardTest < ApplicationSystemTestCase
       show("orange_line")
     JS
 
-    assert_selector ".out-of-station-transfer-line--passage", wait: 15, minimum: 1, visible: :all
+    assert_selector ".out-of-station-transfer-line--walk-transfer", wait: 15, minimum: 1, visible: :all
     assert_no_selector ".transfer-station-marker", wait: 5
   end
 
-  test "shows cross-system transfer marker at kaohsiung when tra and red line are visible" do
+  test "shows cross-system passage link at kaohsiung when tra and red line are visible" do
     visit root_path
 
     within "#taiwan-region-map" do
@@ -565,7 +588,7 @@ class DashboardTest < ApplicationSystemTestCase
       show("red_line")
     JS
 
-    assert_selector ".transfer-station-marker", wait: 15, minimum: 1, visible: :all
+    assert_selector ".out-of-station-transfer-line--passage", wait: 15, minimum: 1, visible: :all
     assert_selector ".leaflet-stationMarkers-pane .leaflet-interactive", wait: 15, minimum: 1, visible: :all
   end
 
@@ -611,7 +634,7 @@ class DashboardTest < ApplicationSystemTestCase
     assert_selector ".out-of-station-marker", wait: 10, minimum: 2
   end
 
-  test "shows in-station transfer marker between wenhu line and maokong gondola at Taipei Zoo" do
+  test "shows out-of-station transfer between wenhu line and maokong gondola at Taipei Zoo" do
     visit root_path
 
     within "#taiwan-region-map" do
@@ -628,7 +651,9 @@ class DashboardTest < ApplicationSystemTestCase
       show("maokong_gondola")
     JS
 
-    assert_selector ".transfer-station-marker", wait: 10, minimum: 1
+    assert_selector ".out-of-station-transfer-line", wait: 10, minimum: 1
+    assert_selector ".out-of-station-marker", wait: 10, minimum: 2
+    assert_no_selector ".leaflet-stationMarkers-pane .transfer-station-marker"
   end
 
   test "shows Danhai LRT when the line checkbox is toggled" do

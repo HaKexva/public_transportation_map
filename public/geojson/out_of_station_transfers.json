@@ -80,9 +80,9 @@
     ]
   },
   {
-    "id": "airport_mrt_beimen_fare_discount",
-    "kind": "fare_discount",
-    "label": "機場捷運台北車站／北門站外轉乘",
+    "id": "airport_mrt_beimen_passage",
+    "kind": "passage",
+    "label": "機場捷運台北車站／北門聯通道轉乘",
     "routes": [ "airport_mrt", "songshan_xindian" ],
     "endpoints": [
       { "route_id": "airport_mrt", "ref": "A1", "name": "台北車站" },
@@ -90,13 +90,33 @@
     ]
   },
   {
-    "id": "airport_mrt_taipei_main_fare_discount",
-    "kind": "fare_discount",
-    "label": "機場捷運台北車站／捷運台北車站站外轉乘",
+    "id": "airport_mrt_taipei_main_passage",
+    "kind": "passage",
+    "label": "機場捷運台北車站／捷運台北車站聯通道轉乘",
     "routes": [ "airport_mrt", "tamsui_xinyi" ],
     "endpoints": [
       { "route_id": "airport_mrt", "ref": "A1", "name": "台北車站" },
       { "route_id": "tamsui_xinyi", "ref": "R10", "name": "台北車站" }
+    ]
+  },
+  {
+    "id": "taipei_zoo_walk_transfer",
+    "kind": "walk_transfer",
+    "label": "捷運動物園／貓空纜車動物園站外轉乘",
+    "routes": [ "wenhu_line", "maokong_gondola" ],
+    "endpoints": [
+      { "route_id": "wenhu_line", "ref": "BR01", "name": "動物園" },
+      { "route_id": "maokong_gondola", "ref": "G1", "name": "動物園" }
+    ]
+  },
+  {
+    "id": "hamasing_walk_transfer",
+    "kind": "walk_transfer",
+    "label": "哈瑪星站外轉乘（橘線／環狀輕軌）",
+    "routes": [ "orange_line", "circular_lrt" ],
+    "endpoints": [
+      { "route_id": "orange_line", "ref": "C14;O1", "name": "哈瑪星" },
+      { "route_id": "circular_lrt", "ref": "C14;O1", "name": "哈瑪星" }
     ]
   },
   {
@@ -257,6 +277,36 @@
     "endpoints": [
       { "route_id": "mountain_line", "ref": "3340", "name": "新烏日" },
       { "route_id": "taiwan_hsr", "ref": "07", "name": "台中" }
+    ]
+  },
+  {
+    "id": "tra_hsr_hsinchu_passage",
+    "kind": "passage",
+    "label": "台鐵六家／高鐵新竹聯通道轉乘",
+    "routes": [ "liujia_line", "taiwan_hsr" ],
+    "endpoints": [
+      { "route_id": "liujia_line", "ref": "1194", "name": "六家" },
+      { "route_id": "taiwan_hsr", "ref": "05", "name": "新竹" }
+    ]
+  },
+  {
+    "id": "tra_hsr_tainan_passage",
+    "kind": "passage",
+    "label": "台鐵沙崙／高鐵台南聯通道轉乘",
+    "routes": [ "shalun_line", "taiwan_hsr" ],
+    "endpoints": [
+      { "route_id": "shalun_line", "ref": "4272", "name": "沙崙" },
+      { "route_id": "taiwan_hsr", "ref": "11", "name": "台南" }
+    ]
+  },
+  {
+    "id": "tra_hsr_zuoying_passage",
+    "kind": "passage",
+    "label": "台鐵新左營／高鐵左營聯通道轉乘",
+    "routes": [ "western_trunk_south", "taiwan_hsr" ],
+    "endpoints": [
+      { "route_id": "western_trunk_south", "ref": "4340", "name": "新左營" },
+      { "route_id": "taiwan_hsr", "ref": "12", "name": "左營" }
     ]
   }
 ]

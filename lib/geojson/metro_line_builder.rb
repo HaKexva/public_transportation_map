@@ -102,6 +102,8 @@ module Geojson
       stations = fetch_stations_for_line
       apply_taichung_station_coordinates!(stations) if @line.system_id == "taichung_metro"
       align_stations_to_routes!(stations, @route_features)
+      extend_airport_mrt_to_terminals!(@route_features, stations) if @line.slug == "airport_mrt"
+      align_stations_to_routes!(stations, @route_features) if @line.slug == "airport_mrt"
       align_tra_junction_station!(stations) if @line.system_id == "tra"
       apply_tra_route_terminals!(@route_features, stations) if @line.system_id == "tra"
       reorder_tra_stations!(stations) if tra_station_ordered_line?
@@ -226,7 +228,11 @@ module Geojson
     # Forward/back OSM relations describe the same track; keep one LineString per line.
     def build_single_track_route_features
       route_features = []
-      coordinates = longest_route_coordinates
+      coordinates = if @line.slug == "airport_mrt"
+        airport_mrt_centerline_coordinates
+      else
+        longest_route_coordinates
+      end
 
       if coordinates
         route_features << route_feature(coordinates, branch_index: 0, relation_index: 0)
@@ -259,6 +265,22 @@ module Geojson
       end
 
       best
+    end
+
+    # Average the westbound/eastbound Airport MRT rails into one drawable centerline.
+    def airport_mrt_centerline_coordinates
+      chains = @line.relation_ids.filter_map do |relation_id|
+        ways = OsmRouteExtractor.new(relation_id: relation_id).fetch_way_elements
+        next if ways.empty?
+
+        OsmRouteExtractor.new(relation_id: relation_id)
+          .stitch_line_strings(ways)
+          .max_by { |chain| TrackGeometry.path_length_meters(chain) }
+      end
+      return nil if chains.empty?
+      return chains.first if chains.length == 1
+
+      TrackGeometry.average_parallel_line_strings(chains[0], chains[1])
     end
 
     TRA_CHAIN_GAP_MAIN_M = 2_000
@@ -1139,12 +1161,44 @@ module Geojson
 
     def stitch_tra_route_features!
       routes = @route_features.select { |feature| feature.dig(:properties, :feature_type) == "route" }
+      return if routes.empty?
+
+      if routes.length > 1
+        merge_tra_route_fragments!(routes)
+        routes = @route_features.select { |feature| feature.dig(:properties, :feature_type) == "route" }
+      end
+
       return if routes.length != 1
 
       coordinates = routes.first.dig(:geometry, :coordinates)
       return unless coordinates.is_a?(Array) && coordinates.length >= 2
 
       stitch_tra_coordinates!(coordinates)
+    end
+
+    # Join split TRA route LineStrings when endpoints are within stitching range.
+    def merge_tra_route_fragments!(routes)
+      chains = routes.filter_map do |feature|
+        coordinates = feature.dig(:geometry, :coordinates)
+        next unless coordinates.is_a?(Array) && coordinates.length >= 2
+
+        coordinates.map(&:dup)
+      end
+      return if chains.length < 2
+
+      merged = merge_connectable_chains(chains, gap_threshold_m: TRA_CHAIN_GAP_MAIN_M)
+      primary = merged.max_by(&:length)
+      return unless primary&.length.to_i >= 2
+
+      stitch_tra_coordinates!(primary, min_gap_m: 150)
+
+      keep = routes.first
+      keep[:geometry][:coordinates] = primary
+      keep[:properties][:name] = keep[:properties][:name].to_s.sub(/\s*\(\d+\)\z/, "")
+
+      @route_features.reject! do |feature|
+        feature.dig(:properties, :feature_type) == "route" && feature.object_id != keep.object_id
+      end
     end
 
     def stitch_tra_coordinates!(coordinates, max_gap_m: TRA_CHAIN_GAP_FRAGMENT_M, step_m: TRA_CHAIN_GAP_STITCH_STEP_M,
@@ -1606,7 +1660,6 @@ module Geojson
     # OSM includes 新店機廠深層存車軌；客運支線只保留爬升至小碧潭站的高架段。
     def clip_xiaobitan_yard_loop!(route_features)
       floor_lat = 24.9695
-      rejoin_lat = 24.9705
 
       route_features.each do |feature|
         next unless feature.dig(:properties, :feature_type) == "route"
@@ -1614,21 +1667,29 @@ module Geojson
         coordinates = feature.dig(:geometry, :coordinates)
         next unless coordinates.is_a?(Array) && coordinates.length >= 4
 
-        cut_start = nil
-        cut_end = nil
-        coordinates.each_with_index do |point, index|
-          next if index.zero?
+        filtered = coordinates.reject { |point| point[1] < floor_lat }
+        next if filtered.length < 2
 
-          if cut_start.nil? && point[1] < floor_lat && coordinates[index - 1][1] >= floor_lat
-            cut_start = index
-          elsif cut_start && cut_end.nil? && point[1] >= rejoin_lat && coordinates[index - 1][1] < rejoin_lat
-            cut_end = index
-            break
-          end
+        feature[:geometry][:coordinates] = TrackGeometry.densify_coordinates(filtered, max_step_m: 40)
+      end
+    end
+
+    # OSM Airport MRT rails stop on a short stub past A1/A22; trim the stub and snap the end.
+    def extend_airport_mrt_to_terminals!(route_features, stations)
+      terminals = stations.select { |station| %w[A1 A22].include?(station[:ref].to_s) }
+      return if terminals.empty?
+
+      route_features.each do |feature|
+        next unless feature.dig(:properties, :feature_type) == "route"
+
+        coordinates = feature.dig(:geometry, :coordinates)
+        next unless coordinates.is_a?(Array) && coordinates.length >= 2
+
+        terminals.each do |station|
+          point = [ station[:lon], station[:lat] ]
+          feature[:geometry][:coordinates] = TrackGeometry.trim_terminal_stub_and_snap(coordinates, point)
+          coordinates = feature[:geometry][:coordinates]
         end
-        next unless cut_start && cut_end && cut_end > cut_start
-
-        feature[:geometry][:coordinates] = coordinates[0...cut_start] + coordinates[cut_end..]
       end
     end
 

@@ -608,6 +608,7 @@ class MetroLineBuilderTraTest < ActiveSupport::TestCase
     stations = data["features"].select { |f| f.dig("properties", "feature_type") == "station" }
     names = stations.map { |feature| feature.dig("properties", "name") }
 
+    assert_equal 1, routes.length, "expected pingxi fragments to be stitched into one route"
     assert_equal 7, names.length
     assert_equal %w[三貂嶺 大華 十分 望古 嶺腳 平溪 菁桐], names
 

@@ -1,14 +1,10 @@
 import { Controller } from "@hotwired/stimulus"
 
 const STORAGE_KEY_WIDTH = "mapSidebarWidthPx"
-const STORAGE_KEY_HEIGHT = "mapSidebarHeightPx"
 const DEFAULT_WIDTH_PX = 352
-const DEFAULT_HEIGHT_PX = 320
 const MIN_WIDTH_PX = 240
-const MIN_HEIGHT_PX = 160
 const MAX_WIDTH_RATIO = 0.55
-const MAX_HEIGHT_RATIO = 0.55
-const STACKED_MEDIA = "(max-width: 767px)"
+const MOBILE_MEDIA = "(max-width: 767px)"
 
 export default class extends Controller {
   static targets = [ "sidebar", "resizer", "mapPane" ]
@@ -18,7 +14,7 @@ export default class extends Controller {
     this.onPointerMove = this.handlePointerMove.bind(this)
     this.onPointerUp = this.stopDrag.bind(this)
 
-    this.mediaQuery = window.matchMedia(STACKED_MEDIA)
+    this.mediaQuery = window.matchMedia(MOBILE_MEDIA)
     this.onLayoutModeChange = () => {
       this.applyStoredSize()
       this.syncLayoutMode()
@@ -48,6 +44,7 @@ export default class extends Controller {
 
   startDrag(event) {
     if (event.button !== undefined && event.button !== 0) return
+    if (this.isMobile() || this.isSidebarCollapsed()) return
 
     event.preventDefault()
     this.dragging = true
@@ -63,14 +60,8 @@ export default class extends Controller {
     if (!this.dragging) return
 
     const bounds = this.element.getBoundingClientRect()
-
-    if (this.isStacked()) {
-      const height = event.clientY - bounds.top
-      this.applyHeight(this.clampHeight(height))
-    } else {
-      const width = event.clientX - bounds.left
-      this.applyWidth(this.clampWidth(width))
-    }
+    const width = event.clientX - bounds.left
+    this.applyWidth(this.clampWidth(width))
   }
 
   stopDrag() {
@@ -87,28 +78,37 @@ export default class extends Controller {
     this.notifyMapResize()
   }
 
-  isStacked() {
+  isMobile() {
     return this.mediaQuery?.matches ?? window.innerWidth <= 767
   }
 
+  isSidebarCollapsed() {
+    return this.element.classList.contains("map-split-layout--sidebar-collapsed")
+  }
+
   syncLayoutMode() {
-    this.element.classList.toggle("map-split-layout--stacked", this.isStacked())
+    this.element.classList.toggle("map-split-layout--mobile", this.isMobile())
+
+    if (this.isMobile()) {
+      this.element.classList.remove("map-split-layout--sidebar-collapsed")
+      this.element.querySelector("[data-map-target=\"layersPanel\"]")
+        ?.classList.remove("map-ui-panel--collapsed")
+    } else {
+      this.element.classList.remove("map-split-layout--layers-open")
+      document.body.classList.remove("overflow-hidden")
+    }
   }
 
   applyStoredSize() {
-    if (this.isStacked()) {
-      this.applyHeight(this.clampHeight(this.loadHeight()))
-    } else {
-      this.applyWidth(this.clampWidth(this.loadWidth()))
+    if (this.isMobile() || this.isSidebarCollapsed()) {
+      return
     }
+
+    this.applyWidth(this.clampWidth(this.loadWidth()))
   }
 
   applyWidth(widthPx) {
     this.element.style.setProperty("--map-sidebar-width", `${widthPx}px`)
-  }
-
-  applyHeight(heightPx) {
-    this.element.style.setProperty("--map-sidebar-height", `${heightPx}px`)
   }
 
   currentWidth() {
@@ -118,31 +118,14 @@ export default class extends Controller {
     return Number.isFinite(parsed) ? parsed : DEFAULT_WIDTH_PX
   }
 
-  currentHeight() {
-    const raw = getComputedStyle(this.element).getPropertyValue("--map-sidebar-height").trim()
-    const parsed = Number.parseFloat(raw)
-
-    return Number.isFinite(parsed) ? parsed : DEFAULT_HEIGHT_PX
-  }
-
   clampWidth(widthPx) {
     const max = Math.floor(this.element.getBoundingClientRect().width * MAX_WIDTH_RATIO)
 
     return Math.min(Math.max(widthPx, MIN_WIDTH_PX), Math.max(max, MIN_WIDTH_PX))
   }
 
-  clampHeight(heightPx) {
-    const max = Math.floor(this.element.getBoundingClientRect().height * MAX_HEIGHT_RATIO)
-
-    return Math.min(Math.max(heightPx, MIN_HEIGHT_PX), Math.max(max, MIN_HEIGHT_PX))
-  }
-
   loadWidth() {
     return this.loadStoredSize(STORAGE_KEY_WIDTH, DEFAULT_WIDTH_PX, (value) => this.clampWidth(value))
-  }
-
-  loadHeight() {
-    return this.loadStoredSize(STORAGE_KEY_HEIGHT, DEFAULT_HEIGHT_PX, (value) => this.clampHeight(value))
   }
 
   loadStoredSize(key, fallback, clamp) {
@@ -158,12 +141,10 @@ export default class extends Controller {
   }
 
   persistSize() {
+    if (this.isMobile() || this.isSidebarCollapsed()) return
+
     try {
-      if (this.isStacked()) {
-        localStorage.setItem(STORAGE_KEY_HEIGHT, String(Math.round(this.currentHeight())))
-      } else {
-        localStorage.setItem(STORAGE_KEY_WIDTH, String(Math.round(this.currentWidth())))
-      }
+      localStorage.setItem(STORAGE_KEY_WIDTH, String(Math.round(this.currentWidth())))
     } catch (_error) {
       // ignore storage errors
     }
@@ -173,19 +154,19 @@ export default class extends Controller {
     const resizer = this.resizerTarget
     if (!resizer) return
 
-    if (this.isStacked()) {
-      resizer.setAttribute("aria-orientation", "horizontal")
-      resizer.setAttribute("aria-label", "調整路線列表與地圖高度")
-      resizer.setAttribute("aria-valuemin", String(MIN_HEIGHT_PX))
-      resizer.setAttribute("aria-valuemax", String(Math.round(window.innerHeight * MAX_HEIGHT_RATIO)))
-      resizer.setAttribute("aria-valuenow", String(Math.round(this.currentHeight())))
-    } else {
-      resizer.setAttribute("aria-orientation", "vertical")
-      resizer.setAttribute("aria-label", "調整側欄與地圖寬度")
-      resizer.setAttribute("aria-valuemin", String(MIN_WIDTH_PX))
-      resizer.setAttribute("aria-valuemax", String(Math.round(window.innerWidth * MAX_WIDTH_RATIO)))
-      resizer.setAttribute("aria-valuenow", String(Math.round(this.currentWidth())))
+    if (this.isMobile() || this.isSidebarCollapsed()) {
+      resizer.setAttribute("aria-hidden", "true")
+      resizer.setAttribute("tabindex", "-1")
+      return
     }
+
+    resizer.removeAttribute("aria-hidden")
+    resizer.setAttribute("tabindex", "0")
+    resizer.setAttribute("aria-orientation", "vertical")
+    resizer.setAttribute("aria-label", "調整側欄與地圖寬度")
+    resizer.setAttribute("aria-valuemin", String(MIN_WIDTH_PX))
+    resizer.setAttribute("aria-valuemax", String(Math.round(window.innerWidth * MAX_WIDTH_RATIO)))
+    resizer.setAttribute("aria-valuenow", String(Math.round(this.currentWidth())))
   }
 
   notifyMapResize() {

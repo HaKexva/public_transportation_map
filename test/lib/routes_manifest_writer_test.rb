@@ -33,4 +33,18 @@ class RoutesManifestWriterTest < ActiveSupport::TestCase
   ensure
     path.delete if path.exist?
   end
+
+  test "manifest entries include passenger station names for search" do
+    path = Rails.root.join("tmp", "routes_manifest_test_#{name}.json")
+    Geojson::RoutesManifestWriter.write!(path: path)
+
+    manifest = JSON.parse(path.read)
+    bannan = manifest.fetch("taipei_metro").find { |entry| entry["id"] == "bannan" }
+
+    assert bannan, "expected bannan in manifest"
+    assert_includes Array(bannan["station_names"]), "頂埔"
+    assert_includes Array(bannan["station_names"]), "BL01"
+  ensure
+    path.delete if path.exist?
+  end
 end

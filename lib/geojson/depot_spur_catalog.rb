@@ -41,6 +41,9 @@ module Geojson
       "xindian_depot" => { lon: 121.5305976, lat: 24.9712591 },
       "qingpu_depot" => { lon: 121.2141381, lat: 25.0137163 },
       "tra_fugang_depot" => { lon: 121.062, lat: 24.929 },
+      "nangang_depot" => { lon: 121.60385, lat: 25.05184 },
+      "tucheng_depot" => { lon: 121.45164, lat: 24.99573 },
+      "taichung_beitun_depot" => { lon: 120.71023, lat: 24.18410 },
       "hsr_liujia_depot" => { lon: 121.03858, lat: 24.8019923 },
       "hsr_wuri_depot" => { lon: 120.6146884, lat: 24.0995112 },
       "hsr_taibao_depot" => { lon: 120.3239384, lat: 23.4631241 }
@@ -62,7 +65,6 @@ module Geojson
         500_541_174, 870_561_403, 870_561_404, 870_561_405, 870_561_406, 870_561_407, 870_561_408,
         870_561_409, 870_561_410, 870_561_411, 870_561_412, 1_342_641_743, 1_342_641_744
       ],
-      "skytrain_depot" => [ 256_726_319, 256_726_320 ],
       "hsr_taibao_depot" => [
         197_654_509, 197_654_511, 194_333_560, 194_333_563,
         966_452_493, 966_452_494, 966_452_495, 966_452_496,
@@ -73,12 +75,14 @@ module Geojson
     # Catalog hints for yards where the marker should sit away from the passenger main line.
     FACILITY_COORDINATE_HINTS = {
       "neihu_depot" => { lon: 121.621417, lat: 25.057639 },
+      "beitou_depot" => { lon: 121.48699, lat: 25.13751 },
       "tra_changhua_depot" => { lon: 120.540171, lat: 24.085948 },
       "hsr_yanchao_depot" => { lon: 120.3465, lat: 22.764806 },
       "kaohsiung_north_depot" => { lon: 120.3026, lat: 22.7767 },
+      "kaohsiung_south_depot" => { lon: 120.3308, lat: 22.5843 },
       "shisizhang_depot" => { lon: 121.5288, lat: 24.9852 },
-      "xindian_depot" => { lon: 121.530598, lat: 24.971259 },
-      "tra_fugang_depot" => { lon: 121.0849875, lat: 24.9344212 },
+      "xindian_depot" => { lon: 121.5378, lat: 24.9683 },
+      "taichung_beitun_depot" => { lon: 120.7120, lat: 24.1890 },
       "hsr_liujia_depot" => { lon: 121.0412509, lat: 24.8124655 },
       "hsr_wuri_depot" => { lon: 120.6125, lat: 24.1100 },
       "hsr_taibao_depot" => { lon: 120.32375, lat: 23.4755 }

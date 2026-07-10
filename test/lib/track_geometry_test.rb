@@ -9,9 +9,12 @@ class TrackGeometryTest < ActiveSupport::TestCase
     route = data.fetch("features").find { |feature| feature.dig("properties", "feature_type") == "route" }
     coordinates = route.dig("geometry", "coordinates")
 
-    assert coordinates.length < 40, "expected clipped passenger route, got #{coordinates.length} points"
     refute coordinates.any? { |lon, lat| lat < 24.9695 },
            "passenger route should not dip into depot storage yard"
+    max_gap = coordinates.each_cons(2).map do |start, finish|
+      Geojson::TrackGeometry.planar_distance_meters(start[0], start[1], finish[0], finish[1])
+    end.max
+    assert_operator max_gap, :<, 200, "expected densified passenger clip, max gap #{max_gap.round}m"
     assert_in_delta 121.5305976, coordinates.last[0], 0.0001
     assert_in_delta 24.9717591, coordinates.last[1], 0.0001
   end
@@ -86,11 +89,14 @@ class TrackGeometryTest < ActiveSupport::TestCase
 
     depot = Geojson::MetroDepotCatalog::DEPOTS.find { |entry| entry[:id] == "hsr_wuri_depot" }
     facility = Geojson::MetroDepotCatalog.primary_facility_coordinates(depot)
+    junction_hint = Geojson::DepotSpurCatalog.junction_hint_for(depot[:id])
     coordinates = Geojson::TrackGeometry.depot_link_coordinates_for_point(
       facility[:lon],
       facility[:lat],
       line_strings,
-      spur_line_strings: spur_lines
+      spur_line_strings: spur_lines,
+      junction_reference_lon: junction_hint[:lon],
+      junction_reference_lat: junction_hint[:lat]
     )
 
     assert coordinates
@@ -413,6 +419,34 @@ class TrackGeometryTest < ActiveSupport::TestCase
     assert_operator shisizhang_feature.dig("geometry", "coordinates").last[1], :>, xindian_feature.dig("geometry", "coordinates").last[1]
   end
 
+  test "average_parallel_line_strings returns midpoint corridor" do
+    primary = [ [ 121.0, 25.0 ], [ 121.01, 25.0 ], [ 121.02, 25.0 ] ]
+    secondary = [ [ 121.0, 25.00005 ], [ 121.01, 25.00005 ], [ 121.02, 25.00005 ] ]
+
+    center = Geojson::TrackGeometry.average_parallel_line_strings(primary, secondary, sample_m: 500, max_pair_m: 20)
+
+    assert_operator center.length, :>=, 2
+    mid_lat = center[center.length / 2][1]
+    assert_in_delta 25.000025, mid_lat, 0.00001
+  end
+
+  test "trim_terminal_stub_and_snap drops short beyond-terminal stub" do
+    station = [ 121.5143, 25.0487 ]
+    # Stub east of station, then corridor west.
+    coordinates = [
+      [ 121.5151, 25.0485 ],
+      [ 121.5143, 25.0487 ],
+      [ 121.5135, 25.0489 ],
+      [ 121.5125, 25.0492 ]
+    ]
+
+    trimmed = Geojson::TrackGeometry.trim_terminal_stub_and_snap(coordinates, station)
+
+    assert_equal station, trimmed.first
+    assert_operator trimmed.length, :<, coordinates.length
+    refute_equal coordinates.first, trimmed.first
+  end
+
   test "qingpu depot link branches from hsr taoyuan airport mrt station not laojiexi" do
     path = Rails.root.join("public/geojson/taoyuan_metro/airport_mrt.geojson")
     line_strings = Geojson::TrackGeometry.route_line_strings_from_geojson(path)
@@ -437,7 +471,7 @@ class TrackGeometryTest < ActiveSupport::TestCase
     assert coordinates
     assert_operator coordinates.first[1], :>, laojiexi_lat + 0.04
     assert_in_delta a18_lat, coordinates.first[1], 0.01
-    refute Geojson::TrackGeometry.straight_line?(coordinates)
+    assert_operator Geojson::TrackGeometry.path_length_meters(coordinates), :<, 500
 
     geojson = JSON.parse(path.read)
     spur = geojson.fetch("features").find { |feature| feature.dig("properties", "depot_id") == "qingpu_depot" }
@@ -497,7 +531,6 @@ class TrackGeometryTest < ActiveSupport::TestCase
       junction_reference_lon: junction_hint[:lon],
       junction_reference_lat: junction_hint[:lat]
     )
-    coordinates[-1] = [ facility[:lon], facility[:lat] ]
 
     junction_lat = 24.8019923
     assert coordinates
@@ -516,5 +549,41 @@ class TrackGeometryTest < ActiveSupport::TestCase
     assert spur, "expected 六家維修基地支線 on taiwan hsr geojson"
     assert_operator spur.dig("geometry", "coordinates").length, :>=, 6
     refute Geojson::TrackGeometry.straight_line?(spur.dig("geometry", "coordinates"))
+  end
+
+  test "bannan depot spurs stay local and do not copy the passenger corridor" do
+    path = Rails.root.join("public/geojson/taipei_metro/bannan.geojson")
+    data = JSON.parse(path.read)
+    route = data.fetch("features").find { |feature| feature.dig("properties", "feature_type") == "route" }
+    main_lines = [ route.dig("geometry", "coordinates") ]
+
+    nangang = data.fetch("features").find { |feature| feature.dig("properties", "depot_id") == "nangang_depot" }
+    assert nangang, "expected nangang_depot on bannan geojson"
+    nangang_coords = nangang.dig("geometry", "coordinates")
+    assert_operator Geojson::TrackGeometry.path_length_meters(nangang_coords), :<, 2_000
+    assert_operator Geojson::TrackGeometry.main_line_overlap_ratio(nangang_coords, main_lines), :<, 0.25
+
+    # OSM yard cache for 土城機廠 is disconnected from the main line; omit rather than
+    # draw approach tracks that never reach the facility (or copy the passenger corridor).
+    tucheng = data.fetch("features").find { |feature| feature.dig("properties", "depot_id") == "tucheng_depot" }
+    refute tucheng, "tucheng_depot should be omitted until a connected yard spur exists"
+  end
+
+  test "depot spur finalize does not force a long closing chord to the facility" do
+    path = [
+      [ 121.0, 25.0 ],
+      [ 121.001, 25.001 ],
+      [ 121.002, 25.002 ]
+    ]
+    facility_lon = 121.02
+    facility_lat = 25.02
+
+    coordinates = Geojson::TrackGeometry.finalize_depot_path(path, facility_lon, facility_lat)
+
+    assert_equal path.last, coordinates.last
+    closing = Geojson::TrackGeometry.planar_distance_meters(
+      coordinates[-2][0], coordinates[-2][1], coordinates[-1][0], coordinates[-1][1]
+    )
+    assert_operator closing, :<, 200
   end
 end

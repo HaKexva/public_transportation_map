@@ -44,7 +44,6 @@ module Geojson
         )
         next unless coordinates
 
-        coordinates[-1] = [ facility[:lon], facility[:lat] ]
         features << spur_feature(line, depot, coordinates)
       end
 

@@ -27,13 +27,17 @@ module Views
 
       private
 
+      def display_name
+        localized_route_name(@route)
+      end
+
       def render_header
         header(class: "route-page__header shrink-0 border-b border-border/60 bg-background/95 px-4 py-3 backdrop-blur-sm") do
           div(class: "flex items-start gap-3") do
             a(
               href: root_path,
               class: "route-page__back mt-0.5 shrink-0 text-sm text-muted-foreground transition-colors hover:text-foreground"
-            ) { "← 返回地圖" }
+            ) { t("route.back") }
 
             span(
               class: "mt-1 size-3 shrink-0 rounded-full",
@@ -42,12 +46,7 @@ module Views
 
             div(class: "min-w-0 flex-1") do
               render RubyUI::Text.new(as: "p", size: "1", weight: "muted") { @system_label }
-              h1(class: "text-lg font-semibold leading-tight") { @route["name"] }
-              if @route["name_en"].present?
-                render RubyUI::Text.new(as: "p", size: "1", weight: "muted", class: "mt-0.5") do
-                  @route["name_en"]
-                end
-              end
+              h1(class: "text-lg font-semibold leading-tight") { display_name }
               p(class: "mt-1 text-xs text-muted-foreground", data: { map_target: "routeStopsMeta" }) { "" }
             end
 
@@ -60,13 +59,15 @@ module Views
               id: "layer-#{@route['id']}",
               class: layer_checkbox_classes,
               checked: true,
-              aria: { label: "在地圖顯示 #{@route['name']}" },
+              aria: { label: t("route.show_on_map", name: display_name) },
               data: {
                 map_target: "layerCheckbox",
                 action: "change->map#toggleLayer",
                 map_layer_param: @route["id"]
               }
             )
+
+            render_locale_toggle
           end
         end
       end
@@ -76,8 +77,8 @@ module Views
           class: "route-page__stops flex max-h-[45vh] min-h-0 w-full shrink-0 flex-col overflow-hidden border-b border-border/60 md:max-h-none md:w-[22rem] md:border-r md:border-b-0"
         ) do
           div(class: "shrink-0 border-b border-border/40 px-4 py-2") do
-            render RubyUI::Text.new(as: "p", size: "1", weight: "muted", class: "uppercase tracking-wide") { "站點列表" }
-            h2(class: "sr-only", data: { map_target: "routeStopsTitle" }) { @route["name"] }
+            render RubyUI::Text.new(as: "p", size: "1", weight: "muted", class: "uppercase tracking-wide") { t("route.stops_list") }
+            h2(class: "sr-only", data: { map_target: "routeStopsTitle" }) { display_name }
           end
 
           ol(
@@ -88,7 +89,7 @@ module Views
           p(
             class: "hidden px-4 py-8 text-center text-sm text-muted-foreground",
             data: { map_target: "routeStopsEmpty" }
-          ) { "此路線沒有站點資料" }
+          ) { t("route.no_stops") }
         end
       end
 
@@ -98,7 +99,7 @@ module Views
             class: "relative h-full w-full",
             data: { map_target: "map" },
             role: "region",
-            aria: { label: "#{@route['name']} 路線地圖" }
+            aria: { label: t("route.map_aria", name: display_name) }
           )
         end
       end

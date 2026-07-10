@@ -9,7 +9,8 @@ module Geojson
         name_en: "Taoyuan Airport MRT",
         ref: "A",
         color: "#0073B7",
-        relation_ids: [ 6937083 ],
+        # Westbound + eastbound passenger tracks; builder averages them to a centerline.
+        relation_ids: [ 2108764, 6937083 ],
         station_ref_prefix: "A"
       )
     ].freeze

@@ -64,7 +64,9 @@ module Geojson
           next if entries.any? { |existing| existing[:id] == entry[:id] }
 
           path = Rails.root.join("public#{entry[:file]}")
-          entries << entry if path.exist?
+          next unless path.exist?
+
+          entries << enrich_entry(entry.dup, path)
         end
         manifest[system_id] = entries
       end
@@ -90,7 +92,31 @@ module Geojson
       }
 
       entry[:branch_of] = line.branch_of if line.branch_of.present?
+      enrich_entry(entry, file_path)
+    end
+
+    def enrich_entry(entry, file_path)
+      station_names = station_names_for(file_path)
+      entry[:station_names] = station_names if station_names.any?
       entry
+    end
+
+    def station_names_for(file_path)
+      data = JSON.parse(File.read(file_path))
+      names = []
+
+      Array(data["features"]).each do |feature|
+        next unless Transit::StationRef.passenger_station?(feature)
+
+        properties = feature["properties"] || {}
+        names << properties["name"].to_s.strip
+        names << properties["name_en"].to_s.strip
+        names << properties["ref"].to_s.strip
+      end
+
+      names.reject(&:empty?).uniq
+    rescue JSON::ParserError, Errno::ENOENT
+      []
     end
   end
 end

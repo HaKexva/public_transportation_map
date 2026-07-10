@@ -13,8 +13,8 @@ module Geojson
         name: "新店機廠",
         routes: %w[songshan_xindian xiaobitan_branch],
         track_on: "xiaobitan_branch",
-        lon: 121.530598,
-        lat: 24.971259,
+        lon: 121.5378,
+        lat: 24.9683,
         grade: "三級"
       },
       { id: "nangang_depot", name: "南港機廠", routes: %w[bannan], lon: 121.59836, lat: 25.05034, grade: "三級" },
@@ -54,9 +54,7 @@ module Geojson
       },
       { id: "tra_hualien_depot", name: "花蓮機務段", routes: %w[beihui_line taidong_line], lon: 121.603036, lat: 23.995747, grade: "機務段" },
       { id: "tra_taitung_depot", name: "臺東機務分段", routes: %w[taidong_line], lon: 121.1224316, lat: 22.7934597, grade: "機務段" },
-      { id: "tra_yilan_depot", name: "宜蘭機務分段", routes: %w[yilan_line], lon: 121.762, lat: 24.751, grade: "機務段" },
-      { id: "skytrain_depot", name: "航廈電車維修區", routes: %w[taoyuan_airport_skytrain], lon: 121.238209, lat: 25.080096, grade: "維修區" },
-      { id: "sun_moon_ropeway_depot", name: "日月潭纜車維修區", routes: %w[sun_moon_ropeway], lon: 120.951, lat: 23.860, grade: "維修區" }
+      { id: "tra_yilan_depot", name: "宜蘭機務分段", routes: %w[yilan_line], lon: 121.762, lat: 24.751, grade: "機務段" }
     ].freeze
 
     def self.depots_for_route(route_id)
@@ -120,7 +118,6 @@ module Geojson
         )
         next unless coordinates
 
-        coordinates[-1] = [ facility[:lon], facility[:lat] ]
         { route_id: route_id, coordinates: coordinates }
       end
     end

@@ -1,0 +1,177 @@
+zh-TW:
+  app:
+    title: "台灣大眾運輸地圖"
+    name: "台灣大眾運輸地圖"
+  locale:
+    zh_tw: "中文"
+    en: "English"
+    toggle: "切換語言"
+  systems:
+    taipei_metro: "台北捷運"
+    new_taipei_metro: "新北捷運"
+    taoyuan_metro: "桃園捷運"
+    taichung_metro: "台中捷運"
+    kaohsiung_metro: "高雄捷運"
+    hsr: "高鐵"
+    tra: "台鐵"
+    other: "其他"
+  map:
+    title: "台灣大眾運輸地圖"
+    layers_aria: "路線圖層與圖例"
+    resizer_aria: "調整側欄與地圖寬度"
+    map_aria: "台灣、澎湖、金門、馬祖地圖"
+    legend: "圖例"
+    legend_description: "路線、轉乘連線與車站符號"
+    legend_sections:
+      special_routes: "特殊路線"
+      transfers: "轉乘連線"
+      stations: "車站"
+    layers_button: "圖層"
+    reset_viewport: "重設視角"
+    show_metro_only: "僅顯示捷運與輕軌"
+    search_hint: "勾選顯示於地圖；右側可進入路線圖。"
+    categories_aria: "路線分類"
+    categories:
+      metro: "捷運"
+      tra: "台鐵"
+      hsr: "高鐵"
+      other: "其他"
+    select_all: "全選"
+    select_all_metro: "全選捷運與輕軌"
+    select_all_system: "全選%{label}"
+    show_on_map: "在地圖顯示 %{name}"
+    open_route_map: "進入路線圖"
+    open_route_map_for: "進入 %{name} 路線圖"
+    route_details: "%{name} 詳情"
+    details: "詳情"
+    search_label: "搜尋路線或車站"
+    search_placeholder: "搜尋路線、代碼或站名…"
+    clear_search: "清除搜尋"
+    clear: "清除"
+    no_results: "找不到符合的路線"
+    light_mode: "淺色模式"
+    dark_mode: "深色模式"
+    layers:
+      metro:
+        label: "捷運"
+        description: "台北、新北、桃園、台中、高雄捷運與輕軌"
+      tra:
+        label: "台鐵"
+        description: "縱貫線、山線、海線、東部幹線與支線"
+      hsr:
+        label: "高鐵"
+        description: "台灣高鐵（南港－左營）"
+      other:
+        label: "其他"
+        description: "纜車、機場電車"
+    metro_systems:
+      taipei_metro:
+        label: "台北捷運"
+        description: "6 條路線"
+      new_taipei_metro:
+        label: "新北捷運"
+        description: "環狀線、三鶯線、淡海與安坑輕軌"
+      taoyuan_metro:
+        label: "桃園捷運"
+        description: "機場捷運（藍／紫雙線）"
+      taichung_metro:
+        label: "台中捷運"
+        description: "綠線"
+      kaohsiung_metro:
+        label: "高雄捷運"
+        description: "紅線、橘線、環狀輕軌"
+    route_notes:
+      airport_mrt: "普通車藍線／直達車紫線並排"
+      danhai_lrt: "綠山／藍海雙軌並排"
+      taoyuan_airport_skytrain: "北側／南側雙軌並排"
+    legend_routes:
+      airport_mrt:
+        label: "機場捷運"
+        note: "普通車（藍）／直達車（紫）雙線並排"
+      danhai_lrt:
+        label: "淡海輕軌"
+        note: "綠山／藍海雙軌並排"
+      skytrain:
+        label: "機場電車"
+        note: "北側／南側雙軌並排"
+    legend_transfers:
+      passage:
+        label: "聯通道／共構轉乘"
+        note: "異系統有站體連結（灰實線）"
+      fare_discount:
+        label: "站外轉乘（有優惠）"
+        note: "無聯通道、有轉乘優惠（灰虛線）"
+      walk_transfer:
+        label: "站外轉乘（無優惠）"
+        note: "有轉乘定義、無優惠（灰點線）"
+    legend_markers:
+      station: "一般站"
+      terminal: "起迄站"
+      transfer:
+        label: "同系統站內轉乘"
+        note: "雙色橢圓"
+      airport_mrt_transfer:
+        label: "快慢車交會站"
+        note: "雙色橢圓（藍／紫）；A18、A21 僅環北直達部分班次停靠"
+      depot: "機廠／維修區"
+      out_of_station:
+        label: "站外轉乘站"
+        note: "轉乘連線端點"
+      angle_station: "轉角站（不提供載客服務）"
+  route:
+    back: "← 返回地圖"
+    show_on_map: "在地圖顯示 %{name}"
+    stops_list: "站點列表"
+    no_stops: "此路線沒有站點資料"
+    map_aria: "%{name} 路線地圖"
+  js:
+    transfer:
+      passage: "異系統聯通道／共構轉乘"
+      walk_transfer: "站外轉乘（無優惠）"
+      fare_discount: "站外轉乘（有優惠）"
+      generic: "站外轉乘"
+      in_station: "站內轉乘"
+      cross_system: "跨系統轉乘"
+    panel:
+      expand: "展開圖層面板"
+      collapse: "收合圖層面板"
+    sections:
+      commuter: "普通車"
+      express: "直達車"
+      lushan: "綠山線"
+      lanhai: "藍海線"
+      skytrain_north: "北側（管制區內）"
+      skytrain_south: "南側（管制區外）"
+    stops:
+      title_fallback: "路線站點"
+      count: "共 %{count} 站"
+      no_passenger: "（不提供載客）"
+      suspended: "（停駛）"
+    depot:
+      serving_routes: "服務路線：%{routes}"
+      vehicle_base: "車輛基地（不提供載客）"
+      suffix: "%{grade}機廠"
+      grades:
+        "維修區": "維修區"
+        "維修基地": "維修基地"
+        "總機廠": "總機廠"
+        "機務段": "機務段"
+        "調車場": "調車場"
+        "機廠": "機廠"
+    terminal:
+      origin: "起點"
+      destination: "終點"
+    lines:
+      danhai: "淡海輕軌（%{segments}）"
+      skytrain_north: "桃園機場南北側電車（北側）"
+      skytrain_south: "桃園機場南北側電車（南側）"
+    popup:
+      out_of_station: "站外轉乘"
+      express_meet: "普通車／直達車交會"
+      express_stop: "直達車停靠"
+      secured_boarding: "管制區內搭乘"
+      public_boarding: "管制區外搭乘"
+      no_passenger: "不提供載客服務"
+      open_route_map: "進入路線圖"
+    list_sep: "、"
+    segment_sep: "／"
