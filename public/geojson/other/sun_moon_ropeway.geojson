@@ -69,6 +69,40 @@
     {
       "type": "Feature",
       "properties": {
+        "feature_type": "station",
+        "ref": "SM01",
+        "name": "日月潭端車站",
+        "line": "九族文化村－日月潭纜車",
+        "color": "#059669"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.9348179,
+          23.852257
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "SM02",
+        "name": "九族端車站",
+        "line": "九族文化村－日月潭纜車",
+        "color": "#059669"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.950941,
+          23.8601457
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "feature_type": "depot_spur",
         "ref": "SM",
         "name": "日月潭纜車維修區支線",
@@ -122,40 +156,6 @@
             120.951,
             23.86
           ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "SM01",
-        "name": "日月潭端車站",
-        "line": "九族文化村－日月潭纜車",
-        "color": "#059669"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          120.9348179,
-          23.852257
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "SM02",
-        "name": "九族端車站",
-        "line": "九族文化村－日月潭纜車",
-        "color": "#059669"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          120.950941,
-          23.8601457
         ]
       }
     }

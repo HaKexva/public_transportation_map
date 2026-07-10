@@ -1130,45 +1130,6 @@
     {
       "type": "Feature",
       "properties": {
-        "feature_type": "depot_spur",
-        "ref": "O",
-        "name": "大寮機廠支線",
-        "color": "#FAA73F",
-        "depot_id": "kaohsiung_daliao_depot"
-      },
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
-          [
-            120.3910039,
-            22.6214392
-          ],
-          [
-            120.3907438,
-            22.6214956
-          ],
-          [
-            120.3913876,
-            22.620614
-          ],
-          [
-            120.3944305,
-            22.6155209
-          ],
-          [
-            120.3952219,
-            22.6141963
-          ],
-          [
-            120.3969136,
-            22.6151053
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "feature_type": "station",
         "ref": "C14;O1",
         "name": "哈瑪星",
@@ -1401,6 +1362,45 @@
         "coordinates": [
           120.39054400685224,
           22.622082871832802
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "depot_spur",
+        "ref": "O",
+        "name": "大寮機廠支線",
+        "color": "#FAA73F",
+        "depot_id": "kaohsiung_daliao_depot"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.3910039,
+            22.6214392
+          ],
+          [
+            120.3907438,
+            22.6214956
+          ],
+          [
+            120.3913876,
+            22.620614
+          ],
+          [
+            120.3944305,
+            22.6155209
+          ],
+          [
+            120.3952219,
+            22.6141963
+          ],
+          [
+            120.396914,
+            22.615105
+          ]
         ]
       }
     }

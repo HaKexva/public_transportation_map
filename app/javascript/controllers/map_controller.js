@@ -1847,17 +1847,100 @@ export default class extends Controller {
     const parts = this.transferStationRefs(ref)
     if (parts.length !== 2) return false
 
-    const routeIds = new Set()
-    parts.forEach((part) => {
-      const routeId = this.routeIdForStationRefPart(part)
-      if (routeId) routeIds.add(routeId)
-    })
+    const routeIds = new Set(
+      parts.map((part) => this.routeIdForStationRefPart(part, parts)).filter(Boolean)
+    )
 
-    return routeIds.size > 1
+    if (routeIds.size <= 1) return false
+
+    return Array.from(routeIds).every((routeId) => this.manifestSystemForRoute(routeId) === "kaohsiung_metro")
   }
 
-  routeIdForStationRefPart(part) {
+  manifestRouteIdsForStationRefPart(part) {
+    if (!part) return []
+
+    const routeIds = []
+
+    for (const routes of Object.values(this.routesManifest)) {
+      if (!Array.isArray(routes)) continue
+
+      for (const route of routes) {
+        if (!this.stationRefMatchesRoute(part, route.ref, route.id)) continue
+
+        routeIds.push(route.id)
+      }
+    }
+
+    return routeIds
+  }
+
+  isZhongheStationRefPart(part) {
+    if (!part) return false
+
+    return /^O(?:0[1-9]|10|11|1[2-9]|2[0-1]|5[0-4])$/i.test(part)
+  }
+
+  routeIdForStationRefPartInTransfer(part, parts) {
+    const sibling = parts.find((candidate) => candidate !== part)
+    if (!sibling) return null
+
+    const siblingRouteIds = this.manifestRouteIdsForStationRefPart(sibling)
+    const partRouteIds = this.manifestRouteIdsForStationRefPart(part)
+    const siblingSystems = new Set(
+      siblingRouteIds.map((routeId) => this.manifestSystemForRoute(routeId)).filter(Boolean)
+    )
+
+    if (this.isZhongheStationRefPart(sibling) && siblingRouteIds.includes("zhonghe_xinlu")) {
+      if (this.isZhongheStationRefPart(part)) return "zhonghe_xinlu"
+
+      const partnerRouteId = partRouteIds.find(
+        (routeId) => routeId !== "zhonghe_xinlu" && this.manifestSystemForRoute(routeId) === "taipei_metro"
+      )
+      if (partnerRouteId) return partnerRouteId
+    }
+
+    if (siblingSystems.has("taipei_metro") && this.isZhongheStationRefPart(part)) {
+      return "zhonghe_xinlu"
+    }
+
+    if (/^O1$/i.test(part) && siblingRouteIds.includes("circular_lrt")) return "orange_line"
+    if (/^C\d/i.test(part) && siblingRouteIds.includes("orange_line")) return "circular_lrt"
+
+    const kaohsiungSiblingRouteIds = siblingRouteIds.filter(
+      (routeId) => this.manifestSystemForRoute(routeId) === "kaohsiung_metro"
+    )
+    const siblingIsTaipeiZhongheO = this.isZhongheStationRefPart(sibling) && siblingRouteIds.includes("zhonghe_xinlu")
+    if (!siblingIsTaipeiZhongheO) {
+      if (/^R\d/i.test(part) && kaohsiungSiblingRouteIds.includes("orange_line") && partRouteIds.includes("red_line")) {
+        return "red_line"
+      }
+      if (/^O\d/i.test(part) && !this.isZhongheStationRefPart(part) &&
+          kaohsiungSiblingRouteIds.includes("red_line") && partRouteIds.includes("orange_line")) {
+        return "orange_line"
+      }
+    }
+
+    return null
+  }
+
+  // Maokong gondola and Taipei Metro share one station name but separate platforms (e.g. BR01/G1 動物園).
+  isRopewayMetroTransferRef(ref) {
+    const parts = this.transferStationRefs(ref)
+    if (parts.length !== 2) return false
+    if (!parts.some((part) => /^G\d/i.test(part))) return false
+
+    const systems = new Set(this.transferSystemIds(ref))
+    return systems.has("other") && (systems.has("taipei_metro") || systems.has("new_taipei_metro"))
+  }
+
+  routeIdForStationRefPart(part, contextParts = null) {
     if (!part) return null
+
+    const transferParts = contextParts || (part.includes(";") ? this.transferStationRefs(part) : [ part ])
+    if (transferParts.length === 2) {
+      const contextualRouteId = this.routeIdForStationRefPartInTransfer(part, transferParts)
+      if (contextualRouteId) return contextualRouteId
+    }
 
     for (const routes of Object.values(this.routesManifest)) {
       if (!Array.isArray(routes)) continue
@@ -1906,10 +1989,12 @@ export default class extends Controller {
   }
 
   transferSystemIds(ref) {
+    const parts = this.transferStationRefs(ref)
     const systemIds = new Set()
 
-    this.transferStationRefs(ref).forEach((part) => {
-      const systemId = this.systemIdForStationRefPart(part)
+    parts.forEach((part) => {
+      const routeId = this.routeIdForStationRefPart(part, parts)
+      const systemId = routeId ? this.manifestSystemForRoute(routeId) : this.systemIdForStationRefPart(part)
       if (systemId) systemIds.add(systemId)
     })
 
@@ -2122,7 +2207,9 @@ export default class extends Controller {
       const name = feature.properties?.name
       const label = name || "跨系統轉乘"
       const note = this.transferNoteForKind("cross_system_in_station")
-      const coLocated = coLocatedRef || this.crossSystemHubSpreadMeters(endpoints) <= 80
+      const coLocated = coLocatedRef ||
+        this.isRopewayMetroTransferRef(ref) ||
+        this.crossSystemHubSpreadMeters(endpoints) <= 80
 
       if (!coLocated && endpoints.length >= 2) {
         for (let index = 0; index < endpoints.length - 1; index += 1) {

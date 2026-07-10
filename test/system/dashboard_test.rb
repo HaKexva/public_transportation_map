@@ -710,7 +710,8 @@ class DashboardTest < ApplicationSystemTestCase
 
     names = page.all(".route-stop-item__name", minimum: 4).map(&:text)
     assert_includes names, "第一航廈（北側）"
-    assert_includes names, "第二航廈（南側）"
+    assert names.any? { |name| name.include?("第二航廈（南側）") },
+           "expected south skytrain stop with optional 停駛 suffix, got #{names.inspect}"
   end
 
   test "airport mrt route page lists commuter and express sections" do
