@@ -77,7 +77,8 @@ module Geojson
       def legacy_transfer_for(name, line:)
         legacy = TaipeiMetroCatalog::IN_STATION_TRANSFERS_BY_NAME[name] ||
           KaohsiungMetroCatalog::IN_STATION_TRANSFERS_BY_NAME[name] ||
-          KaohsiungMetroCatalog::CIRCULAR_LRT_IN_STATION_TRANSFERS_BY_NAME[name]
+          KaohsiungMetroCatalog::CIRCULAR_LRT_IN_STATION_TRANSFERS_BY_NAME[name] ||
+          KaohsiungMetroCatalog::CROSS_ROUTE_TRANSFERS_BY_NAME[name]
         return nil unless legacy
         return nil unless legacy_transfer_applies_to_line?(legacy, line)
 
