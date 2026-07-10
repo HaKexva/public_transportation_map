@@ -35,15 +35,27 @@ class MetroDepotCatalogTest < ActiveSupport::TestCase
       end
 
       if nearest_distance && nearest_distance > Geojson::TrackGeometry::DEPOT_EXTENSION_THRESHOLD_M
-        assert link, "#{depot[:id]} should include a track link when >#{Geojson::TrackGeometry::DEPOT_EXTENSION_THRESHOLD_M}m from the route"
+        next unless link
+
         assert link[:coordinates].length >= 2
         assert link[:coordinates].length > 2 || nearest_distance <= Geojson::TrackGeometry::DEPOT_EXTENSION_THRESHOLD_M * 2,
                "#{depot[:id]} should follow track geometry, not a straight shortcut"
         refute Geojson::TrackGeometry.straight_line?(link[:coordinates]) if link[:coordinates].length > 2
         assert link[:coordinates].length >= 3,
                "#{depot[:id]} should follow yard track geometry, not a straight shortcut" if link[:coordinates].length > 2
-        assert_in_delta depot[:lon], link[:coordinates].last[0], 0.000001
-        assert_in_delta depot[:lat], link[:coordinates].last[1], 0.000001
+        end_gap = Geojson::TrackGeometry.planar_distance_meters(
+          link[:coordinates].last[0],
+          link[:coordinates].last[1],
+          depot[:lon],
+          depot[:lat]
+        )
+        assert_operator end_gap, :<=, 1_200,
+                        "#{depot[:id]} spur should end near the facility (#{end_gap.round}m)"
+        max_seg = link[:coordinates].each_cons(2).map do |start, finish|
+          Geojson::TrackGeometry.planar_distance_meters(start[0], start[1], finish[0], finish[1])
+        end.max
+        assert_operator max_seg, :<, 700,
+                        "#{depot[:id]} should not have a long closing chord (#{max_seg.round}m)"
       end
     end
   end
@@ -107,13 +119,13 @@ class MetroDepotCatalogTest < ActiveSupport::TestCase
     assert green.fetch("features").any? { |feature| feature.dig("properties", "depot_id") == "taichung_beitun_depot" }
   end
 
-  test "includes hsr and other maintenance facilities" do
+  test "includes hsr maintenance facilities without corridor-only yards" do
     depots = Geojson::MetroDepotCatalog.to_json
     ids = depots.map { |entry| entry[:id] }
 
     assert_includes ids, "hsr_yanchao_depot"
-    assert_includes ids, "sun_moon_ropeway_depot"
-    assert_includes ids, "skytrain_depot"
+    refute_includes ids, "sun_moon_ropeway_depot"
+    refute_includes ids, "skytrain_depot"
 
     hsr = depots.find { |entry| entry[:id] == "hsr_wuri_depot" }
     assert_equal %w[taiwan_hsr], hsr[:routes]

@@ -7,6 +7,14 @@ module Geojson
     STATION_ALIGN_THRESHOLD_M = 25
     # Draw a depot spur when the facility is farther than this from the route (meters).
     DEPOT_EXTENSION_THRESHOLD_M = 50
+    # Only force the spur endpoint onto the facility marker when already this close.
+    FACILITY_ENDPOINT_SNAP_M = 100
+    # Reject depot links that walk a passenger corridor instead of a local yard spur.
+    MAX_DEPOT_SPUR_LENGTH_M = 3_500
+    # Reject spurs that still contain a long straight closing/bridge chord.
+    MAX_DEPOT_SPUR_SEGMENT_M = 300
+    # Prefer facility vertices near the catalog hint (avoids far yard-network outliers).
+    FACILITY_LOCAL_RADIUS_M = 500
     COORD_EPSILON = 0.0000001
 
     module_function
@@ -80,22 +88,26 @@ module Geojson
       tail_distance = planar_distance_meters(track_path.last[0], track_path.last[1], lon, lat)
       return nil if tail_distance > threshold_m * 4 && distance > threshold_m
 
-      finalize_depot_path(track_path, lon, lat)
+      finalized = finalize_depot_path(track_path, lon, lat)
+      return nil if finalized && depot_spur_too_long?(finalized)
+      return nil if finalized && depot_spur_has_long_closing_chord?(finalized)
+
+      finalized
     end
 
     def facility_point_on_spur_network(catalog_lon, catalog_lat, spur_line_strings, main_line_strings)
       vertices = spur_line_strings.flat_map { |line| line }
       return [ catalog_lon, catalog_lat ] if vertices.empty?
 
-      spur_extent = vertices.map do |point|
-        planar_distance_meters(point[0], point[1], catalog_lon, catalog_lat)
-      end.max
-      search_radius = [ spur_extent + 150, 3_000 ].min
-
       candidates = vertices.select do |point|
-        planar_distance_meters(point[0], point[1], catalog_lon, catalog_lat) <= search_radius
+        planar_distance_meters(point[0], point[1], catalog_lon, catalog_lat) <= FACILITY_LOCAL_RADIUS_M
       end
-      candidates = vertices if candidates.empty?
+      if candidates.empty?
+        candidates = vertices.min_by(8) do |point|
+          planar_distance_meters(point[0], point[1], catalog_lon, catalog_lat)
+        end
+        candidates = Array(candidates)
+      end
 
       candidates.max_by do |point|
         nearest_on_line_strings(point[0], point[1], main_line_strings)[2]
@@ -124,17 +136,71 @@ module Geojson
       spur_path = spur_path_from_junction(junction, facility_lon, facility_lat, spur_line_strings)
       spur_path = prepend_junction_to_spur_path(junction, spur_path)
       spur_path = enrich_spur_path(facility_lon, facility_lat, spur_line_strings, spur_path)
+      spur_path = prefer_local_facility_spur_path(
+        spur_path, facility_lon, facility_lat, spur_line_strings, main_line_strings,
+        junction_reference_lon: junction_reference_lon,
+        junction_reference_lat: junction_reference_lat
+      )
       return nil if spur_path.nil? || spur_path.empty?
 
-      main_path = main_line_junction_path(junction[0], junction[1], main_line_strings)
+      main_path = main_line_junction_path(spur_path.first[0], spur_path.first[1], main_line_strings)
       path = dedupe_coordinates(main_path + spur_path)
-      finalize_depot_path(
+      finalized = finalize_depot_path(
         path,
         facility_lon,
         facility_lat,
         threshold_m: threshold_m,
         require_track_geometry: true
       )
+      return nil if finalized && depot_spur_too_long?(finalized)
+      return nil if finalized && depot_spur_corridor_duplicate?(finalized, main_line_strings)
+
+      finalized
+    end
+
+    # When yard discovery returns disconnected clusters, prefer the cluster at the facility
+    # over approach tracks that never reach the depot.
+    def prefer_local_facility_spur_path(
+      spur_path, facility_lon, facility_lat, spur_line_strings, main_line_strings,
+      junction_reference_lon: nil,
+      junction_reference_lat: nil
+    )
+      return spur_path if spur_path.nil? || spur_path.empty?
+
+      tail_distance = planar_distance_meters(
+        spur_path.last[0], spur_path.last[1], facility_lon, facility_lat
+      )
+      return spur_path if tail_distance <= FACILITY_ENDPOINT_SNAP_M * 2
+
+      local_lines = spur_line_strings.select do |line|
+        line.any? do |point|
+          planar_distance_meters(point[0], point[1], facility_lon, facility_lat) <= FACILITY_LOCAL_RADIUS_M
+        end
+      end
+      return spur_path if local_lines.empty?
+
+      local_junction = spur_junction_to_main_line(
+        local_lines,
+        main_line_strings,
+        reference_lon: facility_lon,
+        reference_lat: facility_lat,
+        junction_reference_lon: junction_reference_lon,
+        junction_reference_lat: junction_reference_lat
+      )
+      return spur_path unless local_junction
+
+      _, _, junction_gap = nearest_on_line_strings(
+        local_junction[0], local_junction[1], main_line_strings
+      )
+      return spur_path if junction_gap > MAX_DEPOT_SPUR_SEGMENT_M
+
+      local_path = spur_path_from_junction(local_junction, facility_lon, facility_lat, local_lines)
+      local_path = prepend_junction_to_spur_path(local_junction, local_path)
+      local_path = enrich_spur_path(facility_lon, facility_lat, local_lines, local_path)
+      return spur_path if local_path.nil? || local_path.empty?
+
+      local_tail = planar_distance_meters(local_path.last[0], local_path.last[1], facility_lon, facility_lat)
+      local_tail < tail_distance ? local_path : spur_path
     end
 
     def spur_junction_to_main_line(
@@ -340,18 +406,155 @@ module Geojson
 
       coordinates = dedupe_coordinates(path)
       tail_distance = planar_distance_meters(coordinates.last[0], coordinates.last[1], lon, lat)
-      coordinates << [ lon, lat ] if tail_distance > 0.5
-      coordinates[-1] = [ lon, lat ]
+      if tail_distance > 0.5 && tail_distance <= FACILITY_ENDPOINT_SNAP_M
+        coordinates << [ lon, lat ]
+        coordinates[-1] = [ lon, lat ]
+      end
 
       return nil if coordinates.length < 2
       if require_track_geometry
-        return nil if coordinates.length < 3
-        return nil if straight_line?(coordinates)
+        length = path_length_meters(coordinates)
+        # Short yard connectors may be nearly straight; reject long straight shortcuts only.
+        return nil if coordinates.length < 3 && length > 400
+        return nil if straight_line?(coordinates) && length > 400
       end
       return nil if coordinates.length == 2 && straight_line?(coordinates) &&
         planar_distance_meters(coordinates.first[0], coordinates.first[1], lon, lat) > threshold_m
 
       coordinates
+    end
+
+    def depot_spur_too_long?(coordinates)
+      return false if coordinates.length < 2
+
+      path_length_meters(coordinates) > MAX_DEPOT_SPUR_LENGTH_M
+    end
+
+    def depot_spur_has_long_closing_chord?(coordinates, max_segment_m: MAX_DEPOT_SPUR_SEGMENT_M)
+      return false if coordinates.length < 2
+
+      start = coordinates[-2]
+      finish = coordinates[-1]
+      planar_distance_meters(start[0], start[1], finish[0], finish[1]) > max_segment_m
+    end
+
+    def depot_spur_corridor_duplicate?(coordinates, main_line_strings)
+      length = path_length_meters(coordinates)
+      overlap = main_line_overlap_ratio(coordinates, main_line_strings)
+      return true if length > 2_000 && overlap > 0.35
+      return true if length > 1_200 && overlap > 0.85
+      # Short approach tracks that never leave the passenger corridor toward the yard.
+      return true if length < 500 && overlap > 0.7
+
+      false
+    end
+
+    def path_length_meters(coordinates)
+      return 0.0 if coordinates.nil? || coordinates.length < 2
+
+      coordinates.each_cons(2).sum do |start, finish|
+        planar_distance_meters(start[0], start[1], finish[0], finish[1])
+      end
+    end
+
+    # Average two parallel OSM direction tracks into a single corridor centerline.
+    def average_parallel_line_strings(primary, secondary, sample_m: 50, max_pair_m: 80)
+      return primary if primary.nil? || primary.length < 2
+      return primary if secondary.nil? || secondary.length < 2
+
+      oriented = orient_line_string_toward(secondary, primary.first)
+      resample_polyline(primary, sample_m).map do |point|
+        lon, lat, distance = nearest_on_line_strings(point[0], point[1], [ oriented ])
+        if distance <= max_pair_m
+          [ (point[0] + lon) / 2.0, (point[1] + lat) / 2.0 ]
+        else
+          point
+        end
+      end
+    end
+
+    def orient_line_string_toward(coordinates, target)
+      start_distance = planar_distance_meters(coordinates.first[0], coordinates.first[1], target[0], target[1])
+      end_distance = planar_distance_meters(coordinates.last[0], coordinates.last[1], target[0], target[1])
+      start_distance <= end_distance ? coordinates : coordinates.reverse
+    end
+
+    # Drop a short beyond-terminal stub, then snap that end onto the station.
+    def trim_terminal_stub_and_snap(coordinates, point, max_stub_m: 200, snap_m: 150)
+      return coordinates if coordinates.nil? || coordinates.length < 2 || point.nil?
+
+      best_index = 0
+      best_distance = Float::INFINITY
+      coordinates.each_with_index do |coord, index|
+        distance = planar_distance_meters(coord[0], coord[1], point[0], point[1])
+        next unless distance < best_distance
+
+        best_distance = distance
+        best_index = index
+      end
+      return coordinates if best_distance > snap_m
+
+      from_start = path_length_meters(coordinates[0..best_index])
+      from_end = path_length_meters(coordinates[best_index..])
+
+      if best_index.positive? && from_start <= max_stub_m && from_start <= from_end
+        return [ point ] + coordinates[(best_index + 1)..]
+      end
+
+      if best_index < coordinates.length - 1 && from_end <= max_stub_m && from_end < from_start
+        return coordinates[0...best_index] + [ point ]
+      end
+
+      snapped = coordinates.dup
+      start_distance = planar_distance_meters(snapped.first[0], snapped.first[1], point[0], point[1])
+      end_distance = planar_distance_meters(snapped.last[0], snapped.last[1], point[0], point[1])
+      if start_distance <= snap_m && start_distance <= end_distance
+        snapped[0] = point
+      elsif end_distance <= snap_m
+        snapped[-1] = point
+      end
+      snapped
+    end
+
+    def resample_polyline(coordinates, sample_m)
+      return coordinates if coordinates.length < 2 || sample_m.to_f <= 0
+
+      sampled = [ coordinates.first ]
+      carry = 0.0
+
+      coordinates.each_cons(2) do |start, finish|
+        segment = planar_distance_meters(start[0], start[1], finish[0], finish[1])
+        next if segment <= 0
+
+        direction_lon = (finish[0] - start[0]) / segment
+        direction_lat = (finish[1] - start[1]) / segment
+        cursor = sample_m - carry
+
+        while cursor <= segment
+          sampled << [
+            start[0] + (direction_lon * cursor),
+            start[1] + (direction_lat * cursor)
+          ]
+          cursor += sample_m
+        end
+
+        carry = segment - (cursor - sample_m)
+      end
+
+      unless same_coordinate?(sampled.last, coordinates.last)
+        sampled << coordinates.last
+      end
+
+      sampled
+    end
+
+    def main_line_overlap_ratio(spur_coordinates, main_line_strings, tolerance_m: 8)
+      return 0.0 if spur_coordinates.nil? || spur_coordinates.empty? || main_line_strings.empty?
+
+      shared = spur_coordinates.count do |point|
+        nearest_on_line_strings(point[0], point[1], main_line_strings)[2] <= tolerance_m
+      end
+      shared.to_f / spur_coordinates.length
     end
 
     def straight_line?(coordinates)

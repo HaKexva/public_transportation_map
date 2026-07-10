@@ -30,4 +30,18 @@ class OutOfStationTransferCatalogTest < ActiveSupport::TestCase
       assert_equal 2, transfer["endpoints"].length
     end
   end
+
+  test "transfer kinds follow connection-strength classes" do
+    transfers = JSON.parse(TRANSFERS_PATH.read)
+    by_id = transfers.index_by { |entry| entry["id"] }
+
+    assert_equal "passage", by_id.fetch("airport_mrt_taipei_main_passage")["kind"]
+    assert_equal "passage", by_id.fetch("airport_mrt_beimen_passage")["kind"]
+    assert_equal "fare_discount", by_id.fetch("banqiao_fare_discount")["kind"]
+    assert_equal "fare_discount", by_id.fetch("xinpu_fare_discount")["kind"]
+    assert_equal "walk_transfer", by_id.fetch("taipei_zoo_walk_transfer")["kind"]
+    assert_equal "walk_transfer", by_id.fetch("hamasing_walk_transfer")["kind"]
+    assert_equal "passage", by_id.fetch("tra_hsr_tainan_passage")["kind"]
+    assert_equal "passage", by_id.fetch("tra_hsr_hsinchu_passage")["kind"]
+  end
 end

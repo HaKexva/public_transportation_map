@@ -1,31 +1,177 @@
-# Files in the config/locales directory are used for internationalization and
-# are automatically loaded by Rails. If you want to use locales other than
-# English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t "hello"
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t("hello") %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more about the API, please read the Rails Internationalization guide
-# at https://guides.rubyonrails.org/i18n.html.
-#
-# Be aware that YAML interprets the following case-insensitive strings as
-# booleans: `true`, `false`, `on`, `off`, `yes`, `no`. Therefore, these strings
-# must be quoted to be interpreted as strings. For example:
-#
-#     en:
-#       "yes": yup
-#       enabled: "ON"
-
 en:
-  hello: "Hello world"
+  app:
+    title: "Taiwan Public Transit Map"
+    name: "Taiwan Public Transit Map"
+  locale:
+    zh_tw: "Chinese"
+    en: "English"
+    toggle: "Switch language"
+  systems:
+    taipei_metro: "Taipei Metro"
+    new_taipei_metro: "New Taipei Metro"
+    taoyuan_metro: "Taoyuan Metro"
+    taichung_metro: "Taichung Metro"
+    kaohsiung_metro: "Kaohsiung Metro"
+    hsr: "HSR"
+    tra: "TRA"
+    other: "Other"
+  map:
+    title: "Taiwan Public Transit Map"
+    layers_aria: "Route layers and legend"
+    resizer_aria: "Resize sidebar and map"
+    map_aria: "Map of Taiwan, Penghu, Kinmen, and Matsu"
+    legend: "Legend"
+    legend_description: "Routes, transfer links, and station symbols"
+    legend_sections:
+      special_routes: "Special routes"
+      transfers: "Transfers"
+      stations: "Stations"
+    layers_button: "Layers"
+    reset_viewport: "Reset view"
+    show_metro_only: "Metro & LRT only"
+    search_hint: "Check to show on map; use the link to open the route map."
+    categories_aria: "Route categories"
+    categories:
+      metro: "Metro"
+      tra: "TRA"
+      hsr: "HSR"
+      other: "Other"
+    select_all: "All"
+    select_all_metro: "Select all metro & LRT"
+    select_all_system: "Select all %{label}"
+    show_on_map: "Show %{name} on map"
+    open_route_map: "Open route map"
+    open_route_map_for: "Open %{name} route map"
+    route_details: "%{name} details"
+    details: "Details"
+    search_label: "Search routes or stations"
+    search_placeholder: "Search routes, codes, or stations…"
+    clear_search: "Clear search"
+    clear: "Clear"
+    no_results: "No matching routes"
+    light_mode: "Light mode"
+    dark_mode: "Dark mode"
+    layers:
+      metro:
+        label: "Metro"
+        description: "Taipei, New Taipei, Taoyuan, Taichung, and Kaohsiung metro & LRT"
+      tra:
+        label: "TRA"
+        description: "Western, mountain, coastal, eastern, and branch lines"
+      hsr:
+        label: "HSR"
+        description: "Taiwan High Speed Rail (Nangang–Zuoying)"
+      other:
+        label: "Other"
+        description: "Cable cars and airport people movers"
+    metro_systems:
+      taipei_metro:
+        label: "Taipei Metro"
+        description: "6 lines"
+      new_taipei_metro:
+        label: "New Taipei Metro"
+        description: "Circular, Sanying, Danhai & Ankeng LRT"
+      taoyuan_metro:
+        label: "Taoyuan Metro"
+        description: "Airport MRT (blue / purple)"
+      taichung_metro:
+        label: "Taichung Metro"
+        description: "Green Line"
+      kaohsiung_metro:
+        label: "Kaohsiung Metro"
+        description: "Red, Orange, and Circular Light Rail"
+    route_notes:
+      airport_mrt: "Commuter (blue) / Express (purple) parallel tracks"
+      danhai_lrt: "Green Mountain / Blue Coast parallel tracks"
+      taoyuan_airport_skytrain: "North / South parallel tracks"
+    legend_routes:
+      airport_mrt:
+        label: "Airport MRT"
+        note: "Commuter (blue) / Express (purple) side by side"
+      danhai_lrt:
+        label: "Danhai LRT"
+        note: "Green Mountain / Blue Coast parallel tracks"
+      skytrain:
+        label: "Airport Skytrain"
+        note: "North / South parallel tracks"
+    legend_transfers:
+      passage:
+        label: "Passage / co-structure transfer"
+        note: "Physical link between systems (solid gray)"
+      fare_discount:
+        label: "Out-of-station (fare discount)"
+        note: "No passage; transfer discount (dashed gray)"
+      walk_transfer:
+        label: "Out-of-station (no discount)"
+        note: "Named transfer; no discount (dotted gray)"
+    legend_markers:
+      station: "Station"
+      terminal: "Terminal"
+      transfer:
+        label: "In-system transfer"
+        note: "Two-tone oval"
+      airport_mrt_transfer:
+        label: "Commuter / Express meet"
+        note: "Two-tone oval (blue / purple); A18 & A21: limited Express stops"
+      depot: "Depot / yard"
+      out_of_station:
+        label: "Out-of-station transfer"
+        note: "Transfer link endpoint"
+      angle_station: "Angle station (no passenger service)"
+  route:
+    back: "← Back to map"
+    show_on_map: "Show %{name} on map"
+    stops_list: "Stops"
+    no_stops: "No stop data for this route"
+    map_aria: "%{name} route map"
+  js:
+    transfer:
+      passage: "Cross-system passage / co-structure transfer"
+      walk_transfer: "Out-of-station transfer (no discount)"
+      fare_discount: "Out-of-station transfer (fare discount)"
+      generic: "Out-of-station transfer"
+      in_station: "In-station transfer"
+      cross_system: "Cross-system transfer"
+    panel:
+      expand: "Expand layers panel"
+      collapse: "Collapse layers panel"
+    sections:
+      commuter: "Commuter"
+      express: "Express"
+      lushan: "Green Mountain Line"
+      lanhai: "Blue Coast Line"
+      skytrain_north: "North (secured area)"
+      skytrain_south: "South (public area)"
+    stops:
+      title_fallback: "Route stops"
+      count: "%{count} stops"
+      no_passenger: " (no passenger service)"
+      suspended: " (suspended)"
+    depot:
+      serving_routes: "Serves: %{routes}"
+      vehicle_base: "Depot (no passenger service)"
+      suffix: "%{grade} depot"
+      grades:
+        "維修區": "Maintenance area"
+        "維修基地": "Maintenance base"
+        "總機廠": "Main depot"
+        "機務段": "Rolling stock depot"
+        "調車場": "Marshalling yard"
+        "機廠": "Depot"
+    terminal:
+      origin: "Origin"
+      destination: "Destination"
+    lines:
+      danhai: "Danhai LRT (%{segments})"
+      skytrain_north: "Taoyuan Airport Skytrain (North)"
+      skytrain_south: "Taoyuan Airport Skytrain (South)"
+    popup:
+      out_of_station: "Out-of-station transfer"
+      express_meet: "Commuter / Express meet"
+      express_stop: "Express stop"
+      secured_boarding: "Board inside secured area"
+      public_boarding: "Board outside secured area"
+      no_passenger: "No passenger service"
+      open_route_map: "Open route map"
+    list_sep: ", "
+    segment_sep: " / "
