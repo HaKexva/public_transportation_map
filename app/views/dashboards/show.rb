@@ -35,7 +35,6 @@ module Views
             aria: { label: t("map.layers_aria") }
           ) do
             render_layers_panel
-            render_sidebar_footer
           end
 
           div(
@@ -233,25 +232,6 @@ module Views
         end
       end
 
-      def render_sidebar_footer
-        div(class: "map-sidebar-footer shrink-0 border-t border-border/60 bg-background/95") do
-          div(class: "flex flex-col gap-2 px-4 py-3") do
-            render RubyUI::Button.new(
-              variant: :outline,
-              size: :sm,
-              class: "w-full",
-              data: { action: "click->map#resetViewport" }
-            ) { t("map.reset_viewport") }
-            div(class: "flex items-center gap-2") do
-              div(class: "min-w-0 flex-1") do
-                render_legend_open_button(id: "map-legend-trigger")
-              end
-              render_theme_toggle
-            end
-          end
-        end
-      end
-
       def render_legend_section(title, items, &block)
         div(class: "map-legend-section space-y-2") do
           render RubyUI::Text.new(as: "p", size: "1", weight: "muted", class: "uppercase tracking-wide") { title }
@@ -382,14 +362,24 @@ module Views
 
       def render_header
         render RubyUI::CardHeader.new(class: "space-y-3 pb-3") do
-          div(class: "flex items-start justify-between gap-2") do
+          div(class: "flex flex-wrap items-center justify-between gap-2") do
             div(class: "map-ui-panel__title-block min-w-0") do
               div(class: "flex items-center gap-2") do
                 render_map_icon
                 render RubyUI::CardTitle.new(class: "text-lg leading-tight") { t("map.title") }
               end
             end
-            render_locale_toggle
+            div(class: "map-sidebar-actions flex shrink-0 flex-wrap items-center justify-end gap-2") do
+              render RubyUI::Button.new(
+                variant: :outline,
+                size: :sm,
+                type: :button,
+                data: { action: "click->map#resetViewport" }
+              ) { t("map.reset_viewport") }
+              render_legend_open_button(class_name: "", id: "map-legend-trigger")
+              render_theme_toggle
+              render_locale_toggle
+            end
           end
         end
       end
