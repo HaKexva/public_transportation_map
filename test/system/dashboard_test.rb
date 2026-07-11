@@ -694,7 +694,7 @@ class DashboardTest < ApplicationSystemTestCase
   test "airport mrt layer toggle uses commuter blue" do
     visit root_path
 
-    row = find("a[href='#{route_path('airport_mrt')}']", visible: :all)
+    row = find(".route-search-item[data-route-id='airport_mrt']", visible: :all)
     dot = row.find("span[style*='background-color']", match: :first, visible: :all)
     assert_match(/rgb\(0,\s*115,\s*183\)/i, dot[:style])
   end
@@ -762,7 +762,7 @@ class DashboardTest < ApplicationSystemTestCase
   test "danhai lrt layer toggle uses coral line color" do
     visit root_path
 
-    row = find("a[href='#{route_path('danhai_lrt')}']", visible: :all)
+    row = find(".route-search-item[data-route-id='danhai_lrt']", visible: :all)
     dot = row.find("span[style*='background-color']", match: :first, visible: :all)
     assert_match(/rgb\(237,\s*107,\s*70\)/i, dot[:style])
   end

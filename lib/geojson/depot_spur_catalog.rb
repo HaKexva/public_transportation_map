@@ -82,6 +82,8 @@ module Geojson
       "kaohsiung_south_depot" => { lon: 120.3308, lat: 22.5843 },
       "shisizhang_depot" => { lon: 121.5288, lat: 24.9852 },
       "xindian_depot" => { lon: 121.5378, lat: 24.9683 },
+      # Catalog marker sits SW of the yard; pin the facility on the OSM spur throat.
+      "qingpu_depot" => { lon: 121.216552, lat: 25.014589 },
       "taichung_beitun_depot" => { lon: 120.7120, lat: 24.1890 },
       "hsr_liujia_depot" => { lon: 121.0412509, lat: 24.8124655 },
       "hsr_wuri_depot" => { lon: 120.6125, lat: 24.1100 },
