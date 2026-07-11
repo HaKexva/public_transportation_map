@@ -236,20 +236,12 @@ module Views
       def render_sidebar_footer
         div(class: "map-sidebar-footer shrink-0 border-t border-border/60 bg-background/95") do
           div(class: "flex flex-col gap-2 px-4 py-3") do
-            div(class: "grid grid-cols-2 gap-2") do
-              render RubyUI::Button.new(
-                variant: :ghost,
-                size: :sm,
-                class: "w-full text-muted-foreground",
-                data: { action: "click->map#showAllMetro" }
-              ) { t("map.show_metro_only") }
-              render RubyUI::Button.new(
-                variant: :outline,
-                size: :sm,
-                class: "w-full",
-                data: { action: "click->map#resetViewport" }
-              ) { t("map.reset_viewport") }
-            end
+            render RubyUI::Button.new(
+              variant: :outline,
+              size: :sm,
+              class: "w-full",
+              data: { action: "click->map#resetViewport" }
+            ) { t("map.reset_viewport") }
             div(class: "flex items-center gap-2") do
               div(class: "min-w-0 flex-1") do
                 render_legend_open_button(id: "map-legend-trigger")

@@ -99,6 +99,11 @@ module Geojson
       vertices = spur_line_strings.flat_map { |line| line }
       return [ catalog_lon, catalog_lat ] if vertices.empty?
 
+      on_network = vertices.find do |point|
+        planar_distance_meters(point[0], point[1], catalog_lon, catalog_lat) <= 1.0
+      end
+      return on_network if on_network
+
       candidates = vertices.select do |point|
         planar_distance_meters(point[0], point[1], catalog_lon, catalog_lat) <= FACILITY_LOCAL_RADIUS_M
       end
@@ -110,7 +115,9 @@ module Geojson
       end
 
       candidates.max_by do |point|
-        nearest_on_line_strings(point[0], point[1], main_line_strings)[2]
+        main_distance = nearest_on_line_strings(point[0], point[1], main_line_strings)[2]
+        proximity = -planar_distance_meters(point[0], point[1], catalog_lon, catalog_lat)
+        [ main_distance, proximity ]
       end
     end
 

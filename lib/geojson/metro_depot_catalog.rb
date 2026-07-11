@@ -24,7 +24,7 @@ module Geojson
       { id: "luzhou_depot", name: "蘆洲機廠", routes: %w[zhonghe_xinlu], lon: 121.4670, lat: 25.0900, grade: "四級" },
       { id: "muzha_depot", name: "木柵機廠", routes: %w[wenhu_line], lon: 121.58491, lat: 25.00162, grade: "中運量" },
       { id: "neihu_depot", name: "內湖機廠", routes: %w[wenhu_line], lon: 121.621417, lat: 25.057639, grade: "中運量" },
-      { id: "qingpu_depot", name: "青埔機廠", routes: %w[airport_mrt], lon: 121.208, lat: 25.0086, grade: "主機廠" },
+      { id: "qingpu_depot", name: "青埔機廠", routes: %w[airport_mrt], lon: 121.216552, lat: 25.014589, grade: "主機廠" },
       { id: "shisizhang_depot", name: "十四張機廠", routes: %w[circular ankeng_lrt], lon: 121.5288, lat: 24.9852, grade: "輕軌" },
       { id: "ankeng_depot", name: "安坑機廠", routes: %w[ankeng_lrt], lon: 121.4860, lat: 24.9450, grade: "輕軌" },
       { id: "danhai_depot", name: "淡海車廠", routes: %w[danhai_lrt], lon: 121.434621, lat: 25.2009501, grade: "輕軌" },
