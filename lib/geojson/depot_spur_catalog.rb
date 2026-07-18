@@ -27,7 +27,12 @@ module Geojson
       # OSM yard discovery also captures the east throat toward 大肚溪; keep the west yard only.
       "hsr_wuri_depot" => { max_lon: 120.618 },
       # OSM yard discovery also captures the southeast throat; keep the northwest yard only.
-      "hsr_taibao_depot" => { min_lat: 23.456 }
+      "hsr_taibao_depot" => { min_lat: 23.456 },
+      # NLSC MRT yard discovery also captures the passenger main line and an eastward stub
+      # past 南港展覽館; keep only the northeast yard throat.
+      "neihu_depot" => { min_lon: 121.619, min_lat: 25.0555 },
+      # NLSC MRT discovery also captures the 文湖線 passenger corridor west of 動物園.
+      "muzha_depot" => { min_lon: 121.579 }
     }.freeze
 
     # Force depot spurs to join the main line at a known station or junction.
@@ -46,7 +51,8 @@ module Geojson
       "taichung_beitun_depot" => { lon: 120.71023, lat: 24.18410 },
       "hsr_liujia_depot" => { lon: 121.03858, lat: 24.8019923 },
       "hsr_wuri_depot" => { lon: 120.6146884, lat: 24.0995112 },
-      "hsr_taibao_depot" => { lon: 120.3239384, lat: 23.4631241 }
+      "hsr_taibao_depot" => { lon: 120.3239384, lat: 23.4631241 },
+      "muzha_depot" => { lon: 121.57948795924513, lat: 24.99833313676789 }
     }.freeze
 
     # Optional OSM way overrides when automatic discovery returns too much noise.
@@ -90,6 +96,14 @@ module Geojson
       "hsr_taibao_depot" => { lon: 120.32375, lat: 23.4755 }
     }.freeze
 
+    OMIT_SPUR_IDS = %w[
+      neihu_depot
+    ].freeze
+
+    def self.omit_spur?(depot_id)
+      OMIT_SPUR_IDS.include?(depot_id)
+    end
+
     def self.junction_hint_for(depot_id)
       SPUR_JUNCTION_HINTS[depot_id]
     end
@@ -121,6 +135,9 @@ module Geojson
     end
 
     def self.line_strings_for_depot(depot_id)
+      nlsc_lines = NlscRailwayCatalog.line_strings_for_depot(depot_id)
+      return apply_spur_line_bounds(depot_id, nlsc_lines) if nlsc_lines.any?
+
       cache_path = CACHE_DIR.join("#{depot_id}.json")
       return [] unless cache_path.exist?
 
@@ -148,6 +165,10 @@ module Geojson
       FileUtils.mkdir_p(CACHE_DIR)
 
       depots.each do |depot|
+        if NlscRailwayCatalog.refresh_depot_cache!(depot)
+          next
+        end
+
         refresh_depot!(depot)
         sleep 0.5
       end

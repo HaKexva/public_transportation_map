@@ -1,0 +1,49 @@
+[
+  {
+    "EffectiveDate": "2026-01-01",
+    "ExpiringDate": "2026-12-31",
+    "GeneralTimetable": {
+      "GeneralTrainInfo": {
+        "TrainNo": "0117",
+        "Direction": 0,
+        "TripHeadSign": "左營"
+      },
+      "ServiceDay": {
+        "Monday": 1,
+        "Tuesday": 1,
+        "Wednesday": 1,
+        "Thursday": 1,
+        "Friday": 1,
+        "Saturday": 1,
+        "Sunday": 1,
+        "NationalHolidays": 1,
+        "DayBeforeHoliday": 0,
+        "DayAfterHoliday": 0,
+        "TyphoonDay": 0
+      },
+      "StopTimes": [
+        {
+          "StopSequence": 1,
+          "StationID": "0990",
+          "StationName": { "Zh_tw": "南港" },
+          "ArrivalTime": "06:00",
+          "DepartureTime": "06:00"
+        },
+        {
+          "StopSequence": 2,
+          "StationID": "1000",
+          "StationName": { "Zh_tw": "台北" },
+          "ArrivalTime": "06:10",
+          "DepartureTime": "06:12"
+        },
+        {
+          "StopSequence": 3,
+          "StationID": "1070",
+          "StationName": { "Zh_tw": "左營" },
+          "ArrivalTime": "08:30",
+          "DepartureTime": "08:30"
+        }
+      ]
+    }
+  }
+]

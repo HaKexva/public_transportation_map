@@ -67,6 +67,12 @@ build-iPhoneSimulator/
 /app/assets/builds/*
 !/app/assets/builds/.keep
 
+# Propshaft / importmap fingerprint output (local serve cache).
+/public/assets/
+
+# macOS Finder metadata
+.DS_Store
+
 # Ignore key files for decrypting credentials and more.
 /config/*.key
 

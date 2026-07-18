@@ -15,6 +15,7 @@ module Geojson
     MAX_DEPOT_SPUR_SEGMENT_M = 300
     # Prefer facility vertices near the catalog hint (avoids far yard-network outliers).
     FACILITY_LOCAL_RADIUS_M = 500
+    SPUR_NETWORK_VERTEX_SNAP_M = 8
     COORD_EPSILON = 0.0000001
 
     module_function
@@ -263,6 +264,9 @@ module Geojson
     end
 
     def spur_path_from_junction(junction, target_lon, target_lat, spur_line_strings)
+      network_path = spur_path_via_line_network(junction, target_lon, target_lat, spur_line_strings)
+      return network_path if network_path&.length.to_i >= 2
+
       best_path = nil
       best_tail_distance = Float::INFINITY
 
@@ -278,6 +282,80 @@ module Geojson
       end
 
       best_path
+    end
+
+    def spur_path_via_line_network(junction, target_lon, target_lat, spur_line_strings)
+      graph, vertices = build_spur_line_graph(spur_line_strings)
+      return nil if graph.empty?
+
+      start = vertices.min_by do |vertex|
+        planar_distance_meters(vertex[0], vertex[1], junction[0], junction[1])
+      end
+      return nil if planar_distance_meters(start[0], start[1], junction[0], junction[1]) > 100
+
+      distances = { start => 0.0 }
+      paths = { start => [ start ] }
+      queue = [ start ]
+      best_path = [ start ]
+      best_tail = planar_distance_meters(start[0], start[1], target_lon, target_lat)
+      visited = {}
+
+      until queue.empty?
+        node = queue.min_by { |vertex| distances[vertex] + planar_distance_meters(vertex[0], vertex[1], target_lon, target_lat) }
+        queue.delete(node)
+        next if visited[node]
+
+        visited[node] = true
+        tail = planar_distance_meters(node[0], node[1], target_lon, target_lat)
+        if tail < best_tail
+          best_tail = tail
+          best_path = paths[node]
+        end
+        break if tail <= FACILITY_ENDPOINT_SNAP_M
+
+        graph.fetch(node, {}).each do |neighbor, edge_distance|
+          next if visited[neighbor]
+
+          candidate = distances[node] + edge_distance
+          next if distances[neighbor] && candidate >= distances[neighbor]
+
+          distances[neighbor] = candidate
+          paths[neighbor] = paths[node] + [ neighbor ]
+          queue << neighbor unless queue.include?(neighbor)
+        end
+      end
+
+      return nil if best_path.nil? || best_path.length < 2
+
+      dedupe_coordinates(best_path)
+    end
+
+    def build_spur_line_graph(spur_line_strings)
+      registry = []
+      graph = Hash.new { |hash, key| hash[key] = {} }
+
+      spur_line_strings.each do |coordinates|
+        coordinates.each_cons(2) do |start, finish|
+          from = snap_spur_vertex(start, registry)
+          to = snap_spur_vertex(finish, registry)
+          next if same_coordinate?(from, to)
+
+          distance = planar_distance_meters(from[0], from[1], to[0], to[1])
+          graph[from][to] = distance
+          graph[to][from] = distance
+        end
+      end
+
+      [ graph, registry ]
+    end
+
+    def snap_spur_vertex(point, registry)
+      registry.each do |existing|
+        return existing if planar_distance_meters(point[0], point[1], existing[0], existing[1]) <= SPUR_NETWORK_VERTEX_SNAP_M
+      end
+
+      registry << point
+      point
     end
 
     def path_along_line_string_from_vertex(coordinates, junction, target_lon, target_lat)

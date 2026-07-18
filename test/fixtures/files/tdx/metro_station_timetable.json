@@ -1,0 +1,31 @@
+[
+  {
+    "LineID": "BL",
+    "StationID": "BL12",
+    "StationName": { "Zh_tw": "台北車站" },
+    "DestinationStationName": { "Zh_tw": "頂埔" },
+    "Direction": 0,
+    "ServiceDay": {
+      "Monday": 1,
+      "Tuesday": 1,
+      "Wednesday": 1,
+      "Thursday": 1,
+      "Friday": 1,
+      "Saturday": 0,
+      "Sunday": 0,
+      "NationalHolidays": 0,
+      "DayBeforeHoliday": 0,
+      "DayAfterHoliday": 0,
+      "TyphoonDay": 0
+    },
+    "Timetables": [
+      {
+        "Sequence": 1,
+        "TrainNo": "BL-0602",
+        "DepartureTime": "06:02",
+        "ArrivalTime": "06:02",
+        "TrainType": 1
+      }
+    ]
+  }
+]

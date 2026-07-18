@@ -61,24 +61,66 @@ class TrackGeometryTest < ActiveSupport::TestCase
     refute Geojson::TrackGeometry.straight_line?(coordinates)
   end
 
-  test "depot link uses deep yard geometry for neihu depot" do
+  test "neihu depot spur is omitted on wenhu line" do
+    assert Geojson::DepotSpurCatalog.omit_spur?("neihu_depot")
+
+    path = Rails.root.join("public/geojson/taipei_metro/wenhu_line.geojson")
+    geojson = JSON.parse(path.read)
+    spur = geojson.fetch("features").find { |feature| feature.dig("properties", "depot_id") == "neihu_depot" }
+    refute spur, "expected no 內湖機廠支線 on wenhu line geojson"
+  end
+
+  test "muzha depot spur follows nlsc yard tracks from 動物園 terminus" do
     path = Rails.root.join("public/geojson/taipei_metro/wenhu_line.geojson")
     line_strings = Geojson::TrackGeometry.route_line_strings_from_geojson(path)
-    spur_lines = Geojson::DepotSpurCatalog.line_strings_for_depot("neihu_depot")
+    spur_lines = Geojson::DepotSpurCatalog.line_strings_for_depot("muzha_depot")
     skip "run bin/rails geojson:depot_spurs first" if spur_lines.empty?
 
-    depot = Geojson::MetroDepotCatalog::DEPOTS.find { |entry| entry[:id] == "neihu_depot" }
-    facility = Geojson::DepotSpurCatalog.facility_coordinates(depot, main_line_strings: line_strings)
+    depot = Geojson::MetroDepotCatalog::DEPOTS.find { |entry| entry[:id] == "muzha_depot" }
+    facility = Geojson::MetroDepotCatalog.primary_facility_coordinates(depot)
+    junction_hint = Geojson::DepotSpurCatalog.junction_hint_for(depot[:id])
     coordinates = Geojson::TrackGeometry.depot_link_coordinates_for_point(
       facility[:lon],
       facility[:lat],
       line_strings,
-      spur_line_strings: spur_lines
+      spur_line_strings: spur_lines,
+      junction_reference_lon: junction_hint[:lon],
+      junction_reference_lat: junction_hint[:lat]
     )
 
     assert coordinates
-    assert coordinates.length >= 10, "expected yard track geometry for 內湖機廠"
-    refute Geojson::TrackGeometry.straight_line?(coordinates)
+    assert_operator coordinates.length, :>=, 20, "expected yard link from 動物園 throat to 木柵機廠"
+    assert_operator coordinates.last[0], :>, 121.586, "expected spur to reach the northeast yard"
+    assert_operator coordinates.first[0], :>, 121.579, "expected spur to branch east of 木柵"
+    assert_operator coordinates.first[0], :<, 121.5805
+    _, _, junction_dist = Geojson::TrackGeometry.nearest_on_line_strings(
+      coordinates.first[0], coordinates.first[1], line_strings
+    )
+    assert_operator junction_dist, :<, 20
+    tail = Geojson::TrackGeometry.planar_distance_meters(
+      coordinates.last[0], coordinates.last[1], facility[:lon], facility[:lat]
+    )
+    assert_operator tail, :<, 5
+
+    geojson = JSON.parse(path.read)
+    spur = geojson.fetch("features").find { |feature| feature.dig("properties", "depot_id") == "muzha_depot" }
+    assert spur, "expected 木柵機廠支線 on wenhu line geojson"
+    refute Geojson::TrackGeometry.straight_line?(spur.dig("geometry", "coordinates"))
+  end
+
+  test "wenhu line route does not extend east of 南港展覽館" do
+    path = Rails.root.join("public/geojson/taipei_metro/wenhu_line.geojson")
+    data = JSON.parse(path.read)
+    route = data.fetch("features").find { |feature| feature.dig("properties", "feature_type") == "route" }
+    station = data.fetch("features").find do |feature|
+      feature.dig("properties", "feature_type") == "station" &&
+        feature.dig("properties", "name") == "南港展覽館"
+    end
+    station_lon = station.dig("geometry", "coordinates", 0)
+    max_route_lon = route.dig("geometry", "coordinates").map { |point| point[0] }.max
+
+    assert_operator max_route_lon, :<=, station_lon + 0.00005,
+                    "expected 文湖線 to end at 南港展覽館 without an eastward stub"
   end
 
   test "hsr wuri depot link joins main line locally not from the southern terminus" do
