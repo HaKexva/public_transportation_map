@@ -48,7 +48,7 @@ module Transit
       when Integer then value == 1
       when String
         normalized = value.strip.downcase
-        return normalized == "1" || normalized == "true" || normalized == "yes" || normalized == "y"
+        normalized == "1" || normalized == "true" || normalized == "yes" || normalized == "y"
       else
         # Fallback: try numeric conversion, treating non-numeric values as inactive.
         begin
