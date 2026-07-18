@@ -456,7 +456,7 @@
 
   .map-split-layout--sidebar-collapsed .map-ui-panel__title-block,
   .map-split-layout--sidebar-collapsed .map-sidebar-actions,
-  .map-split-layout--sidebar-collapsed [data-controller="ruby-ui--theme-toggle"],
+  .map-split-layout--sidebar-collapsed .theme-toggle,
   .map-split-layout--sidebar-collapsed [data-controller="locale-toggle"] {
     display: none;
   }
@@ -787,6 +787,57 @@
   background: #e4e4e7;
 }
 
+/* Only invert NLSC tiles in dark mode (CARTO already has a dark style). */
+.dark .nlsc-basemap-tiles.nlsc-basemap-tiles--dark {
+  filter: invert(1) hue-rotate(180deg) brightness(0.92) contrast(0.92) saturate(0.7);
+}
+
+.map-basemap-select__control {
+  max-width: 7.5rem;
+  cursor: pointer;
+}
+
+.map-basemap-select__control:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+.leaflet-container.map-basemap--satellite path.route-line--halo,
+.dark .leaflet-container path.route-line--halo,
+.leaflet-container.map-basemap--satellite path.airport-mrt-commuter-line.route-line--halo,
+.leaflet-container.map-basemap--satellite path.airport-mrt-express-line.route-line--halo,
+.dark .leaflet-container path.airport-mrt-commuter-line.route-line--halo,
+.dark .leaflet-container path.airport-mrt-express-line.route-line--halo {
+  filter: drop-shadow(0 0 1.5px rgba(0, 0, 0, 0.85)) drop-shadow(0 0 0.5px rgba(255, 255, 255, 0.35));
+}
+
+.station-name-label-icon {
+  background: transparent !important;
+  border: none !important;
+}
+
+.station-name-label {
+  display: inline-block;
+  max-width: 10rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 0.1rem 0.35rem;
+  border-radius: 0.25rem;
+  background: color-mix(in oklab, var(--background) 88%, transparent);
+  color: var(--foreground);
+  font-size: 0.7rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  box-shadow: 0 0 0 1px color-mix(in oklab, var(--border) 70%, transparent);
+  pointer-events: none;
+}
+
+.dark .station-name-label {
+  background: color-mix(in oklab, var(--background) 82%, transparent);
+}
+
 #taiwan-region-map {
   position: absolute;
   inset: 0;
@@ -806,14 +857,17 @@
   transition: color 150ms, opacity 150ms, background-color 150ms, box-shadow 150ms;
 }
 
+.theme-toggle,
 .locale-toggle {
   cursor: pointer;
 }
 
+.theme-toggle:hover .theme-toggle-button[aria-pressed="false"],
 .locale-toggle:hover .locale-toggle-button[aria-pressed="false"] {
   opacity: 0.75;
 }
 
+.theme-toggle:focus-visible,
 .locale-toggle:focus-visible {
   outline: 2px solid var(--ring);
   outline-offset: 2px;

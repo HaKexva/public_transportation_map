@@ -31,10 +31,6 @@ module Geojson
       { ref: "2211", name: "一號碼頭", lon: 120.5533791, lat: 24.2944089 }
     ].freeze
 
-    TAICHUNG_PORT_FALLBACK_STATIONS = [
-      { ref: "2218", name: "一號碼頭", lon: 120.5533791, lat: 24.2944089 }
-    ].freeze
-
     PINGTUNG_FALLBACK_STATIONS = [
       { ref: "4400", name: "高雄", lon: 120.3025585, lat: 22.6395321 },
       { ref: "4410", name: "民族", lon: 120.3150956, lat: 22.6387002 },

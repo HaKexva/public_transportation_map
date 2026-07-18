@@ -1,0 +1,28 @@
+[
+  {
+    "LineID": "BL",
+    "Direction": 0,
+    "ServiceDay": {
+      "Monday": 1,
+      "Tuesday": 1,
+      "Wednesday": 1,
+      "Thursday": 1,
+      "Friday": 1,
+      "Saturday": 0,
+      "Sunday": 0,
+      "NationalHolidays": 0,
+      "DayBeforeHoliday": 0,
+      "DayAfterHoliday": 0,
+      "TyphoonDay": 0
+    },
+    "Headways": [
+      {
+        "StartTime": "07:00",
+        "EndTime": "09:00",
+        "MinHeadwayMins": 3,
+        "MaxHeadwayMins": 5,
+        "PeakFlag": "1"
+      }
+    ]
+  }
+]

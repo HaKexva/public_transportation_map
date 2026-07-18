@@ -30,8 +30,8 @@ module Geojson
       end
 
       if built_lines.any?
-        write_manifest!(@system_id, built_lines)
-        puts "Updated #{MANIFEST_PATH} with #{built_lines.length} #{@system_id} lines"
+        Geojson::RoutesManifestWriter.write!
+        puts "Updated routes manifest with #{built_lines.length} rebuilt #{@system_id} lines"
       else
         warn "No #{@system_id} lines built; leaving routes manifest unchanged"
       end

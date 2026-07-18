@@ -3,7 +3,19 @@
 class RouteCatalog
   class << self
     def manifest
-      @manifest ||= JSON.parse(Rails.public_path.join("geojson/routes.json").read)
+      if Rails.env.development?
+        JSON.parse(manifest_path.read)
+      else
+        @manifest ||= JSON.parse(manifest_path.read)
+      end
+    end
+
+    def reset!
+      @manifest = nil
+    end
+
+    def manifest_path
+      Rails.public_path.join("geojson/routes.json")
     end
 
     def find(id)

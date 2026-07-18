@@ -1,0 +1,48 @@
+{
+  "TrainTimetables": [
+    {
+      "TrainInfo": {
+        "TrainNo": "133",
+        "Direction": 0,
+        "TrainTypeCode": "3",
+        "TripHeadSign": "高雄"
+      },
+      "ServiceDay": {
+        "Monday": 1,
+        "Tuesday": 1,
+        "Wednesday": 1,
+        "Thursday": 1,
+        "Friday": 1,
+        "Saturday": 0,
+        "Sunday": 0,
+        "NationalHolidays": 0,
+        "DayBeforeHoliday": 0,
+        "DayAfterHoliday": 0,
+        "TyphoonDay": 0
+      },
+      "StopTimes": [
+        {
+          "StopSequence": 1,
+          "StationID": "1000",
+          "StationName": { "Zh_tw": "臺北" },
+          "ArrivalTime": "08:00",
+          "DepartureTime": "08:00"
+        },
+        {
+          "StopSequence": 2,
+          "StationID": "1010",
+          "StationName": { "Zh_tw": "萬華" },
+          "ArrivalTime": "08:05",
+          "DepartureTime": "08:06"
+        },
+        {
+          "StopSequence": 3,
+          "StationID": "1020",
+          "StationName": { "Zh_tw": "板橋" },
+          "ArrivalTime": "08:10",
+          "DepartureTime": "08:11"
+        }
+      ]
+    }
+  ]
+}

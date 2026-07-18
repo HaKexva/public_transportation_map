@@ -99,7 +99,20 @@ bin/rails test:system
 
 System tests expect a headless Chrome browser.
 
-## Project layout
+## Where things live
+
+| Path | Role |
+| --- | --- |
+| `app/` | Thin UI: Phlex views, Stimulus (`map_controller.js`), RubyUI components |
+| `lib/geojson/` | Map geometry pipeline: line catalogs, OSM/NLSC builders, fallback caches |
+| `lib/transit/` | Schedules: TDX client, catalog sync, schedule seeders/importers |
+| `lib/route_catalog.rb` | Runtime reader for `public/geojson/routes.json` (shared by map + transit) |
+| `lib/tasks/geojson.rake` | Rebuild GeoJSON / `routes.json` / depots |
+| `lib/tasks/transit.rake` | Sync DB catalog, seed/import schedules |
+| `public/geojson/` | Static route GeoJSON served to the browser (see that folder’s README) |
+| `db/seeds.rb` | Orchestration only; schedule logic stays in `lib/transit/` |
+
+**Placement rules:** geometry + source catalogs → `lib/geojson/` (output → `public/geojson/{system}/`); timetables / TDX / DB sync → `lib/transit/`; fallback JSON/ZIP → `lib/geojson/fallback_tracks/` (not `public/`). `other` routes keep geometry in `OtherTransitCatalog` and hours in `OtherTransitScheduleCatalog` (same slugs, separate data).
 
 ```
 app/

@@ -467,6 +467,10 @@ class MetroLineBuilderTraTest < ActiveSupport::TestCase
     end
     assert_equal 0, gaps
 
+    assert_operator coords.length, :>, 80,
+                    "expected coastal track geometry, not a shortcut chord between terminals"
+    assert_operator Geojson::TrackGeometry.path_length_meters(coords), :>, 7_000
+
     stations.each do |station|
       lon, lat = station.dig("geometry", "coordinates")
       distance = Geojson::TrackGeometry.nearest_on_line_strings(
