@@ -58,7 +58,9 @@ module Geojson
     ].freeze
 
     def self.depots_for_route(route_id)
-      DEPOTS.select { |depot| depot_track_route_id(depot) == route_id }
+      DEPOTS.select do |depot|
+        Array(depot[:track_on] || depot[:routes]).include?(route_id)
+      end
     end
 
     def self.depot_track_route_id(depot)
@@ -106,8 +108,14 @@ module Geojson
         next if line_strings.empty?
 
         facility_coords = DepotSpurCatalog.facility_coordinates(depot, main_line_strings: line_strings)
-        spur_line_strings = DepotSpurCatalog.line_strings_for_depot(depot[:id])
         junction_hint = DepotSpurCatalog.junction_hint_for(depot[:id])
+        spur_line_strings = DepotSpurCatalog.linkable_line_strings_for_depot(
+          depot[:id],
+          main_line_strings: line_strings,
+          facility_lon: facility_coords[:lon],
+          facility_lat: facility_coords[:lat],
+          junction_hint: junction_hint
+        )
         coordinates = TrackGeometry.depot_link_coordinates_for_point(
           facility_coords[:lon],
           facility_coords[:lat],

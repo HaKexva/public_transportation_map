@@ -2311,13 +2311,21 @@ export default class extends Controller {
   }
 
   shouldShowInStationTransferMarker(ref, routeId) {
-    return this.isInSystemInStationTransferRef(ref, routeId)
+    if (!this.isInSystemInStationTransferRef(ref, routeId)) return false
+
+    // Only draw the oval when at least two participating lines are visible.
+    // Otherwise wenhu-only views would show ovals for R/BL/G partners that are off.
+    const visibleParts = this.transferStationRefs(ref).filter((part) => {
+      return this.manifestRouteIdsForStationRefPart(part).some((id) => this.layerVisible[id])
+    })
+
+    return visibleParts.length >= 2
   }
 
   shouldHideStationForTransfer(ref, routeId = null) {
     // Only same-system in-station ovals replace the underlying station dots.
     // Cross-system hubs use class 2–4 connection lines and keep station markers.
-    return this.isInSystemInStationTransferRef(ref, routeId)
+    return this.shouldShowInStationTransferMarker(ref, routeId)
   }
 
   hiddenStationMarker(latlng) {

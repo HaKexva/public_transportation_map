@@ -17,11 +17,18 @@ module Geojson
       "kaohsiung_south_depot" => { min_lat: 22.578 },
       # OSM yard discovery also captures a southern siding away from C37 輕軌機廠.
       "kaohsiung_circular_depot" => { min_lat: 22.6084 },
-      # OSM yard discovery captures the north/south loop around 七堵; keep the depot throat only.
+      # OSM/NLSC yard discovery captures the north/south loop around 七堵; keep the depot throat only.
       "tra_qidu_depot" => { min_lat: 25.092, max_lat: 25.099 },
       # Shared OSM cache also contains the 小碧潭 yard south of 十四張; keep each depot local.
-      "shisizhang_depot" => { min_lat: 24.982 },
-      "xindian_depot" => { max_lat: 24.973, min_lon: 121.525 },
+      "shisizhang_depot" => { min_lat: 24.982, max_lat: 24.9865 },
+      # NLSC yard discovery also captures deep storage south of 三民路; keep the throat near the facility.
+      "xindian_depot" => { max_lat: 24.970, min_lon: 121.525 },
+      # NLSC discovery also captures the passenger BL corridor and a north yard loop; keep the local throat.
+      "nangang_depot" => { min_lon: 121.595, max_lat: 25.054 },
+      # NLSC discovery also captures the east-west passenger corridor east of 富岡; keep the south yard only.
+      "tra_fugang_depot" => { max_lat: 24.933 },
+      # OSM yard discovery also captures a northern stub toward 淡金公路; keep the depot throat only.
+      "danhai_depot" => { max_lat: 25.203 },
       # OSM discovery also captures a disconnected southern yard cluster away from the HSR corridor.
       "hsr_liujia_depot" => { max_lon: 121.0428 },
       # OSM yard discovery also captures the east throat toward 大肚溪; keep the west yard only.
@@ -45,7 +52,7 @@ module Geojson
       "shisizhang_depot" => { lon: 121.5276, lat: 24.9844835 },
       "xindian_depot" => { lon: 121.5305976, lat: 24.9712591 },
       "qingpu_depot" => { lon: 121.2141381, lat: 25.0137163 },
-      "tra_fugang_depot" => { lon: 121.062, lat: 24.929 },
+      "tra_fugang_depot" => { lon: 121.0676, lat: 24.9312 },
       "nangang_depot" => { lon: 121.60385, lat: 25.05184 },
       "tucheng_depot" => { lon: 121.45164, lat: 24.99573 },
       "taichung_beitun_depot" => { lon: 120.71023, lat: 24.18410 },
@@ -93,11 +100,14 @@ module Geojson
       "taichung_beitun_depot" => { lon: 120.7120, lat: 24.1890 },
       "hsr_liujia_depot" => { lon: 121.0412509, lat: 24.8124655 },
       "hsr_wuri_depot" => { lon: 120.6125, lat: 24.1100 },
-      "hsr_taibao_depot" => { lon: 120.32375, lat: 23.4755 }
+      "hsr_taibao_depot" => { lon: 120.32375, lat: 23.4755 },
+      "tra_fugang_depot" => { lon: 121.082, lat: 24.928 },
+      "danhai_depot" => { lon: 121.434621, lat: 25.2009501 }
     }.freeze
 
     OMIT_SPUR_IDS = %w[
       neihu_depot
+      tucheng_depot
     ].freeze
 
     def self.omit_spur?(depot_id)
@@ -114,7 +124,9 @@ module Geojson
 
       hint_lon = depot[:lon]
       hint_lat = depot[:lat]
-      spur_lines = line_strings_for_depot(depot[:id])
+      # Prefer OSM spur network so facility placement matches linkable_line_strings_for_depot.
+      spur_lines = osm_line_strings_for_depot(depot[:id])
+      spur_lines = nlsc_line_strings_for_depot(depot[:id]) if spur_lines.empty?
 
       if spur_lines.any? && main_line_strings&.any?
         point = TrackGeometry.facility_point_on_spur_network(
@@ -134,15 +146,61 @@ module Geojson
       { lon: hint_lon.round(6), lat: hint_lat.round(6) }
     end
 
-    def self.line_strings_for_depot(depot_id)
-      nlsc_lines = NlscRailwayCatalog.line_strings_for_depot(depot_id)
-      return apply_spur_line_bounds(depot_id, nlsc_lines) if nlsc_lines.any?
-
+    def self.osm_line_strings_for_depot(depot_id)
       cache_path = CACHE_DIR.join("#{depot_id}.json")
       return [] unless cache_path.exist?
 
       lines = JSON.parse(cache_path.read).fetch("line_strings", [])
       apply_spur_line_bounds(depot_id, lines)
+    end
+
+    def self.nlsc_line_strings_for_depot(depot_id)
+      lines = NlscRailwayCatalog.line_strings_for_depot(depot_id)
+      return [] if lines.empty?
+
+      apply_spur_line_bounds(depot_id, lines)
+    end
+
+    def self.line_strings_for_depot(depot_id)
+      nlsc = nlsc_line_strings_for_depot(depot_id)
+      return nlsc if nlsc.any?
+
+      osm_line_strings_for_depot(depot_id)
+    end
+
+    # Prefer OSM yard throats, then NLSC extracts (NLSC fragments sometimes never snap).
+    def self.candidates_for_depot(depot_id)
+      candidates = []
+      osm = osm_line_strings_for_depot(depot_id)
+      candidates << osm if osm.any?
+      nlsc = nlsc_line_strings_for_depot(depot_id)
+      candidates << nlsc if nlsc.any?
+      candidates
+    end
+
+    def self.linkable_line_strings_for_depot(
+      depot_id,
+      main_line_strings:,
+      facility_lon:,
+      facility_lat:,
+      junction_hint: nil
+    )
+      # Try OSM first (reliable yard throats), then NLSC.
+      [ osm_line_strings_for_depot(depot_id), nlsc_line_strings_for_depot(depot_id) ].each do |spur_line_strings|
+        next if spur_line_strings.empty?
+
+        link = TrackGeometry.depot_link_coordinates_for_point(
+          facility_lon,
+          facility_lat,
+          main_line_strings,
+          spur_line_strings: spur_line_strings,
+          junction_reference_lon: junction_hint&.dig(:lon),
+          junction_reference_lat: junction_hint&.dig(:lat)
+        )
+        return spur_line_strings if link
+      end
+
+      []
     end
 
     def self.apply_spur_line_bounds(depot_id, lines)

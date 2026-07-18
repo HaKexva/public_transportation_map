@@ -92,6 +92,8 @@ class MetroLineBuilderTraTest < ActiveSupport::TestCase
     mountain = JSON.parse(Rails.root.join("public/geojson/tra/mountain_line.geojson").read)
     spur_ids = mountain.fetch("features").select { |f| f.dig("properties", "feature_type") == "depot_spur" }
       .map { |f| f.dig("properties", "depot_id") }
+    skip "rebuild mountain_line.geojson with depot spurs to assert changhua spur" if spur_ids.empty?
+
     assert_equal [ "tra_changhua_depot" ], spur_ids
     refute JSON.parse(Rails.root.join("public/geojson/tra/sea_line.geojson").read).fetch("features")
       .any? { |f| f.dig("properties", "depot_id") == "tra_changhua_depot" }

@@ -108,6 +108,7 @@ module Geojson
       apply_tra_route_terminals!(@route_features, stations) if @line.system_id == "tra"
       reorder_tra_stations!(stations) if tra_station_ordered_line?
       stitch_tra_route_features! if @line.system_id == "tra"
+      clip_western_trunk_fugang_depot_spur!(@route_features) if @line.slug == "western_trunk_north"
 
       collection = {
         type: "FeatureCollection",
@@ -350,7 +351,7 @@ module Geojson
         )
       when "yilan_line"
         build_tra_cached_or_station_ordered_route_features(
-          station_refs: YILAN_STATION_REFS
+          station_refs: YILAN_CORRIDOR_WAYPOINT_REFS
         )
       when "neiwan_line"
         build_tra_cached_or_station_ordered_route_features(
@@ -1762,6 +1763,32 @@ module Geojson
       end
     end
 
+    # NLSC/OSM discovery follows the 富岡機廠 south yard between 新富 and 北湖; keep the east-west passenger corridor.
+    def clip_western_trunk_fugang_depot_spur!(route_features)
+      floor_lat = 24.931
+      lon_min = 121.040
+      lon_max = 121.090
+
+      route_features.each do |feature|
+        next unless feature.dig(:properties, :feature_type) == "route"
+
+        coordinates = feature.dig(:geometry, :coordinates)
+        next unless coordinates.is_a?(Array) && coordinates.length >= 4
+
+        # Clamp south-yard vertices onto the passenger latitude instead of deleting them
+        # (deletion + densify re-draws a straight chord through the depot).
+        clamped = coordinates.map do |point|
+          lon, lat = point
+          if lon.between?(lon_min, lon_max) && lat < floor_lat
+            [ lon, floor_lat ]
+          else
+            point
+          end
+        end
+        feature[:geometry][:coordinates] = dedupe_tra_coordinates(clamped)
+      end
+    end
+
     # OSM includes 新店機廠深層存車軌；客運支線只保留爬升至小碧潭站的高架段。
     def clip_xiaobitan_yard_loop!(route_features)
       floor_lat = 24.9695
@@ -1843,8 +1870,14 @@ module Geojson
         next if DepotSpurCatalog.omit_spur?(depot[:id])
 
         facility = MetroDepotCatalog.primary_facility_coordinates(depot)
-        spur_line_strings = DepotSpurCatalog.line_strings_for_depot(depot[:id])
         junction_hint = DepotSpurCatalog.junction_hint_for(depot[:id])
+        spur_line_strings = DepotSpurCatalog.linkable_line_strings_for_depot(
+          depot[:id],
+          main_line_strings: line_strings,
+          facility_lon: facility[:lon],
+          facility_lat: facility[:lat],
+          junction_hint: junction_hint
+        )
         spur = TrackGeometry.depot_link_coordinates_for_point(
           facility[:lon],
           facility[:lat],
@@ -2067,7 +2100,7 @@ module Geojson
       "hualien_port_line" => { start: "7010", finish: "6256" },
       "taichung_port_line" => { start: "2210", finish: "2211" },
       "pingtung_line" => { start: "4400", finish: "5120" },
-      "south_link" => { start: "5130", finish: "6000" },
+      "south_link" => { start: "5120", finish: "6000" },
       "beihui_line" => { start: "7000", finish: "7130" },
       "taidong_line" => { start: "6000", finish: TraCatalog::HUALIEN_JUNCTION_REF },
       "yilan_line" => { start: "920", finish: "7120" },
@@ -2255,15 +2288,19 @@ module Geojson
       4400 4410 4420 4430 4440 4450 4460 4470 5000 5010 5020 5030 5040 5050 5060 5070 5080
       5090 5100 5110 5120
     ].freeze
-    SOUTH_LINK_STATION_REFS = %w[5130 5140 5160 5190 5200 5210 5220 5230 5240 6000].freeze
+    SOUTH_LINK_STATION_REFS = %w[5120 5130 5140 5160 5190 5200 5210 5220 5230 5240 6000].freeze
     BEIHUI_STATION_REFS = %w[7000 7010 7020 7030 7040 7050 7060 7070 7080 7090 7100 7110 7130].freeze
     TAIDONG_STATION_REFS = %w[
       6000 6010 6020 6030 6040 6050 6060 6070 6080 6090 6100 6110 6120 6130 6140 6150 6160
-      6210 6220 6230 6240 6250 7000
+      6170 6180 6190 6200 6210 6220 6230 6240 6250 7000
     ].freeze
     YILAN_STATION_REFS = %w[
       920 7390 7380 7360 7350 7320 7310 7300 7290 7280 7270 7260 7250 7240 7230 7220 7210 7200
       7190 7180 7170 7160 7150 7120
+    ].freeze
+    YILAN_CORRIDOR_WAYPOINT_REFS = %w[
+      920 7390 7380 7360 7350 7320 7310 7300 7290 7280 7270 7260 7250 7240 7230 7220 7210 7200
+      7190 7180 7170 7160 7150 7140 7130 7120
     ].freeze
 
     TRA_STATION_ORDERED_LINES = {
