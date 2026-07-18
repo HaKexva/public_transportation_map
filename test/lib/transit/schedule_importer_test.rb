@@ -13,13 +13,13 @@ class FakeTdxClient
 
   def fetch_all(path, query: {}, page_size: 1_000)
     key = case path
-          when %r{v3/Rail/TRA/GeneralTrainTimetable} then :tra
-          when %r{v2/Rail/THSR/GeneralTimetable} then :thsr
-          when %r{v2/Rail/Metro/Frequency/} then :metro_frequency
-          when %r{v2/Rail/Metro/StationTimeTable/} then :metro_station_timetable
-          else
-            raise "unexpected path: #{path}"
-          end
+    when %r{v3/Rail/TRA/GeneralTrainTimetable} then :tra
+    when %r{v2/Rail/THSR/GeneralTimetable} then :thsr
+    when %r{v2/Rail/Metro/Frequency/} then :metro_frequency
+    when %r{v2/Rail/Metro/StationTimeTable/} then :metro_station_timetable
+    else
+      raise "unexpected path: #{path}"
+    end
 
     payload = @fixtures.fetch(key)
     Transit::ResponseDecoder.list(payload)
