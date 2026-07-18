@@ -1,0 +1,112 @@
+{
+  "type": "FeatureCollection",
+  "name": "其他橋頭糖鐵",
+  "properties": {
+    "source": "Track geometry from OpenStreetMap ways 41389875. © OpenStreetMap contributors, ODbL.",
+    "network": "其他",
+    "ref": "QS",
+    "osm_relations": [],
+    "osm_ways": [
+      41389875
+    ]
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "QS",
+        "name": "橋頭糖鐵",
+        "name_en": "Qiaotou Sugar Railway",
+        "color": "#B45309"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.3243611,
+            22.7430259
+          ],
+          [
+            120.3242856,
+            22.7430637
+          ],
+          [
+            120.3230475,
+            22.7442232
+          ],
+          [
+            120.3209157,
+            22.7462752
+          ],
+          [
+            120.3206702,
+            22.746519
+          ],
+          [
+            120.3184803,
+            22.74858
+          ],
+          [
+            120.3169465,
+            22.7499908
+          ],
+          [
+            120.3161634,
+            22.7508097
+          ],
+          [
+            120.3160897,
+            22.7508788
+          ],
+          [
+            120.3157163,
+            22.7512378
+          ],
+          [
+            120.3148114,
+            22.752797
+          ],
+          [
+            120.3146833,
+            22.7530305
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "QS01",
+        "name": "高雄花卉農園中心站",
+        "line": "橋頭糖鐵",
+        "color": "#B45309"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.3243611,
+          22.7430259
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "QS02",
+        "name": "捷運橋頭糖廠站",
+        "line": "橋頭糖鐵",
+        "color": "#B45309"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.3146833,
+          22.7530305
+        ]
+      }
+    }
+  ]
+}

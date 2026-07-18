@@ -28,13 +28,20 @@ module Geojson
     end
 
     def fetch_way_by_id(way_id)
+      OsmApiClient.way_elements(way_id).presence || overpass_way_elements(way_id)
+    end
+
+    def overpass_way_elements(way_id)
       query = <<~QL.squish
-        [out:json][timeout:90];
+        [out:json][timeout:30];
         way(#{way_id});
         out geom;
       QL
 
       post_overpass(query).fetch("elements", []).select { |element| element["type"] == "way" && element["geometry"] }
+    rescue StandardError => error
+      warn "Overpass way #{way_id} failed (#{error.message})"
+      []
     end
 
     def fetch_aerialway_stations_for_way(way_id, ref_prefix:, include_angle_stations: false)
@@ -48,7 +55,7 @@ module Geojson
       stations = []
       index = 1
 
-      post_overpass(query).fetch("elements", []).each do |element|
+      aerialway_station_elements(query, way_id).each do |element|
         next unless element["type"] == "node"
 
         tags = element["tags"] || {}
@@ -95,8 +102,12 @@ module Geojson
     end
 
     def fetch_way_elements
+      OsmApiClient.relation_way_elements(@relation_id).presence || overpass_relation_way_elements
+    end
+
+    def overpass_relation_way_elements
       query = <<~QL.squish
-        [out:json][timeout:180];
+        [out:json][timeout:60];
         relation(#{@relation_id});
         way(r);
         out geom;
@@ -104,6 +115,9 @@ module Geojson
 
       response = post_overpass(query)
       response.fetch("elements", []).select { |element| element["type"] == "way" && element["geometry"] }
+    rescue StandardError => error
+      warn "Overpass relation #{@relation_id} failed (#{error.message})"
+      []
     end
 
     def stitch_line_string(ways)
@@ -167,8 +181,17 @@ module Geojson
     end
 
     def fetch_stations_from_relation(allow_missing_ref: false, ref_prefix: nil)
+      api_elements = OsmApiClient.relation_node_elements(@relation_id)
+      if api_elements.any?
+        return parse_station_elements(
+          { "elements" => api_elements },
+          allow_missing_ref: allow_missing_ref,
+          ref_prefix: ref_prefix
+        )
+      end
+
       query = <<~QL.squish
-        [out:json][timeout:90];
+        [out:json][timeout:30];
         relation(#{@relation_id});
         node(r);
         out;
@@ -179,6 +202,9 @@ module Geojson
         allow_missing_ref: allow_missing_ref,
         ref_prefix: ref_prefix
       )
+    rescue StandardError => error
+      warn "Overpass relation #{@relation_id} stations failed (#{error.message})"
+      []
     end
 
     def fetch_named_stops_from_relation
@@ -249,6 +275,24 @@ module Geojson
     end
 
     private
+
+    def aerialway_station_elements(_query, way_id)
+      OsmApiClient.way_node_elements(way_id).values.presence || overpass_aerialway_station_elements(way_id)
+    end
+
+    def overpass_aerialway_station_elements(way_id)
+      query = <<~QL.squish
+        [out:json][timeout:30];
+        way(#{way_id});
+        node(w);
+        out;
+      QL
+
+      post_overpass(query).fetch("elements", [])
+    rescue StandardError => error
+      warn "Overpass aerialway stations for way #{way_id} failed (#{error.message})"
+      []
+    end
 
     def network_filter_clause(network)
       return "" if network.blank?

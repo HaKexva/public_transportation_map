@@ -120,6 +120,22 @@ class DashboardTest < ApplicationSystemTestCase
     assert names.index("忠孝復興") < names.index("南京復興")
   end
 
+  test "shows every station name label on the route map" do
+    visit route_path("wenhu_line")
+    assert_selector ".route-stop-item", minimum: 10, wait: 10
+    assert_selector ".leaflet-container", wait: 5
+
+    stop_names = page.all(".route-stop-item__name", minimum: 10, wait: 10).map(&:text)
+    assert_selector ".station-name-label", minimum: stop_names.length, wait: 15
+
+    label_names = page.evaluate_script(<<~JS)
+      Array.from(document.querySelectorAll(".station-name-label")).map((el) => el.textContent.trim())
+    JS
+
+    missing = stop_names - label_names
+    assert_empty missing, "missing map labels: #{missing.inspect}"
+  end
+
   test "orders zhonghe xinlu stops by line station number including transfer refs" do
     visit route_path("zhonghe_xinlu")
 
@@ -220,6 +236,38 @@ class DashboardTest < ApplicationSystemTestCase
     assert_selector "#layer-circular_lrt", visible: :all
     assert_selector "#layer-taiwan_hsr", visible: :all
     assert_button "重設視角"
+    assert_selector "#map-basemap-select"
+    assert_selector "#map-basemap-select option", text: "衛星"
+    assert_selector "#map-basemap-select option", text: "台灣圖資"
+  end
+
+  test "switches basemap from the dropdown without breaking the map" do
+    visit root_path
+    assert_selector ".leaflet-container", wait: 5
+    assert_selector "#map-basemap-select"
+
+    select "衛星", from: "map-basemap-select"
+    sat_state = page.evaluate_script(<<~JS)
+      (() => {
+        const select = document.getElementById("map-basemap-select")
+        const map = document.querySelector(".leaflet-container")
+        return {
+          value: select?.value,
+          satClass: map?.classList.contains("map-basemap--satellite"),
+          tileCount: document.querySelectorAll(".leaflet-tile-pane img.leaflet-tile").length
+        }
+      })()
+    JS
+    assert_equal "sat", sat_state["value"]
+    assert sat_state["satClass"]
+    assert sat_state["tileCount"].positive?
+
+    select "簡化地圖", from: "map-basemap-select"
+    assert_equal "carto", page.find("#map-basemap-select").value
+
+    select "台灣圖資", from: "map-basemap-select"
+    assert_selector ".leaflet-container"
+    assert_equal "nlsc", page.find("#map-basemap-select").value
   end
 
   test "uses map-first layout with layers sheet on narrow screens" do

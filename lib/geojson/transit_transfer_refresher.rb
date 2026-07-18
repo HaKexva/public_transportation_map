@@ -9,6 +9,7 @@ module Geojson
       "taichung_metro" => TaichungMetroCatalog::LINES,
       "kaohsiung_metro" => KaohsiungMetroCatalog::LINES,
       "hsr" => HsrCatalog::LINES,
+      "sugar_railway" => SugarRailwayCatalog::LINES,
       "other" => OtherTransitCatalog::LINES
     }.freeze
 

@@ -1,0 +1,140 @@
+{
+  "type": "FeatureCollection",
+  "name": "其他劍湖山世界纜車",
+  "properties": {
+    "source": "Track geometry from OpenStreetMap ways 1283663642. © OpenStreetMap contributors, ODbL.",
+    "network": "其他",
+    "ref": "JH",
+    "osm_relations": [],
+    "osm_ways": [
+      1283663642
+    ]
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "JH",
+        "name": "劍湖山世界纜車",
+        "name_en": "Janfusun Fancyworld Ropeway",
+        "color": "#0891B2"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.5765699,
+            23.6183971
+          ],
+          [
+            120.5765297,
+            23.6185728
+          ],
+          [
+            120.5765954,
+            23.6186687
+          ],
+          [
+            120.5766825,
+            23.6187154
+          ],
+          [
+            120.5768126,
+            23.6186625
+          ],
+          [
+            120.5772217,
+            23.6184413
+          ],
+          [
+            120.5774081,
+            23.6183049
+          ],
+          [
+            120.5774523,
+            23.6182583
+          ],
+          [
+            120.577447,
+            23.6181882
+          ],
+          [
+            120.5774,
+            23.6180727
+          ],
+          [
+            120.5773142,
+            23.6178712
+          ],
+          [
+            120.5772136,
+            23.617639
+          ],
+          [
+            120.5770916,
+            23.6175677
+          ],
+          [
+            120.5769977,
+            23.6176439
+          ],
+          [
+            120.5769253,
+            23.6178011
+          ],
+          [
+            120.576818,
+            23.6179511
+          ],
+          [
+            120.5767402,
+            23.6180334
+          ],
+          [
+            120.5766745,
+            23.6181821
+          ],
+          [
+            120.5765699,
+            23.6183971
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "JH01",
+        "name": "劍湖山世界",
+        "line": "劍湖山世界纜車",
+        "color": "#0891B2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.5765,
+          23.6205
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "JH02",
+        "name": "劍虎館",
+        "line": "劍湖山世界纜車",
+        "color": "#0891B2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.5788,
+          23.6165
+        ]
+      }
+    }
+  ]
+}
