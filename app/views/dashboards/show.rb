@@ -79,6 +79,7 @@ module Views
           { id: "metro", label: t("map.categories.metro") },
           { id: "tra", label: t("map.categories.tra") },
           { id: "hsr", label: t("map.categories.hsr") },
+          { id: "sugar_railway", label: t("map.categories.sugar_railway") },
           { id: "other", label: t("map.categories.other") }
         ]
       end
@@ -120,6 +121,16 @@ module Views
           color: "#64748B",
           badge: :secondary,
           description: t("map.layers.other.description")
+        }
+      end
+
+      def sugar_system
+        {
+          id: "sugar_railway",
+          label: t("map.layers.sugar_railway.label"),
+          color: "#B45309",
+          badge: :orange,
+          description: t("map.layers.sugar_railway.description")
         }
       end
 
@@ -196,7 +207,27 @@ module Views
               render_legend_section(t("map.legend_sections.special_routes"), legend_route_lines) { |item| render_legend_line_item(item) }
               render_legend_section(t("map.legend_sections.transfers"), legend_transfer_lines) { |item| render_legend_line_item(item) }
               render_legend_section(t("map.legend_sections.stations"), legend_markers) { |item| render_legend_marker_item(item) }
+              p(class: "text-xs text-muted-foreground") { t("map.basemap_legend") }
             end
+          end
+        end
+      end
+
+      def render_basemap_select
+        div(class: "map-basemap-select shrink-0") do
+          label(for: "map-basemap-select", class: "sr-only") { t("map.basemap_label") }
+          select(
+            id: "map-basemap-select",
+            class: "map-basemap-select__control h-8 rounded-lg border border-border bg-background px-2 text-xs text-foreground shadow-xs",
+            aria: { label: t("map.basemap_label") },
+            data: {
+              map_target: "basemapSelect",
+              action: "change->map#setBasemapStyle"
+            }
+          ) do
+            option(value: "nlsc", selected: true) { t("map.nlsc_basemap") }
+            option(value: "carto") { t("map.carto_basemap") }
+            option(value: "sat") { t("map.satellite_basemap") }
           end
         end
       end
@@ -362,24 +393,25 @@ module Views
 
       def render_header
         render RubyUI::CardHeader.new(class: "space-y-3 pb-3") do
-          div(class: "flex flex-wrap items-center justify-between gap-2") do
+          div(class: "flex items-center justify-between gap-2") do
             div(class: "map-ui-panel__title-block min-w-0") do
               div(class: "flex items-center gap-2") do
                 render_map_icon
                 render RubyUI::CardTitle.new(class: "text-lg leading-tight") { t("map.title") }
               end
             end
-            div(class: "map-sidebar-actions flex shrink-0 flex-wrap items-center justify-end gap-2") do
-              render RubyUI::Button.new(
-                variant: :outline,
-                size: :sm,
-                type: :button,
-                data: { action: "click->map#resetViewport" }
-              ) { t("map.reset_viewport") }
-              render_legend_open_button(class_name: "", id: "map-legend-trigger")
-              render_theme_toggle
-              render_locale_toggle
-            end
+            render_locale_toggle
+          end
+          div(class: "map-sidebar-actions flex flex-wrap items-center justify-end gap-2") do
+            render RubyUI::Button.new(
+              variant: :outline,
+              size: :sm,
+              type: :button,
+              data: { action: "click->map#resetViewport" }
+            ) { t("map.reset_viewport") }
+            render_legend_open_button(class_name: "", id: "map-legend-trigger")
+            render_basemap_select
+            render_theme_toggle
           end
         end
       end
@@ -436,6 +468,7 @@ module Views
         when "metro" then active_metro_systems.any?
         when "tra" then tra_routes.any?
         when "hsr" then hsr_routes.any?
+        when "sugar_railway" then sugar_routes.any?
         when "other" then other_routes.any?
         else false
         end
@@ -446,6 +479,7 @@ module Views
         groups << { kind: :metro, category: "metro", system: metro_layer, metro_systems: active_metro_systems } if active_metro_systems.any?
         groups << { kind: :routes, category: "tra", system: tra_system, routes: tra_routes } if tra_routes.any?
         groups << { kind: :routes, category: "hsr", system: hsr_system, routes: hsr_routes } if hsr_routes.any?
+        groups << { kind: :routes, category: "sugar_railway", system: sugar_system, routes: sugar_routes } if sugar_routes.any?
         groups << { kind: :routes, category: "other", system: other_system, routes: other_routes } if other_routes.any?
         groups
       end
@@ -638,6 +672,7 @@ module Views
         case system[:id]
         when "tra" then "tra"
         when "hsr" then "hsr"
+        when "sugar_railway" then "sugar_railway"
         when "other" then "other"
         else "metro"
         end
@@ -692,6 +727,10 @@ module Views
 
       def other_routes
         @routes_manifest.fetch("other", [])
+      end
+
+      def sugar_routes
+        @routes_manifest.fetch("sugar_railway", [])
       end
 
       def layer_checkbox_classes
@@ -819,28 +858,25 @@ module Views
       end
 
       def render_theme_toggle
-        render RubyUI::ThemeToggle.new(
-          class: "inline-flex shrink-0 items-center rounded-lg border border-border bg-muted/50 p-0.5",
-          data: { controller: "ruby-ui--theme-toggle" }
+        button(
+          type: "button",
+          class: "theme-toggle inline-flex shrink-0 items-center rounded-lg border border-border bg-muted/50 p-0.5",
+          aria: { label: t("map.theme_toggle") },
+          data: {
+            controller: "ruby-ui--theme-toggle",
+            action: "click->ruby-ui--theme-toggle#toggle"
+          }
         ) do
-          button(
-            type: "button",
+          span(
             class: "theme-toggle-button",
-            aria: { label: t("map.light_mode") },
-            data: {
-              ruby_ui__theme_toggle_target: "lightButton",
-              action: "click->ruby-ui--theme-toggle#setLightTheme"
-            }
+            aria: { hidden: true },
+            data: { ruby_ui__theme_toggle_target: "lightButton" }
           ) { render_sun_icon }
 
-          button(
-            type: "button",
-            class: "theme-toggle-button",
-            aria: { label: t("map.dark_mode") },
-            data: {
-              ruby_ui__theme_toggle_target: "darkButton",
-              action: "click->ruby-ui--theme-toggle#setDarkTheme"
-            }
+          span(
+            class: "theme-toggle-button hidden",
+            aria: { hidden: true },
+            data: { ruby_ui__theme_toggle_target: "darkButton" }
           ) { render_moon_icon }
         end
       end

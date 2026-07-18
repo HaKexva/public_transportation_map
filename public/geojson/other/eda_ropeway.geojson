@@ -1,0 +1,96 @@
+{
+  "type": "FeatureCollection",
+  "name": "其他義大纜車",
+  "properties": {
+    "source": "Track geometry from OpenStreetMap ways 969817468. © OpenStreetMap contributors, ODbL.",
+    "network": "其他",
+    "ref": "ED",
+    "osm_relations": [],
+    "osm_ways": [
+      969817468
+    ]
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "ED",
+        "name": "義大纜車",
+        "name_en": "E-Da Ropeway",
+        "color": "#0891B2"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.410272,
+            22.7313604
+          ],
+          [
+            120.409453,
+            22.730921
+          ],
+          [
+            120.4093561,
+            22.7308726
+          ],
+          [
+            120.4091711,
+            22.730829
+          ],
+          [
+            120.4090981,
+            22.7308252
+          ],
+          [
+            120.4086889,
+            22.7308516
+          ],
+          [
+            120.4084781,
+            22.7308618
+          ],
+          [
+            120.4082266,
+            22.730801
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "ED01",
+        "name": "義大調酒館",
+        "line": "義大纜車",
+        "color": "#0891B2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.4075,
+          22.7325
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "ED02",
+        "name": "義大皇家酒店",
+        "line": "義大纜車",
+        "color": "#0891B2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.4105,
+          22.7295
+        ]
+      }
+    }
+  ]
+}

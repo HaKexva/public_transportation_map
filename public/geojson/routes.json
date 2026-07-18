@@ -1501,7 +1501,115 @@
         "台中港",
         "2210",
         "一號碼頭",
-        "2218"
+        "2211"
+      ]
+    }
+  ],
+  "sugar_railway": [
+    {
+      "id": "qiaotou_sugar_railway",
+      "file": "/geojson/sugar_railway/qiaotou_sugar_railway.geojson",
+      "name": "橋頭糖鐵",
+      "name_en": "Qiaotou Sugar Railway",
+      "ref": "QS",
+      "color": "#B45309",
+      "station_names": [
+        "高雄花卉農園中心站",
+        "QS01",
+        "捷運橋頭糖廠站",
+        "QS02"
+      ]
+    },
+    {
+      "id": "huwei_sugar_railway",
+      "file": "/geojson/sugar_railway/huwei_sugar_railway.geojson",
+      "name": "虎尾糖廠鐵路",
+      "name_en": "Huwei Sugar Railway",
+      "ref": "HW",
+      "color": "#B45309",
+      "station_names": [
+        "虎尾糖廠",
+        "HW01",
+        "後壁寮旗",
+        "HW02",
+        "北溪厝",
+        "HW03",
+        "改良場",
+        "HW04",
+        "9番裝車場",
+        "HW05",
+        "畜殖場",
+        "HW06",
+        "10番裝車場",
+        "HW07",
+        "11番裝車場",
+        "HW08",
+        "12番裝車場",
+        "HW09",
+        "13番裝車場",
+        "HW10"
+      ]
+    },
+    {
+      "id": "suantou_sugar_railway",
+      "file": "/geojson/sugar_railway/suantou_sugar_railway.geojson",
+      "name": "蒜頭蔗埕文化園區五分車",
+      "name_en": "Suantou Sugar Railway",
+      "ref": "STS",
+      "color": "#B45309",
+      "station_names": [
+        "蒜頭站",
+        "STS01",
+        "故宮南院站",
+        "STS02",
+        "五分車高鐵站",
+        "STS03"
+      ]
+    },
+    {
+      "id": "wushulin_sugar_railway",
+      "file": "/geojson/sugar_railway/wushulin_sugar_railway.geojson",
+      "name": "烏樹林糖廠五分車",
+      "name_en": "Wushulin Sugar Railway",
+      "ref": "WS",
+      "color": "#B45309",
+      "station_names": [
+        "內埕",
+        "WS01",
+        "烏樹林",
+        "WS02",
+        "新頂埤",
+        "WS03"
+      ]
+    },
+    {
+      "id": "guangfu_sugar_railway",
+      "file": "/geojson/sugar_railway/guangfu_sugar_railway.geojson",
+      "name": "花蓮觀光糖廠五分車",
+      "name_en": "Hualien Sugar Factory Railway",
+      "ref": "GF",
+      "color": "#B45309",
+      "station_names": [
+        "漪漣園",
+        "GF01",
+        "花糖文物館",
+        "GF02"
+      ]
+    },
+    {
+      "id": "xihu_sugar_tourist_railway",
+      "file": "/geojson/sugar_railway/xihu_sugar_tourist_railway.geojson",
+      "name": "溪湖糖廠蒸汽觀光五分車",
+      "name_en": "Xihu Sugar Factory Tourist Railway",
+      "ref": "XT",
+      "color": "#B45309",
+      "station_names": [
+        "溪湖",
+        "XT01",
+        "草埔",
+        "XT02",
+        "濁水",
+        "XT03"
       ]
     }
   ],
@@ -1512,7 +1620,7 @@
       "name": "貓空纜車",
       "name_en": "Maokong Gondola",
       "ref": "MG",
-      "color": "#00AFE2",
+      "color": "#0891B2",
       "station_names": [
         "動物園",
         "G1;BR01",
@@ -1548,12 +1656,134 @@
       "name": "九族文化村－日月潭纜車",
       "name_en": "Sun Moon Lake Ropeway",
       "ref": "SM",
-      "color": "#059669",
+      "color": "#0891B2",
       "station_names": [
         "日月潭端車站",
         "SM01",
         "九族端車站",
         "SM02"
+      ]
+    },
+    {
+      "id": "wulai_trolley",
+      "file": "/geojson/other/wulai_trolley.geojson",
+      "name": "烏來台車",
+      "name_en": "Wulai Trolley",
+      "ref": "WL",
+      "color": "#0F766E",
+      "station_names": [
+        "烏來",
+        "WL01",
+        "瀑布",
+        "WL02"
+      ]
+    },
+    {
+      "id": "alishan_forest_railway",
+      "file": "/geojson/other/alishan_forest_railway.geojson",
+      "name": "阿里山林業鐵路",
+      "name_en": "Alishan Forest Railway",
+      "ref": "AF",
+      "color": "#166534",
+      "station_names": [
+        "嘉義",
+        "AF01",
+        "北門",
+        "AF02",
+        "竹崎",
+        "AF03",
+        "樟腦寮",
+        "AF04",
+        "獨立山",
+        "AF05",
+        "梨園寮",
+        "AF06",
+        "交力坪",
+        "AF07",
+        "水社寮",
+        "AF08",
+        "奮起湖",
+        "AF09",
+        "十字路",
+        "AF10",
+        "阿里山",
+        "AF11",
+        "神木",
+        "AF12",
+        "沼平",
+        "AF13",
+        "對高岳",
+        "AF14",
+        "祝山",
+        "AF15"
+      ]
+    },
+    {
+      "id": "taipingshan_forest_railway",
+      "file": "/geojson/other/taipingshan_forest_railway.geojson",
+      "name": "太平山森林鐵路（蹦蹦車）",
+      "name_en": "Taipingshan Forest Railway",
+      "ref": "TP",
+      "color": "#166534",
+      "station_names": [
+        "太平山",
+        "TP01",
+        "茂興",
+        "TP02"
+      ]
+    },
+    {
+      "id": "shengxing_old_mountain_line",
+      "file": "/geojson/other/shengxing_old_mountain_line.geojson",
+      "name": "苗栗舊山線鐵道自行車（勝興段）",
+      "name_en": "Shengxing Old Mountain Line Rail Bike",
+      "ref": "OM",
+      "color": "#7C2D12",
+      "station_names": [
+        "魚藤坪",
+        "OM01"
+      ]
+    },
+    {
+      "id": "shenao_rail_bike",
+      "file": "/geojson/other/shenao_rail_bike.geojson",
+      "name": "深澳鐵道自行車",
+      "name_en": "Shen'ao Rail Bike",
+      "ref": "RB",
+      "color": "#7C2D12",
+      "station_names": [
+        "八斗子",
+        "RB01",
+        "深澳",
+        "RB02"
+      ]
+    },
+    {
+      "id": "jianhushan_ropeway",
+      "file": "/geojson/other/jianhushan_ropeway.geojson",
+      "name": "劍湖山世界纜車",
+      "name_en": "Janfusun Fancyworld Ropeway",
+      "ref": "JH",
+      "color": "#0891B2",
+      "station_names": [
+        "劍湖山世界",
+        "JH01",
+        "劍虎館",
+        "JH02"
+      ]
+    },
+    {
+      "id": "eda_ropeway",
+      "file": "/geojson/other/eda_ropeway.geojson",
+      "name": "義大纜車",
+      "name_en": "E-Da Ropeway",
+      "ref": "ED",
+      "color": "#0891B2",
+      "station_names": [
+        "義大調酒館",
+        "ED01",
+        "義大皇家酒店",
+        "ED02"
       ]
     }
   ]

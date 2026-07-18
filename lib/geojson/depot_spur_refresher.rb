@@ -31,6 +31,8 @@ module Geojson
 
       line_strings = TrackGeometry.route_line_strings_from_geojson(path)
       MetroDepotCatalog.depots_for_route(route_id).each do |depot|
+        next if DepotSpurCatalog.omit_spur?(depot[:id])
+
         facility = MetroDepotCatalog.primary_facility_coordinates(depot)
         spur_line_strings = DepotSpurCatalog.line_strings_for_depot(depot[:id])
         junction_hint = DepotSpurCatalog.junction_hint_for(depot[:id])
@@ -77,6 +79,7 @@ module Geojson
         KaohsiungMetroCatalog::LINES,
         HsrCatalog::LINES,
         TraCatalog::LINES,
+        SugarRailwayCatalog::LINES,
         OtherTransitCatalog::LINES
       ]
 

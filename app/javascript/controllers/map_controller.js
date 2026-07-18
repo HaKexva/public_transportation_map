@@ -31,13 +31,27 @@ const TRANSFER_LINE_COLOR_WALK = "#737373"
 const TRANSFER_LINE_WEIGHT_PASSAGE = 5
 const TRANSFER_LINE_WEIGHT_FARE_DISCOUNT = 4
 const TRANSFER_LINE_WEIGHT_WALK = 3
-const PARALLEL_TRACK_HALF_OFFSET_PX = 6
+const PARALLEL_TRACK_HALF_OFFSET_M = 25
 const PARALLEL_TRACK_ROUTE_IDS = new Set([
   "airport_mrt",
   "airport_mrt_express",
   "danhai_lrt",
   "taoyuan_airport_skytrain"
 ])
+const PARALLEL_TRACK_MIN_ZOOM = 13
+const LAYER_LOAD_CONCURRENCY = 6
+const STATION_LABEL_MIN_ZOOM = 14
+const STATION_LABEL_PRIORITY_ZOOM = 12
+const CARTO_LIGHT_BASEMAP_URL = "https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png"
+const CARTO_DARK_BASEMAP_URL = "https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png"
+const ESRI_SAT_BASEMAP_URL = "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
+const NLSC_BASEMAP_URL = "https://wmts.nlsc.gov.tw/wmts/EMAP/default/GoogleMapsCompatible/{z}/{y}/{x}"
+const CARTO_BASEMAP_ATTRIBUTION = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>'
+const ESRI_SAT_BASEMAP_ATTRIBUTION = "Tiles &copy; Esri &mdash; Source: Esri, Maxar, Earthstar Geographics"
+const NLSC_BASEMAP_ATTRIBUTION = '&copy; <a href="https://maps.nlsc.gov.tw/" target="_blank" rel="noopener">內政部國土測繪中心</a>'
+const BASEMAP_MODE_STORAGE_KEY = "map-basemap-style"
+const LEGACY_BASEMAP_MODE_STORAGE_KEY = "map-basemap"
+const LEGACY_NLSC_ENABLED_STORAGE_KEY = "map-nlsc-enabled"
 const SKYTRAIN_NORTH_STATION_ORDER = [ "ST1N", "ST2N" ]
 const SKYTRAIN_SOUTH_STATION_ORDER = [ "ST1S", "ST2S" ]
 const TRA_BRANCH_ROUTE_IDS = new Set([
@@ -140,7 +154,8 @@ export default class extends Controller {
     "routeStopsTitle",
     "routeStopsMeta",
     "routeStopsList",
-    "routeStopsEmpty"
+    "routeStopsEmpty",
+    "basemapSelect"
   ]
 
   connect() {
@@ -167,9 +182,11 @@ export default class extends Controller {
     this.stationCoordinatesByKey = {}
     this.selectedRouteId = null
     this.stationCoordsByRouteRef = {}
+    this.stationLabelEntries = []
     this.mapReady = false
     this.themeObserver = null
     this.activeCategory = null
+    this.basemapStyle = this.readBasemapStyle()
     this.setLayerControlsDisabled(true)
     this.syncMobileSidebarAria(false)
     this.waitForLeaflet(0)
@@ -184,6 +201,11 @@ export default class extends Controller {
     if (this.map && this.refreshParallelTracksOnZoom) {
       this.map.off("zoomend", this.refreshParallelTracksOnZoom)
     }
+    if (this.map && this.refreshStationLabelsOnView) {
+      this.map.off("zoomend", this.refreshStationLabelsOnView)
+      this.map.off("moveend", this.refreshStationLabelsOnView)
+    }
+    if (this.onThemeChanged) window.removeEventListener("theme:changed", this.onThemeChanged)
     this.element?.classList.remove("map-split-layout--layers-open")
     document.body.classList.remove("overflow-hidden")
     this.themeObserver?.disconnect()
@@ -191,6 +213,7 @@ export default class extends Controller {
     this.map?.remove()
     this.map = null
     this.mapReady = false
+    this.tileLayer = null
     this.layerGroups = {}
     this.layerVisible = {}
     this.layerLoadGeneration = {}
@@ -205,6 +228,8 @@ export default class extends Controller {
     this.transferKindByEndpointKey = new Map()
     this.metroDepots = []
     this.stationCoordinatesByKey = {}
+    this.stationLabelEntries = []
+    this.stationLabelGroup = null
   }
 
   t(key, vars = {}) {
@@ -272,16 +297,29 @@ export default class extends Controller {
       zoomControl: true,
       scrollWheelZoom: true,
       dragging: true,
-      touchZoom: true
+      touchZoom: true,
+      zoomAnimation: true,
+      markerZoomAnimation: true,
+      fadeAnimation: true,
+      // Integer zoom levels feel more predictable than continuous fractional zoom.
+      zoomSnap: 1,
+      zoomDelta: 1,
+      wheelPxPerZoomLevel: 80,
+      wheelDebounceTime: 40
     })
 
-    this.tileLayer = L.tileLayer(this.basemapUrl(), {
-      subdomains: "abcd",
-      maxZoom: 20,
-      attribution: "&copy; OpenStreetMap &copy; CARTO"
+    this.tileLayer = L.tileLayer(this.primaryBasemapUrl(), {
+      ...this.primaryBasemapOptions(),
+      updateWhenZooming: true,
+      keepBuffer: 2
     }).addTo(this.map)
+    this.syncPrimaryBasemapClass()
 
     this.watchThemeChanges()
+    this.syncBasemapSelect()
+
+    this.onThemeChanged = () => this.applyThemeBasemap()
+    window.addEventListener("theme:changed", this.onThemeChanged)
 
     await Promise.all([
       this.loadRoutesManifest(),
@@ -306,19 +344,27 @@ export default class extends Controller {
     stationPane.style.zIndex = 650
     this.stationMarkerPane = "stationMarkers"
 
+    const stationLabelPane = this.map.createPane("stationLabels")
+    stationLabelPane.style.zIndex = 660
+    this.stationLabelPane = "stationLabels"
+
     this.outOfStationTransferGroup = L.featureGroup().addTo(this.map)
     this.crossSystemInStationTransferGroup = L.featureGroup().addTo(this.map)
     this.inStationTransferGroup = L.featureGroup().addTo(this.map)
     this.metroDepotGroup = L.featureGroup().addTo(this.map)
+    this.stationLabelGroup = L.layerGroup().addTo(this.map)
 
-    this.allLayerIds().forEach((layerId) => {
-      this.layerGroups[layerId] = L.featureGroup()
-      this.layerVisible[layerId] = false
-      this.layerLoadGeneration[layerId] = 0
-    })
+    this.ensureAllLayerGroups()
 
     this.map.fitBounds(LEAFLET_BOUNDS)
     this.map.zoomControl.setPosition("topright")
+    this.parallelTracksActive = (this.map.getZoom() ?? 12) >= PARALLEL_TRACK_MIN_ZOOM
+
+    this.refreshParallelTracksOnZoom = () => this.scheduleParallelTracksRefresh()
+    this.refreshStationLabelsOnView = () => this.refreshStationLabels()
+    this.map.on("zoomend", this.refreshParallelTracksOnZoom)
+    this.map.on("zoomend", this.refreshStationLabelsOnView)
+    this.map.on("moveend", this.refreshStationLabelsOnView)
 
     this.resizeHandler = () => this.invalidateMapSize()
     requestAnimationFrame(this.resizeHandler)
@@ -344,6 +390,7 @@ export default class extends Controller {
 
     this.selectedRouteId = routeId
     this.syncRouteSelectionUI()
+    this.applyRouteEmphasis()
 
     const checkbox = this.checkboxForLayer(routeId)
     if (!this.layerVisible[routeId]) {
@@ -353,10 +400,29 @@ export default class extends Controller {
     }
 
     await this.displayRouteStops(routeId)
+    this.refreshStationLabels()
   }
 
   allLayerIds() {
     return [ ...BASE_LAYERS, ...this.routeLayerIds() ]
+  }
+
+  ensureAllLayerGroups() {
+    const L = window.L
+    if (!L) return
+
+    this.allLayerIds().forEach((layerId) => {
+      if (this.layerGroups[layerId]) return
+
+      this.layerGroups[layerId] = L.featureGroup()
+      this.layerVisible[layerId] = false
+      this.layerLoadGeneration[layerId] = 0
+    })
+  }
+
+  ensureLayerGroup(layerId) {
+    this.ensureAllLayerGroups()
+    return this.layerGroups[layerId]
   }
 
   routeLayerIds() {
@@ -386,7 +452,7 @@ export default class extends Controller {
 
   async loadOutOfStationTransfers() {
     try {
-      const response = await fetch("/geojson/out_of_station_transfers.json", { cache: "no-store" })
+      const response = await fetch("/geojson/out_of_station_transfers.json", { cache: "force-cache" })
       if (!response.ok) throw new Error("out-of-station transfers missing")
 
       this.outOfStationTransfers = await response.json()
@@ -450,7 +516,7 @@ export default class extends Controller {
 
   async loadMetroDepots() {
     try {
-      const response = await fetch("/geojson/metro_depots.json", { cache: "no-store" })
+      const response = await fetch("/geojson/metro_depots.json", { cache: "force-cache" })
       if (!response.ok) throw new Error("metro depots missing")
 
       this.metroDepots = await response.json()
@@ -462,7 +528,7 @@ export default class extends Controller {
 
   async loadRoutesManifest() {
     try {
-      const response = await fetch("/geojson/routes.json")
+      const response = await fetch("/geojson/routes.json", { cache: "no-cache" })
       if (!response.ok) throw new Error("routes manifest missing")
       this.routesManifest = await response.json()
       const { colorsByPrefix, routesByLineRef } = this.buildLineColorMap()
@@ -1346,22 +1412,128 @@ export default class extends Controller {
     this.map.setView(latlng, Math.max(this.map.getZoom(), 14))
   }
 
-  basemapUrl() {
-    const dark = document.documentElement.classList.contains("dark")
+  fastBasemapUrl() {
+    return this.cartoBasemapUrl()
+  }
 
-    return dark
-      ? "https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png"
-      : "https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png"
+  cartoBasemapUrl() {
+    const dark = document.documentElement.classList.contains("dark")
+    return dark ? CARTO_DARK_BASEMAP_URL : CARTO_LIGHT_BASEMAP_URL
+  }
+
+  readBasemapStyle() {
+    try {
+      const stored = window.localStorage?.getItem(BASEMAP_MODE_STORAGE_KEY)
+      if (stored === "sat" || stored === "carto" || stored === "nlsc") return stored
+
+      const legacyMode = window.localStorage?.getItem(LEGACY_BASEMAP_MODE_STORAGE_KEY)
+      if (legacyMode === "sat") return "sat"
+
+      const legacyNlsc = window.localStorage?.getItem(LEGACY_NLSC_ENABLED_STORAGE_KEY)
+      if (legacyNlsc === "0") return "carto"
+
+      return "nlsc"
+    } catch (_error) {
+      return "nlsc"
+    }
+  }
+
+  usesNlscPrimary() {
+    return this.basemapStyle === "nlsc"
+  }
+
+  primaryBasemapUrl() {
+    if (this.basemapStyle === "sat") return ESRI_SAT_BASEMAP_URL
+    if (this.basemapStyle === "nlsc") return NLSC_BASEMAP_URL
+    return this.cartoBasemapUrl()
+  }
+
+  primaryBasemapOptions() {
+    if (this.basemapStyle === "sat") {
+      return {
+        maxZoom: 19,
+        attribution: ESRI_SAT_BASEMAP_ATTRIBUTION
+      }
+    }
+
+    if (this.basemapStyle === "nlsc") {
+      return {
+        maxZoom: 19,
+        maxNativeZoom: 19,
+        attribution: NLSC_BASEMAP_ATTRIBUTION
+      }
+    }
+
+    return {
+      subdomains: "abcd",
+      maxZoom: 20,
+      attribution: CARTO_BASEMAP_ATTRIBUTION
+    }
+  }
+
+  syncPrimaryBasemap() {
+    if (!this.tileLayer) return
+
+    const options = this.primaryBasemapOptions()
+    this.tileLayer.setUrl(this.primaryBasemapUrl())
+    if (options.attribution) this.tileLayer.options.attribution = options.attribution
+    if (options.maxZoom) this.tileLayer.options.maxZoom = options.maxZoom
+    if (options.maxNativeZoom) {
+      this.tileLayer.options.maxNativeZoom = options.maxNativeZoom
+    } else {
+      delete this.tileLayer.options.maxNativeZoom
+    }
+    if (options.subdomains) {
+      this.tileLayer.options.subdomains = options.subdomains
+    } else {
+      delete this.tileLayer.options.subdomains
+    }
+    this.syncPrimaryBasemapClass()
+  }
+
+  syncPrimaryBasemapClass() {
+    const container = this.tileLayer?.getContainer?.()
+    if (!container) return
+
+    const dark = document.documentElement.classList.contains("dark")
+    container.classList.toggle("nlsc-basemap-tiles", this.usesNlscPrimary())
+    container.classList.toggle("nlsc-basemap-tiles--dark", this.usesNlscPrimary() && dark)
+  }
+
+  syncBasemapSelect() {
+    if (!this.hasBasemapSelectTarget) return
+
+    this.basemapSelectTarget.value = this.basemapStyle
+  }
+
+  setBasemapStyle(event) {
+    const style = event?.target?.value
+    if (!style || style === this.basemapStyle) return
+    if (style !== "nlsc" && style !== "carto" && style !== "sat") return
+
+    this.basemapStyle = style
+
+    try {
+      window.localStorage?.setItem(BASEMAP_MODE_STORAGE_KEY, this.basemapStyle)
+    } catch (_error) {
+      // ignore storage failures
+    }
+
+    this.syncPrimaryBasemap()
+    this.syncBasemapSelect()
+    this.applyRouteEmphasis()
+    this.map?.getContainer()?.classList.toggle("map-basemap--satellite", this.basemapStyle === "sat")
   }
 
   applyThemeBasemap() {
-    if (!this.tileLayer) return
-
-    this.tileLayer.setUrl(this.basemapUrl())
+    if (this.basemapStyle === "carto") this.syncPrimaryBasemap()
+    this.syncPrimaryBasemapClass()
+    this.applyRouteEmphasis()
   }
 
   watchThemeChanges() {
     this.applyThemeBasemap()
+    this.map?.getContainer()?.classList.toggle("map-basemap--satellite", this.basemapStyle === "sat")
 
     this.themeObserver = new MutationObserver(() => this.applyThemeBasemap())
     this.themeObserver.observe(document.documentElement, {
@@ -1421,9 +1593,9 @@ export default class extends Controller {
 
     try {
       if (visible) {
-        for (const routeId of routeIds) {
-          await this.showLayer(routeId, { fitBounds: false })
-        }
+        await this.mapPool(routeIds, LAYER_LOAD_CONCURRENCY, async (routeId) => {
+          await this.showLayer(routeId, { fitBounds: false, manageControl: false })
+        })
 
         afterSync?.()
 
@@ -1443,6 +1615,19 @@ export default class extends Controller {
     } finally {
       this.setLayerControlsDisabled(false)
     }
+  }
+
+  async mapPool(items, concurrency, worker) {
+    const queue = items.slice()
+    const runners = Array.from({ length: Math.min(concurrency, Math.max(queue.length, 1)) }, async () => {
+      while (queue.length > 0) {
+        const item = queue.shift()
+        if (item === undefined) return
+        await worker(item)
+      }
+    })
+
+    await Promise.all(runners)
   }
 
   setLayerControlsDisabled(disabled) {
@@ -1491,7 +1676,7 @@ export default class extends Controller {
   }
 
   transitSystemIds() {
-    return [ "tra", "hsr", "other" ]
+    return [ "tra", "hsr", "sugar_railway", "other" ]
   }
 
   isTraRoute(routeId) {
@@ -2411,9 +2596,11 @@ export default class extends Controller {
     this.updateOutOfStationTransfers()
   }
 
-  async showLayer(layerId, { checkbox = null, fitBounds = true } = {}) {
+  async showLayer(layerId, { checkbox = null, fitBounds = true, manageControl = true } = {}) {
     const control = checkbox || this.checkboxForLayer(layerId)
     if (!this.mapReady || !this.map) return
+
+    this.ensureLayerGroup(layerId)
 
     const group = this.layerGroups[layerId]
     if (this.layerVisible[layerId] && group?.getLayers().length > 0) {
@@ -2421,6 +2608,8 @@ export default class extends Controller {
       if (!this.map.hasLayer(group)) group.addTo(this.map)
       if (fitBounds) this.fitLayerBounds(layerId)
       this.updateOutOfStationTransfers()
+      this.applyRouteEmphasis()
+      this.refreshStationLabels()
       return
     }
 
@@ -2428,7 +2617,7 @@ export default class extends Controller {
     this.layerVisible[layerId] = true
     if (control) {
       control.checked = true
-      control.disabled = true
+      if (manageControl) control.disabled = true
     }
 
     try {
@@ -2448,12 +2637,14 @@ export default class extends Controller {
       loadedGroup.addTo(this.map)
       if (fitBounds) this.fitLayerBounds(layerId)
       this.updateOutOfStationTransfers()
+      this.applyRouteEmphasis()
+      this.refreshStationLabels()
     } catch (error) {
       console.error("Failed to load layer", layerId, error)
       this.hideLayer(layerId)
       if (control) this.resetLayerCheckbox(control, layerId)
     } finally {
-      if (control && this.mapReady) control.disabled = false
+      if (manageControl && control && this.mapReady) control.disabled = false
     }
   }
 
@@ -2490,7 +2681,10 @@ export default class extends Controller {
       if (route?.id) delete this.routeTracksByRouteId[route.id]
     })
 
+    this.clearStationLabelsForLayer(layerId)
     this.updateOutOfStationTransfers()
+    this.applyRouteEmphasis()
+    this.refreshStationLabels()
   }
 
   async loadLayer(layerId, generation, { skipTraRefresh = false } = {}) {
@@ -2503,16 +2697,9 @@ export default class extends Controller {
     const routes = metroRoutes.length > 0 ? metroRoutes : (this.routesManifest[layerId] || [])
     if (routes.length === 0) return
 
-    const results = []
-
-    for (const route of routes) {
-      try {
-        await this.addRouteToGroup(route, layerId, generation)
-        results.push({ status: "fulfilled" })
-      } catch (reason) {
-        results.push({ status: "rejected", reason })
-      }
-    }
+    const results = await Promise.allSettled(
+      routes.map((route) => this.addRouteToGroup(route, layerId, generation))
+    )
 
     if (!this.isLayerGenerationCurrent(layerId, generation)) return
 
@@ -2565,6 +2752,7 @@ export default class extends Controller {
           if (lineStyle.color && typeof layer.setStyle === "function") layer.setStyle(lineStyle)
         }
 
+        this.registerStationLabel(feature, layer, route)
         this.bindFeaturePopup(feature, layer, route.id)
       }
     })
@@ -2893,14 +3081,18 @@ export default class extends Controller {
     const isExpress = feature.properties?.feature_type === "express_route" ||
       feature.properties?.service_type === "express" ||
       route?.id === "airport_mrt_express"
+    const emphasisId = this.emphasizedRouteId()
+    const dimmed = Boolean(emphasisId && route?.id && route.id !== emphasisId)
+    const haloBoost = this.routeStrokeBoost()
+    const dimFactor = dimmed ? 0.28 : 1
 
     if (isExpress) {
       return {
         pane: this.expressRoutePane,
-        className: "airport-mrt-express-line",
+        className: `airport-mrt-express-line${haloBoost ? " route-line--halo" : ""}${dimmed ? " route-line--dimmed" : ""}`,
         color: EXPRESS_LINE_COLOR,
-        weight: 6,
-        opacity: 1,
+        weight: 6 + haloBoost,
+        opacity: 1 * dimFactor,
         lineCap: "round",
         lineJoin: "round"
       }
@@ -2909,10 +3101,10 @@ export default class extends Controller {
     if (route?.id === "airport_mrt") {
       return {
         pane: this.commuterRoutePane,
-        className: "airport-mrt-commuter-line",
+        className: `airport-mrt-commuter-line${haloBoost ? " route-line--halo" : ""}${dimmed ? " route-line--dimmed" : ""}`,
         color: AIRPORT_MRT_COMMUTER_COLOR,
-        weight: 6,
-        opacity: 0.95,
+        weight: 6 + haloBoost,
+        opacity: 0.95 * dimFactor,
         lineCap: "round",
         lineJoin: "round"
       }
@@ -2920,9 +3112,10 @@ export default class extends Controller {
 
     if (route?.id === "danhai_lrt") {
       return {
+        className: `${haloBoost ? "route-line--halo" : ""}${dimmed ? " route-line--dimmed" : ""}`.trim(),
         color: DANHAI_LRT_COLOR,
-        weight: 6,
-        opacity: 0.95,
+        weight: 6 + haloBoost,
+        opacity: 0.95 * dimFactor,
         lineCap: "round",
         lineJoin: "round"
       }
@@ -2930,22 +3123,60 @@ export default class extends Controller {
 
     if (feature.properties?.feature_type === "depot_spur") {
       return {
+        className: `depot-spur-line${haloBoost ? " route-line--halo" : ""}${dimmed ? " route-line--dimmed" : ""}`,
         color: feature.properties?.color || this.routeDisplayColor(route) || color,
-        weight: 4,
-        opacity: 0.85,
+        weight: 4 + Math.min(haloBoost, 1),
+        opacity: 0.85 * dimFactor,
         lineCap: "round",
-        lineJoin: "round",
-        className: "depot-spur-line"
+        lineJoin: "round"
       }
     }
 
     return {
+      className: `${haloBoost ? "route-line--halo" : ""}${dimmed ? " route-line--dimmed" : ""}`.trim(),
       color: feature.properties?.color || this.routeDisplayColor(route) || color,
-      weight: 5,
-      opacity: 0.9,
+      weight: 5 + haloBoost,
+      opacity: 0.9 * dimFactor,
       lineCap: "round",
       lineJoin: "round"
     }
+  }
+
+  emphasizedRouteId() {
+    if (this.selectedRouteId) return this.selectedRouteId
+
+    const visible = this.visibleRouteLayerIds()
+    return visible.length === 1 ? visible[0] : null
+  }
+
+  routeStrokeBoost() {
+    const dark = document.documentElement.classList.contains("dark")
+    if (this.basemapStyle === "sat") return 2
+    if (dark) return 1
+    return 0
+  }
+
+  applyRouteEmphasis() {
+    if (!this.map || !this.layerGroups) return
+
+    this.visibleRouteLayerIds().forEach((layerId) => {
+      const route = this.findRoute(layerId)
+      const group = this.layerGroups[layerId]
+      if (!group || !route) return
+
+      const color = this.routeDisplayColor(route) || LAYER_COLORS[layerId] || "#666666"
+
+      group.eachLayer((geoLayer) => {
+        if (typeof geoLayer.eachLayer !== "function") return
+
+        geoLayer.eachLayer((layer) => {
+          if (!layer.feature || typeof layer.setStyle !== "function") return
+          if (!this.isRouteLineFeature(layer.feature) && layer.feature.properties?.feature_type !== "depot_spur") return
+
+          layer.setStyle(this.styleForFeature(layer.feature, color, route))
+        })
+      })
+    })
   }
 
   stationColorForRoute(routeId, feature, stationRef, fallbackColor) {
@@ -2993,88 +3224,67 @@ export default class extends Controller {
   routeUsesParallelTracks(route) {
     if (!PARALLEL_TRACK_ROUTE_IDS.has(route?.id)) return false
 
-    // Danhai / skytrain: zoomed out should read as a single line.
-    if (route?.id === "danhai_lrt" || route?.id === "taoyuan_airport_skytrain") {
-      const zoom = this.map?.getZoom() ?? 12
-      return zoom >= 13
-    }
-
-    return true
+    // Zoomed out: keep a single corridor so geographic offsets do not fan into scallops.
+    const zoom = this.map?.getZoom() ?? 12
+    return zoom >= PARALLEL_TRACK_MIN_ZOOM
   }
 
   scheduleParallelTracksRefresh() {
+    if (!this.map) return
+
+    const parallelActive = (this.map.getZoom() ?? 12) >= PARALLEL_TRACK_MIN_ZOOM
+    if (this.parallelTracksActive === parallelActive) return
+
+    this.parallelTracksActive = parallelActive
+
     if (this.parallelTracksRefreshTimer) clearTimeout(this.parallelTracksRefreshTimer)
 
     this.parallelTracksRefreshTimer = setTimeout(() => {
       this.parallelTracksRefreshTimer = null
       this.refreshVisibleParallelLayers()
-    }, 80)
+    }, 120)
   }
 
   async refreshVisibleParallelLayers() {
     if (!this.mapReady || !this.map) return
 
     const layerIds = this.visibleRouteLayerIds().filter((layerId) => {
-      return this.routesToLoad(layerId).some((route) => this.routeUsesParallelTracks(route))
+      return this.routesToLoad(layerId).some((route) => PARALLEL_TRACK_ROUTE_IDS.has(route?.id))
     })
+    if (layerIds.length === 0) return
 
-    for (const layerId of layerIds) {
+    await this.mapPool(layerIds, LAYER_LOAD_CONCURRENCY, async (layerId) => {
       const generation = this.bumpLayerGeneration(layerId)
       const group = this.layerGroups[layerId]
-      if (!group) continue
+      if (!group) return
 
+      this.clearStationLabelsForLayer(layerId)
       group.clearLayers()
 
       try {
         await this.loadLayer(layerId, generation)
       } catch (error) {
         console.warn("Failed to refresh parallel tracks for", layerId, error)
-        continue
+        return
       }
 
-      if (!this.isLayerGenerationCurrent(layerId, generation) || !this.layerVisible[layerId]) continue
+      if (!this.isLayerGenerationCurrent(layerId, generation) || !this.layerVisible[layerId]) return
 
       if (group.getLayers().length > 0) {
         if (!this.map.hasLayer(group)) group.addTo(this.map)
         if (layerId === "airport_mrt") this.bringAirportMrtCommuterLinesToFront(group)
       }
+    })
 
-    }
-
-    if (layerIds.length > 0) {
-      this.reindexVisibleStationCoordinates()
-      this.updateOutOfStationTransfers()
-      this.updateMetroDepots()
-    }
+    this.reindexVisibleStationCoordinates()
+    this.updateOutOfStationTransfers()
+    this.updateMetroDepots()
+    this.applyRouteEmphasis()
+    this.refreshStationLabels()
   }
 
-  metersPerPixelAt(lat) {
-    const zoom = this.map?.getZoom() ?? 10
-    const safeLat = Math.max(-85, Math.min(85, lat))
-
-    return 40075016.686 * Math.cos(safeLat * Math.PI / 180) / (256 * Math.pow(2, zoom))
-  }
-
-  centerLatOfGeoJSON(data) {
-    for (const feature of data.features || []) {
-      const coordinates = feature.geometry?.coordinates
-      if (feature.geometry?.type === "LineString" && coordinates?.length >= 2) {
-        const mid = coordinates[Math.floor(coordinates.length / 2)]
-        return mid[1]
-      }
-
-      if (feature.geometry?.type === "Point" && coordinates?.length >= 2) {
-        return coordinates[1]
-      }
-    }
-
-    return 25.05
-  }
-
-  parallelHalfOffsetMeters(data) {
-    const lat = this.centerLatOfGeoJSON(data)
-
-    return this.metersPerPixelAt(lat) * PARALLEL_TRACK_HALF_OFFSET_PX
+  parallelHalfOffsetMeters(_data) {
+    return PARALLEL_TRACK_HALF_OFFSET_M
   }
 
   referenceRouteLine(route, data) {
@@ -3528,6 +3738,126 @@ export default class extends Controller {
     return this.circleMarkerAt(position, lineColor)
   }
 
+  registerStationLabel(feature, layer, route) {
+    const featureType = feature.properties?.feature_type
+    if (featureType !== "station" && featureType !== "angle_station") return
+    if (featureType === "station" && feature.properties?.passenger_service === false) return
+
+    const name = this.featureDisplayName(feature)
+    if (!name) return
+
+    const latlng = layer.getLatLng?.()
+    if (!latlng) return
+
+    const ref = feature.properties?.ref || ""
+    const routeId = route?.id
+    const key = `${routeId}:${ref}:${featureType}`
+    const priority = this.stationLabelPriority(feature, routeId, ref)
+
+    this.stationLabelEntries = (this.stationLabelEntries || []).filter((entry) => entry.key !== key)
+    this.stationLabelEntries.push({
+      key,
+      routeId,
+      layerId: routeId,
+      name,
+      latlng,
+      priority
+    })
+  }
+
+  stationLabelPriority(feature, routeId, stationRef) {
+    if (this.isAirportMrtExpressTransferStation(routeId, stationRef)) return 3
+    if (this.isOutOfStationEndpoint(routeId, stationRef)) return 3
+    if (this.isCrossSystemTransferRef(stationRef)) return 3
+    if (this.shouldShowInStationTransferMarker(stationRef, routeId)) return 3
+    if ((stationRef || "").includes(";")) return 3
+    if (this.isTerminalStation(feature)) return 2
+    return 1
+  }
+
+  clearStationLabelsForLayer(layerId) {
+    const routeIds = new Set(this.routesToLoad(layerId).map((route) => route?.id).filter(Boolean))
+    routeIds.add(layerId)
+    this.stationLabelEntries = (this.stationLabelEntries || []).filter((entry) => !routeIds.has(entry.routeId) && !routeIds.has(entry.layerId))
+  }
+
+  routeLabelFocusId() {
+    if (this.initialRouteIdValue) return this.initialRouteIdValue
+    if (this.selectedRouteId && this.visibleRouteLayerIds().length === 1) return this.selectedRouteId
+    return null
+  }
+
+  refreshStationLabels() {
+    if (!this.map || !this.stationLabelGroup || !window.L) return
+
+    const L = window.L
+    this.stationLabelGroup.clearLayers()
+
+    const focusRouteId = this.routeLabelFocusId()
+    const bounds = this.map.getBounds().pad(0.08)
+    let candidates
+
+    if (focusRouteId) {
+      // Route detail: show every station name to the right of its marker.
+      const focusRouteIds = new Set(this.routesToLoad(focusRouteId).map((route) => route?.id).filter(Boolean))
+      focusRouteIds.add(focusRouteId)
+
+      candidates = (this.stationLabelEntries || [])
+        .filter((entry) => focusRouteIds.has(entry.routeId) && bounds.contains(entry.latlng))
+        .sort((a, b) => b.priority - a.priority || a.name.localeCompare(b.name, "zh-Hant"))
+    } else {
+      const zoom = this.map.getZoom() ?? 0
+      if (zoom < STATION_LABEL_PRIORITY_ZOOM) return
+
+      const minPriority = zoom >= STATION_LABEL_MIN_ZOOM ? 1 : 2
+      candidates = (this.stationLabelEntries || [])
+        .filter((entry) => entry.priority >= minPriority && bounds.contains(entry.latlng))
+        .sort((a, b) => b.priority - a.priority || a.name.length - b.name.length)
+    }
+
+    const placed = []
+    const skipCollision = Boolean(focusRouteId)
+
+    candidates.forEach((entry) => {
+      const point = this.map.latLngToContainerPoint(entry.latlng)
+      const width = Math.min(12 + entry.name.length * 11, 160)
+      const height = 16
+      const box = {
+        left: point.x + 8,
+        right: point.x + 8 + width,
+        top: point.y - height / 2,
+        bottom: point.y + height / 2
+      }
+
+      if (!skipCollision) {
+        const collides = placed.some((other) => {
+          return !(box.right < other.left || box.left > other.right || box.bottom < other.top || box.top > other.bottom)
+        })
+        if (collides) return
+        placed.push(box)
+      }
+
+      this.stationLabelGroup.addLayer(this.buildStationNameLabelMarker(entry, width, height))
+    })
+  }
+
+  buildStationNameLabelMarker(entry, width, height) {
+    const L = window.L
+
+    return L.marker(entry.latlng, {
+      interactive: false,
+      keyboard: false,
+      pane: this.stationLabelPane,
+      zIndexOffset: 100 + (entry.priority || 1),
+      icon: L.divIcon({
+        className: "station-name-label-icon",
+        html: `<span class="station-name-label">${this.escapeHtml(entry.name)}</span>`,
+        iconSize: [ width, height ],
+        iconAnchor: [ -8, height / 2 ]
+      })
+    })
+  }
+
   terminalMarkerAt(latlng, color) {
     const L = window.L
     const safeColor = color || "#666666"
@@ -3837,11 +4167,14 @@ export default class extends Controller {
 
   async fetchGeoJSON(url) {
     if (!this.geoJSONCache[url]) {
-      this.geoJSONCache[url] = fetch(url, { cache: "no-store" }).then(async (response) => {
+      this.geoJSONCache[url] = fetch(url, { cache: "no-cache" }).then(async (response) => {
         if (!response.ok) throw new Error(`Failed to load ${url}`)
         const data = await response.json()
         this.geoJSONDataByUrl[url] = data
         return data
+      }).catch((error) => {
+        delete this.geoJSONCache[url]
+        throw error
       })
     }
 

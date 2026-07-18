@@ -14,6 +14,7 @@ zh-TW:
     kaohsiung_metro: "高雄捷運"
     hsr: "高鐵"
     tra: "台鐵"
+    sugar_railway: "糖鐵"
     other: "其他"
   map:
     title: "台灣大眾運輸地圖"
@@ -35,6 +36,7 @@ zh-TW:
       metro: "捷運"
       tra: "台鐵"
       hsr: "高鐵"
+      sugar_railway: "糖鐵"
       other: "其他"
     select_all: "全選"
     select_all_metro: "全選捷運與輕軌"
@@ -51,6 +53,12 @@ zh-TW:
     no_results: "找不到符合的路線"
     light_mode: "淺色模式"
     dark_mode: "深色模式"
+    theme_toggle: "切換色調"
+    basemap_label: "底圖"
+    satellite_basemap: "衛星"
+    nlsc_basemap: "台灣圖資"
+    carto_basemap: "簡化地圖"
+    basemap_legend: "底圖：台灣圖資（中文地名）／簡化地圖／衛星"
     layers:
       metro:
         label: "捷運"
@@ -61,9 +69,12 @@ zh-TW:
       hsr:
         label: "高鐵"
         description: "台灣高鐵（南港－左營）"
+      sugar_railway:
+        label: "糖鐵"
+        description: "台糖五分車與觀光糖鐵"
       other:
         label: "其他"
-        description: "纜車、機場電車"
+        description: "纜車、機場電車、林鐵與觀光鐵道"
     metro_systems:
       taipei_metro:
         label: "台北捷運"

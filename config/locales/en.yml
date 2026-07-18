@@ -14,6 +14,7 @@ en:
     kaohsiung_metro: "Kaohsiung Metro"
     hsr: "HSR"
     tra: "TRA"
+    sugar_railway: "Sugar Railway"
     other: "Other"
   map:
     title: "Taiwan Public Transit Map"
@@ -35,6 +36,7 @@ en:
       metro: "Metro"
       tra: "TRA"
       hsr: "HSR"
+      sugar_railway: "Sugar"
       other: "Other"
     select_all: "All"
     select_all_metro: "Select all metro & LRT"
@@ -51,6 +53,12 @@ en:
     no_results: "No matching routes"
     light_mode: "Light mode"
     dark_mode: "Dark mode"
+    theme_toggle: "Toggle theme"
+    basemap_label: "Basemap"
+    satellite_basemap: "Satellite"
+    nlsc_basemap: "Taiwan map"
+    carto_basemap: "Simple map"
+    basemap_legend: "Basemap: Taiwan map (Chinese labels) / Simple map / Satellite"
     layers:
       metro:
         label: "Metro"
@@ -61,9 +69,12 @@ en:
       hsr:
         label: "HSR"
         description: "Taiwan High Speed Rail (Nangang–Zuoying)"
+      sugar_railway:
+        label: "Sugar Railway"
+        description: "Taiwan Sugar tourist and industrial railways"
       other:
         label: "Other"
-        description: "Cable cars and airport people movers"
+        description: "Cable cars, airport people movers, forest railways, and heritage lines"
     metro_systems:
       taipei_metro:
         label: "Taipei Metro"

@@ -97,13 +97,13 @@ module Geojson
 
       clip_xiaobitan_yard_loop!(@route_features) if @line.slug == "xiaobitan_branch"
 
-      extend_routes_for_depots!(@route_features)
-
       stations = fetch_stations_for_line
       apply_taichung_station_coordinates!(stations) if @line.system_id == "taichung_metro"
       align_stations_to_routes!(stations, @route_features)
+      trim_metro_terminal_stubs!(@route_features, stations) if trim_metro_terminal_stubs?
       extend_airport_mrt_to_terminals!(@route_features, stations) if @line.slug == "airport_mrt"
       align_stations_to_routes!(stations, @route_features) if @line.slug == "airport_mrt"
+      extend_routes_for_depots!(@route_features)
       align_tra_junction_station!(stations) if @line.system_id == "tra"
       apply_tra_route_terminals!(@route_features, stations) if @line.system_id == "tra"
       reorder_tra_stations!(stations) if tra_station_ordered_line?
@@ -248,7 +248,46 @@ module Geojson
         end
       end
 
+      return stitch_other_way_route_features(route_features) if stitch_other_way_routes?
+
       route_features
+    end
+
+    def stitch_other_way_routes?
+      %w[other sugar_railway].include?(@line.system_id) && @line.way_ids.length > 5
+    end
+
+    # Greedily merge fragmented OSM ways into continuous corridor LineStrings.
+    def stitch_other_way_route_features(route_features)
+      chains = route_features.filter_map do |feature|
+        coords = feature.dig(:geometry, :coordinates) || feature.dig("geometry", "coordinates")
+        next unless coords.is_a?(Array) && coords.length >= 2
+
+        coords.map { |point| [ point[0].to_f, point[1].to_f ] }
+      end
+
+      return route_features if chains.empty?
+
+      merged = []
+      remaining = chains.dup
+
+      until remaining.empty?
+        chain = remaining.shift
+        loop do
+          connected = connect_nearest_tra_chain!(chain, remaining, gap_threshold_m: OTHER_WAY_STITCH_GAP_M)
+          break unless connected
+        end
+        merged << chain if chain.length >= 2
+      end
+
+      if @line.slug == "alishan_forest_railway" && merged.any?
+        # One continuous Chiayi–Zhushan corridor; drop yard / spur / duplicate fragments.
+        merged = [ merged.max_by(&:length) ]
+      end
+
+      merged.map.with_index do |coords, index|
+        route_feature(coords, branch_index: index, relation_index: 0)
+      end
     end
 
     def longest_route_coordinates
@@ -288,6 +327,7 @@ module Geojson
     TRA_CHAIN_GAP_FRAGMENT_M = 45_000
     TRA_CHAIN_GAP_STITCH_MIN_M = 400
     TRA_CHAIN_GAP_STITCH_STEP_M = 250
+    OTHER_WAY_STITCH_GAP_M = 250
     TRA_CHAIN_MAX_POINT_JUMP_M = 250
 
     def build_tra_route_features
@@ -341,9 +381,7 @@ module Geojson
           station_refs: SHALUN_STATION_REFS
         )
       when "hualien_port_line"
-        build_tra_cached_or_station_ordered_route_features(
-          station_refs: HUALIEN_PORT_STATION_REFS
-        )
+        build_hualien_port_line_route_features
       when "taichung_port_line"
         build_tra_cached_or_station_ordered_route_features(
           station_refs: TAICHUNG_PORT_STATION_REFS
@@ -412,6 +450,12 @@ module Geojson
 
     def build_tra_cached_or_station_ordered_route_features(station_refs:)
       features = build_tra_station_ordered_route_features(station_refs: station_refs)
+      if features.any?
+        coordinates = features.first.dig(:geometry, :coordinates)
+        if coordinates && tra_corridor_has_long_straight_run?(coordinates, min_length_m: 2_000)
+          features = []
+        end
+      end
       return features if features.any?
 
       fallback = tra_track_fallback_coordinates
@@ -940,6 +984,64 @@ module Geojson
       combined
     end
 
+    def build_hualien_port_line_route_features
+      corridor = hualien_port_corridor_coordinates
+      return [] unless corridor&.length.to_i >= 2
+
+      dedupe_tra_coordinates!(corridor)
+      orient_tra_line!(corridor)
+      densified = TrackGeometry.densify_coordinates(corridor, max_step_m: 200)
+      [ route_feature(densified) ]
+    end
+
+    def hualien_port_corridor_coordinates
+      fallback = tra_track_fallback_coordinates
+      return nil unless fallback&.length.to_i >= 2
+
+      beipu = self.class.tra_station_by_ref["7010"]
+      port = self.class.tra_station_by_ref["6256"]
+      return nil unless beipu && port
+
+      parent_route = tra_branch_parent_route_coordinates
+      if parent_route&.length.to_i >= 2
+        junction_idx = nearest_chain_index(parent_route, fallback.first[0], fallback.first[1])
+        beipu_idx = nearest_chain_index(parent_route, beipu[:lon], beipu[:lat])
+        connector = chain_segment_between(parent_route, beipu_idx, junction_idx)
+
+        port_idx = nearest_chain_index(fallback, port[:lon], port[:lat])
+        branch = fallback[0..port_idx]
+
+        corridor = TrackGeometry.dedupe_coordinates(connector + branch.drop(1))
+        corridor[0] = [ beipu[:lon], beipu[:lat] ]
+        corridor[-1] = [ port[:lon], port[:lat] ]
+        return corridor
+      end
+
+      corridor = fallback.dup
+      if tra_endpoint_gap(corridor.first, [ port[:lon], port[:lat] ]) <
+          tra_endpoint_gap(corridor.first, [ beipu[:lon], beipu[:lat] ])
+        corridor.reverse!
+      end
+      corridor[0] = [ beipu[:lon], beipu[:lat] ]
+      corridor[-1] = [ port[:lon], port[:lat] ]
+      corridor
+    end
+
+    def tra_branch_parent_route_coordinates
+      parent_slug = TraCatalog::BRANCH_OF[@line.slug]
+      return nil unless parent_slug
+
+      path = Rails.root.join("public/geojson/tra/#{parent_slug}.geojson")
+      return nil unless path.exist?
+
+      data = JSON.parse(path.read)
+      data.fetch("features", []).find do |feature|
+        feature.dig("properties", "feature_type") == "route"
+      end&.dig("geometry", "coordinates")
+    rescue StandardError
+      nil
+    end
+
     def build_tra_beihui_line_route_features
       combined = tra_junction_linked_chain(
         junction_lon: TraCatalog::HUALIEN_JUNCTION_LON,
@@ -1107,6 +1209,7 @@ module Geojson
       return chain if @line.slug.in?(%w[
         sea_line neiwan_line liujia_line jiji_line yilan_line
         pingxi_line shenao_line chengzhui_line shalun_line
+        hualien_port_line taichung_port_line
       ])
 
       return chain unless tra_line_orientation(0) == :north_to_south
@@ -1160,6 +1263,8 @@ module Geojson
     end
 
     def stitch_tra_route_features!
+      return if @line.slug == "hualien_port_line"
+
       routes = @route_features.select { |feature| feature.dig(:properties, :feature_type) == "route" }
       return if routes.empty?
 
@@ -1521,7 +1626,7 @@ module Geojson
         return fetch_maokong_gondola_stations
       end
 
-      if @line.system_id == "other"
+      if %w[other sugar_railway].include?(@line.system_id)
         return fetch_other_stations
       end
 
@@ -1674,6 +1779,43 @@ module Geojson
       end
     end
 
+    METRO_TERMINAL_STUB_SYSTEMS = %w[
+      taipei_metro new_taipei_metro kaohsiung_metro taichung_metro other sugar_railway
+    ].freeze
+
+    def trim_metro_terminal_stubs?
+      METRO_TERMINAL_STUB_SYSTEMS.include?(@line.system_id) && @line.slug != "circular"
+    end
+
+    # OSM route relations often include a short yard stub beyond terminal stations.
+    def trim_metro_terminal_stubs!(route_features, stations)
+      return if stations.empty?
+
+      route_features.each do |feature|
+        next unless feature.dig(:properties, :feature_type) == "route"
+
+        coordinates = feature.dig(:geometry, :coordinates)
+        next unless coordinates.is_a?(Array) && coordinates.length >= 2
+
+        terminal_stations_near_route_ends(stations, coordinates).each do |station|
+          point = [ station[:lon], station[:lat] ]
+          feature[:geometry][:coordinates] = TrackGeometry.trim_terminal_stub_and_snap(coordinates, point)
+          coordinates = feature[:geometry][:coordinates]
+        end
+      end
+    end
+
+    def terminal_stations_near_route_ends(stations, coordinates, threshold_m: 200)
+      start = coordinates.first
+      finish = coordinates.last
+
+      stations.select do |station|
+        start_dist = TrackGeometry.planar_distance_meters(station[:lon], station[:lat], start[0], start[1])
+        finish_dist = TrackGeometry.planar_distance_meters(station[:lon], station[:lat], finish[0], finish[1])
+        start_dist <= threshold_m || finish_dist <= threshold_m
+      end
+    end
+
     # OSM Airport MRT rails stop on a short stub past A1/A22; trim the stub and snap the end.
     def extend_airport_mrt_to_terminals!(route_features, stations)
       terminals = stations.select { |station| %w[A1 A22].include?(station[:ref].to_s) }
@@ -1698,6 +1840,8 @@ module Geojson
       return if line_strings.empty?
 
       MetroDepotCatalog.depots_for_route(@line.slug).each do |depot|
+        next if DepotSpurCatalog.omit_spur?(depot[:id])
+
         facility = MetroDepotCatalog.primary_facility_coordinates(depot)
         spur_line_strings = DepotSpurCatalog.line_strings_for_depot(depot[:id])
         junction_hint = DepotSpurCatalog.junction_hint_for(depot[:id])
@@ -2360,7 +2504,40 @@ module Geojson
         )
       end
 
-      merge_stations([], stations)
+      # Prefer curated fallback refs/names (OSM may only tag one terminus, e.g. 橋頭糖鐵).
+      fallback = SugarRailwayCatalog::FALLBACK_STATIONS_BY_SLUG[@line.slug] ||
+        OtherTransitCatalog::FALLBACK_STATIONS_BY_SLUG[@line.slug] ||
+        []
+      stations = merge_stations(fallback, stations)
+      stations = filter_alishan_passenger_stations(stations) if @line.slug == "alishan_forest_railway"
+      stations
+    end
+
+    ALISHAN_PASSENGER_STATION_NAMES = %w[
+      嘉義 北門 竹崎 樟腦寮 獨立山 梨園寮 交力坪 水社寮 奮起湖 十字路 阿里山 神木 沼平 對高岳 祝山
+    ].freeze
+
+    def filter_alishan_passenger_stations(stations)
+      allowed = ALISHAN_PASSENGER_STATION_NAMES.to_set
+      fallback_by_name = OtherTransitCatalog::ALISHAN_FALLBACK_STATIONS.index_by { |station| station[:name] }
+
+      filtered = stations.filter_map do |station|
+        name = station[:name].to_s
+        next unless allowed.include?(name)
+
+        fallback = fallback_by_name[name]
+        if fallback
+          station.merge(ref: fallback[:ref], name_en: fallback[:name_en] || station[:name_en])
+        else
+          station
+        end
+      end
+      return stations if filtered.empty?
+
+      filtered.sort_by do |station|
+        index = ALISHAN_PASSENGER_STATION_NAMES.index(station[:name].to_s) || 99
+        [ index, station[:lon].to_f ]
+      end
     end
 
     def stations_from_relations
