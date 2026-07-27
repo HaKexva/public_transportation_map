@@ -236,10 +236,15 @@ module Geojson
       facility_lat:,
       junction_hint: nil
     )
-      # Try OSM first (reliable yard throats), then NLSC.
-      [ osm_line_strings_for_depot(depot_id), nlsc_line_strings_for_depot(depot_id) ].each do |spur_line_strings|
-        next if spur_line_strings.empty?
+      osm = osm_line_strings_for_depot(depot_id)
+      nlsc = nlsc_line_strings_for_depot(depot_id)
+      # OSM first, then OSM+NLSC (bridges disconnected yard clusters), then NLSC alone.
+      candidates = []
+      candidates << osm if osm.any?
+      candidates << (osm + nlsc) if osm.any? && nlsc.any?
+      candidates << nlsc if nlsc.any?
 
+      candidates.each do |spur_line_strings|
         spur_line_strings = filter_off_main_spur_lines(
           spur_line_strings,
           main_line_strings,

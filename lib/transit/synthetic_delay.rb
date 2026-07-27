@@ -50,4 +50,3 @@ module Transit
     end
   end
 end
-

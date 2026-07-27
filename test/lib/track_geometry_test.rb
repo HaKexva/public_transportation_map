@@ -310,7 +310,8 @@ class TrackGeometryTest < ActiveSupport::TestCase
     caoya_lon = 120.3287686
     caoya_lat = 22.5805475
     assert coordinates
-    assert coordinates.length < 40, "expected a local yard link near 草衙"
+    # OSM+NLSC merge densifies the local throat; keep under corridor-traverse budgets.
+    assert coordinates.length < 50, "expected a local yard link near 草衙"
     assert_operator coordinates.first[1], :>, 22.578
     assert Geojson::TrackGeometry.planar_distance_meters(
       coordinates.first[0], coordinates.first[1], caoya_lon, caoya_lat

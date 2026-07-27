@@ -50,7 +50,7 @@ module Transit
       return multi_stop unless multi_stop.empty?
 
       headway_vehicle = headway_vehicle_for(route, direction, calendar_ids: calendar_ids)
-      headway_vehicle ? [headway_vehicle].first(MAX_VEHICLES_PER_ROUTE_DIRECTION) : []
+      headway_vehicle ? [ headway_vehicle ].first(MAX_VEHICLES_PER_ROUTE_DIRECTION) : []
     end
 
     # Uses real timetable stop sequences to interpolate vehicle progress along the line.
@@ -130,7 +130,7 @@ module Transit
       elapsed = modulo_minutes(effective_at_minutes - rule_departure_minutes, travel_minutes)
       route_progress = (elapsed / travel_minutes).clamp(0.0, 1.0)
 
-      from_idx = [(route_progress * (station_records.length - 1)).floor, station_records.length - 2].min
+      from_idx = [ (route_progress * (station_records.length - 1)).floor, station_records.length - 2 ].min
       to_idx = from_idx + 1
       segment_start = from_idx.to_f / (station_records.length - 1)
       segment_end = to_idx.to_f / (station_records.length - 1)
@@ -196,7 +196,7 @@ module Transit
 
         if within_segment_minutes?(minutes, a, b)
           segment_progress = segment_progress_minutes(minutes, a, b)
-          return [stop_times[i], stop_times[i + 1], segment_progress]
+          return [ stop_times[i], stop_times[i + 1], segment_progress ]
         end
       end
 
@@ -249,7 +249,7 @@ module Transit
       start_min = modulo_minutes(at_min - minutes, 1440)
       end_min = modulo_minutes(at_min + minutes, 1440)
 
-      [time_of_day_from_minutes(start_min), time_of_day_from_minutes(end_min)]
+      [ time_of_day_from_minutes(start_min), time_of_day_from_minutes(end_min) ]
     end
 
     def modulo_minutes(value, mod)
@@ -289,4 +289,3 @@ module Transit
     end
   end
 end
-
