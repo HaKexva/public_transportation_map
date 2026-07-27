@@ -40,6 +40,7 @@ const PARALLEL_TRACK_ROUTE_IDS = new Set([
 ])
 const PARALLEL_TRACK_MIN_ZOOM = 13
 const LAYER_LOAD_CONCURRENCY = 6
+const VEHICLE_REFRESH_DEBOUNCE_MS = 300
 const STATION_LABEL_MIN_ZOOM = 14
 const STATION_LABEL_PRIORITY_ZOOM = 12
 const CARTO_LIGHT_BASEMAP_URL = "https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png"
@@ -183,10 +184,16 @@ export default class extends Controller {
     this.themeObserver = null
     this.activeCategory = null
     this.basemapStyle = this.readBasemapStyle()
+    this.simulationAt = null
+    this.vehicleRefreshTimer = null
+    this.vehicleFetchController = null
+    this.vehicleGroup = null
     this.setLayerControlsDisabled(true)
     this.syncMobileSidebarAria(false)
     this.waitForLeaflet(0)
     this.initializeCategoryFilter()
+    this.onSimulationTime = (event) => this.handleSimulationTime(event)
+    window.addEventListener("map:simulation-time", this.onSimulationTime)
   }
 
   disconnect() {
@@ -202,6 +209,9 @@ export default class extends Controller {
       this.map.off("moveend", this.refreshStationLabelsOnView)
     }
     if (this.onThemeChanged) window.removeEventListener("theme:changed", this.onThemeChanged)
+    if (this.onSimulationTime) window.removeEventListener("map:simulation-time", this.onSimulationTime)
+    if (this.vehicleRefreshTimer) clearTimeout(this.vehicleRefreshTimer)
+    if (this.vehicleFetchController) this.vehicleFetchController.abort()
     this.element?.classList.remove("map-split-layout--layers-open")
     document.body.classList.remove("overflow-hidden")
     this.themeObserver?.disconnect()
