@@ -15,6 +15,7 @@ en:
     hsr: "HSR"
     tra: "TRA"
     sugar_railway: "Sugar Railway"
+    ferry: "Ferry"
     other: "Other"
   map:
     title: "Taiwan Public Transit Map"
@@ -29,14 +30,14 @@ en:
       stations: "Stations"
     layers_button: "Layers"
     reset_viewport: "Reset view"
-    show_metro_only: "Metro & LRT only"
     search_hint: "Check to show on map; use the link to open the route map."
     categories_aria: "Route categories"
     categories:
-      metro: "Metro"
+      metro: "Metro & LRT"
       tra: "TRA"
       hsr: "HSR"
       sugar_railway: "Sugar"
+      ferry: "Ferry"
       other: "Other"
     select_all: "All"
     select_all_metro: "Select all metro & LRT"
@@ -72,19 +73,22 @@ en:
       sugar_railway:
         label: "Sugar Railway"
         description: "Taiwan Sugar tourist and industrial railways"
+      ferry:
+        label: "Ferry"
+        description: "Gushan–Cijin, Tamsui–Bali, Liuqiu, Sun Moon Lake, Green Island & Orchid Island ferries"
       other:
         label: "Other"
         description: "Cable cars, airport people movers, forest railways, and heritage lines"
     metro_systems:
       taipei_metro:
         label: "Taipei Metro"
-        description: "6 lines"
+        description: "5 lines"
       new_taipei_metro:
         label: "New Taipei Metro"
         description: "Circular, Sanying, Danhai & Ankeng LRT"
       taoyuan_metro:
         label: "Taoyuan Metro"
-        description: "Airport MRT (blue / purple)"
+        description: "Airport MRT (blue)"
       taichung_metro:
         label: "Taichung Metro"
         description: "Green Line"
@@ -92,13 +96,14 @@ en:
         label: "Kaohsiung Metro"
         description: "Red, Orange, and Circular Light Rail"
     route_notes:
-      airport_mrt: "Commuter (blue) / Express (purple) parallel tracks"
+      airport_mrt: "Commuter (blue) parallel tracks"
+      airport_mrt_express: "Express stops only"
       danhai_lrt: "Green Mountain / Blue Coast parallel tracks"
       taoyuan_airport_skytrain: "North / South parallel tracks"
     legend_routes:
       airport_mrt:
         label: "Airport MRT"
-        note: "Commuter (blue) / Express (purple) side by side"
+        note: "Commuter (blue) side by side"
       danhai_lrt:
         label: "Danhai LRT"
         note: "Green Mountain / Blue Coast parallel tracks"

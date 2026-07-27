@@ -1,0 +1,70 @@
+{
+  "type": "FeatureCollection",
+  "name": "渡輪富岡－綠島渡輪",
+  "properties": {
+    "source": "Track geometry from OpenStreetMap ways 256726319, 256726320 (with fallbacks). © OpenStreetMap contributors, ODbL.",
+    "network": "渡輪",
+    "ref": "GI",
+    "osm_relations": [],
+    "osm_ways": []
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "GI",
+        "name": "富岡－綠島渡輪",
+        "name_en": "Fugang–Green Island Ferry",
+        "color": "#0891b2"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            121.159,
+            22.7881
+          ],
+          [
+            121.4744,
+            22.6627
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "GI01",
+        "name": "富岡漁港",
+        "line": "富岡－綠島渡輪",
+        "color": "#0891b2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.159,
+          22.7881
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "GI02",
+        "name": "綠島南寮漁港",
+        "line": "富岡－綠島渡輪",
+        "color": "#0891b2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.4744,
+          22.6627
+        ]
+      }
+    }
+  ]
+}

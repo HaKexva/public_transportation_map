@@ -25,9 +25,9 @@ const DANHAI_SHARED_STATION_REFS = new Set(
 const DANHAI_LANHAI_STATION_ORDER = [ "V28", "V27", "V26" ]
 const OUT_OF_STATION_MARKER_COLOR = "#737373"
 // Class 2–4 connection strength: solid (passage) > dashed (fare discount) > dotted (named walk).
-const TRANSFER_LINE_COLOR_PASSAGE = "#525252"
-const TRANSFER_LINE_COLOR_FARE_DISCOUNT = "#3a3a3a"
-const TRANSFER_LINE_COLOR_WALK = "#737373"
+const TRANSFER_LINE_COLOR_PASSAGE = "#404040"
+const TRANSFER_LINE_COLOR_FARE_DISCOUNT = "#737373"
+const TRANSFER_LINE_COLOR_WALK = "#a3a3af"
 const TRANSFER_LINE_WEIGHT_PASSAGE = 5
 const TRANSFER_LINE_WEIGHT_FARE_DISCOUNT = 4
 const TRANSFER_LINE_WEIGHT_WALK = 3
@@ -74,10 +74,6 @@ const TRA_BRANCH_ROUTE_PRIORITY = {
   shalun_line: 1,
   shenao_line: 1,
   hualien_port_line: 1
-}
-const BUNDLED_ROUTE_IDS = new Set([ "airport_mrt_express" ])
-const PARALLEL_ROUTE_DEPENDENTS = {
-  airport_mrt: [ "airport_mrt_express" ]
 }
 // Branch origin stations stay on the branch layer even when the parent line is visible.
 const TRA_BRANCH_JUNCTION_REFS = {
@@ -550,36 +546,55 @@ export default class extends Controller {
     const route = this.findRoute(layerId)
     if (!route) return this.routesManifest[layerId] || []
 
-    const routes = [ route ]
+    return [ route ]
+  }
 
-    ;(PARALLEL_ROUTE_DEPENDENTS[layerId] || []).forEach((dependentId) => {
-      if (this.layerVisible[dependentId]) return
-
-      const dependent = this.findRoute(dependentId)
-      if (dependent) routes.push(dependent)
-    })
-
-    return routes
+  routeSystemRefKey(systemId, ref) {
+    return systemId && ref ? `${systemId}:${ref}` : null
   }
 
   buildLineColorMap() {
     const colorsByPrefix = {}
     const routesByLineRef = {}
 
-    Object.values(this.routesManifest).forEach((routes) => {
+    Object.entries(this.routesManifest).forEach(([ systemId, routes ]) => {
       if (!Array.isArray(routes)) return
 
       routes.forEach((route) => {
         if (!route.ref) return
 
-        if (!routesByLineRef[route.ref]) routesByLineRef[route.ref] = []
-        routesByLineRef[route.ref].push(route)
+        const key = this.routeSystemRefKey(systemId, route.ref)
+        if (!routesByLineRef[key]) routesByLineRef[key] = []
+        routesByLineRef[key].push(route)
 
-        if (!route.branch_of) colorsByPrefix[route.ref] = this.routeDisplayColor(route) || route.color
+        if (!route.branch_of) colorsByPrefix[key] = this.routeDisplayColor(route) || route.color
       })
     })
 
     return { colorsByPrefix, routesByLineRef }
+  }
+
+  routesForSystemRef(systemId, ref) {
+    return this.routesByLineRef[this.routeSystemRefKey(systemId, ref)] || []
+  }
+
+  routesForLinePrefix(prefix) {
+    const visibleIds = new Set(this.visibleRouteLayerIds())
+    const visibleRoutes = []
+    const allRoutes = []
+
+    Object.entries(this.routesManifest).forEach(([ systemId, routeList ]) => {
+      if (!Array.isArray(routeList)) return
+
+      routeList.forEach((route) => {
+        if (route.ref !== prefix) return
+
+        allRoutes.push(route)
+        if (visibleIds.has(route.id)) visibleRoutes.push(route)
+      })
+    })
+
+    return visibleRoutes.length > 0 ? visibleRoutes : allRoutes
   }
 
   async resetView() {
@@ -824,7 +839,11 @@ export default class extends Controller {
 
   async collectStationsForRoute(routeId) {
     if (routeId === "airport_mrt") {
-      return this.collectAirportMrtStationSections()
+      return this.collectAirportMrtCommuterStationSections()
+    }
+
+    if (routeId === "airport_mrt_express") {
+      return this.collectAirportMrtExpressStationSections()
     }
 
     const manifestRoute = this.findRoute(routeId)
@@ -842,22 +861,23 @@ export default class extends Controller {
     return this.mergeStationSections(sections)
   }
 
-  async collectAirportMrtStationSections() {
+  async collectAirportMrtCommuterStationSections() {
     const commuterRoute = this.findRoute("airport_mrt")
-    const expressRoute = this.findRoute("airport_mrt_express")
     if (!commuterRoute?.file) return []
 
     const commuterData = await this.fetchGeoJSON(commuterRoute.file)
-    let expressData = null
-
-    if (expressRoute?.file) {
-      expressData = await this.fetchGeoJSON(expressRoute.file)
-    }
-
-    return this.buildAirportMrtStationSections(commuterData, expressData)
+    return this.buildAirportMrtCommuterStationSections(commuterData)
   }
 
-  buildAirportMrtStationSections(commuterGeojson, expressGeojson) {
+  async collectAirportMrtExpressStationSections() {
+    const expressRoute = this.findRoute("airport_mrt_express")
+    if (!expressRoute?.file) return []
+
+    const expressData = await this.fetchGeoJSON(expressRoute.file)
+    return this.buildAirportMrtExpressStationSections(expressData)
+  }
+
+  buildAirportMrtCommuterStationSections(commuterGeojson) {
     const routeId = "airport_mrt"
     const manifestRoute = this.findRoute(routeId)
     const commuterStations = this.extractPassengerStationFeatures(commuterGeojson, routeId)
@@ -867,18 +887,17 @@ export default class extends Controller {
       commuterGeojson
     )
 
-    let expressStations = []
+    return [
+      { label: this.t("sections.commuter"), stations: orderedCommuter }
+    ].filter((section) => section.stations.length > 0)
+  }
 
-    if (expressGeojson) {
-      expressStations = this.extractPassengerStationFeatures(expressGeojson, "airport_mrt_express")
-    } else {
-      expressStations = orderedCommuter.filter((station) => this.isAirportMrtExpressStop(station.ref))
-    }
-
+  buildAirportMrtExpressStationSections(expressGeojson) {
+    const routeId = "airport_mrt_express"
+    const expressStations = this.extractPassengerStationFeatures(expressGeojson, routeId)
     const orderedExpress = this.sortAirportMrtExpressStationsForList(expressStations)
 
     return [
-      { label: this.t("sections.commuter"), stations: orderedCommuter },
       { label: this.t("sections.express"), stations: orderedExpress }
     ].filter((section) => section.stations.length > 0)
   }
@@ -1647,7 +1666,7 @@ export default class extends Controller {
 
   routeIdsForSystem(systemId) {
     return (this.routesManifest[systemId] || [])
-      .filter((route) => route.id && !BUNDLED_ROUTE_IDS.has(route.id))
+      .filter((route) => route.id)
       .map((route) => route.id)
   }
 
@@ -1676,7 +1695,7 @@ export default class extends Controller {
   }
 
   transitSystemIds() {
-    return [ "tra", "hsr", "sugar_railway", "other" ]
+    return [ "tra", "hsr", "sugar_railway", "ferry", "other" ]
   }
 
   isTraRoute(routeId) {
@@ -3960,7 +3979,7 @@ export default class extends Controller {
       const traRoute = this.traRouteForLineRef(lineRef)
       if (traRoute) return this.routeDisplayColor(traRoute) || traRoute.color || TRA_BRAND_COLOR
 
-      const routes = this.routesByLineRef[lineRef] || []
+      const routes = this.routesForSystemRef("tra", lineRef)
       if (routes.length > 0) return this.routeDisplayColor(routes[0]) || routes[0].color
 
       return TRA_BRAND_COLOR
@@ -3968,8 +3987,8 @@ export default class extends Controller {
 
     if (/^\d+$/.test(stationRef)) {
       if (stationRef.length <= 2) {
-        const hsrRoutes = this.routesByLineRef.HSR || this.routesManifest.hsr || []
-        const hsrRoute = Array.isArray(hsrRoutes) ? hsrRoutes[0] : null
+        const hsrRoutes = this.routesForSystemRef("hsr", "HSR")
+        const hsrRoute = hsrRoutes[0] || (Array.isArray(this.routesManifest.hsr) ? this.routesManifest.hsr[0] : null)
         if (hsrRoute) return this.routeDisplayColor(hsrRoute) || hsrRoute.color || LAYER_COLORS.hsr
       }
 
@@ -3977,18 +3996,24 @@ export default class extends Controller {
     }
 
     if (/^G[1-6]$/i.test(stationRef)) {
-      const maokongRoutes = this.routesByLineRef.MG || this.routesManifest.other || []
-      const maokong = (Array.isArray(maokongRoutes) ? maokongRoutes : []).find((route) => route.id === "maokong_gondola")
+      const maokongRoutes = this.routesForSystemRef("other", "MG")
+      const maokong = maokongRoutes.find((route) => route.id === "maokong_gondola")
       if (maokong) return this.routeDisplayColor(maokong) || maokong.color
     }
 
     const prefix = this.linePrefixForStationRef(stationRef)
     if (!prefix) return null
 
-    const routes = this.routesByLineRef[prefix] || []
+    const routes = this.routesForLinePrefix(prefix)
     if (routes.length === 0) return null
 
     if (prefix === "A") {
+      const visibleIds = new Set(this.visibleRouteLayerIds())
+      if (visibleIds.has("airport_mrt_express") && !visibleIds.has("airport_mrt")) {
+        const expressRoute = routes.find((route) => route.id === "airport_mrt_express")
+        if (expressRoute) return EXPRESS_LINE_COLOR
+      }
+
       const airportRoute = routes.find((route) => route.id === "airport_mrt")
       if (airportRoute) return AIRPORT_MRT_COMMUTER_COLOR
     }

@@ -9,6 +9,9 @@ module Geojson
     DEPOT_EXTENSION_THRESHOLD_M = 50
     # Only force the spur endpoint onto the facility marker when already this close.
     FACILITY_ENDPOINT_SNAP_M = 100
+    # Stop yard-network search only when a vertex is this close to the facility.
+    # Using FACILITY_ENDPOINT_SNAP_M here shortcuts across parallel yard tracks.
+    FACILITY_PATH_REACHED_M = 15
     # Reject depot links that walk a passenger corridor instead of a local yard spur.
     MAX_DEPOT_SPUR_LENGTH_M = 3_500
     # Reject spurs that still contain a long straight closing/bridge chord.
@@ -115,10 +118,11 @@ module Geojson
         candidates = Array(candidates)
       end
 
-      candidates.max_by do |point|
+      # Prefer the catalog marker; only break ties by staying farther from the passenger main line.
+      candidates.min_by do |point|
+        proximity = planar_distance_meters(point[0], point[1], catalog_lon, catalog_lat)
         main_distance = nearest_on_line_strings(point[0], point[1], main_line_strings)[2]
-        proximity = -planar_distance_meters(point[0], point[1], catalog_lon, catalog_lat)
-        [ main_distance, proximity ]
+        [ proximity, -main_distance ]
       end
     end
 
@@ -311,7 +315,7 @@ module Geojson
           best_tail = tail
           best_path = paths[node]
         end
-        break if tail <= FACILITY_ENDPOINT_SNAP_M
+        break if tail <= FACILITY_PATH_REACHED_M
 
         graph.fetch(node, {}).each do |neighbor, edge_distance|
           next if visited[neighbor]
@@ -530,6 +534,8 @@ module Geojson
       return true if length > 1_200 && overlap > 0.85
       # Short approach tracks that never leave the passenger corridor toward the yard.
       return true if length < 500 && overlap > 0.7
+      # Medium spur that still hugs the passenger corridor (e.g. 北投 along 復興崗).
+      return true if length >= 500 && overlap > 0.7
 
       false
     end

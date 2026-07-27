@@ -106,6 +106,7 @@ module Views
 
       def route_color
         return "#0073B7" if @route["id"] == "airport_mrt"
+        return "#6A2C91" if @route["id"] == "airport_mrt_express"
 
         @route["color"].presence || "#666666"
       end

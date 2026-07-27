@@ -1,0 +1,70 @@
+{
+  "type": "FeatureCollection",
+  "name": "渡輪鼓山－旗津渡輪",
+  "properties": {
+    "source": "Track geometry from OpenStreetMap ways 256726319, 256726320 (with fallbacks). © OpenStreetMap contributors, ODbL.",
+    "network": "渡輪",
+    "ref": "CJ",
+    "osm_relations": [],
+    "osm_ways": []
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "CJ",
+        "name": "鼓山－旗津渡輪",
+        "name_en": "Gushan–Cijin Ferry",
+        "color": "#0891b2"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.2847,
+            22.6289
+          ],
+          [
+            120.2697,
+            22.6221
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "CJ01",
+        "name": "鼓山輪渡站",
+        "line": "鼓山－旗津渡輪",
+        "color": "#0891b2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.2847,
+          22.6289
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "CJ02",
+        "name": "旗津輪渡站",
+        "line": "鼓山－旗津渡輪",
+        "color": "#0891b2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.2697,
+          22.6221
+        ]
+      }
+    }
+  ]
+}

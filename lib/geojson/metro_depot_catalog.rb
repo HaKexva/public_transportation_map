@@ -7,27 +7,40 @@ module Geojson
   # Linked routes gain depot_spur geometry when rebuilt (see MetroLineBuilder).
   module MetroDepotCatalog
     DEPOTS = [
-      { id: "beitou_depot", name: "北投機廠", routes: %w[tamsui_xinyi], lon: 121.48699, lat: 25.13751, grade: "五級" },
+      # Depot body at red circle south of 復興崗 (screenshot 15.52.02).
+      { id: "beitou_depot", name: "北投機廠", routes: %w[tamsui_xinyi], lon: 121.48421, lat: 25.13585, grade: "五級" },
       {
         id: "xindian_depot",
         name: "新店機廠",
         routes: %w[songshan_xindian xiaobitan_branch],
         track_on: "xiaobitan_branch",
-        lon: 121.5378,
-        lat: 24.9683,
+        # Next to 小碧潭 station throat.
+        lon: 121.53148,
+        lat: 24.97128,
         grade: "三級"
+      },
+      {
+        id: "sanying_depot",
+        name: "三峽機廠",
+        routes: %w[sanying_line],
+        lon: 121.3805,
+        lat: 24.9345,
+        grade: "五級"
       },
       { id: "nangang_depot", name: "南港機廠", routes: %w[bannan], lon: 121.59836, lat: 25.05034, grade: "三級" },
       { id: "tucheng_depot", name: "土城機廠", routes: %w[bannan], lon: 121.4415, lat: 24.98674, grade: "四級" },
       { id: "zhonghe_depot", name: "中和機廠", routes: %w[zhonghe_xinlu], lon: 121.508814, lat: 24.990250, grade: "一級" },
       { id: "xinzhuang_depot", name: "新莊機廠", routes: %w[zhonghe_xinlu], lon: 121.410, lat: 25.0215, grade: "三級" },
       { id: "luzhou_depot", name: "蘆洲機廠", routes: %w[zhonghe_xinlu], lon: 121.4670, lat: 25.0900, grade: "四級" },
-      { id: "muzha_depot", name: "木柵機廠", routes: %w[wenhu_line], lon: 121.58491, lat: 25.00162, grade: "中運量" },
-      { id: "neihu_depot", name: "內湖機廠", routes: %w[wenhu_line], lon: 121.621417, lat: 25.057639, grade: "中運量" },
+      # Marker on the NW yard rectangle (screenshot 21.33.31 red box); spur tip may differ.
+      { id: "muzha_depot", name: "木柵機廠", routes: %w[wenhu_line], lon: 121.5848, lat: 25.00135, grade: "中運量" },
+      # Marker on the north yard along 環東大道 (screenshot 21.32.49 red box).
+      { id: "neihu_depot", name: "內湖機廠", routes: %w[wenhu_line], lon: 121.6194, lat: 25.06037, grade: "中運量" },
       { id: "qingpu_depot", name: "青埔機廠", routes: %w[airport_mrt], lon: 121.216552, lat: 25.014589, grade: "主機廠" },
       { id: "shisizhang_depot", name: "十四張機廠", routes: %w[circular ankeng_lrt], lon: 121.5288, lat: 24.9852, grade: "輕軌" },
       { id: "ankeng_depot", name: "安坑機廠", routes: %w[ankeng_lrt], lon: 121.4860, lat: 24.9450, grade: "輕軌" },
-      { id: "danhai_depot", name: "淡海車廠", routes: %w[danhai_lrt], lon: 121.434621, lat: 25.2009501, grade: "輕軌" },
+      # Yard body west of V11 崁頂 (screenshot 11.14.52).
+      { id: "danhai_depot", name: "淡海車廠", routes: %w[danhai_lrt], lon: 121.4332, lat: 25.2007, grade: "輕軌" },
       { id: "kaohsiung_north_depot", name: "北機廠", routes: %w[red_line], lon: 120.3026, lat: 22.7767, grade: "三級" },
       { id: "kaohsiung_south_depot", name: "南機廠", routes: %w[red_line], lon: 120.3308, lat: 22.5843, grade: "三級" },
       { id: "kaohsiung_daliao_depot", name: "大寮機廠", routes: %w[orange_line], lon: 120.392, lat: 22.624, grade: "主機廠" },
@@ -41,15 +54,17 @@ module Geojson
       { id: "hsr_zuoying_depot", name: "左營維修基地", routes: %w[taiwan_hsr], lon: 120.315, lat: 22.694, grade: "維修基地" },
       { id: "tra_shulin_depot", name: "樹林調車場", routes: %w[western_trunk_north], lon: 121.418, lat: 24.988, grade: "調車場" },
       { id: "tra_qidu_depot", name: "七堵機務段", routes: %w[western_trunk_north yilan_line], track_on: "western_trunk_north", lon: 121.716, lat: 25.096, grade: "機務段" },
-      { id: "tra_fugang_depot", name: "富岡機廠", routes: %w[western_trunk_north], lon: 121.082, lat: 24.928, grade: "機廠" },
+      # North sidings (screenshot 19.53.33); not the south X.
+      { id: "tra_fugang_depot", name: "富岡機廠", routes: %w[western_trunk_north], lon: 121.0725, lat: 24.9328, grade: "機廠" },
       { id: "tra_changhua_depot", name: "彰化機務段", routes: %w[mountain_line sea_line western_trunk_south], track_on: "mountain_line", lon: 120.540171, lat: 24.085948, grade: "機務段" },
       {
         id: "tra_chaozhou_depot",
         name: "潮州機廠",
         routes: %w[pingtung_line western_trunk_south],
         track_on: "pingtung_line",
-        lon: 120.542,
-        lat: 22.5505,
+        # SW of Chaozhou toward 崁頂交流道 (screenshot 19.51.57).
+        lon: 120.5315,
+        lat: 22.5355,
         grade: "機廠"
       },
       { id: "tra_hualien_depot", name: "花蓮機務段", routes: %w[beihui_line taidong_line], lon: 121.603036, lat: 23.995747, grade: "機務段" },
@@ -84,19 +99,21 @@ module Geojson
     end
 
     def self.serialize_depot(depot)
-      facility = primary_facility_coordinates(depot)
       {
         id: depot[:id],
         name: depot[:name],
         routes: depot[:routes],
-        lon: facility[:lon],
-        lat: facility[:lat],
+        # Catalog lon/lat are the on-map depot body (本體); spur tips use facility hints.
+        lon: depot[:lon],
+        lat: depot[:lat],
         grade: depot[:grade],
         track_links: track_links_for_depot(depot)
       }.compact
     end
 
     def self.track_links_for_depot(depot)
+      return [] if DepotSpurCatalog.omit_spur?(depot[:id])
+
       link_route_ids = depot[:track_on] ? Array(depot[:track_on]) : depot[:routes]
       facility = primary_facility_coordinates(depot)
 
@@ -116,6 +133,7 @@ module Geojson
           facility_lat: facility_coords[:lat],
           junction_hint: junction_hint
         )
+        spur_line_strings = DepotSpurCatalog.line_strings_for_depot(depot[:id]) if spur_line_strings.empty?
         coordinates = TrackGeometry.depot_link_coordinates_for_point(
           facility_coords[:lon],
           facility_coords[:lat],
@@ -124,10 +142,25 @@ module Geojson
           junction_reference_lon: junction_hint&.dig(:lon),
           junction_reference_lat: junction_hint&.dig(:lat)
         )
+        if coordinates.nil? || TrackGeometry.depot_spur_corridor_duplicate?(coordinates, line_strings)
+          coordinates = on_disk_depot_spur_coordinates(path, depot[:id])
+        end
         next unless coordinates
 
         { route_id: route_id, coordinates: coordinates }
       end
+    end
+
+    def self.on_disk_depot_spur_coordinates(path, depot_id)
+      return nil unless path.exist?
+
+      feature = JSON.parse(path.read).fetch("features", []).find do |entry|
+        entry.dig("properties", "depot_id") == depot_id
+      end
+      coordinates = feature&.dig("geometry", "coordinates")
+      return nil unless coordinates.is_a?(Array) && coordinates.length >= 2
+
+      coordinates
     end
 
     def self.route_geojson_path(route_id)
@@ -138,6 +171,6 @@ module Geojson
       Rails.root.join("public#{entry["file"]}")
     end
 
-    private_class_method :serialize_depot, :track_links_for_depot, :route_geojson_path
+    private_class_method :serialize_depot, :track_links_for_depot, :on_disk_depot_spur_coordinates, :route_geojson_path
   end
 end

@@ -96,13 +96,15 @@ module Geojson
       raise "No track geometry for #{@line.slug}" if @route_features.empty?
 
       clip_xiaobitan_yard_loop!(@route_features) if @line.slug == "xiaobitan_branch"
+      clip_danhai_north_stub!(@route_features) if @line.slug == "danhai_lrt"
 
       stations = fetch_stations_for_line
       apply_taichung_station_coordinates!(stations) if @line.system_id == "taichung_metro"
       align_stations_to_routes!(stations, @route_features)
       trim_metro_terminal_stubs!(@route_features, stations) if trim_metro_terminal_stubs?
       extend_airport_mrt_to_terminals!(@route_features, stations) if @line.slug == "airport_mrt"
-      align_stations_to_routes!(stations, @route_features) if @line.slug == "airport_mrt"
+      extend_tamsui_xinyi_eastern_extension!(@route_features, stations) if @line.slug == "tamsui_xinyi"
+      align_stations_to_routes!(stations, @route_features) if @line.slug == "airport_mrt" || @line.slug == "tamsui_xinyi"
       extend_routes_for_depots!(@route_features)
       align_tra_junction_station!(stations) if @line.system_id == "tra"
       apply_tra_route_terminals!(@route_features, stations) if @line.system_id == "tra"
@@ -186,7 +188,18 @@ module Geojson
       return build_tra_route_features if @line.system_id == "tra"
       return build_per_relation_route_features if multi_branch_line?
 
-      build_single_track_route_features
+      features = build_single_track_route_features
+
+      # Ferry routes with no OSM way geometry: draw a straight line between fallback piers.
+      if features.empty? && @line.system_id == "ferry"
+        fallback_piers = FerryCatalog::FALLBACK_STATIONS_BY_SLUG[@line.slug] || []
+        if fallback_piers.length >= 2
+          coords = fallback_piers.map { |pier| [ pier[:lon].to_f, pier[:lat].to_f ] }
+          features = [ route_feature(coords, branch_index: 0, relation_index: 0) ]
+        end
+      end
+
+      features
     end
 
     # Multiple OSM relations that are separate branches (not forward/back duplicates).
@@ -255,7 +268,7 @@ module Geojson
     end
 
     def stitch_other_way_routes?
-      %w[other sugar_railway].include?(@line.system_id) && @line.way_ids.length > 5
+      %w[other sugar_railway ferry].include?(@line.system_id) && @line.way_ids.length > 5
     end
 
     # Greedily merge fragmented OSM ways into continuous corridor LineStrings.
@@ -384,9 +397,7 @@ module Geojson
       when "hualien_port_line"
         build_hualien_port_line_route_features
       when "taichung_port_line"
-        build_tra_cached_or_station_ordered_route_features(
-          station_refs: TAICHUNG_PORT_STATION_REFS
-        )
+        build_taichung_port_line_route_features
       when "pingtung_line"
         build_tra_cached_or_station_ordered_route_features(
           station_refs: PINGTUNG_STATION_REFS
@@ -992,7 +1003,41 @@ module Geojson
       dedupe_tra_coordinates!(corridor)
       orient_tra_line!(corridor)
       densified = TrackGeometry.densify_coordinates(corridor, max_step_m: 200)
-      [ route_feature(densified) ]
+      features = [ route_feature(densified) ]
+
+      # Coastal stub north of 花蓮港 toward 環保公園 / 大本 (screenshot 19.48.15).
+      north_path = Rails.root.join("lib/geojson/fallback_tracks/tra/hualien_port_north_stub.json")
+      if north_path.exist?
+        north = JSON.parse(north_path.read)
+        if north.is_a?(Array) && north.length >= 2
+          north_coords = TrackGeometry.densify_coordinates(north, max_step_m: 50)
+          features << route_feature(north_coords, branch_index: 1, relation_index: 0).tap do |feature|
+            feature[:properties][:name] = "#{@line.name}（北段尾軌）"
+          end
+        end
+      end
+
+      features
+    end
+
+    def build_taichung_port_line_route_features
+      features = build_tra_cached_or_station_ordered_route_features(
+        station_refs: TAICHUNG_PORT_STATION_REFS
+      )
+      return [] if features.empty?
+
+      west_path = Rails.root.join("lib/geojson/fallback_tracks/tra/taichung_port_west_branch.json")
+      if west_path.exist?
+        west = JSON.parse(west_path.read)
+        if west.is_a?(Array) && west.length >= 2
+          densified = TrackGeometry.densify_coordinates(west, max_step_m: 50)
+          features << route_feature(densified, branch_index: 1, relation_index: 0).tap do |feature|
+            feature[:properties][:name] = "#{@line.name}（碼頭支線）"
+          end
+        end
+      end
+
+      features
     end
 
     def hualien_port_corridor_coordinates
@@ -1000,31 +1045,16 @@ module Geojson
       return nil unless fallback&.length.to_i >= 2
 
       beipu = self.class.tra_station_by_ref["7010"]
-      port = self.class.tra_station_by_ref["6256"]
-      return nil unless beipu && port
-
-      parent_route = tra_branch_parent_route_coordinates
-      if parent_route&.length.to_i >= 2
-        junction_idx = nearest_chain_index(parent_route, fallback.first[0], fallback.first[1])
-        beipu_idx = nearest_chain_index(parent_route, beipu[:lon], beipu[:lat])
-        connector = chain_segment_between(parent_route, beipu_idx, junction_idx)
-
-        port_idx = nearest_chain_index(fallback, port[:lon], port[:lat])
-        branch = fallback[0..port_idx]
-
-        corridor = TrackGeometry.dedupe_coordinates(connector + branch.drop(1))
-        corridor[0] = [ beipu[:lon], beipu[:lat] ]
-        corridor[-1] = [ port[:lon], port[:lat] ]
-        return corridor
-      end
+      return nil unless beipu
 
       corridor = fallback.dup
-      if tra_endpoint_gap(corridor.first, [ port[:lon], port[:lat] ]) <
-          tra_endpoint_gap(corridor.first, [ beipu[:lon], beipu[:lat] ])
+      # 北埔 at the inland end; coastal tail south of 花蓮港 toward 美崙海濱
+      # (screenshot 2026-07-27 13.59.24).
+      if tra_endpoint_gap(corridor.first, [ beipu[:lon], beipu[:lat] ]) >
+          tra_endpoint_gap(corridor.last, [ beipu[:lon], beipu[:lat] ])
         corridor.reverse!
       end
       corridor[0] = [ beipu[:lon], beipu[:lat] ]
-      corridor[-1] = [ port[:lon], port[:lat] ]
       corridor
     end
 
@@ -1265,6 +1295,7 @@ module Geojson
 
     def stitch_tra_route_features!
       return if @line.slug == "hualien_port_line"
+      return if @line.slug == "taichung_port_line"
 
       routes = @route_features.select { |feature| feature.dig(:properties, :feature_type) == "route" }
       return if routes.empty?
@@ -1627,7 +1658,7 @@ module Geojson
         return fetch_maokong_gondola_stations
       end
 
-      if %w[other sugar_railway].include?(@line.system_id)
+      if %w[other sugar_railway ferry].include?(@line.system_id)
         return fetch_other_stations
       end
 
@@ -1692,10 +1723,61 @@ module Geojson
 
       if @line.slug == "tamsui_xinyi"
         stations = stations.reject { |station| station[:ref].in?(%w[R22A]) }
+        inject_tamsui_xinyi_eastern_extension_station!(stations)
         return apply_taipei_in_station_transfers!(stations)
       end
 
       apply_taipei_in_station_transfers!(stations)
+    end
+
+    def inject_tamsui_xinyi_eastern_extension_station!(stations)
+      extension = tamsui_xinyi_eastern_extension_payload
+      return if extension.nil?
+
+      extension.fetch("stations", []).each do |fallback|
+        next if stations.any? { |station| station[:ref].to_s.split(";").include?(fallback["ref"]) }
+
+        stations << {
+          ref: fallback["ref"],
+          name: fallback["name"],
+          lon: fallback["lon"],
+          lat: fallback["lat"],
+          position_anchored: true
+        }
+      end
+    end
+
+    def extend_tamsui_xinyi_eastern_extension!(route_features, stations)
+      extension = tamsui_xinyi_eastern_extension_payload
+      return if extension.nil?
+
+      extension_coords = extension.fetch("coordinates", [])
+      return if extension_coords.length < 2
+
+      xiangshan = stations.find { |station| station[:ref].to_s.split(";").include?("R02") }
+      return unless xiangshan
+
+      route_features.each do |feature|
+        next unless feature.dig(:properties, :feature_type) == "route"
+
+        coordinates = feature.dig(:geometry, :coordinates)
+        next unless coordinates.is_a?(Array) && coordinates.length >= 2
+
+        # Drop any short stub past 象山, then prepend 廣慈尾軌 → 廣慈 → 象山.
+        trimmed = TrackGeometry.trim_terminal_stub_and_snap(
+          coordinates,
+          [ xiangshan[:lon], xiangshan[:lat] ]
+        )
+        joined = TrackGeometry.dedupe_coordinates(extension_coords + trimmed)
+        feature[:geometry][:coordinates] = joined
+      end
+    end
+
+    def tamsui_xinyi_eastern_extension_payload
+      path = Rails.root.join("lib/geojson/fallback_tracks/tamsui_xinyi_eastern_extension.json")
+      return nil unless path.exist?
+
+      JSON.parse(path.read)
     end
 
     def apply_taipei_in_station_transfers!(stations)
@@ -1789,25 +1871,82 @@ module Geojson
       end
     end
 
-    # OSM includes 新店機廠深層存車軌；客運支線只保留爬升至小碧潭站的高架段。
+    # OSM relation 台北捷運小碧潭支線(順向): 七張 → south/west elevated loop → 小碧潭.
+    # Do not substitute a riverside E-W chord (screenshot 2026-07-27 14.12.41), and do not
+    # extend a NW overrun into 中央路133巷 past the station.
+    XIAOBITAN_PASSENGER_CORRIDOR = [
+      [ 121.5429079, 24.9750234 ],
+      [ 121.5428916, 24.9732532 ],
+      [ 121.5428525, 24.9719893 ],
+      [ 121.5427013, 24.9714199 ],
+      [ 121.5426346, 24.9712056 ],
+      [ 121.5425802, 24.9710752 ],
+      [ 121.5424488, 24.9708299 ],
+      [ 121.5422651, 24.9705870 ],
+      [ 121.5421342, 24.9704509 ],
+      [ 121.5416699, 24.9700942 ],
+      [ 121.5407342, 24.9695701 ],
+      [ 121.5403432, 24.9693303 ],
+      [ 121.5399763, 24.9690274 ],
+      [ 121.5395285, 24.9687455 ],
+      [ 121.5392041, 24.9685371 ],
+      [ 121.5388111, 24.9683211 ],
+      [ 121.5384311, 24.9682055 ],
+      [ 121.5381642, 24.9681822 ],
+      [ 121.5377786, 24.9682163 ],
+      [ 121.5371426, 24.9683626 ],
+      [ 121.5364142, 24.9687826 ],
+      [ 121.5360471, 24.9690306 ],
+      [ 121.5352963, 24.9695413 ],
+      [ 121.5345275, 24.9700574 ],
+      [ 121.5340234, 24.9703477 ],
+      [ 121.5333634, 24.9707002 ],
+      [ 121.5328176, 24.9709035 ],
+      [ 121.5323122, 24.9710056 ],
+      [ 121.5316549, 24.9712012 ],
+      [ 121.5314821, 24.9712804 ],
+      [ 121.5305976, 24.9717591 ] # 小碧潭 — no NW stub into 中央路133巷
+    ].freeze
+
     def clip_xiaobitan_yard_loop!(route_features)
-      floor_lat = 24.9695
+      route_features.each do |feature|
+        next unless feature.dig(:properties, :feature_type) == "route"
+
+        feature[:geometry][:coordinates] = TrackGeometry.densify_coordinates(
+          XIAOBITAN_PASSENGER_CORRIDOR,
+          max_step_m: 40
+        )
+      end
+    end
+
+    # OSM/route relations include a stub north of V11 past 台2; passenger tip ends at 崁頂.
+    def clip_danhai_north_stub!(route_features)
+      tip_lat = 25.2010
 
       route_features.each do |feature|
         next unless feature.dig(:properties, :feature_type) == "route"
 
         coordinates = feature.dig(:geometry, :coordinates)
-        next unless coordinates.is_a?(Array) && coordinates.length >= 4
+        next unless coordinates.is_a?(Array) && coordinates.length >= 2
 
-        filtered = coordinates.reject { |point| point[1] < floor_lat }
+        filtered = coordinates.reject { |point| point[1] > tip_lat }
         next if filtered.length < 2
+
+        # Keep orientation: northern tip should be last for the lushan segment ending at 崁頂.
+        if filtered.last[1] < filtered.first[1]
+          filtered = filtered.reverse
+        end
+        # Prefer ending at the northernmost remaining vertex (near 崁頂).
+        if filtered.first[1] > filtered.last[1]
+          filtered = filtered.reverse
+        end
 
         feature[:geometry][:coordinates] = TrackGeometry.densify_coordinates(filtered, max_step_m: 40)
       end
     end
 
     METRO_TERMINAL_STUB_SYSTEMS = %w[
-      taipei_metro new_taipei_metro kaohsiung_metro taichung_metro other sugar_railway
+      taipei_metro new_taipei_metro kaohsiung_metro taichung_metro other sugar_railway ferry
     ].freeze
 
     def trim_metro_terminal_stubs?
@@ -2097,8 +2236,9 @@ module Geojson
       "shenao_line" => { start: "7360", finish: "7362" },
       "chengzhui_line" => { start: "3350", finish: "2260" },
       "shalun_line" => { start: "4270", finish: "4272" },
-      "hualien_port_line" => { start: "7010", finish: "6256" },
-      "taichung_port_line" => { start: "2210", finish: "2211" },
+      "hualien_port_line" => { start: "7010" },
+      # Keep 一號碼頭 mid-corridor; route continues into port freight tracks beyond the station.
+      "taichung_port_line" => { start: "2210" },
       "pingtung_line" => { start: "4400", finish: "5120" },
       "south_link" => { start: "5120", finish: "6000" },
       "beihui_line" => { start: "7000", finish: "7130" },
@@ -2115,7 +2255,7 @@ module Geojson
       return if routes.empty?
 
       partial = TRA_PARTIAL_TERMINAL_REFS[@line.slug]
-      if partial&.dig(:start) && partial[:finish]
+      if partial&.dig(:start) || partial&.dig(:finish)
         routes.each_with_index do |route, index|
           coordinates = route.dig(:geometry, :coordinates)
           next unless coordinates.is_a?(Array) && coordinates.length >= 2
@@ -2123,7 +2263,7 @@ module Geojson
           extend_tra_named_terminals_at_ends!(
             coordinates,
             start_ref: index.zero? ? partial[:start] : nil,
-            finish_ref: index == routes.length - 1 ? partial[:finish] : nil,
+            finish_ref: (partial[:finish] && index == routes.length - 1) ? partial[:finish] : nil,
             stations: stations
           )
           trim_tra_corridor_endpoint_jumps!(coordinates)
@@ -2296,7 +2436,7 @@ module Geojson
     ].freeze
     YILAN_STATION_REFS = %w[
       920 7390 7380 7360 7350 7320 7310 7300 7290 7280 7270 7260 7250 7240 7230 7220 7210 7200
-      7190 7180 7170 7160 7150 7120
+      7190 7180 7170 7160 7150 7140 7130 7120
     ].freeze
     YILAN_CORRIDOR_WAYPOINT_REFS = %w[
       920 7390 7380 7360 7350 7320 7310 7300 7290 7280 7270 7260 7250 7240 7230 7220 7210 7200
@@ -2544,6 +2684,7 @@ module Geojson
       # Prefer curated fallback refs/names (OSM may only tag one terminus, e.g. 橋頭糖鐵).
       fallback = SugarRailwayCatalog::FALLBACK_STATIONS_BY_SLUG[@line.slug] ||
         OtherTransitCatalog::FALLBACK_STATIONS_BY_SLUG[@line.slug] ||
+        FerryCatalog::FALLBACK_STATIONS_BY_SLUG[@line.slug] ||
         []
       stations = merge_stations(fallback, stations)
       stations = filter_alishan_passenger_stations(stations) if @line.slug == "alishan_forest_railway"

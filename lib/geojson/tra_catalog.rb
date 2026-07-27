@@ -71,7 +71,7 @@ module Geojson
       MetroLine.tra(slug: "jiji_line", name: "集集線", name_en: "Jiji Line", ref: "JJ", color: BRAND_COLOR, relation_ids: [ 5_224_252 ], station_ref_prefix: "TRA", branch_of: BRANCH_OF["jiji_line"]),
       MetroLine.tra(slug: "pingxi_line", name: "平溪線", name_en: "Pingxi Line", ref: "PX", color: BRAND_COLOR, relation_ids: [ 5_149_859 ], station_ref_prefix: "TRA", branch_of: BRANCH_OF["pingxi_line"]),
       MetroLine.tra(slug: "chengzhui_line", name: "成追線", name_en: "Chengzhui Line", ref: "CZ", color: BRAND_COLOR, relation_ids: [ 5_224_215 ], station_ref_prefix: "TRA", branch_of: BRANCH_OF["chengzhui_line"]),
-      MetroLine.tra(slug: "shalun_line", name: "沙崙線", name_en: "Shalun Line", ref: "SL", color: BRAND_COLOR, relation_ids: [ 4_252_440, 4_252_441 ], station_ref_prefix: "TRA", branch_of: BRANCH_OF["shalun_line"]),
+      MetroLine.tra(slug: "shalun_line", name: "沙崙線", name_en: "Shalun Line", ref: "SAL", color: BRAND_COLOR, relation_ids: [ 4_252_440, 4_252_441 ], station_ref_prefix: "TRA", branch_of: BRANCH_OF["shalun_line"]),
       MetroLine.tra(slug: "shenao_line", name: "深澳線", name_en: "Shenao Line", ref: "SA", color: BRAND_COLOR, relation_ids: [ 5_149_860 ], station_ref_prefix: "TRA", branch_of: BRANCH_OF["shenao_line"]),
       MetroLine.tra(slug: "hualien_port_line", name: "花蓮臨港線", name_en: "Hualien Port Line", ref: "HP", color: BRAND_COLOR, relation_ids: [ 5_224_251 ], station_ref_prefix: "TRA", branch_of: BRANCH_OF["hualien_port_line"]),
       MetroLine.tra(slug: "taichung_port_line", name: "臺中臨港線", name_en: "Taichung Port Line", ref: "TP", color: BRAND_COLOR, relation_ids: [ 8_969_7472 ], station_ref_prefix: "TRA", branch_of: BRANCH_OF["taichung_port_line"])

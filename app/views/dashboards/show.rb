@@ -8,8 +8,6 @@ module Views
         super()
       end
 
-      BUNDLED_ROUTE_IDS = %w[airport_mrt_express].freeze
-
       METRO_SYSTEM_META = [
         { id: "taipei_metro", color: "#A74C00", badge: :amber },
         { id: "new_taipei_metro", color: "#E95A0C", badge: :orange },
@@ -80,6 +78,7 @@ module Views
           { id: "tra", label: t("map.categories.tra") },
           { id: "hsr", label: t("map.categories.hsr") },
           { id: "sugar_railway", label: t("map.categories.sugar_railway") },
+          { id: "ferry", label: t("map.categories.ferry") },
           { id: "other", label: t("map.categories.other") }
         ]
       end
@@ -111,6 +110,16 @@ module Views
           color: "#DB5325",
           badge: :orange,
           description: t("map.layers.hsr.description")
+        }
+      end
+
+      def ferry_system
+        {
+          id: "ferry",
+          label: t("map.layers.ferry.label"),
+          color: "#0891b2",
+          badge: :cyan,
+          description: t("map.layers.ferry.description")
         }
       end
 
@@ -149,7 +158,7 @@ module Views
             label: t("map.legend_routes.airport_mrt.label"),
             note: t("map.legend_routes.airport_mrt.note"),
             style: :parallel,
-            colors: [ "#0073B7", "#6A2C91" ]
+            colors: [ "#0073B7", "#0073B7" ]
           },
           {
             label: t("map.legend_routes.danhai_lrt.label"),
@@ -168,9 +177,9 @@ module Views
 
       def legend_transfer_lines
         [
-          { label: t("map.legend_transfers.passage.label"), note: t("map.legend_transfers.passage.note"), color: "#525252", style: :solid },
-          { label: t("map.legend_transfers.fare_discount.label"), note: t("map.legend_transfers.fare_discount.note"), color: "#3a3a3a", style: :dashed },
-          { label: t("map.legend_transfers.walk_transfer.label"), note: t("map.legend_transfers.walk_transfer.note"), color: "#737373", style: :dotted }
+          { label: t("map.legend_transfers.passage.label"), note: t("map.legend_transfers.passage.note"), color: "#404040", style: :solid },
+          { label: t("map.legend_transfers.fare_discount.label"), note: t("map.legend_transfers.fare_discount.note"), color: "#737373", style: :dashed },
+          { label: t("map.legend_transfers.walk_transfer.label"), note: t("map.legend_transfers.walk_transfer.note"), color: "#a3a3af", style: :dotted }
         ]
       end
 
@@ -400,7 +409,21 @@ module Views
                 render RubyUI::CardTitle.new(class: "text-lg leading-tight") { t("map.title") }
               end
             end
-            render_locale_toggle
+            div(class: "flex shrink-0 items-center gap-2") do
+              button(
+                type: "button",
+                class: "map-ui-panel__toggle hidden md:inline-flex",
+                aria: {
+                  controls: "map-layers-panel-body",
+                  expanded: true,
+                  label: t("js.panel.collapse")
+                },
+                data: { action: "click->map#toggleLayersPanel" }
+              ) do
+                render_chevron_icon
+              end
+              render_locale_toggle
+            end
           end
           div(class: "map-sidebar-actions flex flex-wrap items-center justify-end gap-2") do
             render RubyUI::Button.new(
@@ -469,6 +492,7 @@ module Views
         when "tra" then tra_routes.any?
         when "hsr" then hsr_routes.any?
         when "sugar_railway" then sugar_routes.any?
+        when "ferry" then ferry_routes.any?
         when "other" then other_routes.any?
         else false
         end
@@ -480,6 +504,7 @@ module Views
         groups << { kind: :routes, category: "tra", system: tra_system, routes: tra_routes } if tra_routes.any?
         groups << { kind: :routes, category: "hsr", system: hsr_system, routes: hsr_routes } if hsr_routes.any?
         groups << { kind: :routes, category: "sugar_railway", system: sugar_system, routes: sugar_routes } if sugar_routes.any?
+        groups << { kind: :routes, category: "ferry", system: ferry_system, routes: ferry_routes } if ferry_routes.any?
         groups << { kind: :routes, category: "other", system: other_system, routes: other_routes } if other_routes.any?
         groups
       end
@@ -673,6 +698,7 @@ module Views
         when "tra" then "tra"
         when "hsr" then "hsr"
         when "sugar_railway" then "sugar_railway"
+        when "ferry" then "ferry"
         when "other" then "other"
         else "metro"
         end
@@ -681,6 +707,7 @@ module Views
       def route_row_subtitle(route)
         parts = []
         parts << t("map.route_notes.airport_mrt") if route["id"] == "airport_mrt"
+        parts << t("map.route_notes.airport_mrt_express") if route["id"] == "airport_mrt_express"
         parts << t("map.route_notes.danhai_lrt") if route["id"] == "danhai_lrt"
         parts << t("map.route_notes.taoyuan_airport_skytrain") if route["id"] == "taoyuan_airport_skytrain"
         parts.compact.join(" · ")
@@ -727,6 +754,10 @@ module Views
 
       def other_routes
         @routes_manifest.fetch("other", [])
+      end
+
+      def ferry_routes
+        @routes_manifest.fetch("ferry", [])
       end
 
       def sugar_routes
@@ -782,11 +813,12 @@ module Views
       end
 
       def system_routes(system_id)
-        @routes_manifest.fetch(system_id, []).reject { |route| BUNDLED_ROUTE_IDS.include?(route["id"]) }
+        @routes_manifest.fetch(system_id, [])
       end
 
       def route_display_color(route)
         return "#0073B7" if route["id"] == "airport_mrt"
+        return "#6A2C91" if route["id"] == "airport_mrt_express"
 
         route["color"]
       end
@@ -837,6 +869,21 @@ module Views
         ) do |s|
           s.circle(cx: "11", cy: "11", r: "8")
           s.path(d: "m21 21-4.3-4.3")
+        end
+      end
+
+      def render_chevron_icon
+        svg(
+          xmlns: "http://www.w3.org/2000/svg",
+          viewbox: "0 0 24 24",
+          fill: "none",
+          stroke: "currentColor",
+          stroke_width: "2",
+          stroke_linecap: "round",
+          stroke_linejoin: "round",
+          class: "map-ui-panel__chevron size-4"
+        ) do |s|
+          s.path(d: "m6 9 6 6 6-6")
         end
       end
 
