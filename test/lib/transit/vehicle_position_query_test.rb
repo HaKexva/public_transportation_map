@@ -22,12 +22,12 @@ class VehiclePositionQueryTest < ActiveSupport::TestCase
   end
 
   test "returns empty array for unknown route_id" do
-    result = Transit::VehiclePositionQuery.new(at: @at, route_ids: ["nonexistent_xyz"]).call
+    result = Transit::VehiclePositionQuery.new(at: @at, route_ids: [ "nonexistent_xyz" ]).call
     assert_equal [], result
   end
 
   test "returns vehicles for bannan route during service hours" do
-    result = Transit::VehiclePositionQuery.new(at: @at, route_ids: ["bannan"]).call
+    result = Transit::VehiclePositionQuery.new(at: @at, route_ids: [ "bannan" ]).call
     assert result.length >= 1, "Expected at least 1 vehicle on bannan at 10:00"
 
     vehicle = result.first
@@ -41,7 +41,7 @@ class VehiclePositionQueryTest < ActiveSupport::TestCase
   end
 
   test "returns vehicles for TRA western_trunk_north" do
-    result = Transit::VehiclePositionQuery.new(at: @at, route_ids: ["western_trunk_north"]).call
+    result = Transit::VehiclePositionQuery.new(at: @at, route_ids: [ "western_trunk_north" ]).call
     assert result.length >= 1, "Expected TRA trains at 10:00 weekday"
 
     vehicle = result.first
@@ -50,7 +50,7 @@ class VehiclePositionQueryTest < ActiveSupport::TestCase
   end
 
   test "vehicle hash contains required keys" do
-    result = Transit::VehiclePositionQuery.new(at: @at, route_ids: ["bannan"]).call
+    result = Transit::VehiclePositionQuery.new(at: @at, route_ids: [ "bannan" ]).call
     skip "No vehicles returned" if result.empty?
 
     vehicle = result.first
@@ -84,7 +84,7 @@ class VehiclePositionQueryTest < ActiveSupport::TestCase
 
   test "does not raise for night time query" do
     night_at = Time.new(2026, 7, 27, 3, 0, 0, "+08:00").in_time_zone("Asia/Taipei")
-    result = Transit::VehiclePositionQuery.new(at: night_at, route_ids: ["western_trunk_north"]).call
+    result = Transit::VehiclePositionQuery.new(at: night_at, route_ids: [ "western_trunk_north" ]).call
     assert_kind_of Array, result
   end
 end
