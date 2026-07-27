@@ -124,6 +124,28 @@ module Views
                 },
                 aria: { pressed: "false" }
               ) { t("map.time_scrubber.play") }
+              label(class: "time-scrubber__speed") do
+                span(class: "sr-only") { t("map.time_scrubber.speed_aria") }
+                select(
+                  class: "time-scrubber__speed-select",
+                  data: {
+                    time_scrubber_target: "speedSelect",
+                    action: "change->time-scrubber#changeSpeed"
+                  },
+                  aria: { label: t("map.time_scrubber.speed_aria") }
+                ) do
+                  [
+                    [ 1, t("map.time_scrubber.speed_1x") ],
+                    [ 2, t("map.time_scrubber.speed_2x") ],
+                    [ 5, t("map.time_scrubber.speed_5x") ],
+                    [ 10, t("map.time_scrubber.speed_10x") ],
+                    [ 30, t("map.time_scrubber.speed_30x") ],
+                    [ 60, t("map.time_scrubber.speed_60x") ]
+                  ].each do |value, label|
+                    option(value: value) { label }
+                  end
+                end
+              end
             end
 
             label(class: "time-scrubber__slider-label") do

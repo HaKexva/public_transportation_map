@@ -236,6 +236,8 @@ export default class extends Controller {
     this.stationCoordinatesByKey = {}
     this.stationLabelEntries = []
     this.stationLabelGroup = null
+    this.vehicleGroup = null
+    this.simulationAt = null
   }
 
   t(key, vars = {}) {
@@ -359,6 +361,10 @@ export default class extends Controller {
     this.inStationTransferGroup = L.featureGroup().addTo(this.map)
     this.metroDepotGroup = L.featureGroup().addTo(this.map)
     this.stationLabelGroup = L.layerGroup().addTo(this.map)
+
+    const vehiclePane = this.map.createPane("vehicles")
+    vehiclePane.style.zIndex = 700
+    this.vehicleGroup = L.layerGroup({ pane: "vehicles" }).addTo(this.map)
 
     this.ensureAllLayerGroups()
 
@@ -2676,6 +2682,7 @@ export default class extends Controller {
       this.updateOutOfStationTransfers()
       this.applyRouteEmphasis()
       this.refreshStationLabels()
+      if (this.simulationAt) this.scheduleVehicleRefresh()
     } catch (error) {
       console.error("Failed to load layer", layerId, error)
       this.hideLayer(layerId)
@@ -2711,6 +2718,7 @@ export default class extends Controller {
     }
 
     group.clearLayers()
+    if (this.simulationAt) this.scheduleVehicleRefresh()
 
     this.clearStationCoordinatesForRoutes(this.routesToLoad(layerId))
 
@@ -4222,6 +4230,202 @@ export default class extends Controller {
     }
 
     return this.geoJSONCache[url]
+  }
+
+  // ─── Vehicle layer ───────────────────────────────────────────────────────────
+
+  handleSimulationTime(event) {
+    const at = event.detail?.at
+    if (!at) return
+
+    this.simulationAt = at
+    this.scheduleVehicleRefresh()
+  }
+
+  scheduleVehicleRefresh() {
+    if (this.vehicleRefreshTimer) clearTimeout(this.vehicleRefreshTimer)
+    this.vehicleRefreshTimer = setTimeout(() => {
+      this.vehicleRefreshTimer = null
+      this.refreshVehicles()
+    }, VEHICLE_REFRESH_DEBOUNCE_MS)
+  }
+
+  async refreshVehicles() {
+    if (!this.mapReady || !this.map || !this.simulationAt) return
+
+    const routeIds = this.visibleRouteLayerIds()
+
+    // Notify the scrubber that there are no visible routes
+    if (routeIds.length === 0) {
+      this.notifyVehicleSummary([])
+      return
+    }
+
+    if (this.vehicleFetchController) this.vehicleFetchController.abort()
+    this.vehicleFetchController = new AbortController()
+
+    const params = new URLSearchParams({ at: this.simulationAt })
+    routeIds.forEach((id) => params.append("route_ids[]", id))
+
+    let data
+    try {
+      const response = await fetch(`/api/vehicles?${params}`, { signal: this.vehicleFetchController.signal })
+      if (!response.ok) return
+      data = await response.json()
+    } catch (error) {
+      if (error.name !== "AbortError") console.warn("vehicles fetch failed", error)
+      return
+    }
+
+    if (!this.vehicleGroup) return
+    this.vehicleGroup.clearLayers()
+
+    const vehicles = data.vehicles || []
+    vehicles.forEach((vehicle) => this.renderVehicleMarker(vehicle))
+    this.notifyVehicleSummary(vehicles)
+  }
+
+  renderVehicleMarker(vehicle) {
+    const latlng = this.interpolateVehiclePosition(vehicle)
+    if (!latlng) return
+
+    const color = vehicle.color || "#64748b"
+    const status = vehicle.status || "on_time"
+
+    const icon = L.divIcon({
+      className: "leaflet-div-icon vehicle-marker-icon",
+      html: `<div class="vehicle-marker vehicle-marker--${this.escapeHtml(status)}" style="--vehicle-color:${this.escapeHtml(color)}"></div>`,
+      iconSize: [ 12, 12 ],
+      iconAnchor: [ 6, 6 ]
+    })
+
+    const marker = L.marker(latlng, { icon, pane: "vehicles", interactive: true })
+    marker.bindPopup(() => this.vehiclePopupHtml(vehicle), { maxWidth: 240 })
+    this.vehicleGroup.addLayer(marker)
+  }
+
+  interpolateVehiclePosition(vehicle) {
+    const fromRef = vehicle.from_station_ref
+    const toRef = vehicle.to_station_ref
+    const progress = vehicle.progress ?? 0
+    const routeId = vehicle.route_id
+
+    const fromCoord = this.stationCoordForRef(fromRef, routeId)
+    const toCoord = this.stationCoordForRef(toRef, routeId)
+    if (!fromCoord || !toCoord) return null
+
+    const tracks = this.routeTracksByRouteId[routeId]
+    if (tracks && tracks.length > 0) {
+      const interpolated = this.interpolateAlongTracks(fromCoord, toCoord, progress, tracks)
+      if (interpolated) return interpolated
+    }
+
+    // Fallback: straight-line interpolation
+    const lat = fromCoord[0] + (toCoord[0] - fromCoord[0]) * progress
+    const lng = fromCoord[1] + (toCoord[1] - fromCoord[1]) * progress
+    return L.latLng(lat, lng)
+  }
+
+  stationCoordForRef(ref, routeId) {
+    // stationCoordsByRouteRef is keyed by routeId then by station ref
+    const byRoute = this.stationCoordsByRouteRef[routeId]
+    if (byRoute) {
+      const coord = byRoute[ref]
+      if (coord) return [ coord.lat, coord.lng ]
+    }
+
+    // Also check compound refs (e.g. "07;3340;119") by splitting on ";"
+    if (ref && ref.includes(";")) {
+      for (const part of ref.split(";")) {
+        const c = byRoute?.[part.trim()]
+        if (c) return [ c.lat, c.lng ]
+      }
+    }
+
+    // Fall back to global stationCoordinatesByKey
+    const global = this.stationCoordinatesByKey[ref]
+    if (global) return [ global.lat, global.lng ]
+
+    return null
+  }
+
+  interpolateAlongTracks(fromCoord, toCoord, progress, tracks) {
+    // Find the track segment that passes nearest to both from and to coords
+    let bestTrack = null
+    let bestScore = Infinity
+
+    for (const coords of tracks) {
+      if (coords.length < 2) continue
+      const fromIdx = this.chainIndexForPoint(fromCoord[0], fromCoord[1], coords)
+      const toIdx = this.chainIndexForPoint(toCoord[0], toCoord[1], coords)
+      const score = Math.abs(fromIdx - toIdx)
+      if (score < bestScore) {
+        bestScore = score
+        bestTrack = { coords, fromIdx, toIdx }
+      }
+    }
+
+    if (!bestTrack) return null
+    const { coords, fromIdx, toIdx } = bestTrack
+    const targetIdx = fromIdx + (toIdx - fromIdx) * progress
+
+    const segIdx = Math.floor(targetIdx)
+    const segProg = targetIdx - segIdx
+    const clampedSeg = Math.max(0, Math.min(segIdx, coords.length - 2))
+    const segActualProg = clampedSeg === segIdx ? segProg : (segIdx < 0 ? 0 : 1)
+
+    const [ lon1, lat1 ] = coords[clampedSeg]
+    const [ lon2, lat2 ] = coords[Math.min(clampedSeg + 1, coords.length - 1)]
+    const lat = lat1 + (lat2 - lat1) * segActualProg
+    const lng = lon1 + (lon2 - lon1) * segActualProg
+    return L.latLng(lat, lng)
+  }
+
+  vehiclePopupHtml(vehicle) {
+    const trainNum = vehicle.train_number || this.t("time_scrubber.no_train")
+    const dest = vehicle.destination_name
+    const delayS = vehicle.delay_seconds ?? 0
+    const status = vehicle.status || "on_time"
+    const color = vehicle.color || "#64748b"
+
+    let statusLabel
+    if (status === "delayed") {
+      const mins = Math.round(Math.abs(delayS) / 60)
+      statusLabel = `<span style="color:#f59e0b">▲ ${this.t("time_scrubber.delay_minutes", { minutes: mins })}</span>`
+    } else if (status === "early") {
+      const mins = Math.round(Math.abs(delayS) / 60)
+      statusLabel = `<span style="color:#06b6d4">▼ ${this.t("time_scrubber.early_minutes", { minutes: mins })}</span>`
+    } else {
+      statusLabel = `<span style="color:#22c55e">● ${this.t("time_scrubber.on_time_label")}</span>`
+    }
+
+    const destLine = dest
+      ? `<div style="font-size:0.8rem;color:#64748b">${this.t("time_scrubber.destination", { name: this.escapeHtml(dest) })}</div>`
+      : ""
+
+    return `<div style="min-width:140px">
+      <div style="font-weight:600;margin-bottom:2px">
+        <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${this.escapeHtml(color)};margin-right:4px;vertical-align:middle"></span>
+        ${this.t("time_scrubber.train", { number: this.escapeHtml(trainNum) })}
+      </div>
+      ${destLine}
+      <div style="font-size:0.75rem;margin-top:4px">${statusLabel}</div>
+      <div style="font-size:0.7rem;color:#94a3b8;margin-top:6px">${this.t("time_scrubber.synthetic_note")}</div>
+    </div>`
+  }
+
+  notifyVehicleSummary(vehicles) {
+    const count = vehicles.length
+    const onTime = vehicles.filter((v) => v.status === "on_time").length
+    const delayed = vehicles.filter((v) => v.status === "delayed").length
+    const early = vehicles.filter((v) => v.status === "early").length
+
+    // Try to find the time-scrubber controller and call its public method
+    const scrubberEl = document.querySelector("[data-controller~='time-scrubber']")
+    if (scrubberEl) {
+      const scrubber = this.application.getControllerForElementAndIdentifier(scrubberEl, "time-scrubber")
+      if (scrubber) scrubber.setVehicleSummary({ count, onTime, delayed, early })
+    }
   }
 
   fitLayerBounds(layerId) {
