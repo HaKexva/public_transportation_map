@@ -117,7 +117,7 @@ module Geojson
         slug: "wushulin_sugar_railway",
         name: "烏樹林糖廠五分車",
         name_en: "Wushulin Sugar Railway",
-        ref: "WS",
+        ref: "WSL",
         color: "#B45309",
         way_ids: WUSHULIN_WAY_IDS,
         station_ref_prefix: "WS"

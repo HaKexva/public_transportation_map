@@ -11,6 +11,13 @@ module Geojson
       "sea_line" => %w[3431]
     }.freeze
 
+    TAIDONG_CENTRAL_FALLBACK_STATIONS = [
+      { ref: "6170", name: "萬榮", lon: 121.41907, lat: 23.71199 },
+      { ref: "6180", name: "鳳林", lon: 121.44708, lat: 23.74625 },
+      { ref: "6190", name: "南平", lon: 121.45833, lat: 23.78228 },
+      { ref: "6200", name: "林榮新光", lon: 121.462169, lat: 23.802447 }
+    ].freeze
+
     TAIDONG_SOUTHERN_FALLBACK_STATIONS = [
       { ref: "6010", name: "山里", lon: 121.069722, lat: 22.897222 },
       { ref: "6020", name: "鹿野", lon: 121.1275, lat: 22.951389 },
@@ -56,8 +63,8 @@ module Geojson
       by_ref = cached.each_with_object({}) { |entry, index| index[entry["ref"]] = entry }
 
       (
-        TAIDONG_SOUTHERN_FALLBACK_STATIONS + PINGTUNG_FALLBACK_STATIONS + YILAN_FALLBACK_STATIONS +
-          HUALIEN_PORT_FALLBACK_STATIONS + TAICHUNG_PORT_FALLBACK_STATIONS
+        TAIDONG_CENTRAL_FALLBACK_STATIONS + TAIDONG_SOUTHERN_FALLBACK_STATIONS + PINGTUNG_FALLBACK_STATIONS +
+          YILAN_FALLBACK_STATIONS + HUALIEN_PORT_FALLBACK_STATIONS + TAICHUNG_PORT_FALLBACK_STATIONS
       ).each do |entry|
         by_ref[entry[:ref]] ||= {
           "ref" => entry[:ref], "name" => entry[:name], "lon" => entry[:lon], "lat" => entry[:lat]

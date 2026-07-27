@@ -20,46 +20,88 @@ module Geojson
       # OSM/NLSC yard discovery captures the north/south loop around 七堵; keep the depot throat only.
       "tra_qidu_depot" => { min_lat: 25.092, max_lat: 25.099 },
       # Shared OSM cache also contains the 小碧潭 yard south of 十四張; keep each depot local.
-      "shisizhang_depot" => { min_lat: 24.982, max_lat: 24.9865 },
-      # NLSC yard discovery also captures deep storage south of 三民路; keep the throat near the facility.
-      "xindian_depot" => { max_lat: 24.970, min_lon: 121.525 },
+      "shisizhang_depot" => {
+        min_lat: 24.982, max_lat: 24.9855, min_lon: 121.5265, max_lon: 121.5305,
+        clip_vertices: true
+      },
+      # NLSC mixes 七張/環狀 corridor and deep storage; keep only the yard south of the elevated branch.
+      # Keep yard leads south of the elevated loop bend; exclude deep main-line south of 新店.
+      "xindian_depot" => {
+        # Keep only the yard lead attached near 小碧潭 station throat.
+        max_lat: 24.9725, min_lat: 24.9690, min_lon: 121.5295, max_lon: 121.5335,
+        clip_vertices: true
+      },
+      # Keep SW yard toward 崁頂交流道 (screenshot 19.51.57).
+      "tra_chaozhou_depot" => {
+        min_lat: 22.528, max_lat: 22.5505, min_lon: 120.528, max_lon: 120.538,
+        clip_vertices: true
+      },
+      # 三峽機廠 south of 龍埔路.
+      "sanying_depot" => { min_lat: 24.932, max_lat: 24.940, min_lon: 121.378, max_lon: 121.392 },
       # NLSC discovery also captures the passenger BL corridor and a north yard loop; keep the local throat.
       "nangang_depot" => { min_lon: 121.595, max_lat: 25.054 },
-      # NLSC discovery also captures the east-west passenger corridor east of 富岡; keep the south yard only.
-      "tra_fugang_depot" => { max_lat: 24.933 },
-      # OSM yard discovery also captures a northern stub toward 淡金公路; keep the depot throat only.
-      "danhai_depot" => { max_lat: 25.203 },
+      # Keep the north sidings (screenshot 19.53.33); drop the south spur marked X.
+      "tra_fugang_depot" => {
+        min_lat: 24.9305, max_lat: 24.9345, min_lon: 121.065, max_lon: 121.085,
+        clip_vertices: true
+      },
+      # OSM stub continues north past 崁頂 toward 淡金公路; keep only the yard west of V11.
+      "danhai_depot" => { max_lat: 25.2018, min_lat: 25.1995, min_lon: 121.4315, max_lon: 121.4355 },
       # OSM discovery also captures a disconnected southern yard cluster away from the HSR corridor.
       "hsr_liujia_depot" => { max_lon: 121.0428 },
       # OSM yard discovery also captures the east throat toward 大肚溪; keep the west yard only.
       "hsr_wuri_depot" => { max_lon: 120.618 },
       # OSM yard discovery also captures the southeast throat; keep the northwest yard only.
       "hsr_taibao_depot" => { min_lat: 23.456 },
-      # NLSC MRT yard discovery also captures the passenger main line and an eastward stub
-      # past 南港展覽館; keep only the northeast yard throat.
-      "neihu_depot" => { min_lon: 121.619, min_lat: 25.0555 },
+      # NLSC MRT discovery also captures the 文湖線 passenger corridor west of 南港展覽館;
+      # keep the northeast approach into 內湖機廠 (red path north along 環東大道).
+      "neihu_depot" => { min_lon: 121.6165, max_lon: 121.623, min_lat: 25.0545, max_lat: 25.0615 },
       # NLSC MRT discovery also captures the 文湖線 passenger corridor west of 動物園.
-      "muzha_depot" => { min_lon: 121.579 }
+      "muzha_depot" => { min_lon: 121.579 },
+      # NLSC pulls the Daye Rd east loop and far Xinbeitou yards; keep the 復興崗→北投機廠 throat.
+      # clip_vertices: approach tracks continue slightly east of the branch; trim instead of dropping.
+      "beitou_depot" => {
+        min_lon: 121.478,
+        max_lon: 121.4915,
+        min_lat: 25.134,
+        max_lat: 25.1385,
+        clip_vertices: true
+      }
+    }.freeze
+
+    # Drop spur fragments that only duplicate the passenger corridor (need a yard vertex this far off).
+    SPUR_OFF_MAIN_MIN_M = {
+      "beitou_depot" => 40,
+      "xindian_depot" => 35,
+      "danhai_depot" => 25
     }.freeze
 
     # Force depot spurs to join the main line at a known station or junction.
     SPUR_JUNCTION_HINTS = {
       "kaohsiung_circular_depot" => { lon: 120.326042, lat: 22.608478 },
-      "tra_chaozhou_depot" => { lon: 120.5360618, lat: 22.5499793 },
+      # Leave the passenger corridor just south of 潮州 before entering the SW yard.
+      "tra_chaozhou_depot" => { lon: 120.5359, lat: 22.5483 },
+      # On passenger corridor SE of 龍埔 before the river bridge.
+      "sanying_depot" => { lon: 121.3895, lat: 24.9362 },
+      "danhai_depot" => { lon: 121.43482, lat: 25.2010 },
       "tra_yilan_depot" => { lon: 121.758253, lat: 24.753583 },
       "tra_qidu_depot" => { lon: 121.713831, lat: 25.092014 },
-      "beitou_depot" => { lon: 121.48924, lat: 25.13845 },
-      "shisizhang_depot" => { lon: 121.5276, lat: 24.9844835 },
-      "xindian_depot" => { lon: 121.5305976, lat: 24.9712591 },
+      # Branch east of 水磨坑溪 / 豐年郵局 (screenshot 15.52.02), not the diagonal X south of the post office.
+      "beitou_depot" => { lon: 121.4907, lat: 25.13805 },
+      "shisizhang_depot" => { lon: 121.52845, lat: 24.98383 },
+      # Peel from the southern bend of the 小碧潭 elevated loop into the yard.
+      "xindian_depot" => { lon: 121.53148, lat: 24.97128 },
       "qingpu_depot" => { lon: 121.2141381, lat: 25.0137163 },
-      "tra_fugang_depot" => { lon: 121.0676, lat: 24.9312 },
+      "tra_fugang_depot" => { lon: 121.0705, lat: 24.9315 },
       "nangang_depot" => { lon: 121.60385, lat: 25.05184 },
       "tucheng_depot" => { lon: 121.45164, lat: 24.99573 },
       "taichung_beitun_depot" => { lon: 120.71023, lat: 24.18410 },
       "hsr_liujia_depot" => { lon: 121.03858, lat: 24.8019923 },
       "hsr_wuri_depot" => { lon: 120.6146884, lat: 24.0995112 },
       "hsr_taibao_depot" => { lon: 120.3239384, lat: 23.4631241 },
-      "muzha_depot" => { lon: 121.57948795924513, lat: 24.99833313676789 }
+      "muzha_depot" => { lon: 121.57948795924513, lat: 24.99833313676789 },
+      # Branch east from 南港展覽館 into 內湖機廠.
+      "neihu_depot" => { lon: 121.6175958, lat: 25.055012 }
     }.freeze
 
     # Optional OSM way overrides when automatic discovery returns too much noise.
@@ -87,26 +129,35 @@ module Geojson
 
     # Catalog hints for yards where the marker should sit away from the passenger main line.
     FACILITY_COORDINATE_HINTS = {
-      "neihu_depot" => { lon: 121.621417, lat: 25.057639 },
-      "beitou_depot" => { lon: 121.48699, lat: 25.13751 },
+      # Northern yard throat along 環東大道 (screenshot 21.32.49 red box).
+      "neihu_depot" => { lon: 121.6194, lat: 25.06037 },
+      # East side of the 木柵機廠 yard rectangle tracks (screenshot 21.33.31).
+      "muzha_depot" => { lon: 121.5855, lat: 25.0014 },
+      # Spur tip on continuous yard lead (avoid diagonal closing chord). Marker stays at red circle.
+      "beitou_depot" => { lon: 121.48594, lat: 25.13663 },
       "tra_changhua_depot" => { lon: 120.540171, lat: 24.085948 },
       "hsr_yanchao_depot" => { lon: 120.3465, lat: 22.764806 },
       "kaohsiung_north_depot" => { lon: 120.3026, lat: 22.7767 },
       "kaohsiung_south_depot" => { lon: 120.3308, lat: 22.5843 },
       "shisizhang_depot" => { lon: 121.5288, lat: 24.9852 },
-      "xindian_depot" => { lon: 121.5378, lat: 24.9683 },
+      "xindian_depot" => { lon: 121.53148, lat: 24.97128 },
       # Catalog marker sits SW of the yard; pin the facility on the OSM spur throat.
       "qingpu_depot" => { lon: 121.216552, lat: 25.014589 },
       "taichung_beitun_depot" => { lon: 120.7120, lat: 24.1890 },
       "hsr_liujia_depot" => { lon: 121.0412509, lat: 24.8124655 },
       "hsr_wuri_depot" => { lon: 120.6125, lat: 24.1100 },
       "hsr_taibao_depot" => { lon: 120.32375, lat: 23.4755 },
-      "tra_fugang_depot" => { lon: 121.082, lat: 24.928 },
-      "danhai_depot" => { lon: 121.434621, lat: 25.2009501 }
+      # North yard throat (screenshot 19.53.33 red box), not the south X.
+      "tra_fugang_depot" => { lon: 121.0725, lat: 24.9328 },
+      # Yard west of V11 崁頂 (screenshot 11.14.52), not the stub north of 台2.
+      "danhai_depot" => { lon: 121.4332, lat: 25.2007 },
+      # SW yard toward 崁頂交流道 (screenshot 19.51.57).
+      "tra_chaozhou_depot" => { lon: 120.5315, lat: 22.5355 },
+      # 三峽機廠 south of 龍埔路 (screenshot 11.14.15).
+      "sanying_depot" => { lon: 121.3805, lat: 24.9345 }
     }.freeze
 
     OMIT_SPUR_IDS = %w[
-      neihu_depot
       tucheng_depot
     ].freeze
 
@@ -162,10 +213,10 @@ module Geojson
     end
 
     def self.line_strings_for_depot(depot_id)
-      nlsc = nlsc_line_strings_for_depot(depot_id)
-      return nlsc if nlsc.any?
+      osm = osm_line_strings_for_depot(depot_id)
+      return osm if osm.any?
 
-      osm_line_strings_for_depot(depot_id)
+      nlsc_line_strings_for_depot(depot_id)
     end
 
     # Prefer OSM yard throats, then NLSC extracts (NLSC fragments sometimes never snap).
@@ -189,6 +240,13 @@ module Geojson
       [ osm_line_strings_for_depot(depot_id), nlsc_line_strings_for_depot(depot_id) ].each do |spur_line_strings|
         next if spur_line_strings.empty?
 
+        spur_line_strings = filter_off_main_spur_lines(
+          spur_line_strings,
+          main_line_strings,
+          min_distance_m: SPUR_OFF_MAIN_MIN_M[depot_id]
+        )
+        next if spur_line_strings.empty?
+
         link = TrackGeometry.depot_link_coordinates_for_point(
           facility_lon,
           facility_lat,
@@ -197,15 +255,50 @@ module Geojson
           junction_reference_lon: junction_hint&.dig(:lon),
           junction_reference_lat: junction_hint&.dig(:lat)
         )
-        return spur_line_strings if link
+        next unless link
+
+        # Reject stub links that never leave the junction toward the facility
+        # (disconnected OSM fragments can still produce a short truthy path).
+        tail = TrackGeometry.planar_distance_meters(
+          link.last[0], link.last[1], facility_lon, facility_lat
+        )
+        next if tail > TrackGeometry::FACILITY_ENDPOINT_SNAP_M * 2
+
+        return spur_line_strings
       end
 
       []
     end
 
+    def self.filter_off_main_spur_lines(lines, main_line_strings, min_distance_m:)
+      return lines if min_distance_m.nil? || main_line_strings.nil? || main_line_strings.empty?
+
+      lines.select do |line|
+        line.any? do |lon, lat|
+          TrackGeometry.nearest_on_line_strings(lon, lat, main_line_strings)[2] > min_distance_m
+        end
+      end
+    end
+
     def self.apply_spur_line_bounds(depot_id, lines)
       bounds = SPUR_LINE_BOUNDS[depot_id]
       return lines unless bounds
+
+      if bounds[:clip_vertices]
+        return lines.filter_map do |line|
+          clipped = line.select do |lon, lat|
+            lon_ok = (!bounds[:max_lon] || lon <= bounds[:max_lon]) &&
+              (!bounds[:min_lon] || lon >= bounds[:min_lon])
+            lat_ok = (!bounds[:max_lat] || lat <= bounds[:max_lat]) &&
+              (!bounds[:min_lat] || lat >= bounds[:min_lat])
+            lon_ok && lat_ok
+          end
+          next if clipped.length < 2
+          next if bounds[:require_max_lat_above] && clipped.map { |point| point[1] }.max < bounds[:require_max_lat_above]
+
+          clipped
+        end
+      end
 
       lines.select do |line|
         lats = line.map { |point| point[1] }

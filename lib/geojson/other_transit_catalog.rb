@@ -159,7 +159,7 @@ module Geojson
         slug: "taipingshan_forest_railway",
         name: "太平山森林鐵路（蹦蹦車）",
         name_en: "Taipingshan Forest Railway",
-        ref: "TP",
+        ref: "TPS",
         color: COLOR_FOREST_RAILWAY,
         way_ids: TAIPINGSHAN_WAY_IDS,
         station_ref_prefix: "TP"

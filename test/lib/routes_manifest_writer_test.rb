@@ -47,4 +47,33 @@ class RoutesManifestWriterTest < ActiveSupport::TestCase
   ensure
     path.delete if path.exist?
   end
+
+  test "manifest entries use distinct refs for colliding line codes" do
+    path = Rails.root.join("tmp", "routes_manifest_test_#{name}.json")
+    Geojson::RoutesManifestWriter.write!(path: path)
+
+    manifest = JSON.parse(path.read)
+    tra = manifest.fetch("tra")
+    other = manifest.fetch("other")
+    sugar = manifest.fetch("sugar_railway")
+
+    shalun = tra.find { |entry| entry["id"] == "shalun_line" }
+    south_link = tra.find { |entry| entry["id"] == "south_link" }
+    taipingshan = other.find { |entry| entry["id"] == "taipingshan_forest_railway" }
+    taichung_port = tra.find { |entry| entry["id"] == "taichung_port_line" }
+    wushulin = sugar.find { |entry| entry["id"] == "wushulin_sugar_railway" }
+    western_south = tra.find { |entry| entry["id"] == "western_trunk_south" }
+
+    assert_equal "SAL", shalun["ref"]
+    assert_equal "SL", south_link["ref"]
+    assert_not_equal shalun["ref"], south_link["ref"]
+    assert_equal "TPS", taipingshan["ref"]
+    assert_equal "TP", taichung_port["ref"]
+    assert_not_equal taipingshan["ref"], taichung_port["ref"]
+    assert_equal "WSL", wushulin["ref"]
+    assert_equal "WS", western_south["ref"]
+    assert_not_equal wushulin["ref"], western_south["ref"]
+  ensure
+    path.delete if path.exist?
+  end
 end

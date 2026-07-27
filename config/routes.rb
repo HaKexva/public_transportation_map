@@ -14,4 +14,8 @@ Rails.application.routes.draw do
 
   root "dashboards#show"
   resources :routes, only: [ :show ], param: :id
+
+  namespace :api do
+    resources :vehicles, only: [ :index ]
+  end
 end

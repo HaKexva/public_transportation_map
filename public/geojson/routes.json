@@ -119,7 +119,9 @@
         "紅樹林",
         "R27",
         "淡水",
-        "R28"
+        "R28",
+        "廣慈/奉天宮",
+        "R01"
       ]
     },
     {
@@ -1153,6 +1155,8 @@
       "ref": "SL",
       "color": "#004B87",
       "station_names": [
+        "枋寮",
+        "5120",
         "加祿",
         "5130",
         "內獅",
@@ -1217,6 +1221,14 @@
         "6150",
         "光復",
         "6160",
+        "萬榮",
+        "6170",
+        "鳳林",
+        "6180",
+        "南平",
+        "6190",
+        "林榮新光",
+        "6200",
         "豐田",
         "6210",
         "壽豐",
@@ -1321,6 +1333,10 @@
         "7160",
         "冬山",
         "7150",
+        "新馬",
+        "7140",
+        "蘇澳新",
+        "7130",
         "蘇澳",
         "7120"
       ]
@@ -1445,7 +1461,7 @@
       "file": "/geojson/tra/shalun_line.geojson",
       "name": "沙崙線",
       "name_en": "Shalun Line",
-      "ref": "SL",
+      "ref": "SAL",
       "color": "#004B87",
       "branch_of": "western_trunk_south",
       "station_names": [
@@ -1571,7 +1587,7 @@
       "file": "/geojson/sugar_railway/wushulin_sugar_railway.geojson",
       "name": "烏樹林糖廠五分車",
       "name_en": "Wushulin Sugar Railway",
-      "ref": "WS",
+      "ref": "WSL",
       "color": "#B45309",
       "station_names": [
         "內埕",
@@ -1610,6 +1626,96 @@
         "XT02",
         "濁水",
         "XT03"
+      ]
+    }
+  ],
+  "ferry": [
+    {
+      "id": "cijin_ferry",
+      "file": "/geojson/ferry/cijin_ferry.geojson",
+      "name": "鼓山－旗津渡輪",
+      "name_en": "Gushan–Cijin Ferry",
+      "ref": "CJ",
+      "color": "#0891b2",
+      "station_names": [
+        "鼓山輪渡站",
+        "CJ01",
+        "旗津輪渡站",
+        "CJ02"
+      ]
+    },
+    {
+      "id": "tamsui_bali_ferry",
+      "file": "/geojson/ferry/tamsui_bali_ferry.geojson",
+      "name": "淡水－八里渡輪",
+      "name_en": "Tamsui–Bali Ferry",
+      "ref": "TB",
+      "color": "#0891b2",
+      "station_names": [
+        "淡水渡船頭",
+        "TB01",
+        "八里左岸碼頭",
+        "TB02"
+      ]
+    },
+    {
+      "id": "liuqiu_ferry",
+      "file": "/geojson/ferry/liuqiu_ferry.geojson",
+      "name": "東港－小琉球渡輪",
+      "name_en": "Donggang–Liuqiu Ferry",
+      "ref": "LQ",
+      "color": "#0891b2",
+      "station_names": [
+        "東港旅客碼頭",
+        "LQ01",
+        "小琉球大福漁港",
+        "LQ02"
+      ]
+    },
+    {
+      "id": "sun_moon_lake_ferry",
+      "file": "/geojson/ferry/sun_moon_lake_ferry.geojson",
+      "name": "日月潭觀光渡輪",
+      "name_en": "Sun Moon Lake Ferry",
+      "ref": "SML",
+      "color": "#0891b2",
+      "station_names": [
+        "水社碼頭",
+        "SML01",
+        "朝霧碼頭",
+        "SML02",
+        "玄光寺碼頭",
+        "SML03",
+        "伊達邵碼頭",
+        "SML04"
+      ]
+    },
+    {
+      "id": "green_island_ferry",
+      "file": "/geojson/ferry/green_island_ferry.geojson",
+      "name": "富岡－綠島渡輪",
+      "name_en": "Fugang–Green Island Ferry",
+      "ref": "GI",
+      "color": "#0891b2",
+      "station_names": [
+        "富岡漁港",
+        "GI01",
+        "綠島南寮漁港",
+        "GI02"
+      ]
+    },
+    {
+      "id": "orchid_island_ferry",
+      "file": "/geojson/ferry/orchid_island_ferry.geojson",
+      "name": "富岡－蘭嶼渡輪",
+      "name_en": "Fugang–Orchid Island Ferry",
+      "ref": "OI",
+      "color": "#0891b2",
+      "station_names": [
+        "富岡漁港",
+        "OI01",
+        "蘭嶼開元漁港",
+        "OI02"
       ]
     }
   ],
@@ -1723,7 +1829,7 @@
       "file": "/geojson/other/taipingshan_forest_railway.geojson",
       "name": "太平山森林鐵路（蹦蹦車）",
       "name_en": "Taipingshan Forest Railway",
-      "ref": "TP",
+      "ref": "TPS",
       "color": "#166534",
       "station_names": [
         "太平山",

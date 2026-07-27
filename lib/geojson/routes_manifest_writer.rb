@@ -15,6 +15,7 @@ module Geojson
       "hsr" => -> { Geojson::HsrCatalog::LINES },
       "tra" => -> { Geojson::TraCatalog::LINES },
       "sugar_railway" => -> { Geojson::SugarRailwayCatalog::LINES },
+      "ferry" => -> { Geojson::FerryCatalog::LINES },
       "other" => -> { Geojson::OtherTransitCatalog::LINES }
     }.freeze
 

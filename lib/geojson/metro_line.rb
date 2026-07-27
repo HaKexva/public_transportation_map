@@ -177,5 +177,23 @@ module Geojson
         osm_networks: [ "糖鐵", "台糖", "Sugar Railway", "Taiwan Sugar" ]
       )
     end
+
+    def self.ferry(slug:, name:, name_en:, ref:, color:, station_ref_prefix:, relation_ids: nil, way_ids: nil, branch_of: nil)
+      new(
+        slug: slug,
+        name: name,
+        name_en: name_en,
+        ref: ref,
+        color: color,
+        relation_ids: relation_ids || [],
+        way_ids: way_ids || [],
+        station_ref_prefix: station_ref_prefix,
+        branch_of: branch_of,
+        system_id: "ferry",
+        output_subdir: "ferry",
+        network_name: "渡輪",
+        osm_networks: [ "渡輪", "Ferry", "Taiwan Ferry" ]
+      )
+    end
   end
 end

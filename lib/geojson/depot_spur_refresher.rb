@@ -34,8 +34,15 @@ module Geojson
         next if DepotSpurCatalog.omit_spur?(depot[:id])
 
         facility = MetroDepotCatalog.primary_facility_coordinates(depot)
-        spur_line_strings = DepotSpurCatalog.line_strings_for_depot(depot[:id])
         junction_hint = DepotSpurCatalog.junction_hint_for(depot[:id])
+        spur_line_strings = DepotSpurCatalog.linkable_line_strings_for_depot(
+          depot[:id],
+          main_line_strings: line_strings,
+          facility_lon: facility[:lon],
+          facility_lat: facility[:lat],
+          junction_hint: junction_hint
+        )
+        spur_line_strings = DepotSpurCatalog.line_strings_for_depot(depot[:id]) if spur_line_strings.empty?
         coordinates = TrackGeometry.depot_link_coordinates_for_point(
           facility[:lon],
           facility[:lat],

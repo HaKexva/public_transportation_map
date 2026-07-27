@@ -36,6 +36,14 @@ namespace :geojson do
     )
   end
 
+  desc "Rebuild Ferry (渡輪) GeoJSON files from OpenStreetMap"
+  task ferry: :environment do
+    Geojson::MetroSystemImporter.import!(
+      system_id: "ferry",
+      lines: Geojson::FerryCatalog::LINES
+    )
+  end
+
   desc "Rebuild Taiwan Sugar Railway (糖鐵) GeoJSON files from OpenStreetMap"
   task sugar_railway: :environment do
     Geojson::MetroSystemImporter.import!(
@@ -135,6 +143,12 @@ namespace :geojson do
     task depot_spurs: :environment do
       updated = Geojson::NlscRailwayCatalog.refresh_all_depot_caches!
       puts "Wrote #{updated.length} NLSC depot spur caches"
+    end
+
+    desc "Rebuild TRA fallback track JSON from NLSC centerlines"
+    task tra_fallbacks: :environment do
+      updated = Geojson::NlscTraCorridorBuilder.rebuild_all!
+      puts "Rebuilt #{updated.length} TRA NLSC fallback tracks"
     end
   end
 

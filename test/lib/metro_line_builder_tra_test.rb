@@ -421,30 +421,40 @@ class MetroLineBuilderTraTest < ActiveSupport::TestCase
     end
   end
 
-  test "taichung port line geojson is continuous from taichung port to pier one" do
+  test "taichung port line geojson is continuous from taichung port into the harbor" do
     path = Rails.root.join("public/geojson/tra/taichung_port_line.geojson")
     skip "run bin/rails geojson:tra_offline first" unless path.exist?
 
     data = JSON.parse(path.read)
-    route = data["features"].find { |f| f.dig("properties", "feature_type") == "route" }
-    coords = route.dig("geometry", "coordinates")
+    routes = data["features"].select { |f| f.dig("properties", "feature_type") == "route" }
+    coords = routes.flat_map { |feature| feature.dig("geometry", "coordinates") }
     stations = data["features"].select { |f| f.dig("properties", "feature_type") == "station" }
     names = stations.map { |feature| feature.dig("properties", "name") }
 
+    assert_operator routes.length, :>=, 1
     assert_equal 2, names.length
     assert_equal %w[台中港 一號碼頭], names
 
-    gaps = coords.each_cons(2).count do |(start, finish)|
-      Geojson::TrackGeometry.planar_distance_meters(start[0], start[1], finish[0], finish[1]) > 2_000
+    # Multi-branch port tracks are separate LineStrings; only check within each route.
+    routes.each do |route|
+      segment = route.dig("geometry", "coordinates")
+      segment_gaps = segment.each_cons(2).count do |(start, finish)|
+        Geojson::TrackGeometry.planar_distance_meters(start[0], start[1], finish[0], finish[1]) > 2_000
+      end
+      assert_equal 0, segment_gaps
     end
-    assert_equal 0, gaps
+
+    # Screenshot 19.53.04: continue south along 臨港路 past 一號碼頭.
+    assert_operator coords.map { |point| point[1] }.min, :<, 24.27
+    # And a west dock branch toward the harbor piers.
+    assert_operator coords.map { |point| point[0] }.min, :<, 120.535
 
     stations.each do |station|
       lon, lat = station.dig("geometry", "coordinates")
       distance = Geojson::TrackGeometry.nearest_on_line_strings(
         lon,
         lat,
-        [ coords ]
+        routes.map { |feature| feature.dig("geometry", "coordinates") }
       ).last
 
       assert_operator distance, :<=, 100, "#{station.dig('properties', 'name')} should sit on the route"
@@ -456,13 +466,14 @@ class MetroLineBuilderTraTest < ActiveSupport::TestCase
     skip "run bin/rails geojson:tra_offline first" unless path.exist?
 
     data = JSON.parse(path.read)
-    route = data["features"].find { |f| f.dig("properties", "feature_type") == "route" }
-    coords = route.dig("geometry", "coordinates")
+    routes = data["features"].select { |f| f.dig("properties", "feature_type") == "route" }
+    coords = routes.first.dig("geometry", "coordinates")
     stations = data["features"].select { |f| f.dig("properties", "feature_type") == "station" }
     names = stations.map { |feature| feature.dig("properties", "name") }
 
     assert_equal 2, names.length
     assert_equal %w[北埔 花蓮港], names
+    assert_operator routes.length, :>=, 1
 
     gaps = coords.each_cons(2).count do |(start, finish)|
       Geojson::TrackGeometry.planar_distance_meters(start[0], start[1], finish[0], finish[1]) > 2_000
@@ -473,12 +484,23 @@ class MetroLineBuilderTraTest < ActiveSupport::TestCase
                     "expected coastal track geometry, not a shortcut chord between terminals"
     assert_operator Geojson::TrackGeometry.path_length_meters(coords), :>, 7_000
 
+    port = stations.find { |feature| feature.dig("properties", "name") == "花蓮港" }
+    port_lon, port_lat = port.dig("geometry", "coordinates")
+
+    # Screenshot 2026-07-27 13.59.24: coastal tail continues south of 花蓮港 toward 美崙海濱.
+    assert_operator coords.map { |point| point[1] }.min, :<, port_lat - 0.005
+
+    # Screenshot 19.48.15: northern coastal stub toward 環保公園 (separate route feature or main).
+    all_coords = routes.flat_map { |feature| feature.dig("geometry", "coordinates") }
+    assert_operator all_coords.map { |point| point[1] }.max, :>, port_lat + 0.01
+    assert_operator all_coords.map { |point| point[0] }.max, :>, port_lon
+
     stations.each do |station|
       lon, lat = station.dig("geometry", "coordinates")
       distance = Geojson::TrackGeometry.nearest_on_line_strings(
         lon,
         lat,
-        [ coords ]
+        routes.map { |feature| feature.dig("geometry", "coordinates") }
       ).last
 
       assert_operator distance, :<=, 25, "#{station.dig('properties', 'name')} should sit on the route"
@@ -678,12 +700,12 @@ class MetroLineBuilderTraTest < ActiveSupport::TestCase
     stations = data["features"].select { |f| f.dig("properties", "feature_type") == "station" }
     names = stations.map { |feature| feature.dig("properties", "name") }
 
-    assert_equal 10, names.length
-    assert_equal "加祿", names.first
+    assert_equal 11, names.length
+    assert_equal "枋寮", names.first
     assert_equal "臺東", names.last
-    assert_equal "內獅", names[1]
-    assert_equal "康樂", names[8]
-    refute_includes names, "枋寮"
+    assert_equal "加祿", names[1]
+    assert_equal "內獅", names[2]
+    assert_equal "康樂", names[9]
 
     gaps = coords.each_cons(2).count do |(start, finish)|
       Geojson::TrackGeometry.planar_distance_meters(start[0], start[1], finish[0], finish[1]) > 2_000
@@ -736,7 +758,7 @@ class MetroLineBuilderTraTest < ActiveSupport::TestCase
     stations = data["features"].select { |f| f.dig("properties", "feature_type") == "station" }
     names = stations.map { |feature| feature.dig("properties", "name") }
 
-    assert_equal 23, names.length
+    assert_equal 27, names.length
     assert_equal "臺東", names.first
     assert_equal "花蓮", names.last
     assert_equal "山里", names[1]

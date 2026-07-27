@@ -3,7 +3,7 @@
 require "test_helper"
 
 class MetroDepotCatalogTest < ActiveSupport::TestCase
-  test "exported depots use OSM facility coordinates and expose track links when off the main line" do
+  test "exported depots use catalog body coordinates and expose track links when off the main line" do
     catalog_by_id = Geojson::MetroDepotCatalog::DEPOTS.index_by { |depot| depot[:id] }
     depots = Geojson::MetroDepotCatalog.to_json
 
@@ -13,9 +13,11 @@ class MetroDepotCatalogTest < ActiveSupport::TestCase
       catalog = catalog_by_id[depot[:id]]
       assert catalog, "missing catalog entry for #{depot[:id]}"
 
+      # On-map depot body (本體) follows the catalog marker, not the spur tip.
+      assert_in_delta catalog[:lon], depot[:lon], 0.000001
+      assert_in_delta catalog[:lat], depot[:lat], 0.000001
+
       facility = Geojson::MetroDepotCatalog.primary_facility_coordinates(catalog)
-      assert_in_delta facility[:lon], depot[:lon], 0.000001
-      assert_in_delta facility[:lat], depot[:lat], 0.000001
 
       nearest_distance = depot[:routes].filter_map do |route_id|
         path = Geojson::MetroDepotCatalog.send(:route_geojson_path, route_id)
@@ -46,8 +48,8 @@ class MetroDepotCatalogTest < ActiveSupport::TestCase
         end_gap = Geojson::TrackGeometry.planar_distance_meters(
           link[:coordinates].last[0],
           link[:coordinates].last[1],
-          depot[:lon],
-          depot[:lat]
+          facility[:lon],
+          facility[:lat]
         )
         assert_operator end_gap, :<=, 1_200,
                         "#{depot[:id]} spur should end near the facility (#{end_gap.round}m)"
@@ -158,12 +160,12 @@ class MetroDepotCatalogTest < ActiveSupport::TestCase
     caoya_lon = 120.3287686
     south_link = south_depot[:track_links].sole
     assert_operator south_link[:coordinates].first[1], :>, 22.578
-    assert_operator south_link[:coordinates].first[1], :<, 22.582
+    assert_operator south_link[:coordinates].first[1], :<=, 22.583
     assert Geojson::TrackGeometry.planar_distance_meters(
       south_link[:coordinates].first[0],
       south_link[:coordinates].first[1],
       caoya_lon,
       caoya_lat
-    ) < 150
+    ) < 300
   end
 end

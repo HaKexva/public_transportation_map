@@ -174,6 +174,74 @@ class MetroLineBuilderTaipeiTransfersTest < ActiveSupport::TestCase
     assert_not_includes names, "古亭"
   end
 
+  test "tamsui xinyi geojson extends past 象山 to 廣慈/奉天宮 with eastern tail" do
+    data = JSON.parse(Rails.root.join("public/geojson/taipei_metro/tamsui_xinyi.geojson").read)
+    stations = data.fetch("features").select { |feature| feature.dig("properties", "feature_type") == "station" }
+    route = data.fetch("features").find { |feature| feature.dig("properties", "feature_type") == "route" }
+    guangci = stations.find { |feature| feature.dig("properties", "ref") == "R01" }
+    xiangshan = stations.find { |feature| feature.dig("properties", "ref") == "R02" }
+
+    assert guangci, "expected R01 廣慈/奉天宮"
+    assert_equal "廣慈/奉天宮", guangci.dig("properties", "name")
+    assert_in_delta 121.58188, guangci.dig("geometry", "coordinates", 0), 0.0005
+    assert_in_delta 25.03747, guangci.dig("geometry", "coordinates", 1), 0.0005
+
+    coords = route.dig("geometry", "coordinates")
+    max_lon = coords.map { |point| point[0] }.max
+    assert_operator max_lon, :>, 121.584, "expected eastern tail beyond 廣慈 toward 玉成公園"
+
+    nearest = coords.min_by do |point|
+      Geojson::TrackGeometry.planar_distance_meters(
+        point[0], point[1],
+        guangci.dig("geometry", "coordinates", 0),
+        guangci.dig("geometry", "coordinates", 1)
+      )
+    end
+    dist = Geojson::TrackGeometry.planar_distance_meters(
+      nearest[0], nearest[1],
+      guangci.dig("geometry", "coordinates", 0),
+      guangci.dig("geometry", "coordinates", 1)
+    )
+    assert_operator dist, :<, 30
+
+    # Corridor: 象山 → 信義路六段(~25.033) → 福德街 → 中坡南路北行(~121.585)
+    xs = xiangshan.dig("geometry", "coordinates")
+    xs_idx = coords.each_with_index.min_by { |point, _|
+      Geojson::TrackGeometry.planar_distance_meters(point[0], point[1], xs[0], xs[1])
+    }.last
+    gc_idx = coords.each_with_index.min_by { |point, _|
+      Geojson::TrackGeometry.planar_distance_meters(
+        point[0], point[1],
+        guangci.dig("geometry", "coordinates", 0),
+        guangci.dig("geometry", "coordinates", 1)
+      )
+    }.last
+    assert_operator gc_idx, :<, xs_idx, "廣慈 should lie east of 象山 on the coordinate array"
+
+    # Between 象山 and 廣慈, stay near 信義路六段 / 福德街 (not a straight NE chord).
+    mid = coords[((gc_idx + xs_idx) / 2)]
+    assert_operator mid[1], :<, 25.0365, "Xiangshan–Guangci segment should follow 信義路六段/福德街"
+    assert_operator mid[1], :>, 25.0325
+
+    # Tail along 中坡南路, ending at 玉成公園外側 (not through park interior).
+    tip = coords.first
+    assert_in_delta 121.58548, tip[0], 0.0015
+    assert_in_delta 25.04156, tip[1], 0.0015
+    assert_operator tip[1], :<, 25.0425, "tail must not cross into 玉成公園"
+    assert_operator tip[1], :>, 25.0405
+
+    # Tail should follow 中坡南路 with multiple vertices, not a single chord.
+    gc_lon = guangci.dig("geometry", "coordinates", 0)
+    tail_pts = coords.take_while { |point| point[0] > gc_lon + 0.001 }
+    assert_operator tail_pts.length, :>=, 10, "expected detailed 中坡南路 tail east of 廣慈"
+
+    # Just east of 象山, stay on 信義路六段 (~25.033), matching the pre-extension OSM stub.
+    near_xs = coords[xs_idx - 1]
+    assert_in_delta 25.03292, near_xs[1], 0.00035
+    assert_operator near_xs[0], :>, xs[0]
+    assert_operator near_xs[0], :<, 121.573
+  end
+
   test "songshan xindian geojson lists 中山 松江南京 南京復興 on the green line" do
     data = JSON.parse(Rails.root.join("public/geojson/taipei_metro/songshan_xindian.geojson").read)
     stations = data.fetch("features").select do |feature|

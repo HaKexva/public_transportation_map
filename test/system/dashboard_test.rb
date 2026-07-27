@@ -221,7 +221,7 @@ class DashboardTest < ApplicationSystemTestCase
     assert_selector "#layer-all_metro", visible: :all
     assert_no_button "僅顯示捷運與輕軌"
     assert_no_text "全部路線"
-    assert_selector ".layer-category-chip", text: "捷運"
+    assert_selector ".layer-category-chip", text: "捷運與輕軌"
     assert_selector ".layer-category-chip", text: "台鐵"
     assert_selector ".layer-category-chip", text: "其他"
     assert_no_selector ".layer-category-chip", text: "全部"
@@ -234,7 +234,7 @@ class DashboardTest < ApplicationSystemTestCase
     assert_selector "#layer-red_line", visible: :all
     assert_selector "#layer-orange_line", visible: :all
     assert_selector "#layer-circular_lrt", visible: :all
-    assert_selector "#layer-taiwan_hsr", visible: :all
+    assert_selector "#layer-airport_mrt_express", visible: :all
     assert_button "重設視角"
     assert_selector "#map-basemap-select"
     assert_selector "#map-basemap-select option", text: "衛星"
@@ -720,7 +720,7 @@ class DashboardTest < ApplicationSystemTestCase
     assert_selector ".leaflet-overlay-pane path.leaflet-interactive", wait: 10, minimum: 1
   end
 
-  test "shows airport mrt express line and stops with the main airport line" do
+  test "commuter airport mrt layer shows blue line without express line" do
     visit root_path
 
     within "#taiwan-region-map" do
@@ -734,9 +734,45 @@ class DashboardTest < ApplicationSystemTestCase
     JS
 
     assert_selector "path.airport-mrt-commuter-line", wait: 10, minimum: 1
+    assert_no_selector "path.airport-mrt-express-line", wait: 2
+    assert_selector ".leaflet-stationMarkers-pane .leaflet-interactive", wait: 10, minimum: 1
+  end
+
+  test "express airport mrt layer shows purple line without commuter line" do
+    visit root_path
+
+    within "#taiwan-region-map" do
+      assert_selector ".leaflet-tile-pane", wait: 10
+    end
+
+    page.execute_script(<<~JS)
+      const checkbox = document.getElementById("layer-airport_mrt_express")
+      checkbox.checked = true
+      checkbox.dispatchEvent(new Event("change", { bubbles: true }))
+    JS
+
+    assert_selector "path.airport-mrt-express-line", wait: 10, minimum: 1
+    assert_no_selector "path.airport-mrt-commuter-line", wait: 2
+  end
+
+  test "both airport mrt layers show parallel commuter and express lines" do
+    visit root_path
+
+    within "#taiwan-region-map" do
+      assert_selector ".leaflet-tile-pane", wait: 10
+    end
+
+    page.execute_script(<<~JS)
+      ;["airport_mrt", "airport_mrt_express"].forEach((id) => {
+        const checkbox = document.getElementById(`layer-${id}`)
+        checkbox.checked = true
+        checkbox.dispatchEvent(new Event("change", { bubbles: true }))
+      })
+    JS
+
+    assert_selector "path.airport-mrt-commuter-line", wait: 10, minimum: 1
     assert_selector "path.airport-mrt-express-line", wait: 10, minimum: 1
     assert_selector ".transfer-station-marker", wait: 10, minimum: 1
-    assert_selector ".leaflet-stationMarkers-pane .leaflet-interactive", wait: 10, minimum: 1
   end
 
   test "airport mrt layer toggle uses commuter blue" do
@@ -787,16 +823,33 @@ class DashboardTest < ApplicationSystemTestCase
            "expected south skytrain stop with optional 停駛 suffix, got #{names.inspect}"
   end
 
-  test "airport mrt route page lists commuter and express sections" do
+  test "airport mrt express layer toggle uses purple line color" do
+    visit root_path
+
+    row = find(".route-search-item[data-route-id='airport_mrt_express']", visible: :all)
+    dot = row.find("span[style*='background-color']", match: :first, visible: :all)
+    assert_match(/rgb\(106,\s*44,\s*145\)/i, dot[:style])
+  end
+
+  test "airport mrt commuter route page lists commuter section only" do
     visit route_path("airport_mrt")
     assert_selector ".route-stop-item", minimum: 7, wait: 10
 
     assert_selector ".route-stops-section-heading", text: "普通車"
-    assert_selector ".route-stops-section-heading", text: "直達車"
+    assert_no_selector ".route-stops-section-heading", text: "直達車"
 
     refs = page.all(".route-stop-item__index", minimum: 7, wait: 10).map(&:text)
     assert_equal "A1", refs.first
     assert_includes refs, "A21"
+    assert refs.length > 7, "expected full commuter stop list, got #{refs.length} stops"
+  end
+
+  test "airport mrt express route page lists express section only" do
+    visit route_path("airport_mrt_express")
+    assert_selector ".route-stop-item", minimum: 7, wait: 10
+
+    assert_selector ".route-stops-section-heading", text: "直達車"
+    assert_no_selector ".route-stops-section-heading", text: "普通車"
 
     express_heading = find(".route-stops-section-heading", text: "直達車")
     express_section_refs = express_heading.all(
@@ -823,9 +876,11 @@ class DashboardTest < ApplicationSystemTestCase
     end
 
     page.execute_script(<<~JS)
-      const checkbox = document.getElementById("layer-airport_mrt")
-      checkbox.checked = true
-      checkbox.dispatchEvent(new Event("change", { bubbles: true }))
+      ;["airport_mrt", "airport_mrt_express"].forEach((id) => {
+        const checkbox = document.getElementById(`layer-${id}`)
+        checkbox.checked = true
+        checkbox.dispatchEvent(new Event("change", { bubbles: true }))
+      })
     JS
 
     assert_selector "path.airport-mrt-express-line", wait: 10, minimum: 1
@@ -868,7 +923,7 @@ class DashboardTest < ApplicationSystemTestCase
     end
 
     page.execute_script(<<~JS)
-      const checkbox = document.getElementById("layer-airport_mrt")
+      const checkbox = document.getElementById("layer-airport_mrt_express")
       checkbox.checked = true
       checkbox.dispatchEvent(new Event("change", { bubbles: true }))
     JS
@@ -876,5 +931,18 @@ class DashboardTest < ApplicationSystemTestCase
     express_path = find("path.airport-mrt-express-line", wait: 10, match: :first)
     dash = express_path[:style].to_s[/stroke-dasharray:\s*([^;]+)/i, 1]
     assert dash.blank?, "expected solid express line, got dasharray: #{dash}"
+  end
+
+  test "sidebar collapse button hides and restores the layers panel on desktop" do
+    visit root_path
+    assert_selector "#map-layers-panel-body", visible: :visible
+
+    find(".map-ui-panel__toggle", visible: :all).click
+    assert_selector ".map-split-layout--sidebar-collapsed", wait: 5
+    assert_selector "#map-layers-panel-body", visible: :hidden
+
+    find(".map-ui-panel__toggle", visible: :all).click
+    assert_no_selector ".map-split-layout--sidebar-collapsed", wait: 5
+    assert_selector "#map-layers-panel-body", visible: :visible
   end
 end

@@ -1,0 +1,84 @@
+{
+  "type": "FeatureCollection",
+  "name": "渡輪淡水－八里渡輪",
+  "properties": {
+    "source": "Track geometry from OpenStreetMap ways 30442793. © OpenStreetMap contributors, ODbL.",
+    "network": "渡輪",
+    "ref": "TB",
+    "osm_relations": [],
+    "osm_ways": [
+      30442793
+    ]
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "TB",
+        "name": "淡水－八里渡輪",
+        "name_en": "Tamsui–Bali Ferry",
+        "color": "#0891b2"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            7.8311643,
+            50.4362105
+          ],
+          [
+            7.8313737,
+            50.4362796
+          ],
+          [
+            7.8314621,
+            50.4362946
+          ],
+          [
+            7.8316882,
+            50.4363721
+          ],
+          [
+            7.8317118,
+            50.4363816
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TB01",
+        "name": "淡水渡船頭",
+        "line": "淡水－八里渡輪",
+        "color": "#0891b2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.4326,
+          25.1694
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TB02",
+        "name": "八里左岸碼頭",
+        "line": "淡水－八里渡輪",
+        "color": "#0891b2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.4045,
+          25.1542
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "type": "FeatureCollection",
+  "name": "渡輪日月潭觀光渡輪",
+  "properties": {
+    "source": "Track geometry from OpenStreetMap ways 256726319, 256726320 (with fallbacks). © OpenStreetMap contributors, ODbL.",
+    "network": "渡輪",
+    "ref": "SML",
+    "osm_relations": [],
+    "osm_ways": []
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "SML",
+        "name": "日月潭觀光渡輪",
+        "name_en": "Sun Moon Lake Ferry",
+        "color": "#0891b2"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.9081,
+            23.8644
+          ],
+          [
+            120.9003,
+            23.87
+          ],
+          [
+            120.9236,
+            23.8494
+          ],
+          [
+            120.9261,
+            23.8464
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "SML01",
+        "name": "水社碼頭",
+        "line": "日月潭觀光渡輪",
+        "color": "#0891b2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.9081,
+          23.8644
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "SML02",
+        "name": "朝霧碼頭",
+        "line": "日月潭觀光渡輪",
+        "color": "#0891b2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.9003,
+          23.87
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "SML03",
+        "name": "玄光寺碼頭",
+        "line": "日月潭觀光渡輪",
+        "color": "#0891b2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.9236,
+          23.8494
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "SML04",
+        "name": "伊達邵碼頭",
+        "line": "日月潭觀光渡輪",
+        "color": "#0891b2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.9261,
+          23.8464
+        ]
+      }
+    }
+  ]
+}
