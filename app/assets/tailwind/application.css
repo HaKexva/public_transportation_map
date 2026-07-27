@@ -1023,6 +1023,28 @@
   background: color-mix(in oklch, var(--primary) 12%, var(--background));
 }
 
+.time-scrubber__speed {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+}
+
+.time-scrubber__speed-select {
+  appearance: none;
+  border: 1px solid color-mix(in oklch, var(--border) 80%, transparent);
+  background: color-mix(in oklch, var(--background) 80%, transparent);
+  color: var(--foreground);
+  border-radius: 0.5rem;
+  padding: 0.25rem 0.45rem;
+  font-size: 0.75rem;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+.time-scrubber__speed-select:hover {
+  background: var(--accent);
+}
+
 .time-scrubber__slider-label {
   display: block;
 }
