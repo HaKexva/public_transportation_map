@@ -4,6 +4,8 @@ An interactive map of Taiwan, Penghu, Kinmen, and Matsu with toggleable public t
 
 **Repository:** [github.com/HaKexva/public_transportation_map](https://github.com/HaKexva/public_transportation_map)
 
+[繁體中文](README.zh-TW.md)
+
 ## Features
 
 - Full-screen **road-only** basemap (CARTO light, no labels) centered on Taiwan and outlying islands
