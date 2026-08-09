@@ -8,17 +8,20 @@ module Geojson
   class LevelCrossingCatalog
     OUTPUT = Rails.root.join("public/geojson/level_crossings.json")
 
-    def self.refresh!(output: OUTPUT)
-      new(output: output).refresh!
+    def self.refresh!(output: OUTPUT, route_ids: nil)
+      new(output: output, route_ids: route_ids).refresh!
     end
 
-    def initialize(output: OUTPUT)
+    def initialize(output: OUTPUT, route_ids: nil)
       @output = output
+      @route_ids = Array(route_ids).map(&:to_s).reject(&:blank?).presence
     end
 
     def refresh!
       features = []
-      TransitRoute.where(system_id: "tra").find_each do |route|
+      scope = TransitRoute.where(system_id: "tra")
+      scope = scope.where(route_id: @route_ids) if @route_ids
+      scope.find_each do |route|
         chainage = Transit::TrackChainage.for_route(route)
         next unless chainage
 
