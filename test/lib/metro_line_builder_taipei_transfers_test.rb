@@ -29,7 +29,7 @@ class MetroLineBuilderTaipeiTransfersTest < ActiveSupport::TestCase
 
     station = bannan_stations.find { |entry| entry[:name] == "板橋" }
     assert station, "expected 板橋 on 板南線"
-    assert_equal "BL07;1020;03", station[:ref]
+    assert_equal "BL07", station[:ref]
 
     circular_builder = Geojson::MetroLineBuilder.new(circular)
     circular_stations = []
@@ -50,7 +50,7 @@ class MetroLineBuilderTaipeiTransfersTest < ActiveSupport::TestCase
         feature.dig("properties", "name") == "板橋"
     end
 
-    assert_equal "BL07;1020;03", bannan_station.dig("properties", "ref")
+    assert_equal "BL07", bannan_station.dig("properties", "ref")
     assert_equal "Y16", circular_station.dig("properties", "ref")
     refute_includes circular_station.dig("properties", "ref"), ";"
   end
@@ -283,7 +283,7 @@ class MetroLineBuilderTaipeiTransfersTest < ActiveSupport::TestCase
 
       station = stations.find { |entry| entry[:name] == "台北車站" }
       assert station, "expected 台北車站 on #{slug}"
-      assert_equal "R10;BL12;1000;02", station[:ref]
+      assert_equal "R10;BL12", station[:ref]
     end
   end
 

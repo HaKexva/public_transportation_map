@@ -1,0 +1,70 @@
+{
+  "type": "FeatureCollection",
+  "name": "渡輪高雄－馬公渡輪",
+  "properties": {
+    "source": "Track geometry from OpenStreetMap ways 256726319, 256726320 (with fallbacks). © OpenStreetMap contributors, ODbL.",
+    "network": "渡輪",
+    "ref": "KP",
+    "osm_relations": [],
+    "osm_ways": []
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "KP",
+        "name": "高雄－馬公渡輪",
+        "name_en": "Kaohsiung–Magong Ferry",
+        "color": "#0891b2"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.2726,
+            22.6199
+          ],
+          [
+            119.5641,
+            23.5636
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KP01",
+        "name": "新濱碼頭",
+        "line": "高雄－馬公渡輪",
+        "color": "#0891b2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.2726,
+          22.6199
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KP02",
+        "name": "馬公商港",
+        "line": "高雄－馬公渡輪",
+        "color": "#0891b2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          119.5641,
+          23.5636
+        ]
+      }
+    }
+  ]
+}

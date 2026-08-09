@@ -1,0 +1,91 @@
+{
+  "type": "FeatureCollection",
+  "name": "渡輪大稻埕－關渡－淡水藍色公路",
+  "properties": {
+    "source": "Track geometry from OpenStreetMap ways 256726319, 256726320 (with fallbacks). © OpenStreetMap contributors, ODbL.",
+    "network": "渡輪",
+    "ref": "DT",
+    "osm_relations": [],
+    "osm_ways": []
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "DT",
+        "name": "大稻埕－關渡－淡水藍色公路",
+        "name_en": "Dadaocheng–Guandu–Tamsui Blue Highway",
+        "color": "#0891b2"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            121.5073,
+            25.0567
+          ],
+          [
+            121.4612,
+            25.1207
+          ],
+          [
+            121.4373,
+            25.1707
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "DT01",
+        "name": "大稻埕碼頭",
+        "line": "大稻埕－關渡－淡水藍色公路",
+        "color": "#0891b2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5073,
+          25.0567
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "DT02",
+        "name": "關渡碼頭",
+        "line": "大稻埕－關渡－淡水藍色公路",
+        "color": "#0891b2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.4612,
+          25.1207
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "DT03",
+        "name": "淡水客船碼頭",
+        "line": "大稻埕－關渡－淡水藍色公路",
+        "color": "#0891b2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.4373,
+          25.1707
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": { "feature_type": "route" },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [121.0000, 25.0000],
+          [121.0100, 25.0000],
+          [121.0200, 25.0000],
+          [121.0300, 25.0000]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "feature_type": "station", "ref": "A", "name": "甲" },
+      "geometry": { "type": "Point", "coordinates": [121.0000, 25.0000] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "feature_type": "station", "ref": "B", "name": "乙" },
+      "geometry": { "type": "Point", "coordinates": [121.0100, 25.0000] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "feature_type": "station", "ref": "C", "name": "丙" },
+      "geometry": { "type": "Point", "coordinates": [121.0200, 25.0000] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "feature_type": "station", "ref": "D", "name": "丁" },
+      "geometry": { "type": "Point", "coordinates": [121.0300, 25.0000] }
+    }
+  ]
+}

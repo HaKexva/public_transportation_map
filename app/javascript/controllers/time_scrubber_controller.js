@@ -2,10 +2,12 @@ import { Controller } from "@hotwired/stimulus"
 
 const STORAGE_KEY_POS = "mapTimeScrubberPos"
 const STORAGE_KEY_SPEED = "mapTimeScrubberSpeed"
+const STORAGE_KEY_EXPANDED = "mapTimeScrubberExpanded"
 const DEBOUNCE_MS = 150
 const PLAY_SPEEDS = [ 1, 2, 5, 10, 30, 60 ]
 const DEFAULT_PLAY_SPEED = 1
-const MIN_TICK_MS = 16
+const CLOCK_TZ = "Asia/Taipei"
+const TAIPEI_OFFSET_MS = 8 * 60 * 60 * 1000
 
 export default class extends Controller {
   static targets = [
@@ -15,11 +17,11 @@ export default class extends Controller {
     "slider",
     "playButton",
     "speedSelect",
+    "expandButton",
+    "details",
     "hint",
     "vehicleCount",
-    "statusOnTime",
-    "statusDelayed",
-    "statusEarly"
+    "badge"
   ]
 
   connect() {
@@ -28,6 +30,7 @@ export default class extends Controller {
     this.playTimer = null
     this.emitTimer = null
     this.playSpeed = this.loadPlaySpeed()
+    this.expanded = this.loadExpanded()
     this.draggingPanel = false
     this.dragOffsetX = 0
     this.dragOffsetY = 0
@@ -36,19 +39,26 @@ export default class extends Controller {
     this.onPointerUp = this.stopPanelDrag.bind(this)
 
     this.restorePosition()
+    this.syncExpanded()
     this.syncSpeedSelect()
     this.syncLabels()
     this.syncSlider()
     this.emitTime({ immediate: true })
+    // Map may connect after us — re-emit once controllers settle.
+    this._bootEmitTimer = setTimeout(() => this.emitTime({ immediate: true }), 400)
   }
 
   disconnect() {
     this.stopPlayback()
     this.clearEmitTimer()
     this.stopPanelDrag()
+    if (this._bootEmitTimer) {
+      clearTimeout(this._bootEmitTimer)
+      this._bootEmitTimer = null
+    }
   }
 
-  // --- Panel drag (header only) ---
+  // --- Panel drag (compact bar only) ---
 
   startPanelDrag(event) {
     if (event.button !== undefined && event.button !== 0) return
@@ -126,17 +136,65 @@ export default class extends Controller {
     }
   }
 
+  // --- Expand / collapse ---
+
+  toggleExpanded() {
+    this.expanded = !this.expanded
+    this.persistExpanded()
+    this.syncExpanded()
+  }
+
+  syncExpanded() {
+    this.panelTarget.classList.toggle("time-scrubber--collapsed", !this.expanded)
+    this.panelTarget.classList.toggle("time-scrubber--expanded", this.expanded)
+
+    if (this.hasExpandButtonTarget) {
+      this.expandButtonTarget.textContent = this.expanded
+        ? this.t("time_scrubber.collapse")
+        : this.t("time_scrubber.expand")
+      this.expandButtonTarget.setAttribute("aria-expanded", this.expanded ? "true" : "false")
+      this.expandButtonTarget.setAttribute(
+        "aria-label",
+        this.expanded ? this.t("time_scrubber.collapse") : this.t("time_scrubber.expand")
+      )
+    }
+  }
+
+  loadExpanded() {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY_EXPANDED)
+      if (raw === "1" || raw === "true") return true
+      if (raw === "0" || raw === "false") return false
+    } catch (_error) {
+      // ignore
+    }
+
+    return false
+  }
+
+  persistExpanded() {
+    try {
+      localStorage.setItem(STORAGE_KEY_EXPANDED, this.expanded ? "1" : "0")
+    } catch (_error) {
+      // ignore
+    }
+  }
+
   // --- Time controls ---
 
   scrub(event) {
     const minutes = Number.parseInt(event.target.value, 10)
     if (!Number.isFinite(minutes)) return
 
-    const next = new Date(this.at)
-    next.setHours(Math.floor(minutes / 60), minutes % 60, this.at.getSeconds(), 0)
-    this.at = next
+    this.at = this.setTaipeiClock(this.at, {
+      hours: Math.floor(minutes / 60),
+      minutes: minutes % 60,
+      seconds: 0,
+      milliseconds: 0
+    })
     this.syncLabels()
-    this.emitTime()
+    // Scrubbing must move vehicles with the clock (even when not playing).
+    this.emitTime({ immediate: true })
   }
 
   jumpToNow() {
@@ -146,13 +204,21 @@ export default class extends Controller {
     this.emitTime({ immediate: true })
   }
 
+  setFromIso(iso) {
+    const date = new Date(iso)
+    if (Number.isNaN(date.getTime())) return
+
+    this.at = date
+    this.syncLabels()
+    this.syncSlider()
+    this.emitTime({ immediate: true })
+  }
+
   shiftDay(event) {
     const delta = Number.parseInt(event.currentTarget.dataset.delta || "0", 10)
     if (!delta) return
 
-    const next = new Date(this.at)
-    next.setDate(next.getDate() + delta)
-    this.at = next
+    this.at = new Date(this.at.getTime() + delta * 24 * 60 * 60 * 1000)
     this.syncLabels()
     this.emitTime({ immediate: true })
   }
@@ -166,6 +232,10 @@ export default class extends Controller {
       this.stopPlaybackTimer()
       this.startPlaybackTimer()
     }
+
+    window.dispatchEvent(new CustomEvent("map:simulation-speed", {
+      detail: { speed: this.playSpeed, playing: this.playing }
+    }))
   }
 
   togglePlay() {
@@ -180,34 +250,55 @@ export default class extends Controller {
     this.playing = true
     this.syncPlayButton()
     this.startPlaybackTimer()
+    window.dispatchEvent(new CustomEvent("map:simulation-speed", {
+      detail: { speed: this.playSpeed, playing: true }
+    }))
   }
 
   startPlaybackTimer() {
     this.stopPlaybackTimer()
 
-    // Advance one simulation second per tick; speed shortens the real-time interval.
-    const tickMs = Math.max(MIN_TICK_MS, Math.round(1000 / this.playSpeed))
+    // Smooth clock: advance by real elapsed * speed using rAF (not 1s jumps).
+    this._playLastTs = null
+    this._lastEmitTs = 0
+    const tick = (ts) => {
+      if (!this.playing) return
 
-    this.playTimer = window.setInterval(() => {
-      this.at = new Date(this.at.getTime() + 1000)
+      if (this._playLastTs == null) this._playLastTs = ts
+      const deltaMs = Math.min(100, ts - this._playLastTs)
+      this._playLastTs = ts
+
+      this.at = new Date(this.at.getTime() + deltaMs * this.playSpeed)
       this.syncLabels()
       this.syncSlider()
-      // During play, refresh promptly so the map follows each second.
-      this.emitTime({ immediate: this.playSpeed <= 5 })
-    }, tickMs)
+
+      // Emit often enough for map/API sync, but not every paint.
+      if (!this._lastEmitTs || ts - this._lastEmitTs >= 50) {
+        this._lastEmitTs = ts
+        this.emitTime({ immediate: true })
+      }
+
+      this.playTimer = window.requestAnimationFrame(tick)
+    }
+
+    this.playTimer = window.requestAnimationFrame(tick)
   }
 
   stopPlayback() {
     this.playing = false
     this.syncPlayButton()
     this.stopPlaybackTimer()
+    window.dispatchEvent(new CustomEvent("map:simulation-speed", {
+      detail: { speed: this.playSpeed, playing: false }
+    }))
   }
 
   stopPlaybackTimer() {
     if (this.playTimer) {
-      clearInterval(this.playTimer)
+      window.cancelAnimationFrame(this.playTimer)
       this.playTimer = null
     }
+    this._playLastTs = null
   }
 
   syncPlayButton() {
@@ -256,13 +347,19 @@ export default class extends Controller {
   syncSlider() {
     if (!this.hasSliderTarget) return
 
-    this.sliderTarget.value = String(this.at.getHours() * 60 + this.at.getMinutes())
+    const parts = this.taipeiParts(this.at)
+    this.sliderTarget.value = String(parts.hours * 60 + parts.minutes)
   }
 
   emitTime({ immediate = false } = {}) {
     const dispatch = () => {
       window.dispatchEvent(new CustomEvent("map:simulation-time", {
-        detail: { at: this.at.toISOString() }
+        detail: {
+          at: this.at.toISOString(),
+          speed: this.playSpeed,
+          playing: this.playing,
+          immediate
+        }
       }))
     }
 
@@ -282,37 +379,68 @@ export default class extends Controller {
     }
   }
 
-  setVehicleSummary({ count = 0, onTime = 0, delayed = 0, early = 0 } = {}) {
+  setVehicleSummary({ count = 0, live = false } = {}) {
     if (this.hasVehicleCountTarget) {
       this.vehicleCountTarget.textContent = this.t("time_scrubber.vehicle_count", { count })
     }
-    if (this.hasStatusOnTimeTarget) this.statusOnTimeTarget.textContent = String(onTime)
-    if (this.hasStatusDelayedTarget) this.statusDelayedTarget.textContent = String(delayed)
-    if (this.hasStatusEarlyTarget) this.statusEarlyTarget.textContent = String(early)
 
     if (this.hasHintTarget) {
       this.hintTarget.hidden = count > 0
+    }
+
+    if (this.hasBadgeTarget) {
+      this.badgeTarget.textContent = live
+        ? this.t("time_scrubber.live_badge")
+        : this.t("time_scrubber.synthetic_badge")
+      this.badgeTarget.classList.toggle("time-scrubber__badge--live", Boolean(live))
     }
   }
 
   formatDate(date) {
     try {
       return new Intl.DateTimeFormat(this.localeTag(), {
-        year: "numeric",
+        timeZone: CLOCK_TZ,
         month: "2-digit",
         day: "2-digit",
         weekday: "short"
       }).format(date)
     } catch (_error) {
-      return date.toISOString().slice(0, 10)
+      return date.toISOString().slice(5, 10)
     }
   }
 
   formatTime(date) {
-    const hh = String(date.getHours()).padStart(2, "0")
-    const mm = String(date.getMinutes()).padStart(2, "0")
-    const ss = String(date.getSeconds()).padStart(2, "0")
+    const parts = this.taipeiParts(date)
+    const hh = String(parts.hours).padStart(2, "0")
+    const mm = String(parts.minutes).padStart(2, "0")
+    const ss = String(parts.seconds).padStart(2, "0")
     return `${hh}:${mm}:${ss}`
+  }
+
+  // Simulation clock is always Asia/Taipei (UTC+8, no DST).
+  taipeiParts(date) {
+    const shifted = new Date(date.getTime() + TAIPEI_OFFSET_MS)
+    return {
+      year: shifted.getUTCFullYear(),
+      month: shifted.getUTCMonth(),
+      day: shifted.getUTCDate(),
+      hours: shifted.getUTCHours(),
+      minutes: shifted.getUTCMinutes(),
+      seconds: shifted.getUTCSeconds()
+    }
+  }
+
+  setTaipeiClock(baseDate, { hours, minutes, seconds = 0, milliseconds = 0 }) {
+    const parts = this.taipeiParts(baseDate)
+    return new Date(Date.UTC(
+      parts.year,
+      parts.month,
+      parts.day,
+      hours,
+      minutes,
+      seconds,
+      milliseconds
+    ) - TAIPEI_OFFSET_MS)
   }
 
   localeTag() {

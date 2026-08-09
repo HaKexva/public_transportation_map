@@ -18,8 +18,9 @@ module Views
 
       def view_template
         div(
-          class: "map-split-layout fixed inset-0 flex flex-col overflow-hidden bg-background md:flex-row",
-          data: { controller: "map split-pane" }
+          class: "map-split-layout is-booting fixed inset-0 flex flex-col overflow-hidden bg-background md:flex-row",
+          data: { controller: "map split-pane" },
+          aria: { busy: "true" }
         ) do
           div(
             class: "map-layers-backdrop",
@@ -68,131 +69,11 @@ module Views
           end
 
           render_legend_dialog
+          render_boot_overlay
         end
       end
 
       private
-
-      def render_time_scrubber
-        div(
-          class: "time-scrubber",
-          data: {
-            controller: "time-scrubber",
-            time_scrubber_target: "panel"
-          },
-          role: "region",
-          aria: { label: t("map.time_scrubber.aria") }
-        ) do
-          div(
-            class: "time-scrubber__header",
-            data: { action: "pointerdown->time-scrubber#startPanelDrag" }
-          ) do
-            div(class: "time-scrubber__title") { t("map.time_scrubber.title") }
-            span(class: "time-scrubber__badge") { t("map.time_scrubber.synthetic_badge") }
-          end
-
-          div(class: "time-scrubber__body") do
-            div(class: "time-scrubber__datetime") do
-              div(class: "time-scrubber__date", data: { time_scrubber_target: "dateLabel" })
-              div(class: "time-scrubber__time", data: { time_scrubber_target: "timeLabel" })
-            end
-
-            div(class: "time-scrubber__day-row") do
-              button(
-                type: "button",
-                class: "time-scrubber__btn",
-                data: { action: "time-scrubber#shiftDay", delta: "-1" },
-                aria: { label: t("map.time_scrubber.prev_day") }
-              ) { "‹" }
-              button(
-                type: "button",
-                class: "time-scrubber__btn time-scrubber__btn--primary",
-                data: { action: "time-scrubber#jumpToNow" }
-              ) { t("map.time_scrubber.now") }
-              button(
-                type: "button",
-                class: "time-scrubber__btn",
-                data: { action: "time-scrubber#shiftDay", delta: "1" },
-                aria: { label: t("map.time_scrubber.next_day") }
-              ) { "›" }
-              button(
-                type: "button",
-                class: "time-scrubber__btn",
-                data: {
-                  action: "time-scrubber#togglePlay",
-                  time_scrubber_target: "playButton"
-                },
-                aria: { pressed: "false" }
-              ) { t("map.time_scrubber.play") }
-              label(class: "time-scrubber__speed") do
-                span(class: "sr-only") { t("map.time_scrubber.speed_aria") }
-                select(
-                  class: "time-scrubber__speed-select",
-                  data: {
-                    time_scrubber_target: "speedSelect",
-                    action: "change->time-scrubber#changeSpeed"
-                  },
-                  aria: { label: t("map.time_scrubber.speed_aria") }
-                ) do
-                  [
-                    [ 1, t("map.time_scrubber.speed_1x") ],
-                    [ 2, t("map.time_scrubber.speed_2x") ],
-                    [ 5, t("map.time_scrubber.speed_5x") ],
-                    [ 10, t("map.time_scrubber.speed_10x") ],
-                    [ 30, t("map.time_scrubber.speed_30x") ],
-                    [ 60, t("map.time_scrubber.speed_60x") ]
-                  ].each do |value, label|
-                    option(value: value) { label }
-                  end
-                end
-              end
-            end
-
-            label(class: "time-scrubber__slider-label") do
-              span(class: "sr-only") { t("map.time_scrubber.scrub_aria") }
-              input(
-                type: "range",
-                class: "time-scrubber__slider",
-                min: "0",
-                max: "1439",
-                step: "1",
-                value: "0",
-                data: {
-                  time_scrubber_target: "slider",
-                  action: "input->time-scrubber#scrub"
-                }
-              )
-            end
-
-            p(
-              class: "time-scrubber__hint",
-              data: { time_scrubber_target: "hint" }
-            ) { t("map.time_scrubber.empty_hint") }
-
-            div(class: "time-scrubber__stats") do
-              span(data: { time_scrubber_target: "vehicleCount" }) { t("map.time_scrubber.vehicle_count", count: 0) }
-            end
-
-            div(class: "time-scrubber__legend", aria: { label: t("map.time_scrubber.legend_aria") }) do
-              span(class: "time-scrubber__legend-item time-scrubber__legend-item--on-time") do
-                plain t("map.time_scrubber.on_time")
-                plain " "
-                span(data: { time_scrubber_target: "statusOnTime" }) { "0" }
-              end
-              span(class: "time-scrubber__legend-item time-scrubber__legend-item--delayed") do
-                plain t("map.time_scrubber.delayed")
-                plain " "
-                span(data: { time_scrubber_target: "statusDelayed" }) { "0" }
-              end
-              span(class: "time-scrubber__legend-item time-scrubber__legend-item--early") do
-                plain t("map.time_scrubber.early")
-                plain " "
-                span(data: { time_scrubber_target: "statusEarly" }) { "0" }
-              end
-            end
-          end
-        end
-      end
 
       def category_chips
         [

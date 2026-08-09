@@ -12,13 +12,14 @@ module Api
         return
       end
 
-      vehicles = Transit::VehiclePositionQuery.new(
+      query = Transit::VehiclePositionQuery.new(
         at: at,
         route_ids: route_ids,
         datasets: ScheduleDataset.active.to_a
-      ).call
+      )
+      vehicles = query.call
 
-      render json: { at: at.iso8601, vehicles: vehicles }
+      render json: { at: at.iso8601, vehicles: vehicles, live: query.live_meta }
     end
 
     private
@@ -26,8 +27,16 @@ module Api
     def parse_at!(raw)
       return Time.zone.now if raw.blank?
 
-      Time.zone.parse(raw)
-    rescue ArgumentError
+      parsed =
+        begin
+          Time.iso8601(raw.to_s).in_time_zone
+        rescue ArgumentError, TypeError
+          Time.zone.parse(raw.to_s)
+        end
+      raise ArgumentError if parsed.blank?
+
+      parsed
+    rescue ArgumentError, TypeError
       raise ActionController::BadRequest, "Invalid at param (expected ISO time string)"
     end
   end

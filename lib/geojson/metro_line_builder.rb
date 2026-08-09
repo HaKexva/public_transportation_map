@@ -364,7 +364,7 @@ module Geojson
         )
       when "yilan_line"
         build_tra_cached_or_station_ordered_route_features(
-          station_refs: YILAN_CORRIDOR_WAYPOINT_REFS
+          station_refs: YILAN_STATION_REFS
         )
       when "neiwan_line"
         build_tra_cached_or_station_ordered_route_features(
@@ -2439,10 +2439,6 @@ module Geojson
       920 7390 7380 7360 7350 7320 7310 7300 7290 7280 7270 7260 7250 7240 7230 7220 7210 7200
       7190 7180 7170 7160 7150 7120
     ].freeze
-    YILAN_CORRIDOR_WAYPOINT_REFS = %w[
-      920 7390 7380 7360 7350 7320 7310 7300 7290 7280 7270 7260 7250 7240 7230 7220 7210 7200
-      7190 7180 7170 7160 7150 7120
-    ].freeze
 
     TRA_STATION_ORDERED_LINES = {
       "western_trunk_north" => WESTERN_TRUNK_NORTH_STATION_REFS,
@@ -2623,9 +2619,14 @@ module Geojson
 
         line_ref = transfer_ref_for_current_line(transfer[:combined_ref])
         coords = transfer_coordinates_for_line_ref(transfer, line_ref)
+        display_ref = TransitTransferCatalog.ref_for_line(
+          transfer[:combined_ref],
+          line: @line,
+          coordinates_by_ref: transfer[:coordinates_by_ref]
+        )
 
         station.merge(
-          ref: transfer[:combined_ref],
+          ref: display_ref.presence || line_ref || transfer[:combined_ref],
           lon: coords[:lon],
           lat: coords[:lat]
         )
@@ -3034,7 +3035,11 @@ module Geojson
         ref = original_ref
         transfer_entry = in_station_transfer_for(station[:name], ref: original_ref)
         if transfer_entry
-          ref = TransitTransferCatalog.ref_for_line(transfer_entry.combined_ref, line: @line)
+          ref = TransitTransferCatalog.ref_for_line(
+            transfer_entry.combined_ref,
+            line: @line,
+            coordinates_by_ref: transfer_entry.coordinates_by_ref
+          )
           coords = TransitTransferCatalog.coordinates_for_line(transfer_entry, line: @line, ref: ref)
           hub_entry = TransitTransferCatalog::Entry.new(
             combined_ref: transfer_entry.combined_ref,

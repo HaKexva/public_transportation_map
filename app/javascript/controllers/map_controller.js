@@ -1,5 +1,8 @@
 // airport-mrt-colors-v3: commuter #0073B7, express #6A2C91, solid parallel tracks
 import { Controller } from "@hotwired/stimulus"
+import { VehicleCanvasLayer } from "transit/vehicle_canvas_layer"
+import { motionKind, easedProgress, speedKmh } from "transit/motion_profile"
+import { buildChainage, longestTrackLine, nearestDistance, pointAtDistance } from "transit/track_chainage"
 
 const LEAFLET_BOUNDS = [ [ 21.85, 118.15 ], [ 26.45, 122.25 ] ]
 
@@ -40,7 +43,8 @@ const PARALLEL_TRACK_ROUTE_IDS = new Set([
 ])
 const PARALLEL_TRACK_MIN_ZOOM = 13
 const LAYER_LOAD_CONCURRENCY = 6
-const VEHICLE_REFRESH_DEBOUNCE_MS = 300
+const VEHICLE_MIN_ZOOM = 5
+const VEHICLE_TAG_ZOOM = 10
 const STATION_LABEL_MIN_ZOOM = 14
 const STATION_LABEL_PRIORITY_ZOOM = 12
 const CARTO_LIGHT_BASEMAP_URL = "https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png"
@@ -53,6 +57,12 @@ const NLSC_BASEMAP_ATTRIBUTION = '&copy; <a href="https://maps.nlsc.gov.tw/" tar
 const BASEMAP_MODE_STORAGE_KEY = "map-basemap-style"
 const LEGACY_BASEMAP_MODE_STORAGE_KEY = "map-basemap"
 const LEGACY_NLSC_ENABLED_STORAGE_KEY = "map-nlsc-enabled"
+const NEARBY_PIN_STORAGE_KEY = "map-nearby-pins"
+const RIDE_STAMP_STORAGE_KEY = "map-ride-stamps"
+const RELAX_MODE_STORAGE_KEY = "map-relax-mode"
+const LIVE_OVERLAY_WINDOW_MS = 15 * 60 * 1000
+const NEARBY_RADIUS_M = 1500
+const STATION_BOARD_MINUTES = 60
 const SKYTRAIN_NORTH_STATION_ORDER = [ "ST1N", "ST2N" ]
 const SKYTRAIN_SOUTH_STATION_ORDER = [ "ST1S", "ST2S" ]
 const TRA_BRANCH_ROUTE_IDS = new Set([
@@ -142,7 +152,6 @@ export default class extends Controller {
     "layerSearchItem",
     "layerSearchGroup",
     "layerSearchEmpty",
-    "layerSearchMuted",
     "layerSearchClear",
     "categoryChip",
     "routeBrowser",
@@ -152,7 +161,12 @@ export default class extends Controller {
     "routeStopsMeta",
     "routeStopsList",
     "routeStopsEmpty",
-    "basemapSelect"
+    "basemapSelect",
+    "bootOverlay",
+    "bootStatus",
+    "bootProgressBar",
+    "bootCount",
+    "bootList"
   ]
 
   connect() {
@@ -172,28 +186,81 @@ export default class extends Controller {
     this.lineColorsByPrefix = {}
     this.routesByLineRef = {}
     this.routeTracksByRouteId = {}
+    this.vehicleTracksByRouteId = {}
     this.outOfStationTransfers = []
     this.outOfStationEndpointKeys = new Set()
     this.transferKindByEndpointKey = new Map()
     this.metroDepots = []
     this.stationCoordinatesByKey = {}
+    this.stationNameByKey = {}
     this.selectedRouteId = null
     this.stationCoordsByRouteRef = {}
     this.stationLabelEntries = []
     this.mapReady = false
+    this.booting = true
+    this.bootTasks = []
     this.themeObserver = null
     this.activeCategory = null
     this.basemapStyle = this.readBasemapStyle()
     this.simulationAt = null
+    this.simulationPlaying = false
+    this.simulationSpeed = 1
     this.vehicleRefreshTimer = null
     this.vehicleFetchController = null
+    this.vehicleRequestSeq = 0
     this.vehicleGroup = null
+    this.vehicleMarkersById = {}
+    this.vehicleRefreshImmediate = false
+    this.followedVehicleKey = null
+    this.followedMarker = null
+    this.followedSoftId = null
+    this.followedTrainNumber = null
+    this.followedRouteId = null
+    this.followedDirection = null
+    this.followedDestination = null
+    this.followLastLatLng = null
+    this.followCameraLocked = false
+    this.followMissed = false
+    this.followBarEl = null
+    this.followHandoff = null
+    this.followHandoffKey = null
+    this.followHandoffDecision = null
+    this.pendingFollowTripId = null
+    this.pendingFollowTrainNumber = null
+    this.onFollowMapDrag = null
+    this.scheduleSnapshots = {}
+    this.scheduleDate = null
+    this.scheduleFetchController = null
+    this.liveOverlayByKey = {}
+    this.routeChainage = {}
+    this.vehicleCanvas = null
+    this.crossingGroup = null
+    this.crossingsVisible = false
+    this.crossingFeatures = []
+    this.pinMode = false
+    this.nearbyPins = []
+    this.nearbyPinGroup = null
+    this.exploreRelax = false
+    this.shareTimer = null
+    this.pendingShare = null
+    this.applyingShare = false
+    this.alertBannerEl = null
+    this.exploreToolsEl = null
+    this.stationBoardEl = null
+    this.nearbyPanelEl = null
+    this.explorePanelEl = null
+    this.dismissedAlertIds = new Set()
     this.setLayerControlsDisabled(true)
     this.syncMobileSidebarAria(false)
+    this.element.classList.add("is-booting")
+    this.element.setAttribute("aria-busy", "true")
+    this.startBootTask("leaflet", this.t("boot.leaflet"))
     this.waitForLeaflet(0)
     this.initializeCategoryFilter()
     this.onSimulationTime = (event) => this.handleSimulationTime(event)
+    this.onSimulationSpeed = (event) => this.handleSimulationSpeed(event)
     window.addEventListener("map:simulation-time", this.onSimulationTime)
+    window.addEventListener("map:simulation-speed", this.onSimulationSpeed)
   }
 
   disconnect() {
@@ -210,8 +277,31 @@ export default class extends Controller {
     }
     if (this.onThemeChanged) window.removeEventListener("theme:changed", this.onThemeChanged)
     if (this.onSimulationTime) window.removeEventListener("map:simulation-time", this.onSimulationTime)
+    if (this.onSimulationSpeed) window.removeEventListener("map:simulation-speed", this.onSimulationSpeed)
     if (this.vehicleRefreshTimer) clearTimeout(this.vehicleRefreshTimer)
+    if (this.stationLabelRefreshTimer) clearTimeout(this.stationLabelRefreshTimer)
     if (this.vehicleFetchController) this.vehicleFetchController.abort()
+    if (this.scheduleFetchController) this.scheduleFetchController.abort()
+    this.stopVehicleAnimationLoop()
+    this.stopFollowingVehicle({ silent: true })
+    this.vehicleCanvas?.remove()
+    this.vehicleCanvas = null
+    this.alertBannerEl?.remove()
+    this.exploreToolsEl?.remove()
+    this.stationBoardEl?.remove()
+    this.nearbyPanelEl?.remove()
+    this.explorePanelEl?.remove()
+    if (this.shareTimer) clearTimeout(this.shareTimer)
+    if (this.map && this.refreshVehiclesOnView) {
+      this.map.off("zoomend", this.refreshVehiclesOnView)
+      this.map.off("moveend", this.refreshVehiclesOnView)
+    }
+    if (this.map && this.onFollowMapDrag) {
+      this.map.off("dragstart", this.onFollowMapDrag)
+      this.onFollowMapDrag = null
+    }
+    this.followBarEl?.remove()
+    this.followBarEl = null
     this.element?.classList.remove("map-split-layout--layers-open")
     document.body.classList.remove("overflow-hidden")
     this.themeObserver?.disconnect()
@@ -219,6 +309,8 @@ export default class extends Controller {
     this.map?.remove()
     this.map = null
     this.mapReady = false
+    this.booting = false
+    this.bootTasks = []
     this.tileLayer = null
     this.layerGroups = {}
     this.layerVisible = {}
@@ -229,15 +321,30 @@ export default class extends Controller {
     this.lineColorsByPrefix = {}
     this.routesByLineRef = {}
     this.routeTracksByRouteId = {}
+    this.vehicleTracksByRouteId = {}
     this.outOfStationTransfers = []
     this.outOfStationEndpointKeys = new Set()
     this.transferKindByEndpointKey = new Map()
     this.metroDepots = []
     this.stationCoordinatesByKey = {}
+    this.stationNameByKey = {}
     this.stationLabelEntries = []
     this.stationLabelGroup = null
     this.vehicleGroup = null
+    this.vehicleMarkersById = {}
     this.simulationAt = null
+    this.simulationPlaying = false
+    this.simulationSpeed = 1
+    this.followedVehicleKey = null
+    this.followedMarker = null
+    this.followedSoftId = null
+    this.followedTrainNumber = null
+    this.followedRouteId = null
+    this.followedDirection = null
+    this.followedDestination = null
+    this.followLastLatLng = null
+    this.followCameraLocked = false
+    this.followMissed = false
   }
 
   t(key, vars = {}) {
@@ -273,10 +380,16 @@ export default class extends Controller {
 
   featureDisplayName(feature) {
     const properties = feature?.properties || {}
-    return this.localizedName(
-      properties.name || properties.ref || "",
-      properties.name_en
-    )
+    const name = this.localizedName(properties.name || "", properties.name_en)
+    if (this.isDisplayableStationName(name)) return name
+
+    const ref = String(properties.ref || "").trim()
+    return this.isDisplayableStationName(ref) ? ref : ""
+  }
+
+  isDisplayableStationName(value) {
+    const name = String(value || "").trim()
+    return Boolean(name) && !name.includes(";")
   }
 
   stationDisplayName(station) {
@@ -290,6 +403,8 @@ export default class extends Controller {
     }
 
     if (attempts > 60) {
+      this.finishBootTask("leaflet", "error")
+      this.completeBoot({ failed: true })
       this.element.innerHTML = "<p style=\"padding:1rem;font-family:sans-serif\">Map failed to load. Hard-refresh the page.</p>"
       return
     }
@@ -298,6 +413,8 @@ export default class extends Controller {
   }
 
   async initMap() {
+    this.startBootTask("leaflet", this.t("boot.leaflet"))
+
     const L = window.L
     const mapElement = this.hasMapTarget ? this.mapTarget : this.element
 
@@ -322,6 +439,7 @@ export default class extends Controller {
       keepBuffer: 2
     }).addTo(this.map)
     this.syncPrimaryBasemapClass()
+    this.finishBootTask("leaflet")
 
     this.watchThemeChanges()
     this.syncBasemapSelect()
@@ -329,12 +447,19 @@ export default class extends Controller {
     this.onThemeChanged = () => this.applyThemeBasemap()
     window.addEventListener("theme:changed", this.onThemeChanged)
 
+    this.startBootTask("manifest", this.t("boot.manifest"))
+    this.startBootTask("transfers", this.t("boot.transfers"))
+    this.startBootTask("depots", this.t("boot.depots"))
+
     await Promise.all([
-      this.loadRoutesManifest(),
-      this.loadOutOfStationTransfers(),
-      this.loadMetroDepots()
+      this.loadRoutesManifest().then(() => this.finishBootTask("manifest"), () => this.finishBootTask("manifest", "error")),
+      this.loadOutOfStationTransfers().then(() => this.finishBootTask("transfers"), () => this.finishBootTask("transfers", "error")),
+      this.loadMetroDepots().then(() => this.finishBootTask("depots"), () => this.finishBootTask("depots", "error"))
     ])
-    if (!this.map) return
+    if (!this.map) {
+      this.completeBoot({ failed: true })
+      return
+    }
 
     const transferPane = this.map.createPane("outOfStationTransfers")
     transferPane.style.zIndex = 640
@@ -365,6 +490,18 @@ export default class extends Controller {
     const vehiclePane = this.map.createPane("vehicles")
     vehiclePane.style.zIndex = 700
     this.vehicleGroup = L.layerGroup({ pane: "vehicles" }).addTo(this.map)
+    this.vehicleMarkersById = {}
+    this.vehicleCanvas = new VehicleCanvasLayer()
+    this.vehicleCanvas.addTo(this.map)
+    this.vehicleCanvas.onSelect = (entry) => this.handleCanvasVehicleSelect(entry)
+    this.crossingGroup = L.layerGroup()
+    this.nearbyPinGroup = L.layerGroup().addTo(this.map)
+    this.pendingShare = this.readShareParams()
+    this.ensureExploreUi()
+    this.restoreRelaxMode()
+    this.loadStoredPins()
+    this.loadAlerts()
+    this.loadCrossings()
 
     this.ensureAllLayerGroups()
 
@@ -373,10 +510,30 @@ export default class extends Controller {
     this.parallelTracksActive = (this.map.getZoom() ?? 12) >= PARALLEL_TRACK_MIN_ZOOM
 
     this.refreshParallelTracksOnZoom = () => this.scheduleParallelTracksRefresh()
-    this.refreshStationLabelsOnView = () => this.refreshStationLabels()
+    this.refreshStationLabelsOnView = () => {
+      if (this.ignoreMapViewEvents) return
+      this.scheduleStationLabelRefresh()
+    }
+    this.refreshVehiclesOnView = () => {
+      if (this.ignoreMapViewEvents) return
+      this.redrawVehicleCanvas()
+      this.scheduleShareUrlUpdate()
+    }
     this.map.on("zoomend", this.refreshParallelTracksOnZoom)
     this.map.on("zoomend", this.refreshStationLabelsOnView)
     this.map.on("moveend", this.refreshStationLabelsOnView)
+    this.map.on("zoomend", this.refreshVehiclesOnView)
+    this.map.on("moveend", this.refreshVehiclesOnView)
+
+    this.onFollowMapDrag = () => {
+      if (this._autoPan || this.ignoreMapViewEvents) return
+      if (!this.followedVehicleKey || !this.followCameraLocked) return
+      this.followCameraLocked = false
+      this.syncFollowBar()
+    }
+    this.map.on("dragstart", this.onFollowMapDrag)
+
+    this.ensureFollowBar()
 
     this.resizeHandler = () => this.invalidateMapSize()
     requestAnimationFrame(this.resizeHandler)
@@ -385,16 +542,154 @@ export default class extends Controller {
     window.addEventListener("resize", this.resizeHandler)
 
     this.mapReady = true
-    this.setLayerControlsDisabled(false)
     this.syncPanelToggleStates()
-    await this.loadInitialRouteFromPage()
+    this.syncSimulationFromScrubber()
+    try {
+      await this.loadInitialRouteFromPage()
+      await this.ensureDefaultVehicleLayers()
+      this.syncSimulationFromScrubber()
+      await this.applyShareParams()
+      await this.bootVehicles()
+      this.completeBoot()
+      this.scheduleShareUrlUpdate()
+    } catch (error) {
+      console.error("Map boot failed", error)
+      this.completeBoot({ failed: true })
+    }
   }
 
   async loadInitialRouteFromPage() {
     const routeId = this.initialRouteIdValue || new URLSearchParams(window.location.search).get("route")
     if (!routeId) return
 
-    await this.openRouteDetail(routeId)
+    const route = this.findRoute(routeId)
+    const label = this.routeDisplayName(route) || routeId
+    this.startBootTask(`route:${routeId}`, label)
+    this.startBootTask("stops", this.t("boot.stops"))
+    try {
+      await this.openRouteDetail(routeId)
+      this.finishBootTask(`route:${routeId}`)
+      this.finishBootTask("stops")
+    } catch (error) {
+      this.finishBootTask(`route:${routeId}`, "error")
+      this.finishBootTask("stops", "error")
+      throw error
+    }
+  }
+
+  // Vehicles only render for visible route layers. First visit on the dashboard
+  // has nothing checked, so auto-open the main timetable-backed lines once.
+  // Dedicated route pages already load their route — never expand to defaults.
+  async ensureDefaultVehicleLayers() {
+    if (this.initialRouteIdValue) return
+
+    if (this.visibleRouteLayerIds().length > 0) return
+
+    if (this.pendingShare?.routes?.length) {
+      const shareRoutes = this.pendingShare.routes.filter((routeId) => Boolean(this.findRoute(routeId)))
+      if (shareRoutes.length > 0) {
+        await this.setRouteLayersVisible(shareRoutes, true, {
+          fitBounds: false,
+          afterSync: () => {
+            this.syncAllMetroCheckbox()
+            this.syncAllTraCheckbox()
+            this.syncAllTransitCheckbox()
+          }
+        })
+        return
+      }
+    }
+
+    const defaults = [
+      "bannan",
+      "tamsui_xinyi",
+      "zhonghe_xinlu",
+      "songshan_xindian",
+      "wenhu_line",
+      "western_trunk_north",
+      "taiwan_hsr"
+    ].filter((routeId) => Boolean(this.findRoute(routeId)))
+
+    if (defaults.length === 0) return
+
+    await this.setRouteLayersVisible(defaults, true, {
+      fitBounds: true,
+      afterSync: () => {
+        this.syncAllMetroCheckbox()
+        this.syncAllTraCheckbox()
+        this.syncAllTransitCheckbox()
+      }
+    })
+  }
+
+  async bootVehicles() {
+    this.startBootTask("vehicles", this.t("boot.vehicles"))
+    try {
+      await this.fetchAndSyncVehicles()
+      this.finishBootTask("vehicles")
+    } catch (error) {
+      console.warn("vehicles boot fetch failed", error)
+      this.finishBootTask("vehicles", "error")
+    }
+  }
+
+  startBootTask(id, label) {
+    if (!this.bootTasks) this.bootTasks = []
+    const existing = this.bootTasks.find((task) => task.id === id)
+    if (existing) {
+      existing.label = label
+      existing.status = "loading"
+    } else {
+      this.bootTasks.push({ id, label, status: "loading" })
+    }
+    this.renderBootProgress()
+  }
+
+  finishBootTask(id, status = "done") {
+    const task = this.bootTasks?.find((entry) => entry.id === id)
+    if (task) task.status = status === "error" ? "error" : "done"
+    this.renderBootProgress()
+  }
+
+  renderBootProgress() {
+    const tasks = this.bootTasks || []
+    const done = tasks.filter((task) => task.status === "done" || task.status === "error").length
+    const total = tasks.length
+    const percent = total === 0 ? 0 : Math.round((done / total) * 100)
+    const current = tasks.find((task) => task.status === "loading")
+
+    if (this.hasBootProgressBarTarget) {
+      this.bootProgressBarTarget.style.width = `${percent}%`
+    }
+    if (this.hasBootCountTarget) {
+      this.bootCountTarget.textContent = this.t("boot.count", { done, total })
+    }
+    if (this.hasBootStatusTarget) {
+      this.bootStatusTarget.textContent = current?.label || (total > 0 && done === total ? this.t("boot.ready") : this.t("boot.starting"))
+    }
+    if (this.hasBootListTarget) {
+      this.bootListTarget.replaceChildren(...tasks.map((task) => {
+        const item = document.createElement("li")
+        item.className = `map-boot-overlay__item map-boot-overlay__item--${task.status}`
+        item.textContent = task.label
+        return item
+      }))
+    }
+  }
+
+  completeBoot({ failed = false } = {}) {
+    this.booting = false
+    this.element.classList.remove("is-booting")
+    this.element.setAttribute("aria-busy", "false")
+    if (this.hasBootStatusTarget) {
+      this.bootStatusTarget.textContent = failed ? this.t("boot.failed") : this.t("boot.ready")
+    }
+    if (this.hasBootOverlayTarget) {
+      this.bootOverlayTarget.hidden = true
+      this.bootOverlayTarget.setAttribute("aria-busy", "false")
+    }
+    if (this.mapReady) this.setLayerControlsDisabled(false)
+    if (this.mapReady && this.simulationAt) this.scheduleVehicleRefresh()
   }
 
   async openRouteDetail(routeId) {
@@ -768,12 +1063,6 @@ export default class extends Controller {
 
       group.classList.toggle("hidden", !visible)
     })
-
-    if (this.hasLayerSearchMutedTarget) {
-      this.layerSearchMutedTargets.forEach((element) => {
-        element.classList.toggle("hidden", hasQuery)
-      })
-    }
 
     if (this.hasLayerSearchClearTarget) {
       this.layerSearchClearTarget.classList.toggle("hidden", !hasQuery)
@@ -1257,7 +1546,7 @@ export default class extends Controller {
     const projectedY = y1 + (progress * dy)
     const distance = ((px - projectedX) ** 2) + ((py - projectedY) ** 2)
 
-    return { progress, distance }
+    return { progress, distance, projectedX, projectedY }
   }
 
   routeLineStringsFromGeoJSON(geojson) {
@@ -1442,9 +1731,11 @@ export default class extends Controller {
     const ref = event.params.ref
     const latlng = this.stationCoordsByRouteRef[routeId]?.[ref]
 
-    if (!latlng || !this.map) return
+    if (latlng && this.map) {
+      this.map.setView(latlng, Math.max(this.map.getZoom(), 14))
+    }
 
-    this.map.setView(latlng, Math.max(this.map.getZoom(), 14))
+    this.openStationBoard({ routeId, ref, name: this.stationNameForRef(ref, routeId) || ref })
   }
 
   fastBasemapUrl() {
@@ -1629,7 +1920,17 @@ export default class extends Controller {
     try {
       if (visible) {
         await this.mapPool(routeIds, LAYER_LOAD_CONCURRENCY, async (routeId) => {
-          await this.showLayer(routeId, { fitBounds: false, manageControl: false })
+          if (this.booting) {
+            const route = this.findRoute(routeId)
+            this.startBootTask(`route:${routeId}`, this.routeDisplayName(route) || routeId)
+          }
+          try {
+            await this.showLayer(routeId, { fitBounds: false, manageControl: false })
+            if (this.booting) this.finishBootTask(`route:${routeId}`)
+          } catch (error) {
+            if (this.booting) this.finishBootTask(`route:${routeId}`, "error")
+            throw error
+          }
         })
 
         afterSync?.()
@@ -1647,6 +1948,11 @@ export default class extends Controller {
 
       this.updateOutOfStationTransfers()
       this.updateMetroDepots()
+      if (this.simulationAt) {
+        this.ensureScheduleSnapshots(this.visibleRouteLayerIds())
+        this.scheduleVehicleRefresh()
+        this.scheduleShareUrlUpdate()
+      }
     } finally {
       this.setLayerControlsDisabled(false)
     }
@@ -1666,6 +1972,8 @@ export default class extends Controller {
   }
 
   setLayerControlsDisabled(disabled) {
+    if (!disabled && this.booting) return
+
     this.layerCheckboxTargets.forEach((checkbox) => {
       if (checkbox.dataset.available === "false") {
         checkbox.disabled = true
@@ -1891,9 +2199,14 @@ export default class extends Controller {
       if (!ref || !coordinates) return
 
       const latlng = L.latLng(coordinates[1], coordinates[0])
+      const name = this.featureDisplayName(feature)
 
       this.coordinateIndexRefs(routeId, ref).forEach((stationRef) => {
         this.stationCoordinatesByKey[this.stationKey(routeId, stationRef)] = latlng
+        if (name) this.stationNameByKey[this.stationKey(routeId, stationRef)] = name
+      })
+      this.transferStationRefs(ref).forEach((stationRef) => {
+        if (name) this.stationNameByKey[this.stationKey(routeId, stationRef)] ||= name
       })
     })
   }
@@ -1919,6 +2232,10 @@ export default class extends Controller {
 
         this.coordinateIndexRefs(route.id, feature.properties?.ref).forEach((stationRef) => {
           delete this.stationCoordinatesByKey[this.stationKey(route.id, stationRef)]
+          delete this.stationNameByKey[this.stationKey(route.id, stationRef)]
+        })
+        this.transferStationRefs(feature.properties?.ref).forEach((stationRef) => {
+          delete this.stationNameByKey[this.stationKey(route.id, stationRef)]
         })
       })
     })
@@ -2653,6 +2970,7 @@ export default class extends Controller {
       this.updateOutOfStationTransfers()
       this.applyRouteEmphasis()
       this.refreshStationLabels()
+      if (this.simulationAt) this.scheduleVehicleRefresh()
       return
     }
 
@@ -2723,7 +3041,11 @@ export default class extends Controller {
     this.clearStationCoordinatesForRoutes(this.routesToLoad(layerId))
 
     this.routesToLoad(layerId).forEach((route) => {
-      if (route?.id) delete this.routeTracksByRouteId[route.id]
+      if (route?.id) {
+        delete this.routeTracksByRouteId[route.id]
+        delete this.vehicleTracksByRouteId[route.id]
+        delete this.routeChainage[route.id]
+      }
     })
 
     this.clearStationLabelsForLayer(layerId)
@@ -3245,15 +3567,21 @@ export default class extends Controller {
   }
 
   cacheRouteTracks(routeId, data) {
-    this.routeTracksByRouteId[routeId] = this.extractRouteTracks(data)
+    this.routeTracksByRouteId[routeId] = this.extractRouteTracks(data, { includeDepot: true })
+    // Vehicle motion must follow the passenger main line, never depot spurs.
+    this.vehicleTracksByRouteId[routeId] = this.extractRouteTracks(data, { includeDepot: false })
   }
 
-  extractRouteTracks(data) {
+  extractRouteTracks(data, { includeDepot = true } = {}) {
     const lines = []
 
     ;(data.features || []).forEach((feature) => {
       const featureType = feature.properties?.feature_type
-      if (featureType !== "route" && featureType !== "express_route" && featureType !== "depot_spur") return
+      const allowed =
+        featureType === "route" ||
+        featureType === "express_route" ||
+        (includeDepot && featureType === "depot_spur")
+      if (!allowed) return
 
       const geometry = feature.geometry
       if (geometry?.type === "LineString") {
@@ -3264,6 +3592,10 @@ export default class extends Controller {
     })
 
     return lines
+  }
+
+  vehicleTracksFor(routeId) {
+    return this.vehicleTracksByRouteId[routeId] || this.routeTracksByRouteId[routeId] || []
   }
 
   routeUsesParallelTracks(route) {
@@ -3832,6 +4164,14 @@ export default class extends Controller {
     return null
   }
 
+  scheduleStationLabelRefresh() {
+    if (this.stationLabelRefreshTimer) clearTimeout(this.stationLabelRefreshTimer)
+    this.stationLabelRefreshTimer = setTimeout(() => {
+      this.stationLabelRefreshTimer = null
+      this.refreshStationLabels()
+    }, 120)
+  }
+
   refreshStationLabels() {
     if (!this.map || !this.stationLabelGroup || !window.L) return
 
@@ -3906,7 +4246,7 @@ export default class extends Controller {
   terminalMarkerAt(latlng, color) {
     const L = window.L
     const safeColor = color || "#666666"
-    const size = Math.max(this.stationMarkerRadius() + 6, 14)
+    const size = Math.max(this.stationMarkerRadius() + 4, 10)
     const html = `<div class="terminal-station-marker" aria-hidden="true" style="--terminal-line-color:${safeColor}"></div>`
 
     return L.marker(latlng, {
@@ -3951,11 +4291,11 @@ export default class extends Controller {
   }
 
   transferStationMarkerDimensions() {
-    const diameter = Math.max((this.stationMarkerRadius() * 2) + 4, 12)
+    const diameter = Math.max((this.stationMarkerRadius() * 2) + 2, 10)
 
     return {
       width: diameter + 2,
-      height: Math.max(Math.round(diameter * 0.68), 9)
+      height: Math.max(Math.round(diameter * 0.68), 8)
     }
   }
 
@@ -4085,8 +4425,8 @@ export default class extends Controller {
       icon: L.divIcon({
         className: "angle-station-icon",
         html,
-        iconSize: [ 18, 18 ],
-        iconAnchor: [ 9, 9 ]
+        iconSize: [ 16, 16 ],
+        iconAnchor: [ 8, 8 ]
       }),
       pane: this.stationMarkerPane,
       zIndexOffset: 550
@@ -4102,8 +4442,8 @@ export default class extends Controller {
       icon: L.divIcon({
         className: "out-of-station-station-icon",
         html,
-        iconSize: [ 18, 18 ],
-        iconAnchor: [ 9, 9 ]
+        iconSize: [ 14, 14 ],
+        iconAnchor: [ 7, 7 ]
       }),
       pane: this.stationMarkerPane,
       zIndexOffset: 600
@@ -4113,11 +4453,11 @@ export default class extends Controller {
   stationMarkerRadius() {
     const zoom = this.map?.getZoom() ?? 12
 
-    if (zoom <= 10) return 4
-    if (zoom <= 12) return 5
-    if (zoom <= 14) return 7
+    if (zoom <= 10) return 3
+    if (zoom <= 12) return 4
+    if (zoom <= 14) return 5
 
-    return 8
+    return 6
   }
 
   circleMarkerAt(latlng, color) {
@@ -4127,7 +4467,7 @@ export default class extends Controller {
       radius: this.stationMarkerRadius(),
       fillColor: color,
       color: "#ffffff",
-      weight: 2,
+      weight: 1.5,
       opacity: 1,
       fillOpacity: 0.95,
       pane: this.stationMarkerPane
@@ -4180,7 +4520,13 @@ export default class extends Controller {
       : ""
     const popup = `<strong>${label}</strong>${subtitle}${terminalNote}${boardingAreaNote}${noPassengerServiceNote}${directionNote}${transferNote}${expressNote}`
 
-    layer.bindPopup(popup)
+    layer.bindPopup(() => {
+      const board = this.stationBoardHtml(ref, routeId, name)
+      return `${popup}${board}`
+    }, { maxWidth: 320 })
+    layer.on("popupopen", () => {
+      this.bindStationBoardActions(layer.getPopup()?.getElement())
+    })
   }
 
   isRouteLineFeature(feature) {
@@ -4234,197 +4580,1494 @@ export default class extends Controller {
 
   // ─── Vehicle layer ───────────────────────────────────────────────────────────
 
+  syncSimulationFromScrubber() {
+    const scrubberEl = document.querySelector("[data-controller~='time-scrubber']")
+    const scrubber = scrubberEl
+      ? this.application.getControllerForElementAndIdentifier(scrubberEl, "time-scrubber")
+      : null
+
+    if (scrubber?.at instanceof Date && !Number.isNaN(scrubber.at.getTime())) {
+      this.simulationAt = scrubber.at.toISOString()
+      this.simulationPlaying = Boolean(scrubber.playing)
+      if (Number.isFinite(scrubber.playSpeed)) this.simulationSpeed = scrubber.playSpeed
+    } else if (!this.simulationAt) {
+      this.simulationAt = new Date().toISOString()
+    }
+
+    this.scheduleVehicleRefresh()
+  }
+
   handleSimulationTime(event) {
     const at = event.detail?.at
     if (!at) return
 
     this.simulationAt = at
+    if (typeof event.detail?.playing === "boolean") this.simulationPlaying = event.detail.playing
+    if (Number.isFinite(event.detail?.speed)) this.simulationSpeed = event.detail.speed
+    this.vehicleRefreshImmediate = Boolean(event.detail?.immediate) && !this.simulationPlaying
+
+    if (this.simulationPlaying) {
+      // One rAF loop owns marker + camera updates (railisland tick). Don't also
+      // interpolate here or follow-cam setView runs twice per frame.
+      this.ensureVehicleAnimationLoop()
+      if (!this.vehicleRefreshTimer && !this.vehicleRefreshRunning) {
+        this.scheduleVehicleRefresh()
+      }
+      return
+    }
+
+    // Scrub / pause: move with the clock immediately from the local snapshot.
+    // Live overlay only corrects delay / GPS near wall-clock now.
+    this.ensureScheduleSnapshots(this.visibleRouteLayerIds())
+    this.refreshLocalFleet()
     this.scheduleVehicleRefresh()
+    this.scheduleShareUrlUpdate()
+  }
+
+  minutesSinceMidnightFromIso(iso) {
+    const date = new Date(iso)
+    if (Number.isNaN(date.getTime())) return null
+
+    // Simulation clock is Asia/Taipei (UTC+8, no DST).
+    const totalMinutes = (date.getTime() / 60000) + (8 * 60)
+    const dayMinutes = ((totalMinutes % 1440) + 1440) % 1440
+    return dayMinutes
+  }
+
+  ensureVehicleAnimationLoop() {
+    if (this.vehicleAnimFrame) return
+    if (!this.simulationPlaying) return
+
+    const step = (now) => {
+      this.vehicleAnimFrame = null
+      if (!this.simulationPlaying) return
+
+      this.pullSimulationTimeFromScrubber()
+
+      // railisland: camera setView every paint is the main follow jank source.
+      // Throttle marker + camera to ~30fps; sim clock still advances every rAF.
+      const minFrameMs = 33
+      if (!this._vehicleDrawAt || now - this._vehicleDrawAt >= minFrameMs) {
+        this._vehicleDrawAt = now
+        this.refreshLocalFleet({ now })
+        if (this.followCameraLocked) this.warmFollowTiles()
+      }
+
+      this.vehicleAnimFrame = window.requestAnimationFrame(step)
+    }
+
+    this.vehicleAnimFrame = window.requestAnimationFrame(step)
+  }
+
+  pullSimulationTimeFromScrubber() {
+    const scrubberEl = document.querySelector("[data-controller~='time-scrubber']")
+    if (!scrubberEl || !this.application) return
+
+    const scrubber = this.application.getControllerForElementAndIdentifier(scrubberEl, "time-scrubber")
+    if (!scrubber?.at) return
+
+    this.simulationAt = scrubber.at.toISOString()
+    this.simulationPlaying = Boolean(scrubber.playing)
+    if (Number.isFinite(scrubber.playSpeed)) this.simulationSpeed = scrubber.playSpeed
+  }
+
+  stopVehicleAnimationLoop() {
+    if (this.vehicleAnimFrame) {
+      window.cancelAnimationFrame(this.vehicleAnimFrame)
+      this.vehicleAnimFrame = null
+    }
+  }
+
+  advanceVehicleMarkersLocally({ now = performance.now() } = {}) {
+    this.refreshLocalFleet({ now })
+  }
+
+  refreshLocalFleet({ now = performance.now(), resync = false } = {}) {
+    if (!this.simulationAt) return
+
+    const date = this.simulationDateString()
+    if (date && date !== this.scheduleDate) {
+      this.scheduleSnapshots = {}
+      this.scheduleDate = date
+      this.ensureScheduleSnapshots(this.visibleRouteLayerIds())
+    }
+
+    const vehicles = this.buildLocalVehicles()
+    if ((this.map?.getZoom() ?? 0) < VEHICLE_MIN_ZOOM) {
+      this.clearVehicleMarkers()
+      this.redrawVehicleCanvas([])
+      this.notifyVehicleSummary(vehicles, { applied: Object.keys(this.liveOverlayByKey).length > 0 })
+      return
+    }
+
+    const fleetKey = vehicles.map((vehicle) => String(vehicle.id)).sort().join(",")
+    if (resync || fleetKey !== this._localFleetIds) {
+      this._localFleetIds = fleetKey
+      this.syncVehicleMarkers(vehicles)
+    } else {
+      this.advanceExistingMarkers(vehicles)
+    }
+
+    this.notifyVehicleSummary(vehicles, { applied: Object.keys(this.liveOverlayByKey).length > 0 })
+    this.updateFollowCamera()
+    this.redrawVehicleCanvas(vehicles)
+    if (this.followedVehicleKey) this.syncFollowBar()
+  }
+
+  setVehicleMarkerVisible(marker, visible) {
+    const el = marker?.getElement?.()
+    if (el) el.style.visibility = visible ? "" : "hidden"
+    if (typeof marker?.setOpacity === "function") marker.setOpacity(visible ? 1 : 0)
+  }
+
+  placeVehicleOnPath(vehicle, atMin) {
+    const delayMin = (Number(vehicle.delay_seconds) || 0) / 60
+    const clock = Number.isFinite(atMin) ? atMin - delayMin : atMin
+    const path = Array.isArray(vehicle.path) ? vehicle.path : null
+    if (path && path.length >= 2) {
+      const placement = this.placementOnStopPath(path, clock, vehicle)
+      if (!placement) return false
+      this.applyVehiclePlacement(vehicle, placement)
+      return true
+    }
+
+    const dep = Number(vehicle.motion_departure_minutes ?? vehicle.departure_minutes)
+    const arr = Number(vehicle.motion_arrival_minutes ?? vehicle.arrival_minutes)
+    if (!Number.isFinite(dep) || !Number.isFinite(arr)) return false
+
+    if (vehicle.status === "stopped") {
+      if (!this.withinSegmentMinutes(atMin, dep, arr) && atMin !== dep) return false
+      vehicle.progress = 0
+      return true
+    }
+
+    if (this.withinSegmentMinutes(atMin, dep, arr)) {
+      vehicle.progress = this.segmentProgressMinutes(atMin, dep, arr)
+      return true
+    }
+
+    const agePastArr = this.wrappedMinuteSpan(arr, atMin)
+    const ageBeforeDep = this.wrappedMinuteSpan(atMin, dep)
+    if (agePastArr <= ageBeforeDep && agePastArr < 30) {
+      vehicle.progress = 1
+      return true
+    }
+
+    return ageBeforeDep < 2
+  }
+
+  placementOnStopPath(path, atMin, vehicle = null) {
+    for (let i = 0; i < path.length; i += 1) {
+      const stop = path[i]
+      const arrival = Number(stop.a)
+      const departure = Number(stop.d)
+      if (!Number.isFinite(arrival) || !Number.isFinite(departure)) continue
+
+      if (arrival <= departure && atMin >= arrival && atMin < departure) {
+        const next = path[i + 1] || stop
+        return {
+          fromRef: stop.r,
+          toRef: next.r,
+          fromName: stop.n,
+          toName: next.n,
+          progress: 0,
+          stopped: true,
+          departure: arrival,
+          arrival: departure,
+          motionDeparture: arrival,
+          motionArrival: departure
+        }
+      }
+
+      const next = path[i + 1]
+      if (!next) continue
+
+      const nextArrival = Number(next.a)
+      if (!Number.isFinite(nextArrival)) continue
+      if (!this.withinSegmentMinutes(atMin, departure, nextArrival)) continue
+
+      const linear = this.segmentProgressMinutes(atMin, departure, nextArrival)
+      return {
+        fromRef: stop.r,
+        toRef: next.r,
+        fromName: stop.n,
+        toName: next.n,
+        fromKm: Number(stop.km),
+        toKm: Number(next.km),
+        progress: this.easedHopProgress(linear, vehicle),
+        linear,
+        stopped: false,
+        departure,
+        arrival: nextArrival,
+        motionDeparture: departure,
+        motionArrival: nextArrival
+      }
+    }
+
+    return null
+  }
+
+  applyVehiclePlacement(vehicle, placement) {
+    vehicle.from_station_ref = placement.fromRef
+    vehicle.to_station_ref = placement.toRef
+    if (placement.fromName) vehicle.from_station_name = placement.fromName
+    if (placement.toName) vehicle.to_station_name = placement.toName
+    vehicle.progress = placement.progress
+    const delay = Number(vehicle.delay_seconds) || 0
+    vehicle.status = placement.stopped ? "stopped" : (delay > 120 ? "delayed" : "on_time")
+    vehicle.departure_minutes = placement.departure
+    vehicle.arrival_minutes = placement.arrival
+    vehicle.motion_departure_minutes = placement.motionDeparture
+    vehicle.motion_arrival_minutes = placement.motionArrival
+    vehicle.linear_progress = placement.linear ?? placement.progress
+    if (Number.isFinite(placement.fromKm)) vehicle.from_km = placement.fromKm
+    else delete vehicle.from_km
+    if (Number.isFinite(placement.toKm)) vehicle.to_km = placement.toKm
+    else delete vehicle.to_km
+
+    const fromCoord = this.stationCoordForRef(placement.fromRef, vehicle.route_id)
+    const toCoord = this.stationCoordForRef(placement.toRef, vehicle.route_id)
+    if (fromCoord) {
+      vehicle.from_lat = fromCoord[0]
+      vehicle.from_lng = fromCoord[1]
+    } else {
+      delete vehicle.from_lat
+      delete vehicle.from_lng
+    }
+    if (toCoord) {
+      vehicle.to_lat = toCoord[0]
+      vehicle.to_lng = toCoord[1]
+    } else {
+      delete vehicle.to_lat
+      delete vehicle.to_lng
+    }
+  }
+
+  handleSimulationSpeed(event) {
+    if (typeof event.detail?.playing === "boolean") {
+      this.simulationPlaying = event.detail.playing
+      if (!this.simulationPlaying) this.stopVehicleAnimationLoop()
+      else this.ensureVehicleAnimationLoop()
+    }
+    if (Number.isFinite(event.detail?.speed)) this.simulationSpeed = event.detail.speed
+  }
+
+  vehicleRefreshDebounceMs() {
+    // Snapshot owns motion. Overlay fetch is only a near-now delay/GPS patch.
+    if (!this.isNearLiveClock()) return 8000
+    if (this.simulationPlaying) return 900
+    if (this.vehicleRefreshImmediate) return 800
+    return 700
   }
 
   scheduleVehicleRefresh() {
+    if (this.booting) return
     if (this.vehicleRefreshTimer) clearTimeout(this.vehicleRefreshTimer)
     this.vehicleRefreshTimer = setTimeout(() => {
       this.vehicleRefreshTimer = null
+      this.vehicleRefreshImmediate = false
       this.refreshVehicles()
-    }, VEHICLE_REFRESH_DEBOUNCE_MS)
+    }, this.vehicleRefreshDebounceMs())
   }
 
   async refreshVehicles() {
     if (!this.mapReady || !this.map || !this.simulationAt) return
 
+    if (this.vehicleRefreshRunning) {
+      this.vehicleRefreshQueued = true
+      return
+    }
+
+    this.vehicleRefreshRunning = true
+    try {
+      do {
+        this.vehicleRefreshQueued = false
+        await this.fetchAndSyncVehicles()
+      } while (this.vehicleRefreshQueued)
+    } finally {
+      this.vehicleRefreshRunning = false
+    }
+  }
+
+  async fetchAndSyncVehicles() {
     const routeIds = this.visibleRouteLayerIds()
 
-    // Notify the scrubber that there are no visible routes
     if (routeIds.length === 0) {
+      this.clearVehicleMarkers()
+      this.redrawVehicleCanvas([])
       this.notifyVehicleSummary([])
       return
     }
 
-    if (this.vehicleFetchController) this.vehicleFetchController.abort()
-    this.vehicleFetchController = new AbortController()
+    await this.ensureScheduleSnapshots(routeIds)
+    this.refreshLocalFleet()
 
-    const params = new URLSearchParams({ at: this.simulationAt })
-    routeIds.forEach((id) => params.append("route_ids[]", id))
-
-    let data
-    try {
-      const response = await fetch(`/api/vehicles?${params}`, { signal: this.vehicleFetchController.signal })
-      if (!response.ok) return
-      data = await response.json()
-    } catch (error) {
-      if (error.name !== "AbortError") console.warn("vehicles fetch failed", error)
+    if (!this.isNearLiveClock()) {
+      this.liveOverlayByKey = {}
       return
     }
 
-    if (!this.vehicleGroup) return
-    this.vehicleGroup.clearLayers()
+    const requestAt = this.simulationAt
+    if (!requestAt) return
 
-    const vehicles = data.vehicles || []
-    vehicles.forEach((vehicle) => this.renderVehicleMarker(vehicle))
-    this.notifyVehicleSummary(vehicles)
+    const params = new URLSearchParams({ at: requestAt })
+    routeIds.forEach((id) => params.append("route_ids[]", id))
+
+    if (this.vehicleFetchController) this.vehicleFetchController.abort()
+    this.vehicleFetchController = new AbortController()
+    const { signal } = this.vehicleFetchController
+    const requestSeq = ++this.vehicleRequestSeq
+
+    let data
+    try {
+      const response = await fetch(`/api/vehicles?${params}`, { signal })
+      if (!response.ok) {
+        console.warn("vehicles fetch HTTP", response.status)
+        return
+      }
+      data = await response.json()
+    } catch (error) {
+      if (error?.name === "AbortError") return
+      console.warn("vehicles fetch failed", error)
+      return
+    }
+
+    if (requestSeq !== this.vehicleRequestSeq) {
+      this.vehicleRefreshQueued = true
+      return
+    }
+
+    this.mergeLiveOverlay(data.vehicles || [], data.live || {})
+    this.refreshLocalFleet()
+
+    if (this.simulationPlaying && this.isNearLiveClock() && !this.vehicleRefreshTimer && !this.vehicleRefreshQueued) {
+      this.scheduleVehicleRefresh()
+    }
   }
 
-  renderVehicleMarker(vehicle) {
-    const latlng = this.interpolateVehiclePosition(vehicle)
-    if (!latlng) return
-
-    const color = vehicle.color || "#64748b"
-    const status = vehicle.status || "on_time"
-
-    const icon = L.divIcon({
-      className: "leaflet-div-icon vehicle-marker-icon",
-      html: `<div class="vehicle-marker vehicle-marker--${this.escapeHtml(status)}" style="--vehicle-color:${this.escapeHtml(color)}"></div>`,
-      iconSize: [ 12, 12 ],
-      iconAnchor: [ 6, 6 ]
+  syncVehicleMarkers(vehicles) {
+    const nextIds = new Set()
+    const softToId = {}
+    vehicles.forEach((vehicle) => {
+      const soft = String(vehicle.soft_id || vehicle.id || "")
+      if (soft) softToId[soft] = String(vehicle.id || soft)
     })
 
-    const marker = L.marker(latlng, { icon, pane: "vehicles", interactive: true })
-    marker.bindPopup(() => this.vehiclePopupHtml(vehicle), { maxWidth: 240 })
-    this.vehicleGroup.addLayer(marker)
-  }
-
-  interpolateVehiclePosition(vehicle) {
-    const fromRef = vehicle.from_station_ref
-    const toRef = vehicle.to_station_ref
-    const progress = vehicle.progress ?? 0
-    const routeId = vehicle.route_id
-
-    const fromCoord = this.stationCoordForRef(fromRef, routeId)
-    const toCoord = this.stationCoordForRef(toRef, routeId)
-    if (!fromCoord || !toCoord) return null
-
-    const tracks = this.routeTracksByRouteId[routeId]
-    if (tracks && tracks.length > 0) {
-      const interpolated = this.interpolateAlongTracks(fromCoord, toCoord, progress, tracks)
-      if (interpolated) return interpolated
-    }
-
-    // Fallback: straight-line interpolation
-    const lat = fromCoord[0] + (toCoord[0] - fromCoord[0]) * progress
-    const lng = fromCoord[1] + (toCoord[1] - fromCoord[1]) * progress
-    return L.latLng(lat, lng)
-  }
-
-  stationCoordForRef(ref, routeId) {
-    // stationCoordsByRouteRef is keyed by routeId then by station ref
-    const byRoute = this.stationCoordsByRouteRef[routeId]
-    if (byRoute) {
-      const coord = byRoute[ref]
-      if (coord) return [ coord.lat, coord.lng ]
-    }
-
-    // Also check compound refs (e.g. "07;3340;119") by splitting on ";"
-    if (ref && ref.includes(";")) {
-      for (const part of ref.split(";")) {
-        const c = byRoute?.[part.trim()]
-        if (c) return [ c.lat, c.lng ]
+    // Re-key existing markers when a hop rolls forward with the same soft_id.
+    Object.entries(this.vehicleMarkersById).forEach(([id, marker]) => {
+      const soft = String(marker._vehicleData?.soft_id || "")
+      const nextId = softToId[soft]
+      if (nextId && nextId !== id && !this.vehicleMarkersById[nextId]) {
+        this.vehicleMarkersById[nextId] = marker
+        delete this.vehicleMarkersById[id]
+        marker._markerId = nextId
       }
+    })
+
+    const claimedMarkerIds = new Set()
+
+    vehicles.forEach((vehicle) => {
+      const id = String(vehicle.id || "")
+      if (!id) return
+
+      const onPath = this.applySimulationProgress(vehicle)
+      const latlng = this.interpolateVehiclePosition(vehicle)
+      if (!latlng) return
+
+      nextIds.add(id)
+      let existing = this.vehicleMarkersById[id]
+
+      // Smooth handoff across metro station hops: reuse a nearby same-line marker.
+      if (!existing) {
+        existing = this.findHandoffMarker(vehicle, latlng, claimedMarkerIds)
+        if (existing) {
+          const oldId = existing._markerId
+          if (oldId && this.vehicleMarkersById[oldId] === existing) {
+            delete this.vehicleMarkersById[oldId]
+          }
+          this.vehicleMarkersById[id] = existing
+          existing._markerId = id
+        }
+      }
+
+      if (existing) {
+        claimedMarkerIds.add(id)
+        existing.setLatLng(latlng)
+        existing._vehicleData = vehicle
+        existing.setIcon(this.vehicleIconFor(vehicle, latlng))
+        this.setVehicleMarkerVisible(existing, onPath !== false)
+        if (this.followedMarker === existing) {
+          this.followedVehicleKey = this.vehicleFollowKey(vehicle) || this.followedVehicleKey
+          this.followedSoftId = String(vehicle.soft_id || this.followedSoftId || "") || null
+          this.followLastLatLng = latlng
+        }
+        return
+      }
+
+      const marker = this.createVehicleMarker(vehicle, latlng)
+      marker._markerId = id
+      this.vehicleMarkersById[id] = marker
+      this.vehicleGroup.addLayer(marker)
+      this.setVehicleMarkerVisible(marker, onPath !== false)
+      claimedMarkerIds.add(id)
+    })
+
+    Object.keys(this.vehicleMarkersById).forEach((id) => {
+      if (nextIds.has(id)) return
+
+      const marker = this.vehicleMarkersById[id]
+      this.vehicleGroup.removeLayer(marker)
+      delete this.vehicleMarkersById[id]
+    })
+
+    this.refreshFollowedMarkerStyles()
+    this.tryAdoptPendingFollowVehicle()
+    this.updateFollowCamera({ fromSync: true })
+  }
+
+  findHandoffMarker(vehicle, latlng, claimedMarkerIds) {
+    const routeId = vehicle.route_id
+    const direction = vehicle.direction
+    const destination = vehicle.destination_name
+    const soft = String(vehicle.soft_id || "")
+    let softMatch = null
+    let followedMatch = null
+    let followedDistance = Infinity
+    let nearMatch = null
+    let nearDistance = 120
+
+    Object.entries(this.vehicleMarkersById).forEach(([id, marker]) => {
+      if (claimedMarkerIds.has(id)) return
+      const data = marker._vehicleData
+      if (!data) return
+      if (data.route_id !== routeId || data.direction !== direction) return
+      if (destination && data.destination_name && data.destination_name !== destination) return
+
+      const distance = marker.getLatLng().distanceTo(latlng)
+      const markerSoft = String(data.soft_id || "")
+
+      if (soft && markerSoft && soft === markerSoft) {
+        softMatch = marker
+        return
+      }
+
+      // Keep the followed marker glued to its train across metro hops.
+      if (this.followedMarker && marker === this.followedMarker && distance < 450) {
+        if (distance < followedDistance) {
+          followedDistance = distance
+          followedMatch = marker
+        }
+        return
+      }
+
+      // Generic proximity handoff — never steal the followed marker for another train.
+      if (this.followedMarker && marker === this.followedMarker) return
+      if (distance < nearDistance) {
+        nearDistance = distance
+        nearMatch = marker
+      }
+    })
+
+    return softMatch || followedMatch || nearMatch
+  }
+
+  applySimulationProgress(vehicle) {
+    const atMin = this.minutesSinceMidnightFromIso(this.simulationAt)
+    if (!Number.isFinite(atMin)) return true
+
+    return this.placeVehicleOnPath(vehicle, atMin)
+  }
+
+  withinSegmentMinutes(minutes, a, b) {
+    if (a <= b) return minutes >= a && minutes <= b
+    return minutes >= a || minutes <= b
+  }
+
+  wrappedMinuteSpan(from, to) {
+    const delta = ((to - from) % 1440 + 1440) % 1440
+    return delta
+  }
+
+  segmentProgressMinutes(minutes, a, b) {
+    if (a === b) return 0
+
+    let segmentLen
+    let offset
+    if (a <= b) {
+      segmentLen = b - a
+      offset = minutes - a
+    } else {
+      segmentLen = (1440 - a) + b
+      offset = minutes >= a ? (minutes - a) : (1440 - a + minutes)
     }
 
-    // Fall back to global stationCoordinatesByKey
-    const global = this.stationCoordinatesByKey[ref]
-    if (global) return [ global.lat, global.lng ]
+    if (segmentLen <= 0) return 0
+    return Math.max(0, Math.min(1, offset / segmentLen))
+  }
+
+  clearVehicleMarkers() {
+    if (this.vehicleGroup) this.vehicleGroup.clearLayers()
+    this.vehicleMarkersById = {}
+    this._localFleetIds = null
+    if (this.followedVehicleKey) {
+      if (!this.followHandoffPending()) {
+        this.recordRideStamp({
+          route_id: this.followedRouteId,
+          train_number: this.followedTrainNumber,
+          destination_name: this.followedDestination
+        })
+        this.followMissed = true
+      }
+      this.syncFollowBar()
+    }
+  }
+
+  createVehicleMarker(vehicle, latlng) {
+    const L = window.L
+    const marker = L.marker(latlng, {
+      icon: this.vehicleIconFor(vehicle, latlng),
+      pane: "vehicles",
+      interactive: !this.vehicleCanvas,
+      zIndexOffset: 800
+    })
+    marker._vehicleData = vehicle
+    marker.bindPopup(() => this.vehiclePopupHtml(marker._vehicleData || vehicle), { maxWidth: 280 })
+    marker.on("popupopen", () => this.bindVehiclePopupActions(marker))
+    return marker
+  }
+
+  bindVehiclePopupActions(marker) {
+    const root = marker.getPopup()?.getElement()
+    if (!root) return
+
+    const followBtn = root.querySelector("[data-vehicle-follow]")
+    if (followBtn && !followBtn._bound) {
+      followBtn._bound = true
+      followBtn.addEventListener("click", (event) => {
+        event.preventDefault()
+        event.stopPropagation()
+        this.startFollowingVehicle(marker._vehicleData, marker)
+        marker.closePopup()
+      })
+    }
+
+    const stopBtn = root.querySelector("[data-vehicle-unfollow]")
+    if (stopBtn && !stopBtn._bound) {
+      stopBtn._bound = true
+      stopBtn.addEventListener("click", (event) => {
+        event.preventDefault()
+        event.stopPropagation()
+        this.stopFollowingVehicle()
+        marker.closePopup()
+      })
+    }
+  }
+
+  vehicleStationLabel(vehicle, side) {
+    const named = String(vehicle?.[`${side}_station_name`] || "").trim()
+    if (this.isDisplayableStationName(named)) return named
+
+    const ref = vehicle?.[`${side}_station_ref`]
+    const resolved = this.stationNameForRef(ref, vehicle?.route_id)
+    if (resolved) return resolved
+
+    const raw = String(ref || "").trim()
+    return this.isDisplayableStationName(raw) ? raw : "—"
+  }
+
+  stationNameForRef(ref, routeId) {
+    if (!ref) return null
+
+    const names = this.stationNameByKey || {}
+    const tokens = [
+      ...this.coordinateIndexRefs(routeId, ref),
+      ...this.transferStationRefs(ref),
+      ref
+    ].filter(Boolean)
+
+    for (const token of tokens) {
+      if (routeId) {
+        const direct = names[this.stationKey(routeId, token)]
+        if (this.isDisplayableStationName(direct)) return direct
+      }
+
+      const suffix = `:${token}`
+      const match = Object.entries(names).find(([ key, name ]) => (
+        key.endsWith(suffix) && this.isDisplayableStationName(name)
+      ))
+      if (match) return match[1]
+    }
 
     return null
   }
 
-  interpolateAlongTracks(fromCoord, toCoord, progress, tracks) {
-    // Find the track segment that passes nearest to both from and to coords
-    let bestTrack = null
-    let bestScore = Infinity
+  vehicleFollowKey(vehicle) {
+    if (!vehicle) return null
+    // Prefer hard id for TRA/HSR trips; metro soft_id changes every hop so it is
+    // only a hint — follow pins the marker object instead.
+    return String(vehicle.id || vehicle.soft_id || "").trim() || null
+  }
+
+  isFollowingVehicle(vehicle) {
+    if (!vehicle || !this.followedVehicleKey) return false
+    if (this.followedMarker?._vehicleData === vehicle) return true
+    if (String(vehicle.id || "") === this.followedVehicleKey) return true
+    if (this.followedSoftId && String(vehicle.soft_id || "") === this.followedSoftId) return true
+    return (
+      this.followedRouteId === vehicle.route_id &&
+      this.followedDirection === vehicle.direction &&
+      this.followedDestination === vehicle.destination_name &&
+      this.followedTrainNumber &&
+      String(vehicle.train_number || "") === String(this.followedTrainNumber)
+    )
+  }
+
+  startFollowingVehicle(vehicle, marker = null) {
+    const key = this.vehicleFollowKey(vehicle)
+    if (!key) return
+
+    this.clearFollowHandoffState()
+    this.followedMarker = marker || Object.values(this.vehicleMarkersById).find((item) => (
+      item._vehicleData === vehicle || this.vehicleFollowKey(item._vehicleData) === key
+    )) || null
+    this.followedVehicleKey = key
+    this.followedSoftId = String(vehicle.soft_id || "") || null
+    this.followedTrainNumber = vehicle.train_number ? String(vehicle.train_number) : null
+    this.followedRouteId = vehicle.route_id || null
+    this.followedDirection = vehicle.direction || null
+    this.followedDestination = vehicle.destination_name || null
+    this.followCameraLocked = true
+    this.followMissed = false
+    this.followedLabel = this.vehicleLabel(vehicle)
+    this.followedColor = this.normalizeHexColor(vehicle.color) || "#64748b"
+    this.followLastLatLng = this.followedMarker?.getLatLng() || null
+
+    this.refreshFollowedMarkerStyles()
+    this.syncFollowBar()
+    this.centerOnFollowedVehicle({ force: true, zoom: true })
+    this.ensureScrubberPlaying()
+    this.scheduleShareUrlUpdate()
+  }
+
+  stopFollowingVehicle({ silent = false } = {}) {
+    this.followedMarker = null
+    this.followedVehicleKey = null
+    this.followedSoftId = null
+    this.followedTrainNumber = null
+    this.followedRouteId = null
+    this.followedDirection = null
+    this.followedDestination = null
+    this.followLastLatLng = null
+    this.followCameraLocked = false
+    this.followMissed = false
+    this.followedLabel = null
+    this.followedColor = null
+    this.clearFollowHandoffState()
+    this.refreshFollowedMarkerStyles()
+    if (!silent) this.syncFollowBar()
+    else if (this.followBarEl) this.followBarEl.hidden = true
+    this.scheduleShareUrlUpdate()
+  }
+
+  clearFollowHandoffState() {
+    this.followHandoff = null
+    this.followHandoffKey = null
+    this.followHandoffDecision = null
+    this.pendingFollowTripId = null
+    this.pendingFollowTrainNumber = null
+  }
+
+  followHandoffPending() {
+    if (this.pendingFollowTrainNumber) return true
+    return Boolean(this.followHandoff?.train_number) && this.followHandoffDecision !== "no"
+  }
+
+  ensureScrubberPlaying() {
+    const scrubberEl = document.querySelector("[data-controller~='time-scrubber']")
+    if (!scrubberEl || !this.application) return
+
+    const scrubber = this.application.getControllerForElementAndIdentifier(scrubberEl, "time-scrubber")
+    if (!scrubber) return
+    if (!scrubber.playing) scrubber.startPlayback()
+  }
+
+  findFollowedMarker() {
+    if (!this.followedVehicleKey && !this.followedMarker) return null
+
+    // 1) Pinned marker object still on the map.
+    if (this.followedMarker) {
+      const stillMounted = Object.values(this.vehicleMarkersById).includes(this.followedMarker)
+      if (stillMounted) {
+        const data = this.followedMarker._vehicleData
+        if (data) {
+          this.followedVehicleKey = this.vehicleFollowKey(data) || this.followedVehicleKey
+          this.followedSoftId = String(data.soft_id || this.followedSoftId || "") || null
+          this.followLastLatLng = this.followedMarker.getLatLng()
+        }
+        return this.followedMarker
+      }
+      this.followedMarker = null
+    }
+
+    // 2) Exact hard id.
+    if (this.followedVehicleKey && this.vehicleMarkersById[this.followedVehicleKey]) {
+      this.followedMarker = this.vehicleMarkersById[this.followedVehicleKey]
+      return this.followedMarker
+    }
+
+    // 3) Soft id / train number identity.
+    const match = Object.values(this.vehicleMarkersById).find((marker) => (
+      this.isFollowingVehicle(marker._vehicleData)
+    ))
+    if (match) {
+      this.followedMarker = match
+      this.followLastLatLng = match.getLatLng()
+      return match
+    }
+
+    // 4) Nearest same-line candidate near last known position (metro hop recovery).
+    if (!this.followLastLatLng || !this.followedRouteId) return null
+
+    let best = null
+    let bestDistance = 500
+    Object.values(this.vehicleMarkersById).forEach((marker) => {
+      const data = marker._vehicleData
+      if (!data) return
+      if (data.route_id !== this.followedRouteId) return
+      if (this.followedDirection && data.direction !== this.followedDirection) return
+      if (this.followedDestination && data.destination_name && data.destination_name !== this.followedDestination) return
+      const distance = marker.getLatLng().distanceTo(this.followLastLatLng)
+      if (distance < bestDistance) {
+        bestDistance = distance
+        best = marker
+      }
+    })
+
+    if (best) {
+      this.followedMarker = best
+      this.followedVehicleKey = this.vehicleFollowKey(best._vehicleData) || this.followedVehicleKey
+      this.followedSoftId = String(best._vehicleData?.soft_id || this.followedSoftId || "") || null
+      this.followLastLatLng = best.getLatLng()
+    }
+    return best
+  }
+
+  refreshFollowedMarkerStyles() {
+    Object.values(this.vehicleMarkersById).forEach((marker) => {
+      const following = this.followedMarker
+        ? marker === this.followedMarker
+        : this.isFollowingVehicle(marker._vehicleData)
+      const el = marker.getElement()
+      el?.classList.toggle("vehicle-marker--following", following)
+      marker.setZIndexOffset(following ? 1200 : 800)
+    })
+  }
+
+  updateFollowCamera({ fromSync = false } = {}) {
+    if (!this.followedVehicleKey && !this.followedMarker) return
+
+    const marker = this.findFollowedMarker()
+    if (!marker) {
+      if (this.followHandoffPending()) {
+        if (fromSync) this.syncFollowBar()
+        return
+      }
+      if (fromSync && !this.followMissed) {
+        this.recordRideStamp({
+          route_id: this.followedRouteId,
+          train_number: this.followedTrainNumber,
+          destination_name: this.followedDestination
+        })
+        this.followMissed = true
+        this.syncFollowBar()
+      }
+      return
+    }
+
+    this.maybeArmFollowHandoff(marker._vehicleData)
+
+    if (this.followMissed) {
+      this.followMissed = false
+      this.syncFollowBar()
+    } else if (fromSync) {
+      this.syncFollowBar()
+    }
+
+    if (this.followCameraLocked) this.centerOnFollowedVehicle()
+  }
+
+  centerOnFollowedVehicle({ force = false, zoom = false } = {}) {
+    if (!this.map) return
+    const marker = this.findFollowedMarker()
+    if (!marker) return
+
+    const latlng = marker.getLatLng()
+    if (!latlng) return
+    this.followLastLatLng = latlng
+
+    const targetZoom = zoom
+      ? Math.max(this.map.getZoom() ?? 0, VEHICLE_TAG_ZOOM)
+      : this.map.getZoom()
+
+    // Match railisland recenterTo: skip setView when already centered (dwell/pause).
+    // Repeated setView(animate:false) is their documented follow jank source.
+    if (!force && !zoom && this.followCameraAlreadyCentered(latlng, targetZoom)) return
+
+    this._autoPan = true
+    this.ignoreMapViewEvents = true
+    try {
+      this.map.setView(latlng, targetZoom, { animate: false })
+    } finally {
+      this.ignoreMapViewEvents = false
+      this._autoPan = false
+    }
+  }
+
+  followCameraAlreadyCentered(latlng, zoom) {
+    if (!this.map) return false
+    const currentZoom = this.map.getZoom()
+    if (Number.isFinite(zoom) && Number.isFinite(currentZoom) && Math.abs(currentZoom - zoom) > 0.01) {
+      return false
+    }
+
+    const current = this.map.getCenter()
+    if (!current) return false
+
+    return Math.abs(current.lat - latlng.lat) < 1e-6 && Math.abs(current.lng - latlng.lng) < 1e-6
+  }
+
+  moveVehicleMarker(marker, latlng) {
+    if (!marker || !latlng) return
+    const current = marker.getLatLng()
+    if (current && current.distanceTo(latlng) < 0.4) return
+    marker.setLatLng(latlng)
+  }
+
+  ensureFollowBar() {
+    if (this.followBarEl) return
+
+    const el = document.createElement("div")
+    el.className = "vehicle-follow-bar"
+    el.hidden = true
+    el.innerHTML = `
+      <div class="vehicle-follow-bar__row">
+        <span class="vehicle-follow-bar__dot" aria-hidden="true"></span>
+        <div class="vehicle-follow-bar__copy">
+          <strong class="vehicle-follow-bar__title"></strong>
+          <span class="vehicle-follow-bar__meta"></span>
+        </div>
+        <button type="button" class="vehicle-follow-bar__btn vehicle-follow-bar__recenter" hidden></button>
+        <button type="button" class="vehicle-follow-bar__btn vehicle-follow-bar__stop"></button>
+      </div>
+      <div class="vehicle-follow-bar__handoff" hidden>
+        <p class="vehicle-follow-bar__handoff-msg"></p>
+        <div class="vehicle-follow-bar__handoff-actions">
+          <button type="button" class="vehicle-follow-bar__btn vehicle-follow-bar__handoff-yes" data-follow-handoff="yes"></button>
+          <button type="button" class="vehicle-follow-bar__btn vehicle-follow-bar__handoff-no" data-follow-handoff="no"></button>
+        </div>
+      </div>
+    `
+    const host = this.hasMapTarget
+      ? (this.mapTarget.parentElement || this.mapTarget)
+      : this.element
+    host.appendChild(el)
+    this.followBarEl = el
+
+    el.querySelector(".vehicle-follow-bar__stop")?.addEventListener("click", () => {
+      this.stopFollowingVehicle()
+    })
+    el.querySelector(".vehicle-follow-bar__recenter")?.addEventListener("click", () => {
+      this.followCameraLocked = true
+      this.followMissed = false
+      this.centerOnFollowedVehicle({ force: true, zoom: true })
+      this.syncFollowBar()
+    })
+    el.querySelector("[data-follow-handoff='yes']")?.addEventListener("click", () => {
+      this.acceptFollowHandoff()
+    })
+    el.querySelector("[data-follow-handoff='no']")?.addEventListener("click", () => {
+      this.rejectFollowHandoff()
+    })
+  }
+
+  syncFollowBar() {
+    this.ensureFollowBar()
+    const el = this.followBarEl
+    if (!el) return
+
+    if (!this.followedVehicleKey) {
+      el.hidden = true
+      return
+    }
+
+    el.hidden = false
+    el.classList.toggle("vehicle-follow-bar--miss", Boolean(this.followMissed) && !this.followHandoffPending())
+    el.classList.toggle("vehicle-follow-bar--unlocked", !this.followCameraLocked && !this.followMissed)
+
+    const marker = this.findFollowedMarker()
+    const vehicle = marker?._vehicleData
+    if (vehicle) this.maybeArmFollowHandoff(vehicle)
+    const title = vehicle ? this.vehicleLabel(vehicle) : (this.followedLabel || this.t("time_scrubber.follow_train"))
+    const color = this.normalizeHexColor(vehicle?.color || this.followedColor) || "#64748b"
+
+    const titleEl = el.querySelector(".vehicle-follow-bar__title")
+    const metaEl = el.querySelector(".vehicle-follow-bar__meta")
+    const dotEl = el.querySelector(".vehicle-follow-bar__dot")
+    const recenterBtn = el.querySelector(".vehicle-follow-bar__recenter")
+    const stopBtn = el.querySelector(".vehicle-follow-bar__stop")
+    const handoffEl = el.querySelector(".vehicle-follow-bar__handoff")
+    const handoffMsg = el.querySelector(".vehicle-follow-bar__handoff-msg")
+    const handoffYes = el.querySelector("[data-follow-handoff='yes']")
+    const handoffNo = el.querySelector("[data-follow-handoff='no']")
+    const showHandoff = Boolean(this.followHandoff?.train_number) && !this.followHandoffDecision
+
+    el.classList.toggle("vehicle-follow-bar--handoff", showHandoff || Boolean(this.pendingFollowTrainNumber))
+
+    if (titleEl) titleEl.textContent = title
+    if (dotEl) dotEl.style.background = color
+    if (stopBtn) stopBtn.textContent = this.t("time_scrubber.unfollow")
+
+    if (recenterBtn) {
+      recenterBtn.hidden = this.followCameraLocked || this.followMissed
+      recenterBtn.textContent = this.t("time_scrubber.follow_recenter")
+    }
+
+    if (handoffEl) {
+      handoffEl.hidden = !showHandoff
+      if (showHandoff && handoffMsg) {
+        handoffMsg.textContent = this.t("time_scrubber.follow_handoff", { number: this.followHandoff.train_number })
+      }
+      if (handoffYes) handoffYes.textContent = this.t("time_scrubber.follow_handoff_yes")
+      if (handoffNo) handoffNo.textContent = this.t("time_scrubber.follow_handoff_no")
+    }
+
+    if (metaEl) {
+      if (this.pendingFollowTrainNumber && !vehicle) {
+        metaEl.textContent = this.t("time_scrubber.follow_handoff_waiting", { number: this.pendingFollowTrainNumber })
+      } else if (this.followMissed && !showHandoff) {
+        metaEl.textContent = this.t("time_scrubber.follow_ended")
+      } else if (!this.followCameraLocked && !showHandoff) {
+        metaEl.textContent = this.t("time_scrubber.follow_unlocked")
+      } else if (vehicle) {
+        const fromName = this.vehicleStationLabel(vehicle, "from")
+        const toName = this.vehicleStationLabel(vehicle, "to")
+        const extras = []
+        const journey = this.followJourneyKm(vehicle)
+        if (Number.isFinite(journey)) extras.push(this.t("time_scrubber.journey_km", { km: journey.toFixed(1) }))
+        const speed = this.followSpeedKmh(vehicle)
+        if (Number.isFinite(speed) && speed > 1) extras.push(this.t("time_scrubber.speed_kmh", { speed: Math.round(speed) }))
+        const segment = this.t("time_scrubber.segment", { from: fromName, to: toName })
+        metaEl.textContent = extras.length ? `${segment} · ${extras.join(" · ")}` : segment
+      } else {
+        metaEl.textContent = this.t("time_scrubber.follow_tracking")
+      }
+    }
+  }
+
+  maybeArmFollowHandoff(vehicle) {
+    const next = vehicle?.continues_as
+    const number = String(next?.train_number || "").trim()
+    if (!number || !this.followedVehicleKey) return
+
+    const key = `${this.vehicleFollowKey(vehicle) || this.followedVehicleKey}->${next.trip_id || number}`
+    if (this.followHandoffKey === key) return
+    if (this.followHandoffDecision === "yes" || this.followHandoffDecision === "no") return
+
+    this.followHandoffKey = key
+    this.followHandoff = {
+      train_number: number,
+      trip_id: next.trip_id || null,
+      route_id: next.route_id || null
+    }
+    this.followHandoffDecision = null
+  }
+
+  async acceptFollowHandoff() {
+    const next = this.followHandoff
+    if (!next?.train_number) return
+
+    this.followHandoffDecision = "yes"
+    this.pendingFollowTripId = next.trip_id ? `trip:${next.trip_id}` : null
+    this.pendingFollowTrainNumber = String(next.train_number)
+    this.followedTrainNumber = this.pendingFollowTrainNumber
+    this.followedSoftId = this.pendingFollowTripId
+    this.followedDestination = null
+    this.followMissed = false
+    this.followHandoff = null
+    if (next.route_id) this.followedRouteId = next.route_id
+
+    if (next.route_id && !this.layerVisible[next.route_id]) {
+      await this.setRouteLayersVisible([next.route_id], true, { fitBounds: false })
+    }
+
+    if (!this.tryAdoptPendingFollowVehicle()) {
+      this.vehicleRefreshImmediate = true
+      this.scheduleVehicleRefresh()
+      this.syncFollowBar()
+    }
+  }
+
+  rejectFollowHandoff() {
+    this.followHandoffDecision = "no"
+    this.followHandoff = null
+    this.stopFollowingVehicle()
+  }
+
+  tryAdoptPendingFollowVehicle() {
+    if (!this.pendingFollowTripId && !this.pendingFollowTrainNumber) return false
+
+    const marker = Object.values(this.vehicleMarkersById).find((item) => {
+      const data = item._vehicleData
+      if (!data) return false
+      if (this.pendingFollowTripId && String(data.id) === String(this.pendingFollowTripId)) return true
+      return this.pendingFollowTrainNumber && String(data.train_number || "") === String(this.pendingFollowTrainNumber)
+    })
+    if (!marker) return false
+
+    this.startFollowingVehicle(marker._vehicleData, marker)
+    return true
+  }
+
+  vehicleIconFor(vehicle, latlng = null) {
+    const L = window.L
+    if (this.vehicleCanvas) {
+      return L.divIcon({
+        className: "leaflet-div-icon vehicle-marker-icon vehicle-marker-icon--ghost",
+        html: "",
+        iconSize: [ 12, 12 ],
+        iconAnchor: [ 6, 6 ]
+      })
+    }
+
+    const zoom = this.map?.getZoom() ?? 12
+    const color = this.normalizeHexColor(vehicle.color) || "#64748b"
+    const status = vehicle.status || "on_time"
+    const fg = this.contrastTextColor(color)
+    const isHsr = this.isHsrVehicle(vehicle)
+    const labelText = this.vehicleLabel(vehicle)
+
+    if (zoom < VEHICLE_TAG_ZOOM) {
+      const size = zoom <= 9 ? 10 : 14
+      return L.divIcon({
+        className: "leaflet-div-icon vehicle-marker-icon",
+        html: `<div class="vehicle-dot vehicle-dot--${this.escapeHtml(status)}${isHsr ? " vehicle-dot--hsr" : ""}" style="--vehicle-color:${this.escapeHtml(color)};width:${size}px;height:${size}px"></div>`,
+        iconSize: [ size, size ],
+        iconAnchor: [ size / 2, size / 2 ]
+      })
+    }
+
+    const bearing = this.vehicleBearingDegrees(vehicle, latlng)
+    const approxW = Math.max(isHsr ? 34 : 28, String(labelText).length * (isHsr ? 7.5 : 9) + 14)
+    const box = Math.max(approxW + 12, 28)
+    const shortTurn = this.isShortTurnVehicle(vehicle)
+
+    const tagClass = [
+      "vehicle-tag",
+      isHsr ? "vehicle-tag--hsr" : "",
+      shortTurn ? "vehicle-tag--short-turn" : "",
+      `vehicle-tag--${status}`
+    ].filter(Boolean).join(" ")
+
+    return L.divIcon({
+      className: "leaflet-div-icon vehicle-marker-icon",
+      html: `<div class="${tagClass}" style="--vehicle-color:${this.escapeHtml(color)};--vehicle-fg:${this.escapeHtml(fg)};--vehicle-bearing:${bearing}deg"><span class="vehicle-tag__label">${this.escapeHtml(labelText)}</span><span class="vehicle-tag__arrow" aria-hidden="true"></span></div>`,
+      iconSize: [ box, box ],
+      iconAnchor: [ box / 2, box / 2 ]
+    })
+  }
+
+  vehicleLabel(vehicle) {
+    if (this.isMetroVehicle(vehicle)) {
+      const dest = String(vehicle.label || vehicle.destination_name || "").trim()
+      if (dest) return dest
+    }
+
+    const num = String(vehicle.train_number || vehicle.label || "").trim()
+    if (num) return num
+
+    const route = this.findRoute(vehicle.route_id)
+    const name = this.routeDisplayName(route)
+    if (name) {
+      const shortened = name.replace(/線$/, "").replace(/輕軌$/, "").replace(/捷運$/, "")
+      if (/[\u4e00-\u9fff]/.test(shortened)) return shortened.slice(0, 2)
+      return shortened.slice(0, 4)
+    }
+
+    return String(vehicle.route_id || "列車").slice(0, 4)
+  }
+
+  isShortTurnVehicle(vehicle) {
+    return vehicle.service_kind === "short_turn" || String(vehicle.label || "").startsWith("往")
+  }
+
+  isMetroVehicle(vehicle) {
+    const systemId = String(vehicle.system_id || "")
+    return systemId.includes("metro") || systemId.endsWith("_lrt") || systemId === "lrt"
+  }
+
+  isHsrVehicle(vehicle) {
+    return vehicle.system_id === "hsr" || vehicle.system_id === "taiwan_hsr" || vehicle.route_id === "taiwan_hsr"
+  }
+
+  normalizeHexColor(color) {
+    if (!color) return null
+    const value = String(color).trim()
+    if (/^#[0-9a-fA-F]{6}$/.test(value)) return value
+    if (/^#[0-9a-fA-F]{3}$/.test(value)) {
+      return `#${value[1]}${value[1]}${value[2]}${value[2]}${value[3]}${value[3]}`
+    }
+    return value
+  }
+
+  contrastTextColor(hex) {
+    const normalized = this.normalizeHexColor(hex)
+    if (!normalized || !/^#[0-9a-fA-F]{6}$/.test(normalized)) return "#fff"
+
+    const r = Number.parseInt(normalized.slice(1, 3), 16)
+    const g = Number.parseInt(normalized.slice(3, 5), 16)
+    const b = Number.parseInt(normalized.slice(5, 7), 16)
+    return (0.299 * r + 0.587 * g + 0.114 * b) > 150 ? "#111111" : "#ffffff"
+  }
+
+  vehicleBearingDegrees(vehicle, latlng = null) {
+    const fromCoord = this.stationCoordForRef(vehicle.from_station_ref, vehicle.route_id) ||
+      (Number.isFinite(vehicle.from_lat) ? [ vehicle.from_lat, vehicle.from_lng ] : null)
+    const toCoord = this.stationCoordForRef(vehicle.to_station_ref, vehicle.route_id) ||
+      (Number.isFinite(vehicle.to_lat) ? [ vehicle.to_lat, vehicle.to_lng ] : null)
+    if (!fromCoord || !toCoord) return 0
+
+    // Prefer track tangent near the vehicle when available.
+    if (latlng) {
+      const tracks = this.vehicleTracksFor(vehicle.route_id)
+      const tangent = tracks?.length ? this.trackBearingNear(latlng, tracks) : null
+      if (Number.isFinite(tangent)) return tangent
+    }
+
+    return this.vehiclePairBearingDegrees(fromCoord, toCoord)
+  }
+
+  trackBearingNear(latlng, tracks) {
+    const L = window.L
+    let best = null
+    let bestDistance = Infinity
 
     for (const coords of tracks) {
-      if (coords.length < 2) continue
-      const fromIdx = this.chainIndexForPoint(fromCoord[0], fromCoord[1], coords)
-      const toIdx = this.chainIndexForPoint(toCoord[0], toCoord[1], coords)
-      const score = Math.abs(fromIdx - toIdx)
-      if (score < bestScore) {
-        bestScore = score
-        bestTrack = { coords, fromIdx, toIdx }
+      if (!coords || coords.length < 2) continue
+
+      for (let i = 0; i < coords.length - 1; i += 1) {
+        const a = L.latLng(coords[i][1], coords[i][0])
+        const b = L.latLng(coords[i + 1][1], coords[i + 1][0])
+        const mid = L.latLng((a.lat + b.lat) / 2, (a.lng + b.lng) / 2)
+        const distance = latlng.distanceTo(mid)
+        if (distance >= bestDistance) continue
+
+        bestDistance = distance
+        best = this.vehiclePairBearingDegrees([ a.lat, a.lng ], [ b.lat, b.lng ])
       }
     }
 
-    if (!bestTrack) return null
-    const { coords, fromIdx, toIdx } = bestTrack
-    const targetIdx = fromIdx + (toIdx - fromIdx) * progress
+    return bestDistance < 400 ? best : null
+  }
 
-    const segIdx = Math.floor(targetIdx)
-    const segProg = targetIdx - segIdx
-    const clampedSeg = Math.max(0, Math.min(segIdx, coords.length - 2))
-    const segActualProg = clampedSeg === segIdx ? segProg : (segIdx < 0 ? 0 : 1)
+  vehiclePairBearingDegrees(fromCoord, toCoord) {
+    const lat1 = (fromCoord[0] * Math.PI) / 180
+    const lat2 = (toCoord[0] * Math.PI) / 180
+    const dLng = ((toCoord[1] - fromCoord[1]) * Math.PI) / 180
+    const y = Math.sin(dLng) * Math.cos(lat2)
+    const x = Math.cos(lat1) * Math.sin(lat2) - Math.sin(lat1) * Math.cos(lat2) * Math.cos(dLng)
+    return ((Math.atan2(y, x) * 180) / Math.PI + 360) % 360
+  }
 
-    const [ lon1, lat1 ] = coords[clampedSeg]
-    const [ lon2, lat2 ] = coords[Math.min(clampedSeg + 1, coords.length - 1)]
-    const lat = lat1 + (lat2 - lat1) * segActualProg
-    const lng = lon1 + (lon2 - lon1) * segActualProg
-    return L.latLng(lat, lng)
+  interpolateVehiclePosition(vehicle) {
+    const L = window.L
+    if (!L) return null
+
+    if (Number.isFinite(vehicle.lat) && Number.isFinite(vehicle.lng) && vehicle.position_source === "tdx_gps") {
+      return L.latLng(vehicle.lat, vehicle.lng)
+    }
+
+    const progress = vehicle.progress ?? 0
+    const chainPoint = this.chainagePointForVehicle(vehicle, progress)
+    if (chainPoint) return L.latLng(chainPoint.lat, chainPoint.lng)
+
+    const tracks = this.vehicleTracksFor(vehicle.route_id)
+
+    let fromCoord = null
+    let toCoord = null
+
+    if (Number.isFinite(vehicle.from_lat) && Number.isFinite(vehicle.from_lng) &&
+        Number.isFinite(vehicle.to_lat) && Number.isFinite(vehicle.to_lng)) {
+      fromCoord = [ vehicle.from_lat, vehicle.from_lng ]
+      toCoord = [ vehicle.to_lat, vehicle.to_lng ]
+    } else {
+      fromCoord = this.stationCoordForRef(vehicle.from_station_ref, vehicle.route_id)
+      toCoord = this.stationCoordForRef(vehicle.to_station_ref, vehicle.route_id)
+    }
+
+    // Dwell / hop endpoints: snap to the station instead of scanning the full polyline.
+    if (fromCoord && (progress <= 0 || vehicle.status === "stopped")) {
+      return L.latLng(fromCoord[0], fromCoord[1])
+    }
+    if (toCoord && progress >= 1) {
+      return L.latLng(toCoord[0], toCoord[1])
+    }
+
+    if (fromCoord && toCoord && tracks.length > 0) {
+      const interpolated = this.interpolateAlongTracks(fromCoord, toCoord, progress, tracks)
+      if (interpolated) return interpolated
+    }
+
+    if (fromCoord && toCoord) {
+      const lat = fromCoord[0] + (toCoord[0] - fromCoord[0]) * progress
+      const lng = fromCoord[1] + (toCoord[1] - fromCoord[1]) * progress
+      return L.latLng(lat, lng)
+    }
+
+    if (Number.isFinite(vehicle.lat) && Number.isFinite(vehicle.lng)) {
+      return L.latLng(vehicle.lat, vehicle.lng)
+    }
+
+    return null
+  }
+
+  stationCoordForRef(ref, routeId) {
+    if (!ref || !routeId) return null
+
+    const latlng = this.stationLatLng(routeId, ref)
+    if (latlng) return [ latlng.lat, latlng.lng ]
+
+    const byRoute = this.stationCoordsByRouteRef[routeId]
+    if (!byRoute) return null
+
+    if (byRoute[ref]) return [ byRoute[ref].lat, byRoute[ref].lng ]
+
+    for (const part of this.transferStationRefs(ref)) {
+      if (byRoute[part]) return [ byRoute[part].lat, byRoute[part].lng ]
+    }
+
+    const token = this.transferStationRefs(ref)[0]
+    if (!token) return null
+
+    const matchKey = Object.keys(byRoute).find((key) => {
+      return key === token || this.transferStationRefs(key).includes(token)
+    })
+    if (!matchKey) return null
+
+    return [ byRoute[matchKey].lat, byRoute[matchKey].lng ]
+  }
+
+  interpolateAlongTracks(fromCoord, toCoord, progress, tracks) {
+    const L = window.L
+    let best = null
+    let bestScore = Infinity
+
+    for (const coords of tracks) {
+      if (!coords || coords.length < 2) continue
+
+      const fromHit = this.chainHitForPoint(fromCoord[0], fromCoord[1], coords)
+      const toHit = this.chainHitForPoint(toCoord[0], toCoord[1], coords)
+      if (!fromHit || !toHit) continue
+
+      // Reject tracks that don't actually pass near both stations (e.g. depot stubs).
+      if (fromHit.distanceMeters > 250 || toHit.distanceMeters > 250) continue
+
+      const spanMeters = Math.abs(toHit.distanceAlong - fromHit.distanceAlong)
+      if (spanMeters < 40) continue
+
+      // Prefer accurate snaps and a real inter-station span.
+      const score = fromHit.distanceMeters + toHit.distanceMeters - (spanMeters * 0.001)
+      if (score >= bestScore) continue
+
+      bestScore = score
+      best = { coords, fromHit, toHit }
+    }
+
+    if (!best) return null
+
+    const targetAlong =
+      best.fromHit.distanceAlong +
+      ((best.toHit.distanceAlong - best.fromHit.distanceAlong) * Math.max(0, Math.min(1, progress)))
+
+    const point = this.pointAlongPolyline(best.coords, targetAlong)
+    if (!point) return null
+
+    return L.latLng(point[1], point[0])
+  }
+
+  chainHitForPoint(lat, lon, coordinates) {
+    let best = null
+    let traveled = 0
+
+    for (let segmentIndex = 0; segmentIndex < coordinates.length - 1; segmentIndex += 1) {
+      const start = coordinates[segmentIndex]
+      const finish = coordinates[segmentIndex + 1]
+      const projection = this.projectLonLatOnSegment(lon, lat, start, finish)
+      const segMeters = this.haversineMeters(start[1], start[0], finish[1], finish[0])
+      const distanceAlong = traveled + (segMeters * projection.progress)
+      const distanceMeters = this.haversineMeters(lat, lon, projection.projectedY, projection.projectedX)
+
+      if (!best || distanceMeters < best.distanceMeters) {
+        best = {
+          index: segmentIndex + projection.progress,
+          distanceAlong,
+          distanceMeters
+        }
+      }
+
+      traveled += segMeters
+    }
+
+    return best
+  }
+
+  pointAlongPolyline(coordinates, targetMeters) {
+    if (!coordinates || coordinates.length < 2) return null
+
+    let traveled = 0
+    const total = this.polylineLengthMeters(coordinates)
+    const target = Math.max(0, Math.min(total, targetMeters))
+
+    for (let i = 0; i < coordinates.length - 1; i += 1) {
+      const start = coordinates[i]
+      const finish = coordinates[i + 1]
+      const seg = this.haversineMeters(start[1], start[0], finish[1], finish[0])
+      if (traveled + seg >= target || i === coordinates.length - 2) {
+        const ratio = seg > 0 ? Math.max(0, Math.min(1, (target - traveled) / seg)) : 0
+        return [
+          start[0] + ((finish[0] - start[0]) * ratio),
+          start[1] + ((finish[1] - start[1]) * ratio)
+        ]
+      }
+      traveled += seg
+    }
+
+    return coordinates[coordinates.length - 1]
+  }
+
+  polylineLengthMeters(coordinates) {
+    let total = 0
+    for (let i = 0; i < coordinates.length - 1; i += 1) {
+      const a = coordinates[i]
+      const b = coordinates[i + 1]
+      total += this.haversineMeters(a[1], a[0], b[1], b[0])
+    }
+    return total
+  }
+
+  haversineMeters(lat1, lon1, lat2, lon2) {
+    const toRad = Math.PI / 180
+    const dLat = (lat2 - lat1) * toRad
+    const dLon = (lon2 - lon1) * toRad
+    const a =
+      Math.sin(dLat / 2) ** 2 +
+      Math.cos(lat1 * toRad) * Math.cos(lat2 * toRad) * Math.sin(dLon / 2) ** 2
+    return 2 * 6378137 * Math.asin(Math.min(1, Math.sqrt(a)))
   }
 
   vehiclePopupHtml(vehicle) {
-    const trainNum = vehicle.train_number || this.t("time_scrubber.no_train")
-    const dest = vehicle.destination_name
-    const delayS = vehicle.delay_seconds ?? 0
-    const status = vehicle.status || "on_time"
     const color = vehicle.color || "#64748b"
+    const source = vehicle.position_source || "unknown"
+    const sourceLabel =
+      source === "timetable" ? this.t("time_scrubber.source_timetable") :
+      source === "station_timetable" ? this.t("time_scrubber.source_station_timetable") :
+      source === "headway_estimate" ? this.t("time_scrubber.source_headway") :
+      source === "timetable+live" ? this.t("time_scrubber.source_timetable_live") :
+      source === "station_timetable+live" ? this.t("time_scrubber.source_station_timetable_live") :
+      source === "headway_estimate+live" ? this.t("time_scrubber.source_headway_live") :
+      source === "tdx_gps" ? this.t("time_scrubber.source_gps") :
+      this.t("time_scrubber.source_unknown")
 
-    let statusLabel
-    if (status === "delayed") {
-      const mins = Math.round(Math.abs(delayS) / 60)
-      statusLabel = `<span style="color:#f59e0b">▲ ${this.t("time_scrubber.delay_minutes", { minutes: mins })}</span>`
-    } else if (status === "early") {
-      const mins = Math.round(Math.abs(delayS) / 60)
-      statusLabel = `<span style="color:#06b6d4">▼ ${this.t("time_scrubber.early_minutes", { minutes: mins })}</span>`
-    } else {
-      statusLabel = `<span style="color:#22c55e">● ${this.t("time_scrubber.on_time_label")}</span>`
-    }
+    const delaySource = vehicle.delay_source || "none"
+    const delayLabel =
+      delaySource === "tdx_tra" ? this.t("time_scrubber.source_live_tra") :
+      delaySource === "tdx_metro_liveboard" ? this.t("time_scrubber.source_live_metro") :
+      null
 
-    const destLine = dest
-      ? `<div style="font-size:0.8rem;color:#64748b">${this.t("time_scrubber.destination", { name: this.escapeHtml(dest) })}</div>`
+    const liveApplied = String(source).includes("live") || source === "tdx_gps" || String(delaySource).startsWith("tdx")
+    const note = liveApplied
+      ? this.t("time_scrubber.live_note")
+      : this.t("time_scrubber.synthetic_note")
+
+    const route = this.findRoute(vehicle.route_id)
+    const routeName = this.routeDisplayName(route) || vehicle.route_id || "—"
+    const title = this.isMetroVehicle(vehicle)
+      ? (vehicle.label || this.t("time_scrubber.destination", { name: String(vehicle.destination_name || this.t("time_scrubber.no_train")) }))
+      : this.t("time_scrubber.train_number", { number: String(vehicle.train_number || vehicle.label || this.t("time_scrubber.no_train")) })
+
+    const fromName = this.vehicleStationLabel(vehicle, "from")
+    const toName = this.vehicleStationLabel(vehicle, "to")
+    const direction = vehicle.direction ? String(vehicle.direction) : ""
+    const shortTurnNote = this.isShortTurnVehicle(vehicle)
+      ? `<div style="font-size:0.75rem;color:#b45309;margin-top:2px">${this.escapeHtml(this.t("time_scrubber.short_turn"))}</div>`
       : ""
 
-    return `<div style="min-width:140px">
-      <div style="font-weight:600;margin-bottom:2px">
+    const delaySeconds = Number(vehicle.delay_seconds) || 0
+    let delayLine = ""
+    if (Math.abs(delaySeconds) >= 120) {
+      const minutes = Math.round(Math.abs(delaySeconds) / 60)
+      delayLine = delaySeconds > 0
+        ? this.t("time_scrubber.delay_minutes", { minutes })
+        : this.t("time_scrubber.early_minutes", { minutes })
+    }
+
+    const lines = [
+      `<div style="font-weight:600;margin-bottom:4px">
         <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${this.escapeHtml(color)};margin-right:4px;vertical-align:middle"></span>
-        ${this.t("time_scrubber.train", { number: this.escapeHtml(trainNum) })}
-      </div>
-      ${destLine}
-      <div style="font-size:0.75rem;margin-top:4px">${statusLabel}</div>
-      <div style="font-size:0.7rem;color:#94a3b8;margin-top:6px">${this.t("time_scrubber.synthetic_note")}</div>
-    </div>`
+        ${this.escapeHtml(title)}
+      </div>`,
+      shortTurnNote,
+      `<div style="font-size:0.8rem;color:#475569">${this.escapeHtml(this.t("time_scrubber.route", { name: routeName }))}</div>`
+    ]
+
+    if (direction) {
+      lines.push(`<div style="font-size:0.8rem;color:#475569">${this.escapeHtml(this.t("time_scrubber.direction", { name: direction }))}</div>`)
+    }
+
+    lines.push(
+      `<div style="font-size:0.8rem;color:#475569;margin-top:2px">${this.escapeHtml(this.t("time_scrubber.segment", { from: fromName, to: toName }))}</div>`
+    )
+
+    if (delayLine) {
+      lines.push(`<div style="font-size:0.8rem;color:#b45309;margin-top:4px">${this.escapeHtml(delayLine)}</div>`)
+    }
+
+    const continuesAs = String(vehicle.continues_as?.train_number || "").trim()
+    if (continuesAs) {
+      lines.push(`<div style="font-size:0.8rem;color:#b45309;margin-top:4px">${this.escapeHtml(this.t("time_scrubber.follow_handoff", { number: continuesAs }))}</div>`)
+    }
+
+    lines.push(
+      `<div style="font-size:0.75rem;margin-top:6px;color:#64748b">${this.escapeHtml(sourceLabel)}</div>`
+    )
+    if (delayLabel) {
+      lines.push(`<div style="font-size:0.7rem;color:#64748b">${this.escapeHtml(delayLabel)}</div>`)
+    }
+    lines.push(
+      `<div style="font-size:0.7rem;color:#94a3b8;margin-top:6px">${this.escapeHtml(note)}</div>`
+    )
+
+    const following = this.isFollowingVehicle(vehicle)
+    lines.push(
+      `<button type="button" class="vehicle-follow-popup-btn" data-vehicle-${following ? "unfollow" : "follow"} style="margin-top:8px;width:100%;border:1px solid #cbd5e1;background:#f8fafc;border-radius:0.4rem;padding:0.35rem 0.5rem;font-size:0.75rem;cursor:pointer">
+        ${this.escapeHtml(following ? this.t("time_scrubber.unfollow") : this.t("time_scrubber.follow_train"))}
+      </button>`
+    )
+
+    return `<div style="min-width:180px">${lines.join("")}</div>`
   }
 
-  notifyVehicleSummary(vehicles) {
+  notifyVehicleSummary(vehicles, liveMeta = {}) {
     const count = vehicles.length
-    const onTime = vehicles.filter((v) => v.status === "on_time").length
-    const delayed = vehicles.filter((v) => v.status === "delayed").length
-    const early = vehicles.filter((v) => v.status === "early").length
+    const live = Boolean(liveMeta.applied) || vehicles.some((vehicle) => {
+      const source = String(vehicle.position_source || "")
+      const delay = String(vehicle.delay_source || "")
+      return source.includes("live") || source === "tdx_gps" || delay.startsWith("tdx")
+    })
 
-    // Try to find the time-scrubber controller and call its public method
     const scrubberEl = document.querySelector("[data-controller~='time-scrubber']")
     if (scrubberEl) {
       const scrubber = this.application.getControllerForElementAndIdentifier(scrubberEl, "time-scrubber")
-      if (scrubber) scrubber.setVehicleSummary({ count, onTime, delayed, early })
+      if (scrubber) scrubber.setVehicleSummary({ count, live })
     }
   }
 
@@ -4441,4 +6084,912 @@ export default class extends Controller {
       console.warn("Could not fit bounds for layer", layerId, error)
     }
   }
+
+  simulationDateString() {
+    if (!this.simulationAt) return null
+    const date = new Date(this.simulationAt)
+    if (Number.isNaN(date.getTime())) return null
+    const shifted = new Date(date.getTime() + (8 * 60 * 60 * 1000))
+    const year = shifted.getUTCFullYear()
+    const month = String(shifted.getUTCMonth() + 1).padStart(2, "0")
+    const day = String(shifted.getUTCDate()).padStart(2, "0")
+    return `${year}-${month}-${day}`
+  }
+
+  isNearLiveClock() {
+    if (!this.simulationAt) return false
+    const sim = Date.parse(this.simulationAt)
+    if (!Number.isFinite(sim)) return false
+    return Math.abs(sim - Date.now()) <= LIVE_OVERLAY_WINDOW_MS
+  }
+
+  async ensureScheduleSnapshots(routeIds) {
+    const date = this.simulationDateString()
+    if (!date) return
+
+    const wanted = Array.from(new Set(routeIds)).filter(Boolean)
+    const missing = wanted.filter((id) => this.scheduleSnapshots[id]?.date !== date)
+    wanted.forEach((id) => {
+      if (this.scheduleSnapshots[id] && this.scheduleSnapshots[id].date !== date) {
+        delete this.scheduleSnapshots[id]
+      }
+    })
+    if (missing.length === 0) return
+
+    if (this.scheduleFetchController) this.scheduleFetchController.abort()
+    this.scheduleFetchController = new AbortController()
+    const { signal } = this.scheduleFetchController
+    const params = new URLSearchParams({ date })
+    missing.forEach((id) => params.append("route_ids[]", id))
+
+    try {
+      const response = await fetch(`/api/schedules?${params}`, { signal })
+      if (!response.ok) return
+      const data = await response.json()
+      const loaded = new Set()
+      ;(data.routes || []).forEach((route) => {
+        this.scheduleSnapshots[route.route_id] = { date: data.date, ...route }
+        loaded.add(route.route_id)
+      })
+      missing.forEach((id) => {
+        if (!loaded.has(id)) this.scheduleSnapshots[id] = { date, route_id: id, trips: [] }
+      })
+      this.scheduleDate = date
+      this.refreshLocalFleet({ resync: true })
+    } catch (error) {
+      if (error?.name === "AbortError") return
+      console.warn("schedules fetch failed", error)
+    }
+  }
+
+  buildLocalVehicles() {
+    const atMin = this.minutesSinceMidnightFromIso(this.simulationAt)
+    if (!Number.isFinite(atMin)) return []
+
+    const vehicles = []
+    this.visibleRouteLayerIds().forEach((routeId) => {
+      const snap = this.scheduleSnapshots[routeId]
+      if (!snap?.trips) return
+
+      snap.trips.forEach((trip) => {
+        const overlay = this.liveOverlayFor(trip, snap)
+        const vehicle = {
+          id: trip.id,
+          soft_id: trip.id,
+          train_number: trip.train_number,
+          destination_name: trip.destination_name,
+          label: this.isMetroSystemId(snap.system_id) ? trip.destination_name : trip.train_number,
+          direction: trip.direction,
+          trip_type: trip.trip_type,
+          route_id: snap.route_id,
+          system_id: snap.system_id,
+          color: snap.color,
+          path: trip.path,
+          continues_as: trip.continues_as,
+          position_source: overlay?.position_source || "timetable",
+          delay_seconds: overlay?.delay_seconds || 0,
+          delay_source: overlay?.delay_source || "none",
+          lat: overlay?.lat,
+          lng: overlay?.lng
+        }
+        if (!this.placeVehicleOnPath(vehicle, atMin)) return
+        vehicles.push(vehicle)
+      })
+    })
+
+    return vehicles
+  }
+
+  isMetroSystemId(systemId) {
+    return String(systemId || "").includes("metro") || String(systemId || "").endsWith("_lrt")
+  }
+
+  liveOverlayFor(trip, snap) {
+    const byId = this.liveOverlayByKey[String(trip.id)]
+    if (byId) return byId
+    const train = String(trip.train_number || "").trim()
+    if (!train) return null
+    return this.liveOverlayByKey[`${snap.route_id}:${train}`] || this.liveOverlayByKey[train] || null
+  }
+
+  mergeLiveOverlay(vehicles, liveMeta = {}) {
+    const next = {}
+    vehicles.forEach((vehicle) => {
+      const overlay = {
+        delay_seconds: Number(vehicle.delay_seconds) || 0,
+        delay_source: vehicle.delay_source || "none",
+        position_source: vehicle.position_source,
+        lat: vehicle.lat,
+        lng: vehicle.lng
+      }
+      if (vehicle.id) next[String(vehicle.id)] = overlay
+      if (vehicle.train_number) {
+        next[`${vehicle.route_id}:${vehicle.train_number}`] = overlay
+        next[String(vehicle.train_number)] = overlay
+      }
+    })
+    this.liveOverlayByKey = liveMeta.applied === false ? {} : next
+  }
+
+  advanceExistingMarkers(vehicles) {
+    const byId = {}
+    vehicles.forEach((vehicle) => {
+      byId[String(vehicle.id)] = vehicle
+    })
+
+    Object.entries(this.vehicleMarkersById).forEach(([id, marker]) => {
+      const vehicle = byId[id]
+      if (!vehicle) return
+      marker._vehicleData = vehicle
+      const latlng = this.interpolateVehiclePosition(vehicle)
+      this.setVehicleMarkerVisible(marker, Boolean(latlng))
+      if (latlng) this.moveVehicleMarker(marker, latlng)
+    })
+  }
+
+  easedHopProgress(linear, vehicle) {
+    const kind = motionKind(vehicle?.system_id, vehicle?.trip_type)
+    return easedProgress(linear, kind)
+  }
+
+  ensureRouteChainage(routeId) {
+    if (this.routeChainage[routeId]) return this.routeChainage[routeId]
+    const line = longestTrackLine(this.vehicleTracksFor(routeId))
+    const chainage = buildChainage(line)
+    if (chainage) this.routeChainage[routeId] = chainage
+    return chainage
+  }
+
+  stationKmOnRoute(routeId, ref) {
+    const chainage = this.ensureRouteChainage(routeId)
+    const coord = this.stationCoordForRef(ref, routeId)
+    if (!chainage || !coord) return null
+    return nearestDistance(chainage, coord[1], coord[0])
+  }
+
+  chainagePointForVehicle(vehicle, progress) {
+    let fromKm = Number(vehicle.from_km)
+    let toKm = Number(vehicle.to_km)
+    if (!Number.isFinite(fromKm)) fromKm = this.stationKmOnRoute(vehicle.route_id, vehicle.from_station_ref)
+    if (!Number.isFinite(toKm)) toKm = this.stationKmOnRoute(vehicle.route_id, vehicle.to_station_ref)
+    if (!Number.isFinite(fromKm) || !Number.isFinite(toKm)) return null
+
+    const chainage = this.ensureRouteChainage(vehicle.route_id)
+    if (!chainage) return null
+    const km = fromKm + ((toKm - fromKm) * Math.max(0, Math.min(1, progress)))
+    return pointAtDistance(chainage, km)
+  }
+
+  followJourneyKm(vehicle) {
+    const path = Array.isArray(vehicle?.path) ? vehicle.path : []
+    const start = Number(path[0]?.km)
+    let now = Number.isFinite(vehicle.from_km) && Number.isFinite(vehicle.to_km)
+      ? vehicle.from_km + ((vehicle.to_km - vehicle.from_km) * (vehicle.progress || 0))
+      : Number.NaN
+    if (!Number.isFinite(start) || !Number.isFinite(now)) {
+      const startKm = this.stationKmOnRoute(vehicle.route_id, path[0]?.r)
+      const nowKm = this.stationKmOnRoute(vehicle.route_id, vehicle.from_station_ref)
+      if (!Number.isFinite(startKm) || !Number.isFinite(nowKm)) return null
+      return Math.abs(nowKm - startKm)
+    }
+    return Math.abs(now - start)
+  }
+
+  followSpeedKmh(vehicle) {
+    if (vehicle?.status === "stopped") return 0
+    const hopKm = Number.isFinite(vehicle.from_km) && Number.isFinite(vehicle.to_km)
+      ? Math.abs(vehicle.to_km - vehicle.from_km)
+      : null
+    const hopMinutes = this.wrappedMinuteSpan(
+      Number(vehicle.motion_departure_minutes),
+      Number(vehicle.motion_arrival_minutes)
+    )
+    if (!(hopKm > 0) || !(hopMinutes > 0)) return null
+    return speedKmh(vehicle.linear_progress ?? vehicle.progress ?? 0, {
+      kind: motionKind(vehicle.system_id, vehicle.trip_type),
+      hopKm,
+      hopMinutes
+    })
+  }
+
+  redrawVehicleCanvas(vehicles = null) {
+    if (!this.vehicleCanvas) return
+    const list = vehicles || this.buildLocalVehicles()
+    const entries = list.map((vehicle) => {
+      const latlng = this.interpolateVehiclePosition(vehicle)
+      if (!latlng) return null
+      return {
+        id: vehicle.id,
+        latlng,
+        color: this.normalizeHexColor(vehicle.color) || "#64748b",
+        label: this.vehicleLabel(vehicle),
+        vehicle
+      }
+    }).filter(Boolean)
+    this.vehicleCanvas.setVehicles(entries, {
+      followedId: this.followedMarker?._vehicleData?.id || this.followedVehicleKey
+    })
+  }
+
+  handleCanvasVehicleSelect(entry) {
+    const marker = this.vehicleMarkersById[String(entry.id)]
+    if (marker) {
+      marker.openPopup()
+      return
+    }
+    if (entry.vehicle) this.startFollowingVehicle(entry.vehicle)
+  }
+
+  warmFollowTiles() {
+    if (!this.map || !this.tileLayer || this.simulationSpeed < 10) return
+    const latlng = this.followLastLatLng || this.followedMarker?.getLatLng()
+    if (!latlng) return
+
+    const now = performance.now()
+    if (this._tileWarmAt && now - this._tileWarmAt < 450) return
+    this._tileWarmAt = now
+
+    const zoom = Math.round(this.map.getZoom() ?? 12)
+    const template = this.tileLayer._url
+    if (!template) return
+
+    const projected = this.map.project(latlng, zoom)
+    const vehicle = this.followedMarker?._vehicleData
+    const bearing = vehicle ? this.vehicleBearingDegrees(vehicle, latlng) : 0
+    const rad = (bearing * Math.PI) / 180
+    const ahead = 280
+    const centers = [
+      [ Math.floor(projected.x / 256), Math.floor(projected.y / 256) ],
+      [
+        Math.floor((projected.x + Math.sin(rad) * ahead) / 256),
+        Math.floor((projected.y - Math.cos(rad) * ahead) / 256)
+      ]
+    ]
+
+    const L = window.L
+    centers.forEach(([ cx, cy ]) => {
+      for (let dx = -1; dx <= 1; dx += 1) {
+        for (let dy = -1; dy <= 1; dy += 1) {
+          const url = L.Util.template(template, {
+            s: [ "a", "b", "c" ][(Math.abs(cx + dx) + Math.abs(cy + dy)) % 3],
+            x: cx + dx,
+            y: cy + dy,
+            z: zoom,
+            r: ""
+          })
+          const img = new Image()
+          img.referrerPolicy = "no-referrer"
+          img.src = url
+        }
+      }
+    })
+  }
+
+  stationBoardRows(ref, routeId = null, windowMinutes = STATION_BOARD_MINUTES) {
+    const atMin = this.minutesSinceMidnightFromIso(this.simulationAt)
+    if (!Number.isFinite(atMin) || !ref) return []
+
+    const tokens = this.transferStationRefs(ref)
+    const rows = []
+    const routeIds = routeId ? [ routeId ] : this.visibleRouteLayerIds()
+
+    routeIds.forEach((id) => {
+      const snap = this.scheduleSnapshots[id]
+      snap?.trips?.forEach((trip) => {
+        (trip.path || []).forEach((stop) => {
+          if (stop.t) return
+          const stopTokens = this.transferStationRefs(stop.r)
+          if (!tokens.some((token) => stopTokens.includes(token) || token === stop.r || stop.r === ref)) return
+          const arrival = Number(stop.a)
+          if (!Number.isFinite(arrival)) return
+          let wait = arrival - atMin
+          if (wait < -120) wait += 1440
+          if (wait < -0.5 || wait > windowMinutes) return
+          rows.push({
+            id: trip.id,
+            train_number: trip.train_number,
+            destination_name: trip.destination_name,
+            route_id: id,
+            wait,
+            arrival,
+            name: stop.n
+          })
+        })
+      })
+    })
+
+    return rows.sort((a, b) => a.wait - b.wait).slice(0, 12)
+  }
+
+  stationBoardHtml(ref, routeId, stationName) {
+    const rows = this.stationBoardRows(ref, routeId)
+    if (rows.length === 0) {
+      return `<div class="station-board"><div class="station-board__empty">${this.escapeHtml(this.t("explore.board_empty"))}</div></div>`
+    }
+
+    const items = rows.map((row) => {
+      const mins = Math.max(0, Math.round(row.wait))
+      const label = row.train_number || row.destination_name || row.route_id
+      const dest = row.destination_name ? ` → ${row.destination_name}` : ""
+      return `<button type="button" class="station-board__row" data-follow-trip="${this.escapeHtml(row.id)}" data-follow-train="${this.escapeHtml(row.train_number || "")}" data-follow-route="${this.escapeHtml(row.route_id)}">
+        <span>${this.escapeHtml(label)}${this.escapeHtml(dest)}</span>
+        <span>${mins}${this.escapeHtml(this.t("explore.minutes_short"))}</span>
+      </button>`
+    }).join("")
+
+    return `<div class="station-board">
+      <div class="station-board__title">${this.escapeHtml(this.t("explore.board_title", { name: stationName || ref }))}</div>
+      ${items}
+    </div>`
+  }
+
+  bindStationBoardActions(root) {
+    if (!root) return
+    root.querySelectorAll("[data-follow-trip]").forEach((button) => {
+      if (button._bound) return
+      button._bound = true
+      button.addEventListener("click", (event) => {
+        event.preventDefault()
+        event.stopPropagation()
+        this.followTripFromBoard(button.dataset.followTrip, button.dataset.followTrain, button.dataset.followRoute)
+      })
+    })
+  }
+
+  openStationBoard({ routeId, ref, name }) {
+    this.ensureExploreUi()
+    const panel = this.stationBoardEl
+    if (!panel) return
+    panel.hidden = false
+    panel.innerHTML = `
+      <div class="map-float-panel__head">
+        <strong>${this.escapeHtml(name || ref || "")}</strong>
+        <button type="button" class="map-float-panel__close" data-station-board-close>&times;</button>
+      </div>
+      ${this.stationBoardHtml(ref, null, name)}
+    `
+    panel.querySelector("[data-station-board-close]")?.addEventListener("click", () => {
+      panel.hidden = true
+    })
+    this.bindStationBoardActions(panel)
+  }
+
+  followTripFromBoard(tripId, trainNumber, routeId) {
+    const marker = Object.values(this.vehicleMarkersById).find((item) => String(item._vehicleData?.id) === String(tripId))
+    if (marker) {
+      this.startFollowingVehicle(marker._vehicleData, marker)
+      return
+    }
+
+    this.pendingFollowTripId = tripId || null
+    this.pendingFollowTrainNumber = trainNumber || null
+    if (routeId && !this.layerVisible[routeId]) {
+      this.setRouteLayersVisible([ routeId ], true, { fitBounds: false })
+    }
+    this.tryAdoptPendingFollowVehicle()
+  }
+
+  readShareParams() {
+    const params = new URLSearchParams(window.location.search)
+    const routes = String(params.get("routes") || "").split(",").map((id) => id.trim()).filter(Boolean)
+    const lat = Number.parseFloat(params.get("lat"))
+    const lng = Number.parseFloat(params.get("lng"))
+    const z = Number.parseFloat(params.get("z"))
+    return {
+      at: params.get("at"),
+      lat: Number.isFinite(lat) ? lat : null,
+      lng: Number.isFinite(lng) ? lng : null,
+      z: Number.isFinite(z) ? z : null,
+      routes,
+      follow: params.get("follow")
+    }
+  }
+
+  async applyShareParams() {
+    const share = this.pendingShare
+    if (!share) return
+
+    this.applyingShare = true
+    try {
+      if (share.at) this.setScrubberAt(share.at)
+      if (Number.isFinite(share.lat) && Number.isFinite(share.lng) && this.map) {
+        this.map.setView([ share.lat, share.lng ], share.z || this.map.getZoom(), { animate: false })
+      }
+      if (share.follow) {
+        this.pendingFollowTripId = share.follow.startsWith("trip:") ? share.follow : null
+        this.pendingFollowTrainNumber = share.follow
+        this.tryAdoptPendingFollowVehicle()
+      }
+    } finally {
+      this.applyingShare = false
+    }
+  }
+
+  setScrubberAt(iso) {
+    const scrubberEl = document.querySelector("[data-controller~='time-scrubber']")
+    const scrubber = scrubberEl
+      ? this.application.getControllerForElementAndIdentifier(scrubberEl, "time-scrubber")
+      : null
+    if (scrubber?.setFromIso) {
+      scrubber.setFromIso(iso)
+      return
+    }
+    this.simulationAt = iso
+  }
+
+  scheduleShareUrlUpdate() {
+    if (this.applyingShare || this.booting) return
+    if (this.shareTimer) clearTimeout(this.shareTimer)
+    this.shareTimer = setTimeout(() => this.writeShareUrl(), 400)
+  }
+
+  writeShareUrl() {
+    if (!this.map || this.applyingShare) return
+    const center = this.map.getCenter()
+    const params = new URLSearchParams(window.location.search)
+    if (this.simulationAt) params.set("at", this.simulationAt)
+    if (center) {
+      params.set("lat", center.lat.toFixed(5))
+      params.set("lng", center.lng.toFixed(5))
+    }
+    params.set("z", String(Math.round((this.map.getZoom() ?? 11) * 10) / 10))
+    const routes = this.visibleRouteLayerIds()
+    if (routes.length) params.set("routes", routes.join(","))
+    else params.delete("routes")
+    if (this.followedTrainNumber || this.followedVehicleKey) {
+      params.set("follow", this.followedTrainNumber || this.followedVehicleKey)
+    } else {
+      params.delete("follow")
+    }
+
+    const next = `${window.location.pathname}?${params.toString()}`
+    const current = `${window.location.pathname}${window.location.search}`
+    if (next !== current) window.history.replaceState({}, "", next)
+  }
+
+  async loadCrossings() {
+    try {
+      const data = await this.fetchGeoJSON("/geojson/level_crossings.json")
+      this.crossingFeatures = Array.isArray(data?.features) ? data.features : []
+    } catch (_error) {
+      this.crossingFeatures = []
+    }
+  }
+
+  toggleCrossings() {
+    this.crossingsVisible = !this.crossingsVisible
+    this.syncCrossingLayer()
+    this.syncExploreToolState()
+  }
+
+  syncCrossingLayer() {
+    if (!this.map || !this.crossingGroup) return
+    this.crossingGroup.clearLayers()
+    if (!this.crossingsVisible) {
+      if (this.map.hasLayer(this.crossingGroup)) this.map.removeLayer(this.crossingGroup)
+      return
+    }
+
+    const L = window.L
+    this.crossingFeatures.forEach((feature) => {
+      const coords = feature.geometry?.coordinates
+      if (!Array.isArray(coords) || coords.length < 2) return
+      const marker = L.circleMarker([ coords[1], coords[0] ], {
+        radius: 5,
+        color: "#b45309",
+        weight: 1.5,
+        fillColor: "#fbbf24",
+        fillOpacity: 0.9
+      })
+      marker.bindPopup(() => this.crossingPopupHtml(feature), { maxWidth: 300 })
+      marker.on("popupopen", () => this.bindStationBoardActions(marker.getPopup()?.getElement()))
+      this.crossingGroup.addLayer(marker)
+    })
+    if (!this.map.hasLayer(this.crossingGroup)) this.crossingGroup.addTo(this.map)
+  }
+
+  crossingPopupHtml(feature) {
+    const name = feature.properties?.name || this.t("explore.crossing")
+    const d = Number(feature.properties?.d)
+    const routeId = feature.properties?.route_id
+    const rows = this.crossingPassRows(routeId, d)
+    const list = rows.length
+      ? rows.map((row) => {
+        const mins = Math.max(0, Math.round(row.wait))
+        return `<button type="button" class="station-board__row" data-follow-trip="${this.escapeHtml(row.id)}" data-follow-train="${this.escapeHtml(row.train_number || "")}" data-follow-route="${this.escapeHtml(row.route_id)}">
+          <span>${this.escapeHtml(row.train_number || row.destination_name || "")}</span>
+          <span>${mins}${this.escapeHtml(this.t("explore.minutes_short"))}</span>
+        </button>`
+      }).join("")
+      : `<div class="station-board__empty">${this.escapeHtml(this.t("explore.board_empty"))}</div>`
+
+    return `<div class="station-board">
+      <div class="station-board__title">${this.escapeHtml(name)}</div>
+      <div class="station-board__note">${this.escapeHtml(this.t("explore.timetable_estimate"))}</div>
+      ${list}
+    </div>`
+  }
+
+  crossingPassRows(routeId, distanceKm, windowMinutes = STATION_BOARD_MINUTES) {
+    const atMin = this.minutesSinceMidnightFromIso(this.simulationAt)
+    if (!Number.isFinite(atMin) || !Number.isFinite(distanceKm)) return []
+
+    const snap = this.scheduleSnapshots[routeId]
+    if (!snap) return []
+
+    const rows = []
+    snap.trips?.forEach((trip) => {
+      const path = trip.path || []
+      for (let i = 0; i < path.length - 1; i += 1) {
+        const a = Number(path[i].km)
+        const b = Number(path[i + 1].km)
+        if (!Number.isFinite(a) || !Number.isFinite(b)) continue
+        const lo = Math.min(a, b)
+        const hi = Math.max(a, b)
+        if (distanceKm < lo || distanceKm > hi || hi === lo) continue
+        const frac = (distanceKm - a) / (b - a)
+        const dep = Number(path[i].d)
+        const arr = Number(path[i + 1].a)
+        if (!Number.isFinite(dep) || !Number.isFinite(arr)) continue
+        let span = arr - dep
+        if (span < -720) span += 1440
+        const pass = dep + (span * frac)
+        let wait = pass - atMin
+        if (wait < -120) wait += 1440
+        if (wait < -0.5 || wait > windowMinutes) continue
+        rows.push({
+          id: trip.id,
+          train_number: trip.train_number,
+          destination_name: trip.destination_name,
+          route_id: routeId,
+          wait
+        })
+      }
+    })
+    return rows.sort((a, b) => a.wait - b.wait).slice(0, 10)
+  }
+
+  togglePinMode() {
+    this.pinMode = !this.pinMode
+    this.syncExploreToolState()
+    if (this.pinMode) {
+      this.map?.getContainer()?.classList.add("map--pin-mode")
+      if (!this._onMapPinClick) {
+        this._onMapPinClick = (event) => this.dropNearbyPin(event.latlng)
+        this.map?.on("click", this._onMapPinClick)
+      }
+    } else {
+      this.map?.getContainer()?.classList.remove("map--pin-mode")
+      if (this._onMapPinClick) {
+        this.map?.off("click", this._onMapPinClick)
+        this._onMapPinClick = null
+      }
+    }
+  }
+
+  dropNearbyPin(latlng) {
+    if (!latlng) return
+    const pin = {
+      id: `pin-${Date.now()}`,
+      lat: latlng.lat,
+      lng: latlng.lng,
+      saved: false
+    }
+    this.nearbyPins.push(pin)
+    this.renderNearbyPins()
+    this.openNearbyPanel(pin)
+    this.pinMode = false
+    this.map?.getContainer()?.classList.remove("map--pin-mode")
+    if (this._onMapPinClick) {
+      this.map?.off("click", this._onMapPinClick)
+      this._onMapPinClick = null
+    }
+    this.syncExploreToolState()
+  }
+
+  renderNearbyPins() {
+    if (!this.nearbyPinGroup) return
+    const L = window.L
+    this.nearbyPinGroup.clearLayers()
+    this.nearbyPins.forEach((pin) => {
+      const marker = L.marker([ pin.lat, pin.lng ], { pane: "vehicles" })
+      marker.on("click", () => this.openNearbyPanel(pin))
+      this.nearbyPinGroup.addLayer(marker)
+    })
+  }
+
+  nearbyTrainRows(latlng) {
+    const atMin = this.minutesSinceMidnightFromIso(this.simulationAt)
+    if (!Number.isFinite(atMin) || !latlng) return []
+
+    const rows = []
+    this.visibleRouteLayerIds().forEach((routeId) => {
+      const chainage = this.ensureRouteChainage(routeId)
+      if (!chainage) return
+      const d = nearestDistance(chainage, latlng.lng, latlng.lat)
+      if (!Number.isFinite(d)) return
+      const point = pointAtDistance(chainage, d)
+      if (!point) return
+      const distM = this.haversineMeters(latlng.lat, latlng.lng, point.lat, point.lng)
+      if (distM > NEARBY_RADIUS_M) return
+      this.crossingPassRows(routeId, d).forEach((row) => {
+        rows.push({ ...row, meters: Math.round(distM) })
+      })
+    })
+
+    return rows.sort((a, b) => a.wait - b.wait).slice(0, 12)
+  }
+
+  openNearbyPanel(pin) {
+    this.ensureExploreUi()
+    const panel = this.nearbyPanelEl
+    if (!panel) return
+    const rows = this.nearbyTrainRows({ lat: pin.lat, lng: pin.lng })
+    const list = rows.length
+      ? rows.map((row) => {
+        const mins = Math.max(0, Math.round(row.wait))
+        return `<button type="button" class="station-board__row" data-follow-trip="${this.escapeHtml(row.id)}" data-follow-train="${this.escapeHtml(row.train_number || "")}" data-follow-route="${this.escapeHtml(row.route_id)}">
+          <span>${this.escapeHtml(row.train_number || row.destination_name || "")} · ${row.meters}m</span>
+          <span>${mins}${this.escapeHtml(this.t("explore.minutes_short"))}</span>
+        </button>`
+      }).join("")
+      : `<div class="station-board__empty">${this.escapeHtml(this.t("explore.board_empty"))}</div>`
+
+    panel.hidden = false
+    panel.innerHTML = `
+      <div class="map-float-panel__head">
+        <strong>${this.escapeHtml(this.t("explore.nearby_title"))}</strong>
+        <button type="button" class="map-float-panel__close" data-nearby-close>&times;</button>
+      </div>
+      <div class="station-board__note">${this.escapeHtml(this.t("explore.timetable_estimate"))}</div>
+      ${list}
+      <button type="button" class="map-float-panel__action" data-nearby-save>${this.escapeHtml(pin.saved ? this.t("explore.pin_saved") : this.t("explore.save_pin"))}</button>
+    `
+    panel.querySelector("[data-nearby-close]")?.addEventListener("click", () => { panel.hidden = true })
+    panel.querySelector("[data-nearby-save]")?.addEventListener("click", (event) => {
+      pin.saved = true
+      this.persistPins()
+      event.currentTarget.textContent = this.t("explore.pin_saved")
+    })
+    this.bindStationBoardActions(panel)
+  }
+
+  persistPins() {
+    try {
+      const saved = this.nearbyPins.filter((pin) => pin.saved).map((pin) => ({ lat: pin.lat, lng: pin.lng }))
+      window.localStorage?.setItem(NEARBY_PIN_STORAGE_KEY, JSON.stringify(saved))
+    } catch (_error) {
+      // ignore
+    }
+  }
+
+  loadStoredPins() {
+    try {
+      const raw = window.localStorage?.getItem(NEARBY_PIN_STORAGE_KEY)
+      const parsed = raw ? JSON.parse(raw) : []
+      this.nearbyPins = Array.isArray(parsed)
+        ? parsed.map((pin, index) => ({ id: `saved-${index}`, lat: pin.lat, lng: pin.lng, saved: true }))
+        : []
+      this.renderNearbyPins()
+    } catch (_error) {
+      this.nearbyPins = []
+    }
+  }
+
+  async copyShareUrl() {
+    this.writeShareUrl()
+    const url = window.location.href
+    try {
+      await navigator.clipboard?.writeText(url)
+    } catch (_error) {
+      window.prompt(this.t("explore.share"), url)
+    }
+    this.flashExploreNotice(this.t("explore.share_copied"))
+  }
+
+  async loadAlerts() {
+    try {
+      const response = await fetch("/api/alerts")
+      if (!response.ok) return
+      const data = await response.json()
+      this.renderAlertBanner(Array.isArray(data.alerts) ? data.alerts : [])
+    } catch (_error) {
+      // optional feed
+    }
+  }
+
+  renderAlertBanner(alerts) {
+    this.ensureExploreUi()
+    const el = this.alertBannerEl
+    if (!el) return
+    const visible = alerts.filter((alert) => alert?.id && !this.dismissedAlertIds.has(String(alert.id)))
+    if (visible.length === 0) {
+      el.hidden = true
+      el.replaceChildren()
+      return
+    }
+
+    el.hidden = false
+    el.innerHTML = visible.map((alert) => `
+      <div class="map-alert-banner__item" data-alert-id="${this.escapeHtml(alert.id)}">
+        <span>${this.escapeHtml(alert.title || alert.message || "")}</span>
+        <button type="button" data-alert-dismiss="${this.escapeHtml(alert.id)}">&times;</button>
+      </div>
+    `).join("")
+    el.querySelectorAll("[data-alert-dismiss]").forEach((button) => {
+      button.addEventListener("click", () => {
+        this.dismissedAlertIds.add(String(button.dataset.alertDismiss))
+        this.renderAlertBanner(alerts)
+      })
+    })
+  }
+
+  rideStamps() {
+    try {
+      const raw = window.localStorage?.getItem(RIDE_STAMP_STORAGE_KEY)
+      const parsed = raw ? JSON.parse(raw) : []
+      return Array.isArray(parsed) ? parsed : []
+    } catch (_error) {
+      return []
+    }
+  }
+
+  recordRideStamp(vehicle) {
+    if (!vehicle) return
+    const stamps = this.rideStamps()
+    const date = this.simulationDateString()
+    const entry = {
+      date,
+      route_id: vehicle.route_id,
+      train_number: vehicle.train_number || vehicle.label,
+      destination_name: vehicle.destination_name,
+      km: this.followJourneyKm(vehicle)
+    }
+    const key = `${entry.date}:${entry.route_id}:${entry.train_number}`
+    if (stamps.some((stamp) => `${stamp.date}:${stamp.route_id}:${stamp.train_number}` === key)) return
+    stamps.unshift(entry)
+    try {
+      window.localStorage?.setItem(RIDE_STAMP_STORAGE_KEY, JSON.stringify(stamps.slice(0, 80)))
+    } catch (_error) {
+      // ignore
+    }
+  }
+
+  randomHopTrain() {
+    const vehicles = this.buildLocalVehicles()
+    if (vehicles.length === 0) return
+    const pick = vehicles[Math.floor(Math.random() * vehicles.length)]
+    const marker = this.vehicleMarkersById[String(pick.id)]
+    this.startFollowingVehicle(pick, marker || null)
+  }
+
+  toggleRelaxMode() {
+    this.exploreRelax = !this.exploreRelax
+    document.body.classList.toggle("map-relax-mode", this.exploreRelax)
+    try {
+      window.localStorage?.setItem(RELAX_MODE_STORAGE_KEY, this.exploreRelax ? "1" : "0")
+    } catch (_error) {
+      // ignore
+    }
+    if (this.exploreRelax && this.basemapStyle !== "carto") {
+      this.setBasemapStyle({ target: { value: "carto" } })
+    }
+    this.syncExploreToolState()
+  }
+
+  restoreRelaxMode() {
+    try {
+      this.exploreRelax = window.localStorage?.getItem(RELAX_MODE_STORAGE_KEY) === "1"
+    } catch (_error) {
+      this.exploreRelax = false
+    }
+    document.body.classList.toggle("map-relax-mode", this.exploreRelax)
+  }
+
+  toggleExplorePanel() {
+    this.ensureExploreUi()
+    if (!this.explorePanelEl) return
+    this.explorePanelEl.hidden = !this.explorePanelEl.hidden
+    if (!this.explorePanelEl.hidden) this.renderExplorePanel()
+  }
+
+  renderExplorePanel() {
+    const stamps = this.rideStamps()
+    const items = stamps.slice(0, 12).map((stamp) => {
+      const km = Number.isFinite(stamp.km) ? ` · ${Number(stamp.km).toFixed(1)}km` : ""
+      return `<li>${this.escapeHtml(stamp.date || "")} · ${this.escapeHtml(stamp.train_number || stamp.route_id || "")}${this.escapeHtml(km)}</li>`
+    }).join("") || `<li>${this.escapeHtml(this.t("explore.stamps_empty"))}</li>`
+
+    this.explorePanelEl.innerHTML = `
+      <div class="map-float-panel__head">
+        <strong>${this.escapeHtml(this.t("explore.title"))}</strong>
+        <button type="button" class="map-float-panel__close" data-explore-close>&times;</button>
+      </div>
+      <p class="station-board__note">${this.escapeHtml(this.t("explore.stamps_count", { count: stamps.length }))}</p>
+      <ul class="explore-stamp-list">${items}</ul>
+      <div class="map-float-panel__actions">
+        <button type="button" class="map-float-panel__action" data-explore-random>${this.escapeHtml(this.t("explore.random_train"))}</button>
+        <button type="button" class="map-float-panel__action" data-explore-relax>${this.escapeHtml(this.exploreRelax ? this.t("explore.relax_off") : this.t("explore.relax_on"))}</button>
+      </div>
+    `
+    this.explorePanelEl.querySelector("[data-explore-close]")?.addEventListener("click", () => {
+      this.explorePanelEl.hidden = true
+    })
+    this.explorePanelEl.querySelector("[data-explore-random]")?.addEventListener("click", () => this.randomHopTrain())
+    this.explorePanelEl.querySelector("[data-explore-relax]")?.addEventListener("click", () => {
+      this.toggleRelaxMode()
+      this.renderExplorePanel()
+    })
+  }
+
+  flashExploreNotice(message) {
+    this.ensureExploreUi()
+    if (!this.exploreToolsEl) return
+    const note = this.exploreToolsEl.querySelector(".map-explore-tools__note")
+    if (!note) return
+    note.textContent = message
+    note.hidden = false
+    clearTimeout(this._exploreNoteTimer)
+    this._exploreNoteTimer = setTimeout(() => { note.hidden = true }, 1800)
+  }
+
+  syncExploreToolState() {
+    if (!this.exploreToolsEl) return
+    this.exploreToolsEl.querySelector("[data-tool='pin']")?.classList.toggle("is-active", this.pinMode)
+    this.exploreToolsEl.querySelector("[data-tool='crossings']")?.classList.toggle("is-active", this.crossingsVisible)
+    this.exploreToolsEl.querySelector("[data-tool='relax']")?.classList.toggle("is-active", this.exploreRelax)
+  }
+
+  ensureExploreUi() {
+    if (this.exploreToolsEl) return
+    const host = this.hasMapTarget
+      ? (this.mapTarget.parentElement || this.mapTarget)
+      : this.element
+
+    const banner = document.createElement("div")
+    banner.className = "map-alert-banner"
+    banner.hidden = true
+    host.appendChild(banner)
+    this.alertBannerEl = banner
+
+    const tools = document.createElement("div")
+    tools.className = "map-explore-tools"
+    tools.innerHTML = `
+      <button type="button" data-tool="share">${this.escapeHtml(this.t("explore.share"))}</button>
+      <button type="button" data-tool="pin">${this.escapeHtml(this.t("explore.pin"))}</button>
+      <button type="button" data-tool="crossings">${this.escapeHtml(this.t("explore.crossings"))}</button>
+      <button type="button" data-tool="explore">${this.escapeHtml(this.t("explore.title"))}</button>
+      <span class="map-explore-tools__note" hidden></span>
+    `
+    tools.addEventListener("click", (event) => {
+      const button = event.target.closest("[data-tool]")
+      if (!button) return
+      const tool = button.dataset.tool
+      if (tool === "share") this.copyShareUrl()
+      if (tool === "pin") this.togglePinMode()
+      if (tool === "crossings") this.toggleCrossings()
+      if (tool === "explore") this.toggleExplorePanel()
+    })
+    host.appendChild(tools)
+    this.exploreToolsEl = tools
+
+    const stationBoard = document.createElement("div")
+    stationBoard.className = "map-float-panel map-station-board-panel"
+    stationBoard.hidden = true
+    host.appendChild(stationBoard)
+    this.stationBoardEl = stationBoard
+
+    const nearby = document.createElement("div")
+    nearby.className = "map-float-panel map-nearby-panel"
+    nearby.hidden = true
+    host.appendChild(nearby)
+    this.nearbyPanelEl = nearby
+
+    const explore = document.createElement("div")
+    explore.className = "map-float-panel map-explore-panel"
+    explore.hidden = true
+    host.appendChild(explore)
+    this.explorePanelEl = explore
+  }
 }
+

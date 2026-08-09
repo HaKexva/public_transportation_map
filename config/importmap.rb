@@ -23,3 +23,4 @@ pin "@kurkle/color", to: "@kurkle--color.js" # @0.3.4
 pin "embla-carousel" # @8.6.0
 pin "fuse.js" # @7.3.0
 pin "leaflet", to: "leaflet.js"
+pin_all_from "app/javascript/transit", under: "transit"

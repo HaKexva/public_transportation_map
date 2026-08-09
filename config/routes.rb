@@ -17,5 +17,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     resources :vehicles, only: [ :index ]
+    resources :schedules, only: [ :index ]
+    resources :alerts, only: [ :index ]
   end
 end

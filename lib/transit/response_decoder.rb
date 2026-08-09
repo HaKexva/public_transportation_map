@@ -10,6 +10,10 @@ module Transit
       GeneralTimetable
       Frequencies
       StationTimeTables
+      TrainLiveBoards
+      StationLiveBoards
+      LiveBoards
+      LivePositions
     ].freeze
 
     module_function

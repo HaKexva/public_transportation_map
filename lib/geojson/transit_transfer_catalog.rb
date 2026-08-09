@@ -16,65 +16,66 @@ module Geojson
       "高雄車站" => "高雄"
     }.freeze
 
-    # HSR 左營／台鐵新左營／高雄捷運左營站（12、4340、R16）站內轉乘樞紐。
+    # HSR 左營／台鐵新左營／高雄捷運左營站（12、4340、R16）——各系統點只標自己站號。
     ZUOYING_HSR_HUB = {
       tra_ref: "4340",
       tra_lines: %w[western_trunk_south pingtung_line],
       by_system: {
-        tra: "4340;12;R16",
-        kaohsiung_metro: "R16;4340;12",
-        hsr: "12;4340;R16"
+        tra: "4340",
+        kaohsiung_metro: "R16",
+        hsr: "12"
       },
       lon: 120.30737341037691,
       lat: 22.687543335422784
     }.freeze
 
-    # HSR 台中／台鐵新烏日／台中捷運高鐵臺中站（07、3340、119）站內轉乘樞紐。
+    # HSR 台中／台鐵新烏日／台中捷運高鐵臺中站（07、3340、119）。
     TAICHUNG_HSR_HUB = {
       tra_ref: "3340",
       tra_lines: %w[mountain_line],
       by_system: {
-        tra: "3340;07;119",
-        taichung_metro: "119;07;3340",
-        hsr: "07;3340;119"
+        tra: "3340",
+        taichung_metro: "119",
+        hsr: "07"
       },
       lon: 120.614252,
       lat: 24.110103
     }.freeze
 
-    # HSR 新竹／台鐵六家（05、1194）站內轉乘樞紐。
+    # HSR 新竹／台鐵六家（05、1194）。
     HSINCHU_HSR_HUB = {
       tra_ref: "1194",
       tra_lines: %w[liujia_line],
       by_system: {
-        tra: "1194;05",
-        hsr: "05;1194"
+        tra: "1194",
+        hsr: "05"
       },
       lon: 121.03941188336667,
       lat: 24.80711133931995
     }.freeze
 
-    # HSR 台南／台鐵沙崙（11、4272）站內轉乘樞紐。
+    # HSR 台南／台鐵沙崙（11、4272）。
     TAINAN_HSR_HUB = {
       tra_ref: "4272",
       tra_lines: %w[shalun_line],
       by_system: {
-        tra: "4272;11",
-        hsr: "11;4272"
+        tra: "4272",
+        hsr: "11"
       },
       lon: 120.2863739,
       lat: 22.9237208
     }.freeze
 
     # Cross-system transfers keyed by canonical station name.
+    # by_system refs are per-system only; semicolon joins only codes that share one point.
     CROSS_SYSTEM = {
       "南港" => {
         tra_ref: "980",
         tra_lines: %w[western_trunk_north],
         by_system: {
-          tra: "980;BL22;01",
-          taipei_metro: "BL22;980;01",
-          hsr: "01;980;BL22"
+          tra: "980",
+          taipei_metro: "BL22",
+          hsr: "01"
         },
         lon: 121.6072576,
         lat: 25.0528686
@@ -83,8 +84,8 @@ module Geojson
         tra_ref: "990",
         tra_lines: %w[western_trunk_north],
         by_system: {
-          tra: "990;G19",
-          taipei_metro: "G19;990"
+          tra: "990",
+          taipei_metro: "G19"
         },
         lon: 121.57816703272442,
         lat: 25.04936551944271
@@ -93,8 +94,8 @@ module Geojson
         tra_ref: "1000",
         tra_lines: %w[western_trunk_north],
         by_system: {
-          tra: "1000;R10;BL12;02",
-          hsr: "02;1000;R10;BL12"
+          tra: "1000",
+          hsr: "02"
         },
         lon: 121.51702320022838,
         lat: 25.04804218211409
@@ -103,15 +104,15 @@ module Geojson
         tra_ref: "1020",
         tra_lines: %w[western_trunk_north western_trunk_south],
         by_system: {
-          tra: "1020;BL07;03",
-          hsr: "03;1020;BL07"
+          tra: "1020",
+          hsr: "03"
         },
         lon: 121.46401388004938,
         lat: 25.013932198858488
       },
       "桃園" => {
         by_system: {
-          hsr: "04;A18"
+          hsr: "04"
         },
         lon: 121.2141381,
         lat: 25.0137163
@@ -129,16 +130,16 @@ module Geojson
         tra_ref: "4400",
         tra_lines: %w[pingtung_line western_trunk_south],
         by_system: {
-          tra: "4400;R11",
-          kaohsiung_metro: "R11;4400"
+          tra: "4400",
+          kaohsiung_metro: "R11"
         },
         lon: 120.3025585,
         lat: 22.6395321
       },
       "動物園" => {
         by_system: {
-          other: "G1;BR01",
-          taipei_metro: "BR01;G1"
+          other: "G1",
+          taipei_metro: "BR01"
         },
         lon: 121.5794478,
         lat: 24.9983168,
@@ -164,7 +165,11 @@ module Geojson
           entry = transfer_for(station[:name], line: line, ref: station[:ref])
           next station unless entry
 
-          line_ref = ref_for_line(entry.combined_ref, line: line)
+          line_ref = ref_for_line(
+            entry.combined_ref,
+            line: line,
+            coordinates_by_ref: entry.coordinates_by_ref
+          )
           coords = coordinates_for_line(entry, line: line, ref: line_ref)
           updated = station.merge(ref: line_ref)
           hub_entry = Entry.new(
@@ -203,10 +208,22 @@ module Geojson
         ) <= TRANSFER_HUB_COORDINATE_MAX_M
       end
 
-      def ref_for_line(combined_ref, line:)
+      # Same geographic point → keep semicolon-joined refs (one marker, many codes).
+      # Cross-system / separate platforms → only codes belonging to this line's system.
+      def ref_for_line(combined_ref, line:, coordinates_by_ref: nil)
         parts = combined_ref.to_s.split(";").map(&:strip)
         return combined_ref if parts.length <= 1
-        return combined_ref if cross_system_transfer_parts?(parts)
+
+        if coordinates_by_ref.present?
+          preferred = preferred_platform_ref(combined_ref, line: line, by_ref: coordinates_by_ref)
+          return preferred if preferred.present?
+        end
+
+        system_parts = parts_for_system(parts, line)
+        if system_parts.any? && system_parts.length < parts.length
+          return system_parts.join(";")
+        end
+
         return combined_ref unless line.system_id == "tra"
 
         suffix = line.ref.to_s
@@ -220,12 +237,7 @@ module Geojson
         normalized = name.to_s.strip.sub(/車站\z/, "")
         return nil if normalized.blank?
 
-        canonical = NAME_ALIASES[normalized] || normalized
-        case canonical
-        when "臺北" then "台北"
-        when "臺南" then "台南"
-        else canonical
-        end
+        NAME_ALIASES[normalized] || normalized
       end
 
       private
@@ -243,6 +255,19 @@ module Geojson
         parts.find { |part| by_ref.key?(part) }
       end
 
+      def parts_for_system(parts, line)
+        case line.system_id
+        when "tra"
+          parts.select { |part| part.match?(/\A\d{3,4}(-[A-Z]+)?\z/) }
+        when "hsr"
+          parts.select { |part| part.match?(/\A\d{2}\z/) }
+        when "taichung_metro"
+          parts.select { |part| part.match?(/\A\d{3}\z/) }
+        else
+          parts.reject { |part| part.match?(/\A\d{3,4}(-[A-Z]+)?\z/) || part.match?(/\A\d{2}\z/) }
+        end
+      end
+
       def canonical_tra_ref(ref)
         ref.to_s.split(";").first.to_s.sub(/-.*\z/, "")
       end
@@ -254,13 +279,6 @@ module Geojson
           lat: entry[:lat],
           coordinates_by_ref: entry[:coordinates_by_ref]
         )
-      end
-
-      def cross_system_transfer_parts?(parts)
-        tra_part = parts.any? { |part| part.match?(/\A\d{3,4}(-[A-Z]+)?\z/) }
-        other_part = parts.any? { |part| part.match?(/\A[A-Z]{1,3}\d/i) || part.match?(/\A\d{2}\z/) }
-
-        tra_part && other_part
       end
 
       def cross_system_for(canonical, line:, ref: nil)

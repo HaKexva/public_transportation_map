@@ -39,11 +39,13 @@ class DashboardTest < ApplicationSystemTestCase
   test "navigates to dedicated route page from dashboard" do
     visit root_path
 
+    assert_selector ".map-boot-overlay[hidden]", visible: :all, wait: 30
     page.execute_script("document.querySelector(\"a[href='#{route_path('wenhu_line')}']\").click()")
 
     assert_current_path route_path("wenhu_line")
     assert_selector "h1", text: "文湖線", wait: 10
     assert_selector ".route-stop-item", minimum: 5, wait: 10
+    assert_selector ".time-scrubber", wait: 5
     assert_link "← 返回地圖", href: root_path
   end
 
@@ -154,9 +156,23 @@ class DashboardTest < ApplicationSystemTestCase
     assert indices.index("O11") < indices.index("O12")
   end
 
+  test "shows a loading list until the map is ready" do
+    visit root_path
+
+    assert_selector ".map-boot-overlay", visible: :all
+    assert_selector ".map-boot-overlay__item", visible: :all, minimum: 4, wait: 10
+    assert_selector ".map-boot-overlay__bar", visible: :all
+
+    assert_selector ".map-boot-overlay[hidden]", visible: :all, wait: 30
+    assert_no_selector ".is-booting"
+    assert_selector "#layer-wenhu_line:not([disabled])", visible: :all, wait: 5
+    assert_selector "#layer-bannan:checked", visible: :all, wait: 10
+  end
+
   test "filters sidebar routes from the search box" do
     visit root_path
 
+    assert_selector ".map-boot-overlay[hidden]", visible: :all, wait: 30
     assert_selector "#layer-search", wait: 10
     assert_selector "#layer-wenhu_line", visible: :all
     assert_selector "#layer-circular", visible: :all
@@ -183,6 +199,7 @@ class DashboardTest < ApplicationSystemTestCase
 
     assert_selector "#taiwan-region-map"
     assert_selector ".leaflet-container", wait: 5
+    assert_selector ".map-boot-overlay[hidden]", visible: :all, wait: 30
     assert_button "圖例"
 
     split_layout = page.evaluate_script(<<~JS)
