@@ -554,6 +554,7 @@ class DashboardTest < ApplicationSystemTestCase
 
   test "shows out-of-station transfer link between hsr and taichung green line at HSR Taichung" do
     visit root_path
+    assert_selector ".map-boot-overlay[hidden]", visible: :all, wait: 30
 
     within "#taiwan-region-map" do
       assert_selector ".leaflet-tile-pane", wait: 10
@@ -596,6 +597,7 @@ class DashboardTest < ApplicationSystemTestCase
 
   test "shows co-located cross-system passage link at tainan when hsr and shalun line are visible" do
     visit root_path
+    assert_selector ".map-boot-overlay[hidden]", visible: :all, wait: 30
 
     within "#taiwan-region-map" do
       assert_selector ".leaflet-tile-pane", wait: 10
@@ -611,6 +613,7 @@ class DashboardTest < ApplicationSystemTestCase
       show("shalun_line")
     JS
 
+    assert_selector ".leaflet-overlay-pane path.leaflet-interactive", wait: 20, minimum: 2
     assert_selector ".out-of-station-transfer-line--passage", wait: 15, minimum: 1, visible: :all
     assert_no_selector ".leaflet-overlay-pane .transfer-station-marker", wait: 5
   end
@@ -654,6 +657,7 @@ class DashboardTest < ApplicationSystemTestCase
       show("red_line")
     JS
 
+    assert_selector ".leaflet-overlay-pane path.leaflet-interactive", wait: 20, minimum: 2
     assert_selector ".out-of-station-transfer-line--passage", wait: 15, minimum: 1, visible: :all
     assert_selector ".leaflet-stationMarkers-pane .leaflet-interactive", wait: 15, minimum: 1, visible: :all
   end
