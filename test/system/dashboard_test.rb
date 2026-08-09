@@ -595,6 +595,43 @@ class DashboardTest < ApplicationSystemTestCase
     assert_selector ".leaflet-stationMarkers-pane .leaflet-interactive", wait: 15, minimum: 1, visible: :all
   end
 
+  test "does not link hsr zuoying passage to taipei shilin R16" do
+    visit root_path
+    assert_selector ".map-boot-overlay[hidden]", visible: :all, wait: 30
+
+    within "#taiwan-region-map" do
+      assert_selector ".leaflet-tile-pane", wait: 10
+    end
+
+    page.execute_script(<<~JS)
+      const show = (id) => {
+        const checkbox = document.getElementById(`layer-${id}`)
+        checkbox.checked = true
+        checkbox.dispatchEvent(new Event("change", { bubbles: true }))
+      }
+      show("taiwan_hsr")
+      show("tamsui_xinyi")
+    JS
+
+    assert_selector ".leaflet-overlay-pane path.leaflet-interactive", wait: 20, minimum: 2
+
+    spans = out_of_station_passage_spans
+    refute island_spanning_passage?(spans), "Taipei R16 士林 must not pair with HSR 左營, got #{spans.inspect}"
+
+    page.execute_script(<<~JS)
+      const checkbox = document.getElementById("layer-red_line")
+      checkbox.checked = true
+      checkbox.dispatchEvent(new Event("change", { bubbles: true }))
+    JS
+
+    assert_selector ".out-of-station-transfer-line--passage", wait: 15, minimum: 1, visible: :all
+
+    spans = out_of_station_passage_spans
+    zuoying = spans.find { |span| span["minLat"].between?(22.5, 22.85) && span["maxLat"] < 23.2 }
+    assert zuoying, "expected a Zuoying-local HSR–紅線 passage, got #{spans.inspect}"
+    refute island_spanning_passage?(spans), "Kaohsiung 紅線 R16 must not snap to 士林, got #{spans.inspect}"
+  end
+
   test "shows co-located cross-system passage link at tainan when hsr and shalun line are visible" do
     visit root_path
     assert_selector ".map-boot-overlay[hidden]", visible: :all, wait: 30
@@ -968,4 +1005,42 @@ class DashboardTest < ApplicationSystemTestCase
     assert_no_selector ".map-split-layout--sidebar-collapsed", wait: 5
     assert_selector "#map-layers-panel-body", visible: :visible
   end
+
+  private
+
+    def out_of_station_passage_spans
+      page.evaluate_script(<<~JS)
+        (() => {
+          const el = document.querySelector('[data-controller~="map"]')
+          const controller = window.Stimulus.getControllerForElementAndIdentifier(el, "map")
+          const group = controller?.outOfStationTransferGroup
+          if (!group) return []
+
+          const spans = []
+          group.eachLayer((layer) => {
+            const className = layer.options?.className || ""
+            if (!className.includes("out-of-station-transfer-line--passage")) return
+
+            const points = (layer.getLatLngs?.() || [])
+              .flat(Infinity)
+              .filter((point) => point && typeof point.lat === "number")
+            if (points.length < 2) return
+
+            const lats = points.map((point) => point.lat)
+            const lngs = points.map((point) => point.lng)
+            spans.push({
+              minLat: Math.min(...lats),
+              maxLat: Math.max(...lats),
+              minLng: Math.min(...lngs),
+              maxLng: Math.max(...lngs)
+            })
+          })
+          return spans
+        })()
+      JS
+    end
+
+    def island_spanning_passage?(spans)
+      Array(spans).any? { |span| span["minLat"] < 23.5 && span["maxLat"] > 24.5 }
+    end
 end

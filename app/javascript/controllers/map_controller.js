@@ -2315,23 +2315,37 @@ export default class extends Controller {
     return Boolean(this.layerVisible[routeId])
   }
 
-  // Resolve a transfer end on any visible line that carries that station ref.
-  // Catalog `routes` is a typical pair (e.g. pingtung + red); TRA 高雄 is also
-  // on western_trunk_south, so that layer plus the MRT should still draw.
+  // Resolve a transfer end on the catalog route, then same-system siblings.
+  // TRA 高雄 is listed on pingtung_line but also lives on western_trunk_south.
+  // Do not cross systems: Taipei R16 士林 ≠ Kaohsiung R16 左營.
   visibleTransferEndpointLatLng(endpoint) {
     if (!endpoint?.ref) return null
 
-    if (endpoint.route_id && this.layerVisible[endpoint.route_id]) {
-      const direct = this.stationLatLng(endpoint.route_id, endpoint.ref)
-      if (direct) return direct
-    }
+    for (const routeId of this.transferEndpointRouteIds(endpoint)) {
+      if (!this.layerVisible[routeId]) continue
 
-    for (const routeId of this.visibleRouteLayerIds()) {
       const latlng = this.stationLatLng(routeId, endpoint.ref)
       if (latlng) return latlng
     }
 
     return null
+  }
+
+  transferEndpointRouteIds(endpoint) {
+    const preferred = endpoint.route_id
+    if (!preferred) return this.visibleRouteLayerIds()
+
+    const systemId = this.manifestSystemForRoute(preferred)
+    const routeIds = [ preferred ]
+
+    if (!systemId) return routeIds
+
+    this.routeLayerIds().forEach((routeId) => {
+      if (routeId === preferred) return
+      if (this.manifestSystemForRoute(routeId) === systemId) routeIds.push(routeId)
+    })
+
+    return routeIds
   }
 
   updateMetroDepots() {
