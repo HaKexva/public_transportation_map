@@ -2285,7 +2285,6 @@ export default class extends Controller {
         .filter(Boolean)
 
       if (latlngs.length < 2) return
-      if (latlngs[0].equals?.(latlngs[1])) return
 
       const kind = this.transferKind(transfer)
       const layers = this.transferConnectionLayers(latlngs, kind)
@@ -4026,8 +4025,19 @@ export default class extends Controller {
     const midLng = (start.lng + end.lng) / 2
     const deltaLat = end.lat - start.lat
     const deltaLng = end.lng - start.lng
-    const length = Math.hypot(deltaLat, deltaLng) || 1
+    const length = Math.hypot(deltaLat, deltaLng)
     const bulgeScale = 0.00045
+
+    // HSR/TRA/MRT hubs often share one catalog point (台中、台南、高雄).
+    // Draw a small loop so the passage stroke still appears.
+    if (!(length > 1e-12)) {
+      return [
+        start,
+        window.L.latLng(start.lat + bulgeScale, start.lng),
+        window.L.latLng(start.lat + bulgeScale * 0.35, start.lng + bulgeScale),
+        start
+      ]
+    }
 
     const bulge = window.L.latLng(
       midLat + (-deltaLng / length) * bulgeScale,
