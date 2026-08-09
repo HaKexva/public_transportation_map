@@ -19,7 +19,10 @@ module Views
       def view_template
         div(
           class: "map-split-layout is-booting fixed inset-0 flex flex-col overflow-hidden bg-background md:flex-row",
-          data: { controller: "map split-pane" },
+          data: {
+            controller: "map split-pane",
+            map_auto_default_layers_value: Rails.env.test? ? "false" : "true"
+          },
           aria: { busy: "true" }
         ) do
           div(

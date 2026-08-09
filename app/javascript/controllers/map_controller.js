@@ -140,7 +140,8 @@ const METRO_SYSTEM_IDS = [
 
 export default class extends Controller {
   static values = {
-    initialRouteId: String
+    initialRouteId: String,
+    autoDefaultLayers: { type: Boolean, default: true }
   }
 
   static targets = [
@@ -581,6 +582,7 @@ export default class extends Controller {
   // has nothing checked, so auto-open the main timetable-backed lines once.
   // Dedicated route pages already load their route — never expand to defaults.
   async ensureDefaultVehicleLayers() {
+    if (!this.autoDefaultLayersValue) return
     if (this.initialRouteIdValue) return
 
     if (this.visibleRouteLayerIds().length > 0) return
