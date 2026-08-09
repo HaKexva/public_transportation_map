@@ -4,22 +4,23 @@ require "test_helper"
 
 class TrackChainageTest < ActiveSupport::TestCase
   setup do
+    @slug = "test_chainage_#{Process.pid}_#{SecureRandom.hex(4)}"
     @fixture = Rails.root.join("test/fixtures/files/geojson/test_chainage.geojson")
-    @public_copy = Rails.root.join("public/geojson/test_chainage.geojson")
+    @public_copy = Rails.root.join("public/geojson/#{@slug}.geojson")
     FileUtils.mkdir_p(@public_copy.dirname)
     FileUtils.cp(@fixture, @public_copy)
 
     @route = TransitRoute.create!(
       system_id: "tra",
-      route_id: "test_chainage_line",
+      route_id: @slug,
       name: "測試里程線",
       line_ref: "TK",
-      geojson_path: "/geojson/test_chainage.geojson"
+      geojson_path: "/geojson/#{@slug}.geojson"
     )
   end
 
   teardown do
-    @public_copy.delete if @public_copy.exist?
+    @public_copy.delete if @public_copy&.exist?
     Transit::GeojsonStationCoords.clear_cache!
   end
 
