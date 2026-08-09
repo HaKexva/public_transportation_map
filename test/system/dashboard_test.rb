@@ -952,6 +952,7 @@ class DashboardTest < ApplicationSystemTestCase
 
   test "sidebar collapse button hides and restores the layers panel on desktop" do
     visit root_path
+    assert_selector ".map-boot-overlay[hidden]", visible: :all, wait: 30
     assert_selector "#map-layers-panel-body", visible: :visible
 
     find(".map-ui-panel__toggle", visible: :all).click
