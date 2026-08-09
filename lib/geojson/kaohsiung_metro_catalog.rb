@@ -52,8 +52,7 @@ module Geojson
         ref: "C",
         color: "#ADC956",
         relation_ids: [ 6_826_886 ],
-        station_ref_prefix: "C",
-        osm_networks: [ "高雄捷運", "高雄大眾捷運系統", "環狀輕軌" ]
+        station_ref_prefix: "C"
       )
     ].freeze
   end

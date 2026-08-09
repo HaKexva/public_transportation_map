@@ -9,8 +9,8 @@ class TransitTransferCatalogTest < ActiveSupport::TestCase
     hub = Geojson::TransitTransferCatalog::HSINCHU_HSR_HUB
 
     {
-      [ "新竹", Geojson::HsrCatalog::LINES.first ] => "05;1194",
-      [ "六家", liujia_line ] => "1194;05"
+      [ "新竹", Geojson::HsrCatalog::LINES.first ] => "05",
+      [ "六家", liujia_line ] => "1194"
     }.each do |(name, line), expected_ref|
       entry = Geojson::TransitTransferCatalog.transfer_for(name, line: line)
 
@@ -27,8 +27,8 @@ class TransitTransferCatalogTest < ActiveSupport::TestCase
     shalun_line = Geojson::TraCatalog::LINES.find { |entry| entry.slug == "shalun_line" }
 
     {
-      [ "台南", Geojson::HsrCatalog::LINES.first ] => "11;4272",
-      [ "沙崙", shalun_line ] => "4272;11"
+      [ "台南", Geojson::HsrCatalog::LINES.first ] => "11",
+      [ "沙崙", shalun_line ] => "4272"
     }.each do |(name, line), expected_ref|
       entry = Geojson::TransitTransferCatalog.transfer_for(name, line: line)
 
@@ -40,12 +40,11 @@ class TransitTransferCatalogTest < ActiveSupport::TestCase
 
   test "marks banqiao hsr tra and metro transfer at banqiao hub" do
     western_trunk_north = Geojson::TraCatalog::LINES.find { |entry| entry.slug == "western_trunk_north" }
-    bannan = Geojson::TaipeiMetroCatalog::LINES.find { |entry| entry.slug == "bannan" }
     circular = Geojson::TaipeiMetroCatalog::LINES.find { |entry| entry.slug == "circular" }
 
     {
-      [ "板橋", Geojson::HsrCatalog::LINES.first ] => "03;1020;BL07",
-      [ "板橋", western_trunk_north ] => "1020;BL07;03"
+      [ "板橋", Geojson::HsrCatalog::LINES.first ] => "03",
+      [ "板橋", western_trunk_north ] => "1020"
     }.each do |(name, line), expected_ref|
       entry = Geojson::TransitTransferCatalog.transfer_for(name, line: line)
 
@@ -88,7 +87,7 @@ class TransitTransferCatalogTest < ActiveSupport::TestCase
     line = Geojson::OtherTransitCatalog::LINES.find { |entry| entry.slug == "maokong_gondola" }
     entry = Geojson::TransitTransferCatalog.transfer_for("動物園", line: line)
 
-    assert_equal "G1;BR01", entry.combined_ref
+    assert_equal "G1", entry.combined_ref
   end
 
   test "uses separate coordinates for wenhu and maokong at taipei zoo" do
@@ -96,28 +95,61 @@ class TransitTransferCatalogTest < ActiveSupport::TestCase
     wenhu = Geojson::TaipeiMetroCatalog::LINES.find { |entry| entry.slug == "wenhu_line" }
     entry = Geojson::TransitTransferCatalog.transfer_for("動物園", line: maokong)
 
-    g1 = Geojson::TransitTransferCatalog.coordinates_for_line(entry, line: maokong, ref: "G1;BR01")
-    br01 = Geojson::TransitTransferCatalog.coordinates_for_line(entry, line: wenhu, ref: "BR01;G1")
+    g1 = Geojson::TransitTransferCatalog.coordinates_for_line(entry, line: maokong, ref: "G1")
+    br01 = Geojson::TransitTransferCatalog.coordinates_for_line(entry, line: wenhu, ref: "BR01")
 
     assert_in_delta 121.5762884, g1[:lon], 0.0001
     assert_in_delta 24.9959573, g1[:lat], 0.0001
     assert_in_delta 121.5794478, br01[:lon], 0.0001
     assert_in_delta 24.9983168, br01[:lat], 0.0001
+
+    assert_equal "G1", Geojson::TransitTransferCatalog.ref_for_line(
+      entry.combined_ref, line: maokong, coordinates_by_ref: entry.coordinates_by_ref
+    )
+    assert_equal "BR01", Geojson::TransitTransferCatalog.ref_for_line(
+      "BR01", line: wenhu, coordinates_by_ref: entry.coordinates_by_ref
+    )
+  end
+
+  test "keeps combined refs for same-point in-station transfers" do
+    tamsui = Geojson::TaipeiMetroCatalog::LINES.find { |entry| entry.slug == "tamsui_xinyi" }
+    entry = Geojson::TaipeiMetroCatalog::IN_STATION_TRANSFERS_BY_NAME.fetch("大安")
+
+    assert_nil entry[:coordinates_by_ref]
+    assert_equal "BR09;R05", Geojson::TransitTransferCatalog.ref_for_line(
+      entry[:combined_ref], line: tamsui, coordinates_by_ref: entry[:coordinates_by_ref]
+    )
+  end
+
+  test "strips foreign system codes from mixed hub refs" do
+    tamsui = Geojson::TaipeiMetroCatalog::LINES.find { |entry| entry.slug == "tamsui_xinyi" }
+    hsr = Geojson::HsrCatalog::LINES.first
+    tra = Geojson::TraCatalog::LINES.find { |entry| entry.slug == "western_trunk_north" }
+
+    assert_equal "R10;BL12", Geojson::TransitTransferCatalog.ref_for_line(
+      "R10;BL12;1000;02", line: tamsui
+    )
+    assert_equal "02", Geojson::TransitTransferCatalog.ref_for_line(
+      "02;1000;R10;BL12", line: hsr
+    )
+    assert_equal "1000", Geojson::TransitTransferCatalog.ref_for_line(
+      "1000;R10;BL12;02", line: tra
+    )
   end
 
   test "marks metro transfer at songshan for tra interchange" do
     line = Geojson::TaipeiMetroCatalog::LINES.find { |entry| entry.slug == "songshan_xindian" }
     entry = Geojson::TransitTransferCatalog.transfer_for("松山", line: line)
 
-    assert_equal "G19;990", entry.combined_ref
+    assert_equal "G19", entry.combined_ref
   end
 
   test "marks taichung hsr tra and metro transfer at xinwuri hub" do
     mountain_line = Geojson::TraCatalog::LINES.find { |entry| entry.slug == "mountain_line" }
     {
-      [ "台中", Geojson::HsrCatalog::LINES.first ] => "07;3340;119",
-      [ "高鐵臺中站", Geojson::TaichungMetroCatalog::LINES.first ] => "119;07;3340",
-      [ "新烏日", mountain_line ] => "3340;07;119"
+      [ "台中", Geojson::HsrCatalog::LINES.first ] => "07",
+      [ "高鐵臺中站", Geojson::TaichungMetroCatalog::LINES.first ] => "119",
+      [ "新烏日", mountain_line ] => "3340"
     }.each do |(name, line), expected_ref|
       entry = Geojson::TransitTransferCatalog.transfer_for(name, line: line)
 
@@ -130,9 +162,9 @@ class TransitTransferCatalogTest < ActiveSupport::TestCase
     bannan = Geojson::TaipeiMetroCatalog::LINES.find { |entry| entry.slug == "bannan" }
 
     {
-      [ "南港", Geojson::HsrCatalog::LINES.first ] => "01;980;BL22",
-      [ "南港", bannan ] => "BL22;980;01",
-      [ "南港", western_trunk_north ] => "980;BL22;01"
+      [ "南港", Geojson::HsrCatalog::LINES.first ] => "01",
+      [ "南港", bannan ] => "BL22",
+      [ "南港", western_trunk_north ] => "980"
     }.each do |(name, line), expected_ref|
       entry = Geojson::TransitTransferCatalog.transfer_for(name, line: line)
 
@@ -144,9 +176,9 @@ class TransitTransferCatalogTest < ActiveSupport::TestCase
     western_trunk_south = Geojson::TraCatalog::LINES.find { |entry| entry.slug == "western_trunk_south" }
 
     {
-      [ "左營", Geojson::HsrCatalog::LINES.first ] => "12;4340;R16",
-      [ "左營", Geojson::KaohsiungMetroCatalog::LINES.find { |entry| entry.slug == "red_line" } ] => "R16;4340;12",
-      [ "新左營", western_trunk_south ] => "4340;12;R16"
+      [ "左營", Geojson::HsrCatalog::LINES.first ] => "12",
+      [ "左營", Geojson::KaohsiungMetroCatalog::LINES.find { |entry| entry.slug == "red_line" } ] => "R16",
+      [ "新左營", western_trunk_south ] => "4340"
     }.each do |(name, line), expected_ref|
       entry = Geojson::TransitTransferCatalog.transfer_for(name, line: line)
 
@@ -187,9 +219,9 @@ class TransitTransferCatalogTest < ActiveSupport::TestCase
     airport_mrt = Geojson::TaoyuanMetroCatalog::LINES.find { |entry| entry.slug == "airport_mrt" }
 
     {
-      [ "台北", Geojson::HsrCatalog::LINES.first ] => "02;1000;R10;BL12",
-      [ "台北車站", western_trunk_north ] => "1000;R10;BL12;02",
-      [ "臺北", western_trunk_north ] => "1000;R10;BL12;02"
+      [ "台北", Geojson::HsrCatalog::LINES.first ] => "02",
+      [ "台北車站", western_trunk_north ] => "1000",
+      [ "臺北", western_trunk_north ] => "1000"
     }.each do |(name, line), expected_ref|
       entry = Geojson::TransitTransferCatalog.transfer_for(name, line: line)
 

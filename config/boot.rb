@@ -1,7 +1,11 @@
 ENV["BUNDLE_GEMFILE"] ||= File.expand_path("../Gemfile", __dir__)
 
 require "bundler/setup" # Set up gems listed in the Gemfile.
-require "bootsnap/setup" # Speed up boot time by caching expensive operations.
+begin
+  require "bootsnap/setup" # Speed up boot time by caching expensive operations.
+rescue LoadError
+  # Native extension may be stale after a Ruby patchlevel upgrade.
+end
 
 # After a master-key rotation, Railway may still have the old RAILS_MASTER_KEY while
 # credentials.yml.enc was re-encrypted. A stale key raises InvalidMessage on boot.

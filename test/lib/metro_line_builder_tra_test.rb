@@ -30,7 +30,7 @@ class MetroLineBuilderTraTest < ActiveSupport::TestCase
     features = builder.send(:station_features, stations)
     refs = features.map { |feature| feature.dig(:properties, :ref) }
 
-    assert_includes refs, "1020;BL07;03"
+    assert_includes refs, "1020"
     assert_includes refs, "1250"
     refute_includes refs, "1250-WN;1250-M;1250-S"
     assert_includes refs, "910"

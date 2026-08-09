@@ -23,11 +23,11 @@ class MetroLineBuilderTaichungTest < ActiveSupport::TestCase
 
     assert_equal 18, stations.length
     assert_includes refs, "103a"
-    assert_includes refs, "119;07;3340"
+    assert_includes refs, "119"
 
     station_refs = stations.map { |feature| feature.dig("properties", "ref") }
     assert_equal "103a", station_refs.first, "expected 北屯總站 (103a) as the northern terminus"
-    assert_equal "119;07;3340", station_refs.last, "expected 高鐵臺中站 (119) as the southern terminus"
+    assert_equal "119", station_refs.last, "expected 高鐵臺中站 (119) as the southern terminus"
   end
 
   test "all stations match catalog coordinates (OSM / Wikipedia sources)" do

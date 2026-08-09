@@ -1,0 +1,70 @@
+{
+  "type": "FeatureCollection",
+  "name": "渡輪布袋－馬公渡輪",
+  "properties": {
+    "source": "Track geometry from OpenStreetMap ways 256726319, 256726320 (with fallbacks). © OpenStreetMap contributors, ODbL.",
+    "network": "渡輪",
+    "ref": "BP",
+    "osm_relations": [],
+    "osm_ways": []
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "BP",
+        "name": "布袋－馬公渡輪",
+        "name_en": "Budai–Magong Ferry",
+        "color": "#0891b2"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.1396,
+            23.3799
+          ],
+          [
+            119.5641,
+            23.5636
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "BP01",
+        "name": "布袋商港",
+        "line": "布袋－馬公渡輪",
+        "color": "#0891b2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.1396,
+          23.3799
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "BP02",
+        "name": "馬公商港",
+        "line": "布袋－馬公渡輪",
+        "color": "#0891b2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          119.5641,
+          23.5636
+        ]
+      }
+    }
+  ]
+}

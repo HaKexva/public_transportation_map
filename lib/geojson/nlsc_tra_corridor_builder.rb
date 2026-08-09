@@ -18,7 +18,7 @@ module Geojson
     ].freeze
 
     STATION_REFS_BY_SLUG = {
-      "yilan_line" => MetroLineBuilder::YILAN_CORRIDOR_WAYPOINT_REFS,
+      "yilan_line" => MetroLineBuilder::YILAN_STATION_REFS,
       "south_link" => MetroLineBuilder::SOUTH_LINK_STATION_REFS,
       "taidong_line" => MetroLineBuilder::TAIDONG_STATION_REFS,
       "jiji_line" => MetroLineBuilder::JIJI_STATION_REFS,

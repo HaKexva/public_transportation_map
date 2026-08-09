@@ -43,6 +43,7 @@ class TransitScheduleImporterTest < ActiveSupport::TestCase
 
     trip = ScheduleTrip.find_by!(schedule_dataset: result.dataset, train_number: "133")
     assert_equal "高雄", trip.destination_name
+    assert_equal "本列車於板橋站後改為200次", trip.notes
     assert_equal 3, trip.trip_stop_times.count
     refs = trip.ordered_stop_times.map(&:station_ref)
     assert_includes refs.first, "1000"
@@ -55,8 +56,8 @@ class TransitScheduleImporterTest < ActiveSupport::TestCase
 
     trip = ScheduleTrip.find_by!(schedule_dataset: result.dataset, train_number: "0117")
     assert_equal "左營", trip.destination_name
-    assert trip.trip_stop_times.exists?(station_ref: "02;1000;R10;BL12")
-    assert trip.trip_stop_times.exists?(station_ref: "12;4340;R16")
+    assert trip.trip_stop_times.exists?(station_ref: "02")
+    assert trip.trip_stop_times.exists?(station_ref: "12")
   end
 
   test "imports metro headways and station departures" do
@@ -86,7 +87,7 @@ class TransitStationRefResolverTest < ActiveSupport::TestCase
   end
 
   test "resolves HSR and TRA station ids" do
-    assert_equal "02;1000;R10;BL12", @resolver.resolve_ref(system_id: "hsr", tdx_station_id: "1000")
+    assert_equal "02", @resolver.resolve_ref(system_id: "hsr", tdx_station_id: "1000")
     tra_ref = @resolver.resolve_ref(system_id: "tra", tdx_station_id: "1000")
     assert_includes tra_ref, "1000"
   end

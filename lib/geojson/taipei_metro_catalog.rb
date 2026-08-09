@@ -11,7 +11,7 @@ module Geojson
       "景安" => { combined_ref: "O02;Y11", lon: 121.5053774, lat: 24.9936008 },
       "頭前庄" => { combined_ref: "O17;Y18", lon: 121.4608616, lat: 25.0397007 },
       "板橋" => {
-        combined_ref: "BL07;1020;03",
+        combined_ref: "BL07",
         lines: %w[bannan],
         lon: 121.462992,
         lat: 25.0144988
@@ -25,7 +25,7 @@ module Geojson
       "中正紀念堂" => { combined_ref: "R08;G10", lon: 121.5177618, lat: 25.0333942 },
       "大安" => { combined_ref: "BR09;R05", lon: 121.54361, lat: 25.03306 },
       "台北車站" => {
-        combined_ref: "R10;BL12;1000;02",
+        combined_ref: "R10;BL12",
         lines: %w[tamsui_xinyi bannan],
         lon: 121.51702320022838,
         lat: 25.04804218211409

@@ -204,6 +204,7 @@ module Transit
 
       calendar = ensure_calendar!(dataset, service_day)
 
+      notes = rail_trip_notes(system_id, train_info)
       trip = ScheduleTrip.find_or_create_by!(
         schedule_dataset: dataset,
         transit_route: route,
@@ -213,8 +214,9 @@ module Transit
       ) do |trip_record|
         trip_record.destination_name = destination_name
         trip_record.trip_type = trip_type
-        trip_record.notes = "TDX #{system_id.upcase} 定期時刻"
+        trip_record.notes = notes
       end
+      trip.update!(notes: notes) if trip.notes != notes
 
       return if trip.trip_stop_times.exists?
 
@@ -228,6 +230,10 @@ module Transit
         )
       end
       @stats[:trips] += 1
+    end
+
+    def rail_trip_notes(system_id, train_info)
+      train_info["Note"].to_s.strip.presence || "TDX #{system_id.upcase} 定期時刻"
     end
 
     def map_stop_times(system_id:, stop_times:)

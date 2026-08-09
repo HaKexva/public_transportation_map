@@ -11,17 +11,19 @@ module Views
 
       def view_template
         div(
-          class: "route-page flex h-dvh flex-col bg-background",
+          class: "route-page is-booting relative flex h-dvh flex-col bg-background",
           data: {
             controller: "map",
             map_initial_route_id_value: @route["id"]
-          }
+          },
+          aria: { busy: "true" }
         ) do
           render_header
           div(class: "route-page__body flex min-h-0 flex-1 flex-col overflow-hidden md:flex-row") do
             render_stops_section
             render_map_section
           end
+          render_boot_overlay
         end
       end
 
@@ -101,6 +103,7 @@ module Views
             role: "region",
             aria: { label: t("route.map_aria", name: display_name) }
           )
+          render_time_scrubber(empty_hint_key: "route.vehicles_empty_hint")
         end
       end
 

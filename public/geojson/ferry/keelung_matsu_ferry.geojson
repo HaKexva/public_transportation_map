@@ -1,0 +1,70 @@
+{
+  "type": "FeatureCollection",
+  "name": "渡輪基隆－南竿渡輪",
+  "properties": {
+    "source": "Track geometry from OpenStreetMap ways 256726319, 256726320 (with fallbacks). © OpenStreetMap contributors, ODbL.",
+    "network": "渡輪",
+    "ref": "KM",
+    "osm_relations": [],
+    "osm_ways": []
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "KM",
+        "name": "基隆－南竿渡輪",
+        "name_en": "Keelung–Nangan Ferry",
+        "color": "#0891b2"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            121.7416,
+            25.1351
+          ],
+          [
+            119.9436,
+            26.1612
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KM01",
+        "name": "基隆港西岸客運中心",
+        "line": "基隆－南竿渡輪",
+        "color": "#0891b2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.7416,
+          25.1351
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KM02",
+        "name": "南竿福澳港",
+        "line": "基隆－南竿渡輪",
+        "color": "#0891b2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          119.9436,
+          26.1612
+        ]
+      }
+    }
+  ]
+}

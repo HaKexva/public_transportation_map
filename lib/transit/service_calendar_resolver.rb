@@ -80,21 +80,10 @@ module Transit
       simple = simple_codes_for_date(date)
       bit = weekday_bit_index(date)
 
-      ids = ServiceCalendar.where(code: simple).pluck(:id)
-      ServiceCalendar.where("code LIKE 'sd_%'").find_each do |calendar|
-        ids << calendar.id if fingerprint_matches_date?(calendar.code, date)
-      end
-      ids.uniq
-    end
-
-    # Returns service_calendar ids for the given dataset/date.
-    def calendar_ids_for(dataset:, date:)
-      simple = simple_codes_for_date(date)
-      ids = dataset.service_calendars.where(code: simple).pluck(:id)
-      dataset.service_calendars.where("code LIKE 'sd_%'").find_each do |calendar|
-        ids << calendar.id if fingerprint_matches_date?(calendar.code, date)
-      end
-      ids.uniq
+      # Match sd_ fingerprints whose weekday bit is set (Postgres regex).
+      sd_ids = ServiceCalendar.where("code ~ ?", "^sd_.{#{bit}}1").pluck(:id)
+      simple_ids = ServiceCalendar.where(code: simple).pluck(:id)
+      (sd_ids + simple_ids).uniq
     end
   end
 end

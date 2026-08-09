@@ -19,8 +19,8 @@ class MetroLineBuilderHsrTest < ActiveSupport::TestCase
     assert first_coord[0].between?(120.0, 122.0)
     assert first_coord[1].between?(22.0, 25.5)
 
-    assert_equal "01;980;BL22", stations.find { |f| f.dig("properties", "name") == "南港" }.dig("properties", "ref")
-    assert_equal "12;4340;R16", stations.find { |f| f.dig("properties", "name") == "左營" }.dig("properties", "ref")
+    assert_equal "01", stations.find { |f| f.dig("properties", "name") == "南港" }.dig("properties", "ref")
+    assert_equal "12", stations.find { |f| f.dig("properties", "name") == "左營" }.dig("properties", "ref")
     refute stations.any? { |feature| feature.dig("properties", "station_role").present? }
 
     banqiao = stations.find { |f| f.dig("properties", "name") == "板橋" }
@@ -34,7 +34,7 @@ class MetroLineBuilderHsrTest < ActiveSupport::TestCase
     hub = Geojson::TransitTransferCatalog::HSINCHU_HSR_HUB
     hlon, hlat = hsinchu.dig("geometry", "coordinates")
 
-    assert_equal "05;1194", hsinchu.dig("properties", "ref")
+    assert_equal "05", hsinchu.dig("properties", "ref")
     assert_in_delta hub[:lon], hlon, 0.002, "新竹 longitude"
     assert_in_delta hub[:lat], hlat, 0.002, "新竹 latitude"
     refute_in_delta 120.971683, hlon, 0.01, "新竹 should not use downtown TRA coordinates"
@@ -50,7 +50,7 @@ class MetroLineBuilderHsrTest < ActiveSupport::TestCase
     expected_taoyuan = Geojson::HsrCatalog::FALLBACK_STATIONS.find { |s| s[:name] == "桃園" }
     tlon, tlat = taoyuan.dig("geometry", "coordinates")
 
-    assert_equal "04;A18", taoyuan.dig("properties", "ref")
+    assert_equal "04", taoyuan.dig("properties", "ref")
     assert_in_delta expected_taoyuan[:lon], tlon, 0.002, "桃園 longitude"
     assert_in_delta expected_taoyuan[:lat], tlat, 0.002, "桃園 latitude"
     refute_in_delta 121.3137705396601, tlon, 0.05, "桃園 should not use downtown TRA coordinates"

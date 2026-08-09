@@ -1,0 +1,70 @@
+{
+  "type": "FeatureCollection",
+  "name": "渡輪棧貳庫－旗津海上巴士",
+  "properties": {
+    "source": "Track geometry from OpenStreetMap ways 256726319, 256726320 (with fallbacks). © OpenStreetMap contributors, ODbL.",
+    "network": "渡輪",
+    "ref": "KW",
+    "osm_relations": [],
+    "osm_ways": []
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "KW",
+        "name": "棧貳庫－旗津海上巴士",
+        "name_en": "KW2–Cijin Sea Bus",
+        "color": "#0891b2"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.2765,
+            22.6185
+          ],
+          [
+            120.2698,
+            22.6139
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KW01",
+        "name": "棧貳庫碼頭",
+        "line": "棧貳庫－旗津海上巴士",
+        "color": "#0891b2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.2765,
+          22.6185
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KW02",
+        "name": "旗津輪渡站",
+        "line": "棧貳庫－旗津海上巴士",
+        "color": "#0891b2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.2698,
+          22.6139
+        ]
+      }
+    }
+  ]
+}

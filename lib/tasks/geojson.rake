@@ -156,4 +156,10 @@ namespace :geojson do
   task routes_manifest: :environment do
     Geojson::RoutesManifestWriter.write!
   end
+
+  desc "Estimate TRA level-crossing points from corridor midpoints (not third-party dumps)"
+  task level_crossings: :environment do
+    count = Geojson::LevelCrossingCatalog.refresh!
+    puts "Wrote #{count} estimated level crossings"
+  end
 end

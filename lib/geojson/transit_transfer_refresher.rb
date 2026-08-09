@@ -50,11 +50,16 @@ module Geojson
           entry = transfer_entry_for(name, line: line, ref: ref)
           next unless entry
 
-          feature["properties"]["ref"] = entry.combined_ref
+          line_ref = TransitTransferCatalog.ref_for_line(
+            entry.combined_ref,
+            line: line,
+            coordinates_by_ref: entry.coordinates_by_ref
+          )
+          feature["properties"]["ref"] = line_ref
           coords = TransitTransferCatalog.coordinates_for_line(
             entry,
             line: line,
-            ref: TransitTransferCatalog.ref_for_line(entry.combined_ref, line: line)
+            ref: line_ref
           )
           if coords[:lon] && coords[:lat]
             feature["geometry"]["coordinates"] = [ coords[:lon], coords[:lat] ]
