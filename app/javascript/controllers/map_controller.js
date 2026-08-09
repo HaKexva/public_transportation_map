@@ -63,6 +63,7 @@ const RELAX_MODE_STORAGE_KEY = "map-relax-mode"
 const LIVE_OVERLAY_WINDOW_MS = 15 * 60 * 1000
 const NEARBY_RADIUS_M = 1500
 const STATION_BOARD_MINUTES = 60
+const SCHEDULE_FETCH_CHUNK = 8
 const SKYTRAIN_NORTH_STATION_ORDER = [ "ST1N", "ST2N" ]
 const SKYTRAIN_SOUTH_STATION_ORDER = [ "ST1S", "ST2S" ]
 const TRA_BRANCH_ROUTE_IDS = new Set([
@@ -547,7 +548,7 @@ export default class extends Controller {
     this.syncSimulationFromScrubber()
     try {
       await this.loadInitialRouteFromPage()
-      await this.ensureDefaultVehicleLayers()
+      await this.ensureInitialRouteLayers()
       this.syncSimulationFromScrubber()
       await this.applyShareParams()
       await this.bootVehicles()
@@ -578,10 +579,10 @@ export default class extends Controller {
     }
   }
 
-  // Vehicles only render for visible route layers. First visit on the dashboard
-  // has nothing checked, so auto-open the main timetable-backed lines once.
-  // Dedicated route pages already load their route — never expand to defaults.
-  async ensureDefaultVehicleLayers() {
+  // First dashboard visit: show the full route catalog. Trains are not a
+  // separate layer — they follow whichever routes are checked.
+  // Dedicated route pages already load their route.
+  async ensureInitialRouteLayers() {
     if (!this.autoDefaultLayersValue) return
     if (this.initialRouteIdValue) return
 
@@ -602,26 +603,7 @@ export default class extends Controller {
       }
     }
 
-    const defaults = [
-      "bannan",
-      "tamsui_xinyi",
-      "zhonghe_xinlu",
-      "songshan_xindian",
-      "wenhu_line",
-      "western_trunk_north",
-      "taiwan_hsr"
-    ].filter((routeId) => Boolean(this.findRoute(routeId)))
-
-    if (defaults.length === 0) return
-
-    await this.setRouteLayersVisible(defaults, true, {
-      fitBounds: true,
-      afterSync: () => {
-        this.syncAllMetroCheckbox()
-        this.syncAllTraCheckbox()
-        this.syncAllTransitCheckbox()
-      }
-    })
+    await this.setAllTransitLayersVisible(true, { fitBounds: true })
   }
 
   async bootVehicles() {
@@ -6121,23 +6103,28 @@ export default class extends Controller {
     if (this.scheduleFetchController) this.scheduleFetchController.abort()
     this.scheduleFetchController = new AbortController()
     const { signal } = this.scheduleFetchController
-    const params = new URLSearchParams({ date })
-    missing.forEach((id) => params.append("route_ids[]", id))
 
     try {
-      const response = await fetch(`/api/schedules?${params}`, { signal })
-      if (!response.ok) return
-      const data = await response.json()
-      const loaded = new Set()
-      ;(data.routes || []).forEach((route) => {
-        this.scheduleSnapshots[route.route_id] = { date: data.date, ...route }
-        loaded.add(route.route_id)
-      })
-      missing.forEach((id) => {
-        if (!loaded.has(id)) this.scheduleSnapshots[id] = { date, route_id: id, trips: [] }
-      })
-      this.scheduleDate = date
-      this.refreshLocalFleet({ resync: true })
+      for (let index = 0; index < missing.length; index += SCHEDULE_FETCH_CHUNK) {
+        const chunk = missing.slice(index, index + SCHEDULE_FETCH_CHUNK)
+        const params = new URLSearchParams({ date })
+        chunk.forEach((id) => params.append("route_ids[]", id))
+
+        const response = await fetch(`/api/schedules?${params}`, { signal })
+        if (!response.ok) return
+
+        const data = await response.json()
+        const loaded = new Set()
+        ;(data.routes || []).forEach((route) => {
+          this.scheduleSnapshots[route.route_id] = { date: data.date, ...route }
+          loaded.add(route.route_id)
+        })
+        chunk.forEach((id) => {
+          if (!loaded.has(id)) this.scheduleSnapshots[id] = { date, route_id: id, trips: [] }
+        })
+        this.scheduleDate = date
+        this.refreshLocalFleet({ resync: true })
+      }
     } catch (error) {
       if (error?.name === "AbortError") return
       console.warn("schedules fetch failed", error)
