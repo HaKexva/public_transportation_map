@@ -2280,13 +2280,12 @@ export default class extends Controller {
     group.clearLayers()
 
     this.outOfStationTransfers.forEach((transfer) => {
-      if (!transfer.routes?.every((routeId) => this.layerVisible[routeId])) return
-
-      const latlngs = transfer.endpoints
-        .map((endpoint) => this.stationLatLng(endpoint.route_id, endpoint.ref))
+      const latlngs = (transfer.endpoints || [])
+        .map((endpoint) => this.visibleTransferEndpointLatLng(endpoint))
         .filter(Boolean)
 
       if (latlngs.length < 2) return
+      if (latlngs[0].equals?.(latlngs[1])) return
 
       const kind = this.transferKind(transfer)
       const layers = this.transferConnectionLayers(latlngs, kind)
@@ -2315,6 +2314,25 @@ export default class extends Controller {
     if (!routeId) return false
 
     return Boolean(this.layerVisible[routeId])
+  }
+
+  // Resolve a transfer end on any visible line that carries that station ref.
+  // Catalog `routes` is a typical pair (e.g. pingtung + red); TRA 高雄 is also
+  // on western_trunk_south, so that layer plus the MRT should still draw.
+  visibleTransferEndpointLatLng(endpoint) {
+    if (!endpoint?.ref) return null
+
+    if (endpoint.route_id && this.layerVisible[endpoint.route_id]) {
+      const direct = this.stationLatLng(endpoint.route_id, endpoint.ref)
+      if (direct) return direct
+    }
+
+    for (const routeId of this.visibleRouteLayerIds()) {
+      const latlng = this.stationLatLng(routeId, endpoint.ref)
+      if (latlng) return latlng
+    }
+
+    return null
   }
 
   updateMetroDepots() {

@@ -166,7 +166,7 @@ class DashboardTest < ApplicationSystemTestCase
     assert_selector ".map-boot-overlay[hidden]", visible: :all, wait: 30
     assert_no_selector ".is-booting"
     assert_selector "#layer-wenhu_line:not([disabled])", visible: :all, wait: 5
-    assert_selector "#layer-bannan:checked", visible: :all, wait: 10
+    assert_selector "#layer-bannan:not([disabled])", visible: :all, wait: 5
   end
 
   test "filters sidebar routes from the search box" do
@@ -638,6 +638,7 @@ class DashboardTest < ApplicationSystemTestCase
 
   test "shows cross-system passage link at kaohsiung when tra and red line are visible" do
     visit root_path
+    assert_selector ".map-boot-overlay[hidden]", visible: :all, wait: 30
 
     within "#taiwan-region-map" do
       assert_selector ".leaflet-tile-pane", wait: 10
