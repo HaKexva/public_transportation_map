@@ -1,0 +1,882 @@
+{
+  "type": "FeatureCollection",
+  "name": "黃8",
+  "properties": {
+    "id": "taichung_huang8",
+    "name": "黃8",
+    "name_en": "黃8",
+    "ref": "黃8",
+    "color": "#b45309",
+    "city_id": "Taichung",
+    "source": "TDX Bus Shape / StopOfRoute",
+    "operator_id": "8102",
+    "operator": "怡美車隊",
+    "official_map_url": "https://citybus.taichung.gov.tw/ebus/strapi/uploads/8_8d795566aa.jpeg"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "黃8",
+        "name": "黃8",
+        "name_en": "黃8",
+        "color": "#b45309",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.70529,
+            24.07925
+          ],
+          [
+            120.70485,
+            24.07912
+          ],
+          [
+            120.70413,
+            24.07922
+          ],
+          [
+            120.70363,
+            24.08008
+          ],
+          [
+            120.69935,
+            24.07802
+          ],
+          [
+            120.69904,
+            24.07793
+          ],
+          [
+            120.6998,
+            24.07547
+          ],
+          [
+            120.69986,
+            24.07493
+          ],
+          [
+            120.69973,
+            24.074
+          ],
+          [
+            120.69962,
+            24.07376
+          ],
+          [
+            120.69977,
+            24.0737
+          ],
+          [
+            120.69976,
+            24.07315
+          ],
+          [
+            120.69819,
+            24.06071
+          ],
+          [
+            120.69615,
+            24.06094
+          ],
+          [
+            120.69515,
+            24.06115
+          ],
+          [
+            120.69496,
+            24.05984
+          ],
+          [
+            120.69479,
+            24.05954
+          ],
+          [
+            120.69458,
+            24.05936
+          ],
+          [
+            120.68884,
+            24.05653
+          ],
+          [
+            120.68444,
+            24.05096
+          ],
+          [
+            120.68292,
+            24.05008
+          ],
+          [
+            120.68248,
+            24.04995
+          ],
+          [
+            120.67562,
+            24.0492
+          ],
+          [
+            120.6761,
+            24.04863
+          ],
+          [
+            120.68256,
+            24.03958
+          ],
+          [
+            120.6771,
+            24.03739
+          ],
+          [
+            120.67685,
+            24.03669
+          ],
+          [
+            120.67641,
+            24.03623
+          ],
+          [
+            120.67629,
+            24.03544
+          ],
+          [
+            120.67582,
+            24.03351
+          ],
+          [
+            120.67623,
+            24.0328
+          ],
+          [
+            120.67681,
+            24.03207
+          ],
+          [
+            120.67479,
+            24.03278
+          ],
+          [
+            120.67254,
+            24.03418
+          ],
+          [
+            120.67172,
+            24.0345
+          ],
+          [
+            120.66848,
+            24.03606
+          ],
+          [
+            120.66556,
+            24.03686
+          ],
+          [
+            120.66505,
+            24.03662
+          ],
+          [
+            120.66409,
+            24.03657
+          ],
+          [
+            120.66421,
+            24.03662
+          ],
+          [
+            120.66352,
+            24.03728
+          ],
+          [
+            120.66535,
+            24.038
+          ],
+          [
+            120.66378,
+            24.04149
+          ],
+          [
+            120.66342,
+            24.04144
+          ],
+          [
+            120.66306,
+            24.04159
+          ],
+          [
+            120.66286,
+            24.04143
+          ],
+          [
+            120.66249,
+            24.04104
+          ],
+          [
+            120.66068,
+            24.03979
+          ],
+          [
+            120.65837,
+            24.04171
+          ],
+          [
+            120.65687,
+            24.04327
+          ],
+          [
+            120.65583,
+            24.04449
+          ],
+          [
+            120.64859,
+            24.05239
+          ],
+          [
+            120.64844,
+            24.05272
+          ],
+          [
+            120.64788,
+            24.05347
+          ],
+          [
+            120.64766,
+            24.05404
+          ],
+          [
+            120.64723,
+            24.05418
+          ],
+          [
+            120.64704,
+            24.05464
+          ],
+          [
+            120.64696,
+            24.05515
+          ],
+          [
+            120.64685,
+            24.05538
+          ],
+          [
+            120.64679,
+            24.05535
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG15372",
+        "name": "花東新村",
+        "name_en": "Huadong New Village",
+        "line": "黃8",
+        "color": "#b45309",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.70528297401,
+          24.079282231257
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG15373",
+        "name": "中正吉峰路口",
+        "name_en": "Zhongzheng-Jifeng Intersection",
+        "line": "黃8",
+        "color": "#b45309",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.699575,
+          24.076009
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG15374",
+        "name": "霧峰農工",
+        "name_en": "Wufeng Agr. Ind. Senior High School",
+        "line": "黃8",
+        "color": "#b45309",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.699695,
+          24.072901
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG15375",
+        "name": "甲寅(中正路)",
+        "name_en": "Jiayin(Zhongzheng Road)",
+        "line": "黃8",
+        "color": "#b45309",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.69928,
+          24.0697
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG15376",
+        "name": "中正草湖路口",
+        "name_en": "Zhongzheng-Caohu Intersection",
+        "line": "黃8",
+        "color": "#b45309",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.699056,
+          24.068124
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG15378",
+        "name": "霧峰",
+        "name_en": "Wufeng",
+        "line": "黃8",
+        "color": "#b45309",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.69853,
+          24.063746
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG30116",
+        "name": "霧峰郵局",
+        "name_en": "Wufeng Post Office",
+        "line": "黃8",
+        "color": "#b45309",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.698331,
+          24.061817
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG30117",
+        "name": "亞大醫院",
+        "name_en": "Asia University Hospital",
+        "line": "黃8",
+        "color": "#b45309",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.686402,
+          24.05344
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG30118",
+        "name": "六股路南阡巷口",
+        "name_en": "Liugu Rd. Nanqian Ln.",
+        "line": "黃8",
+        "color": "#b45309",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.682347,
+          24.039783
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG30119",
+        "name": "光明西路豐正路口",
+        "name_en": "Guangming W. Rd. Fengzheng Intersection",
+        "line": "黃8",
+        "color": "#b45309",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.676575,
+          24.032276
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG30120",
+        "name": "南勢(豐正路)",
+        "name_en": "Nanshi(Fengzheng Road)",
+        "line": "黃8",
+        "color": "#b45309",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.675062,
+          24.032688
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG30121",
+        "name": "邑興社區",
+        "name_en": "Yixing Community",
+        "line": "黃8",
+        "color": "#b45309",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.671943,
+          24.034434
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG30122",
+        "name": "豐正路538巷口",
+        "name_en": "Fengzheng Road 538th Lane",
+        "line": "黃8",
+        "color": "#b45309",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.670048,
+          24.035386
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG30123",
+        "name": "光正國小",
+        "name_en": "Kuangjang Elementary School",
+        "line": "黃8",
+        "color": "#b45309",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.667722,
+          24.036317
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG30124",
+        "name": "丁台路北岸路口",
+        "name_en": "Dingtai Rd. Bei'an Intersection",
+        "line": "黃8",
+        "color": "#b45309",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.664191,
+          24.036683
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG30125",
+        "name": "喀哩",
+        "name_en": "Kali",
+        "line": "黃8",
+        "color": "#b45309",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.646834,
+          24.055443
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG30126",
+        "name": "喀哩",
+        "name_en": "Kali",
+        "line": "黃8",
+        "color": "#b45309",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.646818,
+          24.055336
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG30127",
+        "name": "丁台路北岸路口",
+        "name_en": "Dingtai Rd. Bei'an Intersection",
+        "line": "黃8",
+        "color": "#b45309",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.664091,
+          24.036583
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG30128",
+        "name": "光正國小",
+        "name_en": "Kuangjang Elementary School",
+        "line": "黃8",
+        "color": "#b45309",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.667709,
+          24.036269
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG30129",
+        "name": "豐正路538巷口",
+        "name_en": "Fengzheng Road 538th Lane",
+        "line": "黃8",
+        "color": "#b45309",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.669809,
+          24.035369
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG30130",
+        "name": "邑興社區",
+        "name_en": "Yixing Community",
+        "line": "黃8",
+        "color": "#b45309",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.671924,
+          24.034385
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG30131",
+        "name": "南勢(豐正路)",
+        "name_en": "Nanshi(Fengzheng Road)",
+        "line": "黃8",
+        "color": "#b45309",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.675032,
+          24.032651
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG30132",
+        "name": "光明西路豐正路口",
+        "name_en": "Guangming W. Rd. Fengzheng Intersection",
+        "line": "黃8",
+        "color": "#b45309",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.676602,
+          24.032095
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG30133",
+        "name": "六股路南阡巷口",
+        "name_en": "Liugu Rd. Nanqian Ln.",
+        "line": "黃8",
+        "color": "#b45309",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.682542,
+          24.039504
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG30134",
+        "name": "亞大醫院",
+        "name_en": "Asia University Hospital",
+        "line": "黃8",
+        "color": "#b45309",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.686426,
+          24.053428
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG30135",
+        "name": "霧峰郵局",
+        "name_en": "Wufeng Post Office",
+        "line": "黃8",
+        "color": "#b45309",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.698379,
+          24.06181
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG15379",
+        "name": "霧峰",
+        "name_en": "Wufeng",
+        "line": "黃8",
+        "color": "#b45309",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.698598,
+          24.063714
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG15380",
+        "name": "中正草湖路口",
+        "name_en": "Zhongzheng-Caohu Intersection",
+        "line": "黃8",
+        "color": "#b45309",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.699033,
+          24.067461
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG15381",
+        "name": "甲寅(中正路)",
+        "name_en": "Jiayin(Zhongzheng Road)",
+        "line": "黃8",
+        "color": "#b45309",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.699389,
+          24.069667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG15382",
+        "name": "霧峰農工",
+        "name_en": "Wufeng Agr. Ind. Senior High School",
+        "line": "黃8",
+        "color": "#b45309",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.699744,
+          24.072817
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG15383",
+        "name": "中正吉峰路口",
+        "name_en": "Zhongzheng-Jifeng Intersection",
+        "line": "黃8",
+        "color": "#b45309",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.699808,
+          24.076042
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG15372",
+        "name": "花東新村",
+        "name_en": "Huadong New Village",
+        "line": "黃8",
+        "color": "#b45309",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.70528297401,
+          24.079282231257
+        ]
+      }
+    }
+  ]
+}

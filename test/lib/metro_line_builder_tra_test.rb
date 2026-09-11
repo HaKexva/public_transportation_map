@@ -163,6 +163,33 @@ class MetroLineBuilderTraTest < ActiveSupport::TestCase
     ) < 500
   end
 
+  test "western trunk north keeps the passenger curve from xinfu through beihu to xinfeng" do
+    path = Rails.root.join("public/geojson/tra/western_trunk_north.geojson")
+    skip "run bin/rails geojson:tra first" unless path.exist?
+
+    data = JSON.parse(path.read)
+    coords = data["features"].find { |feature| feature.dig("properties", "feature_type") == "route" }
+      .dig("geometry", "coordinates")
+    stations = data["features"].select { |feature| feature.dig("properties", "feature_type") == "station" }
+    named = stations.to_h { |feature| [ feature.dig("properties", "name"), feature.dig("geometry", "coordinates") ] }
+
+    %w[新富 北湖 湖口 新豐].each do |name|
+      lon, lat = named.fetch(name)
+      nearest = coords.min_by do |point|
+        Geojson::TrackGeometry.planar_distance_meters(lon, lat, point[0], point[1])
+      end
+      distance = Geojson::TrackGeometry.planar_distance_meters(lon, lat, nearest[0], nearest[1])
+      assert_operator distance, :<, 120, "#{name} should sit on the passenger corridor, not a 24.931 shelf"
+    end
+
+    xinfu_lon, = named.fetch("新富")
+    xinfeng_lon, = named.fetch("新豐")
+    shelf = coords.count do |lon, lat|
+      lon.between?(xinfeng_lon, xinfu_lon) && (lat - 24.931).abs < 0.00005 && lon < 121.068
+    end
+    assert_operator shelf, :<, 8, "新富 to 新豐 must not be clamped onto lat 24.931"
+  end
+
   test "western trunk south geojson is continuous from changhua to sankuai" do
     path = Rails.root.join("public/geojson/tra/western_trunk_south.geojson")
     skip "run bin/rails geojson:tra first" unless path.exist?

@@ -1,0 +1,141 @@
+{
+  "type": "FeatureCollection",
+  "name": "橘12區間車(寒暑假停駛)",
+  "properties": {
+    "id": "kaohsiung_ju12qu_1498f5db38",
+    "name": "橘12區間車(寒暑假停駛)",
+    "name_en": "橘12區間車(寒暑假停駛)",
+    "ref": "橘12區間車(寒暑假停駛)",
+    "color": "#134e4a",
+    "city_id": "Kaohsiung",
+    "source": "TDX Bus Shape / StopOfRoute",
+    "official_map_url": "http://ibus.tbkc.gov.tw/cms/api/route/9121/map/557/image",
+    "operator_id": "10320",
+    "operator": "高雄客運",
+    "operator_en": "Kaohsiung Bus Co., Ltd."
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "橘12區間車(寒暑假停駛)",
+        "name": "橘12區間車(寒暑假停駛)",
+        "name_en": "橘12區間車(寒暑假停駛)",
+        "color": "#134e4a",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.34925,
+            22.625
+          ],
+          [
+            120.34944,
+            22.61987
+          ],
+          [
+            120.34939,
+            22.61851
+          ],
+          [
+            120.34921,
+            22.61773
+          ],
+          [
+            120.34886,
+            22.61621
+          ],
+          [
+            120.34873,
+            22.61596
+          ],
+          [
+            120.34816,
+            22.61524
+          ],
+          [
+            120.3476,
+            22.61453
+          ],
+          [
+            120.34651,
+            22.61318
+          ],
+          [
+            120.34475,
+            22.61307
+          ],
+          [
+            120.34229,
+            22.61286
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "橘12區間車(寒暑假停駛)",
+        "name": "橘12區間車(寒暑假停駛)",
+        "name_en": "橘12區間車(寒暑假停駛)",
+        "color": "#134e4a",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.36096,
+            22.65802
+          ],
+          [
+            120.36098,
+            22.65742
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH109121132691",
+        "name": "捷運鳳山西站(青年路一段)",
+        "name_en": "MRT Fongshan West Station(Cingnian Rd. Sec. 1)",
+        "line": "橘12區間車(寒暑假停駛)",
+        "color": "#134e4a",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.349235,
+          22.624994
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH109121132731",
+        "name": "鳳新高中",
+        "name_en": "FengHsin Senior High School",
+        "line": "橘12區間車(寒暑假停駛)",
+        "color": "#134e4a",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.342842,
+          22.612936
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,468 @@
+{
+  "type": "FeatureCollection",
+  "name": "133B",
+  "properties": {
+    "id": "taoyuan_133b",
+    "name": "133B",
+    "name_en": "133B",
+    "ref": "133B",
+    "color": "#db2777",
+    "city_id": "Taoyuan",
+    "source": "TDX Bus Shape / StopOfRoute",
+    "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/1332/map/2390/image",
+    "operator_id": "2",
+    "operator": "中壢客運",
+    "operator_en": "Chungli Bus Co., Ltd."
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "133B",
+        "name": "133B",
+        "name_en": "133B",
+        "color": "#db2777",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            121.22425,
+            24.95325
+          ],
+          [
+            121.22406,
+            24.95311
+          ],
+          [
+            121.22336,
+            24.95344
+          ],
+          [
+            121.22452,
+            24.95587
+          ],
+          [
+            121.22463,
+            24.95596
+          ],
+          [
+            121.22492,
+            24.95676
+          ],
+          [
+            121.22235,
+            24.95783
+          ],
+          [
+            121.21956,
+            24.9581
+          ],
+          [
+            121.21747,
+            24.95843
+          ],
+          [
+            121.21561,
+            24.95875
+          ],
+          [
+            121.21488,
+            24.95897
+          ],
+          [
+            121.2117,
+            24.96113
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "133B",
+        "name": "133B",
+        "name_en": "133B",
+        "color": "#db2777",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            121.22579,
+            24.95647
+          ],
+          [
+            121.22497,
+            24.95474
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO5642",
+        "name": "中壢客運中壢總站",
+        "name_en": "Zhongli Bus Zhongli Main Station",
+        "line": "133B",
+        "color": "#db2777",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.224161,
+          24.953365
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO8303",
+        "name": "中央延平路口",
+        "name_en": "Zhongyang and Yanping Road Intersection",
+        "line": "133B",
+        "color": "#db2777",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.224295,
+          24.957101
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO3389",
+        "name": "中央新生路口",
+        "name_en": "Zhongyang-ShinSheng Road Intersection",
+        "line": "133B",
+        "color": "#db2777",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.222643,
+          24.957753
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO9139",
+        "name": "捷運老街溪站(中央西路)",
+        "name_en": "MRT Laojie River Station(Zhongyang W. Rd.)",
+        "line": "133B",
+        "color": "#db2777",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.219739,
+          24.958235
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO834",
+        "name": "民權路口",
+        "name_en": "Minquan Road Intersection",
+        "line": "133B",
+        "color": "#db2777",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.217679,
+          24.958426
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO3395",
+        "name": "新明國小",
+        "name_en": "Xinming Elementary School",
+        "line": "133B",
+        "color": "#db2777",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.215899,
+          24.958816
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO3394",
+        "name": "曉明幼稚園",
+        "name_en": "Xiaoming Kindergarten",
+        "line": "133B",
+        "color": "#db2777",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.2146,
+          24.95931
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO3391",
+        "name": "華宏補習班",
+        "name_en": "Huahong Cram School",
+        "line": "133B",
+        "color": "#db2777",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.21368,
+          24.9599
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO3741",
+        "name": "中壢高中(中央西路)",
+        "name_en": "Zhongli Senior High School(Zhongyang W. Rd.)",
+        "line": "133B",
+        "color": "#db2777",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.211871,
+          24.96107
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO3745",
+        "name": "中壢高中(中央西路)",
+        "name_en": "Zhongli Senior High School(Zhongyang W. Rd.)",
+        "line": "133B",
+        "color": "#db2777",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.211831,
+          24.961005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO9249",
+        "name": "華宏補習班",
+        "name_en": "Huahong Cram School",
+        "line": "133B",
+        "color": "#db2777",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.213464,
+          24.959917
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO9254",
+        "name": "曉明幼稚園",
+        "name_en": "Xiaoming Kindergarten",
+        "line": "133B",
+        "color": "#db2777",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.2145,
+          24.95914
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO3739",
+        "name": "新明國小",
+        "name_en": "Xinming Elementary School",
+        "line": "133B",
+        "color": "#db2777",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.21553,
+          24.958721
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO9250",
+        "name": "民權路口",
+        "name_en": "Minquan Road Intersection",
+        "line": "133B",
+        "color": "#db2777",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.2176,
+          24.95833
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO9251",
+        "name": "捷運老街溪站(中央西路)",
+        "name_en": "MRT Laojie River Station(Zhongyang W. Rd.)",
+        "line": "133B",
+        "color": "#db2777",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.219678,
+          24.957955
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO9322",
+        "name": "中央新生路口",
+        "name_en": "Zhongyang-ShinSheng Road Intersection",
+        "line": "133B",
+        "color": "#db2777",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.222563,
+          24.957569
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO9358",
+        "name": "中央延平路口",
+        "name_en": "Zhongyang and Yanping Road Intersection",
+        "line": "133B",
+        "color": "#db2777",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.224135,
+          24.956935
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO8383",
+        "name": "中央東路",
+        "name_en": "JungYang East Road",
+        "line": "133B",
+        "color": "#db2777",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.225447,
+          24.956424
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO1215",
+        "name": "中壢客運中壢總站",
+        "name_en": "Zhongli Bus Zhongli Main Station",
+        "line": "133B",
+        "color": "#db2777",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.224161,
+          24.953365
+        ]
+      }
+    }
+  ]
+}

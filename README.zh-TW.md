@@ -19,7 +19,7 @@
 - **重設視圖**按鈕，回到預設地圖範圍
 - 無需驗證 —— 儀表板為公開頁面
 
-> 公車與渡輪圖層目前為佔位。捷運、台鐵、高鐵及其他路線從 `public/geojson/` 載入 GeoJSON。
+> 公車路線圖已從 TDX 匯入（縣市公車；公路客運用 `CITY=InterCity` 匯入）。渡輪圖層目前為佔位。捷運、台鐵、高鐵及其他路線從 `public/geojson/` 載入 GeoJSON。公車資料缺口見 [`docs/bus_data_gaps/`](docs/bus_data_gaps/)。
 
 ## 技術棧
 
@@ -91,6 +91,17 @@ bin/rails tailwindcss:build
 | 變數 | 用途 |
 | --- | --- |
 | `GOOGLE_MAPS_API_KEY` | 保留供未來 Google Maps 整合。目前預設使用 Leaflet + CARTO/OSM。 |
+| `TDX_CLIENT_ID` / `TDX_CLIENT_SECRET` | [TDX](https://tdx.transportdata.tw) 憑證。匯入高鐵／捷運時刻表與即時誤點／GPS 時需要。台鐵每日時刻改從台鐵 ODS 匯入，不必金鑰。 |
+
+靜態時刻表存在 Postgres。台鐵用 ODS 每日 JSON（今天起最多 14 天）；高鐵用 TDX 當日時刻表；捷運站別時刻會縫成多站車次。軌道幾何仍是 OSM GeoJSON。
+
+匯入或更新：
+
+```bash
+bin/rails transit:import_schedules
+```
+
+正式環境每天台北時間 03:30 也會跑一次。即時看板不寫入資料庫。
 
 ## 測試
 
@@ -107,7 +118,7 @@ bin/rails test:system
 | --- | --- |
 | `app/` | 精簡 UI：Phlex 視圖、Stimulus（`map_controller.js`）、RubyUI 元件 |
 | `lib/geojson/` | 地圖幾何管線：路線目錄、OSM/NLSC 建置器、後備快取 |
-| `lib/transit/` | 班表：TDX 客戶端、目錄同步、班表種子／匯入 |
+| `lib/transit/` | 班表：台鐵 ODS、TDX 客戶端、捷運班次縫合、目錄同步、匯入 |
 | `lib/route_catalog.rb` | `public/geojson/routes.json` 的執行時讀取器（地圖與運輸共用） |
 | `lib/tasks/geojson.rake` | 重建 GeoJSON / `routes.json` / 車廠 |
 | `lib/tasks/transit.rake` | 同步資料庫目錄、種子／匯入班表 |

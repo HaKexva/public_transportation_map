@@ -60,9 +60,13 @@ module Transit
     end
 
     # Exact fingerprint for the date's weekday service type (useful for tests / debugging).
+    def date_code_for(date)
+      "date_#{date.iso8601}"
+    end
+
     def calendar_codes_for_date(date)
       fingerprint_code = "sd_#{ServiceDayMapper.fingerprint(service_day_for_date(date))}"
-      ([ fingerprint_code ] + simple_codes_for_date(date)).compact.uniq
+      ([ date_code_for(date), fingerprint_code ] + simple_codes_for_date(date)).compact.uniq
     end
 
     def fingerprint_matches_date?(code, date)
@@ -75,15 +79,26 @@ module Transit
       bits[bit] == "1"
     end
 
-    # Returns service_calendar ids across all datasets for the given date.
-    def calendar_ids_for_date(date)
+    # Returns service_calendar ids for the given date, limited to active datasets
+    # (or an explicit dataset list) so stale TDX snapshots are ignored.
+    def calendar_ids_for_date(date, datasets: nil)
+      dataset_ids = dataset_ids_for(datasets)
+      return [] if dataset_ids.empty?
+
       simple = simple_codes_for_date(date)
       bit = weekday_bit_index(date)
+      scope = ServiceCalendar.where(schedule_dataset_id: dataset_ids)
 
+      date_ids = scope.where(code: date_code_for(date)).pluck(:id)
       # Match sd_ fingerprints whose weekday bit is set (Postgres regex).
-      sd_ids = ServiceCalendar.where("code ~ ?", "^sd_.{#{bit}}1").pluck(:id)
-      simple_ids = ServiceCalendar.where(code: simple).pluck(:id)
-      (sd_ids + simple_ids).uniq
+      sd_ids = scope.where("code ~ ?", "^sd_.{#{bit}}1").pluck(:id)
+      simple_ids = scope.where(code: simple).pluck(:id)
+      (date_ids + sd_ids + simple_ids).uniq
+    end
+
+    def dataset_ids_for(datasets)
+      records = datasets.nil? ? ScheduleDataset.active : Array(datasets)
+      records.filter_map { |item| item.respond_to?(:id) ? item.id : item }
     end
   end
 end

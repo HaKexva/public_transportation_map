@@ -1,0 +1,938 @@
+{
+  "type": "FeatureCollection",
+  "name": "紅3鳳林接駁線",
+  "properties": {
+    "id": "kaohsiung_hong3_5e6d5bd048",
+    "name": "紅3鳳林接駁線",
+    "name_en": "紅3鳳林接駁線",
+    "ref": "紅3鳳林接駁線",
+    "color": "#9f1239",
+    "city_id": "Kaohsiung",
+    "source": "TDX Bus Shape / StopOfRoute",
+    "official_map_url": "http://ibus.tbkc.gov.tw/cms/api/route/2112/map/1852/image",
+    "operator_id": "10360",
+    "operator": "港都客運",
+    "operator_en": "Great-City-Life Bus Co., Ltd."
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "紅3鳳林接駁線",
+        "name": "紅3鳳林接駁線",
+        "name_en": "紅3鳳林接駁線",
+        "color": "#9f1239",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.34876,
+            22.5217
+          ],
+          [
+            120.35422,
+            22.51642
+          ],
+          [
+            120.35588,
+            22.51476
+          ],
+          [
+            120.35708,
+            22.51595
+          ],
+          [
+            120.36261,
+            22.51045
+          ],
+          [
+            120.36336,
+            22.50984
+          ],
+          [
+            120.36575,
+            22.50899
+          ],
+          [
+            120.36572,
+            22.50889
+          ],
+          [
+            120.36711,
+            22.50832
+          ],
+          [
+            120.36775,
+            22.50791
+          ],
+          [
+            120.36868,
+            22.50694
+          ],
+          [
+            120.36928,
+            22.50644
+          ],
+          [
+            120.36999,
+            22.50596
+          ],
+          [
+            120.37074,
+            22.50544
+          ],
+          [
+            120.37153,
+            22.50501
+          ],
+          [
+            120.37252,
+            22.50475
+          ],
+          [
+            120.37839,
+            22.50367
+          ],
+          [
+            120.38046,
+            22.50332
+          ],
+          [
+            120.3822,
+            22.5032
+          ],
+          [
+            120.38253,
+            22.50313
+          ],
+          [
+            120.38279,
+            22.50299
+          ],
+          [
+            120.38297,
+            22.50288
+          ],
+          [
+            120.38314,
+            22.50274
+          ],
+          [
+            120.38351,
+            22.50215
+          ],
+          [
+            120.38366,
+            22.501830000000002
+          ],
+          [
+            120.38395,
+            22.50152
+          ],
+          [
+            120.38451,
+            22.50108
+          ],
+          [
+            120.38534,
+            22.50056
+          ],
+          [
+            120.38646,
+            22.50013
+          ],
+          [
+            120.38763,
+            22.49985
+          ],
+          [
+            120.38852,
+            22.49974
+          ],
+          [
+            120.38941,
+            22.49969
+          ],
+          [
+            120.39094,
+            22.49981
+          ],
+          [
+            120.39341,
+            22.50002
+          ],
+          [
+            120.39789,
+            22.50054
+          ],
+          [
+            120.398,
+            22.50076
+          ],
+          [
+            120.39788,
+            22.50138
+          ],
+          [
+            120.39774,
+            22.50383
+          ],
+          [
+            120.39765,
+            22.5043
+          ],
+          [
+            120.39671,
+            22.50665
+          ],
+          [
+            120.39604,
+            22.50973
+          ],
+          [
+            120.39617,
+            22.51276
+          ],
+          [
+            120.3961,
+            22.51318
+          ],
+          [
+            120.39531,
+            22.51309
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "紅3鳳林接駁線",
+        "name": "紅3鳳林接駁線",
+        "name_en": "紅3鳳林接駁線",
+        "color": "#9f1239",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.39477,
+            22.50819
+          ],
+          [
+            120.39512,
+            22.50698
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10211290751",
+        "name": "鳳林國中",
+        "name_en": "Fonglin Junior High School",
+        "line": "紅3鳳林接駁線",
+        "color": "#9f1239",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.34883,
+          22.52161
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10211290761",
+        "name": "龍鳳公園",
+        "name_en": "Longfong Park",
+        "line": "紅3鳳林接駁線",
+        "color": "#9f1239",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.353209,
+          22.517285
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10211290771",
+        "name": "岐山一路口",
+        "name_en": "Cishang 1st Rd. Intersection",
+        "line": "紅3鳳林接駁線",
+        "color": "#9f1239",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.354322,
+          22.516183
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10211290781",
+        "name": "龍興路",
+        "name_en": "Longsing Rd.",
+        "line": "紅3鳳林接駁線",
+        "color": "#9f1239",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.356053,
+          22.51493
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH102112179831",
+        "name": "鳳鳴國小",
+        "name_en": "Fong Ming Elementary School",
+        "line": "紅3鳳林接駁線",
+        "color": "#9f1239",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.357783,
+          22.515136
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH102112181981",
+        "name": "鳳鳴里",
+        "name_en": "Fongming Village",
+        "line": "紅3鳳林接駁線",
+        "color": "#9f1239",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.359233,
+          22.513716
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10211292301",
+        "name": "鳳鼻頭(鳳鳴路)",
+        "name_en": "Fongbitou(Fongming Rd.)",
+        "line": "紅3鳳林接駁線",
+        "color": "#9f1239",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.361162,
+          22.511804
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10211215581",
+        "name": "大安森林",
+        "name_en": "Daan Forest",
+        "line": "紅3鳳林接駁線",
+        "color": "#9f1239",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.366277,
+          22.508629
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10211217081",
+        "name": "海墘路口",
+        "name_en": "Haician Rd. Intersection",
+        "line": "紅3鳳林接駁線",
+        "color": "#9f1239",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.368655,
+          22.506881
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10211215591",
+        "name": "中門7-11站",
+        "name_en": "Jhongmen 7-11 Station",
+        "line": "紅3鳳林接駁線",
+        "color": "#9f1239",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.371304,
+          22.505082
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10211215651",
+        "name": "港埔派出所",
+        "name_en": "Gangpu Police Station",
+        "line": "紅3鳳林接駁線",
+        "color": "#9f1239",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.376446,
+          22.50401
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10211215661",
+        "name": "頂厝路口",
+        "name_en": "Dingcuo Rd. Intersection",
+        "line": "紅3鳳林接駁線",
+        "color": "#9f1239",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.379796,
+          22.503419
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10211217061",
+        "name": "過溝巷口",
+        "name_en": "Guoguo Lane Intersection",
+        "line": "紅3鳳林接駁線",
+        "color": "#9f1239",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.38418,
+          22.50126
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10211215671",
+        "name": "田厝路口",
+        "name_en": "Tiancuo Rd. Intersection",
+        "line": "紅3鳳林接駁線",
+        "color": "#9f1239",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.387029,
+          22.499941
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10211215681",
+        "name": "新光人壽",
+        "name_en": "Shin Kong Life Insurance",
+        "line": "紅3鳳林接駁線",
+        "color": "#9f1239",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.392741,
+          22.49993
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10211215701",
+        "name": "國泰人壽",
+        "name_en": "Cathay Life Insurance Co., Ltd.",
+        "line": "紅3鳳林接駁線",
+        "color": "#9f1239",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.397878,
+          22.501521
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10211217011",
+        "name": "鳳林路一段",
+        "name_en": "Fonglin Rd. Sec. 1",
+        "line": "紅3鳳林接駁線",
+        "color": "#9f1239",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.396692,
+          22.506928
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10211217021",
+        "name": "林園高中",
+        "name_en": "Linyuan Senior High School",
+        "line": "紅3鳳林接駁線",
+        "color": "#9f1239",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.395526,
+          22.513135
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH102112159122",
+        "name": "林園區公所",
+        "name_en": "Linyuan District Office",
+        "line": "紅3鳳林接駁線",
+        "color": "#9f1239",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.394776,
+          22.507824
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10211217032",
+        "name": "鳳林路一段",
+        "name_en": "Fonglin Rd. Sec. 1",
+        "line": "紅3鳳林接駁線",
+        "color": "#9f1239",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.39668,
+          22.5061
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10211215722",
+        "name": "國泰人壽",
+        "name_en": "Cathay Life Insurance Co., Ltd.",
+        "line": "紅3鳳林接駁線",
+        "color": "#9f1239",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.39771,
+          22.50156
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH102112133442",
+        "name": "幸福公園",
+        "name_en": "SingFu Park",
+        "line": "紅3鳳林接駁線",
+        "color": "#9f1239",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.394982,
+          22.500544
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10211215732",
+        "name": "新光人壽",
+        "name_en": "Shin Kong Life Insurance",
+        "line": "紅3鳳林接駁線",
+        "color": "#9f1239",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.392958,
+          22.500327
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10211215762",
+        "name": "田厝路口",
+        "name_en": "Tiancuo Rd. Intersection",
+        "line": "紅3鳳林接駁線",
+        "color": "#9f1239",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.386451,
+          22.500484
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10211217072",
+        "name": "過溝巷口",
+        "name_en": "Guoguo Lane Intersection",
+        "line": "紅3鳳林接駁線",
+        "color": "#9f1239",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.384604,
+          22.501432
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10211215772",
+        "name": "頂厝路口",
+        "name_en": "Dingcuo Rd. Intersection",
+        "line": "紅3鳳林接駁線",
+        "color": "#9f1239",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.379842,
+          22.50373
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10211215782",
+        "name": "港埔派出所",
+        "name_en": "Gangpu Police Station",
+        "line": "紅3鳳林接駁線",
+        "color": "#9f1239",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.376495,
+          22.504342
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10211215792",
+        "name": "中門7-11站",
+        "name_en": "Jhongmen 7-11 Station",
+        "line": "紅3鳳林接駁線",
+        "color": "#9f1239",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.372099,
+          22.505173
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10211217092",
+        "name": "海墘路口",
+        "name_en": "Haician Rd. Intersection",
+        "line": "紅3鳳林接駁線",
+        "color": "#9f1239",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.368828,
+          22.50723
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10211215802",
+        "name": "大安森林",
+        "name_en": "Daan Forest",
+        "line": "紅3鳳林接駁線",
+        "color": "#9f1239",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.366483,
+          22.508922
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10211287772",
+        "name": "鳳鼻頭(鳳鳴路)",
+        "name_en": "Fongbitou(Fongming Rd.)",
+        "line": "紅3鳳林接駁線",
+        "color": "#9f1239",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.361287,
+          22.511912
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10211282072",
+        "name": "鳳鳴里",
+        "name_en": "Fongming Village",
+        "line": "紅3鳳林接駁線",
+        "color": "#9f1239",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.359377,
+          22.513783
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10211281342",
+        "name": "鳳鳴國小",
+        "name_en": "Fong Ming Elementary School",
+        "line": "紅3鳳林接駁線",
+        "color": "#9f1239",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.357811,
+          22.51532
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10211290792",
+        "name": "邦坑",
+        "name_en": "Bangkeng",
+        "line": "紅3鳳林接駁線",
+        "color": "#9f1239",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.355822,
+          22.517303
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10211290802",
+        "name": "歧山二路",
+        "name_en": "Cishan 2nd Rd.",
+        "line": "紅3鳳林接駁線",
+        "color": "#9f1239",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.354315,
+          22.517914
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10211290812",
+        "name": "龍鳳公園",
+        "name_en": "Longfong Park",
+        "line": "紅3鳳林接駁線",
+        "color": "#9f1239",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.35316,
+          22.517457
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10211290822",
+        "name": "鳳林國中",
+        "name_en": "Fonglin Junior High School",
+        "line": "紅3鳳林接駁線",
+        "color": "#9f1239",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.34893,
+          22.52163
+        ]
+      }
+    }
+  ]
+}

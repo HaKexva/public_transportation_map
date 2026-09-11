@@ -14,7 +14,10 @@ module Views
           class: "route-page is-booting relative flex h-dvh flex-col bg-background",
           data: {
             controller: "map",
-            map_initial_route_id_value: @route["id"]
+            map_initial_route_id_value: @route["id"],
+            map_routes_manifest_url_value: static_geojson_url("geojson/routes.json"),
+            map_metro_depots_url_value: static_geojson_url("geojson/metro_depots.json"),
+            map_out_of_station_transfers_url_value: static_geojson_url("geojson/out_of_station_transfers.json")
           },
           aria: { busy: "true" }
         ) do
@@ -23,6 +26,8 @@ module Views
             render_stops_section
             render_map_section
           end
+          # Cover the whole page (stops + map). Overlay inside the map pane left
+          # the empty stops list visible with no blocker while GeoJSON loads.
           render_boot_overlay
         end
       end
@@ -50,6 +55,7 @@ module Views
               render RubyUI::Text.new(as: "p", size: "1", weight: "muted") { @system_label }
               h1(class: "text-lg font-semibold leading-tight") { display_name }
               p(class: "mt-1 text-xs text-muted-foreground", data: { map_target: "routeStopsMeta" }) { "" }
+              render_route_view_switcher
             end
 
             span(class: "shrink-0 rounded bg-muted px-2 py-1 text-xs font-medium text-muted-foreground") do
@@ -76,7 +82,8 @@ module Views
 
       def render_stops_section
         section(
-          class: "route-page__stops flex max-h-[45vh] min-h-0 w-full shrink-0 flex-col overflow-hidden border-b border-border/60 md:max-h-none md:w-[22rem] md:border-r md:border-b-0"
+          class: "route-page__stops flex max-h-[45vh] min-h-0 w-full shrink-0 flex-col overflow-hidden border-b border-border/60 md:max-h-none md:w-[22rem] md:border-r md:border-b-0",
+          data: { map_target: "routeStopsSection" }
         ) do
           div(class: "shrink-0 border-b border-border/40 px-4 py-2") do
             render RubyUI::Text.new(as: "p", size: "1", weight: "muted", class: "uppercase tracking-wide") { t("route.stops_list") }
@@ -86,7 +93,11 @@ module Views
           ol(
             class: "route-stops__list min-h-0 flex-1 list-none overflow-y-auto p-2",
             data: { map_target: "routeStopsList" }
-          )
+          ) do
+            li(class: "route-stops__loading px-3 py-6 text-center text-sm text-muted-foreground") do
+              t("route.loading_stops")
+            end
+          end
 
           p(
             class: "hidden px-4 py-8 text-center text-sm text-muted-foreground",
@@ -96,14 +107,17 @@ module Views
       end
 
       def render_map_section
-        div(class: "route-page__map relative min-h-0 min-w-0 flex-1") do
-          div(
-            class: "relative h-full w-full",
-            data: { map_target: "map" },
-            role: "region",
-            aria: { label: t("route.map_aria", name: display_name) }
-          )
-          render_time_scrubber(empty_hint_key: "route.vehicles_empty_hint")
+        div(class: "route-page__map relative flex min-h-0 min-w-0 flex-1 flex-col") do
+          div(class: "relative min-h-0 min-w-0 flex-1", data: { map_target: "routeMapSection" }) do
+            div(
+              class: "absolute inset-0 h-full w-full",
+              data: { map_target: "map" },
+              role: "region",
+              aria: { label: t("route.map_aria", name: display_name) }
+            )
+            render_time_scrubber(empty_hint_key: "route.vehicles_empty_hint")
+          end
+          render_official_route_panel
         end
       end
 

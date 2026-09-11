@@ -2,13 +2,17 @@
 
 module Transit
   class SampleScheduleSeeder
+    DATASET_NAME = "範例：板南線平日時刻"
+
     def self.seed!
       new.seed!
     end
 
     def seed!
+      return if ScheduleDataset.tdx.active.exists?
+
       route = TransitRoute.find_by_manifest!(system_id: "taipei_metro", route_id: "bannan")
-      dataset = ScheduleDataset.find_or_create_by!(name: "範例：板南線平日時刻") do |record|
+      dataset = ScheduleDataset.find_or_create_by!(name: DATASET_NAME) do |record|
         record.source = "manual"
         record.valid_from = Date.current
         record.notes = "示範固定班次與班距規則的種子資料"

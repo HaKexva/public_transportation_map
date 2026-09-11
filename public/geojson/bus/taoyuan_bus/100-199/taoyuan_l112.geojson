@@ -1,0 +1,246 @@
+{
+  "type": "FeatureCollection",
+  "name": "L112",
+  "properties": {
+    "id": "taoyuan_l112",
+    "name": "L112",
+    "name_en": "L112",
+    "ref": "L112",
+    "color": "#65a30d",
+    "city_id": "Taoyuan",
+    "source": "TDX Bus Shape / StopOfRoute",
+    "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/6112/map/2223/image",
+    "operator_id": "1",
+    "operator": "桃園客運",
+    "operator_en": "Taoyuan Bus Co., Ltd."
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "L112",
+        "name": "L112",
+        "name_en": "L112",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            121.30008,
+            24.99277
+          ],
+          [
+            121.30101,
+            24.99216
+          ],
+          [
+            121.30102,
+            24.9917
+          ],
+          [
+            121.30525,
+            24.98928
+          ],
+          [
+            121.30543,
+            24.98921
+          ],
+          [
+            121.30842,
+            24.98901
+          ],
+          [
+            121.30855,
+            24.98903
+          ],
+          [
+            121.31429,
+            24.99086
+          ],
+          [
+            121.3147,
+            24.98981
+          ],
+          [
+            121.31579,
+            24.99
+          ],
+          [
+            121.31584,
+            24.99018
+          ],
+          [
+            121.31504,
+            24.99104
+          ],
+          [
+            121.31474,
+            24.99104
+          ],
+          [
+            121.30855,
+            24.98907
+          ],
+          [
+            121.30842,
+            24.98905
+          ],
+          [
+            121.30544,
+            24.98925
+          ],
+          [
+            121.30527,
+            24.98932
+          ],
+          [
+            121.30106,
+            24.99173
+          ],
+          [
+            121.30105,
+            24.99222
+          ],
+          [
+            121.30162,
+            24.9923
+          ],
+          [
+            121.30252,
+            24.99323
+          ],
+          [
+            121.30249,
+            24.99369
+          ],
+          [
+            121.30083,
+            24.99361
+          ],
+          [
+            121.30064,
+            24.99358
+          ],
+          [
+            121.29941,
+            24.99355
+          ],
+          [
+            121.29945,
+            24.99336
+          ],
+          [
+            121.29956,
+            24.99316
+          ],
+          [
+            121.29984,
+            24.99295
+          ],
+          [
+            121.30027,
+            24.99263
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO13061",
+        "name": "府前郵局",
+        "name_en": "Fuqian Post Office",
+        "line": "L112",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.300184,
+          24.992618
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO410",
+        "name": "台電大樓",
+        "name_en": "Taipower Building",
+        "line": "L112",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.305161,
+          24.989253
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO12455",
+        "name": "桃園火車站",
+        "name_en": "Taoyuan Train Station",
+        "line": "L112",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.315091,
+          24.989815
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO20",
+        "name": "台電大樓",
+        "name_en": "Taipower Building",
+        "line": "L112",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.304901,
+          24.989632
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO13109",
+        "name": "府前郵局",
+        "name_en": "Fuqian Post Office",
+        "line": "L112",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.300184,
+          24.992618
+        ]
+      }
+    }
+  ]
+}

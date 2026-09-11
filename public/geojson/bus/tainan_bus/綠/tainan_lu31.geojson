@@ -1,0 +1,352 @@
+{
+  "type": "FeatureCollection",
+  "name": "綠31",
+  "properties": {
+    "id": "tainan_lu31",
+    "name": "綠31",
+    "name_en": "綠31",
+    "ref": "綠31",
+    "color": "#9333ea",
+    "city_id": "Tainan",
+    "source": "TDX Bus Shape / StopOfRoute",
+    "official_map_url": "http://busmap.tainan.gov.tw/ebus/resources/PathPic/zh_TW/1131.jpg",
+    "operator_id": "16253",
+    "operator": "中華衛星台南車隊"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "綠31",
+        "name": "綠31",
+        "name_en": "綠31",
+        "color": "#9333ea",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.46037,
+            23.12417
+          ],
+          [
+            120.46058,
+            23.12425
+          ],
+          [
+            120.46054,
+            23.12393
+          ],
+          [
+            120.45978,
+            23.12293
+          ],
+          [
+            120.45933,
+            23.12188
+          ],
+          [
+            120.45841,
+            23.12197
+          ],
+          [
+            120.45756,
+            23.12178
+          ],
+          [
+            120.45526,
+            23.12096
+          ],
+          [
+            120.45426,
+            23.12176
+          ],
+          [
+            120.45363,
+            23.12191
+          ],
+          [
+            120.45008,
+            23.12323
+          ],
+          [
+            120.44899,
+            23.12345
+          ],
+          [
+            120.44706,
+            23.12242
+          ],
+          [
+            120.44523,
+            23.12272
+          ],
+          [
+            120.44461,
+            23.12275
+          ],
+          [
+            120.44444,
+            23.12352
+          ],
+          [
+            120.44348,
+            23.12811
+          ],
+          [
+            120.44206,
+            23.13163
+          ],
+          [
+            120.44178,
+            23.13667
+          ],
+          [
+            120.44146,
+            23.13763
+          ],
+          [
+            120.44141,
+            23.13962
+          ],
+          [
+            120.44292,
+            23.14351
+          ],
+          [
+            120.44509,
+            23.14948
+          ],
+          [
+            120.44577,
+            23.15043
+          ],
+          [
+            120.44679,
+            23.15363
+          ],
+          [
+            120.44666,
+            23.15458
+          ],
+          [
+            120.44687,
+            23.15523
+          ],
+          [
+            120.44726,
+            23.15577
+          ],
+          [
+            120.44774,
+            23.15689
+          ],
+          [
+            120.44786,
+            23.15805
+          ],
+          [
+            120.44872,
+            23.15913
+          ],
+          [
+            120.44868,
+            23.15914
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TNN25811",
+        "name": "玉井站",
+        "name_en": "Yujing Bus Station",
+        "line": "綠31",
+        "color": "#9333ea",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.46037,
+          23.12416
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TNN25817",
+        "name": "玉井國小",
+        "name_en": "Yujing Elementary School",
+        "line": "綠31",
+        "color": "#9333ea",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.45879,
+          23.12194
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TNN25818",
+        "name": "口豐里",
+        "name_en": "Koufong Vil.",
+        "line": "綠31",
+        "color": "#9333ea",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.44521,
+          23.12276
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TNN25819",
+        "name": "內豐里",
+        "name_en": "Neifong Vil.",
+        "line": "綠31",
+        "color": "#9333ea",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.44292,
+          23.14351
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TNN25820",
+        "name": "竹湖",
+        "name_en": "Jhuhu",
+        "line": "綠31",
+        "color": "#9333ea",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.44867,
+          23.15915
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TNN25821",
+        "name": "竹湖",
+        "name_en": "Jhuhu",
+        "line": "綠31",
+        "color": "#9333ea",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.44867,
+          23.15915
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TNN25822",
+        "name": "內豐里",
+        "name_en": "Neifong Vil.",
+        "line": "綠31",
+        "color": "#9333ea",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.44286,
+          23.14347
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TNN25823",
+        "name": "口豐里",
+        "name_en": "Koufong Vil.",
+        "line": "綠31",
+        "color": "#9333ea",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.44522,
+          23.12269
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TNN25824",
+        "name": "玉井國小",
+        "name_en": "Yujing Elementary School",
+        "line": "綠31",
+        "color": "#9333ea",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.45856,
+          23.12193
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TNN25812",
+        "name": "玉井站",
+        "name_en": "Yujing Bus Station",
+        "line": "綠31",
+        "color": "#9333ea",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.46037,
+          23.12416
+        ]
+      }
+    }
+  ]
+}

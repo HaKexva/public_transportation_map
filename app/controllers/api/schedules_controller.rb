@@ -12,9 +12,10 @@ module Api
       end
 
       cache_key = [
-        "schedule_snapshot/v1",
+        "schedule_snapshot/v2",
         date.iso8601,
-        route_ids.sort.join(",")
+        route_ids.sort.join(","),
+        active_dataset_stamp
       ]
       payload = Rails.cache.fetch(cache_key, expires_in: 15.minutes) do
         Transit::ScheduleSnapshot.new(date: date, route_ids: route_ids).call
@@ -24,6 +25,10 @@ module Api
     end
 
     private
+
+    def active_dataset_stamp
+      ScheduleDataset.active.order(:id).pluck(:id, :updated_at)
+    end
 
     def parse_date!(raw)
       zone = ActiveSupport::TimeZone["Taipei"]

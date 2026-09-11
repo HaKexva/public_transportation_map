@@ -1,0 +1,171 @@
+{
+  "type": "FeatureCollection",
+  "name": "通勤29",
+  "properties": {
+    "id": "taipei_tongqin29",
+    "name": "通勤29",
+    "name_en": "通勤29",
+    "ref": "通勤29",
+    "color": "#701a75",
+    "city_id": "Taipei",
+    "source": "TDX Bus Shape / StopOfRoute",
+    "official_map_url": "https://ebus.gov.taipei/File/Get/1d235320-9572-41e5-ab0a-2fac8536dce7?v=639234358574191692",
+    "operator_id": "200",
+    "operator": "首都客運",
+    "operator_en": "Capital Bus Co., Ltd."
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "通勤29",
+        "name": "通勤29",
+        "name_en": "通勤29",
+        "color": "#701a75",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            121.566535683299,
+            25.0512559293085
+          ],
+          [
+            121.567622528561,
+            25.0512794940894
+          ],
+          [
+            121.569732578056,
+            25.0512469651141
+          ],
+          [
+            121.570342992775,
+            25.0512431381753
+          ],
+          [
+            121.570767537268,
+            25.0513445520142
+          ],
+          [
+            121.571346269561,
+            25.0516449661012
+          ],
+          [
+            121.573135270485,
+            25.0526112611974
+          ],
+          [
+            121.574818663325,
+            25.0535354531428
+          ],
+          [
+            121.576111306259,
+            25.0541018281997
+          ],
+          [
+            121.577498996467,
+            25.0548059665129
+          ],
+          [
+            121.579361923048,
+            25.0558162448529
+          ],
+          [
+            121.581486757674,
+            25.0569566247916
+          ],
+          [
+            121.582927251924,
+            25.057741108186
+          ],
+          [
+            121.585382873394,
+            25.0590577208123
+          ],
+          [
+            121.585738658897,
+            25.0591847971662
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TPE218522",
+        "name": "南京公寓(捷運南京三民)",
+        "name_en": "Nanjing Apartment (MRT Nanjing Sanmin Sta.)",
+        "line": "通勤29",
+        "color": "#701a75",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.566535683299,
+          25.0512559293088
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TPE218521",
+        "name": "潭美公園",
+        "name_en": "Tan-mei Park",
+        "line": "通勤29",
+        "color": "#701a75",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5857387,
+          25.0591848
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TPE218524",
+        "name": "潭美公園",
+        "name_en": "Tan-mei Park",
+        "line": "通勤29",
+        "color": "#701a75",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.58567426682049,
+          25.059637621521563
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TPE218523",
+        "name": "南京公寓(捷運南京三民)",
+        "name_en": "Nanjing Apartment (MRT Nanjing Sanmin Sta.)",
+        "line": "通勤29",
+        "color": "#701a75",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.564777,
+          25.051492
+        ]
+      }
+    }
+  ]
+}

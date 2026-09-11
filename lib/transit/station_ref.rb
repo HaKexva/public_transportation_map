@@ -9,6 +9,7 @@ module Transit
 
     def matches_route?(station_ref, line_ref:, route_id:, system_id:)
       return false if station_ref.blank?
+      return true if system_id.to_s == "bus"
 
       sort_key = sort_key_for_route(station_ref, line_ref)
       return false if sort_key.blank?

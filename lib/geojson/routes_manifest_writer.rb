@@ -73,12 +73,53 @@ module Geojson
         manifest[system_id] = entries
       end
 
+      bus_entries = bus_manifest_entries
+      manifest["bus"] = bus_entries if bus_entries.any?
+
       FileUtils.mkdir_p(@path.dirname)
       File.write(@path, JSON.pretty_generate(manifest))
       puts "Wrote #{@path} (#{manifest.values.sum(&:length)} routes)"
     end
 
     private
+
+    def bus_manifest_entries
+      bus_dir = Rails.root.join("public/geojson/bus")
+      return [] unless bus_dir.exist?
+
+      Dir.glob(bus_dir.join("**/*.geojson")).sort.filter_map do |path|
+        file_path = Pathname.new(path)
+        data = JSON.parse(File.read(file_path))
+        properties = data["properties"] || {}
+        relative = file_path.relative_path_from(Rails.root.join("public"))
+        slug = properties["id"].presence || file_path.basename(".geojson").to_s
+
+        entry = {
+          id: slug,
+          file: "/#{relative}",
+          name: properties["name"].presence || data["name"].presence || properties["ref"],
+          name_en: properties["name_en"].presence || name_en_from_bus_file(data),
+          ref: properties["ref"],
+          color: properties["color"].presence || color_from_bus_file(data)
+        }
+        %w[city_id operator_id operator operator_en official_map_url via].each do |key|
+          entry[key.to_sym] = properties[key] if properties[key].present?
+        end
+        enrich_entry(entry, file_path, include_stations: false)
+      rescue JSON::ParserError
+        nil
+      end
+    end
+
+    def name_en_from_bus_file(data)
+      Array(data["features"]).find { |feature| feature.dig("properties", "feature_type") == "route" }
+        &.dig("properties", "name_en")
+    end
+
+    def color_from_bus_file(data)
+      Array(data["features"]).find { |feature| feature.dig("properties", "feature_type") == "route" }
+        &.dig("properties", "color")
+    end
 
     def manifest_entry(line)
       file_path = Rails.root.join("public/geojson", line.output_subdir, "#{line.slug}.geojson")
@@ -97,7 +138,9 @@ module Geojson
       enrich_entry(entry, file_path)
     end
 
-    def enrich_entry(entry, file_path)
+    def enrich_entry(entry, file_path, include_stations: true)
+      return entry unless include_stations
+
       station_names = station_names_for(file_path)
       entry[:station_names] = station_names if station_names.any?
       entry

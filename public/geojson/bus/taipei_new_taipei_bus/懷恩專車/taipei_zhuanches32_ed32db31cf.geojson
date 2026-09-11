@@ -1,0 +1,339 @@
+{
+  "type": "FeatureCollection",
+  "name": "懷恩專車S32",
+  "properties": {
+    "id": "taipei_zhuanches32_ed32db31cf",
+    "name": "懷恩專車S32",
+    "name_en": "懷恩專車S32",
+    "ref": "懷恩專車S32",
+    "color": "#0891b2",
+    "city_id": "Taipei",
+    "source": "TDX Bus Shape / StopOfRoute",
+    "official_map_url": "https://ebus.gov.taipei/File/Get/aaf02524-4b0a-4cb4-8f33-cc39ef06dd88?v=639234358551372537",
+    "operator_id": "100",
+    "operator": "臺北客運",
+    "operator_en": "Taipei Bus Co., Ltd."
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "懷恩專車S32",
+        "name": "懷恩專車S32",
+        "name_en": "懷恩專車S32",
+        "color": "#0891b2",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            121.551857335415,
+            25.0236727831919
+          ],
+          [
+            121.552472332828,
+            25.0242073404359
+          ],
+          [
+            121.552585555286,
+            25.0242020338408
+          ],
+          [
+            121.554079896516,
+            25.0228488446051
+          ],
+          [
+            121.554521073679,
+            25.0224358093634
+          ],
+          [
+            121.554564020128,
+            25.0223066802874
+          ],
+          [
+            121.554417611778,
+            25.0221439420804
+          ],
+          [
+            121.554251682314,
+            25.0219192922445
+          ],
+          [
+            121.553884685382,
+            25.0212842562327
+          ],
+          [
+            121.553763654479,
+            25.0211109032129
+          ],
+          [
+            121.552662663684,
+            25.0203821102887
+          ],
+          [
+            121.552039940166,
+            25.019959337653
+          ],
+          [
+            121.551758836134,
+            25.0196197033513
+          ],
+          [
+            121.551423072983,
+            25.0190465683364
+          ],
+          [
+            121.551248359018,
+            25.0187608842974
+          ],
+          [
+            121.550919428257,
+            25.018406210618
+          ],
+          [
+            121.550800349466,
+            25.0182531964698
+          ],
+          [
+            121.550254734346,
+            25.0181382146145
+          ],
+          [
+            121.549900426138,
+            25.0180515359139
+          ],
+          [
+            121.549687646002,
+            25.0179347849144
+          ],
+          [
+            121.549402637747,
+            25.0175447296335
+          ],
+          [
+            121.549166432275,
+            25.017224547275
+          ],
+          [
+            121.548953652139,
+            25.0169397434809
+          ],
+          [
+            121.549041497149,
+            25.0167663843263
+          ],
+          [
+            121.550562191882,
+            25.0157456831159
+          ],
+          [
+            121.552590435564,
+            25.0143924006642
+          ],
+          [
+            121.552882276209,
+            25.0140297538131
+          ],
+          [
+            121.553245856946,
+            25.0136777199918
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "懷恩專車S32",
+        "name": "懷恩專車S32",
+        "name_en": "懷恩專車S32",
+        "color": "#0891b2",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            121.548250404028,
+            25.0179546856607
+          ],
+          [
+            121.547032286553,
+            25.0191398798522
+          ],
+          [
+            121.547003980938,
+            25.0192309801262
+          ],
+          [
+            121.547363169425,
+            25.0195688465716
+          ],
+          [
+            121.549166920302,
+            25.0212201333329
+          ],
+          [
+            121.549897009943,
+            25.021913543326
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TPE163285",
+        "name": "捷運六張犁站(基隆路)",
+        "name_en": "MRT Liuzhangli (Keelung Rd.)",
+        "line": "懷恩專車S32",
+        "color": "#0891b2",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.551906976436,
+          25.0236369355906
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TPE213164",
+        "name": "捷運六張犁站(和平)",
+        "name_en": "MRT Liuzhangli Sta. (Heping)",
+        "line": "懷恩專車S32",
+        "color": "#0891b2",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.553534505165,
+          25.0232432826612
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TPE163286",
+        "name": "黎明社教中心",
+        "name_en": "Liming Social Education Center",
+        "line": "懷恩專車S32",
+        "color": "#0891b2",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.55150423663828,
+          25.01926507278785
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TPE163287",
+        "name": "芳和國中",
+        "name_en": "Fangfe Junior High School",
+        "line": "懷恩專車S32",
+        "color": "#0891b2",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.550257364418,
+          25.0181390276757
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TPE163288",
+        "name": "青峰活動中心",
+        "name_en": "Qingfeng Activity Center",
+        "line": "懷恩專車S32",
+        "color": "#0891b2",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5513423711172,
+          25.015144865886427
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TPE185567",
+        "name": "臺北市懷愛館",
+        "name_en": "Taipei Huai Ai Funeral Parlor",
+        "line": "懷恩專車S32",
+        "color": "#0891b2",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.55319791903287,
+          25.013699726936505
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TPE163290",
+        "name": "青峰活動中心",
+        "name_en": "Qingfeng Activity Center",
+        "line": "懷恩專車S32",
+        "color": "#0891b2",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.55075149283692,
+          25.016039021546764
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TPE163291",
+        "name": "捷運六張犁站(基隆路)",
+        "name_en": "MRT Liuzhangli (Keelung Rd.)",
+        "line": "懷恩專車S32",
+        "color": "#0891b2",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.551906976436,
+          25.0236369355906
+        ]
+      }
+    }
+  ]
+}

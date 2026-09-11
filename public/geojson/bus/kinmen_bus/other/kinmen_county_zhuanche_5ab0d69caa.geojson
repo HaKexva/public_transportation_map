@@ -1,0 +1,273 @@
+{
+  "type": "FeatureCollection",
+  "name": "金門醫院專車",
+  "properties": {
+    "id": "kinmen_county_zhuanche_5ab0d69caa",
+    "name": "金門醫院專車",
+    "name_en": "金門醫院專車",
+    "ref": "金門醫院專車",
+    "color": "#155e75",
+    "city_id": "KinmenCounty",
+    "source": "TDX Bus Shape / StopOfRoute",
+    "operator_id": "0001",
+    "operator": "金門",
+    "operator_en": "City Bus and Ferry Management Office, Kinmen County",
+    "official_map_url": "https://www.kmdn.gov.tw/media/114233481/w_1110316e3.jpg"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "金門醫院專車",
+        "name": "金門醫院專車",
+        "name_en": "金門醫院專車",
+        "color": "#155e75",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            118.41378,
+            24.4422
+          ],
+          [
+            118.41401,
+            24.4425
+          ],
+          [
+            118.41428,
+            24.44232
+          ],
+          [
+            118.41322,
+            24.44083
+          ],
+          [
+            118.41303,
+            24.44077
+          ],
+          [
+            118.41312,
+            24.44056
+          ],
+          [
+            118.41242,
+            24.43957
+          ],
+          [
+            118.41775,
+            24.43795
+          ],
+          [
+            118.4182,
+            24.43909
+          ],
+          [
+            118.41788,
+            24.4392
+          ],
+          [
+            118.41824,
+            24.4401
+          ],
+          [
+            118.41815,
+            24.44029
+          ],
+          [
+            118.41882,
+            24.441
+          ],
+          [
+            118.4177,
+            24.44161
+          ],
+          [
+            118.41814,
+            24.44216
+          ],
+          [
+            118.4186,
+            24.44192
+          ],
+          [
+            118.41916,
+            24.44183
+          ],
+          [
+            118.4201,
+            24.44212
+          ],
+          [
+            118.42088,
+            24.44098
+          ],
+          [
+            118.41914,
+            24.44034
+          ],
+          [
+            118.41825,
+            24.44021
+          ],
+          [
+            118.41783,
+            24.43917
+          ],
+          [
+            118.41814,
+            24.43907
+          ],
+          [
+            118.41773,
+            24.43799
+          ],
+          [
+            118.41249,
+            24.43959
+          ],
+          [
+            118.41317,
+            24.44053
+          ],
+          [
+            118.41337,
+            24.44063
+          ],
+          [
+            118.41328,
+            24.4408
+          ],
+          [
+            118.41407,
+            24.44197
+          ],
+          [
+            118.41379,
+            24.44214
+          ],
+          [
+            118.41401,
+            24.44245
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KIN98-8555",
+        "name": "山外站",
+        "name_en": "Shanwai Station",
+        "line": "金門醫院專車",
+        "color": "#155e75",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          118.41405209061,
+          24.442215868008
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KIN98-41020",
+        "name": "金湖衛生所",
+        "name_en": "Public Health Center",
+        "line": "金門醫院專車",
+        "color": "#155e75",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          118.41756382376,
+          24.437909279433
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KIN98-27000",
+        "name": "金門醫院綜合醫療大樓",
+        "name_en": "Kinmen Hospital",
+        "line": "金門醫院專車",
+        "color": "#155e75",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          118.418852,
+          24.441246
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KIN98-41019",
+        "name": "向日葵大樓",
+        "name_en": "kinmen hospital",
+        "line": "金門醫院專車",
+        "color": "#155e75",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          118.41905588993,
+          24.441939125945
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KIN98-41055",
+        "name": "金湖衛生所",
+        "name_en": "Public Health Center",
+        "line": "金門醫院專車",
+        "color": "#155e75",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          118.41756382376,
+          24.437909279433
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KIN98-7055",
+        "name": "山外站",
+        "name_en": "Shanwai Station",
+        "line": "金門醫院專車",
+        "color": "#155e75",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          118.41405209061,
+          24.442215868008
+        ]
+      }
+    }
+  ]
+}

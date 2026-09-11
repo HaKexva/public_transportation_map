@@ -66,7 +66,7 @@ module Transit
     end
 
     def compute_vehicles(at_date)
-      calendar_ids = Transit::ServiceCalendarResolver.calendar_ids_for_date(at_date)
+      calendar_ids = Transit::ServiceCalendarResolver.calendar_ids_for_date(at_date, datasets: @datasets)
       return [] if calendar_ids.empty?
 
       routes = TransitRoute.where(route_id: @route_ids).to_a
@@ -132,11 +132,13 @@ module Transit
     end
 
     def vehicle_directions_for_route(route)
-      trip_dirs = ScheduleTrip.where(transit_route_id: route.id).distinct.limit(8).pluck(:direction).compact.uniq
+      dataset_ids = dataset_ids_for_query
+      trip_dirs = ScheduleTrip.where(transit_route_id: route.id, schedule_dataset_id: dataset_ids)
+        .distinct.pluck(:direction).compact.uniq
       dirs = trip_dirs
       if dirs.empty?
-        headway_dirs = HeadwayRule.where(transit_route_id: route.id).distinct.pluck(:direction).compact.uniq
-        dirs = headway_dirs
+        dirs = HeadwayRule.where(transit_route_id: route.id, schedule_dataset_id: dataset_ids)
+          .distinct.pluck(:direction).compact.uniq
       end
 
       if dirs.empty?
@@ -147,11 +149,27 @@ module Transit
       dirs |= [ "outbound" ] if dirs.include?("inbound")
       dirs |= [ "reverse" ] if dirs.include?("forward")
       dirs |= [ "forward" ] if dirs.include?("reverse")
+
+      # Inactive demo trips use forward/reverse; TDX metro uses outbound/inbound.
+      # Prefer the timetable pair so we do not fall through to synthetic trains.
+      paired = dirs & %w[outbound inbound]
+      return paired if paired.length == 2
+
+      paired = dirs & %w[forward reverse]
+      return paired if paired.length == 2
+
       dirs.first(2)
+    end
+
+    def dataset_ids_for_query
+      Array(@datasets).filter_map { |item| item.respond_to?(:id) ? item.id : item }
     end
 
     def vehicles_for_route_direction(route, direction, calendar_ids:)
       if metro_system?(route)
+        stitched = multi_stop_vehicles_for(route, direction, calendar_ids: calendar_ids)
+        return stitched if stitched.any?
+
         metro = station_timetable_vehicles_for(route, direction, calendar_ids: calendar_ids)
         return metro if metro.any?
 
@@ -409,10 +427,12 @@ module Transit
       effective_at_minutes = minutes_since_midnight(@at)
       vehicles = []
 
+      densifier = ScheduleDensifier.new
       trip_ids.each do |trip_id|
         ordered = stops_by_trip[trip_id]
         next if ordered.nil? || ordered.length < 2
 
+        ordered = densifier.densify(route, ordered)
         segment = find_active_trip_placement(ordered, effective_at_minutes)
         next unless segment
 

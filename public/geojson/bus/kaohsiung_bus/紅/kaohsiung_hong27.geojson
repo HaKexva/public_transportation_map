@@ -1,0 +1,785 @@
+{
+  "type": "FeatureCollection",
+  "name": "紅27",
+  "properties": {
+    "id": "kaohsiung_hong27",
+    "name": "紅27",
+    "name_en": "紅27",
+    "ref": "紅27",
+    "color": "#9f1239",
+    "city_id": "Kaohsiung",
+    "source": "TDX Bus Shape / StopOfRoute",
+    "official_map_url": "http://ibus.tbkc.gov.tw/cms/api/route/827/map/1596/image",
+    "operator_id": "10360",
+    "operator": "港都客運",
+    "operator_en": "Great-City-Life Bus Co., Ltd."
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "紅27",
+        "name": "紅27",
+        "name_en": "紅27",
+        "color": "#9f1239",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.30357,
+            22.63943
+          ],
+          [
+            120.30369,
+            22.64112
+          ],
+          [
+            120.30835,
+            22.64078
+          ],
+          [
+            120.30832,
+            22.64035
+          ],
+          [
+            120.30846,
+            22.63999
+          ],
+          [
+            120.30853,
+            22.63908
+          ],
+          [
+            120.30874,
+            22.63817
+          ],
+          [
+            120.30868,
+            22.63755
+          ],
+          [
+            120.30635,
+            22.63754
+          ],
+          [
+            120.30536,
+            22.63754
+          ],
+          [
+            120.30433,
+            22.63762
+          ],
+          [
+            120.30254,
+            22.63777
+          ],
+          [
+            120.30069,
+            22.63787
+          ],
+          [
+            120.29642,
+            22.63786
+          ],
+          [
+            120.29618,
+            22.63784
+          ],
+          [
+            120.29296,
+            22.63686
+          ],
+          [
+            120.28878,
+            22.63552
+          ],
+          [
+            120.28563,
+            22.63444
+          ],
+          [
+            120.28556,
+            22.63448
+          ],
+          [
+            120.28476,
+            22.63422
+          ],
+          [
+            120.2846,
+            22.63409
+          ],
+          [
+            120.28444,
+            22.63622
+          ],
+          [
+            120.28429,
+            22.63724
+          ],
+          [
+            120.28407,
+            22.63827
+          ],
+          [
+            120.28388,
+            22.63898
+          ],
+          [
+            120.28363,
+            22.6397
+          ],
+          [
+            120.2834,
+            22.64021
+          ],
+          [
+            120.28305,
+            22.64075
+          ],
+          [
+            120.2837,
+            22.64112
+          ],
+          [
+            120.28394,
+            22.64115
+          ],
+          [
+            120.28554,
+            22.64145
+          ],
+          [
+            120.28697,
+            22.64143
+          ],
+          [
+            120.28724,
+            22.6414
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "紅27",
+        "name": "紅27",
+        "name_en": "紅27",
+        "color": "#9f1239",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.288,
+            22.64124
+          ],
+          [
+            120.28866,
+            22.64096
+          ],
+          [
+            120.28939,
+            22.64056
+          ],
+          [
+            120.29009,
+            22.64002
+          ],
+          [
+            120.29071,
+            22.63939
+          ],
+          [
+            120.28544,
+            22.63766
+          ],
+          [
+            120.28522,
+            22.63844
+          ],
+          [
+            120.28492,
+            22.63921
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH100827138821",
+        "name": "高雄車站(站東路)",
+        "name_en": "Kaohsiung Main Station(Jhandong Rd.)",
+        "line": "紅27",
+        "color": "#9f1239",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.303662,
+          22.639645
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10082782271",
+        "name": "大連街口",
+        "name_en": "Dalian St. Intersection",
+        "line": "紅27",
+        "color": "#9f1239",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.305383,
+          22.640947
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10082782291",
+        "name": "自由路口(九如二路)",
+        "name_en": "Zihyou Rd. Intersection(Jiouru 2ndRd.)",
+        "line": "紅27",
+        "color": "#9f1239",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.307422,
+          22.64083
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10082782411",
+        "name": "建國忠孝路口",
+        "name_en": "Jianguo Jhongsiao Intersection",
+        "line": "紅27",
+        "color": "#9f1239",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.306267,
+          22.637569
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10082782421",
+        "name": "建國林森路口",
+        "name_en": "Jianguo Linsen Intersection",
+        "line": "紅27",
+        "color": "#9f1239",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.304364,
+          22.637659
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10082728951",
+        "name": "高雄車站(建國路)",
+        "name_en": "Kaohsiung Main Station(Jianguo Rd.)",
+        "line": "紅27",
+        "color": "#9f1239",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.301171,
+          22.637872
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10082729011",
+        "name": "高雄中學",
+        "name_en": "Kaohsiung Senior High School",
+        "line": "紅27",
+        "color": "#9f1239",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.297358,
+          22.637964
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10082729081",
+        "name": "三鳳中街",
+        "name_en": "Sanfongjhong St.",
+        "line": "紅27",
+        "color": "#9f1239",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.293969,
+          22.637207
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10082729121",
+        "name": "三民國小",
+        "name_en": "Sanmin Elementary School",
+        "line": "紅27",
+        "color": "#9f1239",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.290575,
+          22.63619
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10082729151",
+        "name": "建國三路",
+        "name_en": "Jianguo 3rd Rd.",
+        "line": "紅27",
+        "color": "#9f1239",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.288542,
+          22.63551
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10082729191",
+        "name": "河濱國小",
+        "name_en": "Hebin Elementary School",
+        "line": "紅27",
+        "color": "#9f1239",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.2865,
+          22.634854
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10082734901",
+        "name": "綠川里(慈仁宮)",
+        "name_en": "Lyuchuan Village(Cihren Temple)",
+        "line": "紅27",
+        "color": "#9f1239",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.284538,
+          22.635417
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10082734931",
+        "name": "河邊里活動中心",
+        "name_en": "Hebian Village Community Center",
+        "line": "紅27",
+        "color": "#9f1239",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.283695,
+          22.63972
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10082735441",
+        "name": "中都街口",
+        "name_en": "Jhongdu St. Intersection",
+        "line": "紅27",
+        "color": "#9f1239",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.287245,
+          22.641389
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10082731032",
+        "name": "中都街口",
+        "name_en": "Jhongdu St. Intersection",
+        "line": "紅27",
+        "color": "#9f1239",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.287245,
+          22.641389
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10082731262",
+        "name": "台安街口",
+        "name_en": "Taian St. Intersection",
+        "line": "紅27",
+        "color": "#9f1239",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.28865,
+          22.640886
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10082731092",
+        "name": "三角公園",
+        "name_en": "Triangle Park",
+        "line": "紅27",
+        "color": "#9f1239",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.289843,
+          22.640172
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10082731142",
+        "name": "中仁街口",
+        "name_en": "Jhongren St. Intersection",
+        "line": "紅27",
+        "color": "#9f1239",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.290176,
+          22.639234
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10082731152",
+        "name": "國泰社區",
+        "name_en": "Guotai Community",
+        "line": "紅27",
+        "color": "#9f1239",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.288743,
+          22.638746
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10082731202",
+        "name": "市中一路口",
+        "name_en": "Shihjhong 1st Rd. Intersection",
+        "line": "紅27",
+        "color": "#9f1239",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.285888,
+          22.637868
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10082731282",
+        "name": "同盟三路",
+        "name_en": "Tongmeng 3rd Rd.",
+        "line": "紅27",
+        "color": "#9f1239",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.28528,
+          22.638351
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10082732092",
+        "name": "中都磚窯廠(川東里)",
+        "name_en": "Jhongdu Brick Kiln(Chuandong Village)",
+        "line": "紅27",
+        "color": "#9f1239",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.284363,
+          22.640396
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10082734972",
+        "name": "河邊里活動中心",
+        "name_en": "Hebian Village Community Center",
+        "line": "紅27",
+        "color": "#9f1239",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.283588,
+          22.639658
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10082734982",
+        "name": "綠川里(慈仁宮)",
+        "name_en": "Lyuchuan Village(Cihren Temple)",
+        "line": "紅27",
+        "color": "#9f1239",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.284491,
+          22.635487
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10082729832",
+        "name": "河濱國小",
+        "name_en": "Hebin Elementary School",
+        "line": "紅27",
+        "color": "#9f1239",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.286471,
+          22.634625
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10082729902",
+        "name": "建國三路",
+        "name_en": "Jianguo 3rd Rd.",
+        "line": "紅27",
+        "color": "#9f1239",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.288253,
+          22.635328
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10082729952",
+        "name": "三民國小",
+        "name_en": "Sanmin Elementary School",
+        "line": "紅27",
+        "color": "#9f1239",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.290743,
+          22.63603
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10082730092",
+        "name": "三鳳中街",
+        "name_en": "Sanfongjhong St.",
+        "line": "紅27",
+        "color": "#9f1239",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.295093,
+          22.637442
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH100827138862",
+        "name": "高雄中學",
+        "name_en": "Kaohsiung Senior High School",
+        "line": "紅27",
+        "color": "#9f1239",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.297493,
+          22.637793
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH100827138892",
+        "name": "高雄車站(站東路)",
+        "name_en": "Kaohsiung Main Station(Jhandong Rd.)",
+        "line": "紅27",
+        "color": "#9f1239",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.303662,
+          22.639645
+        ]
+      }
+    }
+  ]
+}

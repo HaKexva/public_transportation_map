@@ -1,0 +1,1271 @@
+{
+  "type": "FeatureCollection",
+  "name": "109",
+  "properties": {
+    "id": "taoyuan_109",
+    "name": "109",
+    "name_en": "109",
+    "ref": "109",
+    "color": "#65a30d",
+    "city_id": "Taoyuan",
+    "source": "TDX Bus Shape / StopOfRoute",
+    "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/3460/map/1565/image",
+    "operator_id": "1",
+    "operator": "桃園客運",
+    "operator_en": "Taoyuan Bus Co., Ltd."
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "109",
+        "name": "109",
+        "name_en": "109",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            121.31424,
+            24.98678
+          ],
+          [
+            121.31436,
+            24.98564
+          ],
+          [
+            121.31058,
+            24.98526
+          ],
+          [
+            121.31011,
+            24.98408
+          ],
+          [
+            121.30988,
+            24.98383
+          ],
+          [
+            121.30627,
+            24.98087
+          ],
+          [
+            121.30507,
+            24.97991
+          ],
+          [
+            121.30459,
+            24.97947
+          ],
+          [
+            121.3043,
+            24.97915
+          ],
+          [
+            121.30404,
+            24.97875
+          ],
+          [
+            121.30259,
+            24.9762
+          ],
+          [
+            121.30239,
+            24.97544
+          ],
+          [
+            121.30239,
+            24.97521
+          ],
+          [
+            121.30041,
+            24.97545
+          ],
+          [
+            121.30007,
+            24.97312
+          ],
+          [
+            121.2997,
+            24.97105
+          ],
+          [
+            121.29934,
+            24.96895
+          ],
+          [
+            121.29517,
+            24.96894
+          ],
+          [
+            121.29471,
+            24.96819
+          ],
+          [
+            121.29455,
+            24.96568
+          ],
+          [
+            121.29452,
+            24.96408
+          ],
+          [
+            121.29673,
+            24.96335
+          ],
+          [
+            121.29509,
+            24.96104
+          ],
+          [
+            121.29425,
+            24.95951
+          ],
+          [
+            121.29132,
+            24.95956
+          ],
+          [
+            121.2843,
+            24.96033
+          ],
+          [
+            121.28017,
+            24.9608
+          ],
+          [
+            121.27913,
+            24.96069
+          ],
+          [
+            121.27895,
+            24.96175
+          ],
+          [
+            121.27882,
+            24.96301
+          ],
+          [
+            121.27871,
+            24.9637
+          ],
+          [
+            121.27856,
+            24.96504
+          ],
+          [
+            121.27809,
+            24.96532
+          ],
+          [
+            121.27724,
+            24.96705
+          ],
+          [
+            121.27538,
+            24.97091
+          ],
+          [
+            121.27526,
+            24.9715
+          ],
+          [
+            121.27512,
+            24.97181
+          ],
+          [
+            121.27439,
+            24.97271
+          ],
+          [
+            121.27373,
+            24.97367
+          ],
+          [
+            121.2731,
+            24.97443
+          ],
+          [
+            121.27292,
+            24.97466
+          ],
+          [
+            121.27266,
+            24.97484
+          ],
+          [
+            121.27231,
+            24.97502
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO39015",
+        "name": "桃園總站",
+        "name_en": "Taoyuan Main Station",
+        "line": "109",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.314085,
+          24.986559
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO246",
+        "name": "聖保祿醫院",
+        "name_en": "St. Pauls Hospital",
+        "line": "109",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.313943,
+          24.98565
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO34669",
+        "name": "建國路口",
+        "name_en": "Jianguo Road Intersection",
+        "line": "109",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.311032,
+          24.985374
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO65130",
+        "name": "介壽建國路口",
+        "name_en": "JieShou and JianGuo Rd. Intersection",
+        "line": "109",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.310243,
+          24.984633
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO65129",
+        "name": "介壽保羅街口",
+        "name_en": "JieShou and Baoluo St. Intersection",
+        "line": "109",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.309369,
+          24.983523
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO588",
+        "name": "桃園監理站",
+        "name_en": "Taoyuan Motor Vehicles Office",
+        "line": "109",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.303948,
+          24.978797
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO65126",
+        "name": "利台",
+        "name_en": "Litai",
+        "line": "109",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.302958,
+          24.976941
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO65125",
+        "name": "力行街口",
+        "name_en": "Lixing Street Intersection",
+        "line": "109",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.302405,
+          24.975797
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO6953",
+        "name": "大福街口",
+        "name_en": "Dafu St. Intersection",
+        "line": "109",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.300301,
+          24.974979
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO6954",
+        "name": "大地花園",
+        "name_en": "DaDi Garden",
+        "line": "109",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.299846,
+          24.972242
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO6955",
+        "name": "東培公司",
+        "name_en": "TUNGPEI INDUSTRIAL CO.  LTD.",
+        "line": "109",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.29938,
+          24.96933
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO3272",
+        "name": "大明街口",
+        "name_en": "Daming Street Intersection",
+        "line": "109",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.296862,
+          24.96897
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO3278",
+        "name": "桃德路",
+        "name_en": "TauDe Road",
+        "line": "109",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.294566,
+          24.967628
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO3279",
+        "name": "中德里",
+        "name_en": "Zhongde Village",
+        "line": "109",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.29451,
+          24.966122
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO3281",
+        "name": "永福西街",
+        "name_en": "Yungfu West St.",
+        "line": "109",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.295028,
+          24.963841
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO1475",
+        "name": "陸光國宅",
+        "name_en": "Luguang Public Housing",
+        "line": "109",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.295933,
+          24.962324
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO3282",
+        "name": "福國北街",
+        "name_en": "FuGuo North Street",
+        "line": "109",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.294566,
+          24.960265
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO7679",
+        "name": "廣福路(廣隆街口)",
+        "name_en": "Guanfu Rd.(Guanlung St. Intersection)",
+        "line": "109",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.292039,
+          24.959598
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO6956",
+        "name": "廣福路389巷",
+        "name_en": "Guangfu Rd., Ln. 389",
+        "line": "109",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.289053,
+          24.959849
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO6957",
+        "name": "廣福路530巷",
+        "name_en": "Guangfu Rd., Ln. 530",
+        "line": "109",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.286622,
+          24.960153
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO6958",
+        "name": "中祥食品",
+        "name_en": "Chung Hsiang Foods",
+        "line": "109",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.283995,
+          24.960459
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO6889",
+        "name": "廣興路口",
+        "name_en": "Guangxing Rd. Intersection",
+        "line": "109",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.281492,
+          24.960739
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO5338",
+        "name": "元聖宮",
+        "name_en": "Yuansheng Temple",
+        "line": "109",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.27873,
+          24.964
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO5340",
+        "name": "寶豐街口",
+        "name_en": "Baofeng St. Intersection",
+        "line": "109",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.277237,
+          24.96717
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO5342",
+        "name": "聯明街口",
+        "name_en": "Lianming St. Intersection",
+        "line": "109",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.27636,
+          24.96902
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO777",
+        "name": "泰豐街口",
+        "name_en": "TaiFeng Street Intersection",
+        "line": "109",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.275679,
+          24.970563
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO779",
+        "name": "國聯街口",
+        "name_en": "Guolian St. Intersection",
+        "line": "109",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.274175,
+          24.973065
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO781",
+        "name": "新興高中",
+        "name_en": "ShinShing High School",
+        "line": "109",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.272292,
+          24.975038
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO6959",
+        "name": "新興高中",
+        "name_en": "ShinShing High School",
+        "line": "109",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.27224,
+          24.975001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO780",
+        "name": "國聯街口",
+        "name_en": "Guolian St. Intersection",
+        "line": "109",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.274345,
+          24.972724
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO778",
+        "name": "泰豐街口",
+        "name_en": "TaiFeng Street Intersection",
+        "line": "109",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.275415,
+          24.970759
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO5343",
+        "name": "聯明街口",
+        "name_en": "Lianming St. Intersection",
+        "line": "109",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.276178,
+          24.96915
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO5341",
+        "name": "寶豐街口",
+        "name_en": "Baofeng St. Intersection",
+        "line": "109",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.277054,
+          24.967388
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO5339",
+        "name": "元聖宮",
+        "name_en": "Yuansheng Temple",
+        "line": "109",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.278616,
+          24.964184
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO6917",
+        "name": "廣興路口",
+        "name_en": "Guangxing Rd. Intersection",
+        "line": "109",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.281292,
+          24.960576
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO6960",
+        "name": "中祥食品",
+        "name_en": "Chung Hsiang Foods",
+        "line": "109",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.284166,
+          24.960329
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO6961",
+        "name": "廣福路530巷",
+        "name_en": "Guangfu Rd., Ln. 530",
+        "line": "109",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.286543,
+          24.960003
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO6962",
+        "name": "廣福路389巷",
+        "name_en": "Guangfu Rd., Ln. 389",
+        "line": "109",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.289009,
+          24.959731
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO7633",
+        "name": "廣福路(廣隆街口)",
+        "name_en": "Guanfu Rd.(Guanlung St. Intersection)",
+        "line": "109",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.291876,
+          24.959489
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO3516",
+        "name": "福國北街",
+        "name_en": "FuGuo North Street",
+        "line": "109",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.294588,
+          24.959974
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO1488",
+        "name": "陸光國宅",
+        "name_en": "Luguang Public Housing",
+        "line": "109",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.295504,
+          24.961665
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO3527",
+        "name": "永福西街",
+        "name_en": "Yungfu West St.",
+        "line": "109",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.295226,
+          24.963922
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO5289",
+        "name": "中德里",
+        "name_en": "Zhongde Village",
+        "line": "109",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.294655,
+          24.966149
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO5300",
+        "name": "桃德路",
+        "name_en": "TauDe Road",
+        "line": "109",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.294663,
+          24.967405
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO3553",
+        "name": "大明街口",
+        "name_en": "Daming Street Intersection",
+        "line": "109",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.296605,
+          24.968786
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO6963",
+        "name": "東培公司",
+        "name_en": "TUNGPEI INDUSTRIAL CO.  LTD.",
+        "line": "109",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.29943,
+          24.96958
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO6964",
+        "name": "大地花園",
+        "name_en": "DaDi Garden",
+        "line": "109",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.299901,
+          24.972105
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO6965",
+        "name": "大福街口",
+        "name_en": "Dafu St. Intersection",
+        "line": "109",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.300341,
+          24.974964
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO65047",
+        "name": "力行街口",
+        "name_en": "Lixing Street Intersection",
+        "line": "109",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.302529,
+          24.975505
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO65046",
+        "name": "利台",
+        "name_en": "Litai",
+        "line": "109",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.303116,
+          24.976913
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO587",
+        "name": "桃園監理站",
+        "name_en": "Taoyuan Motor Vehicles Office",
+        "line": "109",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.304411,
+          24.979142
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO3689",
+        "name": "介壽保羅街口",
+        "name_en": "JieShou and Baoluo St. Intersection",
+        "line": "109",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.309142,
+          24.983087
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO3691",
+        "name": "介壽建國路口",
+        "name_en": "JieShou and JianGuo Rd. Intersection",
+        "line": "109",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.31034,
+          24.984421
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO65039",
+        "name": "建國路口",
+        "name_en": "JianGuo Road Intersection",
+        "line": "109",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.311159,
+          24.985244
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO248",
+        "name": "聖保祿醫院",
+        "name_en": "St. Pauls Hospital",
+        "line": "109",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.313841,
+          24.985525
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO39015",
+        "name": "桃園總站",
+        "name_en": "Taoyuan Main Station",
+        "line": "109",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.314085,
+          24.986559
+        ]
+      }
+    }
+  ]
+}

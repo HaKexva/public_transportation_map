@@ -1,0 +1,651 @@
+{
+  "type": "FeatureCollection",
+  "name": "T603",
+  "properties": {
+    "id": "taoyuan_t603",
+    "name": "T603",
+    "name_en": "T603",
+    "ref": "T603",
+    "color": "#0e7490",
+    "city_id": "Taoyuan",
+    "source": "TDX Bus Shape / StopOfRoute",
+    "operator_id": "6",
+    "operator": "亞通客運",
+    "operator_en": "Yatung Bus Co., Ltd.",
+    "official_map_url": "https://ebus.tycg.gov.tw/cms/api/route/6030/map/latest"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "T603",
+        "name": "T603",
+        "name_en": "T603",
+        "color": "#0e7490",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            121.10546,
+            24.97267
+          ],
+          [
+            121.1071,
+            24.97277
+          ],
+          [
+            121.10892,
+            24.96987
+          ],
+          [
+            121.1069,
+            24.9689
+          ],
+          [
+            121.10626,
+            24.97
+          ],
+          [
+            121.10752,
+            24.97056
+          ],
+          [
+            121.10818,
+            24.96942
+          ],
+          [
+            121.10681,
+            24.96878
+          ],
+          [
+            121.10598,
+            24.96804
+          ],
+          [
+            121.10491,
+            24.96773
+          ],
+          [
+            121.10378,
+            24.96813
+          ],
+          [
+            121.10212,
+            24.96873
+          ],
+          [
+            121.10065,
+            24.96958
+          ],
+          [
+            121.10151,
+            24.97049
+          ],
+          [
+            121.10193,
+            24.97077
+          ],
+          [
+            121.10036,
+            24.96917
+          ],
+          [
+            121.09941,
+            24.96794
+          ],
+          [
+            121.09874,
+            24.9666
+          ],
+          [
+            121.09773,
+            24.96688
+          ],
+          [
+            121.09422,
+            24.96733
+          ],
+          [
+            121.09221,
+            24.96794
+          ],
+          [
+            121.08995,
+            24.96863
+          ],
+          [
+            121.08805,
+            24.96896
+          ],
+          [
+            121.08623,
+            24.97056
+          ],
+          [
+            121.08636,
+            24.97277
+          ],
+          [
+            121.08644,
+            24.9741
+          ],
+          [
+            121.08349,
+            24.97458
+          ],
+          [
+            121.08198,
+            24.9749
+          ],
+          [
+            121.0805,
+            24.97535
+          ],
+          [
+            121.07616,
+            24.97353
+          ],
+          [
+            121.0743,
+            24.97158
+          ],
+          [
+            121.07239,
+            24.96926
+          ],
+          [
+            121.07196,
+            24.96894
+          ],
+          [
+            121.06601,
+            24.96762
+          ],
+          [
+            121.05962,
+            24.96641
+          ],
+          [
+            121.05553,
+            24.96551
+          ],
+          [
+            121.05293,
+            24.96456
+          ],
+          [
+            121.05402,
+            24.96777
+          ],
+          [
+            121.05104,
+            24.96944
+          ],
+          [
+            121.05083,
+            24.97214
+          ],
+          [
+            121.04641,
+            24.97364
+          ],
+          [
+            121.04624,
+            24.97457
+          ],
+          [
+            121.04482,
+            24.97889
+          ],
+          [
+            121.04572,
+            24.98262
+          ],
+          [
+            121.04529,
+            24.98406
+          ],
+          [
+            121.04658,
+            24.98593
+          ],
+          [
+            121.0459,
+            24.9873
+          ],
+          [
+            121.04851,
+            24.99371
+          ],
+          [
+            121.05091,
+            24.99834
+          ],
+          [
+            121.05192,
+            24.99945
+          ],
+          [
+            121.05293,
+            25.00231
+          ],
+          [
+            121.04957,
+            25.00446
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "T603",
+        "name": "T603",
+        "name_en": "T603",
+        "color": "#0e7490",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            121.08288,
+            24.97653
+          ],
+          [
+            121.08632,
+            24.97582
+          ],
+          [
+            121.086,
+            24.9751
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO597",
+        "name": "新屋區公所",
+        "name_en": "Sinwu District office",
+        "line": "T603",
+        "color": "#0e7490",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.105461,
+          24.972669
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO4478",
+        "name": "新屋分院",
+        "name_en": "Sinwu Branch, Taoyuan General Hospital",
+        "line": "T603",
+        "color": "#0e7490",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.106377,
+          24.969606
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO6456",
+        "name": "新屋高中",
+        "name_en": "Sinwu High school",
+        "line": "T603",
+        "color": "#0e7490",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.10163,
+          24.97057
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO10106",
+        "name": "中興路310巷",
+        "name_en": "Lane 310 Zhongxing Road",
+        "line": "T603",
+        "color": "#0e7490",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.092193,
+          24.967962
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO10107",
+        "name": "上庄路",
+        "name_en": "Shangzhuang Road",
+        "line": "T603",
+        "color": "#0e7490",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.086338,
+          24.972795
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO57725",
+        "name": "東福",
+        "name_en": "Dongfu",
+        "line": "T603",
+        "color": "#0e7490",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.08047,
+          24.97537
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO63848",
+        "name": "上糠榔",
+        "name_en": "shangkanglang",
+        "line": "T603",
+        "color": "#0e7490",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.059719,
+          24.966351
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO10109",
+        "name": "永安國小",
+        "name_en": "Yongan Elementary School",
+        "line": "T603",
+        "color": "#0e7490",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.045872,
+          24.987315
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO10110",
+        "name": "保安路",
+        "name_en": "Baoan Road",
+        "line": "T603",
+        "color": "#0e7490",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.048482,
+          24.993724
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO63905",
+        "name": "北湖國小",
+        "name_en": "Beihu Elementary School",
+        "line": "T603",
+        "color": "#0e7490",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.04954,
+          25.00447
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO63894",
+        "name": "北湖國小",
+        "name_en": "Beihu Elementary School",
+        "line": "T603",
+        "color": "#0e7490",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.04944,
+          25.00443
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO10112",
+        "name": "保安路",
+        "name_en": "Baoan Road",
+        "line": "T603",
+        "color": "#0e7490",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.048375,
+          24.993764
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO10113",
+        "name": "永安國小",
+        "name_en": "Yongan Elementary School",
+        "line": "T603",
+        "color": "#0e7490",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.04579,
+          24.98712
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO63876",
+        "name": "上糠榔",
+        "name_en": "shangkanglang",
+        "line": "T603",
+        "color": "#0e7490",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.059585,
+          24.966419
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO57724",
+        "name": "東福",
+        "name_en": "Dongfu",
+        "line": "T603",
+        "color": "#0e7490",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.08029,
+          24.97529
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO10115",
+        "name": "上庄路",
+        "name_en": "Shangzhuang Road",
+        "line": "T603",
+        "color": "#0e7490",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.086224,
+          24.972666
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO10116",
+        "name": "中興路310巷",
+        "name_en": "Lane 310 Zhongxing Road",
+        "line": "T603",
+        "color": "#0e7490",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.092395,
+          24.967909
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO6456",
+        "name": "新屋高中",
+        "name_en": "Sinwu High school",
+        "line": "T603",
+        "color": "#0e7490",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.10163,
+          24.97057
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO4477",
+        "name": "新屋分院",
+        "name_en": "Sinwu Branch, Taoyuan General Hospital",
+        "line": "T603",
+        "color": "#0e7490",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.106559,
+          24.969596
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO595",
+        "name": "新屋區公所",
+        "name_en": "Sinwu District office",
+        "line": "T603",
+        "color": "#0e7490",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.105292,
+          24.972828
+        ]
+      }
+    }
+  ]
+}

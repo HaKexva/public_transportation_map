@@ -1,0 +1,631 @@
+{
+  "type": "FeatureCollection",
+  "name": "98",
+  "properties": {
+    "id": "kaohsiung_98",
+    "name": "98",
+    "name_en": "98",
+    "ref": "98",
+    "color": "#134e4a",
+    "city_id": "Kaohsiung",
+    "source": "TDX Bus Shape / StopOfRoute",
+    "official_map_url": "http://ibus.tbkc.gov.tw/cms/api/route/98/map/1201/image",
+    "operator_id": "10320",
+    "operator": "高雄客運",
+    "operator_en": "Kaohsiung Bus Co., Ltd."
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "98",
+        "name": "98",
+        "name_en": "98",
+        "color": "#134e4a",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.31758,
+            22.74379
+          ],
+          [
+            120.31758,
+            22.74337
+          ],
+          [
+            120.31682,
+            22.74305
+          ],
+          [
+            120.31461,
+            22.74203
+          ],
+          [
+            120.31686,
+            22.73775
+          ],
+          [
+            120.31266,
+            22.73672
+          ],
+          [
+            120.31219,
+            22.73664
+          ],
+          [
+            120.30972,
+            22.73651
+          ],
+          [
+            120.30806,
+            22.73624
+          ],
+          [
+            120.30798,
+            22.7374
+          ],
+          [
+            120.3075,
+            22.73741
+          ],
+          [
+            120.30703,
+            22.73747
+          ],
+          [
+            120.30637,
+            22.73776
+          ],
+          [
+            120.30573,
+            22.73824
+          ],
+          [
+            120.30551,
+            22.73853
+          ],
+          [
+            120.30517999999999,
+            22.73914
+          ],
+          [
+            120.30396,
+            22.73876
+          ],
+          [
+            120.30411,
+            22.73772
+          ],
+          [
+            120.30427,
+            22.73775
+          ],
+          [
+            120.30439,
+            22.73692
+          ],
+          [
+            120.30419,
+            22.73689
+          ],
+          [
+            120.30431,
+            22.73583
+          ],
+          [
+            120.30306,
+            22.73586
+          ],
+          [
+            120.30322,
+            22.73392
+          ],
+          [
+            120.30328,
+            22.73294
+          ],
+          [
+            120.3033,
+            22.73198
+          ],
+          [
+            120.30314,
+            22.73081
+          ],
+          [
+            120.30314,
+            22.72866
+          ],
+          [
+            120.3031,
+            22.72818
+          ],
+          [
+            120.30291,
+            22.72735
+          ],
+          [
+            120.30276,
+            22.72686
+          ],
+          [
+            120.30275,
+            22.7262
+          ],
+          [
+            120.30293,
+            22.7253
+          ],
+          [
+            120.30441,
+            22.72187
+          ],
+          [
+            120.30432,
+            22.7218
+          ],
+          [
+            120.30426,
+            22.72169
+          ],
+          [
+            120.30426,
+            22.72153
+          ],
+          [
+            120.30437,
+            22.72143
+          ],
+          [
+            120.3045,
+            22.72138
+          ],
+          [
+            120.30464,
+            22.7214
+          ],
+          [
+            120.30545,
+            22.71961
+          ],
+          [
+            120.30506,
+            22.71945
+          ],
+          [
+            120.30513,
+            22.71915
+          ],
+          [
+            120.30523,
+            22.7189
+          ],
+          [
+            120.3055,
+            22.71856
+          ],
+          [
+            120.30612,
+            22.71877
+          ],
+          [
+            120.30617,
+            22.7189
+          ],
+          [
+            120.30612,
+            22.71899
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "98",
+        "name": "98",
+        "name_en": "98",
+        "color": "#134e4a",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.31788,
+            22.74423
+          ],
+          [
+            120.31759,
+            22.74425
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10009888291",
+        "name": "捷運青埔站",
+        "name_en": "MRT Cingpu Station",
+        "line": "98",
+        "color": "#134e4a",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.317561,
+          22.743771
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10009879641",
+        "name": "經武路口",
+        "name_en": "Jingwu Rd. Intersection",
+        "line": "98",
+        "color": "#134e4a",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.315406,
+          22.742403
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10009879651",
+        "name": "橋新七路(新東一街)",
+        "name_en": "Ciaosin 7th Rd.(Sindong 1st St.)",
+        "line": "98",
+        "color": "#134e4a",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.316049,
+          22.739269
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10009879681",
+        "name": "橋新一路(橋新七路)",
+        "name_en": "Ciaosin 1st Rd.(Ciaosin 7th Rd.)",
+        "line": "98",
+        "color": "#134e4a",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.316054,
+          22.737599
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10009879691",
+        "name": "都會公園(北門)",
+        "name_en": "Metropolitan Park(North Gate)",
+        "line": "98",
+        "color": "#134e4a",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.310399,
+          22.736573
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10009879701",
+        "name": "橋新二路(橋新九路)",
+        "name_en": "Ciaosin 2nd Rd.(Ciaosin 9th Rd.)",
+        "line": "98",
+        "color": "#134e4a",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.307297,
+          22.737481
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH100098124501",
+        "name": "橋頭地檢署",
+        "name_en": "Ciaotou District Prosecutors office",
+        "line": "98",
+        "color": "#134e4a",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.304762,
+          22.739032
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH100098157331",
+        "name": "橋頭地方法院(2)",
+        "name_en": "Ciaotou District Court(2)",
+        "line": "98",
+        "color": "#134e4a",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.304233,
+          22.737549
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH1000987341",
+        "name": "翠屏里活動中心",
+        "name_en": "Cueiping Village Community Center",
+        "line": "98",
+        "color": "#134e4a",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.302755,
+          22.726875
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH1000987351",
+        "name": "捷運楠梓科技園區站(園區內)",
+        "name_en": "MRT Nanzih Technology Industrial Park (Industrial Park)",
+        "line": "98",
+        "color": "#134e4a",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.306161,
+          22.71916
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH1000985722",
+        "name": "捷運楠梓科技園區站(園區內)",
+        "name_en": "MRT Nanzih Technology Industrial Park (Industrial Park)",
+        "line": "98",
+        "color": "#134e4a",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.306161,
+          22.71916
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH1000985732",
+        "name": "翠屏里活動中心",
+        "name_en": "Cueiping Village Community Center",
+        "line": "98",
+        "color": "#134e4a",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.30292,
+          22.726777
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH100098158102",
+        "name": "橋頭地方法院(2)",
+        "name_en": "Ciaotou District Court(2)",
+        "line": "98",
+        "color": "#134e4a",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.304379,
+          22.737521
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH100098152322",
+        "name": "橋頭地方法院(1)",
+        "name_en": "Ciaotou District Court(1)",
+        "line": "98",
+        "color": "#134e4a",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.304528,
+          22.738757
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10009879752",
+        "name": "橋新二路(橋新九路)",
+        "name_en": "Ciaosin 2nd Rd.(Ciaosin 9th Rd.)",
+        "line": "98",
+        "color": "#134e4a",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.307284,
+          22.73736
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10009879772",
+        "name": "都會公園(北門)",
+        "name_en": "Metropolitan Park(North Gate)",
+        "line": "98",
+        "color": "#134e4a",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.310423,
+          22.736468
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10009879782",
+        "name": "橋新一路(橋新七路)",
+        "name_en": "Ciaosin 1st Rd.(Ciaosin 7th Rd.)",
+        "line": "98",
+        "color": "#134e4a",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.315951,
+          22.737449
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10009879812",
+        "name": "橋新七路(新東一街)",
+        "name_en": "Ciaosin 7th Rd.(Sindong 1st St.)",
+        "line": "98",
+        "color": "#134e4a",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.316146,
+          22.739286
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10009879822",
+        "name": "經武路口",
+        "name_en": "Jingwu Rd. Intersection",
+        "line": "98",
+        "color": "#134e4a",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.31544,
+          22.742284
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10009888602",
+        "name": "捷運青埔站",
+        "name_en": "MRT Cingpu Station",
+        "line": "98",
+        "color": "#134e4a",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.317561,
+          22.743771
+        ]
+      }
+    }
+  ]
+}

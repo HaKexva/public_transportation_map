@@ -1,0 +1,261 @@
+{
+  "type": "FeatureCollection",
+  "name": "黃2果嶺公園接駁線",
+  "properties": {
+    "id": "kaohsiung_huang2_90e10e7ee1",
+    "name": "黃2果嶺公園接駁線",
+    "name_en": "黃2果嶺公園接駁線",
+    "ref": "黃2果嶺公園接駁線",
+    "color": "#9f1239",
+    "city_id": "Kaohsiung",
+    "source": "TDX Bus Shape / StopOfRoute",
+    "official_map_url": "http://ibus.tbkc.gov.tw/cms/api/route/6023/map/1246/image",
+    "operator_id": "10360",
+    "operator": "港都客運",
+    "operator_en": "Great-City-Life Bus Co., Ltd."
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "黃2果嶺公園接駁線",
+        "name": "黃2果嶺公園接駁線",
+        "name_en": "黃2果嶺公園接駁線",
+        "color": "#9f1239",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.34944,
+            22.65331
+          ],
+          [
+            120.34916,
+            22.65276
+          ],
+          [
+            120.34919,
+            22.65253
+          ],
+          [
+            120.34826,
+            22.6504
+          ],
+          [
+            120.34795,
+            22.65057
+          ],
+          [
+            120.34771,
+            22.65074
+          ],
+          [
+            120.34744,
+            22.65129
+          ],
+          [
+            120.34697,
+            22.65232
+          ],
+          [
+            120.34651,
+            22.6532
+          ],
+          [
+            120.34576,
+            22.65425
+          ],
+          [
+            120.34532,
+            22.6548
+          ],
+          [
+            120.34513,
+            22.65543
+          ],
+          [
+            120.34487,
+            22.65631
+          ],
+          [
+            120.34449,
+            22.65665
+          ],
+          [
+            120.3432,
+            22.65738
+          ],
+          [
+            120.33943,
+            22.65926
+          ],
+          [
+            120.33891,
+            22.65955
+          ],
+          [
+            120.33858,
+            22.65987
+          ],
+          [
+            120.33854,
+            22.66012
+          ],
+          [
+            120.33876,
+            22.6606
+          ],
+          [
+            120.33885,
+            22.66078
+          ],
+          [
+            120.33887,
+            22.66104
+          ],
+          [
+            120.3385,
+            22.66161
+          ],
+          [
+            120.33831,
+            22.66187
+          ],
+          [
+            120.33817,
+            22.66218
+          ],
+          [
+            120.33826,
+            22.66265
+          ],
+          [
+            120.33851,
+            22.66293
+          ],
+          [
+            120.33882,
+            22.66314
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10602391301",
+        "name": "澄清湖",
+        "name_en": "Chengcing Lake",
+        "line": "黃2果嶺公園接駁線",
+        "color": "#9f1239",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.349499,
+          22.653378
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10602391261",
+        "name": "圓山路",
+        "name_en": "Yuanshan Rd.",
+        "line": "黃2果嶺公園接駁線",
+        "color": "#9f1239",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.345771,
+          22.654285
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10602391271",
+        "name": "高雄果嶺自然公園",
+        "name_en": "Kaohsiung Green Park",
+        "line": "黃2果嶺公園接駁線",
+        "color": "#9f1239",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.338906,
+          22.663083
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10602391282",
+        "name": "高雄果嶺自然公園",
+        "name_en": "Kaohsiung Green Park",
+        "line": "黃2果嶺公園接駁線",
+        "color": "#9f1239",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.338794,
+          22.663165
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10602391292",
+        "name": "圓山路",
+        "name_en": "Yuanshan Rd.",
+        "line": "黃2果嶺公園接駁線",
+        "color": "#9f1239",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.345826,
+          22.653999
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10602391312",
+        "name": "澄清湖",
+        "name_en": "Chengcing Lake",
+        "line": "黃2果嶺公園接駁線",
+        "color": "#9f1239",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.349499,
+          22.653378
+        ]
+      }
+    }
+  ]
+}

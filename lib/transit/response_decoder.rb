@@ -10,6 +10,8 @@ module Transit
       GeneralTimetable
       Frequencies
       StationTimeTables
+      DailyTimetables
+      DailyTimetable
       TrainLiveBoards
       StationLiveBoards
       LiveBoards

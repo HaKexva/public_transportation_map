@@ -13,6 +13,7 @@ export default class extends Controller {
   static targets = [
     "panel",
     "dateLabel",
+    "dateInput",
     "timeLabel",
     "slider",
     "playButton",
@@ -21,7 +22,8 @@ export default class extends Controller {
     "details",
     "hint",
     "vehicleCount",
-    "badge"
+    "badge",
+    "periodButton"
   ]
 
   connect() {
@@ -43,6 +45,8 @@ export default class extends Controller {
     this.syncSpeedSelect()
     this.syncLabels()
     this.syncSlider()
+    this.syncDateInput()
+    this.syncPeriodButtons()
     this.emitTime({ immediate: true })
     // Map may connect after us — re-emit once controllers settle.
     this._bootEmitTimer = setTimeout(() => this.emitTime({ immediate: true }), 400)
@@ -144,6 +148,26 @@ export default class extends Controller {
     this.syncExpanded()
   }
 
+  openDatePicker() {
+    this.expanded = true
+    this.persistExpanded()
+    this.syncExpanded()
+    if (!this.hasDateInputTarget) return
+
+    const input = this.dateInputTarget
+    requestAnimationFrame(() => {
+      if (typeof input.showPicker === "function") {
+        try {
+          input.showPicker()
+          return
+        } catch (_error) {
+          // Some browsers only allow showPicker from a direct user gesture.
+        }
+      }
+      input.focus()
+    })
+  }
+
   syncExpanded() {
     this.panelTarget.classList.toggle("time-scrubber--collapsed", !this.expanded)
     this.panelTarget.classList.toggle("time-scrubber--expanded", this.expanded)
@@ -193,7 +217,46 @@ export default class extends Controller {
       milliseconds: 0
     })
     this.syncLabels()
+    this.syncPeriodButtons()
     // Scrubbing must move vehicles with the clock (even when not playing).
+    this.emitTime({ immediate: true })
+  }
+
+  pickDate(event) {
+    const value = event.currentTarget.value
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) return
+
+    const [ year, month, day ] = value.split("-").map((part) => Number.parseInt(part, 10))
+    const parts = this.taipeiParts(this.at)
+    this.at = new Date(Date.UTC(
+      year,
+      month - 1,
+      day,
+      parts.hours,
+      parts.minutes,
+      parts.seconds,
+      0
+    ) - TAIPEI_OFFSET_MS)
+    this.syncLabels()
+    this.syncSlider()
+    this.syncDateInput()
+    this.syncPeriodButtons()
+    this.emitTime({ immediate: true })
+  }
+
+  pickPeriod(event) {
+    const minutes = Number.parseInt(event.currentTarget.dataset.minutes || "0", 10)
+    if (!Number.isFinite(minutes)) return
+
+    this.at = this.setTaipeiClock(this.at, {
+      hours: Math.floor(minutes / 60) % 24,
+      minutes: minutes % 60,
+      seconds: 0,
+      milliseconds: 0
+    })
+    this.syncLabels()
+    this.syncSlider()
+    this.syncPeriodButtons()
     this.emitTime({ immediate: true })
   }
 
@@ -201,6 +264,8 @@ export default class extends Controller {
     this.at = new Date()
     this.syncLabels()
     this.syncSlider()
+    this.syncDateInput()
+    this.syncPeriodButtons()
     this.emitTime({ immediate: true })
   }
 
@@ -211,6 +276,8 @@ export default class extends Controller {
     this.at = date
     this.syncLabels()
     this.syncSlider()
+    this.syncDateInput()
+    this.syncPeriodButtons()
     this.emitTime({ immediate: true })
   }
 
@@ -220,6 +287,8 @@ export default class extends Controller {
 
     this.at = new Date(this.at.getTime() + delta * 24 * 60 * 60 * 1000)
     this.syncLabels()
+    this.syncDateInput()
+    this.syncPeriodButtons()
     this.emitTime({ immediate: true })
   }
 
@@ -271,6 +340,8 @@ export default class extends Controller {
       this.at = new Date(this.at.getTime() + deltaMs * this.playSpeed)
       this.syncLabels()
       this.syncSlider()
+      this.syncDateInput()
+      this.syncPeriodButtons()
 
       // Emit often enough for map/API sync, but not every paint.
       if (!this._lastEmitTs || ts - this._lastEmitTs >= 50) {
@@ -342,6 +413,32 @@ export default class extends Controller {
     if (this.hasTimeLabelTarget) {
       this.timeLabelTarget.textContent = this.formatTime(this.at)
     }
+    this.syncDateInput()
+    this.syncPeriodButtons()
+  }
+
+  syncDateInput() {
+    if (!this.hasDateInputTarget) return
+    if (document.activeElement === this.dateInputTarget) return
+
+    const parts = this.taipeiParts(this.at)
+    const month = String(parts.month + 1).padStart(2, "0")
+    const day = String(parts.day).padStart(2, "0")
+    this.dateInputTarget.value = `${parts.year}-${month}-${day}`
+  }
+
+  syncPeriodButtons() {
+    if (!this.hasPeriodButtonTarget) return
+
+    const parts = this.taipeiParts(this.at)
+    const minutes = parts.hours * 60 + parts.minutes
+    this.periodButtonTargets.forEach((button) => {
+      const from = Number.parseInt(button.dataset.from || "0", 10)
+      const until = Number.parseInt(button.dataset.until || "0", 10)
+      const active = Number.isFinite(from) && Number.isFinite(until) && minutes >= from && minutes < until
+      button.classList.toggle("time-scrubber__btn--active", active)
+      button.setAttribute("aria-pressed", active ? "true" : "false")
+    })
   }
 
   syncSlider() {
@@ -400,6 +497,7 @@ export default class extends Controller {
     try {
       return new Intl.DateTimeFormat(this.localeTag(), {
         timeZone: CLOCK_TZ,
+        year: "numeric",
         month: "2-digit",
         day: "2-digit",
         weekday: "short"

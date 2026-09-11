@@ -1,0 +1,757 @@
+{
+  "type": "FeatureCollection",
+  "name": "500（經中壢）",
+  "properties": {
+    "id": "taoyuan_500_3a2caa2b18",
+    "name": "500（經中壢）",
+    "name_en": "500 (via 中壢)",
+    "ref": "500",
+    "color": "#65a30d",
+    "city_id": "Taoyuan",
+    "source": "TDX Bus Shape / StopOfRoute",
+    "via": "中壢",
+    "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/5006/map/2003/image",
+    "operator_id": "1",
+    "operator": "桃園客運",
+    "operator_en": "Taoyuan Bus Co., Ltd."
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "500",
+        "name": "500（經中壢）",
+        "name_en": "500 (via 中壢)",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            121.22398,
+            24.95306
+          ],
+          [
+            121.2239,
+            24.9529
+          ],
+          [
+            121.22368,
+            24.95298
+          ],
+          [
+            121.2238,
+            24.95326
+          ],
+          [
+            121.22214,
+            24.95391
+          ],
+          [
+            121.22267,
+            24.95499
+          ],
+          [
+            121.22081,
+            24.95569
+          ],
+          [
+            121.21913,
+            24.95505
+          ],
+          [
+            121.21877,
+            24.95505
+          ],
+          [
+            121.21768,
+            24.95526
+          ],
+          [
+            121.21751,
+            24.95498
+          ],
+          [
+            121.21545,
+            24.95294
+          ],
+          [
+            121.21378,
+            24.95108
+          ],
+          [
+            121.21054,
+            24.95183
+          ],
+          [
+            121.21022,
+            24.95183
+          ],
+          [
+            121.20669,
+            24.95139
+          ],
+          [
+            121.20541,
+            24.95054
+          ],
+          [
+            121.20509,
+            24.95449
+          ],
+          [
+            121.20309,
+            24.9544
+          ],
+          [
+            121.20335,
+            24.94992
+          ],
+          [
+            121.20354,
+            24.94945
+          ],
+          [
+            121.20398,
+            24.94893
+          ],
+          [
+            121.20367,
+            24.9486
+          ],
+          [
+            121.2019,
+            24.94734
+          ],
+          [
+            121.20077,
+            24.94607
+          ],
+          [
+            121.20013,
+            24.94578
+          ],
+          [
+            121.19921,
+            24.94568
+          ],
+          [
+            121.19884,
+            24.94553
+          ],
+          [
+            121.19825,
+            24.94484
+          ],
+          [
+            121.19774,
+            24.94444
+          ],
+          [
+            121.19416,
+            24.94249
+          ],
+          [
+            121.19341,
+            24.94234
+          ],
+          [
+            121.19067,
+            24.94231
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO64910",
+        "name": "中壢總站",
+        "name_en": "Zhongli Bus Terminal",
+        "line": "500（經中壢）",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.223906,
+          24.953018
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO4157",
+        "name": "第一銀行",
+        "name_en": "First Bank",
+        "line": "500（經中壢）",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.222028,
+          24.955308
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO64908",
+        "name": "第一市場",
+        "name_en": "First Market",
+        "line": "500（經中壢）",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.220106,
+          24.955536
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO64907",
+        "name": "義民路口",
+        "name_en": "Yimin Road Intersection",
+        "line": "500（經中壢）",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.217019,
+          24.954624
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO64906",
+        "name": "消防隊",
+        "name_en": "Fire Brigade",
+        "line": "500（經中壢）",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.215256,
+          24.952778
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO64905",
+        "name": "育達路口",
+        "name_en": "Yuda Road Intersection",
+        "line": "500（經中壢）",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.21298,
+          24.95134
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO64904",
+        "name": "育達高中",
+        "name_en": "Yuda High School",
+        "line": "500（經中壢）",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.209109,
+          24.951765
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO64903",
+        "name": "大伯公",
+        "name_en": "Dabogong",
+        "line": "500（經中壢）",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.205697,
+          24.950743
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO64902",
+        "name": "復旦集會所",
+        "name_en": "Fudan United Meeting Office",
+        "line": "500（經中壢）",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.205126,
+          24.954266
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO64901",
+        "name": "文化國小",
+        "name_en": "Wenhua Elementary School",
+        "line": "500（經中壢）",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.203044,
+          24.953335
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO64900",
+        "name": "復旦中學",
+        "name_en": "Fudan High School",
+        "line": "500（經中壢）",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.20341,
+          24.948477
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO64899",
+        "name": "上中原",
+        "name_en": "Shangzhongyuan",
+        "line": "500（經中壢）",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.201065,
+          24.946529
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO64898",
+        "name": "下中原",
+        "name_en": "Xiazhongyuan",
+        "line": "500（經中壢）",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.199737,
+          24.945784
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO64897",
+        "name": "復旦新村",
+        "name_en": "Fudan Village",
+        "line": "500（經中壢）",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.19779,
+          24.944535
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO64896",
+        "name": "七星工廠",
+        "name_en": "Qixing Factory",
+        "line": "500（經中壢）",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.196176,
+          24.94361
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO64895",
+        "name": "高山下",
+        "name_en": "Gaoshanxia",
+        "line": "500（經中壢）",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.190694,
+          24.942362
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO64894",
+        "name": "高山下",
+        "name_en": "Gaoshanxia",
+        "line": "500（經中壢）",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.190693,
+          24.94223
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO64893",
+        "name": "七星工廠",
+        "name_en": "Qixing Factory",
+        "line": "500（經中壢）",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.196145,
+          24.943506
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO64892",
+        "name": "復旦新村",
+        "name_en": "Fudan Village",
+        "line": "500（經中壢）",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.19771,
+          24.94442
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO64891",
+        "name": "下中原",
+        "name_en": "Xiazhongyuan",
+        "line": "500（經中壢）",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.199672,
+          24.945698
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO64890",
+        "name": "上中原",
+        "name_en": "Shangzhongyuan",
+        "line": "500（經中壢）",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.20115,
+          24.946496
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO64889",
+        "name": "復旦中學",
+        "name_en": "Fudan High School",
+        "line": "500（經中壢）",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.20338,
+          24.94836
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO64888",
+        "name": "文化國小",
+        "name_en": "Wenhua Elementary School",
+        "line": "500（經中壢）",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.203225,
+          24.953355
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO64887",
+        "name": "復旦集會所",
+        "name_en": "Fudan United Meeting Office",
+        "line": "500（經中壢）",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.205086,
+          24.954292
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO64886",
+        "name": "大伯公",
+        "name_en": "Dabogong",
+        "line": "500（經中壢）",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.20596,
+          24.95086
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO64885",
+        "name": "育達高中",
+        "name_en": "Yuda High School",
+        "line": "500（經中壢）",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.209409,
+          24.951626
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO64884",
+        "name": "育達路口",
+        "name_en": "Yuda Road Intersection",
+        "line": "500（經中壢）",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.213439,
+          24.951095
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO64883",
+        "name": "消防隊",
+        "name_en": "Fire Brigade",
+        "line": "500（經中壢）",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.215256,
+          24.952696
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO64882",
+        "name": "義民路口",
+        "name_en": "Yimin Road Intersection",
+        "line": "500（經中壢）",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.217169,
+          24.954474
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO64880",
+        "name": "第一銀行",
+        "name_en": "First Bank",
+        "line": "500（經中壢）",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.221976,
+          24.955072
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO64910",
+        "name": "中壢總站",
+        "name_en": "Zhongli Bus Terminal",
+        "line": "500（經中壢）",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.223906,
+          24.953018
+        ]
+      }
+    }
+  ]
+}

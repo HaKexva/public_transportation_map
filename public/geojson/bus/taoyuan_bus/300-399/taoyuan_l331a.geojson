@@ -1,0 +1,402 @@
+{
+  "type": "FeatureCollection",
+  "name": "L331A",
+  "properties": {
+    "id": "taoyuan_l331a",
+    "name": "L331A",
+    "name_en": "L331A",
+    "ref": "L331A",
+    "color": "#0e7490",
+    "city_id": "Taoyuan",
+    "source": "TDX Bus Shape / StopOfRoute",
+    "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/53311/map/2367/image",
+    "operator_id": "6",
+    "operator": "亞通客運",
+    "operator_en": "Yatung Bus Co., Ltd."
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "L331A",
+        "name": "L331A",
+        "name_en": "L331A",
+        "color": "#0e7490",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            121.26287,
+            25.04338
+          ],
+          [
+            121.26323,
+            25.04343
+          ],
+          [
+            121.26335,
+            25.04355
+          ],
+          [
+            121.26386,
+            25.04494
+          ],
+          [
+            121.26414,
+            25.0453
+          ],
+          [
+            121.26463,
+            25.04552
+          ],
+          [
+            121.26497,
+            25.04582
+          ],
+          [
+            121.26552,
+            25.04654
+          ],
+          [
+            121.26591,
+            25.04668
+          ],
+          [
+            121.26584,
+            25.04861
+          ],
+          [
+            121.26588,
+            25.04901
+          ],
+          [
+            121.26612,
+            25.04945
+          ],
+          [
+            121.26669,
+            25.05021
+          ],
+          [
+            121.26704,
+            25.05101
+          ],
+          [
+            121.26814,
+            25.0523
+          ],
+          [
+            121.26831,
+            25.05275
+          ],
+          [
+            121.26884,
+            25.05623
+          ],
+          [
+            121.26874,
+            25.05657
+          ],
+          [
+            121.26814,
+            25.05745
+          ],
+          [
+            121.26791,
+            25.05815
+          ],
+          [
+            121.26698,
+            25.06153
+          ],
+          [
+            121.26683,
+            25.06222
+          ],
+          [
+            121.26689,
+            25.06249
+          ],
+          [
+            121.27771,
+            25.05756
+          ],
+          [
+            121.27741,
+            25.05694
+          ],
+          [
+            121.27751,
+            25.05689
+          ],
+          [
+            121.27856,
+            25.05515
+          ],
+          [
+            121.27751,
+            25.05689
+          ],
+          [
+            121.27741,
+            25.05694
+          ],
+          [
+            121.27655,
+            25.05548
+          ],
+          [
+            121.27606,
+            25.05483
+          ],
+          [
+            121.27567,
+            25.05446
+          ],
+          [
+            121.27575,
+            25.05384
+          ],
+          [
+            121.27579,
+            25.04827
+          ],
+          [
+            121.27591,
+            25.04731
+          ],
+          [
+            121.27665,
+            25.04582
+          ],
+          [
+            121.27904,
+            25.04208
+          ],
+          [
+            121.27977,
+            25.04127
+          ],
+          [
+            121.28271,
+            25.03861
+          ],
+          [
+            121.28315,
+            25.0391
+          ],
+          [
+            121.28379,
+            25.04052
+          ],
+          [
+            121.28409,
+            25.04094
+          ],
+          [
+            121.28451,
+            25.04132
+          ],
+          [
+            121.28676,
+            25.04275
+          ],
+          [
+            121.28731,
+            25.04368
+          ],
+          [
+            121.28825,
+            25.04436
+          ],
+          [
+            121.28908,
+            25.04589
+          ],
+          [
+            121.28954,
+            25.0463
+          ],
+          [
+            121.29009,
+            25.04656
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO17186",
+        "name": "蘆宏路152號",
+        "name_en": "Luhong Rd., No. 152",
+        "line": "L331A",
+        "color": "#0e7490",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.262872,
+          25.043331
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO17188",
+        "name": "蘆竹國小",
+        "name_en": "Luzhu Elementary School ",
+        "line": "L331A",
+        "color": "#0e7490",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.266789,
+          25.050342
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO4648",
+        "name": "三商公司",
+        "name_en": "Mercuries & Associates, Ltd. ",
+        "line": "L331A",
+        "color": "#0e7490",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.270098,
+          25.06097
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO4649",
+        "name": "厚生社區",
+        "name_en": "Hou Sheng community",
+        "line": "L331A",
+        "color": "#0e7490",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.27853,
+          25.05514
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO4650",
+        "name": "中正北及蘆竹街口",
+        "name_en": "Jhong Jheng Bei and Lu Jhu Sec.",
+        "line": "L331A",
+        "color": "#0e7490",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.27574,
+          25.05196
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO4652",
+        "name": "香格里拉社區",
+        "name_en": "Shangri-La community",
+        "line": "L331A",
+        "color": "#0e7490",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.27628,
+          25.04639
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO9761",
+        "name": "中正北路1087號",
+        "name_en": "Zhongzheng N. Rd., No. 1087",
+        "line": "L331A",
+        "color": "#0e7490",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.277489,
+          25.044383
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO4653",
+        "name": "光明國中",
+        "name_en": "Guang-Ming Junior High School",
+        "line": "L331A",
+        "color": "#0e7490",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.28843,
+          25.04456
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO4655",
+        "name": "錦興國小",
+        "name_en": "Jinxing Elementary School",
+        "line": "L331A",
+        "color": "#0e7490",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.29011,
+          25.04653
+        ]
+      }
+    }
+  ]
+}

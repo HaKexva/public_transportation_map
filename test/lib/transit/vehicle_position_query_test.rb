@@ -163,3 +163,87 @@ class VehiclePositionQueryTest < ActiveSupport::TestCase
     assert_in_delta 60, query.send(:wrapped_minute_span, 100, 160), 0.001
   end
 end
+
+class VehicleDirectionSelectionTest < ActiveSupport::TestCase
+  test "ignores inactive dataset directions so metro keeps outbound/inbound" do
+    route = TransitRoute.create!(
+      system_id: "taipei_metro",
+      route_id: "direction_select_line",
+      name: "方向測試線",
+      line_ref: "DS",
+      color: "#000000",
+      geojson_path: "/geojson/does-not-exist.geojson"
+    )
+    active = ScheduleDataset.create!(name: "active tdx", source: "tdx", active: true)
+    stale = ScheduleDataset.create!(name: "stale demo", source: "manual", active: false)
+    live_cal = ServiceCalendar.create!(schedule_dataset: active, code: "weekday", name: "平日")
+    stale_cal = ServiceCalendar.create!(schedule_dataset: stale, code: "weekday", name: "舊平日")
+
+    ScheduleTrip.create!(
+      schedule_dataset: active, transit_route: route, service_calendar: live_cal,
+      direction: "outbound", train_number: "A1", destination_name: "終點"
+    )
+    ScheduleTrip.create!(
+      schedule_dataset: active, transit_route: route, service_calendar: live_cal,
+      direction: "inbound", train_number: "A2", destination_name: "起點"
+    )
+    ScheduleTrip.create!(
+      schedule_dataset: stale, transit_route: route, service_calendar: stale_cal,
+      direction: "forward", train_number: "DEMO", destination_name: "示範"
+    )
+
+    query = Transit::VehiclePositionQuery.new(
+      at: Time.find_zone!("Asia/Taipei").local(2026, 8, 10, 12, 0, 0),
+      route_ids: [ route.route_id ],
+      datasets: [ active ]
+    )
+
+    assert_equal %w[inbound outbound], query.send(:vehicle_directions_for_route, route).sort
+  end
+end
+
+class VehicleDensifyPlacementTest < ActiveSupport::TestCase
+  test "express TRA trips interpolate through corridor stations" do
+    route = TransitRoute.create!(
+      system_id: "tra",
+      route_id: "densify_vehicle_line",
+      name: "密化測試線",
+      line_ref: "DV",
+      color: "#000000",
+      geojson_path: "/geojson/does-not-exist.geojson"
+    )
+    %w[A B C D E].each_with_index do |ref, index|
+      TransitRouteStation.create!(
+        transit_route: route,
+        station_ref: ref,
+        name: ref,
+        stop_sequence: index + 1,
+        direction: TransitRoute::DIRECTION_BOTH
+      )
+    end
+
+    dataset = ScheduleDataset.create!(name: "densify tdx", source: "tdx", active: true)
+    calendar = ServiceCalendar.create!(schedule_dataset: dataset, code: "weekday", name: "平日")
+    trip = ScheduleTrip.create!(
+      schedule_dataset: dataset,
+      transit_route: route,
+      service_calendar: calendar,
+      direction: "forward",
+      train_number: "100",
+      destination_name: "E"
+    )
+    TripStopTime.create!(schedule_trip: trip, station_ref: "A", stop_sequence: 1,
+                         arrival_time: Time.utc(2000, 1, 1, 10, 0, 0), departure_time: Time.utc(2000, 1, 1, 10, 1, 0))
+    TripStopTime.create!(schedule_trip: trip, station_ref: "E", stop_sequence: 2,
+                         arrival_time: Time.utc(2000, 1, 1, 10, 40, 0), departure_time: Time.utc(2000, 1, 1, 10, 41, 0))
+
+    at = Time.find_zone!("Asia/Taipei").local(2026, 8, 10, 10, 20, 0)
+    vehicles = Transit::VehiclePositionQuery.new(at: at, route_ids: [ route.route_id ], datasets: [ dataset ]).call
+    vehicle = vehicles.find { |row| row[:train_number] == "100" }
+
+    assert vehicle, "expected densified express trip to appear"
+    refute_equal [ "A", "E" ], [ vehicle[:from_station_ref], vehicle[:to_station_ref] ]
+    assert_includes %w[A B C D E], vehicle[:from_station_ref]
+    assert_includes %w[A B C D E], vehicle[:to_station_ref]
+  end
+end

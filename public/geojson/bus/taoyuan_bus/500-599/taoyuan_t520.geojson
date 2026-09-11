@@ -1,0 +1,797 @@
+{
+  "type": "FeatureCollection",
+  "name": "T520",
+  "properties": {
+    "id": "taoyuan_t520",
+    "name": "T520",
+    "name_en": "T520",
+    "ref": "T520",
+    "color": "#0e7490",
+    "city_id": "Taoyuan",
+    "source": "TDX Bus Shape / StopOfRoute",
+    "operator_id": "6",
+    "operator": "亞通客運",
+    "operator_en": "Yatung Bus Co., Ltd.",
+    "official_map_url": "https://ebus.tycg.gov.tw/cms/api/route/5200/map/latest"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "T520",
+        "name": "T520",
+        "name_en": "T520",
+        "color": "#0e7490",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            121.08111,
+            25.03828
+          ],
+          [
+            121.08065,
+            25.03793
+          ],
+          [
+            121.08118,
+            25.03727
+          ],
+          [
+            121.0804,
+            25.03692
+          ],
+          [
+            121.08068,
+            25.03643
+          ],
+          [
+            121.08011,
+            25.03589
+          ],
+          [
+            121.07616,
+            25.03248
+          ],
+          [
+            121.07534,
+            25.03187
+          ],
+          [
+            121.0751,
+            25.03144
+          ],
+          [
+            121.07461,
+            25.03091
+          ],
+          [
+            121.07428,
+            25.03056
+          ],
+          [
+            121.0742,
+            25.03011
+          ],
+          [
+            121.07391,
+            25.02966
+          ],
+          [
+            121.07338,
+            25.02888
+          ],
+          [
+            121.07291,
+            25.02853
+          ],
+          [
+            121.07236,
+            25.02826
+          ],
+          [
+            121.07188,
+            25.02768
+          ],
+          [
+            121.07153,
+            25.02725
+          ],
+          [
+            121.07229,
+            25.02661
+          ],
+          [
+            121.07237,
+            25.02645
+          ],
+          [
+            121.07256,
+            25.02599
+          ],
+          [
+            121.07325,
+            25.02557
+          ],
+          [
+            121.07379,
+            25.02493
+          ],
+          [
+            121.07359,
+            25.0235
+          ],
+          [
+            121.07259,
+            25.02228
+          ],
+          [
+            121.07139,
+            25.02096
+          ],
+          [
+            121.07025,
+            25.0196
+          ],
+          [
+            121.07023,
+            25.01882
+          ],
+          [
+            121.07061,
+            25.01865
+          ],
+          [
+            121.07099,
+            25.01836
+          ],
+          [
+            121.07161,
+            25.01764
+          ],
+          [
+            121.07225,
+            25.01655
+          ],
+          [
+            121.07266,
+            25.01632
+          ],
+          [
+            121.07335,
+            25.01531
+          ],
+          [
+            121.07311,
+            25.01508
+          ],
+          [
+            121.07337,
+            25.01429
+          ],
+          [
+            121.07454,
+            25.01316
+          ],
+          [
+            121.07512,
+            25.01258
+          ],
+          [
+            121.07553,
+            25.012
+          ],
+          [
+            121.07856,
+            25.00763
+          ],
+          [
+            121.07877,
+            25.00685
+          ],
+          [
+            121.08132,
+            25.0043
+          ],
+          [
+            121.08454,
+            25.00315
+          ],
+          [
+            121.08647,
+            25.001830000000002
+          ],
+          [
+            121.08859,
+            24.99868
+          ],
+          [
+            121.09037,
+            24.99753
+          ],
+          [
+            121.09222,
+            24.99572
+          ],
+          [
+            121.09322,
+            24.99529
+          ],
+          [
+            121.09484,
+            24.99431
+          ],
+          [
+            121.09357,
+            24.99373
+          ],
+          [
+            121.08627,
+            24.98583
+          ],
+          [
+            121.08754,
+            24.98466
+          ],
+          [
+            121.08852,
+            24.98337
+          ],
+          [
+            121.09153,
+            24.97935
+          ],
+          [
+            121.09403,
+            24.9785
+          ],
+          [
+            121.09625,
+            24.97684
+          ],
+          [
+            121.09705,
+            24.97682
+          ],
+          [
+            121.09842,
+            24.9753
+          ],
+          [
+            121.09954,
+            24.97467
+          ],
+          [
+            121.09946,
+            24.97346
+          ],
+          [
+            121.1032,
+            24.97278
+          ],
+          [
+            121.10404,
+            24.97276
+          ],
+          [
+            121.10721,
+            24.97282
+          ],
+          [
+            121.10748,
+            24.97222
+          ],
+          [
+            121.10884,
+            24.96982
+          ],
+          [
+            121.10691,
+            24.96888
+          ],
+          [
+            121.10654,
+            24.96959
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO10093",
+        "name": "真好觀音站",
+        "name_en": "Zhenhao Guanyin Station",
+        "line": "T520",
+        "color": "#0e7490",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.081108,
+          25.038275
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO63785",
+        "name": "天主堂",
+        "name_en": "Catholic Church",
+        "line": "T520",
+        "color": "#0e7490",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.080034,
+          25.035931
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO10094",
+        "name": "武威活動中心",
+        "name_en": "Wuwei Activity Center",
+        "line": "T520",
+        "color": "#0e7490",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.073042,
+          25.028651
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO10095",
+        "name": "武威二路",
+        "name_en": "Wuwei 2nd Road",
+        "line": "T520",
+        "color": "#0e7490",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.071896,
+          25.027681
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO63781",
+        "name": "廖厝",
+        "name_en": "Liaocuo",
+        "line": "T520",
+        "color": "#0e7490",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.073695,
+          25.02498
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO63780",
+        "name": "萬欣",
+        "name_en": "Wanxin",
+        "line": "T520",
+        "color": "#0e7490",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.07142,
+          25.0211
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO10096",
+        "name": "桃大路",
+        "name_en": "Taoda Road",
+        "line": "T520",
+        "color": "#0e7490",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.070833,
+          25.018422
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO10097",
+        "name": "華興路",
+        "name_en": "Huaxing Road",
+        "line": "T520",
+        "color": "#0e7490",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.09323,
+          24.995299
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO63767",
+        "name": "下後湖",
+        "name_en": "Xiahouhu",
+        "line": "T520",
+        "color": "#0e7490",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.088532,
+          24.983382
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO63765",
+        "name": "頂後湖",
+        "name_en": "Dinghouhu",
+        "line": "T520",
+        "color": "#0e7490",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.096262,
+          24.976852
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO64185",
+        "name": "新屋郵局",
+        "name_en": "Xinwu Post Office",
+        "line": "T520",
+        "color": "#0e7490",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.104558,
+          24.972635
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO10098",
+        "name": "新屋區農會",
+        "name_en": "Xinwu District Farmers Association",
+        "line": "T520",
+        "color": "#0e7490",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.107254,
+          24.972429
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO4477",
+        "name": "新屋分院",
+        "name_en": "Sinwu Branch, Taoyuan General Hospital",
+        "line": "T520",
+        "color": "#0e7490",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.106559,
+          24.969596
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO4478",
+        "name": "新屋分院",
+        "name_en": "Sinwu Branch, Taoyuan General Hospital",
+        "line": "T520",
+        "color": "#0e7490",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.106377,
+          24.969606
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO10100",
+        "name": "新屋區農會",
+        "name_en": "Xinwu District Farmers Association",
+        "line": "T520",
+        "color": "#0e7490",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.107449,
+          24.9723
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO64187",
+        "name": "新屋郵局",
+        "name_en": "Xinwu Post Office",
+        "line": "T520",
+        "color": "#0e7490",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.10443,
+          24.97284
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO63806",
+        "name": "頂後湖",
+        "name_en": "Dinghouhu",
+        "line": "T520",
+        "color": "#0e7490",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.09628,
+          24.97703
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO63804",
+        "name": "下後湖",
+        "name_en": "Xiahouhu",
+        "line": "T520",
+        "color": "#0e7490",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.08866,
+          24.98347
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO10101",
+        "name": "華興路",
+        "name_en": "Huaxing Road",
+        "line": "T520",
+        "color": "#0e7490",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.093268,
+          24.995228
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO10102",
+        "name": "桃大路",
+        "name_en": "Taoda Road",
+        "line": "T520",
+        "color": "#0e7490",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.070913,
+          25.018471
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO63791",
+        "name": "萬欣",
+        "name_en": "Wanxin",
+        "line": "T520",
+        "color": "#0e7490",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.07166,
+          25.02121
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO63790",
+        "name": "廖厝",
+        "name_en": "Liaocuo",
+        "line": "T520",
+        "color": "#0e7490",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.073752,
+          25.024968
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO10103",
+        "name": "武威二路",
+        "name_en": "Wuwei 2nd Road",
+        "line": "T520",
+        "color": "#0e7490",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.071915,
+          25.027614
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO10104",
+        "name": "武威活動中心",
+        "name_en": "Wuwei Activity Center",
+        "line": "T520",
+        "color": "#0e7490",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.073188,
+          25.028677
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO63786",
+        "name": "天主堂",
+        "name_en": "Catholic Church",
+        "line": "T520",
+        "color": "#0e7490",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.0801,
+          25.0359
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO10105",
+        "name": "真好觀音站",
+        "name_en": "Zhenhao Guanyin Station",
+        "line": "T520",
+        "color": "#0e7490",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.080997,
+          25.038108
+        ]
+      }
+    }
+  ]
+}

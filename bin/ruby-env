@@ -1,0 +1,12 @@
+# Shared by project binstubs. Prefer mise Ruby and drop chruby env that
+# breaks vendor/bundle native extensions compiled against another libruby.
+unset RUBY_ROOT RUBY_ENGINE RUBYOPT GEM_HOME GEM_PATH
+
+if command -v mise >/dev/null 2>&1; then
+  _mise_ruby="$(mise which ruby 2>/dev/null || true)"
+  if [ -n "$_mise_ruby" ] && [ -x "$_mise_ruby" ]; then
+    PATH="$(dirname "$_mise_ruby"):$PATH"
+    export PATH
+  fi
+  unset _mise_ruby
+fi

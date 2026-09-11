@@ -1,0 +1,808 @@
+{
+  "type": "FeatureCollection",
+  "name": "市民小巴2區間車",
+  "properties": {
+    "id": "taichung_shiminxiao_2qu_3af9803414",
+    "name": "市民小巴2區間車",
+    "name_en": "市民小巴2區間車",
+    "ref": "市民小巴2區間車",
+    "color": "#b45309",
+    "city_id": "Taichung",
+    "source": "TDX Bus Shape / StopOfRoute",
+    "operator_id": "25",
+    "operator": "睿奕交通",
+    "official_map_url": "https://citybus.taichung.gov.tw/ebus/strapi/uploads/900_900_7ce21108bf.jpeg"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "市民小巴2區間車",
+        "name": "市民小巴2區間車",
+        "name_en": "市民小巴2區間車",
+        "color": "#b45309",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.65463,
+            24.33201
+          ],
+          [
+            120.65584,
+            24.33228
+          ],
+          [
+            120.65576,
+            24.333
+          ],
+          [
+            120.65537,
+            24.33486
+          ],
+          [
+            120.6547,
+            24.33656
+          ],
+          [
+            120.65466,
+            24.3369
+          ],
+          [
+            120.65631,
+            24.33881
+          ],
+          [
+            120.658,
+            24.33886
+          ],
+          [
+            120.66218,
+            24.34018
+          ],
+          [
+            120.66473,
+            24.34029
+          ],
+          [
+            120.66486,
+            24.34034
+          ],
+          [
+            120.66538,
+            24.34088
+          ],
+          [
+            120.66627,
+            24.34127
+          ],
+          [
+            120.67004,
+            24.34131
+          ],
+          [
+            120.6719,
+            24.34126
+          ],
+          [
+            120.67289,
+            24.34219
+          ],
+          [
+            120.67369,
+            24.34283
+          ],
+          [
+            120.67559,
+            24.3441
+          ],
+          [
+            120.67768,
+            24.34441
+          ],
+          [
+            120.67935,
+            24.34416
+          ],
+          [
+            120.67973,
+            24.34416
+          ],
+          [
+            120.68075,
+            24.3444
+          ],
+          [
+            120.6816,
+            24.34439
+          ],
+          [
+            120.68225,
+            24.3448
+          ],
+          [
+            120.6836,
+            24.34481
+          ],
+          [
+            120.68452,
+            24.3447
+          ],
+          [
+            120.68577,
+            24.345
+          ],
+          [
+            120.69067,
+            24.34544
+          ],
+          [
+            120.69659,
+            24.34621
+          ],
+          [
+            120.69955,
+            24.34667
+          ],
+          [
+            120.70249,
+            24.34572
+          ],
+          [
+            120.70467,
+            24.34491
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG8552",
+        "name": "外埔區公所",
+        "name_en": "Waipu District Office",
+        "line": "市民小巴2區間車",
+        "color": "#b45309",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.65464315367,
+          24.332067138693
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG10102",
+        "name": "田中央(中山路)",
+        "name_en": "Tianzhongyang(Zhongshan Road)",
+        "line": "市民小巴2區間車",
+        "color": "#b45309",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.654907,
+          24.336159
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG18358",
+        "name": "中山大馬路口",
+        "name_en": "Zhongshan-Dama Intersection",
+        "line": "市民小巴2區間車",
+        "color": "#b45309",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.655506,
+          24.337927
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG18357",
+        "name": "大馬中山路口",
+        "name_en": "Dama-Zhongshan Intersection",
+        "line": "市民小巴2區間車",
+        "color": "#b45309",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.657067,
+          24.338856
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG679",
+        "name": "中山里福德祠",
+        "name_en": "Zhongshan Village Fude Temple",
+        "line": "市民小巴2區間車",
+        "color": "#b45309",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.662079,
+          24.340119
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG20059",
+        "name": "竹圍(新厝路)",
+        "name_en": "Zhuwei(Xincuo Road)",
+        "line": "市民小巴2區間車",
+        "color": "#b45309",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.667938,
+          24.341339
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG6291",
+        "name": "頂竹圍",
+        "name_en": "Dingzhuwei",
+        "line": "市民小巴2區間車",
+        "color": "#b45309",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.672071,
+          24.341486
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG6188",
+        "name": "崎頂(土城路)",
+        "name_en": "Qiding(Tucheng Road)",
+        "line": "市民小巴2區間車",
+        "color": "#b45309",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.675668,
+          24.344125
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG6079",
+        "name": "風坑",
+        "name_en": "Fengkeng",
+        "line": "市民小巴2區間車",
+        "color": "#b45309",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.6804,
+          24.344345
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG18714",
+        "name": "土城廍子路口",
+        "name_en": "Tucheng-Buzi Intersection",
+        "line": "市民小巴2區間車",
+        "color": "#b45309",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.683463,
+          24.344829
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG5141",
+        "name": "下廍仔(土城路)",
+        "name_en": "Xiabuzi(Tucheng Road)",
+        "line": "市民小巴2區間車",
+        "color": "#b45309",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.685685,
+          24.344955
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG21199",
+        "name": "廍子5鄰",
+        "name_en": "Buzi 5th Neighborhood",
+        "line": "市民小巴2區間車",
+        "color": "#b45309",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.688618,
+          24.345315
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG5536",
+        "name": "北路",
+        "name_en": "Beilu",
+        "line": "市民小巴2區間車",
+        "color": "#b45309",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.691102,
+          24.345541
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG5338",
+        "name": "中廍仔",
+        "name_en": "Zhongbuzi",
+        "line": "市民小巴2區間車",
+        "color": "#b45309",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.694129,
+          24.345909
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG13950",
+        "name": "南路",
+        "name_en": "Nanlu",
+        "line": "市民小巴2區間車",
+        "color": "#b45309",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.696874,
+          24.346278
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG5187",
+        "name": "上廍仔",
+        "name_en": "Shangbuzi",
+        "line": "市民小巴2區間車",
+        "color": "#b45309",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.699675,
+          24.346681
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG5204",
+        "name": "土城(土城路)",
+        "name_en": "Tucheng(Tucheng Road)",
+        "line": "市民小巴2區間車",
+        "color": "#b45309",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.704675,
+          24.344918
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG5204",
+        "name": "土城(土城路)",
+        "name_en": "Tucheng(Tucheng Road)",
+        "line": "市民小巴2區間車",
+        "color": "#b45309",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.704675,
+          24.344918
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG5187",
+        "name": "上廍仔",
+        "name_en": "Shangbuzi",
+        "line": "市民小巴2區間車",
+        "color": "#b45309",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.699675,
+          24.346681
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG13950",
+        "name": "南路",
+        "name_en": "Nanlu",
+        "line": "市民小巴2區間車",
+        "color": "#b45309",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.696874,
+          24.346278
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG5338",
+        "name": "中廍仔",
+        "name_en": "Zhongbuzi",
+        "line": "市民小巴2區間車",
+        "color": "#b45309",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.694129,
+          24.345909
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG5536",
+        "name": "北路",
+        "name_en": "Beilu",
+        "line": "市民小巴2區間車",
+        "color": "#b45309",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.691102,
+          24.345541
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG21200",
+        "name": "廍子5鄰",
+        "name_en": "Buzi 5th Neighborhood",
+        "line": "市民小巴2區間車",
+        "color": "#b45309",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.688667,
+          24.345195
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG5141",
+        "name": "下廍仔(土城路)",
+        "name_en": "Xiabuzi(Tucheng Road)",
+        "line": "市民小巴2區間車",
+        "color": "#b45309",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.685685,
+          24.344955
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG18714",
+        "name": "土城廍子路口",
+        "name_en": "Tucheng-Buzi Intersection",
+        "line": "市民小巴2區間車",
+        "color": "#b45309",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.683463,
+          24.344829
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG6079",
+        "name": "風坑",
+        "name_en": "Fengkeng",
+        "line": "市民小巴2區間車",
+        "color": "#b45309",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.6804,
+          24.344345
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG6188",
+        "name": "崎頂(土城路)",
+        "name_en": "Qiding(Tucheng Road)",
+        "line": "市民小巴2區間車",
+        "color": "#b45309",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.675668,
+          24.344125
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG6291",
+        "name": "頂竹圍",
+        "name_en": "Dingzhuwei",
+        "line": "市民小巴2區間車",
+        "color": "#b45309",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.672071,
+          24.341486
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG20059",
+        "name": "竹圍(新厝路)",
+        "name_en": "Zhuwei(Xincuo Road)",
+        "line": "市民小巴2區間車",
+        "color": "#b45309",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.667938,
+          24.341339
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG680",
+        "name": "中山里福德祠",
+        "name_en": "Zhongshan Village Fude Temple",
+        "line": "市民小巴2區間車",
+        "color": "#b45309",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.661524,
+          24.340019
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG681",
+        "name": "大馬中山路口",
+        "name_en": "Dama-Zhongshan Intersection",
+        "line": "市民小巴2區間車",
+        "color": "#b45309",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.657052,
+          24.338793
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG18358",
+        "name": "中山大馬路口",
+        "name_en": "Zhongshan-Dama Intersection",
+        "line": "市民小巴2區間車",
+        "color": "#b45309",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.655506,
+          24.337927
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG10110",
+        "name": "田中央(中山路)",
+        "name_en": "Tianzhongyang(Zhongshan Road)",
+        "line": "市民小巴2區間車",
+        "color": "#b45309",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.654871,
+          24.336108
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TXG8553",
+        "name": "外埔區公所",
+        "name_en": "Waipu District Office",
+        "line": "市民小巴2區間車",
+        "color": "#b45309",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.65464315367,
+          24.332067138693
+        ]
+      }
+    }
+  ]
+}

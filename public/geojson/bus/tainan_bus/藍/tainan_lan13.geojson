@@ -1,0 +1,813 @@
+{
+  "type": "FeatureCollection",
+  "name": "藍13",
+  "properties": {
+    "id": "tainan_lan13",
+    "name": "藍13",
+    "name_en": "藍13",
+    "ref": "藍13",
+    "color": "#4f46e5",
+    "city_id": "Tainan",
+    "source": "TDX Bus Shape / StopOfRoute",
+    "official_map_url": "http://busmap.tainan.gov.tw/ebus/resources/PathPic/zh_TW/1213.jpg",
+    "operator_id": "10160",
+    "operator": "興南客運",
+    "operator_en": "Shing Nan Bus Co., Ltd."
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "藍13",
+        "name": "藍13",
+        "name_en": "藍13",
+        "color": "#4f46e5",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.17735,
+            23.16312
+          ],
+          [
+            120.17481,
+            23.16313
+          ],
+          [
+            120.17478,
+            23.16422
+          ],
+          [
+            120.17493,
+            23.16568
+          ],
+          [
+            120.17433,
+            23.16635
+          ],
+          [
+            120.17405,
+            23.16695
+          ],
+          [
+            120.17369,
+            23.16726
+          ],
+          [
+            120.17304,
+            23.16775
+          ],
+          [
+            120.17075,
+            23.16936
+          ],
+          [
+            120.16841,
+            23.17095
+          ],
+          [
+            120.16701,
+            23.17105
+          ],
+          [
+            120.16596,
+            23.17129
+          ],
+          [
+            120.16442,
+            23.17169
+          ],
+          [
+            120.16252,
+            23.17221
+          ],
+          [
+            120.16185,
+            23.17237
+          ],
+          [
+            120.16069,
+            23.17261
+          ],
+          [
+            120.15784,
+            23.17311
+          ],
+          [
+            120.15385,
+            23.17381
+          ],
+          [
+            120.15331,
+            23.17379
+          ],
+          [
+            120.15316,
+            23.17375
+          ],
+          [
+            120.15273,
+            23.17356
+          ],
+          [
+            120.15154,
+            23.17311
+          ],
+          [
+            120.15071,
+            23.17317
+          ],
+          [
+            120.14983,
+            23.17301
+          ],
+          [
+            120.14896,
+            23.17363
+          ],
+          [
+            120.14841,
+            23.17395
+          ],
+          [
+            120.14344,
+            23.17948
+          ],
+          [
+            120.13986,
+            23.18321
+          ],
+          [
+            120.13542,
+            23.18753
+          ],
+          [
+            120.13451,
+            23.18762
+          ],
+          [
+            120.13401,
+            23.18766
+          ],
+          [
+            120.13091,
+            23.18807
+          ],
+          [
+            120.12692,
+            23.18839
+          ],
+          [
+            120.12342,
+            23.18947
+          ],
+          [
+            120.12231,
+            23.18983
+          ],
+          [
+            120.12021,
+            23.19028
+          ],
+          [
+            120.11253,
+            23.19087
+          ],
+          [
+            120.11247,
+            23.18184
+          ],
+          [
+            120.11262,
+            23.16929
+          ],
+          [
+            120.11254,
+            23.16872
+          ],
+          [
+            120.11246,
+            23.16844
+          ],
+          [
+            120.11214,
+            23.16835
+          ],
+          [
+            120.11013,
+            23.16795
+          ],
+          [
+            120.09863,
+            23.16793
+          ],
+          [
+            120.09737,
+            23.16843
+          ],
+          [
+            120.09751,
+            23.16971
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "藍13",
+        "name": "藍13",
+        "name_en": "藍13",
+        "color": "#4f46e5",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.17812,
+            23.16537
+          ],
+          [
+            120.17821,
+            23.16314
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TNN6070",
+        "name": "佳里站",
+        "name_en": "Jiali Bus Station",
+        "line": "藍13",
+        "color": "#4f46e5",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.17735,
+          23.16312
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TNN6071",
+        "name": "北門高中",
+        "name_en": "Beimen Senior High School",
+        "line": "藍13",
+        "color": "#4f46e5",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.17405,
+          23.16695
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TNN6072",
+        "name": "潭墘",
+        "name_en": "Tancian",
+        "line": "藍13",
+        "color": "#4f46e5",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.17075,
+          23.16936
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TNN6073",
+        "name": "本善寺",
+        "name_en": "Benshan Temple",
+        "line": "藍13",
+        "color": "#4f46e5",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.16596,
+          23.17129
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TNN6074",
+        "name": "海澄里-北頭洋",
+        "name_en": "Haicheng Vil.-Beitouyang",
+        "line": "藍13",
+        "color": "#4f46e5",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.16188,
+          23.17239
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TNN6075",
+        "name": "緯城社區",
+        "name_en": "Weicheng Community",
+        "line": "藍13",
+        "color": "#4f46e5",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.15784,
+          23.17311
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TNN6076",
+        "name": "延平國小",
+        "name_en": "Yanping Elementary School",
+        "line": "藍13",
+        "color": "#4f46e5",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.15385,
+          23.17381
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TNN6077",
+        "name": "下營",
+        "name_en": "Siaying",
+        "line": "藍13",
+        "color": "#4f46e5",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.15068,
+          23.17318
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TNN6078",
+        "name": "城子內",
+        "name_en": "Chengzihnei",
+        "line": "藍13",
+        "color": "#4f46e5",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.14344,
+          23.17947
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TNN6079",
+        "name": "後港西",
+        "name_en": "Hougangsi",
+        "line": "藍13",
+        "color": "#4f46e5",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.13986,
+          23.18321
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TNN6080",
+        "name": "謝子寮",
+        "name_en": "Siezihliao",
+        "line": "藍13",
+        "color": "#4f46e5",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.13415,
+          23.18773
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TNN6081",
+        "name": "大潭",
+        "name_en": "Datan",
+        "line": "藍13",
+        "color": "#4f46e5",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.13091,
+          23.18807
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TNN6082",
+        "name": "五棟寮",
+        "name_en": "Wudongliao",
+        "line": "藍13",
+        "color": "#4f46e5",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.12231,
+          23.18983
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TNN6083",
+        "name": "頂山子",
+        "name_en": "Dingshanzih",
+        "line": "藍13",
+        "color": "#4f46e5",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.11246,
+          23.18184
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TNN6084",
+        "name": "西寮",
+        "name_en": "Siliao",
+        "line": "藍13",
+        "color": "#4f46e5",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.09751,
+          23.16971
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TNN6085",
+        "name": "西寮",
+        "name_en": "Siliao",
+        "line": "藍13",
+        "color": "#4f46e5",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.09729,
+          23.16986
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TNN6086",
+        "name": "頂山子",
+        "name_en": "Dingshanzih",
+        "line": "藍13",
+        "color": "#4f46e5",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.11258,
+          23.18164
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TNN6087",
+        "name": "五棟寮",
+        "name_en": "Wudongliao",
+        "line": "藍13",
+        "color": "#4f46e5",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.12236,
+          23.18971
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TNN6088",
+        "name": "大潭",
+        "name_en": "Datan",
+        "line": "藍13",
+        "color": "#4f46e5",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.13108,
+          23.18794
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TNN6089",
+        "name": "謝子寮",
+        "name_en": "Siezihliao",
+        "line": "藍13",
+        "color": "#4f46e5",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.13427,
+          23.18763
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TNN6090",
+        "name": "後港西",
+        "name_en": "Hougangsi",
+        "line": "藍13",
+        "color": "#4f46e5",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.13981,
+          23.18311
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TNN6091",
+        "name": "城子內",
+        "name_en": "Chengzihnei",
+        "line": "藍13",
+        "color": "#4f46e5",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.14359,
+          23.17926
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TNN6092",
+        "name": "下營",
+        "name_en": "Siaying",
+        "line": "藍13",
+        "color": "#4f46e5",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.15064,
+          23.17302
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TNN6093",
+        "name": "延平國小",
+        "name_en": "Yanping Elementary School",
+        "line": "藍13",
+        "color": "#4f46e5",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.15347,
+          23.17375
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TNN6094",
+        "name": "緯城社區",
+        "name_en": "Weicheng Community",
+        "line": "藍13",
+        "color": "#4f46e5",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.15761,
+          23.17307
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TNN6095",
+        "name": "海澄里-北頭洋",
+        "name_en": "Haicheng Vil.-Beitouyang",
+        "line": "藍13",
+        "color": "#4f46e5",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.16165,
+          23.17237
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TNN6096",
+        "name": "本善寺",
+        "name_en": "Benshan Temple",
+        "line": "藍13",
+        "color": "#4f46e5",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.16609,
+          23.17112
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TNN6097",
+        "name": "潭墘",
+        "name_en": "Tancian",
+        "line": "藍13",
+        "color": "#4f46e5",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.17068,
+          23.16932
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TNN6098",
+        "name": "北門高中",
+        "name_en": "Beimen Senior High School",
+        "line": "藍13",
+        "color": "#4f46e5",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.17396,
+          23.16691
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TNN6099",
+        "name": "佳里站",
+        "name_en": "Jiali Bus Station",
+        "line": "藍13",
+        "color": "#4f46e5",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.17735,
+          23.16312
+        ]
+      }
+    }
+  ]
+}

@@ -101,6 +101,7 @@ module Transit
 
     def request_with_retries(uri, request)
       attempt = 0
+      response = nil
 
       loop do
         response = http_request(uri, request)
@@ -111,7 +112,9 @@ module Transit
         sleep(2**attempt)
       end
 
-      raise RequestError, "TDX #{response.code} for #{uri}: #{response.body.to_s.truncate(200)}"
+      code = response&.code || "nil"
+      body = response&.body.to_s.truncate(200)
+      raise RequestError, "TDX #{code} for #{uri}: #{body}"
     end
 
     def http_request(uri, request)

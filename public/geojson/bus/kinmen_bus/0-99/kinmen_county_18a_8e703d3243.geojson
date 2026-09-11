@@ -1,0 +1,636 @@
+{
+  "type": "FeatureCollection",
+  "name": "18A往沙美",
+  "properties": {
+    "id": "kinmen_county_18a_8e703d3243",
+    "name": "18A往沙美",
+    "name_en": "18A往沙美",
+    "ref": "18A往沙美",
+    "color": "#155e75",
+    "city_id": "KinmenCounty",
+    "source": "TDX Bus Shape / StopOfRoute",
+    "official_map_url": "http://ebus.kinmen.gov.tw/api/route/183/map/202/image",
+    "operator_id": "0001",
+    "operator": "金門",
+    "operator_en": "City Bus and Ferry Management Office, Kinmen County"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "18A往沙美",
+        "name": "18A往沙美",
+        "name_en": "18A往沙美",
+        "color": "#155e75",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            118.4138,
+            24.4422
+          ],
+          [
+            118.41402,
+            24.4425
+          ],
+          [
+            118.41433,
+            24.4423
+          ],
+          [
+            118.41759,
+            24.4468
+          ],
+          [
+            118.41925,
+            24.44783
+          ],
+          [
+            118.42196,
+            24.44859
+          ],
+          [
+            118.42553,
+            24.45185
+          ],
+          [
+            118.43659,
+            24.46465
+          ],
+          [
+            118.43683,
+            24.4647
+          ],
+          [
+            118.43682,
+            24.46489
+          ],
+          [
+            118.4366,
+            24.4649
+          ],
+          [
+            118.43527,
+            24.46641
+          ],
+          [
+            118.42994,
+            24.47707
+          ],
+          [
+            118.42958,
+            24.47727
+          ],
+          [
+            118.42854,
+            24.47748
+          ],
+          [
+            118.42969,
+            24.47377
+          ],
+          [
+            118.42894,
+            24.4742
+          ],
+          [
+            118.42865,
+            24.47477
+          ],
+          [
+            118.42721,
+            24.47563
+          ],
+          [
+            118.42616,
+            24.47609
+          ],
+          [
+            118.42529,
+            24.47627
+          ],
+          [
+            118.42378,
+            24.47614
+          ],
+          [
+            118.42094,
+            24.47549
+          ],
+          [
+            118.41925,
+            24.47502
+          ],
+          [
+            118.41754,
+            24.4741
+          ],
+          [
+            118.41714,
+            24.47354
+          ],
+          [
+            118.41674,
+            24.47327
+          ],
+          [
+            118.41618,
+            24.47442
+          ],
+          [
+            118.41634,
+            24.4821
+          ],
+          [
+            118.41754,
+            24.48318
+          ],
+          [
+            118.41773,
+            24.48357
+          ],
+          [
+            118.41796,
+            24.48382
+          ],
+          [
+            118.41908,
+            24.48438
+          ],
+          [
+            118.41963,
+            24.48439
+          ],
+          [
+            118.42013,
+            24.48465
+          ],
+          [
+            118.4203,
+            24.48512
+          ],
+          [
+            118.41987,
+            24.48556
+          ],
+          [
+            118.41942,
+            24.48576
+          ],
+          [
+            118.41611,
+            24.48661
+          ],
+          [
+            118.41283,
+            24.48884
+          ],
+          [
+            118.41313,
+            24.48921
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KIN183-1101",
+        "name": "山外站",
+        "name_en": "Shanwai Station",
+        "line": "18A往沙美",
+        "color": "#155e75",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          118.41405209061,
+          24.442215868008
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KIN183-11000",
+        "name": "黃海路",
+        "name_en": "Huanghai Rd.",
+        "line": "18A往沙美",
+        "color": "#155e75",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          118.41636467169,
+          24.444890631472
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KIN183-1103",
+        "name": "監理站",
+        "name_en": "Motor Vehicles Office",
+        "line": "18A往沙美",
+        "color": "#155e75",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          118.41819202971,
+          24.4471080053
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KIN183-1105",
+        "name": "南雄",
+        "name_en": "Nanxiong",
+        "line": "18A往沙美",
+        "color": "#155e75",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          118.42148369485,
+          24.448343419533
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KIN183-1107",
+        "name": "下莊",
+        "name_en": "Xiazhuang",
+        "line": "18A往沙美",
+        "color": "#155e75",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          118.42589910211,
+          24.452146691526
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KIN183-1109",
+        "name": "陽明山",
+        "name_en": "YangMingShan",
+        "line": "18A往沙美",
+        "color": "#155e75",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          118.42910650391,
+          24.455841897334
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KIN183-11004",
+        "name": "陽明",
+        "name_en": "Yangming",
+        "line": "18A往沙美",
+        "color": "#155e75",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          118.43540965943,
+          24.463143678375
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KIN183-1111",
+        "name": "鵲山",
+        "name_en": "Queshan",
+        "line": "18A往沙美",
+        "color": "#155e75",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          118.43646038502,
+          24.465209810823
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KIN183-1113",
+        "name": "屏東",
+        "name_en": "Pingdong",
+        "line": "18A往沙美",
+        "color": "#155e75",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          118.43279236248,
+          24.471571164494
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KIN183-1115",
+        "name": "東店",
+        "name_en": "Dongdian",
+        "line": "18A往沙美",
+        "color": "#155e75",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          118.43030139659,
+          24.476556867683
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KIN183-1117",
+        "name": "太武社區三",
+        "name_en": "Taiwu Community 3",
+        "line": "18A往沙美",
+        "color": "#155e75",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          118.42924698454,
+          24.477430367478
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KIN183-1119",
+        "name": "太武社區一",
+        "name_en": "Taiwu Community 1",
+        "line": "18A往沙美",
+        "color": "#155e75",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          118.42854021036,
+          24.477080674963
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KIN183-1121",
+        "name": "太武社區二",
+        "name_en": "Taiwu Community 2",
+        "line": "18A往沙美",
+        "color": "#155e75",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          118.42904891366,
+          24.475496213378
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KIN183-1123",
+        "name": "加油站",
+        "name_en": "Gas Station",
+        "line": "18A往沙美",
+        "color": "#155e75",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          118.42951202272,
+          24.474002738613
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KIN183-1125",
+        "name": "南陽一",
+        "name_en": "Nanyang 1",
+        "line": "18A往沙美",
+        "color": "#155e75",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          118.42837946832,
+          24.475031852934
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KIN183-1127",
+        "name": "南陽二",
+        "name_en": "Nanyang 2",
+        "line": "18A往沙美",
+        "color": "#155e75",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          118.42537939019,
+          24.476364985381
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KIN183-1129",
+        "name": "蔡厝",
+        "name_en": "Caicuo",
+        "line": "18A往沙美",
+        "color": "#155e75",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          118.4167361901,
+          24.473398450962
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KIN183-1133",
+        "name": "建東農場",
+        "name_en": "Jiandong Ranch",
+        "line": "18A往沙美",
+        "color": "#155e75",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          118.41633682108,
+          24.477869374861
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KIN183-1135",
+        "name": "后水頭一",
+        "name_en": "Houshuitou 1",
+        "line": "18A往沙美",
+        "color": "#155e75",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          118.41687858399,
+          24.482526816345
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KIN183-1137",
+        "name": "東蕭",
+        "name_en": "Dongxiao",
+        "line": "18A往沙美",
+        "color": "#155e75",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          118.41848454728,
+          24.486086241855
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KIN183-1139",
+        "name": "后水頭",
+        "name_en": "Houshuitou",
+        "line": "18A往沙美",
+        "color": "#155e75",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          118.41733120997,
+          24.486383863436
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KIN183-1141",
+        "name": "后浦頭",
+        "name_en": "Houputou",
+        "line": "18A往沙美",
+        "color": "#155e75",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          118.41488409643,
+          24.487534796249
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KIN183-1143",
+        "name": "沙美站",
+        "name_en": "Shamei Station",
+        "line": "18A往沙美",
+        "color": "#155e75",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          118.41301761278,
+          24.488958338487
+        ]
+      }
+    }
+  ]
+}

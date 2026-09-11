@@ -1,0 +1,991 @@
+{
+  "type": "FeatureCollection",
+  "name": "111",
+  "properties": {
+    "id": "taoyuan_111",
+    "name": "111",
+    "name_en": "111",
+    "ref": "111",
+    "color": "#65a30d",
+    "city_id": "Taoyuan",
+    "source": "TDX Bus Shape / StopOfRoute",
+    "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/3480/map/1669/image",
+    "operator_id": "1",
+    "operator": "桃園客運",
+    "operator_en": "Taoyuan Bus Co., Ltd."
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "111",
+        "name": "111",
+        "name_en": "111",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            121.22378,
+            24.9543
+          ],
+          [
+            121.22389,
+            24.95453
+          ],
+          [
+            121.22257,
+            24.95506
+          ],
+          [
+            121.22177,
+            24.95335
+          ],
+          [
+            121.22167,
+            24.9532
+          ],
+          [
+            121.22138,
+            24.95297
+          ],
+          [
+            121.22198,
+            24.95231
+          ],
+          [
+            121.22245,
+            24.95182
+          ],
+          [
+            121.22287,
+            24.95095
+          ],
+          [
+            121.22356,
+            24.94993
+          ],
+          [
+            121.2218,
+            24.94893
+          ],
+          [
+            121.22164,
+            24.94879
+          ],
+          [
+            121.22073,
+            24.94758
+          ],
+          [
+            121.21919,
+            24.94548
+          ],
+          [
+            121.22213,
+            24.94559
+          ],
+          [
+            121.22203,
+            24.94522
+          ],
+          [
+            121.22201,
+            24.9449
+          ],
+          [
+            121.22261,
+            24.9435
+          ],
+          [
+            121.22274,
+            24.9429
+          ],
+          [
+            121.22306,
+            24.94073
+          ],
+          [
+            121.22158,
+            24.94019
+          ],
+          [
+            121.22115,
+            24.9401
+          ],
+          [
+            121.21939,
+            24.94015
+          ],
+          [
+            121.21632,
+            24.94027
+          ],
+          [
+            121.21617,
+            24.93825
+          ],
+          [
+            121.21595,
+            24.93717
+          ],
+          [
+            121.21547,
+            24.93487
+          ],
+          [
+            121.21526,
+            24.93431
+          ],
+          [
+            121.21475,
+            24.93294
+          ],
+          [
+            121.21441,
+            24.93197
+          ],
+          [
+            121.21378,
+            24.92929
+          ],
+          [
+            121.21344,
+            24.92822
+          ],
+          [
+            121.21295,
+            24.92684
+          ],
+          [
+            121.21244,
+            24.92532
+          ],
+          [
+            121.21215,
+            24.92476
+          ],
+          [
+            121.21204,
+            24.92421
+          ],
+          [
+            121.2118,
+            24.92279
+          ],
+          [
+            121.21121,
+            24.9192
+          ],
+          [
+            121.21103,
+            24.91812
+          ],
+          [
+            121.21076,
+            24.91633
+          ],
+          [
+            121.21019,
+            24.9164
+          ],
+          [
+            121.20922,
+            24.91637
+          ],
+          [
+            121.20688,
+            24.91619
+          ],
+          [
+            121.20619,
+            24.9162
+          ],
+          [
+            121.20642,
+            24.91335
+          ],
+          [
+            121.20251,
+            24.91317
+          ],
+          [
+            121.20243,
+            24.91227
+          ],
+          [
+            121.20249,
+            24.9113
+          ],
+          [
+            121.20604,
+            24.91132
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO7776",
+        "name": "中壢公車站",
+        "name_en": "Zhongli Bus Station",
+        "line": "111",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.223778,
+          24.954254
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO8251",
+        "name": "中壢分局",
+        "name_en": "Zhongli Police District",
+        "line": "111",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.222187,
+          24.954379
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO836",
+        "name": "和平市場",
+        "name_en": "Heping Market",
+        "line": "111",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.220919,
+          24.947993
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO838",
+        "name": "平鎮區公所(和平路)",
+        "name_en": "Civil Affairs Office of Pingzhen District (Heping Rd.)",
+        "line": "111",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.219604,
+          24.946079
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO840",
+        "name": "紫雲宮",
+        "name_en": "TzYun Temple",
+        "line": "111",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.221402,
+          24.945519
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO18381",
+        "name": "金山街口",
+        "name_en": "JinShan Street Corner",
+        "line": "111",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.222441,
+          24.943448
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO18382",
+        "name": "北勢新村",
+        "name_en": "Beishi Village",
+        "line": "111",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.222815,
+          24.941813
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO18383",
+        "name": "平鎮高中",
+        "name_en": "Pingjen High School",
+        "line": "111",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.219359,
+          24.940178
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO36395",
+        "name": "第一製藥廠",
+        "name_en": "1st Pharmaceutical Factory",
+        "line": "111",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.216158,
+          24.939696
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO36301",
+        "name": "非常大地",
+        "name_en": "Feichangdadi",
+        "line": "111",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.215607,
+          24.936026
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO38955",
+        "name": "新貴里",
+        "name_en": "Xingui Village",
+        "line": "111",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.214451,
+          24.932424
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO10958",
+        "name": "李屋",
+        "name_en": "Liwu",
+        "line": "111",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.213752,
+          24.929322
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO5203",
+        "name": "北勢橋",
+        "name_en": "Beishi Bridge",
+        "line": "111",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.211959,
+          24.924242
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO10937",
+        "name": "下王屋",
+        "name_en": "Xiawangwu",
+        "line": "111",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.211727,
+          24.922615
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO10961",
+        "name": "王屋",
+        "name_en": "Wangwu",
+        "line": "111",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.211471,
+          24.920935
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO5207",
+        "name": "長壽新村",
+        "name_en": "Changshou Village",
+        "line": "111",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.210813,
+          24.917381
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO805",
+        "name": "南京路口",
+        "name_en": "Nanjing Road Intersection",
+        "line": "111",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.209822,
+          24.916466
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO1395",
+        "name": "福德祠",
+        "name_en": "Fude Shrine ",
+        "line": "111",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.206814,
+          24.916306
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO806",
+        "name": "平鎮分局",
+        "name_en": "Pingzhen Police Station",
+        "line": "111",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.206281,
+          24.913851
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO807",
+        "name": "中庸路口",
+        "name_en": "ZungYung Road Intersection",
+        "line": "111",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.20385,
+          24.913252
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO808",
+        "name": "長沙街口",
+        "name_en": "Changsha Street Intersection",
+        "line": "111",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.203712,
+          24.91126
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO809",
+        "name": "上海路口",
+        "name_en": "Shanghai Street Intersection",
+        "line": "111",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.20609,
+          24.91131
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO810",
+        "name": "平鎮分局",
+        "name_en": "Pingzhen Police Station",
+        "line": "111",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.20641,
+          24.913733
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO38971",
+        "name": "福德祠",
+        "name_en": "Fude Shrine ",
+        "line": "111",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.206859,
+          24.916191
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO811",
+        "name": "南京路口",
+        "name_en": "Nanjing Road Intersection",
+        "line": "111",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.209699,
+          24.916302
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO5195",
+        "name": "長壽新村",
+        "name_en": "Changshou Village",
+        "line": "111",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.211269,
+          24.918305
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO10936",
+        "name": "王屋",
+        "name_en": "Wangwu",
+        "line": "111",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.211575,
+          24.920485
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO10960",
+        "name": "下王屋",
+        "name_en": "Xiawangwu",
+        "line": "111",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.211961,
+          24.922802
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO5198",
+        "name": "北勢橋",
+        "name_en": "Beishi Bridge",
+        "line": "111",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.212661,
+          24.925437
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO10939",
+        "name": "李屋",
+        "name_en": "Liwu",
+        "line": "111",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.21379,
+          24.928975
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO38956",
+        "name": "新貴里",
+        "name_en": "Xingui Village",
+        "line": "111",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.214944,
+          24.933146
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO36394",
+        "name": "非常大地",
+        "name_en": "Feichangdadi",
+        "line": "111",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.215767,
+          24.935683
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO38970",
+        "name": "平鎮圖書分館",
+        "name_en": "Pingzhen Branch Taoyuan Public Library",
+        "line": "111",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.217541,
+          24.940089
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO18386",
+        "name": "平鎮高中",
+        "name_en": "Pingjen High School",
+        "line": "111",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.219347,
+          24.94002
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO18385",
+        "name": "北勢新村",
+        "name_en": "Beishi Village",
+        "line": "111",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.223021,
+          24.941591
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO18384",
+        "name": "金山街口",
+        "name_en": "JinShan Street Corner",
+        "line": "111",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.222301,
+          24.944236
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO835",
+        "name": "紫雲宮",
+        "name_en": "TzYun Temple",
+        "line": "111",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.221542,
+          24.945622
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO839",
+        "name": "平鎮區公所(和平路)",
+        "name_en": "Civil Affairs Office of Pingzhen District (Heping Rd.)",
+        "line": "111",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.219798,
+          24.946188
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO837",
+        "name": "和平市場",
+        "name_en": "Heping Market",
+        "line": "111",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.221404,
+          24.948329
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO7777",
+        "name": "中壢公車站",
+        "name_en": "Zhongli Bus Station",
+        "line": "111",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.223778,
+          24.954254
+        ]
+      }
+    }
+  ]
+}

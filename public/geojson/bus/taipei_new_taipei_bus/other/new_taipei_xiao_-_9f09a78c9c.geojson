@@ -1,0 +1,201 @@
+{
+  "type": "FeatureCollection",
+  "name": "沙崙國小(篤行路)-捷運亞東醫院站",
+  "properties": {
+    "id": "new_taipei_xiao_-_9f09a78c9c",
+    "name": "沙崙國小(篤行路)-捷運亞東醫院站",
+    "name_en": "沙崙國小(篤行路)-捷運亞東醫院站",
+    "ref": "沙崙國小(篤行路)-捷運亞東醫院站",
+    "color": "#d97706",
+    "city_id": "NewTaipei",
+    "source": "TDX Bus Shape / StopOfRoute",
+    "official_map_url": "https://ebus.gov.taipei/File/Get/bbcbffee-5572-4cd6-8edf-3c40fa51be47?v=639234359043204379",
+    "operator_id": "16179",
+    "operator": "三重客運"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "沙崙國小(篤行路)-捷運亞東醫院站",
+        "name": "沙崙國小(篤行路)-捷運亞東醫院站",
+        "name_en": "沙崙國小(篤行路)-捷運亞東醫院站",
+        "color": "#d97706",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            121.429962941056,
+            24.9885189406407
+          ],
+          [
+            121.43112705614,
+            24.9904691268597
+          ],
+          [
+            121.431528235831,
+            24.9914251953171
+          ],
+          [
+            121.431666860208,
+            24.9921604672317
+          ],
+          [
+            121.43223370048,
+            24.9956478845392
+          ],
+          [
+            121.432409705976,
+            24.9957315592829
+          ],
+          [
+            121.432675156887,
+            24.9957431006269
+          ],
+          [
+            121.441075924942,
+            24.9948541889413
+          ],
+          [
+            121.443723545882,
+            24.9944762742329
+          ],
+          [
+            121.449066750649,
+            24.9934983092263
+          ],
+          [
+            121.449715951247,
+            24.9931549542434
+          ],
+          [
+            121.44991503943,
+            24.9930525248158
+          ],
+          [
+            121.450411317221,
+            24.9936570027058
+          ],
+          [
+            121.450944456444,
+            24.9940568195857
+          ],
+          [
+            121.45124662199,
+            24.9947822837421
+          ],
+          [
+            121.451887328483,
+            24.9962798290239
+          ],
+          [
+            121.452553679193,
+            24.9983348536804
+          ],
+          [
+            121.453228898506,
+            25.0003718821974
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "NWT223541",
+        "name": "沙崙國小(篤行路)",
+        "name_en": "Shalun Elementary School(Duxing Rd.)",
+        "line": "沙崙國小(篤行路)-捷運亞東醫院站",
+        "color": "#d97706",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.430908,
+          24.989821
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "NWT223542",
+        "name": "崑崙里",
+        "name_en": "Kunlun Village",
+        "line": "沙崙國小(篤行路)-捷運亞東醫院站",
+        "color": "#d97706",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.431818,
+          24.992455
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "NWT223543",
+        "name": "沙崙里",
+        "name_en": "Shalun Village",
+        "line": "沙崙國小(篤行路)-捷運亞東醫院站",
+        "color": "#d97706",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.432175,
+          24.994874
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "NWT223544",
+        "name": "亞東科技大學(南雅南路)",
+        "name_en": "Oriental University of Science & Technology(Nanya S. Rd.)",
+        "line": "沙崙國小(篤行路)-捷運亞東醫院站",
+        "color": "#d97706",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.4515397,
+          24.995237
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "NWT223545",
+        "name": "捷運亞東醫院站",
+        "name_en": "MRT Far Eastern Hospital Station",
+        "line": "沙崙國小(篤行路)-捷運亞東醫院站",
+        "color": "#d97706",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.453027,
+          24.999426
+        ]
+      }
+    }
+  ]
+}

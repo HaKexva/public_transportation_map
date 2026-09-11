@@ -1,0 +1,1111 @@
+{
+  "type": "FeatureCollection",
+  "name": "紅11",
+  "properties": {
+    "id": "kaohsiung_hong11",
+    "name": "紅11",
+    "name_en": "紅11",
+    "ref": "紅11",
+    "color": "#9333ea",
+    "city_id": "Kaohsiung",
+    "source": "TDX Bus Shape / StopOfRoute",
+    "official_map_url": "http://ibus.tbkc.gov.tw/cms/api/route/811/map/1397/image",
+    "operator_id": "10250",
+    "operator": "東南客運",
+    "operator_en": "Southeast Bus Co., Ltd."
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "紅11",
+        "name": "紅11",
+        "name_en": "紅11",
+        "color": "#9333ea",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.35547,
+            22.59317
+          ],
+          [
+            120.35604,
+            22.59301
+          ],
+          [
+            120.3576,
+            22.59286
+          ],
+          [
+            120.36136,
+            22.5928
+          ],
+          [
+            120.36282,
+            22.59277
+          ],
+          [
+            120.36275,
+            22.5902
+          ],
+          [
+            120.36281,
+            22.58987
+          ],
+          [
+            120.36279,
+            22.58829
+          ],
+          [
+            120.36112,
+            22.58833
+          ],
+          [
+            120.3566,
+            22.58843
+          ],
+          [
+            120.35233,
+            22.58856
+          ],
+          [
+            120.35164,
+            22.58874
+          ],
+          [
+            120.34907,
+            22.58908
+          ],
+          [
+            120.34905,
+            22.58789
+          ],
+          [
+            120.34902,
+            22.58742
+          ],
+          [
+            120.34666,
+            22.58743
+          ],
+          [
+            120.34662,
+            22.58616
+          ],
+          [
+            120.34321,
+            22.5862
+          ],
+          [
+            120.33754,
+            22.58769
+          ],
+          [
+            120.3381,
+            22.58978
+          ],
+          [
+            120.33867,
+            22.5907
+          ],
+          [
+            120.33901,
+            22.59111
+          ],
+          [
+            120.34114,
+            22.59256
+          ],
+          [
+            120.34121,
+            22.59263
+          ],
+          [
+            120.34112,
+            22.59272
+          ],
+          [
+            120.34032,
+            22.59374
+          ],
+          [
+            120.34012,
+            22.5943
+          ],
+          [
+            120.34007,
+            22.59517
+          ],
+          [
+            120.3397,
+            22.59583
+          ],
+          [
+            120.33859,
+            22.59734
+          ],
+          [
+            120.34032,
+            22.59983
+          ],
+          [
+            120.33961,
+            22.60077
+          ],
+          [
+            120.3372,
+            22.59907
+          ],
+          [
+            120.33787,
+            22.59809
+          ],
+          [
+            120.33851,
+            22.59727
+          ],
+          [
+            120.32923,
+            22.59091
+          ],
+          [
+            120.3283,
+            22.59332
+          ],
+          [
+            120.32666,
+            22.59216
+          ],
+          [
+            120.32531,
+            22.59109
+          ],
+          [
+            120.324,
+            22.58988
+          ],
+          [
+            120.32003,
+            22.58683
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH100811130981",
+        "name": "過埤公園",
+        "name_en": "Guopi Park",
+        "line": "紅11",
+        "color": "#9333ea",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.355608,
+          22.593057
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH100811162081",
+        "name": "7-11鳳頂門市",
+        "name_en": "7-11 Fongding Store",
+        "line": "紅11",
+        "color": "#9333ea",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.358491,
+          22.592821
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH100811131001",
+        "name": "過埤派出所",
+        "name_en": "Guopi Police Station",
+        "line": "紅11",
+        "color": "#9333ea",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.360829,
+          22.592771
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH100811113181",
+        "name": "過埤國小",
+        "name_en": "Guopi Elementary School",
+        "line": "紅11",
+        "color": "#9333ea",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.362736,
+          22.591341
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10081116631",
+        "name": "過埤路口",
+        "name_en": "Guopi Rd. Intersection",
+        "line": "紅11",
+        "color": "#9333ea",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.362784,
+          22.588978
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH100811131011",
+        "name": "頂庄路",
+        "name_en": "Dingjhuang Rd.",
+        "line": "紅11",
+        "color": "#9333ea",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.361469,
+          22.588342
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH100811181",
+        "name": "翡翠晶鑽",
+        "name_en": "Feicuei Jingzuan",
+        "line": "紅11",
+        "color": "#9333ea",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.360196,
+          22.588357
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10081184841",
+        "name": "頂庄棒球場",
+        "name_en": "Dingjhuang Baseball field",
+        "line": "紅11",
+        "color": "#9333ea",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.357798,
+          22.588503
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH100811162091",
+        "name": "南成里",
+        "name_en": "Nancheng Village",
+        "line": "紅11",
+        "color": "#9333ea",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.349007,
+          22.587631
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH100811162101",
+        "name": "飛鳳宮",
+        "name_en": "Feifong Temple",
+        "line": "紅11",
+        "color": "#9333ea",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.347413,
+          22.587456
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH100811140391",
+        "name": "朝鳳寺(家和五街)",
+        "name_en": "Jhaofong Temple(Jiahe 5th St)",
+        "line": "紅11",
+        "color": "#9333ea",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.343947,
+          22.586219
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH100811113711",
+        "name": "國慶六街",
+        "name_en": "Guocing 6th St.",
+        "line": "紅11",
+        "color": "#9333ea",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.340667,
+          22.586904
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10081162971",
+        "name": "濟天宮(國慶六街)",
+        "name_en": "Jitian Temple(Guocing 6the Rd.)",
+        "line": "紅11",
+        "color": "#9333ea",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.33797,
+          22.587579
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10081126591",
+        "name": "南和路口",
+        "name_en": "Nanhe Rd. Intersection",
+        "line": "紅11",
+        "color": "#9333ea",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.338534,
+          22.590352
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10081182241",
+        "name": "鳳南路口",
+        "name_en": "Fongnan Rd. Intersection",
+        "line": "紅11",
+        "color": "#9333ea",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.3407,
+          22.59223
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH100811146481",
+        "name": "鳳翔國小",
+        "name_en": "Fong Siang Elementary School",
+        "line": "紅11",
+        "color": "#9333ea",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.340094,
+          22.59508
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10081186711",
+        "name": "一甲(鳳山)",
+        "name_en": "Yijia(Fongshan)",
+        "line": "紅11",
+        "color": "#9333ea",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.338526,
+          22.600189
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH100811162111",
+        "name": "家樂福五甲店",
+        "name_en": "Carrefour(Wujia Store)",
+        "line": "紅11",
+        "color": "#9333ea",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.337094,
+          22.596316
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH100811162121",
+        "name": "南成國小",
+        "name_en": "Nan Cheng Elementary School",
+        "line": "紅11",
+        "color": "#9333ea",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.334467,
+          22.594568
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH100811190771",
+        "name": "第二衛生所",
+        "name_en": "Second Public Health Center",
+        "line": "紅11",
+        "color": "#9333ea",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.333251,
+          22.593727
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH100811162131",
+        "name": "童心幼稚園",
+        "name_en": "Greenground Kindergarten",
+        "line": "紅11",
+        "color": "#9333ea",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.330002,
+          22.591471
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH100811162141",
+        "name": "健能游泳池",
+        "name_en": "Jianneng Swimming Pool",
+        "line": "紅11",
+        "color": "#9333ea",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.329033,
+          22.59145
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10081186661",
+        "name": "五甲三誠路口",
+        "name_en": "Wujia Sancheng Rd. Intersection",
+        "line": "紅11",
+        "color": "#9333ea",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.326752,
+          22.592303
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10081186651",
+        "name": "福誠高中",
+        "name_en": "Fu Cheng Senior High School",
+        "line": "紅11",
+        "color": "#9333ea",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.324318,
+          22.590332
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10081186641",
+        "name": "捷運前鎮高中站",
+        "name_en": "MRT Cianjhen Senior High School Station",
+        "line": "紅11",
+        "color": "#9333ea",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.321563,
+          22.588097
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10081162891",
+        "name": "前鎮高中",
+        "name_en": "Cianjhen Senior High School",
+        "line": "紅11",
+        "color": "#9333ea",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.320232,
+          22.587108
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10081113912",
+        "name": "樹人路",
+        "name_en": "Shuren Rd.",
+        "line": "紅11",
+        "color": "#9333ea",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.319147,
+          22.589324
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH100811113562",
+        "name": "捷運前鎮高中站",
+        "name_en": "MRT Cianjhen Senior High School Station",
+        "line": "紅11",
+        "color": "#9333ea",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.321649,
+          22.587931
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10081186562",
+        "name": "福誠高中",
+        "name_en": "Fu Cheng Senior High School",
+        "line": "紅11",
+        "color": "#9333ea",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.324439,
+          22.59021
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10081186552",
+        "name": "五甲三誠路口",
+        "name_en": "Wujia Sancheng Rd. Intersection",
+        "line": "紅11",
+        "color": "#9333ea",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.326804,
+          22.592127
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH100811162012",
+        "name": "健能游泳池",
+        "name_en": "Jianneng Swimming Pool",
+        "line": "紅11",
+        "color": "#9333ea",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.329037,
+          22.591355
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH100811162022",
+        "name": "童心幼稚園",
+        "name_en": "Greenground Kindergarten",
+        "line": "紅11",
+        "color": "#9333ea",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.330292,
+          22.591614
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH100811190782",
+        "name": "第二衛生所",
+        "name_en": "Second Public Health Center",
+        "line": "紅11",
+        "color": "#9333ea",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.33278,
+          22.593251
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH100811162032",
+        "name": "南成國小",
+        "name_en": "Nan Cheng Elementary School",
+        "line": "紅11",
+        "color": "#9333ea",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.334947,
+          22.594803
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH100811162042",
+        "name": "家樂福五甲店",
+        "name_en": "Carrefour(Wujia Store)",
+        "line": "紅11",
+        "color": "#9333ea",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.337336,
+          22.596429
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH100811143532",
+        "name": "一甲(鳳山)",
+        "name_en": "Yijia(Fongshan)",
+        "line": "紅11",
+        "color": "#9333ea",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.338643,
+          22.599971
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10081167152",
+        "name": "二甲",
+        "name_en": "Erjia",
+        "line": "紅11",
+        "color": "#9333ea",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.339699,
+          22.598938
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH100811146432",
+        "name": "鳳翔國小",
+        "name_en": "Fong Siang Elementary School",
+        "line": "紅11",
+        "color": "#9333ea",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.339858,
+          22.594926
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10081181172",
+        "name": "鳳南路口",
+        "name_en": "Fongnan Rd. Intersection",
+        "line": "紅11",
+        "color": "#9333ea",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.34039,
+          22.592181
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10081126572",
+        "name": "南和路口",
+        "name_en": "Nanhe Rd. Intersection",
+        "line": "紅11",
+        "color": "#9333ea",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.338475,
+          22.590635
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10081162942",
+        "name": "濟天宮(國慶六街)",
+        "name_en": "Jitian Temple(Guocing 6the Rd.)",
+        "line": "紅11",
+        "color": "#9333ea",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.337967,
+          22.58757
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH100811113742",
+        "name": "國慶六街",
+        "name_en": "Guocing 6th St.",
+        "line": "紅11",
+        "color": "#9333ea",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.340715,
+          22.586828
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH100811141352",
+        "name": "朝鳳寺(家和五街)",
+        "name_en": "Jhaofong Temple(Jiahe 5th St)",
+        "line": "紅11",
+        "color": "#9333ea",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.343937,
+          22.586189
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH100811162052",
+        "name": "飛鳳宮",
+        "name_en": "Feifong Temple",
+        "line": "紅11",
+        "color": "#9333ea",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.347308,
+          22.587426
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH100811162062",
+        "name": "南成里",
+        "name_en": "Nancheng Village",
+        "line": "紅11",
+        "color": "#9333ea",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.349039,
+          22.587634
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH100811178522",
+        "name": "頂庄棒球場",
+        "name_en": "Dingjhuang Baseball field",
+        "line": "紅11",
+        "color": "#9333ea",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.357859,
+          22.588391
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH100811162072",
+        "name": "7-11鳳頂門市",
+        "name_en": "7-11 Fongding Store",
+        "line": "紅11",
+        "color": "#9333ea",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.358486,
+          22.592913
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH100811131082",
+        "name": "過埤公園",
+        "name_en": "Guopi Park",
+        "line": "紅11",
+        "color": "#9333ea",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.355684,
+          22.593193
+        ]
+      }
+    }
+  ]
+}

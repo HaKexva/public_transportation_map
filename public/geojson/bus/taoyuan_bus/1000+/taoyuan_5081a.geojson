@@ -1,0 +1,992 @@
+{
+  "type": "FeatureCollection",
+  "name": "5081A",
+  "properties": {
+    "id": "taoyuan_5081a",
+    "name": "5081A",
+    "name_en": "5081A",
+    "ref": "5081A",
+    "color": "#65a30d",
+    "city_id": "Taoyuan",
+    "source": "TDX Bus Shape / StopOfRoute",
+    "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/50811/map/2106/image",
+    "operator_id": "1",
+    "operator": "桃園客運",
+    "operator_en": "Taoyuan Bus Co., Ltd."
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "5081A",
+        "name": "5081A",
+        "name_en": "5081A",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            121.22376,
+            24.95296
+          ],
+          [
+            121.22381,
+            24.95312
+          ],
+          [
+            121.22386,
+            24.95324
+          ],
+          [
+            121.22205,
+            24.95391
+          ],
+          [
+            121.22367,
+            24.95728
+          ],
+          [
+            121.22229,
+            24.95776
+          ],
+          [
+            121.2183,
+            24.9583
+          ],
+          [
+            121.21771,
+            24.96232
+          ],
+          [
+            121.2164,
+            24.96659
+          ],
+          [
+            121.21581,
+            24.96899
+          ],
+          [
+            121.2153,
+            24.9705
+          ],
+          [
+            121.21443,
+            24.97231
+          ],
+          [
+            121.2136,
+            24.97433
+          ],
+          [
+            121.21341,
+            24.97472
+          ],
+          [
+            121.20966,
+            24.97938
+          ],
+          [
+            121.20794,
+            24.98115
+          ],
+          [
+            121.2072,
+            24.98244
+          ],
+          [
+            121.20738,
+            24.98468
+          ],
+          [
+            121.20826,
+            24.98694
+          ],
+          [
+            121.20965,
+            24.98943
+          ],
+          [
+            121.20971,
+            24.98983
+          ],
+          [
+            121.20907,
+            24.99288
+          ],
+          [
+            121.20893,
+            24.99526
+          ],
+          [
+            121.20877,
+            24.99557
+          ],
+          [
+            121.20521,
+            24.99958
+          ],
+          [
+            121.20515,
+            24.99969
+          ],
+          [
+            121.20515,
+            25.00064
+          ],
+          [
+            121.20942,
+            25.00064
+          ],
+          [
+            121.20997,
+            25.00074
+          ],
+          [
+            121.21062,
+            25.00101
+          ],
+          [
+            121.21059,
+            25.00107
+          ],
+          [
+            121.21144,
+            25.00177
+          ],
+          [
+            121.21279,
+            25.00308
+          ],
+          [
+            121.21493,
+            25.00516
+          ],
+          [
+            121.21649,
+            25.00701
+          ],
+          [
+            121.21497,
+            25.00829
+          ],
+          [
+            121.21435,
+            25.0094
+          ],
+          [
+            121.21342,
+            25.01111
+          ],
+          [
+            121.21333,
+            25.01127
+          ],
+          [
+            121.21281,
+            25.01176
+          ],
+          [
+            121.21276,
+            25.01195
+          ],
+          [
+            121.21282,
+            25.01221
+          ],
+          [
+            121.2133,
+            25.0127
+          ],
+          [
+            121.21358,
+            25.01247
+          ],
+          [
+            121.21404,
+            25.01295
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "5081A",
+        "name": "5081A",
+        "name_en": "5081A",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            121.21551,
+            25.01485
+          ],
+          [
+            121.21583,
+            25.01496
+          ],
+          [
+            121.21615,
+            25.01491
+          ],
+          [
+            121.21706,
+            25.01421
+          ],
+          [
+            121.21707,
+            25.01401
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO4735",
+        "name": "中壢總站",
+        "name_en": "Zhongli Bus Terminal",
+        "line": "5081A",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.223906,
+          24.953018
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO3389",
+        "name": "中央新生路口",
+        "name_en": "Zhongyang-ShinSheng Road Intersection",
+        "line": "5081A",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.222643,
+          24.957753
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO62772",
+        "name": "捷運老街溪站(中央西路)",
+        "name_en": "MRT Laojie River Station(Zhongyang W. Rd.)",
+        "line": "5081A",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.219739,
+          24.958235
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO62770",
+        "name": "柑園",
+        "name_en": "Ganyuan",
+        "line": "5081A",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.217229,
+          24.964165
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO62769",
+        "name": "家興新村",
+        "name_en": "Guxing Village",
+        "line": "5081A",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.21627,
+          24.96731
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO62768",
+        "name": "下舊社",
+        "name_en": "Xiajiushe",
+        "line": "5081A",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.215409,
+          24.970348
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO7450",
+        "name": "鄒家站",
+        "name_en": "Chou Jia station",
+        "line": "5081A",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.214001,
+          24.973444
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO62767",
+        "name": "三座屋",
+        "name_en": "Sanzuowu",
+        "line": "5081A",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.212888,
+          24.975431
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO62766",
+        "name": "六號坡",
+        "name_en": "Liuhaopo",
+        "line": "5081A",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.209811,
+          24.979243
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO62765",
+        "name": "水圳頭",
+        "name_en": "Shuichoutou",
+        "line": "5081A",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.20736,
+          24.98387
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO62764",
+        "name": "大丘田",
+        "name_en": "Daqiutian",
+        "line": "5081A",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.20932,
+          24.98868
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO62763",
+        "name": "農場",
+        "name_en": "Farm",
+        "line": "5081A",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.20932,
+          24.99182
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO62762",
+        "name": "芝芭里",
+        "name_en": "Zhiba Village",
+        "line": "5081A",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.20904,
+          24.99411
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO62761",
+        "name": "芭里國小",
+        "name_en": "Ba-Li Elementary School",
+        "line": "5081A",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.20772,
+          24.99685
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO62760",
+        "name": "五號坡",
+        "name_en": "Wuhaopo",
+        "line": "5081A",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.205667,
+          24.999205
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO8053",
+        "name": "領航南文德路口",
+        "name_en": "Linghang S. and Wende Rd. Intersection",
+        "line": "5081A",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.208289,
+          25.000536
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO9513",
+        "name": "青埔",
+        "name_en": "Qingpu",
+        "line": "5081A",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.215028,
+          25.005122
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO7444",
+        "name": "青埔致遠一路口",
+        "name_en": "Qingpu and Zhiyuan 1st Rd Intersection",
+        "line": "5081A",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.215889,
+          25.007737
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO9677",
+        "name": "高鐵桃園站",
+        "name_en": "THSR Taoyuan Station",
+        "line": "5081A",
+        "color": "#65a30d",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.213987,
+          25.012749
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO9677",
+        "name": "高鐵桃園站",
+        "name_en": "THSR Taoyuan Station",
+        "line": "5081A",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.213987,
+          25.012749
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO7449",
+        "name": "青埔致遠一路口",
+        "name_en": "Qingpu and Zhiyuan 1st Rd Intersection",
+        "line": "5081A",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.215699,
+          25.007457
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO9514",
+        "name": "青埔",
+        "name_en": "Qingpu",
+        "line": "5081A",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.215115,
+          25.005806
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO8054",
+        "name": "領航南文德路口",
+        "name_en": "Linghang S. and Wende Rd. Intersection",
+        "line": "5081A",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.207999,
+          25.000935
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO62787",
+        "name": "五號坡",
+        "name_en": "Wuhaopo",
+        "line": "5081A",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.205324,
+          24.999293
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO62786",
+        "name": "芭里國小",
+        "name_en": "Ba-Li Elementary School",
+        "line": "5081A",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.207531,
+          24.996886
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO62785",
+        "name": "芝芭里",
+        "name_en": "Zhiba Village",
+        "line": "5081A",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.208904,
+          24.994103
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO62784",
+        "name": "農場",
+        "name_en": "Farm",
+        "line": "5081A",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.209185,
+          24.99179
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO62783",
+        "name": "大丘田",
+        "name_en": "Daqiutian",
+        "line": "5081A",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.209283,
+          24.988783
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO62782",
+        "name": "水圳頭",
+        "name_en": "Shuichoutou",
+        "line": "5081A",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.20733,
+          24.98405
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO62781",
+        "name": "六號坡",
+        "name_en": "Liuhaopo",
+        "line": "5081A",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.20976,
+          24.979207
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO62780",
+        "name": "三座屋",
+        "name_en": "Sanzuowu",
+        "line": "5081A",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.212756,
+          24.975387
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO7451",
+        "name": "鄒家站",
+        "name_en": "Chou Jia station",
+        "line": "5081A",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.213928,
+          24.973464
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO62779",
+        "name": "下舊社",
+        "name_en": "Xiajiushe",
+        "line": "5081A",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.215308,
+          24.970334
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO62778",
+        "name": "家興新村",
+        "name_en": "Guxing Village",
+        "line": "5081A",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.21618,
+          24.96731
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO62777",
+        "name": "柑園",
+        "name_en": "Ganyuan",
+        "line": "5081A",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.21709,
+          24.964194
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO62775",
+        "name": "捷運老街溪站(中央西路)",
+        "name_en": "MRT Laojie River Station(Zhongyang W. Rd.)",
+        "line": "5081A",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.219678,
+          24.957955
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO9322",
+        "name": "中央新生路口",
+        "name_en": "Zhongyang-ShinSheng Road Intersection",
+        "line": "5081A",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.222563,
+          24.957569
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO4144",
+        "name": "中央延平路口",
+        "name_en": "Zhongyang and Yanping Road Intersection",
+        "line": "5081A",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.224135,
+          24.956935
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO4736",
+        "name": "中壢總站",
+        "name_en": "Zhongli Bus Terminal",
+        "line": "5081A",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.223906,
+          24.953018
+        ]
+      }
+    }
+  ]
+}

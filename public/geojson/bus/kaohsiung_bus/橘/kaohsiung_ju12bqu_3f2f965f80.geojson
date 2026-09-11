@@ -1,0 +1,327 @@
+{
+  "type": "FeatureCollection",
+  "name": "橘12B區間車(果嶺公園接駁線)",
+  "properties": {
+    "id": "kaohsiung_ju12bqu_3f2f965f80",
+    "name": "橘12B區間車(果嶺公園接駁線)",
+    "name_en": "橘12B區間車(果嶺公園接駁線)",
+    "ref": "橘12B區間車(果嶺公園接駁線)",
+    "color": "#134e4a",
+    "city_id": "Kaohsiung",
+    "source": "TDX Bus Shape / StopOfRoute",
+    "official_map_url": "http://ibus.tbkc.gov.tw/cms/api/route/9122/map/1860/image",
+    "operator_id": "10320",
+    "operator": "高雄客運",
+    "operator_en": "Kaohsiung Bus Co., Ltd."
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "橘12B區間車(果嶺公園接駁線)",
+        "name": "橘12B區間車(果嶺公園接駁線)",
+        "name_en": "橘12B區間車(果嶺公園接駁線)",
+        "color": "#134e4a",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.35701,
+            22.65085
+          ],
+          [
+            120.356,
+            22.65116
+          ],
+          [
+            120.35533,
+            22.65075
+          ],
+          [
+            120.35404,
+            22.65056
+          ],
+          [
+            120.35309,
+            22.65055
+          ],
+          [
+            120.35253,
+            22.65067
+          ],
+          [
+            120.35222,
+            22.65118
+          ],
+          [
+            120.35108,
+            22.65331
+          ],
+          [
+            120.35072,
+            22.65351
+          ],
+          [
+            120.35031,
+            22.6536
+          ],
+          [
+            120.35001,
+            22.65349
+          ],
+          [
+            120.34975,
+            22.65325
+          ],
+          [
+            120.34953,
+            22.65332
+          ],
+          [
+            120.34942,
+            22.65329
+          ],
+          [
+            120.34934,
+            22.65322
+          ],
+          [
+            120.3492,
+            22.65276
+          ],
+          [
+            120.34917,
+            22.65249
+          ],
+          [
+            120.34827,
+            22.65041
+          ],
+          [
+            120.34797,
+            22.65054
+          ],
+          [
+            120.34776,
+            22.65069
+          ],
+          [
+            120.34721,
+            22.65174
+          ],
+          [
+            120.34665,
+            22.653
+          ],
+          [
+            120.34588,
+            22.65411
+          ],
+          [
+            120.34519,
+            22.65512
+          ],
+          [
+            120.34494,
+            22.65619
+          ],
+          [
+            120.34459,
+            22.65658
+          ],
+          [
+            120.34282,
+            22.65759
+          ],
+          [
+            120.34067,
+            22.65864
+          ],
+          [
+            120.33893,
+            22.6595
+          ],
+          [
+            120.33856,
+            22.65992
+          ],
+          [
+            120.33861,
+            22.66045
+          ],
+          [
+            120.33889,
+            22.66102
+          ],
+          [
+            120.33814,
+            22.66217
+          ],
+          [
+            120.33835,
+            22.66261
+          ],
+          [
+            120.33901,
+            22.66333
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10912291341",
+        "name": "長庚醫院",
+        "name_en": "Chang Gung Memorial Hospital",
+        "line": "橘12B區間車(果嶺公園接駁線)",
+        "color": "#134e4a",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.356797,
+          22.650963
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10912291351",
+        "name": "澄清湖",
+        "name_en": "Cheng Ching Lake",
+        "line": "橘12B區間車(果嶺公園接駁線)",
+        "color": "#134e4a",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.349499,
+          22.653378
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10912291361",
+        "name": "圓山路",
+        "name_en": "Yuanshan Rd.",
+        "line": "橘12B區間車(果嶺公園接駁線)",
+        "color": "#134e4a",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.345771,
+          22.654285
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10912291371",
+        "name": "高雄果嶺自然公園",
+        "name_en": "Kaohsiung Green Park",
+        "line": "橘12B區間車(果嶺公園接駁線)",
+        "color": "#134e4a",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.338906,
+          22.663083
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10912291382",
+        "name": "高雄果嶺自然公園",
+        "name_en": "Kaohsiung Green Park",
+        "line": "橘12B區間車(果嶺公園接駁線)",
+        "color": "#134e4a",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.338794,
+          22.663165
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10912291392",
+        "name": "圓山路",
+        "name_en": "Yuanshan Rd.",
+        "line": "橘12B區間車(果嶺公園接駁線)",
+        "color": "#134e4a",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.345826,
+          22.653999
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10912291402",
+        "name": "澄清湖",
+        "name_en": "Cheng Ching Lake",
+        "line": "橘12B區間車(果嶺公園接駁線)",
+        "color": "#134e4a",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.349499,
+          22.653378
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10912291412",
+        "name": "長庚醫院",
+        "name_en": "Chang Gung Memorial Hospital",
+        "line": "橘12B區間車(果嶺公園接駁線)",
+        "color": "#134e4a",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.356891,
+          22.650753
+        ]
+      }
+    }
+  ]
+}

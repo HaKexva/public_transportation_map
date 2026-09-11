@@ -65,4 +65,33 @@ class ServiceCalendarResolverTest < ActiveSupport::TestCase
     codes = Transit::ServiceCalendarResolver.calendar_codes_for_date(monday)
     assert_includes codes, "sd_11111000000"
   end
+
+  test "calendar_codes_for_date includes date-specific code" do
+    monday = Date.new(2026, 7, 27)
+    codes = Transit::ServiceCalendarResolver.calendar_codes_for_date(monday)
+    assert_includes codes, "date_2026-07-27"
+    assert_includes codes, "sd_11111000000"
+  end
+
+  test "calendar_ids_for_date matches date_ calendars" do
+    monday = Date.new(2026, 7, 27)
+    active = ScheduleDataset.create!(name: "ods", source: "tdx", active: true)
+    date_cal = ServiceCalendar.create!(schedule_dataset: active, code: "date_2026-07-27", name: "2026-07-27")
+
+    ids = Transit::ServiceCalendarResolver.calendar_ids_for_date(monday)
+    assert_includes ids, date_cal.id
+  end
+
+  test "calendar_ids_for_date ignores inactive datasets" do
+    monday = Date.new(2026, 7, 27)
+    active = ScheduleDataset.create!(name: "active", source: "manual", active: true)
+    stale = ScheduleDataset.create!(name: "stale", source: "tdx", active: false)
+    live_cal = ServiceCalendar.create!(schedule_dataset: active, code: "weekday", name: "平日")
+    stale_cal = ServiceCalendar.create!(schedule_dataset: stale, code: "weekday", name: "舊平日")
+
+    ids = Transit::ServiceCalendarResolver.calendar_ids_for_date(monday)
+
+    assert_includes ids, live_cal.id
+    refute_includes ids, stale_cal.id
+  end
 end

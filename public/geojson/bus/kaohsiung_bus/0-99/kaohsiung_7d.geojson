@@ -1,0 +1,576 @@
+{
+  "type": "FeatureCollection",
+  "name": "7D",
+  "properties": {
+    "id": "kaohsiung_7d",
+    "name": "7D",
+    "name_en": "7D",
+    "ref": "7D",
+    "color": "#9f1239",
+    "city_id": "Kaohsiung",
+    "source": "TDX Bus Shape / StopOfRoute",
+    "official_map_url": "http://ibus.tbkc.gov.tw/cms/api/route/732/map/1753/image",
+    "operator_id": "10360",
+    "operator": "港都客運",
+    "operator_en": "Great-City-Life Bus Co., Ltd."
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "7D",
+        "name": "7D",
+        "name_en": "7D",
+        "color": "#9f1239",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.29878,
+            22.71904
+          ],
+          [
+            120.29859,
+            22.71894
+          ],
+          [
+            120.29983,
+            22.71587
+          ],
+          [
+            120.30682,
+            22.71849
+          ],
+          [
+            120.31036,
+            22.71981
+          ],
+          [
+            120.31206,
+            22.72049
+          ],
+          [
+            120.31373,
+            22.72118
+          ],
+          [
+            120.3163,
+            22.72225
+          ],
+          [
+            120.31758,
+            22.72278
+          ],
+          [
+            120.3187,
+            22.72326
+          ],
+          [
+            120.31926,
+            22.72333
+          ],
+          [
+            120.31981,
+            22.72322
+          ],
+          [
+            120.32067,
+            22.7228
+          ],
+          [
+            120.32163,
+            22.72232
+          ],
+          [
+            120.32253,
+            22.72197
+          ],
+          [
+            120.3234,
+            22.72178
+          ],
+          [
+            120.32437,
+            22.72171
+          ],
+          [
+            120.32558,
+            22.7219
+          ],
+          [
+            120.32643,
+            22.72214
+          ],
+          [
+            120.32727,
+            22.72243
+          ],
+          [
+            120.32795,
+            22.72273
+          ],
+          [
+            120.3279,
+            22.72284
+          ],
+          [
+            120.32714,
+            22.72317
+          ],
+          [
+            120.32599,
+            22.72397
+          ],
+          [
+            120.32411,
+            22.72528
+          ],
+          [
+            120.32515,
+            22.72696
+          ],
+          [
+            120.32537,
+            22.72714
+          ],
+          [
+            120.32734,
+            22.7303
+          ],
+          [
+            120.3276,
+            22.73055
+          ],
+          [
+            120.3282,
+            22.73086
+          ],
+          [
+            120.32912,
+            22.73139
+          ],
+          [
+            120.3298,
+            22.7319
+          ],
+          [
+            120.33034,
+            22.73242
+          ],
+          [
+            120.33173,
+            22.73396
+          ],
+          [
+            120.33309,
+            22.73551
+          ],
+          [
+            120.33563,
+            22.73838
+          ],
+          [
+            120.33695,
+            22.74
+          ],
+          [
+            120.3383,
+            22.7415
+          ],
+          [
+            120.34133,
+            22.74449
+          ],
+          [
+            120.34614,
+            22.7474
+          ],
+          [
+            120.35454,
+            22.75274
+          ],
+          [
+            120.35513,
+            22.75344
+          ],
+          [
+            120.35629,
+            22.75496
+          ],
+          [
+            120.35685,
+            22.75534
+          ],
+          [
+            120.35738,
+            22.75561
+          ],
+          [
+            120.358,
+            22.7559
+          ],
+          [
+            120.36087,
+            22.75916
+          ],
+          [
+            120.36124,
+            22.7593
+          ],
+          [
+            120.36362,
+            22.75952
+          ],
+          [
+            120.36634,
+            22.7598
+          ],
+          [
+            120.36675,
+            22.75994
+          ],
+          [
+            120.37076,
+            22.76231
+          ],
+          [
+            120.375,
+            22.7649
+          ],
+          [
+            120.37533,
+            22.76438
+          ],
+          [
+            120.37536,
+            22.76381
+          ],
+          [
+            120.37641,
+            22.76372
+          ],
+          [
+            120.37655,
+            22.76357
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "7D",
+        "name": "7D",
+        "name_en": "7D",
+        "color": "#9f1239",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.37698,
+            22.76414
+          ],
+          [
+            120.37693,
+            22.76465
+          ],
+          [
+            120.37645,
+            22.76529
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10073245531",
+        "name": "加昌站",
+        "name_en": "Jiachang Station",
+        "line": "7D",
+        "color": "#9f1239",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.298684,
+          22.719012
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10073280801",
+        "name": "捷運楠梓科技園區站",
+        "name_en": "MRT Nanzih Technology Industrial Park Station",
+        "line": "7D",
+        "color": "#9f1239",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.306415,
+          22.718256
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10073245831",
+        "name": "後勁國中(捷運後勁站)",
+        "name_en": "Houjing Elementary School(MRT Houjin Station)",
+        "line": "7D",
+        "color": "#9f1239",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.315639,
+          22.721856
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10073246601",
+        "name": "楠梓火車站",
+        "name_en": "Nanzi Railway Station",
+        "line": "7D",
+        "color": "#9f1239",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.325656,
+          22.727545
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10073252271",
+        "name": "北國麗景",
+        "name_en": "Beiguo Lijing",
+        "line": "7D",
+        "color": "#9f1239",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.338517,
+          22.741508
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10073252291",
+        "name": "鳳山厝",
+        "name_en": "Fongshancuo",
+        "line": "7D",
+        "color": "#9f1239",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.35525,
+          22.753432
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH100732144741",
+        "name": "樹德科技大學(校區)",
+        "name_en": "Shu-Te University(Campus)",
+        "line": "7D",
+        "color": "#9f1239",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.376316,
+          22.763647
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10073252492",
+        "name": "樹德科技大學(校區)",
+        "name_en": "Shu-Te University(Campus)",
+        "line": "7D",
+        "color": "#9f1239",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.376316,
+          22.763647
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH100732161292",
+        "name": "樹德科技大學(橫山路)",
+        "name_en": "Shu-Te University(Hengshan Rd.)",
+        "line": "7D",
+        "color": "#9f1239",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.374495,
+          22.764766
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10073252332",
+        "name": "鳳山厝",
+        "name_en": "Fongshancuo",
+        "line": "7D",
+        "color": "#9f1239",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.35509,
+          22.753629
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10073252352",
+        "name": "北國麗景",
+        "name_en": "Beiguo Lijing",
+        "line": "7D",
+        "color": "#9f1239",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.338311,
+          22.741683
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10073246052",
+        "name": "楠梓火車站",
+        "name_en": "Nanzi Railway Station",
+        "line": "7D",
+        "color": "#9f1239",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.325364,
+          22.727576
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10073246802",
+        "name": "後勁國中(捷運後勁站)",
+        "name_en": "Houjing Elementary School(MRT Houjin Station)",
+        "line": "7D",
+        "color": "#9f1239",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.315423,
+          22.72212
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10073246912",
+        "name": "捷運楠梓科技園區站",
+        "name_en": "MRT Nanzih Technology Industrial Park Station",
+        "line": "7D",
+        "color": "#9f1239",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.306648,
+          22.718659
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10073245482",
+        "name": "加昌站",
+        "name_en": "Jiachang Station",
+        "line": "7D",
+        "color": "#9f1239",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.298684,
+          22.719012
+        ]
+      }
+    }
+  ]
+}

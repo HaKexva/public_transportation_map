@@ -1,0 +1,363 @@
+{
+  "type": "FeatureCollection",
+  "name": "中和-新北板橋公車站",
+  "properties": {
+    "id": "new_taipei_-_faca9ccd48",
+    "name": "中和-新北板橋公車站",
+    "name_en": "中和-新北板橋公車站",
+    "ref": "中和-新北板橋公車站",
+    "color": "#0891b2",
+    "city_id": "NewTaipei",
+    "source": "TDX Bus Shape / StopOfRoute",
+    "official_map_url": "https://ebus.gov.taipei/File/Get/37cde027-7758-4280-9b0a-84ebdfabf5b1?v=639234358994455551",
+    "operator_id": "16176",
+    "operator": "臺北客運",
+    "operator_en": "Taipei Bus Co., Ltd."
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "中和-新北板橋公車站",
+        "name": "中和-新北板橋公車站",
+        "name_en": "中和-新北板橋公車站",
+        "color": "#0891b2",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            121.467658385145,
+            24.9936929348477
+          ],
+          [
+            121.468138285816,
+            24.9940568804628
+          ],
+          [
+            121.468892415441,
+            24.99466937187
+          ],
+          [
+            121.469244995526,
+            24.9949889313924
+          ],
+          [
+            121.470097064063,
+            24.9960274941019
+          ],
+          [
+            121.472314783577,
+            24.9986631365112
+          ],
+          [
+            121.472537751645,
+            24.9989749503469
+          ],
+          [
+            121.472775056333,
+            24.9994792228079
+          ],
+          [
+            121.472792505207,
+            25.0000288623414
+          ],
+          [
+            121.472070994264,
+            25.0048482413626
+          ],
+          [
+            121.470480761631,
+            25.0041752645974
+          ],
+          [
+            121.468088288755,
+            25.0032045574242
+          ],
+          [
+            121.467586633625,
+            25.0030335584582
+          ],
+          [
+            121.464534825548,
+            25.0025694184076
+          ],
+          [
+            121.464189337841,
+            25.0042200818957
+          ],
+          [
+            121.463904176517,
+            25.00597081863
+          ],
+          [
+            121.463551581494,
+            25.007736030023
+          ],
+          [
+            121.463227032436,
+            25.0094215912593
+          ],
+          [
+            121.463230522211,
+            25.0096623857216
+          ],
+          [
+            121.462850136756,
+            25.0106465022197
+          ],
+          [
+            121.464793941328,
+            25.0114875379505
+          ],
+          [
+            121.464336780827,
+            25.0122587781848
+          ],
+          [
+            121.463303807482,
+            25.0129916308962
+          ],
+          [
+            121.462905973153,
+            25.0126042658916
+          ],
+          [
+            121.462260233527,
+            25.0130137437235
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "NWT198573",
+        "name": "華安街口",
+        "name_en": "Huaan St. Entrance",
+        "line": "中和-新北板橋公車站",
+        "color": "#0891b2",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.4679844,
+          24.993825
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "NWT222984",
+        "name": "自強國小",
+        "name_en": "Ziqiang Elementary School",
+        "line": "中和-新北板橋公車站",
+        "color": "#0891b2",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.4720362,
+          24.998187
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "NWT198574",
+        "name": "國光派出所",
+        "name_en": "Guoguang Police Station",
+        "line": "中和-新北板橋公車站",
+        "color": "#0891b2",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.472624,
+          25.001522
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "NWT198575",
+        "name": "莒光路",
+        "name_en": "Juguang Rd.",
+        "line": "中和-新北板橋公車站",
+        "color": "#0891b2",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.472377,
+          25.003205
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "NWT198576",
+        "name": "德光路口",
+        "name_en": "DeGuang Rd. Entrance",
+        "line": "中和-新北板橋公車站",
+        "color": "#0891b2",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.471153,
+          25.004529
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "NWT222985",
+        "name": "德光路",
+        "name_en": "Deguang Rd.",
+        "line": "中和-新北板橋公車站",
+        "color": "#0891b2",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.469691,
+          25.003956
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "NWT198577",
+        "name": "民德路",
+        "name_en": "Minde Rd.",
+        "line": "中和-新北板橋公車站",
+        "color": "#0891b2",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.468023,
+          25.003222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "NWT222986",
+        "name": "福德里",
+        "name_en": "Fude Village",
+        "line": "中和-新北板橋公車站",
+        "color": "#0891b2",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.46635,
+          25.002914
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "NWT222987",
+        "name": "後埔國小",
+        "name_en": "Houpu Elementary School",
+        "line": "中和-新北板橋公車站",
+        "color": "#0891b2",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.464285,
+          25.00403
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "NWT198578",
+        "name": "實踐成都街口",
+        "name_en": "Shijian & Chengdu Intersectuon",
+        "line": "中和-新北板橋公車站",
+        "color": "#0891b2",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.46393390614749,
+          25.005869973155434
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "NWT222988",
+        "name": "新北市政府(新府路)",
+        "name_en": "New Taipei City Hall(Xinfu Rd.)",
+        "line": "中和-新北板橋公車站",
+        "color": "#0891b2",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.464544,
+          25.012043
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "NWT198579",
+        "name": "新北板橋公車站",
+        "name_en": "NTPC Banqiao Bus Station",
+        "line": "中和-新北板橋公車站",
+        "color": "#0891b2",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.462602,
+          25.012813
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,366 @@
+{
+  "type": "FeatureCollection",
+  "name": "紅28",
+  "properties": {
+    "id": "new_taipei_hong28",
+    "name": "紅28",
+    "name_en": "紅28",
+    "ref": "紅28",
+    "color": "#6b21a8",
+    "city_id": "NewTaipei",
+    "source": "TDX Bus Shape / StopOfRoute",
+    "official_map_url": "https://ebus.gov.taipei/File/Get/e1c83a13-b5d4-4cef-9ecb-742c13650951?v=639234358628439952",
+    "operator_id": "16186",
+    "operator": "淡水客運"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "紅28",
+        "name": "紅28",
+        "name_en": "紅28",
+        "color": "#6b21a8",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            121.447799193519,
+            25.1744192475869
+          ],
+          [
+            121.447458918047,
+            25.1742457407869
+          ],
+          [
+            121.447165809472,
+            25.1740048527055
+          ],
+          [
+            121.447131422596,
+            25.1739065143945
+          ],
+          [
+            121.447135487896,
+            25.1736898452143
+          ],
+          [
+            121.447282042183,
+            25.1735045466901
+          ],
+          [
+            121.447359530657,
+            25.1735365527988
+          ],
+          [
+            121.448488167122,
+            25.1733899985115
+          ],
+          [
+            121.448836865254,
+            25.1732990337815
+          ],
+          [
+            121.44997392438,
+            25.1732535514164
+          ],
+          [
+            121.450464123203,
+            25.1730901518087
+          ],
+          [
+            121.450528135421,
+            25.1729166450088
+          ],
+          [
+            121.450474230395,
+            25.1727431382088
+          ],
+          [
+            121.449889697778,
+            25.1719311937664
+          ],
+          [
+            121.45137040144,
+            25.1711495709007
+          ],
+          [
+            121.451008227051,
+            25.1701034765049
+          ],
+          [
+            121.450612362022,
+            25.1700883157166
+          ],
+          [
+            121.450078365366,
+            25.1699636603457
+          ],
+          [
+            121.449699120545,
+            25.1700788240507
+          ],
+          [
+            121.449428136,
+            25.1700462024156
+          ],
+          [
+            121.448693680031,
+            25.1696318075342
+          ],
+          [
+            121.448041301031,
+            25.1693302184316
+          ],
+          [
+            121.447510218115,
+            25.1681377132047
+          ],
+          [
+            121.447237710396,
+            25.1675902660105
+          ],
+          [
+            121.445982776073,
+            25.1682815860168
+          ],
+          [
+            121.445846720153,
+            25.16818429786
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "NWT114541",
+        "name": "淡江大學",
+        "name_en": "Tamkang University",
+        "line": "紅28",
+        "color": "#6b21a8",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.447573,
+          25.174327
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "NWT114542",
+        "name": "淡江大學城",
+        "name_en": "Tamkang Community",
+        "line": "紅28",
+        "color": "#6b21a8",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.4503864,
+          25.173067
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "NWT195846",
+        "name": "文宏廣場",
+        "name_en": "Wenhong Square",
+        "line": "紅28",
+        "color": "#6b21a8",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.4512608,
+          25.170978
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "NWT114544",
+        "name": "淡江柏園",
+        "name_en": "Danjiangboyuan",
+        "line": "紅28",
+        "color": "#6b21a8",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.45078,
+          25.170154
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "NWT114545",
+        "name": "鄧公里",
+        "name_en": "Denggong Village",
+        "line": "紅28",
+        "color": "#6b21a8",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.4478578,
+          25.169
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "NWT114546",
+        "name": "捷運淡水站",
+        "name_en": "MRT DANSHUI Station",
+        "line": "紅28",
+        "color": "#6b21a8",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.446540610778,
+          25.1674549071321
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "NWT114537",
+        "name": "鄧公里",
+        "name_en": "Denggong Villa",
+        "line": "紅28",
+        "color": "#6b21a8",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.4480999,
+          25.169193
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "NWT114538",
+        "name": "淡江柏園",
+        "name_en": "Tamkang",
+        "line": "紅28",
+        "color": "#6b21a8",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.450727,
+          25.169986
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "NWT114543",
+        "name": "文宏廣場",
+        "name_en": "Wenhong Square",
+        "line": "紅28",
+        "color": "#6b21a8",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.451395,
+          25.171023
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "NWT114539",
+        "name": "學府路口",
+        "name_en": "Xuefu Rd. Entrance",
+        "line": "紅28",
+        "color": "#6b21a8",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.4503368,
+          25.171772
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "NWT114540",
+        "name": "淡江大學城",
+        "name_en": "Tamkang University City",
+        "line": "紅28",
+        "color": "#6b21a8",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.450209,
+          25.173253
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "NWT204373",
+        "name": "淡江大學",
+        "name_en": "Tamkang University",
+        "line": "紅28",
+        "color": "#6b21a8",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.447573,
+          25.174327
+        ]
+      }
+    }
+  ]
+}

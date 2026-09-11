@@ -30,6 +30,7 @@ export default class extends Controller {
 
     this.contentTarget.classList.remove("hidden")
     this.syncTriggerState(true)
+    this.dispatch("opened", { detail: { element: this.element } })
   }
 
   close() {

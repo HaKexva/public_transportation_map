@@ -1,0 +1,569 @@
+{
+  "type": "FeatureCollection",
+  "name": "橘20C(直達車)",
+  "properties": {
+    "id": "kaohsiung_ju20c_9de5218e59",
+    "name": "橘20C(直達車)",
+    "name_en": "橘20C(直達車)",
+    "ref": "橘20C(直達車)",
+    "color": "#9333ea",
+    "city_id": "Kaohsiung",
+    "source": "TDX Bus Shape / StopOfRoute",
+    "official_map_url": "http://ibus.tbkc.gov.tw/cms/api/route/9206/map/806/image",
+    "operator_id": "10250",
+    "operator": "東南客運",
+    "operator_en": "Southeast Bus Co., Ltd."
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "橘20C(直達車)",
+        "name": "橘20C(直達車)",
+        "name_en": "橘20C(直達車)",
+        "color": "#9333ea",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.39214,
+            22.62127
+          ],
+          [
+            120.39312,
+            22.62177
+          ],
+          [
+            120.39332,
+            22.62155
+          ],
+          [
+            120.3851,
+            22.6172
+          ],
+          [
+            120.38564,
+            22.61661
+          ],
+          [
+            120.38628,
+            22.61604
+          ],
+          [
+            120.38899,
+            22.61391
+          ],
+          [
+            120.39181,
+            22.61155
+          ],
+          [
+            120.39282,
+            22.61061
+          ],
+          [
+            120.39377,
+            22.60965
+          ],
+          [
+            120.39433,
+            22.60906
+          ],
+          [
+            120.39497,
+            22.60827
+          ],
+          [
+            120.39416,
+            22.60632
+          ],
+          [
+            120.39332,
+            22.60443
+          ],
+          [
+            120.39282,
+            22.60425
+          ],
+          [
+            120.39235,
+            22.6041
+          ],
+          [
+            120.39176,
+            22.60399
+          ],
+          [
+            120.3913,
+            22.60375
+          ],
+          [
+            120.39084,
+            22.60324
+          ],
+          [
+            120.39073,
+            22.60346
+          ],
+          [
+            120.3905,
+            22.60348
+          ],
+          [
+            120.3897,
+            22.6033
+          ],
+          [
+            120.38912,
+            22.6033
+          ],
+          [
+            120.38902,
+            22.60312
+          ],
+          [
+            120.38917,
+            22.60253
+          ],
+          [
+            120.3892,
+            22.60235
+          ],
+          [
+            120.38913,
+            22.60178
+          ],
+          [
+            120.38922,
+            22.60165
+          ],
+          [
+            120.38919,
+            22.60101
+          ],
+          [
+            120.38926,
+            22.6009
+          ],
+          [
+            120.38973,
+            22.60066
+          ],
+          [
+            120.38992,
+            22.60101
+          ],
+          [
+            120.39012,
+            22.60135
+          ],
+          [
+            120.39018,
+            22.60157
+          ],
+          [
+            120.39037,
+            22.60186
+          ],
+          [
+            120.38991,
+            22.60222
+          ],
+          [
+            120.39087,
+            22.60321
+          ],
+          [
+            120.39131,
+            22.60371
+          ],
+          [
+            120.39176,
+            22.60396
+          ],
+          [
+            120.39234,
+            22.60408
+          ],
+          [
+            120.39335,
+            22.60441
+          ],
+          [
+            120.39417,
+            22.60627
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "橘20C(直達車)",
+        "name": "橘20C(直達車)",
+        "name_en": "橘20C(直達車)",
+        "color": "#9333ea",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.39286,
+            22.6222
+          ],
+          [
+            120.3919,
+            22.62169
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH109206130181",
+        "name": "捷運大寮站",
+        "name_en": "MRT Daliao Station",
+        "line": "橘20C(直達車)",
+        "color": "#9333ea",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.392257,
+          22.621239
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH109206130191",
+        "name": "大寮中正路(捷西路口)",
+        "name_en": "Daliao Jhongjheng Rd.(Jiesi Rd. Intersection)",
+        "line": "橘20C(直達車)",
+        "color": "#9333ea",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.388664,
+          22.619148
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH109206131281",
+        "name": "中正路(義發路口)",
+        "name_en": "Jhongjheng Rd.(Yifa Rd. Intersection)",
+        "line": "橘20C(直達車)",
+        "color": "#9333ea",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.386437,
+          22.61797
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH109206130201",
+        "name": "台貿六村",
+        "name_en": "Taimao 6th Village",
+        "line": "橘20C(直達車)",
+        "color": "#9333ea",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.386808,
+          22.615618
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH109206130211",
+        "name": "商協二號",
+        "name_en": "Shangsie No.2",
+        "line": "橘20C(直達車)",
+        "color": "#9333ea",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.388951,
+          22.613885
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH109206130221",
+        "name": "山仔頂",
+        "name_en": "Shanzihding",
+        "line": "橘20C(直達車)",
+        "color": "#9333ea",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.392465,
+          22.610882
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10920688801",
+        "name": "進學路",
+        "name_en": "Jinsyue Rd.",
+        "line": "橘20C(直達車)",
+        "color": "#9333ea",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.39397,
+          22.606039
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH109206147001",
+        "name": "輔英科大校區",
+        "name_en": "Fooyin University Campus",
+        "line": "橘20C(直達車)",
+        "color": "#9333ea",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.391614,
+          22.603989
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH109206192411",
+        "name": "輔英科大圖書館",
+        "name_en": "Fooyin University Library",
+        "line": "橘20C(直達車)",
+        "color": "#9333ea",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.389117,
+          22.602511
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH109206192401",
+        "name": "輔英科大中正堂",
+        "name_en": "Fooyin University Zhongzheng Hall",
+        "line": "橘20C(直達車)",
+        "color": "#9333ea",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.389974,
+          22.600996
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10920688811",
+        "name": "進學路",
+        "name_en": "Jinsyue Rd.",
+        "line": "橘20C(直達車)",
+        "color": "#9333ea",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.393936,
+          22.605722
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH109206130482",
+        "name": "輔英科大",
+        "name_en": "Fooyin University",
+        "line": "橘20C(直達車)",
+        "color": "#9333ea",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.394848,
+          22.608551
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH109206130492",
+        "name": "山仔頂",
+        "name_en": "Shanzihding",
+        "line": "橘20C(直達車)",
+        "color": "#9333ea",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.392559,
+          22.611079
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH109206130502",
+        "name": "商協二號",
+        "name_en": "Shangsie No.2",
+        "line": "橘20C(直達車)",
+        "color": "#9333ea",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.389103,
+          22.613932
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH109206130512",
+        "name": "台貿六村",
+        "name_en": "Taimao 6th Village",
+        "line": "橘20C(直達車)",
+        "color": "#9333ea",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.386943,
+          22.615638
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH109206131292",
+        "name": "中正路(義發路口)",
+        "name_en": "Jhongjheng Rd.(Yifa Rd. Intersection)",
+        "line": "橘20C(直達車)",
+        "color": "#9333ea",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.386414,
+          22.6179
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH109206130522",
+        "name": "大寮中正路(捷西路口)",
+        "name_en": "Daliao Jhongjheng Rd.(Jiesi Rd. Intersection)",
+        "line": "橘20C(直達車)",
+        "color": "#9333ea",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.388654,
+          22.619043
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH109206130532",
+        "name": "捷運大寮站",
+        "name_en": "MRT Daliao Station",
+        "line": "橘20C(直達車)",
+        "color": "#9333ea",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.392257,
+          22.621239
+        ]
+      }
+    }
+  ]
+}

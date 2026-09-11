@@ -1,0 +1,1197 @@
+{
+  "type": "FeatureCollection",
+  "name": "502（經新屋）",
+  "properties": {
+    "id": "taoyuan_502_b1d80a7cfb",
+    "name": "502（經新屋）",
+    "name_en": "502 (via 新屋)",
+    "ref": "502",
+    "color": "#115e59",
+    "city_id": "Taoyuan",
+    "source": "TDX Bus Shape / StopOfRoute",
+    "via": "新屋",
+    "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/5028/map/2319/image",
+    "operator_id": "19",
+    "operator": "捷乘客運"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "502",
+        "name": "502（經新屋）",
+        "name_en": "502 (via 新屋)",
+        "color": "#115e59",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            121.10245,
+            24.97267
+          ],
+          [
+            121.10228,
+            24.97269
+          ],
+          [
+            121.10233,
+            24.97295
+          ],
+          [
+            121.10013,
+            24.97334
+          ],
+          [
+            121.09777,
+            24.9738
+          ],
+          [
+            121.09673,
+            24.97398
+          ],
+          [
+            121.09185,
+            24.97482
+          ],
+          [
+            121.08936,
+            24.97524
+          ],
+          [
+            121.08687,
+            24.97574
+          ],
+          [
+            121.08286,
+            24.97659
+          ],
+          [
+            121.08119,
+            24.97843
+          ],
+          [
+            121.07821,
+            24.98416
+          ],
+          [
+            121.07611,
+            24.98689
+          ],
+          [
+            121.07507,
+            24.98829
+          ],
+          [
+            121.07401,
+            24.98969
+          ],
+          [
+            121.07373,
+            24.98992
+          ],
+          [
+            121.07061,
+            24.99103
+          ],
+          [
+            121.07035,
+            24.99119
+          ],
+          [
+            121.06887,
+            24.99276
+          ],
+          [
+            121.06862,
+            24.99295
+          ],
+          [
+            121.06009,
+            24.99791
+          ],
+          [
+            121.05589,
+            25.00045
+          ],
+          [
+            121.0542,
+            25.00151
+          ],
+          [
+            121.05284,
+            25.00235
+          ],
+          [
+            121.05032,
+            25.0039
+          ],
+          [
+            121.04681,
+            25.00608
+          ],
+          [
+            121.04427,
+            25.00766
+          ],
+          [
+            121.04146,
+            25.0094
+          ],
+          [
+            121.04034,
+            25.01012
+          ],
+          [
+            121.039,
+            25.01093
+          ],
+          [
+            121.03845,
+            25.01124
+          ],
+          [
+            121.03797,
+            25.01157
+          ],
+          [
+            121.03675,
+            25.01236
+          ],
+          [
+            121.03427,
+            25.01476
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO3723",
+        "name": "桃園客運新屋站",
+        "name_en": " Taoyuan Passenger Transport Station (Sinwu Station)",
+        "line": "502（經新屋）",
+        "color": "#115e59",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.102381,
+          24.972716
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO64024",
+        "name": "雙路口",
+        "name_en": "Shuanglukou",
+        "line": "502（經新屋）",
+        "color": "#115e59",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.09977,
+          24.97347
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO64023",
+        "name": "新明公司",
+        "name_en": "Xinming Company",
+        "line": "502（經新屋）",
+        "color": "#115e59",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.096854,
+          24.973984
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO64022",
+        "name": "邱厝",
+        "name_en": "Qiucuo",
+        "line": "502（經新屋）",
+        "color": "#115e59",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.094713,
+          24.974335
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO64021",
+        "name": "全美公司",
+        "name_en": "Quanmei Company",
+        "line": "502（經新屋）",
+        "color": "#115e59",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.0907,
+          24.975085
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO64020",
+        "name": "新光",
+        "name_en": "Xinguang",
+        "line": "502（經新屋）",
+        "color": "#115e59",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.086771,
+          24.975813
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO64019",
+        "name": "東明",
+        "name_en": "Dongming",
+        "line": "502（經新屋）",
+        "color": "#115e59",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.083342,
+          24.976541
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO63918",
+        "name": "天水堂",
+        "name_en": "Tianshuitang",
+        "line": "502（經新屋）",
+        "color": "#115e59",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.08109,
+          24.97865
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO63917",
+        "name": "上赤欄",
+        "name_en": "Shangchilan",
+        "line": "502（經新屋）",
+        "color": "#115e59",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.07917,
+          24.98249
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO63916",
+        "name": "安養中心",
+        "name_en": "Life Seniors Elderly Home",
+        "line": "502（經新屋）",
+        "color": "#115e59",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.07802,
+          24.98455
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO63915",
+        "name": "赤欄",
+        "name_en": "Chilan",
+        "line": "502（經新屋）",
+        "color": "#115e59",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.0768,
+          24.98601
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO63914",
+        "name": "中赤欄",
+        "name_en": "Zhongchilan",
+        "line": "502（經新屋）",
+        "color": "#115e59",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.07504,
+          24.98833
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO63913",
+        "name": "下赤欄",
+        "name_en": "Xiachilan",
+        "line": "502（經新屋）",
+        "color": "#115e59",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.07288,
+          24.99031
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO63912",
+        "name": "偉儷公司",
+        "name_en": "Weili Company",
+        "line": "502（經新屋）",
+        "color": "#115e59",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.07095,
+          24.99094
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO9174",
+        "name": "豐田",
+        "name_en": "Fengtian",
+        "line": "502（經新屋）",
+        "color": "#115e59",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.06866,
+          24.99294
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO63910",
+        "name": "上員笨",
+        "name_en": "Shangyuanben",
+        "line": "502（經新屋）",
+        "color": "#115e59",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.066133,
+          24.994452
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO63909",
+        "name": "員笨",
+        "name_en": "Yuanben",
+        "line": "502（經新屋）",
+        "color": "#115e59",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.06355,
+          24.99597
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO63908",
+        "name": "石牌嶺",
+        "name_en": "Shipailing",
+        "line": "502（經新屋）",
+        "color": "#115e59",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.06002,
+          24.99802
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO63907",
+        "name": "中石牌",
+        "name_en": "Zhongshipai",
+        "line": "502（經新屋）",
+        "color": "#115e59",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.057,
+          24.99987
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO63906",
+        "name": "下石牌嶺",
+        "name_en": "Xiashipailing",
+        "line": "502（經新屋）",
+        "color": "#115e59",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.05233,
+          25.00277
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO63905",
+        "name": "北湖國小",
+        "name_en": "Beihu Elementary School",
+        "line": "502（經新屋）",
+        "color": "#115e59",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.04954,
+          25.00447
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO8372",
+        "name": "上北湖",
+        "name_en": "Shangbeihu",
+        "line": "502（經新屋）",
+        "color": "#115e59",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.044797,
+          25.007412
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO63904",
+        "name": "北湖",
+        "name_en": "Beihu",
+        "line": "502（經新屋）",
+        "color": "#115e59",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.043649,
+          25.008137
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO63903",
+        "name": "北湖一",
+        "name_en": "Beihuyi",
+        "line": "502（經新屋）",
+        "color": "#115e59",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.04053,
+          25.01005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO63902",
+        "name": "中北湖",
+        "name_en": "Zhongbeihu",
+        "line": "502（經新屋）",
+        "color": "#115e59",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.03791,
+          25.01166
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO63901",
+        "name": "姜厝",
+        "name_en": "Jiangcuo",
+        "line": "502（經新屋）",
+        "color": "#115e59",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.03647,
+          25.01266
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO63900",
+        "name": "下北湖",
+        "name_en": "Xiabeihu",
+        "line": "502（經新屋）",
+        "color": "#115e59",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.034367,
+          25.014711
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO63899",
+        "name": "下北湖",
+        "name_en": "Xiabeihu",
+        "line": "502（經新屋）",
+        "color": "#115e59",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.034299,
+          25.014658
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO63898",
+        "name": "姜厝",
+        "name_en": "Jiangcuo",
+        "line": "502（經新屋）",
+        "color": "#115e59",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.036408,
+          25.012565
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO63897",
+        "name": "中北湖",
+        "name_en": "Zhongbeihu",
+        "line": "502（經新屋）",
+        "color": "#115e59",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.03783,
+          25.01161
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO63896",
+        "name": "北湖一",
+        "name_en": "Beihuyi",
+        "line": "502（經新屋）",
+        "color": "#115e59",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.04036,
+          25.01006
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO63895",
+        "name": "北湖",
+        "name_en": "Beihu",
+        "line": "502（經新屋）",
+        "color": "#115e59",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.04374,
+          25.00794
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO8880",
+        "name": "上北湖",
+        "name_en": "Shangbeihu",
+        "line": "502（經新屋）",
+        "color": "#115e59",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.04472,
+          25.00733
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO63894",
+        "name": "北湖國小",
+        "name_en": "Beihu Elementary School",
+        "line": "502（經新屋）",
+        "color": "#115e59",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.04944,
+          25.00443
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO63893",
+        "name": "下石牌嶺",
+        "name_en": "Xiashipailing",
+        "line": "502（經新屋）",
+        "color": "#115e59",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.052213,
+          25.002715
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO63892",
+        "name": "中石牌",
+        "name_en": "Zhongshipai",
+        "line": "502（經新屋）",
+        "color": "#115e59",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.056898,
+          24.999711
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO63891",
+        "name": "石牌嶺",
+        "name_en": "Shipailing",
+        "line": "502（經新屋）",
+        "color": "#115e59",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.059935,
+          24.997876
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO63890",
+        "name": "員笨",
+        "name_en": "Yuanben",
+        "line": "502（經新屋）",
+        "color": "#115e59",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.06346,
+          24.995825
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO63889",
+        "name": "上員笨",
+        "name_en": "Shangyuanben",
+        "line": "502（經新屋）",
+        "color": "#115e59",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.066106,
+          24.994384
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO63888",
+        "name": "豐田",
+        "name_en": "Fengtian",
+        "line": "502（經新屋）",
+        "color": "#115e59",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.0686,
+          24.99284
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO63887",
+        "name": "偉儷公司",
+        "name_en": "Weili Company",
+        "line": "502（經新屋）",
+        "color": "#115e59",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.070901,
+          24.990819
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO63886",
+        "name": "下赤欄",
+        "name_en": "Xiachilan",
+        "line": "502（經新屋）",
+        "color": "#115e59",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.072773,
+          24.99025
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO63885",
+        "name": "中赤欄",
+        "name_en": "Zhongchilan",
+        "line": "502（經新屋）",
+        "color": "#115e59",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.074948,
+          24.988265
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO63884",
+        "name": "赤欄",
+        "name_en": "Chilan",
+        "line": "502（經新屋）",
+        "color": "#115e59",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.076718,
+          24.985953
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO63883",
+        "name": "安養中心",
+        "name_en": "Life Seniors Elderly Home",
+        "line": "502（經新屋）",
+        "color": "#115e59",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.077864,
+          24.984431
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO63882",
+        "name": "上赤欄",
+        "name_en": "Shangchilan",
+        "line": "502（經新屋）",
+        "color": "#115e59",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.07909,
+          24.98245
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO63881",
+        "name": "天水堂",
+        "name_en": "Tianshuitang",
+        "line": "502（經新屋）",
+        "color": "#115e59",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.080988,
+          24.9786
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO63945",
+        "name": "東明",
+        "name_en": "Dongming",
+        "line": "502（經新屋）",
+        "color": "#115e59",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.083334,
+          24.976323
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO63944",
+        "name": "新光",
+        "name_en": "Xinguang",
+        "line": "502（經新屋）",
+        "color": "#115e59",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.086958,
+          24.975576
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO63943",
+        "name": "全美公司",
+        "name_en": "Quanmei Company",
+        "line": "502（經新屋）",
+        "color": "#115e59",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.091011,
+          24.974832
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO63942",
+        "name": "邱厝",
+        "name_en": "Qiucuo",
+        "line": "502（經新屋）",
+        "color": "#115e59",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.09465,
+          24.974242
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO63941",
+        "name": "新明公司",
+        "name_en": "Xinming Company",
+        "line": "502（經新屋）",
+        "color": "#115e59",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.09691,
+          24.97386
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO63940",
+        "name": "雙路口",
+        "name_en": "Shuanglukou",
+        "line": "502（經新屋）",
+        "color": "#115e59",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.099737,
+          24.973326
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO3724",
+        "name": "桃園客運新屋站",
+        "name_en": " Taoyuan Passenger Transport Station (Sinwu Station)",
+        "line": "502（經新屋）",
+        "color": "#115e59",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.102547,
+          24.972854
+        ]
+      }
+    }
+  ]
+}
