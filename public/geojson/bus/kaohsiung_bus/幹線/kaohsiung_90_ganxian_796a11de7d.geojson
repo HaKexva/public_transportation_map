@@ -6,7 +6,7 @@
     "name": "90民族幹線",
     "name_en": "90民族幹線",
     "ref": "90民族幹線",
-    "color": "#9f1239",
+    "color": "#3730a3",
     "city_id": "Kaohsiung",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ibus.tbkc.gov.tw/cms/api/route/90/map/1577/image",
@@ -22,7 +22,7 @@
         "ref": "90民族幹線",
         "name": "90民族幹線",
         "name_en": "90民族幹線",
-        "color": "#9f1239",
+        "color": "#3730a3",
         "direction": 0
       },
       "geometry": {
@@ -69,20 +69,60 @@
             22.68706
           ],
           [
-            120.30801,
-            22.68641
+            120.30811016279155,
+            22.686497408705247
           ],
           [
-            120.30832,
-            22.68612
+            120.30809126249648,
+            22.686476096964807
           ],
           [
-            120.30977,
-            22.68462
+            120.30807863797101,
+            22.686450680630948
           ],
           [
-            120.3101,
-            22.68481
+            120.30807342790348,
+            22.686423109856243
+          ],
+          [
+            120.30807597871483,
+            22.686395217840108
+          ],
+          [
+            120.30808612079986,
+            22.68636885914152
+          ],
+          [
+            120.30810290772415,
+            22.686346069108204
+          ],
+          [
+            120.30972372784716,
+            22.684668215494746
+          ],
+          [
+            120.3097458892967,
+            22.68465028419386
+          ],
+          [
+            120.30977178032796,
+            22.68463818458788
+          ],
+          [
+            120.30980008007646,
+            22.68463237848655
+          ],
+          [
+            120.30982904725028,
+            22.684633223141013
+          ],
+          [
+            120.30985689949064,
+            22.684640666579426
+          ],
+          [
+            120.30988223774845,
+            22.684654475410692
           ],
           [
             120.31103,
@@ -93,12 +133,32 @@
             22.6864
           ],
           [
-            120.31356,
-            22.68723
+            120.31346096209825,
+            22.687160442574672
           ],
           [
-            120.31377,
-            22.68701
+            120.3134849861417,
+            22.687173459976574
+          ],
+          [
+            120.31351125174105,
+            22.687180770501204
+          ],
+          [
+            120.3135386277746,
+            22.687182192229137
+          ],
+          [
+            120.3135656065917,
+            22.687177646863084
+          ],
+          [
+            120.31359070241707,
+            22.687167384725072
+          ],
+          [
+            120.3136128282072,
+            22.68715170570108
           ],
           [
             120.31559,
@@ -302,12 +362,16 @@
         "ref": "90民族幹線",
         "name": "90民族幹線",
         "name_en": "90民族幹線",
-        "color": "#9f1239",
+        "color": "#3730a3",
         "direction": 1
       },
       "geometry": {
         "type": "LineString",
         "coordinates": [
+          [
+            120.30629,
+            22.61448
+          ],
           [
             120.3091,
             22.61545
@@ -323,23 +387,239 @@
           [
             120.31129,
             22.61762
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "route",
-        "ref": "90民族幹線",
-        "name": "90民族幹線",
-        "name_en": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 1
-      },
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
+          ],
+          [
+            120.31068,
+            22.61928
+          ],
+          [
+            120.31169,
+            22.61962
+          ],
+          [
+            120.31421,
+            22.62048
+          ],
+          [
+            120.3153,
+            22.62077
+          ],
+          [
+            120.3165865446957,
+            22.621160292933613
+          ],
+          [
+            120.3166140994353,
+            22.621172635951908
+          ],
+          [
+            120.31663742268842,
+            22.621191375483907
+          ],
+          [
+            120.31665465825934,
+            22.621215135312323
+          ],
+          [
+            120.31666460508286,
+            22.62124225972738
+          ],
+          [
+            120.31666657001205,
+            22.62127085855721
+          ],
+          [
+            120.31666049865032,
+            22.621298716374792
+          ],
+          [
+            120.31625,
+            22.6224
+          ],
+          [
+            120.31582,
+            22.6235
+          ],
+          [
+            120.31473,
+            22.6263
+          ],
+          [
+            120.314,
+            22.62802
+          ],
+          [
+            120.31332,
+            22.62976
+          ],
+          [
+            120.31344,
+            22.63189
+          ],
+          [
+            120.31351,
+            22.63298
+          ],
+          [
+            120.31361,
+            22.634
+          ],
+          [
+            120.31387,
+            22.63745
+          ],
+          [
+            120.31416,
+            22.64088
+          ],
+          [
+            120.31448,
+            22.64503
+          ],
+          [
+            120.31469,
+            22.64741
+          ],
+          [
+            120.31494000000001,
+            22.64889
+          ],
+          [
+            120.31523,
+            22.65256
+          ],
+          [
+            120.31543,
+            22.65492
+          ],
+          [
+            120.31552,
+            22.6561
+          ],
+          [
+            120.31564,
+            22.65728
+          ],
+          [
+            120.31581,
+            22.65966
+          ],
+          [
+            120.31589,
+            22.66047
+          ],
+          [
+            120.31597,
+            22.66147
+          ],
+          [
+            120.31617,
+            22.66347
+          ],
+          [
+            120.31642,
+            22.66494
+          ],
+          [
+            120.31667,
+            22.66616
+          ],
+          [
+            120.3169,
+            22.66739
+          ],
+          [
+            120.31749,
+            22.67069
+          ],
+          [
+            120.3184,
+            22.67513
+          ],
+          [
+            120.31889,
+            22.67763
+          ],
+          [
+            120.31911,
+            22.67868
+          ],
+          [
+            120.31917,
+            22.67908
+          ],
+          [
+            120.31934,
+            22.67988
+          ],
+          [
+            120.31945,
+            22.68071
+          ],
+          [
+            120.31998,
+            22.68298
+          ],
+          [
+            120.31823,
+            22.68328
+          ],
+          [
+            120.31685,
+            22.68435
+          ],
+          [
+            120.31552,
+            22.68548
+          ],
+          [
+            120.31458,
+            22.68628
+          ],
+          [
+            120.31375,
+            22.68708
+          ],
+          [
+            120.31115279618143,
+            22.689229318466605
+          ],
+          [
+            120.3111272507492,
+            22.689245505362084
+          ],
+          [
+            120.31109842979205,
+            22.68925482330527
+          ],
+          [
+            120.3110679949654,
+            22.68925688944622
+          ],
+          [
+            120.31103802235933,
+            22.689251562844603
+          ],
+          [
+            120.3110105565339,
+            22.689239206850765
+          ],
+          [
+            120.31098720046633,
+            22.689220380837643
+          ],
+          [
+            120.30978,
+            22.68796
+          ],
+          [
+            120.30801,
+            22.6864
+          ],
+          [
+            120.30858,
+            22.68581
+          ],
           [
             120.31221,
             22.68916
@@ -349,12 +629,80 @@
             22.68969
           ],
           [
-            120.31447,
-            22.69085
+            120.31442823764272,
+            22.69082161421921
           ],
           [
-            120.31401,
-            22.69136
+            120.31445238108775,
+            22.690843660714627
+          ],
+          [
+            120.31446884526777,
+            22.69087155297343
+          ],
+          [
+            120.3144759003715,
+            22.690902681891195
+          ],
+          [
+            120.31447294056936,
+            22.69093437439307
+          ],
+          [
+            120.3144602200228,
+            22.690963909008598
+          ],
+          [
+            120.31443913067073,
+            22.690988489805502
+          ],
+          [
+            120.31365540726821,
+            22.691664645774093
+          ],
+          [
+            120.31363621829529,
+            22.691686206083528
+          ],
+          [
+            120.31362347541564,
+            22.691711970252992
+          ],
+          [
+            120.31361834800627,
+            22.691739921469065
+          ],
+          [
+            120.31362118586063,
+            22.69176815289121
+          ],
+          [
+            120.31363179537941,
+            22.691794738563154
+          ],
+          [
+            120.31364917479111,
+            22.691817585401434
+          ],
+          [
+            120.31519,
+            22.69336
+          ],
+          [
+            120.31583,
+            22.69365
+          ],
+          [
+            120.31698,
+            22.69377
+          ],
+          [
+            120.31831,
+            22.69409
+          ],
+          [
+            120.32111,
+            22.69498
           ]
         ]
       }
@@ -367,8 +715,9 @@
         "name": "高鐵基地",
         "name_en": "Taiwan High Speed Rail Base",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "4443"
       },
       "geometry": {
         "type": "Point",
@@ -386,8 +735,9 @@
         "name": "高鐵路",
         "name_en": "Gaotie Rd.",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "2212"
       },
       "geometry": {
         "type": "Point",
@@ -405,8 +755,9 @@
         "name": "文府國小(重忠路口)",
         "name_en": "Wen-Fu Elementary School(Jhongjhong Rd. Intersection)",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "3096"
       },
       "geometry": {
         "type": "Point",
@@ -424,8 +775,9 @@
         "name": "左營新光三越",
         "name_en": "Zuoying Shin Kong Mitsukoshi Dept",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "3838"
       },
       "geometry": {
         "type": "Point",
@@ -443,8 +795,9 @@
         "name": "高鐵左營站",
         "name_en": "HSR Zuoying Station",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "2777"
       },
       "geometry": {
         "type": "Point",
@@ -462,8 +815,9 @@
         "name": "重平路口",
         "name_en": "Jhongping Rd. Intersection",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "3841"
       },
       "geometry": {
         "type": "Point",
@@ -481,8 +835,9 @@
         "name": "華夏路口(重愛路)",
         "name_en": "Huasia Rd. Intersection(Jhongai Rd.)",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "2165"
       },
       "geometry": {
         "type": "Point",
@@ -500,8 +855,9 @@
         "name": "文自路口",
         "name_en": "Wunzih Rd. Intersection",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "3806"
       },
       "geometry": {
         "type": "Point",
@@ -519,8 +875,9 @@
         "name": "重愛路(新莊高中)",
         "name_en": "Jhongai Rd.(Hsinchuang Senior High School)",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "2394"
       },
       "geometry": {
         "type": "Point",
@@ -538,8 +895,9 @@
         "name": "新莊高中(民族一路)",
         "name_en": "Hsinchuang Senior High School(Minzu 1st Rd.)",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "873"
       },
       "geometry": {
         "type": "Point",
@@ -557,8 +915,9 @@
         "name": "大中路口(民族一路)",
         "name_en": "Dajhong Rd. Intersection(Minzu 1st Rd.)",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "2444"
       },
       "geometry": {
         "type": "Point",
@@ -576,8 +935,9 @@
         "name": "菜公路口(民族一路)",
         "name_en": "Caigong Rd. Intersection(Minzu 1st Rd.)",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "875"
       },
       "geometry": {
         "type": "Point",
@@ -595,8 +955,9 @@
         "name": "文藻外語大學(民族一路)",
         "name_en": "Wenzao Ursuline University of Languages(Minzu 1st Rd.)",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "877"
       },
       "geometry": {
         "type": "Point",
@@ -614,8 +975,9 @@
         "name": "天祥路口(民族一路)",
         "name_en": "Tiansiang Rd. Intersection(Minzu 1st Rd.)",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "44"
       },
       "geometry": {
         "type": "Point",
@@ -633,8 +995,9 @@
         "name": "民族裕誠路口",
         "name_en": "Minzu Yucheng Rd. Intersection",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "1157"
       },
       "geometry": {
         "type": "Point",
@@ -652,8 +1015,9 @@
         "name": "民族路(明誠路口)",
         "name_en": "Minzu Rd.(Mingcheng Rd. Intersection)",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "48"
       },
       "geometry": {
         "type": "Point",
@@ -671,8 +1035,9 @@
         "name": "民族大順路口",
         "name_en": "Minzu Dashun Rd. Intersection",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "879"
       },
       "geometry": {
         "type": "Point",
@@ -690,8 +1055,9 @@
         "name": "隆峰寺",
         "name_en": "Longfong Temple",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "881"
       },
       "geometry": {
         "type": "Point",
@@ -709,8 +1075,9 @@
         "name": "灣仔內",
         "name_en": "Wanzihnei",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "1755"
       },
       "geometry": {
         "type": "Point",
@@ -728,8 +1095,9 @@
         "name": "果菜公司",
         "name_en": "Vegetable & Fruit Marketing Company",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "386"
       },
       "geometry": {
         "type": "Point",
@@ -747,8 +1115,9 @@
         "name": "民族社區(民族一路)",
         "name_en": "Minzu Community(Minzu 1st Rd.)",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "400"
       },
       "geometry": {
         "type": "Point",
@@ -766,8 +1135,9 @@
         "name": "民族七賢路口(臺灣銀行)",
         "name_en": "Minzu & Cisian Rd. Intersection(Bank of Taiwan)",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "5892"
       },
       "geometry": {
         "type": "Point",
@@ -785,8 +1155,9 @@
         "name": "捷運信義國小站(民族路)",
         "name_en": "MRT Sinyi Elementary School Station(Minzu Rd.)",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "402"
       },
       "geometry": {
         "type": "Point",
@@ -804,8 +1175,9 @@
         "name": "光華五福路口",
         "name_en": "Guanghua Wufu Rd. Intersection",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "5765"
       },
       "geometry": {
         "type": "Point",
@@ -823,8 +1195,9 @@
         "name": "廈門街口",
         "name_en": "Siamen St. Intersection",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "4084"
       },
       "geometry": {
         "type": "Point",
@@ -842,8 +1215,9 @@
         "name": "苓雅一路口",
         "name_en": "Lingya 1st Rd. Intersection",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "3916"
       },
       "geometry": {
         "type": "Point",
@@ -861,8 +1235,9 @@
         "name": "復華中學",
         "name_en": "FuHwa Senior High School",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "106"
       },
       "geometry": {
         "type": "Point",
@@ -880,8 +1255,9 @@
         "name": "市政大樓(四維三路)",
         "name_en": "Kaohsiung City Hall(Sihwei 3rd Rd.)",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "4085"
       },
       "geometry": {
         "type": "Point",
@@ -899,8 +1275,9 @@
         "name": "忠孝路口(四維三路)",
         "name_en": "Jhongsiao Rd. Intersection(Sihwei 3rd Rd.)",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "3967"
       },
       "geometry": {
         "type": "Point",
@@ -918,8 +1295,9 @@
         "name": "苓雅國中",
         "name_en": "Lingya Junior High School",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "4087"
       },
       "geometry": {
         "type": "Point",
@@ -937,8 +1315,9 @@
         "name": "興中二路口",
         "name_en": "Singjhong 2nd Rd. Intersection",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "4059"
       },
       "geometry": {
         "type": "Point",
@@ -956,8 +1335,9 @@
         "name": "新光三越(捷運三多商圈站)",
         "name_en": "Shin Kong Mitsukoshi Department Store(MRT Sandou Shopping District Station)",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "448"
       },
       "geometry": {
         "type": "Point",
@@ -975,8 +1355,9 @@
         "name": "新光三越(捷運三多商圈站)",
         "name_en": "Shin Kong Mitsukoshi Department Store(MRT Sandou Shopping District Station)",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "448"
       },
       "geometry": {
         "type": "Point",
@@ -994,8 +1375,9 @@
         "name": "三多三路",
         "name_en": "Sanduo 3rd Rd.",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "435"
       },
       "geometry": {
         "type": "Point",
@@ -1013,8 +1395,9 @@
         "name": "仁愛三街口",
         "name_en": "Renai 3rd St. Intersection",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "948"
       },
       "geometry": {
         "type": "Point",
@@ -1032,8 +1415,9 @@
         "name": "興中路口",
         "name_en": "Singjhong Rd. Intersection",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "4093"
       },
       "geometry": {
         "type": "Point",
@@ -1051,8 +1435,9 @@
         "name": "市政大樓(四維三路)",
         "name_en": "Kaohsiung City Hall(Sihwei 3rd Rd.)",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "4086"
       },
       "geometry": {
         "type": "Point",
@@ -1070,8 +1455,9 @@
         "name": "復華中學",
         "name_en": "FuHwa Senior High School",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "105"
       },
       "geometry": {
         "type": "Point",
@@ -1089,8 +1475,9 @@
         "name": "苓雅一路口",
         "name_en": "Lingya 1st Rd. Intersection",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "3915"
       },
       "geometry": {
         "type": "Point",
@@ -1108,8 +1495,9 @@
         "name": "青年路口(光華一路)",
         "name_en": "Cingnian Rd. Intersection(Guanghua 1st Rd.)",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "3917"
       },
       "geometry": {
         "type": "Point",
@@ -1127,8 +1515,9 @@
         "name": "光華五福路口",
         "name_en": "Guanghua Wufu Rd. Intersection",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "2175"
       },
       "geometry": {
         "type": "Point",
@@ -1146,8 +1535,9 @@
         "name": "捷運信義國小站(民族路)",
         "name_en": "MRT Sinyi Elementary School Station(Minzu Rd.)",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "403"
       },
       "geometry": {
         "type": "Point",
@@ -1165,8 +1555,9 @@
         "name": "民族七賢路口(臺灣銀行)",
         "name_en": "Minzu & Cisian Rd. Intersection(Bank of Taiwan)",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "5893"
       },
       "geometry": {
         "type": "Point",
@@ -1184,8 +1575,9 @@
         "name": "民族社區(民族一路)",
         "name_en": "Minzu Community(Minzu 1st Rd.)",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "401"
       },
       "geometry": {
         "type": "Point",
@@ -1203,8 +1595,9 @@
         "name": "果菜公司",
         "name_en": "Vegetable & Fruit Marketing Company",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "387"
       },
       "geometry": {
         "type": "Point",
@@ -1222,8 +1615,9 @@
         "name": "灣仔內",
         "name_en": "Wanzihnei",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "1754"
       },
       "geometry": {
         "type": "Point",
@@ -1241,8 +1635,9 @@
         "name": "隆峰寺",
         "name_en": "Longfong Temple",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "880"
       },
       "geometry": {
         "type": "Point",
@@ -1260,8 +1655,9 @@
         "name": "民族大順路口",
         "name_en": "Minzu Dashun Rd. Intersection",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "878"
       },
       "geometry": {
         "type": "Point",
@@ -1279,8 +1675,9 @@
         "name": "民族路(明誠路口)",
         "name_en": "Minzu Rd.(Mingcheng Rd. Intersection)",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "47"
       },
       "geometry": {
         "type": "Point",
@@ -1298,8 +1695,9 @@
         "name": "民族裕誠路口",
         "name_en": "Minzu Yucheng Rd. Intersection",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "1156"
       },
       "geometry": {
         "type": "Point",
@@ -1317,8 +1715,9 @@
         "name": "天祥路口(民族一路)",
         "name_en": "Tiansiang Rd. Intersection(Minzu 1st Rd.)",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "43"
       },
       "geometry": {
         "type": "Point",
@@ -1336,8 +1735,9 @@
         "name": "文藻外語大學(民族一路)",
         "name_en": "Wenzao Ursuline University of Languages(Minzu 1st Rd.)",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "876"
       },
       "geometry": {
         "type": "Point",
@@ -1355,8 +1755,9 @@
         "name": "菜公路口(民族一路)",
         "name_en": "Caigong Rd. Intersection(Minzu 1st Rd.)",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "874"
       },
       "geometry": {
         "type": "Point",
@@ -1374,8 +1775,9 @@
         "name": "大中路口(民族一路)",
         "name_en": "Dajhong Rd. Intersection(Minzu 1st Rd.)",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "2443"
       },
       "geometry": {
         "type": "Point",
@@ -1393,8 +1795,9 @@
         "name": "新莊高中(民族一路)",
         "name_en": "Hsinchuang Senior High School(Minzu 1st Rd.)",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "872"
       },
       "geometry": {
         "type": "Point",
@@ -1412,8 +1815,9 @@
         "name": "重愛路(新莊高中)",
         "name_en": "Jhongai Rd.(Hsinchuang Senior High School)",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "2395"
       },
       "geometry": {
         "type": "Point",
@@ -1431,8 +1835,9 @@
         "name": "文自路口",
         "name_en": "Wunzih Rd. Intersection",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "3807"
       },
       "geometry": {
         "type": "Point",
@@ -1450,8 +1855,9 @@
         "name": "華夏路口(重愛路)",
         "name_en": "Huasia Rd. Intersection(Jhongai Rd.)",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "2167"
       },
       "geometry": {
         "type": "Point",
@@ -1469,8 +1875,9 @@
         "name": "左營新光三越",
         "name_en": "Shin Kong Mitsukoshi Department Store(Kaohsiung Zuoying)",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "3838"
       },
       "geometry": {
         "type": "Point",
@@ -1488,8 +1895,9 @@
         "name": "高鐵左營站",
         "name_en": "HSR Zuoying Station",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "2777"
       },
       "geometry": {
         "type": "Point",
@@ -1507,8 +1915,9 @@
         "name": "文府國小",
         "name_en": "Wen-Fu Elementary School",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "3805"
       },
       "geometry": {
         "type": "Point",
@@ -1526,8 +1935,9 @@
         "name": "文府國小(重忠路口)",
         "name_en": "Wen-Fu Elementary School(Jhongjhong Rd. Intersection)",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "3095"
       },
       "geometry": {
         "type": "Point",
@@ -1545,8 +1955,9 @@
         "name": "高鐵路",
         "name_en": "Gaotie Rd.",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "2211"
       },
       "geometry": {
         "type": "Point",
@@ -1564,8 +1975,9 @@
         "name": "高鐵基地",
         "name_en": "Taiwan High Speed Rail Base",
         "line": "90民族幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "4444"
       },
       "geometry": {
         "type": "Point",

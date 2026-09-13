@@ -6,10 +6,10 @@
     "name": "958",
     "name_en": "958",
     "ref": "958",
-    "color": "#d97706",
+    "color": "#7c3aed",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
-    "official_map_url": "https://ebus.gov.taipei/File/Get/1cb4530b-7b4c-448a-aa78-b68f21d1a419?v=639234358944402231",
+    "official_map_url": "https://ebus.gov.taipei/File/Get/1cb4530b-7b4c-448a-aa78-b68f21d1a419?v=639248448769904064",
     "operator_id": "16179",
     "operator": "三重客運"
   },
@@ -21,7 +21,7 @@
         "ref": "958",
         "name": "958",
         "name_en": "958",
-        "color": "#d97706",
+        "color": "#7c3aed",
         "direction": 0
       },
       "geometry": {
@@ -60,12 +60,32 @@
             25.0614539374803
           ],
           [
-            121.464651019466,
-            25.0612385685203
+            121.46473265412506,
+            25.061260685000796
           ],
           [
-            121.464604156775,
-            25.0616613298122
+            121.46469455700127,
+            25.06125626751091
+          ],
+          [
+            121.46465711452728,
+            25.0612630759168
+          ],
+          [
+            121.4646239625292,
+            25.061280350536645
+          ],
+          [
+            121.46459851341537,
+            25.061306313255674
+          ],
+          [
+            121.46458338671928,
+            25.06133829167388
+          ],
+          [
+            121.46458013485005,
+            25.06137293678068
           ],
           [
             121.464640051602,
@@ -104,28 +124,32 @@
             25.069598074821
           ],
           [
-            121.454633371588,
-            25.066291762453
+            121.45442933863438,
+            25.066085364743383
           ],
           [
-            121.454508736774,
-            25.0663136981804
+            121.45442321428361,
+            25.06607704167121
           ],
           [
-            121.454399058137,
-            25.0662857799819
+            121.45441987747068,
+            25.066067362486056
           ],
           [
-            121.454355186682,
-            25.0661980370723
+            121.4544196943462,
+            25.06605721734325
           ],
           [
-            121.45436316331,
-            25.0661142824767
+            121.45442268001746,
+            25.0660474431923
           ],
           [
-            121.454393075665,
-            25.0660584460796
+            121.45442858817387,
+            25.066038846376795
+          ],
+          [
+            121.45443682699349,
+            25.06603219852613
           ],
           [
             121.454491786439,
@@ -144,16 +168,32 @@
             25.0645688107727
           ],
           [
-            121.456404681577,
-            25.0644800707845
+            121.45639721266336,
+            25.064449937596162
           ],
           [
-            121.456438582247,
-            25.0643943220319
+            121.45639550596665,
+            25.064430393392705
           ],
           [
-            121.4565103719,
-            25.0643604213623
+            121.45639982394924,
+            25.064411080591434
+          ],
+          [
+            121.45640985207297,
+            25.06439362161635
+          ],
+          [
+            121.45642480126251,
+            25.06437939024857
+          ],
+          [
+            121.45644349522232,
+            25.064369506300913
+          ],
+          [
+            121.45646440764146,
+            25.064364752744247
           ],
           [
             121.456679875248,
@@ -201,12 +241,16 @@
         "ref": "958",
         "name": "958",
         "name_en": "958",
-        "color": "#d97706",
+        "color": "#7c3aed",
         "direction": 1
       },
       "geometry": {
         "type": "LineString",
         "coordinates": [
+          [
+            121.459815914672,
+            25.0603877945022
+          ],
           [
             121.460699597296,
             25.0604947479453
@@ -218,6 +262,34 @@
           [
             121.46407570516,
             25.0609015559809
+          ],
+          [
+            121.464659993172,
+            25.0610371586595
+          ],
+          [
+            121.46568498989,
+            25.061332293901
+          ],
+          [
+            121.466247105265,
+            25.0613941564531
+          ],
+          [
+            121.469046640115,
+            25.0613761653558
+          ],
+          [
+            121.469024457623,
+            25.0598115547421
+          ],
+          [
+            121.472050806707,
+            25.0597727864592
+          ],
+          [
+            121.472026409269,
+            25.0480153132053
           ]
         ]
       }
@@ -230,8 +302,9 @@
         "name": "捷運先嗇宮站",
         "name_en": "MRT Xianse Temple Sta.",
         "line": "958",
-        "color": "#d97706",
-        "direction": 0
+        "color": "#7c3aed",
+        "direction": 0,
+        "station_id": "1165604481"
       },
       "geometry": {
         "type": "Point",
@@ -249,8 +322,9 @@
         "name": "台北科技城",
         "name_en": "Taipei technology city",
         "line": "958",
-        "color": "#d97706",
-        "direction": 0
+        "color": "#7c3aed",
+        "direction": 0,
+        "station_id": "1165604483"
       },
       "geometry": {
         "type": "Point",
@@ -268,8 +342,9 @@
         "name": "群光大樓",
         "name_en": "Qunguang Building",
         "line": "958",
-        "color": "#d97706",
-        "direction": 0
+        "color": "#7c3aed",
+        "direction": 0,
+        "station_id": "1165604484"
       },
       "geometry": {
         "type": "Point",
@@ -287,8 +362,9 @@
         "name": "愛新發展中心",
         "name_en": "Aixin Development center",
         "line": "958",
-        "color": "#d97706",
-        "direction": 0
+        "color": "#7c3aed",
+        "direction": 0,
+        "station_id": "1165604486"
       },
       "geometry": {
         "type": "Point",
@@ -306,8 +382,9 @@
         "name": "新北大道重光街口",
         "name_en": "New Taipei Blvd. & Chongguang Intersection",
         "line": "958",
-        "color": "#d97706",
-        "direction": 0
+        "color": "#7c3aed",
+        "direction": 0,
+        "station_id": "3494"
       },
       "geometry": {
         "type": "Point",
@@ -325,8 +402,9 @@
         "name": "台貿二村",
         "name_en": "Taimao Village 2",
         "line": "958",
-        "color": "#d97706",
-        "direction": 0
+        "color": "#7c3aed",
+        "direction": 0,
+        "station_id": "3519"
       },
       "geometry": {
         "type": "Point",
@@ -344,8 +422,9 @@
         "name": "興化國小",
         "name_en": "Xinghua Elementary School",
         "line": "958",
-        "color": "#d97706",
-        "direction": 0
+        "color": "#7c3aed",
+        "direction": 0,
+        "station_id": "20380"
       },
       "geometry": {
         "type": "Point",
@@ -363,8 +442,9 @@
         "name": "吉祥大樓",
         "name_en": "Jixiang Building",
         "line": "958",
-        "color": "#d97706",
-        "direction": 0
+        "color": "#7c3aed",
+        "direction": 0,
+        "station_id": "36005"
       },
       "geometry": {
         "type": "Point",
@@ -382,8 +462,9 @@
         "name": "標準廠房",
         "name_en": "Standard Factory",
         "line": "958",
-        "color": "#d97706",
-        "direction": 0
+        "color": "#7c3aed",
+        "direction": 0,
+        "station_id": "3764"
       },
       "geometry": {
         "type": "Point",
@@ -401,8 +482,9 @@
         "name": "管理中心",
         "name_en": "Management Center",
         "line": "958",
-        "color": "#d97706",
-        "direction": 0
+        "color": "#7c3aed",
+        "direction": 0,
+        "station_id": "50623"
       },
       "geometry": {
         "type": "Point",
@@ -420,8 +502,9 @@
         "name": "捷運新北產業園區站",
         "name_en": "MRT New Taipei Industrial Park Sta.",
         "line": "958",
-        "color": "#d97706",
-        "direction": 0
+        "color": "#7c3aed",
+        "direction": 0,
+        "station_id": "74520"
       },
       "geometry": {
         "type": "Point",
@@ -439,8 +522,9 @@
         "name": "新北大道思源路口",
         "name_en": "New Taipei Blvd.&Siyuan Rd. Intersection",
         "line": "958",
-        "color": "#d97706",
-        "direction": 1
+        "color": "#7c3aed",
+        "direction": 1,
+        "station_id": "1000962"
       },
       "geometry": {
         "type": "Point",
@@ -458,8 +542,9 @@
         "name": "新北大道化成路口",
         "name_en": "New Taipei Blvd. & Huacheng Intersection",
         "line": "958",
-        "color": "#d97706",
-        "direction": 1
+        "color": "#7c3aed",
+        "direction": 1,
+        "station_id": "1000842"
       },
       "geometry": {
         "type": "Point",
@@ -477,8 +562,9 @@
         "name": "新北大道中興路口",
         "name_en": "Zhongshan Rd and Zhongxing Rd Intersection",
         "line": "958",
-        "color": "#d97706",
-        "direction": 1
+        "color": "#7c3aed",
+        "direction": 1,
+        "station_id": "3495"
       },
       "geometry": {
         "type": "Point",
@@ -496,8 +582,9 @@
         "name": "新北大道中興北街口",
         "name_en": "New Taipei Blvd. & Zhongxing North St. Intersection",
         "line": "958",
-        "color": "#d97706",
-        "direction": 1
+        "color": "#7c3aed",
+        "direction": 1,
+        "station_id": "73550"
       },
       "geometry": {
         "type": "Point",
@@ -515,8 +602,9 @@
         "name": "愛新發展中心",
         "name_en": "Aixin Development center",
         "line": "958",
-        "color": "#d97706",
-        "direction": 1
+        "color": "#7c3aed",
+        "direction": 1,
+        "station_id": "1165604487"
       },
       "geometry": {
         "type": "Point",
@@ -534,8 +622,9 @@
         "name": "群光大樓",
         "name_en": "Qunguang Building",
         "line": "958",
-        "color": "#d97706",
-        "direction": 1
+        "color": "#7c3aed",
+        "direction": 1,
+        "station_id": "1165604485"
       },
       "geometry": {
         "type": "Point",
@@ -553,8 +642,9 @@
         "name": "捷運先嗇宮站",
         "name_en": "MRT Xianse Temple Sta.",
         "line": "958",
-        "color": "#d97706",
-        "direction": 1
+        "color": "#7c3aed",
+        "direction": 1,
+        "station_id": "1165604482"
       },
       "geometry": {
         "type": "Point",

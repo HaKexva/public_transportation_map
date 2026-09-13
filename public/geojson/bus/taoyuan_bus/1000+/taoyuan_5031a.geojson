@@ -6,12 +6,11 @@
     "name": "5031A",
     "name_en": "5031A",
     "ref": "5031A",
-    "color": "#115e59",
+    "color": "#0f766e",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "operator_id": "19",
-    "operator": "捷乘客運",
-    "official_map_url": "https://ebus.tycg.gov.tw/cms/api/route/50311/map/latest"
+    "operator": "捷乘客運"
   },
   "features": [
     {
@@ -21,7 +20,7 @@
         "ref": "5031A",
         "name": "5031A",
         "name_en": "5031A",
-        "color": "#115e59",
+        "color": "#0f766e",
         "direction": 0
       },
       "geometry": {
@@ -253,13 +252,798 @@
     {
       "type": "Feature",
       "properties": {
+        "feature_type": "route",
+        "ref": "5031A",
+        "name": "5031A",
+        "name_en": "5031A",
+        "color": "#0f766e",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.9895,
+            24.93985
+          ],
+          [
+            120.98953,
+            24.93987
+          ],
+          [
+            120.98965,
+            24.93992
+          ],
+          [
+            120.99022,
+            24.94008
+          ],
+          [
+            120.99038,
+            24.94009
+          ],
+          [
+            120.99048,
+            24.94008
+          ],
+          [
+            120.99069,
+            24.94001
+          ],
+          [
+            120.99085,
+            24.93996
+          ],
+          [
+            120.99099,
+            24.93994
+          ],
+          [
+            120.99108,
+            24.93994
+          ],
+          [
+            120.99139,
+            24.94003
+          ],
+          [
+            120.9915,
+            24.94004
+          ],
+          [
+            120.99223,
+            24.94004
+          ],
+          [
+            120.99325,
+            24.94002
+          ],
+          [
+            120.99362,
+            24.94044
+          ],
+          [
+            120.99403,
+            24.94077
+          ],
+          [
+            120.99442,
+            24.94107
+          ],
+          [
+            120.99479,
+            24.94134
+          ],
+          [
+            120.99519,
+            24.9417
+          ],
+          [
+            120.99588,
+            24.9424
+          ],
+          [
+            120.99659,
+            24.9431
+          ],
+          [
+            120.99695,
+            24.94344
+          ],
+          [
+            120.99736,
+            24.94358
+          ],
+          [
+            120.99755999999999,
+            24.94366
+          ],
+          [
+            120.99765,
+            24.94372
+          ],
+          [
+            120.99929,
+            24.9453
+          ],
+          [
+            120.99985,
+            24.94576
+          ],
+          [
+            121.00038,
+            24.94627
+          ],
+          [
+            121.0007,
+            24.94653
+          ],
+          [
+            121.00096,
+            24.94671
+          ],
+          [
+            121.00128,
+            24.94691
+          ],
+          [
+            121.00168,
+            24.94718
+          ],
+          [
+            121.00208,
+            24.94745
+          ],
+          [
+            121.00238,
+            24.94767
+          ],
+          [
+            121.00241,
+            24.94769
+          ],
+          [
+            121.00246,
+            24.94771
+          ],
+          [
+            121.00259,
+            24.94778
+          ],
+          [
+            121.00339,
+            24.94784
+          ],
+          [
+            121.00406,
+            24.94794
+          ],
+          [
+            121.00414,
+            24.94795
+          ],
+          [
+            121.00481,
+            24.94796
+          ],
+          [
+            121.00584,
+            24.94807
+          ],
+          [
+            121.00633,
+            24.94818
+          ],
+          [
+            121.00707,
+            24.94837
+          ],
+          [
+            121.00738,
+            24.94846
+          ],
+          [
+            121.00878,
+            24.94888
+          ],
+          [
+            121.00895,
+            24.94894
+          ],
+          [
+            121.00921,
+            24.949
+          ],
+          [
+            121.01142,
+            24.94948
+          ],
+          [
+            121.01236,
+            24.9497
+          ],
+          [
+            121.01282,
+            24.94981
+          ],
+          [
+            121.01438,
+            24.95014
+          ],
+          [
+            121.01547,
+            24.95039
+          ],
+          [
+            121.01624,
+            24.95056
+          ],
+          [
+            121.01712,
+            24.95079
+          ],
+          [
+            121.0181,
+            24.951
+          ],
+          [
+            121.01853,
+            24.95109
+          ],
+          [
+            121.01882,
+            24.95118
+          ],
+          [
+            121.01917,
+            24.95132
+          ],
+          [
+            121.01993,
+            24.95167
+          ],
+          [
+            121.02003,
+            24.95171
+          ],
+          [
+            121.02035,
+            24.95186
+          ],
+          [
+            121.02218,
+            24.95268
+          ],
+          [
+            121.0223,
+            24.95274
+          ],
+          [
+            121.0225,
+            24.95285
+          ],
+          [
+            121.02413,
+            24.95361
+          ],
+          [
+            121.02545,
+            24.9542
+          ],
+          [
+            121.02594,
+            24.95443
+          ],
+          [
+            121.02663,
+            24.95474
+          ],
+          [
+            121.02711,
+            24.9549
+          ],
+          [
+            121.02817,
+            24.95536
+          ],
+          [
+            121.02861,
+            24.95549
+          ],
+          [
+            121.02868,
+            24.95552
+          ],
+          [
+            121.02989,
+            24.95594
+          ],
+          [
+            121.0309,
+            24.95626
+          ],
+          [
+            121.03288,
+            24.95697
+          ],
+          [
+            121.03354,
+            24.95718
+          ],
+          [
+            121.03488,
+            24.95762
+          ],
+          [
+            121.03503,
+            24.95767
+          ],
+          [
+            121.03615,
+            24.95805
+          ],
+          [
+            121.03631,
+            24.9581
+          ],
+          [
+            121.03652,
+            24.95819
+          ],
+          [
+            121.03816,
+            24.95873
+          ],
+          [
+            121.03893,
+            24.95902
+          ],
+          [
+            121.03916,
+            24.95916
+          ],
+          [
+            121.03939,
+            24.95932
+          ],
+          [
+            121.03966,
+            24.95947
+          ],
+          [
+            121.03992,
+            24.9596
+          ],
+          [
+            121.04018,
+            24.95972
+          ],
+          [
+            121.04063,
+            24.95992
+          ],
+          [
+            121.04124,
+            24.96018
+          ],
+          [
+            121.04173,
+            24.96041
+          ],
+          [
+            121.04253,
+            24.96076
+          ],
+          [
+            121.04339,
+            24.96115
+          ],
+          [
+            121.04548,
+            24.96208
+          ],
+          [
+            121.04556,
+            24.96211
+          ],
+          [
+            121.04577,
+            24.96218
+          ],
+          [
+            121.04689,
+            24.96257
+          ],
+          [
+            121.04786,
+            24.96289
+          ],
+          [
+            121.05018,
+            24.9637
+          ],
+          [
+            121.05067,
+            24.96389
+          ],
+          [
+            121.05202,
+            24.96434
+          ],
+          [
+            121.05295,
+            24.96467
+          ],
+          [
+            121.05405,
+            24.96503
+          ],
+          [
+            121.05411,
+            24.96505
+          ],
+          [
+            121.05418,
+            24.96508
+          ],
+          [
+            121.05444,
+            24.96516
+          ],
+          [
+            121.05472,
+            24.96525
+          ],
+          [
+            121.05507,
+            24.96535
+          ],
+          [
+            121.05546,
+            24.96545
+          ],
+          [
+            121.0557,
+            24.96549
+          ],
+          [
+            121.05638,
+            24.96564
+          ],
+          [
+            121.05669,
+            24.9657
+          ],
+          [
+            121.05821,
+            24.96603
+          ],
+          [
+            121.05881,
+            24.96616
+          ],
+          [
+            121.05885,
+            24.96617
+          ],
+          [
+            121.06001,
+            24.96641
+          ],
+          [
+            121.06118,
+            24.96668
+          ],
+          [
+            121.06208,
+            24.96687
+          ],
+          [
+            121.06248,
+            24.96696
+          ],
+          [
+            121.06251,
+            24.96696
+          ],
+          [
+            121.0626,
+            24.96699
+          ],
+          [
+            121.06264,
+            24.967
+          ],
+          [
+            121.06329,
+            24.96712
+          ],
+          [
+            121.06525,
+            24.96755
+          ],
+          [
+            121.06526,
+            24.96755
+          ],
+          [
+            121.06538,
+            24.96758
+          ],
+          [
+            121.06772,
+            24.96809
+          ],
+          [
+            121.06775,
+            24.96809
+          ],
+          [
+            121.06783,
+            24.96811
+          ],
+          [
+            121.06787,
+            24.96812
+          ],
+          [
+            121.06837,
+            24.96823
+          ],
+          [
+            121.0686,
+            24.96828
+          ],
+          [
+            121.06931,
+            24.96844
+          ],
+          [
+            121.06969,
+            24.96851
+          ],
+          [
+            121.07108,
+            24.96882
+          ],
+          [
+            121.07179,
+            24.96898
+          ],
+          [
+            121.07193,
+            24.96901
+          ],
+          [
+            121.07196,
+            24.96902
+          ],
+          [
+            121.07207,
+            24.96907
+          ],
+          [
+            121.0722,
+            24.96918
+          ],
+          [
+            121.07234,
+            24.96929
+          ],
+          [
+            121.07259,
+            24.96956
+          ],
+          [
+            121.07292,
+            24.96995
+          ],
+          [
+            121.07367,
+            24.97085
+          ],
+          [
+            121.07408,
+            24.97133
+          ],
+          [
+            121.07461,
+            24.97196
+          ],
+          [
+            121.07536,
+            24.97285
+          ],
+          [
+            121.07557,
+            24.97307
+          ],
+          [
+            121.07574,
+            24.97324
+          ],
+          [
+            121.07588,
+            24.97335
+          ],
+          [
+            121.07602,
+            24.97345
+          ],
+          [
+            121.07621,
+            24.97357
+          ],
+          [
+            121.07639,
+            24.97365
+          ],
+          [
+            121.07748,
+            24.97414
+          ],
+          [
+            121.07823,
+            24.97445
+          ],
+          [
+            121.07853,
+            24.97459
+          ],
+          [
+            121.07946,
+            24.97498
+          ],
+          [
+            121.07983,
+            24.97515
+          ],
+          [
+            121.08054,
+            24.97547
+          ],
+          [
+            121.08093,
+            24.97563
+          ],
+          [
+            121.08264,
+            24.97635
+          ],
+          [
+            121.08279,
+            24.97644
+          ],
+          [
+            121.08283,
+            24.97655
+          ],
+          [
+            121.08422,
+            24.97628
+          ],
+          [
+            121.08622,
+            24.97586
+          ],
+          [
+            121.08638,
+            24.97583
+          ],
+          [
+            121.08655,
+            24.97579
+          ],
+          [
+            121.08742,
+            24.97562
+          ],
+          [
+            121.08885,
+            24.97532
+          ],
+          [
+            121.09007,
+            24.9751
+          ],
+          [
+            121.0912,
+            24.97491
+          ],
+          [
+            121.09237,
+            24.97471
+          ],
+          [
+            121.093,
+            24.97458
+          ],
+          [
+            121.09403,
+            24.9744
+          ],
+          [
+            121.09528,
+            24.97418
+          ],
+          [
+            121.09534,
+            24.97417
+          ],
+          [
+            121.09672,
+            24.97392
+          ],
+          [
+            121.09691,
+            24.97389
+          ],
+          [
+            121.09712,
+            24.97386
+          ],
+          [
+            121.09774,
+            24.97375
+          ],
+          [
+            121.09824,
+            24.97367
+          ],
+          [
+            121.09865,
+            24.97359
+          ],
+          [
+            121.0989,
+            24.97354
+          ],
+          [
+            121.09939,
+            24.97344
+          ],
+          [
+            121.09987,
+            24.97337
+          ],
+          [
+            121.10019,
+            24.97335
+          ],
+          [
+            121.10083,
+            24.97321
+          ],
+          [
+            121.10124,
+            24.97313
+          ],
+          [
+            121.10233,
+            24.97294
+          ],
+          [
+            121.10256,
+            24.9729
+          ],
+          [
+            121.10259,
+            24.97289
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "feature_type": "station",
         "ref": "TAO3723",
-        "name": "桃園客運新屋站",
-        "name_en": " Taoyuan Passenger Transport Station (Sinwu Station)",
+        "name": "新屋站",
+        "name_en": "Xinwu Station",
         "line": "5031A",
-        "color": "#115e59",
-        "direction": 0
+        "color": "#0f766e",
+        "direction": 0,
+        "station_id": "1786"
       },
       "geometry": {
         "type": "Point",
@@ -277,14 +1061,15 @@
         "name": "雙路口",
         "name_en": "Shuanglukou",
         "line": "5031A",
-        "color": "#115e59",
-        "direction": 0
+        "color": "#0f766e",
+        "direction": 0,
+        "station_id": "2283"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.09977,
-          24.97347
+          121.099769967253,
+          24.9734699957647
         ]
       }
     },
@@ -296,8 +1081,9 @@
         "name": "新明公司",
         "name_en": "Xinming Company",
         "line": "5031A",
-        "color": "#115e59",
-        "direction": 0
+        "color": "#0f766e",
+        "direction": 0,
+        "station_id": "2285"
       },
       "geometry": {
         "type": "Point",
@@ -315,8 +1101,9 @@
         "name": "邱厝",
         "name_en": "Qiucuo",
         "line": "5031A",
-        "color": "#115e59",
-        "direction": 0
+        "color": "#0f766e",
+        "direction": 0,
+        "station_id": "462"
       },
       "geometry": {
         "type": "Point",
@@ -334,14 +1121,15 @@
         "name": "全美公司",
         "name_en": "Quanmei Company",
         "line": "5031A",
-        "color": "#115e59",
-        "direction": 0
+        "color": "#0f766e",
+        "direction": 0,
+        "station_id": "2289"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.0907,
-          24.975085
+          121.09069956705397,
+          24.975084752840797
         ]
       }
     },
@@ -353,8 +1141,9 @@
         "name": "新光",
         "name_en": "Xinguang",
         "line": "5031A",
-        "color": "#115e59",
-        "direction": 0
+        "color": "#0f766e",
+        "direction": 0,
+        "station_id": "2291"
       },
       "geometry": {
         "type": "Point",
@@ -372,8 +1161,9 @@
         "name": "東明",
         "name_en": "Dongming",
         "line": "5031A",
-        "color": "#115e59",
-        "direction": 0
+        "color": "#0f766e",
+        "direction": 0,
+        "station_id": "2297"
       },
       "geometry": {
         "type": "Point",
@@ -391,8 +1181,9 @@
         "name": "東福",
         "name_en": "Dongfu",
         "line": "5031A",
-        "color": "#115e59",
-        "direction": 0
+        "color": "#0f766e",
+        "direction": 0,
+        "station_id": "4124"
       },
       "geometry": {
         "type": "Point",
@@ -410,14 +1201,15 @@
         "name": "東坡",
         "name_en": "Dong Po",
         "line": "5031A",
-        "color": "#115e59",
-        "direction": 0
+        "color": "#0f766e",
+        "direction": 0,
+        "station_id": "2832"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.07569,
-          24.97332
+          121.07569000000001,
+          24.973320000000005
         ]
       }
     },
@@ -429,14 +1221,15 @@
         "name": "葉厝",
         "name_en": "Yecuo",
         "line": "5031A",
-        "color": "#115e59",
-        "direction": 0
+        "color": "#0f766e",
+        "direction": 0,
+        "station_id": "2834"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.070448,
-          24.968752
+          121.07044802846231,
+          24.96875160853506
         ]
       }
     },
@@ -448,8 +1241,9 @@
         "name": "社子",
         "name_en": "Shezih",
         "line": "5031A",
-        "color": "#115e59",
-        "direction": 0
+        "color": "#0f766e",
+        "direction": 0,
+        "station_id": "2229"
       },
       "geometry": {
         "type": "Point",
@@ -467,8 +1261,9 @@
         "name": "上糠榔",
         "name_en": "shangkanglang",
         "line": "5031A",
-        "color": "#115e59",
-        "direction": 0
+        "color": "#0f766e",
+        "direction": 0,
+        "station_id": "2841"
       },
       "geometry": {
         "type": "Point",
@@ -486,8 +1281,9 @@
         "name": "大庄埔",
         "name_en": "dazhuangpu",
         "line": "5031A",
-        "color": "#115e59",
-        "direction": 0
+        "color": "#0f766e",
+        "direction": 0,
+        "station_id": "2843"
       },
       "geometry": {
         "type": "Point",
@@ -505,8 +1301,9 @@
         "name": "警訓中心",
         "name_en": "Police Training Center",
         "line": "5031A",
-        "color": "#115e59",
-        "direction": 0
+        "color": "#0f766e",
+        "direction": 0,
+        "station_id": "2845"
       },
       "geometry": {
         "type": "Point",
@@ -524,8 +1321,9 @@
         "name": "學堂坡",
         "name_en": "xuetangpo",
         "line": "5031A",
-        "color": "#115e59",
-        "direction": 0
+        "color": "#0f766e",
+        "direction": 0,
+        "station_id": "2847"
       },
       "geometry": {
         "type": "Point",
@@ -543,8 +1341,9 @@
         "name": "大坡國中",
         "name_en": "Da-Po Junior High School",
         "line": "5031A",
-        "color": "#115e59",
-        "direction": 0
+        "color": "#0f766e",
+        "direction": 0,
+        "station_id": "2849"
       },
       "geometry": {
         "type": "Point",
@@ -562,8 +1361,9 @@
         "name": "大坡派出所",
         "name_en": "dapo Police Station",
         "line": "5031A",
-        "color": "#115e59",
-        "direction": 0
+        "color": "#0f766e",
+        "direction": 0,
+        "station_id": "2853"
       },
       "geometry": {
         "type": "Point",
@@ -581,14 +1381,15 @@
         "name": "洽溪口",
         "name_en": "Qiaxikou",
         "line": "5031A",
-        "color": "#115e59",
-        "direction": 0
+        "color": "#0f766e",
+        "direction": 0,
+        "station_id": "2855"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.028903,
-          24.955633
+          121.02890333338371,
+          24.955633333345926
         ]
       }
     },
@@ -600,14 +1401,15 @@
         "name": "桃園區農業改良場",
         "name_en": "Taoyuan District Agricultural Improvement Station",
         "line": "5031A",
-        "color": "#115e59",
-        "direction": 0
+        "color": "#0f766e",
+        "direction": 0,
+        "station_id": "2857"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.024523,
-          24.953693
+          121.02452332775354,
+          24.95369332596007
         ]
       }
     },
@@ -619,8 +1421,9 @@
         "name": "後庄社區活動中心",
         "name_en": "Houzhuang Community Activity Center",
         "line": "5031A",
-        "color": "#115e59",
-        "direction": 0
+        "color": "#0f766e",
+        "direction": 0,
+        "station_id": "2859"
       },
       "geometry": {
         "type": "Point",
@@ -638,8 +1441,9 @@
         "name": "後庄里姜厝",
         "name_en": "Houzhuang village Jiangcuo",
         "line": "5031A",
-        "color": "#115e59",
-        "direction": 0
+        "color": "#0f766e",
+        "direction": 0,
+        "station_id": "3274"
       },
       "geometry": {
         "type": "Point",
@@ -657,14 +1461,15 @@
         "name": "蚵間國小",
         "name_en": "Ke-Jian Elementary School",
         "line": "5031A",
-        "color": "#115e59",
-        "direction": 0
+        "color": "#0f766e",
+        "direction": 0,
+        "station_id": "2863"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.00949,
-          24.949083
+          121.00948999594738,
+          24.949083329730996
         ]
       }
     },
@@ -676,14 +1481,15 @@
         "name": "埔頂社區",
         "name_en": "Puding Community",
         "line": "5031A",
-        "color": "#115e59",
-        "direction": 0
+        "color": "#0f766e",
+        "direction": 0,
+        "station_id": "2862"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.004483,
-          24.947892
+          121.00436750414431,
+          24.947980000000005
         ]
       }
     },
@@ -695,14 +1501,15 @@
         "name": "蚵間活動中心",
         "name_en": "Kejian Activity Center",
         "line": "5031A",
-        "color": "#115e59",
-        "direction": 0
+        "color": "#0f766e",
+        "direction": 0,
+        "station_id": "2865"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          120.99971,
-          24.945708
+          120.99971000569566,
+          24.945707502491853
         ]
       }
     },
@@ -714,8 +1521,9 @@
         "name": "許厝",
         "name_en": "Xucuo",
         "line": "5031A",
-        "color": "#115e59",
-        "direction": 0
+        "color": "#0f766e",
+        "direction": 0,
+        "station_id": "1014"
       },
       "geometry": {
         "type": "Point",
@@ -733,8 +1541,9 @@
         "name": "蚵間里",
         "name_en": "Ejian Village",
         "line": "5031A",
-        "color": "#115e59",
-        "direction": 0
+        "color": "#0f766e",
+        "direction": 0,
+        "station_id": "2867"
       },
       "geometry": {
         "type": "Point",
@@ -750,10 +1559,11 @@
         "feature_type": "station",
         "ref": "TAO12749",
         "name": "蚵間里福興宮",
-        "name_en": "Ejian Village Fuxing Temple",
+        "name_en": "Kejian Village Fuxing Temple",
         "line": "5031A",
-        "color": "#115e59",
-        "direction": 0
+        "color": "#0f766e",
+        "direction": 0,
+        "station_id": "2869"
       },
       "geometry": {
         "type": "Point",
@@ -771,8 +1581,9 @@
         "name": "蚵間里福興宮",
         "name_en": "Ejian Village Fuxing Temple",
         "line": "5031A",
-        "color": "#115e59",
-        "direction": 1
+        "color": "#0f766e",
+        "direction": 1,
+        "station_id": "2870"
       },
       "geometry": {
         "type": "Point",
@@ -790,8 +1601,9 @@
         "name": "蚵間里",
         "name_en": "Ejian Village",
         "line": "5031A",
-        "color": "#115e59",
-        "direction": 1
+        "color": "#0f766e",
+        "direction": 1,
+        "station_id": "2868"
       },
       "geometry": {
         "type": "Point",
@@ -809,8 +1621,9 @@
         "name": "許厝",
         "name_en": "Xucuo",
         "line": "5031A",
-        "color": "#115e59",
-        "direction": 1
+        "color": "#0f766e",
+        "direction": 1,
+        "station_id": "1015"
       },
       "geometry": {
         "type": "Point",
@@ -828,8 +1641,9 @@
         "name": "蚵間活動中心",
         "name_en": "Kejian Activity Center",
         "line": "5031A",
-        "color": "#115e59",
-        "direction": 1
+        "color": "#0f766e",
+        "direction": 1,
+        "station_id": "2866"
       },
       "geometry": {
         "type": "Point",
@@ -847,8 +1661,9 @@
         "name": "埔頂社區",
         "name_en": "Puding Community",
         "line": "5031A",
-        "color": "#115e59",
-        "direction": 1
+        "color": "#0f766e",
+        "direction": 1,
+        "station_id": "2861"
       },
       "geometry": {
         "type": "Point",
@@ -866,14 +1681,15 @@
         "name": "蚵間國小",
         "name_en": "Ke-Jian Elementary School",
         "line": "5031A",
-        "color": "#115e59",
-        "direction": 1
+        "color": "#0f766e",
+        "direction": 1,
+        "station_id": "2864"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.009767,
-          24.949103
+          121.00976668693741,
+          24.94910334070451
         ]
       }
     },
@@ -885,8 +1701,9 @@
         "name": "後庄里姜厝",
         "name_en": "Houzhuang village Jiangcuo",
         "line": "5031A",
-        "color": "#115e59",
-        "direction": 1
+        "color": "#0f766e",
+        "direction": 1,
+        "station_id": "3275"
       },
       "geometry": {
         "type": "Point",
@@ -904,8 +1721,9 @@
         "name": "後庄社區活動中心",
         "name_en": "Houzhuang Community Activity Center",
         "line": "5031A",
-        "color": "#115e59",
-        "direction": 1
+        "color": "#0f766e",
+        "direction": 1,
+        "station_id": "2860"
       },
       "geometry": {
         "type": "Point",
@@ -923,8 +1741,9 @@
         "name": "桃園區農業改良場",
         "name_en": "Taoyuan District Agricultural Improvement Station",
         "line": "5031A",
-        "color": "#115e59",
-        "direction": 1
+        "color": "#0f766e",
+        "direction": 1,
+        "station_id": "2858"
       },
       "geometry": {
         "type": "Point",
@@ -942,8 +1761,9 @@
         "name": "洽溪口",
         "name_en": "Qiaxikou",
         "line": "5031A",
-        "color": "#115e59",
-        "direction": 1
+        "color": "#0f766e",
+        "direction": 1,
+        "station_id": "2856"
       },
       "geometry": {
         "type": "Point",
@@ -961,8 +1781,9 @@
         "name": "大坡派出所",
         "name_en": "dapo Police Station",
         "line": "5031A",
-        "color": "#115e59",
-        "direction": 1
+        "color": "#0f766e",
+        "direction": 1,
+        "station_id": "2854"
       },
       "geometry": {
         "type": "Point",
@@ -980,8 +1801,9 @@
         "name": "大坡國中",
         "name_en": "Da-Po Junior High School",
         "line": "5031A",
-        "color": "#115e59",
-        "direction": 1
+        "color": "#0f766e",
+        "direction": 1,
+        "station_id": "2850"
       },
       "geometry": {
         "type": "Point",
@@ -999,8 +1821,9 @@
         "name": "學堂坡",
         "name_en": "xuetangpo",
         "line": "5031A",
-        "color": "#115e59",
-        "direction": 1
+        "color": "#0f766e",
+        "direction": 1,
+        "station_id": "2848"
       },
       "geometry": {
         "type": "Point",
@@ -1018,8 +1841,9 @@
         "name": "警訓中心",
         "name_en": "Police Training Center",
         "line": "5031A",
-        "color": "#115e59",
-        "direction": 1
+        "color": "#0f766e",
+        "direction": 1,
+        "station_id": "2846"
       },
       "geometry": {
         "type": "Point",
@@ -1037,8 +1861,9 @@
         "name": "大庄埔",
         "name_en": "dazhuangpu",
         "line": "5031A",
-        "color": "#115e59",
-        "direction": 1
+        "color": "#0f766e",
+        "direction": 1,
+        "station_id": "2844"
       },
       "geometry": {
         "type": "Point",
@@ -1056,8 +1881,9 @@
         "name": "上糠榔",
         "name_en": "shangkanglang",
         "line": "5031A",
-        "color": "#115e59",
-        "direction": 1
+        "color": "#0f766e",
+        "direction": 1,
+        "station_id": "2842"
       },
       "geometry": {
         "type": "Point",
@@ -1075,8 +1901,9 @@
         "name": "社子",
         "name_en": "Shezih",
         "line": "5031A",
-        "color": "#115e59",
-        "direction": 1
+        "color": "#0f766e",
+        "direction": 1,
+        "station_id": "2230"
       },
       "geometry": {
         "type": "Point",
@@ -1094,14 +1921,15 @@
         "name": "葉厝",
         "name_en": "Yecuo",
         "line": "5031A",
-        "color": "#115e59",
-        "direction": 1
+        "color": "#0f766e",
+        "direction": 1,
+        "station_id": "2835"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.07051,
-          24.96871
+          121.07050999940606,
+          24.96871000048445
         ]
       }
     },
@@ -1113,8 +1941,9 @@
         "name": "東坡",
         "name_en": "Dong Po",
         "line": "5031A",
-        "color": "#115e59",
-        "direction": 1
+        "color": "#0f766e",
+        "direction": 1,
+        "station_id": "2833"
       },
       "geometry": {
         "type": "Point",
@@ -1132,8 +1961,9 @@
         "name": "東福",
         "name_en": "Dongfu",
         "line": "5031A",
-        "color": "#115e59",
-        "direction": 1
+        "color": "#0f766e",
+        "direction": 1,
+        "station_id": "4125"
       },
       "geometry": {
         "type": "Point",
@@ -1151,8 +1981,9 @@
         "name": "東明",
         "name_en": "Dongming",
         "line": "5031A",
-        "color": "#115e59",
-        "direction": 1
+        "color": "#0f766e",
+        "direction": 1,
+        "station_id": "2298"
       },
       "geometry": {
         "type": "Point",
@@ -1170,8 +2001,9 @@
         "name": "新光",
         "name_en": "Xinguang",
         "line": "5031A",
-        "color": "#115e59",
-        "direction": 1
+        "color": "#0f766e",
+        "direction": 1,
+        "station_id": "2292"
       },
       "geometry": {
         "type": "Point",
@@ -1189,8 +2021,9 @@
         "name": "全美公司",
         "name_en": "Quanmei Company",
         "line": "5031A",
-        "color": "#115e59",
-        "direction": 1
+        "color": "#0f766e",
+        "direction": 1,
+        "station_id": "2290"
       },
       "geometry": {
         "type": "Point",
@@ -1208,8 +2041,9 @@
         "name": "邱厝",
         "name_en": "Qiucuo",
         "line": "5031A",
-        "color": "#115e59",
-        "direction": 1
+        "color": "#0f766e",
+        "direction": 1,
+        "station_id": "463"
       },
       "geometry": {
         "type": "Point",
@@ -1227,13 +2061,14 @@
         "name": "新明公司",
         "name_en": "Xinming Company",
         "line": "5031A",
-        "color": "#115e59",
-        "direction": 1
+        "color": "#0f766e",
+        "direction": 1,
+        "station_id": "2286"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.09691,
+          121.09691000000001,
           24.97386
         ]
       }
@@ -1246,14 +2081,15 @@
         "name": "雙路口",
         "name_en": "Shuanglukou",
         "line": "5031A",
-        "color": "#115e59",
-        "direction": 1
+        "color": "#0f766e",
+        "direction": 1,
+        "station_id": "2284"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.099737,
-          24.973326
+          121.099737369031,
+          24.9733261030104
         ]
       }
     },
@@ -1263,10 +2099,11 @@
         "feature_type": "station",
         "ref": "TAO3724",
         "name": "桃園客運新屋站",
-        "name_en": " Taoyuan Passenger Transport Station (Sinwu Station)",
+        "name_en": "Taoyuan Passenger Transport Station (Sinwu Station)",
         "line": "5031A",
-        "color": "#115e59",
-        "direction": 1
+        "color": "#0f766e",
+        "direction": 1,
+        "station_id": "1787"
       },
       "geometry": {
         "type": "Point",

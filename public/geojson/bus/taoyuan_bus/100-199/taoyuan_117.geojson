@@ -6,7 +6,7 @@
     "name": "117",
     "name_en": "117",
     "ref": "117",
-    "color": "#65a30d",
+    "color": "#b91c1c",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/3400/map/2246/image",
@@ -22,7 +22,7 @@
         "ref": "117",
         "name": "117",
         "name_en": "117",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0
       },
       "geometry": {
@@ -113,8 +113,32 @@
             25.01096
           ],
           [
-            121.29658,
-            25.01045
+            121.29670371551815,
+            25.01052655469013
+          ],
+          [
+            121.29667142702975,
+            25.010512505114967
+          ],
+          [
+            121.29663640964132,
+            25.010507849161755
+          ],
+          [
+            121.29660144095938,
+            25.010512800627293
+          ],
+          [
+            121.29656961575725,
+            25.01052692130051
+          ],
+          [
+            121.29654375060628,
+            25.010548961483664
+          ],
+          [
+            121.29652603251714,
+            25.010577210837234
           ],
           [
             121.29567,
@@ -135,23 +159,7 @@
           [
             121.28961,
             25.02025
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "route",
-        "ref": "117",
-        "name": "117",
-        "name_en": "117",
-        "color": "#65a30d",
-        "direction": 1
-      },
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
+          ],
           [
             121.29069,
             25.02164
@@ -167,6 +175,102 @@
           [
             121.29861,
             25.01581
+          ],
+          [
+            121.30027,
+            25.01225
+          ],
+          [
+            121.30117,
+            25.01058
+          ],
+          [
+            121.30227,
+            25.00859
+          ],
+          [
+            121.30274,
+            25.00775
+          ],
+          [
+            121.30346,
+            25.00668
+          ],
+          [
+            121.30462,
+            25.00485
+          ],
+          [
+            121.30548,
+            25.0035
+          ],
+          [
+            121.30841,
+            24.99886
+          ],
+          [
+            121.30721,
+            24.998169999999998
+          ],
+          [
+            121.30689,
+            24.99787
+          ],
+          [
+            121.30593,
+            24.99638
+          ],
+          [
+            121.30583,
+            24.99605
+          ],
+          [
+            121.30578,
+            24.99576
+          ],
+          [
+            121.30583,
+            24.99481
+          ],
+          [
+            121.30594928860587,
+            24.9926033000422
+          ],
+          [
+            121.30595601974576,
+            24.99257224000796
+          ],
+          [
+            121.30597225898947,
+            24.992544303943898
+          ],
+          [
+            121.30599663018747,
+            24.992521825287795
+          ],
+          [
+            121.30602706505748,
+            24.992506711709712
+          ],
+          [
+            121.30606098071873,
+            24.99250024583618
+          ],
+          [
+            121.30609568196894,
+            24.992503016163372
+          ],
+          [
+            121.30747,
+            24.9928
+          ],
+          [
+            121.30851,
+            24.99014
+          ],
+          [
+            121.3121,
+            24.9913
           ]
         ]
       }
@@ -179,8 +283,9 @@
         "name": "統領百貨",
         "name_en": "Tonlin Department Store",
         "line": "117",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1223"
       },
       "geometry": {
         "type": "Point",
@@ -198,8 +303,9 @@
         "name": "中華民族路口",
         "name_en": "Zhonghua and Minzu Road Intersection",
         "line": "117",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1115"
       },
       "geometry": {
         "type": "Point",
@@ -217,8 +323,9 @@
         "name": "南華街",
         "name_en": "NanHua Street",
         "line": "117",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4821"
       },
       "geometry": {
         "type": "Point",
@@ -236,8 +343,9 @@
         "name": "中山南華街口",
         "name_en": "Zhongshan and Nanhua St. Intersection",
         "line": "117",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "5115"
       },
       "geometry": {
         "type": "Point",
@@ -253,10 +361,11 @@
         "feature_type": "station",
         "ref": "TAO600",
         "name": "桃園國中",
-        "name_en": "Taoyuan High School",
+        "name_en": "Taoyuan Junior  High School",
         "line": "117",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1750"
       },
       "geometry": {
         "type": "Point",
@@ -274,8 +383,9 @@
         "name": "中正三民路口",
         "name_en": "Zhongzheng and Sanming Rd. Intersection",
         "line": "117",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "3060"
       },
       "geometry": {
         "type": "Point",
@@ -293,8 +403,9 @@
         "name": "中正二街口",
         "name_en": "Zhongzheng 2nd Street Intersection",
         "line": "117",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1330"
       },
       "geometry": {
         "type": "Point",
@@ -312,8 +423,9 @@
         "name": "北埔路口",
         "name_en": "Beipu Rd. Entrance",
         "line": "117",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1332"
       },
       "geometry": {
         "type": "Point",
@@ -331,8 +443,9 @@
         "name": "中正信光路口",
         "name_en": "Zhongzheng and Xinguang St. Intersection",
         "line": "117",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4301"
       },
       "geometry": {
         "type": "Point",
@@ -350,8 +463,9 @@
         "name": "中正慈文路口",
         "name_en": "Zhongzheng and Ciwen Rd. Intersection",
         "line": "117",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4304"
       },
       "geometry": {
         "type": "Point",
@@ -369,8 +483,9 @@
         "name": "慈文國中",
         "name_en": "TszWen Junior High School",
         "line": "117",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1406"
       },
       "geometry": {
         "type": "Point",
@@ -388,8 +503,9 @@
         "name": "城市大亨",
         "name_en": "Cheng Shi Da Heng",
         "line": "117",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1512"
       },
       "geometry": {
         "type": "Point",
@@ -407,8 +523,9 @@
         "name": "中埔一街口",
         "name_en": "Zhongpu 1st  Street Corner",
         "line": "117",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4368"
       },
       "geometry": {
         "type": "Point",
@@ -426,8 +543,9 @@
         "name": "中埔二街",
         "name_en": "Zhongpu 2nd St.",
         "line": "117",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "3105"
       },
       "geometry": {
         "type": "Point",
@@ -445,8 +563,9 @@
         "name": "同德七街口",
         "name_en": "Tungde 7th  Street Intersection",
         "line": "117",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "3508"
       },
       "geometry": {
         "type": "Point",
@@ -464,14 +583,15 @@
         "name": "中國龍社區",
         "name_en": "JungGuoLung Community",
         "line": "117",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1514"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
           121.29207,
-          25.014718
+          25.01471833
         ]
       }
     },
@@ -483,8 +603,9 @@
         "name": "南平路口",
         "name_en": "NanPing Road Intersection",
         "line": "117",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1515"
       },
       "geometry": {
         "type": "Point",
@@ -500,10 +621,11 @@
         "feature_type": "station",
         "ref": "TAO2002",
         "name": "寶慶安慶街口",
-        "name_en": "Baocing and Ancing St. Intersection",
+        "name_en": "Baoqing and Anqing St. Intersection",
         "line": "117",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1525"
       },
       "geometry": {
         "type": "Point",
@@ -521,8 +643,9 @@
         "name": "中國江山",
         "name_en": "China Jiangshan",
         "line": "117",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1517"
       },
       "geometry": {
         "type": "Point",
@@ -538,10 +661,11 @@
         "feature_type": "station",
         "ref": "TAO1956",
         "name": "日昇大道",
-        "name_en": "Ri Sheng Da Dao",
+        "name_en": "Risheng Blvd.",
         "line": "117",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1519"
       },
       "geometry": {
         "type": "Point",
@@ -559,8 +683,9 @@
         "name": "莊敬敬三街口",
         "name_en": "Zhuangjing Jing 3rd Street Intersection",
         "line": "117",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "3094"
       },
       "geometry": {
         "type": "Point",
@@ -578,8 +703,9 @@
         "name": "莊敬敬二街口",
         "name_en": "Zhuangjing Jing 2nd Street Intersection",
         "line": "117",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4121"
       },
       "geometry": {
         "type": "Point",
@@ -597,8 +723,9 @@
         "name": "莊敬路口",
         "name_en": "Zhuangjing Road Intersection",
         "line": "117",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1377"
       },
       "geometry": {
         "type": "Point",
@@ -616,8 +743,9 @@
         "name": "中正同德十一街口",
         "name_en": "Jhongjheng Tongde 11th St. Intersection",
         "line": "117",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "3919"
       },
       "geometry": {
         "type": "Point",
@@ -635,8 +763,9 @@
         "name": "中正中寧街口",
         "name_en": "Zhongzheng Zhongning Road Intersection",
         "line": "117",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1189"
       },
       "geometry": {
         "type": "Point",
@@ -654,8 +783,9 @@
         "name": "中正藝文特區",
         "name_en": "Taoyuan Arts Center",
         "line": "117",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "3085"
       },
       "geometry": {
         "type": "Point",
@@ -673,8 +803,9 @@
         "name": "中正慈文路口",
         "name_en": "Zhongzheng and Ciwen Rd. Intersection",
         "line": "117",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4303"
       },
       "geometry": {
         "type": "Point",
@@ -692,8 +823,9 @@
         "name": "中正信光路口",
         "name_en": "Zhongzheng and Xinguang St. Intersection",
         "line": "117",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4302"
       },
       "geometry": {
         "type": "Point",
@@ -711,8 +843,9 @@
         "name": "北埔路口",
         "name_en": "Beipu Rd. Entrance",
         "line": "117",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1331"
       },
       "geometry": {
         "type": "Point",
@@ -730,8 +863,9 @@
         "name": "中正二街口",
         "name_en": "Zhongzheng 2nd Street Intersection",
         "line": "117",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1329"
       },
       "geometry": {
         "type": "Point",
@@ -749,8 +883,9 @@
         "name": "中正三民路口",
         "name_en": "Zhongzheng and Sanming Rd. Intersection",
         "line": "117",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "3061"
       },
       "geometry": {
         "type": "Point",
@@ -768,8 +903,9 @@
         "name": "成功國小",
         "name_en": "ChengGung Elementary School",
         "line": "117",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "372"
       },
       "geometry": {
         "type": "Point",
@@ -785,10 +921,11 @@
         "feature_type": "station",
         "ref": "TAO2061",
         "name": "桃園國中",
-        "name_en": "Taoyuan High School",
+        "name_en": "Taoyuan Junior  High School",
         "line": "117",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1751"
       },
       "geometry": {
         "type": "Point",
@@ -806,8 +943,9 @@
         "name": "中山南華街口",
         "name_en": "Zhongshan and Nanhua St. Intersection",
         "line": "117",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "5114"
       },
       "geometry": {
         "type": "Point",
@@ -825,8 +963,9 @@
         "name": "南華街口",
         "name_en": "NanHua Street",
         "line": "117",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "3203"
       },
       "geometry": {
         "type": "Point",
@@ -844,33 +983,15 @@
         "name": "中華民族路口",
         "name_en": "Zhonghua and Minzu Road Intersection",
         "line": "117",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1114"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
           121.309339,
           24.990336
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "TAO1354",
-        "name": "統領百貨",
-        "name_en": "Tonlin Department Store",
-        "line": "117",
-        "color": "#65a30d",
-        "direction": 1
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.312099,
-          24.991231
         ]
       }
     }

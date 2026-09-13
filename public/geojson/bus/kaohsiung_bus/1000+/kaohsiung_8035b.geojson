@@ -6,7 +6,7 @@
     "name": "8035B",
     "name_en": "8035B",
     "ref": "8035B",
-    "color": "#134e4a",
+    "color": "#1e3a8a",
     "city_id": "Kaohsiung",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ibus.tbkc.gov.tw/cms/api/route/8074/map/887/image",
@@ -22,7 +22,7 @@
         "ref": "8035B",
         "name": "8035B",
         "name_en": "8035B",
-        "color": "#134e4a",
+        "color": "#1e3a8a",
         "direction": 0
       },
       "geometry": {
@@ -45,12 +45,32 @@
             22.88346
           ],
           [
-            120.48315,
-            22.88354
+            120.48321070324937,
+            22.88353696122778
+          ],
+          [
+            120.48318171408927,
+            22.883541859518505
+          ],
+          [
+            120.4831549257525,
+            22.883553343589654
+          ],
+          [
+            120.48313208623347,
+            22.88357068076327
+          ],
+          [
+            120.48311464831345,
+            22.883592768252495
+          ],
+          [
+            120.48310372118763,
+            22.883618201111315
           ],
           [
             120.4831,
-            22.88382
+            22.88364536160069
           ],
           [
             120.4831,
@@ -97,16 +117,32 @@
             22.89599
           ],
           [
-            120.48353,
-            22.89737
+            120.48352752904427,
+            22.89771329855166
           ],
           [
-            120.48343,
-            22.89768
+            120.4835257235026,
+            22.897731585026822
           ],
           [
-            120.4832,
-            22.89796
+            120.48352062330459,
+            22.89774932276346
+          ],
+          [
+            120.48351237426446,
+            22.897766009616006
+          ],
+          [
+            120.48350121228214,
+            22.897781168386235
+          ],
+          [
+            120.48348745655974,
+            22.897794365574903
+          ],
+          [
+            120.48347181301631,
+            22.89780504607887
           ],
           [
             120.47995,
@@ -137,20 +173,32 @@
             22.90504
           ],
           [
-            120.47893,
-            22.90542
+            120.47885553979994,
+            22.9057363561122
           ],
           [
-            120.47881,
-            22.90559
+            120.47884848000645,
+            22.90575663485355
           ],
           [
-            120.47861,
-            22.90579
+            120.47883738343982,
+            22.90577511292148
           ],
           [
-            120.47836,
-            22.90589
+            120.4788226348253,
+            22.905791244121698
+          ],
+          [
+            120.4788047940787,
+            22.90580441604998
+          ],
+          [
+            120.4787845385054,
+            22.905814128647776
+          ],
+          [
+            120.4787627833143,
+            22.905819987795958
           ],
           [
             120.47697,
@@ -233,16 +281,32 @@
             22.91562
           ],
           [
-            120.46226,
-            22.9171
+            120.46218144385472,
+            22.91722320785913
           ],
           [
-            120.46229,
-            22.91703
+            120.4621702252678,
+            22.91723788904514
           ],
           [
-            120.46183,
-            22.91729
+            120.46215682073387,
+            22.917250432081264
+          ],
+          [
+            120.46214140090824,
+            22.91726079299678
+          ],
+          [
+            120.46212437392488,
+            22.917268697557628
+          ],
+          [
+            120.46210619045624,
+            22.917273936544845
+          ],
+          [
+            120.46208737856524,
+            22.91727636881177
           ],
           [
             120.46145,
@@ -281,12 +345,32 @@
             22.91853
           ],
           [
-            120.45123,
-            22.91931
+            120.45095798151516,
+            22.919416255516012
           ],
           [
-            120.45092,
-            22.91961
+            120.4509315651354,
+            22.919430623595318
+          ],
+          [
+            120.45090989441744,
+            22.919451073709222
+          ],
+          [
+            120.45089475235221,
+            22.91947607335933
+          ],
+          [
+            120.4508871954247,
+            22.91950387828197
+          ],
+          [
+            120.45088775089323,
+            22.919532548485318
+          ],
+          [
+            120.45089625810517,
+            22.919559826193233
           ],
           [
             120.45151,
@@ -366,13 +450,398 @@
     {
       "type": "Feature",
       "properties": {
+        "feature_type": "route",
+        "ref": "8035B",
+        "name": "8035B",
+        "name_en": "8035B",
+        "color": "#1e3a8a",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.46358,
+            22.94503
+          ],
+          [
+            120.46337,
+            22.94487
+          ],
+          [
+            120.46235,
+            22.94173
+          ],
+          [
+            120.46214,
+            22.94137
+          ],
+          [
+            120.46141,
+            22.94056
+          ],
+          [
+            120.46133,
+            22.94037
+          ],
+          [
+            120.46144,
+            22.93634
+          ],
+          [
+            120.4591,
+            22.93064
+          ],
+          [
+            120.45827,
+            22.9284
+          ],
+          [
+            120.45789,
+            22.928
+          ],
+          [
+            120.4564,
+            22.92737
+          ],
+          [
+            120.45605,
+            22.92712
+          ],
+          [
+            120.45556,
+            22.92602
+          ],
+          [
+            120.45403,
+            22.92378
+          ],
+          [
+            120.45261,
+            22.9215
+          ],
+          [
+            120.45239,
+            22.92129
+          ],
+          [
+            120.45151,
+            22.92085
+          ],
+          [
+            120.45089992867159,
+            22.919567587617927
+          ],
+          [
+            120.45089151551043,
+            22.919540877346794
+          ],
+          [
+            120.45089073035427,
+            22.919512781089722
+          ],
+          [
+            120.45089774781427,
+            22.91948543950604
+          ],
+          [
+            120.45091209751453,
+            22.91946068528456
+          ],
+          [
+            120.4509328176039,
+            22.919440177684844
+          ],
+          [
+            120.45095823587772,
+            22.91942541173794
+          ],
+          [
+            120.45168,
+            22.91912
+          ],
+          [
+            120.4547,
+            22.91804
+          ],
+          [
+            120.45769,
+            22.9171
+          ],
+          [
+            120.45821,
+            22.91678
+          ],
+          [
+            120.45903,
+            22.91648
+          ],
+          [
+            120.45956,
+            22.91648
+          ],
+          [
+            120.46163814599214,
+            22.917332448052832
+          ],
+          [
+            120.46166050880326,
+            22.917339283104806
+          ],
+          [
+            120.46168358888895,
+            22.91734182294797
+          ],
+          [
+            120.46170675494652,
+            22.917340082247446
+          ],
+          [
+            120.46172909335807,
+            22.917334129652602
+          ],
+          [
+            120.46174972314608,
+            22.917324199920586
+          ],
+          [
+            120.46176812359916,
+            22.917310416634205
+          ],
+          [
+            120.46235,
+            22.91678
+          ],
+          [
+            120.46287,
+            22.91583
+          ],
+          [
+            120.46311,
+            22.91552
+          ],
+          [
+            120.46415,
+            22.91457
+          ],
+          [
+            120.46511,
+            22.91342
+          ],
+          [
+            120.46585,
+            22.91218
+          ],
+          [
+            120.46615,
+            22.91095
+          ],
+          [
+            120.46662,
+            22.9103
+          ],
+          [
+            120.46712,
+            22.90982
+          ],
+          [
+            120.47118,
+            22.90874
+          ],
+          [
+            120.47176,
+            22.90869
+          ],
+          [
+            120.47309,
+            22.90892
+          ],
+          [
+            120.47361,
+            22.90882
+          ],
+          [
+            120.47404,
+            22.90858
+          ],
+          [
+            120.47428,
+            22.9083
+          ],
+          [
+            120.47486,
+            22.9071
+          ],
+          [
+            120.47522,
+            22.9067
+          ],
+          [
+            120.47695,
+            22.90602
+          ],
+          [
+            120.4786287397237,
+            22.90577097135528
+          ],
+          [
+            120.47864961197892,
+            22.905765987484898
+          ],
+          [
+            120.47866925614261,
+            22.905757477059954
+          ],
+          [
+            120.47868687080948,
+            22.90574575112097
+          ],
+          [
+            120.47870185137864,
+            22.90573121214578
+          ],
+          [
+            120.47871368366128,
+            22.905714359166097
+          ],
+          [
+            120.47872202941086,
+            22.90569556586439
+          ],
+          [
+            120.47894,
+            22.90504
+          ],
+          [
+            120.47908,
+            22.9041
+          ],
+          [
+            120.4791,
+            22.90322
+          ],
+          [
+            120.47888,
+            22.9012
+          ],
+          [
+            120.47892,
+            22.9008
+          ],
+          [
+            120.47993,
+            22.8997
+          ],
+          [
+            120.48332026439799,
+            22.897703525496865
+          ],
+          [
+            120.4833359905072,
+            22.897692351962757
+          ],
+          [
+            120.48334968883154,
+            22.897678604818687
+          ],
+          [
+            120.48336063750759,
+            22.897662878744242
+          ],
+          [
+            120.4833685109262,
+            22.897645641426468
+          ],
+          [
+            120.48337307493512,
+            22.897627405496173
+          ],
+          [
+            120.4833741946457,
+            22.897608736728525
+          ],
+          [
+            120.48331,
+            22.89568
+          ],
+          [
+            120.48381,
+            22.89568
+          ],
+          [
+            120.4838,
+            22.89598
+          ],
+          [
+            120.48332,
+            22.89598
+          ],
+          [
+            120.48326,
+            22.89182
+          ],
+          [
+            120.48336,
+            22.89139
+          ],
+          [
+            120.4835,
+            22.8912
+          ],
+          [
+            120.48309,
+            22.88708
+          ],
+          [
+            120.48306590248615,
+            22.883630053159408
+          ],
+          [
+            120.48306957969491,
+            22.883602344233683
+          ],
+          [
+            120.483080754669,
+            22.883576417424504
+          ],
+          [
+            120.48309868809531,
+            22.883553993004767
+          ],
+          [
+            120.48312219347947,
+            22.88353655459765
+          ],
+          [
+            120.48314971568057,
+            22.883525255946516
+          ],
+          [
+            120.48317940932043,
+            22.883520845256268
+          ],
+          [
+            120.4843,
+            22.88349
+          ],
+          [
+            120.48473,
+            22.88345
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "feature_type": "station",
         "ref": "KHH108074167091",
         "name": "旗山轉運站",
         "name_en": "Cishan Bus Transfer Station",
         "line": "8035B",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "443"
       },
       "geometry": {
         "type": "Point",
@@ -390,8 +859,9 @@
         "name": "延平路(旗山區公所)",
         "name_en": "Yanping Rd.(Cishan district office)",
         "line": "8035B",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "441"
       },
       "geometry": {
         "type": "Point",
@@ -409,8 +879,9 @@
         "name": "旗山市場",
         "name_en": "Cishan Market",
         "line": "8035B",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "28"
       },
       "geometry": {
         "type": "Point",
@@ -428,8 +899,9 @@
         "name": "中華路口(旗山)",
         "name_en": "Xizhou Hospital",
         "line": "8035B",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "439"
       },
       "geometry": {
         "type": "Point",
@@ -447,8 +919,9 @@
         "name": "旗山北站",
         "name_en": "Cishan North Station",
         "line": "8035B",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "438"
       },
       "geometry": {
         "type": "Point",
@@ -466,8 +939,9 @@
         "name": "旗山監理站",
         "name_en": "Cishan Motor Vehicles Supervision Station",
         "line": "8035B",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "30"
       },
       "geometry": {
         "type": "Point",
@@ -485,8 +959,9 @@
         "name": "朝天宮(旗文路)",
         "name_en": "Chaotian Temple(Ciwun Rd.)",
         "line": "8035B",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "1845"
       },
       "geometry": {
         "type": "Point",
@@ -504,8 +979,9 @@
         "name": "嶺頂",
         "name_en": "Lingding",
         "line": "8035B",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "1847"
       },
       "geometry": {
         "type": "Point",
@@ -523,8 +999,9 @@
         "name": "石溝",
         "name_en": "Shihgou",
         "line": "8035B",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "1849"
       },
       "geometry": {
         "type": "Point",
@@ -542,8 +1019,9 @@
         "name": "二層橋",
         "name_en": "Erceng Bridge",
         "line": "8035B",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "1851"
       },
       "geometry": {
         "type": "Point",
@@ -561,8 +1039,9 @@
         "name": "農會(內門)",
         "name_en": "Farmers' Association(Neimen)",
         "line": "8035B",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "1853"
       },
       "geometry": {
         "type": "Point",
@@ -580,8 +1059,9 @@
         "name": "觀音亭",
         "name_en": "Guanyin Pavilion",
         "line": "8035B",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "1855"
       },
       "geometry": {
         "type": "Point",
@@ -599,8 +1079,9 @@
         "name": "中埔",
         "name_en": "Jhongpu",
         "line": "8035B",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "1857"
       },
       "geometry": {
         "type": "Point",
@@ -618,8 +1099,9 @@
         "name": "內門國中",
         "name_en": "Neiman Junior High School",
         "line": "8035B",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "1859"
       },
       "geometry": {
         "type": "Point",
@@ -637,8 +1119,9 @@
         "name": "中埔頭",
         "name_en": "Jhongputou",
         "line": "8035B",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "1861"
       },
       "geometry": {
         "type": "Point",
@@ -656,8 +1139,9 @@
         "name": "菜公坑",
         "name_en": "Caigongkeng",
         "line": "8035B",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "1863"
       },
       "geometry": {
         "type": "Point",
@@ -675,8 +1159,9 @@
         "name": "內埔橋",
         "name_en": "Neipu Bridge",
         "line": "8035B",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "1865"
       },
       "geometry": {
         "type": "Point",
@@ -694,8 +1179,9 @@
         "name": "十三甲",
         "name_en": "Shihsanjia",
         "line": "8035B",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "1867"
       },
       "geometry": {
         "type": "Point",
@@ -713,8 +1199,9 @@
         "name": "內門國小",
         "name_en": "Neimen Elementary School",
         "line": "8035B",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "1869"
       },
       "geometry": {
         "type": "Point",
@@ -732,8 +1219,9 @@
         "name": "內門區公所",
         "name_en": "Neimen Districr Office",
         "line": "8035B",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "1872"
       },
       "geometry": {
         "type": "Point",
@@ -751,8 +1239,9 @@
         "name": "內門",
         "name_en": "Neimen",
         "line": "8035B",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "1874"
       },
       "geometry": {
         "type": "Point",
@@ -770,8 +1259,9 @@
         "name": "內門",
         "name_en": "Neimen",
         "line": "8035B",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "1875"
       },
       "geometry": {
         "type": "Point",
@@ -789,8 +1279,9 @@
         "name": "內門區公所",
         "name_en": "Neimen Districr Office",
         "line": "8035B",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "1873"
       },
       "geometry": {
         "type": "Point",
@@ -808,8 +1299,9 @@
         "name": "內門國小",
         "name_en": "Neimen Elementary School",
         "line": "8035B",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "1870"
       },
       "geometry": {
         "type": "Point",
@@ -827,8 +1319,9 @@
         "name": "十三甲",
         "name_en": "Shihsanjia",
         "line": "8035B",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "1868"
       },
       "geometry": {
         "type": "Point",
@@ -846,8 +1339,9 @@
         "name": "內埔橋",
         "name_en": "Neipu Bridge",
         "line": "8035B",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "1866"
       },
       "geometry": {
         "type": "Point",
@@ -865,8 +1359,9 @@
         "name": "菜公坑",
         "name_en": "Caigongkeng",
         "line": "8035B",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "1864"
       },
       "geometry": {
         "type": "Point",
@@ -884,8 +1379,9 @@
         "name": "中埔頭",
         "name_en": "Jhongputou",
         "line": "8035B",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "1862"
       },
       "geometry": {
         "type": "Point",
@@ -903,8 +1399,9 @@
         "name": "內門國中",
         "name_en": "Neiman Junior High School",
         "line": "8035B",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "1860"
       },
       "geometry": {
         "type": "Point",
@@ -922,8 +1419,9 @@
         "name": "中埔",
         "name_en": "Jhongpu",
         "line": "8035B",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "1858"
       },
       "geometry": {
         "type": "Point",
@@ -941,8 +1439,9 @@
         "name": "觀音亭",
         "name_en": "Guanyin Pavilion",
         "line": "8035B",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "1856"
       },
       "geometry": {
         "type": "Point",
@@ -960,8 +1459,9 @@
         "name": "農會(內門)",
         "name_en": "Farmers' Association(Neimen)",
         "line": "8035B",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "1854"
       },
       "geometry": {
         "type": "Point",
@@ -979,8 +1479,9 @@
         "name": "二層橋",
         "name_en": "Erceng Bridge",
         "line": "8035B",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "1852"
       },
       "geometry": {
         "type": "Point",
@@ -998,8 +1499,9 @@
         "name": "石溝",
         "name_en": "Shihgou",
         "line": "8035B",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "1850"
       },
       "geometry": {
         "type": "Point",
@@ -1017,8 +1519,9 @@
         "name": "嶺頂",
         "name_en": "Lingding",
         "line": "8035B",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "1848"
       },
       "geometry": {
         "type": "Point",
@@ -1036,8 +1539,9 @@
         "name": "朝天宮(旗文路)",
         "name_en": "Chaotian Temple(Ciwun Rd.)",
         "line": "8035B",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "1846"
       },
       "geometry": {
         "type": "Point",
@@ -1055,8 +1559,9 @@
         "name": "旗山監理站",
         "name_en": "Cishan Motor Vehicles Supervision Station",
         "line": "8035B",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "31"
       },
       "geometry": {
         "type": "Point",
@@ -1074,8 +1579,9 @@
         "name": "旗山北站",
         "name_en": "Cishan North Station",
         "line": "8035B",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "438"
       },
       "geometry": {
         "type": "Point",
@@ -1093,8 +1599,9 @@
         "name": "中華路口(旗山)",
         "name_en": "Xizhou Hospital",
         "line": "8035B",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "440"
       },
       "geometry": {
         "type": "Point",
@@ -1112,8 +1619,9 @@
         "name": "旗山市場",
         "name_en": "Cishan Market",
         "line": "8035B",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "29"
       },
       "geometry": {
         "type": "Point",
@@ -1131,8 +1639,9 @@
         "name": "延平路(旗山區公所)",
         "name_en": "Yanping Rd.(Cishan district office)",
         "line": "8035B",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "442"
       },
       "geometry": {
         "type": "Point",
@@ -1150,8 +1659,9 @@
         "name": "旗山轉運站",
         "name_en": "Cishan Bus Transfer Station",
         "line": "8035B",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "443"
       },
       "geometry": {
         "type": "Point",

@@ -6,7 +6,7 @@
     "name": "220繞",
     "name_en": "220繞",
     "ref": "220繞",
-    "color": "#a21caf",
+    "color": "#65a30d",
     "city_id": "Taichung",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://citybus.taichung.gov.tw/ebus/strapi/uploads/220_354cd72a9e.jpeg",
@@ -22,7 +22,7 @@
         "ref": "220繞",
         "name": "220繞",
         "name_en": "220繞",
-        "color": "#a21caf",
+        "color": "#65a30d",
         "direction": 0
       },
       "geometry": {
@@ -129,8 +129,32 @@
             24.21624
           ],
           [
-            120.65093,
-            24.21649
+            120.65083720458301,
+            24.21647530660015
+          ],
+          [
+            120.65086248866612,
+            24.216482042535848
+          ],
+          [
+            120.65088563529503,
+            24.21649382517679
+          ],
+          [
+            120.65090534746186,
+            24.216510042299284
+          ],
+          [
+            120.65092063701285,
+            24.21652988095311
+          ],
+          [
+            120.65093073749617,
+            24.21655234664385
+          ],
+          [
+            120.65093514499065,
+            24.216576354917972
           ],
           [
             120.65099,
@@ -141,20 +165,60 @@
             24.22164
           ],
           [
-            120.64778,
-            24.2212
+            120.64757432180812,
+            24.221158210602212
           ],
           [
-            120.64738,
-            24.22135
+            120.64754716967639,
+            24.221155651324093
           ],
           [
-            120.64674,
-            24.22271
+            120.64752027201149,
+            24.221158841156146
           ],
           [
-            120.64632,
-            24.22269
+            120.6474948740076,
+            24.22116757753722
+          ],
+          [
+            120.64747231273272,
+            24.221181400543948
+          ],
+          [
+            120.64745377591632,
+            24.221199582469566
+          ],
+          [
+            120.64744012025243,
+            24.221221420735453
+          ],
+          [
+            120.64669303119368,
+            24.22281036219719
+          ],
+          [
+            120.64667280252952,
+            24.22283964147521
+          ],
+          [
+            120.6466438140994,
+            24.222861430079938
+          ],
+          [
+            120.64660885784623,
+            24.222873794387244
+          ],
+          [
+            120.64657144431615,
+            24.222875492688754
+          ],
+          [
+            120.64653533083194,
+            24.222866354429417
+          ],
+          [
+            120.64650384025438,
+            24.222847038582415
           ],
           [
             120.64315,
@@ -261,8 +325,32 @@
             24.18515
           ],
           [
-            120.61398,
-            24.1839
+            120.6140116296451,
+            24.184042201538027
+          ],
+          [
+            120.61399888229676,
+            24.184010772106518
+          ],
+          [
+            120.61397641977757,
+            24.18398451980149
+          ],
+          [
+            120.61394633453686,
+            24.183965781315003
+          ],
+          [
+            120.61391147306907,
+            24.18395632957609
+          ],
+          [
+            120.61387513376802,
+            24.18395705885456
+          ],
+          [
+            120.61384045133171,
+            24.183968047732815
           ],
           [
             120.61303,
@@ -281,12 +369,32 @@
             24.18457
           ],
           [
-            120.60274,
-            24.18295
+            120.602812106364,
+            24.182967328602093
           ],
           [
-            120.60269,
-            24.18345
+            120.60277503998024,
+            24.1829639950263
+          ],
+          [
+            120.60273887383322,
+            24.18297135685911
+          ],
+          [
+            120.60270696574966,
+            24.182988643655627
+          ],
+          [
+            120.6026824513497,
+            24.183014156635476
+          ],
+          [
+            120.60266773967312,
+            24.183045388627974
+          ],
+          [
+            120.60266427323964,
+            24.183079222172278
           ],
           [
             120.60272,
@@ -314,13 +422,526 @@
     {
       "type": "Feature",
       "properties": {
+        "feature_type": "route",
+        "ref": "220繞",
+        "name": "220繞",
+        "name_en": "220繞",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.60671,
+            24.19334
+          ],
+          [
+            120.6065,
+            24.19276
+          ],
+          [
+            120.60553,
+            24.18895
+          ],
+          [
+            120.60285,
+            24.1844
+          ],
+          [
+            120.60269,
+            24.18405
+          ],
+          [
+            120.6026,
+            24.18367
+          ],
+          [
+            120.60261,
+            24.18315
+          ],
+          [
+            120.60267,
+            24.18294
+          ],
+          [
+            120.602618166048,
+            24.182776380230877
+          ],
+          [
+            120.60261389917018,
+            24.182738610009675
+          ],
+          [
+            120.60262414399158,
+            24.18270161568904
+          ],
+          [
+            120.60264769484138,
+            24.18267016642273
+          ],
+          [
+            120.6026816397267,
+            24.18264815081948
+          ],
+          [
+            120.6027217814629,
+            24.182638291043492
+          ],
+          [
+            120.60276336239447,
+            24.182641858562587
+          ],
+          [
+            120.60955,
+            24.18436
+          ],
+          [
+            120.61012,
+            24.18445
+          ],
+          [
+            120.61068,
+            24.1845
+          ],
+          [
+            120.61116,
+            24.18448
+          ],
+          [
+            120.61156,
+            24.18445
+          ],
+          [
+            120.61242,
+            24.1843
+          ],
+          [
+            120.61294,
+            24.18415
+          ],
+          [
+            120.61341,
+            24.18396
+          ],
+          [
+            120.613948318258,
+            24.18369526932628
+          ],
+          [
+            120.61398452659547,
+            24.183683784275082
+          ],
+          [
+            120.61402248890622,
+            24.18368349394264
+          ],
+          [
+            120.6140585923311,
+            24.183694277286804
+          ],
+          [
+            120.61408911053304,
+            24.183715021327956
+          ],
+          [
+            120.61411089364167,
+            24.183743585014636
+          ],
+          [
+            120.61412170633108,
+            24.1837771151333
+          ],
+          [
+            120.61426,
+            24.18477
+          ],
+          [
+            120.61442,
+            24.18583
+          ],
+          [
+            120.61449,
+            24.18632
+          ],
+          [
+            120.61462,
+            24.18683
+          ],
+          [
+            120.61487,
+            24.18753
+          ],
+          [
+            120.61509,
+            24.18786
+          ],
+          [
+            120.61555,
+            24.18912
+          ],
+          [
+            120.61874,
+            24.18777
+          ],
+          [
+            120.61749,
+            24.1854
+          ],
+          [
+            120.61896,
+            24.18473
+          ],
+          [
+            120.62013,
+            24.18714
+          ],
+          [
+            120.62196,
+            24.19127
+          ],
+          [
+            120.62353,
+            24.19338
+          ],
+          [
+            120.62477,
+            24.19545
+          ],
+          [
+            120.62576,
+            24.19848
+          ],
+          [
+            120.62621,
+            24.19934
+          ],
+          [
+            120.62731,
+            24.20096
+          ],
+          [
+            120.62788,
+            24.20184
+          ],
+          [
+            120.62855,
+            24.20277
+          ],
+          [
+            120.6289,
+            24.20339
+          ],
+          [
+            120.62914,
+            24.20428
+          ],
+          [
+            120.62908,
+            24.20704
+          ],
+          [
+            120.62974,
+            24.20921
+          ],
+          [
+            120.62986,
+            24.20961
+          ],
+          [
+            120.63012,
+            24.21001
+          ],
+          [
+            120.63106,
+            24.21089
+          ],
+          [
+            120.63174,
+            24.21195
+          ],
+          [
+            120.63425,
+            24.2135
+          ],
+          [
+            120.63557,
+            24.21506
+          ],
+          [
+            120.63583,
+            24.21541
+          ],
+          [
+            120.63639,
+            24.21682
+          ],
+          [
+            120.63659,
+            24.21704
+          ],
+          [
+            120.63933,
+            24.21865
+          ],
+          [
+            120.64322,
+            24.22001
+          ],
+          [
+            120.64640166776759,
+            24.22275289509161
+          ],
+          [
+            120.646432945833,
+            24.222772411740387
+          ],
+          [
+            120.64646892211243,
+            24.222781814278097
+          ],
+          [
+            120.64650629607688,
+            24.222780422430937
+          ],
+          [
+            120.64654132528977,
+            24.222768375571324
+          ],
+          [
+            120.64657050210587,
+            24.222746880009815
+          ],
+          [
+            120.64659102962855,
+            24.22271782992082
+          ],
+          [
+            120.64898,
+            24.21778
+          ],
+          [
+            120.64927,
+            24.21618
+          ],
+          [
+            120.6508329365387,
+            24.216396456575985
+          ],
+          [
+            120.6508591249607,
+            24.216403005630035
+          ],
+          [
+            120.65088309706184,
+            24.216414933496928
+          ],
+          [
+            120.65090345578075,
+            24.216431588638027
+          ],
+          [
+            120.65091911792412,
+            24.21645208491027
+          ],
+          [
+            120.6509292501817,
+            24.216475331801746
+          ],
+          [
+            120.65093331432749,
+            24.216500118285403
+          ],
+          [
+            120.65097,
+            24.21749
+          ],
+          [
+            120.65072,
+            24.21819
+          ],
+          [
+            120.64993,
+            24.22161
+          ],
+          [
+            120.64836,
+            24.22122
+          ],
+          [
+            120.64782,
+            24.22381
+          ],
+          [
+            120.64724,
+            24.22439
+          ],
+          [
+            120.64902,
+            24.22627
+          ],
+          [
+            120.65048,
+            24.22731
+          ],
+          [
+            120.65596,
+            24.23024
+          ],
+          [
+            120.65812,
+            24.23085
+          ],
+          [
+            120.66369,
+            24.23332
+          ],
+          [
+            120.6668,
+            24.23558
+          ],
+          [
+            120.6762,
+            24.24186
+          ],
+          [
+            120.68301,
+            24.2466
+          ],
+          [
+            120.68489,
+            24.2464
+          ],
+          [
+            120.68921,
+            24.24754
+          ],
+          [
+            120.69344,
+            24.24852
+          ],
+          [
+            120.6953,
+            24.24836
+          ],
+          [
+            120.69626,
+            24.24843
+          ],
+          [
+            120.70317,
+            24.24948
+          ],
+          [
+            120.70916,
+            24.2503
+          ],
+          [
+            120.71449,
+            24.25106
+          ],
+          [
+            120.71665,
+            24.25182
+          ],
+          [
+            120.7177,
+            24.25188
+          ],
+          [
+            120.71887,
+            24.25171
+          ],
+          [
+            120.7208,
+            24.25177
+          ],
+          [
+            120.72247,
+            24.25215
+          ],
+          [
+            120.7236,
+            24.25217
+          ],
+          [
+            120.72408,
+            24.2531
+          ],
+          [
+            120.72481243606863,
+            24.254404013268957
+          ],
+          [
+            120.72482022585939,
+            24.254423000103998
+          ],
+          [
+            120.7248231944133,
+            24.25444336352412
+          ],
+          [
+            120.72482105916082,
+            24.254463814789844
+          ],
+          [
+            120.7248139312283,
+            24.254483289542165
+          ],
+          [
+            120.72480218157956,
+            24.25450077424344
+          ],
+          [
+            120.7247866842172,
+            24.25451516528857
+          ],
+          [
+            120.7246591476633,
+            24.25460831057602
+          ],
+          [
+            120.72463314862037,
+            24.254622149597765
+          ],
+          [
+            120.72460415318929,
+            24.25462812893267
+          ],
+          [
+            120.72457453482278,
+            24.254625899253313
+          ],
+          [
+            120.72454698737992,
+            24.254615663354198
+          ],
+          [
+            120.72452401636447,
+            24.254598352214064
+          ],
+          [
+            120.72450760230247,
+            24.254575321788305
+          ],
+          [
+            120.72434,
+            24.25424
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "feature_type": "station",
         "ref": "TXG17378",
         "name": "豐原轉運中心(第4月台)",
-        "name_en": null,
+        "name_en": "Fengyuan Transfer Center(Platform 4)",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "10844"
       },
       "geometry": {
         "type": "Point",
@@ -338,8 +959,9 @@
         "name": "媽祖廟",
         "name_en": "Mazu Temple",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "1288"
       },
       "geometry": {
         "type": "Point",
@@ -357,8 +979,9 @@
         "name": "臺灣企銀(豐原郵局)",
         "name_en": "Taiwan Business Bank(Fengyuan Post Office)",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "840"
       },
       "geometry": {
         "type": "Point",
@@ -376,8 +999,9 @@
         "name": "慈龍寺",
         "name_en": "Cilong Temple",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "1503"
       },
       "geometry": {
         "type": "Point",
@@ -395,8 +1019,9 @@
         "name": "中正圓環西路口",
         "name_en": "Zhongzheng-Yuanhuan W. Intersection",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "1652"
       },
       "geometry": {
         "type": "Point",
@@ -414,8 +1039,9 @@
         "name": "三光新村",
         "name_en": "Sanguang Community",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "1646"
       },
       "geometry": {
         "type": "Point",
@@ -433,8 +1059,9 @@
         "name": "忠勤新村(豐原運動中心)",
         "name_en": "Zhongqin Community(Fengyuan Sport Center)",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "1500"
       },
       "geometry": {
         "type": "Point",
@@ -452,8 +1079,9 @@
         "name": "社皮鐵路巷",
         "name_en": "Shepi Railway Lane",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "1498"
       },
       "geometry": {
         "type": "Point",
@@ -471,8 +1099,9 @@
         "name": "臺豐社區",
         "name_en": "Taifeng Community",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "1497"
       },
       "geometry": {
         "type": "Point",
@@ -490,8 +1119,9 @@
         "name": "岸裡國小",
         "name_en": "Anli Elementary School",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "837"
       },
       "geometry": {
         "type": "Point",
@@ -509,8 +1139,9 @@
         "name": "望寮",
         "name_en": "Wangliao",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "1493"
       },
       "geometry": {
         "type": "Point",
@@ -528,8 +1159,9 @@
         "name": "紅瓦厝口",
         "name_en": "Hongwacuokuo",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "1660"
       },
       "geometry": {
         "type": "Point",
@@ -547,8 +1179,9 @@
         "name": "社口",
         "name_en": "Shekou",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "1656"
       },
       "geometry": {
         "type": "Point",
@@ -564,10 +1197,11 @@
         "feature_type": "station",
         "ref": "TXG5945",
         "name": "社南廟",
-        "name_en": null,
+        "name_en": "Shenan Temple",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "5714"
       },
       "geometry": {
         "type": "Point",
@@ -583,10 +1217,11 @@
         "feature_type": "station",
         "ref": "TXG6287",
         "name": "頂牛埔",
-        "name_en": null,
+        "name_en": "Dingniupu",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "5906"
       },
       "geometry": {
         "type": "Point",
@@ -602,10 +1237,11 @@
         "feature_type": "station",
         "ref": "TXG14298",
         "name": "三采幼稚園",
-        "name_en": null,
+        "name_en": "Sancai Kindergarten",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "2739"
       },
       "geometry": {
         "type": "Point",
@@ -621,10 +1257,11 @@
         "feature_type": "station",
         "ref": "TXG5499",
         "name": "牛埔仔",
-        "name_en": null,
+        "name_en": "Niupuzi",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "5458"
       },
       "geometry": {
         "type": "Point",
@@ -640,10 +1277,11 @@
         "feature_type": "station",
         "ref": "TXG6589",
         "name": "億鴻新村",
-        "name_en": null,
+        "name_en": "Yihong Community",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "6058"
       },
       "geometry": {
         "type": "Point",
@@ -659,10 +1297,11 @@
         "feature_type": "station",
         "ref": "TXG20560",
         "name": "楓樹腳(上楓國小)",
-        "name_en": null,
+        "name_en": "Fengshujiao(Shangfong Elementary School)",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "4636"
       },
       "geometry": {
         "type": "Point",
@@ -678,10 +1317,11 @@
         "feature_type": "station",
         "ref": "TXG5156",
         "name": "下楓樹腳",
-        "name_en": null,
+        "name_en": "Xia Fengshujiao",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "5275"
       },
       "geometry": {
         "type": "Point",
@@ -697,10 +1337,11 @@
         "feature_type": "station",
         "ref": "TXG6510",
         "name": "達聲",
-        "name_en": null,
+        "name_en": "Dasheng",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "6027"
       },
       "geometry": {
         "type": "Point",
@@ -718,8 +1359,9 @@
         "name": "雅洲新城",
         "name_en": "Yazhou Community",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "5949"
       },
       "geometry": {
         "type": "Point",
@@ -735,10 +1377,11 @@
         "feature_type": "station",
         "ref": "TXG23289",
         "name": "大榮橋",
-        "name_en": null,
+        "name_en": "Darong Bridge",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "5370"
       },
       "geometry": {
         "type": "Point",
@@ -754,10 +1397,11 @@
         "feature_type": "station",
         "ref": "TXG10959",
         "name": "玉山銀行大雅分行",
-        "name_en": null,
+        "name_en": "Esun Bank Daya Branch",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "2741"
       },
       "geometry": {
         "type": "Point",
@@ -775,8 +1419,9 @@
         "name": "大雅",
         "name_en": "Daya",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "1331"
       },
       "geometry": {
         "type": "Point",
@@ -794,8 +1439,9 @@
         "name": "大雅橋(中清東路)",
         "name_en": "Daya Bridge(Zhongqing E. Road)",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "10092"
       },
       "geometry": {
         "type": "Point",
@@ -813,8 +1459,9 @@
         "name": "大華國中(學府路)",
         "name_en": "Dahwa Junior High School(Xuefu Road)",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "4637"
       },
       "geometry": {
         "type": "Point",
@@ -830,10 +1477,11 @@
         "feature_type": "station",
         "ref": "TXG18154",
         "name": "文雅里",
-        "name_en": null,
+        "name_en": "Wenya Village",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "3187"
       },
       "geometry": {
         "type": "Point",
@@ -849,10 +1497,11 @@
         "feature_type": "station",
         "ref": "TXG6331",
         "name": "富貴新村",
-        "name_en": null,
+        "name_en": "Fugui Community",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "5933"
       },
       "geometry": {
         "type": "Point",
@@ -868,10 +1517,11 @@
         "feature_type": "station",
         "ref": "TXG5794",
         "name": "秀山",
-        "name_en": null,
+        "name_en": "Xiushan",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "5628"
       },
       "geometry": {
         "type": "Point",
@@ -887,10 +1537,11 @@
         "feature_type": "station",
         "ref": "TXG5202",
         "name": "土地廟",
-        "name_en": null,
+        "name_en": "Tudi Temple",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "5334"
       },
       "geometry": {
         "type": "Point",
@@ -906,10 +1557,11 @@
         "feature_type": "station",
         "ref": "TXG18124",
         "name": "上橫山",
-        "name_en": null,
+        "name_en": "Shanghengshan",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "3159"
       },
       "geometry": {
         "type": "Point",
@@ -925,10 +1577,11 @@
         "feature_type": "station",
         "ref": "TXG6619",
         "name": "橫山",
-        "name_en": null,
+        "name_en": "Hengshan",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "6076"
       },
       "geometry": {
         "type": "Point",
@@ -944,10 +1597,11 @@
         "feature_type": "station",
         "ref": "TXG19723",
         "name": "永和六甲巷口",
-        "name_en": null,
+        "name_en": "Yonghe-Liujia Intersection",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "4413"
       },
       "geometry": {
         "type": "Point",
@@ -963,10 +1617,11 @@
         "feature_type": "station",
         "ref": "TXG18265",
         "name": "福雅中科路口",
-        "name_en": null,
+        "name_en": "Fuya-Zhongke Intersection",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "3303"
       },
       "geometry": {
         "type": "Point",
@@ -982,10 +1637,11 @@
         "feature_type": "station",
         "ref": "TXG1562",
         "name": "頂林厝",
-        "name_en": null,
+        "name_en": "Dinglincuo",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "2630"
       },
       "geometry": {
         "type": "Point",
@@ -1001,10 +1657,11 @@
         "feature_type": "station",
         "ref": "TXG5074",
         "name": "三角埔(福雅路)",
-        "name_en": null,
+        "name_en": "Sanjiaopu(Fuya Road)",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "5209"
       },
       "geometry": {
         "type": "Point",
@@ -1020,10 +1677,11 @@
         "feature_type": "station",
         "ref": "TXG5100",
         "name": "下三角埔",
-        "name_en": null,
+        "name_en": "Xiasanjiaopu",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "5230"
       },
       "geometry": {
         "type": "Point",
@@ -1039,10 +1697,11 @@
         "feature_type": "station",
         "ref": "TXG1551",
         "name": "林厝里",
-        "name_en": null,
+        "name_en": "Lincuo Village",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "6446"
       },
       "geometry": {
         "type": "Point",
@@ -1058,10 +1717,11 @@
         "feature_type": "station",
         "ref": "TXG18224",
         "name": "水臨橋",
-        "name_en": null,
+        "name_en": "Shuilin Bridge",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "3238"
       },
       "geometry": {
         "type": "Point",
@@ -1077,10 +1737,11 @@
         "feature_type": "station",
         "ref": "TXG14429",
         "name": "福雅路321巷口",
-        "name_en": null,
+        "name_en": "Fuya Road 321st Lane",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "6171"
       },
       "geometry": {
         "type": "Point",
@@ -1096,10 +1757,11 @@
         "feature_type": "station",
         "ref": "TXG420",
         "name": "福雅路252巷口",
-        "name_en": null,
+        "name_en": "Fuya Road 252nd Lane",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "6288"
       },
       "geometry": {
         "type": "Point",
@@ -1115,10 +1777,11 @@
         "feature_type": "station",
         "ref": "TXG18264",
         "name": "福雅西屯路口",
-        "name_en": null,
+        "name_en": "Fuya-Xitun Intersection",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "3302"
       },
       "geometry": {
         "type": "Point",
@@ -1134,10 +1797,11 @@
         "feature_type": "station",
         "ref": "TXG18222",
         "name": "福科福雅路口",
-        "name_en": null,
+        "name_en": "Fuke-Fuya Intersection",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "3235"
       },
       "geometry": {
         "type": "Point",
@@ -1153,10 +1817,11 @@
         "feature_type": "station",
         "ref": "TXG18172",
         "name": "宏台別墅",
-        "name_en": null,
+        "name_en": "Hongtai Villa",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "2366"
       },
       "geometry": {
         "type": "Point",
@@ -1172,10 +1837,11 @@
         "feature_type": "station",
         "ref": "TXG15296",
         "name": "麗景天地",
-        "name_en": null,
+        "name_en": "Lijing Community",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "3945"
       },
       "geometry": {
         "type": "Point",
@@ -1191,10 +1857,11 @@
         "feature_type": "station",
         "ref": "TXG24547",
         "name": "福科國中(福林路)",
-        "name_en": null,
+        "name_en": "Focus Junior High School(Fulin Road)",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "2285"
       },
       "geometry": {
         "type": "Point",
@@ -1210,10 +1877,11 @@
         "feature_type": "station",
         "ref": "TXG24548",
         "name": "福林福順路口",
-        "name_en": null,
+        "name_en": "Fulin-Fushun Intersection",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "4850"
       },
       "geometry": {
         "type": "Point",
@@ -1229,10 +1897,11 @@
         "feature_type": "station",
         "ref": "TXG24549",
         "name": "臺中捐血中心",
-        "name_en": null,
+        "name_en": "Taichung Blood Center",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "283"
       },
       "geometry": {
         "type": "Point",
@@ -1248,10 +1917,11 @@
         "feature_type": "station",
         "ref": "TXG24550",
         "name": "臺灣大道玉門路口",
-        "name_en": null,
+        "name_en": "Taiwan Boulevard-Yumen Intersection",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "744"
       },
       "geometry": {
         "type": "Point",
@@ -1267,10 +1937,11 @@
         "feature_type": "station",
         "ref": "TXG24551",
         "name": "普濟寺",
-        "name_en": null,
+        "name_en": "Puji Temple",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "761"
       },
       "geometry": {
         "type": "Point",
@@ -1286,10 +1957,11 @@
         "feature_type": "station",
         "ref": "TXG24552",
         "name": "東大附中",
-        "name_en": null,
+        "name_en": "THU Affiliated Senior High School",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "138"
       },
       "geometry": {
         "type": "Point",
@@ -1305,10 +1977,11 @@
         "feature_type": "station",
         "ref": "TXG24553",
         "name": "臺中榮總(臺灣大道)",
-        "name_en": null,
+        "name_en": "Taichung Veterans General Hospital(Taiwan Blvd.)",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "740"
       },
       "geometry": {
         "type": "Point",
@@ -1324,10 +1997,11 @@
         "feature_type": "station",
         "ref": "TXG24554",
         "name": "臺中榮總(東大路)",
-        "name_en": null,
+        "name_en": "Taichung Veterans General Hospital(Dongda Road)",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "3576"
       },
       "geometry": {
         "type": "Point",
@@ -1343,10 +2017,11 @@
         "feature_type": "station",
         "ref": "TXG24556",
         "name": "五龍公園",
-        "name_en": null,
+        "name_en": "Wulong Park",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "2222"
       },
       "geometry": {
         "type": "Point",
@@ -1362,10 +2037,11 @@
         "feature_type": "station",
         "ref": "TXG24557",
         "name": "榮總北院",
-        "name_en": null,
+        "name_en": "Veterans General Hospital North",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "238"
       },
       "geometry": {
         "type": "Point",
@@ -1381,10 +2057,11 @@
         "feature_type": "station",
         "ref": "TXG24558",
         "name": "國安社區(宜寧中學)",
-        "name_en": null,
+        "name_en": "Guoan Community(I-Ning High School)",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "327"
       },
       "geometry": {
         "type": "Point",
@@ -1400,10 +2077,11 @@
         "feature_type": "station",
         "ref": "TXG24559",
         "name": "國安社區(宜寧中學)",
-        "name_en": null,
+        "name_en": "Guoan Community(I-Ning High School)",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "326"
       },
       "geometry": {
         "type": "Point",
@@ -1419,10 +2097,11 @@
         "feature_type": "station",
         "ref": "TXG24560",
         "name": "榮總北院",
-        "name_en": null,
+        "name_en": "Veterans General Hospital North",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "237"
       },
       "geometry": {
         "type": "Point",
@@ -1438,10 +2117,11 @@
         "feature_type": "station",
         "ref": "TXG24561",
         "name": "五龍公園",
-        "name_en": null,
+        "name_en": "Wulong Park",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "2221"
       },
       "geometry": {
         "type": "Point",
@@ -1457,10 +2137,11 @@
         "feature_type": "station",
         "ref": "TXG24562",
         "name": "瑞聯天地(東大路)",
-        "name_en": null,
+        "name_en": "Ruilian Community(Dongda Road)",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "74"
       },
       "geometry": {
         "type": "Point",
@@ -1476,10 +2157,11 @@
         "feature_type": "station",
         "ref": "TXG24563",
         "name": "臺中榮總(東大路)",
-        "name_en": null,
+        "name_en": "Taichung Veterans General Hospital(Dongda Road)",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "3577"
       },
       "geometry": {
         "type": "Point",
@@ -1495,10 +2177,11 @@
         "feature_type": "station",
         "ref": "TXG20543",
         "name": "臺中榮總(臺灣大道)",
-        "name_en": null,
+        "name_en": "Taichung Veterans General Hospital(Taiwan Blvd.)",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "739"
       },
       "geometry": {
         "type": "Point",
@@ -1514,10 +2197,11 @@
         "feature_type": "station",
         "ref": "TXG551",
         "name": "東大附中",
-        "name_en": null,
+        "name_en": "THU Affiliated Senior High School",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "137"
       },
       "geometry": {
         "type": "Point",
@@ -1533,10 +2217,11 @@
         "feature_type": "station",
         "ref": "TXG552",
         "name": "普濟寺",
-        "name_en": null,
+        "name_en": "Puji Temple",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "760"
       },
       "geometry": {
         "type": "Point",
@@ -1552,10 +2237,11 @@
         "feature_type": "station",
         "ref": "TXG11171",
         "name": "福林福順路口",
-        "name_en": null,
+        "name_en": "Fulin-Fushun Intersection",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "4849"
       },
       "geometry": {
         "type": "Point",
@@ -1571,10 +2257,11 @@
         "feature_type": "station",
         "ref": "TXG21452",
         "name": "福科國中(福林路)",
-        "name_en": null,
+        "name_en": "Focus Junior High School(Fulin Road)",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "2286"
       },
       "geometry": {
         "type": "Point",
@@ -1590,10 +2277,11 @@
         "feature_type": "station",
         "ref": "TXG1764",
         "name": "麗景天地",
-        "name_en": null,
+        "name_en": "Lijing Community",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "3944"
       },
       "geometry": {
         "type": "Point",
@@ -1609,10 +2297,11 @@
         "feature_type": "station",
         "ref": "TXG5593",
         "name": "宏台別墅",
-        "name_en": null,
+        "name_en": "Hongtai Villa",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "2365"
       },
       "geometry": {
         "type": "Point",
@@ -1628,10 +2317,11 @@
         "feature_type": "station",
         "ref": "TXG18222",
         "name": "福科福雅路口",
-        "name_en": null,
+        "name_en": "Fuke-Fuya Intersection",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "3235"
       },
       "geometry": {
         "type": "Point",
@@ -1647,10 +2337,11 @@
         "feature_type": "station",
         "ref": "TXG18264",
         "name": "福雅西屯路口",
-        "name_en": null,
+        "name_en": "Fuya-Xitun Intersection",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "3302"
       },
       "geometry": {
         "type": "Point",
@@ -1666,10 +2357,11 @@
         "feature_type": "station",
         "ref": "TXG420",
         "name": "福雅路252巷口",
-        "name_en": null,
+        "name_en": "Fuya Road 252nd Lane",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "6288"
       },
       "geometry": {
         "type": "Point",
@@ -1685,10 +2377,11 @@
         "feature_type": "station",
         "ref": "TXG49",
         "name": "福雅路321巷口",
-        "name_en": null,
+        "name_en": "Fuya Road 321st Lane",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "6170"
       },
       "geometry": {
         "type": "Point",
@@ -1704,10 +2397,11 @@
         "feature_type": "station",
         "ref": "TXG18224",
         "name": "水臨橋",
-        "name_en": null,
+        "name_en": "Shuilin Bridge",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "3238"
       },
       "geometry": {
         "type": "Point",
@@ -1723,10 +2417,11 @@
         "feature_type": "station",
         "ref": "TXG17427",
         "name": "林厝里",
-        "name_en": null,
+        "name_en": "Lincuo Village",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "6445"
       },
       "geometry": {
         "type": "Point",
@@ -1742,10 +2437,11 @@
         "feature_type": "station",
         "ref": "TXG5100",
         "name": "下三角埔",
-        "name_en": null,
+        "name_en": "Xiasanjiaopu",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "5230"
       },
       "geometry": {
         "type": "Point",
@@ -1761,10 +2457,11 @@
         "feature_type": "station",
         "ref": "TXG5074",
         "name": "三角埔(福雅路)",
-        "name_en": null,
+        "name_en": "Sanjiaopu(Fuya Road)",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "5209"
       },
       "geometry": {
         "type": "Point",
@@ -1780,10 +2477,11 @@
         "feature_type": "station",
         "ref": "TXG1562",
         "name": "頂林厝",
-        "name_en": null,
+        "name_en": "Dinglincuo",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "2630"
       },
       "geometry": {
         "type": "Point",
@@ -1799,10 +2497,11 @@
         "feature_type": "station",
         "ref": "TXG22386",
         "name": "福雅中科路口",
-        "name_en": null,
+        "name_en": "Fuya-Zhongke Intersection",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "3304"
       },
       "geometry": {
         "type": "Point",
@@ -1818,10 +2517,11 @@
         "feature_type": "station",
         "ref": "TXG19723",
         "name": "永和六甲巷口",
-        "name_en": null,
+        "name_en": "Yonghe-Liujia Intersection",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "4413"
       },
       "geometry": {
         "type": "Point",
@@ -1837,10 +2537,11 @@
         "feature_type": "station",
         "ref": "TXG6619",
         "name": "橫山",
-        "name_en": null,
+        "name_en": "Hengshan",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "6076"
       },
       "geometry": {
         "type": "Point",
@@ -1856,10 +2557,11 @@
         "feature_type": "station",
         "ref": "TXG18124",
         "name": "上橫山",
-        "name_en": null,
+        "name_en": "Shanghengshan",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "3159"
       },
       "geometry": {
         "type": "Point",
@@ -1875,10 +2577,11 @@
         "feature_type": "station",
         "ref": "TXG14504",
         "name": "土地廟",
-        "name_en": null,
+        "name_en": "Tudi Temple",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "5335"
       },
       "geometry": {
         "type": "Point",
@@ -1894,10 +2597,11 @@
         "feature_type": "station",
         "ref": "TXG15250",
         "name": "秀山",
-        "name_en": null,
+        "name_en": "Xiushan",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "5629"
       },
       "geometry": {
         "type": "Point",
@@ -1913,10 +2617,11 @@
         "feature_type": "station",
         "ref": "TXG6331",
         "name": "富貴新村",
-        "name_en": null,
+        "name_en": "Fugui Community",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "5933"
       },
       "geometry": {
         "type": "Point",
@@ -1932,10 +2637,11 @@
         "feature_type": "station",
         "ref": "TXG18154",
         "name": "文雅里",
-        "name_en": null,
+        "name_en": "Wenya Village",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "3187"
       },
       "geometry": {
         "type": "Point",
@@ -1953,8 +2659,9 @@
         "name": "中清雅潭路口",
         "name_en": "Zhongqing-Yatan Intersection",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "2551"
       },
       "geometry": {
         "type": "Point",
@@ -1972,8 +2679,9 @@
         "name": "大華國中(學府路)",
         "name_en": "Dahwa Junior High School(Xuefu Road)",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "4637"
       },
       "geometry": {
         "type": "Point",
@@ -1989,10 +2697,11 @@
         "feature_type": "station",
         "ref": "TXG7231",
         "name": "大雅",
-        "name_en": null,
+        "name_en": "Daya",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "1330"
       },
       "geometry": {
         "type": "Point",
@@ -2008,10 +2717,11 @@
         "feature_type": "station",
         "ref": "TXG14299",
         "name": "玉山銀行大雅分行",
-        "name_en": null,
+        "name_en": "Esun Bank Daya Branch",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "2740"
       },
       "geometry": {
         "type": "Point",
@@ -2027,10 +2737,11 @@
         "feature_type": "station",
         "ref": "TXG5281",
         "name": "大榮橋",
-        "name_en": null,
+        "name_en": "Darong Bridge",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "5369"
       },
       "geometry": {
         "type": "Point",
@@ -2048,8 +2759,9 @@
         "name": "雅洲新城",
         "name_en": "Yazhou Community",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "5949"
       },
       "geometry": {
         "type": "Point",
@@ -2065,10 +2777,11 @@
         "feature_type": "station",
         "ref": "TXG23415",
         "name": "達聲",
-        "name_en": null,
+        "name_en": "Dasheng",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "6026"
       },
       "geometry": {
         "type": "Point",
@@ -2084,10 +2797,11 @@
         "feature_type": "station",
         "ref": "TXG5156",
         "name": "下楓樹腳",
-        "name_en": null,
+        "name_en": "Xia Fengshujiao",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "5275"
       },
       "geometry": {
         "type": "Point",
@@ -2103,10 +2817,11 @@
         "feature_type": "station",
         "ref": "TXG20560",
         "name": "楓樹腳(上楓國小)",
-        "name_en": null,
+        "name_en": "Fengshujiao(Shangfong Elementary School)",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "4636"
       },
       "geometry": {
         "type": "Point",
@@ -2122,10 +2837,11 @@
         "feature_type": "station",
         "ref": "TXG6589",
         "name": "億鴻新村",
-        "name_en": null,
+        "name_en": "Yihong Community",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "6058"
       },
       "geometry": {
         "type": "Point",
@@ -2141,10 +2857,11 @@
         "feature_type": "station",
         "ref": "TXG5499",
         "name": "牛埔仔",
-        "name_en": null,
+        "name_en": "Niupuzi",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "5458"
       },
       "geometry": {
         "type": "Point",
@@ -2160,10 +2877,11 @@
         "feature_type": "station",
         "ref": "TXG14298",
         "name": "三采幼稚園",
-        "name_en": null,
+        "name_en": "Sancai Kindergarten",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "2739"
       },
       "geometry": {
         "type": "Point",
@@ -2179,10 +2897,11 @@
         "feature_type": "station",
         "ref": "TXG6287",
         "name": "頂牛埔",
-        "name_en": null,
+        "name_en": "Dingniupu",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "5906"
       },
       "geometry": {
         "type": "Point",
@@ -2198,10 +2917,11 @@
         "feature_type": "station",
         "ref": "TXG5945",
         "name": "社南廟",
-        "name_en": null,
+        "name_en": "Shenan Temple",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "5714"
       },
       "geometry": {
         "type": "Point",
@@ -2219,8 +2939,9 @@
         "name": "社口",
         "name_en": "Shekou",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "1656"
       },
       "geometry": {
         "type": "Point",
@@ -2238,8 +2959,9 @@
         "name": "紅瓦厝口",
         "name_en": "Hongwacuokuo",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "1659"
       },
       "geometry": {
         "type": "Point",
@@ -2257,8 +2979,9 @@
         "name": "望寮",
         "name_en": "Wangliao",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "1493"
       },
       "geometry": {
         "type": "Point",
@@ -2276,8 +2999,9 @@
         "name": "岸裡國小",
         "name_en": "Anli Elementary School",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "837"
       },
       "geometry": {
         "type": "Point",
@@ -2295,8 +3019,9 @@
         "name": "臺豐社區",
         "name_en": "Taifeng Community",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "1497"
       },
       "geometry": {
         "type": "Point",
@@ -2314,8 +3039,9 @@
         "name": "社皮鐵路巷",
         "name_en": "Shepi Railway Lane",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "1498"
       },
       "geometry": {
         "type": "Point",
@@ -2333,8 +3059,9 @@
         "name": "忠勤新村(豐原運動中心)",
         "name_en": "Zhongqin Community(Fengyuan Sport Center)",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "1500"
       },
       "geometry": {
         "type": "Point",
@@ -2352,8 +3079,9 @@
         "name": "三光新村",
         "name_en": "Sanguang Community",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "1645"
       },
       "geometry": {
         "type": "Point",
@@ -2371,8 +3099,9 @@
         "name": "中正圓環西路口",
         "name_en": "Zhongzheng-Yuanhuan W. Intersection",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "1651"
       },
       "geometry": {
         "type": "Point",
@@ -2390,8 +3119,9 @@
         "name": "慈龍寺",
         "name_en": "Cilong Temple",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "1503"
       },
       "geometry": {
         "type": "Point",
@@ -2409,8 +3139,9 @@
         "name": "臺灣企銀(豐原郵局)",
         "name_en": "Taiwan Business Bank(Fengyuan Post Office)",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "840"
       },
       "geometry": {
         "type": "Point",
@@ -2428,8 +3159,9 @@
         "name": "媽祖廟",
         "name_en": "Mazu Temple",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "1288"
       },
       "geometry": {
         "type": "Point",
@@ -2445,10 +3177,11 @@
         "feature_type": "station",
         "ref": "TXG17379",
         "name": "豐原轉運中心(第4月台)",
-        "name_en": null,
+        "name_en": "Fengyuan Transfer Center(Platform 4)",
         "line": "220繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "10844"
       },
       "geometry": {
         "type": "Point",

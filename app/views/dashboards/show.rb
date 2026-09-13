@@ -842,7 +842,8 @@ module Views
           city_id: city.id,
           operator_id: operator["id"]
         )
-        label = localized_operator_name(operator)
+        name = localized_operator_name(operator)
+        label = bus_operator_fold_label(city, name, operator_routes)
 
         render RubyUI::Collapsible.new(
           open: false,
@@ -881,6 +882,19 @@ module Views
             end
           end
         end
+      end
+
+      def bus_operator_fold_label(city, name, routes)
+        return name unless city.id.to_s == "InterCity"
+
+        ranges = Geojson::BusCatalog.operator_ref_ranges(routes)
+        return name if ranges.empty?
+
+        t(
+          "map.bus.operator_with_ranges",
+          name: name,
+          ranges: ranges.join(t("map.bus.range_sep"))
+        )
       end
 
       # Defer ~thousands of bus checkbox rows until a band/operator fold opens.
@@ -1181,12 +1195,14 @@ module Views
       end
 
       def bus_operator_search_text(city, operator, routes)
+        ranges = city.id.to_s == "InterCity" ? Geojson::BusCatalog.operator_ref_ranges(routes) : []
         [
           t("map.bus.cities.#{city.id}"),
           city.id,
           operator["name"],
           operator["name_en"],
           operator["id"],
+          *ranges,
           *Array(routes).filter_map { |route| route["ref"] }
         ].compact.join(" ")
       end

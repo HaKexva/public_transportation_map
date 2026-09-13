@@ -6,7 +6,7 @@
     "name": "205中華幹線",
     "name_en": "205中華幹線",
     "ref": "205中華幹線",
-    "color": "#9f1239",
+    "color": "#9a3412",
     "city_id": "Kaohsiung",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ibus.tbkc.gov.tw/cms/api/route/114/map/1597/image",
@@ -22,7 +22,7 @@
         "ref": "205中華幹線",
         "name": "205中華幹線",
         "name_en": "205中華幹線",
-        "color": "#9f1239",
+        "color": "#9a3412",
         "direction": 0
       },
       "geometry": {
@@ -253,20 +253,32 @@
             22.67272
           ],
           [
-            120.28648,
-            22.67264
+            120.28635947545163,
+            22.67244610218158
           ],
           [
-            120.28636,
-            22.67252
+            120.28635073423277,
+            22.67242844580933
           ],
           [
-            120.28636,
-            22.67238
+            120.28634546430803,
+            22.672409298259506
           ],
           [
-            120.28642,
-            22.67225
+            120.28634401757704,
+            22.672389580197493
+          ],
+          [
+            120.28634644199178,
+            22.672369945179856
+          ],
+          [
+            120.2863526571949,
+            22.672351044010654
+          ],
+          [
+            120.28636225655474,
+            22.67233379498578
           ],
           [
             120.28651,
@@ -397,12 +409,32 @@
             22.63846
           ],
           [
-            120.29291,
-            22.63682
+            120.29286031620565,
+            22.636950236455988
           ],
           [
-            120.29369,
-            22.63709
+            120.29287398753573,
+            22.636925238239836
+          ],
+          [
+            120.29289389584004,
+            22.63690448679244
+          ],
+          [
+            120.292918822162,
+            22.636889116160003
+          ],
+          [
+            120.29294713145111,
+            22.63688013458434
+          ],
+          [
+            120.29297696675005,
+            22.63687813121493
+          ],
+          [
+            120.2930066005282,
+            22.636883306813658
           ],
           [
             120.29612,
@@ -417,32 +449,64 @@
             22.63787
           ],
           [
-            120.30211,
-            22.63779
+            120.3022211438975,
+            22.637783788017156
           ],
           [
-            120.30226,
-            22.63773
+            120.30225103089977,
+            22.637778420711584
           ],
           [
-            120.30232,
-            22.63766
+            120.30227845171245,
+            22.637766032384864
           ],
           [
-            120.3023,
-            22.63719
+            120.30230148876964,
+            22.637747469945552
+          ],
+          [
+            120.30231857226777,
+            22.637723998285416
+          ],
+          [
+            120.30232853809383,
+            22.637697216822993
+          ],
+          [
+            120.30233071013468,
+            22.637668995726962
           ],
           [
             120.30226,
             22.63657
           ],
           [
-            120.30217,
-            22.63533
+            120.3021266186641,
+            22.63472835592488
           ],
           [
-            120.30211,
-            22.63462
+            120.30212058435774,
+            22.634700436916386
+          ],
+          [
+            120.3021069770897,
+            22.634674979338797
+          ],
+          [
+            120.30208672621335,
+            22.63465367791112
+          ],
+          [
+            120.30206122027853,
+            22.634637993216735
+          ],
+          [
+            120.30203220816071,
+            22.634629000714256
+          ],
+          [
+            120.3020016201392,
+            22.634627320974644
           ],
           [
             120.30047,
@@ -606,12 +670,16 @@
         "ref": "205中華幹線",
         "name": "205中華幹線",
         "name_en": "205中華幹線",
-        "color": "#9f1239",
+        "color": "#9a3412",
         "direction": 1
       },
       "geometry": {
         "type": "LineString",
         "coordinates": [
+          [
+            120.30509,
+            22.5951
+          ],
           [
             120.30442,
             22.59683
@@ -631,23 +699,111 @@
           [
             120.30347,
             22.60211
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "route",
-        "ref": "205中華幹線",
-        "name": "205中華幹線",
-        "name_en": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 1
-      },
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
+          ],
+          [
+            120.30598254196994,
+            22.602951396679014
+          ],
+          [
+            120.30600945395724,
+            22.602964366704853
+          ],
+          [
+            120.30603203737961,
+            22.602983526622896
+          ],
+          [
+            120.30604849709391,
+            22.603007479884283
+          ],
+          [
+            120.3060577046755,
+            22.603034584331052
+          ],
+          [
+            120.30605902888237,
+            22.603062981770197
+          ],
+          [
+            120.30605246929282,
+            22.603090494648246
+          ],
+          [
+            120.3049,
+            22.60602
+          ],
+          [
+            120.30424,
+            22.60779
+          ],
+          [
+            120.30309,
+            22.61075
+          ],
+          [
+            120.30229,
+            22.61287
+          ],
+          [
+            120.30166,
+            22.61447
+          ],
+          [
+            120.30052,
+            22.61736
+          ],
+          [
+            120.29897,
+            22.62138
+          ],
+          [
+            120.29883,
+            22.62178
+          ],
+          [
+            120.29826,
+            22.62324
+          ],
+          [
+            120.29753,
+            22.62515
+          ],
+          [
+            120.29727,
+            22.62588
+          ],
+          [
+            120.29631,
+            22.62828
+          ],
+          [
+            120.29572,
+            22.62976
+          ],
+          [
+            120.2952,
+            22.63125
+          ],
+          [
+            120.29461,
+            22.63276
+          ],
+          [
+            120.29547,
+            22.63305
+          ],
+          [
+            120.29661,
+            22.63345
+          ],
+          [
+            120.29794,
+            22.63386
+          ],
+          [
+            120.30047,
+            22.63471
+          ],
           [
             120.30317,
             22.63451
@@ -667,6 +823,418 @@
           [
             120.30331,
             22.63771
+          ],
+          [
+            120.30195,
+            22.6378
+          ],
+          [
+            120.3007,
+            22.63789
+          ],
+          [
+            120.29645,
+            22.63787
+          ],
+          [
+            120.29403,
+            22.6372
+          ],
+          [
+            120.29299,
+            22.63688
+          ],
+          [
+            120.29186,
+            22.63975
+          ],
+          [
+            120.29182,
+            22.64029
+          ],
+          [
+            120.29169,
+            22.64153
+          ],
+          [
+            120.29165,
+            22.64228
+          ],
+          [
+            120.29173,
+            22.64375
+          ],
+          [
+            120.29183,
+            22.64598
+          ],
+          [
+            120.29206,
+            22.65123
+          ],
+          [
+            120.29213,
+            22.653
+          ],
+          [
+            120.29224,
+            22.65472
+          ],
+          [
+            120.29244,
+            22.65891
+          ],
+          [
+            120.29257,
+            22.66116
+          ],
+          [
+            120.2926,
+            22.66245
+          ],
+          [
+            120.29268,
+            22.66362
+          ],
+          [
+            120.29267,
+            22.66404
+          ],
+          [
+            120.29263,
+            22.66432
+          ],
+          [
+            120.29255,
+            22.66462
+          ],
+          [
+            120.29245,
+            22.66489
+          ],
+          [
+            120.29218,
+            22.66536
+          ],
+          [
+            120.29194,
+            22.66566
+          ],
+          [
+            120.29158,
+            22.66603
+          ],
+          [
+            120.2905,
+            22.66674
+          ],
+          [
+            120.28991,
+            22.66702
+          ],
+          [
+            120.28904,
+            22.66748
+          ],
+          [
+            120.28728,
+            22.66854
+          ],
+          [
+            120.28701,
+            22.66876
+          ],
+          [
+            120.28679,
+            22.66901
+          ],
+          [
+            120.28665,
+            22.66939
+          ],
+          [
+            120.28666,
+            22.67015
+          ],
+          [
+            120.28664,
+            22.67097
+          ],
+          [
+            120.2866,
+            22.67213
+          ],
+          [
+            120.28675650362482,
+            22.6723739889871
+          ],
+          [
+            120.28676496174654,
+            22.672390236935428
+          ],
+          [
+            120.2867704772154,
+            22.672407890827596
+          ],
+          [
+            120.28677270805655,
+            22.672426156368882
+          ],
+          [
+            120.28677159030121,
+            22.672444509799497
+          ],
+          [
+            120.28676715600074,
+            22.67246242483944
+          ],
+          [
+            120.28675968710134,
+            22.672479110701143
+          ],
+          [
+            120.28663,
+            22.67271
+          ],
+          [
+            120.28666,
+            22.67439
+          ],
+          [
+            120.28669,
+            22.67529
+          ],
+          [
+            120.28665,
+            22.67547
+          ],
+          [
+            120.287,
+            22.67708
+          ],
+          [
+            120.28746,
+            22.67966
+          ],
+          [
+            120.28764,
+            22.6808
+          ],
+          [
+            120.28818,
+            22.68198
+          ],
+          [
+            120.28932,
+            22.68428
+          ],
+          [
+            120.28993,
+            22.68561
+          ],
+          [
+            120.29009,
+            22.68578
+          ],
+          [
+            120.29028,
+            22.68592
+          ],
+          [
+            120.29109,
+            22.68626
+          ],
+          [
+            120.29157,
+            22.68647
+          ],
+          [
+            120.29244,
+            22.68683
+          ],
+          [
+            120.29297,
+            22.68707
+          ],
+          [
+            120.29344,
+            22.68744
+          ],
+          [
+            120.29378,
+            22.68788
+          ],
+          [
+            120.29414,
+            22.68838
+          ],
+          [
+            120.29485,
+            22.68894
+          ],
+          [
+            120.29562,
+            22.68984
+          ],
+          [
+            120.29588,
+            22.69012
+          ],
+          [
+            120.29622,
+            22.69039
+          ],
+          [
+            120.29673,
+            22.69069
+          ],
+          [
+            120.29724,
+            22.69097
+          ],
+          [
+            120.29748,
+            22.69113
+          ],
+          [
+            120.29767,
+            22.69138
+          ],
+          [
+            120.29939,
+            22.69389
+          ],
+          [
+            120.30098,
+            22.69621
+          ],
+          [
+            120.30209,
+            22.69782
+          ],
+          [
+            120.30236,
+            22.69825
+          ],
+          [
+            120.30269,
+            22.6988
+          ],
+          [
+            120.30283,
+            22.699
+          ],
+          [
+            120.30272,
+            22.69925
+          ],
+          [
+            120.3027,
+            22.69945
+          ],
+          [
+            120.30262,
+            22.70105
+          ],
+          [
+            120.30257,
+            22.7022
+          ],
+          [
+            120.30254,
+            22.7033
+          ],
+          [
+            120.30247,
+            22.70563
+          ],
+          [
+            120.30239,
+            22.70796
+          ],
+          [
+            120.29999,
+            22.7079
+          ],
+          [
+            120.29969,
+            22.70793
+          ],
+          [
+            120.29931,
+            22.70803
+          ],
+          [
+            120.29891,
+            22.70817
+          ],
+          [
+            120.29842,
+            22.7084
+          ],
+          [
+            120.29782,
+            22.7088
+          ],
+          [
+            120.29738,
+            22.70918
+          ],
+          [
+            120.29696,
+            22.70957
+          ],
+          [
+            120.29613,
+            22.71049
+          ],
+          [
+            120.29448,
+            22.7123
+          ],
+          [
+            120.29433,
+            22.71256
+          ],
+          [
+            120.29388,
+            22.7138
+          ],
+          [
+            120.29312,
+            22.71561
+          ],
+          [
+            120.29277,
+            22.71644
+          ],
+          [
+            120.29411,
+            22.71696
+          ],
+          [
+            120.29473,
+            22.71726
+          ],
+          [
+            120.29609,
+            22.71811
+          ],
+          [
+            120.29746,
+            22.71857
+          ],
+          [
+            120.2986,
+            22.71896
+          ],
+          [
+            120.29868,
+            22.719
+          ],
+          [
+            120.29887,
+            22.71907
           ]
         ]
       }
@@ -679,8 +1247,9 @@
         "name": "加昌站",
         "name_en": "Jiachang Station",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "374"
       },
       "geometry": {
         "type": "Point",
@@ -698,8 +1267,9 @@
         "name": "亞洲托兒所",
         "name_en": "Asian Child-Care Centre",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "3067"
       },
       "geometry": {
         "type": "Point",
@@ -717,8 +1287,9 @@
         "name": "加宏路",
         "name_en": "Jiahong Rd.",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "3065"
       },
       "geometry": {
         "type": "Point",
@@ -736,8 +1307,9 @@
         "name": "加宏路口",
         "name_en": "Jiahong Rd. Intersection",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "633"
       },
       "geometry": {
         "type": "Point",
@@ -755,8 +1327,9 @@
         "name": "慈愛大樓",
         "name_en": "Cihai Building",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "3063"
       },
       "geometry": {
         "type": "Point",
@@ -774,8 +1347,9 @@
         "name": "莒光國小",
         "name_en": "ChuKuang Elementary School",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "3061"
       },
       "geometry": {
         "type": "Point",
@@ -793,8 +1367,9 @@
         "name": "莒光新村(後昌路)",
         "name_en": "Jyuguang New Village(Houchang Rd.)",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "3059"
       },
       "geometry": {
         "type": "Point",
@@ -812,8 +1387,9 @@
         "name": "後昌路(左楠路口)",
         "name_en": "Houchang Rd.(Zuonan Rd. Intersection)",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "3057"
       },
       "geometry": {
         "type": "Point",
@@ -831,8 +1407,9 @@
         "name": "煉油廠(捷運世運站)",
         "name_en": "Refinery(MRT World Game Station)",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "3055"
       },
       "geometry": {
         "type": "Point",
@@ -850,8 +1427,9 @@
         "name": "祥和山莊",
         "name_en": "Sianghe Villa",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "3053"
       },
       "geometry": {
         "type": "Point",
@@ -869,8 +1447,9 @@
         "name": "復興新村",
         "name_en": "Fusing New Village",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "3051"
       },
       "geometry": {
         "type": "Point",
@@ -888,8 +1467,9 @@
         "name": "半屏山(左營大路)",
         "name_en": "Banpingshan(Zuoying Avenue)",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "3049"
       },
       "geometry": {
         "type": "Point",
@@ -907,8 +1487,9 @@
         "name": "菜公路口(左營大路)",
         "name_en": "Caigong Rd. Intersection(Zuoying Avenue)",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "706"
       },
       "geometry": {
         "type": "Point",
@@ -926,8 +1507,9 @@
         "name": "豐穀宮(進學路口)",
         "name_en": "Fonggu Temple(Jinsyue Rd.Intersection)",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "704"
       },
       "geometry": {
         "type": "Point",
@@ -945,8 +1527,9 @@
         "name": "左營市場",
         "name_en": "Zuoying Market",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "3046"
       },
       "geometry": {
         "type": "Point",
@@ -964,8 +1547,9 @@
         "name": "左營大路",
         "name_en": "Zuoying Avenue",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "702"
       },
       "geometry": {
         "type": "Point",
@@ -983,8 +1567,9 @@
         "name": "店仔頂路口",
         "name_en": "Dianzihding Rd. Intersection",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "700"
       },
       "geometry": {
         "type": "Point",
@@ -1002,8 +1587,9 @@
         "name": "左營農會",
         "name_en": "Zuoying Farmers' Association",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "698"
       },
       "geometry": {
         "type": "Point",
@@ -1021,8 +1607,9 @@
         "name": "左營南站",
         "name_en": "Zuoying South Station",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "1469"
       },
       "geometry": {
         "type": "Point",
@@ -1040,8 +1627,9 @@
         "name": "海青工商",
         "name_en": "Haicing Vocational High School",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "1471"
       },
       "geometry": {
         "type": "Point",
@@ -1059,8 +1647,9 @@
         "name": "果貿社區",
         "name_en": "Guomao Community",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "2001"
       },
       "geometry": {
         "type": "Point",
@@ -1078,8 +1667,9 @@
         "name": "臺鐵內惟站(中華一路)",
         "name_en": "TRA Neiwei Station(Jhonghya 1st Rd.)",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "5837"
       },
       "geometry": {
         "type": "Point",
@@ -1097,8 +1687,9 @@
         "name": "明誠中學",
         "name_en": "St. Paul's High School",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "1473"
       },
       "geometry": {
         "type": "Point",
@@ -1116,8 +1707,9 @@
         "name": "明誠路口(中華一路)",
         "name_en": "Mingcheng Rd. Intersection(Jhonghua 1st Rd.)",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "2087"
       },
       "geometry": {
         "type": "Point",
@@ -1135,8 +1727,9 @@
         "name": "美術東五路口",
         "name_en": "Art E. 5th Rd. Intersection",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "2420"
       },
       "geometry": {
         "type": "Point",
@@ -1154,8 +1747,9 @@
         "name": "市立聯合醫院",
         "name_en": "Kaohsiung Municipal United Hospital",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "261"
       },
       "geometry": {
         "type": "Point",
@@ -1173,8 +1767,9 @@
         "name": "龍子里",
         "name_en": "Longzih Village",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "3716"
       },
       "geometry": {
         "type": "Point",
@@ -1192,8 +1787,9 @@
         "name": "變電所(中華二路)",
         "name_en": "Electrical Substation(Jhonghua 2nd Rd.)",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "3718"
       },
       "geometry": {
         "type": "Point",
@@ -1211,8 +1807,9 @@
         "name": "九如三路口",
         "name_en": "Jiouru 3rd Rd. Intersection",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "3720"
       },
       "geometry": {
         "type": "Point",
@@ -1230,8 +1827,9 @@
         "name": "三鳳中街",
         "name_en": "Sanfongjhong St.",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "2577"
       },
       "geometry": {
         "type": "Point",
@@ -1249,8 +1847,9 @@
         "name": "高雄中學",
         "name_en": "Kaohsiung Senior High School",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "2080"
       },
       "geometry": {
         "type": "Point",
@@ -1268,8 +1867,9 @@
         "name": "高雄車站(中山路)",
         "name_en": "Kaohsiung Main Station(Jhongshan Rd.)",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "5766"
       },
       "geometry": {
         "type": "Point",
@@ -1287,8 +1887,9 @@
         "name": "七賢二路",
         "name_en": "Cisian 2nd Rd.",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "1152"
       },
       "geometry": {
         "type": "Point",
@@ -1306,8 +1907,9 @@
         "name": "自立路口",
         "name_en": "Zihli Rd. Intersection",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "2278"
       },
       "geometry": {
         "type": "Point",
@@ -1325,8 +1927,9 @@
         "name": "中華路口(七賢二路)",
         "name_en": "Jhonghua Rd. Intersection(Cisian 2nd Rd.)",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "3021"
       },
       "geometry": {
         "type": "Point",
@@ -1344,8 +1947,9 @@
         "name": "六合二路口",
         "name_en": "Liouhe 2nd Rd. Intersection",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "3338"
       },
       "geometry": {
         "type": "Point",
@@ -1363,8 +1967,9 @@
         "name": "小圓環",
         "name_en": "Small Traffic Circle",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "3340"
       },
       "geometry": {
         "type": "Point",
@@ -1382,8 +1987,9 @@
         "name": "大同醫院",
         "name_en": "Kaohsiung Municipal Tatung Hospital",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "3342"
       },
       "geometry": {
         "type": "Point",
@@ -1401,8 +2007,9 @@
         "name": "中央公園",
         "name_en": "Central Park",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "3344"
       },
       "geometry": {
         "type": "Point",
@@ -1420,8 +2027,9 @@
         "name": "新田路口(中華四路)",
         "name_en": "Sintian Rd. Intersection(Jhonghua 4th Rd.)",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "4089"
       },
       "geometry": {
         "type": "Point",
@@ -1439,8 +2047,9 @@
         "name": "苓雅路口(中華四路)",
         "name_en": "Lingya Rd. Intersection(Jhonghua 4th Rd.)",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "4091"
       },
       "geometry": {
         "type": "Point",
@@ -1458,8 +2067,9 @@
         "name": "苓洲國小(中華四路)",
         "name_en": "Ling Jhou Elementary School(Jhonghua 4th Rd.)",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "4095"
       },
       "geometry": {
         "type": "Point",
@@ -1477,8 +2087,9 @@
         "name": "三多四路口",
         "name_en": "Sanduo 4th Rd. Intersection",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "421"
       },
       "geometry": {
         "type": "Point",
@@ -1496,8 +2107,9 @@
         "name": "新光路口(圖書總館)",
         "name_en": "Singuang Rd. Intersection(Public Library)",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "419"
       },
       "geometry": {
         "type": "Point",
@@ -1515,8 +2127,9 @@
         "name": "中華五路",
         "name_en": "Jhonghua 5th Rd.",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "417"
       },
       "geometry": {
         "type": "Point",
@@ -1534,8 +2147,9 @@
         "name": "中華復興路口",
         "name_en": "Jhonghua Fusing Rd. Intersection",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "415"
       },
       "geometry": {
         "type": "Point",
@@ -1553,8 +2167,9 @@
         "name": "正勤社區(中華五路)",
         "name_en": "Jhengcin Community(Jhonghua 5th Rd.)",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "4097"
       },
       "geometry": {
         "type": "Point",
@@ -1572,8 +2187,9 @@
         "name": "夢時代(中華)",
         "name_en": "Dream Mall(Jhonghua)",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "4805"
       },
       "geometry": {
         "type": "Point",
@@ -1591,8 +2207,9 @@
         "name": "南訓中心(凱旋四路)",
         "name_en": "Southern Vocational Training Center(Kaisyuan 4th Rd.)",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "4006"
       },
       "geometry": {
         "type": "Point",
@@ -1610,8 +2227,9 @@
         "name": "輕軌夢時代站(統一時代百貨)",
         "name_en": "LRT Dream Mall Station(Uni-Ustyle Department Store)",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "2073"
       },
       "geometry": {
         "type": "Point",
@@ -1629,8 +2247,9 @@
         "name": "輕軌夢時代站(統一時代百貨)",
         "name_en": "LRT Dream Mall Station(Uni-Ustyle Department Store)",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "2073"
       },
       "geometry": {
         "type": "Point",
@@ -1648,8 +2267,9 @@
         "name": "台糖物流",
         "name_en": "Taiwan Sugar Logistics Park",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "3722"
       },
       "geometry": {
         "type": "Point",
@@ -1667,8 +2287,9 @@
         "name": "輕軌經貿園區站",
         "name_en": "LRT Commerce and Trade Park",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "3725"
       },
       "geometry": {
         "type": "Point",
@@ -1686,8 +2307,9 @@
         "name": "正勤路",
         "name_en": "Jhengcin Rd.",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "410"
       },
       "geometry": {
         "type": "Point",
@@ -1705,8 +2327,9 @@
         "name": "正勤社區",
         "name_en": "Jhengcin Community",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "412"
       },
       "geometry": {
         "type": "Point",
@@ -1724,8 +2347,9 @@
         "name": "中華復興路口",
         "name_en": "Jhonghua Fusing Rd. Intersection",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "414"
       },
       "geometry": {
         "type": "Point",
@@ -1743,8 +2367,9 @@
         "name": "中華五路",
         "name_en": "Jhonghua 5th Rd.",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "416"
       },
       "geometry": {
         "type": "Point",
@@ -1762,8 +2387,9 @@
         "name": "新光路口(圖書總館)",
         "name_en": "Singuang Rd. Intersection(Public Library)",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "418"
       },
       "geometry": {
         "type": "Point",
@@ -1781,8 +2407,9 @@
         "name": "三多四路口",
         "name_en": "Sanduo 4th Rd. Intersection",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "420"
       },
       "geometry": {
         "type": "Point",
@@ -1800,8 +2427,9 @@
         "name": "苓洲國小(中華四路)",
         "name_en": "Ling Jhou Elementary School(Jhonghua 4th Rd.)",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "4096"
       },
       "geometry": {
         "type": "Point",
@@ -1819,8 +2447,9 @@
         "name": "苓雅路口(中華四路)",
         "name_en": "Lingya Rd. Intersection(Jhonghua 4th Rd.)",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "4092"
       },
       "geometry": {
         "type": "Point",
@@ -1838,8 +2467,9 @@
         "name": "新田路口(中華四路)",
         "name_en": "Sintian Rd. Intersection(Jhonghua 4th Rd.)",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "4090"
       },
       "geometry": {
         "type": "Point",
@@ -1857,8 +2487,9 @@
         "name": "中央公園",
         "name_en": "Central Park",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "3345"
       },
       "geometry": {
         "type": "Point",
@@ -1876,8 +2507,9 @@
         "name": "大同醫院",
         "name_en": "Kaohsiung Municipal Tatung Hospital",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "3343"
       },
       "geometry": {
         "type": "Point",
@@ -1895,8 +2527,9 @@
         "name": "小圓環",
         "name_en": "Small Traffic Circle",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "3341"
       },
       "geometry": {
         "type": "Point",
@@ -1914,8 +2547,9 @@
         "name": "六合二路口",
         "name_en": "Liouhe 2nd Rd. Intersection",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "3339"
       },
       "geometry": {
         "type": "Point",
@@ -1933,8 +2567,9 @@
         "name": "中華路口(七賢二路)",
         "name_en": "Jhonghua Rd. Intersection(Cisian 2nd Rd.)",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "3022"
       },
       "geometry": {
         "type": "Point",
@@ -1952,8 +2587,9 @@
         "name": "自立路口",
         "name_en": "Zihli Rd. Intersection",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "2279"
       },
       "geometry": {
         "type": "Point",
@@ -1971,8 +2607,9 @@
         "name": "七賢二路",
         "name_en": "Cisian 2nd Rd.",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "1153"
       },
       "geometry": {
         "type": "Point",
@@ -1990,8 +2627,9 @@
         "name": "中山一路口",
         "name_en": "Jhongshan 1st Rd. Intersection",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "1978"
       },
       "geometry": {
         "type": "Point",
@@ -2009,8 +2647,9 @@
         "name": "建國林森路口",
         "name_en": "Jianguo Linsen Intersection",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "258"
       },
       "geometry": {
         "type": "Point",
@@ -2028,8 +2667,9 @@
         "name": "高雄車站(建國路)",
         "name_en": "Kaohsiung Main Station(Jianguo Rd.)",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "883"
       },
       "geometry": {
         "type": "Point",
@@ -2047,8 +2687,9 @@
         "name": "高雄中學",
         "name_en": "Kaohsiung Senior High School",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "2079"
       },
       "geometry": {
         "type": "Point",
@@ -2066,8 +2707,9 @@
         "name": "三鳳中街",
         "name_en": "Sanfongjhong St.",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "2578"
       },
       "geometry": {
         "type": "Point",
@@ -2085,8 +2727,9 @@
         "name": "臺鐵三塊厝站(中華路)",
         "name_en": "TRA Sankuaicuo Station(Jhonghua Rd.)",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "5572"
       },
       "geometry": {
         "type": "Point",
@@ -2104,8 +2747,9 @@
         "name": "九如三路口",
         "name_en": "Jiouru 3rd Rd. Intersection",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "3721"
       },
       "geometry": {
         "type": "Point",
@@ -2123,8 +2767,9 @@
         "name": "變電所(中華二路)",
         "name_en": "Electrical Substation(Jhonghua 2nd Rd.)",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "3719"
       },
       "geometry": {
         "type": "Point",
@@ -2142,8 +2787,9 @@
         "name": "龍子里",
         "name_en": "Longzih Village",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "3717"
       },
       "geometry": {
         "type": "Point",
@@ -2161,8 +2807,9 @@
         "name": "市立聯合醫院",
         "name_en": "Kaohsiung Municipal United Hospital",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "260"
       },
       "geometry": {
         "type": "Point",
@@ -2180,8 +2827,9 @@
         "name": "美術東五路口",
         "name_en": "Art E. 5th Rd. Intersection",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "2421"
       },
       "geometry": {
         "type": "Point",
@@ -2199,8 +2847,9 @@
         "name": "明誠路口(中華一路)",
         "name_en": "Mingcheng Rd. Intersection(Jhonghua 1st Rd.)",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "2086"
       },
       "geometry": {
         "type": "Point",
@@ -2218,8 +2867,9 @@
         "name": "明誠中學",
         "name_en": "St. Paul's High School",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "1474"
       },
       "geometry": {
         "type": "Point",
@@ -2237,8 +2887,9 @@
         "name": "臺鐵內惟站(中華一路)",
         "name_en": "TRA Neiwei Station(Jhonghya 1st Rd.)",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "5838"
       },
       "geometry": {
         "type": "Point",
@@ -2256,8 +2907,9 @@
         "name": "果貿社區",
         "name_en": "Guomao Community",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "2000"
       },
       "geometry": {
         "type": "Point",
@@ -2275,8 +2927,9 @@
         "name": "海青工商",
         "name_en": "Haicing Vocational High School",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "1472"
       },
       "geometry": {
         "type": "Point",
@@ -2294,8 +2947,9 @@
         "name": "左營南站",
         "name_en": "Zuoying South Station",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "1470"
       },
       "geometry": {
         "type": "Point",
@@ -2313,8 +2967,9 @@
         "name": "左營農會",
         "name_en": "Zuoying Farmers' Association",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "697"
       },
       "geometry": {
         "type": "Point",
@@ -2332,8 +2987,9 @@
         "name": "店仔頂路口",
         "name_en": "Dianzihding Rd. Intersection",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "699"
       },
       "geometry": {
         "type": "Point",
@@ -2351,8 +3007,9 @@
         "name": "左營大路",
         "name_en": "Zuoying Avenue",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "701"
       },
       "geometry": {
         "type": "Point",
@@ -2370,8 +3027,9 @@
         "name": "左營市場",
         "name_en": "Zuoying Market",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "3045"
       },
       "geometry": {
         "type": "Point",
@@ -2389,8 +3047,9 @@
         "name": "豐穀宮(進學路口)",
         "name_en": "Fonggu Temple(Jinsyue Rd.Intersection)",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "703"
       },
       "geometry": {
         "type": "Point",
@@ -2408,8 +3067,9 @@
         "name": "菜公路口(左營大路)",
         "name_en": "Caigong Rd. Intersection(Zuoying Avenue)",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "705"
       },
       "geometry": {
         "type": "Point",
@@ -2427,8 +3087,9 @@
         "name": "半屏山(左營大路)",
         "name_en": "Banpingshan(Zuoying Avenue)",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "3048"
       },
       "geometry": {
         "type": "Point",
@@ -2446,8 +3107,9 @@
         "name": "復興新村",
         "name_en": "Fusing New Village",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "3050"
       },
       "geometry": {
         "type": "Point",
@@ -2465,8 +3127,9 @@
         "name": "祥和山莊",
         "name_en": "Sianghe Villa",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "3052"
       },
       "geometry": {
         "type": "Point",
@@ -2484,8 +3147,9 @@
         "name": "煉油廠(捷運世運站)",
         "name_en": "Refinery(MRT World Game Station)",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "3054"
       },
       "geometry": {
         "type": "Point",
@@ -2503,8 +3167,9 @@
         "name": "後昌路(左楠路口)",
         "name_en": "Houchang Rd.(Zuonan Rd. Intersection)",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "3056"
       },
       "geometry": {
         "type": "Point",
@@ -2522,8 +3187,9 @@
         "name": "莒光新村(後昌路)",
         "name_en": "Jyuguang New Village(Houchang Rd.)",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "3058"
       },
       "geometry": {
         "type": "Point",
@@ -2541,8 +3207,9 @@
         "name": "莒光國小",
         "name_en": "ChuKuang Elementary School",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "3060"
       },
       "geometry": {
         "type": "Point",
@@ -2560,8 +3227,9 @@
         "name": "慈愛大樓",
         "name_en": "Cihai Building",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "3062"
       },
       "geometry": {
         "type": "Point",
@@ -2579,8 +3247,9 @@
         "name": "加宏路口",
         "name_en": "Jiahong Rd. Intersection",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "634"
       },
       "geometry": {
         "type": "Point",
@@ -2598,8 +3267,9 @@
         "name": "加宏路",
         "name_en": "Jiahong Rd.",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "3064"
       },
       "geometry": {
         "type": "Point",
@@ -2617,8 +3287,9 @@
         "name": "亞洲托兒所",
         "name_en": "Asian Child-Care Centre",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "3066"
       },
       "geometry": {
         "type": "Point",
@@ -2636,8 +3307,9 @@
         "name": "加昌站",
         "name_en": "Jiachang Station",
         "line": "205中華幹線",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "374"
       },
       "geometry": {
         "type": "Point",

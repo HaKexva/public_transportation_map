@@ -6,7 +6,7 @@
     "name": "11",
     "name_en": "11",
     "ref": "11",
-    "color": "#9a3412",
+    "color": "#1e3a8a",
     "city_id": "Kaohsiung",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ibus.tbkc.gov.tw/cms/api/route/11/map/1818/image",
@@ -22,7 +22,7 @@
         "ref": "11",
         "name": "11",
         "name_en": "11",
-        "color": "#9a3412",
+        "color": "#1e3a8a",
         "direction": 0
       },
       "geometry": {
@@ -97,12 +97,32 @@
             22.62398
           ],
           [
-            120.34436,
-            22.62489
+            120.34436068374696,
+            22.624869035765883
           ],
           [
-            120.34388,
-            22.62494
+            120.34435536946143,
+            22.624898271057877
+          ],
+          [
+            120.34434175760767,
+            22.624925059869913
+          ],
+          [
+            120.34432086123456,
+            22.624947430224207
+          ],
+          [
+            120.34429423671098,
+            22.624963715969326
+          ],
+          [
+            120.34426386704025,
+            22.624972704137548
+          ],
+          [
+            120.34423193081044,
+            22.624973717306766
           ],
           [
             120.34325,
@@ -193,12 +213,32 @@
             22.62656
           ],
           [
-            120.28293,
-            22.62751
+            120.28289540822976,
+            22.62744868377345
           ],
           [
-            120.28233,
-            22.6278
+            120.28290620301527,
+            22.627476466081642
+          ],
+          [
+            120.28290851937564,
+            22.627506238800095
+          ],
+          [
+            120.28290202455068,
+            22.627535472395863
+          ],
+          [
+            120.28288720961372,
+            22.62756195651851
+          ],
+          [
+            120.28286519472124,
+            22.62758368870511
+          ],
+          [
+            120.28283791690663,
+            22.627598917791765
           ],
           [
             120.28172,
@@ -265,16 +305,60 @@
             22.64616
           ],
           [
-            120.27623,
-            22.65177
+            120.2762616052014,
+            22.65163473560733
           ],
           [
-            120.27906,
-            22.6517
+            120.27625938481795,
+            22.65166718567462
           ],
           [
-            120.27914,
-            22.65185
+            120.27626766893161,
+            22.65169893822754
+          ],
+          [
+            120.27628574351006,
+            22.65172696187709
+          ],
+          [
+            120.27631197131274,
+            22.65174871817097
+          ],
+          [
+            120.27634397655966,
+            22.65176223636965
+          ],
+          [
+            120.27637888204937,
+            22.651766291419758
+          ],
+          [
+            120.27902038626034,
+            22.651700987353482
+          ],
+          [
+            120.2790513818088,
+            22.65170408261184
+          ],
+          [
+            120.27908037345493,
+            22.651714676918377
+          ],
+          [
+            120.27910532101916,
+            22.651732016184685
+          ],
+          [
+            120.27912445004911,
+            22.651754867115937
+          ],
+          [
+            120.27913639994895,
+            22.651781604387573
+          ],
+          [
+            120.27914032070638,
+            22.651810320505
           ],
           [
             120.27912,
@@ -285,12 +369,32 @@
             22.65643
           ],
           [
-            120.27537,
-            22.65645
+            120.27529548212168,
+            22.65645039782875
           ],
           [
-            120.2753,
-            22.65569
+            120.27526182515709,
+            22.65644598160188
+          ],
+          [
+            120.27523096513063,
+            22.656432749796608
+          ],
+          [
+            120.27520550966804,
+            22.656411822523683
+          ],
+          [
+            120.27518761359993,
+            22.656384971297896
+          ],
+          [
+            120.27517879184653,
+            22.656354469102645
+          ],
+          [
+            120.2751797666263,
+            22.656323026699123
           ],
           [
             120.27556,
@@ -306,13 +410,226 @@
     {
       "type": "Feature",
       "properties": {
+        "feature_type": "route",
+        "ref": "11",
+        "name": "11",
+        "name_en": "11",
+        "color": "#1e3a8a",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.27583,
+            22.65309
+          ],
+          [
+            120.27862,
+            22.64146
+          ],
+          [
+            120.27875,
+            22.64091
+          ],
+          [
+            120.27898,
+            22.64053
+          ],
+          [
+            120.27949,
+            22.63979
+          ],
+          [
+            120.28075,
+            22.63702
+          ],
+          [
+            120.28121,
+            22.63597
+          ],
+          [
+            120.28222,
+            22.63518
+          ],
+          [
+            120.28271,
+            22.63431
+          ],
+          [
+            120.2829,
+            22.6338
+          ],
+          [
+            120.28283,
+            22.63342
+          ],
+          [
+            120.28023,
+            22.62932
+          ],
+          [
+            120.28117,
+            22.62877
+          ],
+          [
+            120.28149,
+            22.62841
+          ],
+          [
+            120.28167,
+            22.628050000000002
+          ],
+          [
+            120.28536,
+            22.62631
+          ],
+          [
+            120.28484,
+            22.62542
+          ],
+          [
+            120.28697,
+            22.62436
+          ],
+          [
+            120.28595,
+            22.62241
+          ],
+          [
+            120.28951,
+            22.62064
+          ],
+          [
+            120.29163,
+            22.62064
+          ],
+          [
+            120.29383,
+            22.62065
+          ],
+          [
+            120.29499,
+            22.62102
+          ],
+          [
+            120.29617,
+            22.61796
+          ],
+          [
+            120.30575,
+            22.62117
+          ],
+          [
+            120.31054,
+            22.62274
+          ],
+          [
+            120.31294,
+            22.62355
+          ],
+          [
+            120.31536,
+            22.62432
+          ],
+          [
+            120.31769,
+            22.61826
+          ],
+          [
+            120.32489,
+            22.62059
+          ],
+          [
+            120.32761,
+            22.62152
+          ],
+          [
+            120.33027,
+            22.62238
+          ],
+          [
+            120.33184,
+            22.62293
+          ],
+          [
+            120.33332,
+            22.62357
+          ],
+          [
+            120.33576,
+            22.62383
+          ],
+          [
+            120.3442,
+            22.62486
+          ],
+          [
+            120.34419,
+            22.62387
+          ],
+          [
+            120.34438,
+            22.62289
+          ],
+          [
+            120.34509,
+            22.6216
+          ],
+          [
+            120.34562,
+            22.61741
+          ],
+          [
+            120.34557,
+            22.61526
+          ],
+          [
+            120.34554,
+            22.61418
+          ],
+          [
+            120.34551,
+            22.61311
+          ],
+          [
+            120.34347,
+            22.61294
+          ],
+          [
+            120.34144,
+            22.61284
+          ],
+          [
+            120.33931,
+            22.61279
+          ],
+          [
+            120.3372,
+            22.61266
+          ],
+          [
+            120.3376,
+            22.6097
+          ],
+          [
+            120.33803,
+            22.6066
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "feature_type": "station",
         "ref": "KHH100011321",
         "name": "瑞豐站(武營路)",
         "name_en": "Rueifong Station(Wuying Rd.)",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "3205"
       },
       "geometry": {
         "type": "Point",
@@ -330,8 +647,9 @@
         "name": "北極殿(鳳山)",
         "name_en": "Beiji Temple(Fongshan)",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "3207"
       },
       "geometry": {
         "type": "Point",
@@ -349,8 +667,9 @@
         "name": "紫竹林精舍",
         "name_en": "Violet Bamboo Grove Buddhist Temple",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "3209"
       },
       "geometry": {
         "type": "Point",
@@ -368,8 +687,9 @@
         "name": "新甲國小",
         "name_en": "Hsin  Chya  Elementary School",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "327"
       },
       "geometry": {
         "type": "Point",
@@ -387,8 +707,9 @@
         "name": "鳳新高中",
         "name_en": "FengHsin Senior High School",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "2555"
       },
       "geometry": {
         "type": "Point",
@@ -406,8 +727,9 @@
         "name": "鳳新高中(南京路)",
         "name_en": "FengHsin Senior High School(Nanjing Rd.)",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "2429"
       },
       "geometry": {
         "type": "Point",
@@ -425,8 +747,9 @@
         "name": "衛武營都會公園(南京路)",
         "name_en": "Weiwuying Metropolitan Park(Nanjing Rd.)",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "1046"
       },
       "geometry": {
         "type": "Point",
@@ -444,8 +767,9 @@
         "name": "建軍站(捷運衛武營站)",
         "name_en": "Jianjun Station(MRT Weiwuying Station)",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "74"
       },
       "geometry": {
         "type": "Point",
@@ -463,8 +787,9 @@
         "name": "衛武營國家藝術文化中心(三多路)",
         "name_en": "National Kaohsiung Center for the Arts(Weiwuying)(Sanduo Rd.)",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "2266"
       },
       "geometry": {
         "type": "Point",
@@ -482,8 +807,9 @@
         "name": "衛武營都會公園",
         "name_en": "Wei Wu Ying Metropolitan Park",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "2268"
       },
       "geometry": {
         "type": "Point",
@@ -501,8 +827,9 @@
         "name": "中正體育場",
         "name_en": "Chungjheng Stadium",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "2270"
       },
       "geometry": {
         "type": "Point",
@@ -520,8 +847,9 @@
         "name": "輔仁路口(三多一路)",
         "name_en": "Furen Rd. Intersection(Sanduo 1st Rd.)",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "2272"
       },
       "geometry": {
         "type": "Point",
@@ -539,8 +867,9 @@
         "name": "五塊厝(三多一路)",
         "name_en": "Wukuaicuo(Sanduo 1st Rd.)",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "114"
       },
       "geometry": {
         "type": "Point",
@@ -558,8 +887,9 @@
         "name": "三信家商",
         "name_en": "San Hsin High School?of?Commerce and Home Economics",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "112"
       },
       "geometry": {
         "type": "Point",
@@ -577,8 +907,9 @@
         "name": "國際商工(輕軌五權國小站)",
         "name_en": "Kuochi Senior Vocational High School(LRT Wucyuan Elementry School Station)",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "110"
       },
       "geometry": {
         "type": "Point",
@@ -596,8 +927,9 @@
         "name": "五權國小(三多二路)",
         "name_en": "Wucyuan Elementry School(Sanduo 2nd Rd.)",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "3661"
       },
       "geometry": {
         "type": "Point",
@@ -615,8 +947,9 @@
         "name": "和平路口",
         "name_en": "Heping Rd. Intersection",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "3663"
       },
       "geometry": {
         "type": "Point",
@@ -634,14 +967,15 @@
         "name": "林德官(三和市場)",
         "name_en": "Lindeguan(Sanhe Market)",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "3665"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          120.319803,
-          22.618973
+          120.319791,
+          22.619
         ]
       }
     },
@@ -653,8 +987,9 @@
         "name": "三多二路口(光華夜市)",
         "name_en": "Sanduo 2nd Rd. Intersection(Guanghua Night Market)",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "3911"
       },
       "geometry": {
         "type": "Point",
@@ -672,8 +1007,9 @@
         "name": "四維路口(光華一路)",
         "name_en": "Sihwei Rd. Intersection(Guanghua 1st Rd.)",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "3913"
       },
       "geometry": {
         "type": "Point",
@@ -691,8 +1027,9 @@
         "name": "苓雅一路口",
         "name_en": "Lingya 1st Rd. Intersection",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "3915"
       },
       "geometry": {
         "type": "Point",
@@ -710,8 +1047,9 @@
         "name": "四維國小(青年一路)",
         "name_en": "Sih-Wei Primary School(Cingnian 1st Rd.)",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "3918"
       },
       "geometry": {
         "type": "Point",
@@ -729,8 +1067,9 @@
         "name": "民權路口(青年一路)",
         "name_en": "Mincyuan Rd. Intersection(Cingnian 1st Rd.)",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "3920"
       },
       "geometry": {
         "type": "Point",
@@ -748,8 +1087,9 @@
         "name": "國民市場",
         "name_en": "Guomin Market",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "3922"
       },
       "geometry": {
         "type": "Point",
@@ -767,8 +1107,9 @@
         "name": "青年一路",
         "name_en": "Cingnian 1st Rd.",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "3924"
       },
       "geometry": {
         "type": "Point",
@@ -786,8 +1127,9 @@
         "name": "仁智街口",
         "name_en": "Renjhih St. Intersection",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "3926"
       },
       "geometry": {
         "type": "Point",
@@ -805,8 +1147,9 @@
         "name": "仁德街口(青年二路)",
         "name_en": "Rende St. Intersection(Cingnian 2nd Rd.)",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "3928"
       },
       "geometry": {
         "type": "Point",
@@ -824,8 +1167,9 @@
         "name": "青年二路",
         "name_en": "Cingnian 2nd Rd.",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "3930"
       },
       "geometry": {
         "type": "Point",
@@ -843,8 +1187,9 @@
         "name": "漢神百貨",
         "name_en": "Hanshin Department Store",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "3673"
       },
       "geometry": {
         "type": "Point",
@@ -862,8 +1207,9 @@
         "name": "高雄女中(真愛碼頭)",
         "name_en": "Kaohsiung Girls' Senior High School(Love Pier)",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "333"
       },
       "geometry": {
         "type": "Point",
@@ -881,8 +1227,9 @@
         "name": "大成街口(輕軌真愛碼頭站)",
         "name_en": "Dacheng St. Intersection(LRT Love Pier Station）",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "3907"
       },
       "geometry": {
         "type": "Point",
@@ -900,8 +1247,9 @@
         "name": "大智路口(五福四路)",
         "name_en": "Dajhih Rd. Intersection(Wufu 4th Rd.)",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "3909"
       },
       "geometry": {
         "type": "Point",
@@ -919,8 +1267,9 @@
         "name": "大智路(光榮國小)",
         "name_en": "Dajhih Rd.(Guang-Rong Elementary School)",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "349"
       },
       "geometry": {
         "type": "Point",
@@ -938,8 +1287,9 @@
         "name": "捷運鹽埕埔站(大仁路)",
         "name_en": "MRT Yanchengpu Station(Daren Rd.)",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "2609"
       },
       "geometry": {
         "type": "Point",
@@ -957,8 +1307,9 @@
         "name": "三山國王廟",
         "name_en": "Temple of the Three Mountain-Kings",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "3958"
       },
       "geometry": {
         "type": "Point",
@@ -976,8 +1327,9 @@
         "name": "輕軌文武聖殿站(台電)",
         "name_en": "LRT Wunwu Temple Station(TPC)",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "4494"
       },
       "geometry": {
         "type": "Point",
@@ -995,8 +1347,9 @@
         "name": "鼓山派出所",
         "name_en": "Gushan Police Station",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "4492"
       },
       "geometry": {
         "type": "Point",
@@ -1014,8 +1367,9 @@
         "name": "輕軌鼓山區公所站",
         "name_en": "LRT Gushan District Office Station",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "4490"
       },
       "geometry": {
         "type": "Point",
@@ -1033,8 +1387,9 @@
         "name": "元亨寺(鼓山二路)",
         "name_en": "Yuanheng Temple(Gushan 2nd Rd.)",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "4488"
       },
       "geometry": {
         "type": "Point",
@@ -1052,8 +1407,9 @@
         "name": "臺鐵鼓山站",
         "name_en": "TRA Gushan Station",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "3937"
       },
       "geometry": {
         "type": "Point",
@@ -1071,8 +1427,9 @@
         "name": "鼓山三路",
         "name_en": "Gushan 3rd Rd.",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "4486"
       },
       "geometry": {
         "type": "Point",
@@ -1090,8 +1447,9 @@
         "name": "華安街口",
         "name_en": "Huaan St. Intersection",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "4211"
       },
       "geometry": {
         "type": "Point",
@@ -1109,8 +1467,9 @@
         "name": "鼓山國中",
         "name_en": "Gushan Junior High School",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "4209"
       },
       "geometry": {
         "type": "Point",
@@ -1128,8 +1487,9 @@
         "name": "九如國小",
         "name_en": "Jeou-Ru Primary School",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "3885"
       },
       "geometry": {
         "type": "Point",
@@ -1147,8 +1507,9 @@
         "name": "大榮高中",
         "name_en": "Dah Yung Senior High School",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "289"
       },
       "geometry": {
         "type": "Point",
@@ -1166,8 +1527,9 @@
         "name": "龍泉寺",
         "name_en": "Longcyuan Temple",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "3883"
       },
       "geometry": {
         "type": "Point",
@@ -1185,8 +1547,9 @@
         "name": "鼓山高中",
         "name_en": "Gushan Senior High School",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "3015"
       },
       "geometry": {
         "type": "Point",
@@ -1204,8 +1567,9 @@
         "name": "鼓山高中",
         "name_en": "Gushan Senior High School",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "3015"
       },
       "geometry": {
         "type": "Point",
@@ -1223,8 +1587,9 @@
         "name": "鼓山國中",
         "name_en": "Gushan Junior High School",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "4208"
       },
       "geometry": {
         "type": "Point",
@@ -1242,8 +1607,9 @@
         "name": "華安街口",
         "name_en": "Huaan St. Intersection",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "4210"
       },
       "geometry": {
         "type": "Point",
@@ -1261,8 +1627,9 @@
         "name": "鼓山三路",
         "name_en": "Gushan 3rd Rd.",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "4485"
       },
       "geometry": {
         "type": "Point",
@@ -1280,8 +1647,9 @@
         "name": "臺鐵鼓山站",
         "name_en": "TRA Gushan Station",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "3938"
       },
       "geometry": {
         "type": "Point",
@@ -1299,8 +1667,9 @@
         "name": "元亨寺(鼓山二路)",
         "name_en": "Yuanheng Temple(Gushan 2nd Rd.)",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "4487"
       },
       "geometry": {
         "type": "Point",
@@ -1318,8 +1687,9 @@
         "name": "輕軌鼓山區公所站",
         "name_en": "LRT Gushan District Office Station",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "4489"
       },
       "geometry": {
         "type": "Point",
@@ -1337,8 +1707,9 @@
         "name": "鼓山派出所",
         "name_en": "Gushan Police Station",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "4491"
       },
       "geometry": {
         "type": "Point",
@@ -1356,8 +1727,9 @@
         "name": "輕軌文武聖殿站(台電)",
         "name_en": "LRT Wunwu Temple Station(TPC)",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "4493"
       },
       "geometry": {
         "type": "Point",
@@ -1375,8 +1747,9 @@
         "name": "大公路",
         "name_en": "Dagong Rd.",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "3279"
       },
       "geometry": {
         "type": "Point",
@@ -1394,8 +1767,9 @@
         "name": "歷史博物館(大公路)",
         "name_en": "Kaohsiung Museum of History(Dagong Rd.)",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "82"
       },
       "geometry": {
         "type": "Point",
@@ -1413,8 +1787,9 @@
         "name": "捷運鹽埕埔站(大仁路)",
         "name_en": "MRT Yanchengpu Station(Daren Rd.)",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "2610"
       },
       "geometry": {
         "type": "Point",
@@ -1432,8 +1807,9 @@
         "name": "大智路(光榮國小)",
         "name_en": "Dajhih Rd.(Guang-Rong Elementary School)",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "348"
       },
       "geometry": {
         "type": "Point",
@@ -1451,8 +1827,9 @@
         "name": "大智路口(五福四路)",
         "name_en": "Dajhih Rd. Intersection(Wufu 4th Rd.)",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "3910"
       },
       "geometry": {
         "type": "Point",
@@ -1470,8 +1847,9 @@
         "name": "大成街口(輕軌真愛碼頭站)",
         "name_en": "Dacheng St. Intersection(LRT Love Pier Station）",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "3908"
       },
       "geometry": {
         "type": "Point",
@@ -1489,8 +1867,9 @@
         "name": "高雄女中(真愛碼頭)",
         "name_en": "Kaohsiung Girls' Senior High School(Love Pier)",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "332"
       },
       "geometry": {
         "type": "Point",
@@ -1508,8 +1887,9 @@
         "name": "漢神百貨",
         "name_en": "Hanshin Department Store",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "3674"
       },
       "geometry": {
         "type": "Point",
@@ -1527,8 +1907,9 @@
         "name": "青年二路",
         "name_en": "Cingnian 2nd Rd.",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "3931"
       },
       "geometry": {
         "type": "Point",
@@ -1546,8 +1927,9 @@
         "name": "仁德街口(青年二路)",
         "name_en": "Rende St. Intersection(Cingnian 2nd Rd.)",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "3929"
       },
       "geometry": {
         "type": "Point",
@@ -1565,8 +1947,9 @@
         "name": "仁智街口",
         "name_en": "Renjhih St. Intersection",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "3927"
       },
       "geometry": {
         "type": "Point",
@@ -1584,8 +1967,9 @@
         "name": "青年一路",
         "name_en": "Cingnian 1st Rd.",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "3925"
       },
       "geometry": {
         "type": "Point",
@@ -1603,8 +1987,9 @@
         "name": "國民市場",
         "name_en": "Guomin Market",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "3923"
       },
       "geometry": {
         "type": "Point",
@@ -1622,8 +2007,9 @@
         "name": "民權路口(青年一路)",
         "name_en": "Mincyuan Rd. Intersection(Cingnian 1st Rd.)",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "3921"
       },
       "geometry": {
         "type": "Point",
@@ -1641,8 +2027,9 @@
         "name": "四維國小(青年一路)",
         "name_en": "Sih-Wei Primary School(Cingnian 1st Rd.)",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "3919"
       },
       "geometry": {
         "type": "Point",
@@ -1660,8 +2047,9 @@
         "name": "苓雅一路口",
         "name_en": "Lingya 1st Rd. Intersection",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "3916"
       },
       "geometry": {
         "type": "Point",
@@ -1679,8 +2067,9 @@
         "name": "四維路口(光華一路)",
         "name_en": "Sihwei Rd. Intersection(Guanghua 1st Rd.)",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "3914"
       },
       "geometry": {
         "type": "Point",
@@ -1698,8 +2087,9 @@
         "name": "光華路口(光華夜市)",
         "name_en": "Guanghua Rd. Intersection(Guanghua Night Market)",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "3668"
       },
       "geometry": {
         "type": "Point",
@@ -1717,8 +2107,9 @@
         "name": "林德官(三和市場)",
         "name_en": "Lindeguan(Sanhe Market)",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "3666"
       },
       "geometry": {
         "type": "Point",
@@ -1736,8 +2127,9 @@
         "name": "和平路口",
         "name_en": "Heping Rd. Intersection",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "3664"
       },
       "geometry": {
         "type": "Point",
@@ -1755,8 +2147,9 @@
         "name": "五權國小(三多二路)",
         "name_en": "Wucyuan Elementry School(Sanduo 2nd Rd.)",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "3662"
       },
       "geometry": {
         "type": "Point",
@@ -1774,8 +2167,9 @@
         "name": "國際商工(輕軌五權國小站)",
         "name_en": "Kuochi Senior Vocational High School(LRT Wucyuan Elementry School Station)",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "109"
       },
       "geometry": {
         "type": "Point",
@@ -1793,8 +2187,9 @@
         "name": "三信家商",
         "name_en": "San Hsin High School?of?Commerce and Home Economics",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "111"
       },
       "geometry": {
         "type": "Point",
@@ -1812,8 +2207,9 @@
         "name": "五塊厝(三多一路)",
         "name_en": "Wukuaicuo(Sanduo 1st Rd.)",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "113"
       },
       "geometry": {
         "type": "Point",
@@ -1831,8 +2227,9 @@
         "name": "輔仁路口(三多一路)",
         "name_en": "Furen Rd. Intersection(Sanduo 1st Rd.)",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "2273"
       },
       "geometry": {
         "type": "Point",
@@ -1850,8 +2247,9 @@
         "name": "中正體育場",
         "name_en": "Chungjheng Stadium",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "2271"
       },
       "geometry": {
         "type": "Point",
@@ -1869,8 +2267,9 @@
         "name": "衛武營都會公園",
         "name_en": "Wei Wu Ying Metropolitan Park",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "2269"
       },
       "geometry": {
         "type": "Point",
@@ -1888,8 +2287,9 @@
         "name": "衛武營國家藝術文化中心(三多路)",
         "name_en": "National Kaohsiung Center for the Arts(Weiwuying)(Sanduo Rd.)",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "2267"
       },
       "geometry": {
         "type": "Point",
@@ -1907,8 +2307,9 @@
         "name": "衛武營都會公園(南京路)",
         "name_en": "Wei Wu Ying Metropolitan Park",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "1047"
       },
       "geometry": {
         "type": "Point",
@@ -1926,8 +2327,9 @@
         "name": "鳳新高中(南京路)",
         "name_en": "FengHsin Senior High School(Nanjing Rd.)",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "2430"
       },
       "geometry": {
         "type": "Point",
@@ -1945,8 +2347,9 @@
         "name": "鳳新高中",
         "name_en": "FengHsin Senior High School",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "2556"
       },
       "geometry": {
         "type": "Point",
@@ -1964,8 +2367,9 @@
         "name": "新甲國小",
         "name_en": "Hsin  Chya  Elementary School",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "326"
       },
       "geometry": {
         "type": "Point",
@@ -1983,8 +2387,9 @@
         "name": "紫竹林精舍(新富路)",
         "name_en": "Violet Bamboo Grove Buddhist Temple(Sinfu Rd.)",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "3210"
       },
       "geometry": {
         "type": "Point",
@@ -2002,8 +2407,9 @@
         "name": "北極殿(鳳山)",
         "name_en": "Beiji Temple(Fongshan)",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "3208"
       },
       "geometry": {
         "type": "Point",
@@ -2021,8 +2427,9 @@
         "name": "瑞豐站(武營路)",
         "name_en": "Rueifong Station(Wuying Rd.)",
         "line": "11",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "3206"
       },
       "geometry": {
         "type": "Point",

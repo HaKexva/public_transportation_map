@@ -6,7 +6,7 @@
     "name": "171",
     "name_en": "171",
     "ref": "171",
-    "color": "#65a30d",
+    "color": "#b91c1c",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/3330/map/1280/image",
@@ -22,7 +22,7 @@
         "ref": "171",
         "name": "171",
         "name_en": "171",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0
       },
       "geometry": {
@@ -53,25 +53,33 @@
             24.9553
           ],
           [
-            121.2164,
-            24.9555
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "route",
-        "ref": "171",
-        "name": "171",
-        "name_en": "171",
-        "color": "#65a30d",
-        "direction": 1
-      },
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
+            121.21649550874909,
+            24.95548508798011
+          ],
+          [
+            121.21646844069568,
+            24.955486451493233
+          ],
+          [
+            121.2164418707192,
+            24.955482217191808
+          ],
+          [
+            121.21641702962295,
+            24.955472624202265
+          ],
+          [
+            121.21639519571919,
+            24.955458166175784
+          ],
+          [
+            121.21637749257134,
+            24.955439587116278
+          ],
+          [
+            121.21636472730876,
+            24.95541760156958
+          ],
           [
             121.21518,
             24.95267
@@ -79,38 +87,62 @@
           [
             121.21704,
             24.95448
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "route",
-        "ref": "171",
-        "name": "171",
-        "name_en": "171",
-        "color": "#65a30d",
-        "direction": 1
-      },
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
+          ],
+          [
+            121.2176,
+            24.9551
+          ],
+          [
+            121.2183,
+            24.95829
+          ],
+          [
+            121.22229,
+            24.95775
+          ],
+          [
+            121.22412,
+            24.9571
+          ],
           [
             121.22574,
             24.95643
           ],
           [
-            121.22432,
-            24.95327
+            121.2242788538626,
+            24.953177828062167
           ],
           [
-            121.22404,
-            24.95315
+            121.22426328529335,
+            24.953152949027913
+          ],
+          [
+            121.22424136183425,
+            24.953132818832348
+          ],
+          [
+            121.2242144720119,
+            24.953118566637986
+          ],
+          [
+            121.22418445470437,
+            24.953111167090448
+          ],
+          [
+            121.22415336266484,
+            24.95311112621262
+          ],
+          [
+            121.22412304887537,
+            24.953118550347174
           ],
           [
             121.22335,
             24.95341
+          ],
+          [
+            121.22381,
+            24.95437
           ]
         ]
       }
@@ -123,8 +155,9 @@
         "name": "中壢公車站",
         "name_en": "Zhongli Bus Station",
         "line": "171",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1229"
       },
       "geometry": {
         "type": "Point",
@@ -142,8 +175,9 @@
         "name": "中央延平路口",
         "name_en": "Zhongyang and Yanping Road Intersection",
         "line": "171",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4644"
       },
       "geometry": {
         "type": "Point",
@@ -161,14 +195,15 @@
         "name": "中央新生路口",
         "name_en": "Zhongyang-ShinSheng Road Intersection",
         "line": "171",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "693"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.222643,
-          24.957753
+          121.22264328576595,
+          24.957753143063794
         ]
       }
     },
@@ -180,8 +215,9 @@
         "name": "捷運老街溪站(中央西路)",
         "name_en": "MRT Laojie River Station(Zhongyang W. Rd.)",
         "line": "171",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4477"
       },
       "geometry": {
         "type": "Point",
@@ -199,8 +235,9 @@
         "name": "舊社",
         "name_en": "Jiushe",
         "line": "171",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "217"
       },
       "geometry": {
         "type": "Point",
@@ -218,8 +255,9 @@
         "name": "消防隊",
         "name_en": "Fire Brigade",
         "line": "171",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4549"
       },
       "geometry": {
         "type": "Point",
@@ -237,8 +275,9 @@
         "name": "義民路口",
         "name_en": "Yimin Road Intersection",
         "line": "171",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4547"
       },
       "geometry": {
         "type": "Point",
@@ -256,8 +295,9 @@
         "name": "捷運老街溪站(中央西路)",
         "name_en": "MRT Laojie River Station(Zhongyang W. Rd.)",
         "line": "171",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4476"
       },
       "geometry": {
         "type": "Point",
@@ -275,8 +315,9 @@
         "name": "中央新生路口",
         "name_en": "Zhongyang-ShinSheng Road Intersection",
         "line": "171",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "692"
       },
       "geometry": {
         "type": "Point",
@@ -294,8 +335,9 @@
         "name": "中央延平路口",
         "name_en": "Zhongyang and Yanping Road Intersection",
         "line": "171",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4643"
       },
       "geometry": {
         "type": "Point",
@@ -313,8 +355,9 @@
         "name": "中壢公車站",
         "name_en": "Zhongli Bus Station",
         "line": "171",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1229"
       },
       "geometry": {
         "type": "Point",

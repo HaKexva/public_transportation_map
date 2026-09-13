@@ -6,10 +6,10 @@
     "name": "通勤12",
     "name_en": "通勤12",
     "ref": "通勤12",
-    "color": "#0f766e",
+    "color": "#701a75",
     "city_id": "Taipei",
     "source": "TDX Bus Shape / StopOfRoute",
-    "official_map_url": "https://ebus.gov.taipei/File/Get/2b4d7884-9f96-4b5d-ad84-f65216e31bd7?v=639234358563097621",
+    "official_map_url": "https://ebus.gov.taipei/File/Get/2b4d7884-9f96-4b5d-ad84-f65216e31bd7?v=639248448924101340",
     "operator_id": "800",
     "operator": "大都會客運",
     "operator_en": "Metropolitan Bus Co., Ltd."
@@ -22,7 +22,7 @@
         "ref": "通勤12",
         "name": "通勤12",
         "name_en": "通勤12",
-        "color": "#0f766e",
+        "color": "#701a75",
         "direction": 0
       },
       "geometry": {
@@ -57,12 +57,32 @@
             25.0021366386144
           ],
           [
-            121.496661098362,
-            25.0023423337904
+            121.49652588168777,
+            25.00232933605769
           ],
           [
-            121.49672971528,
-            25.0017742794142
+            121.49655621809322,
+            25.00232869986569
+          ],
+          [
+            121.4965853111575,
+            25.002321109827665
+          ],
+          [
+            121.49661136445182,
+            25.002307065406878
+          ],
+          [
+            121.49663269192276,
+            25.002287475495827
+          ],
+          [
+            121.49664791335117,
+            25.0022636078665
+          ],
+          [
+            121.49665606083107,
+            25.002236899858143
           ],
           [
             121.496777219301,
@@ -197,16 +217,32 @@
             24.993877453632
           ],
           [
-            121.503408648568,
-            24.9934385268783
+            121.5033749063804,
+            24.993518676093696
           ],
           [
-            121.503729300704,
-            24.9934427128357
+            121.50338551004413,
+            24.993499442387122
           ],
           [
-            121.504273617603,
-            24.993431948945
+            121.50339987003842,
+            24.993482682410637
+          ],
+          [
+            121.50341753573319,
+            24.993468800867024
+          ],
+          [
+            121.5034378285333,
+            24.993458330990208
+          ],
+          [
+            121.50345996892825,
+            24.993451674961197
+          ],
+          [
+            121.50348308654773,
+            24.993449088889854
           ],
           [
             121.504634516201,
@@ -289,16 +325,32 @@
             24.9903235870435
           ],
           [
-            121.5257489609,
-            24.9901888495585
+            121.52571538325991,
+            24.990192659415104
           ],
           [
-            121.525848636803,
-            24.9902344110945
+            121.52574650731286,
+            24.990192878161125
           ],
           [
-            121.525864103753,
-            24.9904053640578
+            121.5257764095321,
+            24.990200424013494
+          ],
+          [
+            121.52580315634985,
+            24.99021477208961
+          ],
+          [
+            121.52582492777215,
+            24.990234946071034
+          ],
+          [
+            121.5258402423571,
+            24.99025957321411
+          ],
+          [
+            121.52584807048484,
+            24.99028707033065
           ],
           [
             121.526444973671,
@@ -541,12 +593,32 @@
             25.0359150055303
           ],
           [
-            121.563403760564,
-            25.0358578284503
+            121.56351197247734,
+            25.03585454292188
           ],
           [
-            121.563636585192,
-            25.0360283829657
+            121.56354310425625,
+            25.035857350969348
+          ],
+          [
+            121.56357233323504,
+            25.03586745410714
+          ],
+          [
+            121.56359766989368,
+            25.035884154219296
+          ],
+          [
+            121.5636173656046,
+            25.035906298735696
+          ],
+          [
+            121.56363006105433,
+            25.035932359336773
+          ],
+          [
+            121.56363488039013,
+            25.035960554964355
           ],
           [
             121.563695100956,
@@ -563,8 +635,9 @@
         "name": "中和保養廠",
         "name_en": "Zhonghe Maintenance Plant",
         "line": "通勤12",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#701a75",
+        "direction": 0,
+        "station_id": "3066"
       },
       "geometry": {
         "type": "Point",
@@ -582,8 +655,9 @@
         "name": "家美工業區",
         "name_en": "Jiamei industrial Area",
         "line": "通勤12",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#701a75",
+        "direction": 0,
+        "station_id": "3133"
       },
       "geometry": {
         "type": "Point",
@@ -601,8 +675,9 @@
         "name": "捷運中和站(中山路)",
         "name_en": "MRT Zhonghe Sta. (Zhongshan Rd.)",
         "line": "通勤12",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#701a75",
+        "direction": 0,
+        "station_id": "72478"
       },
       "geometry": {
         "type": "Point",
@@ -620,8 +695,9 @@
         "name": "連城路口",
         "name_en": "Liancheng Rd. Entrance",
         "line": "通勤12",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#701a75",
+        "direction": 0,
+        "station_id": "3136"
       },
       "geometry": {
         "type": "Point",
@@ -639,8 +715,9 @@
         "name": "中和區公所(景平路)",
         "name_en": "Zhonghe Dist. Office (Jingping Rd.)",
         "line": "通勤12",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#701a75",
+        "direction": 0,
+        "station_id": "1000705"
       },
       "geometry": {
         "type": "Point",
@@ -658,8 +735,9 @@
         "name": "南華路口",
         "name_en": "Yuantong&Jingping Rd. Entrance",
         "line": "通勤12",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#701a75",
+        "direction": 0,
+        "station_id": "3114"
       },
       "geometry": {
         "type": "Point",
@@ -677,8 +755,9 @@
         "name": "捷運景安站(景平路)",
         "name_en": "MRT Jingan Sta.(Jingping Rd.)",
         "line": "通勤12",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#701a75",
+        "direction": 0,
+        "station_id": "3130"
       },
       "geometry": {
         "type": "Point",
@@ -696,8 +775,9 @@
         "name": "中和教會",
         "name_en": "Zhonghe Church",
         "line": "通勤12",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#701a75",
+        "direction": 0,
+        "station_id": "50844"
       },
       "geometry": {
         "type": "Point",
@@ -715,8 +795,9 @@
         "name": "南勢角(景平路)",
         "name_en": "Nanshijiao(Jingping Rd.)",
         "line": "通勤12",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#701a75",
+        "direction": 0,
+        "station_id": "1001137"
       },
       "geometry": {
         "type": "Point",
@@ -734,8 +815,9 @@
         "name": "捷運景平站",
         "name_en": "MRT Jingping Sta.",
         "line": "通勤12",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#701a75",
+        "direction": 0,
+        "station_id": "50848"
       },
       "geometry": {
         "type": "Point",
@@ -753,8 +835,9 @@
         "name": "景平路景德街口",
         "name_en": "Jingping Jingde Intersection",
         "line": "通勤12",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#701a75",
+        "direction": 0,
+        "station_id": "50849"
       },
       "geometry": {
         "type": "Point",
@@ -772,8 +855,9 @@
         "name": "秀景里",
         "name_en": "Xiujing Village",
         "line": "通勤12",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#701a75",
+        "direction": 0,
+        "station_id": "9649"
       },
       "geometry": {
         "type": "Point",
@@ -791,8 +875,9 @@
         "name": "范厝",
         "name_en": "Fancuo",
         "line": "通勤12",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#701a75",
+        "direction": 0,
+        "station_id": "9648"
       },
       "geometry": {
         "type": "Point",
@@ -810,8 +895,9 @@
         "name": "秀朗路三段70巷",
         "name_en": "Xiulang Rd. Sec. 3 Lane 70",
         "line": "通勤12",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#701a75",
+        "direction": 0,
+        "station_id": "3090"
       },
       "geometry": {
         "type": "Point",
@@ -829,8 +915,9 @@
         "name": "劉厝",
         "name_en": "Liucuo",
         "line": "通勤12",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#701a75",
+        "direction": 0,
+        "station_id": "1000470"
       },
       "geometry": {
         "type": "Point",
@@ -848,8 +935,9 @@
         "name": "六合社區",
         "name_en": "Liuhe Community",
         "line": "通勤12",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#701a75",
+        "direction": 0,
+        "station_id": "2997"
       },
       "geometry": {
         "type": "Point",
@@ -867,8 +955,9 @@
         "name": "成功得和路口",
         "name_en": "Chenggong Dehe Rd.",
         "line": "通勤12",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#701a75",
+        "direction": 0,
+        "station_id": "4040"
       },
       "geometry": {
         "type": "Point",
@@ -886,8 +975,9 @@
         "name": "福和橋(成功路)",
         "name_en": "Fuhe Bridge(Chonggong Rd.)",
         "line": "通勤12",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#701a75",
+        "direction": 0,
+        "station_id": "50803"
       },
       "geometry": {
         "type": "Point",
@@ -905,8 +995,9 @@
         "name": "和平高中",
         "name_en": "Heping Senior High School",
         "line": "通勤12",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#701a75",
+        "direction": 0,
+        "station_id": "2254"
       },
       "geometry": {
         "type": "Point",
@@ -924,8 +1015,9 @@
         "name": "捷運六張犁站(基隆路)",
         "name_en": "MRT Liuzhangli (Keelung Rd.)",
         "line": "通勤12",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#701a75",
+        "direction": 0,
+        "station_id": "2307"
       },
       "geometry": {
         "type": "Point",
@@ -943,8 +1035,9 @@
         "name": "三興國小(臨江街觀光夜市)",
         "name_en": "Sanxing Elementary School (Linjiang St. Night Market)",
         "line": "通勤12",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#701a75",
+        "direction": 0,
+        "station_id": "2035"
       },
       "geometry": {
         "type": "Point",
@@ -962,8 +1055,9 @@
         "name": "吳興街口",
         "name_en": "Wuxing St. Entrance",
         "line": "通勤12",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#701a75",
+        "direction": 0,
+        "station_id": "2080"
       },
       "geometry": {
         "type": "Point",
@@ -981,8 +1075,9 @@
         "name": "世貿中心(基隆路)",
         "name_en": "World Trade Center (Keelung Rd.)",
         "line": "通勤12",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#701a75",
+        "direction": 0,
+        "station_id": "15120"
       },
       "geometry": {
         "type": "Point",
@@ -1000,8 +1095,9 @@
         "name": "市政府(市府)",
         "name_en": "Taipei City Hall",
         "line": "通勤12",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#701a75",
+        "direction": 0,
+        "station_id": "2063"
       },
       "geometry": {
         "type": "Point",

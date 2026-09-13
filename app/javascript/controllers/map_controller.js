@@ -87,22 +87,23 @@ const TRANSFER_LINE_COLOR_WALK = "#a3a3af"
 const TRANSFER_LINE_WEIGHT_PASSAGE = 5
 const TRANSFER_LINE_WEIGHT_FARE_DISCOUNT = 4
 const TRANSFER_LINE_WEIGHT_WALK = 3
-const PARALLEL_TRACK_HALF_OFFSET_M = 48
+const PARALLEL_TRACK_HALF_GAP_PX = 6
 const PARALLEL_TRACK_ROUTE_IDS = new Set([
   "airport_mrt",
   "airport_mrt_express",
   "danhai_lrt",
   "taoyuan_airport_skytrain"
 ])
-const PARALLEL_TRACK_MIN_ZOOM = 13
+// Keep dual tracks on at most zooms; gap is screen-fixed so it stays readable when zoomed out.
+const PARALLEL_TRACK_MIN_ZOOM = 10
 // Schedule trips for express live under airport_mrt (trip_type=express).
 const STATION_BOARD_ROUTE_ALIASES = {
   airport_mrt_express: [ "airport_mrt" ],
   airport_mrt: [ "airport_mrt" ]
 }
-const BUS_BAND_OFFSET_M = 12
-const BUS_BAND_MIN_ZOOM = 14
-const BUS_DIRECTION_HALF_OFFSET_M = 16
+const BUS_BAND_GAP_PX = 5
+const BUS_BAND_MIN_ZOOM = 12
+const BUS_DIRECTION_HALF_GAP_PX = 5
 const BUS_ARROW_MIN_ZOOM = 14
 const BUS_ARROW_EDGE_PAD_M = 40
 const BUS_ARROW_BASE_SPACING_M = 200
@@ -603,22 +604,27 @@ export default class extends Controller {
 
     const transferPane = this.map.createPane("outOfStationTransfers")
     transferPane.style.zIndex = 640
+    transferPane.style.pointerEvents = "none"
     this.outOfStationTransferPane = "outOfStationTransfers"
 
     const expressPane = this.map.createPane("expressRoutes")
     expressPane.style.zIndex = 610
+    expressPane.style.pointerEvents = "none"
     this.expressRoutePane = "expressRoutes"
 
     const commuterPane = this.map.createPane("commuterRoutes")
     commuterPane.style.zIndex = 630
+    commuterPane.style.pointerEvents = "none"
     this.commuterRoutePane = "commuterRoutes"
 
     const stationPane = this.map.createPane("stationMarkers")
     stationPane.style.zIndex = 650
+    stationPane.style.pointerEvents = "none"
     this.stationMarkerPane = "stationMarkers"
 
     const stationLabelPane = this.map.createPane("stationLabels")
     stationLabelPane.style.zIndex = 660
+    stationLabelPane.style.pointerEvents = "none"
     this.stationLabelPane = "stationLabels"
 
     this.outOfStationTransferGroup = L.featureGroup().addTo(this.map)
@@ -630,10 +636,13 @@ export default class extends Controller {
 
     const busArrowPane = this.map.createPane("busArrows")
     busArrowPane.style.zIndex = 455
+    busArrowPane.style.pointerEvents = "none"
     this.busArrowGroup = L.layerGroup({ pane: "busArrows" }).addTo(this.map)
 
     const vehiclePane = this.map.createPane("vehicles")
     vehiclePane.style.zIndex = 700
+    // Pane itself must not steal clicks; only drawn vehicles are hit-tested in JS.
+    vehiclePane.style.pointerEvents = "none"
     this.vehicleGroup = L.layerGroup({ pane: "vehicles" }).addTo(this.map)
     this.vehicleMarkersById = {}
     this.vehicleCanvas = new VehicleCanvasLayer()
@@ -655,6 +664,7 @@ export default class extends Controller {
     this.map.zoomControl.setPosition("topright")
     this.parallelTracksActive = (this.map.getZoom() ?? 12) >= PARALLEL_TRACK_MIN_ZOOM
     this.busBandsActive = (this.map.getZoom() ?? 12) >= BUS_BAND_MIN_ZOOM
+    this.parallelOffsetZoomKey = this.parallelOffsetZoomKeyFor(this.map.getZoom() ?? 12)
     this.syncTransportModeChrome()
 
     this.refreshParallelTracksOnZoom = () => this.scheduleParallelTracksRefresh()
@@ -1264,11 +1274,14 @@ export default class extends Controller {
   }
 
   findRoute(layerId) {
-    for (const routes of Object.values(this.routesManifest)) {
+    for (const [ systemId, routes ] of Object.entries(this.routesManifest || {})) {
       if (!Array.isArray(routes)) continue
 
       const route = routes.find((entry) => entry.id === layerId)
-      if (route) return route
+      if (route) {
+        if (!route.system_id) route.system_id = systemId
+        return route
+      }
     }
 
     return null
@@ -1774,20 +1787,22 @@ export default class extends Controller {
 
   syncOfficialMap(route) {
     const url = route?.official_map_url
+    const imageUrl = this.officialMapImageUrl(url)
+    const linkUrl = url || null
 
     if (this.hasRouteOfficialLinkTarget) {
-      this.routeOfficialLinkTarget.classList.toggle("hidden", !url)
-      if (url) {
-        this.routeOfficialLinkTarget.href = url
+      this.routeOfficialLinkTarget.classList.toggle("hidden", !linkUrl)
+      if (linkUrl) {
+        this.routeOfficialLinkTarget.href = linkUrl
       } else {
         this.routeOfficialLinkTarget.removeAttribute("href")
       }
     }
 
     if (this.hasRouteOfficialImageTarget) {
-      this.routeOfficialImageTarget.hidden = !url
-      if (url) {
-        this.routeOfficialImageTarget.src = url
+      this.routeOfficialImageTarget.hidden = !imageUrl
+      if (imageUrl) {
+        this.routeOfficialImageTarget.src = imageUrl
         this.routeOfficialImageTarget.alt = this.routeDisplayName(route) || ""
       } else {
         this.routeOfficialImageTarget.removeAttribute("src")
@@ -1795,13 +1810,30 @@ export default class extends Controller {
     }
 
     if (this.hasRouteOfficialEmptyTarget) {
-      this.routeOfficialEmptyTarget.classList.toggle("hidden", Boolean(url))
+      // Show empty hint when we have no displayable image (even if a portal link exists).
+      this.routeOfficialEmptyTarget.classList.toggle("hidden", Boolean(imageUrl))
     }
 
     const source = this.hasRouteOfficialPanelTarget
       ? this.routeOfficialPanelTarget.querySelector(".route-official-panel__source")
       : null
-    if (source) source.classList.toggle("hidden", !url)
+    if (source) source.classList.toggle("hidden", !imageUrl)
+  }
+
+  // Only feed <img> with direct image endpoints — HTML portals (MapOverview etc.) never render.
+  officialMapImageUrl(url) {
+    const text = String(url || "").trim()
+    if (!text) return null
+    if (/\.(?:jpe?g|png|gif|webp|pdf)(?:\?|#|$)/i.test(text)) return text
+    if (/\/File\/Get\//i.test(text)) return text
+    if (/\/strapi\/uploads\//i.test(text)) return text
+    if (/\/cms\/api\/.+\/(?:image|map)/i.test(text)) return text
+    if (/\/MISUploadData\/Schematic\//i.test(text)) return text
+    if (/\/resources\/PathPic\//i.test(text)) return text
+    if (/\/Upload\/LineImages\//i.test(text)) return text
+    if (/\/files\/bus\//i.test(text)) return text
+    if (/MapOverview|route-map|lineimage\.php|driving-map|routemap\.php/i.test(text)) return null
+    return null
   }
 
   async collectStationsForRoute(routeId) {
@@ -4608,17 +4640,43 @@ export default class extends Controller {
     const zoom = this.map.getZoom() ?? 12
     const parallelActive = zoom >= PARALLEL_TRACK_MIN_ZOOM
     const busBandsActive = zoom >= BUS_BAND_MIN_ZOOM
-    if (this.parallelTracksActive === parallelActive && this.busBandsActive === busBandsActive) return
+    // Rebuild whenever zoom changes enough that screen-fixed meter offsets drift.
+    const zoomKey = this.parallelOffsetZoomKeyFor(zoom)
+    if (
+      this.parallelTracksActive === parallelActive &&
+      this.busBandsActive === busBandsActive &&
+      this.parallelOffsetZoomKey === zoomKey
+    ) return
 
     this.parallelTracksActive = parallelActive
     this.busBandsActive = busBandsActive
+    this.parallelOffsetZoomKey = zoomKey
 
     if (this.parallelTracksRefreshTimer) clearTimeout(this.parallelTracksRefreshTimer)
 
     this.parallelTracksRefreshTimer = setTimeout(() => {
       this.parallelTracksRefreshTimer = null
       this.refreshVisibleParallelLayers()
-    }, 120)
+    }, 80)
+  }
+
+  parallelOffsetZoomKeyFor(zoom) {
+    return Math.round((Number(zoom) || 12) * 4) / 4
+  }
+
+  // Convert a constant on-screen gap into meters at the current zoom/lat.
+  screenGapMeters(pixels) {
+    const map = this.map
+    const L = window.L
+    const px = Math.abs(Number(pixels) || 0)
+    if (!map || !L || px === 0) return px
+
+    const center = map.getCenter()
+    const origin = map.latLngToContainerPoint(center)
+    const shifted = map.containerPointToLatLng(L.point(origin.x + px, origin.y))
+    const meters = map.distance(center, shifted)
+    if (!Number.isFinite(meters) || meters <= 0) return px * 2
+    return meters
   }
 
   async refreshVisibleParallelLayers() {
@@ -4666,7 +4724,7 @@ export default class extends Controller {
   }
 
   parallelHalfOffsetMeters(_data) {
-    return PARALLEL_TRACK_HALF_OFFSET_M
+    return this.screenGapMeters(PARALLEL_TRACK_HALF_GAP_PX)
   }
 
   referenceRouteLine(route, data) {
@@ -4788,9 +4846,10 @@ export default class extends Controller {
   }
 
   busDirectionOffsetMeters(feature) {
+    const half = this.screenGapMeters(BUS_DIRECTION_HALF_GAP_PX)
     const direction = feature?.properties?.direction
-    if (direction === 0 || direction === "0") return -BUS_DIRECTION_HALF_OFFSET_M
-    if (direction === 1 || direction === "1") return BUS_DIRECTION_HALF_OFFSET_M
+    if (direction === 0 || direction === "0") return -half
+    if (direction === 1 || direction === "1") return half
     return 0
   }
 
@@ -4832,7 +4891,7 @@ export default class extends Controller {
     const index = peers.findIndex((entry) => entry.id === route.id)
     if (index < 0) return 0
 
-    const spacing = Math.max(2.5, Math.min(BUS_BAND_OFFSET_M, 18 / peers.length))
+    const spacing = this.screenGapMeters(BUS_BAND_GAP_PX)
     return (index - ((peers.length - 1) / 2)) * spacing
   }
 
@@ -5819,21 +5878,23 @@ export default class extends Controller {
     layer.bindPopup(() => {
       if (isBus) {
         const info = this.busStopInfoHtml(feature, routeId, name)
-        const arrivalsShell = this.busArrivalsShell(feature, routeId, name)
-        const routesShell = this.busThroughRoutesShell(feature, routeId)
-        return `${info}${arrivalsShell}${routesShell}`
+        return info
       }
 
       return popup
     }, { maxWidth: 420, className: "station-popup" })
     layer.on("popupopen", () => {
-      const root = layer.getPopup()?.getElement()
-      if (isBus) {
-        this.hydrateBusStopPopup(root, feature, routeId, name)
+      if (ref) {
+        this.openStationBoard({ routeId, ref, name })
+        // Float panel carries the full board; close the brief name popup.
+        layer.closePopup?.()
         return
       }
 
-      if (ref) this.openStationBoard({ routeId, ref, name })
+      if (isBus) {
+        const root = layer.getPopup()?.getElement()
+        this.hydrateBusStopPopup(root, feature, routeId, name)
+      }
     })
   }
 
@@ -5854,10 +5915,12 @@ export default class extends Controller {
       </div>
     `
 
-    // Popup as fallback (e.g. touch long-press / delayed open); click navigates immediately.
+    // Keep a Leaflet popup as fallback, but primary UX is the float panel —
+    // map-level clicks otherwise close popups before they are seen.
     layer.bindPopup(popup)
     if (typeof layer.setStyle === "function") {
       layer.options.interactive = true
+      layer.options.bubblingMouseEvents = false
     }
 
     if (!layer._routeMapClickBound) {
@@ -5865,12 +5928,52 @@ export default class extends Controller {
       layer.on("click", (event) => {
         if (event?.originalEvent?.metaKey || event?.originalEvent?.ctrlKey || event?.originalEvent?.shiftKey) return
         if (window.L?.DomEvent) {
-          window.L.DomEvent.stopPropagation(event)
-          window.L.DomEvent.preventDefault(event)
+          window.L.DomEvent.stop(event)
         }
         layer.closePopup?.()
-        this.visitRouteMap(routeId)
+        this.openRouteInfoPanel({ routeId, latlng: event?.latlng })
       })
+    }
+  }
+
+  openRouteInfoPanel({ routeId, latlng = null } = {}) {
+    this.ensureExploreUi()
+    const panel = this.stationBoardEl
+    if (!panel || !routeId) return
+
+    const route = this.findRoute(routeId)
+    const name = this.routeDisplayName(route) || routeId
+    const ref = route?.ref || ""
+    const color = this.routeDisplayColor(route) || route?.color || "#64748b"
+    const href = `/routes/${encodeURIComponent(routeId)}`
+    const openLabel = this.escapeHtml(this.t("popup.open_route_map"))
+    const systemId = route?.system_id || ""
+    const cityLabel = route?.city_id ? this.escapeHtml(String(route.city_id)) : ""
+    const systemLabel = systemId
+      ? this.escapeHtml(systemId.replaceAll("_", " "))
+      : cityLabel
+
+    panel.hidden = false
+    panel.innerHTML = `
+      <div class="map-float-panel__head">
+        <strong>${this.escapeHtml(name)}</strong>
+        <button type="button" class="map-float-panel__close" data-station-board-close>&times;</button>
+      </div>
+      <div class="route-info-panel">
+        <div class="route-info-panel__meta">
+          <span class="route-info-panel__swatch" style="background:${this.escapeHtml(color)}"></span>
+          ${ref ? `<span class="route-info-panel__ref">${this.escapeHtml(ref)}</span>` : ""}
+          ${systemLabel ? `<span class="route-info-panel__system">${systemLabel}</span>` : ""}
+        </div>
+        <a class="map-float-panel__action" href="${href}" data-turbo-frame="_top">${openLabel}</a>
+      </div>
+    `
+    panel.querySelector("[data-station-board-close]")?.addEventListener("click", () => {
+      panel.hidden = true
+    })
+
+    if (latlng && this.map?.panTo && this.map.getBounds && !this.map.getBounds().pad(-0.2).contains(latlng)) {
+      this.map.panTo(latlng, { animate: true })
     }
   }
 
@@ -8456,6 +8559,9 @@ export default class extends Controller {
     if (!panel) return
     panel.hidden = false
 
+    const tabTimetable = this.escapeHtml(this.t("explore.tab_timetable"))
+    const tabInfo = this.escapeHtml(this.t("explore.tab_station_info"))
+
     if (this.routeIsBus(routeId)) {
       const feature = this.busStopFeatureForRef(routeId, ref) || {
         properties: { ref, name, station_id: null },
@@ -8468,13 +8574,22 @@ export default class extends Controller {
           <strong>${this.escapeHtml(name || ref || "")}</strong>
           <button type="button" class="map-float-panel__close" data-station-board-close>&times;</button>
         </div>
-        ${this.busStopInfoHtml(feature, routeId, name)}
-        ${this.busArrivalsShell(feature, routeId, name)}
-        ${this.busThroughRoutesShell(feature, routeId)}
+        <div class="station-panel__tabs" role="tablist">
+          <button type="button" class="station-panel__tab is-active" role="tab" aria-selected="true" data-station-tab="timetable">${tabTimetable}</button>
+          <button type="button" class="station-panel__tab" role="tab" aria-selected="false" data-station-tab="info">${tabInfo}</button>
+        </div>
+        <div class="station-panel__pane" data-station-pane="timetable">
+          ${this.busArrivalsShell(feature, routeId, name)}
+        </div>
+        <div class="station-panel__pane" data-station-pane="info" hidden>
+          ${this.busStopInfoHtml(feature, routeId, name)}
+          ${this.busThroughRoutesShell(feature, routeId)}
+        </div>
       `
       panel.querySelector("[data-station-board-close]")?.addEventListener("click", () => {
         panel.hidden = true
       })
+      this.bindStationPanelTabs(panel)
       this.hydrateBusStopPopup(panel, feature, routeId, name)
       return
     }
@@ -8484,12 +8599,108 @@ export default class extends Controller {
         <strong>${this.escapeHtml(name || ref || "")}</strong>
         <button type="button" class="map-float-panel__close" data-station-board-close>&times;</button>
       </div>
-      ${this.stationBoardShell(ref, routeId, name)}
+      <div class="station-panel__tabs" role="tablist">
+        <button type="button" class="station-panel__tab is-active" role="tab" aria-selected="true" data-station-tab="timetable">${tabTimetable}</button>
+        <button type="button" class="station-panel__tab" role="tab" aria-selected="false" data-station-tab="info">${tabInfo}</button>
+      </div>
+      <div class="station-panel__pane" data-station-pane="timetable">
+        ${this.stationBoardShell(ref, routeId, name)}
+      </div>
+      <div class="station-panel__pane" data-station-pane="info" hidden>
+        <div data-station-info-host data-ref="${this.escapeHtml(ref || "")}" data-route="${this.escapeHtml(routeId || "")}" data-name="${this.escapeHtml(name || "")}">
+          ${this.renderStationInfo([], name, { loading: true })}
+        </div>
+      </div>
     `
     panel.querySelector("[data-station-board-close]")?.addEventListener("click", () => {
       panel.hidden = true
     })
+    this.bindStationPanelTabs(panel)
     this.hydrateStationBoard(panel, ref, routeId, name)
+    this.hydrateStationInfo(panel, ref, routeId, name)
+  }
+
+  bindStationPanelTabs(panel) {
+    if (!panel) return
+    const tabs = Array.from(panel.querySelectorAll("[data-station-tab]"))
+    const panes = Array.from(panel.querySelectorAll("[data-station-pane]"))
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        const id = tab.dataset.stationTab
+        tabs.forEach((item) => {
+          const active = item === tab
+          item.classList.toggle("is-active", active)
+          item.setAttribute("aria-selected", active ? "true" : "false")
+        })
+        panes.forEach((pane) => {
+          pane.hidden = pane.dataset.stationPane !== id
+        })
+      })
+    })
+  }
+
+  renderStationInfo(exits, stationName, { loading, error, accessibility } = {}) {
+    const title = this.escapeHtml(this.t("explore.station_info_title", { name: stationName || "" }))
+    let body = ""
+    if (loading) {
+      body = `<div class="station-board__empty">${this.escapeHtml(this.t("explore.station_info_loading"))}</div>`
+    } else if (error) {
+      body = `<div class="station-board__empty">${this.escapeHtml(this.t("explore.station_info_error"))}</div>`
+    } else if (!exits || exits.length === 0) {
+      body = `<div class="station-board__empty">${this.escapeHtml(this.t("explore.station_info_empty"))}</div>`
+    } else {
+      const accessBits = []
+      if (accessibility?.elevator) accessBits.push(this.t("explore.access_elevator"))
+      if (accessibility?.escalator) accessBits.push(this.t("explore.access_escalator"))
+      if (accessibility?.stair) accessBits.push(this.t("explore.access_stair"))
+      const accessHtml = accessBits.length
+        ? `<div class="station-info__access">${accessBits.map((label) => `<span class="station-info__chip">${this.escapeHtml(label)}</span>`).join("")}</div>`
+        : ""
+
+      const items = exits.map((exit) => {
+        const flags = []
+        if (exit.elevator) flags.push(this.t("explore.access_elevator"))
+        if (exit.escalator) flags.push(this.t("explore.access_escalator"))
+        if (exit.stair) flags.push(this.t("explore.access_stair"))
+        const meta = [ exit.location, flags.join(" · ") ].filter(Boolean).join(" · ")
+        return `<div class="station-info__exit">
+          <div class="station-info__exit-name">${this.escapeHtml(exit.name || exit.exit_id || "")}</div>
+          ${meta ? `<div class="station-info__exit-meta">${this.escapeHtml(meta)}</div>` : ""}
+        </div>`
+      }).join("")
+
+      body = `${accessHtml}<div class="station-info__exits">${items}</div>`
+    }
+
+    return `<div class="station-info">
+      <div class="station-board__title">${title}</div>
+      ${body}
+    </div>`
+  }
+
+  async hydrateStationInfo(root, ref, routeId, name) {
+    const host = root?.querySelector?.("[data-station-info-host]") || null
+    if (!host || !ref) return
+
+    const stationName = name || host.dataset.name || ref
+    try {
+      const params = new URLSearchParams({ ref })
+      if (routeId) params.set("route_id", routeId)
+      const response = await fetch(`/api/station_infos?${params}`)
+      if (!response.ok) {
+        host.innerHTML = this.renderStationInfo([], stationName, { error: true })
+        return
+      }
+      const data = await response.json()
+      const exits = Array.isArray(data.exits) ? data.exits : []
+      host.innerHTML = this.renderStationInfo(exits, stationName, {
+        error: Boolean(data.error) && exits.length === 0,
+        accessibility: data.accessibility
+      })
+    } catch (error) {
+      console.warn("Failed to load station info", error)
+      host.innerHTML = this.renderStationInfo([], stationName, { error: true })
+    }
   }
 
   busStopFeatureForRef(routeId, ref) {

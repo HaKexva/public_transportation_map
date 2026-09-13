@@ -6,7 +6,7 @@
     "name": "229",
     "name_en": "229",
     "ref": "229",
-    "color": "#65a30d",
+    "color": "#b91c1c",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/2290/map/1907/image",
@@ -22,7 +22,7 @@
         "ref": "229",
         "name": "229",
         "name_en": "229",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0
       },
       "geometry": {
@@ -49,20 +49,32 @@
             24.96296
           ],
           [
-            121.2302,
-            24.96274
+            121.23049094425228,
+            24.962417966036526
           ],
           [
-            121.23038,
-            24.96254
+            121.2305084729434,
+            24.962402139907905
           ],
           [
-            121.23054,
-            24.96243
+            121.23052883373141,
+            24.962390123673536
           ],
           [
-            121.23073,
-            24.96242
+            121.2305514408925,
+            24.962382127713088
+          ],
+          [
+            121.23057535455891,
+            24.962378484449786
+          ],
+          [
+            121.23059958054637,
+            24.962379345348275
+          ],
+          [
+            121.23062336281707,
+            24.962384757406014
           ],
           [
             121.23402,
@@ -273,8 +285,32 @@
             24.94738
           ],
           [
-            121.20696,
-            24.94734
+            121.20677549660185,
+            24.947352814163043
+          ],
+          [
+            121.20681486405566,
+            24.947356098336158
+          ],
+          [
+            121.20685082373925,
+            24.9473709547307
+          ],
+          [
+            121.20687947532085,
+            24.947395741660124
+          ],
+          [
+            121.20689766108072,
+            24.947427727331924
+          ],
+          [
+            121.20690337674792,
+            24.94746338657295
+          ],
+          [
+            121.20689608643819,
+            24.94749855658208
           ],
           [
             121.20655,
@@ -321,16 +357,60 @@
             24.96025
           ],
           [
-            121.20596,
-            24.96151
+            121.20589033743643,
+            24.961455770988913
           ],
           [
-            121.20666,
-            24.96107
+            121.20591205304292,
+            24.961469204137796
           ],
           [
-            121.20743,
-            24.96069
+            121.20593606817671,
+            24.961477864514794
+          ],
+          [
+            121.2059615647775,
+            24.961481587581957
+          ],
+          [
+            121.20598734051255,
+            24.96148019777214
+          ],
+          [
+            121.20601217988616,
+            24.961473760624035
+          ],
+          [
+            121.20603523328212,
+            24.961462376820997
+          ],
+          [
+            121.20727478570002,
+            24.96068108001235
+          ],
+          [
+            121.2073045131837,
+            24.96066738102108
+          ],
+          [
+            121.20733684453218,
+            24.960661762379207
+          ],
+          [
+            121.20736962436688,
+            24.960664450875278
+          ],
+          [
+            121.20740034124476,
+            24.960675240528847
+          ],
+          [
+            121.20742664177722,
+            24.96069330468534
+          ],
+          [
+            121.20744668354828,
+            24.960717542827133
           ],
           [
             121.20773,
@@ -389,10 +469,11 @@
         "feature_type": "station",
         "ref": "TAO12495",
         "name": "中壢區公所",
-        "name_en": "Civil Affairs Office of Zhongli District",
+        "name_en": "Zhongli District Office",
         "line": "229",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "526"
       },
       "geometry": {
         "type": "Point",
@@ -410,14 +491,15 @@
         "name": "新街國小",
         "name_en": "Xinjie Elementary School",
         "line": "229",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1070"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.229188,
-          24.963967
+          121.22918767233601,
+          24.96396732889902
         ]
       }
     },
@@ -429,8 +511,9 @@
         "name": "中壢戶政事務所",
         "name_en": "Zhongli Household Registration Office",
         "line": "229",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "6533"
       },
       "geometry": {
         "type": "Point",
@@ -448,8 +531,9 @@
         "name": "中壢簡易庭",
         "name_en": "Zhongli Simple Court",
         "line": "229",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "361"
       },
       "geometry": {
         "type": "Point",
@@ -467,8 +551,9 @@
         "name": "台灣拉鍊",
         "name_en": "YKK",
         "line": "229",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "359"
       },
       "geometry": {
         "type": "Point",
@@ -486,8 +571,9 @@
         "name": "中原",
         "name_en": "Chungyuan",
         "line": "229",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1074"
       },
       "geometry": {
         "type": "Point",
@@ -505,8 +591,9 @@
         "name": "中壢工業區",
         "name_en": "Zhongli Industrial Zone",
         "line": "229",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "728"
       },
       "geometry": {
         "type": "Point",
@@ -524,8 +611,9 @@
         "name": "內壢國中",
         "name_en": "Neili Junior High School",
         "line": "229",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "531"
       },
       "geometry": {
         "type": "Point",
@@ -543,8 +631,9 @@
         "name": "自立新村",
         "name_en": "Zili Village",
         "line": "229",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1078"
       },
       "geometry": {
         "type": "Point",
@@ -562,8 +651,9 @@
         "name": "日月光公司",
         "name_en": "Advanced Semiconductor Engineering Inc",
         "line": "229",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "3236"
       },
       "geometry": {
         "type": "Point",
@@ -581,8 +671,9 @@
         "name": "上內壢",
         "name_en": "ShangNeiLi",
         "line": "229",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1080"
       },
       "geometry": {
         "type": "Point",
@@ -600,8 +691,9 @@
         "name": "內壢火車站",
         "name_en": "NeiLi Train Station",
         "line": "229",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "550"
       },
       "geometry": {
         "type": "Point",
@@ -619,8 +711,9 @@
         "name": "永強街口",
         "name_en": "Yongciang Street Intersection",
         "line": "229",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1082"
       },
       "geometry": {
         "type": "Point",
@@ -638,14 +731,15 @@
         "name": "自強國中",
         "name_en": "TzChiang Junior High School",
         "line": "229",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1084"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.260678,
-          24.968586
+          121.26067790722004,
+          24.968585808318362
         ]
       }
     },
@@ -657,8 +751,9 @@
         "name": "陸光新村",
         "name_en": "Luguang Village",
         "line": "229",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1086"
       },
       "geometry": {
         "type": "Point",
@@ -676,8 +771,9 @@
         "name": "環中榮安一街口",
         "name_en": "HuanJung RongAn 1 St. Intersection",
         "line": "229",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1088"
       },
       "geometry": {
         "type": "Point",
@@ -695,8 +791,9 @@
         "name": "環中愛樂",
         "name_en": "HuanJungAiYue",
         "line": "229",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1090"
       },
       "geometry": {
         "type": "Point",
@@ -714,8 +811,9 @@
         "name": "福德宮",
         "name_en": "Fude Temple",
         "line": "229",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "992"
       },
       "geometry": {
         "type": "Point",
@@ -733,14 +831,15 @@
         "name": "六和汽車",
         "name_en": "Ford Lio Ho Motor Company Ltd.",
         "line": "229",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1092"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.250135,
-          24.958543
+          121.25013463700003,
+          24.958542716950042
         ]
       }
     },
@@ -752,8 +851,9 @@
         "name": "慈濟志業園區",
         "name_en": "Tzu Chi Park",
         "line": "229",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1094"
       },
       "geometry": {
         "type": "Point",
@@ -771,8 +871,9 @@
         "name": "實踐路口",
         "name_en": "Shijian Road Intersection",
         "line": "229",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1096"
       },
       "geometry": {
         "type": "Point",
@@ -788,10 +889,11 @@
         "feature_type": "station",
         "ref": "TAO12478",
         "name": "中山東路口",
-        "name_en": "Zhongshan East Road Intersection  ",
+        "name_en": "Zhongshan East Road Intersection",
         "line": "229",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "6494"
       },
       "geometry": {
         "type": "Point",
@@ -809,8 +911,9 @@
         "name": "莒光公園",
         "name_en": "Juguang Park",
         "line": "229",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1098"
       },
       "geometry": {
         "type": "Point",
@@ -828,8 +931,9 @@
         "name": "昆明街口",
         "name_en": "Kunming St. Intersection",
         "line": "229",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1100"
       },
       "geometry": {
         "type": "Point",
@@ -847,8 +951,9 @@
         "name": "龍岡路口",
         "name_en": "Longgang Road Intersection",
         "line": "229",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1102"
       },
       "geometry": {
         "type": "Point",
@@ -866,8 +971,9 @@
         "name": "林森路口",
         "name_en": "Linsen Road Intersection",
         "line": "229",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1104"
       },
       "geometry": {
         "type": "Point",
@@ -885,8 +991,9 @@
         "name": "自忠二街口",
         "name_en": "Zizhong 2nd St. Intersection",
         "line": "229",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1106"
       },
       "geometry": {
         "type": "Point",
@@ -904,8 +1011,9 @@
         "name": "平鎮高中",
         "name_en": "Pingjen High School",
         "line": "229",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1108"
       },
       "geometry": {
         "type": "Point",
@@ -923,8 +1031,9 @@
         "name": "平鎮圖書分館",
         "name_en": "Pingzhen Branch Taoyuan Public Library",
         "line": "229",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "2798"
       },
       "geometry": {
         "type": "Point",
@@ -942,8 +1051,9 @@
         "name": "平鎮地政事務所",
         "name_en": "Pingzhen Land Affaris Office",
         "line": "229",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "2800"
       },
       "geometry": {
         "type": "Point",
@@ -961,8 +1071,9 @@
         "name": "帝國大廈",
         "name_en": "Diguo daxia Community",
         "line": "229",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "2802"
       },
       "geometry": {
         "type": "Point",
@@ -980,8 +1091,9 @@
         "name": "大昌路口",
         "name_en": "DaChang Road Intersection",
         "line": "229",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1845"
       },
       "geometry": {
         "type": "Point",
@@ -999,8 +1111,9 @@
         "name": "聯新國際醫院",
         "name_en": "Landseed International Hospital",
         "line": "229",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1110"
       },
       "geometry": {
         "type": "Point",
@@ -1018,8 +1131,9 @@
         "name": "平興國中",
         "name_en": "Ping Hsing Junior High School",
         "line": "229",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "514"
       },
       "geometry": {
         "type": "Point",
@@ -1037,8 +1151,9 @@
         "name": "環南育達路口",
         "name_en": "Huannan and Yuda Rd. Intersection",
         "line": "229",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "6732"
       },
       "geometry": {
         "type": "Point",
@@ -1056,8 +1171,9 @@
         "name": "復旦國小(環南路)",
         "name_en": "Fudan Elementary School(Huannan Road)",
         "line": "229",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "6702"
       },
       "geometry": {
         "type": "Point",
@@ -1075,8 +1191,9 @@
         "name": "環西志成路口",
         "name_en": "Huanshi and Zhihcheng Rd. Intersection",
         "line": "229",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "209"
       },
       "geometry": {
         "type": "Point",
@@ -1094,8 +1211,9 @@
         "name": "中壢婦幼館",
         "name_en": "Zhongli Women and children Hall",
         "line": "229",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "515"
       },
       "geometry": {
         "type": "Point",
@@ -1113,8 +1231,9 @@
         "name": "天祥醫院(正光街)",
         "name_en": "Armfulcare Hospital(Zhengguang St.)",
         "line": "229",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4070"
       },
       "geometry": {
         "type": "Point",
@@ -1132,8 +1251,9 @@
         "name": "志廣路口",
         "name_en": "Zhiguang Road Intersection",
         "line": "229",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "517"
       },
       "geometry": {
         "type": "Point",
@@ -1151,8 +1271,9 @@
         "name": "環西站",
         "name_en": "Huanxi Station",
         "line": "229",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "519"
       },
       "geometry": {
         "type": "Point",
@@ -1170,8 +1291,9 @@
         "name": "宏國大樓",
         "name_en": "Honguo Building",
         "line": "229",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "521"
       },
       "geometry": {
         "type": "Point",
@@ -1189,8 +1311,9 @@
         "name": "民權路口",
         "name_en": "Minquan Road Intersection",
         "line": "229",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "6495"
       },
       "geometry": {
         "type": "Point",
@@ -1208,8 +1331,9 @@
         "name": "中豐北路口",
         "name_en": "Zhongfeng N. Road Intersection",
         "line": "229",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "523"
       },
       "geometry": {
         "type": "Point",
@@ -1227,8 +1351,9 @@
         "name": "中壢區公所",
         "name_en": "Civil Affairs Office of Zhongli District",
         "line": "229",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "527"
       },
       "geometry": {
         "type": "Point",

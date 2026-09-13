@@ -6,7 +6,7 @@
     "name": "239",
     "name_en": "239",
     "ref": "239",
-    "color": "#134e4a",
+    "color": "#1e3a8a",
     "city_id": "Kaohsiung",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ibus.tbkc.gov.tw/cms/api/route/239/map/1409/image",
@@ -22,7 +22,7 @@
         "ref": "239",
         "name": "239",
         "name_en": "239",
-        "color": "#134e4a",
+        "color": "#1e3a8a",
         "direction": 0
       },
       "geometry": {
@@ -85,12 +85,32 @@
             22.88423
           ],
           [
-            120.18634,
-            22.88594
+            120.18626804008385,
+            22.886192875165097
           ],
           [
-            120.18626,
-            22.88621
+            120.18626688847456,
+            22.886198926292657
+          ],
+          [
+            120.18626683700619,
+            22.88620513498807
+          ],
+          [
+            120.18626790487733,
+            22.886211264310596
+          ],
+          [
+            120.18627006203857,
+            22.88621714178402
+          ],
+          [
+            120.18627324778845,
+            22.886222602019025
+          ],
+          [
+            120.18627727754823,
+            22.88622739611769
           ],
           [
             120.18634,
@@ -161,8 +181,32 @@
             22.91078
           ],
           [
-            120.18524,
-            22.91332
+            120.18522304245454,
+            22.913243903015033
+          ],
+          [
+            120.18523042331658,
+            22.913265421932287
+          ],
+          [
+            120.18524234890425,
+            22.913284935280203
+          ],
+          [
+            120.18525834332566,
+            22.91330175859694
+          ],
+          [
+            120.18527772371587,
+            22.913315173628742
+          ],
+          [
+            120.18529966264956,
+            22.91332460763499
+          ],
+          [
+            120.18532312322498,
+            22.91332964624244
           ],
           [
             120.19036,
@@ -349,8 +393,32 @@
             22.90918
           ],
           [
-            120.2271,
-            22.90932
+            120.22703086491379,
+            22.909282510773025
+          ],
+          [
+            120.22704899102636,
+            22.909294933053886
+          ],
+          [
+            120.22706403424807,
+            22.90931089548971
+          ],
+          [
+            120.22707500670658,
+            22.90932949461651
+          ],
+          [
+            120.22708139065574,
+            22.909349852816423
+          ],
+          [
+            120.22708288486275,
+            22.909371009468003
+          ],
+          [
+            120.22707946609246,
+            22.90939180138999
           ],
           [
             120.22638,
@@ -481,12 +549,32 @@
             22.9524
           ],
           [
-            120.21807,
-            22.95241
+            120.2178986336663,
+            22.952408641379886
           ],
           [
-            120.21794,
-            22.9531
+            120.21793098081285,
+            22.952413135228078
+          ],
+          [
+            120.21796073058323,
+            22.952425755970495
+          ],
+          [
+            120.21798555258324,
+            22.95244551790337
+          ],
+          [
+            120.21800350827685,
+            22.952470877669256
+          ],
+          [
+            120.2180131953694,
+            22.95249985473397
+          ],
+          [
+            120.21801386885461,
+            22.952530096317894
           ],
           [
             120.21785,
@@ -553,12 +641,32 @@
             22.98022
           ],
           [
-            120.21212,
-            22.98117
+            120.21211260626245,
+            22.981184404592767
           ],
           [
-            120.21178,
-            22.98125
+            120.21210140020537,
+            22.981201861810185
+          ],
+          [
+            120.21208711518666,
+            22.98121687477632
+          ],
+          [
+            120.21207009955958,
+            22.981229200437383
+          ],
+          [
+            120.21205093201424,
+            22.981238419605898
+          ],
+          [
+            120.21203026442596,
+            22.98124421874412
+          ],
+          [
+            120.21200881361403,
+            22.98124640040796
           ],
           [
             120.20922,
@@ -638,13 +746,790 @@
     {
       "type": "Feature",
       "properties": {
+        "feature_type": "route",
+        "ref": "239",
+        "name": "239",
+        "name_en": "239",
+        "color": "#1e3a8a",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.21138,
+            22.99765
+          ],
+          [
+            120.21126078932038,
+            22.997449317813768
+          ],
+          [
+            120.211246711734,
+            22.997430479852344
+          ],
+          [
+            120.21122893226044,
+            22.99741501795676
+          ],
+          [
+            120.21120806661945,
+            22.997403331286822
+          ],
+          [
+            120.21118503148807,
+            22.997395933265604
+          ],
+          [
+            120.21116083885417,
+            22.997393148905708
+          ],
+          [
+            120.21113640109981,
+            22.997395127674373
+          ],
+          [
+            120.20994,
+            22.99761
+          ],
+          [
+            120.20775,
+            22.99797
+          ],
+          [
+            120.20521,
+            22.99841
+          ],
+          [
+            120.20467,
+            22.99856
+          ],
+          [
+            120.20124,
+            22.99974
+          ],
+          [
+            120.20056,
+            22.99862
+          ],
+          [
+            120.20021,
+            22.99796
+          ],
+          [
+            120.1999,
+            22.99702
+          ],
+          [
+            120.19958,
+            22.99612
+          ],
+          [
+            120.19915,
+            22.99447
+          ],
+          [
+            120.20116,
+            22.99379
+          ],
+          [
+            120.20303,
+            22.99327
+          ],
+          [
+            120.20267,
+            22.99146
+          ],
+          [
+            120.20228,
+            22.98966
+          ],
+          [
+            120.20223198275367,
+            22.989598054490905
+          ],
+          [
+            120.20222344684161,
+            22.989581839402746
+          ],
+          [
+            120.20222093563073,
+            22.989563762582716
+          ],
+          [
+            120.20222483217063,
+            22.989545898033708
+          ],
+          [
+            120.20223472200095,
+            22.989530145940833
+          ],
+          [
+            120.20224955317754,
+            22.989518181795177
+          ],
+          [
+            120.20226765814931,
+            22.98951129731169
+          ],
+          [
+            120.20454,
+            22.98903
+          ],
+          [
+            120.20428,
+            22.98673
+          ],
+          [
+            120.20406,
+            22.98481
+          ],
+          [
+            120.20366351276238,
+            22.981397500904613
+          ],
+          [
+            120.20366451305735,
+            22.981367720808112
+          ],
+          [
+            120.20367424561415,
+            22.981339241340756
+          ],
+          [
+            120.2036919826875,
+            22.981314299855725
+          ],
+          [
+            120.20371638099648,
+            22.98129478524528
+          ],
+          [
+            120.20374559278515,
+            22.98128217540845
+          ],
+          [
+            120.20377738788758,
+            22.981277425683288
+          ],
+          [
+            120.20664,
+            22.98122
+          ],
+          [
+            120.21101,
+            22.98119
+          ],
+          [
+            120.21201289446633,
+            22.98117378433323
+          ],
+          [
+            120.2120348410367,
+            22.981171495483867
+          ],
+          [
+            120.21205594695887,
+            22.981165421495877
+          ],
+          [
+            120.21207544599116,
+            22.981155778969764
+          ],
+          [
+            120.21209264354232,
+            22.98114291138999
+          ],
+          [
+            120.212106927004,
+            22.981127277123345
+          ],
+          [
+            120.21211791159753,
+            22.981109174345104
+          ],
+          [
+            120.21343,
+            22.97838
+          ],
+          [
+            120.2137,
+            22.97723
+          ],
+          [
+            120.21406,
+            22.97563
+          ],
+          [
+            120.21489,
+            22.972
+          ],
+          [
+            120.21565,
+            22.96842
+          ],
+          [
+            120.21622,
+            22.96512
+          ],
+          [
+            120.21642,
+            22.96454
+          ],
+          [
+            120.21668,
+            22.96323
+          ],
+          [
+            120.21673,
+            22.96195
+          ],
+          [
+            120.21696,
+            22.96014
+          ],
+          [
+            120.21738,
+            22.95678
+          ],
+          [
+            120.21778,
+            22.95356
+          ],
+          [
+            120.21796,
+            22.95242
+          ],
+          [
+            120.21671,
+            22.9524
+          ],
+          [
+            120.2167,
+            22.95033
+          ],
+          [
+            120.2167,
+            22.94928
+          ],
+          [
+            120.21664,
+            22.94825
+          ],
+          [
+            120.2166,
+            22.94564
+          ],
+          [
+            120.2166,
+            22.94372
+          ],
+          [
+            120.21667,
+            22.94302
+          ],
+          [
+            120.21699,
+            22.9422
+          ],
+          [
+            120.21886,
+            22.93958
+          ],
+          [
+            120.21902,
+            22.93908
+          ],
+          [
+            120.2191,
+            22.93821
+          ],
+          [
+            120.21918,
+            22.93798
+          ],
+          [
+            120.21931,
+            22.93775
+          ],
+          [
+            120.21969,
+            22.93742
+          ],
+          [
+            120.2199,
+            22.93732
+          ],
+          [
+            120.22015,
+            22.93723
+          ],
+          [
+            120.22083187705233,
+            22.937178738450424
+          ],
+          [
+            120.22086027323324,
+            22.937173241529983
+          ],
+          [
+            120.22088639563684,
+            22.937161403402293
+          ],
+          [
+            120.22090856625182,
+            22.937143959443528
+          ],
+          [
+            120.22092541724128,
+            22.93712198587512
+          ],
+          [
+            120.22093590896758,
+            22.93709683837702
+          ],
+          [
+            120.22093939423635,
+            22.937070071759596
+          ],
+          [
+            120.22093,
+            22.93507
+          ],
+          [
+            120.2209,
+            22.92943
+          ],
+          [
+            120.22089,
+            22.92912
+          ],
+          [
+            120.22104,
+            22.9283
+          ],
+          [
+            120.22137,
+            22.92755
+          ],
+          [
+            120.22348,
+            22.92359
+          ],
+          [
+            120.22454,
+            22.92162
+          ],
+          [
+            120.22521,
+            22.92032
+          ],
+          [
+            120.22545,
+            22.91985
+          ],
+          [
+            120.22559,
+            22.91931
+          ],
+          [
+            120.22572,
+            22.91792
+          ],
+          [
+            120.22607000000001,
+            22.91299
+          ],
+          [
+            120.22623,
+            22.91193
+          ],
+          [
+            120.22649,
+            22.91085
+          ],
+          [
+            120.22693248222845,
+            22.909276918785128
+          ],
+          [
+            120.22693376912716,
+            22.90926902145031
+          ],
+          [
+            120.22693326794169,
+            22.909260981982083
+          ],
+          [
+            120.22693098244957,
+            22.9092532131674
+          ],
+          [
+            120.22692701178342,
+            22.90924605197646
+          ],
+          [
+            120.22692152816973,
+            22.909239809023944
+          ],
+          [
+            120.22691488173385,
+            22.909234822695563
+          ],
+          [
+            120.22684,
+            22.90919
+          ],
+          [
+            120.22613,
+            22.90956
+          ],
+          [
+            120.22527,
+            22.90991
+          ],
+          [
+            120.22483,
+            22.91003
+          ],
+          [
+            120.2245,
+            22.91004
+          ],
+          [
+            120.2241,
+            22.90999
+          ],
+          [
+            120.22356,
+            22.90982
+          ],
+          [
+            120.22258,
+            22.90964
+          ],
+          [
+            120.22177,
+            22.90937
+          ],
+          [
+            120.22096,
+            22.90914
+          ],
+          [
+            120.22037,
+            22.90895
+          ],
+          [
+            120.22008,
+            22.90886
+          ],
+          [
+            120.21981,
+            22.90883
+          ],
+          [
+            120.21939,
+            22.90885
+          ],
+          [
+            120.21873,
+            22.90907
+          ],
+          [
+            120.21845,
+            22.90911
+          ],
+          [
+            120.21818,
+            22.90905
+          ],
+          [
+            120.21786,
+            22.9089
+          ],
+          [
+            120.21756,
+            22.90881
+          ],
+          [
+            120.21721,
+            22.90877
+          ],
+          [
+            120.21467,
+            22.90863
+          ],
+          [
+            120.21355,
+            22.90856
+          ],
+          [
+            120.21237,
+            22.90856
+          ],
+          [
+            120.21085,
+            22.90838
+          ],
+          [
+            120.20962,
+            22.90834
+          ],
+          [
+            120.20914,
+            22.90824
+          ],
+          [
+            120.20856,
+            22.90792
+          ],
+          [
+            120.20814,
+            22.90775
+          ],
+          [
+            120.20793,
+            22.90766
+          ],
+          [
+            120.20766,
+            22.90763
+          ],
+          [
+            120.20567,
+            22.90806
+          ],
+          [
+            120.20363,
+            22.90865
+          ],
+          [
+            120.20203,
+            22.90911
+          ],
+          [
+            120.20043,
+            22.90968
+          ],
+          [
+            120.1992,
+            22.9102
+          ],
+          [
+            120.198,
+            22.91077
+          ],
+          [
+            120.19557,
+            22.91194
+          ],
+          [
+            120.19306,
+            22.91312
+          ],
+          [
+            120.19045,
+            22.91393
+          ],
+          [
+            120.18783,
+            22.91365
+          ],
+          [
+            120.18648,
+            22.91349
+          ],
+          [
+            120.18527422569687,
+            22.91335920528257
+          ],
+          [
+            120.1852505059515,
+            22.913354254067507
+          ],
+          [
+            120.18522831890864,
+            22.913344818532064
+          ],
+          [
+            120.18520872426409,
+            22.913331319389265
+          ],
+          [
+            120.1851925743009,
+            22.913314343793978
+          ],
+          [
+            120.1851805714733,
+            22.91329463011187
+          ],
+          [
+            120.18517320593163,
+            22.913272890138675
+          ],
+          [
+            120.1846,
+            22.91066
+          ],
+          [
+            120.18434,
+            22.9093
+          ],
+          [
+            120.18395,
+            22.90746
+          ],
+          [
+            120.18371,
+            22.90636
+          ],
+          [
+            120.18343,
+            22.90511
+          ],
+          [
+            120.1835,
+            22.90499
+          ],
+          [
+            120.18363,
+            22.90417
+          ],
+          [
+            120.18374,
+            22.90338
+          ],
+          [
+            120.18411,
+            22.90073
+          ],
+          [
+            120.18473,
+            22.89816
+          ],
+          [
+            120.18515,
+            22.89546
+          ],
+          [
+            120.18521,
+            22.89523
+          ],
+          [
+            120.18554,
+            22.89445
+          ],
+          [
+            120.18629,
+            22.89285
+          ],
+          [
+            120.18669,
+            22.89136
+          ],
+          [
+            120.18688,
+            22.8906
+          ],
+          [
+            120.18696,
+            22.89024
+          ],
+          [
+            120.18699,
+            22.88988
+          ],
+          [
+            120.18711,
+            22.88889
+          ],
+          [
+            120.18718,
+            22.88837
+          ],
+          [
+            120.18721,
+            22.88814
+          ],
+          [
+            120.18718,
+            22.88794
+          ],
+          [
+            120.18618,
+            22.88612
+          ],
+          [
+            120.1872,
+            22.88266
+          ],
+          [
+            120.18754,
+            22.88163
+          ],
+          [
+            120.18784,
+            22.88113
+          ],
+          [
+            120.18809,
+            22.88066
+          ],
+          [
+            120.18836,
+            22.87945
+          ],
+          [
+            120.18859,
+            22.87833
+          ],
+          [
+            120.18899,
+            22.87748
+          ],
+          [
+            120.18928,
+            22.87691
+          ],
+          [
+            120.19051,
+            22.8735
+          ],
+          [
+            120.1914,
+            22.87379
+          ],
+          [
+            120.1939,
+            22.87454
+          ],
+          [
+            120.19641,
+            22.87534
+          ],
+          [
+            120.19762,
+            22.87197
+          ],
+          [
+            120.19894,
+            22.86833
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "feature_type": "station",
         "ref": "KHH100239171341",
         "name": "茄萣站",
         "name_en": "Cieding Station",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "1033"
       },
       "geometry": {
         "type": "Point",
@@ -662,8 +1547,9 @@
         "name": "健康公園",
         "name_en": "Jiankang Park",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "2576"
       },
       "geometry": {
         "type": "Point",
@@ -681,8 +1567,9 @@
         "name": "興達國小",
         "name_en": "Sinda Elementary School",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "6059"
       },
       "geometry": {
         "type": "Point",
@@ -700,8 +1587,9 @@
         "name": "崎漏電信局",
         "name_en": "Cilou Telecom Office",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "1261"
       },
       "geometry": {
         "type": "Point",
@@ -719,8 +1607,9 @@
         "name": "崎漏農會",
         "name_en": "Cilou Farmers' Association",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "1294"
       },
       "geometry": {
         "type": "Point",
@@ -738,8 +1627,9 @@
         "name": "崎漏",
         "name_en": "Cilou",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "2107"
       },
       "geometry": {
         "type": "Point",
@@ -757,8 +1647,9 @@
         "name": "北崎漏",
         "name_en": "North cilou",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "2109"
       },
       "geometry": {
         "type": "Point",
@@ -776,8 +1667,9 @@
         "name": "成功橋",
         "name_en": "Cheng Gong Bridge",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "2045"
       },
       "geometry": {
         "type": "Point",
@@ -795,8 +1687,9 @@
         "name": "光萣",
         "name_en": "Guang Ding",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "2043"
       },
       "geometry": {
         "type": "Point",
@@ -814,8 +1707,9 @@
         "name": "茄萣農會(下茄萣)",
         "name_en": "Qieding District Farmers' Association(XiaQieding)",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "2041"
       },
       "geometry": {
         "type": "Point",
@@ -833,8 +1727,9 @@
         "name": "頂茄萣",
         "name_en": "Dingcieding",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "2039"
       },
       "geometry": {
         "type": "Point",
@@ -852,8 +1747,9 @@
         "name": "曾厝",
         "name_en": "Zeng Cuo",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "2037"
       },
       "geometry": {
         "type": "Point",
@@ -871,8 +1767,9 @@
         "name": "國校前",
         "name_en": "Guosiaocian",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "1454"
       },
       "geometry": {
         "type": "Point",
@@ -890,8 +1787,9 @@
         "name": "茄萣區公所(茄萣國中)",
         "name_en": "CIEDING DISTRICT OFFICE(Jiading Juinior High School)",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "2035"
       },
       "geometry": {
         "type": "Point",
@@ -909,8 +1807,9 @@
         "name": "威武廟",
         "name_en": "Weiwu Temple",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "2013"
       },
       "geometry": {
         "type": "Point",
@@ -928,8 +1827,9 @@
         "name": "茄萣電信局(白雲寺)",
         "name_en": "Cieding Telecom Office(Baiyun Temple)",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "2005"
       },
       "geometry": {
         "type": "Point",
@@ -947,8 +1847,9 @@
         "name": "南白砂崙",
         "name_en": "South Baishalun",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "2033"
       },
       "geometry": {
         "type": "Point",
@@ -966,8 +1867,9 @@
         "name": "白砂崙",
         "name_en": "Baishalun",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "2031"
       },
       "geometry": {
         "type": "Point",
@@ -985,8 +1887,9 @@
         "name": "草仔寮-湖內",
         "name_en": "Cao Zih Liao-Hu Nei",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "2029"
       },
       "geometry": {
         "type": "Point",
@@ -1004,8 +1907,9 @@
         "name": "新庄路口(中正路二段)",
         "name_en": "Sinjhuang Rd. Intersection(Jhongjheng Rd. Sec. 2)",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "4766"
       },
       "geometry": {
         "type": "Point",
@@ -1023,8 +1927,9 @@
         "name": "中賢里",
         "name_en": "Jhongsian Village",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "1026"
       },
       "geometry": {
         "type": "Point",
@@ -1042,8 +1947,9 @@
         "name": "文賢里",
         "name_en": "Wunsian Village",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "2027"
       },
       "geometry": {
         "type": "Point",
@@ -1061,8 +1967,9 @@
         "name": "湖內區公所(圍子內)",
         "name_en": "Hunei District Office(Weizihnei)",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "2025"
       },
       "geometry": {
         "type": "Point",
@@ -1080,8 +1987,9 @@
         "name": "湖內農會",
         "name_en": "Hunei Farmers' Association",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "2023"
       },
       "geometry": {
         "type": "Point",
@@ -1099,8 +2007,9 @@
         "name": "葉厝甲",
         "name_en": "Yecuojia",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "2021"
       },
       "geometry": {
         "type": "Point",
@@ -1118,8 +2027,9 @@
         "name": "圍內",
         "name_en": "Weinei",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "2019"
       },
       "geometry": {
         "type": "Point",
@@ -1137,8 +2047,9 @@
         "name": "仁佑診所",
         "name_en": "Renyou Clinic",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "2017"
       },
       "geometry": {
         "type": "Point",
@@ -1156,8 +2067,9 @@
         "name": "太爺(中正路一段)",
         "name_en": "Taiye(Jhongjheng Rd. Section 1)",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "1999"
       },
       "geometry": {
         "type": "Point",
@@ -1175,8 +2087,9 @@
         "name": "嘉南藥理大學",
         "name_en": "Chia Nan University of Pharmacy and Science",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "1108"
       },
       "geometry": {
         "type": "Point",
@@ -1194,8 +2107,9 @@
         "name": "臺南家具產業博物館",
         "name_en": "Tainan Furniture Manufauring Eco Museum",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "1110"
       },
       "geometry": {
         "type": "Point",
@@ -1213,8 +2127,9 @@
         "name": "奇美博物館",
         "name_en": "Chimei Museum",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "2435"
       },
       "geometry": {
         "type": "Point",
@@ -1232,8 +2147,9 @@
         "name": "臺南航空站(奇美幸福工廠)",
         "name_en": "Tainan Airport(CHIMEI Happiness Factory)",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "2571"
       },
       "geometry": {
         "type": "Point",
@@ -1251,8 +2167,9 @@
         "name": "仁愛里國泰社區",
         "name_en": "Renai Village Cathay Community",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "1116"
       },
       "geometry": {
         "type": "Point",
@@ -1270,8 +2187,9 @@
         "name": "大同機場路口",
         "name_en": "Datong Jichang Intersection",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "1118"
       },
       "geometry": {
         "type": "Point",
@@ -1289,8 +2207,9 @@
         "name": "生產路口",
         "name_en": "Shengchan Rd. Intersection",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "1120"
       },
       "geometry": {
         "type": "Point",
@@ -1308,8 +2227,9 @@
         "name": "亞伯大飯店",
         "name_en": "Abba Hotel",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "1122"
       },
       "geometry": {
         "type": "Point",
@@ -1327,8 +2247,9 @@
         "name": "忠孝新村",
         "name_en": "Jhongsiao New Village",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "1124"
       },
       "geometry": {
         "type": "Point",
@@ -1346,8 +2267,9 @@
         "name": "大林新村",
         "name_en": "Dalin Housing Complex",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "1126"
       },
       "geometry": {
         "type": "Point",
@@ -1365,8 +2287,9 @@
         "name": "竹溪寺(健康路)",
         "name_en": "Jhusi Temple(Jiankang Rd.)",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "1128"
       },
       "geometry": {
         "type": "Point",
@@ -1384,8 +2307,9 @@
         "name": "體育公園(臺南大學)",
         "name_en": "Athletic Park(National University of Tainan)",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "1130"
       },
       "geometry": {
         "type": "Point",
@@ -1403,8 +2327,9 @@
         "name": "南門路",
         "name_en": "Nanmen Rd.",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "1132"
       },
       "geometry": {
         "type": "Point",
@@ -1422,8 +2347,9 @@
         "name": "建興國中(南門路)",
         "name_en": "Jian-Sing Junior High School(Nan-Men Rd.)",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "1134"
       },
       "geometry": {
         "type": "Point",
@@ -1441,8 +2367,9 @@
         "name": "林百貨(忠義路)",
         "name_en": "Hayashi Department Store (Jhongyi Rd.)",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "1136"
       },
       "geometry": {
         "type": "Point",
@@ -1460,8 +2387,9 @@
         "name": "西門民權路口",
         "name_en": "Simen Mincyuan Intersection",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "1138"
       },
       "geometry": {
         "type": "Point",
@@ -1479,8 +2407,9 @@
         "name": "西門路三段口",
         "name_en": "Sec. 3 Si-Men Road Intersection",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "1140"
       },
       "geometry": {
         "type": "Point",
@@ -1498,8 +2427,9 @@
         "name": "光復市場",
         "name_en": "Guang-Fu Market",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "1142"
       },
       "geometry": {
         "type": "Point",
@@ -1517,8 +2447,9 @@
         "name": "臺南火車站(成功路)",
         "name_en": "Tainan Railway Station(Chenggong Rd.)",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "6158"
       },
       "geometry": {
         "type": "Point",
@@ -1536,8 +2467,9 @@
         "name": "臺南火車站(成功路)",
         "name_en": "Tainan Railway Station(Chenggong Rd.)",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "6159"
       },
       "geometry": {
         "type": "Point",
@@ -1555,8 +2487,9 @@
         "name": "光復市場",
         "name_en": "Guang-Fu Market",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "1143"
       },
       "geometry": {
         "type": "Point",
@@ -1574,8 +2507,9 @@
         "name": "西門路三段口",
         "name_en": "Sec. 3 Si-Men Road Intersection",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "1141"
       },
       "geometry": {
         "type": "Point",
@@ -1593,8 +2527,9 @@
         "name": "西門民權路口",
         "name_en": "Simen Mincyuan Intersection",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "1139"
       },
       "geometry": {
         "type": "Point",
@@ -1612,8 +2547,9 @@
         "name": "林百貨(忠義路)",
         "name_en": "Hayashi Department Store (Jhongyi Rd.)",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "1137"
       },
       "geometry": {
         "type": "Point",
@@ -1631,8 +2567,9 @@
         "name": "建興國中(南門路)",
         "name_en": "Jian-Sing Junior High School(Nan-Men Rd.)",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "1135"
       },
       "geometry": {
         "type": "Point",
@@ -1650,8 +2587,9 @@
         "name": "南門路",
         "name_en": "Nanmen Rd.",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "1133"
       },
       "geometry": {
         "type": "Point",
@@ -1669,8 +2607,9 @@
         "name": "體育公園(臺南大學)",
         "name_en": "Athletic Park(National University of Tainan)",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "1131"
       },
       "geometry": {
         "type": "Point",
@@ -1688,8 +2627,9 @@
         "name": "竹溪寺(健康路)",
         "name_en": "Jhusi Temple(Jiankang Rd.)",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "1129"
       },
       "geometry": {
         "type": "Point",
@@ -1707,8 +2647,9 @@
         "name": "大林新村",
         "name_en": "Dalin Housing Complex",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "1127"
       },
       "geometry": {
         "type": "Point",
@@ -1726,8 +2667,9 @@
         "name": "忠孝新村",
         "name_en": "Jhongsiao New Village",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "1125"
       },
       "geometry": {
         "type": "Point",
@@ -1745,8 +2687,9 @@
         "name": "亞伯大飯店",
         "name_en": "Abba Hotel",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "1123"
       },
       "geometry": {
         "type": "Point",
@@ -1764,8 +2707,9 @@
         "name": "生產路口",
         "name_en": "Shengchan Rd. Intersection",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "1121"
       },
       "geometry": {
         "type": "Point",
@@ -1783,8 +2727,9 @@
         "name": "大同機場路口",
         "name_en": "Datong Jichang Intersection",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "1119"
       },
       "geometry": {
         "type": "Point",
@@ -1802,8 +2747,9 @@
         "name": "仁愛里國泰社區",
         "name_en": "Renai Village Cathay Community",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "1117"
       },
       "geometry": {
         "type": "Point",
@@ -1821,8 +2767,9 @@
         "name": "臺南航空站(奇美幸福工廠)",
         "name_en": "Tainan Airport(CHIMEI Happiness Factory)",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "2572"
       },
       "geometry": {
         "type": "Point",
@@ -1840,8 +2787,9 @@
         "name": "奇美博物館",
         "name_en": "Chimei Museum",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "2436"
       },
       "geometry": {
         "type": "Point",
@@ -1859,8 +2807,9 @@
         "name": "臺南家具產業博物館",
         "name_en": "Tainan Furniture Manufauring Eco Museum",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "1111"
       },
       "geometry": {
         "type": "Point",
@@ -1878,8 +2827,9 @@
         "name": "嘉南藥理大學",
         "name_en": "Chia Nan University of Pharmacy and Science",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "1109"
       },
       "geometry": {
         "type": "Point",
@@ -1897,8 +2847,9 @@
         "name": "太爺(中正路一段)",
         "name_en": "Taiye(Jhongjheng Rd. Section 1)",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "1998"
       },
       "geometry": {
         "type": "Point",
@@ -1916,8 +2867,9 @@
         "name": "仁佑診所",
         "name_en": "Renyou Clinic",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "2016"
       },
       "geometry": {
         "type": "Point",
@@ -1935,8 +2887,9 @@
         "name": "圍內",
         "name_en": "Weinei",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "2018"
       },
       "geometry": {
         "type": "Point",
@@ -1954,8 +2907,9 @@
         "name": "葉厝甲",
         "name_en": "Yecuojia",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "2020"
       },
       "geometry": {
         "type": "Point",
@@ -1973,8 +2927,9 @@
         "name": "湖內農會",
         "name_en": "Hunei Farmers' Association",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "2022"
       },
       "geometry": {
         "type": "Point",
@@ -1992,8 +2947,9 @@
         "name": "湖內區公所(圍子內)",
         "name_en": "Hunei District Office(Weizihnei)",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "2024"
       },
       "geometry": {
         "type": "Point",
@@ -2011,8 +2967,9 @@
         "name": "文賢里",
         "name_en": "Wunsian Village",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "2026"
       },
       "geometry": {
         "type": "Point",
@@ -2030,8 +2987,9 @@
         "name": "中賢里",
         "name_en": "Jhongsian Village",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "1025"
       },
       "geometry": {
         "type": "Point",
@@ -2049,8 +3007,9 @@
         "name": "新庄路口(中正路二段)",
         "name_en": "Sinjhuang Rd. Intersection (Jhongjheng Rd. Sec. 2)",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "4765"
       },
       "geometry": {
         "type": "Point",
@@ -2068,8 +3027,9 @@
         "name": "草仔寮-湖內",
         "name_en": "Cao Zih Liao-Hu Nei",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "2028"
       },
       "geometry": {
         "type": "Point",
@@ -2087,8 +3047,9 @@
         "name": "白砂崙",
         "name_en": "Baishalun",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "2030"
       },
       "geometry": {
         "type": "Point",
@@ -2106,8 +3067,9 @@
         "name": "南白砂崙",
         "name_en": "South Baishalun",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "2032"
       },
       "geometry": {
         "type": "Point",
@@ -2125,8 +3087,9 @@
         "name": "茄萣電信局(白雲寺)",
         "name_en": "Cieding Telecom Office(Baiyun Temple)",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "2004"
       },
       "geometry": {
         "type": "Point",
@@ -2144,8 +3107,9 @@
         "name": "威武廟",
         "name_en": "Weiwu Temple",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "2012"
       },
       "geometry": {
         "type": "Point",
@@ -2163,8 +3127,9 @@
         "name": "茄萣區公所(茄萣國中)",
         "name_en": "CIEDING DISTRICT OFFICE(Jiading Juinior High School)",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "2034"
       },
       "geometry": {
         "type": "Point",
@@ -2182,8 +3147,9 @@
         "name": "國校前",
         "name_en": "Guosiaocian",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "1453"
       },
       "geometry": {
         "type": "Point",
@@ -2201,8 +3167,9 @@
         "name": "曾厝",
         "name_en": "Zeng Cuo",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "2036"
       },
       "geometry": {
         "type": "Point",
@@ -2220,8 +3187,9 @@
         "name": "頂茄萣",
         "name_en": "Dingcieding",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "2038"
       },
       "geometry": {
         "type": "Point",
@@ -2239,8 +3207,9 @@
         "name": "茄萣農會(下茄萣)",
         "name_en": "Qieding District Farmers' Association(XiaQieding)",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "2040"
       },
       "geometry": {
         "type": "Point",
@@ -2258,8 +3227,9 @@
         "name": "光萣",
         "name_en": "Guang Ding",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "2042"
       },
       "geometry": {
         "type": "Point",
@@ -2277,8 +3247,9 @@
         "name": "成功橋",
         "name_en": "Cheng Gong Bridge",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "2044"
       },
       "geometry": {
         "type": "Point",
@@ -2296,8 +3267,9 @@
         "name": "北崎漏",
         "name_en": "North cilou",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "2110"
       },
       "geometry": {
         "type": "Point",
@@ -2315,8 +3287,9 @@
         "name": "崎漏",
         "name_en": "Cilou",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "2108"
       },
       "geometry": {
         "type": "Point",
@@ -2334,8 +3307,9 @@
         "name": "崎漏農會",
         "name_en": "Cilou Farmers' Association",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "1293"
       },
       "geometry": {
         "type": "Point",
@@ -2353,8 +3327,9 @@
         "name": "崎漏電信局",
         "name_en": "Cilou Telecom Office",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "1260"
       },
       "geometry": {
         "type": "Point",
@@ -2372,8 +3347,9 @@
         "name": "興達國小",
         "name_en": "Sinda Elementary School",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "1214"
       },
       "geometry": {
         "type": "Point",
@@ -2391,8 +3367,9 @@
         "name": "健康公園",
         "name_en": "Jiankang Park",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "2575"
       },
       "geometry": {
         "type": "Point",
@@ -2410,8 +3387,9 @@
         "name": "茄萣站",
         "name_en": "Cieding Station",
         "line": "239",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "1034"
       },
       "geometry": {
         "type": "Point",

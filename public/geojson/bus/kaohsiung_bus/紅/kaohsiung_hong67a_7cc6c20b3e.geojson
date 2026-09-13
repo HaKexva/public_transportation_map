@@ -6,7 +6,7 @@
     "name": "紅67A(部分延駛中正堂)",
     "name_en": "紅67A(部分延駛中正堂)",
     "ref": "紅67A(部分延駛中正堂)",
-    "color": "#134e4a",
+    "color": "#1e3a8a",
     "city_id": "Kaohsiung",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ibus.tbkc.gov.tw/cms/api/route/867/map/1801/image",
@@ -22,7 +22,7 @@
         "ref": "紅67A(部分延駛中正堂)",
         "name": "紅67A(部分延駛中正堂)",
         "name_en": "紅67A(部分延駛中正堂)",
-        "color": "#134e4a",
+        "color": "#1e3a8a",
         "direction": 0
       },
       "geometry": {
@@ -33,20 +33,60 @@
             22.79231
           ],
           [
-            120.29976,
-            22.79234
+            120.29972779737547,
+            22.79233804718783
           ],
           [
-            120.29984,
-            22.7924
+            120.29975750102396,
+            22.79234349079237
           ],
           [
-            120.29981,
-            22.79291
+            120.29978474777016,
+            22.79235585983493
           ],
           [
-            120.29972,
-            22.79298
+            120.29980765137273,
+            22.792374318910504
+          ],
+          [
+            120.29982467084274,
+            22.792397626064634
+          ],
+          [
+            120.29983466108453,
+            22.792424213156806
+          ],
+          [
+            120.29983695227365,
+            22.79245225003356
+          ],
+          [
+            120.29981208588768,
+            22.792874182873874
+          ],
+          [
+            120.29980613149934,
+            22.79290298584173
+          ],
+          [
+            120.299792114696,
+            22.792929223574223
+          ],
+          [
+            120.29977105327627,
+            22.792951027657296
+          ],
+          [
+            120.29974448021115,
+            22.792966811064662
+          ],
+          [
+            120.29971432964082,
+            22.792975424989336
+          ],
+          [
+            120.29968270868649,
+            22.792976233691782
           ],
           [
             120.29912,
@@ -77,8 +117,32 @@
             22.80684
           ],
           [
-            120.26304,
-            22.80756
+            120.26312686570355,
+            22.807547934042887
+          ],
+          [
+            120.26310272950973,
+            22.807553784021596
+          ],
+          [
+            120.26308037848912,
+            22.807564313881546
+          ],
+          [
+            120.26306095806504,
+            22.807579023463248
+          ],
+          [
+            120.26304536040445,
+            22.80759723701401
+          ],
+          [
+            120.26303430205805,
+            22.807618117810144
+          ],
+          [
+            120.26302827650528,
+            22.80764080700931
           ],
           [
             120.26259,
@@ -93,8 +157,32 @@
             22.81571
           ],
           [
-            120.26969,
-            22.82079
+            120.26963983372517,
+            22.820717911978864
+          ],
+          [
+            120.2696513505013,
+            22.820739322627947
+          ],
+          [
+            120.2696575822729,
+            22.820762900751312
+          ],
+          [
+            120.26965801323536,
+            22.820787174775802
+          ],
+          [
+            120.26965262183516,
+            22.82081093069853
+          ],
+          [
+            120.26964167770933,
+            22.820832980428154
+          ],
+          [
+            120.26962601305173,
+            22.82085194636234
           ],
           [
             120.26788,
@@ -150,13 +238,202 @@
     {
       "type": "Feature",
       "properties": {
+        "feature_type": "route",
+        "ref": "紅67A(部分延駛中正堂)",
+        "name": "紅67A(部分延駛中正堂)",
+        "name_en": "紅67A(部分延駛中正堂)",
+        "color": "#1e3a8a",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.26018,
+            22.82863
+          ],
+          [
+            120.26104,
+            22.82873
+          ],
+          [
+            120.26238,
+            22.82901
+          ],
+          [
+            120.26416,
+            22.82992
+          ],
+          [
+            120.26461,
+            22.82964
+          ],
+          [
+            120.26585944602049,
+            22.829556124903863
+          ],
+          [
+            120.26588463155007,
+            22.829551811937876
+          ],
+          [
+            120.26590825369617,
+            22.829542487412215
+          ],
+          [
+            120.2659291153485,
+            22.829528604474692
+          ],
+          [
+            120.26594621161856,
+            22.829510831854854
+          ],
+          [
+            120.26595871899326,
+            22.829490025645025
+          ],
+          [
+            120.26596606058447,
+            22.829467056860107
+          ],
+          [
+            120.26712,
+            22.82355
+          ],
+          [
+            120.26744,
+            22.82294
+          ],
+          [
+            120.26779,
+            22.82249
+          ],
+          [
+            120.2696729743316,
+            22.82070554368446
+          ],
+          [
+            120.26968890361245,
+            22.820686495774844
+          ],
+          [
+            120.26970004106798,
+            22.820664292148955
+          ],
+          [
+            120.26970553267913,
+            22.82064033608471
+          ],
+          [
+            120.26970509890938,
+            22.820615847004667
+          ],
+          [
+            120.26969876183867,
+            22.820592071463203
+          ],
+          [
+            120.26968705069339,
+            22.820570512362956
+          ],
+          [
+            120.26907,
+            22.8197
+          ],
+          [
+            120.26826,
+            22.81885
+          ],
+          [
+            120.26783,
+            22.81802
+          ],
+          [
+            120.26283,
+            22.81131
+          ],
+          [
+            120.26261,
+            22.81037
+          ],
+          [
+            120.26309635024823,
+            22.807598354227114
+          ],
+          [
+            120.26310284335281,
+            22.80757623949767
+          ],
+          [
+            120.2631141220413,
+            22.80755598410268
+          ],
+          [
+            120.26312970955125,
+            22.807538362496675
+          ],
+          [
+            120.26314891821607,
+            22.807524152083435
+          ],
+          [
+            120.26317090061652,
+            22.807513979776818
+          ],
+          [
+            120.26319456888143,
+            22.80750831060087
+          ],
+          [
+            120.26821,
+            22.80682
+          ],
+          [
+            120.27506,
+            22.816
+          ],
+          [
+            120.2818,
+            22.80993
+          ],
+          [
+            120.29384,
+            22.80013
+          ],
+          [
+            120.29842,
+            22.79673
+          ],
+          [
+            120.29853,
+            22.7965
+          ],
+          [
+            120.29859,
+            22.79611
+          ],
+          [
+            120.29902,
+            22.79228
+          ],
+          [
+            120.29962,
+            22.79234
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "feature_type": "station",
         "ref": "KHH100867133351",
         "name": "臺鐵岡山車站(捷運岡山車站)",
         "name_en": "TRA Gangshan Station(MRT Gangshan Station)",
         "line": "紅67A(部分延駛中正堂)",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "51"
       },
       "geometry": {
         "type": "Point",
@@ -174,8 +451,9 @@
         "name": "岡山農工",
         "name_en": "Kangshan Agricultural & Industrial Vocational Senior High School",
         "line": "紅67A(部分延駛中正堂)",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "2002"
       },
       "geometry": {
         "type": "Point",
@@ -193,8 +471,9 @@
         "name": "育德街口",
         "name_en": "Yude St. Intersection",
         "line": "紅67A(部分延駛中正堂)",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "1029"
       },
       "geometry": {
         "type": "Point",
@@ -212,8 +491,9 @@
         "name": "本洲工業區",
         "name_en": "Benjhou Industrial Park",
         "line": "紅67A(部分延駛中正堂)",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "4947"
       },
       "geometry": {
         "type": "Point",
@@ -231,8 +511,9 @@
         "name": "本工五路口",
         "name_en": "Bengong 5th Rd. Intersection",
         "line": "紅67A(部分延駛中正堂)",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "2255"
       },
       "geometry": {
         "type": "Point",
@@ -250,8 +531,9 @@
         "name": "南本洲",
         "name_en": "South benjhou",
         "line": "紅67A(部分延駛中正堂)",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "1560"
       },
       "geometry": {
         "type": "Point",
@@ -269,8 +551,9 @@
         "name": "本工六路口",
         "name_en": "Bengong 6th Rd. Intersection",
         "line": "紅67A(部分延駛中正堂)",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "5057"
       },
       "geometry": {
         "type": "Point",
@@ -288,8 +571,9 @@
         "name": "滷味博物館",
         "name_en": "Taiwan soya-mixed meat museum",
         "line": "紅67A(部分延駛中正堂)",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "2251"
       },
       "geometry": {
         "type": "Point",
@@ -307,8 +591,9 @@
         "name": "北嶺墘",
         "name_en": "Beilingcian",
         "line": "紅67A(部分延駛中正堂)",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "1074"
       },
       "geometry": {
         "type": "Point",
@@ -326,8 +611,9 @@
         "name": "味全公司",
         "name_en": "Wei Chuan Foods Corp.",
         "line": "紅67A(部分延駛中正堂)",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "1076"
       },
       "geometry": {
         "type": "Point",
@@ -345,8 +631,9 @@
         "name": "台鋼科大",
         "name_en": "Taiwan Steel University of Science and Technology",
         "line": "紅67A(部分延駛中正堂)",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "4763"
       },
       "geometry": {
         "type": "Point",
@@ -364,8 +651,9 @@
         "name": "路科八路口",
         "name_en": "Luke 8th Rd. Intersection",
         "line": "紅67A(部分延駛中正堂)",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "4931"
       },
       "geometry": {
         "type": "Point",
@@ -383,8 +671,9 @@
         "name": "電信技術中心",
         "name_en": "Telecommunications Technology Center",
         "line": "紅67A(部分延駛中正堂)",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "2603"
       },
       "geometry": {
         "type": "Point",
@@ -402,8 +691,9 @@
         "name": "高雄科學園區",
         "name_en": "Kaohsiung Science Park",
         "line": "紅67A(部分延駛中正堂)",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "4933"
       },
       "geometry": {
         "type": "Point",
@@ -421,8 +711,9 @@
         "name": "高雄科學園區",
         "name_en": "Kaohsiung Science Park",
         "line": "紅67A(部分延駛中正堂)",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "4932"
       },
       "geometry": {
         "type": "Point",
@@ -440,8 +731,9 @@
         "name": "電信技術中心",
         "name_en": "Telecommunications Technology Center",
         "line": "紅67A(部分延駛中正堂)",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "2604"
       },
       "geometry": {
         "type": "Point",
@@ -459,8 +751,9 @@
         "name": "味全公司",
         "name_en": "Wei Chuan Foods Corp.",
         "line": "紅67A(部分延駛中正堂)",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "1077"
       },
       "geometry": {
         "type": "Point",
@@ -478,8 +771,9 @@
         "name": "北嶺墘",
         "name_en": "Beilingcian",
         "line": "紅67A(部分延駛中正堂)",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "1075"
       },
       "geometry": {
         "type": "Point",
@@ -497,8 +791,9 @@
         "name": "滷味博物館",
         "name_en": "Taiwan soya-mixed meat museum",
         "line": "紅67A(部分延駛中正堂)",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "2250"
       },
       "geometry": {
         "type": "Point",
@@ -516,8 +811,9 @@
         "name": "本工六路口",
         "name_en": "Bengong 6th Rd. Intersection",
         "line": "紅67A(部分延駛中正堂)",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "2252"
       },
       "geometry": {
         "type": "Point",
@@ -535,8 +831,9 @@
         "name": "南本洲",
         "name_en": "South benjhou",
         "line": "紅67A(部分延駛中正堂)",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "1561"
       },
       "geometry": {
         "type": "Point",
@@ -554,8 +851,9 @@
         "name": "本工五路口",
         "name_en": "Bengong 5th Rd. Intersection",
         "line": "紅67A(部分延駛中正堂)",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "2254"
       },
       "geometry": {
         "type": "Point",
@@ -573,8 +871,9 @@
         "name": "本洲工業區",
         "name_en": "Benjhou Industrial Park",
         "line": "紅67A(部分延駛中正堂)",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "4946"
       },
       "geometry": {
         "type": "Point",
@@ -592,8 +891,9 @@
         "name": "育德街口",
         "name_en": "Yude St. Intersection",
         "line": "紅67A(部分延駛中正堂)",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "1030"
       },
       "geometry": {
         "type": "Point",
@@ -611,8 +911,9 @@
         "name": "岡山農工",
         "name_en": "Kangshan Agricultural & Industrial Vocational Senior High School",
         "line": "紅67A(部分延駛中正堂)",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "2003"
       },
       "geometry": {
         "type": "Point",
@@ -630,8 +931,9 @@
         "name": "臺鐵岡山車站(捷運岡山車站)",
         "name_en": "TRA Gangshan Station(MRT Gangshan Station)",
         "line": "紅67A(部分延駛中正堂)",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "51"
       },
       "geometry": {
         "type": "Point",

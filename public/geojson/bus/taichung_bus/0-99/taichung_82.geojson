@@ -6,7 +6,7 @@
     "name": "82",
     "name_en": "82",
     "ref": "82",
-    "color": "#9f1239",
+    "color": "#c2410c",
     "city_id": "Taichung",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://citybus.taichung.gov.tw/ebus/strapi/uploads/82_b0208a4b15.jpeg",
@@ -22,7 +22,7 @@
         "ref": "82",
         "name": "82",
         "name_en": "82",
-        "color": "#9f1239",
+        "color": "#c2410c",
         "direction": 0
       },
       "geometry": {
@@ -157,12 +157,32 @@
             24.17494
           ],
           [
-            120.6712,
-            24.17436
+            120.67133454734791,
+            24.173923693882728
           ],
           [
-            120.67132,
-            24.17383
+            120.67134525364871,
+            24.173899998777646
+          ],
+          [
+            120.67136156531576,
+            24.173879420454934
+          ],
+          [
+            120.671382644682,
+            24.173862897983245
+          ],
+          [
+            120.67140733258103,
+            24.173851339942686
+          ],
+          [
+            120.6714342714113,
+            24.173845381916472
+          ],
+          [
+            120.67146207524357,
+            24.173845361833727
           ],
           [
             120.67281,
@@ -213,16 +233,32 @@
             24.16281
           ],
           [
-            120.69228,
-            24.16252
+            120.69258686579894,
+            24.162382236716333
           ],
           [
-            120.69244,
-            24.16228
+            120.69261045972509,
+            24.162368183455207
           ],
           [
-            120.69252,
-            24.16191
+            120.6926299661818,
+            24.162349163455833
+          ],
+          [
+            120.69264396023847,
+            24.16232641119163
+          ],
+          [
+            120.69265163086148,
+            24.162301245283157
+          ],
+          [
+            120.69265253349545,
+            24.162275124235126
+          ],
+          [
+            120.69264669803682,
+            24.162249782855667
           ],
           [
             120.69246,
@@ -281,12 +317,32 @@
             24.13843
           ],
           [
-            120.68468,
-            24.13775
+            120.68484145966184,
+            24.137552651683738
           ],
           [
-            120.68495,
-            24.13751
+            120.6848555087353,
+            24.13753829983501
+          ],
+          [
+            120.68487176640835,
+            24.13752666060483
+          ],
+          [
+            120.68488997782431,
+            24.137517795214745
+          ],
+          [
+            120.68490958867193,
+            24.137511973505653
+          ],
+          [
+            120.68493000204478,
+            24.137509372676217
+          ],
+          [
+            120.6849506983203,
+            24.137510083612398
           ],
           [
             120.68617,
@@ -306,12 +362,20 @@
         "ref": "82",
         "name": "82",
         "name_en": "82",
-        "color": "#9f1239",
+        "color": "#c2410c",
         "direction": 1
       },
       "geometry": {
         "type": "LineString",
         "coordinates": [
+          [
+            120.68651,
+            24.13772
+          ],
+          [
+            120.68675,
+            24.13787
+          ],
           [
             120.68688,
             24.13805
@@ -331,23 +395,267 @@
           [
             120.68602,
             24.1389
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "route",
-        "ref": "82",
-        "name": "82",
-        "name_en": "82",
-        "color": "#9f1239",
-        "direction": 1
-      },
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
+          ],
+          [
+            120.68500477838965,
+            24.1375848763923
+          ],
+          [
+            120.68497872713525,
+            24.137560290921297
+          ],
+          [
+            120.68494599807879,
+            24.13754452144236
+          ],
+          [
+            120.68490956856064,
+            24.13753881747862
+          ],
+          [
+            120.68487300390855,
+            24.137543737272438
+          ],
+          [
+            120.68483988267576,
+            24.137558799327525
+          ],
+          [
+            120.68481320969225,
+            24.137582822976086
+          ],
+          [
+            120.68428,
+            24.13824
+          ],
+          [
+            120.68408,
+            24.13848
+          ],
+          [
+            120.68393,
+            24.13862
+          ],
+          [
+            120.68275,
+            24.13964
+          ],
+          [
+            120.68114,
+            24.14104
+          ],
+          [
+            120.67956,
+            24.14241
+          ],
+          [
+            120.6803,
+            24.1431
+          ],
+          [
+            120.68189,
+            24.14473
+          ],
+          [
+            120.68259,
+            24.14611
+          ],
+          [
+            120.6854,
+            24.15283
+          ],
+          [
+            120.68619,
+            24.15469
+          ],
+          [
+            120.69135,
+            24.15908
+          ],
+          [
+            120.69223,
+            24.1612
+          ],
+          [
+            120.69273,
+            24.16232
+          ],
+          [
+            120.69189,
+            24.16274
+          ],
+          [
+            120.69139,
+            24.16292
+          ],
+          [
+            120.69043,
+            24.16296
+          ],
+          [
+            120.68624,
+            24.16303
+          ],
+          [
+            120.686,
+            24.16303
+          ],
+          [
+            120.68518909350594,
+            24.163077804505313
+          ],
+          [
+            120.68515999968767,
+            24.163082954010306
+          ],
+          [
+            120.68513317009202,
+            24.163094618719814
+          ],
+          [
+            120.68511035120378,
+            24.16311205929695
+          ],
+          [
+            120.68509298317333,
+            24.163134175028386
+          ],
+          [
+            120.68508216213549,
+            24.163159570141463
+          ],
+          [
+            120.68507857110639,
+            24.163186638350602
+          ],
+          [
+            120.68509,
+            24.16544
+          ],
+          [
+            120.68513,
+            24.16701
+          ],
+          [
+            120.6855,
+            24.17215
+          ],
+          [
+            120.68218,
+            24.17254
+          ],
+          [
+            120.67953,
+            24.17295
+          ],
+          [
+            120.6771,
+            24.17335
+          ],
+          [
+            120.67542,
+            24.17367
+          ],
+          [
+            120.67418,
+            24.17393
+          ],
+          [
+            120.67357,
+            24.17402
+          ],
+          [
+            120.67264,
+            24.17401
+          ],
+          [
+            120.67144,
+            24.17382
+          ],
+          [
+            120.67121,
+            24.17472
+          ],
+          [
+            120.67106,
+            24.17513
+          ],
+          [
+            120.67078,
+            24.17556
+          ],
+          [
+            120.67042,
+            24.176
+          ],
+          [
+            120.66707,
+            24.1804
+          ],
+          [
+            120.66676,
+            24.18081
+          ],
+          [
+            120.6658,
+            24.18275
+          ],
+          [
+            120.66527,
+            24.18369
+          ],
+          [
+            120.66084,
+            24.19133
+          ],
+          [
+            120.65978,
+            24.19303
+          ],
+          [
+            120.65935,
+            24.19374
+          ],
+          [
+            120.65932,
+            24.19383
+          ],
+          [
+            120.65921,
+            24.19399
+          ],
+          [
+            120.65918,
+            24.19409
+          ],
+          [
+            120.65853866949048,
+            24.195147382929644
+          ],
+          [
+            120.65851963870065,
+            24.195170850161432
+          ],
+          [
+            120.65849478054503,
+            24.195188632790593
+          ],
+          [
+            120.6584656908108,
+            24.19519975002179
+          ],
+          [
+            120.65843443712177,
+            24.195203411670704
+          ],
+          [
+            120.65840324091,
+            24.195199357476728
+          ],
+          [
+            120.65837400472059,
+            24.195187701087814
+          ],
           [
             120.65617,
             24.19397
@@ -359,6 +667,10 @@
           [
             120.65380999999999,
             24.19582
+          ],
+          [
+            120.65269,
+            24.19766
           ]
         ]
       }
@@ -371,8 +683,9 @@
         "name": "水湳轉運中心",
         "name_en": "Shuinan Transit Center",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "3018"
       },
       "geometry": {
         "type": "Point",
@@ -390,8 +703,9 @@
         "name": "環中中清路口",
         "name_en": "Huanzhong-Zhongqing Intersection",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "2425"
       },
       "geometry": {
         "type": "Point",
@@ -409,8 +723,9 @@
         "name": "中清環中路口",
         "name_en": "Zhongqing-Huanzhong Intersection",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "315"
       },
       "geometry": {
         "type": "Point",
@@ -428,8 +743,9 @@
         "name": "下港尾",
         "name_en": "Xiagangwei",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "1060"
       },
       "geometry": {
         "type": "Point",
@@ -447,8 +763,9 @@
         "name": "中清同榮路口",
         "name_en": "Zhongqing-Tongrong Intersection",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "1062"
       },
       "geometry": {
         "type": "Point",
@@ -466,8 +783,9 @@
         "name": "貿易三村(中清路)",
         "name_en": "Maoyi 3rd Village(Zhongqing Road)",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "1064"
       },
       "geometry": {
         "type": "Point",
@@ -485,8 +803,9 @@
         "name": "后庄國宅",
         "name_en": "Houzhuang Civil House",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "1066"
       },
       "geometry": {
         "type": "Point",
@@ -504,8 +823,9 @@
         "name": "中清后庄路口",
         "name_en": "Zhongqing-Houzhuang Intersection",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "1068"
       },
       "geometry": {
         "type": "Point",
@@ -523,8 +843,9 @@
         "name": "后庄仔",
         "name_en": "Houzhuangzi",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "1070"
       },
       "geometry": {
         "type": "Point",
@@ -542,8 +863,9 @@
         "name": "頂陳平",
         "name_en": "Dingchenping",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "1072"
       },
       "geometry": {
         "type": "Point",
@@ -561,8 +883,9 @@
         "name": "陳平",
         "name_en": "Chenping",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "1074"
       },
       "geometry": {
         "type": "Point",
@@ -580,8 +903,9 @@
         "name": "全民醫院",
         "name_en": "Quanmin Hospital",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "66"
       },
       "geometry": {
         "type": "Point",
@@ -599,8 +923,9 @@
         "name": "大德國中",
         "name_en": "Dade Junior High School",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "1076"
       },
       "geometry": {
         "type": "Point",
@@ -618,8 +943,9 @@
         "name": "水湳市場(中清路)",
         "name_en": "Shuinan Market(Zhongqing Road)",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "4049"
       },
       "geometry": {
         "type": "Point",
@@ -637,8 +963,9 @@
         "name": "水湳",
         "name_en": "Shuinan",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "2816"
       },
       "geometry": {
         "type": "Point",
@@ -656,8 +983,9 @@
         "name": "下水湳",
         "name_en": "Xiashuinan",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "1078"
       },
       "geometry": {
         "type": "Point",
@@ -675,8 +1003,9 @@
         "name": "文心中清路口",
         "name_en": "Wenxin-Zhongqing Intersection",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "2431"
       },
       "geometry": {
         "type": "Point",
@@ -694,8 +1023,9 @@
         "name": "文心青島東街口",
         "name_en": "Wenxin-Qingdao E. Intersection",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "261"
       },
       "geometry": {
         "type": "Point",
@@ -713,8 +1043,9 @@
         "name": "文心山西路口",
         "name_en": "Wenxin-Shanxi Intersection",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "1156"
       },
       "geometry": {
         "type": "Point",
@@ -732,8 +1063,9 @@
         "name": "文心梅川西路口",
         "name_en": "Wenxin-MeiChuan W. Intersection",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "717"
       },
       "geometry": {
         "type": "Point",
@@ -751,8 +1083,9 @@
         "name": "文心國小",
         "name_en": "Wenxin Elementary School",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "371"
       },
       "geometry": {
         "type": "Point",
@@ -770,8 +1103,9 @@
         "name": "捷運文心崇德站(文心路)",
         "name_en": "MRT Wenxin Chongde Station(Wenxin Road)",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "310"
       },
       "geometry": {
         "type": "Point",
@@ -789,8 +1123,9 @@
         "name": "捷運文心崇德站(崇德路)",
         "name_en": "MRT Wenxin Chongde Station(Chongde Road)",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "2626"
       },
       "geometry": {
         "type": "Point",
@@ -808,8 +1143,9 @@
         "name": "崇德北平路口",
         "name_en": "Chongde-Beiping Intersection",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "861"
       },
       "geometry": {
         "type": "Point",
@@ -827,8 +1163,9 @@
         "name": "崇德青島路口",
         "name_en": "Chongde-Qingdao Intersection",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "271"
       },
       "geometry": {
         "type": "Point",
@@ -846,8 +1183,9 @@
         "name": "崇德橋",
         "name_en": "Chongde Bridge",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "476"
       },
       "geometry": {
         "type": "Point",
@@ -865,8 +1203,9 @@
         "name": "進化北榮華街口",
         "name_en": "Jinhua N.-Ronghua Intersection",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "807"
       },
       "geometry": {
         "type": "Point",
@@ -884,8 +1223,9 @@
         "name": "稅務新村",
         "name_en": "Shuiwu Community",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "981"
       },
       "geometry": {
         "type": "Point",
@@ -903,8 +1243,9 @@
         "name": "北屯市場",
         "name_en": "Beitun Market",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "954"
       },
       "geometry": {
         "type": "Point",
@@ -922,8 +1263,9 @@
         "name": "監理站",
         "name_en": "Motor Vehicles Office",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "266"
       },
       "geometry": {
         "type": "Point",
@@ -941,8 +1283,9 @@
         "name": "寶覺寺",
         "name_en": "Baojue Temple",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "378"
       },
       "geometry": {
         "type": "Point",
@@ -960,8 +1303,9 @@
         "name": "新民高中(三民路)",
         "name_en": "Shin-min Senior High School(Sanmin Road)",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "727"
       },
       "geometry": {
         "type": "Point",
@@ -979,8 +1323,9 @@
         "name": "一心市場",
         "name_en": "Yixin Market",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "437"
       },
       "geometry": {
         "type": "Point",
@@ -996,10 +1341,11 @@
         "feature_type": "station",
         "ref": "TXG3701",
         "name": "三民錦新街口",
-        "name_en": null,
+        "name_en": "Sanmin-Jinxin Intersection",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "225"
       },
       "geometry": {
         "type": "Point",
@@ -1017,8 +1363,9 @@
         "name": "中友百貨",
         "name_en": "Chungyo Department Store",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "341"
       },
       "geometry": {
         "type": "Point",
@@ -1036,8 +1383,9 @@
         "name": "國立臺中科技大學",
         "name_en": "National Taichung University of Science and Technology",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "280"
       },
       "geometry": {
         "type": "Point",
@@ -1055,8 +1403,9 @@
         "name": "臺中公園(三民路)",
         "name_en": "Taichung Park(Sanmin Road)",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "2264"
       },
       "geometry": {
         "type": "Point",
@@ -1074,8 +1423,9 @@
         "name": "光復國小(三民路)",
         "name_en": "Guang Fu Elementary School(Sanmin Road)",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "136"
       },
       "geometry": {
         "type": "Point",
@@ -1093,8 +1443,9 @@
         "name": "第二市場(三民路)",
         "name_en": "2nd Market(Sanmin Road)",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "92"
       },
       "geometry": {
         "type": "Point",
@@ -1112,8 +1463,9 @@
         "name": "第二信用",
         "name_en": "Second Credit Cooperative",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "4876"
       },
       "geometry": {
         "type": "Point",
@@ -1131,8 +1483,9 @@
         "name": "彰化銀行(自由路)",
         "name_en": "Chang Hwa Bank(Ziyou Road)",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "5"
       },
       "geometry": {
         "type": "Point",
@@ -1150,8 +1503,9 @@
         "name": "臺中車站(臺灣大道)",
         "name_en": "Taichung Station(Taiwan Boulevard)",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "719"
       },
       "geometry": {
         "type": "Point",
@@ -1169,8 +1523,9 @@
         "name": "臺中車站(B月台)",
         "name_en": "Taichung Station(Platform B)",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "4981"
       },
       "geometry": {
         "type": "Point",
@@ -1188,8 +1543,9 @@
         "name": "臺中車站(B月台)",
         "name_en": "Taichung Station(Platform B)",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "4981"
       },
       "geometry": {
         "type": "Point",
@@ -1207,8 +1563,9 @@
         "name": "臺中車站(臺灣大道)",
         "name_en": "Taichung Station(Taiwan Boulevard)",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "720"
       },
       "geometry": {
         "type": "Point",
@@ -1226,8 +1583,9 @@
         "name": "第一廣場",
         "name_en": "First Square",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "2557"
       },
       "geometry": {
         "type": "Point",
@@ -1245,8 +1603,9 @@
         "name": "彰化銀行(臺灣大道)",
         "name_en": "Chang Hwa Bank(Taiwan Boulevard)",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "464"
       },
       "geometry": {
         "type": "Point",
@@ -1264,8 +1623,9 @@
         "name": "第二市場(臺灣大道)",
         "name_en": "2nd Market(Taiwan Boulevard)",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "111"
       },
       "geometry": {
         "type": "Point",
@@ -1283,8 +1643,9 @@
         "name": "光復國小(三民路)",
         "name_en": "Guang Fu Elementary School(Sanmin Road)",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "135"
       },
       "geometry": {
         "type": "Point",
@@ -1302,8 +1663,9 @@
         "name": "臺中公園(三民路)",
         "name_en": "Taichung Park(Sanmin Road)",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "2265"
       },
       "geometry": {
         "type": "Point",
@@ -1321,8 +1683,9 @@
         "name": "國立臺中科技大學",
         "name_en": "National Taichung University of Science and Technology",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "281"
       },
       "geometry": {
         "type": "Point",
@@ -1340,8 +1703,9 @@
         "name": "中友百貨",
         "name_en": "Chungyo Department Store",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "340"
       },
       "geometry": {
         "type": "Point",
@@ -1359,8 +1723,9 @@
         "name": "三民錦新街口",
         "name_en": "Sanmin-Jinxin Intersection",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "226"
       },
       "geometry": {
         "type": "Point",
@@ -1378,8 +1743,9 @@
         "name": "一心市場",
         "name_en": "Yixin Market",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "436"
       },
       "geometry": {
         "type": "Point",
@@ -1397,8 +1763,9 @@
         "name": "新民高中(三民路)",
         "name_en": "Shin-min Senior High School(Sanmin Road)",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "728"
       },
       "geometry": {
         "type": "Point",
@@ -1416,8 +1783,9 @@
         "name": "寶覺寺",
         "name_en": "Baojue Temple",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "377"
       },
       "geometry": {
         "type": "Point",
@@ -1435,8 +1803,9 @@
         "name": "監理站",
         "name_en": "Motor Vehicles Office",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "265"
       },
       "geometry": {
         "type": "Point",
@@ -1454,8 +1823,9 @@
         "name": "北屯國小(進化北路)",
         "name_en": "Beitun Elementary School(Jinhua N. Road)",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "3626"
       },
       "geometry": {
         "type": "Point",
@@ -1473,8 +1843,9 @@
         "name": "北屯市場",
         "name_en": "Beitun Market",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "954"
       },
       "geometry": {
         "type": "Point",
@@ -1492,8 +1863,9 @@
         "name": "稅務新村",
         "name_en": "Shuiwu Community",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "980"
       },
       "geometry": {
         "type": "Point",
@@ -1511,8 +1883,9 @@
         "name": "進化北榮華街口",
         "name_en": "Jinhua N.-Ronghua Intersection",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "808"
       },
       "geometry": {
         "type": "Point",
@@ -1530,8 +1903,9 @@
         "name": "崇德橋",
         "name_en": "Chongde Bridge",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "477"
       },
       "geometry": {
         "type": "Point",
@@ -1549,8 +1923,9 @@
         "name": "崇德青島路口",
         "name_en": "Chongde-Qingdao Intersection",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "272"
       },
       "geometry": {
         "type": "Point",
@@ -1568,8 +1943,9 @@
         "name": "崇德北平路口",
         "name_en": "Chongde-Beiping Intersection",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "860"
       },
       "geometry": {
         "type": "Point",
@@ -1587,8 +1963,9 @@
         "name": "捷運文心崇德站(文心路)",
         "name_en": "MRT Wenxin Chongde Station(Wenxin Road)",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "309"
       },
       "geometry": {
         "type": "Point",
@@ -1606,8 +1983,9 @@
         "name": "文心國小",
         "name_en": "Wenxin Elementary School",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "372"
       },
       "geometry": {
         "type": "Point",
@@ -1625,8 +2003,9 @@
         "name": "文心梅川西路口",
         "name_en": "Wenxin-MeiChuan W. Intersection",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "718"
       },
       "geometry": {
         "type": "Point",
@@ -1644,8 +2023,9 @@
         "name": "文心山西路口",
         "name_en": "Wenxin-Shanxi Intersection",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "1155"
       },
       "geometry": {
         "type": "Point",
@@ -1663,8 +2043,9 @@
         "name": "文心青島東街口",
         "name_en": "Wenxin-Qingdao E. Intersection",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "262"
       },
       "geometry": {
         "type": "Point",
@@ -1682,8 +2063,9 @@
         "name": "文心中清路口",
         "name_en": "Wenxin-Zhongqing Intersection",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "2430"
       },
       "geometry": {
         "type": "Point",
@@ -1701,8 +2083,9 @@
         "name": "下水湳",
         "name_en": "Xiashuinan",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "1079"
       },
       "geometry": {
         "type": "Point",
@@ -1720,8 +2103,9 @@
         "name": "水湳",
         "name_en": "Shuinan",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "2815"
       },
       "geometry": {
         "type": "Point",
@@ -1739,8 +2123,9 @@
         "name": "水湳市場(中清路)",
         "name_en": "Shuinan Market(Zhongqing Road)",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "4050"
       },
       "geometry": {
         "type": "Point",
@@ -1758,8 +2143,9 @@
         "name": "大德國中",
         "name_en": "Dade Junior High School",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "1077"
       },
       "geometry": {
         "type": "Point",
@@ -1777,8 +2163,9 @@
         "name": "全民醫院",
         "name_en": "Quanmin Hospital",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "65"
       },
       "geometry": {
         "type": "Point",
@@ -1796,8 +2183,9 @@
         "name": "陳平",
         "name_en": "Chenping",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "1075"
       },
       "geometry": {
         "type": "Point",
@@ -1815,8 +2203,9 @@
         "name": "頂陳平",
         "name_en": "Dingchenping",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "1073"
       },
       "geometry": {
         "type": "Point",
@@ -1834,8 +2223,9 @@
         "name": "后庄仔",
         "name_en": "Houzhuangzi",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "1071"
       },
       "geometry": {
         "type": "Point",
@@ -1853,8 +2243,9 @@
         "name": "中清后庄路口",
         "name_en": "Zhongqing-Houzhuang Intersection",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "1068"
       },
       "geometry": {
         "type": "Point",
@@ -1872,8 +2263,9 @@
         "name": "后庄國宅",
         "name_en": "Houzhuang Civil House",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "1066"
       },
       "geometry": {
         "type": "Point",
@@ -1891,8 +2283,9 @@
         "name": "貿易三村(中清路)",
         "name_en": "Maoyi 3rd Village(Zhongqing Road)",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "1065"
       },
       "geometry": {
         "type": "Point",
@@ -1910,8 +2303,9 @@
         "name": "中清同榮路口",
         "name_en": "Zhongqing-Tongrong Intersection",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "1063"
       },
       "geometry": {
         "type": "Point",
@@ -1929,8 +2323,9 @@
         "name": "下港尾(經貿八路)",
         "name_en": "Xiagangwei(Jingmao 8th Road)",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "3047"
       },
       "geometry": {
         "type": "Point",
@@ -1948,8 +2343,9 @@
         "name": "經貿黎明路口",
         "name_en": "Jingmao-Liming Intersection",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "7185"
       },
       "geometry": {
         "type": "Point",
@@ -1967,8 +2363,9 @@
         "name": "水湳轉運中心",
         "name_en": "Shuinan Transit Center",
         "line": "82",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "3018"
       },
       "geometry": {
         "type": "Point",

@@ -6,7 +6,7 @@
     "name": "92自由幹線",
     "name_en": "92自由幹線",
     "ref": "92自由幹線",
-    "color": "#3f6212",
+    "color": "#1d4ed8",
     "city_id": "Kaohsiung",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ibus.tbkc.gov.tw/cms/api/route/92/map/1734/image",
@@ -22,7 +22,7 @@
         "ref": "92自由幹線",
         "name": "92自由幹線",
         "name_en": "92自由幹線",
-        "color": "#3f6212",
+        "color": "#1d4ed8",
         "direction": 0
       },
       "geometry": {
@@ -169,12 +169,32 @@
             22.63904
           ],
           [
-            120.30873,
-            22.63824
+            120.30885719490466,
+            22.637671116609436
           ],
           [
-            120.3087,
-            22.63754
+            120.30885916439816,
+            22.637639542515707
+          ],
+          [
+            120.30885119826527,
+            22.637608639687425
+          ],
+          [
+            120.3088339458256,
+            22.637581204912966
+          ],
+          [
+            120.30880888539019,
+            22.637559588997917
+          ],
+          [
+            120.30877816431449,
+            22.637545644146815
+          ],
+          [
+            120.30874442622475,
+            22.637540565394524
           ],
           [
             120.30633,
@@ -202,13 +222,178 @@
     {
       "type": "Feature",
       "properties": {
+        "feature_type": "route",
+        "ref": "92自由幹線",
+        "name": "92自由幹線",
+        "name_en": "92自由幹線",
+        "color": "#1d4ed8",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.30357,
+            22.63958
+          ],
+          [
+            120.30365,
+            22.64117
+          ],
+          [
+            120.30842,
+            22.64084
+          ],
+          [
+            120.30915,
+            22.64991
+          ],
+          [
+            120.30871,
+            22.65237
+          ],
+          [
+            120.30857,
+            22.65355
+          ],
+          [
+            120.30881,
+            22.65654
+          ],
+          [
+            120.30882,
+            22.66111
+          ],
+          [
+            120.30825,
+            22.6635
+          ],
+          [
+            120.30825,
+            22.66415
+          ],
+          [
+            120.30841,
+            22.66488
+          ],
+          [
+            120.3098,
+            22.6687
+          ],
+          [
+            120.31131,
+            22.67227
+          ],
+          [
+            120.31224,
+            22.67471
+          ],
+          [
+            120.31344,
+            22.67839
+          ],
+          [
+            120.31365,
+            22.6795
+          ],
+          [
+            120.31383,
+            22.68154
+          ],
+          [
+            120.31447517441515,
+            22.68267083884024
+          ],
+          [
+            120.31448479146023,
+            22.68269384979298
+          ],
+          [
+            120.31448857418106,
+            22.682718599646606
+          ],
+          [
+            120.31448616364726,
+            22.682743497281898
+          ],
+          [
+            120.314477687681,
+            22.682767222463923
+          ],
+          [
+            120.31446359573333,
+            22.682788517128863
+          ],
+          [
+            120.3144449479253,
+            22.682806019349744
+          ],
+          [
+            120.31282,
+            22.68401
+          ],
+          [
+            120.31128,
+            22.68566
+          ],
+          [
+            120.30971,
+            22.68455
+          ],
+          [
+            120.3081,
+            22.68641
+          ],
+          [
+            120.30954,
+            22.68762
+          ],
+          [
+            120.31113,
+            22.6893
+          ],
+          [
+            120.31624,
+            22.68483
+          ],
+          [
+            120.31821,
+            22.68328
+          ],
+          [
+            120.31982000000001,
+            22.683
+          ],
+          [
+            120.31861,
+            22.67717
+          ],
+          [
+            120.31689,
+            22.66827
+          ],
+          [
+            120.3221,
+            22.66694
+          ],
+          [
+            120.32182,
+            22.6658
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "feature_type": "station",
         "ref": "KHH100092144891",
         "name": "金獅湖站",
         "name_en": "Golden Lion Lake Station",
         "line": "92自由幹線",
-        "color": "#3f6212",
-        "direction": 0
+        "color": "#1d4ed8",
+        "direction": 0,
+        "station_id": "3548"
       },
       "geometry": {
         "type": "Point",
@@ -226,8 +411,9 @@
         "name": "鼎強街口",
         "name_en": "Dingciang St. Intersection",
         "line": "92自由幹線",
-        "color": "#3f6212",
-        "direction": 0
+        "color": "#1d4ed8",
+        "direction": 0,
+        "station_id": "755"
       },
       "geometry": {
         "type": "Point",
@@ -245,8 +431,9 @@
         "name": "天祥一路",
         "name_en": "Tiansiang 1st Rd.",
         "line": "92自由幹線",
-        "color": "#3f6212",
-        "direction": 0
+        "color": "#1d4ed8",
+        "direction": 0,
+        "station_id": "3730"
       },
       "geometry": {
         "type": "Point",
@@ -264,8 +451,9 @@
         "name": "文藻外語大學(民族一路)",
         "name_en": "Wenzao University(Minzu 1st Rd.)",
         "line": "92自由幹線",
-        "color": "#3f6212",
-        "direction": 0
+        "color": "#1d4ed8",
+        "direction": 0,
+        "station_id": "876"
       },
       "geometry": {
         "type": "Point",
@@ -283,8 +471,9 @@
         "name": "菜公路口(民族一路)",
         "name_en": "Caigong Rd. Intersection(Minzu 1st Rd.)",
         "line": "92自由幹線",
-        "color": "#3f6212",
-        "direction": 0
+        "color": "#1d4ed8",
+        "direction": 0,
+        "station_id": "874"
       },
       "geometry": {
         "type": "Point",
@@ -302,8 +491,9 @@
         "name": "大中路口(民族一路)",
         "name_en": "Dajhong Rd. Intersection (Minzu 1st Rd.)",
         "line": "92自由幹線",
-        "color": "#3f6212",
-        "direction": 0
+        "color": "#1d4ed8",
+        "direction": 0,
+        "station_id": "2443"
       },
       "geometry": {
         "type": "Point",
@@ -321,8 +511,9 @@
         "name": "新莊高中(民族一路)",
         "name_en": "Kaohsiung Municipal Hsinchuang Senior High School (Minzu 1st Rd.)",
         "line": "92自由幹線",
-        "color": "#3f6212",
-        "direction": 0
+        "color": "#1d4ed8",
+        "direction": 0,
+        "station_id": "872"
       },
       "geometry": {
         "type": "Point",
@@ -340,8 +531,9 @@
         "name": "重愛路(新莊高中)",
         "name_en": "Jhongai Rd. (Hsin Chuan Senior High School)",
         "line": "92自由幹線",
-        "color": "#3f6212",
-        "direction": 0
+        "color": "#1d4ed8",
+        "direction": 0,
+        "station_id": "2395"
       },
       "geometry": {
         "type": "Point",
@@ -359,8 +551,9 @@
         "name": "文自路口",
         "name_en": "Wunzih Rd. Intersection",
         "line": "92自由幹線",
-        "color": "#3f6212",
-        "direction": 0
+        "color": "#1d4ed8",
+        "direction": 0,
+        "station_id": "3807"
       },
       "geometry": {
         "type": "Point",
@@ -378,8 +571,9 @@
         "name": "華夏路口(重愛路)",
         "name_en": "Huasia Rd. Intersection (Chongai Rd.)",
         "line": "92自由幹線",
-        "color": "#3f6212",
-        "direction": 0
+        "color": "#1d4ed8",
+        "direction": 0,
+        "station_id": "2167"
       },
       "geometry": {
         "type": "Point",
@@ -397,8 +591,9 @@
         "name": "高鐵路口(左營新光三越)",
         "name_en": "HSR Gaotie Rd. Intersection(Zuoying Shin Kong Mitsukoshi Department Store)",
         "line": "92自由幹線",
-        "color": "#3f6212",
-        "direction": 0
+        "color": "#1d4ed8",
+        "direction": 0,
+        "station_id": "4614"
       },
       "geometry": {
         "type": "Point",
@@ -416,8 +611,9 @@
         "name": "高鐵左營站",
         "name_en": "HSR Zuoying Station",
         "line": "92自由幹線",
-        "color": "#3f6212",
-        "direction": 0
+        "color": "#1d4ed8",
+        "direction": 0,
+        "station_id": "2777"
       },
       "geometry": {
         "type": "Point",
@@ -435,8 +631,9 @@
         "name": "重平路口",
         "name_en": "Jhongping Rd. Intersection",
         "line": "92自由幹線",
-        "color": "#3f6212",
-        "direction": 0
+        "color": "#1d4ed8",
+        "direction": 0,
+        "station_id": "3841"
       },
       "geometry": {
         "type": "Point",
@@ -454,8 +651,9 @@
         "name": "重和路口",
         "name_en": "Jhonghe Rd. Intersection",
         "line": "92自由幹線",
-        "color": "#3f6212",
-        "direction": 0
+        "color": "#1d4ed8",
+        "direction": 0,
+        "station_id": "1024"
       },
       "geometry": {
         "type": "Point",
@@ -473,8 +671,9 @@
         "name": "重立路口",
         "name_en": "Jhongli Rd. Intersection",
         "line": "92自由幹線",
-        "color": "#3f6212",
-        "direction": 0
+        "color": "#1d4ed8",
+        "direction": 0,
+        "station_id": "3861"
       },
       "geometry": {
         "type": "Point",
@@ -492,8 +691,9 @@
         "name": "新民國小",
         "name_en": "Xinmin Elementary School",
         "line": "92自由幹線",
-        "color": "#3f6212",
-        "direction": 0
+        "color": "#1d4ed8",
+        "direction": 0,
+        "station_id": "681"
       },
       "geometry": {
         "type": "Point",
@@ -511,8 +711,9 @@
         "name": "自由三路",
         "name_en": "Zihyou 3rd Rd.",
         "line": "92自由幹線",
-        "color": "#3f6212",
-        "direction": 0
+        "color": "#1d4ed8",
+        "direction": 0,
+        "station_id": "4652"
       },
       "geometry": {
         "type": "Point",
@@ -530,8 +731,9 @@
         "name": "重清路口",
         "name_en": "Jhongcing Rd. Intersection",
         "line": "92自由幹線",
-        "color": "#3f6212",
-        "direction": 0
+        "color": "#1d4ed8",
+        "direction": 0,
+        "station_id": "4654"
       },
       "geometry": {
         "type": "Point",
@@ -549,8 +751,9 @@
         "name": "立信路口",
         "name_en": "Lisin Rd. Intersection",
         "line": "92自由幹線",
-        "color": "#3f6212",
-        "direction": 0
+        "color": "#1d4ed8",
+        "direction": 0,
+        "station_id": "3982"
       },
       "geometry": {
         "type": "Point",
@@ -568,8 +771,9 @@
         "name": "自由二路",
         "name_en": "Zihyou 2nd Rd.",
         "line": "92自由幹線",
-        "color": "#3f6212",
-        "direction": 0
+        "color": "#1d4ed8",
+        "direction": 0,
+        "station_id": "4656"
       },
       "geometry": {
         "type": "Point",
@@ -587,8 +791,9 @@
         "name": "明誠路口(自由二路)",
         "name_en": "Mingcheng Rd. Intersection(Zihyou 2nd Rd.)",
         "line": "92自由幹線",
-        "color": "#3f6212",
-        "direction": 0
+        "color": "#1d4ed8",
+        "direction": 0,
+        "station_id": "3996"
       },
       "geometry": {
         "type": "Point",
@@ -606,8 +811,9 @@
         "name": "龍華國中(忠言路口)",
         "name_en": "Longhua Junior High School(Jhongyan Rd. Intersection)",
         "line": "92自由幹線",
-        "color": "#3f6212",
-        "direction": 0
+        "color": "#1d4ed8",
+        "direction": 0,
+        "station_id": "2693"
       },
       "geometry": {
         "type": "Point",
@@ -625,8 +831,9 @@
         "name": "大順一路口",
         "name_en": "Dashun 1st Rd. Intersection",
         "line": "92自由幹線",
-        "color": "#3f6212",
-        "direction": 0
+        "color": "#1d4ed8",
+        "direction": 0,
+        "station_id": "2172"
       },
       "geometry": {
         "type": "Point",
@@ -644,8 +851,9 @@
         "name": "慈濟靜思堂",
         "name_en": "Tzu Chi Jing Si Hall",
         "line": "92自由幹線",
-        "color": "#3f6212",
-        "direction": 0
+        "color": "#1d4ed8",
+        "direction": 0,
+        "station_id": "4118"
       },
       "geometry": {
         "type": "Point",
@@ -663,8 +871,9 @@
         "name": "自由一路",
         "name_en": "Zihyou 1st Rd.",
         "line": "92自由幹線",
-        "color": "#3f6212",
-        "direction": 0
+        "color": "#1d4ed8",
+        "direction": 0,
+        "station_id": "4660"
       },
       "geometry": {
         "type": "Point",
@@ -682,8 +891,9 @@
         "name": "同盟一路口",
         "name_en": "Tongmeng 1st Rd. Intersection",
         "line": "92自由幹線",
-        "color": "#3f6212",
-        "direction": 0
+        "color": "#1d4ed8",
+        "direction": 0,
+        "station_id": "4002"
       },
       "geometry": {
         "type": "Point",
@@ -701,8 +911,9 @@
         "name": "高醫(高雄醫學大學)",
         "name_en": "Kaohsiung Medical University Chung-Ho Memorial Hospital",
         "line": "92自由幹線",
-        "color": "#3f6212",
-        "direction": 0
+        "color": "#1d4ed8",
+        "direction": 0,
+        "station_id": "4004"
       },
       "geometry": {
         "type": "Point",
@@ -720,8 +931,9 @@
         "name": "鐵路新村",
         "name_en": "Railroad New Village",
         "line": "92自由幹線",
-        "color": "#3f6212",
-        "direction": 0
+        "color": "#1d4ed8",
+        "direction": 0,
+        "station_id": "1441"
       },
       "geometry": {
         "type": "Point",
@@ -739,8 +951,9 @@
         "name": "建國忠孝路口",
         "name_en": "Jianguo Jhongsiao Intersection",
         "line": "92自由幹線",
-        "color": "#3f6212",
-        "direction": 0
+        "color": "#1d4ed8",
+        "direction": 0,
+        "station_id": "2865"
       },
       "geometry": {
         "type": "Point",
@@ -758,8 +971,9 @@
         "name": "建國林森路口",
         "name_en": "Jianguo Linsen Intersection",
         "line": "92自由幹線",
-        "color": "#3f6212",
-        "direction": 0
+        "color": "#1d4ed8",
+        "direction": 0,
+        "station_id": "258"
       },
       "geometry": {
         "type": "Point",
@@ -777,8 +991,9 @@
         "name": "高雄車站(站東路)",
         "name_en": "Kaohsiung Main Station(Jhandong Rd.)",
         "line": "92自由幹線",
-        "color": "#3f6212",
-        "direction": 0
+        "color": "#1d4ed8",
+        "direction": 0,
+        "station_id": "5948"
       },
       "geometry": {
         "type": "Point",
@@ -796,8 +1011,9 @@
         "name": "高雄車站(站東路)",
         "name_en": "Kaohsiung Main Station(Jhandong Rd.)",
         "line": "92自由幹線",
-        "color": "#3f6212",
-        "direction": 1
+        "color": "#1d4ed8",
+        "direction": 1,
+        "station_id": "5948"
       },
       "geometry": {
         "type": "Point",
@@ -815,8 +1031,9 @@
         "name": "大連街口",
         "name_en": "Dalian St. Intersection",
         "line": "92自由幹線",
-        "color": "#3f6212",
-        "direction": 1
+        "color": "#1d4ed8",
+        "direction": 1,
+        "station_id": "3194"
       },
       "geometry": {
         "type": "Point",
@@ -834,8 +1051,9 @@
         "name": "高醫(高雄醫學大學)",
         "name_en": "Kaohsiung Medical University Chung-Ho Memorial Hospital",
         "line": "92自由幹線",
-        "color": "#3f6212",
-        "direction": 1
+        "color": "#1d4ed8",
+        "direction": 1,
+        "station_id": "4005"
       },
       "geometry": {
         "type": "Point",
@@ -853,8 +1071,9 @@
         "name": "同盟一路口",
         "name_en": "Tongmeng 1st Rd. Intersection",
         "line": "92自由幹線",
-        "color": "#3f6212",
-        "direction": 1
+        "color": "#1d4ed8",
+        "direction": 1,
+        "station_id": "4003"
       },
       "geometry": {
         "type": "Point",
@@ -872,8 +1091,9 @@
         "name": "自由一路",
         "name_en": "Zihyou 1st Rd.",
         "line": "92自由幹線",
-        "color": "#3f6212",
-        "direction": 1
+        "color": "#1d4ed8",
+        "direction": 1,
+        "station_id": "4661"
       },
       "geometry": {
         "type": "Point",
@@ -891,8 +1111,9 @@
         "name": "慈濟靜思堂",
         "name_en": "Tzu Chi Jing Si Hall",
         "line": "92自由幹線",
-        "color": "#3f6212",
-        "direction": 1
+        "color": "#1d4ed8",
+        "direction": 1,
+        "station_id": "4119"
       },
       "geometry": {
         "type": "Point",
@@ -910,8 +1131,9 @@
         "name": "大順一路口",
         "name_en": "Dashun 1st Rd. Intersection",
         "line": "92自由幹線",
-        "color": "#3f6212",
-        "direction": 1
+        "color": "#1d4ed8",
+        "direction": 1,
+        "station_id": "2173"
       },
       "geometry": {
         "type": "Point",
@@ -929,8 +1151,9 @@
         "name": "龍華國中(忠言路口)",
         "name_en": "Longhua Junior High School(Jhongyan Rd. Intersection)",
         "line": "92自由幹線",
-        "color": "#3f6212",
-        "direction": 1
+        "color": "#1d4ed8",
+        "direction": 1,
+        "station_id": "2692"
       },
       "geometry": {
         "type": "Point",
@@ -948,8 +1171,9 @@
         "name": "明誠路口(自由二路)",
         "name_en": "Mingcheng Rd. Intersection(Zihyou 2nd Rd.)",
         "line": "92自由幹線",
-        "color": "#3f6212",
-        "direction": 1
+        "color": "#1d4ed8",
+        "direction": 1,
+        "station_id": "3995"
       },
       "geometry": {
         "type": "Point",
@@ -967,8 +1191,9 @@
         "name": "自由二路",
         "name_en": "Zihyou 2nd Rd.",
         "line": "92自由幹線",
-        "color": "#3f6212",
-        "direction": 1
+        "color": "#1d4ed8",
+        "direction": 1,
+        "station_id": "4657"
       },
       "geometry": {
         "type": "Point",
@@ -986,8 +1211,9 @@
         "name": "立信路口",
         "name_en": "Lisin Rd. Intersection",
         "line": "92自由幹線",
-        "color": "#3f6212",
-        "direction": 1
+        "color": "#1d4ed8",
+        "direction": 1,
+        "station_id": "3981"
       },
       "geometry": {
         "type": "Point",
@@ -1005,8 +1231,9 @@
         "name": "重清路口",
         "name_en": "Jhongcing Rd. Intersection",
         "line": "92自由幹線",
-        "color": "#3f6212",
-        "direction": 1
+        "color": "#1d4ed8",
+        "direction": 1,
+        "station_id": "4655"
       },
       "geometry": {
         "type": "Point",
@@ -1024,8 +1251,9 @@
         "name": "自由三路",
         "name_en": "Zihyou 3rd Rd.",
         "line": "92自由幹線",
-        "color": "#3f6212",
-        "direction": 1
+        "color": "#1d4ed8",
+        "direction": 1,
+        "station_id": "4653"
       },
       "geometry": {
         "type": "Point",
@@ -1043,8 +1271,9 @@
         "name": "新民國小",
         "name_en": "Xinmin Elementary School",
         "line": "92自由幹線",
-        "color": "#3f6212",
-        "direction": 1
+        "color": "#1d4ed8",
+        "direction": 1,
+        "station_id": "682"
       },
       "geometry": {
         "type": "Point",
@@ -1062,8 +1291,9 @@
         "name": "重立路口",
         "name_en": "Jhongli Rd. Intersection",
         "line": "92自由幹線",
-        "color": "#3f6212",
-        "direction": 1
+        "color": "#1d4ed8",
+        "direction": 1,
+        "station_id": "3860"
       },
       "geometry": {
         "type": "Point",
@@ -1081,8 +1311,9 @@
         "name": "重和路口",
         "name_en": "Jhonghe Rd. Intersection",
         "line": "92自由幹線",
-        "color": "#3f6212",
-        "direction": 1
+        "color": "#1d4ed8",
+        "direction": 1,
+        "station_id": "1023"
       },
       "geometry": {
         "type": "Point",
@@ -1100,8 +1331,9 @@
         "name": "文府路口(高鐵左營站)",
         "name_en": "Wunfu Rd. Intersection (THSR Xinzuoying Station)",
         "line": "92自由幹線",
-        "color": "#3f6212",
-        "direction": 1
+        "color": "#1d4ed8",
+        "direction": 1,
+        "station_id": "4628"
       },
       "geometry": {
         "type": "Point",
@@ -1119,8 +1351,9 @@
         "name": "高鐵路口(左營新光三越)",
         "name_en": "HSR Gaotie Rd. Intersection(Zuoying Shin Kong Mitsukoshi Department Store)",
         "line": "92自由幹線",
-        "color": "#3f6212",
-        "direction": 1
+        "color": "#1d4ed8",
+        "direction": 1,
+        "station_id": "4615"
       },
       "geometry": {
         "type": "Point",
@@ -1138,8 +1371,9 @@
         "name": "華夏路口(重愛路)",
         "name_en": "Huasia Rd. Intersection (Chongai Rd.)",
         "line": "92自由幹線",
-        "color": "#3f6212",
-        "direction": 1
+        "color": "#1d4ed8",
+        "direction": 1,
+        "station_id": "2165"
       },
       "geometry": {
         "type": "Point",
@@ -1157,8 +1391,9 @@
         "name": "文自路口",
         "name_en": "Wunzih Rd. Intersection",
         "line": "92自由幹線",
-        "color": "#3f6212",
-        "direction": 1
+        "color": "#1d4ed8",
+        "direction": 1,
+        "station_id": "3806"
       },
       "geometry": {
         "type": "Point",
@@ -1176,8 +1411,9 @@
         "name": "重愛路(新莊高中)",
         "name_en": "Jhongai Rd. (Hsin Chuan Senior High School)",
         "line": "92自由幹線",
-        "color": "#3f6212",
-        "direction": 1
+        "color": "#1d4ed8",
+        "direction": 1,
+        "station_id": "2394"
       },
       "geometry": {
         "type": "Point",
@@ -1195,8 +1431,9 @@
         "name": "新莊高中(民族一路)",
         "name_en": "Kaohsiung Municipal Hsinchuang Senior High School (Minzu 1st Rd.)",
         "line": "92自由幹線",
-        "color": "#3f6212",
-        "direction": 1
+        "color": "#1d4ed8",
+        "direction": 1,
+        "station_id": "873"
       },
       "geometry": {
         "type": "Point",
@@ -1214,8 +1451,9 @@
         "name": "大中路口(民族一路)",
         "name_en": "Dajhong Rd. Intersection (Minzu 1st Rd.)",
         "line": "92自由幹線",
-        "color": "#3f6212",
-        "direction": 1
+        "color": "#1d4ed8",
+        "direction": 1,
+        "station_id": "2444"
       },
       "geometry": {
         "type": "Point",
@@ -1233,8 +1471,9 @@
         "name": "菜公路口(民族一路)",
         "name_en": "Caigong Rd. Intersection(Minzu 1st Rd.)",
         "line": "92自由幹線",
-        "color": "#3f6212",
-        "direction": 1
+        "color": "#1d4ed8",
+        "direction": 1,
+        "station_id": "875"
       },
       "geometry": {
         "type": "Point",
@@ -1252,8 +1491,9 @@
         "name": "文藻外語大學(民族一路)",
         "name_en": "Wenzao University(Minzu 1st Rd.)",
         "line": "92自由幹線",
-        "color": "#3f6212",
-        "direction": 1
+        "color": "#1d4ed8",
+        "direction": 1,
+        "station_id": "877"
       },
       "geometry": {
         "type": "Point",
@@ -1271,8 +1511,9 @@
         "name": "天祥一路",
         "name_en": "Tiansiang 1st Rd.",
         "line": "92自由幹線",
-        "color": "#3f6212",
-        "direction": 1
+        "color": "#1d4ed8",
+        "direction": 1,
+        "station_id": "3731"
       },
       "geometry": {
         "type": "Point",
@@ -1290,8 +1531,9 @@
         "name": "鼎強街口",
         "name_en": "Dingciang St. Intersection",
         "line": "92自由幹線",
-        "color": "#3f6212",
-        "direction": 1
+        "color": "#1d4ed8",
+        "direction": 1,
+        "station_id": "754"
       },
       "geometry": {
         "type": "Point",
@@ -1309,8 +1551,9 @@
         "name": "金獅湖站",
         "name_en": "Golden Lion Lake Station",
         "line": "92自由幹線",
-        "color": "#3f6212",
-        "direction": 1
+        "color": "#1d4ed8",
+        "direction": 1,
+        "station_id": "3548"
       },
       "geometry": {
         "type": "Point",

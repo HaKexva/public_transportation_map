@@ -6,10 +6,10 @@
     "name": "F218",
     "name_en": "F218",
     "ref": "F218",
-    "color": "#15803d",
+    "color": "#d97706",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
-    "official_map_url": "https://ebus.gov.taipei/File/Get/0c8e894b-c878-4a93-abfb-4f507bb1d0fa?v=639234358800830764",
+    "official_map_url": "https://ebus.gov.taipei/File/Get/0c8e894b-c878-4a93-abfb-4f507bb1d0fa?v=639248448784226636",
     "operator_id": "16233",
     "operator": "泰山區公所",
     "operator_en": "Taishan District Office"
@@ -22,7 +22,7 @@
         "ref": "F218",
         "name": "F218",
         "name_en": "F218",
-        "color": "#15803d",
+        "color": "#d97706",
         "direction": 0
       },
       "geometry": {
@@ -165,16 +165,32 @@
             25.0606399111808
           ],
           [
-            121.432813609335,
-            25.0617193285348
+            121.43282390082847,
+            25.0617399945965
           ],
           [
-            121.433157142497,
-            25.0614951279454
+            121.43284903868108,
+            25.06177296387593
           ],
           [
-            121.433325292939,
-            25.0612636950788
+            121.43288530795893,
+            25.06179522714348
+          ],
+          [
+            121.43292794272688,
+            25.061804040498533
+          ],
+          [
+            121.43297118941726,
+            25.061798214577642
+          ],
+          [
+            121.43300921188339,
+            25.06177853558961
+          ],
+          [
+            121.43303704758125,
+            25.061747377716333
           ],
           [
             121.437686356017,
@@ -250,13 +266,242 @@
     {
       "type": "Feature",
       "properties": {
+        "feature_type": "route",
+        "ref": "F218",
+        "name": "F218",
+        "name_en": "F218",
+        "color": "#d97706",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            121.460003355012,
+            25.0415231947934
+          ],
+          [
+            121.459929224172,
+            25.0444974687418
+          ],
+          [
+            121.457844520304,
+            25.0444504589408
+          ],
+          [
+            121.456016562272,
+            25.0443383586461
+          ],
+          [
+            121.453931858404,
+            25.0439966335542
+          ],
+          [
+            121.453255640497,
+            25.0438248669736
+          ],
+          [
+            121.451892356268,
+            25.0435410000982
+          ],
+          [
+            121.45107149282,
+            25.0434216675264
+          ],
+          [
+            121.449789571708,
+            25.0431649216902
+          ],
+          [
+            121.449069960138,
+            25.0429334888236
+          ],
+          [
+            121.447686787147,
+            25.0424579666057
+          ],
+          [
+            121.446952711024,
+            25.0421361302758
+          ],
+          [
+            121.445262166256,
+            25.0412989942039
+          ],
+          [
+            121.442240882507,
+            25.046489961077
+          ],
+          [
+            121.438518067881,
+            25.0527024870873
+          ],
+          [
+            121.437758749463,
+            25.0540577800502
+          ],
+          [
+            121.435330441759,
+            25.0579856654931
+          ],
+          [
+            121.434516810587,
+            25.059386919177
+          ],
+          [
+            121.43301949300968,
+            25.061874299809276
+          ],
+          [
+            121.43299148759527,
+            25.06190551562907
+          ],
+          [
+            121.43295325579078,
+            25.06192514601794
+          ],
+          [
+            121.43290982480464,
+            25.06193080483486
+          ],
+          [
+            121.43286709756113,
+            25.061921722961486
+          ],
+          [
+            121.43283088133533,
+            25.061899134761028
+          ],
+          [
+            121.43280597436087,
+            25.061865853202182
+          ],
+          [
+            121.432213330338,
+            25.0606399111808
+          ],
+          [
+            121.431880645592,
+            25.059728644269
+          ],
+          [
+            121.430826541208,
+            25.0583255825158
+          ],
+          [
+            121.430754218437,
+            25.0580399075712
+          ],
+          [
+            121.430681895666,
+            25.0556333673733
+          ],
+          [
+            121.43054809854,
+            25.0552301679262
+          ],
+          [
+            121.430508321017,
+            25.055074673969
+          ],
+          [
+            121.430602340619,
+            25.0548034635786
+          ],
+          [
+            121.430551714679,
+            25.0545051321491
+          ],
+          [
+            121.430157555578,
+            25.0538162577574
+          ],
+          [
+            121.429358388961,
+            25.0528959504991
+          ],
+          [
+            121.428479667296,
+            25.0521004000205
+          ],
+          [
+            121.428266315122,
+            25.0519286334399
+          ],
+          [
+            121.427788984835,
+            25.0513066576112
+          ],
+          [
+            121.427615410185,
+            25.0508745290557
+          ],
+          [
+            121.427499693752,
+            25.0496667387836
+          ],
+          [
+            121.427459916228,
+            25.0491116615179
+          ],
+          [
+            121.426957272971,
+            25.0477122159032
+          ],
+          [
+            121.426566730009,
+            25.0464935772155
+          ],
+          [
+            121.425948370319,
+            25.0454159679308
+          ],
+          [
+            121.424796630194,
+            25.0435319597519
+          ],
+          [
+            121.424771317224,
+            25.0432101234219
+          ],
+          [
+            121.424999133952,
+            25.0411489244545
+          ],
+          [
+            121.424988285536,
+            25.0406010794659
+          ],
+          [
+            121.424887033657,
+            25.0401508702177
+          ],
+          [
+            121.424315683768,
+            25.0390696447945
+          ],
+          [
+            121.422411786827,
+            25.0359669979279
+          ],
+          [
+            121.421757265752,
+            25.0350014889379
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "feature_type": "station",
         "ref": "NWT158180",
         "name": "下坡角",
         "name_en": "Xiapojiao",
         "line": "F218",
-        "color": "#15803d",
-        "direction": 0
+        "color": "#d97706",
+        "direction": 0,
+        "station_id": "3605"
       },
       "geometry": {
         "type": "Point",
@@ -274,8 +519,9 @@
         "name": "明志科技大學",
         "name_en": "Mingchi U. of Technology",
         "line": "F218",
-        "color": "#15803d",
-        "direction": 0
+        "color": "#d97706",
+        "direction": 0,
+        "station_id": "3618"
       },
       "geometry": {
         "type": "Point",
@@ -293,8 +539,9 @@
         "name": "泰山巖",
         "name_en": "Taishanyan",
         "line": "F218",
-        "color": "#15803d",
-        "direction": 0
+        "color": "#d97706",
+        "direction": 0,
+        "station_id": "36066"
       },
       "geometry": {
         "type": "Point",
@@ -312,8 +559,9 @@
         "name": "明志國小",
         "name_en": "Mingzhi Elementary School",
         "line": "F218",
-        "color": "#15803d",
-        "direction": 0
+        "color": "#d97706",
+        "direction": 0,
+        "station_id": "3619"
       },
       "geometry": {
         "type": "Point",
@@ -331,8 +579,9 @@
         "name": "文程路口",
         "name_en": "Wencheng Rd. Entrance",
         "line": "F218",
-        "color": "#15803d",
-        "direction": 0
+        "color": "#d97706",
+        "direction": 0,
+        "station_id": "36064"
       },
       "geometry": {
         "type": "Point",
@@ -350,8 +599,9 @@
         "name": "義學里",
         "name_en": "Yixue Village",
         "line": "F218",
-        "color": "#15803d",
-        "direction": 0
+        "color": "#d97706",
+        "direction": 0,
+        "station_id": "3633"
       },
       "geometry": {
         "type": "Point",
@@ -369,8 +619,9 @@
         "name": "同榮里",
         "name_en": "Tongrong Village",
         "line": "F218",
-        "color": "#15803d",
-        "direction": 0
+        "color": "#d97706",
+        "direction": 0,
+        "station_id": "36062"
       },
       "geometry": {
         "type": "Point",
@@ -388,8 +639,9 @@
         "name": "泰山高中",
         "name_en": "Taishan High School",
         "line": "F218",
-        "color": "#15803d",
-        "direction": 0
+        "color": "#d97706",
+        "direction": 0,
+        "station_id": "36061"
       },
       "geometry": {
         "type": "Point",
@@ -407,8 +659,9 @@
         "name": "泰山區公所",
         "name_en": "Taishan District Office",
         "line": "F218",
-        "color": "#15803d",
-        "direction": 0
+        "color": "#d97706",
+        "direction": 0,
+        "station_id": "3628"
       },
       "geometry": {
         "type": "Point",
@@ -426,8 +679,9 @@
         "name": "泰山分駐所",
         "name_en": "Taishan Police Substation",
         "line": "F218",
-        "color": "#15803d",
-        "direction": 0
+        "color": "#d97706",
+        "direction": 0,
+        "station_id": "3621"
       },
       "geometry": {
         "type": "Point",
@@ -445,8 +699,9 @@
         "name": "福泰里",
         "name_en": "Futai Village",
         "line": "F218",
-        "color": "#15803d",
-        "direction": 0
+        "color": "#d97706",
+        "direction": 0,
+        "station_id": "3634"
       },
       "geometry": {
         "type": "Point",
@@ -464,8 +719,9 @@
         "name": "臺北醫院",
         "name_en": "Taipei Hospital",
         "line": "F218",
-        "color": "#15803d",
-        "direction": 0
+        "color": "#d97706",
+        "direction": 0,
+        "station_id": "50665"
       },
       "geometry": {
         "type": "Point",
@@ -483,8 +739,9 @@
         "name": "福泰里",
         "name_en": "Futai Village",
         "line": "F218",
-        "color": "#15803d",
-        "direction": 1
+        "color": "#d97706",
+        "direction": 1,
+        "station_id": "36075"
       },
       "geometry": {
         "type": "Point",
@@ -502,8 +759,9 @@
         "name": "泰山分駐所",
         "name_en": "Taishan Precinct",
         "line": "F218",
-        "color": "#15803d",
-        "direction": 1
+        "color": "#d97706",
+        "direction": 1,
+        "station_id": "36076"
       },
       "geometry": {
         "type": "Point",
@@ -521,8 +779,9 @@
         "name": "泰山區公所",
         "name_en": "Taishan Dist. Office",
         "line": "F218",
-        "color": "#15803d",
-        "direction": 1
+        "color": "#d97706",
+        "direction": 1,
+        "station_id": "3627"
       },
       "geometry": {
         "type": "Point",
@@ -540,8 +799,9 @@
         "name": "泰山高中",
         "name_en": "Taishan High School",
         "line": "F218",
-        "color": "#15803d",
-        "direction": 1
+        "color": "#d97706",
+        "direction": 1,
+        "station_id": "3624"
       },
       "geometry": {
         "type": "Point",
@@ -559,8 +819,9 @@
         "name": "同榮里",
         "name_en": "Tongrong Village",
         "line": "F218",
-        "color": "#15803d",
-        "direction": 1
+        "color": "#d97706",
+        "direction": 1,
+        "station_id": "3613"
       },
       "geometry": {
         "type": "Point",
@@ -578,8 +839,9 @@
         "name": "義學里",
         "name_en": "Yixue Village",
         "line": "F218",
-        "color": "#15803d",
-        "direction": 1
+        "color": "#d97706",
+        "direction": 1,
+        "station_id": "36063"
       },
       "geometry": {
         "type": "Point",
@@ -597,8 +859,9 @@
         "name": "文程路口",
         "name_en": "Wencheng Rd. Entrance",
         "line": "F218",
-        "color": "#15803d",
-        "direction": 1
+        "color": "#d97706",
+        "direction": 1,
+        "station_id": "3612"
       },
       "geometry": {
         "type": "Point",
@@ -616,8 +879,9 @@
         "name": "明志國小",
         "name_en": "Mingzhi Elementary School",
         "line": "F218",
-        "color": "#15803d",
-        "direction": 1
+        "color": "#d97706",
+        "direction": 1,
+        "station_id": "36065"
       },
       "geometry": {
         "type": "Point",
@@ -635,8 +899,9 @@
         "name": "泰山巖",
         "name_en": "Taishanyan",
         "line": "F218",
-        "color": "#15803d",
-        "direction": 1
+        "color": "#d97706",
+        "direction": 1,
+        "station_id": "3631"
       },
       "geometry": {
         "type": "Point",
@@ -654,8 +919,9 @@
         "name": "明志科技大學",
         "name_en": "Mingchi U. of Technology",
         "line": "F218",
-        "color": "#15803d",
-        "direction": 1
+        "color": "#d97706",
+        "direction": 1,
+        "station_id": "1000985"
       },
       "geometry": {
         "type": "Point",
@@ -673,8 +939,9 @@
         "name": "下坡角",
         "name_en": "Xiapojiao",
         "line": "F218",
-        "color": "#15803d",
-        "direction": 1
+        "color": "#d97706",
+        "direction": 1,
+        "station_id": "36068"
       },
       "geometry": {
         "type": "Point",

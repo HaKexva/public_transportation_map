@@ -6,7 +6,7 @@
     "name": "52A",
     "name_en": "52A",
     "ref": "52A",
-    "color": "#9f1239",
+    "color": "#9a3412",
     "city_id": "Kaohsiung",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ibus.tbkc.gov.tw/cms/api/route/52/map/1697/image",
@@ -22,7 +22,7 @@
         "ref": "52A",
         "name": "52A",
         "name_en": "52A",
-        "color": "#9f1239",
+        "color": "#9a3412",
         "direction": 0
       },
       "geometry": {
@@ -73,8 +73,32 @@
             22.62753
           ],
           [
-            120.30103,
-            22.62318
+            120.30120590713318,
+            22.623238691534084
+          ],
+          [
+            120.30116706056175,
+            22.623232310620125
+          ],
+          [
+            120.30112839090165,
+            22.623238237175592
+          ],
+          [
+            120.3010940080599,
+            22.623255722207936
+          ],
+          [
+            120.30106778432913,
+            22.623282796503485
+          ],
+          [
+            120.30105267309997,
+            22.623316410878655
+          ],
+          [
+            120.30105036663181,
+            22.62335269709852
           ],
           [
             120.30153,
@@ -89,16 +113,32 @@
             22.63457
           ],
           [
-            120.30252,
-            22.63754
+            120.30253426666025,
+            22.63771775175683
           ],
           [
-            120.30261,
-            22.63781
+            120.30253829032515,
+            22.637739022531054
           ],
           [
-            120.30281,
-            22.63787
+            120.30254673678382,
+            22.63775908147309
+          ],
+          [
+            120.30255927804474,
+            22.637777195442972
+          ],
+          [
+            120.30257542033067,
+            22.637792651253662
+          ],
+          [
+            120.30259452808416,
+            22.637804840375715
+          ],
+          [
+            120.30261562498232,
+            22.63781321748061
           ],
           [
             120.30343,
@@ -118,12 +158,16 @@
         "ref": "52A",
         "name": "52A",
         "name_en": "52A",
-        "color": "#9f1239",
+        "color": "#9a3412",
         "direction": 1
       },
       "geometry": {
         "type": "LineString",
         "coordinates": [
+          [
+            120.30357,
+            22.63932
+          ],
           [
             120.30371,
             22.64113
@@ -159,23 +203,87 @@
           [
             120.30839,
             22.6341
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "route",
-        "ref": "52A",
-        "name": "52A",
-        "name_en": "52A",
-        "color": "#9f1239",
-        "direction": 1
-      },
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
+          ],
+          [
+            120.30211,
+            22.63463
+          ],
+          [
+            120.30178,
+            22.63136
+          ],
+          [
+            120.30135,
+            22.62726
+          ],
+          [
+            120.30089892069807,
+            22.623201493145167
+          ],
+          [
+            120.30090146978279,
+            22.623165341177454
+          ],
+          [
+            120.30091671928122,
+            22.62313191669931
+          ],
+          [
+            120.30094297210154,
+            22.62310503558126
+          ],
+          [
+            120.30097729185478,
+            22.623087704487695
+          ],
+          [
+            120.30101583986202,
+            22.623081861908748
+          ],
+          [
+            120.30105454968404,
+            22.623088242923547
+          ],
+          [
+            120.3109,
+            22.62635
+          ],
+          [
+            120.31843,
+            22.62889
+          ],
+          [
+            120.31916,
+            22.6269
+          ],
+          [
+            120.3224,
+            22.62798
+          ],
+          [
+            120.32523,
+            22.62069
+          ],
+          [
+            120.32771,
+            22.62158
+          ],
+          [
+            120.33108,
+            22.62267
+          ],
+          [
+            120.33326,
+            22.62356
+          ],
+          [
+            120.3422,
+            22.62468
+          ],
+          [
+            120.34256,
+            22.62465
+          ],
           [
             120.34423,
             22.62486
@@ -195,8 +303,9 @@
         "name": "建軍站(捷運衛武營站)",
         "name_en": "Jianjun Station(MRT Weiwuying Station)",
         "line": "52A",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "74"
       },
       "geometry": {
         "type": "Point",
@@ -214,8 +323,9 @@
         "name": "衛武營國家藝術文化中心(三多路)",
         "name_en": "National Kaohsiung Center for the Arts(Weiwuying)(Sanduo Rd.)",
         "line": "52A",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "2266"
       },
       "geometry": {
         "type": "Point",
@@ -233,8 +343,9 @@
         "name": "衛武營都會公園",
         "name_en": "Wei Wu Ying Metropolitan Park",
         "line": "52A",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "2268"
       },
       "geometry": {
         "type": "Point",
@@ -252,8 +363,9 @@
         "name": "中正體育場",
         "name_en": "Chungjheng Stadium",
         "line": "52A",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "2270"
       },
       "geometry": {
         "type": "Point",
@@ -271,8 +383,9 @@
         "name": "輔仁路口(三多一路)",
         "name_en": "Furen Rd. Intersection(Sanduo 1st Rd.)",
         "line": "52A",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "2272"
       },
       "geometry": {
         "type": "Point",
@@ -290,8 +403,9 @@
         "name": "五塊厝(三多一路)",
         "name_en": "Wukuaicuo(Sanduo 1st Rd.)",
         "line": "52A",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "114"
       },
       "geometry": {
         "type": "Point",
@@ -309,8 +423,9 @@
         "name": "三信家商",
         "name_en": "San Hsin High School?of?Commerce and Home Economics",
         "line": "52A",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "112"
       },
       "geometry": {
         "type": "Point",
@@ -328,8 +443,9 @@
         "name": "國際商工(輕軌五權國小站)",
         "name_en": "Kuochi Senior Vocational High School(LRT Wucyuan Elementry School Station)",
         "line": "52A",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "110"
       },
       "geometry": {
         "type": "Point",
@@ -347,8 +463,9 @@
         "name": "輕軌五權國小站(凱旋二路)",
         "name_en": "LRT Wucyuan Elementry School Station(Kaisyuan 2nd Rd.)",
         "line": "52A",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "2280"
       },
       "geometry": {
         "type": "Point",
@@ -366,8 +483,9 @@
         "name": "凱旋醫院(高師大)",
         "name_en": "Kai-Syuan Psychiatric Hospital(National Kaohsiung Normal University)",
         "line": "52A",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "2309"
       },
       "geometry": {
         "type": "Point",
@@ -385,8 +503,9 @@
         "name": "輕軌衛生局站(凱旋二路)",
         "name_en": "LRT Department of Health Station(Kaisyuan 2nd Rd.)",
         "line": "52A",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "4917"
       },
       "geometry": {
         "type": "Point",
@@ -404,8 +523,9 @@
         "name": "輕軌凱旋公園站(民生醫院)",
         "name_en": "LRT Kaisyuan Park Station(Kaohsiung Municipal Minsheng Hospital)",
         "line": "52A",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "2306"
       },
       "geometry": {
         "type": "Point",
@@ -423,8 +543,9 @@
         "name": "同慶路",
         "name_en": "Tongcing Rd.",
         "line": "52A",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "4126"
       },
       "geometry": {
         "type": "Point",
@@ -442,8 +563,9 @@
         "name": "高雄文化中心(和平一路)",
         "name_en": "Kaohsiung Cultural Center(Heping 1st Rd.)",
         "line": "52A",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "2282"
       },
       "geometry": {
         "type": "Point",
@@ -461,8 +583,9 @@
         "name": "高雄文化中心(五福國中站)",
         "name_en": "Kaohsiung Cultural Center(Wufu Junior High School Station)",
         "line": "52A",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "2284"
       },
       "geometry": {
         "type": "Point",
@@ -480,8 +603,9 @@
         "name": "自來水公園",
         "name_en": "Running Water Park",
         "line": "52A",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "2286"
       },
       "geometry": {
         "type": "Point",
@@ -499,8 +623,9 @@
         "name": "麗尊酒店",
         "name_en": "The Lees Hotel",
         "line": "52A",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "2288"
       },
       "geometry": {
         "type": "Point",
@@ -518,8 +643,9 @@
         "name": "五福民權路口(高雄高商)",
         "name_en": "Wufu Mincyuan Rd. Intersection",
         "line": "52A",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "102"
       },
       "geometry": {
         "type": "Point",
@@ -537,8 +663,9 @@
         "name": "高雄高商(五褔二路)",
         "name_en": "Kaohsiung Vocational High School of Commerce(Wufu 2nd Rd.)",
         "line": "52A",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "100"
       },
       "geometry": {
         "type": "Point",
@@ -556,8 +683,9 @@
         "name": "新興高中",
         "name_en": "Shin Shing High School",
         "line": "52A",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "2290"
       },
       "geometry": {
         "type": "Point",
@@ -575,8 +703,9 @@
         "name": "新堀江",
         "name_en": "Shinkujihan(New Jyuejiang)",
         "line": "52A",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "96"
       },
       "geometry": {
         "type": "Point",
@@ -594,8 +723,9 @@
         "name": "捷運中央公園站",
         "name_en": "MRT Central Park Station",
         "line": "52A",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "2294"
       },
       "geometry": {
         "type": "Point",
@@ -613,8 +743,9 @@
         "name": "捷運美麗島站",
         "name_en": "MRT Formosa Boulevard Station",
         "line": "52A",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "2295"
       },
       "geometry": {
         "type": "Point",
@@ -632,8 +763,9 @@
         "name": "六合夜市(大港埔)",
         "name_en": "Liouhe Night Market(Dagangpu)",
         "line": "52A",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "3348"
       },
       "geometry": {
         "type": "Point",
@@ -651,8 +783,9 @@
         "name": "高雄車站(站東路)",
         "name_en": "Kaohsiung Main Station(Jhandong Rd.)",
         "line": "52A",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "5948"
       },
       "geometry": {
         "type": "Point",
@@ -670,8 +803,9 @@
         "name": "高雄車站(站東路)",
         "name_en": "Kaohsiung Main Station(Jhandong Rd.)",
         "line": "52A",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "5948"
       },
       "geometry": {
         "type": "Point",
@@ -689,8 +823,9 @@
         "name": "大連街口",
         "name_en": "Dalian St. Intersection",
         "line": "52A",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "3194"
       },
       "geometry": {
         "type": "Point",
@@ -708,8 +843,9 @@
         "name": "自由路口(九如二路)",
         "name_en": "Zihyou Rd. Intersection(Jiouru 2ndRd.)",
         "line": "52A",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "3192"
       },
       "geometry": {
         "type": "Point",
@@ -727,8 +863,9 @@
         "name": "七賢國小",
         "name_en": "Cisian Elementary School",
         "line": "52A",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "3271"
       },
       "geometry": {
         "type": "Point",
@@ -746,8 +883,9 @@
         "name": "中山一路口",
         "name_en": "Jhongshan 1st Rd. Intersection",
         "line": "52A",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "1979"
       },
       "geometry": {
         "type": "Point",
@@ -765,8 +903,9 @@
         "name": "六合夜市(大港埔)",
         "name_en": "Liouhe Night Market(Dagangpu)",
         "line": "52A",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "3349"
       },
       "geometry": {
         "type": "Point",
@@ -784,8 +923,9 @@
         "name": "捷運美麗島站",
         "name_en": "MRT Formosa Boulevard Station",
         "line": "52A",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "2296"
       },
       "geometry": {
         "type": "Point",
@@ -803,8 +943,9 @@
         "name": "捷運中央公園站",
         "name_en": "MRT Central Park Station",
         "line": "52A",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "2293"
       },
       "geometry": {
         "type": "Point",
@@ -822,8 +963,9 @@
         "name": "新堀江",
         "name_en": "Shinkujihan(New Jyuejiang)",
         "line": "52A",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "95"
       },
       "geometry": {
         "type": "Point",
@@ -841,8 +983,9 @@
         "name": "新興高中",
         "name_en": "Shin Shing High School",
         "line": "52A",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "2291"
       },
       "geometry": {
         "type": "Point",
@@ -860,8 +1003,9 @@
         "name": "高雄高商(五褔二路)",
         "name_en": "Kaohsiung Vocational High School of Commerce(Wufu 2nd Rd.)",
         "line": "52A",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "99"
       },
       "geometry": {
         "type": "Point",
@@ -879,8 +1023,9 @@
         "name": "五福民權路口(高雄高商)",
         "name_en": "Wufu Mincyuan Rd. Intersection",
         "line": "52A",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "101"
       },
       "geometry": {
         "type": "Point",
@@ -898,8 +1043,9 @@
         "name": "麗尊酒店",
         "name_en": "The Lees Hotel",
         "line": "52A",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "2289"
       },
       "geometry": {
         "type": "Point",
@@ -917,8 +1063,9 @@
         "name": "自來水公園",
         "name_en": "Running Water Park",
         "line": "52A",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "2287"
       },
       "geometry": {
         "type": "Point",
@@ -936,8 +1083,9 @@
         "name": "高雄文化中心(五福國中站)",
         "name_en": "Kaohsiung Cultural Center(Wufu Junior High School Station)",
         "line": "52A",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "2285"
       },
       "geometry": {
         "type": "Point",
@@ -955,8 +1103,9 @@
         "name": "高雄文化中心(和平一路)",
         "name_en": "Kaohsiung Cultural Center(Heping 1st Rd.)",
         "line": "52A",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "2283"
       },
       "geometry": {
         "type": "Point",
@@ -974,8 +1123,9 @@
         "name": "同慶路",
         "name_en": "Tongcing Rd.",
         "line": "52A",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "4127"
       },
       "geometry": {
         "type": "Point",
@@ -993,8 +1143,9 @@
         "name": "輕軌凱旋公園站(民生醫院)",
         "name_en": "LRT Kaisyuan Park Station(Kaohsiung Municipal Minsheng Hospital)",
         "line": "52A",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "2305"
       },
       "geometry": {
         "type": "Point",
@@ -1012,8 +1163,9 @@
         "name": "輕軌衛生局站(凱旋二路)",
         "name_en": "LRT Department of Health Station(Kaisyuan 2nd Rd.)",
         "line": "52A",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "4918"
       },
       "geometry": {
         "type": "Point",
@@ -1031,8 +1183,9 @@
         "name": "凱旋醫院(高師大)",
         "name_en": "Kai-Syuan Psychiatric Hospital(National Kaohsiung Normal University)",
         "line": "52A",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "2308"
       },
       "geometry": {
         "type": "Point",
@@ -1050,8 +1203,9 @@
         "name": "輕軌五權國小站(凱旋二路)",
         "name_en": "LRT Wucyuan Elementry School Station(Kaisyuan 2nd Rd.)",
         "line": "52A",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "2281"
       },
       "geometry": {
         "type": "Point",
@@ -1069,8 +1223,9 @@
         "name": "國際商工(輕軌五權國小站)",
         "name_en": "Kuochi Senior Vocational High School(LRT Wucyuan Elementry School Station)",
         "line": "52A",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "109"
       },
       "geometry": {
         "type": "Point",
@@ -1088,8 +1243,9 @@
         "name": "三信家商",
         "name_en": "San Hsin High School?of?Commerce and Home Economics",
         "line": "52A",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "111"
       },
       "geometry": {
         "type": "Point",
@@ -1107,8 +1263,9 @@
         "name": "五塊厝(三多一路)",
         "name_en": "Wukuaicuo(Sanduo 1st Rd.)",
         "line": "52A",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "113"
       },
       "geometry": {
         "type": "Point",
@@ -1126,8 +1283,9 @@
         "name": "輔仁路口(三多一路)",
         "name_en": "Furen Rd. Intersection(Sanduo 1st Rd.)",
         "line": "52A",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "2273"
       },
       "geometry": {
         "type": "Point",
@@ -1145,8 +1303,9 @@
         "name": "中正體育場",
         "name_en": "Chungjheng Stadium",
         "line": "52A",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "2271"
       },
       "geometry": {
         "type": "Point",
@@ -1164,8 +1323,9 @@
         "name": "衛武營都會公園",
         "name_en": "Wei Wu Ying Metropolitan Park",
         "line": "52A",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "2269"
       },
       "geometry": {
         "type": "Point",
@@ -1183,8 +1343,9 @@
         "name": "衛武營國家藝術文化中心(三多路)",
         "name_en": "National Kaohsiung Center for the Arts(Weiwuying)(Sanduo Rd.)",
         "line": "52A",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "2267"
       },
       "geometry": {
         "type": "Point",
@@ -1202,8 +1363,9 @@
         "name": "自由路(被服廠)",
         "name_en": "Zihyou Rd.(Clothing factory)",
         "line": "52A",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "115"
       },
       "geometry": {
         "type": "Point",

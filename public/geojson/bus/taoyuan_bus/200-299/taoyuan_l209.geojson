@@ -6,7 +6,7 @@
     "name": "L209",
     "name_en": "L209",
     "ref": "L209",
-    "color": "#65a30d",
+    "color": "#b91c1c",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/6580/map/2100/image",
@@ -22,7 +22,7 @@
         "ref": "L209",
         "name": "L209",
         "name_en": "L209",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0
       },
       "geometry": {
@@ -77,12 +77,32 @@
             24.97429
           ],
           [
-            121.23454,
-            24.97699
+            121.23454643585707,
+            24.977573148440175
           ],
           [
-            121.23456,
-            24.97768
+            121.23455071216965,
+            24.977600926493906
+          ],
+          [
+            121.2345626384132,
+            24.97762677028845
+          ],
+          [
+            121.23458141880678,
+            24.97764896290801
+          ],
+          [
+            121.23460580008923,
+            24.97766602338526
+          ],
+          [
+            121.2346341552384,
+            24.977676813233174
+          ],
+          [
+            121.23466458670289,
+            24.977680612387246
           ],
           [
             121.23628,
@@ -117,12 +137,32 @@
             24.98477
           ],
           [
-            121.23864,
-            24.98591
+            121.23898786843942,
+            24.986421807357534
           ],
           [
-            121.23898,
-            24.98655
+            121.23899987219448,
+            24.986445469617305
+          ],
+          [
+            121.23900537452339,
+            24.986471403342765
+          ],
+          [
+            121.23900385199693,
+            24.98649778236121
+          ],
+          [
+            121.23899539476443,
+            24.986523044762265
+          ],
+          [
+            121.23898050358142,
+            24.98654569475084
+          ],
+          [
+            121.23896037956878,
+            24.986564162036807
           ],
           [
             121.23849,
@@ -281,8 +321,32 @@
             25.01406
           ],
           [
-            121.21349,
-            25.0105
+            121.21354831201295,
+            25.01055696502536
+          ],
+          [
+            121.21353359212989,
+            25.01053925025492
+          ],
+          [
+            121.21352299637168,
+            25.010518811119077
+          ],
+          [
+            121.21351726987598,
+            25.01049681217098
+          ],
+          [
+            121.21351666107768,
+            25.010474207799803
+          ],
+          [
+            121.21352119638848,
+            25.010451978660036
+          ],
+          [
+            121.21353051259999,
+            25.0104313700192
           ],
           [
             121.21478,
@@ -293,12 +357,32 @@
             25.00761
           ],
           [
-            121.21453,
-            25.00652
+            121.21426982949353,
+            25.006262842497637
           ],
           [
-            121.21451,
-            25.00591
+            121.21425216360954,
+            25.006240042967157
+          ],
+          [
+            121.21424136097497,
+            25.00621351416198
+          ],
+          [
+            121.21423843886988,
+            25.00618533851464
+          ],
+          [
+            121.2142435959009,
+            25.0061574310378
+          ],
+          [
+            121.21425648156033,
+            25.00613168851739
+          ],
+          [
+            121.21427591525725,
+            25.0061101206548
           ],
           [
             121.21597,
@@ -313,8 +397,32 @@
             25.00504
           ],
           [
-            121.2233,
-            25.0052
+            121.22314754179301,
+            25.005189178234843
+          ],
+          [
+            121.22318252241773,
+            25.00519662610765
+          ],
+          [
+            121.22321352184116,
+            25.005213302017772
+          ],
+          [
+            121.22323763881501,
+            25.005237675273246
+          ],
+          [
+            121.22325266619983,
+            25.005267515280213
+          ],
+          [
+            121.22325722871803,
+            25.005300091138142
+          ],
+          [
+            121.22325099059842,
+            25.005332201495822
           ],
           [
             121.22302,
@@ -461,12 +569,32 @@
             24.9871
           ],
           [
-            121.23847,
-            24.98662
+            121.2385689122019,
+            24.986483496960187
           ],
           [
-            121.23847,
-            24.98619
+            121.23857879963177,
+            24.98646680085881
+          ],
+          [
+            121.23858543864841,
+            24.986448446108078
+          ],
+          [
+            121.23858840629181,
+            24.986429307562897
+          ],
+          [
+            121.23858760847695,
+            24.986409991984335
+          ],
+          [
+            121.23858307049744,
+            24.98639111174604
+          ],
+          [
+            121.23857509546468,
+            24.986373543200443
           ],
           [
             121.23813,
@@ -581,10 +709,11 @@
         "feature_type": "station",
         "ref": "TAO12495",
         "name": "中壢區公所",
-        "name_en": "Civil Affairs Office of Zhongli District",
+        "name_en": "Zhongli District Office",
         "line": "L209",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "526"
       },
       "geometry": {
         "type": "Point",
@@ -602,8 +731,9 @@
         "name": "南園二路",
         "name_en": "Nanyuan 2nd Rd.",
         "line": "L209",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "708"
       },
       "geometry": {
         "type": "Point",
@@ -621,8 +751,9 @@
         "name": "曦園社區",
         "name_en": "Xiyuan Community",
         "line": "L209",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "709"
       },
       "geometry": {
         "type": "Point",
@@ -640,8 +771,9 @@
         "name": "忠福國小",
         "name_en": "Jhongfu Elementary School",
         "line": "L209",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "711"
       },
       "geometry": {
         "type": "Point",
@@ -659,8 +791,9 @@
         "name": "萬能科技大學",
         "name_en": "Vanung University",
         "line": "L209",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "269"
       },
       "geometry": {
         "type": "Point",
@@ -678,8 +811,9 @@
         "name": "謝厝",
         "name_en": "Xiecuo",
         "line": "L209",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "264"
       },
       "geometry": {
         "type": "Point",
@@ -697,8 +831,9 @@
         "name": "大江購物中心",
         "name_en": "Metrowalk Shoping Center",
         "line": "L209",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "262"
       },
       "geometry": {
         "type": "Point",
@@ -716,8 +851,9 @@
         "name": "鄉界",
         "name_en": "Xiangjie",
         "line": "L209",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "260"
       },
       "geometry": {
         "type": "Point",
@@ -735,8 +871,9 @@
         "name": "寶城",
         "name_en": "Baocheng",
         "line": "L209",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "257"
       },
       "geometry": {
         "type": "Point",
@@ -754,8 +891,9 @@
         "name": "岡崎",
         "name_en": "Gangqi",
         "line": "L209",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "254"
       },
       "geometry": {
         "type": "Point",
@@ -773,8 +911,9 @@
         "name": "青昇宮(青埔王公廟)",
         "name_en": "Qingsheng Temple",
         "line": "L209",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "716"
       },
       "geometry": {
         "type": "Point",
@@ -792,8 +931,9 @@
         "name": "青昇一街口",
         "name_en": "Qingsheng 1st St. Intersection",
         "line": "L209",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "717"
       },
       "geometry": {
         "type": "Point",
@@ -811,8 +951,9 @@
         "name": "高鐵桃園站(3號出口)",
         "name_en": "THSR,Taoyuan Station",
         "line": "L209",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "719"
       },
       "geometry": {
         "type": "Point",
@@ -830,8 +971,9 @@
         "name": "青埔國小",
         "name_en": "Qingpu Elementary School",
         "line": "L209",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "6704"
       },
       "geometry": {
         "type": "Point",
@@ -849,8 +991,9 @@
         "name": "廣天寺",
         "name_en": "Guangtian Temple",
         "line": "L209",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "6393"
       },
       "geometry": {
         "type": "Point",
@@ -868,8 +1011,9 @@
         "name": "同心公園",
         "name_en": "Tongxin Park",
         "line": "L209",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "724"
       },
       "geometry": {
         "type": "Point",
@@ -887,8 +1031,9 @@
         "name": "青埔五街口",
         "name_en": "Qingpu 5th St. Intersection",
         "line": "L209",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "725"
       },
       "geometry": {
         "type": "Point",
@@ -906,8 +1051,9 @@
         "name": "M+社區",
         "name_en": "M+ Community",
         "line": "L209",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "726"
       },
       "geometry": {
         "type": "Point",
@@ -925,8 +1071,9 @@
         "name": "高鐵站前公園",
         "name_en": "Gaotiezhanqian Park",
         "line": "L209",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "727"
       },
       "geometry": {
         "type": "Point",
@@ -944,8 +1091,9 @@
         "name": "青昇宮(青埔王公廟)",
         "name_en": "Qingsheng Temple",
         "line": "L209",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "6938"
       },
       "geometry": {
         "type": "Point",
@@ -963,8 +1111,9 @@
         "name": "岡崎",
         "name_en": "Gangqi",
         "line": "L209",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "253"
       },
       "geometry": {
         "type": "Point",
@@ -982,8 +1131,9 @@
         "name": "寶城",
         "name_en": "Baocheng",
         "line": "L209",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "258"
       },
       "geometry": {
         "type": "Point",
@@ -1001,8 +1151,9 @@
         "name": "鄉界",
         "name_en": "Xiangjie",
         "line": "L209",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "259"
       },
       "geometry": {
         "type": "Point",
@@ -1020,8 +1171,9 @@
         "name": "大江購物中心",
         "name_en": "Metrowalk Shoping Center",
         "line": "L209",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "261"
       },
       "geometry": {
         "type": "Point",
@@ -1037,10 +1189,11 @@
         "feature_type": "station",
         "ref": "TAO12613",
         "name": "謝厝",
-        "name_en": "Xiecuo ",
+        "name_en": "Xiecuo",
         "line": "L209",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "263"
       },
       "geometry": {
         "type": "Point",
@@ -1058,8 +1211,9 @@
         "name": "萬能科技大學",
         "name_en": "Vanung University",
         "line": "L209",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "268"
       },
       "geometry": {
         "type": "Point",
@@ -1077,8 +1231,9 @@
         "name": "忠福國小",
         "name_en": "Jhongfu Elementary School",
         "line": "L209",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "7030"
       },
       "geometry": {
         "type": "Point",
@@ -1096,8 +1251,9 @@
         "name": "曦園社區",
         "name_en": "Xiyuan Community",
         "line": "L209",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "710"
       },
       "geometry": {
         "type": "Point",
@@ -1115,8 +1271,9 @@
         "name": "南園二路",
         "name_en": "Nanyuan 2nd Rd.",
         "line": "L209",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "707"
       },
       "geometry": {
         "type": "Point",
@@ -1134,8 +1291,9 @@
         "name": "中壢區公所",
         "name_en": "Civil Affairs Office of Zhongli District",
         "line": "L209",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "527"
       },
       "geometry": {
         "type": "Point",

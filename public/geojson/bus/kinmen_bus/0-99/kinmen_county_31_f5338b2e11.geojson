@@ -6,7 +6,7 @@
     "name": "31先繞西吳",
     "name_en": "31先繞西吳",
     "ref": "31先繞西吳",
-    "color": "#155e75",
+    "color": "#86198f",
     "city_id": "KinmenCounty",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.kinmen.gov.tw/api/route/3111/map/144/image",
@@ -22,19 +22,43 @@
         "ref": "31先繞西吳",
         "name": "31先繞西吳",
         "name_en": "31先繞西吳",
-        "color": "#155e75",
+        "color": "#86198f",
         "direction": 0
       },
       "geometry": {
         "type": "LineString",
         "coordinates": [
           [
-            118.41285,
-            24.48889
+            118.4129,
+            24.48885
           ],
           [
-            118.41314,
-            24.48926
+            118.41308670547691,
+            24.489118837094395
+          ],
+          [
+            118.41310104293134,
+            24.489149095466814
+          ],
+          [
+            118.41310478330561,
+            24.489182247662978
+          ],
+          [
+            118.41309737302313,
+            24.489214877370006
+          ],
+          [
+            118.41307951056447,
+            24.48924390896724
+          ],
+          [
+            118.4130528796146,
+            24.489266605985723
+          ],
+          [
+            118.41302020768119,
+            24.489280770079386
           ],
           [
             118.4128,
@@ -42,7 +66,7 @@
           ],
           [
             118.41247,
-            24.48907
+            24.48903
           ],
           [
             118.41606,
@@ -145,16 +169,40 @@
             24.49041
           ],
           [
-            118.42892,
-            24.491
+            118.429,
+            24.49088
           ],
           [
-            118.42844,
-            24.49183
+            118.42891,
+            24.49101
           ],
           [
-            118.42846,
-            24.49205
+            118.42841351272817,
+            24.49187649724883
+          ],
+          [
+            118.4284058994148,
+            24.491893123586053
+          ],
+          [
+            118.42840134417504,
+            24.49191098559415
+          ],
+          [
+            118.42840013557733,
+            24.491929295479288
+          ],
+          [
+            118.4284023081293,
+            24.491947530460685
+          ],
+          [
+            118.42840779980061,
+            24.491965169896204
+          ],
+          [
+            118.42841627008217,
+            24.49198142284
           ],
           [
             118.43011,
@@ -233,12 +281,32 @@
             24.50341
           ],
           [
-            118.43926,
-            24.50296
+            118.43934200676411,
+            24.502926539119656
           ],
           [
-            118.43964,
-            24.503050000000002
+            118.43936115636076,
+            24.502920454272605
+          ],
+          [
+            118.43938084944283,
+            24.50291747183911
+          ],
+          [
+            118.43940080941967,
+            24.502917561461786
+          ],
+          [
+            118.43942046966161,
+            24.502920720596403
+          ],
+          [
+            118.4394392720479,
+            24.502926859560507
+          ],
+          [
+            118.43945700307452,
+            24.50293600359041
           ],
           [
             118.44006,
@@ -261,12 +329,32 @@
             24.50132
           ],
           [
-            118.44264,
-            24.50062
+            118.44259880592837,
+            24.500552572363883
           ],
           [
-            118.44285,
-            24.50027
+            118.44258800501737,
+            24.500528393408693
+          ],
+          [
+            118.44258381187447,
+            24.500502224564652
+          ],
+          [
+            118.44258664904741,
+            24.50047590321124
+          ],
+          [
+            118.44259634811554,
+            24.50045099184059
+          ],
+          [
+            118.44261233332126,
+            24.50042896924524
+          ],
+          [
+            118.44263333513047,
+            24.50041135206365
           ],
           [
             118.44322,
@@ -325,12 +413,32 @@
             24.48878
           ],
           [
-            118.44129,
-            24.48868
+            118.4409016283645,
+            24.488621653061145
           ],
           [
-            118.44076,
-            24.48844
+            118.44088222920712,
+            24.488617159273787
+          ],
+          [
+            118.44086381560201,
+            24.488609678525062
+          ],
+          [
+            118.44084705114263,
+            24.488599446813616
+          ],
+          [
+            118.44083242054992,
+            24.488586759975114
+          ],
+          [
+            118.44082034684708,
+            24.488571984831793
+          ],
+          [
+            118.44081106958402,
+            24.488555301885203
           ],
           [
             118.44039,
@@ -421,12 +529,12 @@
             24.48664
           ],
           [
-            118.41285,
-            24.48885
+            118.41286,
+            24.4888
           ],
           [
-            118.41313,
-            24.48921
+            118.41297,
+            24.48896
           ]
         ]
       }
@@ -439,8 +547,9 @@
         "name": "沙美站",
         "name_en": "Shamei Station",
         "line": "31先繞西吳",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "266"
       },
       "geometry": {
         "type": "Point",
@@ -458,8 +567,9 @@
         "name": "后浦頭",
         "name_en": "Houputou",
         "line": "31先繞西吳",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "547"
       },
       "geometry": {
         "type": "Point",
@@ -477,8 +587,9 @@
         "name": "后水頭",
         "name_en": "Houshuitou",
         "line": "31先繞西吳",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "548"
       },
       "geometry": {
         "type": "Point",
@@ -496,8 +607,9 @@
         "name": "東蕭",
         "name_en": "Dongxiao",
         "line": "31先繞西吳",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "549"
       },
       "geometry": {
         "type": "Point",
@@ -515,8 +627,9 @@
         "name": "蔡店",
         "name_en": "Caidian",
         "line": "31先繞西吳",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "550"
       },
       "geometry": {
         "type": "Point",
@@ -534,8 +647,9 @@
         "name": "金沙公墓",
         "name_en": "Jinsha Cemetary",
         "line": "31先繞西吳",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "551"
       },
       "geometry": {
         "type": "Point",
@@ -553,8 +667,9 @@
         "name": "陽翟一",
         "name_en": "YangZhai 1",
         "line": "31先繞西吳",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "972"
       },
       "geometry": {
         "type": "Point",
@@ -572,8 +687,9 @@
         "name": "陽翟",
         "name_en": "YangZhai",
         "line": "31先繞西吳",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "552"
       },
       "geometry": {
         "type": "Point",
@@ -591,8 +707,9 @@
         "name": "陽翟東",
         "name_en": "YangZhaidong",
         "line": "31先繞西吳",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "526"
       },
       "geometry": {
         "type": "Point",
@@ -610,8 +727,9 @@
         "name": "西吳",
         "name_en": "Xiwu",
         "line": "31先繞西吳",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "700"
       },
       "geometry": {
         "type": "Point",
@@ -629,8 +747,9 @@
         "name": "東珩",
         "name_en": "Dongheng",
         "line": "31先繞西吳",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "701"
       },
       "geometry": {
         "type": "Point",
@@ -648,8 +767,9 @@
         "name": "東山前一",
         "name_en": "DongShangqian 1",
         "line": "31先繞西吳",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "703"
       },
       "geometry": {
         "type": "Point",
@@ -667,8 +787,9 @@
         "name": "西山前",
         "name_en": "Xishanqian",
         "line": "31先繞西吳",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "704"
       },
       "geometry": {
         "type": "Point",
@@ -686,8 +807,9 @@
         "name": "西山前一",
         "name_en": "Xishanqian 1",
         "line": "31先繞西吳",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "705"
       },
       "geometry": {
         "type": "Point",
@@ -705,8 +827,9 @@
         "name": "山西二",
         "name_en": "Shanxi 2",
         "line": "31先繞西吳",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "708"
       },
       "geometry": {
         "type": "Point",
@@ -724,8 +847,9 @@
         "name": "山西一",
         "name_en": "Shanxi 1",
         "line": "31先繞西吳",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "709"
       },
       "geometry": {
         "type": "Point",
@@ -743,8 +867,9 @@
         "name": "獅山",
         "name_en": "Shi Mountain",
         "line": "31先繞西吳",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "710"
       },
       "geometry": {
         "type": "Point",
@@ -762,8 +887,9 @@
         "name": "山后",
         "name_en": "ShanHou",
         "line": "31先繞西吳",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "713"
       },
       "geometry": {
         "type": "Point",
@@ -781,8 +907,9 @@
         "name": "民俗文化村",
         "name_en": "Folk Culture Village",
         "line": "31先繞西吳",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "714"
       },
       "geometry": {
         "type": "Point",
@@ -800,8 +927,9 @@
         "name": "碧山一",
         "name_en": "Bishan 1",
         "line": "31先繞西吳",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "715"
       },
       "geometry": {
         "type": "Point",
@@ -819,8 +947,9 @@
         "name": "碧山",
         "name_en": "Bishan",
         "line": "31先繞西吳",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "716"
       },
       "geometry": {
         "type": "Point",
@@ -838,8 +967,9 @@
         "name": "安瀾國小",
         "name_en": "An Lan Elementary School",
         "line": "31先繞西吳",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "529"
       },
       "geometry": {
         "type": "Point",
@@ -857,8 +987,9 @@
         "name": "陽翟東",
         "name_en": "YangZhaidong",
         "line": "31先繞西吳",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "530"
       },
       "geometry": {
         "type": "Point",
@@ -876,8 +1007,9 @@
         "name": "陽翟",
         "name_en": "YangZhai",
         "line": "31先繞西吳",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "531"
       },
       "geometry": {
         "type": "Point",
@@ -895,8 +1027,9 @@
         "name": "金沙公墓",
         "name_en": "Jinsha Cemetary",
         "line": "31先繞西吳",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "532"
       },
       "geometry": {
         "type": "Point",
@@ -914,8 +1047,9 @@
         "name": "蔡店",
         "name_en": "Caidian",
         "line": "31先繞西吳",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "533"
       },
       "geometry": {
         "type": "Point",
@@ -933,8 +1067,9 @@
         "name": "東蕭",
         "name_en": "Dongxiao",
         "line": "31先繞西吳",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "534"
       },
       "geometry": {
         "type": "Point",
@@ -952,8 +1087,9 @@
         "name": "后水頭",
         "name_en": "Houshuitou",
         "line": "31先繞西吳",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "535"
       },
       "geometry": {
         "type": "Point",
@@ -971,8 +1107,9 @@
         "name": "后浦頭",
         "name_en": "Houputou",
         "line": "31先繞西吳",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "536"
       },
       "geometry": {
         "type": "Point",
@@ -990,8 +1127,9 @@
         "name": "沙美站",
         "name_en": "Shamei Station",
         "line": "31先繞西吳",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "266"
       },
       "geometry": {
         "type": "Point",

@@ -6,7 +6,7 @@
     "name": "紅1往金城",
     "name_en": "紅1往金城",
     "ref": "紅1往金城",
-    "color": "#155e75",
+    "color": "#86198f",
     "city_id": "KinmenCounty",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.kinmen.gov.tw/api/route/12/map/157/image",
@@ -22,7 +22,7 @@
         "ref": "紅1往金城",
         "name": "紅1往金城",
         "name_en": "紅1往金城",
-        "color": "#155e75",
+        "color": "#86198f",
         "direction": 0
       },
       "geometry": {
@@ -61,12 +61,32 @@
             24.4366
           ],
           [
-            118.40986,
-            24.43593
+            118.40982932830369,
+            24.435890300360082
           ],
           [
-            118.40918,
-            24.43617
+            118.40980830227933,
+            24.43586943342775
+          ],
+          [
+            118.40978244788967,
+            24.435854433533674
+          ],
+          [
+            118.40975326455865,
+            24.435846008434964
+          ],
+          [
+            118.40972270092982,
+            24.435844720696423
+          ],
+          [
+            118.40969279781268,
+            24.435850656303547
+          ],
+          [
+            118.40966523164929,
+            24.435863621430137
           ],
           [
             118.40867,
@@ -157,16 +177,32 @@
             24.44535
           ],
           [
-            118.38526,
-            24.44723
+            118.38511451139836,
+            24.447383006472215
           ],
           [
-            118.38526,
-            24.44738
+            118.38510605265992,
+            24.447389869652962
           ],
           [
-            118.38511,
-            24.44743
+            118.38509610021296,
+            24.447394467926827
+          ],
+          [
+            118.38508520223169,
+            24.447396606768827
+          ],
+          [
+            118.38507406861808,
+            24.447396146853322
+          ],
+          [
+            118.38506342462327,
+            24.447393118139534
+          ],
+          [
+            118.38505384717124,
+            24.44738763045188
           ],
           [
             118.38499,
@@ -225,20 +261,32 @@
             24.43858
           ],
           [
-            118.33034,
-            24.43868
+            118.33030769514409,
+            24.43872038415427
           ],
           [
-            118.33017,
-            24.43864
+            118.33028931158431,
+            24.43873814754329
           ],
           [
-            118.3301,
-            24.43855
+            118.33026683575483,
+            24.438750793006587
           ],
           [
-            118.32975,
-            24.43847
+            118.33024157280025,
+            24.438757725965207
+          ],
+          [
+            118.3302152152739,
+            24.43875848192865
+          ],
+          [
+            118.33018952906264,
+            24.438753010249304
+          ],
+          [
+            118.33016595932287,
+            24.438741497362777
           ],
           [
             118.32938,
@@ -269,28 +317,72 @@
             24.43187
           ],
           [
-            118.32165,
-            24.43157
+            118.32141485149616,
+            24.431525890609866
           ],
           [
-            118.32121,
-            24.43168
+            118.32139200307502,
+            24.431523684432655
+          ],
+          [
+            118.3213692804779,
+            24.43152553805297
+          ],
+          [
+            118.3213473673525,
+            24.431531352724658
+          ],
+          [
+            118.32132707717689,
+            24.431540912590414
+          ],
+          [
+            118.32130916318064,
+            24.43155386276059
+          ],
+          [
+            118.32129406552512,
+            24.43157001632124
           ],
           [
             118.32061,
             24.43246
           ],
           [
-            118.32035,
-            24.43296
+            118.32038266614434,
+            24.43289673747111
           ],
           [
-            118.3201,
-            24.43289
+            118.32037114342052,
+            24.43291397685163
           ],
           [
-            118.31994,
-            24.43322
+            118.32035608445887,
+            24.432928396550388
+          ],
+          [
+            118.32033804686935,
+            24.432939579316596
+          ],
+          [
+            118.3203178423793,
+            24.432947021903612
+          ],
+          [
+            118.32029638023079,
+            24.432950389380267
+          ],
+          [
+            118.32027452092603,
+            24.432949515631083
+          ],
+          [
+            118.32006,
+            24.43292
+          ],
+          [
+            118.31995,
+            24.43327
           ]
         ]
       }
@@ -303,8 +395,9 @@
         "name": "山外站",
         "name_en": "Shanwai Station",
         "line": "紅1往金城",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "29"
       },
       "geometry": {
         "type": "Point",
@@ -322,8 +415,9 @@
         "name": "武德新莊",
         "name_en": "Wude Xinzhuang",
         "line": "紅1往金城",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "30"
       },
       "geometry": {
         "type": "Point",
@@ -341,8 +435,9 @@
         "name": "市港路",
         "name_en": "Shigang Road",
         "line": "紅1往金城",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "992"
       },
       "geometry": {
         "type": "Point",
@@ -360,8 +455,9 @@
         "name": "湖前",
         "name_en": "Huqian",
         "line": "紅1往金城",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "31"
       },
       "geometry": {
         "type": "Point",
@@ -379,8 +475,9 @@
         "name": "陶瓷廠",
         "name_en": "Ceramic Factory",
         "line": "紅1往金城",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "32"
       },
       "geometry": {
         "type": "Point",
@@ -398,8 +495,9 @@
         "name": "塔后(環島南路)",
         "name_en": "Tahou",
         "line": "紅1往金城",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "33"
       },
       "geometry": {
         "type": "Point",
@@ -417,8 +515,9 @@
         "name": "后園",
         "name_en": "Houyuan",
         "line": "紅1往金城",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "34"
       },
       "geometry": {
         "type": "Point",
@@ -436,8 +535,9 @@
         "name": "夏興",
         "name_en": "Xiaxing",
         "line": "紅1往金城",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "35"
       },
       "geometry": {
         "type": "Point",
@@ -455,8 +555,9 @@
         "name": "成功",
         "name_en": "Chenggong",
         "line": "紅1往金城",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "36"
       },
       "geometry": {
         "type": "Point",
@@ -474,8 +575,9 @@
         "name": "柳林路口",
         "name_en": "Liulin Rd. Entrance",
         "line": "紅1往金城",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "37"
       },
       "geometry": {
         "type": "Point",
@@ -493,8 +595,9 @@
         "name": "小徑一",
         "name_en": "Xiaojing 1",
         "line": "紅1往金城",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "38"
       },
       "geometry": {
         "type": "Point",
@@ -512,8 +615,9 @@
         "name": "小徑二",
         "name_en": "Xiaojing 2",
         "line": "紅1往金城",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "39"
       },
       "geometry": {
         "type": "Point",
@@ -531,8 +635,9 @@
         "name": "開瑄國小",
         "name_en": "kaiXuan Elementary school",
         "line": "紅1往金城",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "722"
       },
       "geometry": {
         "type": "Point",
@@ -550,8 +655,9 @@
         "name": "國校",
         "name_en": "Guoxiao",
         "line": "紅1往金城",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "40"
       },
       "geometry": {
         "type": "Point",
@@ -569,8 +675,9 @@
         "name": "伯玉路三段",
         "name_en": "Boyu Rd. Sec.3",
         "line": "紅1往金城",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "41"
       },
       "geometry": {
         "type": "Point",
@@ -588,8 +695,9 @@
         "name": "前山門",
         "name_en": "Qianshanmen",
         "line": "紅1往金城",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "42"
       },
       "geometry": {
         "type": "Point",
@@ -607,8 +715,9 @@
         "name": "水庫",
         "name_en": "Dam",
         "line": "紅1往金城",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "43"
       },
       "geometry": {
         "type": "Point",
@@ -626,8 +735,9 @@
         "name": "雙乳山",
         "name_en": "Shuangru Mount ",
         "line": "紅1往金城",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "44"
       },
       "geometry": {
         "type": "Point",
@@ -645,8 +755,9 @@
         "name": "中山林",
         "name_en": "Sun Yat-sen Memorial Forest",
         "line": "紅1往金城",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "45"
       },
       "geometry": {
         "type": "Point",
@@ -664,8 +775,9 @@
         "name": "中山林一",
         "name_en": "Sun Yat-sen Memorial Forest 1",
         "line": "紅1往金城",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "46"
       },
       "geometry": {
         "type": "Point",
@@ -683,8 +795,9 @@
         "name": "盤山",
         "name_en": "Panshan",
         "line": "紅1往金城",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "47"
       },
       "geometry": {
         "type": "Point",
@@ -702,8 +815,9 @@
         "name": "前厝三",
         "name_en": "Qiancuo 3",
         "line": "紅1往金城",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "48"
       },
       "geometry": {
         "type": "Point",
@@ -721,8 +835,9 @@
         "name": "前厝二",
         "name_en": "Qiancuo 2",
         "line": "紅1往金城",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "49"
       },
       "geometry": {
         "type": "Point",
@@ -740,8 +855,9 @@
         "name": "前厝一(家樂福)",
         "name_en": "Qiancuo 1",
         "line": "紅1往金城",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "50"
       },
       "geometry": {
         "type": "Point",
@@ -759,8 +875,9 @@
         "name": "柏昱新居",
         "name_en": "Boyusinjyu",
         "line": "紅1往金城",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "51"
       },
       "geometry": {
         "type": "Point",
@@ -778,8 +895,9 @@
         "name": "榜林圓環(伯玉路)",
         "name_en": "Banglin Cirque(Boyu Rd)",
         "line": "紅1往金城",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "53"
       },
       "geometry": {
         "type": "Point",
@@ -797,8 +915,9 @@
         "name": "消合社",
         "name_en": "Siaoho Society",
         "line": "紅1往金城",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "54"
       },
       "geometry": {
         "type": "Point",
@@ -816,8 +935,9 @@
         "name": "龍門大鎮",
         "name_en": "Longmendajhen",
         "line": "紅1往金城",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "55"
       },
       "geometry": {
         "type": "Point",
@@ -835,8 +955,9 @@
         "name": "農產中心",
         "name_en": "Nongchan Center",
         "line": "紅1往金城",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "56"
       },
       "geometry": {
         "type": "Point",
@@ -854,8 +975,9 @@
         "name": "工業區",
         "name_en": "Industrial District",
         "line": "紅1往金城",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "57"
       },
       "geometry": {
         "type": "Point",
@@ -873,8 +995,9 @@
         "name": "金城站",
         "name_en": "Jincheng Station",
         "line": "紅1往金城",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "0"
       },
       "geometry": {
         "type": "Point",

@@ -6,7 +6,7 @@
     "name": "綠3",
     "name_en": "綠3",
     "ref": "綠3",
-    "color": "#7c3aed",
+    "color": "#c2410c",
     "city_id": "Taichung",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://citybus.taichung.gov.tw/ebus/strapi/uploads/3_1150815_64ad4aec87.jpeg",
@@ -22,7 +22,7 @@
         "ref": "綠3",
         "name": "綠3",
         "name_en": "綠3",
-        "color": "#7c3aed",
+        "color": "#c2410c",
         "direction": 0
       },
       "geometry": {
@@ -226,12 +226,16 @@
         "ref": "綠3",
         "name": "綠3",
         "name_en": "綠3",
-        "color": "#7c3aed",
+        "color": "#c2410c",
         "direction": 1
       },
       "geometry": {
         "type": "LineString",
         "coordinates": [
+          [
+            120.64397,
+            24.1581
+          ],
           [
             120.64533,
             24.15734
@@ -241,25 +245,133 @@
             24.15717
           ],
           [
-            120.64671,
-            24.15701
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "route",
-        "ref": "綠3",
-        "name": "綠3",
-        "name_en": "綠3",
-        "color": "#7c3aed",
-        "direction": 1
-      },
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
+            120.64661355703403,
+            24.157027076679583
+          ],
+          [
+            120.64663942761584,
+            24.1570195818198
+          ],
+          [
+            120.64666287824885,
+            24.157006776902204
+          ],
+          [
+            120.64668250762874,
+            24.156989371247406
+          ],
+          [
+            120.64669726925909,
+            24.1569682927989
+          ],
+          [
+            120.64670637615669,
+            24.156944665306945
+          ],
+          [
+            120.64670934293089,
+            24.156919753542187
+          ],
+          [
+            120.64658,
+            24.13928
+          ],
+          [
+            120.64641,
+            24.13746
+          ],
+          [
+            120.64618,
+            24.12594
+          ],
+          [
+            120.64634,
+            24.12559
+          ],
+          [
+            120.64799,
+            24.12324
+          ],
+          [
+            120.64997,
+            24.12057
+          ],
+          [
+            120.65045,
+            24.12021
+          ],
+          [
+            120.65528,
+            24.11509
+          ],
+          [
+            120.65711,
+            24.11326
+          ],
+          [
+            120.66044,
+            24.11322
+          ],
+          [
+            120.66253,
+            24.11328
+          ],
+          [
+            120.6692,
+            24.11469
+          ],
+          [
+            120.67065,
+            24.11484
+          ],
+          [
+            120.68391,
+            24.11519
+          ],
+          [
+            120.68385,
+            24.10935
+          ],
+          [
+            120.68397,
+            24.10851
+          ],
+          [
+            120.68436,
+            24.10755
+          ],
+          [
+            120.68465,
+            24.10726
+          ],
+          [
+            120.68526,
+            24.10687
+          ],
+          [
+            120.68958,
+            24.10629
+          ],
+          [
+            120.68874,
+            24.10374
+          ],
+          [
+            120.6876,
+            24.09969
+          ],
+          [
+            120.68696,
+            24.09769
+          ],
+          [
+            120.6868,
+            24.09696
+          ],
+          [
+            120.68676,
+            24.0962
+          ],
           [
             120.68654,
             24.09561
@@ -267,6 +379,102 @@
           [
             120.68643,
             24.09551
+          ],
+          [
+            120.69075,
+            24.0922
+          ],
+          [
+            120.69551,
+            24.0884
+          ],
+          [
+            120.69667,
+            24.08549
+          ],
+          [
+            120.69982,
+            24.07534
+          ],
+          [
+            120.69983,
+            24.07461
+          ],
+          [
+            120.69973,
+            24.074
+          ],
+          [
+            120.69962,
+            24.07376
+          ],
+          [
+            120.69982112982645,
+            24.073679506577935
+          ],
+          [
+            120.69984166976398,
+            24.073668550735913
+          ],
+          [
+            120.69985924388772,
+            24.07365349566026
+          ],
+          [
+            120.69987270846319,
+            24.073635206529232
+          ],
+          [
+            120.69988138063496,
+            24.073614610875442
+          ],
+          [
+            120.69988482059416,
+            24.073592753206707
+          ],
+          [
+            120.69988288132953,
+            24.073570870109673
+          ],
+          [
+            120.69958,
+            24.07216
+          ],
+          [
+            120.69926,
+            24.06916
+          ],
+          [
+            120.69892,
+            24.06685
+          ],
+          [
+            120.69892,
+            24.06626
+          ],
+          [
+            120.69835,
+            24.06197
+          ],
+          [
+            120.69829,
+            24.06198
+          ],
+          [
+            120.69835,
+            24.06197
+          ],
+          [
+            120.69773,
+            24.05715
+          ],
+          [
+            120.69756,
+            24.0563
+          ],
+          [
+            120.69693,
+            24.05524
           ]
         ]
       }
@@ -279,8 +487,9 @@
         "name": "省議會",
         "name_en": "T.P.C.C.",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "1189"
       },
       "geometry": {
         "type": "Point",
@@ -298,8 +507,9 @@
         "name": "霧峰國小",
         "name_en": "Wu Feng Elementary School",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "1224"
       },
       "geometry": {
         "type": "Point",
@@ -317,8 +527,9 @@
         "name": "教育部國教署",
         "name_en": "Ministry of Education",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "3678"
       },
       "geometry": {
         "type": "Point",
@@ -336,8 +547,9 @@
         "name": "霧峰郵局(明台高中)",
         "name_en": "Wufeng Post Office (Ming Tai Senior High School)",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "560"
       },
       "geometry": {
         "type": "Point",
@@ -355,8 +567,9 @@
         "name": "霧峰",
         "name_en": "Wufeng",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "1222"
       },
       "geometry": {
         "type": "Point",
@@ -374,8 +587,9 @@
         "name": "中正草湖路口",
         "name_en": "Zhongzheng-Caohu Intersection",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "2889"
       },
       "geometry": {
         "type": "Point",
@@ -393,8 +607,9 @@
         "name": "甲寅(中正路)",
         "name_en": "Jiayin(Zhongzheng Road)",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "10571"
       },
       "geometry": {
         "type": "Point",
@@ -412,8 +627,9 @@
         "name": "霧峰農工",
         "name_en": "Wufeng Agr. Ind. Senior High School",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "1227"
       },
       "geometry": {
         "type": "Point",
@@ -431,8 +647,9 @@
         "name": "中正吉峰路口",
         "name_en": "Zhongzheng-Jifeng Intersection",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "1170"
       },
       "geometry": {
         "type": "Point",
@@ -450,8 +667,9 @@
         "name": "中興東南路口",
         "name_en": "Zhongxing-Dongnan Intersection",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "1140"
       },
       "geometry": {
         "type": "Point",
@@ -469,8 +687,9 @@
         "name": "草湖",
         "name_en": "Caohu",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "1199"
       },
       "geometry": {
         "type": "Point",
@@ -488,8 +707,9 @@
         "name": "財政部印刷廠",
         "name_en": "The Printing Plant. Ministry of Finance",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "2985"
       },
       "geometry": {
         "type": "Point",
@@ -507,8 +727,9 @@
         "name": "大里圖書館(中興路)",
         "name_en": "Dali Library(Zhongxing Road)",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "1120"
       },
       "geometry": {
         "type": "Point",
@@ -526,8 +747,9 @@
         "name": "青年高中",
         "name_en": "Youth Senior High School",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "1187"
       },
       "geometry": {
         "type": "Point",
@@ -545,8 +767,9 @@
         "name": "中興仁化路口",
         "name_en": "Zhongxing-Renhua Intersection",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "1144"
       },
       "geometry": {
         "type": "Point",
@@ -564,8 +787,9 @@
         "name": "大突寮(中興路)",
         "name_en": "Datuliao(Zhongxing Road)",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "3046"
       },
       "geometry": {
         "type": "Point",
@@ -583,8 +807,9 @@
         "name": "纖維博物館(中興路)",
         "name_en": "Fiber Museum(Zhongxing Road)",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "925"
       },
       "geometry": {
         "type": "Point",
@@ -602,8 +827,9 @@
         "name": "下內新(大里郵局)",
         "name_en": "Xianeixin(Dali Post Office)",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "10"
       },
       "geometry": {
         "type": "Point",
@@ -621,8 +847,9 @@
         "name": "立人高中",
         "name_en": "Liren Senior High School",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "4118"
       },
       "geometry": {
         "type": "Point",
@@ -640,8 +867,9 @@
         "name": "益民國小",
         "name_en": "Yimin Elementary School",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "1195"
       },
       "geometry": {
         "type": "Point",
@@ -659,8 +887,9 @@
         "name": "益民德芳路口",
         "name_en": "Yimin-Defang Intersection",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "1197"
       },
       "geometry": {
         "type": "Point",
@@ -678,8 +907,9 @@
         "name": "興大附中(益民路)",
         "name_en": "NCHU Affiliated Senior High School(Yimin Road)",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "1785"
       },
       "geometry": {
         "type": "Point",
@@ -697,8 +927,9 @@
         "name": "崇光國小",
         "name_en": "Chongguang Elementary School",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "1279"
       },
       "geometry": {
         "type": "Point",
@@ -716,8 +947,9 @@
         "name": "大明益民路口",
         "name_en": "Daming-Yinmin Intersection",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "1124"
       },
       "geometry": {
         "type": "Point",
@@ -735,8 +967,9 @@
         "name": "大明國光路口",
         "name_en": "Daming-Guoguang Intersection",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "1125"
       },
       "geometry": {
         "type": "Point",
@@ -754,8 +987,9 @@
         "name": "大明爽文路口",
         "name_en": "Daming-Shuangwen Intersection",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "897"
       },
       "geometry": {
         "type": "Point",
@@ -773,8 +1007,9 @@
         "name": "積善公園",
         "name_en": "Jishan Park",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "1215"
       },
       "geometry": {
         "type": "Point",
@@ -792,8 +1027,9 @@
         "name": "僑泰中學(高工路)",
         "name_en": "Chiao Tai Senior High School(Gaogong Road)",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "336"
       },
       "geometry": {
         "type": "Point",
@@ -811,8 +1047,9 @@
         "name": "工學一街口",
         "name_en": "Gongxue 1st Street",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "900"
       },
       "geometry": {
         "type": "Point",
@@ -830,8 +1067,9 @@
         "name": "臺中高工(高工路)",
         "name_en": "Taichung Industrial Senior High School(Gaogong Road)",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "1164"
       },
       "geometry": {
         "type": "Point",
@@ -849,8 +1087,9 @@
         "name": "高工文心南路口",
         "name_en": "Gaogong-Wenxin S. Intersection",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "928"
       },
       "geometry": {
         "type": "Point",
@@ -868,8 +1107,9 @@
         "name": "文心南大慶街口",
         "name_en": "Wenxin S.-Daqing Intersection",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "1158"
       },
       "geometry": {
         "type": "Point",
@@ -887,8 +1127,9 @@
         "name": "文心南復興路口",
         "name_en": "Wenxin S.-Fuxing Intersection",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "2243"
       },
       "geometry": {
         "type": "Point",
@@ -906,8 +1147,9 @@
         "name": "文心南復興北路口",
         "name_en": "Wenxin S.- Fuxing N. Intersection",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "4945"
       },
       "geometry": {
         "type": "Point",
@@ -925,8 +1167,9 @@
         "name": "中山醫學大學",
         "name_en": "Chung Shan Medical University",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "160"
       },
       "geometry": {
         "type": "Point",
@@ -944,8 +1187,9 @@
         "name": "文心南三民西路口",
         "name_en": "Wenxin S.-Sanmin W. Intersection",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "563"
       },
       "geometry": {
         "type": "Point",
@@ -963,8 +1207,9 @@
         "name": "豐樂公園",
         "name_en": "Fengle Sculpture Park",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "294"
       },
       "geometry": {
         "type": "Point",
@@ -982,8 +1227,9 @@
         "name": "捷運豐樂公園站(文心南路)",
         "name_en": "MRT Feng-Le Park Station(Wenxin S. Road)",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "2480"
       },
       "geometry": {
         "type": "Point",
@@ -1001,8 +1247,9 @@
         "name": "文心南文心南二路口",
         "name_en": "Wenxin S.-Wenxin S. 2nd Intersection",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "1241"
       },
       "geometry": {
         "type": "Point",
@@ -1020,8 +1267,9 @@
         "name": "文心五權西路口",
         "name_en": "Wenxin-Wuquan W. Intersection",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "1805"
       },
       "geometry": {
         "type": "Point",
@@ -1039,8 +1287,9 @@
         "name": "捷運南屯站(文心路)",
         "name_en": "MRT Nantun Station(Wenxin Road)",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "1022"
       },
       "geometry": {
         "type": "Point",
@@ -1058,8 +1307,9 @@
         "name": "文心大墩七街口",
         "name_en": "Wenxin-Dadun 7th intersection",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "311"
       },
       "geometry": {
         "type": "Point",
@@ -1077,8 +1327,9 @@
         "name": "捷運文心森林公園站(文心路)",
         "name_en": "MRT Wenxin Forest Park Station(Wenxin Road)",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "208"
       },
       "geometry": {
         "type": "Point",
@@ -1096,8 +1347,9 @@
         "name": "文心公益路口",
         "name_en": "Wenxin-Gongyi Intersection",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "168"
       },
       "geometry": {
         "type": "Point",
@@ -1115,8 +1367,9 @@
         "name": "捷運水安宮站(文心路)",
         "name_en": "MRT Shui-An Temple Station(Wenxin Road)",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "4504"
       },
       "geometry": {
         "type": "Point",
@@ -1134,8 +1387,9 @@
         "name": "市政惠文路口",
         "name_en": "Shizheng-Huiwen Intersection",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "3787"
       },
       "geometry": {
         "type": "Point",
@@ -1153,8 +1407,9 @@
         "name": "臺中市議會",
         "name_en": "Taichung City Council",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "1770"
       },
       "geometry": {
         "type": "Point",
@@ -1172,8 +1427,9 @@
         "name": "臺中市議會",
         "name_en": "Taichung City Council",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "1770"
       },
       "geometry": {
         "type": "Point",
@@ -1191,8 +1447,9 @@
         "name": "中央健保署(文心路)",
         "name_en": "NHI Administration(Wenxin Road)",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "904"
       },
       "geometry": {
         "type": "Point",
@@ -1210,8 +1467,9 @@
         "name": "文心市政路口",
         "name_en": "Wenxin-Shizheng Intersection",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "498"
       },
       "geometry": {
         "type": "Point",
@@ -1229,8 +1487,9 @@
         "name": "捷運水安宮站(文心路)",
         "name_en": "MRT Shui-An Temple Station(Wenxin Road)",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "4503"
       },
       "geometry": {
         "type": "Point",
@@ -1248,8 +1507,9 @@
         "name": "文心公益路口",
         "name_en": "Wenxin-Gongyi Intersection",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "169"
       },
       "geometry": {
         "type": "Point",
@@ -1267,8 +1527,9 @@
         "name": "捷運文心森林公園站(文心路)",
         "name_en": "MRT Wenxin Forest Park Station(Wenxin Road)",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "209"
       },
       "geometry": {
         "type": "Point",
@@ -1286,8 +1547,9 @@
         "name": "文心大墩七街口",
         "name_en": "Wenxin-Dadun 7th intersection",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "312"
       },
       "geometry": {
         "type": "Point",
@@ -1305,8 +1567,9 @@
         "name": "文心向心路口",
         "name_en": "Wenxin-Xiangxin Intersection",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "179"
       },
       "geometry": {
         "type": "Point",
@@ -1324,8 +1587,9 @@
         "name": "捷運南屯站(文心路)",
         "name_en": "MRT Nantun Station(Wenxin Road)",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "1021"
       },
       "geometry": {
         "type": "Point",
@@ -1343,8 +1607,9 @@
         "name": "文心南文心南二路口",
         "name_en": "Wenxin S.-Wenxin S. 2nd Intersection",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "1240"
       },
       "geometry": {
         "type": "Point",
@@ -1362,8 +1627,9 @@
         "name": "文心南永春東路口",
         "name_en": "Wenxin S.-Yongchun E. Intersection",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "2518"
       },
       "geometry": {
         "type": "Point",
@@ -1381,8 +1647,9 @@
         "name": "捷運豐樂公園站(文心南路)",
         "name_en": "MRT Feng-Le Park Station(Wenxin S. Road)",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "2479"
       },
       "geometry": {
         "type": "Point",
@@ -1400,8 +1667,9 @@
         "name": "豐樂公園",
         "name_en": "Fengle Sculpture Park",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "293"
       },
       "geometry": {
         "type": "Point",
@@ -1419,8 +1687,9 @@
         "name": "文心南三民西路口",
         "name_en": "Wenxin S.-Sanmin W. Intersection",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "562"
       },
       "geometry": {
         "type": "Point",
@@ -1438,8 +1707,9 @@
         "name": "中山醫學大學",
         "name_en": "Chung Shan Medical University",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "161"
       },
       "geometry": {
         "type": "Point",
@@ -1457,8 +1727,9 @@
         "name": "文心南復興北路口",
         "name_en": "Wenxin S.- Fuxing N. Intersection",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "4944"
       },
       "geometry": {
         "type": "Point",
@@ -1476,8 +1747,9 @@
         "name": "文心南復興路口",
         "name_en": "Wenxin S.-Fuxing Intersection",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "2242"
       },
       "geometry": {
         "type": "Point",
@@ -1495,8 +1767,9 @@
         "name": "文心南大慶街口",
         "name_en": "Wenxin S.-Daqing Intersection",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "1157"
       },
       "geometry": {
         "type": "Point",
@@ -1514,8 +1787,9 @@
         "name": "高工文心南路口",
         "name_en": "Gaogong-Wenxin S. Intersection",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "929"
       },
       "geometry": {
         "type": "Point",
@@ -1533,8 +1807,9 @@
         "name": "臺中高工(高工路)",
         "name_en": "Taichung Industrial Senior High School(Gaogong Road)",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "1163"
       },
       "geometry": {
         "type": "Point",
@@ -1552,8 +1827,9 @@
         "name": "工學一街口",
         "name_en": "Gongxue 1st Street",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "901"
       },
       "geometry": {
         "type": "Point",
@@ -1571,8 +1847,9 @@
         "name": "僑泰中學(高工路)",
         "name_en": "Chiao Tai Senior High School(Gaogong Road)",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "337"
       },
       "geometry": {
         "type": "Point",
@@ -1590,8 +1867,9 @@
         "name": "積善公園",
         "name_en": "Jishan Park",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "1214"
       },
       "geometry": {
         "type": "Point",
@@ -1609,8 +1887,9 @@
         "name": "大明爽文路口",
         "name_en": "Daming-Shuangwen Intersection",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "896"
       },
       "geometry": {
         "type": "Point",
@@ -1628,8 +1907,9 @@
         "name": "大明國光路口",
         "name_en": "Daming-Guoguang Intersection",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "1126"
       },
       "geometry": {
         "type": "Point",
@@ -1647,8 +1927,9 @@
         "name": "大明益民路口",
         "name_en": "Daming-Yinmin Intersection",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "1123"
       },
       "geometry": {
         "type": "Point",
@@ -1666,8 +1947,9 @@
         "name": "崇光國小",
         "name_en": "Chongguang Elementary School",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "1278"
       },
       "geometry": {
         "type": "Point",
@@ -1685,8 +1967,9 @@
         "name": "興大附中(益民路)",
         "name_en": "NCHU Affiliated Senior High School(Yimin Road)",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "1784"
       },
       "geometry": {
         "type": "Point",
@@ -1704,8 +1987,9 @@
         "name": "益民德芳路口",
         "name_en": "Yimin-Defang Intersection",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "1196"
       },
       "geometry": {
         "type": "Point",
@@ -1723,8 +2007,9 @@
         "name": "益民國小",
         "name_en": "Yimin Elementary School",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "1194"
       },
       "geometry": {
         "type": "Point",
@@ -1742,8 +2027,9 @@
         "name": "立人高中",
         "name_en": "Liren Senior High School",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "4117"
       },
       "geometry": {
         "type": "Point",
@@ -1761,8 +2047,9 @@
         "name": "下內新(大里郵局)",
         "name_en": "Xianeixin(Dali Post Office)",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "11"
       },
       "geometry": {
         "type": "Point",
@@ -1780,8 +2067,9 @@
         "name": "纖維博物館(中興路)",
         "name_en": "Fiber Museum(Zhongxing Road)",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "924"
       },
       "geometry": {
         "type": "Point",
@@ -1799,8 +2087,9 @@
         "name": "大突寮(中興路)",
         "name_en": "Datuliao(Zhongxing Road)",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "3045"
       },
       "geometry": {
         "type": "Point",
@@ -1818,8 +2107,9 @@
         "name": "中興仁化路口",
         "name_en": "Zhongxing-Renhua Intersection",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "1143"
       },
       "geometry": {
         "type": "Point",
@@ -1837,8 +2127,9 @@
         "name": "青年高中",
         "name_en": "Youth Senior High School",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "1185"
       },
       "geometry": {
         "type": "Point",
@@ -1856,8 +2147,9 @@
         "name": "大里圖書館(中興路)",
         "name_en": "Dali Library(Zhongxing Road)",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "1119"
       },
       "geometry": {
         "type": "Point",
@@ -1875,8 +2167,9 @@
         "name": "草湖",
         "name_en": "Caohu",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "1198"
       },
       "geometry": {
         "type": "Point",
@@ -1894,8 +2187,9 @@
         "name": "中興東南路口",
         "name_en": "Zhongxing-Dongnan Intersection",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "1139"
       },
       "geometry": {
         "type": "Point",
@@ -1913,8 +2207,9 @@
         "name": "中正吉峰路口",
         "name_en": "Zhongzheng-Jifeng Intersection",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "1169"
       },
       "geometry": {
         "type": "Point",
@@ -1932,8 +2227,9 @@
         "name": "霧峰農工",
         "name_en": "Wufeng Agr. Ind. Senior High School",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "1226"
       },
       "geometry": {
         "type": "Point",
@@ -1951,8 +2247,9 @@
         "name": "甲寅(中正路)",
         "name_en": "Jiayin(Zhongzheng Road)",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "10571"
       },
       "geometry": {
         "type": "Point",
@@ -1970,8 +2267,9 @@
         "name": "中正草湖路口",
         "name_en": "Zhongzheng-Caohu Intersection",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "2890"
       },
       "geometry": {
         "type": "Point",
@@ -1989,8 +2287,9 @@
         "name": "霧峰",
         "name_en": "Wufeng",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "1221"
       },
       "geometry": {
         "type": "Point",
@@ -2008,8 +2307,9 @@
         "name": "霧峰郵局(明台高中)",
         "name_en": "Wufeng Post Office (Ming Tai Senior High School)",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "561"
       },
       "geometry": {
         "type": "Point",
@@ -2027,8 +2327,9 @@
         "name": "教育部國教署",
         "name_en": "Ministry of Education",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "3677"
       },
       "geometry": {
         "type": "Point",
@@ -2046,8 +2347,9 @@
         "name": "霧峰國小",
         "name_en": "Wu Feng Elementary School",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "1223"
       },
       "geometry": {
         "type": "Point",
@@ -2065,8 +2367,9 @@
         "name": "省議會",
         "name_en": "T.P.C.C.",
         "line": "綠3",
-        "color": "#7c3aed",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "1188"
       },
       "geometry": {
         "type": "Point",

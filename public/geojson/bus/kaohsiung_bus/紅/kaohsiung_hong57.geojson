@@ -6,7 +6,7 @@
     "name": "紅57",
     "name_en": "紅57",
     "ref": "紅57",
-    "color": "#9f1239",
+    "color": "#9a3412",
     "city_id": "Kaohsiung",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ibus.tbkc.gov.tw/cms/api/route/857/map/621/image",
@@ -22,7 +22,7 @@
         "ref": "紅57",
         "name": "紅57",
         "name_en": "紅57",
-        "color": "#9f1239",
+        "color": "#9a3412",
         "direction": 0
       },
       "geometry": {
@@ -53,32 +53,60 @@
             22.7221
           ],
           [
-            120.30482,
-            22.7217
+            120.3049063727179,
+            22.721738227791946
           ],
           [
-            120.30474,
-            22.72179
+            120.30488942484051,
+            22.72173240235848
           ],
           [
-            120.30462,
-            22.72187
+            120.30487189907731,
+            22.721729517555765
           ],
           [
-            120.3045,
-            22.7219
+            120.3048541003259,
+            22.721729555329674
           ],
           [
-            120.30442,
-            22.72186
+            120.30483658893654,
+            22.72173251449099
           ],
           [
-            120.30435,
-            22.7218
+            120.30481991621264,
+            22.72173830187774
           ],
           [
-            120.30428,
-            22.72174
+            120.30480433567165,
+            22.721746917503594
+          ],
+          [
+            120.30449291753989,
+            22.721954823257935
+          ],
+          [
+            120.30445758405553,
+            22.721971033846877
+          ],
+          [
+            120.30441884881925,
+            22.721975431119965
+          ],
+          [
+            120.3043807145161,
+            22.721967737342133
+          ],
+          [
+            120.30434743302028,
+            22.721948810349325
+          ],
+          [
+            120.30432271513082,
+            22.72192076045132
+          ],
+          [
+            120.30430929011945,
+            22.72188658146991
           ],
           [
             120.30426,
@@ -138,7 +166,7 @@
         "ref": "紅57",
         "name": "紅57",
         "name_en": "紅57",
-        "color": "#9f1239",
+        "color": "#9a3412",
         "direction": 1
       },
       "geometry": {
@@ -155,23 +183,119 @@
           [
             120.29974,
             22.71446
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "route",
-        "ref": "紅57",
-        "name": "紅57",
-        "name_en": "紅57",
-        "color": "#9f1239",
-        "direction": 1
-      },
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
+          ],
+          [
+            120.30161,
+            22.71507
+          ],
+          [
+            120.29956,
+            22.71972
+          ],
+          [
+            120.30085901307214,
+            22.72026788223223
+          ],
+          [
+            120.30088903332488,
+            22.720276339699087
+          ],
+          [
+            120.30092008552992,
+            22.720277105746327
+          ],
+          [
+            120.30095025806197,
+            22.720270245763988
+          ],
+          [
+            120.30097741921458,
+            22.720256244413694
+          ],
+          [
+            120.30099965003691,
+            22.72023609089877
+          ],
+          [
+            120.30101549303971,
+            22.720210958320937
+          ],
+          [
+            120.30188,
+            22.7183
+          ],
+          [
+            120.30306,
+            22.71876
+          ],
+          [
+            120.30222,
+            22.72072
+          ],
+          [
+            120.30102,
+            22.72026
+          ],
+          [
+            120.29948,
+            22.7238
+          ],
+          [
+            120.30061,
+            22.72439
+          ],
+          [
+            120.30221,
+            22.72071
+          ],
+          [
+            120.30429,
+            22.72151
+          ],
+          [
+            120.30445601682547,
+            22.72134404505005
+          ],
+          [
+            120.30447985695183,
+            22.721325612378358
+          ],
+          [
+            120.30450768587009,
+            22.721313765788864
+          ],
+          [
+            120.30453787190665,
+            22.721309038501577
+          ],
+          [
+            120.30456834393446,
+            22.721311754865546
+          ],
+          [
+            120.30459701120408,
+            22.72132172850537
+          ],
+          [
+            120.30462220560686,
+            22.72133853597955
+          ],
+          [
+            120.30482,
+            22.72151
+          ],
+          [
+            120.30483,
+            22.7217
+          ],
+          [
+            120.30688,
+            22.72247
+          ],
+          [
+            120.30744,
+            22.7212
+          ],
           [
             120.30866,
             22.72166
@@ -179,6 +303,26 @@
           [
             120.30984,
             22.72213
+          ],
+          [
+            120.3093,
+            22.72341
+          ],
+          [
+            120.3081,
+            22.72294
+          ],
+          [
+            120.30754,
+            22.72422
+          ],
+          [
+            120.30877,
+            22.72465
+          ],
+          [
+            120.30854,
+            22.72518
           ]
         ]
       }
@@ -191,8 +335,9 @@
         "name": "東六街口",
         "name_en": "E. 6th St. Intersection",
         "line": "紅57",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "2569"
       },
       "geometry": {
         "type": "Point",
@@ -210,8 +355,9 @@
         "name": "開發經二路口",
         "name_en": "Kaifajing 2nd Rd. Intersection",
         "line": "紅57",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "3312"
       },
       "geometry": {
         "type": "Point",
@@ -229,8 +375,9 @@
         "name": "中一街",
         "name_en": "Jhongyi St.",
         "line": "紅57",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "1264"
       },
       "geometry": {
         "type": "Point",
@@ -248,8 +395,9 @@
         "name": "經三路",
         "name_en": "Jing 3rd Rd.",
         "line": "紅57",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "1394"
       },
       "geometry": {
         "type": "Point",
@@ -267,8 +415,9 @@
         "name": "中央圓環",
         "name_en": "Central Traffic Circle",
         "line": "紅57",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "1013"
       },
       "geometry": {
         "type": "Point",
@@ -286,8 +435,9 @@
         "name": "經五路",
         "name_en": "Jing 5th Rd.",
         "line": "紅57",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "1336"
       },
       "geometry": {
         "type": "Point",
@@ -305,8 +455,9 @@
         "name": "經六內環北路口",
         "name_en": "Jing 6th neihuan N. Rd. Intersection",
         "line": "紅57",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "2544"
       },
       "geometry": {
         "type": "Point",
@@ -324,8 +475,9 @@
         "name": "經六路",
         "name_en": "Jing 6th Rd.",
         "line": "紅57",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "1838"
       },
       "geometry": {
         "type": "Point",
@@ -343,8 +495,9 @@
         "name": "經六西二街口",
         "name_en": "Jing 6th W. 2nd St. Intersection",
         "line": "紅57",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "2545"
       },
       "geometry": {
         "type": "Point",
@@ -362,8 +515,9 @@
         "name": "開發內環西路口",
         "name_en": "Kaifaneihuan W. Rd. Intersection",
         "line": "紅57",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "3100"
       },
       "geometry": {
         "type": "Point",
@@ -381,8 +535,9 @@
         "name": "創意南路",
         "name_en": "Chuang-Yi S. Rd.",
         "line": "紅57",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "2063"
       },
       "geometry": {
         "type": "Point",
@@ -400,8 +555,9 @@
         "name": "創意南路",
         "name_en": "Chuang-Yi S. Rd.",
         "line": "紅57",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "2064"
       },
       "geometry": {
         "type": "Point",
@@ -419,8 +575,9 @@
         "name": "創意北路",
         "name_en": "Chuang-Yi N. Rd.",
         "line": "紅57",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "2046"
       },
       "geometry": {
         "type": "Point",
@@ -438,8 +595,9 @@
         "name": "開發內環西路口",
         "name_en": "Kaifaneihuan W. Rd. Intersection",
         "line": "紅57",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "3099"
       },
       "geometry": {
         "type": "Point",
@@ -457,8 +615,9 @@
         "name": "經六西二街口",
         "name_en": "Jing 6th W. 2nd St. Intersection",
         "line": "紅57",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "2545"
       },
       "geometry": {
         "type": "Point",
@@ -476,8 +635,9 @@
         "name": "經六路",
         "name_en": "Jing 6th Rd.",
         "line": "紅57",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "1839"
       },
       "geometry": {
         "type": "Point",
@@ -495,8 +655,9 @@
         "name": "經六內環北路口",
         "name_en": "Jing 6th neihuan N. Rd. Intersection",
         "line": "紅57",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "2543"
       },
       "geometry": {
         "type": "Point",
@@ -514,8 +675,9 @@
         "name": "經五路",
         "name_en": "Jing 5th Rd.",
         "line": "紅57",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "1337"
       },
       "geometry": {
         "type": "Point",
@@ -533,8 +695,9 @@
         "name": "中央圓環",
         "name_en": "Central Traffic Circle",
         "line": "紅57",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "1014"
       },
       "geometry": {
         "type": "Point",
@@ -552,8 +715,9 @@
         "name": "經二路",
         "name_en": "Jing 2nd Rd.",
         "line": "紅57",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "3235"
       },
       "geometry": {
         "type": "Point",
@@ -571,8 +735,9 @@
         "name": "新經一路",
         "name_en": "Sinjing 1st Rd.",
         "line": "紅57",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "3112"
       },
       "geometry": {
         "type": "Point",
@@ -590,8 +755,9 @@
         "name": "東六街口",
         "name_en": "E. 6th St. Intersection",
         "line": "紅57",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "2570"
       },
       "geometry": {
         "type": "Point",

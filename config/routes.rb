@@ -24,6 +24,7 @@ Rails.application.routes.draw do
     resources :vehicles, only: [ :index ]
     resources :schedules, only: [ :index ]
     resources :station_boards, only: [ :index ]
+    resources :station_infos, only: [ :index ]
     resources :bus_arrivals, only: [ :index ]
     resources :alerts, only: [ :index ]
   end

@@ -573,31 +573,11 @@ module Geojson
     end
 
     def snap_corridor_line_features(features)
-      # Highway coaches have very long polylines; corridor snap is O(n*m) and can hang.
-      return features if @city.kind == :intercity
-
-      route_features = features.select { |feature| feature.dig(:properties, :feature_type) == "route" }
-      other_features = features - route_features
-      outbound = route_features.select { |feature| feature.dig(:properties, :direction).to_i.zero? }
-      inbound = route_features - outbound
-      return features if outbound.empty? || inbound.empty?
-
-      corridors = outbound.map { |feature| feature.dig(:geometry, :coordinates) }
-      leftovers = inbound.flat_map do |feature|
-        Geojson::BusCorridor.unsnapped_segments(feature.dig(:geometry, :coordinates), corridors)
-      end
-      template = outbound.first[:properties]
-      extra = leftovers.filter_map do |coordinates|
-        next if coordinates.length < 2
-
-        {
-          type: "Feature",
-          properties: template.merge(direction: 1),
-          geometry: { type: "LineString", coordinates: coordinates }
-        }
-      end
-
-      outbound + extra + other_features
+      # Previously dropped inbound vertices within 50m of outbound so shared
+      # corridors were drawn once. That left inbound as disconnected spur stubs
+      # at junctions ("斷在路口"). Direction banding now separates outbound /
+      # inbound on screen, so keep both full polylines.
+      features
     end
 
     def station_features_for(stop_rows, name:, color:)
@@ -720,7 +700,19 @@ module Geojson
 
     def official_map_url_for(route)
       explicit = route["RouteMapImageUrl"].to_s.presence || route["RouteMapUrl"].to_s.presence
-      return explicit if explicit.present?
+      if explicit.present?
+        # TDX often gives HTML portal pages (ebus MapOverview); resolve to a direct image for <img>.
+        resolved = Geojson::BusOfficialMapFetcher.new(
+          city_ids: [ @city.id ],
+          resolve_portals: false,
+          rewrite_manifest: false,
+          sync_tdx: false
+        ).resolve_direct_image_url(explicit)
+        return resolved if resolved.present?
+        return nil if Geojson::BusOfficialMapFetcher::PORTAL_HINT.match?(explicit)
+
+        return explicit
+      end
 
       intercity_schematic_url(route)
     end

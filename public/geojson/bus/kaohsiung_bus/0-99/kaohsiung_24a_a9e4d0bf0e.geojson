@@ -6,7 +6,7 @@
     "name": "24A(平日停駛)",
     "name_en": "24A(平日停駛)",
     "ref": "24A(平日停駛)",
-    "color": "#134e4a",
+    "color": "#1e3a8a",
     "city_id": "Kaohsiung",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ibus.tbkc.gov.tw/cms/api/route/243/map/1557/image",
@@ -22,7 +22,7 @@
         "ref": "24A(平日停駛)",
         "name": "24A(平日停駛)",
         "name_en": "24A(平日停駛)",
-        "color": "#134e4a",
+        "color": "#1e3a8a",
         "direction": 0
       },
       "geometry": {
@@ -37,12 +37,32 @@
             22.66517
           ],
           [
-            120.37151,
-            22.6634
+            120.37169610179383,
+            22.663128254088978
           ],
           [
-            120.37135,
-            22.6629
+            120.37171057894304,
+            22.66309727668896
+          ],
+          [
+            120.37171408891179,
+            22.663063318507614
+          ],
+          [
+            120.37170608491799,
+            22.663030024781552
+          ],
+          [
+            120.37168735738648,
+            22.663000683392895
+          ],
+          [
+            120.37165975573224,
+            22.66297819191539
+          ],
+          [
+            120.37162619479695,
+            22.662964815824182
           ],
           [
             120.37045,
@@ -65,8 +85,32 @@
             22.66046
           ],
           [
-            120.3725,
-            22.65961
+            120.37235849267529,
+            22.659780606637952
+          ],
+          [
+            120.37237785969225,
+            22.659745531471515
+          ],
+          [
+            120.37238244110355,
+            22.65970597336029
+          ],
+          [
+            120.37237137827951,
+            22.6596675380358
+          ],
+          [
+            120.37234615720874,
+            22.659635388235362
+          ],
+          [
+            120.37231016565407,
+            22.659613842407612
+          ],
+          [
+            120.37226825407205,
+            22.65960579493352
           ],
           [
             120.36917,
@@ -97,8 +141,32 @@
             22.66289
           ],
           [
-            120.36322,
-            22.66516
+            120.36322808760235,
+            22.6651003609792
+          ],
+          [
+            120.36322378192514,
+            22.6651165635906
+          ],
+          [
+            120.36321559659119,
+            22.665131348734096
+          ],
+          [
+            120.36320396404166,
+            22.665143982198074
+          ],
+          [
+            120.36318951087617,
+            22.665153783467648
+          ],
+          [
+            120.36317301562973,
+            22.66516022458708
+          ],
+          [
+            120.36315539334814,
+            22.665162957387903
           ],
           [
             120.363,
@@ -145,12 +213,32 @@
             22.67427
           ],
           [
-            120.35681,
-            22.6747
+            120.35644429810637,
+            22.675076680132133
           ],
           [
-            120.35641,
-            22.67521
+            120.356425353395,
+            22.675103309702273
+          ],
+          [
+            120.35641550642579,
+            22.67513428410663
+          ],
+          [
+            120.35641590224613,
+            22.67516657962152
+          ],
+          [
+            120.35642650581987,
+            22.675197337607425
+          ],
+          [
+            120.35644637857109,
+            22.67522383551931
+          ],
+          [
+            120.35647345488266,
+            22.675243566364145
           ],
           [
             120.35702,
@@ -373,8 +461,32 @@
             22.67761
           ],
           [
-            120.32172,
-            22.6817
+            120.32172215170395,
+            22.681611376968345
+          ],
+          [
+            120.32171851611098,
+            22.68163590696463
+          ],
+          [
+            120.32170900129985,
+            22.681659018026906
+          ],
+          [
+            120.32169410119097,
+            22.68167952668461
+          ],
+          [
+            120.32167458992144,
+            22.681696367407785
+          ],
+          [
+            120.32165148120183,
+            22.68170866523447
+          ],
+          [
+            120.3216261166142,
+            22.68171575764205
           ],
           [
             120.32076,
@@ -466,63 +578,675 @@
         "ref": "24A(平日停駛)",
         "name": "24A(平日停駛)",
         "name_en": "24A(平日停駛)",
-        "color": "#134e4a",
+        "color": "#1e3a8a",
         "direction": 1
       },
       "geometry": {
         "type": "LineString",
         "coordinates": [
           [
-            120.30347,
-            22.67025
+            120.30334,
+            22.66609
+          ],
+          [
+            120.30346567527751,
+            22.670110636580784
+          ],
+          [
+            120.30347199722688,
+            22.670142866113142
+          ],
+          [
+            120.30348836410799,
+            22.670171857730537
+          ],
+          [
+            120.30351328805025,
+            22.67019499672011
+          ],
+          [
+            120.30354450223264,
+            22.670210178601465
+          ],
+          [
+            120.30357916773968,
+            22.67021602258951
+          ],
+          [
+            120.30361433872326,
+            22.670211942837955
           ],
           [
             120.30622,
             22.66953
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "route",
-        "ref": "24A(平日停駛)",
-        "name": "24A(平日停駛)",
-        "name_en": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 1
-      },
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
+          ],
+          [
+            120.30511,
+            22.66573
+          ],
+          [
+            120.30619,
+            22.6656
+          ],
+          [
+            120.30706,
+            22.66541
+          ],
+          [
+            120.30942,
+            22.66474
+          ],
+          [
+            120.31248,
+            22.66377
+          ],
+          [
+            120.31444,
+            22.66369
+          ],
+          [
+            120.31618,
+            22.66361
+          ],
+          [
+            120.31635,
+            22.66471
+          ],
+          [
+            120.3165,
+            22.66537
+          ],
+          [
+            120.31665,
+            22.66602
+          ],
+          [
+            120.31689,
+            22.66737
+          ],
+          [
+            120.31708,
+            22.66828
+          ],
+          [
+            120.31723,
+            22.66904
+          ],
+          [
+            120.31752,
+            22.6707
+          ],
+          [
+            120.31776,
+            22.67188
+          ],
+          [
+            120.31805,
+            22.6734
+          ],
+          [
+            120.31839,
+            22.67507
+          ],
+          [
+            120.31863,
+            22.67653
+          ],
+          [
+            120.31895,
+            22.67804
+          ],
+          [
+            120.31906,
+            22.67858
+          ],
+          [
+            120.3192,
+            22.6793
+          ],
+          [
+            120.31955,
+            22.681
+          ],
+          [
+            120.31968,
+            22.68109
+          ],
+          [
+            120.31985,
+            22.68195
+          ],
+          [
+            120.32160459352899,
+            22.681683382648202
+          ],
+          [
+            120.32163032484418,
+            22.681676557792994
+          ],
+          [
+            120.32165381668318,
+            22.68166440076096
+          ],
+          [
+            120.32167369506297,
+            22.68164757528937
+          ],
+          [
+            120.32168890700699,
+            22.681626972639336
+          ],
+          [
+            120.32169864672422,
+            22.68160368415267
+          ],
+          [
+            120.3217023988685,
+            22.681578924713975
+          ],
+          [
+            120.32181530287441,
+            22.67731905374089
+          ],
+          [
+            120.32181739980898,
+            22.67730106335257
+          ],
+          [
+            120.32182267664207,
+            22.67728366409471
+          ],
+          [
+            120.32183098754676,
+            22.67726731971152
+          ],
+          [
+            120.32184210207409,
+            22.677252483408374
+          ],
+          [
+            120.32185571203476,
+            22.677239566573828
+          ],
+          [
+            120.32187112829311,
+            22.67722910395781
+          ],
+          [
+            120.32311,
+            22.67653
+          ],
+          [
+            120.32192,
+            22.67474
+          ],
+          [
+            120.32142,
+            22.67308
+          ],
+          [
+            120.32238,
+            22.67283
+          ],
+          [
+            120.32312,
+            22.67247
+          ],
+          [
+            120.32369,
+            22.67202
+          ],
+          [
+            120.32424,
+            22.6714
+          ],
+          [
+            120.32479,
+            22.67066
+          ],
+          [
+            120.32534883303059,
+            22.669509694391948
+          ],
+          [
+            120.32536628472037,
+            22.669483933039473
+          ],
+          [
+            120.32539049168345,
+            22.66946384543213
+          ],
+          [
+            120.32541971164422,
+            22.669450721483244
+          ],
+          [
+            120.32545168951212,
+            22.66944557405156
+          ],
+          [
+            120.32548395735141,
+            22.669448800397184
+          ],
+          [
+            120.325514333402,
+            22.669460318362738
+          ],
+          [
+            120.327,
+            22.67026
+          ],
+          [
+            120.32783,
+            22.6708
+          ],
+          [
+            120.32841,
+            22.67131
+          ],
+          [
+            120.32892,
+            22.67164
+          ],
+          [
+            120.32953,
+            22.67194
+          ],
+          [
+            120.33011,
+            22.67216
+          ],
+          [
+            120.33132580313791,
+            22.672480907436885
+          ],
+          [
+            120.33133895728251,
+            22.672482820808185
+          ],
+          [
+            120.33135211787697,
+            22.672481709602106
+          ],
+          [
+            120.33136459556391,
+            22.67247766571398
+          ],
+          [
+            120.33137564533028,
+            22.67247093059477
+          ],
+          [
+            120.33138460742076,
+            22.672461906382445
+          ],
+          [
+            120.33139099458674,
+            22.672451019514238
+          ],
+          [
+            120.33143,
+            22.67236
+          ],
+          [
+            120.33148,
+            22.67252
+          ],
+          [
+            120.33219,
+            22.67277
+          ],
+          [
+            120.33747,
+            22.6754
+          ],
+          [
+            120.33936,
+            22.67636
+          ],
+          [
+            120.33982,
+            22.67649
+          ],
+          [
+            120.34002,
+            22.6765
+          ],
+          [
+            120.34039,
+            22.6766
+          ],
+          [
+            120.34103,
+            22.6767
+          ],
+          [
+            120.34385,
+            22.67684
+          ],
+          [
+            120.34452,
+            22.67695
+          ],
+          [
+            120.34508,
+            22.67707
+          ],
+          [
+            120.34589,
+            22.67732
+          ],
+          [
+            120.34631,
+            22.67748
+          ],
+          [
+            120.3469,
+            22.67776
+          ],
+          [
+            120.34751,
+            22.67812
+          ],
+          [
+            120.34795,
+            22.67843
+          ],
+          [
+            120.34896,
+            22.67929
+          ],
+          [
+            120.35009,
+            22.6802
+          ],
+          [
+            120.35069,
+            22.68065
+          ],
+          [
+            120.35124,
+            22.68097
+          ],
+          [
+            120.35181,
+            22.68115
+          ],
+          [
+            120.35235,
+            22.68117
+          ],
+          [
+            120.35295,
+            22.68106
+          ],
+          [
+            120.35369,
+            22.68069
+          ],
+          [
+            120.35401,
+            22.68046
+          ],
+          [
+            120.35419,
+            22.68025
+          ],
+          [
+            120.35439,
+            22.67994
+          ],
+          [
+            120.35463,
+            22.67956
+          ],
+          [
+            120.35578,
+            22.67764
+          ],
+          [
+            120.35638,
+            22.67667
+          ],
+          [
+            120.35701,
+            22.67555
+          ],
+          [
+            120.35647097044944,
+            22.675244837086467
+          ],
+          [
+            120.35644500236148,
+            22.675224660015022
+          ],
+          [
+            120.35642619477217,
+            22.675198104058254
+          ],
+          [
+            120.35641647258699,
+            22.67516762411205
+          ],
+          [
+            120.35641666955817,
+            22.67513583406649
+          ],
+          [
+            120.35642676879395,
+            22.675105460162772
+          ],
+          [
+            120.35644562880758,
+            22.675079388113197
+          ],
+          [
+            120.35739,
+            22.67412
+          ],
+          [
+            120.35787,
+            22.67365
+          ],
+          [
+            120.35837,
+            22.67305
+          ],
+          [
+            120.35884,
+            22.67235
+          ],
+          [
+            120.35913,
+            22.67191
+          ],
+          [
+            120.35968,
+            22.67092
+          ],
+          [
+            120.36051,
+            22.66948
+          ],
+          [
+            120.36088,
+            22.66877
+          ],
+          [
+            120.36118,
+            22.6681
+          ],
+          [
+            120.36164,
+            22.66665
+          ],
+          [
+            120.36195,
+            22.66564
+          ],
           [
             120.36209,
             22.66462
           ],
           [
-            120.36242,
-            22.66255
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "route",
-        "ref": "24A(平日停駛)",
-        "name": "24A(平日停駛)",
-        "name_en": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 1
-      },
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
+            120.36240575723725,
+            22.662639972737537
+          ],
           [
-            120.37186,
-            22.6638
+            120.362412819834,
+            22.66261556834902
+          ],
+          [
+            120.362425694703,
+            22.66259343298868
+          ],
+          [
+            120.36244370747589,
+            22.662574646749125
+          ],
+          [
+            120.36246589043762,
+            22.66256021889895
+          ],
+          [
+            120.36249105183475,
+            22.66255092455741
+          ],
+          [
+            120.36251781529455,
+            22.662547263735952
+          ],
+          [
+            120.3635,
+            22.66252
+          ],
+          [
+            120.36363,
+            22.66165
+          ],
+          [
+            120.36409568822488,
+            22.659147478593827
+          ],
+          [
+            120.3641047654019,
+            22.659120334329593
+          ],
+          [
+            120.36412102561829,
+            22.659096408478963
+          ],
+          [
+            120.36414338729517,
+            22.65907720096351
+          ],
+          [
+            120.36417033093855,
+            22.65906401694942
+          ],
+          [
+            120.3642000257061,
+            22.659057752301095
+          ],
+          [
+            120.36423058841191,
+            22.659058854128606
+          ],
+          [
+            120.36569,
+            22.65929
+          ],
+          [
+            120.36646,
+            22.65937
+          ],
+          [
+            120.36961,
+            22.65943
+          ],
+          [
+            120.37239774961155,
+            22.659448451065064
+          ],
+          [
+            120.37243980162464,
+            22.6594560304925
+          ],
+          [
+            120.37247609058535,
+            22.65947719162324
+          ],
+          [
+            120.37250172960273,
+            22.659509088157343
+          ],
+          [
+            120.37251327012132,
+            22.659547429877087
+          ],
+          [
+            120.3725091598929,
+            22.65958705966023
+          ],
+          [
+            120.37249019014418,
+            22.659622354203776
+          ],
+          [
+            120.37205,
+            22.66016
+          ],
+          [
+            120.37151,
+            22.66087
+          ],
+          [
+            120.37095,
+            22.66146
+          ],
+          [
+            120.36957,
+            22.66264
+          ],
+          [
+            120.37044,
+            22.66264
+          ],
+          [
+            120.37138,
+            22.66287
+          ],
+          [
+            120.37152,
+            22.66341
+          ],
+          [
+            120.37183165438965,
+            22.66382757284094
+          ],
+          [
+            120.3718335885991,
+            22.6638307543227
+          ],
+          [
+            120.37183490556173,
+            22.663834268968554
+          ],
+          [
+            120.37183552087144,
+            22.66383794640936
+          ],
+          [
+            120.37183541446332,
+            22.663841666725382
+          ],
+          [
+            120.37183458980725,
+            22.66384530859877
+          ],
+          [
+            120.3718331030149,
+            22.66384870075149
           ],
           [
             120.37181,
@@ -541,8 +1265,36 @@
             22.6649
           ],
           [
-            120.37166,
-            22.66562
+            120.37164243421668,
+            22.665831809698886
+          ],
+          [
+            120.37163238345825,
+            22.66586826877867
+          ],
+          [
+            120.37160958447197,
+            22.665899305837748
+          ],
+          [
+            120.3715767644199,
+            22.665921259956775
+          ],
+          [
+            120.37153785611575,
+            22.66593150038246
+          ],
+          [
+            120.37149752192605,
+            22.665928800008697
+          ],
+          [
+            120.37146027922192,
+            22.665913283734845
+          ],
+          [
+            120.37088,
+            22.66555
           ]
         ]
       }
@@ -555,8 +1307,9 @@
         "name": "鳥松國中",
         "name_en": "Niao Song Junior High School",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "4033"
       },
       "geometry": {
         "type": "Point",
@@ -574,8 +1327,9 @@
         "name": "鳥松區公所(中正路)",
         "name_en": "Niaosong District Office(Jhongjheng Rd.)",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "1224"
       },
       "geometry": {
         "type": "Point",
@@ -593,8 +1347,9 @@
         "name": "鳥松",
         "name_en": "Niaosong",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "4999"
       },
       "geometry": {
         "type": "Point",
@@ -612,8 +1367,9 @@
         "name": "大仁北路",
         "name_en": "Daren N. Rd.",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "4950"
       },
       "geometry": {
         "type": "Point",
@@ -631,8 +1387,9 @@
         "name": "慈育街口",
         "name_en": "Cihyu St. Intersection",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "4419"
       },
       "geometry": {
         "type": "Point",
@@ -650,8 +1407,9 @@
         "name": "仁慈公園",
         "name_en": "Rencih Park",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "4712"
       },
       "geometry": {
         "type": "Point",
@@ -669,8 +1427,9 @@
         "name": "仁忠路口",
         "name_en": "Renjhong Rd. Intersection",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "5013"
       },
       "geometry": {
         "type": "Point",
@@ -688,8 +1447,9 @@
         "name": "登發國小",
         "name_en": "DengFa Elementary School",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "5016"
       },
       "geometry": {
         "type": "Point",
@@ -707,8 +1467,9 @@
         "name": "仁和公園",
         "name_en": "Renhe Park",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "4909"
       },
       "geometry": {
         "type": "Point",
@@ -726,8 +1487,9 @@
         "name": "仁雄澄合街口",
         "name_en": "RenSyong Chenghe St. Intersection",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "2304"
       },
       "geometry": {
         "type": "Point",
@@ -745,8 +1507,9 @@
         "name": "大灣",
         "name_en": "Da Wan",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "2198"
       },
       "geometry": {
         "type": "Point",
@@ -764,8 +1527,9 @@
         "name": "慈惠堂",
         "name_en": "Cihhuei Temple",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "5017"
       },
       "geometry": {
         "type": "Point",
@@ -783,8 +1547,9 @@
         "name": "大灣國中",
         "name_en": "Dawan Junior High School",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "2605"
       },
       "geometry": {
         "type": "Point",
@@ -802,8 +1567,9 @@
         "name": "八德路口(大灣)",
         "name_en": "Bade Rd. Intersection(Da-Wan)",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "215"
       },
       "geometry": {
         "type": "Point",
@@ -821,8 +1587,9 @@
         "name": "極限公園",
         "name_en": "Jisian Park",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "4904"
       },
       "geometry": {
         "type": "Point",
@@ -840,8 +1607,9 @@
         "name": "後備指揮部",
         "name_en": "Reserve Command of MND",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "4449"
       },
       "geometry": {
         "type": "Point",
@@ -859,8 +1627,9 @@
         "name": "鼎金後路",
         "name_en": "Dingjinhou Rd.",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "3581"
       },
       "geometry": {
         "type": "Point",
@@ -878,8 +1647,9 @@
         "name": "鼎貴路口(獅湖國小)",
         "name_en": "Dingguei Rd. Intersection(Shihhu Elementary School)",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "3983"
       },
       "geometry": {
         "type": "Point",
@@ -897,8 +1667,9 @@
         "name": "獅湖國小(鼎中路)",
         "name_en": "Shihhu Elementary School(Dingzhong Rd.)",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "675"
       },
       "geometry": {
         "type": "Point",
@@ -916,8 +1687,9 @@
         "name": "榮總側門",
         "name_en": "the side entrance of Kaohsiung Veterans General Hospital",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "2487"
       },
       "geometry": {
         "type": "Point",
@@ -935,8 +1707,9 @@
         "name": "榮佑路",
         "name_en": "Rongyou Rd.",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "1490"
       },
       "geometry": {
         "type": "Point",
@@ -954,8 +1727,9 @@
         "name": "新莊高中(民族一路)",
         "name_en": "Hsinchuang Senior High School(Minzu 1st Rd.)",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "873"
       },
       "geometry": {
         "type": "Point",
@@ -973,8 +1747,9 @@
         "name": "大中路口(民族一路)",
         "name_en": "Dajhong Rd. Intersection(Minzu 1st Rd.)",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "2444"
       },
       "geometry": {
         "type": "Point",
@@ -992,8 +1767,9 @@
         "name": "菜公路口(民族一路)",
         "name_en": "Caigong Rd. Intersection(Minzu 1st Rd.)",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "875"
       },
       "geometry": {
         "type": "Point",
@@ -1011,8 +1787,9 @@
         "name": "文藻外語大學(民族一路)",
         "name_en": "Wenzao Ursuline University of Languages(Minzu 1st Rd.)",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "877"
       },
       "geometry": {
         "type": "Point",
@@ -1030,8 +1807,9 @@
         "name": "天祥路口(民族一路)",
         "name_en": "Tiansiang Rd. Intersection(Minzu 1st Rd.)",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "44"
       },
       "geometry": {
         "type": "Point",
@@ -1049,8 +1827,9 @@
         "name": "民族裕誠路口",
         "name_en": "Minzu Yucheng Rd. Intersection",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "1157"
       },
       "geometry": {
         "type": "Point",
@@ -1068,8 +1847,9 @@
         "name": "京城世界",
         "name_en": "Jingcheng World",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "4534"
       },
       "geometry": {
         "type": "Point",
@@ -1087,8 +1867,9 @@
         "name": "自由二路口",
         "name_en": "Zihyou 2nd Rd.Intersection",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "3833"
       },
       "geometry": {
         "type": "Point",
@@ -1106,8 +1887,9 @@
         "name": "富國路口",
         "name_en": "Fuguo Rd. Intersection",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "3961"
       },
       "geometry": {
         "type": "Point",
@@ -1125,8 +1907,9 @@
         "name": "富民路口",
         "name_en": "Fumin Rd. Intersection",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "3641"
       },
       "geometry": {
         "type": "Point",
@@ -1144,8 +1927,9 @@
         "name": "捷運巨蛋站",
         "name_en": "MRT Kaohsiung Arena Station",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "3704"
       },
       "geometry": {
         "type": "Point",
@@ -1163,8 +1947,9 @@
         "name": "捷運巨蛋站",
         "name_en": "MRT Kaohsiung Arena Station",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "3704"
       },
       "geometry": {
         "type": "Point",
@@ -1182,8 +1967,9 @@
         "name": "漢神巨蛋",
         "name_en": "Hanshin Arena",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "3702"
       },
       "geometry": {
         "type": "Point",
@@ -1201,8 +1987,9 @@
         "name": "新庄仔",
         "name_en": "Sinjhuangzih",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "686"
       },
       "geometry": {
         "type": "Point",
@@ -1220,8 +2007,9 @@
         "name": "富國路口",
         "name_en": "Fuguo Rd. Intersection",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "3959"
       },
       "geometry": {
         "type": "Point",
@@ -1239,8 +2027,9 @@
         "name": "自由二路口",
         "name_en": "Zihyou 2nd Rd.Intersection",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "3832"
       },
       "geometry": {
         "type": "Point",
@@ -1258,8 +2047,9 @@
         "name": "京城世界",
         "name_en": "Jingcheng World",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "4533"
       },
       "geometry": {
         "type": "Point",
@@ -1277,8 +2067,9 @@
         "name": "民族裕誠路口",
         "name_en": "Minzu Yucheng Rd. Intersection",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "1156"
       },
       "geometry": {
         "type": "Point",
@@ -1296,8 +2087,9 @@
         "name": "天祥路口(民族一路)",
         "name_en": "Tiansiang Rd. Intersection(Minzu 1st Rd.)",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "43"
       },
       "geometry": {
         "type": "Point",
@@ -1315,8 +2107,9 @@
         "name": "文藻外語大學(民族一路)",
         "name_en": "Wenzao Ursuline University of Languages(Minzu 1st Rd.)",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "876"
       },
       "geometry": {
         "type": "Point",
@@ -1334,8 +2127,9 @@
         "name": "菜公路口(民族一路)",
         "name_en": "Caigong Rd. Intersection(Minzu 1st Rd.)",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "874"
       },
       "geometry": {
         "type": "Point",
@@ -1353,8 +2147,9 @@
         "name": "大中路口(民族一路)",
         "name_en": "Dajhong Rd. Intersection(Minzu 1st Rd.)",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "2443"
       },
       "geometry": {
         "type": "Point",
@@ -1372,8 +2167,9 @@
         "name": "新莊高中(民族一路)",
         "name_en": "Hsinchuang Senior High School(Minzu 1st Rd.)",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "872"
       },
       "geometry": {
         "type": "Point",
@@ -1391,8 +2187,9 @@
         "name": "榮佑路",
         "name_en": "Rongyou Rd.",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "1489"
       },
       "geometry": {
         "type": "Point",
@@ -1410,8 +2207,9 @@
         "name": "榮總側門",
         "name_en": "the side entrance of Kaohsiung Veterans General Hospital",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "2488"
       },
       "geometry": {
         "type": "Point",
@@ -1429,8 +2227,9 @@
         "name": "獅湖國小(鼎中路)",
         "name_en": "Shihhu Elementary School(Dingzhong Rd.)",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "676"
       },
       "geometry": {
         "type": "Point",
@@ -1448,8 +2247,9 @@
         "name": "鼎貴路口(獅湖國小)",
         "name_en": "Dingguei Rd. Intersection(Shihhu Elementary School)",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "3984"
       },
       "geometry": {
         "type": "Point",
@@ -1467,8 +2267,9 @@
         "name": "鼎金後路",
         "name_en": "Dingjinhou Rd.",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "3582"
       },
       "geometry": {
         "type": "Point",
@@ -1486,8 +2287,9 @@
         "name": "後備指揮部",
         "name_en": "Reserve Command of MND",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "4450"
       },
       "geometry": {
         "type": "Point",
@@ -1505,8 +2307,9 @@
         "name": "極限公園",
         "name_en": "Jisian Park",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "4905"
       },
       "geometry": {
         "type": "Point",
@@ -1524,8 +2327,9 @@
         "name": "八德路口(大灣)",
         "name_en": "Bade Rd. Intersection(Da-Wan)",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "216"
       },
       "geometry": {
         "type": "Point",
@@ -1543,8 +2347,9 @@
         "name": "大灣國中",
         "name_en": "Dawan Junior High School",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "2606"
       },
       "geometry": {
         "type": "Point",
@@ -1562,8 +2367,9 @@
         "name": "慈惠堂",
         "name_en": "Cihhuei Temple",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "5018"
       },
       "geometry": {
         "type": "Point",
@@ -1581,8 +2387,9 @@
         "name": "大灣",
         "name_en": "Da Wan",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "2197"
       },
       "geometry": {
         "type": "Point",
@@ -1600,8 +2407,9 @@
         "name": "仁雄澄合街口",
         "name_en": "RenSyong Chenghe St. Intersection",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "2303"
       },
       "geometry": {
         "type": "Point",
@@ -1619,8 +2427,9 @@
         "name": "仁和公園",
         "name_en": "Renhe Park",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "4910"
       },
       "geometry": {
         "type": "Point",
@@ -1638,8 +2447,9 @@
         "name": "登發國小",
         "name_en": "DengFa Elementary School",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "5015"
       },
       "geometry": {
         "type": "Point",
@@ -1657,8 +2467,9 @@
         "name": "仁忠路口",
         "name_en": "Renjhong Rd. Intersection",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "5014"
       },
       "geometry": {
         "type": "Point",
@@ -1676,8 +2487,9 @@
         "name": "仁慈公園",
         "name_en": "Rencih Park",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "4711"
       },
       "geometry": {
         "type": "Point",
@@ -1695,8 +2507,9 @@
         "name": "慈育街口",
         "name_en": "Cihyu St. Intersection",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "4420"
       },
       "geometry": {
         "type": "Point",
@@ -1714,8 +2527,9 @@
         "name": "大仁北路",
         "name_en": "Daren N. Rd.",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "4951"
       },
       "geometry": {
         "type": "Point",
@@ -1733,8 +2547,9 @@
         "name": "鳥松",
         "name_en": "Niaosong",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "4998"
       },
       "geometry": {
         "type": "Point",
@@ -1752,8 +2567,9 @@
         "name": "鳥松區公所(神農路)",
         "name_en": "Niaosong District Office(Shennong Rd.)",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "2900"
       },
       "geometry": {
         "type": "Point",
@@ -1771,8 +2587,9 @@
         "name": "鳥松國中",
         "name_en": "Niao Song Junior High School",
         "line": "24A(平日停駛)",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "4034"
       },
       "geometry": {
         "type": "Point",

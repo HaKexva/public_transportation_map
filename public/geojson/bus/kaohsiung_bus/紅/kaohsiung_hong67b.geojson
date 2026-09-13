@@ -6,7 +6,7 @@
     "name": "紅67B",
     "name_en": "紅67B",
     "ref": "紅67B",
-    "color": "#134e4a",
+    "color": "#1e3a8a",
     "city_id": "Kaohsiung",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ibus.tbkc.gov.tw/cms/api/route/8671/map/1802/image",
@@ -22,7 +22,7 @@
         "ref": "紅67B",
         "name": "紅67B",
         "name_en": "紅67B",
-        "color": "#134e4a",
+        "color": "#1e3a8a",
         "direction": 0
       },
       "geometry": {
@@ -33,24 +33,60 @@
             22.7923
           ],
           [
-            120.29973,
-            22.79235
+            120.30000487058115,
+            22.792377065830156
           ],
           [
-            120.29984,
-            22.79242
+            120.30004468618802,
+            22.792387881654214
           ],
           [
-            120.29979,
-            22.79289
+            120.3000779871802,
+            22.792410982477637
           ],
           [
-            120.29972,
-            22.79297
+            120.3001004785659,
+            22.792443440019586
           ],
           [
-            120.2994,
-            22.79295
+            120.30010931758086,
+            22.79248115185883
+          ],
+          [
+            120.30010338703136,
+            22.792519351465288
+          ],
+          [
+            120.30008368820201,
+            22.792552920166447
+          ],
+          [
+            120.2997171579156,
+            22.792973235930752
+          ],
+          [
+            120.2997108918932,
+            22.792979270789594
+          ],
+          [
+            120.29970372302915,
+            22.792984096305958
+          ],
+          [
+            120.2996957598912,
+            22.792987691551772
+          ],
+          [
+            120.29968724488882,
+            22.792989947082553
+          ],
+          [
+            120.29967843723101,
+            22.792990794236665
+          ],
+          [
+            120.29966954983198,
+            22.79299019898928
           ],
           [
             120.29913,
@@ -93,8 +129,32 @@
             22.82556
           ],
           [
-            120.26133,
-            22.85416
+            120.26134514933125,
+            22.85408039481263
+          ],
+          [
+            120.26133817901868,
+            22.854102717132477
+          ],
+          [
+            120.2613263285686,
+            22.854123043060273
+          ],
+          [
+            120.26131011035669,
+            22.854140580582797
+          ],
+          [
+            120.2612902593829,
+            22.854154534909657
+          ],
+          [
+            120.26126767528191,
+            22.85416427363884
+          ],
+          [
+            120.26124347505657,
+            22.85416934534676
           ],
           [
             120.25471,
@@ -154,13 +214,158 @@
     {
       "type": "Feature",
       "properties": {
+        "feature_type": "route",
+        "ref": "紅67B",
+        "name": "紅67B",
+        "name_en": "紅67B",
+        "color": "#1e3a8a",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.24259,
+            22.84126
+          ],
+          [
+            120.24303,
+            22.84164
+          ],
+          [
+            120.24418,
+            22.8431
+          ],
+          [
+            120.24484,
+            22.84382
+          ],
+          [
+            120.24633,
+            22.84527
+          ],
+          [
+            120.2466,
+            22.84562
+          ],
+          [
+            120.25077,
+            22.85331
+          ],
+          [
+            120.25092,
+            22.85348
+          ],
+          [
+            120.25391,
+            22.85544
+          ],
+          [
+            120.25425,
+            22.85508
+          ],
+          [
+            120.2545,
+            22.85491
+          ],
+          [
+            120.25471,
+            22.85487
+          ],
+          [
+            120.2611243093979,
+            22.854159558909984
+          ],
+          [
+            120.26114832281239,
+            22.854154455655042
+          ],
+          [
+            120.2611707353186,
+            22.85414475225371
+          ],
+          [
+            120.26119044870082,
+            22.85413089313784
+          ],
+          [
+            120.26120658183167,
+            22.854113497767173
+          ],
+          [
+            120.26121841360998,
+            22.854093343661113
+          ],
+          [
+            120.26122544135154,
+            22.854071199043346
+          ],
+          [
+            120.26284,
+            22.84589
+          ],
+          [
+            120.2667,
+            22.82551
+          ],
+          [
+            120.26712,
+            22.82355
+          ],
+          [
+            120.26744,
+            22.82294
+          ],
+          [
+            120.26779,
+            22.82249
+          ],
+          [
+            120.26949,
+            22.82088
+          ],
+          [
+            120.2818,
+            22.80993
+          ],
+          [
+            120.29384,
+            22.80013
+          ],
+          [
+            120.29842,
+            22.79673
+          ],
+          [
+            120.29853,
+            22.7965
+          ],
+          [
+            120.29859,
+            22.79611
+          ],
+          [
+            120.29901,
+            22.79228
+          ],
+          [
+            120.29963,
+            22.79234
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "feature_type": "station",
         "ref": "KHH108671109741",
         "name": "臺鐵岡山車站(捷運岡山車站)",
         "name_en": "TRA Gangshan Station(MRT Gangshan Station)",
         "line": "紅67B",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "51"
       },
       "geometry": {
         "type": "Point",
@@ -178,8 +383,9 @@
         "name": "岡山農工",
         "name_en": "Kangshan Agricultural & Industrial Vocational Senior High School",
         "line": "紅67B",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "2002"
       },
       "geometry": {
         "type": "Point",
@@ -197,8 +403,9 @@
         "name": "育德街口",
         "name_en": "Yude St. Intersection",
         "line": "紅67B",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "1029"
       },
       "geometry": {
         "type": "Point",
@@ -216,8 +423,9 @@
         "name": "北嶺墘",
         "name_en": "Beilingcian",
         "line": "紅67B",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "1074"
       },
       "geometry": {
         "type": "Point",
@@ -235,8 +443,9 @@
         "name": "味全公司",
         "name_en": "Wei Chuan Foods Corp.",
         "line": "紅67B",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "1076"
       },
       "geometry": {
         "type": "Point",
@@ -254,8 +463,9 @@
         "name": "台鋼科大",
         "name_en": "Taiwan Steel University of Science and Technology",
         "line": "紅67B",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "4763"
       },
       "geometry": {
         "type": "Point",
@@ -273,8 +483,9 @@
         "name": "國昌路口(中山路)",
         "name_en": "Guochang Rd. Intersection(Jhongshan Rd.)",
         "line": "紅67B",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "2634"
       },
       "geometry": {
         "type": "Point",
@@ -292,8 +503,9 @@
         "name": "路竹區公所(國昌路)",
         "name_en": "Lujhu District Office(Guochang Rd.)",
         "line": "紅67B",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "2622"
       },
       "geometry": {
         "type": "Point",
@@ -311,8 +523,9 @@
         "name": "路竹高中(國昌路)",
         "name_en": "Lu Chu Senior High School(Guochang Rd.)",
         "line": "紅67B",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "2624"
       },
       "geometry": {
         "type": "Point",
@@ -330,8 +543,9 @@
         "name": "路竹高中(中華路)",
         "name_en": "Lu Chu Senior High School(Jhonghua Rd.)",
         "line": "紅67B",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "2626"
       },
       "geometry": {
         "type": "Point",
@@ -349,8 +563,9 @@
         "name": "中華路555巷",
         "name_en": "Jhonghua Rd. 555 Lane",
         "line": "紅67B",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "4114"
       },
       "geometry": {
         "type": "Point",
@@ -368,8 +583,9 @@
         "name": "路竹中華路",
         "name_en": "Lujhu Jhonghua Rd.",
         "line": "紅67B",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "3812"
       },
       "geometry": {
         "type": "Point",
@@ -387,8 +603,9 @@
         "name": "路竹宿舍",
         "name_en": "Lujhu Dormitory",
         "line": "紅67B",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "2628"
       },
       "geometry": {
         "type": "Point",
@@ -406,8 +623,9 @@
         "name": "後鄉里",
         "name_en": "HouSiang Village",
         "line": "紅67B",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "2630"
       },
       "geometry": {
         "type": "Point",
@@ -425,8 +643,9 @@
         "name": "順安宮",
         "name_en": "Shunan Temple",
         "line": "紅67B",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "2632"
       },
       "geometry": {
         "type": "Point",
@@ -444,8 +663,9 @@
         "name": "順安宮",
         "name_en": "Shunan Temple",
         "line": "紅67B",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "2633"
       },
       "geometry": {
         "type": "Point",
@@ -463,8 +683,9 @@
         "name": "後鄉里",
         "name_en": "HouSiang Village",
         "line": "紅67B",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "2631"
       },
       "geometry": {
         "type": "Point",
@@ -482,8 +703,9 @@
         "name": "路竹宿舍",
         "name_en": "Lujhu Dormitory",
         "line": "紅67B",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "2629"
       },
       "geometry": {
         "type": "Point",
@@ -501,8 +723,9 @@
         "name": "路竹中華路",
         "name_en": "Lujhu Jhonghua Rd.",
         "line": "紅67B",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "3813"
       },
       "geometry": {
         "type": "Point",
@@ -520,8 +743,9 @@
         "name": "中華路555巷",
         "name_en": "Jhonghua Rd. 555 Lane",
         "line": "紅67B",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "4115"
       },
       "geometry": {
         "type": "Point",
@@ -539,8 +763,9 @@
         "name": "路竹高中(中華路)",
         "name_en": "Lu Chu Senior High School(Jhonghua Rd.)",
         "line": "紅67B",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "2627"
       },
       "geometry": {
         "type": "Point",
@@ -558,8 +783,9 @@
         "name": "路竹高中(國昌路)",
         "name_en": "Lu Chu Senior High School(Guochang Rd.)",
         "line": "紅67B",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "2625"
       },
       "geometry": {
         "type": "Point",
@@ -577,8 +803,9 @@
         "name": "路竹區公所(國昌路)",
         "name_en": "Lujhu District Office(Guochang Rd.)",
         "line": "紅67B",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "2623"
       },
       "geometry": {
         "type": "Point",
@@ -596,8 +823,9 @@
         "name": "國昌路口(中山路)",
         "name_en": "Guochang Rd. Intersection(Jhongshan Rd.)",
         "line": "紅67B",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "2635"
       },
       "geometry": {
         "type": "Point",
@@ -615,8 +843,9 @@
         "name": "台鋼科大",
         "name_en": "Taiwan Steel University of Science and Technology",
         "line": "紅67B",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "4764"
       },
       "geometry": {
         "type": "Point",
@@ -634,8 +863,9 @@
         "name": "味全公司",
         "name_en": "Wei Chuan Foods Corp.",
         "line": "紅67B",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "1077"
       },
       "geometry": {
         "type": "Point",
@@ -653,8 +883,9 @@
         "name": "北嶺墘",
         "name_en": "Beilingcian",
         "line": "紅67B",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "1075"
       },
       "geometry": {
         "type": "Point",
@@ -672,8 +903,9 @@
         "name": "育德街口",
         "name_en": "Yude St. Intersection",
         "line": "紅67B",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "1030"
       },
       "geometry": {
         "type": "Point",
@@ -691,8 +923,9 @@
         "name": "岡山農工",
         "name_en": "Kangshan Agricultural & Industrial Vocational Senior High School",
         "line": "紅67B",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "2003"
       },
       "geometry": {
         "type": "Point",
@@ -710,8 +943,9 @@
         "name": "臺鐵岡山車站(捷運岡山車站)",
         "name_en": "TRA Gangshan Station(MRT Gangshan Station)",
         "line": "紅67B",
-        "color": "#134e4a",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "51"
       },
       "geometry": {
         "type": "Point",

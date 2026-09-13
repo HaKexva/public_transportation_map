@@ -6,7 +6,7 @@
     "name": "181區1",
     "name_en": "181區1",
     "ref": "181區1",
-    "color": "#0f766e",
+    "color": "#7c3aed",
     "city_id": "Taichung",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://citybus.taichung.gov.tw/ebus/strapi/uploads/181_181_1_181_2_2_13732591fa.jpeg",
@@ -22,7 +22,7 @@
         "ref": "181區1",
         "name": "181區1",
         "name_en": "181區1",
-        "color": "#0f766e",
+        "color": "#7c3aed",
         "direction": 0
       },
       "geometry": {
@@ -73,12 +73,32 @@
             24.42892
           ],
           [
-            120.64412,
-            24.42863
+            120.64402903244668,
+            24.42842591880903
           ],
           [
-            120.64403,
-            24.42834
+            120.64401620689765,
+            24.42840437186048
+          ],
+          [
+            120.64399864607451,
+            24.428386196458355
+          ],
+          [
+            120.64397711852149,
+            24.428372054659643
+          ],
+          [
+            120.64395270128104,
+            24.428362653991012
+          ],
+          [
+            120.64392661596924,
+            24.4283584647762
+          ],
+          [
+            120.64390003582574,
+            24.428359716546296
           ],
           [
             120.6433,
@@ -157,36 +177,88 @@
             24.43028
           ],
           [
-            120.6288,
-            24.43034
+            120.62860094116583,
+            24.43040004683124
           ],
           [
-            120.62861,
-            24.43046
+            120.62857821602613,
+            24.430404727917658
           ],
           [
-            120.62821,
-            24.43009
+            120.62855517803091,
+            24.43040525598936
           ],
           [
-            120.62777,
-            24.42963
+            120.6285324648675,
+            24.43040168210299
           ],
           [
-            120.62745,
-            24.42924
+            120.6285109370318,
+            24.43039414165645
           ],
           [
-            120.62667,
-            24.4297
+            120.62849141011326,
+            24.43038292032214
           ],
           [
-            120.6262,
-            24.42997
+            120.62847435295078,
+            24.430368158228013
           ],
           [
-            120.62609,
-            24.42996
+            120.62748518564585,
+            24.429330359882606
+          ],
+          [
+            120.62746409730707,
+            24.42931286468679
+          ],
+          [
+            120.6274394507246,
+            24.429300623973393
+          ],
+          [
+            120.62741235647454,
+            24.429294038736156
+          ],
+          [
+            120.627384333145,
+            24.429293478066803
+          ],
+          [
+            120.62735695139753,
+            24.429298973389923
+          ],
+          [
+            120.62733142728494,
+            24.429310405300342
+          ],
+          [
+            120.62623449245515,
+            24.429958464104267
+          ],
+          [
+            120.62620484802302,
+            24.429971175752186
+          ],
+          [
+            120.62617292040312,
+            24.429975952888555
+          ],
+          [
+            120.62614077434108,
+            24.429972628076666
+          ],
+          [
+            120.62611080970915,
+            24.42996144953117
+          ],
+          [
+            120.62608526352435,
+            24.42994325178916
+          ],
+          [
+            120.62606587610372,
+            24.429919112114188
           ],
           [
             120.62562,
@@ -265,12 +337,32 @@
             24.42084
           ],
           [
-            120.6285,
-            24.42014
+            120.62849493947904,
+            24.42014391526292
           ],
           [
-            120.62784,
-            24.41975
+            120.62852168206138,
+            24.420115430857603
+          ],
+          [
+            120.6285363048858,
+            24.420079924370018
+          ],
+          [
+            120.6285367045892,
+            24.420041972203137
+          ],
+          [
+            120.62852283231446,
+            24.42000621338142
+          ],
+          [
+            120.62849638371766,
+            24.419977018829144
+          ],
+          [
+            120.62846084440022,
+            24.419958042081173
           ],
           [
             120.62763,
@@ -341,16 +433,32 @@
             24.41247
           ],
           [
-            120.61409,
-            24.41205
+            120.61413156075636,
+            24.41209190923499
           ],
           [
-            120.61406,
-            24.41198
+            120.61411355676607,
+            24.412067983547402
           ],
           [
-            120.61454,
-            24.41164
+            120.61410303966395,
+            24.412040161901675
+          ],
+          [
+            120.61410106276698,
+            24.41201077189798
+          ],
+          [
+            120.61410777152358,
+            24.41198197587942
+          ],
+          [
+            120.614122672343,
+            24.411955892487182
+          ],
+          [
+            120.61414435265412,
+            24.411934676146203
           ],
           [
             120.61554,
@@ -478,13 +586,586 @@
     {
       "type": "Feature",
       "properties": {
+        "feature_type": "route",
+        "ref": "181區1",
+        "name": "181區1",
+        "name_en": "181區1",
+        "color": "#7c3aed",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.65288,
+            24.37728
+          ],
+          [
+            120.65358,
+            24.37846
+          ],
+          [
+            120.65413,
+            24.37938
+          ],
+          [
+            120.65144,
+            24.38101
+          ],
+          [
+            120.65084,
+            24.3815
+          ],
+          [
+            120.65058,
+            24.38163
+          ],
+          [
+            120.65014,
+            24.38185
+          ],
+          [
+            120.6494,
+            24.38227
+          ],
+          [
+            120.64736,
+            24.38352
+          ],
+          [
+            120.64607,
+            24.38431
+          ],
+          [
+            120.64492,
+            24.38502
+          ],
+          [
+            120.64435,
+            24.38537
+          ],
+          [
+            120.64409,
+            24.38556
+          ],
+          [
+            120.64341,
+            24.38615
+          ],
+          [
+            120.64024,
+            24.38907
+          ],
+          [
+            120.63544,
+            24.39352
+          ],
+          [
+            120.63517,
+            24.39375
+          ],
+          [
+            120.63285,
+            24.39589
+          ],
+          [
+            120.63274,
+            24.39607
+          ],
+          [
+            120.63089,
+            24.39969
+          ],
+          [
+            120.63074,
+            24.39988
+          ],
+          [
+            120.63059,
+            24.40001
+          ],
+          [
+            120.62907,
+            24.40111
+          ],
+          [
+            120.62732,
+            24.40237
+          ],
+          [
+            120.62479,
+            24.4042
+          ],
+          [
+            120.62291,
+            24.40559
+          ],
+          [
+            120.62222,
+            24.40609
+          ],
+          [
+            120.61892,
+            24.40847
+          ],
+          [
+            120.61618,
+            24.41045
+          ],
+          [
+            120.61554,
+            24.4109
+          ],
+          [
+            120.6141443524592,
+            24.411934674913244
+          ],
+          [
+            120.61412267187349,
+            24.41195589121638
+          ],
+          [
+            120.61410777086962,
+            24.411981974691038
+          ],
+          [
+            120.61410106200377,
+            24.412010770843114
+          ],
+          [
+            120.61410303887976,
+            24.412040160999783
+          ],
+          [
+            120.61411355604926,
+            24.412067982784436
+          ],
+          [
+            120.61413156023708,
+            24.412091908519713
+          ],
+          [
+            120.61451,
+            24.41247
+          ],
+          [
+            120.61454,
+            24.41252
+          ],
+          [
+            120.6147,
+            24.41288
+          ],
+          [
+            120.61544,
+            24.41443
+          ],
+          [
+            120.61554,
+            24.4145
+          ],
+          [
+            120.61781,
+            24.41552
+          ],
+          [
+            120.61901,
+            24.41607
+          ],
+          [
+            120.62232,
+            24.41757
+          ],
+          [
+            120.62263,
+            24.41771
+          ],
+          [
+            120.6231,
+            24.41795
+          ],
+          [
+            120.62392,
+            24.41837
+          ],
+          [
+            120.6256,
+            24.41923
+          ],
+          [
+            120.62577,
+            24.41929
+          ],
+          [
+            120.62625,
+            24.41938
+          ],
+          [
+            120.62664,
+            24.41946
+          ],
+          [
+            120.62744000000001,
+            24.41964
+          ],
+          [
+            120.62763,
+            24.41968
+          ],
+          [
+            120.62846084402803,
+            24.419958042009885
+          ],
+          [
+            120.62849638348284,
+            24.419977018742596
+          ],
+          [
+            120.6285228321617,
+            24.420006213369177
+          ],
+          [
+            120.6285367044472,
+            24.420041972299092
+          ],
+          [
+            120.62853630467254,
+            24.420079924570587
+          ],
+          [
+            120.62852168170382,
+            24.420115431120706
+          ],
+          [
+            120.62849493889499,
+            24.420143915474675
+          ],
+          [
+            120.62756,
+            24.42084
+          ],
+          [
+            120.62749,
+            24.42098
+          ],
+          [
+            120.6272,
+            24.42164
+          ],
+          [
+            120.62667,
+            24.42288
+          ],
+          [
+            120.6266,
+            24.42307
+          ],
+          [
+            120.62657,
+            24.42328
+          ],
+          [
+            120.62655,
+            24.4237
+          ],
+          [
+            120.6264,
+            24.42542
+          ],
+          [
+            120.62637,
+            24.42594
+          ],
+          [
+            120.62627,
+            24.42703
+          ],
+          [
+            120.62624,
+            24.42717
+          ],
+          [
+            120.62618,
+            24.42729
+          ],
+          [
+            120.62607,
+            24.42761
+          ],
+          [
+            120.62596,
+            24.42782
+          ],
+          [
+            120.62556,
+            24.42876
+          ],
+          [
+            120.62552,
+            24.4289
+          ],
+          [
+            120.62553,
+            24.42898
+          ],
+          [
+            120.62557,
+            24.42907
+          ],
+          [
+            120.62562,
+            24.42917
+          ],
+          [
+            120.62606587641825,
+            24.429919113000167
+          ],
+          [
+            120.62608526385218,
+            24.429943252670274
+          ],
+          [
+            120.62611081012365,
+            24.429961450334442
+          ],
+          [
+            120.62614077481773,
+            24.429972628779655
+          ],
+          [
+            120.62617292091053,
+            24.42997595347547
+          ],
+          [
+            120.62620484852503,
+            24.429971176215645
+          ],
+          [
+            120.62623449294901,
+            24.429958464493932
+          ],
+          [
+            120.62733142681296,
+            24.42931040582119
+          ],
+          [
+            120.62735695087768,
+            24.429298973908818
+          ],
+          [
+            120.62738433256253,
+            24.429293478528145
+          ],
+          [
+            120.62741235584619,
+            24.42929403911762
+          ],
+          [
+            120.62743945007509,
+            24.429300624257237
+          ],
+          [
+            120.62746409666741,
+            24.429312864862005
+          ],
+          [
+            120.62748518500929,
+            24.429330359980625
+          ],
+          [
+            120.62852463036346,
+            24.43042106442318
+          ],
+          [
+            120.62854172136181,
+            24.430435167881352
+          ],
+          [
+            120.62856174079407,
+            24.430444920797612
+          ],
+          [
+            120.62858372969724,
+            24.430449977073877
+          ],
+          [
+            120.62860639945468,
+            24.430450040396977
+          ],
+          [
+            120.62862842154962,
+            24.430445107055974
+          ],
+          [
+            120.62864875881215,
+            24.430435305454115
+          ],
+          [
+            120.6288,
+            24.43034
+          ],
+          [
+            120.629,
+            24.43028
+          ],
+          [
+            120.62925,
+            24.43023
+          ],
+          [
+            120.62999,
+            24.43018
+          ],
+          [
+            120.63148,
+            24.43002
+          ],
+          [
+            120.63332,
+            24.42982
+          ],
+          [
+            120.63517,
+            24.4296
+          ],
+          [
+            120.63572,
+            24.42949
+          ],
+          [
+            120.63633,
+            24.42934
+          ],
+          [
+            120.63697,
+            24.42916
+          ],
+          [
+            120.63724,
+            24.4291
+          ],
+          [
+            120.63736,
+            24.4291
+          ],
+          [
+            120.63747,
+            24.42912
+          ],
+          [
+            120.63759,
+            24.42914
+          ],
+          [
+            120.63768,
+            24.42913
+          ],
+          [
+            120.64015,
+            24.42872
+          ],
+          [
+            120.64087,
+            24.42863
+          ],
+          [
+            120.64154,
+            24.42861
+          ],
+          [
+            120.64269,
+            24.42854
+          ],
+          [
+            120.64407402712744,
+            24.428335055178344
+          ],
+          [
+            120.64410197686817,
+            24.42833395540903
+          ],
+          [
+            120.64412930260994,
+            24.4283388622979
+          ],
+          [
+            120.64415462276955,
+            24.42834948513299
+          ],
+          [
+            120.64417653685871,
+            24.42836523635261
+          ],
+          [
+            120.64419383278296,
+            24.42838524473798
+          ],
+          [
+            120.64420563001791,
+            24.428408617722457
+          ],
+          [
+            120.64436,
+            24.42884
+          ],
+          [
+            120.64463,
+            24.42934
+          ],
+          [
+            120.64555,
+            24.43096
+          ],
+          [
+            120.64584,
+            24.43147
+          ],
+          [
+            120.64622,
+            24.43218
+          ],
+          [
+            120.64729,
+            24.43407
+          ],
+          [
+            120.64754,
+            24.43443
+          ],
+          [
+            120.6492,
+            24.43615
+          ],
+          [
+            120.64933,
+            24.43644
+          ],
+          [
+            120.64936,
+            24.43809
+          ],
+          [
+            120.64948,
+            24.4384
+          ],
+          [
+            120.65159,
+            24.44296
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "feature_type": "station",
         "ref": "TXG8941",
         "name": "苑裡站",
         "name_en": "Yuanli Station",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#7c3aed",
+        "direction": 0,
+        "station_id": "1020"
       },
       "geometry": {
         "type": "Point",
@@ -502,8 +1183,9 @@
         "name": "客庄",
         "name_en": "Kezhuang",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#7c3aed",
+        "direction": 0,
+        "station_id": "1928"
       },
       "geometry": {
         "type": "Point",
@@ -521,8 +1203,9 @@
         "name": "房裡",
         "name_en": "Fangli",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#7c3aed",
+        "direction": 0,
+        "station_id": "1930"
       },
       "geometry": {
         "type": "Point",
@@ -540,8 +1223,9 @@
         "name": "龍德家商(田心二十四路)",
         "name_en": "Long Der Voca. High School(Tianxin 24th Road)",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#7c3aed",
+        "direction": 0,
+        "station_id": "1934"
       },
       "geometry": {
         "type": "Point",
@@ -559,8 +1243,9 @@
         "name": "南房裡",
         "name_en": "Nanfangli",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#7c3aed",
+        "direction": 0,
+        "station_id": "3079"
       },
       "geometry": {
         "type": "Point",
@@ -578,8 +1263,9 @@
         "name": "福德港",
         "name_en": "Fude Harbor",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#7c3aed",
+        "direction": 0,
+        "station_id": "3082"
       },
       "geometry": {
         "type": "Point",
@@ -597,8 +1283,9 @@
         "name": "後壁寮",
         "name_en": "Houbiliao",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#7c3aed",
+        "direction": 0,
+        "station_id": "3084"
       },
       "geometry": {
         "type": "Point",
@@ -616,8 +1303,9 @@
         "name": "船頭埔",
         "name_en": "Chuantoupu",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#7c3aed",
+        "direction": 0,
+        "station_id": "2529"
       },
       "geometry": {
         "type": "Point",
@@ -635,8 +1323,9 @@
         "name": "陳厝(順帆路)",
         "name_en": "Chencuo(Shunfan Road)",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#7c3aed",
+        "direction": 0,
+        "station_id": "10613"
       },
       "geometry": {
         "type": "Point",
@@ -654,8 +1343,9 @@
         "name": "羅厝前",
         "name_en": "Luocuoqian",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#7c3aed",
+        "direction": 0,
+        "station_id": "3092"
       },
       "geometry": {
         "type": "Point",
@@ -673,8 +1363,9 @@
         "name": "西岐",
         "name_en": "Xiqi",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#7c3aed",
+        "direction": 0,
+        "station_id": "3094"
       },
       "geometry": {
         "type": "Point",
@@ -692,8 +1383,9 @@
         "name": "西岐里9鄰",
         "name_en": "Xiqi Village 9th Neighborhood",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#7c3aed",
+        "direction": 0,
+        "station_id": "4821"
       },
       "geometry": {
         "type": "Point",
@@ -711,8 +1403,9 @@
         "name": "西岐里10鄰",
         "name_en": "Xiqi Village 10th Neighborhood",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#7c3aed",
+        "direction": 0,
+        "station_id": "4823"
       },
       "geometry": {
         "type": "Point",
@@ -730,8 +1423,9 @@
         "name": "南西岐",
         "name_en": "Nanxiqi",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#7c3aed",
+        "direction": 0,
+        "station_id": "3096"
       },
       "geometry": {
         "type": "Point",
@@ -749,8 +1443,9 @@
         "name": "苗圃",
         "name_en": "Miaopu",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#7c3aed",
+        "direction": 0,
+        "station_id": "3098"
       },
       "geometry": {
         "type": "Point",
@@ -768,8 +1463,9 @@
         "name": "長壽會館",
         "name_en": "Longevity Hall",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#7c3aed",
+        "direction": 0,
+        "station_id": "6447"
       },
       "geometry": {
         "type": "Point",
@@ -787,8 +1483,9 @@
         "name": "建興",
         "name_en": "Jianxing",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#7c3aed",
+        "direction": 0,
+        "station_id": "3102"
       },
       "geometry": {
         "type": "Point",
@@ -806,8 +1503,9 @@
         "name": "李厝前",
         "name_en": "Licuoqian",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#7c3aed",
+        "direction": 0,
+        "station_id": "3104"
       },
       "geometry": {
         "type": "Point",
@@ -825,8 +1523,9 @@
         "name": "十甲",
         "name_en": "Shijia",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#7c3aed",
+        "direction": 0,
+        "station_id": "3106"
       },
       "geometry": {
         "type": "Point",
@@ -844,8 +1543,9 @@
         "name": "梁厝",
         "name_en": "Liangcuo",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#7c3aed",
+        "direction": 0,
+        "station_id": "299"
       },
       "geometry": {
         "type": "Point",
@@ -863,8 +1563,9 @@
         "name": "育樂路",
         "name_en": "Yule Road",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#7c3aed",
+        "direction": 0,
+        "station_id": "3108"
       },
       "geometry": {
         "type": "Point",
@@ -882,8 +1583,9 @@
         "name": "頭張(臨江路)",
         "name_en": "Touzhang(Linjiang Road)",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#7c3aed",
+        "direction": 0,
+        "station_id": "3110"
       },
       "geometry": {
         "type": "Point",
@@ -901,8 +1603,9 @@
         "name": "石頭厝",
         "name_en": "Shitoucuo",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#7c3aed",
+        "direction": 0,
+        "station_id": "3112"
       },
       "geometry": {
         "type": "Point",
@@ -920,8 +1623,9 @@
         "name": "鄭厝",
         "name_en": "Zhengcuo",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#7c3aed",
+        "direction": 0,
+        "station_id": "3116"
       },
       "geometry": {
         "type": "Point",
@@ -939,8 +1643,9 @@
         "name": "龍泉里",
         "name_en": "Longquan Village",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#7c3aed",
+        "direction": 0,
+        "station_id": "5104"
       },
       "geometry": {
         "type": "Point",
@@ -958,8 +1663,9 @@
         "name": "南龍泉賴厝",
         "name_en": "Nanlongquan Laicuo",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#7c3aed",
+        "direction": 0,
+        "station_id": "7042"
       },
       "geometry": {
         "type": "Point",
@@ -977,8 +1683,9 @@
         "name": "四塊寮",
         "name_en": "Sikuailiao",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#7c3aed",
+        "direction": 0,
+        "station_id": "3118"
       },
       "geometry": {
         "type": "Point",
@@ -996,8 +1703,9 @@
         "name": "樹仔腳(臨江路)",
         "name_en": "Shuzijiao(Linjiang Rd.)",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#7c3aed",
+        "direction": 0,
+        "station_id": "10620"
       },
       "geometry": {
         "type": "Point",
@@ -1015,8 +1723,9 @@
         "name": "孟春",
         "name_en": "Mengchun",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#7c3aed",
+        "direction": 0,
+        "station_id": "3120"
       },
       "geometry": {
         "type": "Point",
@@ -1034,8 +1743,9 @@
         "name": "建興入口",
         "name_en": "Jianxing Entrance",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#7c3aed",
+        "direction": 0,
+        "station_id": "3122"
       },
       "geometry": {
         "type": "Point",
@@ -1053,8 +1763,9 @@
         "name": "日南車站",
         "name_en": "Rinan Station",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#7c3aed",
+        "direction": 0,
+        "station_id": "140"
       },
       "geometry": {
         "type": "Point",
@@ -1072,8 +1783,9 @@
         "name": "日南國中",
         "name_en": "Rih Nan Junior High School",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#7c3aed",
+        "direction": 0,
+        "station_id": "4439"
       },
       "geometry": {
         "type": "Point",
@@ -1091,8 +1803,9 @@
         "name": "日南國中",
         "name_en": "Rih Nan Junior High School",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 1
+        "color": "#7c3aed",
+        "direction": 1,
+        "station_id": "4440"
       },
       "geometry": {
         "type": "Point",
@@ -1110,8 +1823,9 @@
         "name": "日南車站",
         "name_en": "Rinan Station",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 1
+        "color": "#7c3aed",
+        "direction": 1,
+        "station_id": "140"
       },
       "geometry": {
         "type": "Point",
@@ -1129,8 +1843,9 @@
         "name": "建興入口",
         "name_en": "Jianxing Entrance",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 1
+        "color": "#7c3aed",
+        "direction": 1,
+        "station_id": "3123"
       },
       "geometry": {
         "type": "Point",
@@ -1148,8 +1863,9 @@
         "name": "孟春",
         "name_en": "Mengchun",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 1
+        "color": "#7c3aed",
+        "direction": 1,
+        "station_id": "3121"
       },
       "geometry": {
         "type": "Point",
@@ -1167,8 +1883,9 @@
         "name": "樹仔腳(臨江路)",
         "name_en": "Shuzijiao(Linjiang Rd.)",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 1
+        "color": "#7c3aed",
+        "direction": 1,
+        "station_id": "10621"
       },
       "geometry": {
         "type": "Point",
@@ -1186,8 +1903,9 @@
         "name": "四塊寮",
         "name_en": "Sikuailiao",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 1
+        "color": "#7c3aed",
+        "direction": 1,
+        "station_id": "3119"
       },
       "geometry": {
         "type": "Point",
@@ -1205,8 +1923,9 @@
         "name": "南龍泉賴厝",
         "name_en": "Nanlongquan Laicuo",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 1
+        "color": "#7c3aed",
+        "direction": 1,
+        "station_id": "7043"
       },
       "geometry": {
         "type": "Point",
@@ -1224,8 +1943,9 @@
         "name": "龍泉里",
         "name_en": "Longquan Village",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 1
+        "color": "#7c3aed",
+        "direction": 1,
+        "station_id": "5104"
       },
       "geometry": {
         "type": "Point",
@@ -1243,8 +1963,9 @@
         "name": "鄭厝",
         "name_en": "Zhengcuo",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 1
+        "color": "#7c3aed",
+        "direction": 1,
+        "station_id": "3117"
       },
       "geometry": {
         "type": "Point",
@@ -1262,8 +1983,9 @@
         "name": "石頭厝",
         "name_en": "Shitoucuo",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 1
+        "color": "#7c3aed",
+        "direction": 1,
+        "station_id": "3113"
       },
       "geometry": {
         "type": "Point",
@@ -1281,8 +2003,9 @@
         "name": "頭張(臨江路)",
         "name_en": "Touzhang(Linjiang Road)",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 1
+        "color": "#7c3aed",
+        "direction": 1,
+        "station_id": "3111"
       },
       "geometry": {
         "type": "Point",
@@ -1300,8 +2023,9 @@
         "name": "育樂路",
         "name_en": "Yule Road",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 1
+        "color": "#7c3aed",
+        "direction": 1,
+        "station_id": "3109"
       },
       "geometry": {
         "type": "Point",
@@ -1319,8 +2043,9 @@
         "name": "梁厝",
         "name_en": "Liangcuo",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 1
+        "color": "#7c3aed",
+        "direction": 1,
+        "station_id": "300"
       },
       "geometry": {
         "type": "Point",
@@ -1338,8 +2063,9 @@
         "name": "十甲",
         "name_en": "Shijia",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 1
+        "color": "#7c3aed",
+        "direction": 1,
+        "station_id": "3107"
       },
       "geometry": {
         "type": "Point",
@@ -1357,8 +2083,9 @@
         "name": "李厝前",
         "name_en": "Licuoqian",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 1
+        "color": "#7c3aed",
+        "direction": 1,
+        "station_id": "3105"
       },
       "geometry": {
         "type": "Point",
@@ -1376,8 +2103,9 @@
         "name": "建興",
         "name_en": "Jianxing",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 1
+        "color": "#7c3aed",
+        "direction": 1,
+        "station_id": "3103"
       },
       "geometry": {
         "type": "Point",
@@ -1395,8 +2123,9 @@
         "name": "長壽會館",
         "name_en": "Longevity Hall",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 1
+        "color": "#7c3aed",
+        "direction": 1,
+        "station_id": "6447"
       },
       "geometry": {
         "type": "Point",
@@ -1414,8 +2143,9 @@
         "name": "苗圃",
         "name_en": "Miaopu",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 1
+        "color": "#7c3aed",
+        "direction": 1,
+        "station_id": "3099"
       },
       "geometry": {
         "type": "Point",
@@ -1433,8 +2163,9 @@
         "name": "南西岐",
         "name_en": "Nanxiqi",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 1
+        "color": "#7c3aed",
+        "direction": 1,
+        "station_id": "3097"
       },
       "geometry": {
         "type": "Point",
@@ -1452,8 +2183,9 @@
         "name": "西岐里10鄰",
         "name_en": "Xiqi Village 10th Neighborhood",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 1
+        "color": "#7c3aed",
+        "direction": 1,
+        "station_id": "4824"
       },
       "geometry": {
         "type": "Point",
@@ -1471,8 +2203,9 @@
         "name": "西岐里9鄰",
         "name_en": "Xiqi Village 9th Neighborhood",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 1
+        "color": "#7c3aed",
+        "direction": 1,
+        "station_id": "4822"
       },
       "geometry": {
         "type": "Point",
@@ -1490,8 +2223,9 @@
         "name": "西岐",
         "name_en": "Xiqi",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 1
+        "color": "#7c3aed",
+        "direction": 1,
+        "station_id": "3095"
       },
       "geometry": {
         "type": "Point",
@@ -1509,8 +2243,9 @@
         "name": "羅厝前",
         "name_en": "Luocuoqian",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 1
+        "color": "#7c3aed",
+        "direction": 1,
+        "station_id": "3093"
       },
       "geometry": {
         "type": "Point",
@@ -1528,8 +2263,9 @@
         "name": "陳厝(順帆路)",
         "name_en": "Chencuo(Shunfan Road)",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 1
+        "color": "#7c3aed",
+        "direction": 1,
+        "station_id": "10628"
       },
       "geometry": {
         "type": "Point",
@@ -1547,8 +2283,9 @@
         "name": "船頭埔",
         "name_en": "Chuantoupu",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 1
+        "color": "#7c3aed",
+        "direction": 1,
+        "station_id": "2528"
       },
       "geometry": {
         "type": "Point",
@@ -1566,8 +2303,9 @@
         "name": "後壁寮",
         "name_en": "Houbiliao",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 1
+        "color": "#7c3aed",
+        "direction": 1,
+        "station_id": "3085"
       },
       "geometry": {
         "type": "Point",
@@ -1585,8 +2323,9 @@
         "name": "福德港",
         "name_en": "Fude Harbor",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 1
+        "color": "#7c3aed",
+        "direction": 1,
+        "station_id": "3083"
       },
       "geometry": {
         "type": "Point",
@@ -1604,8 +2343,9 @@
         "name": "南房裡",
         "name_en": "Nanfangli",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 1
+        "color": "#7c3aed",
+        "direction": 1,
+        "station_id": "3080"
       },
       "geometry": {
         "type": "Point",
@@ -1623,8 +2363,9 @@
         "name": "龍德家商(中山路)",
         "name_en": "Long Der Voca. High School(Zhongshan Road)",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 1
+        "color": "#7c3aed",
+        "direction": 1,
+        "station_id": "1933"
       },
       "geometry": {
         "type": "Point",
@@ -1642,8 +2383,9 @@
         "name": "房裡",
         "name_en": "Fangli",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 1
+        "color": "#7c3aed",
+        "direction": 1,
+        "station_id": "1931"
       },
       "geometry": {
         "type": "Point",
@@ -1661,8 +2403,9 @@
         "name": "客庄",
         "name_en": "Kezhuang",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 1
+        "color": "#7c3aed",
+        "direction": 1,
+        "station_id": "1928"
       },
       "geometry": {
         "type": "Point",
@@ -1680,8 +2423,9 @@
         "name": "苑裡站",
         "name_en": "Yuanli Station",
         "line": "181區1",
-        "color": "#0f766e",
-        "direction": 1
+        "color": "#7c3aed",
+        "direction": 1,
+        "station_id": "1019"
       },
       "geometry": {
         "type": "Point",

@@ -6,7 +6,7 @@
     "name": "305區",
     "name_en": "305區",
     "ref": "305區",
-    "color": "#92400e",
+    "color": "#4f46e5",
     "city_id": "Taichung",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://citybus.taichung.gov.tw/ebus/strapi/uploads/Telerik_Web_UI_Web_Resource_745c192e06.jpeg",
@@ -22,7 +22,7 @@
         "ref": "305區",
         "name": "305區",
         "name_en": "305區",
-        "color": "#92400e",
+        "color": "#4f46e5",
         "direction": 0
       },
       "geometry": {
@@ -213,20 +213,356 @@
             24.35091
           ],
           [
-            120.62766,
-            24.3512
+            120.62758116146632,
+            24.351090359758395
+          ],
+          [
+            120.62759570673306,
+            24.351118880836168
+          ],
+          [
+            120.62760071802312,
+            24.351150383339533
+          ],
+          [
+            120.62759555297129,
+            24.351181864931295
+          ],
+          [
+            120.62758065579412,
+            24.35121061805992
+          ],
+          [
+            120.62755730771256,
+            24.351234169833372
+          ],
+          [
+            120.6275277884256,
+            24.351250391492858
           ],
           [
             120.62478,
             24.35229
           ],
           [
-            120.62181,
-            24.35337
+            120.62189843011753,
+            24.35333761696565
+          ],
+          [
+            120.62187511096418,
+            24.35334907762163
+          ],
+          [
+            120.6218549569056,
+            24.353365198261766
+          ],
+          [
+            120.62183926255452,
+            24.353385058827563
+          ],
+          [
+            120.62182882930732,
+            24.35340764518443
+          ],
+          [
+            120.62182418991398,
+            24.35343180401148
+          ],
+          [
+            120.62182555927905,
+            24.35345617988239
           ],
           [
             120.62219,
             24.35546
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "305區",
+        "name": "305區",
+        "name_en": "305區",
+        "color": "#4f46e5",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.62218,
+            24.35542
+          ],
+          [
+            120.62180630489965,
+            24.35342757451319
+          ],
+          [
+            120.6218048204554,
+            24.35340291065498
+          ],
+          [
+            120.62180949100973,
+            24.353378455511496
+          ],
+          [
+            120.62182009568994,
+            24.353355613508963
+          ],
+          [
+            120.62183607980984,
+            24.353335579416317
+          ],
+          [
+            120.62185660730744,
+            24.353319401132577
+          ],
+          [
+            120.62188034432455,
+            24.353308016630393
+          ],
+          [
+            120.62472,
+            24.35231
+          ],
+          [
+            120.62755,
+            24.35122
+          ],
+          [
+            120.62738,
+            24.35093
+          ],
+          [
+            120.62769,
+            24.34733
+          ],
+          [
+            120.62768,
+            24.34635
+          ],
+          [
+            120.62573,
+            24.3434
+          ],
+          [
+            120.62533,
+            24.3431
+          ],
+          [
+            120.62024,
+            24.34188
+          ],
+          [
+            120.61928,
+            24.34062
+          ],
+          [
+            120.61829,
+            24.33898
+          ],
+          [
+            120.61806,
+            24.33886
+          ],
+          [
+            120.6148,
+            24.3339
+          ],
+          [
+            120.61367,
+            24.33263
+          ],
+          [
+            120.60906,
+            24.32784
+          ],
+          [
+            120.60834,
+            24.32691
+          ],
+          [
+            120.60804,
+            24.32633
+          ],
+          [
+            120.60789,
+            24.32587
+          ],
+          [
+            120.6039,
+            24.31291
+          ],
+          [
+            120.60332,
+            24.31153
+          ],
+          [
+            120.60341,
+            24.31139
+          ],
+          [
+            120.60336,
+            24.31093
+          ],
+          [
+            120.60307,
+            24.31013
+          ],
+          [
+            120.60232,
+            24.30726
+          ],
+          [
+            120.60203,
+            24.30644
+          ],
+          [
+            120.60064,
+            24.30353
+          ],
+          [
+            120.60024,
+            24.3032
+          ],
+          [
+            120.59626,
+            24.30126
+          ],
+          [
+            120.5951,
+            24.30024
+          ],
+          [
+            120.59496191014968,
+            24.30029074026896
+          ],
+          [
+            120.59494658343436,
+            24.300294677020272
+          ],
+          [
+            120.59493086231656,
+            24.30029542112152
+          ],
+          [
+            120.59491534353498,
+            24.300292996544524
+          ],
+          [
+            120.59490077604481,
+            24.30028752030229
+          ],
+          [
+            120.5948878628907,
+            24.300279256684895
+          ],
+          [
+            120.59487708591983,
+            24.300268426635963
+          ],
+          [
+            120.59432,
+            24.29957
+          ],
+          [
+            120.58942,
+            24.29466
+          ],
+          [
+            120.58862,
+            24.2935
+          ],
+          [
+            120.58593,
+            24.28864
+          ],
+          [
+            120.58291,
+            24.28344
+          ],
+          [
+            120.58214,
+            24.28264
+          ],
+          [
+            120.58125,
+            24.28203
+          ],
+          [
+            120.58137,
+            24.28158
+          ],
+          [
+            120.58136,
+            24.28137
+          ],
+          [
+            120.58125,
+            24.28117
+          ],
+          [
+            120.57738,
+            24.27623
+          ],
+          [
+            120.57711,
+            24.27557
+          ],
+          [
+            120.57713,
+            24.27376
+          ],
+          [
+            120.57694,
+            24.27305
+          ],
+          [
+            120.57327,
+            24.26386
+          ],
+          [
+            120.5724,
+            24.26189
+          ],
+          [
+            120.56594,
+            24.25033
+          ],
+          [
+            120.56555,
+            24.24976
+          ],
+          [
+            120.56315,
+            24.24738
+          ],
+          [
+            120.5628,
+            24.24696
+          ],
+          [
+            120.56247,
+            24.24634
+          ],
+          [
+            120.56074,
+            24.24111
+          ],
+          [
+            120.56009,
+            24.23955
+          ],
+          [
+            120.55983,
+            24.238
+          ],
+          [
+            120.56141,
+            24.23776
           ]
         ]
       }
@@ -239,8 +575,9 @@
         "name": "巨業沙鹿站",
         "name_en": "Geya-Shalu Bus Station",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 0
+        "color": "#4f46e5",
+        "direction": 0,
+        "station_id": "661"
       },
       "geometry": {
         "type": "Point",
@@ -258,8 +595,9 @@
         "name": "第一銀行(沙鹿分行)",
         "name_en": "First Bank Shalu Branch",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 0
+        "color": "#4f46e5",
+        "direction": 0,
+        "station_id": "1890"
       },
       "geometry": {
         "type": "Point",
@@ -277,8 +615,9 @@
         "name": "童綜合醫院(沙鹿院區)",
         "name_en": "Tungs MetroHarbor Hosp.(Shalu)",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 0
+        "color": "#4f46e5",
+        "direction": 0,
+        "station_id": "586"
       },
       "geometry": {
         "type": "Point",
@@ -296,8 +635,9 @@
         "name": "文化莊",
         "name_en": "Wunhuazhuang",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 0
+        "color": "#4f46e5",
+        "direction": 0,
+        "station_id": "588"
       },
       "geometry": {
         "type": "Point",
@@ -315,8 +655,9 @@
         "name": "鹿寮福德宮",
         "name_en": "Luliao Fude Temple",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 0
+        "color": "#4f46e5",
+        "direction": 0,
+        "station_id": "670"
       },
       "geometry": {
         "type": "Point",
@@ -334,8 +675,9 @@
         "name": "鹿寮成衣商圈",
         "name_en": "Luliao Clothes Shopping District",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 0
+        "color": "#4f46e5",
+        "direction": 0,
+        "station_id": "1894"
       },
       "geometry": {
         "type": "Point",
@@ -353,8 +695,9 @@
         "name": "鹿寮",
         "name_en": "Luliao",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 0
+        "color": "#4f46e5",
+        "direction": 0,
+        "station_id": "590"
       },
       "geometry": {
         "type": "Point",
@@ -372,8 +715,9 @@
         "name": "中山長春路口(義聖宮)",
         "name_en": "Zhongshan-Changchun Intersection(Yisheng Temple)",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 0
+        "color": "#4f46e5",
+        "direction": 0,
+        "station_id": "3438"
       },
       "geometry": {
         "type": "Point",
@@ -391,8 +735,9 @@
         "name": "中峰",
         "name_en": "Zhongfeng",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 0
+        "color": "#4f46e5",
+        "direction": 0,
+        "station_id": "592"
       },
       "geometry": {
         "type": "Point",
@@ -410,8 +755,9 @@
         "name": "勞工育樂中心",
         "name_en": "Laborers Recreation Center",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 0
+        "color": "#4f46e5",
+        "direction": 0,
+        "station_id": "1896"
       },
       "geometry": {
         "type": "Point",
@@ -429,8 +775,9 @@
         "name": "鹿峰里",
         "name_en": "Lufeng Village",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 0
+        "color": "#4f46e5",
+        "direction": 0,
+        "station_id": "680"
       },
       "geometry": {
         "type": "Point",
@@ -448,8 +795,9 @@
         "name": "中山星河路口",
         "name_en": "Zhongshan-Xinghe Intersection",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 0
+        "color": "#4f46e5",
+        "direction": 0,
+        "station_id": "1897"
       },
       "geometry": {
         "type": "Point",
@@ -467,8 +815,9 @@
         "name": "清水車站(中山路)",
         "name_en": "Qingshui Station(Zhongshan Road)",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 0
+        "color": "#4f46e5",
+        "direction": 0,
+        "station_id": "3940"
       },
       "geometry": {
         "type": "Point",
@@ -486,8 +835,9 @@
         "name": "清水高中(中山路)",
         "name_en": "Qingshui High school(Zhongshan Road)",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 0
+        "color": "#4f46e5",
+        "direction": 0,
+        "station_id": "1939"
       },
       "geometry": {
         "type": "Point",
@@ -505,8 +855,9 @@
         "name": "華南銀行(清水分行)",
         "name_en": "Hua-Nan Commercial Bank(Qingshui Branch)",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 0
+        "color": "#4f46e5",
+        "direction": 0,
+        "station_id": "594"
       },
       "geometry": {
         "type": "Point",
@@ -524,8 +875,9 @@
         "name": "清水",
         "name_en": "Qingshui",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 0
+        "color": "#4f46e5",
+        "direction": 0,
+        "station_id": "596"
       },
       "geometry": {
         "type": "Point",
@@ -543,8 +895,9 @@
         "name": "中山董公街口",
         "name_en": "Zhongshan-Donggong Intersection",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 0
+        "color": "#4f46e5",
+        "direction": 0,
+        "station_id": "1937"
       },
       "geometry": {
         "type": "Point",
@@ -562,8 +915,9 @@
         "name": "中山高美路口",
         "name_en": "Zhongshan-Gaomei Intersection",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 0
+        "color": "#4f46e5",
+        "direction": 0,
+        "station_id": "672"
       },
       "geometry": {
         "type": "Point",
@@ -581,8 +935,9 @@
         "name": "下湳加油站",
         "name_en": "Xianan Gas Station",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 0
+        "color": "#4f46e5",
+        "direction": 0,
+        "station_id": "643"
       },
       "geometry": {
         "type": "Point",
@@ -600,8 +955,9 @@
         "name": "朝興宮",
         "name_en": "Chaoxing Temple",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 0
+        "color": "#4f46e5",
+        "direction": 0,
+        "station_id": "682"
       },
       "geometry": {
         "type": "Point",
@@ -619,8 +975,9 @@
         "name": "下湳仔(中山路)",
         "name_en": "Xiananzi(Zhongshan Road)",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 0
+        "color": "#4f46e5",
+        "direction": 0,
+        "station_id": "640"
       },
       "geometry": {
         "type": "Point",
@@ -638,8 +995,9 @@
         "name": "三田國小",
         "name_en": "Santian Elementary School",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 0
+        "color": "#4f46e5",
+        "direction": 0,
+        "station_id": "636"
       },
       "geometry": {
         "type": "Point",
@@ -657,8 +1015,9 @@
         "name": "下湳里(中山路)",
         "name_en": "Xianan Village(Zhongshan Road)",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 0
+        "color": "#4f46e5",
+        "direction": 0,
+        "station_id": "10205"
       },
       "geometry": {
         "type": "Point",
@@ -676,8 +1035,9 @@
         "name": "頂湳仔(中山路)",
         "name_en": "Dingnanzi(Zhongshan Road)",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 0
+        "color": "#4f46e5",
+        "direction": 0,
+        "station_id": "678"
       },
       "geometry": {
         "type": "Point",
@@ -695,8 +1055,9 @@
         "name": "菁埔庄",
         "name_en": "Jingpuzhuang",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 0
+        "color": "#4f46e5",
+        "direction": 0,
+        "station_id": "694"
       },
       "geometry": {
         "type": "Point",
@@ -714,8 +1075,9 @@
         "name": "中牛埔",
         "name_en": "ZhongNiupu",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 0
+        "color": "#4f46e5",
+        "direction": 0,
+        "station_id": "1900"
       },
       "geometry": {
         "type": "Point",
@@ -733,8 +1095,9 @@
         "name": "劉厝(中山路)",
         "name_en": "Liucuo(Zhongshan Road)",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 0
+        "color": "#4f46e5",
+        "direction": 0,
+        "station_id": "6720"
       },
       "geometry": {
         "type": "Point",
@@ -752,8 +1115,9 @@
         "name": "甲南(中山路)",
         "name_en": "Jianan(Zhongshan Road)",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 0
+        "color": "#4f46e5",
+        "direction": 0,
+        "station_id": "1902"
       },
       "geometry": {
         "type": "Point",
@@ -771,8 +1135,9 @@
         "name": "大甲溪橋",
         "name_en": "Dajia River Bridge",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 0
+        "color": "#4f46e5",
+        "direction": 0,
+        "station_id": "649"
       },
       "geometry": {
         "type": "Point",
@@ -790,8 +1155,9 @@
         "name": "水汴頭",
         "name_en": "Shuibiantou",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 0
+        "color": "#4f46e5",
+        "direction": 0,
+        "station_id": "296"
       },
       "geometry": {
         "type": "Point",
@@ -809,8 +1175,9 @@
         "name": "武陵里",
         "name_en": "Wuling Village",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 0
+        "color": "#4f46e5",
+        "direction": 0,
+        "station_id": "6537"
       },
       "geometry": {
         "type": "Point",
@@ -828,8 +1195,9 @@
         "name": "番子寮",
         "name_en": "Fanziliao",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 0
+        "color": "#4f46e5",
+        "direction": 0,
+        "station_id": "1903"
       },
       "geometry": {
         "type": "Point",
@@ -847,8 +1215,9 @@
         "name": "外水尾",
         "name_en": "Waishuiwei",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 0
+        "color": "#4f46e5",
+        "direction": 0,
+        "station_id": "658"
       },
       "geometry": {
         "type": "Point",
@@ -866,8 +1235,9 @@
         "name": "水尾橋",
         "name_en": "Shuiwei Bridge",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 0
+        "color": "#4f46e5",
+        "direction": 0,
+        "station_id": "793"
       },
       "geometry": {
         "type": "Point",
@@ -885,8 +1255,9 @@
         "name": "大甲高中(中山路)",
         "name_en": "Dajia Senior High School.(Zhongshan Road)",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 0
+        "color": "#4f46e5",
+        "direction": 0,
+        "station_id": "1319"
       },
       "geometry": {
         "type": "Point",
@@ -904,8 +1275,9 @@
         "name": "南陽里(中山路)",
         "name_en": "Nanyang Village(Zhongshan Road)",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 0
+        "color": "#4f46e5",
+        "direction": 0,
+        "station_id": "1906"
       },
       "geometry": {
         "type": "Point",
@@ -923,8 +1295,9 @@
         "name": "大甲",
         "name_en": "Dajia",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 0
+        "color": "#4f46e5",
+        "direction": 0,
+        "station_id": "132"
       },
       "geometry": {
         "type": "Point",
@@ -942,8 +1315,9 @@
         "name": "大甲車站(中山路)",
         "name_en": "Dajia Station(Zhongshan Road)",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 0
+        "color": "#4f46e5",
+        "direction": 0,
+        "station_id": "6957"
       },
       "geometry": {
         "type": "Point",
@@ -961,8 +1335,9 @@
         "name": "大甲郵局",
         "name_en": "Dajia Post Office",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 0
+        "color": "#4f46e5",
+        "direction": 0,
+        "station_id": "647"
       },
       "geometry": {
         "type": "Point",
@@ -980,8 +1355,9 @@
         "name": "大甲國中",
         "name_en": "Dajia Junior High School",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 0
+        "color": "#4f46e5",
+        "direction": 0,
+        "station_id": "645"
       },
       "geometry": {
         "type": "Point",
@@ -999,8 +1375,9 @@
         "name": "文武公園",
         "name_en": "Wenwu Park",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 0
+        "color": "#4f46e5",
+        "direction": 0,
+        "station_id": "4722"
       },
       "geometry": {
         "type": "Point",
@@ -1018,8 +1395,9 @@
         "name": "文武公園",
         "name_en": "Wenwu Park",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 1
+        "color": "#4f46e5",
+        "direction": 1,
+        "station_id": "4723"
       },
       "geometry": {
         "type": "Point",
@@ -1037,8 +1415,9 @@
         "name": "大甲國中",
         "name_en": "Dajia Junior High School",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 1
+        "color": "#4f46e5",
+        "direction": 1,
+        "station_id": "644"
       },
       "geometry": {
         "type": "Point",
@@ -1056,8 +1435,9 @@
         "name": "大甲郵局",
         "name_en": "Dajia Post Office",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 1
+        "color": "#4f46e5",
+        "direction": 1,
+        "station_id": "646"
       },
       "geometry": {
         "type": "Point",
@@ -1075,8 +1455,9 @@
         "name": "大甲車站(中山路)",
         "name_en": "Dajia Station(Zhongshan Road)",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 1
+        "color": "#4f46e5",
+        "direction": 1,
+        "station_id": "61"
       },
       "geometry": {
         "type": "Point",
@@ -1094,8 +1475,9 @@
         "name": "大甲",
         "name_en": "Dajia",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 1
+        "color": "#4f46e5",
+        "direction": 1,
+        "station_id": "134"
       },
       "geometry": {
         "type": "Point",
@@ -1113,8 +1495,9 @@
         "name": "南陽里(中山路)",
         "name_en": "Nanyang Village(Zhongshan Road)",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 1
+        "color": "#4f46e5",
+        "direction": 1,
+        "station_id": "1905"
       },
       "geometry": {
         "type": "Point",
@@ -1132,8 +1515,9 @@
         "name": "大甲高中(中山路)",
         "name_en": "Dajia Senior High School.(Zhongshan Road)",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 1
+        "color": "#4f46e5",
+        "direction": 1,
+        "station_id": "1318"
       },
       "geometry": {
         "type": "Point",
@@ -1151,8 +1535,9 @@
         "name": "水尾橋",
         "name_en": "Shuiwei Bridge",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 1
+        "color": "#4f46e5",
+        "direction": 1,
+        "station_id": "792"
       },
       "geometry": {
         "type": "Point",
@@ -1170,8 +1555,9 @@
         "name": "外水尾",
         "name_en": "Waishuiwei",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 1
+        "color": "#4f46e5",
+        "direction": 1,
+        "station_id": "659"
       },
       "geometry": {
         "type": "Point",
@@ -1189,8 +1575,9 @@
         "name": "番子寮",
         "name_en": "Fanziliao",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 1
+        "color": "#4f46e5",
+        "direction": 1,
+        "station_id": "1904"
       },
       "geometry": {
         "type": "Point",
@@ -1208,8 +1595,9 @@
         "name": "武陵里",
         "name_en": "Wuling Village",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 1
+        "color": "#4f46e5",
+        "direction": 1,
+        "station_id": "6536"
       },
       "geometry": {
         "type": "Point",
@@ -1227,8 +1615,9 @@
         "name": "水汴頭",
         "name_en": "Shuibiantou",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 1
+        "color": "#4f46e5",
+        "direction": 1,
+        "station_id": "295"
       },
       "geometry": {
         "type": "Point",
@@ -1246,8 +1635,9 @@
         "name": "文曲里(中山路)",
         "name_en": "Wenqu Village(Zhongshan Road)",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 1
+        "color": "#4f46e5",
+        "direction": 1,
+        "station_id": "6598"
       },
       "geometry": {
         "type": "Point",
@@ -1265,8 +1655,9 @@
         "name": "大甲溪橋",
         "name_en": "Dajia River Bridge",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 1
+        "color": "#4f46e5",
+        "direction": 1,
+        "station_id": "649"
       },
       "geometry": {
         "type": "Point",
@@ -1284,8 +1675,9 @@
         "name": "甲南(中山路)",
         "name_en": "Jianan(Zhongshan Road)",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 1
+        "color": "#4f46e5",
+        "direction": 1,
+        "station_id": "1902"
       },
       "geometry": {
         "type": "Point",
@@ -1303,8 +1695,9 @@
         "name": "劉厝(中山路)",
         "name_en": "Liucuo(Zhongshan Road)",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 1
+        "color": "#4f46e5",
+        "direction": 1,
+        "station_id": "2621"
       },
       "geometry": {
         "type": "Point",
@@ -1322,8 +1715,9 @@
         "name": "中牛埔",
         "name_en": "ZhongNiupu",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 1
+        "color": "#4f46e5",
+        "direction": 1,
+        "station_id": "1900"
       },
       "geometry": {
         "type": "Point",
@@ -1341,8 +1735,9 @@
         "name": "菁埔庄",
         "name_en": "Jingpuzhuang",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 1
+        "color": "#4f46e5",
+        "direction": 1,
+        "station_id": "694"
       },
       "geometry": {
         "type": "Point",
@@ -1360,8 +1755,9 @@
         "name": "頂湳仔(中山路)",
         "name_en": "Dingnanzi(Zhongshan Road)",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 1
+        "color": "#4f46e5",
+        "direction": 1,
+        "station_id": "679"
       },
       "geometry": {
         "type": "Point",
@@ -1379,8 +1775,9 @@
         "name": "下湳里(中山路)",
         "name_en": "Xianan Village(Zhongshan Road)",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 1
+        "color": "#4f46e5",
+        "direction": 1,
+        "station_id": "10204"
       },
       "geometry": {
         "type": "Point",
@@ -1398,8 +1795,9 @@
         "name": "三田國小",
         "name_en": "Santian Elementary School",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 1
+        "color": "#4f46e5",
+        "direction": 1,
+        "station_id": "637"
       },
       "geometry": {
         "type": "Point",
@@ -1417,8 +1815,9 @@
         "name": "下湳仔(中山路)",
         "name_en": "Xiananzi(Zhongshan Road)",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 1
+        "color": "#4f46e5",
+        "direction": 1,
+        "station_id": "641"
       },
       "geometry": {
         "type": "Point",
@@ -1436,8 +1835,9 @@
         "name": "朝興宮",
         "name_en": "Chaoxing Temple",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 1
+        "color": "#4f46e5",
+        "direction": 1,
+        "station_id": "683"
       },
       "geometry": {
         "type": "Point",
@@ -1455,8 +1855,9 @@
         "name": "下湳加油站",
         "name_en": "Xianan Gas Station",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 1
+        "color": "#4f46e5",
+        "direction": 1,
+        "station_id": "643"
       },
       "geometry": {
         "type": "Point",
@@ -1474,8 +1875,9 @@
         "name": "中山高美路口",
         "name_en": "Zhongshan-Gaomei Intersection",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 1
+        "color": "#4f46e5",
+        "direction": 1,
+        "station_id": "672"
       },
       "geometry": {
         "type": "Point",
@@ -1493,8 +1895,9 @@
         "name": "中山董公街口",
         "name_en": "Zhongshan-Donggong Intersection",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 1
+        "color": "#4f46e5",
+        "direction": 1,
+        "station_id": "1936"
       },
       "geometry": {
         "type": "Point",
@@ -1512,8 +1915,9 @@
         "name": "清水",
         "name_en": "Qingshui",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 1
+        "color": "#4f46e5",
+        "direction": 1,
+        "station_id": "597"
       },
       "geometry": {
         "type": "Point",
@@ -1531,8 +1935,9 @@
         "name": "華南銀行(清水分行)",
         "name_en": "Hua-Nan Commercial Bank(Qingshui Branch)",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 1
+        "color": "#4f46e5",
+        "direction": 1,
+        "station_id": "595"
       },
       "geometry": {
         "type": "Point",
@@ -1550,8 +1955,9 @@
         "name": "清水高中(中山路)",
         "name_en": "Qingshui High school(Zhongshan Road)",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 1
+        "color": "#4f46e5",
+        "direction": 1,
+        "station_id": "1939"
       },
       "geometry": {
         "type": "Point",
@@ -1569,8 +1975,9 @@
         "name": "清水車站(中山路)",
         "name_en": "Qingshui Station(Zhongshan Road)",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 1
+        "color": "#4f46e5",
+        "direction": 1,
+        "station_id": "3941"
       },
       "geometry": {
         "type": "Point",
@@ -1588,8 +1995,9 @@
         "name": "中山星河路口",
         "name_en": "Zhongshan-Xinghe Intersection",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 1
+        "color": "#4f46e5",
+        "direction": 1,
+        "station_id": "7177"
       },
       "geometry": {
         "type": "Point",
@@ -1607,8 +2015,9 @@
         "name": "鹿峰里",
         "name_en": "Lufeng Village",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 1
+        "color": "#4f46e5",
+        "direction": 1,
+        "station_id": "681"
       },
       "geometry": {
         "type": "Point",
@@ -1626,8 +2035,9 @@
         "name": "勞工育樂中心",
         "name_en": "Laborers Recreation Center",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 1
+        "color": "#4f46e5",
+        "direction": 1,
+        "station_id": "1896"
       },
       "geometry": {
         "type": "Point",
@@ -1645,8 +2055,9 @@
         "name": "中峰",
         "name_en": "Zhongfeng",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 1
+        "color": "#4f46e5",
+        "direction": 1,
+        "station_id": "593"
       },
       "geometry": {
         "type": "Point",
@@ -1664,8 +2075,9 @@
         "name": "中山長春路口(義聖宮)",
         "name_en": "Zhongshan-Changchun Intersection(Yisheng Temple)",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 1
+        "color": "#4f46e5",
+        "direction": 1,
+        "station_id": "3438"
       },
       "geometry": {
         "type": "Point",
@@ -1683,8 +2095,9 @@
         "name": "鹿寮",
         "name_en": "Luliao",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 1
+        "color": "#4f46e5",
+        "direction": 1,
+        "station_id": "591"
       },
       "geometry": {
         "type": "Point",
@@ -1702,8 +2115,9 @@
         "name": "鹿寮成衣商圈",
         "name_en": "Luliao Clothes Shopping District",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 1
+        "color": "#4f46e5",
+        "direction": 1,
+        "station_id": "1894"
       },
       "geometry": {
         "type": "Point",
@@ -1721,8 +2135,9 @@
         "name": "鹿寮福德宮",
         "name_en": "Luliao Fude Temple",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 1
+        "color": "#4f46e5",
+        "direction": 1,
+        "station_id": "670"
       },
       "geometry": {
         "type": "Point",
@@ -1740,8 +2155,9 @@
         "name": "文化莊",
         "name_en": "Wunhuazhuang",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 1
+        "color": "#4f46e5",
+        "direction": 1,
+        "station_id": "589"
       },
       "geometry": {
         "type": "Point",
@@ -1759,8 +2175,9 @@
         "name": "童綜合醫院(沙鹿院區)",
         "name_en": "Tungs MetroHarbor Hosp.(Shalu)",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 1
+        "color": "#4f46e5",
+        "direction": 1,
+        "station_id": "587"
       },
       "geometry": {
         "type": "Point",
@@ -1778,8 +2195,9 @@
         "name": "第一銀行(沙鹿分行)",
         "name_en": "First Bank Shalu Branch",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 1
+        "color": "#4f46e5",
+        "direction": 1,
+        "station_id": "1891"
       },
       "geometry": {
         "type": "Point",
@@ -1797,8 +2215,9 @@
         "name": "巨業沙鹿站",
         "name_en": "Geya-Shalu Bus Station",
         "line": "305區",
-        "color": "#92400e",
-        "direction": 1
+        "color": "#4f46e5",
+        "direction": 1,
+        "station_id": "661"
       },
       "geometry": {
         "type": "Point",

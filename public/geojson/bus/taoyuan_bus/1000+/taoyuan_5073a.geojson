@@ -6,7 +6,7 @@
     "name": "5073A",
     "name_en": "5073A",
     "ref": "5073A",
-    "color": "#65a30d",
+    "color": "#b91c1c",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/50731/map/1716/image",
@@ -22,7 +22,7 @@
         "ref": "5073A",
         "name": "5073A",
         "name_en": "5073A",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0
       },
       "geometry": {
@@ -137,12 +137,32 @@
             25.08855
           ],
           [
-            121.27823,
-            25.0885
+            121.2782091936747,
+            25.088474079049696
           ],
           [
-            121.27884,
-            25.08816
+            121.27820035674048,
+            25.088458428465746
+          ],
+          [
+            121.27819695419227,
+            25.08844090174616
+          ],
+          [
+            121.27819942101999,
+            25.08842324517892
+          ],
+          [
+            121.27820753396757,
+            25.088407056741325
+          ],
+          [
+            121.27822055878667,
+            25.08839380154013
+          ],
+          [
+            121.27823716872857,
+            25.088384734416035
           ],
           [
             121.27938,
@@ -169,16 +189,32 @@
             25.08591
           ],
           [
-            121.28576,
-            25.08572
+            121.28622628412212,
+            25.085485372173842
           ],
           [
-            121.28609,
-            25.08554
+            121.28624663142296,
+            25.085472381724724
           ],
           [
-            121.28629,
-            25.08539
+            121.28626379285272,
+            25.085455564535355
+          ],
+          [
+            121.28627668971671,
+            25.085435830016063
+          ],
+          [
+            121.2862847443949,
+            25.085414062029354
+          ],
+          [
+            121.28628759613724,
+            25.08539123551195
+          ],
+          [
+            121.28628515089054,
+            25.085368521016562
           ],
           [
             121.28591,
@@ -289,20 +325,32 @@
             25.03324
           ],
           [
-            121.30276,
-            25.03292
+            121.30281484389711,
+            25.033012969579318
           ],
           [
-            121.30276,
-            25.03283
+            121.30280661421847,
+            25.032995516948876
           ],
           [
-            121.30279,
-            25.03277
+            121.30280179575924,
+            25.032976706381547
           ],
           [
-            121.30311,
-            25.03249
+            121.30280070746234,
+            25.032957414367647
+          ],
+          [
+            121.3028033837888,
+            25.03293825179051
+          ],
+          [
+            121.30280973999254,
+            25.03291982543484
+          ],
+          [
+            121.30281936936773,
+            25.032903010766873
           ],
           [
             121.30345,
@@ -325,20 +373,32 @@
             25.01575
           ],
           [
-            121.30969,
-            25.01258
+            121.30977764995316,
+            25.01215610883608
           ],
           [
-            121.30962,
-            25.01244
+            121.30977966554251,
+            25.01213308952882
           ],
           [
-            121.30961,
-            25.01226
+            121.30977626398743,
+            25.01211006658562
           ],
           [
-            121.30946,
-            25.01192
+            121.30976757265643,
+            25.012088231319535
+          ],
+          [
+            121.30975398957338,
+            25.012068583687714
+          ],
+          [
+            121.30973613678255,
+            25.012052023463472
+          ],
+          [
+            121.30971513392925,
+            25.012039450204117
           ],
           [
             121.30817,
@@ -361,12 +421,32 @@
             24.99517
           ],
           [
-            121.31322,
-            24.99348
+            121.31332575483711,
+            24.9931051753455
           ],
           [
-            121.3133,
-            24.99299
+            121.31332949885271,
+            24.993078110878162
+          ],
+          [
+            121.31332568201121,
+            24.99305087025662
+          ],
+          [
+            121.31331449803979,
+            24.993025375534266
+          ],
+          [
+            121.31329666267374,
+            24.993003258284716
+          ],
+          [
+            121.31327331731448,
+            24.99298593393508
+          ],
+          [
+            121.31324618339596,
+            24.99297457608937
           ],
           [
             121.31221,
@@ -386,45 +466,14 @@
     {
       "type": "Feature",
       "properties": {
-        "feature_type": "route",
-        "ref": "5073A",
-        "name": "5073A",
-        "name_en": "5073A",
-        "color": "#65a30d",
-        "direction": 1
-      },
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
-          [
-            121.31428,
-            24.99092
-          ],
-          [
-            121.31473,
-            24.99106
-          ],
-          [
-            121.315,
-            24.99104
-          ],
-          [
-            121.31428,
-            24.9918
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "feature_type": "station",
         "ref": "TAO62889",
         "name": "頂社",
         "name_en": "Dingshe",
         "line": "5073A",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4879"
       },
       "geometry": {
         "type": "Point",
@@ -442,8 +491,9 @@
         "name": "偉辰公司",
         "name_en": "Weichen Company",
         "line": "5073A",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4137"
       },
       "geometry": {
         "type": "Point",
@@ -461,8 +511,9 @@
         "name": "草仔崎",
         "name_en": "Caoziqi",
         "line": "5073A",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4877"
       },
       "geometry": {
         "type": "Point",
@@ -480,8 +531,9 @@
         "name": "外社國小",
         "name_en": "Waishe Elementary School",
         "line": "5073A",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4875"
       },
       "geometry": {
         "type": "Point",
@@ -499,8 +551,9 @@
         "name": "外社",
         "name_en": "Waishe",
         "line": "5073A",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4873"
       },
       "geometry": {
         "type": "Point",
@@ -518,8 +571,9 @@
         "name": "下外社",
         "name_en": "Xiawaishe",
         "line": "5073A",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4871"
       },
       "geometry": {
         "type": "Point",
@@ -537,8 +591,9 @@
         "name": "家畜市場",
         "name_en": "Jiachu Market",
         "line": "5073A",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4869"
       },
       "geometry": {
         "type": "Point",
@@ -556,8 +611,9 @@
         "name": "聯邦公司",
         "name_en": "Lianbang Company",
         "line": "5073A",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4867"
       },
       "geometry": {
         "type": "Point",
@@ -575,8 +631,9 @@
         "name": "公溝",
         "name_en": "Gonggou",
         "line": "5073A",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4865"
       },
       "geometry": {
         "type": "Point",
@@ -594,8 +651,9 @@
         "name": "源昇公司",
         "name_en": "Yuansheng Company",
         "line": "5073A",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4863"
       },
       "geometry": {
         "type": "Point",
@@ -613,14 +671,15 @@
         "name": "海山路",
         "name_en": "Haishan Road",
         "line": "5073A",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "5142"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.281934,
-          25.087022
+          121.281934473084,
+          25.0870222942003
         ]
       }
     },
@@ -632,8 +691,9 @@
         "name": "山腳國中",
         "name_en": "Shanjiao Junior High School",
         "line": "5073A",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "5145"
       },
       "geometry": {
         "type": "Point",
@@ -651,14 +711,15 @@
         "name": "海山路",
         "name_en": "Haishan Road",
         "line": "5073A",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "5143"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.28187,
-          25.08686
+          121.28186996456598,
+          25.0868599960509
         ]
       }
     },
@@ -670,8 +731,9 @@
         "name": "山腳",
         "name_en": "Shanjiao",
         "line": "5073A",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "3500"
       },
       "geometry": {
         "type": "Point",
@@ -689,8 +751,9 @@
         "name": "大利新村",
         "name_en": "Dali Village",
         "line": "5073A",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "5119"
       },
       "geometry": {
         "type": "Point",
@@ -708,8 +771,9 @@
         "name": "捷運山鼻站",
         "name_en": "MRT Shanbi Station",
         "line": "5073A",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4748"
       },
       "geometry": {
         "type": "Point",
@@ -727,8 +791,9 @@
         "name": "山鼻",
         "name_en": "Shanbi",
         "line": "5073A",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "6588"
       },
       "geometry": {
         "type": "Point",
@@ -746,8 +811,9 @@
         "name": "群鹿公司",
         "name_en": "Qunlu Company",
         "line": "5073A",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "5141"
       },
       "geometry": {
         "type": "Point",
@@ -765,8 +831,9 @@
         "name": "佑新公司",
         "name_en": "Youxin Company",
         "line": "5073A",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "5139"
       },
       "geometry": {
         "type": "Point",
@@ -784,8 +851,9 @@
         "name": "公埔",
         "name_en": "Gongpu",
         "line": "5073A",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "5137"
       },
       "geometry": {
         "type": "Point",
@@ -803,8 +871,9 @@
         "name": "中崙公司",
         "name_en": "Zhonglun Company",
         "line": "5073A",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "5135"
       },
       "geometry": {
         "type": "Point",
@@ -822,8 +891,9 @@
         "name": "水泥公司",
         "name_en": "Cement Company",
         "line": "5073A",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "5133"
       },
       "geometry": {
         "type": "Point",
@@ -841,8 +911,9 @@
         "name": "埔尾",
         "name_en": "Puwei",
         "line": "5073A",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "2904"
       },
       "geometry": {
         "type": "Point",
@@ -860,8 +931,9 @@
         "name": "內厝橋",
         "name_en": "Neicuo Bridge",
         "line": "5073A",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "5131"
       },
       "geometry": {
         "type": "Point",
@@ -879,8 +951,9 @@
         "name": "南山長榮路口",
         "name_en": "Nanshan Changrong Rd. Intersection",
         "line": "5073A",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4319"
       },
       "geometry": {
         "type": "Point",
@@ -898,8 +971,9 @@
         "name": "南山六福",
         "name_en": "Nanshan Liufu",
         "line": "5073A",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "5129"
       },
       "geometry": {
         "type": "Point",
@@ -917,8 +991,9 @@
         "name": "蘆竹郵局",
         "name_en": "Luzhu Post Office",
         "line": "5073A",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4136"
       },
       "geometry": {
         "type": "Point",
@@ -936,8 +1011,9 @@
         "name": "電通市",
         "name_en": "Diantongshi Community",
         "line": "5073A",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4991"
       },
       "geometry": {
         "type": "Point",
@@ -955,8 +1031,9 @@
         "name": "南山路口",
         "name_en": "Nanshan Road Intersection",
         "line": "5073A",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4895"
       },
       "geometry": {
         "type": "Point",
@@ -974,8 +1051,9 @@
         "name": "南崁市場",
         "name_en": "Nankan market",
         "line": "5073A",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4856"
       },
       "geometry": {
         "type": "Point",
@@ -993,8 +1071,9 @@
         "name": "蘆竹區公所",
         "name_en": "Luzhu District Office",
         "line": "5073A",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4652"
       },
       "geometry": {
         "type": "Point",
@@ -1012,8 +1091,9 @@
         "name": "大同公司",
         "name_en": "Datung Company",
         "line": "5073A",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "3678"
       },
       "geometry": {
         "type": "Point",
@@ -1031,8 +1111,9 @@
         "name": "頂南崁",
         "name_en": "Dingnankan",
         "line": "5073A",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "2781"
       },
       "geometry": {
         "type": "Point",
@@ -1050,8 +1131,9 @@
         "name": "甘蔗園",
         "name_en": "Sugarcane Farm",
         "line": "5073A",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "2783"
       },
       "geometry": {
         "type": "Point",
@@ -1069,8 +1151,9 @@
         "name": "南上里",
         "name_en": "Nanshang Village",
         "line": "5073A",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "2785"
       },
       "geometry": {
         "type": "Point",
@@ -1088,8 +1171,9 @@
         "name": "力捷公司",
         "name_en": "Lijie Company",
         "line": "5073A",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "2765"
       },
       "geometry": {
         "type": "Point",
@@ -1107,8 +1191,9 @@
         "name": "甘蔗園橋",
         "name_en": "Ganzheyuan Bridge",
         "line": "5073A",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4839"
       },
       "geometry": {
         "type": "Point",
@@ -1126,8 +1211,9 @@
         "name": "民生北路一段54巷口",
         "name_en": "Lane 54, Section 1, Minsheng North Road",
         "line": "5073A",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "2279"
       },
       "geometry": {
         "type": "Point",
@@ -1145,8 +1231,9 @@
         "name": "煉油廠",
         "name_en": "Refinery",
         "line": "5073A",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4791"
       },
       "geometry": {
         "type": "Point",
@@ -1164,8 +1251,9 @@
         "name": "許厝",
         "name_en": "Xucuo",
         "line": "5073A",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1021"
       },
       "geometry": {
         "type": "Point",
@@ -1183,8 +1271,9 @@
         "name": "水汴頭",
         "name_en": "Shuibiantou",
         "line": "5073A",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "3435"
       },
       "geometry": {
         "type": "Point",
@@ -1202,8 +1291,9 @@
         "name": "鹽庫西街口",
         "name_en": "Yanku West Street Intersection",
         "line": "5073A",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "3433"
       },
       "geometry": {
         "type": "Point",
@@ -1221,8 +1311,9 @@
         "name": "春日健行路口",
         "name_en": "Chunri Jianxing Road Intersection",
         "line": "5073A",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "3083"
       },
       "geometry": {
         "type": "Point",
@@ -1240,8 +1331,9 @@
         "name": "新埔國宅",
         "name_en": "Xinpu Residence",
         "line": "5073A",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4858"
       },
       "geometry": {
         "type": "Point",
@@ -1259,8 +1351,9 @@
         "name": "永吉新村",
         "name_en": "Yongji Village",
         "line": "5073A",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4789"
       },
       "geometry": {
         "type": "Point",
@@ -1278,8 +1371,9 @@
         "name": "大興路口",
         "name_en": "Daxing Road Intersection",
         "line": "5073A",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4787"
       },
       "geometry": {
         "type": "Point",
@@ -1297,8 +1391,9 @@
         "name": "瓦斯公司",
         "name_en": "Gas Corporation",
         "line": "5073A",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4785"
       },
       "geometry": {
         "type": "Point",
@@ -1316,8 +1411,9 @@
         "name": "文昌國中",
         "name_en": "Wunchang Junior High School",
         "line": "5073A",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4783"
       },
       "geometry": {
         "type": "Point",
@@ -1335,8 +1431,9 @@
         "name": "北門國小",
         "name_en": "Beimen Elementary School",
         "line": "5073A",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4781"
       },
       "geometry": {
         "type": "Point",
@@ -1354,8 +1451,9 @@
         "name": "臺灣菸酒公司",
         "name_en": "Taiwan Tobacco & Liquor Corporation",
         "line": "5073A",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "3613"
       },
       "geometry": {
         "type": "Point",
@@ -1373,8 +1471,9 @@
         "name": "北門新村",
         "name_en": "Beimen Village",
         "line": "5073A",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "971"
       },
       "geometry": {
         "type": "Point",
@@ -1392,8 +1491,9 @@
         "name": "北門口",
         "name_en": "Beimen Station",
         "line": "5073A",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "988"
       },
       "geometry": {
         "type": "Point",
@@ -1411,8 +1511,9 @@
         "name": "鴻福寺",
         "name_en": "Hong Fu temple",
         "line": "5073A",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4779"
       },
       "geometry": {
         "type": "Point",
@@ -1430,8 +1531,9 @@
         "name": "關帝廟",
         "name_en": "Guandi Temple",
         "line": "5073A",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1390"
       },
       "geometry": {
         "type": "Point",
@@ -1449,8 +1551,9 @@
         "name": "成功路",
         "name_en": "Chenggong Rd.",
         "line": "5073A",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4201"
       },
       "geometry": {
         "type": "Point",
@@ -1468,8 +1571,9 @@
         "name": "復興中正路口(桃園火車站)",
         "name_en": "Fuxing and Zhongzheng Rd. Int.(Taoyuan Station)",
         "line": "5073A",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1340"
       },
       "geometry": {
         "type": "Point",

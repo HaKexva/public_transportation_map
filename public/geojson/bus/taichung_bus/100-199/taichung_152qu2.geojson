@@ -6,13 +6,13 @@
     "name": "152區2",
     "name_en": "152區2",
     "ref": "152區2",
-    "color": "#7c3aed",
+    "color": "#c2410c",
     "city_id": "Taichung",
     "source": "TDX Bus Shape / StopOfRoute",
     "operator_id": "15",
     "operator": "中台灣客運",
     "operator_en": "Ct Bus Co., Ltd.",
-    "official_map_url": "https://citybus.taichung.gov.tw/ebus/strapi/uploads/152_0fbb8a6be0.jpeg"
+    "official_map_url": "https://www.tcbus.com.tw/image/152.gif"
   },
   "features": [
     {
@@ -22,7 +22,7 @@
         "ref": "152區2",
         "name": "152區2",
         "name_en": "152區2",
-        "color": "#7c3aed",
+        "color": "#c2410c",
         "direction": 0
       },
       "geometry": {
@@ -346,12 +346,24 @@
         "ref": "152區2",
         "name": "152區2",
         "name_en": "152區2",
-        "color": "#7c3aed",
+        "color": "#c2410c",
         "direction": 1
       },
       "geometry": {
         "type": "LineString",
         "coordinates": [
+          [
+            120.70227,
+            24.24949
+          ],
+          [
+            120.6962,
+            24.24853
+          ],
+          [
+            120.69533,
+            24.24851
+          ],
           [
             120.694,
             24.24947
@@ -365,12 +377,32 @@
             24.25154
           ],
           [
-            120.69063,
-            24.25191
+            120.69025042342983,
+            24.252086706571106
           ],
           [
-            120.68979,
-            24.2518
+            120.69022812027214,
+            24.252094629661517
+          ],
+          [
+            120.69020487138702,
+            24.252098249347725
+          ],
+          [
+            120.69018130256325,
+            24.252097560761186
+          ],
+          [
+            120.69015835133376,
+            24.252092591292847
+          ],
+          [
+            120.6901369306646,
+            24.25208353862082
+          ],
+          [
+            120.69011758532879,
+            24.252070508995697
           ],
           [
             120.6894,
@@ -403,23 +435,135 @@
           [
             120.69,
             24.24827
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "route",
-        "ref": "152區2",
-        "name": "152區2",
-        "name_en": "152區2",
-        "color": "#7c3aed",
-        "direction": 1
-      },
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
+          ],
+          [
+            120.68977,
+            24.24579
+          ],
+          [
+            120.68941,
+            24.24328
+          ],
+          [
+            120.68814,
+            24.2368
+          ],
+          [
+            120.68729,
+            24.23373
+          ],
+          [
+            120.68624,
+            24.23073
+          ],
+          [
+            120.68483,
+            24.22755
+          ],
+          [
+            120.68402,
+            24.22598
+          ],
+          [
+            120.68356,
+            24.22521
+          ],
+          [
+            120.68304,
+            24.22439
+          ],
+          [
+            120.68159,
+            24.22236
+          ],
+          [
+            120.68004,
+            24.2205
+          ],
+          [
+            120.67835,
+            24.2187
+          ],
+          [
+            120.67664,
+            24.21701
+          ],
+          [
+            120.67382,
+            24.21472
+          ],
+          [
+            120.67077,
+            24.21269
+          ],
+          [
+            120.66682,
+            24.2105
+          ],
+          [
+            120.66279,
+            24.2086
+          ],
+          [
+            120.65529,
+            24.20517
+          ],
+          [
+            120.65275,
+            24.20384
+          ],
+          [
+            120.65022,
+            24.20234
+          ],
+          [
+            120.6467,
+            24.19985
+          ],
+          [
+            120.64327,
+            24.19683
+          ],
+          [
+            120.64179,
+            24.1952
+          ],
+          [
+            120.64041,
+            24.1935
+          ],
+          [
+            120.63924,
+            24.19186
+          ],
+          [
+            120.63816,
+            24.19021
+          ],
+          [
+            120.63699,
+            24.18795
+          ],
+          [
+            120.63598,
+            24.18561
+          ],
+          [
+            120.63504,
+            24.18337
+          ],
+          [
+            120.63418,
+            24.18111
+          ],
+          [
+            120.63307,
+            24.17892
+          ],
+          [
+            120.63248,
+            24.17795
+          ],
           [
             120.63175,
             24.177
@@ -429,44 +573,88 @@
             24.17597
           ],
           [
-            120.6304,
-            24.17495
+            120.63006635347726,
+            24.174516312932496
           ],
           [
-            120.63016,
-            24.17465
+            120.63005052704167,
+            24.174499607836964
           ],
           [
-            120.62983,
-            24.1745
+            120.6300316738678,
+            24.174486389308623
           ],
           [
-            120.62945,
-            24.17459
+            120.63001032725407,
+            24.174476896032186
           ],
           [
-            120.6293,
-            24.1748
+            120.6299873471482,
+            24.174471510444025
           ],
           [
-            120.62926,
-            24.17503
+            120.62996365930317,
+            24.174470449502422
           ],
           [
-            120.62937,
-            24.17528
+            120.62994002258364,
+            24.174473802516193
           ],
           [
-            120.62954,
-            24.17548
+            120.62907148139259,
+            24.174680109201773
           ],
           [
-            120.62988,
-            24.1755
+            120.62903624091082,
+            24.174694528701707
           ],
           [
-            120.63028,
-            24.17528
+            120.62900781023045,
+            24.174718755304138
+          ],
+          [
+            120.62898944696477,
+            24.174750133146503
+          ],
+          [
+            120.62898312879638,
+            24.174785282905372
+          ],
+          [
+            120.6289895361779,
+            24.17482041903033
+          ],
+          [
+            120.62900773288897,
+            24.174851465245823
+          ],
+          [
+            120.62983703030108,
+            24.175831173855617
+          ],
+          [
+            120.62986750756711,
+            24.175856656467616
+          ],
+          [
+            120.62990526345729,
+            24.175870895179884
+          ],
+          [
+            120.62994603985044,
+            24.175872483415976
+          ],
+          [
+            120.62998497201032,
+            24.17586123169494
+          ],
+          [
+            120.63001741522274,
+            24.17583848237816
+          ],
+          [
+            120.63003961367909,
+            24.175806698633682
           ],
           [
             120.63073,
@@ -479,26 +667,70 @@
           [
             120.63134,
             24.17385
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "route",
-        "ref": "152區2",
-        "name": "152區2",
-        "name_en": "152區2",
-        "color": "#7c3aed",
-        "direction": 1
-      },
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
+          ],
           [
-            120.64613,
-            24.15721
+            120.63318,
+            24.17339
+          ],
+          [
+            120.63376,
+            24.1731
+          ],
+          [
+            120.63954,
+            24.16866
+          ],
+          [
+            120.64162,
+            24.16716
+          ],
+          [
+            120.64269,
+            24.16636
+          ],
+          [
+            120.64382,
+            24.16572
+          ],
+          [
+            120.64944,
+            24.16267
+          ],
+          [
+            120.64809,
+            24.16063
+          ],
+          [
+            120.6467,
+            24.15845
+          ],
+          [
+            120.64669059039261,
+            24.157208528505848
+          ],
+          [
+            120.64668485828878,
+            24.1571758668108
+          ],
+          [
+            120.64666868945835,
+            24.15714631258131
+          ],
+          [
+            120.64664358508264,
+            24.157122604533704
+          ],
+          [
+            120.64661187601713,
+            24.15710694387911
+          ],
+          [
+            120.64657650634004,
+            24.157100784655757
+          ],
+          [
+            120.64654055265339,
+            24.15710475200573
           ],
           [
             120.64562,
@@ -507,6 +739,10 @@
           [
             120.64476,
             24.15782
+          ],
+          [
+            120.64404,
+            24.15825
           ]
         ]
       }
@@ -519,8 +755,9 @@
         "name": "臺中市議會",
         "name_en": "Taichung City Council",
         "line": "152區2",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "1769"
       },
       "geometry": {
         "type": "Point",
@@ -538,8 +775,9 @@
         "name": "中央健保署(文心路)",
         "name_en": "NHI Administration(Wenxin Road)",
         "line": "152區2",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "905"
       },
       "geometry": {
         "type": "Point",
@@ -557,8 +795,9 @@
         "name": "文心第二市政大樓",
         "name_en": "Wenxin Second Municipal Building",
         "line": "152區2",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "1251"
       },
       "geometry": {
         "type": "Point",
@@ -576,8 +815,9 @@
         "name": "市政府(專用道)",
         "name_en": "Taichung City Hall(Dedicated Road)",
         "line": "152區2",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "3910"
       },
       "geometry": {
         "type": "Point",
@@ -595,8 +835,9 @@
         "name": "新光/遠百(專用道)",
         "name_en": "Shin Kong Mitsukoshi/Top City Dept. Store(Dedicated Road)",
         "line": "152區2",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "4763"
       },
       "geometry": {
         "type": "Point",
@@ -614,8 +855,9 @@
         "name": "秋紅谷(專用道)",
         "name_en": "Maple Garden(Dedicated Road)",
         "line": "152區2",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "4761"
       },
       "geometry": {
         "type": "Point",
@@ -633,8 +875,9 @@
         "name": "朝馬2(臺灣大道)",
         "name_en": "Chaoma 2 (Taiwan Boulevard)",
         "line": "152區2",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "4343"
       },
       "geometry": {
         "type": "Point",
@@ -652,8 +895,9 @@
         "name": "望寮",
         "name_en": "Wangliao",
         "line": "152區2",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "1493"
       },
       "geometry": {
         "type": "Point",
@@ -671,8 +915,9 @@
         "name": "岸裡國小",
         "name_en": "Anli Elementary School",
         "line": "152區2",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "838"
       },
       "geometry": {
         "type": "Point",
@@ -690,8 +935,9 @@
         "name": "臺豐社區",
         "name_en": "Taifeng Community",
         "line": "152區2",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "1497"
       },
       "geometry": {
         "type": "Point",
@@ -709,8 +955,9 @@
         "name": "社皮鐵路巷",
         "name_en": "Shepi Railway Lane",
         "line": "152區2",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "1498"
       },
       "geometry": {
         "type": "Point",
@@ -728,8 +975,9 @@
         "name": "社皮鐵路巷",
         "name_en": "Shepi Railway Lane",
         "line": "152區2",
-        "color": "#7c3aed",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "1498"
       },
       "geometry": {
         "type": "Point",
@@ -747,8 +995,9 @@
         "name": "臺豐社區",
         "name_en": "Taifeng Community",
         "line": "152區2",
-        "color": "#7c3aed",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "1497"
       },
       "geometry": {
         "type": "Point",
@@ -766,8 +1015,9 @@
         "name": "岸裡國小",
         "name_en": "Anli Elementary School",
         "line": "152區2",
-        "color": "#7c3aed",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "838"
       },
       "geometry": {
         "type": "Point",
@@ -785,8 +1035,9 @@
         "name": "朝馬2(臺灣大道)",
         "name_en": "Chaoma 2 (Taiwan Boulevard)",
         "line": "152區2",
-        "color": "#7c3aed",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "4344"
       },
       "geometry": {
         "type": "Point",
@@ -804,8 +1055,9 @@
         "name": "朝馬(臺灣大道)",
         "name_en": "Chaoma(Taiwan Boulevard)",
         "line": "152區2",
-        "color": "#7c3aed",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "3529"
       },
       "geometry": {
         "type": "Point",
@@ -823,8 +1075,9 @@
         "name": "新光/遠百(專用道)",
         "name_en": "Shin Kong Mitsukoshi/Top City Dept. Store(Dedicated Road)",
         "line": "152區2",
-        "color": "#7c3aed",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "4762"
       },
       "geometry": {
         "type": "Point",
@@ -842,8 +1095,9 @@
         "name": "臺中市政府",
         "name_en": "Taichung City Hall",
         "line": "152區2",
-        "color": "#7c3aed",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "470"
       },
       "geometry": {
         "type": "Point",
@@ -861,8 +1115,9 @@
         "name": "捷運市政府站(文心路)",
         "name_en": "MRT Taichung City Hall Station(Wenxin Road)",
         "line": "152區2",
-        "color": "#7c3aed",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "335"
       },
       "geometry": {
         "type": "Point",
@@ -880,8 +1135,9 @@
         "name": "文心第二市政大樓",
         "name_en": "Wenxin Second Municipal Building",
         "line": "152區2",
-        "color": "#7c3aed",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "1250"
       },
       "geometry": {
         "type": "Point",
@@ -899,8 +1155,9 @@
         "name": "臺中市議會",
         "name_en": "Taichung City Council",
         "line": "152區2",
-        "color": "#7c3aed",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "1769"
       },
       "geometry": {
         "type": "Point",

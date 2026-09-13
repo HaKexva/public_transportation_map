@@ -6,13 +6,12 @@
     "name": "258繞",
     "name_en": "258繞",
     "ref": "258繞",
-    "color": "#a21caf",
+    "color": "#65a30d",
     "city_id": "Taichung",
     "source": "TDX Bus Shape / StopOfRoute",
     "operator_id": "6",
     "operator": "豐原客運",
-    "operator_en": "Fengyuan Bus Co., Ltd.",
-    "official_map_url": "https://citybus.taichung.gov.tw/ebus/strapi/uploads/258_258_c158fec614.jpeg"
+    "operator_en": "Fengyuan Bus Co., Ltd."
   },
   "features": [
     {
@@ -22,7 +21,7 @@
         "ref": "258繞",
         "name": "258繞",
         "name_en": "258繞",
-        "color": "#a21caf",
+        "color": "#65a30d",
         "direction": 0
       },
       "geometry": {
@@ -309,24 +308,60 @@
             24.30112
           ],
           [
-            120.80047,
-            24.30278
+            120.80029358440832,
+            24.30306349497676
           ],
           [
-            120.80038,
-            24.30311
+            120.80028433866065,
+            24.3030823485435
           ],
           [
-            120.80047,
-            24.30339
+            120.80027910676512,
+            24.30310279507352
           ],
           [
-            120.80078,
-            24.30377
+            120.80027826262014,
+            24.30312378360679
           ],
           [
-            120.80126,
-            24.30397
+            120.80028183782296,
+            24.303144528520512
+          ],
+          [
+            120.80028969854997,
+            24.303164253310825
+          ],
+          [
+            120.80030131285554,
+            24.303181926346788
+          ],
+          [
+            120.80092709309723,
+            24.30395144488241
+          ],
+          [
+            120.80094107101236,
+            24.303965865176362
+          ],
+          [
+            120.8009572768312,
+            24.303977585833675
+          ],
+          [
+            120.80097545524336,
+            24.303986543469776
+          ],
+          [
+            120.80099505309327,
+            24.30399246551049
+          ],
+          [
+            120.80101547403304,
+            24.303995171752515
+          ],
+          [
+            120.80103619402001,
+            24.30399456916878
           ],
           [
             120.80181,
@@ -437,12 +472,60 @@
             24.31157
           ],
           [
-            120.83165,
-            24.31282
+            120.83161648487645,
+            24.312810985234343
           ],
           [
-            120.83161,
-            24.31288
+            120.83162384951207,
+            24.312814144148078
+          ],
+          [
+            120.8316298766904,
+            24.312819218926343
+          ],
+          [
+            120.83163395731845,
+            24.31282572468774
+          ],
+          [
+            120.83163571200456,
+            24.31283305656667
+          ],
+          [
+            120.8316349776088,
+            24.312840532890224
+          ],
+          [
+            120.8316318660504,
+            24.312847392861435
+          ],
+          [
+            120.83162063388967,
+            24.312863936619703
+          ],
+          [
+            120.8316170482365,
+            24.3128682138672
+          ],
+          [
+            120.8316126030391,
+            24.312871628725194
+          ],
+          [
+            120.83160746224415,
+            24.31287408741243
+          ],
+          [
+            120.83160186592623,
+            24.312875475108463
+          ],
+          [
+            120.8315960754328,
+            24.31287572700804
+          ],
+          [
+            120.83159031326451,
+            24.31287481878251
           ],
           [
             120.82698,
@@ -482,13 +565,578 @@
     {
       "type": "Feature",
       "properties": {
+        "feature_type": "route",
+        "ref": "258繞",
+        "name": "258繞",
+        "name_en": "258繞",
+        "color": "#65a30d",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.82394,
+            24.31435
+          ],
+          [
+            120.82399,
+            24.31414
+          ],
+          [
+            120.82414,
+            24.31378
+          ],
+          [
+            120.82435,
+            24.31345
+          ],
+          [
+            120.82479,
+            24.31292
+          ],
+          [
+            120.82516,
+            24.31262
+          ],
+          [
+            120.82608,
+            24.31212
+          ],
+          [
+            120.82654,
+            24.31184
+          ],
+          [
+            120.82699,
+            24.31156
+          ],
+          [
+            120.82857,
+            24.31201
+          ],
+          [
+            120.83158191060592,
+            24.31279733897508
+          ],
+          [
+            120.83159131147046,
+            24.31280148634263
+          ],
+          [
+            120.83159871932746,
+            24.31280829943612
+          ],
+          [
+            120.83160323400338,
+            24.312816986831663
+          ],
+          [
+            120.83160434071094,
+            24.312826557946345
+          ],
+          [
+            120.83160191325747,
+            24.312835921430924
+          ],
+          [
+            120.83159630182848,
+            24.31284393595489
+          ],
+          [
+            120.83157,
+            24.31287
+          ],
+          [
+            120.82851,
+            24.31208
+          ],
+          [
+            120.82699,
+            24.31165
+          ],
+          [
+            120.82481,
+            24.31057
+          ],
+          [
+            120.8243,
+            24.3104
+          ],
+          [
+            120.82335,
+            24.3103
+          ],
+          [
+            120.8223,
+            24.31028
+          ],
+          [
+            120.8215,
+            24.31036
+          ],
+          [
+            120.82099,
+            24.31019
+          ],
+          [
+            120.82022,
+            24.30973
+          ],
+          [
+            120.81561,
+            24.3068
+          ],
+          [
+            120.81301,
+            24.30517
+          ],
+          [
+            120.81255,
+            24.30481
+          ],
+          [
+            120.81192,
+            24.30411
+          ],
+          [
+            120.81157,
+            24.30377
+          ],
+          [
+            120.81087,
+            24.30338
+          ],
+          [
+            120.81035,
+            24.30331
+          ],
+          [
+            120.80928,
+            24.30331
+          ],
+          [
+            120.80808,
+            24.30343
+          ],
+          [
+            120.80718,
+            24.30352
+          ],
+          [
+            120.80607,
+            24.30373
+          ],
+          [
+            120.8057,
+            24.30371
+          ],
+          [
+            120.80519,
+            24.30349
+          ],
+          [
+            120.80477,
+            24.30332
+          ],
+          [
+            120.80411,
+            24.30331
+          ],
+          [
+            120.80341,
+            24.30334
+          ],
+          [
+            120.80299,
+            24.30344
+          ],
+          [
+            120.8024,
+            24.30368
+          ],
+          [
+            120.80181,
+            24.30392
+          ],
+          [
+            120.80107103173509,
+            24.304000743587256
+          ],
+          [
+            120.80105051097951,
+            24.30400135582414
+          ],
+          [
+            120.80103027952316,
+            24.303998722181824
+          ],
+          [
+            120.80101084385763,
+            24.303992931941398
+          ],
+          [
+            120.80099278405504,
+            24.303984157916968
+          ],
+          [
+            120.80097663912385,
+            24.30397266197593
+          ],
+          [
+            120.80096264845722,
+            24.303958494488864
+          ],
+          [
+            120.8003815425684,
+            24.303259052723085
+          ],
+          [
+            120.80037050597888,
+            24.303242915044972
+          ],
+          [
+            120.80036259686386,
+            24.303224903077023
+          ],
+          [
+            120.80035831088671,
+            24.30320588595262
+          ],
+          [
+            120.80035778520245,
+            24.303186472236508
+          ],
+          [
+            120.80036103663345,
+            24.3031672831847
+          ],
+          [
+            120.80036783398107,
+            24.303149192924376
+          ],
+          [
+            120.80076,
+            24.30235
+          ],
+          [
+            120.80132,
+            24.30136
+          ],
+          [
+            120.80179,
+            24.30084
+          ],
+          [
+            120.80226,
+            24.30025
+          ],
+          [
+            120.8024,
+            24.2999
+          ],
+          [
+            120.80256,
+            24.29911
+          ],
+          [
+            120.80272,
+            24.29836
+          ],
+          [
+            120.80254,
+            24.29786
+          ],
+          [
+            120.80196,
+            24.2969
+          ],
+          [
+            120.80103,
+            24.29523
+          ],
+          [
+            120.80089,
+            24.29501
+          ],
+          [
+            120.80088,
+            24.29476
+          ],
+          [
+            120.80122,
+            24.29314
+          ],
+          [
+            120.80109,
+            24.29272
+          ],
+          [
+            120.80033,
+            24.29189
+          ],
+          [
+            120.79962,
+            24.29134
+          ],
+          [
+            120.79789,
+            24.29065
+          ],
+          [
+            120.79711,
+            24.29031
+          ],
+          [
+            120.79686,
+            24.29014
+          ],
+          [
+            120.79661,
+            24.28989
+          ],
+          [
+            120.79633,
+            24.28907
+          ],
+          [
+            120.79592,
+            24.28813
+          ],
+          [
+            120.79572,
+            24.28738
+          ],
+          [
+            120.79562,
+            24.28656
+          ],
+          [
+            120.79567,
+            24.28621
+          ],
+          [
+            120.7958,
+            24.28592
+          ],
+          [
+            120.79603,
+            24.28564
+          ],
+          [
+            120.7963,
+            24.28546
+          ],
+          [
+            120.79673,
+            24.28529
+          ],
+          [
+            120.79733,
+            24.28522
+          ],
+          [
+            120.79767,
+            24.28531
+          ],
+          [
+            120.79823,
+            24.2855
+          ],
+          [
+            120.79858,
+            24.28561
+          ],
+          [
+            120.79889,
+            24.28562
+          ],
+          [
+            120.79944,
+            24.28543
+          ],
+          [
+            120.80005,
+            24.28522
+          ],
+          [
+            120.8009,
+            24.28509
+          ],
+          [
+            120.80231,
+            24.28464
+          ],
+          [
+            120.8035,
+            24.2842
+          ],
+          [
+            120.804,
+            24.28406
+          ],
+          [
+            120.80455,
+            24.284
+          ],
+          [
+            120.80653,
+            24.28398
+          ],
+          [
+            120.80708,
+            24.28398
+          ],
+          [
+            120.80741,
+            24.2839
+          ],
+          [
+            120.80773,
+            24.28375
+          ],
+          [
+            120.80819,
+            24.2834
+          ],
+          [
+            120.8086,
+            24.28318
+          ],
+          [
+            120.80976,
+            24.28264
+          ],
+          [
+            120.8104,
+            24.28208
+          ],
+          [
+            120.81072,
+            24.28185
+          ],
+          [
+            120.81149,
+            24.28157
+          ],
+          [
+            120.81237,
+            24.28135
+          ],
+          [
+            120.81322,
+            24.28104
+          ],
+          [
+            120.81448,
+            24.28047
+          ],
+          [
+            120.81537,
+            24.27974
+          ],
+          [
+            120.81638,
+            24.27886
+          ],
+          [
+            120.81841,
+            24.276
+          ],
+          [
+            120.819,
+            24.2755
+          ],
+          [
+            120.81974,
+            24.27469
+          ],
+          [
+            120.82096,
+            24.27313
+          ],
+          [
+            120.82228,
+            24.27168
+          ],
+          [
+            120.82279,
+            24.27107
+          ],
+          [
+            120.82295,
+            24.27081
+          ],
+          [
+            120.82317,
+            24.26882
+          ],
+          [
+            120.82333,
+            24.26853
+          ],
+          [
+            120.82359,
+            24.26829
+          ],
+          [
+            120.82402,
+            24.26784
+          ],
+          [
+            120.82554,
+            24.26558
+          ],
+          [
+            120.82586,
+            24.26512
+          ],
+          [
+            120.82611,
+            24.26424
+          ],
+          [
+            120.82642,
+            24.26331
+          ],
+          [
+            120.82669,
+            24.26266
+          ],
+          [
+            120.82688,
+            24.26189
+          ],
+          [
+            120.82695,
+            24.26104
+          ],
+          [
+            120.82706,
+            24.26051
+          ],
+          [
+            120.82752,
+            24.25911
+          ],
+          [
+            120.82779,
+            24.25841
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "feature_type": "station",
         "ref": "TXG5899",
         "name": "東勢",
         "name_en": "Dongshi",
         "line": "258繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "6648"
       },
       "geometry": {
         "type": "Point",
@@ -506,8 +1154,9 @@
         "name": "東勢老人會館",
         "name_en": "Dongshi Sr. Citizens Hall",
         "line": "258繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "1437"
       },
       "geometry": {
         "type": "Point",
@@ -525,8 +1174,9 @@
         "name": "東新國中",
         "name_en": "Dung-shing Junior High School",
         "line": "258繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "1434"
       },
       "geometry": {
         "type": "Point",
@@ -544,8 +1194,9 @@
         "name": "下新社區",
         "name_en": "Xiaxin Community",
         "line": "258繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "5273"
       },
       "geometry": {
         "type": "Point",
@@ -563,8 +1214,9 @@
         "name": "下新",
         "name_en": "Xiaxin",
         "line": "258繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "5270"
       },
       "geometry": {
         "type": "Point",
@@ -582,8 +1234,9 @@
         "name": "東蘭西門巷口",
         "name_en": "Donglan-Ximen Intersection",
         "line": "258繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "5612"
       },
       "geometry": {
         "type": "Point",
@@ -601,8 +1254,9 @@
         "name": "八分",
         "name_en": "Bafen",
         "line": "258繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "5181"
       },
       "geometry": {
         "type": "Point",
@@ -620,8 +1274,9 @@
         "name": "東蘭光明路口",
         "name_en": "Donglan-Guangming Intersection",
         "line": "258繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "5565"
       },
       "geometry": {
         "type": "Point",
@@ -639,8 +1294,9 @@
         "name": "田中央(東蘭路)",
         "name_en": "Tianzhongyang(Donglan Road)",
         "line": "258繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "5527"
       },
       "geometry": {
         "type": "Point",
@@ -658,8 +1314,9 @@
         "name": "福成橋",
         "name_en": "Fucheng Bridge",
         "line": "258繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "6041"
       },
       "geometry": {
         "type": "Point",
@@ -677,8 +1334,9 @@
         "name": "東蘭大明路口",
         "name_en": "Donglan-Daming Intersection",
         "line": "258繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "5347"
       },
       "geometry": {
         "type": "Point",
@@ -696,8 +1354,9 @@
         "name": "校栗埔",
         "name_en": "Xiaolipu",
         "line": "258繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "5820"
       },
       "geometry": {
         "type": "Point",
@@ -715,8 +1374,9 @@
         "name": "三清宮",
         "name_en": "Sanqing Temple",
         "line": "258繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "5216"
       },
       "geometry": {
         "type": "Point",
@@ -734,8 +1394,9 @@
         "name": "下校栗埔",
         "name_en": "Xia Xiaolipu",
         "line": "258繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "5257"
       },
       "geometry": {
         "type": "Point",
@@ -753,8 +1414,9 @@
         "name": "民誠宮",
         "name_en": "Mincheng Temple",
         "line": "258繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "5513"
       },
       "geometry": {
         "type": "Point",
@@ -772,8 +1434,9 @@
         "name": "石城橋頭",
         "name_en": "Shicheng Qiaotou",
         "line": "258繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "5544"
       },
       "geometry": {
         "type": "Point",
@@ -791,8 +1454,9 @@
         "name": "石城",
         "name_en": "Shicheng",
         "line": "258繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "5542"
       },
       "geometry": {
         "type": "Point",
@@ -810,8 +1474,9 @@
         "name": "上石城",
         "name_en": "Shangshicheng",
         "line": "258繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "5305"
       },
       "geometry": {
         "type": "Point",
@@ -829,8 +1494,9 @@
         "name": "頂上",
         "name_en": "Dingshang",
         "line": "258繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "5896"
       },
       "geometry": {
         "type": "Point",
@@ -848,8 +1514,9 @@
         "name": "石排",
         "name_en": "Shipai",
         "line": "258繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "5547"
       },
       "geometry": {
         "type": "Point",
@@ -867,8 +1534,9 @@
         "name": "石壁坑口",
         "name_en": "Shibikengkou",
         "line": "258繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "5548"
       },
       "geometry": {
         "type": "Point",
@@ -886,8 +1554,9 @@
         "name": "暗山",
         "name_en": "Anshan",
         "line": "258繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "5996"
       },
       "geometry": {
         "type": "Point",
@@ -905,8 +1574,9 @@
         "name": "大安溪(東蘭路)",
         "name_en": "Da'an River(Donglan Road)",
         "line": "258繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "10035"
       },
       "geometry": {
         "type": "Point",
@@ -924,8 +1594,9 @@
         "name": "收費站",
         "name_en": "Toll Station",
         "line": "258繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "5590"
       },
       "geometry": {
         "type": "Point",
@@ -943,8 +1614,9 @@
         "name": "溪洲",
         "name_en": "Xizhou",
         "line": "258繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "1615"
       },
       "geometry": {
         "type": "Point",
@@ -962,8 +1634,9 @@
         "name": "中街",
         "name_en": "Zhongjie",
         "line": "258繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "5393"
       },
       "geometry": {
         "type": "Point",
@@ -981,8 +1654,9 @@
         "name": "卓蘭高中",
         "name_en": "National Jhuolan Experimental Senior High School",
         "line": "258繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "10575"
       },
       "geometry": {
         "type": "Point",
@@ -1000,8 +1674,9 @@
         "name": "舊站",
         "name_en": "Jiuzhan",
         "line": "258繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "6119"
       },
       "geometry": {
         "type": "Point",
@@ -1019,8 +1694,9 @@
         "name": "郵局前",
         "name_en": "Post Office",
         "line": "258繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "5947"
       },
       "geometry": {
         "type": "Point",
@@ -1038,8 +1714,9 @@
         "name": "卓蘭",
         "name_en": "Zhuolan",
         "line": "258繞",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "5651"
       },
       "geometry": {
         "type": "Point",
@@ -1057,8 +1734,9 @@
         "name": "卓蘭",
         "name_en": "Zhuolan",
         "line": "258繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "5651"
       },
       "geometry": {
         "type": "Point",
@@ -1076,8 +1754,9 @@
         "name": "郵局前",
         "name_en": "Post Office",
         "line": "258繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "5947"
       },
       "geometry": {
         "type": "Point",
@@ -1095,8 +1774,9 @@
         "name": "舊站",
         "name_en": "Jiuzhan",
         "line": "258繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "6119"
       },
       "geometry": {
         "type": "Point",
@@ -1114,8 +1794,9 @@
         "name": "卓蘭高中",
         "name_en": "National Jhuolan Experimental Senior High School",
         "line": "258繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "10575"
       },
       "geometry": {
         "type": "Point",
@@ -1133,8 +1814,9 @@
         "name": "中街",
         "name_en": "Zhongjie",
         "line": "258繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "5393"
       },
       "geometry": {
         "type": "Point",
@@ -1152,8 +1834,9 @@
         "name": "溪洲",
         "name_en": "Xizhou",
         "line": "258繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "1615"
       },
       "geometry": {
         "type": "Point",
@@ -1171,8 +1854,9 @@
         "name": "收費站",
         "name_en": "Toll Station",
         "line": "258繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "5590"
       },
       "geometry": {
         "type": "Point",
@@ -1190,8 +1874,9 @@
         "name": "大安溪(東蘭路)",
         "name_en": "Da'an River(Donglan Road)",
         "line": "258繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "10035"
       },
       "geometry": {
         "type": "Point",
@@ -1209,8 +1894,9 @@
         "name": "暗山",
         "name_en": "Anshan",
         "line": "258繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "5996"
       },
       "geometry": {
         "type": "Point",
@@ -1228,8 +1914,9 @@
         "name": "石壁坑口",
         "name_en": "Shibikengkou",
         "line": "258繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "5548"
       },
       "geometry": {
         "type": "Point",
@@ -1247,8 +1934,9 @@
         "name": "石排",
         "name_en": "Shipai",
         "line": "258繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "5547"
       },
       "geometry": {
         "type": "Point",
@@ -1266,8 +1954,9 @@
         "name": "頂上",
         "name_en": "Dingshang",
         "line": "258繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "5896"
       },
       "geometry": {
         "type": "Point",
@@ -1285,8 +1974,9 @@
         "name": "上石城",
         "name_en": "Shangshicheng",
         "line": "258繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "5305"
       },
       "geometry": {
         "type": "Point",
@@ -1304,8 +1994,9 @@
         "name": "石城",
         "name_en": "Shicheng",
         "line": "258繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "5542"
       },
       "geometry": {
         "type": "Point",
@@ -1323,8 +2014,9 @@
         "name": "石城橋頭",
         "name_en": "Shicheng Qiaotou",
         "line": "258繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "5544"
       },
       "geometry": {
         "type": "Point",
@@ -1342,8 +2034,9 @@
         "name": "民誠宮",
         "name_en": "Mincheng Temple",
         "line": "258繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "5513"
       },
       "geometry": {
         "type": "Point",
@@ -1361,8 +2054,9 @@
         "name": "下校栗埔",
         "name_en": "Xia Xiaolipu",
         "line": "258繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "5257"
       },
       "geometry": {
         "type": "Point",
@@ -1380,8 +2074,9 @@
         "name": "三清宮",
         "name_en": "Sanqing Temple",
         "line": "258繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "5216"
       },
       "geometry": {
         "type": "Point",
@@ -1399,8 +2094,9 @@
         "name": "校栗埔",
         "name_en": "Xiaolipu",
         "line": "258繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "5820"
       },
       "geometry": {
         "type": "Point",
@@ -1418,8 +2114,9 @@
         "name": "東蘭大明路口",
         "name_en": "Donglan-Daming Intersection",
         "line": "258繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "5347"
       },
       "geometry": {
         "type": "Point",
@@ -1437,8 +2134,9 @@
         "name": "福成橋",
         "name_en": "Fucheng Bridge",
         "line": "258繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "6041"
       },
       "geometry": {
         "type": "Point",
@@ -1456,8 +2154,9 @@
         "name": "田中央(東蘭路)",
         "name_en": "Tianzhongyang(Donglan Road)",
         "line": "258繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "5527"
       },
       "geometry": {
         "type": "Point",
@@ -1475,8 +2174,9 @@
         "name": "東蘭光明路口",
         "name_en": "Donglan-Guangming Intersection",
         "line": "258繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "5565"
       },
       "geometry": {
         "type": "Point",
@@ -1494,8 +2194,9 @@
         "name": "八分",
         "name_en": "Bafen",
         "line": "258繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "5181"
       },
       "geometry": {
         "type": "Point",
@@ -1513,8 +2214,9 @@
         "name": "東蘭西門巷口",
         "name_en": "Donglan-Ximen Intersection",
         "line": "258繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "5612"
       },
       "geometry": {
         "type": "Point",
@@ -1532,8 +2234,9 @@
         "name": "下新",
         "name_en": "Xiaxin",
         "line": "258繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "5270"
       },
       "geometry": {
         "type": "Point",
@@ -1551,8 +2254,9 @@
         "name": "下新社區",
         "name_en": "Xiaxin Community",
         "line": "258繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "5273"
       },
       "geometry": {
         "type": "Point",
@@ -1570,8 +2274,9 @@
         "name": "東新國中",
         "name_en": "Dung-shing Junior High School",
         "line": "258繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "1435"
       },
       "geometry": {
         "type": "Point",
@@ -1589,8 +2294,9 @@
         "name": "東勢老人會館",
         "name_en": "Dongshi Sr. Citizens Hall",
         "line": "258繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "1437"
       },
       "geometry": {
         "type": "Point",
@@ -1608,8 +2314,9 @@
         "name": "東勢",
         "name_en": "Dongshi",
         "line": "258繞",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "6649"
       },
       "geometry": {
         "type": "Point",

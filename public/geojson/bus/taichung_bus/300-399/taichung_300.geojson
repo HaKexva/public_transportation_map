@@ -6,7 +6,7 @@
     "name": "300",
     "name_en": "300",
     "ref": "300",
-    "color": "#9f1239",
+    "color": "#c2410c",
     "city_id": "Taichung",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://citybus.taichung.gov.tw/ebus/strapi/uploads/300_eb6fef71e6.jpeg",
@@ -22,7 +22,7 @@
         "ref": "300",
         "name": "300",
         "name_en": "300",
-        "color": "#9f1239",
+        "color": "#c2410c",
         "direction": 0
       },
       "geometry": {
@@ -202,12 +202,16 @@
         "ref": "300",
         "name": "300",
         "name_en": "300",
-        "color": "#9f1239",
+        "color": "#c2410c",
         "direction": 1
       },
       "geometry": {
         "type": "LineString",
         "coordinates": [
+          [
+            120.68648,
+            24.13775
+          ],
           [
             120.68712,
             24.1381
@@ -231,6 +235,134 @@
           [
             120.68537,
             24.14317
+          ],
+          [
+            120.68225,
+            24.14014
+          ],
+          [
+            120.66864,
+            24.15196
+          ],
+          [
+            120.66705,
+            24.15305
+          ],
+          [
+            120.64267,
+            24.16655
+          ],
+          [
+            120.63117,
+            24.17515
+          ],
+          [
+            120.62972,
+            24.17602
+          ],
+          [
+            120.62822,
+            24.17682
+          ],
+          [
+            120.61399,
+            24.18383
+          ],
+          [
+            120.6131,
+            24.18421
+          ],
+          [
+            120.61213,
+            24.18447
+          ],
+          [
+            120.61063,
+            24.18461
+          ],
+          [
+            120.61014,
+            24.18457
+          ],
+          [
+            120.60956,
+            24.18449
+          ],
+          [
+            120.59961,
+            24.18215
+          ],
+          [
+            120.59789,
+            24.18201
+          ],
+          [
+            120.59613,
+            24.18215
+          ],
+          [
+            120.59512,
+            24.18234
+          ],
+          [
+            120.59349,
+            24.1829
+          ],
+          [
+            120.58194,
+            24.18783
+          ],
+          [
+            120.58091,
+            24.18836
+          ],
+          [
+            120.58059,
+            24.18861
+          ],
+          [
+            120.5802,
+            24.18904
+          ],
+          [
+            120.57984,
+            24.1897
+          ],
+          [
+            120.57968,
+            24.19027
+          ],
+          [
+            120.57968,
+            24.19059
+          ],
+          [
+            120.58139,
+            24.20564
+          ],
+          [
+            120.58156,
+            24.20818
+          ],
+          [
+            120.58089,
+            24.21416
+          ],
+          [
+            120.58017,
+            24.21974
+          ],
+          [
+            120.57982,
+            24.22081
+          ],
+          [
+            120.57936,
+            24.22179
+          ],
+          [
+            120.57707,
+            24.22541
           ]
         ]
       }
@@ -243,8 +375,9 @@
         "name": "靜宜大學(專用道)",
         "name_en": "Providence University(Dedicated Road)",
         "line": "300",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "1387"
       },
       "geometry": {
         "type": "Point",
@@ -262,8 +395,9 @@
         "name": "晉江寮(專用道)",
         "name_en": "Jinjiangliao(Dedicated Road)",
         "line": "300",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "4207"
       },
       "geometry": {
         "type": "Point",
@@ -281,8 +415,9 @@
         "name": "弘光科技大學(專用道)",
         "name_en": "Hungkuang University (Dedicated Road)",
         "line": "300",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "1343"
       },
       "geometry": {
         "type": "Point",
@@ -300,8 +435,9 @@
         "name": "正英路(專用道)",
         "name_en": "Zhengying Road(Dedicated Road)",
         "line": "300",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "4205"
       },
       "geometry": {
         "type": "Point",
@@ -319,8 +455,9 @@
         "name": "坪頂(專用道)",
         "name_en": "Pingding(Dedicated Road)",
         "line": "300",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "1356"
       },
       "geometry": {
         "type": "Point",
@@ -338,8 +475,9 @@
         "name": "東海別墅(專用道)",
         "name_en": "Donghai Villa(Dedicated Road)",
         "line": "300",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "750"
       },
       "geometry": {
         "type": "Point",
@@ -357,8 +495,9 @@
         "name": "榮總/東海大學(專用道)",
         "name_en": "Taichung Veterans General Hospital/Tunghai Uni.(Dedicated Road)",
         "line": "300",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "4888"
       },
       "geometry": {
         "type": "Point",
@@ -376,8 +515,9 @@
         "name": "玉門路(專用道)",
         "name_en": "Yumen Road(Dedicated Road)",
         "line": "300",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "3193"
       },
       "geometry": {
         "type": "Point",
@@ -395,8 +535,9 @@
         "name": "澄清醫院(專用道)",
         "name_en": "Cheng Ching Hospital(Dedicated Road)",
         "line": "300",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "701"
       },
       "geometry": {
         "type": "Point",
@@ -414,8 +555,9 @@
         "name": "中港新城(專用道)",
         "name_en": "Zhonggang Community(Dedicated Road)",
         "line": "300",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "654"
       },
       "geometry": {
         "type": "Point",
@@ -433,8 +575,9 @@
         "name": "福安(專用道)",
         "name_en": "Fu-an(Dedicated Road)",
         "line": "300",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "64"
       },
       "geometry": {
         "type": "Point",
@@ -452,8 +595,9 @@
         "name": "秋紅谷(專用道)",
         "name_en": "Maple Garden(Dedicated Road)",
         "line": "300",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "4760"
       },
       "geometry": {
         "type": "Point",
@@ -471,8 +615,9 @@
         "name": "新光/遠百(專用道)",
         "name_en": "Shin Kong Mitsukoshi/Top City Dept. Store(Dedicated Road)",
         "line": "300",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "4762"
       },
       "geometry": {
         "type": "Point",
@@ -490,8 +635,9 @@
         "name": "市政府(專用道)",
         "name_en": "Taichung City Hall(Dedicated Road)",
         "line": "300",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "3911"
       },
       "geometry": {
         "type": "Point",
@@ -509,8 +655,9 @@
         "name": "頂何厝(專用道)",
         "name_en": "Dinghecuo(Dedicated Road)",
         "line": "300",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "4202"
       },
       "geometry": {
         "type": "Point",
@@ -528,8 +675,9 @@
         "name": "忠明國小(專用道)",
         "name_en": "Chungming Elementary School(Dedicated Road)",
         "line": "300",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "171"
       },
       "geometry": {
         "type": "Point",
@@ -547,8 +695,9 @@
         "name": "科博館(專用道)",
         "name_en": "National Museum of Natural Science(Dedicated Road)",
         "line": "300",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "4844"
       },
       "geometry": {
         "type": "Point",
@@ -566,8 +715,9 @@
         "name": "中正國小(專用道)",
         "name_en": "Chung-Cheng Elementary School(Dedicated Road)",
         "line": "300",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "652"
       },
       "geometry": {
         "type": "Point",
@@ -585,8 +735,9 @@
         "name": "茄苳腳(專用道)",
         "name_en": "Qiedongjiao(Dedicated Road)",
         "line": "300",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "240"
       },
       "geometry": {
         "type": "Point",
@@ -604,8 +755,9 @@
         "name": "臺灣大道原子街口",
         "name_en": "Taiwan Boulevard-Yuanzi Intersection",
         "line": "300",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "789"
       },
       "geometry": {
         "type": "Point",
@@ -623,8 +775,9 @@
         "name": "臺灣大道中華路口",
         "name_en": "Taiwan Boulevard-Zhonghua Intersection",
         "line": "300",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "1335"
       },
       "geometry": {
         "type": "Point",
@@ -642,8 +795,9 @@
         "name": "仁愛醫院",
         "name_en": "Ren-Ai Hospital",
         "line": "300",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "4045"
       },
       "geometry": {
         "type": "Point",
@@ -661,8 +815,9 @@
         "name": "第二市場(臺灣大道)",
         "name_en": "2nd Market(Taiwan Boulevard)",
         "line": "300",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "112"
       },
       "geometry": {
         "type": "Point",
@@ -680,8 +835,9 @@
         "name": "彰化銀行(臺灣大道)",
         "name_en": "Chang Hwa Bank(Taiwan Boulevard)",
         "line": "300",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "465"
       },
       "geometry": {
         "type": "Point",
@@ -699,8 +855,9 @@
         "name": "第一廣場",
         "name_en": "First Square",
         "line": "300",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "2558"
       },
       "geometry": {
         "type": "Point",
@@ -718,8 +875,9 @@
         "name": "臺中車站(A月台)",
         "name_en": "Taichung Station(Platform A)",
         "line": "300",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "4980"
       },
       "geometry": {
         "type": "Point",
@@ -737,8 +895,9 @@
         "name": "臺中車站(A月台)",
         "name_en": "Taichung Station(Platform A)",
         "line": "300",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "4980"
       },
       "geometry": {
         "type": "Point",
@@ -756,8 +915,9 @@
         "name": "第二市場(臺灣大道)",
         "name_en": "2nd Market(Taiwan Boulevard)",
         "line": "300",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "111"
       },
       "geometry": {
         "type": "Point",
@@ -775,8 +935,9 @@
         "name": "仁愛醫院",
         "name_en": "Ren-Ai Hospital",
         "line": "300",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "4046"
       },
       "geometry": {
         "type": "Point",
@@ -794,8 +955,9 @@
         "name": "臺灣大道中華路口",
         "name_en": "Taiwan Boulevard-Zhonghua Intersection",
         "line": "300",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "1336"
       },
       "geometry": {
         "type": "Point",
@@ -813,8 +975,9 @@
         "name": "臺灣大道原子街口",
         "name_en": "Taiwan Boulevard-Yuanzi Intersection",
         "line": "300",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "788"
       },
       "geometry": {
         "type": "Point",
@@ -832,8 +995,9 @@
         "name": "茄苳腳(專用道)",
         "name_en": "Qiedongjiao(Dedicated Road)",
         "line": "300",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "239"
       },
       "geometry": {
         "type": "Point",
@@ -851,8 +1015,9 @@
         "name": "中正國小(專用道)",
         "name_en": "Chung-Cheng Elementary School(Dedicated Road)",
         "line": "300",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "653"
       },
       "geometry": {
         "type": "Point",
@@ -870,8 +1035,9 @@
         "name": "科博館(專用道)",
         "name_en": "National Museum of Natural Science(Dedicated Road)",
         "line": "300",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "4843"
       },
       "geometry": {
         "type": "Point",
@@ -889,8 +1055,9 @@
         "name": "忠明國小(專用道)",
         "name_en": "Chungming Elementary School(Dedicated Road)",
         "line": "300",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "170"
       },
       "geometry": {
         "type": "Point",
@@ -908,8 +1075,9 @@
         "name": "頂何厝(專用道)",
         "name_en": "Dinghecuo(Dedicated Road)",
         "line": "300",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "4203"
       },
       "geometry": {
         "type": "Point",
@@ -927,8 +1095,9 @@
         "name": "市政府(專用道)",
         "name_en": "Taichung City Hall(Dedicated Road)",
         "line": "300",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "3910"
       },
       "geometry": {
         "type": "Point",
@@ -946,8 +1115,9 @@
         "name": "新光/遠百(專用道)",
         "name_en": "Shin Kong Mitsukoshi/Top City Dept. Store(Dedicated Road)",
         "line": "300",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "4763"
       },
       "geometry": {
         "type": "Point",
@@ -965,8 +1135,9 @@
         "name": "秋紅谷(專用道)",
         "name_en": "Maple Garden(Dedicated Road)",
         "line": "300",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "4761"
       },
       "geometry": {
         "type": "Point",
@@ -984,8 +1155,9 @@
         "name": "福安(專用道)",
         "name_en": "Fu-an(Dedicated Road)",
         "line": "300",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "63"
       },
       "geometry": {
         "type": "Point",
@@ -1003,8 +1175,9 @@
         "name": "中港新城(專用道)",
         "name_en": "Zhonggang Community(Dedicated Road)",
         "line": "300",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "655"
       },
       "geometry": {
         "type": "Point",
@@ -1022,8 +1195,9 @@
         "name": "澄清醫院(專用道)",
         "name_en": "Cheng Ching Hospital(Dedicated Road)",
         "line": "300",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "700"
       },
       "geometry": {
         "type": "Point",
@@ -1041,8 +1215,9 @@
         "name": "玉門路(專用道)",
         "name_en": "Yumen Road(Dedicated Road)",
         "line": "300",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "3194"
       },
       "geometry": {
         "type": "Point",
@@ -1060,8 +1235,9 @@
         "name": "榮總/東海大學(專用道)",
         "name_en": "Taichung Veterans General Hospital/Tunghai Uni.(Dedicated Road)",
         "line": "300",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "4889"
       },
       "geometry": {
         "type": "Point",
@@ -1079,8 +1255,9 @@
         "name": "東海別墅(專用道)",
         "name_en": "Donghai Villa(Dedicated Road)",
         "line": "300",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "751"
       },
       "geometry": {
         "type": "Point",
@@ -1098,8 +1275,9 @@
         "name": "坪頂(專用道)",
         "name_en": "Pingding(Dedicated Road)",
         "line": "300",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "1355"
       },
       "geometry": {
         "type": "Point",
@@ -1117,8 +1295,9 @@
         "name": "正英路(專用道)",
         "name_en": "Zhengying Road(Dedicated Road)",
         "line": "300",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "4204"
       },
       "geometry": {
         "type": "Point",
@@ -1136,8 +1315,9 @@
         "name": "弘光科技大學(專用道)",
         "name_en": "Hungkuang University (Dedicated Road)",
         "line": "300",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "1344"
       },
       "geometry": {
         "type": "Point",
@@ -1155,8 +1335,9 @@
         "name": "晉江寮(專用道)",
         "name_en": "Jinjiangliao(Dedicated Road)",
         "line": "300",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "4206"
       },
       "geometry": {
         "type": "Point",
@@ -1174,8 +1355,9 @@
         "name": "靜宜大學(專用道)",
         "name_en": "Providence University(Dedicated Road)",
         "line": "300",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "1388"
       },
       "geometry": {
         "type": "Point",

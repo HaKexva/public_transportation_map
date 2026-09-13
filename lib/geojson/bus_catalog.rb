@@ -266,5 +266,31 @@ module Geojson
     def sort_routes(routes)
       Array(routes).sort_by { |route| [ route["ref"].to_s[/\d+/].to_i, route["ref"].to_s, route["id"].to_s ] }
     end
+
+    # Highway-coach operators are assigned numeric blocks (國光 18xx, 和欣 75xx…).
+    # Cluster route numbers so the sidebar can show e.g. "1751–1881、7000–7005".
+    OPERATOR_REF_GAP = 100
+    OPERATOR_REF_MAX_CLUSTERS = 5
+
+    def operator_ref_ranges(routes, gap: OPERATOR_REF_GAP, max_clusters: OPERATOR_REF_MAX_CLUSTERS)
+      numbers = Array(routes).filter_map { |route| route_number(route["ref"]) }.uniq.sort
+      return [] if numbers.empty?
+
+      clusters = []
+      numbers.each do |number|
+        if clusters.empty? || (number - clusters.last.last) > gap
+          clusters << [ number ]
+        else
+          clusters.last << number
+        end
+      end
+
+      labels = clusters.first(max_clusters).map do |cluster|
+        low, high = cluster.first, cluster.last
+        low == high ? low.to_s : "#{low}–#{high}"
+      end
+      labels << "…" if clusters.length > max_clusters
+      labels
+    end
   end
 end

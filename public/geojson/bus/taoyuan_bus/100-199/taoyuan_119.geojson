@@ -6,7 +6,7 @@
     "name": "119",
     "name_en": "119",
     "ref": "119",
-    "color": "#65a30d",
+    "color": "#b91c1c",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/3380/map/1005/image",
@@ -22,7 +22,7 @@
         "ref": "119",
         "name": "119",
         "name_en": "119",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0
       },
       "geometry": {
@@ -37,12 +37,32 @@
             24.95449
           ],
           [
-            121.22258,
-            24.95495
+            121.2226817499353,
+            24.95491317427326
           ],
           [
-            121.22232,
-            24.9544
+            121.22265181773847,
+            24.95492007130387
+          ],
+          [
+            121.22262123252702,
+            24.954919737079
+          ],
+          [
+            121.22259175279939,
+            24.954912289528057
+          ],
+          [
+            121.22256532958166,
+            24.954898221544546
+          ],
+          [
+            121.22254371161416,
+            24.954878464175167
+          ],
+          [
+            121.22252821438502,
+            24.95485407414744
           ],
           [
             121.22184,
@@ -155,6 +175,106 @@
           [
             121.20538,
             24.94696
+          ],
+          [
+            121.20664,
+            24.94989
+          ],
+          [
+            121.20671,
+            24.95137
+          ],
+          [
+            121.2104,
+            24.95181
+          ],
+          [
+            121.21068,
+            24.95178
+          ],
+          [
+            121.21106,
+            24.95163
+          ],
+          [
+            121.21138,
+            24.95138
+          ],
+          [
+            121.21306,
+            24.95026
+          ],
+          [
+            121.21402,
+            24.95033
+          ],
+          [
+            121.21501,
+            24.95044
+          ],
+          [
+            121.217,
+            24.9506
+          ],
+          [
+            121.21825,
+            24.95071
+          ],
+          [
+            121.2195,
+            24.9516
+          ],
+          [
+            121.22058,
+            24.95232
+          ],
+          [
+            121.22122,
+            24.95283
+          ],
+          [
+            121.2215,
+            24.95299
+          ],
+          [
+            121.2218,
+            24.95324
+          ],
+          [
+            121.22217072283057,
+            24.95433746087939
+          ],
+          [
+            121.22218491637273,
+            24.95436512111504
+          ],
+          [
+            121.22220680949546,
+            24.954387936572825
+          ],
+          [
+            121.22223476177027,
+            24.954404330678447
+          ],
+          [
+            121.22226659078109,
+            24.954413023437368
+          ],
+          [
+            121.22229981142989,
+            24.954413336149333
+          ],
+          [
+            121.22233211088226,
+            24.954405132532404
+          ],
+          [
+            121.22358,
+            24.95391
+          ],
+          [
+            121.22383,
+            24.95445
           ]
         ]
       }
@@ -167,8 +287,9 @@
         "name": "中壢公車站",
         "name_en": "Zhongli Bus Station",
         "line": "119",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1229"
       },
       "geometry": {
         "type": "Point",
@@ -186,8 +307,9 @@
         "name": "中壢分局",
         "name_en": "Zhongli Police Station",
         "line": "119",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "697"
       },
       "geometry": {
         "type": "Point",
@@ -205,8 +327,9 @@
         "name": "中壢國中(延平路)",
         "name_en": "Zhongli Junior High School(Yanping Rd.)",
         "line": "119",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "6692"
       },
       "geometry": {
         "type": "Point",
@@ -224,8 +347,9 @@
         "name": "新勢國小(新勢公園)",
         "name_en": "Hsin-Shin Elementary School (Hsin-Shih Park)",
         "line": "119",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "2418"
       },
       "geometry": {
         "type": "Point",
@@ -243,13 +367,14 @@
         "name": "育英路口",
         "name_en": "YuYing Road Intersection",
         "line": "119",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "2415"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.212478,
+          121.2124783,
           24.95068
         ]
       }
@@ -260,10 +385,11 @@
         "feature_type": "station",
         "ref": "TAO3748",
         "name": "育達高中",
-        "name_en": "Yuda High School  ",
+        "name_en": "Yuda High School",
         "line": "119",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "2414"
       },
       "geometry": {
         "type": "Point",
@@ -281,14 +407,15 @@
         "name": "大伯公",
         "name_en": "Dabogong",
         "line": "119",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "2421"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.205697,
-          24.950743
+          121.20569664985342,
+          24.950743334901155
         ]
       }
     },
@@ -300,14 +427,15 @@
         "name": "復旦中學",
         "name_en": "Fudan High School",
         "line": "119",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "2423"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.20341,
-          24.948477
+          121.2034100000051,
+          24.94847749999679
         ]
       }
     },
@@ -319,13 +447,14 @@
         "name": "羅曼蒂社區",
         "name_en": "LoManTi Community",
         "line": "119",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "2425"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.201887,
+          121.2018867,
           24.946335
         ]
       }
@@ -338,8 +467,9 @@
         "name": "聯新國際醫院",
         "name_en": "Landseed International Hospital",
         "line": "119",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1110"
       },
       "geometry": {
         "type": "Point",
@@ -357,8 +487,9 @@
         "name": "平興國中",
         "name_en": "Ping Hsing Junior High School",
         "line": "119",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "514"
       },
       "geometry": {
         "type": "Point",
@@ -376,8 +507,9 @@
         "name": "育達高中",
         "name_en": "YuDa  Senior High School",
         "line": "119",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "2413"
       },
       "geometry": {
         "type": "Point",
@@ -395,8 +527,9 @@
         "name": "育英路口",
         "name_en": "YuYing Road Intersection",
         "line": "119",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "2416"
       },
       "geometry": {
         "type": "Point",
@@ -414,8 +547,9 @@
         "name": "新勢國小(新勢公園)",
         "name_en": "Hsin-Shin Elementary School (Hsin-Shih Park)",
         "line": "119",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "2417"
       },
       "geometry": {
         "type": "Point",
@@ -433,8 +567,9 @@
         "name": "中壢分局",
         "name_en": "Zhongli Police Station",
         "line": "119",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "698"
       },
       "geometry": {
         "type": "Point",
@@ -452,8 +587,9 @@
         "name": "中壢公車站",
         "name_en": "Zhongli Bus Station",
         "line": "119",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1229"
       },
       "geometry": {
         "type": "Point",

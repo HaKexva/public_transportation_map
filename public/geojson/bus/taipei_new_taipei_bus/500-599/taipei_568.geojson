@@ -6,10 +6,10 @@
     "name": "568",
     "name_en": "568",
     "ref": "568",
-    "color": "#1d4ed8",
+    "color": "#1e40af",
     "city_id": "Taipei",
     "source": "TDX Bus Shape / StopOfRoute",
-    "official_map_url": "https://ebus.gov.taipei/File/Get/37dd6ac7-01c2-4cc3-affd-06a612b62813?v=639234358310367392",
+    "official_map_url": "https://ebus.gov.taipei/File/Get/37dd6ac7-01c2-4cc3-affd-06a612b62813?v=639248448693752257",
     "operator_id": "700",
     "operator": "欣欣客運",
     "operator_en": "Shin-Shin Bus Co., Ltd."
@@ -22,7 +22,7 @@
         "ref": "568",
         "name": "568",
         "name_en": "568",
-        "color": "#1d4ed8",
+        "color": "#1e40af",
         "direction": 0
       },
       "geometry": {
@@ -41,20 +41,32 @@
             25.03198360506302
           ],
           [
-            121.49020508754637,
-            25.031636755100514
+            121.49070897378445,
+            25.03136892118045
           ],
           [
-            121.49067304351588,
-            25.03138651264245
+            121.49073478704075,
+            25.03135866764107
           ],
           [
-            121.49076930028176,
-            25.03135900606767
+            121.49076215467424,
+            25.03135425444891
           ],
           [
-            121.49084482482117,
-            25.0313757783701
+            121.49078989767948,
+            25.031355755212925
+          ],
+          [
+            121.49081650215716,
+            25.031363088038407
+          ],
+          [
+            121.49084051633598,
+            25.031375852782716
+          ],
+          [
+            121.49086089129376,
+            25.03139364191188
           ],
           [
             121.49114618254204,
@@ -426,35 +438,419 @@
         "ref": "568",
         "name": "568",
         "name_en": "568",
-        "color": "#1d4ed8",
+        "color": "#1e40af",
         "direction": 1
       },
       "geometry": {
         "type": "LineString",
         "coordinates": [
           [
-            121.55902543574564,
-            25.0181580948324
+            121.55853961674194,
+            25.018258571696197
           ],
           [
-            121.55913353949805,
-            25.018190636596955
+            121.5589479107243,
+            25.017952959138412
           ],
           [
-            121.5591709315494,
-            25.018219488051106
+            121.55898478908611,
+            25.017934003615895
           ],
           [
-            121.55917759547934,
-            25.01826444262893
+            121.55902619528814,
+            25.017928022953956
           ],
           [
-            121.55917167198604,
-            25.018312752007652
+            121.55906730379185,
+            25.017935521299297
           ],
           [
-            121.55912909687811,
-            25.018369783888623
+            121.55910300935932,
+            25.01795556743736
+          ],
+          [
+            121.55912887773975,
+            25.01798567185152
+          ],
+          [
+            121.55914171069762,
+            25.01802219548725
+          ],
+          [
+            121.55918350306895,
+            25.018304497370057
+          ],
+          [
+            121.55918384122069,
+            25.018310555449787
+          ],
+          [
+            121.55918308225432,
+            25.01831661611458
+          ],
+          [
+            121.55918124182244,
+            25.018322480463226
+          ],
+          [
+            121.55917837000368,
+            25.018327988925307
+          ],
+          [
+            121.55917454494093,
+            25.01833299161417
+          ],
+          [
+            121.55916997718923,
+            25.018337267934786
+          ],
+          [
+            121.5585600713046,
+            25.018819328375812
+          ],
+          [
+            121.55755603919319,
+            25.019751960196125
+          ],
+          [
+            121.55677561895321,
+            25.02049135103561
+          ],
+          [
+            121.55611663032549,
+            25.02108983836303
+          ],
+          [
+            121.55533769095882,
+            25.021858742687215
+          ],
+          [
+            121.55509334686089,
+            25.02208283780546
+          ],
+          [
+            121.55410412348269,
+            25.023015444831508
+          ],
+          [
+            121.55331185625612,
+            25.02375347414603
+          ],
+          [
+            121.55292534831945,
+            25.024122487139135
+          ],
+          [
+            121.55276097138085,
+            25.024248622235078
+          ],
+          [
+            121.55263805889524,
+            25.02434255254146
+          ],
+          [
+            121.55247220108332,
+            25.02439488510955
+          ],
+          [
+            121.55230338152478,
+            25.024424406035553
+          ],
+          [
+            121.55117199430777,
+            25.024499550178792
+          ],
+          [
+            121.54975776028654,
+            25.024573352417544
+          ],
+          [
+            121.54807696906758,
+            25.02468606847836
+          ],
+          [
+            121.54645837452811,
+            25.0247692635997
+          ],
+          [
+            121.54539955010385,
+            25.024824279697356
+          ],
+          [
+            121.54373801023804,
+            25.02492089327258
+          ],
+          [
+            121.5430094205643,
+            25.025005430088505
+          ],
+          [
+            121.54222603857765,
+            25.02511948760502
+          ],
+          [
+            121.5409969137215,
+            25.025284535353016
+          ],
+          [
+            121.53957675620697,
+            25.025492522036444
+          ],
+          [
+            121.53797889389396,
+            25.02569648282884
+          ],
+          [
+            121.5368549110436,
+            25.02583871844399
+          ],
+          [
+            121.53516819633134,
+            25.026086959452865
+          ],
+          [
+            121.53435075425836,
+            25.02621443437041
+          ],
+          [
+            121.53385318082262,
+            25.026265424300345
+          ],
+          [
+            121.53258999588007,
+            25.02636740409667
+          ],
+          [
+            121.53117872360548,
+            25.026470725645993
+          ],
+          [
+            121.52987111246331,
+            25.026559286904757
+          ],
+          [
+            121.52834581294304,
+            25.026676026648207
+          ],
+          [
+            121.52699229472796,
+            25.02678068977205
+          ],
+          [
+            121.52516489705025,
+            25.026925607796183
+          ],
+          [
+            121.52393429132077,
+            25.027046372685557
+          ],
+          [
+            121.52276292052413,
+            25.02711614790081
+          ],
+          [
+            121.5222875601882,
+            25.027101387762432
+          ],
+          [
+            121.52185218343192,
+            25.02703697986509
+          ],
+          [
+            121.5204246215508,
+            25.026752511247484
+          ],
+          [
+            121.51925917424742,
+            25.026519031795058
+          ],
+          [
+            121.5190059449096,
+            25.0265136644461
+          ],
+          [
+            121.51865793967923,
+            25.02660759301896
+          ],
+          [
+            121.51751026285572,
+            25.026924265963412
+          ],
+          [
+            121.51648846026448,
+            25.027222152478828
+          ],
+          [
+            121.5151512316559,
+            25.027568344007197
+          ],
+          [
+            121.51462255988045,
+            25.027744123052805
+          ],
+          [
+            121.5144196802355,
+            25.027863545314197
+          ],
+          [
+            121.51324090507227,
+            25.02848614937886
+          ],
+          [
+            121.51178224485139,
+            25.02926037459585
+          ],
+          [
+            121.5107634040068,
+            25.02980783072644
+          ],
+          [
+            121.50955797312376,
+            25.030434450309432
+          ],
+          [
+            121.50876274415053,
+            25.030863823764907
+          ],
+          [
+            121.50788014365142,
+            25.031310638921664
+          ],
+          [
+            121.50764764654005,
+            25.031507881130835
+          ],
+          [
+            121.50675023730774,
+            25.032299530344716
+          ],
+          [
+            121.5058868881618,
+            25.03302006086685
+          ],
+          [
+            121.50507833132872,
+            25.03369496736873
+          ],
+          [
+            121.50473328784501,
+            25.034014305532903
+          ],
+          [
+            121.50449930986035,
+            25.03421556865472
+          ],
+          [
+            121.50412316803691,
+            25.034524171466877
+          ],
+          [
+            121.50374406446683,
+            25.03483814048779
+          ],
+          [
+            121.50345973678924,
+            25.035091730264227
+          ],
+          [
+            121.50334719041689,
+            25.035215170600626
+          ],
+          [
+            121.50326870413089,
+            25.035240663698104
+          ],
+          [
+            121.50190481980255,
+            25.035256764599044
+          ],
+          [
+            121.50025808866995,
+            25.035294333359683
+          ],
+          [
+            121.49910448835317,
+            25.03533458559047
+          ],
+          [
+            121.49795977327629,
+            25.035364103884646
+          ],
+          [
+            121.49774652751809,
+            25.035376179548397
+          ],
+          [
+            121.49756289922632,
+            25.035403014352482
+          ],
+          [
+            121.49580658346802,
+            25.03543253263019
+          ],
+          [
+            121.49446046961955,
+            25.035475468294187
+          ],
+          [
+            121.4943479232472,
+            25.03545668394304
+          ],
+          [
+            121.49427387958114,
+            25.03540167261242
+          ],
+          [
+            121.49373780343907,
+            25.03477105315767
+          ],
+          [
+            121.49304179297837,
+            25.034000887979715
+          ],
+          [
+            121.49243019229694,
+            25.033311223769346
+          ],
+          [
+            121.49184820908191,
+            25.03265241639917
+          ],
+          [
+            121.49082120490165,
+            25.031461477958718
+          ],
+          [
+            121.49080044914174,
+            25.03144258337172
+          ],
+          [
+            121.49077563117469,
+            25.03142904372966
+          ],
+          [
+            121.49074796652064,
+            25.031421367122544
+          ],
+          [
+            121.49071908936718,
+            25.031420007017676
+          ],
+          [
+            121.49069070552574,
+            25.031425043758237
+          ],
+          [
+            121.49066417281914,
+            25.03143636194484
+          ],
+          [
+            121.49007560371707,
+            25.031770870249833
+          ],
+          [
+            121.48897114988358,
+            25.03234808578173
           ]
         ]
       }
@@ -467,8 +863,9 @@
         "name": "華江站",
         "name_en": "Huajiang Stop",
         "line": "568",
-        "color": "#1d4ed8",
-        "direction": 0
+        "color": "#1e40af",
+        "direction": 0,
+        "station_id": "429"
       },
       "geometry": {
         "type": "Point",
@@ -486,8 +883,9 @@
         "name": "人壽一村",
         "name_en": "Renshou Village 1",
         "line": "568",
-        "color": "#1d4ed8",
-        "direction": 0
+        "color": "#1e40af",
+        "direction": 0,
+        "station_id": "1733"
       },
       "geometry": {
         "type": "Point",
@@ -505,8 +903,9 @@
         "name": "大理高中",
         "name_en": "Dali High School",
         "line": "568",
-        "color": "#1d4ed8",
-        "direction": 0
+        "color": "#1e40af",
+        "direction": 0,
+        "station_id": "1165610157"
       },
       "geometry": {
         "type": "Point",
@@ -524,8 +923,9 @@
         "name": "華江派出所",
         "name_en": "Huajiang Police Station",
         "line": "568",
-        "color": "#1d4ed8",
-        "direction": 0
+        "color": "#1e40af",
+        "direction": 0,
+        "station_id": "1001358"
       },
       "geometry": {
         "type": "Point",
@@ -543,8 +943,9 @@
         "name": "中國時報",
         "name_en": "China Times",
         "line": "568",
-        "color": "#1d4ed8",
-        "direction": 0
+        "color": "#1e40af",
+        "direction": 0,
+        "station_id": "3940"
       },
       "geometry": {
         "type": "Point",
@@ -562,8 +963,9 @@
         "name": "捷運龍山寺站",
         "name_en": "MRT Longshan Temple Sta.",
         "line": "568",
-        "color": "#1d4ed8",
-        "direction": 0
+        "color": "#1e40af",
+        "direction": 0,
+        "station_id": "1794"
       },
       "geometry": {
         "type": "Point",
@@ -581,8 +983,9 @@
         "name": "昆明街口",
         "name_en": "Kunming St. Entrance",
         "line": "568",
-        "color": "#1d4ed8",
-        "direction": 0
+        "color": "#1e40af",
+        "direction": 0,
+        "station_id": "1764"
       },
       "geometry": {
         "type": "Point",
@@ -600,8 +1003,9 @@
         "name": "和平中華路口",
         "name_en": "Heping & Zhonghua Intersection",
         "line": "568",
-        "color": "#1d4ed8",
-        "direction": 0
+        "color": "#1e40af",
+        "direction": 0,
+        "station_id": "1924"
       },
       "geometry": {
         "type": "Point",
@@ -619,8 +1023,9 @@
         "name": "植物園",
         "name_en": "Taipei Botanical Garden",
         "line": "568",
-        "color": "#1d4ed8",
-        "direction": 0
+        "color": "#1e40af",
+        "direction": 0,
+        "station_id": "2004"
       },
       "geometry": {
         "type": "Point",
@@ -638,8 +1043,9 @@
         "name": "龍口市場",
         "name_en": "Longkou Market",
         "line": "568",
-        "color": "#1d4ed8",
-        "direction": 0
+        "color": "#1e40af",
+        "direction": 0,
+        "station_id": "1001233"
       },
       "geometry": {
         "type": "Point",
@@ -657,8 +1063,9 @@
         "name": "泉州街",
         "name_en": "Quanzhou St.",
         "line": "568",
-        "color": "#1d4ed8",
-        "direction": 0
+        "color": "#1e40af",
+        "direction": 0,
+        "station_id": "1955"
       },
       "geometry": {
         "type": "Point",
@@ -676,8 +1083,9 @@
         "name": "和平西路一段",
         "name_en": "Heping W. Rd. Sec. 1",
         "line": "568",
-        "color": "#1d4ed8",
-        "direction": 0
+        "color": "#1e40af",
+        "direction": 0,
+        "station_id": "3906"
       },
       "geometry": {
         "type": "Point",
@@ -695,8 +1103,9 @@
         "name": "南福板溪(南昌公園)",
         "name_en": "Nanfu Banxi (Nanchang Park)",
         "line": "568",
-        "color": "#1d4ed8",
-        "direction": 0
+        "color": "#1e40af",
+        "direction": 0,
+        "station_id": "1907"
       },
       "geometry": {
         "type": "Point",
@@ -714,8 +1123,9 @@
         "name": "捷運古亭站(和平)",
         "name_en": "MRT Guting Sta. (Heping)",
         "line": "568",
-        "color": "#1d4ed8",
-        "direction": 0
+        "color": "#1e40af",
+        "direction": 0,
+        "station_id": "2311"
       },
       "geometry": {
         "type": "Point",
@@ -733,8 +1143,9 @@
         "name": "師大",
         "name_en": "National Taiwan Normal U.",
         "line": "568",
-        "color": "#1d4ed8",
-        "direction": 0
+        "color": "#1e40af",
+        "direction": 0,
+        "station_id": "2289"
       },
       "geometry": {
         "type": "Point",
@@ -752,8 +1163,9 @@
         "name": "師大綜合大樓",
         "name_en": "NTNU Union Building 1",
         "line": "568",
-        "color": "#1d4ed8",
-        "direction": 0
+        "color": "#1e40af",
+        "direction": 0,
+        "station_id": "2291"
       },
       "geometry": {
         "type": "Point",
@@ -771,8 +1183,9 @@
         "name": "溫州街口",
         "name_en": "Wenzhou St. Entrance",
         "line": "568",
-        "color": "#1d4ed8",
-        "direction": 0
+        "color": "#1e40af",
+        "direction": 0,
+        "station_id": "3914"
       },
       "geometry": {
         "type": "Point",
@@ -790,8 +1203,9 @@
         "name": "大安森林公園",
         "name_en": "Daan Park",
         "line": "568",
-        "color": "#1d4ed8",
-        "direction": 0
+        "color": "#1e40af",
+        "direction": 0,
+        "station_id": "2190"
       },
       "geometry": {
         "type": "Point",
@@ -809,8 +1223,9 @@
         "name": "龍門國中(和平)",
         "name_en": "Longmen Jr. High School (Heping)",
         "line": "568",
-        "color": "#1d4ed8",
-        "direction": 0
+        "color": "#1e40af",
+        "direction": 0,
+        "station_id": "2345"
       },
       "geometry": {
         "type": "Point",
@@ -828,8 +1243,9 @@
         "name": "復興南路口",
         "name_en": "Fuxing S. Rd. Entrance",
         "line": "568",
-        "color": "#1d4ed8",
-        "direction": 0
+        "color": "#1e40af",
+        "direction": 0,
+        "station_id": "2327"
       },
       "geometry": {
         "type": "Point",
@@ -847,8 +1263,9 @@
         "name": "國立臺北教育大學",
         "name_en": "National Taipei University of Education",
         "line": "568",
-        "color": "#1d4ed8",
-        "direction": 0
+        "color": "#1e40af",
+        "direction": 0,
+        "station_id": "2300"
       },
       "geometry": {
         "type": "Point",
@@ -866,8 +1283,9 @@
         "name": "臥龍街",
         "name_en": "Wolong St.",
         "line": "568",
-        "color": "#1d4ed8",
-        "direction": 0
+        "color": "#1e40af",
+        "direction": 0,
+        "station_id": "2267"
       },
       "geometry": {
         "type": "Point",
@@ -885,8 +1303,9 @@
         "name": "和平安和路口",
         "name_en": "Heping and Anhe intersection",
         "line": "568",
-        "color": "#1d4ed8",
-        "direction": 0
+        "color": "#1e40af",
+        "direction": 0,
+        "station_id": "2250"
       },
       "geometry": {
         "type": "Point",
@@ -904,8 +1323,9 @@
         "name": "捷運六張犁站(和平)",
         "name_en": "MRT Liuzhangli Sta. (Heping)",
         "line": "568",
-        "color": "#1d4ed8",
-        "direction": 0
+        "color": "#1e40af",
+        "direction": 0,
+        "station_id": "2146"
       },
       "geometry": {
         "type": "Point",
@@ -923,8 +1343,9 @@
         "name": "富陽街口",
         "name_en": "Fuyang St. Entrance",
         "line": "568",
-        "color": "#1d4ed8",
-        "direction": 0
+        "color": "#1e40af",
+        "direction": 0,
+        "station_id": "2085"
       },
       "geometry": {
         "type": "Point",
@@ -942,8 +1363,9 @@
         "name": "黎忠市場",
         "name_en": "Lizhong Market",
         "line": "568",
-        "color": "#1d4ed8",
-        "direction": 0
+        "color": "#1e40af",
+        "direction": 0,
+        "station_id": "2172"
       },
       "geometry": {
         "type": "Point",
@@ -961,8 +1383,9 @@
         "name": "捷運麟光站",
         "name_en": "MRT Linguang Sta.",
         "line": "568",
-        "color": "#1d4ed8",
-        "direction": 0
+        "color": "#1e40af",
+        "direction": 0,
+        "station_id": "2157"
       },
       "geometry": {
         "type": "Point",
@@ -980,8 +1403,9 @@
         "name": "捷運麟光站",
         "name_en": "MRT Linguang Sta.",
         "line": "568",
-        "color": "#1d4ed8",
-        "direction": 1
+        "color": "#1e40af",
+        "direction": 1,
+        "station_id": "2157"
       },
       "geometry": {
         "type": "Point",
@@ -999,8 +1423,9 @@
         "name": "黎忠市場",
         "name_en": "Lizhong Market",
         "line": "568",
-        "color": "#1d4ed8",
-        "direction": 1
+        "color": "#1e40af",
+        "direction": 1,
+        "station_id": "6015"
       },
       "geometry": {
         "type": "Point",
@@ -1018,8 +1443,9 @@
         "name": "富陽街口",
         "name_en": "Fuyang St. Entrance",
         "line": "568",
-        "color": "#1d4ed8",
-        "direction": 1
+        "color": "#1e40af",
+        "direction": 1,
+        "station_id": "2160"
       },
       "geometry": {
         "type": "Point",
@@ -1037,8 +1463,9 @@
         "name": "捷運六張犁站(和平)",
         "name_en": "MRT Liuzhangli Sta. (Heping)",
         "line": "568",
-        "color": "#1d4ed8",
-        "direction": 1
+        "color": "#1e40af",
+        "direction": 1,
+        "station_id": "2147"
       },
       "geometry": {
         "type": "Point",
@@ -1056,8 +1483,9 @@
         "name": "和平安和路口",
         "name_en": "Heping and Anhe intersection",
         "line": "568",
-        "color": "#1d4ed8",
-        "direction": 1
+        "color": "#1e40af",
+        "direction": 1,
+        "station_id": "1165607095"
       },
       "geometry": {
         "type": "Point",
@@ -1075,8 +1503,9 @@
         "name": "臥龍街",
         "name_en": "Wolong St.",
         "line": "568",
-        "color": "#1d4ed8",
-        "direction": 1
+        "color": "#1e40af",
+        "direction": 1,
+        "station_id": "6020"
       },
       "geometry": {
         "type": "Point",
@@ -1094,8 +1523,9 @@
         "name": "國立臺北教育大學",
         "name_en": "National Taipei University of Education",
         "line": "568",
-        "color": "#1d4ed8",
-        "direction": 1
+        "color": "#1e40af",
+        "direction": 1,
+        "station_id": "2304"
       },
       "geometry": {
         "type": "Point",
@@ -1113,8 +1543,9 @@
         "name": "復興南路口",
         "name_en": "Fuxing S. Rd. Entrance",
         "line": "568",
-        "color": "#1d4ed8",
-        "direction": 1
+        "color": "#1e40af",
+        "direction": 1,
+        "station_id": "6021"
       },
       "geometry": {
         "type": "Point",
@@ -1132,8 +1563,9 @@
         "name": "國北教大實小",
         "name_en": "National Taipei University of Education Experiment Elementary School",
         "line": "568",
-        "color": "#1d4ed8",
-        "direction": 1
+        "color": "#1e40af",
+        "direction": 1,
+        "station_id": "2299"
       },
       "geometry": {
         "type": "Point",
@@ -1151,8 +1583,9 @@
         "name": "龍門國中(和平)",
         "name_en": "Longmen Jr. High School (Heping)",
         "line": "568",
-        "color": "#1d4ed8",
-        "direction": 1
+        "color": "#1e40af",
+        "direction": 1,
+        "station_id": "3942"
       },
       "geometry": {
         "type": "Point",
@@ -1170,8 +1603,9 @@
         "name": "大安森林公園",
         "name_en": "Daan Park",
         "line": "568",
-        "color": "#1d4ed8",
-        "direction": 1
+        "color": "#1e40af",
+        "direction": 1,
+        "station_id": "2192"
       },
       "geometry": {
         "type": "Point",
@@ -1189,8 +1623,9 @@
         "name": "溫州街口",
         "name_en": "Wenzhou St. Entrance",
         "line": "568",
-        "color": "#1d4ed8",
-        "direction": 1
+        "color": "#1e40af",
+        "direction": 1,
+        "station_id": "6024"
       },
       "geometry": {
         "type": "Point",
@@ -1208,8 +1643,9 @@
         "name": "師大綜合大樓",
         "name_en": "NTNU Union Building 1",
         "line": "568",
-        "color": "#1d4ed8",
-        "direction": 1
+        "color": "#1e40af",
+        "direction": 1,
+        "station_id": "2292"
       },
       "geometry": {
         "type": "Point",
@@ -1227,8 +1663,9 @@
         "name": "師大",
         "name_en": "National Taiwan Normal U.",
         "line": "568",
-        "color": "#1d4ed8",
-        "direction": 1
+        "color": "#1e40af",
+        "direction": 1,
+        "station_id": "6025"
       },
       "geometry": {
         "type": "Point",
@@ -1246,8 +1683,9 @@
         "name": "捷運古亭站(和平)",
         "name_en": "MRT Guting Sta. (Heping)",
         "line": "568",
-        "color": "#1d4ed8",
-        "direction": 1
+        "color": "#1e40af",
+        "direction": 1,
+        "station_id": "6026"
       },
       "geometry": {
         "type": "Point",
@@ -1265,8 +1703,9 @@
         "name": "南福板溪(南昌公園)",
         "name_en": "Nanfu Banxi (Nanchang Park)",
         "line": "568",
-        "color": "#1d4ed8",
-        "direction": 1
+        "color": "#1e40af",
+        "direction": 1,
+        "station_id": "3905"
       },
       "geometry": {
         "type": "Point",
@@ -1284,8 +1723,9 @@
         "name": "和平西路一段",
         "name_en": "Heping W. Rd. Sec. 1",
         "line": "568",
-        "color": "#1d4ed8",
-        "direction": 1
+        "color": "#1e40af",
+        "direction": 1,
+        "station_id": "1925"
       },
       "geometry": {
         "type": "Point",
@@ -1303,8 +1743,9 @@
         "name": "泉州街",
         "name_en": "Quanzhou St.",
         "line": "568",
-        "color": "#1d4ed8",
-        "direction": 1
+        "color": "#1e40af",
+        "direction": 1,
+        "station_id": "3907"
       },
       "geometry": {
         "type": "Point",
@@ -1322,8 +1763,9 @@
         "name": "龍口市場",
         "name_en": "Longkou Market",
         "line": "568",
-        "color": "#1d4ed8",
-        "direction": 1
+        "color": "#1e40af",
+        "direction": 1,
+        "station_id": "3908"
       },
       "geometry": {
         "type": "Point",
@@ -1341,8 +1783,9 @@
         "name": "植物園",
         "name_en": "Taipei Botanical Garden",
         "line": "568",
-        "color": "#1d4ed8",
-        "direction": 1
+        "color": "#1e40af",
+        "direction": 1,
+        "station_id": "3909"
       },
       "geometry": {
         "type": "Point",
@@ -1360,8 +1803,9 @@
         "name": "和平中華路口",
         "name_en": "Heping & Zhonghua Intersection",
         "line": "568",
-        "color": "#1d4ed8",
-        "direction": 1
+        "color": "#1e40af",
+        "direction": 1,
+        "station_id": "3910"
       },
       "geometry": {
         "type": "Point",
@@ -1379,8 +1823,9 @@
         "name": "昆明街口",
         "name_en": "Kunming St. Entrance",
         "line": "568",
-        "color": "#1d4ed8",
-        "direction": 1
+        "color": "#1e40af",
+        "direction": 1,
+        "station_id": "1762"
       },
       "geometry": {
         "type": "Point",
@@ -1398,8 +1843,9 @@
         "name": "捷運龍山寺站",
         "name_en": "MRT Longshan Temple Sta.",
         "line": "568",
-        "color": "#1d4ed8",
-        "direction": 1
+        "color": "#1e40af",
+        "direction": 1,
+        "station_id": "3911"
       },
       "geometry": {
         "type": "Point",
@@ -1417,8 +1863,9 @@
         "name": "中國時報",
         "name_en": "China Times",
         "line": "568",
-        "color": "#1d4ed8",
-        "direction": 1
+        "color": "#1e40af",
+        "direction": 1,
+        "station_id": "3913"
       },
       "geometry": {
         "type": "Point",
@@ -1436,8 +1883,9 @@
         "name": "華江派出所",
         "name_en": "Huajiang Police Station",
         "line": "568",
-        "color": "#1d4ed8",
-        "direction": 1
+        "color": "#1e40af",
+        "direction": 1,
+        "station_id": "1000096"
       },
       "geometry": {
         "type": "Point",
@@ -1455,8 +1903,9 @@
         "name": "大理高中",
         "name_en": "Dali High School",
         "line": "568",
-        "color": "#1d4ed8",
-        "direction": 1
+        "color": "#1e40af",
+        "direction": 1,
+        "station_id": "1739"
       },
       "geometry": {
         "type": "Point",
@@ -1474,8 +1923,9 @@
         "name": "人壽一村",
         "name_en": "Renshou Village 1",
         "line": "568",
-        "color": "#1d4ed8",
-        "direction": 1
+        "color": "#1e40af",
+        "direction": 1,
+        "station_id": "1001234"
       },
       "geometry": {
         "type": "Point",
@@ -1493,8 +1943,9 @@
         "name": "華江站",
         "name_en": "Huajiang Stop",
         "line": "568",
-        "color": "#1d4ed8",
-        "direction": 1
+        "color": "#1e40af",
+        "direction": 1,
+        "station_id": "1165608960"
       },
       "geometry": {
         "type": "Point",

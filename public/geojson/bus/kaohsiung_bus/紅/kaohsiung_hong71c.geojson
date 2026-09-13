@@ -6,7 +6,7 @@
     "name": "紅71C",
     "name_en": "紅71C",
     "ref": "紅71C",
-    "color": "#9f1239",
+    "color": "#9a3412",
     "city_id": "Kaohsiung",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ibus.tbkc.gov.tw/cms/api/route/8713/map/1809/image",
@@ -22,7 +22,7 @@
         "ref": "紅71C",
         "name": "紅71C",
         "name_en": "紅71C",
-        "color": "#9f1239",
+        "color": "#9a3412",
         "direction": 0
       },
       "geometry": {
@@ -137,12 +137,32 @@
             22.74788
           ],
           [
-            120.31427,
-            22.74997
+            120.31417392036947,
+            22.74991733871981
           ],
           [
-            120.31391,
-            22.75064
+            120.31419675521805,
+            22.749933689525083
+          ],
+          [
+            120.31421477067137,
+            22.749955019964705
+          ],
+          [
+            120.31422653368837,
+            22.749979830740443
+          ],
+          [
+            120.31423131071244,
+            22.75000657462093
+          ],
+          [
+            120.31422880384233,
+            22.750033583823935
+          ],
+          [
+            120.31421931459627,
+            22.750058901872634
           ],
           [
             120.31108,
@@ -189,12 +209,32 @@
             22.77875
           ],
           [
-            120.30094,
-            22.77936
+            120.30094692337418,
+            22.779362757980238
           ],
           [
-            120.30103,
-            22.77946
+            120.30097321643382,
+            22.779377384618066
+          ],
+          [
+            120.30099468918436,
+            22.77939807696473
+          ],
+          [
+            120.3010095627327,
+            22.77942327537774
+          ],
+          [
+            120.30101679499238,
+            22.77945121437894
+          ],
+          [
+            120.30101587924904,
+            22.77947993647615
+          ],
+          [
+            120.30100700769175,
+            22.779507167561945
           ],
           [
             120.30047,
@@ -210,23 +250,47 @@
         "ref": "紅71C",
         "name": "紅71C",
         "name_en": "紅71C",
-        "color": "#9f1239",
+        "color": "#9a3412",
         "direction": 1
       },
       "geometry": {
         "type": "LineString",
         "coordinates": [
           [
+            120.30087,
+            22.77981
+          ],
+          [
             120.30022,
             22.78117
           ],
           [
-            120.30033,
-            22.78179
+            120.3003926999838,
+            22.782145585472847
           ],
           [
-            120.30014,
-            22.7823
+            120.30039372393249,
+            22.782173095334066
+          ],
+          [
+            120.30038721823942,
+            22.78220007435934
+          ],
+          [
+            120.30037358370724,
+            22.782224652634415
+          ],
+          [
+            120.30035370466075,
+            22.782245236032104
+          ],
+          [
+            120.30032887043895,
+            22.78226048952974
+          ],
+          [
+            120.3003008501158,
+            22.782269393664084
           ],
           [
             120.2994,
@@ -239,6 +303,118 @@
           [
             120.29902,
             22.77918
+          ],
+          [
+            120.30506,
+            22.76828
+          ],
+          [
+            120.30931,
+            22.76058
+          ],
+          [
+            120.3096,
+            22.75986
+          ],
+          [
+            120.31057,
+            22.75659
+          ],
+          [
+            120.3141,
+            22.75002
+          ],
+          [
+            120.30658,
+            22.74596
+          ],
+          [
+            120.30281,
+            22.74086
+          ],
+          [
+            120.30266,
+            22.74044
+          ],
+          [
+            120.30333,
+            22.73277
+          ],
+          [
+            120.3033,
+            22.73185
+          ],
+          [
+            120.30313,
+            22.73069
+          ],
+          [
+            120.30312,
+            22.72837
+          ],
+          [
+            120.30277,
+            22.72693
+          ],
+          [
+            120.30273492502037,
+            22.726290516333577
+          ],
+          [
+            120.30273043084837,
+            22.726265700742463
+          ],
+          [
+            120.30271992675026,
+            22.726242546620472
+          ],
+          [
+            120.3027039733272,
+            22.726222255763115
+          ],
+          [
+            120.30268342520057,
+            22.726205915147187
+          ],
+          [
+            120.30265938312904,
+            22.726194400135913
+          ],
+          [
+            120.30263323866953,
+            22.726188340021686
+          ],
+          [
+            120.30156,
+            22.72606
+          ],
+          [
+            120.29735,
+            22.72418
+          ],
+          [
+            120.29785,
+            22.72331
+          ],
+          [
+            120.29808,
+            22.72307
+          ],
+          [
+            120.29956,
+            22.71964
+          ],
+          [
+            120.29848,
+            22.71926
+          ],
+          [
+            120.29858,
+            22.71893
+          ],
+          [
+            120.29902,
+            22.71911
           ]
         ]
       }
@@ -251,8 +427,9 @@
         "name": "加昌站",
         "name_en": "Jiachang Station",
         "line": "紅71C",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "374"
       },
       "geometry": {
         "type": "Point",
@@ -270,8 +447,9 @@
         "name": "外環西路",
         "name_en": "Waihuan W. Rd.",
         "line": "紅71C",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "384"
       },
       "geometry": {
         "type": "Point",
@@ -289,8 +467,9 @@
         "name": "益群路(德民路口)",
         "name_en": "Yicyun Rd.(Demin Rd. Intersection)",
         "line": "紅71C",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "2402"
       },
       "geometry": {
         "type": "Point",
@@ -308,8 +487,9 @@
         "name": "翠屏路口(惠民路)",
         "name_en": "Cueiping Rd. Intersection(Hueimin Rd.)",
         "line": "紅71C",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "3850"
       },
       "geometry": {
         "type": "Point",
@@ -327,8 +507,9 @@
         "name": "成功南路",
         "name_en": "Chenggong S. Rd.",
         "line": "紅71C",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "1063"
       },
       "geometry": {
         "type": "Point",
@@ -346,8 +527,9 @@
         "name": "橋頭市場",
         "name_en": "Ciaotou Market",
         "line": "紅71C",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "1113"
       },
       "geometry": {
         "type": "Point",
@@ -365,8 +547,9 @@
         "name": "捷運橋頭火車站",
         "name_en": "MRT Ciaotou Train Station",
         "line": "紅71C",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "10"
       },
       "geometry": {
         "type": "Point",
@@ -384,8 +567,9 @@
         "name": "德松路口",
         "name_en": "Desong Rd. Intersection",
         "line": "紅71C",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "1968"
       },
       "geometry": {
         "type": "Point",
@@ -403,8 +587,9 @@
         "name": "捷運岡山高醫站",
         "name_en": "MRT Kaohsiung Medical University Gangshan Hospital",
         "line": "紅71C",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "209"
       },
       "geometry": {
         "type": "Point",
@@ -422,8 +607,9 @@
         "name": "德松路口",
         "name_en": "Desong Rd. Intersection",
         "line": "紅71C",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "1969"
       },
       "geometry": {
         "type": "Point",
@@ -441,8 +627,9 @@
         "name": "捷運橋頭火車站",
         "name_en": "MRT Ciaotou Train Station",
         "line": "紅71C",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "9"
       },
       "geometry": {
         "type": "Point",
@@ -460,8 +647,9 @@
         "name": "橋頭市場",
         "name_en": "Ciaotou Market",
         "line": "紅71C",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "1112"
       },
       "geometry": {
         "type": "Point",
@@ -479,8 +667,9 @@
         "name": "成功南路",
         "name_en": "Chenggong S. Rd.",
         "line": "紅71C",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "1064"
       },
       "geometry": {
         "type": "Point",
@@ -498,8 +687,9 @@
         "name": "翠屏路口(惠民路)",
         "name_en": "Cueiping Rd. Intersection(Hueimin Rd.)",
         "line": "紅71C",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "3851"
       },
       "geometry": {
         "type": "Point",
@@ -517,8 +707,9 @@
         "name": "益群路(德民路口)",
         "name_en": "Yicyun Rd.(Demin Rd. Intersection)",
         "line": "紅71C",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "2403"
       },
       "geometry": {
         "type": "Point",
@@ -536,8 +727,9 @@
         "name": "外環西路",
         "name_en": "Waihuan W. Rd.",
         "line": "紅71C",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "385"
       },
       "geometry": {
         "type": "Point",
@@ -555,8 +747,9 @@
         "name": "加昌站",
         "name_en": "Jiachang Station",
         "line": "紅71C",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "374"
       },
       "geometry": {
         "type": "Point",

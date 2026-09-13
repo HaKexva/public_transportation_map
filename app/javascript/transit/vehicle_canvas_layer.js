@@ -10,7 +10,7 @@ export class VehicleCanvasLayer {
     this._vehicles = []
     this._followedId = null
     this._onReset = () => this._reset()
-    this._onClick = (event) => this._handleClick(event)
+    this._onMapClick = (event) => this._handleMapClick(event)
     this.onSelect = null
   }
 
@@ -22,12 +22,13 @@ export class VehicleCanvasLayer {
     this._canvas.style.position = "absolute"
     this._canvas.style.left = "0"
     this._canvas.style.top = "0"
-    this._canvas.style.pointerEvents = "auto"
+    // Let route/stop clicks pass through; vehicle picks use the map click handler.
+    this._canvas.style.pointerEvents = "none"
     this._canvas.style.zIndex = 1
     pane.appendChild(this._canvas)
     this._ctx = this._canvas.getContext("2d")
     map.on("move resize zoom viewreset zoomanim", this._onReset)
-    leaflet().DomEvent.on(this._canvas, "click", this._onClick)
+    map.on("click", this._onMapClick)
     this._reset()
     return this
   }
@@ -35,10 +36,8 @@ export class VehicleCanvasLayer {
   remove() {
     if (!this._map) return
     this._map.off("move resize zoom viewreset zoomanim", this._onReset)
-    if (this._canvas) {
-      leaflet().DomEvent.off(this._canvas, "click", this._onClick)
-      this._canvas.remove()
-    }
+    this._map.off("click", this._onMapClick)
+    if (this._canvas) this._canvas.remove()
     this._map = null
     this._canvas = null
     this._ctx = null
@@ -107,26 +106,36 @@ export class VehicleCanvasLayer {
     this.redraw()
   }
 
-  _handleClick(event) {
-    if (!this._map || !this.onSelect) return
+  entryAt(containerPoint, maxDistance = 22) {
+    if (!this._map || !containerPoint) return null
 
-    const L = leaflet()
-    const point = this._map.mouseEventToContainerPoint(event)
     let best = null
-    let bestDist = 22
+    let bestDist = maxDistance
 
     this._vehicles.forEach((entry) => {
       const projected = this._map.latLngToContainerPoint(entry.latlng)
-      const dist = projected.distanceTo(point)
+      const dist = projected.distanceTo(containerPoint)
       if (dist < bestDist) {
         bestDist = dist
         best = entry
       }
     })
 
-    if (best) {
-      L.DomEvent.stop(event)
-      this.onSelect(best)
-    }
+    return best
+  }
+
+  _handleMapClick(event) {
+    if (!this._map || !this.onSelect) return
+
+    // Prefer station/route interactive targets when the click landed on them.
+    const target = event.originalEvent?.target
+    if (target?.closest?.(".leaflet-interactive")) return
+
+    const best = this.entryAt(event.containerPoint)
+    if (!best) return
+
+    const L = leaflet()
+    if (L?.DomEvent) L.DomEvent.stop(event)
+    this.onSelect(best)
   }
 }

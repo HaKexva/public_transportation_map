@@ -6,7 +6,7 @@
     "name": "橘12區間車(寒暑假停駛)",
     "name_en": "橘12區間車(寒暑假停駛)",
     "ref": "橘12區間車(寒暑假停駛)",
-    "color": "#134e4a",
+    "color": "#1e3a8a",
     "city_id": "Kaohsiung",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ibus.tbkc.gov.tw/cms/api/route/9121/map/557/image",
@@ -22,7 +22,31 @@
         "ref": "橘12區間車(寒暑假停駛)",
         "name": "橘12區間車(寒暑假停駛)",
         "name_en": "橘12區間車(寒暑假停駛)",
-        "color": "#134e4a",
+        "color": "#1e3a8a",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.36096,
+            22.65802
+          ],
+          [
+            120.36098,
+            22.65742
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "橘12區間車(寒暑假停駛)",
+        "name": "橘12區間車(寒暑假停駛)",
+        "name_en": "橘12區間車(寒暑假停駛)",
+        "color": "#1e3a8a",
         "direction": 0
       },
       "geometry": {
@@ -78,37 +102,14 @@
     {
       "type": "Feature",
       "properties": {
-        "feature_type": "route",
-        "ref": "橘12區間車(寒暑假停駛)",
-        "name": "橘12區間車(寒暑假停駛)",
-        "name_en": "橘12區間車(寒暑假停駛)",
-        "color": "#134e4a",
-        "direction": 1
-      },
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
-          [
-            120.36096,
-            22.65802
-          ],
-          [
-            120.36098,
-            22.65742
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "feature_type": "station",
         "ref": "KHH109121132691",
         "name": "捷運鳳山西站(青年路一段)",
         "name_en": "MRT Fongshan West Station(Cingnian Rd. Sec. 1)",
         "line": "橘12區間車(寒暑假停駛)",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "2826"
       },
       "geometry": {
         "type": "Point",
@@ -126,8 +127,9 @@
         "name": "鳳新高中",
         "name_en": "FengHsin Senior High School",
         "line": "橘12區間車(寒暑假停駛)",
-        "color": "#134e4a",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "2556"
       },
       "geometry": {
         "type": "Point",

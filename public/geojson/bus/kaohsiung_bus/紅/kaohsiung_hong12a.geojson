@@ -6,7 +6,7 @@
     "name": "紅12A",
     "name_en": "紅12A",
     "ref": "紅12A",
-    "color": "#9333ea",
+    "color": "#2563eb",
     "city_id": "Kaohsiung",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ibus.tbkc.gov.tw/cms/api/route/812/map/1546/image",
@@ -22,7 +22,7 @@
         "ref": "紅12A",
         "name": "紅12A",
         "name_en": "紅12A",
-        "color": "#9333ea",
+        "color": "#2563eb",
         "direction": 0
       },
       "geometry": {
@@ -65,12 +65,32 @@
             22.60164
           ],
           [
-            120.32426,
-            22.60324
+            120.32399820771563,
+            22.603554646880454
           ],
           [
-            120.32387,
-            22.60361
+            120.32397412943406,
+            22.603576323211726
+          ],
+          [
+            120.32394479482613,
+            22.60359062465868
+          ],
+          [
+            120.32391232093444,
+            22.603596692515122
+          ],
+          [
+            120.32387932090624,
+            22.60359403850565
+          ],
+          [
+            120.32384845022652,
+            22.60358287619622
+          ],
+          [
+            120.32382190694001,
+            22.60356383031007
           ],
           [
             120.3211,
@@ -138,19 +158,187 @@
         "ref": "紅12A",
         "name": "紅12A",
         "name_en": "紅12A",
-        "color": "#9333ea",
+        "color": "#2563eb",
         "direction": 1
       },
       "geometry": {
         "type": "LineString",
         "coordinates": [
           [
-            120.30355,
-            22.59089
+            120.30536,
+            22.59148
           ],
           [
-            120.30361,
-            22.59081
+            120.30359532494774,
+            22.590904878746592
+          ],
+          [
+            120.30358549642224,
+            22.59089998278751
+          ],
+          [
+            120.30357765487948,
+            22.590892508257195
+          ],
+          [
+            120.30357261025507,
+            22.590883179451225
+          ],
+          [
+            120.30357083455145,
+            22.590872869223233
+          ],
+          [
+            120.30357249391304,
+            22.59086254225402
+          ],
+          [
+            120.3035773640455,
+            22.590853257155256
+          ],
+          [
+            120.30359425062595,
+            22.590831147353466
+          ],
+          [
+            120.30359947576439,
+            22.590825545902625
+          ],
+          [
+            120.30360577421452,
+            22.590821182651695
+          ],
+          [
+            120.30361292672595,
+            22.590818164937765
+          ],
+          [
+            120.3036206059288,
+            22.590816630881353
+          ],
+          [
+            120.30362846034659,
+            22.5908166506961
+          ],
+          [
+            120.30363620455866,
+            22.59081824670784
+          ],
+          [
+            120.30553,
+            22.59141
+          ],
+          [
+            120.30686,
+            22.59214
+          ],
+          [
+            120.30795,
+            22.59253
+          ],
+          [
+            120.3078,
+            22.59287
+          ],
+          [
+            120.31411,
+            22.59499
+          ],
+          [
+            120.31487,
+            22.59533
+          ],
+          [
+            120.31513,
+            22.59549
+          ],
+          [
+            120.31532,
+            22.59565
+          ],
+          [
+            120.31545,
+            22.59574
+          ],
+          [
+            120.31559,
+            22.59583
+          ],
+          [
+            120.31582,
+            22.596
+          ],
+          [
+            120.31617,
+            22.59625
+          ],
+          [
+            120.31777,
+            22.59781
+          ],
+          [
+            120.32374369762272,
+            22.603516589486023
+          ],
+          [
+            120.32377062438681,
+            22.603535876286877
+          ],
+          [
+            120.32380198449187,
+            22.60354705278539
+          ],
+          [
+            120.32383546919341,
+            22.603549468189296
+          ],
+          [
+            120.32386830830292,
+            22.60354292267229
+          ],
+          [
+            120.32389778504174,
+            22.603527957744816
+          ],
+          [
+            120.32392169410825,
+            22.603505518109795
+          ],
+          [
+            120.32545,
+            22.60159
+          ],
+          [
+            120.32639,
+            22.59889
+          ],
+          [
+            120.32826,
+            22.59954
+          ],
+          [
+            120.3304,
+            22.60046
+          ],
+          [
+            120.33292,
+            22.60182
+          ],
+          [
+            120.33457,
+            22.60286
+          ],
+          [
+            120.33384,
+            22.60386
+          ],
+          [
+            120.33359,
+            22.60564
+          ],
+          [
+            120.33845,
+            22.606
           ]
         ]
       }
@@ -163,8 +351,9 @@
         "name": "瑞豐站(瑞隆路)",
         "name_en": "Rueifong Station(Rueilong Rd.)",
         "line": "紅12A",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "2457"
       },
       "geometry": {
         "type": "Point",
@@ -182,8 +371,9 @@
         "name": "永豐路口",
         "name_en": "Yongfong Rd. Intersection",
         "line": "紅12A",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "1263"
       },
       "geometry": {
         "type": "Point",
@@ -201,8 +391,9 @@
         "name": "永豐崗山南街口",
         "name_en": "Yongfong Gangshan South St. Intersection",
         "line": "紅12A",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "972"
       },
       "geometry": {
         "type": "Point",
@@ -220,8 +411,9 @@
         "name": "公正路口",
         "name_en": "Gongjheng Rd. Intersection",
         "line": "紅12A",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "3286"
       },
       "geometry": {
         "type": "Point",
@@ -239,8 +431,9 @@
         "name": "南正二路口",
         "name_en": "Nanjheng 2nd Rd. Intersection",
         "line": "紅12A",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "3288"
       },
       "geometry": {
         "type": "Point",
@@ -258,8 +451,9 @@
         "name": "瑞祥國小",
         "name_en": "Ruei Siang Primary School",
         "line": "紅12A",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "3290"
       },
       "geometry": {
         "type": "Point",
@@ -277,8 +471,9 @@
         "name": "瑞祥高中(班超路)",
         "name_en": "Rueisiang High School(Banchao Rd.)",
         "line": "紅12A",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "3292"
       },
       "geometry": {
         "type": "Point",
@@ -296,8 +491,9 @@
         "name": "凱旋四路",
         "name_en": "Kaisyuan 4th Rd.",
         "line": "紅12A",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "2127"
       },
       "geometry": {
         "type": "Point",
@@ -315,8 +511,9 @@
         "name": "輕軌凱旋瑞田站(舊凱旋四路)",
         "name_en": "LRT Kaisyuan Rueitian Station(Old Kai Syuan 4th Rd.)",
         "line": "紅12A",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "2676"
       },
       "geometry": {
         "type": "Point",
@@ -334,8 +531,9 @@
         "name": "捷運凱旋站(輕軌前鎮之星站)1",
         "name_en": "MRT Kaisyuan Station 1(LRT Cianjhen Star Station)",
         "line": "紅12A",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "4016"
       },
       "geometry": {
         "type": "Point",
@@ -353,8 +551,9 @@
         "name": "輕軌凱旋中華站(舊凱旋四路)",
         "name_en": "LRT Kaisyuan Jhonghua Station(Old Kai Syuan 4th Rd.)",
         "line": "紅12A",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "2516"
       },
       "geometry": {
         "type": "Point",
@@ -372,8 +571,9 @@
         "name": "南訓中心(凱旋四路)",
         "name_en": "Southern Vocational Training Center(Kaisyuan 4th Rd.)",
         "line": "紅12A",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "4006"
       },
       "geometry": {
         "type": "Point",
@@ -391,8 +591,9 @@
         "name": "前鎮站",
         "name_en": "Cianjhen Station",
         "line": "紅12A",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "959"
       },
       "geometry": {
         "type": "Point",
@@ -410,8 +611,9 @@
         "name": "前鎮站",
         "name_en": "Cianjhen Station",
         "line": "紅12A",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "961"
       },
       "geometry": {
         "type": "Point",
@@ -429,8 +631,9 @@
         "name": "南訓中心(凱旋四路)",
         "name_en": "Southern Vocational Training Center(Kaisyuan 4th Rd.)",
         "line": "紅12A",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "4007"
       },
       "geometry": {
         "type": "Point",
@@ -448,8 +651,9 @@
         "name": "輕軌凱旋中華站(舊凱旋四路)",
         "name_en": "LRT Kaisyuan Jhonghua Station(Old Kai Syuan 4th Rd.)",
         "line": "紅12A",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "2515"
       },
       "geometry": {
         "type": "Point",
@@ -467,8 +671,9 @@
         "name": "捷運凱旋站(輕軌前鎮之星站)1",
         "name_en": "MRT Kaisyuan Station 1(LRT Cianjhen Star Station)",
         "line": "紅12A",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "4017"
       },
       "geometry": {
         "type": "Point",
@@ -486,8 +691,9 @@
         "name": "輕軌凱旋瑞田站(舊凱旋四路)",
         "name_en": "LRT Kaisyuan Rueitian Station(Old Kai Syuan 4th Rd.)",
         "line": "紅12A",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "2677"
       },
       "geometry": {
         "type": "Point",
@@ -505,8 +711,9 @@
         "name": "凱旋四路",
         "name_en": "Kaisyuan 4th Rd.",
         "line": "紅12A",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "2128"
       },
       "geometry": {
         "type": "Point",
@@ -524,8 +731,9 @@
         "name": "瑞祥高中(班超路)",
         "name_en": "Rueisiang High School(Banchao Rd.)",
         "line": "紅12A",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "3293"
       },
       "geometry": {
         "type": "Point",
@@ -543,8 +751,9 @@
         "name": "瑞祥國小",
         "name_en": "Ruei Siang Primary School",
         "line": "紅12A",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "3291"
       },
       "geometry": {
         "type": "Point",
@@ -562,8 +771,9 @@
         "name": "南正二路口",
         "name_en": "Nanjheng 2nd Rd. Intersection",
         "line": "紅12A",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "3289"
       },
       "geometry": {
         "type": "Point",
@@ -581,8 +791,9 @@
         "name": "公正路口",
         "name_en": "Gongjheng Rd. Intersection",
         "line": "紅12A",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "3287"
       },
       "geometry": {
         "type": "Point",
@@ -600,8 +811,9 @@
         "name": "永豐崗山南街口",
         "name_en": "Yongfong Gangshan South St. Intersection",
         "line": "紅12A",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "971"
       },
       "geometry": {
         "type": "Point",
@@ -619,8 +831,9 @@
         "name": "永豐路口",
         "name_en": "Yongfong Rd. Intersection",
         "line": "紅12A",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "1262"
       },
       "geometry": {
         "type": "Point",
@@ -638,8 +851,9 @@
         "name": "瑞豐站(瑞隆路)",
         "name_en": "Rueifong Station(Rueilong Rd.)",
         "line": "紅12A",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "2456"
       },
       "geometry": {
         "type": "Point",

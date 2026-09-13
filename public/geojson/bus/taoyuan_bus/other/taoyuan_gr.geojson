@@ -6,7 +6,7 @@
     "name": "GR",
     "name_en": "GR",
     "ref": "GR",
-    "color": "#65a30d",
+    "color": "#b91c1c",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/607/map/2259/image",
@@ -22,7 +22,7 @@
         "ref": "GR",
         "name": "GR",
         "name_en": "GR",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0
       },
       "geometry": {
@@ -41,8 +41,32 @@
             24.98565
           ],
           [
-            121.31061,
-            24.98525
+            121.3107897677545,
+            24.98526925923757
+          ],
+          [
+            121.3107506488873,
+            24.985270995341658
+          ],
+          [
+            121.3107143516038,
+            24.985284190594694
+          ],
+          [
+            121.31068469747173,
+            24.985307410662685
+          ],
+          [
+            121.31066488692329,
+            24.985338149511964
+          ],
+          [
+            121.31065705801863,
+            24.985373089641843
+          ],
+          [
+            121.31066198931262,
+            24.985408258402387
           ],
           [
             121.31105,
@@ -149,12 +173,32 @@
             25.03801
           ],
           [
-            121.28283,
-            25.03868
+            121.28292449203009,
+            25.038592680810996
           ],
           [
-            121.28301,
-            25.03888
+            121.28290842883918,
+            25.038611172878372
+          ],
+          [
+            121.2828969840599,
+            25.03863275450008
+          ],
+          [
+            121.28289101030836,
+            25.03865610191027
+          ],
+          [
+            121.2828907989566,
+            25.038680076329957
+          ],
+          [
+            121.28289636031342,
+            25.038703508397507
+          ],
+          [
+            121.2829072315895,
+            25.03872496598663
           ],
           [
             121.28323,
@@ -169,12 +213,32 @@
             25.04065
           ],
           [
-            121.2843,
-            25.04113
+            121.28462614825843,
+            25.041514265743924
           ],
           [
-            121.28484,
-            25.04151
+            121.28464636574267,
+            25.04153297701998
+          ],
+          [
+            121.28467055016776,
+            25.041546554258474
+          ],
+          [
+            121.2846975719174,
+            25.04155451628615
+          ],
+          [
+            121.28472589189195,
+            25.04155640960337
+          ],
+          [
+            121.28475389704771,
+            25.041552126370927
+          ],
+          [
+            121.2847803065443,
+            25.04154174397667
           ],
           [
             121.28891,
@@ -205,12 +269,32 @@
             25.0437
           ],
           [
-            121.28867,
-            25.04512
+            121.28863461050348,
+            25.045136903821064
           ],
           [
-            121.28906,
-            25.04585
+            121.28860692880578,
+            25.0451552072307
+          ],
+          [
+            121.28858592642929,
+            25.04518020988847
+          ],
+          [
+            121.2885736761765,
+            25.045209661390338
+          ],
+          [
+            121.28857120954653,
+            25.045241081852815
+          ],
+          [
+            121.28857873423527,
+            25.04527182560144
+          ],
+          [
+            121.28859537056083,
+            25.045299011464756
           ],
           [
             121.28934,
@@ -313,12 +397,32 @@
             25.07793
           ],
           [
-            121.25906,
-            25.07905
+            121.25912118911708,
+            25.07894046740226
           ],
           [
-            121.2595,
-            25.07931
+            121.25911161587624,
+            25.078963989794968
+          ],
+          [
+            121.25910821674509,
+            25.078989197992726
+          ],
+          [
+            121.25911133219823,
+            25.079014436667865
+          ],
+          [
+            121.25912079170531,
+            25.07903832433295
+          ],
+          [
+            121.25913607748204,
+            25.07905955345067
+          ],
+          [
+            121.25915603129887,
+            25.079076743783975
           ],
           [
             121.25996,
@@ -357,12 +461,548 @@
             25.08614
           ],
           [
-            121.26478,
-            25.08726
+            121.26471446312598,
+            25.087199411014925
+          ],
+          [
+            121.26473515375689,
+            25.087214675879146
+          ],
+          [
+            121.26475865217834,
+            25.087225237023713
+          ],
+          [
+            121.26478411453888,
+            25.08723085405196
+          ],
+          [
+            121.26481030743244,
+            25.087231254872975
+          ],
+          [
+            121.26483596206565,
+            25.087226420070845
+          ],
+          [
+            121.26486015170671,
+            25.087216412669484
           ],
           [
             121.26578,
             25.08672
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "GR",
+        "name": "GR",
+        "name_en": "GR",
+        "color": "#b91c1c",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            121.26568,
+            25.08664
+          ],
+          [
+            121.26478,
+            25.08726
+          ],
+          [
+            121.26351,
+            25.0861
+          ],
+          [
+            121.26307,
+            25.08517
+          ],
+          [
+            121.26245,
+            25.08273
+          ],
+          [
+            121.26203,
+            25.08241
+          ],
+          [
+            121.2615,
+            25.08132
+          ],
+          [
+            121.26045,
+            25.08009
+          ],
+          [
+            121.25948,
+            25.07941
+          ],
+          [
+            121.2589,
+            25.07907
+          ],
+          [
+            121.25932,
+            25.07836
+          ],
+          [
+            121.25968,
+            25.07765
+          ],
+          [
+            121.2599,
+            25.07717
+          ],
+          [
+            121.26008,
+            25.07666
+          ],
+          [
+            121.26031,
+            25.07573
+          ],
+          [
+            121.26037,
+            25.07466
+          ],
+          [
+            121.2603,
+            25.0736
+          ],
+          [
+            121.26025,
+            25.07259
+          ],
+          [
+            121.2603,
+            25.0721
+          ],
+          [
+            121.26058,
+            25.07114
+          ],
+          [
+            121.26159,
+            25.06803
+          ],
+          [
+            121.26237,
+            25.06564
+          ],
+          [
+            121.26256,
+            25.06504
+          ],
+          [
+            121.26281,
+            25.06465
+          ],
+          [
+            121.26312,
+            25.06432
+          ],
+          [
+            121.26354,
+            25.06399
+          ],
+          [
+            121.26988,
+            25.06113
+          ],
+          [
+            121.27483,
+            25.05888
+          ],
+          [
+            121.2773,
+            25.05775
+          ],
+          [
+            121.27864,
+            25.05745
+          ],
+          [
+            121.27979,
+            25.05663
+          ],
+          [
+            121.28372,
+            25.05404
+          ],
+          [
+            121.28662,
+            25.05244
+          ],
+          [
+            121.29022,
+            25.05047
+          ],
+          [
+            121.29044,
+            25.05025
+          ],
+          [
+            121.29209,
+            25.04729
+          ],
+          [
+            121.29068,
+            25.04667
+          ],
+          [
+            121.28961,
+            25.04634
+          ],
+          [
+            121.28927,
+            25.04611
+          ],
+          [
+            121.28861096335754,
+            25.045220655685267
+          ],
+          [
+            121.28859627672904,
+            25.045192762908528
+          ],
+          [
+            121.28859080560554,
+            25.045161869224017
+          ],
+          [
+            121.28859522110557,
+            25.045130835254348
+          ],
+          [
+            121.28860915629485,
+            25.04510223996614
+          ],
+          [
+            121.28863145313952,
+            25.045078459668165
+          ],
+          [
+            121.28865997036529,
+            25.045061591351278
+          ],
+          [
+            121.29173,
+            25.04378
+          ],
+          [
+            121.28994680731536,
+            25.041096520458566
+          ],
+          [
+            121.28993442326758,
+            25.041070611731907
+          ],
+          [
+            121.28992978295307,
+            25.041042326532246
+          ],
+          [
+            121.28993339990942,
+            25.041013917255395
+          ],
+          [
+            121.2899450230861,
+            25.04098735577039
+          ],
+          [
+            121.28996384572613,
+            25.04096448569226
+          ],
+          [
+            121.28998824618246,
+            25.040947063613878
+          ],
+          [
+            121.29303,
+            25.03932
+          ],
+          [
+            121.29328,
+            25.0376
+          ],
+          [
+            121.29231,
+            25.03696
+          ],
+          [
+            121.29151,
+            25.03793
+          ],
+          [
+            121.29123,
+            25.03815
+          ],
+          [
+            121.28838,
+            25.03965
+          ],
+          [
+            121.28481868888947,
+            25.041566960930002
+          ],
+          [
+            121.28479285496849,
+            25.041577405898114
+          ],
+          [
+            121.28476541616689,
+            25.041581977550923
+          ],
+          [
+            121.28473756480504,
+            25.0415805951362
+          ],
+          [
+            121.284710831493,
+            25.041573334626435
+          ],
+          [
+            121.28468668539695,
+            25.041560595033
+          ],
+          [
+            121.28466619101425,
+            25.041542787822888
+          ],
+          [
+            121.28397,
+            25.04078
+          ],
+          [
+            121.28373,
+            25.04041
+          ],
+          [
+            121.28346,
+            25.03977
+          ],
+          [
+            121.28331,
+            25.03943
+          ],
+          [
+            121.28318,
+            25.03914
+          ],
+          [
+            121.28295,
+            25.03884
+          ],
+          [
+            121.28266,
+            25.03859
+          ],
+          [
+            121.28365,
+            25.03775
+          ],
+          [
+            121.28768,
+            25.0341
+          ],
+          [
+            121.2898,
+            25.03213
+          ],
+          [
+            121.29087,
+            25.03115
+          ],
+          [
+            121.2914,
+            25.03067
+          ],
+          [
+            121.29189,
+            25.03016
+          ],
+          [
+            121.29417,
+            25.02535
+          ],
+          [
+            121.29457,
+            25.02447
+          ],
+          [
+            121.29608,
+            25.02119
+          ],
+          [
+            121.29715,
+            25.01892
+          ],
+          [
+            121.29799,
+            25.01704
+          ],
+          [
+            121.30068,
+            25.01143
+          ],
+          [
+            121.3022,
+            25.00867
+          ],
+          [
+            121.30459,
+            25.00487
+          ],
+          [
+            121.30572,
+            25.0031
+          ],
+          [
+            121.30599,
+            25.00265
+          ],
+          [
+            121.30794,
+            24.99964
+          ],
+          [
+            121.30944,
+            24.99714
+          ],
+          [
+            121.31064,
+            24.99527
+          ],
+          [
+            121.3105,
+            24.99518
+          ],
+          [
+            121.31092095652886,
+            24.994558331060194
+          ],
+          [
+            121.31092742515915,
+            24.994550658362368
+          ],
+          [
+            121.3109353813796,
+            24.994544474765856
+          ],
+          [
+            121.31094456507323,
+            24.994539924002012
+          ],
+          [
+            121.31095458038078,
+            24.994537202229616
+          ],
+          [
+            121.31096499559656,
+            24.994536426769535
+          ],
+          [
+            121.31097543866697,
+            24.994537647585375
+          ],
+          [
+            121.31104279352205,
+            24.99455197092691
+          ],
+          [
+            121.31105362856484,
+            24.994553198436865
+          ],
+          [
+            121.31106442129945,
+            24.994552278893227
+          ],
+          [
+            121.31107474804155,
+            24.99454927147901
+          ],
+          [
+            121.31108412982887,
+            24.994544315680397
+          ],
+          [
+            121.31109213152689,
+            24.994537641351155
+          ],
+          [
+            121.31109845457378,
+            24.994529438338397
+          ],
+          [
+            121.31198,
+            24.99308
+          ],
+          [
+            121.3126,
+            24.99138
+          ],
+          [
+            121.30969,
+            24.99055
+          ],
+          [
+            121.31049,
+            24.98852
+          ],
+          [
+            121.31102,
+            24.98709
+          ],
+          [
+            121.31103,
+            24.98672
+          ],
+          [
+            121.31061211830483,
+            24.985440810254747
+          ],
+          [
+            121.31060734090008,
+            24.98540537883833
+          ],
+          [
+            121.31061549577225,
+            24.985370254784687
+          ],
+          [
+            121.31063575584324,
+            24.98533947985735
+          ],
+          [
+            121.31066590492078,
+            24.985316420439162
+          ],
+          [
+            121.310702645082,
+            24.9853035989351
+          ],
+          [
+            121.31074206690748,
+            24.985302431315286
+          ],
+          [
+            121.31432,
+            24.98574
+          ],
+          [
+            121.31423,
+            24.98655
+          ],
+          [
+            121.31385,
+            24.98652
           ]
         ]
       }
@@ -375,8 +1015,9 @@
         "name": "桃園總站",
         "name_en": "Taoyuan Main Station",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "3204"
       },
       "geometry": {
         "type": "Point",
@@ -394,8 +1035,9 @@
         "name": "聖保祿醫院",
         "name_en": "Saint Pauls Hospital",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "872"
       },
       "geometry": {
         "type": "Point",
@@ -413,8 +1055,9 @@
         "name": "建國路口",
         "name_en": "Jianguo Road Intersection",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "3066"
       },
       "geometry": {
         "type": "Point",
@@ -432,8 +1075,9 @@
         "name": "統領百貨",
         "name_en": "Tonlin Department Store",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1223"
       },
       "geometry": {
         "type": "Point",
@@ -451,8 +1095,9 @@
         "name": "桃園郵局",
         "name_en": "Taoyuan Post Office",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "357"
       },
       "geometry": {
         "type": "Point",
@@ -470,8 +1115,9 @@
         "name": "永和市場",
         "name_en": "Yonghe Market",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "370"
       },
       "geometry": {
         "type": "Point",
@@ -489,8 +1135,9 @@
         "name": "中正三民路口",
         "name_en": "Zhongzheng and Sanming Rd. Intersection",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "3060"
       },
       "geometry": {
         "type": "Point",
@@ -508,8 +1155,9 @@
         "name": "中正二街口",
         "name_en": "Zhongzheng 2nd Street Intersection",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1330"
       },
       "geometry": {
         "type": "Point",
@@ -527,8 +1175,9 @@
         "name": "北埔路口",
         "name_en": "Beipu Rd. Entrance",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1332"
       },
       "geometry": {
         "type": "Point",
@@ -546,8 +1195,9 @@
         "name": "中正信光路口",
         "name_en": "Zhongzheng and Xinguang St. Intersection",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4301"
       },
       "geometry": {
         "type": "Point",
@@ -565,8 +1215,9 @@
         "name": "中正慈文路口",
         "name_en": "Zhongzheng and Ciwen Rd. Intersection",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4304"
       },
       "geometry": {
         "type": "Point",
@@ -584,8 +1235,9 @@
         "name": "慈文國中",
         "name_en": "TszWen Junior High School",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1406"
       },
       "geometry": {
         "type": "Point",
@@ -603,14 +1255,15 @@
         "name": "中正藝文特區",
         "name_en": "Zhongzheng Art District",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "3084"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.29931,
-          25.014676
+          121.29931036134563,
+          25.014676006102167
         ]
       }
     },
@@ -622,8 +1275,9 @@
         "name": "中正中寧街口",
         "name_en": "Zhongzheng Zhongning Road Intersection",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1190"
       },
       "geometry": {
         "type": "Point",
@@ -641,8 +1295,9 @@
         "name": "中正同德十一街口",
         "name_en": "Jhongjheng Tongde 11th St. Intersection",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "3920"
       },
       "geometry": {
         "type": "Point",
@@ -660,8 +1315,9 @@
         "name": "莊敬路口",
         "name_en": "Zhuangjing Road Intersection",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1376"
       },
       "geometry": {
         "type": "Point",
@@ -679,8 +1335,9 @@
         "name": "中正莊二街口",
         "name_en": "Zhongzhengzhuang 2th Street Intersection",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "5211"
       },
       "geometry": {
         "type": "Point",
@@ -698,14 +1355,15 @@
         "name": "中正橋",
         "name_en": "Zhengzheng Bridge",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "5088"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.2939,
-          25.02621
+          121.29390000000001,
+          25.026210000000003
         ]
       }
     },
@@ -717,8 +1375,9 @@
         "name": "中正北路320巷",
         "name_en": "Jhongjheng N. Rd., Lane 320",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "3789"
       },
       "geometry": {
         "type": "Point",
@@ -736,8 +1395,9 @@
         "name": "南竹路口",
         "name_en": "Nanzhu Road Intersection",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "5212"
       },
       "geometry": {
         "type": "Point",
@@ -753,10 +1413,11 @@
         "feature_type": "station",
         "ref": "TAO39028",
         "name": "奉化南順一街口",
-        "name_en": "Fenghua Nanshun 1st Street Intersection  ",
+        "name_en": "Fenghua Nanshun 1st Street Intersection",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "3785"
       },
       "geometry": {
         "type": "Point",
@@ -772,10 +1433,11 @@
         "feature_type": "station",
         "ref": "TAO6749",
         "name": "奉化忠孝西路口",
-        "name_en": "Fenghua Zhongxiao West Road Intersection ",
+        "name_en": "Fenghua Zhongxiao West Road Intersection",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "3833"
       },
       "geometry": {
         "type": "Point",
@@ -793,8 +1455,9 @@
         "name": "麗寶經典",
         "name_en": "Libao Classic",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "3832"
       },
       "geometry": {
         "type": "Point",
@@ -812,8 +1475,9 @@
         "name": "光明郵局",
         "name_en": "Guangming post office",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "3830"
       },
       "geometry": {
         "type": "Point",
@@ -831,8 +1495,9 @@
         "name": "光明國小",
         "name_en": "Guanming Elementary School",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "3782"
       },
       "geometry": {
         "type": "Point",
@@ -850,8 +1515,9 @@
         "name": "光明國中(光明路)",
         "name_en": "Guang-Ming Junior High School(Guangming Rd.)",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "5216"
       },
       "geometry": {
         "type": "Point",
@@ -869,14 +1535,15 @@
         "name": "錦興國小(南竹路)",
         "name_en": "Jinxing Elementary School",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "5217"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.290687,
-          25.046734
+          121.290589,
+          25.046795
         ]
       }
     },
@@ -888,8 +1555,9 @@
         "name": "南崁",
         "name_en": "NanKan",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4578"
       },
       "geometry": {
         "type": "Point",
@@ -907,8 +1575,9 @@
         "name": "台茂",
         "name_en": "Taimall",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "3744"
       },
       "geometry": {
         "type": "Point",
@@ -926,8 +1595,9 @@
         "name": "下南崁",
         "name_en": "Xianankan",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1373"
       },
       "geometry": {
         "type": "Point",
@@ -945,8 +1615,9 @@
         "name": "南亞(好市多)",
         "name_en": "Nanya (Costco)",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4064"
       },
       "geometry": {
         "type": "Point",
@@ -964,14 +1635,15 @@
         "name": "溪洲",
         "name_en": "Xizhou",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "5087"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.278982,
-          25.057195
+          121.278495,
+          25.057106
         ]
       }
     },
@@ -983,8 +1655,9 @@
         "name": "台灣松下",
         "name_en": "Panasonic Taiwan Co., Ltd.",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4580"
       },
       "geometry": {
         "type": "Point",
@@ -1002,8 +1675,9 @@
         "name": "三商",
         "name_en": "Sanshang",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4582"
       },
       "geometry": {
         "type": "Point",
@@ -1021,8 +1695,9 @@
         "name": "水尾",
         "name_en": "Shuiwei",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1264"
       },
       "geometry": {
         "type": "Point",
@@ -1040,8 +1715,9 @@
         "name": "八股路口",
         "name_en": "Bagu Road Intersection",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4228"
       },
       "geometry": {
         "type": "Point",
@@ -1059,8 +1735,9 @@
         "name": "下水尾",
         "name_en": "Xiashuiwei",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4756"
       },
       "geometry": {
         "type": "Point",
@@ -1078,8 +1755,9 @@
         "name": "菓林",
         "name_en": "Guolin",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4584"
       },
       "geometry": {
         "type": "Point",
@@ -1097,8 +1775,9 @@
         "name": "崁下",
         "name_en": "Kanxia",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4586"
       },
       "geometry": {
         "type": "Point",
@@ -1116,8 +1795,9 @@
         "name": "坑菓幸福路口",
         "name_en": "Kengguosingfu Rd. Intersection",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4112"
       },
       "geometry": {
         "type": "Point",
@@ -1135,14 +1815,15 @@
         "name": "捷運坑口站",
         "name_en": "MRT Kengkou Station",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4406"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.265542,
-          25.086756
+          121.26554191031315,
+          25.08675575657173
         ]
       }
     },
@@ -1154,14 +1835,15 @@
         "name": "捷運坑口站",
         "name_en": "MRT Kengkou Station",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 1,
+        "station_id": "4406"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.265542,
-          25.086756
+          121.26554191031315,
+          25.08675575657173
         ]
       }
     },
@@ -1173,14 +1855,15 @@
         "name": "坑菓幸福路口",
         "name_en": "Kengguosingfu Rd. Intersection",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 1,
+        "station_id": "4111"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.261432,
-          25.081337
+          121.26143180568113,
+          25.081337477854564
         ]
       }
     },
@@ -1192,8 +1875,9 @@
         "name": "崁下",
         "name_en": "Kanxia",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 1,
+        "station_id": "4587"
       },
       "geometry": {
         "type": "Point",
@@ -1211,8 +1895,9 @@
         "name": "菓林",
         "name_en": "Guolin",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 1,
+        "station_id": "4585"
       },
       "geometry": {
         "type": "Point",
@@ -1230,8 +1915,9 @@
         "name": "下水尾",
         "name_en": "Xiashuiwei",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 1,
+        "station_id": "4757"
       },
       "geometry": {
         "type": "Point",
@@ -1249,8 +1935,9 @@
         "name": "八股路口",
         "name_en": "Bagu Road Intersection",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 1,
+        "station_id": "4229"
       },
       "geometry": {
         "type": "Point",
@@ -1268,8 +1955,9 @@
         "name": "水尾",
         "name_en": "Shuiwei",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 1,
+        "station_id": "1268"
       },
       "geometry": {
         "type": "Point",
@@ -1287,8 +1975,9 @@
         "name": "三商",
         "name_en": "Sanshang",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 1,
+        "station_id": "4583"
       },
       "geometry": {
         "type": "Point",
@@ -1306,8 +1995,9 @@
         "name": "台灣松下",
         "name_en": "Panasonic Taiwan Co., Ltd.",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 1,
+        "station_id": "4581"
       },
       "geometry": {
         "type": "Point",
@@ -1325,14 +2015,15 @@
         "name": "溪洲",
         "name_en": "Xizhou",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 1,
+        "station_id": "5087"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.278982,
-          25.057195
+          121.278495,
+          25.057106
         ]
       }
     },
@@ -1344,8 +2035,9 @@
         "name": "南亞(好市多)",
         "name_en": "Nanya (Costco)",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 1,
+        "station_id": "4065"
       },
       "geometry": {
         "type": "Point",
@@ -1363,8 +2055,9 @@
         "name": "下南崁",
         "name_en": "Xianankan",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 1,
+        "station_id": "1372"
       },
       "geometry": {
         "type": "Point",
@@ -1382,8 +2075,9 @@
         "name": "台茂",
         "name_en": "Taimall",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 1,
+        "station_id": "7078"
       },
       "geometry": {
         "type": "Point",
@@ -1401,8 +2095,9 @@
         "name": "南崁",
         "name_en": "NanKan",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 1,
+        "station_id": "4579"
       },
       "geometry": {
         "type": "Point",
@@ -1420,14 +2115,15 @@
         "name": "錦興國小(南竹路)",
         "name_en": "Jinxing Elementary School",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 1,
+        "station_id": "5217"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.290687,
-          25.046734
+          121.290589,
+          25.046795
         ]
       }
     },
@@ -1439,8 +2135,9 @@
         "name": "光明國中(光明路)",
         "name_en": "Guang-Ming Junior High School(Guangming Rd.)",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 1,
+        "station_id": "5216"
       },
       "geometry": {
         "type": "Point",
@@ -1458,8 +2155,9 @@
         "name": "光明國小",
         "name_en": "Guanming Elementary School",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 1,
+        "station_id": "3783"
       },
       "geometry": {
         "type": "Point",
@@ -1477,8 +2175,9 @@
         "name": "光明郵局",
         "name_en": "Guangming post office",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 1,
+        "station_id": "3829"
       },
       "geometry": {
         "type": "Point",
@@ -1496,8 +2195,9 @@
         "name": "麗寶經典",
         "name_en": "Libao Classic",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 1,
+        "station_id": "3831"
       },
       "geometry": {
         "type": "Point",
@@ -1513,10 +2213,11 @@
         "feature_type": "station",
         "ref": "TAO6750",
         "name": "奉化忠孝西路口",
-        "name_en": "Fenghua Zhongxiao West Road Intersection ",
+        "name_en": "Fenghua Zhongxiao West Road Intersection",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 1,
+        "station_id": "3834"
       },
       "geometry": {
         "type": "Point",
@@ -1532,10 +2233,11 @@
         "feature_type": "station",
         "ref": "TAO15",
         "name": "奉化南順一街口",
-        "name_en": "Fenghua Nanshun 1st Street Intersection  ",
+        "name_en": "Fenghua Nanshun 1st Street Intersection",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 1,
+        "station_id": "3784"
       },
       "geometry": {
         "type": "Point",
@@ -1553,8 +2255,9 @@
         "name": "南竹路口",
         "name_en": "Nanzhu Road Intersection",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 1,
+        "station_id": "5213"
       },
       "geometry": {
         "type": "Point",
@@ -1572,14 +2275,15 @@
         "name": "中正北路320巷",
         "name_en": "Jhongjheng N. Rd., Lane 320",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 1,
+        "station_id": "3788"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.285766,
-          25.035796
+          121.28576574999929,
+          25.035795999999237
         ]
       }
     },
@@ -1591,8 +2295,9 @@
         "name": "中正橋",
         "name_en": "Zhengzheng Bridge",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 1,
+        "station_id": "5089"
       },
       "geometry": {
         "type": "Point",
@@ -1610,8 +2315,9 @@
         "name": "中正莊二街口",
         "name_en": "Zhongzhengzhuang 2th Street Intersection",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 1,
+        "station_id": "6176"
       },
       "geometry": {
         "type": "Point",
@@ -1629,8 +2335,9 @@
         "name": "莊敬路口",
         "name_en": "Zhuangjing Road Intersection",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 1,
+        "station_id": "1377"
       },
       "geometry": {
         "type": "Point",
@@ -1648,8 +2355,9 @@
         "name": "中正同德十一街口",
         "name_en": "Jhongjheng Tongde 11th St. Intersection",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 1,
+        "station_id": "3919"
       },
       "geometry": {
         "type": "Point",
@@ -1667,8 +2375,9 @@
         "name": "中正中寧街口",
         "name_en": "Zhongzheng Zhongning Road Intersection",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 1,
+        "station_id": "1189"
       },
       "geometry": {
         "type": "Point",
@@ -1686,8 +2395,9 @@
         "name": "中正藝文特區",
         "name_en": "Zhongzheng Art District",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 1,
+        "station_id": "3085"
       },
       "geometry": {
         "type": "Point",
@@ -1705,8 +2415,9 @@
         "name": "中正慈文路口",
         "name_en": "Zhongzheng and Ciwen Rd. Intersection",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 1,
+        "station_id": "4303"
       },
       "geometry": {
         "type": "Point",
@@ -1724,8 +2435,9 @@
         "name": "中正信光路口",
         "name_en": "Zhongzheng and Xinguang St. Intersection",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 1,
+        "station_id": "4302"
       },
       "geometry": {
         "type": "Point",
@@ -1743,8 +2455,9 @@
         "name": "北埔路口",
         "name_en": "Beipu Rd. Entrance",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 1,
+        "station_id": "1331"
       },
       "geometry": {
         "type": "Point",
@@ -1762,8 +2475,9 @@
         "name": "中正二街口",
         "name_en": "Zhongzheng 2nd Street Intersection",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 1,
+        "station_id": "1329"
       },
       "geometry": {
         "type": "Point",
@@ -1781,8 +2495,9 @@
         "name": "中正三民路口",
         "name_en": "Zhongzheng and Sanming Rd. Intersection",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 1,
+        "station_id": "3061"
       },
       "geometry": {
         "type": "Point",
@@ -1800,8 +2515,9 @@
         "name": "永和市場",
         "name_en": "Yonghe Market",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 1,
+        "station_id": "371"
       },
       "geometry": {
         "type": "Point",
@@ -1819,8 +2535,9 @@
         "name": "桃園郵局",
         "name_en": "Taoyuan Post Office",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 1,
+        "station_id": "356"
       },
       "geometry": {
         "type": "Point",
@@ -1838,8 +2555,9 @@
         "name": "統領百貨",
         "name_en": "Tonlin Department Store",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 1,
+        "station_id": "1224"
       },
       "geometry": {
         "type": "Point",
@@ -1857,8 +2575,9 @@
         "name": "建國路口",
         "name_en": "JianGuo Road Intersection",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 1,
+        "station_id": "3067"
       },
       "geometry": {
         "type": "Point",
@@ -1876,8 +2595,9 @@
         "name": "聖保祿醫院",
         "name_en": "Saint Pauls Hospital",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 1,
+        "station_id": "872"
       },
       "geometry": {
         "type": "Point",
@@ -1895,8 +2615,9 @@
         "name": "桃園總站",
         "name_en": "Taoyuan Main Station",
         "line": "GR",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 1,
+        "station_id": "3204"
       },
       "geometry": {
         "type": "Point",

@@ -6,7 +6,7 @@
     "name": "3",
     "name_en": "3",
     "ref": "3",
-    "color": "#9f1239",
+    "color": "#3730a3",
     "city_id": "Kaohsiung",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ibus.tbkc.gov.tw/cms/api/route/3/map/1420/image",
@@ -22,7 +22,7 @@
         "ref": "3",
         "name": "3",
         "name_en": "3",
-        "color": "#9f1239",
+        "color": "#3730a3",
         "direction": 0
       },
       "geometry": {
@@ -85,12 +85,32 @@
             22.68358
           ],
           [
-            120.30331,
-            22.68302
+            120.30324741476191,
+            22.68297425384466
           ],
           [
-            120.30325,
-            22.6828
+            120.30322516916222,
+            22.682952710856032
+          ],
+          [
+            120.30320994404232,
+            22.682926003498135
+          ],
+          [
+            120.30320323324987,
+            22.682896431051862
+          ],
+          [
+            120.30320555691983,
+            22.68286628559575
+          ],
+          [
+            120.30321673495092,
+            22.682837903620733
+          ],
+          [
+            120.30323561575696,
+            22.68281375927388
           ],
           [
             120.30372,
@@ -117,16 +137,32 @@
             22.68537
           ],
           [
-            120.31307,
-            22.6869
+            120.3134496277409,
+            22.68716948784665
           ],
           [
-            120.31343,
-            22.6871
+            120.31347036361045,
+            22.687180618530284
           ],
           [
-            120.31353,
-            22.68721
+            120.31349316054157,
+            22.68718641513978
+          ],
+          [
+            120.31351679399947,
+            22.687186680058137
+          ],
+          [
+            120.31353973480621,
+            22.68718139614409
+          ],
+          [
+            120.31356049860112,
+            22.687170905287722
+          ],
+          [
+            120.3135779455838,
+            22.687155656327906
           ],
           [
             120.31369,
@@ -157,8 +193,32 @@
             22.68187
           ],
           [
-            120.32171,
-            22.68169
+            120.32161401298775,
+            22.68170499965594
+          ],
+          [
+            120.32163982981635,
+            22.681698052296845
+          ],
+          [
+            120.32166336314609,
+            22.681685733702018
+          ],
+          [
+            120.32168322306043,
+            22.681668722857353
+          ],
+          [
+            120.32169834805856,
+            22.681647928982553
+          ],
+          [
+            120.32170792971819,
+            22.681624463498085
+          ],
+          [
+            120.32171145617085,
+            22.6815995691642
           ],
           [
             120.32174,
@@ -193,12 +253,32 @@
             22.67093
           ],
           [
-            120.31995,
-            22.6683
+            120.3197510133035,
+            22.66763303727795
           ],
           [
-            120.31973,
-            22.66752
+            120.31973858918884,
+            22.66760612548453
+          ],
+          [
+            120.31971902979555,
+            22.66758341441912
+          ],
+          [
+            120.31969368285023,
+            22.667566345115453
+          ],
+          [
+            120.31966436827322,
+            22.667556143156016
+          ],
+          [
+            120.31963319086223,
+            22.66755354104538
+          ],
+          [
+            120.31960215933535,
+            22.667558795154918
           ],
           [
             120.319,
@@ -338,12 +418,16 @@
         "ref": "3",
         "name": "3",
         "name_en": "3",
-        "color": "#9f1239",
+        "color": "#3730a3",
         "direction": 1
       },
       "geometry": {
         "type": "LineString",
         "coordinates": [
+          [
+            120.29537,
+            22.66105
+          ],
           [
             120.29713,
             22.66111
@@ -355,23 +439,307 @@
           [
             120.29698,
             22.66489
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "route",
-        "ref": "3",
-        "name": "3",
-        "name_en": "3",
-        "color": "#9f1239",
-        "direction": 1
-      },
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
+          ],
+          [
+            120.29689976615762,
+            22.665727264114192
+          ],
+          [
+            120.29690141363467,
+            22.665757311336446
+          ],
+          [
+            120.29691190514689,
+            22.665785844320226
+          ],
+          [
+            120.29693043765974,
+            22.665810594902393
+          ],
+          [
+            120.29695558141384,
+            22.6658296536075
+          ],
+          [
+            120.296985396601,
+            22.665841550081065
+          ],
+          [
+            120.29701759325219,
+            22.665845366408185
+          ],
+          [
+            120.30095,
+            22.6658
+          ],
+          [
+            120.30283,
+            22.66578
+          ],
+          [
+            120.30467,
+            22.66576
+          ],
+          [
+            120.30605,
+            22.66564
+          ],
+          [
+            120.30691,
+            22.66545
+          ],
+          [
+            120.30664,
+            22.66397
+          ],
+          [
+            120.30649,
+            22.66295
+          ],
+          [
+            120.30656,
+            22.66107
+          ],
+          [
+            120.30774,
+            22.66104
+          ],
+          [
+            120.30938,
+            22.66098
+          ],
+          [
+            120.31017,
+            22.66092
+          ],
+          [
+            120.31098,
+            22.66066
+          ],
+          [
+            120.31259,
+            22.6602
+          ],
+          [
+            120.31432,
+            22.65971
+          ],
+          [
+            120.3158,
+            22.65971
+          ],
+          [
+            120.31595,
+            22.66129
+          ],
+          [
+            120.31615,
+            22.66312
+          ],
+          [
+            120.31625,
+            22.66403
+          ],
+          [
+            120.31638,
+            22.66494
+          ],
+          [
+            120.31709,
+            22.66827
+          ],
+          [
+            120.31873,
+            22.66779
+          ],
+          [
+            120.31973,
+            22.66748
+          ],
+          [
+            120.32006,
+            22.6686
+          ],
+          [
+            120.32076,
+            22.67099
+          ],
+          [
+            120.32155,
+            22.67343
+          ],
+          [
+            120.32197,
+            22.67478
+          ],
+          [
+            120.32328,
+            22.67671
+          ],
+          [
+            120.32181,
+            22.67764
+          ],
+          [
+            120.32174,
+            22.67953
+          ],
+          [
+            120.32171,
+            22.6817
+          ],
+          [
+            120.31986557642904,
+            22.68197273143647
+          ],
+          [
+            120.3198361048152,
+            22.681980933872666
+          ],
+          [
+            120.31980986043128,
+            22.681996075603852
+          ],
+          [
+            120.31978880450781,
+            22.68201707924852
+          ],
+          [
+            120.31977440914561,
+            22.682042476360813
+          ],
+          [
+            120.31976768078007,
+            22.682070491330602
+          ],
+          [
+            120.31976906465223,
+            22.682099034858442
+          ],
+          [
+            120.31994,
+            22.68298
+          ],
+          [
+            120.31856,
+            22.68324
+          ],
+          [
+            120.31823,
+            22.68329
+          ],
+          [
+            120.31683,
+            22.68437
+          ],
+          [
+            120.31552,
+            22.68548
+          ],
+          [
+            120.31375,
+            22.68708
+          ],
+          [
+            120.3112213028565,
+            22.689272861088035
+          ],
+          [
+            120.3111964738185,
+            22.68928944607638
+          ],
+          [
+            120.31116826252803,
+            22.68929938992055
+          ],
+          [
+            120.3111382512419,
+            22.689302289823154
+          ],
+          [
+            120.31110844141958,
+            22.689297952389033
+          ],
+          [
+            120.31108082108494,
+            22.689286666882644
+          ],
+          [
+            120.31105694752445,
+            22.689268911216217
+          ],
+          [
+            120.31086,
+            22.68908
+          ],
+          [
+            120.30986,
+            22.68799
+          ],
+          [
+            120.30878,
+            22.68704
+          ],
+          [
+            120.30793,
+            22.68636
+          ],
+          [
+            120.30595,
+            22.68492
+          ],
+          [
+            120.30325202973589,
+            22.682955547124052
+          ],
+          [
+            120.30322896025001,
+            22.682932927573784
+          ],
+          [
+            120.30321362973075,
+            22.682904798932352
+          ],
+          [
+            120.30320764518797,
+            22.68287376334631
+          ],
+          [
+            120.30321151145706,
+            22.68284243887046
+          ],
+          [
+            120.3032249023929,
+            22.68281346792934
+          ],
+          [
+            120.30324638408699,
+            22.682789547238727
+          ],
+          [
+            120.30379,
+            22.68234
+          ],
+          [
+            120.30521,
+            22.68112
+          ],
+          [
+            120.30704,
+            22.68266
+          ],
+          [
+            120.30824,
+            22.68352
+          ],
+          [
+            120.31103,
+            22.68546
+          ],
+          [
+            120.31341,
+            22.68726
+          ],
           [
             120.31585,
             22.68904
@@ -379,6 +747,54 @@
           [
             120.31401,
             22.69136
+          ],
+          [
+            120.31365540726821,
+            22.691664645774093
+          ],
+          [
+            120.31363621829529,
+            22.691686206083528
+          ],
+          [
+            120.31362347541564,
+            22.691711970252992
+          ],
+          [
+            120.31361834800627,
+            22.691739921469065
+          ],
+          [
+            120.31362118586063,
+            22.69176815289121
+          ],
+          [
+            120.31363179537941,
+            22.691794738563154
+          ],
+          [
+            120.31364917479111,
+            22.691817585401434
+          ],
+          [
+            120.31519,
+            22.69336
+          ],
+          [
+            120.31579,
+            22.69366
+          ],
+          [
+            120.31698,
+            22.69377
+          ],
+          [
+            120.319,
+            22.6943
+          ],
+          [
+            120.32167,
+            22.69516
           ]
         ]
       }
@@ -391,8 +807,9 @@
         "name": "高鐵基地",
         "name_en": "Taiwan High Speed Rail Base",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "4443"
       },
       "geometry": {
         "type": "Point",
@@ -410,8 +827,9 @@
         "name": "高鐵路",
         "name_en": "Gaotie Rd.",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "2212"
       },
       "geometry": {
         "type": "Point",
@@ -429,8 +847,9 @@
         "name": "文府國小(重忠路口)",
         "name_en": "Wen-Fu Elementary School(Jhongjhong Rd. Intersection)",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "3096"
       },
       "geometry": {
         "type": "Point",
@@ -448,8 +867,9 @@
         "name": "左營新光三越",
         "name_en": "Shin Kong Mitsukoshi Department Store(Kaohsiung Zuoying)",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "3838"
       },
       "geometry": {
         "type": "Point",
@@ -467,8 +887,9 @@
         "name": "高鐵左營站",
         "name_en": "HSR Zuoying Station",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "2777"
       },
       "geometry": {
         "type": "Point",
@@ -486,8 +907,9 @@
         "name": "曾子路(原生植物園)",
         "name_en": "Zengzih Rd.(Indigenous Botanical Garden)",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "4168"
       },
       "geometry": {
         "type": "Point",
@@ -505,8 +927,9 @@
         "name": "大中路口(華夏路)",
         "name_en": "Dajhong Rd. Intersection(Huasia Rd.)",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "3636"
       },
       "geometry": {
         "type": "Point",
@@ -524,8 +947,9 @@
         "name": "大中路口一(華夏路)",
         "name_en": "Dajhong Rd. Intersection I(Huasia Rd.)",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "3819"
       },
       "geometry": {
         "type": "Point",
@@ -543,8 +967,9 @@
         "name": "重平路口",
         "name_en": "Jhongping Rd. Intersection",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "3841"
       },
       "geometry": {
         "type": "Point",
@@ -562,8 +987,9 @@
         "name": "華夏路口(重愛路)",
         "name_en": "Huasia Rd. Intersection(Jhongai Rd.)",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "2165"
       },
       "geometry": {
         "type": "Point",
@@ -581,8 +1007,9 @@
         "name": "文自路口",
         "name_en": "Wunzih Rd. Intersection",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "3806"
       },
       "geometry": {
         "type": "Point",
@@ -600,8 +1027,9 @@
         "name": "重愛路(新莊高中)",
         "name_en": "Jhongai Rd.(Hsinchuang Senior High School)",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "2394"
       },
       "geometry": {
         "type": "Point",
@@ -619,8 +1047,9 @@
         "name": "榮佑路",
         "name_en": "Rongyou Rd.",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "1489"
       },
       "geometry": {
         "type": "Point",
@@ -638,8 +1067,9 @@
         "name": "榮總側門",
         "name_en": "the side entrance of Kaohsiung Veterans General Hospital",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "2488"
       },
       "geometry": {
         "type": "Point",
@@ -657,8 +1087,9 @@
         "name": "獅湖國小(鼎中路)",
         "name_en": "Shihhu Elementary School(Dingzhong Rd.)",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "676"
       },
       "geometry": {
         "type": "Point",
@@ -676,8 +1107,9 @@
         "name": "文藻外語大學(鼎中路)",
         "name_en": "Wenzao Ursuline University of Languages(Dingjhong Rd.)",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "674"
       },
       "geometry": {
         "type": "Point",
@@ -695,8 +1127,9 @@
         "name": "鼎中路(天祥一路口)",
         "name_en": "Dingjhong Rd.(Tiansiang 1st Rd.)",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "4167"
       },
       "geometry": {
         "type": "Point",
@@ -714,8 +1147,9 @@
         "name": "天祥一路",
         "name_en": "Tiansiang 1st Rd.",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "3730"
       },
       "geometry": {
         "type": "Point",
@@ -733,8 +1167,9 @@
         "name": "民族裕誠路口",
         "name_en": "Minzu Yucheng Rd. Intersection",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "1157"
       },
       "geometry": {
         "type": "Point",
@@ -752,8 +1187,9 @@
         "name": "民族路(明誠路口)",
         "name_en": "Minzu Rd.(Mingcheng Rd. Intersection)",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "48"
       },
       "geometry": {
         "type": "Point",
@@ -771,8 +1207,9 @@
         "name": "大樂民族店",
         "name_en": "Dollars Mall(Minzu Store)",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "2695"
       },
       "geometry": {
         "type": "Point",
@@ -790,8 +1227,9 @@
         "name": "河堤路口(明誠二路)",
         "name_en": "Heti Rd. Intersection(Mingcheng 2nd Rd.)",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "3998"
       },
       "geometry": {
         "type": "Point",
@@ -809,8 +1247,9 @@
         "name": "河堤公園(明誠二路)",
         "name_en": "Riverbank Park(Mingcheng 2nd Rd.)",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "2434"
       },
       "geometry": {
         "type": "Point",
@@ -828,8 +1267,9 @@
         "name": "水利會",
         "name_en": "Irrigation Association",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "3646"
       },
       "geometry": {
         "type": "Point",
@@ -847,8 +1287,9 @@
         "name": "富國路",
         "name_en": "Fuguo Rd.",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "3644"
       },
       "geometry": {
         "type": "Point",
@@ -866,8 +1307,9 @@
         "name": "富民路口",
         "name_en": "Fumin Rd. Intersection",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "3641"
       },
       "geometry": {
         "type": "Point",
@@ -885,8 +1327,9 @@
         "name": "捷運巨蛋站(裕誠路)",
         "name_en": "MRT Kaohsiung Arena Station(Yucheng Rd.)",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "4144"
       },
       "geometry": {
         "type": "Point",
@@ -904,8 +1347,9 @@
         "name": "三民家商",
         "name_en": "Kaohsiung Municipal Sanmin Home Economics & Commerce Vocational High School",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "3839"
       },
       "geometry": {
         "type": "Point",
@@ -923,8 +1367,9 @@
         "name": "明倫路口",
         "name_en": "Minglun Rd. Intersection",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "4129"
       },
       "geometry": {
         "type": "Point",
@@ -942,8 +1387,9 @@
         "name": "裕豐街口",
         "name_en": "Yufong St. Intersection",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "4053"
       },
       "geometry": {
         "type": "Point",
@@ -961,8 +1407,9 @@
         "name": "民康街口",
         "name_en": "Minkang St. Intersection",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "4051"
       },
       "geometry": {
         "type": "Point",
@@ -980,8 +1427,9 @@
         "name": "龍勝路口(凹子底公園)",
         "name_en": "Longsheng Rd. Intersection(Aozihdi Forest Park)",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "station_id": "3678"
       },
       "geometry": {
         "type": "Point",
@@ -999,8 +1447,9 @@
         "name": "龍勝路口(凹子底公園)",
         "name_en": "Longsheng Rd. Intersection(Aozihdi Forest Park)",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "3678"
       },
       "geometry": {
         "type": "Point",
@@ -1018,8 +1467,9 @@
         "name": "華榮公園",
         "name_en": "Huarong Park",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "3680"
       },
       "geometry": {
         "type": "Point",
@@ -1037,8 +1487,9 @@
         "name": "明倫路口",
         "name_en": "Minglun Rd. Intersection",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "4128"
       },
       "geometry": {
         "type": "Point",
@@ -1056,8 +1507,9 @@
         "name": "三民家商",
         "name_en": "Kaohsiung Municipal Sanmin Home Economics & Commerce Vocational High School",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "3840"
       },
       "geometry": {
         "type": "Point",
@@ -1075,8 +1527,9 @@
         "name": "捷運巨蛋站(裕誠路)",
         "name_en": "MRT Kaohsiung Arena Station(Yucheng Rd.)",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "4143"
       },
       "geometry": {
         "type": "Point",
@@ -1094,8 +1547,9 @@
         "name": "富民路口",
         "name_en": "Fumin Rd. Intersection",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "3642"
       },
       "geometry": {
         "type": "Point",
@@ -1113,8 +1567,9 @@
         "name": "富國路",
         "name_en": "Fuguo Rd.",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "3643"
       },
       "geometry": {
         "type": "Point",
@@ -1132,8 +1587,9 @@
         "name": "水利會",
         "name_en": "Irrigation Association",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "3645"
       },
       "geometry": {
         "type": "Point",
@@ -1151,8 +1607,9 @@
         "name": "河堤公園(明誠二路)",
         "name_en": "Riverbank Park(Mingcheng 2nd Rd.)",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "2433"
       },
       "geometry": {
         "type": "Point",
@@ -1170,8 +1627,9 @@
         "name": "河堤路口(明誠二路)",
         "name_en": "Heti Rd. Intersection(Mingcheng 2nd Rd.)",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "3997"
       },
       "geometry": {
         "type": "Point",
@@ -1189,8 +1647,9 @@
         "name": "大樂民族店",
         "name_en": "Dollars Mall(Minzu Store)",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "2694"
       },
       "geometry": {
         "type": "Point",
@@ -1208,8 +1667,9 @@
         "name": "民族路(明誠路口)",
         "name_en": "Minzu Rd.(Mingcheng Rd. Intersection)",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "47"
       },
       "geometry": {
         "type": "Point",
@@ -1227,8 +1687,9 @@
         "name": "民族裕誠路口",
         "name_en": "Minzu Yucheng Rd. Intersection",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "1156"
       },
       "geometry": {
         "type": "Point",
@@ -1246,8 +1707,9 @@
         "name": "天祥一路",
         "name_en": "Tiansiang 1st Rd.",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "3731"
       },
       "geometry": {
         "type": "Point",
@@ -1265,8 +1727,9 @@
         "name": "鼎中路(天祥一路口)",
         "name_en": "Dingjhong Rd.(Tiansiang 1st Rd.)",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "4166"
       },
       "geometry": {
         "type": "Point",
@@ -1284,8 +1747,9 @@
         "name": "文藻外語大學(鼎中路)",
         "name_en": "Wenzao Ursuline University of Languages(Dingjhong Rd.)",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "673"
       },
       "geometry": {
         "type": "Point",
@@ -1303,8 +1767,9 @@
         "name": "獅湖國小(鼎中路)",
         "name_en": "Shihhu Elementary School(Dingzhong Rd.)",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "675"
       },
       "geometry": {
         "type": "Point",
@@ -1322,8 +1787,9 @@
         "name": "榮總側門",
         "name_en": "the side entrance of Kaohsiung Veterans General Hospital",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "2487"
       },
       "geometry": {
         "type": "Point",
@@ -1341,8 +1807,9 @@
         "name": "榮佑路",
         "name_en": "Rongyou Rd.",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "1490"
       },
       "geometry": {
         "type": "Point",
@@ -1360,8 +1827,9 @@
         "name": "重愛路(新莊高中)",
         "name_en": "Jhongai Rd.(Hsinchuang Senior High School)",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "2395"
       },
       "geometry": {
         "type": "Point",
@@ -1379,8 +1847,9 @@
         "name": "文自路口",
         "name_en": "Wunzih Rd. Intersection",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "3807"
       },
       "geometry": {
         "type": "Point",
@@ -1398,8 +1867,9 @@
         "name": "華夏路口(重愛路)",
         "name_en": "Huasia Rd. Intersection(Jhongai Rd.)",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "2167"
       },
       "geometry": {
         "type": "Point",
@@ -1417,8 +1887,9 @@
         "name": "高鐵路口(左營新光三越)",
         "name_en": "HSR Gaotie Rd. Intersection(Zuoying Shin Kong Mitsukoshi Department Store)",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "4614"
       },
       "geometry": {
         "type": "Point",
@@ -1436,8 +1907,9 @@
         "name": "左營新光三越",
         "name_en": "Shin Kong Mitsukoshi Department Store(Kaohsiung Zuoying)",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "3838"
       },
       "geometry": {
         "type": "Point",
@@ -1455,8 +1927,9 @@
         "name": "高鐵左營站",
         "name_en": "HSR Zuoying Station",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "2777"
       },
       "geometry": {
         "type": "Point",
@@ -1474,8 +1947,9 @@
         "name": "曾子路(原生植物園)",
         "name_en": "Zengzih Rd.(Indigenous Botanical Garden)",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "4168"
       },
       "geometry": {
         "type": "Point",
@@ -1493,8 +1967,9 @@
         "name": "大中路口(華夏路)",
         "name_en": "Dajhong Rd. Intersection (Huasia Rd.)",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "3636"
       },
       "geometry": {
         "type": "Point",
@@ -1512,8 +1987,9 @@
         "name": "大中路口一(華夏路)",
         "name_en": "Dajhong Rd. Intersection I (Huasia Rd.)",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "3819"
       },
       "geometry": {
         "type": "Point",
@@ -1531,8 +2007,9 @@
         "name": "重平路口",
         "name_en": "Jhongping Rd. Intersection",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "3841"
       },
       "geometry": {
         "type": "Point",
@@ -1550,8 +2027,9 @@
         "name": "文府國小",
         "name_en": "Wen-Fu Elementary School",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "3805"
       },
       "geometry": {
         "type": "Point",
@@ -1569,8 +2047,9 @@
         "name": "文府國小(重忠路口)",
         "name_en": "Wen-Fu Elementary School(Jhongjhong Rd. Intersection)",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "3095"
       },
       "geometry": {
         "type": "Point",
@@ -1588,8 +2067,9 @@
         "name": "高鐵路",
         "name_en": "Gaotie Rd.",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "2211"
       },
       "geometry": {
         "type": "Point",
@@ -1607,8 +2087,9 @@
         "name": "高鐵基地",
         "name_en": "Taiwan High Speed Rail Base",
         "line": "3",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#3730a3",
+        "direction": 1,
+        "station_id": "4444"
       },
       "geometry": {
         "type": "Point",

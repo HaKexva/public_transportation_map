@@ -6,13 +6,12 @@
     "name": "900跳蛙公車",
     "name_en": "900跳蛙公車",
     "ref": "900跳蛙公車",
-    "color": "#a21caf",
+    "color": "#65a30d",
     "city_id": "Taichung",
     "source": "TDX Bus Shape / StopOfRoute",
     "operator_id": "6",
     "operator": "豐原客運",
-    "operator_en": "Fengyuan Bus Co., Ltd.",
-    "official_map_url": "https://citybus.taichung.gov.tw/ebus/strapi/uploads/900_f2575b36bd.jpeg"
+    "operator_en": "Fengyuan Bus Co., Ltd."
   },
   "features": [
     {
@@ -22,7 +21,7 @@
         "ref": "900跳蛙公車",
         "name": "900跳蛙公車",
         "name_en": "900跳蛙公車",
-        "color": "#a21caf",
+        "color": "#65a30d",
         "direction": 0
       },
       "geometry": {
@@ -97,16 +96,32 @@
             24.1453
           ],
           [
-            120.68646,
-            24.1457
+            120.68641134723948,
+            24.146189550969527
           ],
           [
-            120.68613,
-            24.14615
+            120.68640521611701,
+            24.146215545899736
           ],
           [
-            120.6861,
-            24.14629
+            120.68639243152701,
+            24.146239332806775
+          ],
+          [
+            120.6863737501875,
+            24.146259559785133
+          ],
+          [
+            120.68635028782654,
+            24.14627501879476
+          ],
+          [
+            120.68632344571479,
+            24.146284786558724
+          ],
+          [
+            120.68629483493774,
+            24.14628827963422
           ],
           [
             120.68382,
@@ -117,12 +132,32 @@
             24.14584
           ],
           [
-            120.6826,
-            24.14602
+            120.68268765589274,
+            24.145975860469697
           ],
           [
-            120.68263,
-            24.1461
+            120.68266491969499,
+            24.145990769385932
+          ],
+          [
+            120.68264643251332,
+            24.14601043298568
+          ],
+          [
+            120.68263356031316,
+            24.146033570648815
+          ],
+          [
+            120.68262704067335,
+            24.146058856583927
+          ],
+          [
+            120.68262724717023,
+            24.146084841903324
+          ],
+          [
+            120.68263406865812,
+            24.14610979941127
           ],
           [
             120.6842,
@@ -313,12 +348,32 @@
             24.25371
           ],
           [
-            120.72235,
-            24.25406
+            120.72247749198303,
+            24.254091186069633
           ],
           [
-            120.72256,
-            24.25459
+            120.72250157550313,
+            24.25409976843256
+          ],
+          [
+            120.72252321195722,
+            24.254113070639775
+          ],
+          [
+            120.72254115238864,
+            24.254130398776805
+          ],
+          [
+            120.72255452663185,
+            24.254150912376275
+          ],
+          [
+            120.72256268599537,
+            24.254173616466183
+          ],
+          [
+            120.72256523476767,
+            24.254197400471693
           ],
           [
             120.72254,
@@ -329,8 +384,32 @@
             24.25646
           ],
           [
-            120.72056,
-            24.25894
+            120.72061604416913,
+            24.258866332864788
+          ],
+          [
+            120.72060323533258,
+            24.258888088781216
+          ],
+          [
+            120.72059606307164,
+            24.258912296518925
+          ],
+          [
+            120.72059513468875,
+            24.25893736943764
+          ],
+          [
+            120.72060049976491,
+            24.25896196849985
+          ],
+          [
+            120.72061187177432,
+            24.258984779974707
+          ],
+          [
+            120.72062835263485,
+            24.25900431294544
           ],
           [
             120.72193,
@@ -390,36 +469,444 @@
         "ref": "900跳蛙公車",
         "name": "900跳蛙公車",
         "name_en": "900跳蛙公車",
-        "color": "#a21caf",
+        "color": "#65a30d",
         "direction": 1
       },
       "geometry": {
         "type": "LineString",
         "coordinates": [
           [
-            120.71872,
-            24.25343
+            120.74183,
+            24.25571
           ],
           [
-            120.71876,
-            24.25292
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "route",
-        "ref": "900跳蛙公車",
-        "name": "900跳蛙公車",
-        "name_en": "900跳蛙公車",
-        "color": "#a21caf",
-        "direction": 1
-      },
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
+            120.73768,
+            24.25586
+          ],
+          [
+            120.72983,
+            24.25514
+          ],
+          [
+            120.72973,
+            24.25604
+          ],
+          [
+            120.727,
+            24.25988
+          ],
+          [
+            120.72361,
+            24.26074
+          ],
+          [
+            120.72245,
+            24.26068
+          ],
+          [
+            120.72053,
+            24.25902
+          ],
+          [
+            120.72251,
+            24.25632
+          ],
+          [
+            120.72258972830831,
+            24.254203667686607
+          ],
+          [
+            120.72258775118989,
+            24.254179830457854
+          ],
+          [
+            120.72258012823282,
+            24.254156944433518
+          ],
+          [
+            120.72256722893363,
+            24.254136148159397
+          ],
+          [
+            120.72254968021461,
+            24.25411845236078
+          ],
+          [
+            120.72252833496576,
+            24.254104717075897
+          ],
+          [
+            120.72250444333211,
+            24.254095666192182
+          ],
+          [
+            120.72127,
+            24.25377
+          ],
+          [
+            120.72004,
+            24.2536
+          ],
+          [
+            120.71885147847885,
+            24.25344705032322
+          ],
+          [
+            120.71882397496003,
+            24.253440305797472
+          ],
+          [
+            120.71879893130377,
+            24.25342765919671
+          ],
+          [
+            120.71877792461343,
+            24.253409864237568
+          ],
+          [
+            120.71876218246987,
+            24.253387960814948
+          ],
+          [
+            120.71875262480634,
+            24.25336322891255
+          ],
+          [
+            120.718749809642,
+            24.253337130927115
+          ],
+          [
+            120.7187866466107,
+            24.25183733475374
+          ],
+          [
+            120.71878214065191,
+            24.251805121489454
+          ],
+          [
+            120.71876744804666,
+            24.251775559336217
+          ],
+          [
+            120.71874388482081,
+            24.25175131420602
+          ],
+          [
+            120.71871356222515,
+            24.251734558447932
+          ],
+          [
+            120.71867919714605,
+            24.251726793367794
+          ],
+          [
+            120.71864370283305,
+            24.251728747215445
+          ],
+          [
+            120.71797,
+            24.25186
+          ],
+          [
+            120.71666,
+            24.25186
+          ],
+          [
+            120.71567,
+            24.25143
+          ],
+          [
+            120.71509,
+            24.25117
+          ],
+          [
+            120.71445,
+            24.25107
+          ],
+          [
+            120.71531,
+            24.24822
+          ],
+          [
+            120.71447,
+            24.24511
+          ],
+          [
+            120.71297,
+            24.24188
+          ],
+          [
+            120.71114,
+            24.23898
+          ],
+          [
+            120.70889,
+            24.23253
+          ],
+          [
+            120.70853,
+            24.23041
+          ],
+          [
+            120.70786,
+            24.22689
+          ],
+          [
+            120.70707,
+            24.22339
+          ],
+          [
+            120.70571,
+            24.21763
+          ],
+          [
+            120.70515,
+            24.21527
+          ],
+          [
+            120.70548,
+            24.21138
+          ],
+          [
+            120.70518,
+            24.20729
+          ],
+          [
+            120.70428,
+            24.20383
+          ],
+          [
+            120.70256,
+            24.19637
+          ],
+          [
+            120.70245,
+            24.19171
+          ],
+          [
+            120.7025,
+            24.18672
+          ],
+          [
+            120.70187,
+            24.18173
+          ],
+          [
+            120.69916,
+            24.17558
+          ],
+          [
+            120.69846,
+            24.17406
+          ],
+          [
+            120.69834,
+            24.1737
+          ],
+          [
+            120.69828,
+            24.17302
+          ],
+          [
+            120.69831,
+            24.17182
+          ],
+          [
+            120.69826,
+            24.17151
+          ],
+          [
+            120.69809,
+            24.17106
+          ],
+          [
+            120.6978,
+            24.17056
+          ],
+          [
+            120.69695,
+            24.1693
+          ],
+          [
+            120.69417,
+            24.16495
+          ],
+          [
+            120.6931,
+            24.16312
+          ],
+          [
+            120.69265,
+            24.1623
+          ],
+          [
+            120.69129,
+            24.15922
+          ],
+          [
+            120.68954,
+            24.15768
+          ],
+          [
+            120.688,
+            24.15637
+          ],
+          [
+            120.68724,
+            24.15573
+          ],
+          [
+            120.6862,
+            24.15474
+          ],
+          [
+            120.68245,
+            24.14591
+          ],
+          [
+            120.68307,
+            24.14579
+          ],
+          [
+            120.68412,
+            24.14628
+          ],
+          [
+            120.6859660736565,
+            24.14619656130023
+          ],
+          [
+            120.68598740068036,
+            24.146193783457573
+          ],
+          [
+            120.68600786172719,
+            24.146187478000915
+          ],
+          [
+            120.68602673308953,
+            24.146177857215783
+          ],
+          [
+            120.68604338497374,
+            24.146165242176465
+          ],
+          [
+            120.68605726165686,
+            24.146150053884444
+          ],
+          [
+            120.68606802758643,
+            24.14613253881223
+          ],
+          [
+            120.68632,
+            24.14562
+          ],
+          [
+            120.68633,
+            24.14539
+          ],
+          [
+            120.68596,
+            24.1442
+          ],
+          [
+            120.68573,
+            24.14341
+          ],
+          [
+            120.68577,
+            24.14186
+          ],
+          [
+            120.68579,
+            24.14028
+          ],
+          [
+            120.68598,
+            24.13973
+          ],
+          [
+            120.68602,
+            24.13958
+          ],
+          [
+            120.68604,
+            24.13921
+          ],
+          [
+            120.68602,
+            24.13888
+          ],
+          [
+            120.68566,
+            24.13838
+          ],
+          [
+            120.68539,
+            24.13811
+          ],
+          [
+            120.68514,
+            24.13781
+          ],
+          [
+            120.68466,
+            24.1376
+          ],
+          [
+            120.68437,
+            24.13734
+          ],
+          [
+            120.68421,
+            24.13689
+          ],
+          [
+            120.68406,
+            24.13673
+          ],
+          [
+            120.6822856442862,
+            24.135934177402206
+          ],
+          [
+            120.68226259326796,
+            24.135926378019295
+          ],
+          [
+            120.68223861328276,
+            24.1359231411941
+          ],
+          [
+            120.68221441922721,
+            24.135924470507344
+          ],
+          [
+            120.6821910296896,
+            24.135930309993917
+          ],
+          [
+            120.68216942938744,
+            24.135940413806953
+          ],
+          [
+            120.68215023279257,
+            24.135954625257344
+          ],
+          [
+            120.68102,
+            24.13698
+          ],
+          [
+            120.67996,
+            24.13793
+          ],
+          [
+            120.67771,
+            24.13578
+          ],
           [
             120.67469,
             24.13284
@@ -431,6 +918,10 @@
           [
             120.67257,
             24.13325
+          ],
+          [
+            120.67157,
+            24.13414
           ]
         ]
       }
@@ -443,8 +934,9 @@
         "name": "朝陽三民路口",
         "name_en": "Chaoyang-Sanmin Intersection",
         "line": "900跳蛙公車",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "10193"
       },
       "geometry": {
         "type": "Point",
@@ -462,8 +954,9 @@
         "name": "臺中女中",
         "name_en": "Taichung Girls Senior High School",
         "line": "900跳蛙公車",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "865"
       },
       "geometry": {
         "type": "Point",
@@ -481,8 +974,9 @@
         "name": "臺中車站(民族路口)",
         "name_en": "Taichung Station(Minzu Intersection)",
         "line": "900跳蛙公車",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "6226"
       },
       "geometry": {
         "type": "Point",
@@ -500,8 +994,9 @@
         "name": "國立臺中科技大學",
         "name_en": "National Taichung University of Science and Technology",
         "line": "900跳蛙公車",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "281"
       },
       "geometry": {
         "type": "Point",
@@ -519,8 +1014,9 @@
         "name": "中友百貨",
         "name_en": "Chungyo Department Store",
         "line": "900跳蛙公車",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "340"
       },
       "geometry": {
         "type": "Point",
@@ -538,8 +1034,9 @@
         "name": "三民錦新街口",
         "name_en": "Sanmin-Jinxin Intersection",
         "line": "900跳蛙公車",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "226"
       },
       "geometry": {
         "type": "Point",
@@ -557,8 +1054,9 @@
         "name": "新民高中(三民路)",
         "name_en": "Shin-min Senior High School(Sanmin Road)",
         "line": "900跳蛙公車",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "728"
       },
       "geometry": {
         "type": "Point",
@@ -576,8 +1074,9 @@
         "name": "監理站",
         "name_en": "Motor Vehicles Office",
         "line": "900跳蛙公車",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "265"
       },
       "geometry": {
         "type": "Point",
@@ -595,8 +1094,9 @@
         "name": "北屯國小(北屯路)",
         "name_en": "Beitun Elementary School(Beitun Road)",
         "line": "900跳蛙公車",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "142"
       },
       "geometry": {
         "type": "Point",
@@ -614,8 +1114,9 @@
         "name": "三光國中",
         "name_en": "Sanguang junior high school",
         "line": "900跳蛙公車",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "430"
       },
       "geometry": {
         "type": "Point",
@@ -633,8 +1134,9 @@
         "name": "大坑口",
         "name_en": "Dakengkou",
         "line": "900跳蛙公車",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "1244"
       },
       "geometry": {
         "type": "Point",
@@ -652,8 +1154,9 @@
         "name": "北屯崇德二路口",
         "name_en": "Beitun-Chongde 2nd Intersection",
         "line": "900跳蛙公車",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "1253"
       },
       "geometry": {
         "type": "Point",
@@ -671,8 +1174,9 @@
         "name": "北新國中",
         "name_en": "Beixin Junior High School",
         "line": "900跳蛙公車",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "1247"
       },
       "geometry": {
         "type": "Point",
@@ -690,8 +1194,9 @@
         "name": "捷運松竹站(北屯路)",
         "name_en": "MRT Songzhu Station(Beitun Road)",
         "line": "900跳蛙公車",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "332"
       },
       "geometry": {
         "type": "Point",
@@ -709,8 +1214,9 @@
         "name": "中山中興路口",
         "name_en": "Zhongshan-Zhongxing Intersection",
         "line": "900跳蛙公車",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "1233"
       },
       "geometry": {
         "type": "Point",
@@ -728,8 +1234,9 @@
         "name": "頭家厝車站",
         "name_en": "Toujiacuo Station",
         "line": "900跳蛙公車",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "1312"
       },
       "geometry": {
         "type": "Point",
@@ -747,8 +1254,9 @@
         "name": "僑忠國小",
         "name_en": "Chyau-Zhong Elementary School",
         "line": "900跳蛙公車",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "1213"
       },
       "geometry": {
         "type": "Point",
@@ -766,8 +1274,9 @@
         "name": "中山潭子街口",
         "name_en": "Zhongshan-Tanzi Intersection",
         "line": "900跳蛙公車",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "1304"
       },
       "geometry": {
         "type": "Point",
@@ -785,8 +1294,9 @@
         "name": "潭子車站",
         "name_en": "Tanzi Station",
         "line": "900跳蛙公車",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "1300"
       },
       "geometry": {
         "type": "Point",
@@ -804,8 +1314,9 @@
         "name": "潭子國小",
         "name_en": "Tanzi Elementary School",
         "line": "900跳蛙公車",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "1299"
       },
       "geometry": {
         "type": "Point",
@@ -823,8 +1334,9 @@
         "name": "潭子科技園區",
         "name_en": "TTIP",
         "line": "900跳蛙公車",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "1302"
       },
       "geometry": {
         "type": "Point",
@@ -842,8 +1354,9 @@
         "name": "弘文中學",
         "name_en": "Hong Wen Senior High School",
         "line": "900跳蛙公車",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "1254"
       },
       "geometry": {
         "type": "Point",
@@ -861,8 +1374,9 @@
         "name": "文化新村",
         "name_en": "Cultural Community",
         "line": "900跳蛙公車",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "1237"
       },
       "geometry": {
         "type": "Point",
@@ -880,8 +1394,9 @@
         "name": "豐原高商",
         "name_en": "Fengyuan Voc. School",
         "line": "900跳蛙公車",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "1314"
       },
       "geometry": {
         "type": "Point",
@@ -899,8 +1414,9 @@
         "name": "臺灣企銀(豐原郵局)",
         "name_en": "Taiwan Business Bank(Fengyuan Post Office)",
         "line": "900跳蛙公車",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "840"
       },
       "geometry": {
         "type": "Point",
@@ -918,8 +1434,9 @@
         "name": "媽祖廟",
         "name_en": "Mazu Temple",
         "line": "900跳蛙公車",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "1288"
       },
       "geometry": {
         "type": "Point",
@@ -937,8 +1454,9 @@
         "name": "豐原",
         "name_en": "Fengyuan",
         "line": "900跳蛙公車",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "6688"
       },
       "geometry": {
         "type": "Point",
@@ -956,8 +1474,9 @@
         "name": "豐原車站",
         "name_en": "Fengyuan Station",
         "line": "900跳蛙公車",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "2845"
       },
       "geometry": {
         "type": "Point",
@@ -975,8 +1494,9 @@
         "name": "豐村國小",
         "name_en": "Feng Chuen Elementary School",
         "line": "900跳蛙公車",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "4353"
       },
       "geometry": {
         "type": "Point",
@@ -994,8 +1514,9 @@
         "name": "豐原高中",
         "name_en": "Fengyuan Senior High School",
         "line": "900跳蛙公車",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#65a30d",
+        "direction": 0,
+        "station_id": "2329"
       },
       "geometry": {
         "type": "Point",
@@ -1013,8 +1534,9 @@
         "name": "豐原高中",
         "name_en": "Fengyuan Senior High School",
         "line": "900跳蛙公車",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "2329"
       },
       "geometry": {
         "type": "Point",
@@ -1032,8 +1554,9 @@
         "name": "豐村國小",
         "name_en": "Feng Chuen Elementary School",
         "line": "900跳蛙公車",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "4353"
       },
       "geometry": {
         "type": "Point",
@@ -1051,8 +1574,9 @@
         "name": "豐原車站",
         "name_en": "Fengyuan Station",
         "line": "900跳蛙公車",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "2845"
       },
       "geometry": {
         "type": "Point",
@@ -1070,8 +1594,9 @@
         "name": "豐原",
         "name_en": "Fengyuan",
         "line": "900跳蛙公車",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "6687"
       },
       "geometry": {
         "type": "Point",
@@ -1089,8 +1614,9 @@
         "name": "媽祖廟",
         "name_en": "Mazu Temple",
         "line": "900跳蛙公車",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "1288"
       },
       "geometry": {
         "type": "Point",
@@ -1108,8 +1634,9 @@
         "name": "臺灣企銀(豐原郵局)",
         "name_en": "Taiwan Business Bank(Fengyuan Post Office)",
         "line": "900跳蛙公車",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "840"
       },
       "geometry": {
         "type": "Point",
@@ -1127,8 +1654,9 @@
         "name": "豐原高商",
         "name_en": "Fengyuan Voc. School",
         "line": "900跳蛙公車",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "1314"
       },
       "geometry": {
         "type": "Point",
@@ -1146,8 +1674,9 @@
         "name": "文化新村",
         "name_en": "Cultural Community",
         "line": "900跳蛙公車",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "1237"
       },
       "geometry": {
         "type": "Point",
@@ -1165,8 +1694,9 @@
         "name": "弘文中學",
         "name_en": "Hong Wen Senior High School",
         "line": "900跳蛙公車",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "1254"
       },
       "geometry": {
         "type": "Point",
@@ -1184,8 +1714,9 @@
         "name": "潭子科技園區",
         "name_en": "TTIP",
         "line": "900跳蛙公車",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "1303"
       },
       "geometry": {
         "type": "Point",
@@ -1203,8 +1734,9 @@
         "name": "潭子國小",
         "name_en": "Tanzi Elementary School",
         "line": "900跳蛙公車",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "1299"
       },
       "geometry": {
         "type": "Point",
@@ -1222,8 +1754,9 @@
         "name": "潭子車站",
         "name_en": "Tanzi Station",
         "line": "900跳蛙公車",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "1300"
       },
       "geometry": {
         "type": "Point",
@@ -1241,8 +1774,9 @@
         "name": "中山潭子街口",
         "name_en": "Zhongshan-Tanzi Intersection",
         "line": "900跳蛙公車",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "1304"
       },
       "geometry": {
         "type": "Point",
@@ -1260,8 +1794,9 @@
         "name": "僑忠國小",
         "name_en": "Chyau-Zhong Elementary School",
         "line": "900跳蛙公車",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "1212"
       },
       "geometry": {
         "type": "Point",
@@ -1279,8 +1814,9 @@
         "name": "頭家厝車站",
         "name_en": "Toujiacuo Station",
         "line": "900跳蛙公車",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "1312"
       },
       "geometry": {
         "type": "Point",
@@ -1298,8 +1834,9 @@
         "name": "中山中興路口",
         "name_en": "Zhongshan-Zhongxing Intersection",
         "line": "900跳蛙公車",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "1233"
       },
       "geometry": {
         "type": "Point",
@@ -1317,8 +1854,9 @@
         "name": "捷運松竹站(北屯路)",
         "name_en": "MRT Songzhu Station(Beitun Road)",
         "line": "900跳蛙公車",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "333"
       },
       "geometry": {
         "type": "Point",
@@ -1336,8 +1874,9 @@
         "name": "北新國中",
         "name_en": "Beixin Junior High School",
         "line": "900跳蛙公車",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "1247"
       },
       "geometry": {
         "type": "Point",
@@ -1355,8 +1894,9 @@
         "name": "北屯崇德二路口",
         "name_en": "Beitun-Chongde 2nd Intersection",
         "line": "900跳蛙公車",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "1253"
       },
       "geometry": {
         "type": "Point",
@@ -1374,8 +1914,9 @@
         "name": "大坑口",
         "name_en": "Dakengkou",
         "line": "900跳蛙公車",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "1244"
       },
       "geometry": {
         "type": "Point",
@@ -1393,8 +1934,9 @@
         "name": "三光國中",
         "name_en": "Sanguang junior high school",
         "line": "900跳蛙公車",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "430"
       },
       "geometry": {
         "type": "Point",
@@ -1412,8 +1954,9 @@
         "name": "北屯國小(北屯路)",
         "name_en": "Beitun Elementary School(Beitun Road)",
         "line": "900跳蛙公車",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "142"
       },
       "geometry": {
         "type": "Point",
@@ -1431,8 +1974,9 @@
         "name": "監理站",
         "name_en": "Motor Vehicles Office",
         "line": "900跳蛙公車",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "265"
       },
       "geometry": {
         "type": "Point",
@@ -1450,8 +1994,9 @@
         "name": "新民高中(三民路)",
         "name_en": "Shin-min Senior High School(Sanmin Road)",
         "line": "900跳蛙公車",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "727"
       },
       "geometry": {
         "type": "Point",
@@ -1469,8 +2014,9 @@
         "name": "三民錦新街口",
         "name_en": "Sanmin-Jinxin Intersection",
         "line": "900跳蛙公車",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "226"
       },
       "geometry": {
         "type": "Point",
@@ -1488,8 +2034,9 @@
         "name": "中友百貨",
         "name_en": "Chungyo Department Store",
         "line": "900跳蛙公車",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "341"
       },
       "geometry": {
         "type": "Point",
@@ -1507,8 +2054,9 @@
         "name": "國立臺中科技大學",
         "name_en": "National Taichung University of Science and Technology",
         "line": "900跳蛙公車",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "281"
       },
       "geometry": {
         "type": "Point",
@@ -1526,8 +2074,9 @@
         "name": "臺中車站(民族路口)",
         "name_en": "Taichung Station(Minzu Intersection)",
         "line": "900跳蛙公車",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "6225"
       },
       "geometry": {
         "type": "Point",
@@ -1545,8 +2094,9 @@
         "name": "臺中女中",
         "name_en": "Taichung Girls Senior High School",
         "line": "900跳蛙公車",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "864"
       },
       "geometry": {
         "type": "Point",
@@ -1564,8 +2114,9 @@
         "name": "朝陽三民路口",
         "name_en": "Chaoyang-Sanmin Intersection",
         "line": "900跳蛙公車",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#65a30d",
+        "direction": 1,
+        "station_id": "10193"
       },
       "geometry": {
         "type": "Point",

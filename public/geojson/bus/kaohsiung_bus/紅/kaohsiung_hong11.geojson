@@ -6,7 +6,7 @@
     "name": "紅11",
     "name_en": "紅11",
     "ref": "紅11",
-    "color": "#9333ea",
+    "color": "#2563eb",
     "city_id": "Kaohsiung",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ibus.tbkc.gov.tw/cms/api/route/811/map/1397/image",
@@ -22,7 +22,7 @@
         "ref": "紅11",
         "name": "紅11",
         "name_en": "紅11",
-        "color": "#9333ea",
+        "color": "#2563eb",
         "direction": 0
       },
       "geometry": {
@@ -81,12 +81,32 @@
             22.58908
           ],
           [
-            120.34905,
-            22.58789
+            120.34904394298165,
+            22.587527274155956
           ],
           [
-            120.34902,
-            22.58742
+            120.34903955241931,
+            22.587499418645688
+          ],
+          [
+            120.34902761231136,
+            22.58747355982719
+          ],
+          [
+            120.3490089248284,
+            22.58745142353746
+          ],
+          [
+            120.348984745757,
+            22.587434497320658
+          ],
+          [
+            120.34895669991492,
+            22.58742391860744
+          ],
+          [
+            120.34892666821048,
+            22.587420398296743
           ],
           [
             120.34666,
@@ -117,16 +137,32 @@
             22.59111
           ],
           [
-            120.34114,
-            22.59256
+            120.34111507726443,
+            22.59254290032156
           ],
           [
-            120.34121,
-            22.59263
+            120.34113676300522,
+            22.592562236424722
           ],
           [
-            120.34112,
-            22.59272
+            120.3411525822943,
+            22.59258641078199
+          ],
+          [
+            120.34116114460723,
+            22.592613565116277
+          ],
+          [
+            120.34116186816684,
+            22.59264185439185
+          ],
+          [
+            120.3411547038099,
+            22.592669356457954
+          ],
+          [
+            120.34114036765199,
+            22.592693908966915
           ],
           [
             120.34032,
@@ -169,12 +205,60 @@
             22.59727
           ],
           [
-            120.32923,
-            22.59091
+            120.3293566421964,
+            22.590997410050683
           ],
           [
-            120.3283,
-            22.59332
+            120.32932432636939,
+            22.590981699711588
+          ],
+          [
+            120.32928876659403,
+            22.590976029844903
+          ],
+          [
+            120.32925304284473,
+            22.59098072479526
+          ],
+          [
+            120.3292205662954,
+            22.590995336253254
+          ],
+          [
+            120.3291944380528,
+            22.591018469006308
+          ],
+          [
+            120.32917706558148,
+            22.591048142075994
+          ],
+          [
+            120.32835378288921,
+            22.593179646140634
+          ],
+          [
+            120.32833623041799,
+            22.593209536066837
+          ],
+          [
+            120.32830979650552,
+            22.593232762517957
+          ],
+          [
+            120.32827695847214,
+            22.593247299605576
+          ],
+          [
+            120.32824090269817,
+            22.593251736749174
+          ],
+          [
+            120.32820512779173,
+            22.593245643398397
+          ],
+          [
+            120.32817279029221,
+            22.59322938749565
           ],
           [
             120.32666,
@@ -198,13 +282,282 @@
     {
       "type": "Feature",
       "properties": {
+        "feature_type": "route",
+        "ref": "紅11",
+        "name": "紅11",
+        "name_en": "紅11",
+        "color": "#2563eb",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.31915,
+            22.58934
+          ],
+          [
+            120.32083,
+            22.58742
+          ],
+          [
+            120.324,
+            22.58988
+          ],
+          [
+            120.32666,
+            22.59216
+          ],
+          [
+            120.32817278969992,
+            22.59322938783711
+          ],
+          [
+            120.32820512724587,
+            22.593245643661355
+          ],
+          [
+            120.32824090220417,
+            22.59325173683674
+          ],
+          [
+            120.32827695796873,
+            22.593247299506483
+          ],
+          [
+            120.32830979592907,
+            22.593232762239445
+          ],
+          [
+            120.32833622970897,
+            22.593209535634884
+          ],
+          [
+            120.32835378213677,
+            22.59317964564774
+          ],
+          [
+            120.32917706128258,
+            22.59104815571274
+          ],
+          [
+            120.32919443478528,
+            22.591018481277864
+          ],
+          [
+            120.32922056472671,
+            22.59099534780501
+          ],
+          [
+            120.32925304337041,
+            22.590980736605623
+          ],
+          [
+            120.32928876910638,
+            22.59097604300405
+          ],
+          [
+            120.32932433023737,
+            22.590981715224725
+          ],
+          [
+            120.3293566462691,
+            22.590997428750626
+          ],
+          [
+            120.33861,
+            22.59734
+          ],
+          [
+            120.33728,
+            22.5991
+          ],
+          [
+            120.33961,
+            22.60077
+          ],
+          [
+            120.3403,
+            22.59988
+          ],
+          [
+            120.33967,
+            22.59886
+          ],
+          [
+            120.33864,
+            22.59739
+          ],
+          [
+            120.33849,
+            22.59729
+          ],
+          [
+            120.33912,
+            22.59647
+          ],
+          [
+            120.33962,
+            22.59573
+          ],
+          [
+            120.33988,
+            22.59525
+          ],
+          [
+            120.34001,
+            22.59413
+          ],
+          [
+            120.34023,
+            22.59368
+          ],
+          [
+            120.34054,
+            22.59322
+          ],
+          [
+            120.34107196294588,
+            22.592633380680127
+          ],
+          [
+            120.34107984624579,
+            22.59262085592399
+          ],
+          [
+            120.34108287463465,
+            22.59260646819817
+          ],
+          [
+            120.34108060112904,
+            22.59259196073198
+          ],
+          [
+            120.34107328292407,
+            22.592578974713017
+          ],
+          [
+            120.34106174790705,
+            22.592568979211965
+          ],
+          [
+            120.34104737601841,
+            22.59256312236093
+          ],
+          [
+            120.34099,
+            22.59255
+          ],
+          [
+            120.33896,
+            22.59119
+          ],
+          [
+            120.33859,
+            22.59076
+          ],
+          [
+            120.33798,
+            22.58981
+          ],
+          [
+            120.33741,
+            22.58772
+          ],
+          [
+            120.34321,
+            22.5862
+          ],
+          [
+            120.34673,
+            22.58616
+          ],
+          [
+            120.34677,
+            22.58744
+          ],
+          [
+            120.34889339042616,
+            22.587421133322582
+          ],
+          [
+            120.34892339582063,
+            22.587424502220316
+          ],
+          [
+            120.3489514589509,
+            22.587434916086252
+          ],
+          [
+            120.34897570811108,
+            22.58745167736211
+          ],
+          [
+            120.3489945191686,
+            22.587473663430288
+          ],
+          [
+            120.34900663221791,
+            22.58749940173299
+          ],
+          [
+            120.34901123631059,
+            22.587527186034514
+          ],
+          [
+            120.34905,
+            22.58908
+          ],
+          [
+            120.35161,
+            22.58877
+          ],
+          [
+            120.35237,
+            22.58855
+          ],
+          [
+            120.35529,
+            22.58848
+          ],
+          [
+            120.35885,
+            22.58839
+          ],
+          [
+            120.35897,
+            22.59051
+          ],
+          [
+            120.35901,
+            22.59283
+          ],
+          [
+            120.35774,
+            22.59284
+          ],
+          [
+            120.35678,
+            22.59293
+          ],
+          [
+            120.35548,
+            22.59315
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "feature_type": "station",
         "ref": "KHH100811130981",
         "name": "過埤公園",
         "name_en": "Guopi Park",
         "line": "紅11",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "978"
       },
       "geometry": {
         "type": "Point",
@@ -222,8 +575,9 @@
         "name": "7-11鳳頂門市",
         "name_en": "7-11 Fongding Store",
         "line": "紅11",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "976"
       },
       "geometry": {
         "type": "Point",
@@ -241,8 +595,9 @@
         "name": "過埤派出所",
         "name_en": "Guopi Police Station",
         "line": "紅11",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "965"
       },
       "geometry": {
         "type": "Point",
@@ -260,8 +615,9 @@
         "name": "過埤國小",
         "name_en": "Guopi Elementary School",
         "line": "紅11",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "966"
       },
       "geometry": {
         "type": "Point",
@@ -279,8 +635,9 @@
         "name": "過埤路口",
         "name_en": "Guopi Rd. Intersection",
         "line": "紅11",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "968"
       },
       "geometry": {
         "type": "Point",
@@ -298,8 +655,9 @@
         "name": "頂庄路",
         "name_en": "Dingjhuang Rd.",
         "line": "紅11",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "970"
       },
       "geometry": {
         "type": "Point",
@@ -317,8 +675,9 @@
         "name": "翡翠晶鑽",
         "name_en": "Feicuei Jingzuan",
         "line": "紅11",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "973"
       },
       "geometry": {
         "type": "Point",
@@ -336,8 +695,9 @@
         "name": "頂庄棒球場",
         "name_en": "Dingjhuang Baseball field",
         "line": "紅11",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "6067"
       },
       "geometry": {
         "type": "Point",
@@ -355,8 +715,9 @@
         "name": "南成里",
         "name_en": "Nancheng Village",
         "line": "紅11",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "2346"
       },
       "geometry": {
         "type": "Point",
@@ -374,8 +735,9 @@
         "name": "飛鳳宮",
         "name_en": "Feifong Temple",
         "line": "紅11",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "2344"
       },
       "geometry": {
         "type": "Point",
@@ -393,8 +755,9 @@
         "name": "朝鳳寺(家和五街)",
         "name_en": "Jhaofong Temple(Jiahe 5th St)",
         "line": "紅11",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "2471"
       },
       "geometry": {
         "type": "Point",
@@ -412,8 +775,9 @@
         "name": "國慶六街",
         "name_en": "Guocing 6th St.",
         "line": "紅11",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "4352"
       },
       "geometry": {
         "type": "Point",
@@ -431,8 +795,9 @@
         "name": "濟天宮(國慶六街)",
         "name_en": "Jitian Temple(Guocing 6the Rd.)",
         "line": "紅11",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "108"
       },
       "geometry": {
         "type": "Point",
@@ -450,8 +815,9 @@
         "name": "南和路口",
         "name_en": "Nanhe Rd. Intersection",
         "line": "紅11",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "3610"
       },
       "geometry": {
         "type": "Point",
@@ -469,8 +835,9 @@
         "name": "鳳南路口",
         "name_en": "Fongnan Rd. Intersection",
         "line": "紅11",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "1069"
       },
       "geometry": {
         "type": "Point",
@@ -488,8 +855,9 @@
         "name": "鳳翔國小",
         "name_en": "Fong Siang Elementary School",
         "line": "紅11",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "2589"
       },
       "geometry": {
         "type": "Point",
@@ -507,8 +875,9 @@
         "name": "一甲(鳳山)",
         "name_en": "Yijia(Fongshan)",
         "line": "紅11",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "4513"
       },
       "geometry": {
         "type": "Point",
@@ -523,11 +892,12 @@
       "properties": {
         "feature_type": "station",
         "ref": "KHH100811162111",
-        "name": "家樂福五甲店",
-        "name_en": "Carrefour(Wujia Store)",
+        "name": "富榮公園",
+        "name_en": "Furong Park",
         "line": "紅11",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "2342"
       },
       "geometry": {
         "type": "Point",
@@ -545,8 +915,9 @@
         "name": "南成國小",
         "name_en": "Nan Cheng Elementary School",
         "line": "紅11",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "2340"
       },
       "geometry": {
         "type": "Point",
@@ -564,8 +935,9 @@
         "name": "第二衛生所",
         "name_en": "Second Public Health Center",
         "line": "紅11",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "2618"
       },
       "geometry": {
         "type": "Point",
@@ -583,8 +955,9 @@
         "name": "童心幼稚園",
         "name_en": "Greenground Kindergarten",
         "line": "紅11",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "2338"
       },
       "geometry": {
         "type": "Point",
@@ -602,8 +975,9 @@
         "name": "健能游泳池",
         "name_en": "Jianneng Swimming Pool",
         "line": "紅11",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "2336"
       },
       "geometry": {
         "type": "Point",
@@ -621,8 +995,9 @@
         "name": "五甲三誠路口",
         "name_en": "Wujia Sancheng Rd. Intersection",
         "line": "紅11",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "1296"
       },
       "geometry": {
         "type": "Point",
@@ -640,8 +1015,9 @@
         "name": "福誠高中",
         "name_en": "Fu Cheng Senior High School",
         "line": "紅11",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "2428"
       },
       "geometry": {
         "type": "Point",
@@ -659,8 +1035,9 @@
         "name": "捷運前鎮高中站",
         "name_en": "MRT Cianjhen Senior High School Station",
         "line": "紅11",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "4409"
       },
       "geometry": {
         "type": "Point",
@@ -678,8 +1055,9 @@
         "name": "前鎮高中",
         "name_en": "Cianjhen Senior High School",
         "line": "紅11",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "97"
       },
       "geometry": {
         "type": "Point",
@@ -697,8 +1075,9 @@
         "name": "樹人路",
         "name_en": "Shuren Rd.",
         "line": "紅11",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "4477"
       },
       "geometry": {
         "type": "Point",
@@ -716,8 +1095,9 @@
         "name": "捷運前鎮高中站",
         "name_en": "MRT Cianjhen Senior High School Station",
         "line": "紅11",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "4408"
       },
       "geometry": {
         "type": "Point",
@@ -735,8 +1115,9 @@
         "name": "福誠高中",
         "name_en": "Fu Cheng Senior High School",
         "line": "紅11",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "2427"
       },
       "geometry": {
         "type": "Point",
@@ -754,8 +1135,9 @@
         "name": "五甲三誠路口",
         "name_en": "Wujia Sancheng Rd. Intersection",
         "line": "紅11",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "1295"
       },
       "geometry": {
         "type": "Point",
@@ -773,8 +1155,9 @@
         "name": "健能游泳池",
         "name_en": "Jianneng Swimming Pool",
         "line": "紅11",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "2335"
       },
       "geometry": {
         "type": "Point",
@@ -792,8 +1175,9 @@
         "name": "童心幼稚園",
         "name_en": "Greenground Kindergarten",
         "line": "紅11",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "2337"
       },
       "geometry": {
         "type": "Point",
@@ -811,8 +1195,9 @@
         "name": "第二衛生所",
         "name_en": "Second Public Health Center",
         "line": "紅11",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "2619"
       },
       "geometry": {
         "type": "Point",
@@ -830,8 +1215,9 @@
         "name": "南成國小",
         "name_en": "Nan Cheng Elementary School",
         "line": "紅11",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "2339"
       },
       "geometry": {
         "type": "Point",
@@ -846,11 +1232,12 @@
       "properties": {
         "feature_type": "station",
         "ref": "KHH100811162042",
-        "name": "家樂福五甲店",
-        "name_en": "Carrefour(Wujia Store)",
+        "name": "富榮公園",
+        "name_en": "Furong Park",
         "line": "紅11",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "2341"
       },
       "geometry": {
         "type": "Point",
@@ -868,8 +1255,9 @@
         "name": "一甲(鳳山)",
         "name_en": "Yijia(Fongshan)",
         "line": "紅11",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "4514"
       },
       "geometry": {
         "type": "Point",
@@ -887,8 +1275,9 @@
         "name": "二甲",
         "name_en": "Erjia",
         "line": "紅11",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "351"
       },
       "geometry": {
         "type": "Point",
@@ -906,8 +1295,9 @@
         "name": "鳳翔國小",
         "name_en": "Fong Siang Elementary School",
         "line": "紅11",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "2588"
       },
       "geometry": {
         "type": "Point",
@@ -925,8 +1315,9 @@
         "name": "鳳南路口",
         "name_en": "Fongnan Rd. Intersection",
         "line": "紅11",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "1068"
       },
       "geometry": {
         "type": "Point",
@@ -944,8 +1335,9 @@
         "name": "南和路口",
         "name_en": "Nanhe Rd. Intersection",
         "line": "紅11",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "3611"
       },
       "geometry": {
         "type": "Point",
@@ -963,8 +1355,9 @@
         "name": "濟天宮(國慶六街)",
         "name_en": "Jitian Temple(Guocing 6the Rd.)",
         "line": "紅11",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "107"
       },
       "geometry": {
         "type": "Point",
@@ -982,8 +1375,9 @@
         "name": "國慶六街",
         "name_en": "Guocing 6th St.",
         "line": "紅11",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "4353"
       },
       "geometry": {
         "type": "Point",
@@ -1001,8 +1395,9 @@
         "name": "朝鳳寺(家和五街)",
         "name_en": "Jhaofong Temple(Jiahe 5th St)",
         "line": "紅11",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "2472"
       },
       "geometry": {
         "type": "Point",
@@ -1020,8 +1415,9 @@
         "name": "飛鳳宮",
         "name_en": "Feifong Temple",
         "line": "紅11",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "2343"
       },
       "geometry": {
         "type": "Point",
@@ -1039,8 +1435,9 @@
         "name": "南成里",
         "name_en": "Nancheng Village",
         "line": "紅11",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "2345"
       },
       "geometry": {
         "type": "Point",
@@ -1058,8 +1455,9 @@
         "name": "頂庄棒球場",
         "name_en": "Dingjhuang Baseball field",
         "line": "紅11",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "2143"
       },
       "geometry": {
         "type": "Point",
@@ -1077,8 +1475,9 @@
         "name": "7-11鳳頂門市",
         "name_en": "7-11 Fongding Store",
         "line": "紅11",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "975"
       },
       "geometry": {
         "type": "Point",
@@ -1096,8 +1495,9 @@
         "name": "過埤公園",
         "name_en": "Guopi Park",
         "line": "紅11",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "977"
       },
       "geometry": {
         "type": "Point",

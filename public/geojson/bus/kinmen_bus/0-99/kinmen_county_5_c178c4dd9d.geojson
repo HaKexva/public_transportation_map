@@ -6,7 +6,7 @@
     "name": "5往金城行駛環島北路",
     "name_en": "5往金城行駛環島北路",
     "ref": "5往金城行駛環島北路",
-    "color": "#155e75",
+    "color": "#86198f",
     "city_id": "KinmenCounty",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.kinmen.gov.tw/api/route/525/map/230/image",
@@ -22,7 +22,7 @@
         "ref": "5往金城行駛環島北路",
         "name": "5往金城行駛環島北路",
         "name_en": "5往金城行駛環島北路",
-        "color": "#155e75",
+        "color": "#86198f",
         "direction": 0
       },
       "geometry": {
@@ -33,24 +33,92 @@
             24.48887
           ],
           [
-            118.41316,
-            24.48926
+            118.4130766404465,
+            24.489147105085323
+          ],
+          [
+            118.4130914969538,
+            24.4891757279394
+          ],
+          [
+            118.41309639395652,
+            24.489207448741897
+          ],
+          [
+            118.41309066802471,
+            24.489239052751657
+          ],
+          [
+            118.413074848005,
+            24.489267621024602
+          ],
+          [
+            118.41305039503327,
+            24.489290514997073
+          ],
+          [
+            118.41301980707128,
+            24.48930554263476
           ],
           [
             118.41285,
             24.48936
           ],
           [
-            118.41248,
-            24.4891
+            118.41255061181081,
+            24.489149969339387
           ],
           [
-            118.41055,
-            24.49039
+            118.41252868070501,
+            24.48913767922024
           ],
           [
-            118.41035,
-            24.49039
+            118.4125047653902,
+            24.489130096652246
+          ],
+          [
+            118.41247963836526,
+            24.489127342711804
+          ],
+          [
+            118.4124544464484,
+            24.489129543091046
+          ],
+          [
+            118.4124303394196,
+            24.489136597362833
+          ],
+          [
+            118.41240809725139,
+            24.489148398469816
+          ],
+          [
+            118.41051572820543,
+            24.490413042684548
+          ],
+          [
+            118.41048947237162,
+            24.49042639489751
+          ],
+          [
+            118.41046079048476,
+            24.490433221660954
+          ],
+          [
+            118.41043115721719,
+            24.490433310657867
+          ],
+          [
+            118.41040242712438,
+            24.490426656318498
+          ],
+          [
+            118.41037639823796,
+            24.490413675095123
+          ],
+          [
+            118.41035443733179,
+            24.490394891031457
           ],
           [
             118.40537,
@@ -61,16 +129,32 @@
             24.48833
           ],
           [
-            118.39887,
-            24.48922
+            118.39887991066239,
+            24.489209243804982
           ],
           [
-            118.39861,
-            24.48921
+            118.3988549854167,
+            24.489229529515274
           ],
           [
-            118.39841,
-            24.48893
+            118.3988252722242,
+            24.48924253458244
+          ],
+          [
+            118.39879280064085,
+            24.48924754093376
+          ],
+          [
+            118.39876007986818,
+            24.48924416170962
+          ],
+          [
+            118.39872963836356,
+            24.48923265803539
+          ],
+          [
+            118.39870354195864,
+            24.489213642549284
           ],
           [
             118.39716,
@@ -169,12 +253,32 @@
             24.47858
           ],
           [
-            118.39462,
-            24.47918
+            118.39459756600517,
+            24.479159106840942
           ],
           [
-            118.39474,
-            24.47918
+            118.3946208545439,
+            24.479175922226336
+          ],
+          [
+            118.39464757099667,
+            24.479186800095313
+          ],
+          [
+            118.39467638063694,
+            24.479191349117833
+          ],
+          [
+            118.39470552841306,
+            24.47918929217243
+          ],
+          [
+            118.39473323867443,
+            24.47918075456596
+          ],
+          [
+            118.39475813768964,
+            24.479166015211586
           ],
           [
             118.39644,
@@ -229,12 +333,32 @@
             24.44951
           ],
           [
-            118.33508,
-            24.45079
+            118.33504834697395,
+            24.450816117889502
           ],
           [
-            118.33464,
-            24.45056
+            118.33502249295087,
+            24.450832369563436
+          ],
+          [
+            118.33499329852049,
+            24.450841755563822
+          ],
+          [
+            118.33496244847436,
+            24.45084388886273
+          ],
+          [
+            118.3349320485353,
+            24.450838623848192
+          ],
+          [
+            118.3349041737032,
+            24.450826319892794
+          ],
+          [
+            118.33488045160429,
+            24.450807533727986
           ],
           [
             118.33421,
@@ -299,8 +423,9 @@
         "name": "沙美站",
         "name_en": "Shamei Station",
         "line": "5往金城行駛環島北路",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "266"
       },
       "geometry": {
         "type": "Point",
@@ -318,8 +443,9 @@
         "name": "金沙",
         "name_en": "JinSha",
         "line": "5往金城行駛環島北路",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "268"
       },
       "geometry": {
         "type": "Point",
@@ -337,8 +463,9 @@
         "name": "金沙水庫",
         "name_en": "JinSha Dam",
         "line": "5往金城行駛環島北路",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "271"
       },
       "geometry": {
         "type": "Point",
@@ -356,8 +483,9 @@
         "name": "富康二村",
         "name_en": "Fukang-er Village",
         "line": "5往金城行駛環島北路",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "272"
       },
       "geometry": {
         "type": "Point",
@@ -375,8 +503,9 @@
         "name": "富康農莊",
         "name_en": "Fukang Grange",
         "line": "5往金城行駛環島北路",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "273"
       },
       "geometry": {
         "type": "Point",
@@ -394,8 +523,9 @@
         "name": "洋山",
         "name_en": "Yangshan",
         "line": "5往金城行駛環島北路",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "274"
       },
       "geometry": {
         "type": "Point",
@@ -413,8 +543,9 @@
         "name": "前山",
         "name_en": "Qianshan",
         "line": "5往金城行駛環島北路",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "275"
       },
       "geometry": {
         "type": "Point",
@@ -432,8 +563,9 @@
         "name": "長福里",
         "name_en": "Changfu Village",
         "line": "5往金城行駛環島北路",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "276"
       },
       "geometry": {
         "type": "Point",
@@ -451,8 +583,9 @@
         "name": "后宅",
         "name_en": "Houzhai",
         "line": "5往金城行駛環島北路",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "277"
       },
       "geometry": {
         "type": "Point",
@@ -470,8 +603,9 @@
         "name": "后宅一",
         "name_en": "Houzhai 1",
         "line": "5往金城行駛環島北路",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "278"
       },
       "geometry": {
         "type": "Point",
@@ -489,8 +623,9 @@
         "name": "浦邊一",
         "name_en": "Pubian 1",
         "line": "5往金城行駛環島北路",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "252"
       },
       "geometry": {
         "type": "Point",
@@ -508,8 +643,9 @@
         "name": "浦邊",
         "name_en": "Pubian",
         "line": "5往金城行駛環島北路",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "313"
       },
       "geometry": {
         "type": "Point",
@@ -527,8 +663,9 @@
         "name": "浦邊一",
         "name_en": "Pubian 1",
         "line": "5往金城行駛環島北路",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "254"
       },
       "geometry": {
         "type": "Point",
@@ -546,8 +683,9 @@
         "name": "何浦國小",
         "name_en": "Hepu Elementary",
         "line": "5往金城行駛環島北路",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "279"
       },
       "geometry": {
         "type": "Point",
@@ -565,8 +703,9 @@
         "name": "下塘頭",
         "name_en": "Xiaxtangtou",
         "line": "5往金城行駛環島北路",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "280"
       },
       "geometry": {
         "type": "Point",
@@ -584,8 +723,9 @@
         "name": "何厝",
         "name_en": "Hecuo (Huandao N. Rd.)",
         "line": "5往金城行駛環島北路",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "283"
       },
       "geometry": {
         "type": "Point",
@@ -603,8 +743,9 @@
         "name": "何厝一",
         "name_en": "Hechuo 1",
         "line": "5往金城行駛環島北路",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "306"
       },
       "geometry": {
         "type": "Point",
@@ -622,8 +763,9 @@
         "name": "大路口",
         "name_en": "Dalukou",
         "line": "5往金城行駛環島北路",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "307"
       },
       "geometry": {
         "type": "Point",
@@ -641,8 +783,9 @@
         "name": "晨光教養院",
         "name_en": "Chenguang Education Instiute",
         "line": "5往金城行駛環島北路",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "308"
       },
       "geometry": {
         "type": "Point",
@@ -660,8 +803,9 @@
         "name": "高坑二",
         "name_en": "Gaokeng 2",
         "line": "5往金城行駛環島北路",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "285"
       },
       "geometry": {
         "type": "Point",
@@ -679,8 +823,9 @@
         "name": "中蘭溝",
         "name_en": "Zhonglan Channel",
         "line": "5往金城行駛環島北路",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "286"
       },
       "geometry": {
         "type": "Point",
@@ -698,8 +843,9 @@
         "name": "中蘭",
         "name_en": "Zhonglan",
         "line": "5往金城行駛環島北路",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "287"
       },
       "geometry": {
         "type": "Point",
@@ -717,8 +863,9 @@
         "name": "中蘭一",
         "name_en": "Slaughter Field",
         "line": "5往金城行駛環島北路",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "288"
       },
       "geometry": {
         "type": "Point",
@@ -736,8 +883,9 @@
         "name": "屠宰場",
         "name_en": "Slaughterhouse",
         "line": "5往金城行駛環島北路",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "289"
       },
       "geometry": {
         "type": "Point",
@@ -755,8 +903,9 @@
         "name": "瓊徑路口",
         "name_en": "QionJingLuKou",
         "line": "5往金城行駛環島北路",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "290"
       },
       "geometry": {
         "type": "Point",
@@ -774,8 +923,9 @@
         "name": "瓊林風獅爺",
         "name_en": "Qionglin Spirit Lion Statue",
         "line": "5往金城行駛環島北路",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "310"
       },
       "geometry": {
         "type": "Point",
@@ -790,11 +940,12 @@
       "properties": {
         "feature_type": "station",
         "ref": "KIN525-4751",
-        "name": "瓊林圓環(環北路二段)",
+        "name": "瓊林圓環(環島北路二段)",
         "name_en": "Qionglin Cirque",
         "line": "5往金城行駛環島北路",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "311"
       },
       "geometry": {
         "type": "Point",
@@ -812,8 +963,9 @@
         "name": "環島北路二段",
         "name_en": "Huandao N. Rd. Sec 2",
         "line": "5往金城行駛環島北路",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "312"
       },
       "geometry": {
         "type": "Point",
@@ -831,8 +983,9 @@
         "name": "后盤山",
         "name_en": "Houpan Mountain",
         "line": "5往金城行駛環島北路",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "167"
       },
       "geometry": {
         "type": "Point",
@@ -850,8 +1003,9 @@
         "name": "紫玄宮",
         "name_en": "Zihsyuan Temple",
         "line": "5往金城行駛環島北路",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "168"
       },
       "geometry": {
         "type": "Point",
@@ -869,8 +1023,9 @@
         "name": "家扶中心",
         "name_en": "TFCF",
         "line": "5往金城行駛環島北路",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "959"
       },
       "geometry": {
         "type": "Point",
@@ -888,8 +1043,9 @@
         "name": "東堡溝",
         "name_en": "Dongbaogou",
         "line": "5往金城行駛環島北路",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "169"
       },
       "geometry": {
         "type": "Point",
@@ -907,8 +1063,9 @@
         "name": "仁愛新村",
         "name_en": "RenAi Xintun",
         "line": "5往金城行駛環島北路",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "291"
       },
       "geometry": {
         "type": "Point",
@@ -926,8 +1083,9 @@
         "name": "地政局",
         "name_en": "Land Administration Bureau",
         "line": "5往金城行駛環島北路",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "304"
       },
       "geometry": {
         "type": "Point",
@@ -945,8 +1103,9 @@
         "name": "環島北路",
         "name_en": "Huandao N. Rd.",
         "line": "5往金城行駛環島北路",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "292"
       },
       "geometry": {
         "type": "Point",
@@ -964,8 +1123,9 @@
         "name": "鎮西",
         "name_en": "JhenSi",
         "line": "5往金城行駛環島北路",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "293"
       },
       "geometry": {
         "type": "Point",
@@ -983,8 +1143,9 @@
         "name": "金門大學",
         "name_en": "National Quemoy University",
         "line": "5往金城行駛環島北路",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "294"
       },
       "geometry": {
         "type": "Point",
@@ -1002,8 +1163,9 @@
         "name": "文化局",
         "name_en": "Cultural Affairs Bureau",
         "line": "5往金城行駛環島北路",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "295"
       },
       "geometry": {
         "type": "Point",
@@ -1021,8 +1183,9 @@
         "name": "金城新莊",
         "name_en": "Jincheng Xinzhuang",
         "line": "5往金城行駛環島北路",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "296"
       },
       "geometry": {
         "type": "Point",
@@ -1040,8 +1203,9 @@
         "name": "金城站",
         "name_en": "Jincheng Station",
         "line": "5往金城行駛環島北路",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "station_id": "0"
       },
       "geometry": {
         "type": "Point",

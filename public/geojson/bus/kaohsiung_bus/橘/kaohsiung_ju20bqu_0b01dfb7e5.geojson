@@ -6,13 +6,12 @@
     "name": "橘20B區間車",
     "name_en": "橘20B區間車",
     "ref": "橘20B區間車",
-    "color": "#9333ea",
+    "color": "#2563eb",
     "city_id": "Kaohsiung",
     "source": "TDX Bus Shape / StopOfRoute",
     "operator_id": "10250",
     "operator": "東南客運",
-    "operator_en": "Southeast Bus Co., Ltd.",
-    "official_map_url": "http://southeastbus.com/index/kcg/lusian/O20.jpg"
+    "operator_en": "Southeast Bus Co., Ltd."
   },
   "features": [
     {
@@ -22,7 +21,7 @@
         "ref": "橘20B區間車",
         "name": "橘20B區間車",
         "name_en": "橘20B區間車",
-        "color": "#9333ea",
+        "color": "#2563eb",
         "direction": 0
       },
       "geometry": {
@@ -33,20 +32,88 @@
             22.62127
           ],
           [
-            120.39312,
-            22.62177
+            120.39304597555038,
+            22.62173272674251
           ],
           [
-            120.39332,
-            22.62156
+            120.3930680832401,
+            22.621741014226227
           ],
           [
-            120.3851,
-            22.6172
+            120.39309131723537,
+            22.621744468145984
           ],
           [
-            120.38565,
-            22.61661
+            120.39311479722635,
+            22.621743054064503
+          ],
+          [
+            120.39313735755917,
+            22.62173684218324
+          ],
+          [
+            120.39315787823605,
+            22.621726140888313
+          ],
+          [
+            120.39317558426434,
+            22.621711224694042
+          ],
+          [
+            120.39323475916,
+            22.62165013457608
+          ],
+          [
+            120.39325150228163,
+            22.621626108127554
+          ],
+          [
+            120.39326012586353,
+            22.621598273672525
+          ],
+          [
+            120.39325963535171,
+            22.62156931145536
+          ],
+          [
+            120.39325007345379,
+            22.621541743143197
+          ],
+          [
+            120.3932322727001,
+            22.62151796903939
+          ],
+          [
+            120.39320806083458,
+            22.62150020698211
+          ],
+          [
+            120.38517188371321,
+            22.617238402057698
+          ],
+          [
+            120.38514414738623,
+            22.617217798639956
+          ],
+          [
+            120.38512420300991,
+            22.617190101312772
+          ],
+          [
+            120.38511423791819,
+            22.617158084506194
+          ],
+          [
+            120.3851151914647,
+            22.61712476626611
+          ],
+          [
+            120.38512697376396,
+            22.61709328731729
+          ],
+          [
+            120.38514818098771,
+            22.617066882079094
           ],
           [
             120.38628,
@@ -90,7 +157,7 @@
         "ref": "橘20B區間車",
         "name": "橘20B區間車",
         "name_en": "橘20B區間車",
-        "color": "#9333ea",
+        "color": "#2563eb",
         "direction": 1
       },
       "geometry": {
@@ -115,23 +182,15 @@
           [
             120.4023,
             22.59359
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "route",
-        "ref": "橘20B區間車",
-        "name": "橘20B區間車",
-        "name_en": "橘20B區間車",
-        "color": "#9333ea",
-        "direction": 1
-      },
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
+          ],
+          [
+            120.39976,
+            22.60016
+          ],
+          [
+            120.39969,
+            22.60014
+          ],
           [
             120.3986,
             22.60064
@@ -151,23 +210,67 @@
           [
             120.39536,
             22.60654
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "route",
-        "ref": "橘20B區間車",
-        "name": "橘20B區間車",
-        "name_en": "橘20B區間車",
-        "color": "#9333ea",
-        "direction": 1
-      },
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
+          ],
+          [
+            120.39533,
+            22.60778
+          ],
+          [
+            120.39539,
+            22.60782
+          ],
+          [
+            120.39433,
+            22.60917
+          ],
+          [
+            120.39187,
+            22.61161
+          ],
+          [
+            120.38915,
+            22.61387
+          ],
+          [
+            120.38617,
+            22.61622
+          ],
+          [
+            120.38524982546117,
+            22.617139470889068
+          ],
+          [
+            120.38523037119563,
+            22.617166097194126
+          ],
+          [
+            120.38522011014483,
+            22.617197232375162
+          ],
+          [
+            120.38522024375627,
+            22.6172297957285
+          ],
+          [
+            120.38523076000772,
+            22.61726085723732
+          ],
+          [
+            120.3852507126578,
+            22.617287622019244
+          ],
+          [
+            120.38527800015129,
+            22.6173075208049
+          ],
+          [
+            120.39334,
+            22.62153
+          ],
+          [
+            120.39307,
+            22.62186
+          ],
           [
             120.39286,
             22.6222
@@ -175,6 +278,14 @@
           [
             120.3919,
             22.62169
+          ],
+          [
+            120.39214,
+            22.62127
+          ],
+          [
+            120.39241,
+            22.62143
           ]
         ]
       }
@@ -187,8 +298,9 @@
         "name": "捷運大寮站",
         "name_en": "MRT Daliao Station",
         "line": "橘20B區間車",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "2813"
       },
       "geometry": {
         "type": "Point",
@@ -206,8 +318,9 @@
         "name": "大寮中正路(捷西路口)",
         "name_en": "Daliao Jhongjheng Rd.(Jiesi Rd. Intersection)",
         "line": "橘20B區間車",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "2815"
       },
       "geometry": {
         "type": "Point",
@@ -225,8 +338,9 @@
         "name": "中正路(義發路口)",
         "name_en": "Jhongjheng Rd.(Yifa Rd. Intersection)",
         "line": "橘20B區間車",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "4819"
       },
       "geometry": {
         "type": "Point",
@@ -244,8 +358,9 @@
         "name": "台貿六村",
         "name_en": "Taimao 6th Village",
         "line": "橘20B區間車",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "134"
       },
       "geometry": {
         "type": "Point",
@@ -263,8 +378,9 @@
         "name": "商協二號",
         "name_en": "Shangsie No.2",
         "line": "橘20B區間車",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "136"
       },
       "geometry": {
         "type": "Point",
@@ -282,8 +398,9 @@
         "name": "山仔頂",
         "name_en": "Shanzihding",
         "line": "橘20B區間車",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "138"
       },
       "geometry": {
         "type": "Point",
@@ -301,8 +418,9 @@
         "name": "輔英科大",
         "name_en": "Fooyin University",
         "line": "橘20B區間車",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "140"
       },
       "geometry": {
         "type": "Point",
@@ -320,8 +438,9 @@
         "name": "力行路(永芳國小)",
         "name_en": "Lising Rd.(Yong Fang Elementary School)",
         "line": "橘20B區間車",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "2047"
       },
       "geometry": {
         "type": "Point",
@@ -339,8 +458,9 @@
         "name": "中山工商(力行路)",
         "name_en": "Chung Shan Industrial & Commercial School(Lising Rd.)",
         "line": "橘20B區間車",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "2048"
       },
       "geometry": {
         "type": "Point",
@@ -358,8 +478,9 @@
         "name": "大寮",
         "name_en": "Daliao",
         "line": "橘20B區間車",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "144"
       },
       "geometry": {
         "type": "Point",
@@ -377,8 +498,9 @@
         "name": "大寮路口",
         "name_en": "Daliao Rd. Intersection",
         "line": "橘20B區間車",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "145"
       },
       "geometry": {
         "type": "Point",
@@ -396,8 +518,9 @@
         "name": "高英工商",
         "name_en": "Kao Ying Industrial Commercial Vocational High School",
         "line": "橘20B區間車",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "1987"
       },
       "geometry": {
         "type": "Point",
@@ -415,8 +538,9 @@
         "name": "高雄男子監獄",
         "name_en": "Kaohsiung Prison,Agency of corrections,Ministry of Justice",
         "line": "橘20B區間車",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "4827"
       },
       "geometry": {
         "type": "Point",
@@ -434,8 +558,9 @@
         "name": "大寮地政",
         "name_en": "Daliao Land Office，Land Administration Bureau",
         "line": "橘20B區間車",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "4825"
       },
       "geometry": {
         "type": "Point",
@@ -453,8 +578,9 @@
         "name": "高英工商",
         "name_en": "Kao Ying Industrial Commercial Vocational High School",
         "line": "橘20B區間車",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "1986"
       },
       "geometry": {
         "type": "Point",
@@ -472,8 +598,9 @@
         "name": "大寮路口",
         "name_en": "Daliao Rd. Intersection",
         "line": "橘20B區間車",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "146"
       },
       "geometry": {
         "type": "Point",
@@ -491,8 +618,9 @@
         "name": "大寮農會",
         "name_en": "Daliao District Farmers' Association",
         "line": "橘20B區間車",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "1040"
       },
       "geometry": {
         "type": "Point",
@@ -510,8 +638,9 @@
         "name": "中山工商",
         "name_en": "Chung Shan Industrial & Commercial School",
         "line": "橘20B區間車",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "1988"
       },
       "geometry": {
         "type": "Point",
@@ -529,8 +658,9 @@
         "name": "大寮區公所",
         "name_en": "Daliao District Office Kaohsiung City",
         "line": "橘20B區間車",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "205"
       },
       "geometry": {
         "type": "Point",
@@ -548,8 +678,9 @@
         "name": "輔英科大",
         "name_en": "Fooyin University",
         "line": "橘20B區間車",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "141"
       },
       "geometry": {
         "type": "Point",
@@ -567,8 +698,9 @@
         "name": "山仔頂",
         "name_en": "Shanzihding",
         "line": "橘20B區間車",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "139"
       },
       "geometry": {
         "type": "Point",
@@ -586,8 +718,9 @@
         "name": "商協二號",
         "name_en": "Shangsie No.2",
         "line": "橘20B區間車",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "137"
       },
       "geometry": {
         "type": "Point",
@@ -605,8 +738,9 @@
         "name": "台貿六村",
         "name_en": "Taimao 6th Village",
         "line": "橘20B區間車",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "135"
       },
       "geometry": {
         "type": "Point",
@@ -624,8 +758,9 @@
         "name": "中正路(義發路口)",
         "name_en": "Jhongjheng Rd.(Yifa Rd. Intersection)",
         "line": "橘20B區間車",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "4820"
       },
       "geometry": {
         "type": "Point",
@@ -643,8 +778,9 @@
         "name": "大寮中正路(捷西路口)",
         "name_en": "Daliao Jhongjheng Rd.(Jiesi Rd. Intersection)",
         "line": "橘20B區間車",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "2816"
       },
       "geometry": {
         "type": "Point",
@@ -662,8 +798,9 @@
         "name": "捷運大寮站",
         "name_en": "MRT Daliao Station",
         "line": "橘20B區間車",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "2813"
       },
       "geometry": {
         "type": "Point",

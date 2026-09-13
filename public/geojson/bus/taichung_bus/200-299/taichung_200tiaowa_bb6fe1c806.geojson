@@ -6,7 +6,7 @@
     "name": "200跳蛙公車",
     "name_en": "200跳蛙公車",
     "ref": "200跳蛙公車",
-    "color": "#9f1239",
+    "color": "#c2410c",
     "city_id": "Taichung",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://citybus.taichung.gov.tw/ebus/strapi/uploads/Telerik_Web_UI_Web_Resource_12_dc43222b7a.jpeg",
@@ -22,7 +22,7 @@
         "ref": "200跳蛙公車",
         "name": "200跳蛙公車",
         "name_en": "200跳蛙公車",
-        "color": "#9f1239",
+        "color": "#c2410c",
         "direction": 0
       },
       "geometry": {
@@ -41,12 +41,32 @@
             24.05661
           ],
           [
-            120.69506,
-            24.05961
+            120.6950586055408,
+            24.059609308083928
           ],
           [
-            120.69512,
-            24.05972
+            120.69507693227517,
+            24.059620512102995
+          ],
+          [
+            120.69509290243134,
+            24.059634891928642
+          ],
+          [
+            120.69510563894063,
+            24.05965178198348
+          ],
+          [
+            120.69511468524303,
+            24.059670576817172
+          ],
+          [
+            120.69511971705968,
+            24.059690602699646
+          ],
+          [
+            120.69512055664964,
+            24.059711098308014
           ],
           [
             120.69509,
@@ -57,8 +77,32 @@
             24.06172
           ],
           [
-            120.69606,
-            24.06561
+            120.69602974496287,
+            24.065447645249233
+          ],
+          [
+            120.69604247401759,
+            24.065481309832744
+          ],
+          [
+            120.69606627170376,
+            24.065509283194594
+          ],
+          [
+            120.69609861442174,
+            24.065528696934717
+          ],
+          [
+            120.69613604046756,
+            24.06553747316278
+          ],
+          [
+            120.69617454405883,
+            24.065534672542036
+          ],
+          [
+            120.69621032196362,
+            24.06552040617141
           ],
           [
             120.69753,
@@ -194,13 +238,230 @@
     {
       "type": "Feature",
       "properties": {
+        "feature_type": "route",
+        "ref": "200跳蛙公車",
+        "name": "200跳蛙公車",
+        "name_en": "200跳蛙公車",
+        "color": "#c2410c",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.67811,
+            24.1362
+          ],
+          [
+            120.67995,
+            24.13784
+          ],
+          [
+            120.68224,
+            24.1359
+          ],
+          [
+            120.68514,
+            24.13002
+          ],
+          [
+            120.68418,
+            24.12641
+          ],
+          [
+            120.68414,
+            24.12232
+          ],
+          [
+            120.68798,
+            24.1205
+          ],
+          [
+            120.68855,
+            24.12007
+          ],
+          [
+            120.68881,
+            24.11974
+          ],
+          [
+            120.68914,
+            24.11935
+          ],
+          [
+            120.68934,
+            24.11892
+          ],
+          [
+            120.68997,
+            24.11179
+          ],
+          [
+            120.68994000000001,
+            24.10835
+          ],
+          [
+            120.69,
+            24.10786
+          ],
+          [
+            120.68994000000001,
+            24.10743
+          ],
+          [
+            120.68874,
+            24.10374
+          ],
+          [
+            120.68686,
+            24.09712
+          ],
+          [
+            120.68686,
+            24.09662
+          ],
+          [
+            120.68741,
+            24.09508
+          ],
+          [
+            120.68766,
+            24.09473
+          ],
+          [
+            120.69355,
+            24.09015
+          ],
+          [
+            120.69561,
+            24.08845
+          ],
+          [
+            120.69614,
+            24.08726
+          ],
+          [
+            120.69684,
+            24.08533
+          ],
+          [
+            120.69989,
+            24.07562
+          ],
+          [
+            120.7,
+            24.07505
+          ],
+          [
+            120.69993,
+            24.07424
+          ],
+          [
+            120.69977,
+            24.0737
+          ],
+          [
+            120.69974,
+            24.07298
+          ],
+          [
+            120.69864,
+            24.06446
+          ],
+          [
+            120.69753,
+            24.06474
+          ],
+          [
+            120.69621032258448,
+            24.065520406408925
+          ],
+          [
+            120.69617454465141,
+            24.065534672717057
+          ],
+          [
+            120.69613604102834,
+            24.065537473173563
+          ],
+          [
+            120.69609861501145,
+            24.06552869677539
+          ],
+          [
+            120.69606627238377,
+            24.06550928287834
+          ],
+          [
+            120.6960424748428,
+            24.06548130939146
+          ],
+          [
+            120.69602974578972,
+            24.065447644763985
+          ],
+          [
+            120.69533,
+            24.06172
+          ],
+          [
+            120.69509,
+            24.0602
+          ],
+          [
+            120.69512055665598,
+            24.059711098247888
+          ],
+          [
+            120.6951197170096,
+            24.059690602829388
+          ],
+          [
+            120.69511468529261,
+            24.059670577125615
+          ],
+          [
+            120.69510563916157,
+            24.059651782435154
+          ],
+          [
+            120.69509290288299,
+            24.059634892470186
+          ],
+          [
+            120.695076933,
+            24.059620512666342
+          ],
+          [
+            120.69505860658064,
+            24.059609308565715
+          ],
+          [
+            120.68895,
+            24.05661
+          ],
+          [
+            120.68855,
+            24.05619
+          ],
+          [
+            120.68642,
+            24.05344
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "feature_type": "station",
         "ref": "TXG20062",
         "name": "亞大醫院",
         "name_en": "Asia University Hospital",
         "line": "200跳蛙公車",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "4538"
       },
       "geometry": {
         "type": "Point",
@@ -218,8 +479,9 @@
         "name": "霧峰農會",
         "name_en": "Wufeng Farmers' Association",
         "line": "200跳蛙公車",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "2843"
       },
       "geometry": {
         "type": "Point",
@@ -237,8 +499,9 @@
         "name": "霧峰農工",
         "name_en": "Wufeng Agr. Ind. Senior High School",
         "line": "200跳蛙公車",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "1226"
       },
       "geometry": {
         "type": "Point",
@@ -256,8 +519,9 @@
         "name": "大里圖書館(中興路)",
         "name_en": "Dali Library(Zhongxing Road)",
         "line": "200跳蛙公車",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "1120"
       },
       "geometry": {
         "type": "Point",
@@ -275,8 +539,9 @@
         "name": "中興仁化路口",
         "name_en": "Zhongxing-Renhua Intersection",
         "line": "200跳蛙公車",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "1143"
       },
       "geometry": {
         "type": "Point",
@@ -294,8 +559,9 @@
         "name": "立人高中",
         "name_en": "Liren Senior High School",
         "line": "200跳蛙公車",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "4118"
       },
       "geometry": {
         "type": "Point",
@@ -313,8 +579,9 @@
         "name": "內新市場",
         "name_en": "Neixin Market",
         "line": "200跳蛙公車",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "5422"
       },
       "geometry": {
         "type": "Point",
@@ -332,8 +599,9 @@
         "name": "菩提醫院",
         "name_en": "Puti Hospital",
         "line": "200跳蛙公車",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "3840"
       },
       "geometry": {
         "type": "Point",
@@ -351,8 +619,9 @@
         "name": "明德高中(臺中路)",
         "name_en": "Ming-Der Senior High School(Taichung Road)",
         "line": "200跳蛙公車",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "10558"
       },
       "geometry": {
         "type": "Point",
@@ -370,8 +639,9 @@
         "name": "興大附農(臺中路)",
         "name_en": "NCHU Affiliated Agricultural Senior High School(Taichung Road)",
         "line": "200跳蛙公車",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "722"
       },
       "geometry": {
         "type": "Point",
@@ -389,8 +659,9 @@
         "name": "臺中國小(臺中路)",
         "name_en": "Taichung Elementary School(Taichung Road)",
         "line": "200跳蛙公車",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "93"
       },
       "geometry": {
         "type": "Point",
@@ -408,8 +679,9 @@
         "name": "第三市場",
         "name_en": "The Third Market",
         "line": "200跳蛙公車",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "1283"
       },
       "geometry": {
         "type": "Point",
@@ -427,8 +699,9 @@
         "name": "臺中女中",
         "name_en": "Taichung Girls Senior High School",
         "line": "200跳蛙公車",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "station_id": "864"
       },
       "geometry": {
         "type": "Point",
@@ -446,8 +719,9 @@
         "name": "臺中女中",
         "name_en": "Taichung Girls Senior High School",
         "line": "200跳蛙公車",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "865"
       },
       "geometry": {
         "type": "Point",
@@ -465,8 +739,9 @@
         "name": "第三市場",
         "name_en": "The Third Market",
         "line": "200跳蛙公車",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "1283"
       },
       "geometry": {
         "type": "Point",
@@ -484,8 +759,9 @@
         "name": "臺中國小(臺中路)",
         "name_en": "Taichung Elementary School(Taichung Road)",
         "line": "200跳蛙公車",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "93"
       },
       "geometry": {
         "type": "Point",
@@ -503,8 +779,9 @@
         "name": "興大附農(臺中路)",
         "name_en": "NCHU Affiliated Agricultural Senior High School(Taichung Road)",
         "line": "200跳蛙公車",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "721"
       },
       "geometry": {
         "type": "Point",
@@ -522,8 +799,9 @@
         "name": "明德高中(臺中路)",
         "name_en": "Ming-Der Senior High School(Taichung Road)",
         "line": "200跳蛙公車",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "5091"
       },
       "geometry": {
         "type": "Point",
@@ -541,8 +819,9 @@
         "name": "菩提醫院",
         "name_en": "Puti Hospital",
         "line": "200跳蛙公車",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "3840"
       },
       "geometry": {
         "type": "Point",
@@ -560,8 +839,9 @@
         "name": "內新市場",
         "name_en": "Neixin Market",
         "line": "200跳蛙公車",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "5422"
       },
       "geometry": {
         "type": "Point",
@@ -579,8 +859,9 @@
         "name": "立人高中",
         "name_en": "Liren Senior High School",
         "line": "200跳蛙公車",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "4117"
       },
       "geometry": {
         "type": "Point",
@@ -598,8 +879,9 @@
         "name": "中興仁化路口",
         "name_en": "Zhongxing-Renhua Intersection",
         "line": "200跳蛙公車",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "1143"
       },
       "geometry": {
         "type": "Point",
@@ -617,8 +899,9 @@
         "name": "大里圖書館(中興路)",
         "name_en": "Dali Library(Zhongxing Road)",
         "line": "200跳蛙公車",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "1119"
       },
       "geometry": {
         "type": "Point",
@@ -636,8 +919,9 @@
         "name": "霧峰農工",
         "name_en": "Wufeng Agr. Ind. Senior High School",
         "line": "200跳蛙公車",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "1226"
       },
       "geometry": {
         "type": "Point",
@@ -655,8 +939,9 @@
         "name": "霧峰農會",
         "name_en": "Wufeng Farmers' Association",
         "line": "200跳蛙公車",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "2844"
       },
       "geometry": {
         "type": "Point",
@@ -674,8 +959,9 @@
         "name": "亞大醫院",
         "name_en": "Asia University Hospital",
         "line": "200跳蛙公車",
-        "color": "#9f1239",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "station_id": "4538"
       },
       "geometry": {
         "type": "Point",

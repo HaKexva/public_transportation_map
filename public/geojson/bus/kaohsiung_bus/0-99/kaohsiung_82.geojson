@@ -6,7 +6,7 @@
     "name": "82",
     "name_en": "82",
     "ref": "82",
-    "color": "#9a3412",
+    "color": "#1e3a8a",
     "city_id": "Kaohsiung",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ibus.tbkc.gov.tw/cms/api/route/82/map/1682/image",
@@ -22,7 +22,7 @@
         "ref": "82",
         "name": "82",
         "name_en": "82",
-        "color": "#9a3412",
+        "color": "#1e3a8a",
         "direction": 0
       },
       "geometry": {
@@ -137,24 +137,188 @@
             22.62753
           ],
           [
-            120.28533,
-            22.62635
+            120.28528874698729,
+            22.626370182859045
           ],
           [
-            120.28518,
-            22.62595
+            120.28531356299767,
+            22.62635389476756
           ],
           [
-            120.28489,
-            22.62545
+            120.2853332004142,
+            22.62633194282371
           ],
           [
-            120.28478,
-            22.62543
+            120.28534600191388,
+            22.626305991091282
+          ],
+          [
+            120.28535108208686,
+            22.626277834509917
+          ],
+          [
+            120.28534808956533,
+            22.626249420516608
+          ],
+          [
+            120.28533739275461,
+            22.626222994397345
+          ],
+          [
+            120.28491150898991,
+            22.625487414634083
+          ],
+          [
+            120.28489372217297,
+            22.625464365353867
+          ],
+          [
+            120.28487040938846,
+            22.625446554340627
+          ],
+          [
+            120.28484296532295,
+            22.625434890495576
+          ],
+          [
+            120.28481322233954,
+            22.625430152580872
+          ],
+          [
+            120.28478316629365,
+            22.625432656933775
+          ],
+          [
+            120.28475450575871,
+            22.62544238053862
           ],
           [
             120.28343,
             22.62608
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "82",
+        "name": "82",
+        "name_en": "82",
+        "color": "#1e3a8a",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.28374,
+            22.62593
+          ],
+          [
+            120.28237,
+            22.62657
+          ],
+          [
+            120.2838,
+            22.62916
+          ],
+          [
+            120.29463,
+            22.63276
+          ],
+          [
+            120.29299,
+            22.63687
+          ],
+          [
+            120.29628,
+            22.63786
+          ],
+          [
+            120.29779,
+            22.63786
+          ],
+          [
+            120.29929,
+            22.63786
+          ],
+          [
+            120.30084,
+            22.63785
+          ],
+          [
+            120.30211,
+            22.63778
+          ],
+          [
+            120.30278,
+            22.63773
+          ],
+          [
+            120.30356,
+            22.63768
+          ],
+          [
+            120.30519,
+            22.63754
+          ],
+          [
+            120.30497,
+            22.63436
+          ],
+          [
+            120.30839,
+            22.63409
+          ],
+          [
+            120.3167,
+            22.63355
+          ],
+          [
+            120.31977,
+            22.6253
+          ],
+          [
+            120.32148,
+            22.62105
+          ],
+          [
+            120.3225,
+            22.61826
+          ],
+          [
+            120.32248,
+            22.61231
+          ],
+          [
+            120.322,
+            22.61071
+          ],
+          [
+            120.32113,
+            22.60827
+          ],
+          [
+            120.32066,
+            22.60683
+          ],
+          [
+            120.32464,
+            22.60508
+          ],
+          [
+            120.32498,
+            22.60497
+          ],
+          [
+            120.32684,
+            22.60513
+          ],
+          [
+            120.33821,
+            22.60599
           ]
         ]
       }
@@ -167,8 +331,9 @@
         "name": "瑞豐站(瑞隆路)",
         "name_en": "Rueifong Station(Rueilong Rd.)",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "2457"
       },
       "geometry": {
         "type": "Point",
@@ -186,8 +351,9 @@
         "name": "永豐路口",
         "name_en": "Yongfong Rd. Intersection",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "1263"
       },
       "geometry": {
         "type": "Point",
@@ -205,8 +371,9 @@
         "name": "瑞隆路",
         "name_en": "Rueilong Rd.",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "3236"
       },
       "geometry": {
         "type": "Point",
@@ -224,8 +391,9 @@
         "name": "崗山仔",
         "name_en": "Gangshanzih",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "3238"
       },
       "geometry": {
         "type": "Point",
@@ -243,8 +411,9 @@
         "name": "憲德市場",
         "name_en": "Siande Market",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "3240"
       },
       "geometry": {
         "type": "Point",
@@ -262,8 +431,9 @@
         "name": "輕軌籬仔內站(一心一路)",
         "name_en": "LRT Lizihnei Station(Yisin 1st Rd.)",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "4607"
       },
       "geometry": {
         "type": "Point",
@@ -281,8 +451,9 @@
         "name": "和平二路口",
         "name_en": "Heping 2nd Rd. Intersection",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "3283"
       },
       "geometry": {
         "type": "Point",
@@ -300,8 +471,9 @@
         "name": "光華國中",
         "name_en": "Guanghua Junior High School",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "3244"
       },
       "geometry": {
         "type": "Point",
@@ -319,8 +491,9 @@
         "name": "廣西路口",
         "name_en": "Guangsi Rd. Intersection",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "3246"
       },
       "geometry": {
         "type": "Point",
@@ -338,8 +511,9 @@
         "name": "林西街口",
         "name_en": "Linsi St. Intersection",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "3248"
       },
       "geometry": {
         "type": "Point",
@@ -357,8 +531,9 @@
         "name": "五權街口",
         "name_en": "Wucyuan St. Intersection",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "3250"
       },
       "geometry": {
         "type": "Point",
@@ -376,8 +551,9 @@
         "name": "長青服務中心(和平一路)",
         "name_en": "Senior Citizens Service Center(Heping 1st Rd.)",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "3252"
       },
       "geometry": {
         "type": "Point",
@@ -395,8 +571,9 @@
         "name": "師範大學(和平校區)",
         "name_en": "National Kaohsiung Normal University(Heping Campus)",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "3254"
       },
       "geometry": {
         "type": "Point",
@@ -414,8 +591,9 @@
         "name": "高雄文化中心(和平一路)",
         "name_en": "Kaohsiung Cultural Center(Heping 1st Rd.)",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "2282"
       },
       "geometry": {
         "type": "Point",
@@ -433,8 +611,9 @@
         "name": "捷運文化中心站",
         "name_en": "MRT Cultural Center Station",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "3256"
       },
       "geometry": {
         "type": "Point",
@@ -452,8 +631,9 @@
         "name": "和平一路",
         "name_en": "Heping 1st Rd.",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "3258"
       },
       "geometry": {
         "type": "Point",
@@ -471,8 +651,9 @@
         "name": "和平一路口",
         "name_en": "Heping 1st Rd. Intersection",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "3260"
       },
       "geometry": {
         "type": "Point",
@@ -490,8 +671,9 @@
         "name": "七賢一路",
         "name_en": "Cisian 1st Rd.",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "3262"
       },
       "geometry": {
         "type": "Point",
@@ -509,8 +691,9 @@
         "name": "民族路口(七賢一路)",
         "name_en": "Minzu Rd. Intersection(Cisian 1st Rd.)",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "3265"
       },
       "geometry": {
         "type": "Point",
@@ -528,8 +711,9 @@
         "name": "錦田路口(七賢一路)",
         "name_en": "Jintian Rd. Intersection(Cisian 1st Rd.)",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "3267"
       },
       "geometry": {
         "type": "Point",
@@ -547,8 +731,9 @@
         "name": "復興一路口",
         "name_en": "Fusing 1st Rd. Intersection",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "3269"
       },
       "geometry": {
         "type": "Point",
@@ -566,8 +751,9 @@
         "name": "七賢國小",
         "name_en": "Cisian Elementary School",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "3271"
       },
       "geometry": {
         "type": "Point",
@@ -585,8 +771,9 @@
         "name": "高雄車站(建國路)",
         "name_en": "Kaohsiung Main Station(Jianguo Rd.)",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "883"
       },
       "geometry": {
         "type": "Point",
@@ -604,8 +791,9 @@
         "name": "高雄中學",
         "name_en": "Kaohsiung Senior High School",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "2079"
       },
       "geometry": {
         "type": "Point",
@@ -623,8 +811,9 @@
         "name": "三鳳中街",
         "name_en": "Sanfongjhong St.",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "2578"
       },
       "geometry": {
         "type": "Point",
@@ -642,8 +831,9 @@
         "name": "三民市場",
         "name_en": "Sanmin Market",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "3034"
       },
       "geometry": {
         "type": "Point",
@@ -661,8 +851,9 @@
         "name": "七賢二路口(中華三路)",
         "name_en": "Cisian 2nd Rd. Intersection(Jhonghua 3rd Rd.)",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "3032"
       },
       "geometry": {
         "type": "Point",
@@ -680,8 +871,9 @@
         "name": "自強路口",
         "name_en": "Zihciang Rd. Intersection",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "3273"
       },
       "geometry": {
         "type": "Point",
@@ -699,8 +891,9 @@
         "name": "成功一路口",
         "name_en": "Chenggong 1st Rd. Intersection",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "2133"
       },
       "geometry": {
         "type": "Point",
@@ -718,8 +911,9 @@
         "name": "河東路口",
         "name_en": "Hedong Rd. Intersection",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "3275"
       },
       "geometry": {
         "type": "Point",
@@ -737,8 +931,9 @@
         "name": "七賢三路口",
         "name_en": "Cisian 3rd Rd. Intersection",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "3277"
       },
       "geometry": {
         "type": "Point",
@@ -756,8 +951,9 @@
         "name": "大公路",
         "name_en": "Dagong Rd.",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "3279"
       },
       "geometry": {
         "type": "Point",
@@ -775,8 +971,9 @@
         "name": "歷史博物館(大公路)",
         "name_en": "Kaohsiung Museum of History(Dagong Rd.)",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "82"
       },
       "geometry": {
         "type": "Point",
@@ -794,8 +991,9 @@
         "name": "三山國王廟",
         "name_en": "Temple of the Three Mountain-Kings",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "3958"
       },
       "geometry": {
         "type": "Point",
@@ -813,8 +1011,9 @@
         "name": "三山國王廟",
         "name_en": "Temple of the Three Mountain-Kings",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "3958"
       },
       "geometry": {
         "type": "Point",
@@ -832,8 +1031,9 @@
         "name": "七賢三路口",
         "name_en": "Cisian 3rd Rd. Intersection",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "3278"
       },
       "geometry": {
         "type": "Point",
@@ -851,8 +1051,9 @@
         "name": "河東路口",
         "name_en": "Hedong Rd. Intersection",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "3276"
       },
       "geometry": {
         "type": "Point",
@@ -870,8 +1071,9 @@
         "name": "成功一路口",
         "name_en": "Chenggong 1st Rd. Intersection",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "2134"
       },
       "geometry": {
         "type": "Point",
@@ -889,8 +1091,9 @@
         "name": "自強路口",
         "name_en": "Zihciang Rd. Intersection",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "3274"
       },
       "geometry": {
         "type": "Point",
@@ -908,8 +1111,9 @@
         "name": "七賢二路口(中華三路)",
         "name_en": "Cisian 2nd Rd. Intersection(Jhonghua 3rd Rd.)",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "3031"
       },
       "geometry": {
         "type": "Point",
@@ -927,8 +1131,9 @@
         "name": "三民市場",
         "name_en": "Sanmin Market",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "3033"
       },
       "geometry": {
         "type": "Point",
@@ -946,8 +1151,9 @@
         "name": "三鳳中街",
         "name_en": "Sanfongjhong St.",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "2577"
       },
       "geometry": {
         "type": "Point",
@@ -965,8 +1171,9 @@
         "name": "高雄中學",
         "name_en": "Kaohsiung Senior High School",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "2080"
       },
       "geometry": {
         "type": "Point",
@@ -984,8 +1191,9 @@
         "name": "高雄車站(建國路)",
         "name_en": "Kaohsiung Main Station(Jianguo Rd.)",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "882"
       },
       "geometry": {
         "type": "Point",
@@ -1003,8 +1211,9 @@
         "name": "七賢國小",
         "name_en": "Cisian Elementary School",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "3272"
       },
       "geometry": {
         "type": "Point",
@@ -1022,8 +1231,9 @@
         "name": "復興一路口",
         "name_en": "Fusing 1st Rd. Intersection",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "3270"
       },
       "geometry": {
         "type": "Point",
@@ -1041,8 +1251,9 @@
         "name": "錦田路口(七賢一路)",
         "name_en": "Jintian Rd. Intersection(Cisian 1st Rd.)",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "3268"
       },
       "geometry": {
         "type": "Point",
@@ -1060,8 +1271,9 @@
         "name": "民族路口(七賢一路)",
         "name_en": "Minzu Rd. Intersection(Cisian 1st Rd.)",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "3266"
       },
       "geometry": {
         "type": "Point",
@@ -1079,8 +1291,9 @@
         "name": "七賢一路",
         "name_en": "Cisian 1st Rd.",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "3263"
       },
       "geometry": {
         "type": "Point",
@@ -1098,8 +1311,9 @@
         "name": "和平一路口",
         "name_en": "Heping 1st Rd. Intersection",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "3261"
       },
       "geometry": {
         "type": "Point",
@@ -1117,8 +1331,9 @@
         "name": "和平一路",
         "name_en": "Heping 1st Rd.",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "3259"
       },
       "geometry": {
         "type": "Point",
@@ -1136,8 +1351,9 @@
         "name": "捷運文化中心站",
         "name_en": "MRT Cultural Center Station",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "3257"
       },
       "geometry": {
         "type": "Point",
@@ -1155,8 +1371,9 @@
         "name": "高雄文化中心(和平一路)",
         "name_en": "Kaohsiung Cultural Center(Heping 1st Rd.)",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "2283"
       },
       "geometry": {
         "type": "Point",
@@ -1174,8 +1391,9 @@
         "name": "師範大學(和平校區)",
         "name_en": "National Kaohsiung Normal University(Heping Campus)",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "3255"
       },
       "geometry": {
         "type": "Point",
@@ -1193,8 +1411,9 @@
         "name": "長青服務中心(和平一路)",
         "name_en": "Senior Citizens Service Center(Heping 1st Rd.)",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "3253"
       },
       "geometry": {
         "type": "Point",
@@ -1212,8 +1431,9 @@
         "name": "五權街口",
         "name_en": "Wucyuan St. Intersection",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "3251"
       },
       "geometry": {
         "type": "Point",
@@ -1231,8 +1451,9 @@
         "name": "林西街口",
         "name_en": "Linsi St. Intersection",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "3249"
       },
       "geometry": {
         "type": "Point",
@@ -1250,8 +1471,9 @@
         "name": "廣西路口",
         "name_en": "Guangsi Rd. Intersection",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "3247"
       },
       "geometry": {
         "type": "Point",
@@ -1269,8 +1491,9 @@
         "name": "光華國中",
         "name_en": "Guanghua Junior High School",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "3245"
       },
       "geometry": {
         "type": "Point",
@@ -1288,8 +1511,9 @@
         "name": "樂群國小",
         "name_en": "LeChyun Elementary School",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "3243"
       },
       "geometry": {
         "type": "Point",
@@ -1307,8 +1531,9 @@
         "name": "和平二路口",
         "name_en": "Heping 2nd Rd. Intersection",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "3282"
       },
       "geometry": {
         "type": "Point",
@@ -1326,8 +1551,9 @@
         "name": "輕軌籬仔內站(一心一路)",
         "name_en": "LRT Lizihnei Station(Yisin 1st Rd.)",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "4608"
       },
       "geometry": {
         "type": "Point",
@@ -1345,8 +1571,9 @@
         "name": "憲德市場",
         "name_en": "Siande Market",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "3241"
       },
       "geometry": {
         "type": "Point",
@@ -1364,8 +1591,9 @@
         "name": "崗山仔",
         "name_en": "Gangshanzih",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "3239"
       },
       "geometry": {
         "type": "Point",
@@ -1383,8 +1611,9 @@
         "name": "瑞隆路",
         "name_en": "Rueilong Rd.",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "3237"
       },
       "geometry": {
         "type": "Point",
@@ -1402,8 +1631,9 @@
         "name": "永豐路口",
         "name_en": "Yongfong Rd. Intersection",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "1262"
       },
       "geometry": {
         "type": "Point",
@@ -1421,8 +1651,9 @@
         "name": "瑞豐站(瑞隆路)",
         "name_en": "Rueifong Station(Rueilong Rd.)",
         "line": "82",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "2456"
       },
       "geometry": {
         "type": "Point",

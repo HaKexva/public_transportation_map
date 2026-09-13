@@ -6,7 +6,7 @@
     "name": "黃17末班",
     "name_en": "黃17末班",
     "ref": "黃17末班",
-    "color": "#b45309",
+    "color": "#1d4ed8",
     "city_id": "Taichung",
     "source": "TDX Bus Shape / StopOfRoute",
     "operator_id": "8102",
@@ -21,7 +21,7 @@
         "ref": "黃17末班",
         "name": "黃17末班",
         "name_en": "黃17末班",
-        "color": "#b45309",
+        "color": "#1d4ed8",
         "direction": 0
       },
       "geometry": {
@@ -200,64 +200,60 @@
             24.20508
           ],
           [
-            120.79494,
-            24.2051
+            120.79445624964565,
+            24.205262247578528
           ],
           [
-            120.79485,
-            24.20517
+            120.7944374612646,
+            24.20527038081293
           ],
           [
-            120.79467,
-            24.20528
+            120.7944203087266,
+            24.20528156947383
           ],
           [
-            120.79441,
-            24.20546
+            120.79440558761597,
+            24.205295374169342
           ],
           [
-            120.79435,
-            24.20553
+            120.79439376437195,
+            24.205311357496846
           ],
           [
-            120.79433,
-            24.20565
+            120.79438521361477,
+            24.20532901302363
           ],
           [
-            120.79432,
-            24.20574
+            120.79438018784018,
+            24.205347893345497
           ],
           [
-            120.79433,
-            24.20579
+            120.7942892413515,
+            24.205895745500257
           ],
           [
-            120.79432,
-            24.20584
+            120.7942810424383,
+            24.205922215411384
           ],
           [
-            120.79429,
-            24.20588
+            120.79426593565539,
+            24.205945851446046
           ],
           [
-            120.79426,
-            24.20591
+            120.79424486544248,
+            24.205965258921402
           ],
           [
-            120.79421,
-            24.20592
+            120.79421917487609,
+            24.205979200748665
           ],
           [
-            120.79417,
-            24.20591
+            120.79419050154748,
+            24.20598678823531
           ],
           [
-            120.79408,
-            24.20591
-          ],
-          [
-            120.79375,
-            24.20595
+            120.79416059138073,
+            24.20598753023664
           ],
           [
             120.79364,
@@ -388,12 +384,32 @@
             24.21544
           ],
           [
-            120.78206,
-            24.21453
+            120.78272093630676,
+            24.214347081022158
           ],
           [
-            120.78285,
-            24.21459
+            120.78276055944583,
+            24.214342564845655
+          ],
+          [
+            120.78279934653678,
+            24.214350343984016
+          ],
+          [
+            120.78283314108114,
+            24.21436948011228
+          ],
+          [
+            120.7828581303061,
+            24.214397814251466
+          ],
+          [
+            120.78287149487373,
+            24.21443214968332
+          ],
+          [
+            120.78287174823947,
+            24.214468492438645
           ],
           [
             120.78278,
@@ -497,13 +513,442 @@
     {
       "type": "Feature",
       "properties": {
+        "feature_type": "route",
+        "ref": "黃17末班",
+        "name": "黃17末班",
+        "name_en": "黃17末班",
+        "color": "#1d4ed8",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.78733,
+            24.24083
+          ],
+          [
+            120.78715,
+            24.24006
+          ],
+          [
+            120.7867,
+            24.23932
+          ],
+          [
+            120.78661,
+            24.23704
+          ],
+          [
+            120.78652,
+            24.23665
+          ],
+          [
+            120.78587,
+            24.23518
+          ],
+          [
+            120.78536,
+            24.23309
+          ],
+          [
+            120.78458,
+            24.23122
+          ],
+          [
+            120.78472,
+            24.22985
+          ],
+          [
+            120.784,
+            24.22867
+          ],
+          [
+            120.78415,
+            24.22768
+          ],
+          [
+            120.78393,
+            24.22688
+          ],
+          [
+            120.78387,
+            24.22634
+          ],
+          [
+            120.78394,
+            24.22602
+          ],
+          [
+            120.78429,
+            24.22558
+          ],
+          [
+            120.78438,
+            24.22468
+          ],
+          [
+            120.78393,
+            24.22388
+          ],
+          [
+            120.78388,
+            24.22292
+          ],
+          [
+            120.78363,
+            24.22102
+          ],
+          [
+            120.78337,
+            24.22024
+          ],
+          [
+            120.78304,
+            24.21966
+          ],
+          [
+            120.78325,
+            24.21866
+          ],
+          [
+            120.78293,
+            24.21656
+          ],
+          [
+            120.78278,
+            24.21498
+          ],
+          [
+            120.78287174809081,
+            24.21446849351309
+          ],
+          [
+            120.78287149452652,
+            24.214432150830984
+          ],
+          [
+            120.78285812999832,
+            24.214397815491182
+          ],
+          [
+            120.78283314087227,
+            24.214369481405647
+          ],
+          [
+            120.78279934645981,
+            24.214350345269256
+          ],
+          [
+            120.78276055949824,
+            24.214342566050195
+          ],
+          [
+            120.78272093646447,
+            24.2143470821195
+          ],
+          [
+            120.77875,
+            24.21544
+          ],
+          [
+            120.77506,
+            24.21659
+          ],
+          [
+            120.774,
+            24.21713
+          ],
+          [
+            120.77358,
+            24.21742
+          ],
+          [
+            120.77295,
+            24.21803
+          ],
+          [
+            120.77274,
+            24.21832
+          ],
+          [
+            120.77269,
+            24.21853
+          ],
+          [
+            120.77257,
+            24.21861
+          ],
+          [
+            120.77254,
+            24.21893
+          ],
+          [
+            120.77258,
+            24.2186
+          ],
+          [
+            120.7727,
+            24.21853
+          ],
+          [
+            120.77275,
+            24.21832
+          ],
+          [
+            120.77296,
+            24.21803
+          ],
+          [
+            120.77359,
+            24.21742
+          ],
+          [
+            120.77401,
+            24.21713
+          ],
+          [
+            120.77507,
+            24.21659
+          ],
+          [
+            120.77876,
+            24.21544
+          ],
+          [
+            120.78207,
+            24.21453
+          ],
+          [
+            120.78286,
+            24.21459
+          ],
+          [
+            120.7838,
+            24.21283
+          ],
+          [
+            120.78419,
+            24.21182
+          ],
+          [
+            120.78468,
+            24.20996
+          ],
+          [
+            120.78486,
+            24.20963
+          ],
+          [
+            120.78608,
+            24.20873
+          ],
+          [
+            120.78786,
+            24.20777
+          ],
+          [
+            120.78842,
+            24.20719
+          ],
+          [
+            120.78868,
+            24.20709
+          ],
+          [
+            120.78962,
+            24.20695
+          ],
+          [
+            120.79026,
+            24.20663
+          ],
+          [
+            120.79104,
+            24.20644
+          ],
+          [
+            120.79171,
+            24.20614
+          ],
+          [
+            120.7924,
+            24.20613
+          ],
+          [
+            120.79342,
+            24.20599
+          ],
+          [
+            120.79364,
+            24.20594
+          ],
+          [
+            120.79392,
+            24.20584
+          ],
+          [
+            120.79407,
+            24.20575
+          ],
+          [
+            120.79415,
+            24.20564
+          ],
+          [
+            120.79425,
+            24.20555
+          ],
+          [
+            120.79439,
+            24.20543
+          ],
+          [
+            120.79443,
+            24.20542
+          ],
+          [
+            120.79465,
+            24.20528
+          ],
+          [
+            120.79488,
+            24.20513
+          ],
+          [
+            120.79507,
+            24.20499
+          ],
+          [
+            120.79567,
+            24.20456
+          ],
+          [
+            120.7957,
+            24.20454
+          ],
+          [
+            120.79604,
+            24.20432
+          ],
+          [
+            120.79623,
+            24.20419
+          ],
+          [
+            120.79684,
+            24.20365
+          ],
+          [
+            120.79697,
+            24.20355
+          ],
+          [
+            120.79727,
+            24.20324
+          ],
+          [
+            120.79768,
+            24.20264
+          ],
+          [
+            120.79774,
+            24.20238
+          ],
+          [
+            120.79787,
+            24.20208
+          ],
+          [
+            120.79826,
+            24.20159
+          ],
+          [
+            120.79858,
+            24.20127
+          ],
+          [
+            120.79871,
+            24.20115
+          ],
+          [
+            120.799,
+            24.201
+          ],
+          [
+            120.79936,
+            24.20081
+          ],
+          [
+            120.79944,
+            24.20071
+          ],
+          [
+            120.79965,
+            24.20033
+          ],
+          [
+            120.80024,
+            24.19926
+          ],
+          [
+            120.80202,
+            24.19781
+          ],
+          [
+            120.80282,
+            24.19717
+          ],
+          [
+            120.80432,
+            24.19598
+          ],
+          [
+            120.80652,
+            24.19422
+          ],
+          [
+            120.80757,
+            24.19337
+          ],
+          [
+            120.8087,
+            24.19246
+          ],
+          [
+            120.80968,
+            24.19169
+          ],
+          [
+            120.81082,
+            24.19084
+          ],
+          [
+            120.81118,
+            24.19058
+          ],
+          [
+            120.81144,
+            24.19042
+          ],
+          [
+            120.81145,
+            24.19044
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "feature_type": "station",
         "ref": "TXG6412",
         "name": "新五村",
         "name_en": "Xinwu Village",
         "line": "黃17末班",
-        "color": "#b45309",
-        "direction": 0
+        "color": "#1d4ed8",
+        "direction": 0,
+        "station_id": "5969"
       },
       "geometry": {
         "type": "Point",
@@ -521,8 +966,9 @@
         "name": "三嵙口",
         "name_en": "Sankekou",
         "line": "黃17末班",
-        "color": "#b45309",
-        "direction": 0
+        "color": "#1d4ed8",
+        "direction": 0,
+        "station_id": "5201"
       },
       "geometry": {
         "type": "Point",
@@ -540,8 +986,9 @@
         "name": "新四村",
         "name_en": "Xinsi Village",
         "line": "黃17末班",
-        "color": "#b45309",
-        "direction": 0
+        "color": "#1d4ed8",
+        "direction": 0,
+        "station_id": "5977"
       },
       "geometry": {
         "type": "Point",
@@ -559,8 +1006,9 @@
         "name": "四村口",
         "name_en": "NO.4 Residential Quarter Entrance",
         "line": "黃17末班",
-        "color": "#b45309",
-        "direction": 0
+        "color": "#1d4ed8",
+        "direction": 0,
+        "station_id": "5497"
       },
       "geometry": {
         "type": "Point",
@@ -578,8 +1026,9 @@
         "name": "頭嵙口",
         "name_en": "Toukekou",
         "line": "黃17末班",
-        "color": "#b45309",
-        "direction": 0
+        "color": "#1d4ed8",
+        "direction": 0,
+        "station_id": "6097"
       },
       "geometry": {
         "type": "Point",
@@ -597,8 +1046,9 @@
         "name": "上中興嶺",
         "name_en": "Shang Zhongxingling",
         "line": "黃17末班",
-        "color": "#b45309",
-        "direction": 0
+        "color": "#1d4ed8",
+        "direction": 0,
+        "station_id": "5289"
       },
       "geometry": {
         "type": "Point",
@@ -616,8 +1066,9 @@
         "name": "中興嶺",
         "name_en": "Zhongxingling",
         "line": "黃17末班",
-        "color": "#b45309",
-        "direction": 0
+        "color": "#1d4ed8",
+        "direction": 0,
+        "station_id": "276"
       },
       "geometry": {
         "type": "Point",
@@ -635,8 +1086,9 @@
         "name": "天主教堂",
         "name_en": "Catholic Church",
         "line": "黃17末班",
-        "color": "#b45309",
-        "direction": 0
+        "color": "#1d4ed8",
+        "direction": 0,
+        "station_id": "501"
       },
       "geometry": {
         "type": "Point",
@@ -654,8 +1106,9 @@
         "name": "受奉宮",
         "name_en": "Shoufeng Temple",
         "line": "黃17末班",
-        "color": "#b45309",
-        "direction": 0
+        "color": "#1d4ed8",
+        "direction": 0,
+        "station_id": "503"
       },
       "geometry": {
         "type": "Point",
@@ -673,8 +1126,9 @@
         "name": "崁頂(水井街)",
         "name_en": "Kanding(Shuijing Street)",
         "line": "黃17末班",
-        "color": "#b45309",
-        "direction": 0
+        "color": "#1d4ed8",
+        "direction": 0,
+        "station_id": "505"
       },
       "geometry": {
         "type": "Point",
@@ -692,8 +1146,9 @@
         "name": "中央",
         "name_en": "Zhongyang",
         "line": "黃17末班",
-        "color": "#b45309",
-        "direction": 0
+        "color": "#1d4ed8",
+        "direction": 0,
+        "station_id": "508"
       },
       "geometry": {
         "type": "Point",
@@ -711,8 +1166,9 @@
         "name": "中路",
         "name_en": "Zhonglu",
         "line": "黃17末班",
-        "color": "#b45309",
-        "direction": 0
+        "color": "#1d4ed8",
+        "direction": 0,
+        "station_id": "10648"
       },
       "geometry": {
         "type": "Point",
@@ -730,8 +1186,9 @@
         "name": "水井",
         "name_en": "Shuijing",
         "line": "黃17末班",
-        "color": "#b45309",
-        "direction": 0
+        "color": "#1d4ed8",
+        "direction": 0,
+        "station_id": "511"
       },
       "geometry": {
         "type": "Point",
@@ -749,8 +1206,9 @@
         "name": "水井廟口",
         "name_en": "Shuijingmiaokou",
         "line": "黃17末班",
-        "color": "#b45309",
-        "direction": 0
+        "color": "#1d4ed8",
+        "direction": 0,
+        "station_id": "10656"
       },
       "geometry": {
         "type": "Point",
@@ -768,8 +1226,9 @@
         "name": "水井",
         "name_en": "Shuijing",
         "line": "黃17末班",
-        "color": "#b45309",
-        "direction": 0
+        "color": "#1d4ed8",
+        "direction": 0,
+        "station_id": "512"
       },
       "geometry": {
         "type": "Point",
@@ -787,8 +1246,9 @@
         "name": "中路",
         "name_en": "Zhonglu",
         "line": "黃17末班",
-        "color": "#b45309",
-        "direction": 0
+        "color": "#1d4ed8",
+        "direction": 0,
+        "station_id": "10649"
       },
       "geometry": {
         "type": "Point",
@@ -806,8 +1266,9 @@
         "name": "中央",
         "name_en": "Zhongyang",
         "line": "黃17末班",
-        "color": "#b45309",
-        "direction": 0
+        "color": "#1d4ed8",
+        "direction": 0,
+        "station_id": "507"
       },
       "geometry": {
         "type": "Point",
@@ -825,8 +1286,9 @@
         "name": "崁頂(水井街)",
         "name_en": "Kanding(Shuijing Street)",
         "line": "黃17末班",
-        "color": "#b45309",
-        "direction": 0
+        "color": "#1d4ed8",
+        "direction": 0,
+        "station_id": "506"
       },
       "geometry": {
         "type": "Point",
@@ -844,8 +1306,9 @@
         "name": "中興畜牧場",
         "name_en": "Zhongxing Livestock Farm",
         "line": "黃17末班",
-        "color": "#b45309",
-        "direction": 0
+        "color": "#1d4ed8",
+        "direction": 0,
+        "station_id": "10658"
       },
       "geometry": {
         "type": "Point",
@@ -863,8 +1326,9 @@
         "name": "山沐斯達",
         "name_en": "Sam Musta",
         "line": "黃17末班",
-        "color": "#b45309",
-        "direction": 0
+        "color": "#1d4ed8",
+        "direction": 0,
+        "station_id": "10661"
       },
       "geometry": {
         "type": "Point",
@@ -882,8 +1346,9 @@
         "name": "崑山",
         "name_en": "Kuensan",
         "line": "黃17末班",
-        "color": "#b45309",
-        "direction": 0
+        "color": "#1d4ed8",
+        "direction": 0,
+        "station_id": "10662"
       },
       "geometry": {
         "type": "Point",
@@ -901,8 +1366,9 @@
         "name": "崑山",
         "name_en": "Kuensan",
         "line": "黃17末班",
-        "color": "#b45309",
-        "direction": 1
+        "color": "#1d4ed8",
+        "direction": 1,
+        "station_id": "10664"
       },
       "geometry": {
         "type": "Point",
@@ -920,8 +1386,9 @@
         "name": "山沐斯達",
         "name_en": "Sam Musta",
         "line": "黃17末班",
-        "color": "#b45309",
-        "direction": 1
+        "color": "#1d4ed8",
+        "direction": 1,
+        "station_id": "10661"
       },
       "geometry": {
         "type": "Point",
@@ -939,8 +1406,9 @@
         "name": "中興畜牧場",
         "name_en": "Zhongxing Livestock Farm",
         "line": "黃17末班",
-        "color": "#b45309",
-        "direction": 1
+        "color": "#1d4ed8",
+        "direction": 1,
+        "station_id": "10686"
       },
       "geometry": {
         "type": "Point",
@@ -958,8 +1426,9 @@
         "name": "崁頂(水井街)",
         "name_en": "Kanding(Shuijing Street)",
         "line": "黃17末班",
-        "color": "#b45309",
-        "direction": 1
+        "color": "#1d4ed8",
+        "direction": 1,
+        "station_id": "505"
       },
       "geometry": {
         "type": "Point",
@@ -977,8 +1446,9 @@
         "name": "中央",
         "name_en": "Zhongyang",
         "line": "黃17末班",
-        "color": "#b45309",
-        "direction": 1
+        "color": "#1d4ed8",
+        "direction": 1,
+        "station_id": "508"
       },
       "geometry": {
         "type": "Point",
@@ -996,8 +1466,9 @@
         "name": "中路",
         "name_en": "Zhonglu",
         "line": "黃17末班",
-        "color": "#b45309",
-        "direction": 1
+        "color": "#1d4ed8",
+        "direction": 1,
+        "station_id": "10648"
       },
       "geometry": {
         "type": "Point",
@@ -1015,8 +1486,9 @@
         "name": "水井",
         "name_en": "Shuijing",
         "line": "黃17末班",
-        "color": "#b45309",
-        "direction": 1
+        "color": "#1d4ed8",
+        "direction": 1,
+        "station_id": "511"
       },
       "geometry": {
         "type": "Point",
@@ -1034,8 +1506,9 @@
         "name": "水井廟口",
         "name_en": "Shuijingmiaokou",
         "line": "黃17末班",
-        "color": "#b45309",
-        "direction": 1
+        "color": "#1d4ed8",
+        "direction": 1,
+        "station_id": "10656"
       },
       "geometry": {
         "type": "Point",
@@ -1053,8 +1526,9 @@
         "name": "水井",
         "name_en": "Shuijing",
         "line": "黃17末班",
-        "color": "#b45309",
-        "direction": 1
+        "color": "#1d4ed8",
+        "direction": 1,
+        "station_id": "512"
       },
       "geometry": {
         "type": "Point",
@@ -1072,8 +1546,9 @@
         "name": "中路",
         "name_en": "Zhonglu",
         "line": "黃17末班",
-        "color": "#b45309",
-        "direction": 1
+        "color": "#1d4ed8",
+        "direction": 1,
+        "station_id": "10649"
       },
       "geometry": {
         "type": "Point",
@@ -1091,8 +1566,9 @@
         "name": "中央",
         "name_en": "Zhongyang",
         "line": "黃17末班",
-        "color": "#b45309",
-        "direction": 1
+        "color": "#1d4ed8",
+        "direction": 1,
+        "station_id": "507"
       },
       "geometry": {
         "type": "Point",
@@ -1110,8 +1586,9 @@
         "name": "崁頂(水井街)",
         "name_en": "Kanding(Shuijing Street)",
         "line": "黃17末班",
-        "color": "#b45309",
-        "direction": 1
+        "color": "#1d4ed8",
+        "direction": 1,
+        "station_id": "506"
       },
       "geometry": {
         "type": "Point",
@@ -1129,8 +1606,9 @@
         "name": "受奉宮",
         "name_en": "Shoufeng Temple",
         "line": "黃17末班",
-        "color": "#b45309",
-        "direction": 1
+        "color": "#1d4ed8",
+        "direction": 1,
+        "station_id": "504"
       },
       "geometry": {
         "type": "Point",
@@ -1148,8 +1626,9 @@
         "name": "天主教堂",
         "name_en": "Catholic Church",
         "line": "黃17末班",
-        "color": "#b45309",
-        "direction": 1
+        "color": "#1d4ed8",
+        "direction": 1,
+        "station_id": "502"
       },
       "geometry": {
         "type": "Point",
@@ -1167,8 +1646,9 @@
         "name": "中興嶺",
         "name_en": "Zhongxingling",
         "line": "黃17末班",
-        "color": "#b45309",
-        "direction": 1
+        "color": "#1d4ed8",
+        "direction": 1,
+        "station_id": "1948"
       },
       "geometry": {
         "type": "Point",
@@ -1186,8 +1666,9 @@
         "name": "上中興嶺",
         "name_en": "Shang Zhongxingling",
         "line": "黃17末班",
-        "color": "#b45309",
-        "direction": 1
+        "color": "#1d4ed8",
+        "direction": 1,
+        "station_id": "5289"
       },
       "geometry": {
         "type": "Point",
@@ -1205,8 +1686,9 @@
         "name": "頭嵙口",
         "name_en": "Toukekou",
         "line": "黃17末班",
-        "color": "#b45309",
-        "direction": 1
+        "color": "#1d4ed8",
+        "direction": 1,
+        "station_id": "6097"
       },
       "geometry": {
         "type": "Point",
@@ -1224,8 +1706,9 @@
         "name": "四村口",
         "name_en": "NO.4 Residential Quarter Entrance",
         "line": "黃17末班",
-        "color": "#b45309",
-        "direction": 1
+        "color": "#1d4ed8",
+        "direction": 1,
+        "station_id": "5497"
       },
       "geometry": {
         "type": "Point",
@@ -1243,8 +1726,9 @@
         "name": "新四村",
         "name_en": "Xinsi Village",
         "line": "黃17末班",
-        "color": "#b45309",
-        "direction": 1
+        "color": "#1d4ed8",
+        "direction": 1,
+        "station_id": "5977"
       },
       "geometry": {
         "type": "Point",
@@ -1262,8 +1746,9 @@
         "name": "三嵙口",
         "name_en": "Sankekou",
         "line": "黃17末班",
-        "color": "#b45309",
-        "direction": 1
+        "color": "#1d4ed8",
+        "direction": 1,
+        "station_id": "5201"
       },
       "geometry": {
         "type": "Point",
@@ -1281,8 +1766,9 @@
         "name": "新五村",
         "name_en": "Xinwu Village",
         "line": "黃17末班",
-        "color": "#b45309",
-        "direction": 1
+        "color": "#1d4ed8",
+        "direction": 1,
+        "station_id": "5969"
       },
       "geometry": {
         "type": "Point",

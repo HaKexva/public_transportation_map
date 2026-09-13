@@ -6,7 +6,7 @@
     "name": "152",
     "name_en": "152",
     "ref": "152",
-    "color": "#65a30d",
+    "color": "#b91c1c",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/3192/map/2249/image",
@@ -22,7 +22,7 @@
         "ref": "152",
         "name": "152",
         "name_en": "152",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0
       },
       "geometry": {
@@ -61,12 +61,60 @@
             24.99468
           ],
           [
-            121.31084,
-            24.99533
+            121.31086201811301,
+            24.995293044397542
           ],
           [
-            121.31068,
-            24.99529
+            121.31085451267347,
+            24.995302825503487
+          ],
+          [
+            121.31084493794391,
+            24.995310733149022
+          ],
+          [
+            121.31083368522062,
+            24.995316513782267
+          ],
+          [
+            121.31082131103504,
+            24.99531988150761
+          ],
+          [
+            121.31080842738335,
+            24.995320669765807
+          ],
+          [
+            121.31079557085215,
+            24.99531881433703
+          ],
+          [
+            121.31072162219398,
+            24.99530047897625
+          ],
+          [
+            121.31070937712302,
+            24.99529865134372
+          ],
+          [
+            121.31069708922907,
+            24.995299225142638
+          ],
+          [
+            121.31068520969818,
+            24.99530214936506
+          ],
+          [
+            121.31067427198303,
+            24.995307292698193
+          ],
+          [
+            121.31066476724395,
+            24.995314424179636
+          ],
+          [
+            121.31065702403369,
+            24.99532336579783
           ],
           [
             121.3093,
@@ -157,29 +205,33 @@
             25.02273
           ],
           [
-            121.29758,
-            25.02438
+            121.29740591495795,
+            25.024666169070287
           ],
           [
-            121.29677,
-            25.02408
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "route",
-        "ref": "152",
-        "name": "152",
-        "name_en": "152",
-        "color": "#65a30d",
-        "direction": 1
-      },
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
+            121.29738041267666,
+            25.0246950881436
+          ],
+          [
+            121.29734605440085,
+            25.024714356551883
+          ],
+          [
+            121.29730661582973,
+            25.02472204335163
+          ],
+          [
+            121.29726662905833,
+            25.02471726521197
+          ],
+          [
+            121.29723068917832,
+            25.02470057121424
+          ],
+          [
+            121.29720271217843,
+            25.024673586778242
+          ],
           [
             121.29553,
             25.02239
@@ -199,34 +251,186 @@
           [
             121.29938,
             25.01417
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "route",
-        "ref": "152",
-        "name": "152",
-        "name_en": "152",
-        "color": "#65a30d",
-        "direction": 1
-      },
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
-          [
-            121.31096,
-            24.99222
           ],
           [
-            121.31112,
-            24.99176
+            121.30055,
+            25.01186
+          ],
+          [
+            121.30206,
+            25.0091
+          ],
+          [
+            121.30289,
+            25.00756
+          ],
+          [
+            121.30319,
+            25.00715
+          ],
+          [
+            121.30359,
+            25.00653
+          ],
+          [
+            121.30438,
+            25.00525
+          ],
+          [
+            121.3046,
+            25.00484
+          ],
+          [
+            121.30564,
+            25.00323
+          ],
+          [
+            121.30686,
+            25.0013
+          ],
+          [
+            121.30769,
+            25.0
+          ],
+          [
+            121.30806,
+            24.99941
+          ],
+          [
+            121.30932,
+            24.9974
+          ],
+          [
+            121.31068,
+            24.99527
+          ],
+          [
+            121.31051,
+            24.99518
+          ],
+          [
+            121.31092994747218,
+            24.994559832238497
+          ],
+          [
+            121.3109366447335,
+            24.994552016544745
+          ],
+          [
+            121.31094496950318,
+            24.9945458502786
+          ],
+          [
+            121.31095458576905,
+            24.99454152370262
+          ],
+          [
+            121.31096501411056,
+            24.99453925251897
+          ],
+          [
+            121.31097573462098,
+            24.994539149957905
+          ],
+          [
+            121.31098630990782,
+            24.994541251113937
+          ],
+          [
+            121.31104334670913,
+            24.9945586424879
+          ],
+          [
+            121.31105399539429,
+            24.99456075040658
+          ],
+          [
+            121.311064788917,
+            24.99456062444248
+          ],
+          [
+            121.31107527886259,
+            24.99455830093709
+          ],
+          [
+            121.31108493507631,
+            24.99455389731879
+          ],
+          [
+            121.31109326953964,
+            24.994547636143484
+          ],
+          [
+            121.31109993815429,
+            24.994539717154417
+          ],
+          [
+            121.31169,
+            24.99365
+          ],
+          [
+            121.3122060297185,
+            24.992813547983083
+          ],
+          [
+            121.31221801252549,
+            24.992785309315835
+          ],
+          [
+            121.31222096478932,
+            24.992754822985216
+          ],
+          [
+            121.31221447738235,
+            24.992724796089096
+          ],
+          [
+            121.31219906593415,
+            24.99269761521341
+          ],
+          [
+            121.31217595537133,
+            24.99267544073781
+          ],
+          [
+            121.31214725336096,
+            24.992660135918726
+          ],
+          [
+            121.3110487278232,
+            24.99225312645923
+          ],
+          [
+            121.31102270503251,
+            24.992239707427775
+          ],
+          [
+            121.3110009860386,
+            24.992220582426228
+          ],
+          [
+            121.31098523990379,
+            24.99219708350829
+          ],
+          [
+            121.31097648044303,
+            24.992170723651935
+          ],
+          [
+            121.31097527163429,
+            24.99214320003667
+          ],
+          [
+            121.31098160334489,
+            24.99211651122279
           ],
           [
             121.31137,
             24.99112
+          ],
+          [
+            121.31248,
+            24.99146
           ]
         ]
       }
@@ -239,8 +443,9 @@
         "name": "統領百貨",
         "name_en": "Tonlin Department Store",
         "line": "152",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1223"
       },
       "geometry": {
         "type": "Point",
@@ -258,8 +463,9 @@
         "name": "桃園郵局",
         "name_en": "Taoyuan Post Office",
         "line": "152",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "357"
       },
       "geometry": {
         "type": "Point",
@@ -277,8 +483,9 @@
         "name": "永和市場",
         "name_en": "Yonghe Market",
         "line": "152",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "370"
       },
       "geometry": {
         "type": "Point",
@@ -296,8 +503,9 @@
         "name": "中正三民路口",
         "name_en": "Zhongzheng and Sanming Rd. Intersection",
         "line": "152",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "3060"
       },
       "geometry": {
         "type": "Point",
@@ -315,8 +523,9 @@
         "name": "中正二街口",
         "name_en": "Zhongzheng 2nd Street Intersection",
         "line": "152",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1330"
       },
       "geometry": {
         "type": "Point",
@@ -334,8 +543,9 @@
         "name": "北埔路口",
         "name_en": "Beipu Rd. Entrance",
         "line": "152",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1332"
       },
       "geometry": {
         "type": "Point",
@@ -353,8 +563,9 @@
         "name": "中正信光路口",
         "name_en": "Zhongzheng and Xinguang St. Intersection",
         "line": "152",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4301"
       },
       "geometry": {
         "type": "Point",
@@ -372,8 +583,9 @@
         "name": "中正慈文路口",
         "name_en": "Zhongzheng and Ciwen Rd. Intersection",
         "line": "152",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4304"
       },
       "geometry": {
         "type": "Point",
@@ -391,8 +603,9 @@
         "name": "慈文國中",
         "name_en": "TszWen Junior High School",
         "line": "152",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1406"
       },
       "geometry": {
         "type": "Point",
@@ -410,8 +623,9 @@
         "name": "大興西新埔六街口",
         "name_en": "Daxing W. and Xinpu 6th St. Intersection",
         "line": "152",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4305"
       },
       "geometry": {
         "type": "Point",
@@ -429,8 +643,9 @@
         "name": "新埔公園",
         "name_en": "Xinpu Park",
         "line": "152",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4307"
       },
       "geometry": {
         "type": "Point",
@@ -448,14 +663,15 @@
         "name": "同安親子公園",
         "name_en": "TungAn Park for family relationship",
         "line": "152",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1355"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.302503,
-          25.017283
+          121.3025033,
+          25.01728333
         ]
       }
     },
@@ -467,14 +683,15 @@
         "name": "永昌新城",
         "name_en": "YungChang New Community",
         "line": "152",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1334"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
           121.300545,
-          25.019978
+          25.01997833
         ]
       }
     },
@@ -484,16 +701,17 @@
         "feature_type": "station",
         "ref": "TAO460",
         "name": "同安國小",
-        "name_en": "TungAn Elementary School",
+        "name_en": "Tongan Elementary School",
         "line": "152",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4691"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.299132,
-          25.022018
+          121.2991317,
+          25.02201833
         ]
       }
     },
@@ -503,10 +721,11 @@
         "feature_type": "station",
         "ref": "TAO1789",
         "name": "尊爵飯店",
-        "name_en": "TzuenJiue Hotel",
+        "name_en": "Monarch Plaza Hotel",
         "line": "152",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1404"
       },
       "geometry": {
         "type": "Point",
@@ -524,8 +743,9 @@
         "name": "莊敬路口",
         "name_en": "Zhuangjing Road Intersection",
         "line": "152",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1377"
       },
       "geometry": {
         "type": "Point",
@@ -543,8 +763,9 @@
         "name": "中正同德十一街口",
         "name_en": "Jhongjheng Tongde 11th St. Intersection",
         "line": "152",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "3919"
       },
       "geometry": {
         "type": "Point",
@@ -562,8 +783,9 @@
         "name": "中正中寧街口",
         "name_en": "Zhongzheng Zhongning Road Intersection",
         "line": "152",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1189"
       },
       "geometry": {
         "type": "Point",
@@ -581,8 +803,9 @@
         "name": "中正藝文特區",
         "name_en": "Taoyuan Arts Center",
         "line": "152",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "3085"
       },
       "geometry": {
         "type": "Point",
@@ -600,8 +823,9 @@
         "name": "中正慈文路口",
         "name_en": "Zhongzheng and Ciwen Rd. Intersection",
         "line": "152",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4303"
       },
       "geometry": {
         "type": "Point",
@@ -619,8 +843,9 @@
         "name": "中正信光路口",
         "name_en": "Zhongzheng and Xinguang St. Intersection",
         "line": "152",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4302"
       },
       "geometry": {
         "type": "Point",
@@ -638,8 +863,9 @@
         "name": "北埔路口",
         "name_en": "Beipu Rd. Entrance",
         "line": "152",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1331"
       },
       "geometry": {
         "type": "Point",
@@ -657,8 +883,9 @@
         "name": "中正二街口",
         "name_en": "Zhongzheng 2nd Street Intersection",
         "line": "152",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1329"
       },
       "geometry": {
         "type": "Point",
@@ -676,8 +903,9 @@
         "name": "中正三民路口",
         "name_en": "Zhongzheng and Sanming Rd. Intersection",
         "line": "152",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "3061"
       },
       "geometry": {
         "type": "Point",
@@ -695,8 +923,9 @@
         "name": "永和市場",
         "name_en": "Yonghe Market",
         "line": "152",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "371"
       },
       "geometry": {
         "type": "Point",
@@ -714,33 +943,15 @@
         "name": "桃園郵局",
         "name_en": "Taoyuan Post Office",
         "line": "152",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "356"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
           121.311644,
           24.993582
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "TAO1354",
-        "name": "統領百貨",
-        "name_en": "Tonlin Department Store",
-        "line": "152",
-        "color": "#65a30d",
-        "direction": 1
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.312099,
-          24.991231
         ]
       }
     }

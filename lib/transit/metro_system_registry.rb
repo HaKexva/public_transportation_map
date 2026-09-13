@@ -77,5 +77,19 @@ module Transit
 
       entry.line_map[line_id.to_s] || entry.line_map[line_id.to_s.upcase]
     end
+
+    def tdx_rail_systems_for_route(route_id)
+      rid = route_id.to_s
+      ENTRIES.filter_map do |entry|
+        entry.tdx_rail_system if entry.line_map.value?(rid)
+      end.uniq
+    end
+
+    def tdx_rail_systems_for_system(system_id)
+      sid = system_id.to_s
+      ENTRIES.filter_map do |entry|
+        entry.tdx_rail_system if entry.system_id == sid
+      end.uniq
+    end
   end
 end

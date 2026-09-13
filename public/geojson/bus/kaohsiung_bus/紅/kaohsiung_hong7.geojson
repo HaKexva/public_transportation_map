@@ -6,7 +6,7 @@
     "name": "紅7",
     "name_en": "紅7",
     "ref": "紅7",
-    "color": "#9333ea",
+    "color": "#2563eb",
     "city_id": "Kaohsiung",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ibus.tbkc.gov.tw/cms/api/route/807/map/1618/image",
@@ -22,7 +22,7 @@
         "ref": "紅7",
         "name": "紅7",
         "name_en": "紅7",
-        "color": "#9333ea",
+        "color": "#2563eb",
         "direction": 0
       },
       "geometry": {
@@ -102,15 +102,59 @@
           ],
           [
             120.34337,
-            22.58305
+            22.583034713618833
           ],
           [
-            120.34416,
-            22.5832
+            120.34337264473128,
+            22.583019129736662
           ],
           [
-            120.34962,
-            22.58481
+            120.34338032189332,
+            22.58300506039521
+          ],
+          [
+            120.34339228537071,
+            22.58299387294251
+          ],
+          [
+            120.34340737247672,
+            22.58298665464631
+          ],
+          [
+            120.34342411695044,
+            22.582984107026522
+          ],
+          [
+            120.34344099690294,
+            22.58298650891794
+          ],
+          [
+            120.34946071802473,
+            22.584762701373695
+          ],
+          [
+            120.34949775844514,
+            22.584767837670746
+          ],
+          [
+            120.3495344181271,
+            22.58476187739479
+          ],
+          [
+            120.34956719812199,
+            22.584745493056843
+          ],
+          [
+            120.34959276763973,
+            22.58472034947685
+          ],
+          [
+            120.34960852855015,
+            22.58468900150529
+          ],
+          [
+            120.34961288101681,
+            22.584654666971993
           ],
           [
             120.34956,
@@ -121,12 +165,32 @@
             22.58329
           ],
           [
-            120.3582,
-            22.58314
+            120.3585432928045,
+            22.583053683880816
           ],
           [
-            120.35869,
-            22.58314
+            120.35857811333075,
+            22.583049959100258
+          ],
+          [
+            120.35861235824794,
+            22.58305594874835
+          ],
+          [
+            120.358643176822,
+            22.58307106896292
+          ],
+          [
+            120.35866782370631,
+            22.58309397282152
+          ],
+          [
+            120.35868410333406,
+            22.583122620027616
+          ],
+          [
+            120.35869056647343,
+            22.583154486569068
           ],
           [
             120.35876,
@@ -174,15 +238,43 @@
         "ref": "紅7",
         "name": "紅7",
         "name_en": "紅7",
-        "color": "#9333ea",
+        "color": "#2563eb",
         "direction": 1
       },
       "geometry": {
         "type": "LineString",
         "coordinates": [
           [
-            120.37087,
-            22.57926
+            120.37146,
+            22.57953
+          ],
+          [
+            120.37149930506723,
+            22.579346837651094
+          ],
+          [
+            120.3715007570874,
+            22.579313554206927
+          ],
+          [
+            120.37149122349682,
+            22.57928129576117
+          ],
+          [
+            120.3714715793639,
+            22.57925326838056
+          ],
+          [
+            120.37144369027301,
+            22.57923213379836
+          ],
+          [
+            120.37141020482417,
+            22.579219899145443
+          ],
+          [
+            120.37137422989663,
+            22.579217732489898
           ],
           [
             120.37027,
@@ -207,23 +299,15 @@
           [
             120.36253,
             22.58137
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "route",
-        "ref": "紅7",
-        "name": "紅7",
-        "name_en": "紅7",
-        "color": "#9333ea",
-        "direction": 1
-      },
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
+          ],
+          [
+            120.36266,
+            22.5849
+          ],
+          [
+            120.35877,
+            22.58502
+          ],
           [
             120.35481,
             22.58485
@@ -231,6 +315,98 @@
           [
             120.35019,
             22.58495
+          ],
+          [
+            120.34924,
+            22.5848
+          ],
+          [
+            120.34415,
+            22.58329
+          ],
+          [
+            120.34288084799863,
+            22.583075221202087
+          ],
+          [
+            120.34284400963831,
+            22.58307443464735
+          ],
+          [
+            120.34280887309342,
+            22.583084303905526
+          ],
+          [
+            120.34277876842201,
+            22.58310382921308
+          ],
+          [
+            120.34275667117733,
+            22.583131080683756
+          ],
+          [
+            120.34274476545649,
+            22.583163364775427
+          ],
+          [
+            120.34274421170089,
+            22.583197384136017
+          ],
+          [
+            120.34321,
+            22.5862
+          ],
+          [
+            120.33741,
+            22.58772
+          ],
+          [
+            120.33682,
+            22.58571
+          ],
+          [
+            120.33688,
+            22.58308
+          ],
+          [
+            120.33326,
+            22.58305
+          ],
+          [
+            120.33264,
+            22.58285
+          ],
+          [
+            120.33039,
+            22.58137
+          ],
+          [
+            120.32938,
+            22.58065
+          ],
+          [
+            120.32914,
+            22.58055
+          ],
+          [
+            120.32604,
+            22.5783
+          ],
+          [
+            120.3239,
+            22.57677
+          ],
+          [
+            120.32173,
+            22.57519
+          ],
+          [
+            120.32291,
+            22.57378
+          ],
+          [
+            120.32169,
+            22.57287
           ]
         ]
       }
@@ -243,8 +419,9 @@
         "name": "后安路",
         "name_en": "Houan Rd.",
         "line": "紅7",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "4571"
       },
       "geometry": {
         "type": "Point",
@@ -262,8 +439,9 @@
         "name": "佛德街口",
         "name_en": "Fode St. Intersection",
         "line": "紅7",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "4374"
       },
       "geometry": {
         "type": "Point",
@@ -281,8 +459,9 @@
         "name": "捷運草衙站",
         "name_en": "MRT Caoya Station",
         "line": "紅7",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "4407"
       },
       "geometry": {
         "type": "Point",
@@ -300,8 +479,9 @@
         "name": "捷運公司(捷運草衙站)",
         "name_en": "Kaohsiung Rapid Transit Corp.(MRT Caoya Station)",
         "line": "紅7",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "3523"
       },
       "geometry": {
         "type": "Point",
@@ -319,8 +499,9 @@
         "name": "明正里",
         "name_en": "Mingjheng Village",
         "line": "紅7",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "3521"
       },
       "geometry": {
         "type": "Point",
@@ -338,8 +519,9 @@
         "name": "朝天宮(明鳳三路)",
         "name_en": "Chaotian Temple(Mingfong 3rd Rd.)",
         "line": "紅7",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "4148"
       },
       "geometry": {
         "type": "Point",
@@ -357,8 +539,9 @@
         "name": "明鳳十二街口",
         "name_en": "Mingfong 12th St. Intersection",
         "line": "紅7",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "4710"
       },
       "geometry": {
         "type": "Point",
@@ -376,8 +559,9 @@
         "name": "濟天宮(明鳳三路)",
         "name_en": "Jitian Temple(Mingfong 3rd Rd.)",
         "line": "紅7",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "4354"
       },
       "geometry": {
         "type": "Point",
@@ -395,8 +579,9 @@
         "name": "國慶六街",
         "name_en": "Guocing 6th St.",
         "line": "紅7",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "4353"
       },
       "geometry": {
         "type": "Point",
@@ -414,8 +599,9 @@
         "name": "朝鳳寺(紅毛港路)",
         "name_en": "Jhaofong Temple(Hongmaogang Rd.)",
         "line": "紅7",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "4351"
       },
       "geometry": {
         "type": "Point",
@@ -433,8 +619,9 @@
         "name": "明聖街口",
         "name_en": "Mingsheng St. Intersection",
         "line": "紅7",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "4572"
       },
       "geometry": {
         "type": "Point",
@@ -452,8 +639,9 @@
         "name": "福安宮",
         "name_en": "Fuan Temple",
         "line": "紅7",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "4574"
       },
       "geometry": {
         "type": "Point",
@@ -471,8 +659,9 @@
         "name": "德仁路口",
         "name_en": "Deren Rd. Intersection",
         "line": "紅7",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "4576"
       },
       "geometry": {
         "type": "Point",
@@ -490,8 +679,9 @@
         "name": "桂林國小(機場咖啡)",
         "name_en": "Guei-Lin Elementary School(Airport coffee)",
         "line": "紅7",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "4578"
       },
       "geometry": {
         "type": "Point",
@@ -509,8 +699,9 @@
         "name": "桂林教會",
         "name_en": "Gueilin Church",
         "line": "紅7",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "4579"
       },
       "geometry": {
         "type": "Point",
@@ -528,8 +719,9 @@
         "name": "桂德街口",
         "name_en": "Gueide St. Intersection",
         "line": "紅7",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "2168"
       },
       "geometry": {
         "type": "Point",
@@ -547,8 +739,9 @@
         "name": "孔鳳路口",
         "name_en": "Kongfong Rd. Intersection",
         "line": "紅7",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "4349"
       },
       "geometry": {
         "type": "Point",
@@ -566,8 +759,9 @@
         "name": "新昌街口",
         "name_en": "Sinchang St. Intersetion",
         "line": "紅7",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "4580"
       },
       "geometry": {
         "type": "Point",
@@ -585,8 +779,9 @@
         "name": "中安路(勝安街口)",
         "name_en": "Jhongan Rd.(Shengan St. Intersection)",
         "line": "紅7",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "4582"
       },
       "geometry": {
         "type": "Point",
@@ -604,8 +799,9 @@
         "name": "中安路(高鳳路口)",
         "name_en": "Jhongan Rd.(Gaofong Rd. Intersection)",
         "line": "紅7",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "2880"
       },
       "geometry": {
         "type": "Point",
@@ -623,8 +819,9 @@
         "name": "東高雄",
         "name_en": "East Kaohsiung",
         "line": "紅7",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "3499"
       },
       "geometry": {
         "type": "Point",
@@ -642,8 +839,9 @@
         "name": "孔宅",
         "name_en": "Kongjhai",
         "line": "紅7",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "1906"
       },
       "geometry": {
         "type": "Point",
@@ -661,8 +859,9 @@
         "name": "孔宅",
         "name_en": "Kongjhai",
         "line": "紅7",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "1906"
       },
       "geometry": {
         "type": "Point",
@@ -680,8 +879,9 @@
         "name": "明義國中",
         "name_en": "Mingyi Junior High School",
         "line": "紅7",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "4583"
       },
       "geometry": {
         "type": "Point",
@@ -699,8 +899,9 @@
         "name": "金城路口",
         "name_en": "Jincheng Rd. Intersection",
         "line": "紅7",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "3502"
       },
       "geometry": {
         "type": "Point",
@@ -718,8 +919,9 @@
         "name": "復華街口",
         "name_en": "Fuhua St. Intersection",
         "line": "紅7",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "4584"
       },
       "geometry": {
         "type": "Point",
@@ -737,8 +939,9 @@
         "name": "華昌路",
         "name_en": "Huachang Rd.",
         "line": "紅7",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "4585"
       },
       "geometry": {
         "type": "Point",
@@ -756,8 +959,9 @@
         "name": "新昌街口",
         "name_en": "Sinchang St. Intersetion",
         "line": "紅7",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "4581"
       },
       "geometry": {
         "type": "Point",
@@ -775,8 +979,9 @@
         "name": "鳳頂路",
         "name_en": "Fongding Rd.",
         "line": "紅7",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "4587"
       },
       "geometry": {
         "type": "Point",
@@ -794,8 +999,9 @@
         "name": "桂園路口",
         "name_en": "Gueiyuan Rd. Intersection",
         "line": "紅7",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "4588"
       },
       "geometry": {
         "type": "Point",
@@ -813,8 +1019,9 @@
         "name": "德仁路口",
         "name_en": "Deren Rd. Intersection",
         "line": "紅7",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "4577"
       },
       "geometry": {
         "type": "Point",
@@ -832,8 +1039,9 @@
         "name": "福安宮",
         "name_en": "Fuan Temple",
         "line": "紅7",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "4575"
       },
       "geometry": {
         "type": "Point",
@@ -851,8 +1059,9 @@
         "name": "明聖街口",
         "name_en": "Mingsheng St. Intersection",
         "line": "紅7",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "4573"
       },
       "geometry": {
         "type": "Point",
@@ -870,8 +1079,9 @@
         "name": "朝鳳寺(紅毛港路)",
         "name_en": "Jhaofong Temple(Hongmaogang Rd.)",
         "line": "紅7",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "4350"
       },
       "geometry": {
         "type": "Point",
@@ -889,8 +1099,9 @@
         "name": "國慶六街",
         "name_en": "Guocing 6th St.",
         "line": "紅7",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "4352"
       },
       "geometry": {
         "type": "Point",
@@ -908,8 +1119,9 @@
         "name": "濟天宮(明鳳三路)",
         "name_en": "Jitian Temple(Mingfong 3rd Rd.)",
         "line": "紅7",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "4355"
       },
       "geometry": {
         "type": "Point",
@@ -927,8 +1139,9 @@
         "name": "明鳳十二街口",
         "name_en": "Mingfong 12th St. Intersection",
         "line": "紅7",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "4709"
       },
       "geometry": {
         "type": "Point",
@@ -946,8 +1159,9 @@
         "name": "朝天宮(明鳳三路)",
         "name_en": "Chaotian Temple(Mingfong 3rd Rd.)",
         "line": "紅7",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "4147"
       },
       "geometry": {
         "type": "Point",
@@ -965,8 +1179,9 @@
         "name": "明正里",
         "name_en": "Mingjheng Village",
         "line": "紅7",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "3520"
       },
       "geometry": {
         "type": "Point",
@@ -984,8 +1199,9 @@
         "name": "捷運公司(捷運草衙站)",
         "name_en": "Kaohsiung Rapid Transit Corp.(MRT Caoya Station)",
         "line": "紅7",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "3522"
       },
       "geometry": {
         "type": "Point",
@@ -1003,8 +1219,9 @@
         "name": "捷運草衙站",
         "name_en": "MRT Caoya Station",
         "line": "紅7",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "4406"
       },
       "geometry": {
         "type": "Point",
@@ -1022,8 +1239,9 @@
         "name": "佛德街口",
         "name_en": "Fode St. Intersection",
         "line": "紅7",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "4373"
       },
       "geometry": {
         "type": "Point",
@@ -1041,8 +1259,9 @@
         "name": "后安路",
         "name_en": "Houan Rd.",
         "line": "紅7",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "4570"
       },
       "geometry": {
         "type": "Point",

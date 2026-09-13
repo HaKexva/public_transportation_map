@@ -1700,7 +1700,54 @@
 }
 
 .vehicle-canvas-layer {
+  /* Must stay none — otherwise the full-map canvas steals route/stop clicks. */
+  pointer-events: none;
+}
+
+.leaflet-overlay-pane path.leaflet-interactive {
+  pointer-events: stroke;
+}
+
+/* Custom panes sit above the overlay routes; keep the pane inert and only
+   re-enable hits on interactive children (stations, transfer lines, etc.). */
+.leaflet-outOfStationTransfers-pane .leaflet-interactive,
+.leaflet-expressRoutes-pane .leaflet-interactive,
+.leaflet-commuterRoutes-pane .leaflet-interactive,
+.leaflet-stationMarkers-pane .leaflet-interactive,
+.leaflet-busArrows-pane .leaflet-interactive,
+.leaflet-vehicles-pane .leaflet-interactive {
   pointer-events: auto;
+}
+
+.route-info-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.route-info-panel__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
+}
+
+.route-info-panel__swatch {
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 9999px;
+  box-shadow: 0 0 0 1px color-mix(in oklch, var(--foreground) 12%, transparent);
+}
+
+.route-info-panel__ref {
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.route-info-panel__system {
+  opacity: 0.85;
 }
 
 .vehicle-marker-icon--ghost {
@@ -1797,6 +1844,73 @@
 .map-station-board-panel {
   width: min(24rem, calc(100% - 1.5rem));
   max-height: min(32rem, 75vh);
+}
+
+.station-panel__tabs {
+  display: flex;
+  gap: 0.25rem;
+  margin: 0 0 0.5rem;
+  padding: 0.15rem;
+  border-radius: 0.5rem;
+  background: color-mix(in oklch, var(--muted) 55%, transparent);
+}
+
+.station-panel__tab {
+  flex: 1 1 0;
+  border: 0;
+  border-radius: 0.4rem;
+  padding: 0.35rem 0.45rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--muted-foreground);
+  background: transparent;
+  cursor: pointer;
+}
+
+.station-panel__tab.is-active {
+  color: var(--foreground);
+  background: color-mix(in oklch, var(--background) 92%, transparent);
+  box-shadow: 0 1px 2px color-mix(in oklch, var(--foreground) 10%, transparent);
+}
+
+.station-info__access {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-bottom: 0.45rem;
+}
+
+.station-info__chip {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 0.35rem;
+  padding: 0.15rem 0.4rem;
+  font-size: 0.68rem;
+  background: color-mix(in oklch, #0f766e 16%, var(--background));
+  color: color-mix(in oklch, #0f766e 70%, var(--foreground));
+}
+
+.station-info__exits {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.station-info__exit {
+  border: 1px solid color-mix(in oklch, var(--border) 75%, transparent);
+  border-radius: 0.45rem;
+  padding: 0.4rem 0.5rem;
+}
+
+.station-info__exit-name {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.station-info__exit-meta {
+  margin-top: 0.15rem;
+  font-size: 0.68rem;
+  color: var(--muted-foreground);
 }
 
 .map-float-panel__head {

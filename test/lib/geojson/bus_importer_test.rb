@@ -139,7 +139,7 @@ class GeojsonBusImporterTest < ActiveSupport::TestCase
     remove_keelung_fixture("keelung_901", "keelung_902")
   end
 
-  test "snaps inbound geometry onto the outbound corridor and keeps direction on stops" do
+  test "keeps both direction polylines and direction on stops" do
     client = FakeTdxClient.new(
       "v2/Bus/Route/City/Keelung" => [ route_record(map_url: "https://example.test/101.png") ],
       "v2/Bus/Shape/City/Keelung" => [
@@ -163,7 +163,8 @@ class GeojsonBusImporterTest < ActiveSupport::TestCase
     line_features = data["features"].select { |feature| feature.dig("properties", "feature_type") == "route" }
     stations = data["features"].select { |feature| feature.dig("properties", "feature_type") == "station" }
 
-    assert_equal 1, line_features.length
+    assert_equal 2, line_features.length
+    assert_equal [ 0, 1 ], line_features.map { |feature| feature.dig("properties", "direction") }.sort
     assert_equal "https://example.test/101.png", data.dig("properties", "official_map_url")
     assert_equal [ 0, 1 ], stations.map { |feature| feature.dig("properties", "direction") }.sort
   ensure
@@ -588,6 +589,38 @@ class GeojsonBusImporterTest < ActiveSupport::TestCase
       "Direction" => direction,
       "Geometry" => wkt
     }
+  end
+
+  test "keeps full inbound geometry even when it overlaps outbound corridor" do
+    shared = "LINESTRING(121.7400 25.1300, 121.7410 25.1300, 121.7420 25.1300, 121.7430 25.1300)"
+    inbound_spur = "LINESTRING(121.7400 25.1300, 121.7410 25.1300, 121.7420 25.1300, 121.7420 25.1310, 121.7420 25.1320)"
+
+    client = FakeTdxClient.new(
+      "v2/Bus/Route/City/Keelung" => [ route_record ],
+      "v2/Bus/Shape/City/Keelung" => [
+        shape_record(direction: 0, wkt: shared),
+        shape_record(direction: 1, wkt: inbound_spur)
+      ],
+      "v2/Bus/StopOfRoute/City/Keelung" => [ stop_of_route_record ]
+    )
+
+    Geojson::BusImporter.import!(
+      city_id: "Keelung",
+      series: "9",
+      client: client,
+      rewrite_manifest: false
+    )
+
+    data = JSON.parse(Geojson::BusLayout.geojson_path(city_id: "Keelung", slug: "keelung_901", ref: "901").read)
+    routes = data["features"].select { |feature| feature.dig("properties", "feature_type") == "route" }
+    outbound = routes.select { |feature| feature.dig("properties", "direction").to_i.zero? }
+    inbound = routes.select { |feature| feature.dig("properties", "direction").to_i == 1 }
+
+    assert_operator outbound.sum { |feature| feature.dig("geometry", "coordinates").length }, :>=, 4
+    # Must retain the full return path (shared corridor + spur), not spur stubs only.
+    assert_operator inbound.sum { |feature| feature.dig("geometry", "coordinates").length }, :>=, 5
+  ensure
+    remove_keelung_fixture("keelung_901")
   end
 
   def stop_of_route_record(uid: "KEL901", stop_uid: "KEL1001", stop_name: "基隆車站", station_id: "KELST01")

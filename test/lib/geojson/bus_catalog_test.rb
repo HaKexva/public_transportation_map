@@ -136,4 +136,19 @@ class GeojsonBusCatalogTest < ActiveSupport::TestCase
       assert I18n.exists?("map.bus.bands.#{band}", locale: :en), "missing en band #{band}"
     end
   end
+
+  test "clusters highway-coach operator route numbers into sidebar ranges" do
+    routes = [
+      { "ref" => "1751" },
+      { "ref" => "1800A" },
+      { "ref" => "1881" },
+      { "ref" => "7000" },
+      { "ref" => "7005" },
+      { "ref" => "南投" }
+    ]
+
+    assert_equal %w[1751–1881 7000–7005], Geojson::BusCatalog.operator_ref_ranges(routes)
+    assert_equal [ "1551" ], Geojson::BusCatalog.operator_ref_ranges([ { "ref" => "1551" } ])
+    assert_equal [], Geojson::BusCatalog.operator_ref_ranges([ { "ref" => "台灣好行" } ])
+  end
 end

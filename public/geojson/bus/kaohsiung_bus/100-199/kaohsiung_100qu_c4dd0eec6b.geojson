@@ -6,13 +6,12 @@
     "name": "100區間車",
     "name_en": "100區間車",
     "ref": "100區間車",
-    "color": "#9a3412",
+    "color": "#1e3a8a",
     "city_id": "Kaohsiung",
     "source": "TDX Bus Shape / StopOfRoute",
     "operator_id": "10270",
     "operator": "統聯客運",
-    "operator_en": "United Highway Bus Co., Ltd.",
-    "official_map_url": "https://www.ubus.com.tw/UrbanBus/KaohsiungBus/100s/100%E5%8D%80.png"
+    "operator_en": "United Highway Bus Co., Ltd."
   },
   "features": [
     {
@@ -22,7 +21,7 @@
         "ref": "100區間車",
         "name": "100區間車",
         "name_en": "100區間車",
-        "color": "#9a3412",
+        "color": "#1e3a8a",
         "direction": 0
       },
       "geometry": {
@@ -69,16 +68,32 @@
             22.6182
           ],
           [
-            120.33153,
-            22.62223
+            120.33148045221286,
+            22.622657713040834
           ],
           [
-            120.3315,
-            22.62238
+            120.33147149971293,
+            22.62268925414257
           ],
           [
-            120.33136,
-            22.62276
+            120.33145292841382,
+            22.622716837221294
+          ],
+          [
+            120.33142639750578,
+            22.622738064954117
+          ],
+          [
+            120.33139429075028,
+            22.6227510300617
+          ],
+          [
+            120.33135949289021,
+            22.622754567648965
+          ],
+          [
+            120.33132488525439,
+            22.622748278392272
           ],
           [
             120.3265,
@@ -122,13 +137,114 @@
     {
       "type": "Feature",
       "properties": {
+        "feature_type": "route",
+        "ref": "100區間車",
+        "name": "100區間車",
+        "name_en": "100區間車",
+        "color": "#1e3a8a",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.30315,
+            22.61349
+          ],
+          [
+            120.3046,
+            22.61394
+          ],
+          [
+            120.30619,
+            22.61446
+          ],
+          [
+            120.31221,
+            22.61647
+          ],
+          [
+            120.31823,
+            22.61842
+          ],
+          [
+            120.32651,
+            22.62114
+          ],
+          [
+            120.33132491642802,
+            22.622741589900485
+          ],
+          [
+            120.33135936199331,
+            22.622747915219378
+          ],
+          [
+            120.3313940206285,
+            22.622744498846597
+          ],
+          [
+            120.33142605121863,
+            22.622731727145396
+          ],
+          [
+            120.33145260086593,
+            22.622710737664526
+          ],
+          [
+            120.33147130484872,
+            22.622683399893216
+          ],
+          [
+            120.33148050843934,
+            22.622652061078544
+          ],
+          [
+            120.33161,
+            22.62163
+          ],
+          [
+            120.33179,
+            22.61988
+          ],
+          [
+            120.33215,
+            22.61695
+          ],
+          [
+            120.33274,
+            22.6124
+          ],
+          [
+            120.33273,
+            22.61206
+          ],
+          [
+            120.3333,
+            22.60726
+          ],
+          [
+            120.33349,
+            22.60562
+          ],
+          [
+            120.33894,
+            22.60603
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "feature_type": "station",
         "ref": "KHH1010011781",
         "name": "瑞豐站(瑞隆路)",
         "name_en": "Rueifong Station(Rueilong Rd.)",
         "line": "100區間車",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "2457"
       },
       "geometry": {
         "type": "Point",
@@ -146,8 +262,9 @@
         "name": "崗山市場",
         "name_en": "Gangshan Market",
         "line": "100區間車",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "3649"
       },
       "geometry": {
         "type": "Point",
@@ -165,8 +282,9 @@
         "name": "鐵路機料廠",
         "name_en": "Railway Material Plant",
         "line": "100區間車",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "3653"
       },
       "geometry": {
         "type": "Point",
@@ -184,8 +302,10 @@
         "name": "鐵路機廠",
         "name_en": "Railway Workshop",
         "line": "100區間車",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "3655",
+        "stop_role": "depot"
       },
       "geometry": {
         "type": "Point",
@@ -203,8 +323,9 @@
         "name": "國際商工(輕軌五權國小站)",
         "name_en": "Kuochi Senior Vocational High School(LRT Wucyuan Elementry School Station)",
         "line": "100區間車",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "110"
       },
       "geometry": {
         "type": "Point",
@@ -222,8 +343,9 @@
         "name": "光華路口(光華夜市)",
         "name_en": "Guanghua Rd. Intersection(Guanghua Night Market)",
         "line": "100區間車",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "3667"
       },
       "geometry": {
         "type": "Point",
@@ -241,8 +363,9 @@
         "name": "新光三越(捷運三多商圈站)",
         "name_en": "Shin Kong Mitsukoshi Department Store(MRT Sandou Shopping District Station)",
         "line": "100區間車",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "447"
       },
       "geometry": {
         "type": "Point",
@@ -260,8 +383,9 @@
         "name": "大遠百百貨(捷運三多商圈站)",
         "name_en": "Far Eastern Department Store(MRT Sandou Shopping District Station)",
         "line": "100區間車",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "station_id": "525"
       },
       "geometry": {
         "type": "Point",
@@ -279,8 +403,9 @@
         "name": "大遠百百貨(捷運三多商圈站)",
         "name_en": "Far Eastern Department Store(MRT Sandou Shopping District Station)",
         "line": "100區間車",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "525"
       },
       "geometry": {
         "type": "Point",
@@ -298,8 +423,9 @@
         "name": "新光三越(捷運三多商圈站)",
         "name_en": "Shin Kong Mitsukoshi Department Store(MRT Sandou Shopping District Station)",
         "line": "100區間車",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "448"
       },
       "geometry": {
         "type": "Point",
@@ -317,8 +443,9 @@
         "name": "光華路口(光華夜市)",
         "name_en": "Guanghua Rd. Intersection(Guanghua Night Market)",
         "line": "100區間車",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "3668"
       },
       "geometry": {
         "type": "Point",
@@ -336,8 +463,9 @@
         "name": "國際商工(輕軌五權國小站)",
         "name_en": "Kuochi Senior Vocational High School(LRT Wucyuan Elementry School Station)",
         "line": "100區間車",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "109"
       },
       "geometry": {
         "type": "Point",
@@ -355,8 +483,10 @@
         "name": "鐵路機廠",
         "name_en": "Railway Workshop",
         "line": "100區間車",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "3656",
+        "stop_role": "depot"
       },
       "geometry": {
         "type": "Point",
@@ -374,8 +504,9 @@
         "name": "鐵路機料廠",
         "name_en": "Railway Material Plant",
         "line": "100區間車",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "3654"
       },
       "geometry": {
         "type": "Point",
@@ -393,8 +524,9 @@
         "name": "崗山市場",
         "name_en": "Gangshan Market",
         "line": "100區間車",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "3650"
       },
       "geometry": {
         "type": "Point",
@@ -412,8 +544,9 @@
         "name": "瑞豐站(瑞隆路)",
         "name_en": "Rueifong Station(Rueilong Rd.)",
         "line": "100區間車",
-        "color": "#9a3412",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "station_id": "2456"
       },
       "geometry": {
         "type": "Point",

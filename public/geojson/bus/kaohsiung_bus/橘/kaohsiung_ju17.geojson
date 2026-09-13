@@ -6,7 +6,7 @@
     "name": "橘17",
     "name_en": "橘17",
     "ref": "橘17",
-    "color": "#9333ea",
+    "color": "#2563eb",
     "city_id": "Kaohsiung",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ibus.tbkc.gov.tw/cms/api/route/917/map/1572/image",
@@ -22,7 +22,7 @@
         "ref": "橘17",
         "name": "橘17",
         "name_en": "橘17",
-        "color": "#9333ea",
+        "color": "#2563eb",
         "direction": 0
       },
       "geometry": {
@@ -53,8 +53,32 @@
             22.629
           ],
           [
-            120.35704,
-            22.62905
+            120.35718190217828,
+            22.629047475204484
+          ],
+          [
+            120.35714813660724,
+            22.629052741707252
+          ],
+          [
+            120.3571174521692,
+            22.629066891944532
+          ],
+          [
+            120.35709250400471,
+            22.629088708430714
+          ],
+          [
+            120.35707543816297,
+            22.629116314504547
+          ],
+          [
+            120.35706772265326,
+            22.629147335482582
+          ],
+          [
+            120.35706998518755,
+            22.629178948373944
           ],
           [
             120.35741,
@@ -182,12 +206,16 @@
         "ref": "橘17",
         "name": "橘17",
         "name_en": "橘17",
-        "color": "#9333ea",
+        "color": "#2563eb",
         "direction": 1
       },
       "geometry": {
         "type": "LineString",
         "coordinates": [
+          [
+            120.35653,
+            22.65098
+          ],
           [
             120.35879,
             22.65031
@@ -209,24 +237,60 @@
             22.64774
           ],
           [
-            120.35823,
-            22.64704
+            120.35813803832518,
+            22.64686489454801
           ],
           [
-            120.35785,
-            22.6468
+            120.35812685102111,
+            22.646847766074814
           ],
           [
-            120.35737,
-            22.64679
+            120.35811270431797,
+            22.64683304545707
           ],
           [
-            120.35711,
-            22.64691
+            120.35809592364451,
+            22.646820948761807
           ],
           [
-            120.35694,
-            22.64709
+            120.35807706371446,
+            22.64681187586588
+          ],
+          [
+            120.35805674797491,
+            22.64680612668931
+          ],
+          [
+            120.3580356665038,
+            22.646803891667865
+          ],
+          [
+            120.35718045062768,
+            22.64678602705292
+          ],
+          [
+            120.35715868292542,
+            22.646787464368597
+          ],
+          [
+            120.35713760018403,
+            22.646792633948856
+          ],
+          [
+            120.35711791856897,
+            22.646801355260884
+          ],
+          [
+            120.3571003239275,
+            22.64681332439223
+          ],
+          [
+            120.35708542938188,
+            22.646828124253357
+          ],
+          [
+            120.35707360375557,
+            22.64684551398085
           ],
           [
             120.35661,
@@ -247,6 +311,106 @@
           [
             120.35193,
             22.6484
+          ],
+          [
+            120.35124,
+            22.64835
+          ],
+          [
+            120.35164,
+            22.64649
+          ],
+          [
+            120.3515,
+            22.64619
+          ],
+          [
+            120.3494,
+            22.64353
+          ],
+          [
+            120.34881,
+            22.64118
+          ],
+          [
+            120.34811,
+            22.6378
+          ],
+          [
+            120.3487,
+            22.63777
+          ],
+          [
+            120.35726,
+            22.63624
+          ],
+          [
+            120.35809,
+            22.63482
+          ],
+          [
+            120.35819,
+            22.63448
+          ],
+          [
+            120.35798,
+            22.63328
+          ],
+          [
+            120.35741,
+            22.63063
+          ],
+          [
+            120.35707057650757,
+            22.62918149279964
+          ],
+          [
+            120.3570683443133,
+            22.629149537230766
+          ],
+          [
+            120.35707630244858,
+            22.629118219759274
+          ],
+          [
+            120.35709378773217,
+            22.629090446707146
+          ],
+          [
+            120.35711926377587,
+            22.629068658423066
+          ],
+          [
+            120.35715049206344,
+            22.629054769389114
+          ],
+          [
+            120.35718472864247,
+            22.62905
+          ],
+          [
+            120.35919,
+            22.62905
+          ],
+          [
+            120.36255,
+            22.6287
+          ],
+          [
+            120.36218,
+            22.62677
+          ],
+          [
+            120.36199,
+            22.62554
+          ],
+          [
+            120.36265,
+            22.62538
+          ],
+          [
+            120.3623,
+            22.62453
           ]
         ]
       }
@@ -259,8 +423,9 @@
         "name": "大東文化藝術中心",
         "name_en": "Dadong Art Center",
         "line": "橘17",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "4808"
       },
       "geometry": {
         "type": "Point",
@@ -278,8 +443,9 @@
         "name": "自來水公司(鳳山)",
         "name_en": "Water Corporation(Fongshan)",
         "line": "橘17",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "4417"
       },
       "geometry": {
         "type": "Point",
@@ -297,8 +463,9 @@
         "name": "光復路",
         "name_en": "Guangfu Rd.",
         "line": "橘17",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "757"
       },
       "geometry": {
         "type": "Point",
@@ -316,8 +483,9 @@
         "name": "臺鐵鳳山站",
         "name_en": "TRA Fongshan Station",
         "line": "橘17",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "1004"
       },
       "geometry": {
         "type": "Point",
@@ -335,8 +503,9 @@
         "name": "鳳山商工(建國路三段)",
         "name_en": "Fongshan Senior Commercial & Industrial School(Sec. 3, Jianguo Rd.)",
         "line": "橘17",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "2468"
       },
       "geometry": {
         "type": "Point",
@@ -354,8 +523,9 @@
         "name": "青年路口(建國路三段)",
         "name_en": "Cingnian Rd. Intersection(Jianguo Rd. Sec. 3)",
         "line": "橘17",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "2749"
       },
       "geometry": {
         "type": "Point",
@@ -373,8 +543,9 @@
         "name": "文濱路口",
         "name_en": "Wunbin Rd. Intersection",
         "line": "橘17",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "2747"
       },
       "geometry": {
         "type": "Point",
@@ -392,8 +563,9 @@
         "name": "文山學園",
         "name_en": "WunShan Academy",
         "line": "橘17",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "1276"
       },
       "geometry": {
         "type": "Point",
@@ -411,8 +583,9 @@
         "name": "正修科大宿舍",
         "name_en": "Cheng Shiu University Students'Dormitory",
         "line": "橘17",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "2706"
       },
       "geometry": {
         "type": "Point",
@@ -430,8 +603,9 @@
         "name": "正修科大(後門)",
         "name_en": "The backdoor of Cheng Shiu University",
         "line": "橘17",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "2708"
       },
       "geometry": {
         "type": "Point",
@@ -449,8 +623,9 @@
         "name": "長庚復健大樓",
         "name_en": "Chang Gung Rehabilitation Building",
         "line": "橘17",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "1993"
       },
       "geometry": {
         "type": "Point",
@@ -468,8 +643,9 @@
         "name": "長庚醫院",
         "name_en": "Chang Gung Memorial Hospital",
         "line": "橘17",
-        "color": "#9333ea",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "station_id": "655"
       },
       "geometry": {
         "type": "Point",
@@ -487,8 +663,9 @@
         "name": "長庚醫院",
         "name_en": "Chang Gung Memorial Hospital",
         "line": "橘17",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "655"
       },
       "geometry": {
         "type": "Point",
@@ -506,8 +683,9 @@
         "name": "文山高中",
         "name_en": "WunShan Senior High School",
         "line": "橘17",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "1995"
       },
       "geometry": {
         "type": "Point",
@@ -525,8 +703,9 @@
         "name": "正修科大宿舍",
         "name_en": "Cheng Shiu University Students'Dormitory",
         "line": "橘17",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "2707"
       },
       "geometry": {
         "type": "Point",
@@ -544,8 +723,9 @@
         "name": "文山學園",
         "name_en": "WunShan Academy",
         "line": "橘17",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "1277"
       },
       "geometry": {
         "type": "Point",
@@ -563,8 +743,9 @@
         "name": "文濱路口",
         "name_en": "Wunbin Rd. Intersection",
         "line": "橘17",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "2746"
       },
       "geometry": {
         "type": "Point",
@@ -582,8 +763,9 @@
         "name": "青年路口(建國路三段)",
         "name_en": "Cingnian Rd. Intersection(Jianguo Rd. Sec. 3)",
         "line": "橘17",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "2748"
       },
       "geometry": {
         "type": "Point",
@@ -601,8 +783,9 @@
         "name": "鳳山商工(建國路三段)",
         "name_en": "Fongshan Senior Commercial & Industrial School(Sec. 3, Jianguo Rd.)",
         "line": "橘17",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "2467"
       },
       "geometry": {
         "type": "Point",
@@ -620,8 +803,9 @@
         "name": "臺鐵鳳山站",
         "name_en": "TRA Fengshan Station",
         "line": "橘17",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "1003"
       },
       "geometry": {
         "type": "Point",
@@ -639,8 +823,9 @@
         "name": "光復路",
         "name_en": "Guangfu Rd.",
         "line": "橘17",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "756"
       },
       "geometry": {
         "type": "Point",
@@ -658,8 +843,9 @@
         "name": "自來水公司(鳳山)",
         "name_en": "Water Corporation(Fongshan)",
         "line": "橘17",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "4418"
       },
       "geometry": {
         "type": "Point",
@@ -677,8 +863,9 @@
         "name": "大東文化藝術中心",
         "name_en": "Dadong Art Center",
         "line": "橘17",
-        "color": "#9333ea",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "station_id": "4808"
       },
       "geometry": {
         "type": "Point",

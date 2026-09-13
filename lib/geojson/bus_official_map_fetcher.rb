@@ -399,7 +399,11 @@ module Geojson
       return unless match
 
       src = match[1]
+      return if src.blank? || src.match?(%r{\.(?:undefined)?(?:\?|$)}i) || src == "."
+
       src = URI.join("https://ebus.gov.taipei/", src).to_s if src.start_with?(".")
+      return unless src.include?("/File/Get/")
+
       src
     end
 

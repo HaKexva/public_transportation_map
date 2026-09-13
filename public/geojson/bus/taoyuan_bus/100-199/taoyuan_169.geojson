@@ -6,7 +6,7 @@
     "name": "169",
     "name_en": "169",
     "ref": "169",
-    "color": "#65a30d",
+    "color": "#b91c1c",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/3300/map/2184/image",
@@ -22,7 +22,7 @@
         "ref": "169",
         "name": "169",
         "name_en": "169",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0
       },
       "geometry": {
@@ -61,24 +61,32 @@
             24.95635
           ],
           [
-            121.23326,
-            24.95691
+            121.23389972435739,
+            24.957104967700857
           ],
           [
-            121.23379,
-            24.95706
+            121.23392218536722,
+            24.957109677822352
           ],
           [
-            121.23387,
-            24.95707
+            121.23394496936199,
+            24.95711035805434
           ],
           [
-            121.23395,
-            24.95705
+            121.23396747678366,
+            24.95710705580848
           ],
           [
-            121.2341,
-            24.957
+            121.23398888028355,
+            24.957099892471792
+          ],
+          [
+            121.23400839309186,
+            24.957089131360878
+          ],
+          [
+            121.23402557784657,
+            24.957074886922666
           ],
           [
             121.23475,
@@ -181,12 +189,32 @@
             24.93755
           ],
           [
-            121.25419,
-            24.937
+            121.25429046215002,
+            24.936870890455115
           ],
           [
-            121.25447,
-            24.93685
+            121.25431773956436,
+            24.936845689158787
+          ],
+          [
+            121.25435207434538,
+            24.93682995861698
+          ],
+          [
+            121.25439010982953,
+            24.936825047485566
+          ],
+          [
+            121.2544278746079,
+            24.936831468551798
+          ],
+          [
+            121.2544614255368,
+            24.93684855137121
+          ],
+          [
+            121.25448746609244,
+            24.9368748046322
           ],
           [
             121.25604,
@@ -223,23 +251,7 @@
           [
             121.25681,
             24.94663
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "route",
-        "ref": "169",
-        "name": "169",
-        "name_en": "169",
-        "color": "#65a30d",
-        "direction": 1
-      },
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
+          ],
           [
             121.25688,
             24.94764
@@ -253,24 +265,60 @@
             24.94888
           ],
           [
-            121.2569,
-            24.94985
+            121.25679727152216,
+            24.950518662228266
           ],
           [
-            121.25689,
-            24.95064
+            121.25679697958016,
+            24.950546668024604
           ],
           [
-            121.25974,
-            24.95104
+            121.25680458696226,
+            24.95057390753631
           ],
           [
-            121.25982,
-            24.95081
+            121.25681959951129,
+            24.950598450216038
           ],
           [
-            121.26016,
-            24.95047
+            121.2568410105522,
+            24.95061865034046
+          ],
+          [
+            121.25686738435546,
+            24.950633153378753
+          ],
+          [
+            121.25689682789606,
+            24.95064096926714
+          ],
+          [
+            121.25981147799223,
+            24.951050097640145
+          ],
+          [
+            121.25983826487818,
+            24.95105109250727
+          ],
+          [
+            121.25986449444135,
+            24.951046615984705
+          ],
+          [
+            121.25988897001311,
+            24.95103691110256
+          ],
+          [
+            121.25991045874163,
+            24.951022466702607
+          ],
+          [
+            121.25992787822447,
+            24.95100401035949
+          ],
+          [
+            121.25994045437908,
+            24.950982230656024
           ],
           [
             121.26038,
@@ -297,20 +345,284 @@
             24.94476
           ],
           [
-            121.25952,
-            24.94384
+            121.25951086660137,
+            24.943628630540786
           ],
           [
-            121.25945,
-            24.94364
+            121.25950593258709,
+            24.94360166859349
           ],
           [
-            121.25931,
-            24.94355
+            121.25949379602744,
+            24.94357671264645
           ],
           [
-            121.25913,
-            24.94352
+            121.25947522349232,
+            24.943555311560313
+          ],
+          [
+            121.2594513900451,
+            24.943538819357677
+          ],
+          [
+            121.25942380360114,
+            24.943528279481605
+          ],
+          [
+            121.25939422460289,
+            24.94352435902508
+          ],
+          [
+            121.25799581278292,
+            24.943501416693692
+          ],
+          [
+            121.25797131383403,
+            24.943498672211653
+          ],
+          [
+            121.25794794986388,
+            24.943491361724288
+          ],
+          [
+            121.2579267442293,
+            24.943479800973062
+          ],
+          [
+            121.25790861208782,
+            24.943464488877645
+          ],
+          [
+            121.2578943359562,
+            24.94344608625197
+          ],
+          [
+            121.25788446075057,
+            24.943425179749145
+          ],
+          [
+            121.25747,
+            24.94222
+          ],
+          [
+            121.25634,
+            24.93994
+          ],
+          [
+            121.25605,
+            24.93907
+          ],
+          [
+            121.25450011885398,
+            24.93687869367615
+          ],
+          [
+            121.25447408933232,
+            24.936852356665366
+          ],
+          [
+            121.25444050886128,
+            24.936835207307592
+          ],
+          [
+            121.25440268914605,
+            24.93682874982901
+          ],
+          [
+            121.25436459168318,
+            24.936833660630256
+          ],
+          [
+            121.25433020706242,
+            24.9368494253203
+          ],
+          [
+            121.25430290928081,
+            24.93687468651309
+          ],
+          [
+            121.25387,
+            24.93743
+          ],
+          [
+            121.25379,
+            24.93753
+          ],
+          [
+            121.25298,
+            24.93884
+          ],
+          [
+            121.25238,
+            24.93976
+          ],
+          [
+            121.25176,
+            24.94044
+          ],
+          [
+            121.25074,
+            24.94161
+          ],
+          [
+            121.24983,
+            24.94262
+          ],
+          [
+            121.24835,
+            24.94442
+          ],
+          [
+            121.2475,
+            24.94541
+          ],
+          [
+            121.24641,
+            24.94636
+          ],
+          [
+            121.24636,
+            24.94657
+          ],
+          [
+            121.24505,
+            24.94761
+          ],
+          [
+            121.24456,
+            24.94797
+          ],
+          [
+            121.24364,
+            24.94874
+          ],
+          [
+            121.2432,
+            24.94903
+          ],
+          [
+            121.24241,
+            24.94972
+          ],
+          [
+            121.24057,
+            24.9515
+          ],
+          [
+            121.24043,
+            24.95152
+          ],
+          [
+            121.2397,
+            24.95244
+          ],
+          [
+            121.23954,
+            24.95281
+          ],
+          [
+            121.2393,
+            24.95313
+          ],
+          [
+            121.23794,
+            24.95394
+          ],
+          [
+            121.23677,
+            24.95462
+          ],
+          [
+            121.23608,
+            24.95506
+          ],
+          [
+            121.23553,
+            24.9556
+          ],
+          [
+            121.23507,
+            24.95609
+          ],
+          [
+            121.23406630462131,
+            24.957126149599695
+          ],
+          [
+            121.23404910943346,
+            24.95714081102579
+          ],
+          [
+            121.23402946135494,
+            24.95715192750559
+          ],
+          [
+            121.23400782879257,
+            24.957159362979283
+          ],
+          [
+            121.23398502931292,
+            24.957162836435586
+          ],
+          [
+            121.23396192458422,
+            24.95716221660101
+          ],
+          [
+            121.2339391494467,
+            24.95715745419984
+          ],
+          [
+            121.23273,
+            24.95679
+          ],
+          [
+            121.23202,
+            24.95655
+          ],
+          [
+            121.23128,
+            24.95633
+          ],
+          [
+            121.23038,
+            24.9561
+          ],
+          [
+            121.22893,
+            24.95572
+          ],
+          [
+            121.22811,
+            24.9555
+          ],
+          [
+            121.22741,
+            24.95534
+          ],
+          [
+            121.2267,
+            24.9552
+          ],
+          [
+            121.22642,
+            24.95518
+          ],
+          [
+            121.22537,
+            24.95561
+          ],
+          [
+            121.22335,
+            24.95645
+          ],
+          [
+            121.2237,
+            24.95717
+          ],
+          [
+            121.22437,
+            24.95693
           ]
         ]
       }
@@ -323,8 +635,9 @@
         "name": "中央延平路口",
         "name_en": "Zhongyang and Yanping Road Intersection",
         "line": "169",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4643"
       },
       "geometry": {
         "type": "Point",
@@ -342,8 +655,9 @@
         "name": "中壢農會",
         "name_en": "Zhongli Farmers Association",
         "line": "169",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "3773"
       },
       "geometry": {
         "type": "Point",
@@ -361,8 +675,9 @@
         "name": "中央市場",
         "name_en": "Zhongyang Market",
         "line": "169",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "580"
       },
       "geometry": {
         "type": "Point",
@@ -380,8 +695,9 @@
         "name": "埔頂橋",
         "name_en": "PuDing Bridge",
         "line": "169",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "752"
       },
       "geometry": {
         "type": "Point",
@@ -397,10 +713,11 @@
         "feature_type": "station",
         "ref": "TAO118",
         "name": "中山東路口",
-        "name_en": "Zhongshan East Road Intersection ",
+        "name_en": "Zhongshan East Road Intersection",
         "line": "169",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "512"
       },
       "geometry": {
         "type": "Point",
@@ -418,14 +735,15 @@
         "name": "中山東中北路口",
         "name_en": "Zhongshan E. and Zhongbei Rd. Intersection",
         "line": "169",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "639"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.236057,
-          24.955006
+          121.23605735759153,
+          24.955006462236756
         ]
       }
     },
@@ -437,8 +755,9 @@
         "name": "普仁(中原夜市)",
         "name_en": "PuRen(Zhongyuan Night Market)",
         "line": "169",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "920"
       },
       "geometry": {
         "type": "Point",
@@ -456,14 +775,15 @@
         "name": "普仁新村",
         "name_en": "Puren Village",
         "line": "169",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "607"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.239443,
-          24.952664
+          121.23944288399647,
+          24.952664155040512
         ]
       }
     },
@@ -475,14 +795,15 @@
         "name": "環中東路口",
         "name_en": "Huanzhong E. Road Intersection",
         "line": "169",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1187"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.240954,
-          24.950818
+          121.24095391066676,
+          24.950817834825152
         ]
       }
     },
@@ -494,8 +815,9 @@
         "name": "榮民服務處",
         "name_en": "Taoyuan County Veterans Service Office",
         "line": "169",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "605"
       },
       "geometry": {
         "type": "Point",
@@ -513,14 +835,15 @@
         "name": "普仁國小",
         "name_en": "Puren Elementary School",
         "line": "169",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "603"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.244662,
-          24.94781
+          121.24466210323251,
+          24.94781013247773
         ]
       }
     },
@@ -532,8 +855,9 @@
         "name": "金鋒市場",
         "name_en": "JinFeng Market",
         "line": "169",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "3278"
       },
       "geometry": {
         "type": "Point",
@@ -551,8 +875,9 @@
         "name": "六泰新村",
         "name_en": "LiouTai New Village",
         "line": "169",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1130"
       },
       "geometry": {
         "type": "Point",
@@ -570,14 +895,15 @@
         "name": "龍慈路口",
         "name_en": "Longci Road Intersection",
         "line": "169",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "3247"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.248368,
-          24.944271
+          121.24836752881602,
+          24.94427077302362
         ]
       }
     },
@@ -589,8 +915,9 @@
         "name": "仁美",
         "name_en": "RenMei",
         "line": "169",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "694"
       },
       "geometry": {
         "type": "Point",
@@ -608,14 +935,15 @@
         "name": "電信器材場",
         "name_en": "Telcom Equipment Market",
         "line": "169",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4596"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.251243,
-          24.940876
+          121.2512433940136,
+          24.940876191837155
         ]
       }
     },
@@ -627,14 +955,15 @@
         "name": "富台國小",
         "name_en": "Fu-Tai Elementary School",
         "line": "169",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "3292"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.252486,
-          24.939526999999998
+          121.25248644913943,
+          24.93952715212278
         ]
       }
     },
@@ -646,14 +975,15 @@
         "name": "富台",
         "name_en": "Futai",
         "line": "169",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "839"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.253559,
-          24.937715
+          121.25355876650431,
+          24.937714705395884
         ]
       }
     },
@@ -665,8 +995,9 @@
         "name": "北區健保署(榮民南路)",
         "name_en": "NHIA(RungMin S. Road)",
         "line": "169",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "799"
       },
       "geometry": {
         "type": "Point",
@@ -684,8 +1015,9 @@
         "name": "萬寶龍社區",
         "name_en": "WanBauLung Community",
         "line": "169",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "3370"
       },
       "geometry": {
         "type": "Point",
@@ -703,13 +1035,14 @@
         "name": "榮民南華勛街口",
         "name_en": "Rongmin S. and Huaxun St. Intersection",
         "line": "169",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4533"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.257764,
+          121.25776399999998,
           24.943922
         ]
       }
@@ -722,14 +1055,15 @@
         "name": "榮民南仁慈路口",
         "name_en": "Rongmin S. and Renci Rd. Intersection",
         "line": "169",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4531"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.256951,
-          24.946257
+          121.25695054640896,
+          24.946257457835873
         ]
       }
     },
@@ -741,8 +1075,9 @@
         "name": "金車公司",
         "name_en": "KingCar Industrial Co.  Ltd.",
         "line": "169",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "2940"
       },
       "geometry": {
         "type": "Point",
@@ -760,8 +1095,9 @@
         "name": "活動中心",
         "name_en": "Activity Center",
         "line": "169",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "299"
       },
       "geometry": {
         "type": "Point",
@@ -779,8 +1115,9 @@
         "name": "華勛五村",
         "name_en": "HuaShiun 5th Village",
         "line": "169",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "5240"
       },
       "geometry": {
         "type": "Point",
@@ -798,8 +1135,9 @@
         "name": "華勛街141巷",
         "name_en": "Huashiun Street Lane 141",
         "line": "169",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "576"
       },
       "geometry": {
         "type": "Point",
@@ -817,8 +1155,9 @@
         "name": "華勛市場",
         "name_en": "HuaShiun Market",
         "line": "169",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "5047"
       },
       "geometry": {
         "type": "Point",
@@ -836,8 +1175,9 @@
         "name": "土地公",
         "name_en": "TuDiGung",
         "line": "169",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1068"
       },
       "geometry": {
         "type": "Point",
@@ -855,8 +1195,9 @@
         "name": "榮美社區",
         "name_en": "RungMei Community",
         "line": "169",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "5234"
       },
       "geometry": {
         "type": "Point",
@@ -874,8 +1215,9 @@
         "name": "仁美里",
         "name_en": "RenMei Village",
         "line": "169",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1128"
       },
       "geometry": {
         "type": "Point",
@@ -893,8 +1235,9 @@
         "name": "榮民南龍東路口",
         "name_en": "Rongmin S. and Longdong Rd. Intersection",
         "line": "169",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4977"
       },
       "geometry": {
         "type": "Point",
@@ -912,8 +1255,9 @@
         "name": "榮民南路",
         "name_en": "RungMin S. Road",
         "line": "169",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "6289"
       },
       "geometry": {
         "type": "Point",
@@ -931,14 +1275,15 @@
         "name": "萬寶龍社區",
         "name_en": "WanBauLung Community",
         "line": "169",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "3371"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.256211,
-          24.939662
+          121.25621080400002,
+          24.9396623091
         ]
       }
     },
@@ -950,8 +1295,9 @@
         "name": "北區健保署(榮民南路)",
         "name_en": "NHIA(RungMin S. Road)",
         "line": "169",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "800"
       },
       "geometry": {
         "type": "Point",
@@ -969,8 +1315,9 @@
         "name": "富台",
         "name_en": "Futai",
         "line": "169",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "840"
       },
       "geometry": {
         "type": "Point",
@@ -988,14 +1335,15 @@
         "name": "富台國小",
         "name_en": "Fu-Tai Elementary School",
         "line": "169",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "3293"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.252395,
-          24.939799
+          121.25239527283468,
+          24.93979891622736
         ]
       }
     },
@@ -1007,14 +1355,15 @@
         "name": "電信器材場",
         "name_en": "Telcom Equipment Market",
         "line": "169",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4597"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.251372,
-          24.940947
+          121.25137213430389,
+          24.940947011347
         ]
       }
     },
@@ -1026,8 +1375,9 @@
         "name": "仁美",
         "name_en": "RenMei",
         "line": "169",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "695"
       },
       "geometry": {
         "type": "Point",
@@ -1045,8 +1395,9 @@
         "name": "龍慈路口",
         "name_en": "Longci Road Intersection",
         "line": "169",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "6912"
       },
       "geometry": {
         "type": "Point",
@@ -1064,8 +1415,9 @@
         "name": "六泰新村",
         "name_en": "LiouTai New Village",
         "line": "169",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1131"
       },
       "geometry": {
         "type": "Point",
@@ -1083,8 +1435,9 @@
         "name": "金鋒市場",
         "name_en": "JinFeng Market",
         "line": "169",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "3279"
       },
       "geometry": {
         "type": "Point",
@@ -1102,8 +1455,9 @@
         "name": "普仁國小",
         "name_en": "Puren Elementary School",
         "line": "169",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "604"
       },
       "geometry": {
         "type": "Point",
@@ -1121,8 +1475,9 @@
         "name": "榮民服務處",
         "name_en": "Taoyuan County Veterans Service Office",
         "line": "169",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "606"
       },
       "geometry": {
         "type": "Point",
@@ -1140,8 +1495,9 @@
         "name": "環中東路口",
         "name_en": "Huanzhong E. Road Intersection",
         "line": "169",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1188"
       },
       "geometry": {
         "type": "Point",
@@ -1159,8 +1515,9 @@
         "name": "普仁新村",
         "name_en": "Puren Village",
         "line": "169",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "608"
       },
       "geometry": {
         "type": "Point",
@@ -1178,8 +1535,9 @@
         "name": "普仁(中原夜市)",
         "name_en": "PuRen(Zhongyuan Night Market)",
         "line": "169",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "921"
       },
       "geometry": {
         "type": "Point",
@@ -1197,8 +1555,9 @@
         "name": "中山東中北路口",
         "name_en": "Zhongshan E. and Zhongbei Rd. Intersection",
         "line": "169",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "640"
       },
       "geometry": {
         "type": "Point",
@@ -1214,10 +1573,11 @@
         "feature_type": "station",
         "ref": "TAO151",
         "name": "中山東路口",
-        "name_en": "Zhongshan East Road Intersection ",
+        "name_en": "Zhongshan East Road Intersection",
         "line": "169",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "513"
       },
       "geometry": {
         "type": "Point",
@@ -1235,8 +1595,9 @@
         "name": "埔頂橋",
         "name_en": "PuDing Bridge",
         "line": "169",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "751"
       },
       "geometry": {
         "type": "Point",
@@ -1254,8 +1615,9 @@
         "name": "中央市場",
         "name_en": "Zhongyang Market",
         "line": "169",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "579"
       },
       "geometry": {
         "type": "Point",
@@ -1273,8 +1635,9 @@
         "name": "中壢農會",
         "name_en": "Zhongli Farmers Association",
         "line": "169",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "3772"
       },
       "geometry": {
         "type": "Point",
@@ -1292,8 +1655,9 @@
         "name": "中央延平路口",
         "name_en": "Zhongyang and Yanping Road Intersection",
         "line": "169",
-        "color": "#65a30d",
-        "direction": 1
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4643"
       },
       "geometry": {
         "type": "Point",
