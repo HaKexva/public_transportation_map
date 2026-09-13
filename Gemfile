@@ -73,6 +73,6 @@ gem "phlex-rails", "~> 2.4"
 
 gem "tailwind_merge", "~> 1.5"
 
-gem "rouge", "~> 5.0"
+gem "rouge", "~> 5.1"
 
 gem "tailwindcss-rails", "~> 4.6"
