@@ -40,13 +40,34 @@ class DashboardTest < ApplicationSystemTestCase
     visit root_path
 
     assert_selector ".map-boot-overlay[hidden]", visible: :all, wait: 30
-    page.execute_script("document.querySelector(\"a[href='#{route_path('wenhu_line')}']\").click()")
+    assert_selector "a[href='#{route_path('wenhu_line')}']", visible: :all, wait: 5
+    page.execute_script(<<~JS)
+      const link = document.querySelector("a[href='#{route_path('wenhu_line')}']")
+      if (!link) throw new Error("wenhu_line link missing")
+      link.scrollIntoView({ block: "center" })
+      link.click()
+    JS
 
+    assert_selector "h1", text: "文湖線", wait: 15
     assert_current_path route_path("wenhu_line")
-    assert_selector "h1", text: "文湖線", wait: 10
     assert_selector ".route-stop-item", minimum: 5, wait: 10
     assert_selector ".time-scrubber", wait: 5
     assert_link "← 返回地圖", href: root_path
+  end
+
+  test "shows official map and stops together on a bus route page" do
+    visit route_path("keelung_r66")
+
+    assert_selector ".route-stop-item", minimum: 1, wait: 15
+    assert_selector ".route-page__map .leaflet-container", wait: 10
+    assert_selector ".route-view-switcher", text: "官方路線圖"
+    assert_selector ".route-page__stops", text: "站點列表"
+
+    find(".route-view-switcher [data-view='official']").click
+
+    assert_selector ".route-official-panel__image[src]", wait: 10
+    assert_selector ".route-stop-item", minimum: 1
+    assert_selector ".route-page__map .route-official-panel.flex"
   end
 
   test "lists 東門 on tamsui xinyi line between 大安森林公園 and 中正紀念堂" do
@@ -167,6 +188,7 @@ class DashboardTest < ApplicationSystemTestCase
     assert_no_selector ".is-booting"
     assert_selector "#layer-wenhu_line:not([disabled])", visible: :all, wait: 5
     assert_selector "#layer-bannan:not([disabled])", visible: :all, wait: 5
+    assert_selector "#layer-keelung_101_zhongzheng:not(:checked)", visible: :all
   end
 
   test "filters sidebar routes from the search box" do
@@ -192,6 +214,17 @@ class DashboardTest < ApplicationSystemTestCase
 
     assert_selector "#layer-bannan", visible: :all
     assert_no_selector "#layer-wenhu_line", visible: :visible
+  end
+
+  test "shows four region viewpoint chips on the dashboard" do
+    visit root_path
+
+    assert_selector ".map-region-switcher", wait: 10
+    assert_selector "[data-map-target='regionChip']", count: 4
+    assert_selector "[data-region-id='north'][aria-pressed='true']"
+    assert_selector "[data-region-id='central']"
+    assert_selector "[data-region-id='south']"
+    assert_selector "[data-region-id='east']"
   end
 
   test "shows the map on the home page" do
@@ -240,6 +273,7 @@ class DashboardTest < ApplicationSystemTestCase
     assert_no_text "全部路線"
     assert_selector ".layer-category-chip", text: "捷運與輕軌"
     assert_selector ".layer-category-chip", text: "台鐵"
+    assert_selector ".layer-category-chip", text: "公車"
     assert_selector ".layer-category-chip", text: "其他"
     assert_no_selector ".layer-category-chip", text: "全部"
     assert_text "捷運"
@@ -256,6 +290,61 @@ class DashboardTest < ApplicationSystemTestCase
     assert_selector "#map-basemap-select"
     assert_selector "#map-basemap-select option", text: "衛星"
     assert_selector "#map-basemap-select option", text: "台灣圖資"
+  end
+
+  test "nests city hundreds and highway operator folds on the bus layer" do
+    visit root_path
+    assert_selector ".map-boot-overlay[hidden]", visible: :all, wait: 30
+
+    assert_selector ".map-transport-mode__chip--active", text: "軌道運輸"
+
+    find(".map-transport-mode__chip", text: "公車").click
+
+    assert_selector ".map-transport-mode__chip--active", text: "公車"
+    assert_selector ".map-region-switcher.is-hidden", visible: :all
+    assert_selector ".bus-fold__trigger", text: "大台北"
+    assert_selector ".bus-fold__trigger", text: "公路客運"
+    assert_no_selector ".bus-fold__trigger", text: "臺北市"
+    assert_no_selector ".bus-fold__trigger", text: "新北市"
+
+    find(".bus-fold__trigger", text: "基隆市").click
+    assert_selector ".bus-fold__trigger", text: "T, R"
+    assert_selector ".bus-fold__trigger", text: "100-199"
+    assert_selector ".bus-fold__trigger", text: "200-299"
+    assert_selector ".bus-fold__trigger", text: "300-399"
+    assert_no_text "基隆市公車處"
+    within find(".bus-fold", text: "基隆市") do
+      assert_no_selector ".bus-fold__trigger", text: "0-99"
+    end
+
+    find(".bus-fold__trigger", text: "100-199").click
+    assert_selector "[data-map-target~='busRouteBucket'][data-hydrated='true']", wait: 10
+    assert_text "經中正路"
+    assert_text "經祥豐街"
+    within find(".bus-fold--band", text: "300-399") do
+      assert_selector "label", text: "全選"
+    end
+
+    find(".bus-fold__trigger", text: "大台北").click
+
+    assert_selector ".bus-fold__trigger", text: "0-99"
+    assert_selector ".bus-fold__trigger", text: "100-199"
+    assert_selector ".bus-fold__trigger", text: "200-299"
+    assert_selector ".bus-fold__trigger", text: "紅線接駁"
+    assert_selector ".bus-fold__trigger", text: "藍線接駁"
+    assert_selector ".bus-fold__trigger", text: "內科通勤"
+    assert_selector ".bus-fold__trigger", text: "內科快線"
+    assert_selector ".bus-fold__trigger", text: "南軟專車"
+    assert_selector ".bus-fold__trigger", text: "通勤"
+    assert_selector ".bus-fold__trigger", text: "幹線"
+    assert_selector ".bus-fold__trigger", text: "北士科"
+    assert_selector ".bus-fold__trigger", text: "懷恩專車"
+    assert_selector ".bus-fold__trigger", text: "地區線"
+    assert_no_text "此範圍尚無公車路線資料。"
+
+    find(".bus-fold__trigger", text: "桃園市").click
+    assert_selector ".bus-fold__trigger", text: "100-199"
+    assert_no_selector ".bus-fold--operator"
   end
 
   test "switches basemap from the dropdown without breaking the map" do

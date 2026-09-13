@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_07_10_130500) do
+ActiveRecord::Schema[8.1].define(version: 2026_08_16_093000) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -117,6 +117,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_07_10_130500) do
     t.index ["schedule_trip_id", "station_ref"], name: "index_trip_stop_times_on_schedule_trip_id_and_station_ref", unique: true
     t.index ["schedule_trip_id", "stop_sequence"], name: "index_trip_stop_times_on_schedule_trip_id_and_stop_sequence", unique: true
     t.index ["schedule_trip_id"], name: "index_trip_stop_times_on_schedule_trip_id"
+    t.index ["station_ref"], name: "index_trip_stop_times_on_station_ref"
   end
 
   add_foreign_key "headway_rules", "schedule_datasets"

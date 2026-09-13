@@ -19,9 +19,10 @@ Do **not** hand-edit `routes.json` for new lines. Rebuild it with catalogs + rak
 | `kaohsiung_metro` | `kaohsiung_metro/` | Kaohsiung Metro / LRT |
 | `hsr` | `hsr/` | Taiwan High Speed Rail |
 | `tra` | `tra/` | Taiwan Railway |
+| `bus` | `bus/` | City buses + highway coaches (`InterCity`) from TDX; city folders like `bus/kaohsiung_bus/`, `bus/keelung_bus/100-199/` |
 | `other` | `other/` | Sugar railways, ropeways, forest railways, etc. |
 
-Station and track geometry primarily come from [OpenStreetMap](https://www.openstreetmap.org/) (© contributors, ODbL), with NLSC / fallback caches under `lib/geojson/fallback_tracks/` when needed.
+Station and track geometry primarily come from [OpenStreetMap](https://www.openstreetmap.org/) (© contributors, ODbL), with NLSC / fallback caches under `lib/geojson/fallback_tracks/` when needed. Bus geometry comes from TDX Shape / StopOfRoute.
 
 ## Root helper files
 
@@ -29,6 +30,8 @@ Station and track geometry primarily come from [OpenStreetMap](https://www.opens
 | --- | --- |
 | `routes.json` | Runtime route index (id, color, labels, `file` path) |
 | `metro_depots.json` | Depot markers + spur track links |
+| `bus_depots.json` | Bus dispatch yards / operator parking markers |
+| `bus/{city}/_stop_routes.json` | Stop StationID / cluster → routes through that stop |
 | `out_of_station_transfers.json` | Out-of-station transfer markers |
 
 ## Exception: Circular Line (環狀線)
@@ -48,8 +51,18 @@ bin/rails geojson:taichung_metro
 bin/rails geojson:kaohsiung_metro
 bin/rails geojson:hsr
 bin/rails geojson:tra
+bin/rails geojson:bus CITY=Keelung          # one city; CITY=InterCity for highway coaches
+bin/rails geojson:bus_all                   # all city buses; INCLUDE_INTERCITY=1 for coaches
+bin/rails geojson:bus_coverage              # TDX Route/Shape vs local (needs TDX credentials)
+bin/rails geojson:bus_gaps_export           # local-only gap list -> docs/bus_data_gaps/
+bin/rails geojson:bus_manual_import         # inbox/bus_manual + annotated missing_official_maps.md URLs
+bin/rails geojson:bus_reorganize            # move on-disk bus GeoJSON into per-city folders + bands
+bin/rails geojson:bus_sharpen CITY=Keelung  # square soft intersection cuts into crisp L-corners
+bin/rails geojson:bus_official_maps         # resolve TDX/portal HTML pages → direct image URLs (SKIP_TDX=1 to only rewrite stored portals)
+bin/rails geojson:bus_wikipedia_audit       # sparse-county Wikipedia cross-check
 bin/rails geojson:other
 bin/rails geojson:routes_manifest   # rewrite routes.json from on-disk GeoJSON + catalogs
+bin/rails geojson:bus_stop_index    # rewrite bus _stop_routes.json + bus_depots.json
 bin/rails geojson:depots            # rewrite metro_depots.json
 bin/rails geojson:depot_spurs
 bin/rails geojson:refresh_transfer_refs

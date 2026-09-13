@@ -1,0 +1,639 @@
+{
+  "type": "FeatureCollection",
+  "name": "紅5",
+  "properties": {
+    "id": "kaohsiung_hong5",
+    "name": "紅5",
+    "name_en": "紅5",
+    "ref": "紅5",
+    "color": "#9a3412",
+    "city_id": "Kaohsiung",
+    "source": "TDX Bus Shape / StopOfRoute",
+    "official_map_url": "http://ibus.tbkc.gov.tw/cms/api/route/213/map/831/image",
+    "operator_id": "10360",
+    "operator": "港都客運",
+    "operator_en": "Great-City-Life Bus Co., Ltd."
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "紅5",
+        "name": "紅5",
+        "name_en": "紅5",
+        "color": "#9a3412",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.3538,
+            22.56473
+          ],
+          [
+            120.35577,
+            22.56255
+          ],
+          [
+            120.36335,
+            22.55309
+          ],
+          [
+            120.3651,
+            22.55078
+          ],
+          [
+            120.37291,
+            22.53965
+          ],
+          [
+            120.37329,
+            22.53853
+          ],
+          [
+            120.37341,
+            22.5373
+          ],
+          [
+            120.37335,
+            22.53675
+          ],
+          [
+            120.37307,
+            22.5357
+          ],
+          [
+            120.37066,
+            22.53116
+          ],
+          [
+            120.3682,
+            22.5324
+          ],
+          [
+            120.37083364359329,
+            22.53723865708779
+          ],
+          [
+            120.37084188397915,
+            22.537258575275207
+          ],
+          [
+            120.37084579883786,
+            22.53727991430907
+          ],
+          [
+            120.37084508389214,
+            22.537301551589504
+          ],
+          [
+            120.37083976757123,
+            22.537322626728223
+          ],
+          [
+            120.37083006127416,
+            22.53734230169004
+          ],
+          [
+            120.37081662219184,
+            22.537359511074932
+          ],
+          [
+            120.3692,
+            22.53904
+          ],
+          [
+            120.36215,
+            22.53367
+          ],
+          [
+            120.36286,
+            22.53287
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "紅5",
+        "name": "紅5",
+        "name_en": "紅5",
+        "color": "#9a3412",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.36563,
+            22.52975
+          ],
+          [
+            120.366197058642,
+            22.52912544733851
+          ],
+          [
+            120.36622624201499,
+            22.529102196862958
+          ],
+          [
+            120.36626156591124,
+            22.529089102339913
+          ],
+          [
+            120.36629954017737,
+            22.529087266111755
+          ],
+          [
+            120.36633613327051,
+            22.52909688312189
+          ],
+          [
+            120.36636746028026,
+            22.529116932379196
+          ],
+          [
+            120.36639034823114,
+            22.529145561717208
+          ],
+          [
+            120.3682,
+            22.5324
+          ],
+          [
+            120.37074,
+            22.53111
+          ],
+          [
+            120.37284,
+            22.53496
+          ],
+          [
+            120.37319,
+            22.53568
+          ],
+          [
+            120.37334,
+            22.53616
+          ],
+          [
+            120.37347,
+            22.53687
+          ],
+          [
+            120.37351,
+            22.53769
+          ],
+          [
+            120.37324,
+            22.53913
+          ],
+          [
+            120.37299,
+            22.5397
+          ],
+          [
+            120.37205,
+            22.54113
+          ],
+          [
+            120.36464,
+            22.55162
+          ],
+          [
+            120.35596,
+            22.5625
+          ],
+          [
+            120.35405,
+            22.56466
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10021344831",
+        "name": "捷運小港站",
+        "name_en": "MRT Siaogang Station",
+        "line": "紅5",
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "2905"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.353694,
+          22.564803
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH100213152771",
+        "name": "立群路口",
+        "name_en": "Licyun Rd. Intersection",
+        "line": "紅5",
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "1477"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.355181,
+          22.563016
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH100213127031",
+        "name": "海光公司",
+        "name_en": "Hai Kwang Enterprise Corporation",
+        "line": "紅5",
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "2132"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.365138,
+          22.550571
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10021344911",
+        "name": "唐榮公司",
+        "name_en": "Tang Eng Iron Works Co., Ltd.",
+        "line": "紅5",
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "4224"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.369156,
+          22.544928
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10021358341",
+        "name": "中鴻公司",
+        "name_en": "Chung Hung Steel Corporation",
+        "line": "紅5",
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "1985"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.371468,
+          22.532754
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10021358361",
+        "name": "永記公司",
+        "name_en": "Rainbow Paint Company",
+        "line": "紅5",
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "79"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.370739,
+          22.531432
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH100213148151",
+        "name": "大業南路口",
+        "name_en": "Daye S. Rd. Intersection",
+        "line": "紅5",
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "4887"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.36864,
+          22.5322
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10021318121",
+        "name": "上林路口",
+        "name_en": "Shanglin Rd. Intersection",
+        "line": "紅5",
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "4256"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.368896,
+          22.53355
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10021318301",
+        "name": "職訓中心(大業南路)",
+        "name_en": "The Training and Employment Center(Daye S. Rd.)",
+        "line": "紅5",
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "4272"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.370382,
+          22.536255
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10021318211",
+        "name": "職訓中心(中林路)",
+        "name_en": "The Training and Employment Center(Jhonglin Rd.)",
+        "line": "紅5",
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "3619"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.368819,
+          22.538809
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10021318181",
+        "name": "中林路",
+        "name_en": "Jhonglin Rd",
+        "line": "紅5",
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "4103"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.365985,
+          22.536609
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10021318171",
+        "name": "中化小港廠",
+        "name_en": "CPDC Hisaogang Plant",
+        "line": "紅5",
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "4240"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.364475,
+          22.53547
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10021318321",
+        "name": "中智路",
+        "name_en": "Jhongjhih Rd.",
+        "line": "紅5",
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "4273"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.362674,
+          22.53294
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10021318312",
+        "name": "小港郵局(中智街)",
+        "name_en": "Xiaogang Post Office(Jhongjhih St.)",
+        "line": "紅5",
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "4260"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.365731,
+          22.52953
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH100213148162",
+        "name": "大業南路口",
+        "name_en": "Daye S. Rd. Intersection",
+        "line": "紅5",
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "4888"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.368834,
+          22.531983
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10021358382",
+        "name": "永記公司",
+        "name_en": "Rainbow Paint Company",
+        "line": "紅5",
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "78"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.370874,
+          22.531089
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10021358412",
+        "name": "中鴻公司",
+        "name_en": "Chung Hung Steel Corporation",
+        "line": "紅5",
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "1984"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.3716,
+          22.53264
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10021344992",
+        "name": "唐榮公司",
+        "name_en": "Tang Eng Iron Works Co., Ltd.",
+        "line": "紅5",
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "4225"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.369608,
+          22.544757
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10021358422",
+        "name": "海光公司",
+        "name_en": "Hai Kwang Enterprise Corporation",
+        "line": "紅5",
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "2131"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.36545,
+          22.55052
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH100213152902",
+        "name": "立群路口",
+        "name_en": "Licyun Rd. Intersection",
+        "line": "紅5",
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "1478"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.355658,
+          22.562952
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10021344872",
+        "name": "捷運小港站",
+        "name_en": "MRT Siaogang Station",
+        "line": "紅5",
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "2906"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.354015,
+          22.564728
+        ]
+      }
+    }
+  ]
+}

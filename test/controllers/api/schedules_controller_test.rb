@@ -15,4 +15,13 @@ class Api::SchedulesControllerTest < ActionDispatch::IntegrationTest
     get api_schedules_url, params: { date: "not-a-date", route_ids: [ "bannan" ] }
     assert_response :bad_request
   end
+
+  test "index returns empty routes when no active datasets exist" do
+    ScheduleDataset.update_all(active: false)
+
+    get api_schedules_url, params: { date: "2026-08-04", route_ids: [ "bannan" ] }
+
+    assert_response :success
+    assert_equal [], JSON.parse(response.body)["routes"]
+  end
 end

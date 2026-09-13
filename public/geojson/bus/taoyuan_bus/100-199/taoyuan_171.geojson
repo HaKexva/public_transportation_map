@@ -1,0 +1,371 @@
+{
+  "type": "FeatureCollection",
+  "name": "171",
+  "properties": {
+    "id": "taoyuan_171",
+    "name": "171",
+    "name_en": "171",
+    "ref": "171",
+    "color": "#b91c1c",
+    "city_id": "Taoyuan",
+    "source": "TDX Bus Shape / StopOfRoute",
+    "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/3330/map/1280/image",
+    "operator_id": "1",
+    "operator": "桃園客運",
+    "operator_en": "Taoyuan Bus Co., Ltd."
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "171",
+        "name": "171",
+        "name_en": "171",
+        "color": "#b91c1c",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            121.22374,
+            24.95423
+          ],
+          [
+            121.22494,
+            24.95676
+          ],
+          [
+            121.22229,
+            24.95775
+          ],
+          [
+            121.21834,
+            24.95827
+          ],
+          [
+            121.21795,
+            24.95651
+          ],
+          [
+            121.21769,
+            24.9553
+          ],
+          [
+            121.21649550874909,
+            24.95548508798011
+          ],
+          [
+            121.21646844069568,
+            24.955486451493233
+          ],
+          [
+            121.2164418707192,
+            24.955482217191808
+          ],
+          [
+            121.21641702962295,
+            24.955472624202265
+          ],
+          [
+            121.21639519571919,
+            24.955458166175784
+          ],
+          [
+            121.21637749257134,
+            24.955439587116278
+          ],
+          [
+            121.21636472730876,
+            24.95541760156958
+          ],
+          [
+            121.21518,
+            24.95267
+          ],
+          [
+            121.21704,
+            24.95448
+          ],
+          [
+            121.2176,
+            24.9551
+          ],
+          [
+            121.2183,
+            24.95829
+          ],
+          [
+            121.22229,
+            24.95775
+          ],
+          [
+            121.22412,
+            24.9571
+          ],
+          [
+            121.22574,
+            24.95643
+          ],
+          [
+            121.2242788538626,
+            24.953177828062167
+          ],
+          [
+            121.22426328529335,
+            24.953152949027913
+          ],
+          [
+            121.22424136183425,
+            24.953132818832348
+          ],
+          [
+            121.2242144720119,
+            24.953118566637986
+          ],
+          [
+            121.22418445470437,
+            24.953111167090448
+          ],
+          [
+            121.22415336266484,
+            24.95311112621262
+          ],
+          [
+            121.22412304887537,
+            24.953118550347174
+          ],
+          [
+            121.22335,
+            24.95341
+          ],
+          [
+            121.22381,
+            24.95437
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO3164",
+        "name": "中壢公車站",
+        "name_en": "Zhongli Bus Station",
+        "line": "171",
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1229"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.223778,
+          24.954254
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO8303",
+        "name": "中央延平路口",
+        "name_en": "Zhongyang and Yanping Road Intersection",
+        "line": "171",
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4644"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.224295,
+          24.957101
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO3389",
+        "name": "中央新生路口",
+        "name_en": "Zhongyang-ShinSheng Road Intersection",
+        "line": "171",
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "693"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.22264328576595,
+          24.957753143063794
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO9135",
+        "name": "捷運老街溪站(中央西路)",
+        "name_en": "MRT Laojie River Station(Zhongyang W. Rd.)",
+        "line": "171",
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4477"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.219739,
+          24.958235
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO9136",
+        "name": "舊社",
+        "name_en": "Jiushe",
+        "line": "171",
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "217"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.216369,
+          24.955599
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO9137",
+        "name": "消防隊",
+        "name_en": "Fire Brigade",
+        "line": "171",
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4549"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.215256,
+          24.952696
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO9138",
+        "name": "義民路口",
+        "name_en": "Yimin Road Intersection",
+        "line": "171",
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4547"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.217169,
+          24.954474
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO9251",
+        "name": "捷運老街溪站(中央西路)",
+        "name_en": "MRT Laojie River Station(Zhongyang W. Rd.)",
+        "line": "171",
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4476"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.219678,
+          24.957955
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO9322",
+        "name": "中央新生路口",
+        "name_en": "Zhongyang-ShinSheng Road Intersection",
+        "line": "171",
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "692"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.222563,
+          24.957569
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO4143",
+        "name": "中央延平路口",
+        "name_en": "Zhongyang and Yanping Road Intersection",
+        "line": "171",
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4643"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.224135,
+          24.956935
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO3165",
+        "name": "中壢公車站",
+        "name_en": "Zhongli Bus Station",
+        "line": "171",
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1229"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.223778,
+          24.954254
+        ]
+      }
+    }
+  ]
+}

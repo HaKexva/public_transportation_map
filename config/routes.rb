@@ -12,12 +12,20 @@ Rails.application.routes.draw do
   # get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
   # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
 
+  # Flat bus GeoJSON paths used by pre-reorganize manifests → nested city folders.
+  get "/geojson/bus/:slug", to: "bus_geojson_redirects#show",
+      constraints: { slug: /[^\/]+\.geojson/ },
+      format: false
+
   root "dashboards#show"
   resources :routes, only: [ :show ], param: :id
 
   namespace :api do
     resources :vehicles, only: [ :index ]
     resources :schedules, only: [ :index ]
+    resources :station_boards, only: [ :index ]
+    resources :station_infos, only: [ :index ]
+    resources :bus_arrivals, only: [ :index ]
     resources :alerts, only: [ :index ]
   end
 end

@@ -19,7 +19,7 @@ An interactive map of Taiwan, Penghu, Kinmen, and Matsu with toggleable public t
 - **Reset view** button to fit the default map bounds
 - No authentication — the dashboard is public
 
-> Bus and ferry layers are placeholders. Metro, TRA, HSR, and other transit lines load GeoJSON from `public/geojson/`.
+> Bus route geometry is imported from TDX (city buses; highway coaches via `CITY=InterCity`). Ferry remains a placeholder. Metro, TRA, HSR, and other transit lines load GeoJSON from `public/geojson/`. See [`docs/bus_data_gaps/`](docs/bus_data_gaps/) for coverage gaps.
 
 ## Tech stack
 
@@ -91,6 +91,17 @@ Copy `.env.example` to `.env`. All variables are optional for local development.
 | Variable | Purpose |
 | --- | --- |
 | `GOOGLE_MAPS_API_KEY` | Reserved for future Google Maps integration. The app uses Leaflet + CARTO/OSM by default. |
+| `TDX_CLIENT_ID` / `TDX_CLIENT_SECRET` | [TDX](https://tdx.transportdata.tw) credentials. Required to import HSR / metro timetables and for live delay/GPS. TRA daily schedules import from 台鐵 ODS without a key. |
+
+Static timetables live in Postgres. TRA uses 台鐵 ODS daily JSON (today through 14 days). HSR uses TDX `DailyTimetable`. Metro station boards are stitched into multi-stop trips. Track geometry stays OSM GeoJSON.
+
+Import or refresh with:
+
+```bash
+bin/rails transit:import_schedules
+```
+
+Production also runs this daily at 03:30 Taipei time. Live boards are not stored.
 
 ## Testing
 
@@ -107,7 +118,7 @@ System tests expect a headless Chrome browser.
 | --- | --- |
 | `app/` | Thin UI: Phlex views, Stimulus (`map_controller.js`), RubyUI components |
 | `lib/geojson/` | Map geometry pipeline: line catalogs, OSM/NLSC builders, fallback caches |
-| `lib/transit/` | Schedules: TDX client, catalog sync, schedule seeders/importers |
+| `lib/transit/` | Schedules: TRA ODS client, TDX client, metro trip stitcher, catalog sync, importers |
 | `lib/route_catalog.rb` | Runtime reader for `public/geojson/routes.json` (shared by map + transit) |
 | `lib/tasks/geojson.rake` | Rebuild GeoJSON / `routes.json` / depots |
 | `lib/tasks/transit.rake` | Sync DB catalog, seed/import schedules |

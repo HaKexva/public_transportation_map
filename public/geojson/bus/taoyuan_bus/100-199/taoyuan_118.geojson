@@ -1,0 +1,479 @@
+{
+  "type": "FeatureCollection",
+  "name": "118",
+  "properties": {
+    "id": "taoyuan_118",
+    "name": "118",
+    "name_en": "118",
+    "ref": "118",
+    "color": "#b91c1c",
+    "city_id": "Taoyuan",
+    "source": "TDX Bus Shape / StopOfRoute",
+    "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/3370/map/1639/image",
+    "operator_id": "1",
+    "operator": "桃園客運",
+    "operator_en": "Taoyuan Bus Co., Ltd."
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "118",
+        "name": "118",
+        "name_en": "118",
+        "color": "#b91c1c",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            121.22371,
+            24.95418
+          ],
+          [
+            121.22498,
+            24.95681
+          ],
+          [
+            121.22369,
+            24.95728
+          ],
+          [
+            121.22234,
+            24.95779
+          ],
+          [
+            121.22284,
+            24.95976
+          ],
+          [
+            121.22295,
+            24.96033
+          ],
+          [
+            121.22302,
+            24.96238
+          ],
+          [
+            121.21998,
+            24.96266
+          ],
+          [
+            121.21932,
+            24.96265
+          ],
+          [
+            121.21827,
+            24.9625
+          ],
+          [
+            121.21769,
+            24.96232
+          ],
+          [
+            121.21695,
+            24.96475
+          ],
+          [
+            121.21342,
+            24.96383
+          ],
+          [
+            121.21301,
+            24.96365
+          ],
+          [
+            121.21274,
+            24.96344
+          ],
+          [
+            121.21167607067542,
+            24.962186550311273
+          ],
+          [
+            121.21166266356157,
+            24.962166454907848
+          ],
+          [
+            121.21165422593536,
+            24.962143833723374
+          ],
+          [
+            121.21165141380848,
+            24.962120075167775
+          ],
+          [
+            121.21165436344883,
+            24.962096330515042
+          ],
+          [
+            121.21166293192499,
+            24.962073750365484
+          ],
+          [
+            121.21167645452364,
+            24.962053720733472
+          ],
+          [
+            121.21355,
+            24.95987
+          ],
+          [
+            121.21494,
+            24.95888
+          ],
+          [
+            121.21833,
+            24.95827
+          ],
+          [
+            121.22236,
+            24.95777
+          ],
+          [
+            121.22576,
+            24.95643
+          ],
+          [
+            121.22424968733232,
+            24.95319623485372
+          ],
+          [
+            121.22423368124575,
+            24.953171477922844
+          ],
+          [
+            121.22421136031976,
+            24.953151589408332
+          ],
+          [
+            121.2241841428234,
+            24.953137684970407
+          ],
+          [
+            121.22415390156424,
+            24.953130721358956
+          ],
+          [
+            121.22412271741183,
+            24.953131177732843
+          ],
+          [
+            121.22409245507544,
+            24.953139134863587
+          ],
+          [
+            121.22336,
+            24.95343
+          ],
+          [
+            121.22384,
+            24.95444
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO1419",
+        "name": "中壢公車站",
+        "name_en": "Zhongli Bus Station",
+        "line": "118",
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1229"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.223778,
+          24.954254
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO8303",
+        "name": "中央延平路口",
+        "name_en": "Zhongyang and Yanping Road Intersection",
+        "line": "118",
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4644"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.224295,
+          24.957101
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO3389",
+        "name": "中央新生路口",
+        "name_en": "Zhongyang-ShinSheng Road Intersection",
+        "line": "118",
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "693"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.22264328576595,
+          24.957753143063794
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO2563",
+        "name": "SOGO百貨(新生路)",
+        "name_en": "SOGO Department Stores(Xinsheng Road.)",
+        "line": "118",
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "5036"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.223079,
+          24.961867
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO3757",
+        "name": "興國市場",
+        "name_en": "ShingGuo Market",
+        "line": "118",
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "629"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.219487,
+          24.962735
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO3758",
+        "name": "光明公園",
+        "name_en": "Guangming Park",
+        "line": "118",
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "635"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.21653008854932,
+          24.964649853689835
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO3759",
+        "name": "勞保局(國民運動中心)",
+        "name_en": "Bureau of Labor Insurance(Civil Sports Center)",
+        "line": "118",
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "2420"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.21471165000456,
+          24.964194999994127
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO3746",
+        "name": "中壢高中(三光路)",
+        "name_en": "Zhongli High School(Sanguang Rd.)",
+        "line": "118",
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "641"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.211562,
+          24.962183
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO3740",
+        "name": "華宏補習班",
+        "name_en": "Huahong Cram School",
+        "line": "118",
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4645"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.21346415000102,
+          24.959917499998834
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO3739",
+        "name": "新明國小",
+        "name_en": "Xinming Elementary School",
+        "line": "118",
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "332"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.21553,
+          24.958721
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO9250",
+        "name": "民權路口",
+        "name_en": "Minquan Road Intersection",
+        "line": "118",
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "6575"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.2176,
+          24.95833
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO9251",
+        "name": "捷運老街溪站(中央西路)",
+        "name_en": "MRT Laojie River Station(Zhongyang W. Rd.)",
+        "line": "118",
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4476"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.219678,
+          24.957955
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO9322",
+        "name": "中央新生路口",
+        "name_en": "Zhongyang-ShinSheng Road Intersection",
+        "line": "118",
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "692"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.222563,
+          24.957569
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO3731",
+        "name": "中央延平路口",
+        "name_en": "Zhongyang and Yanping Road Intersection",
+        "line": "118",
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4643"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.224135,
+          24.956935
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO2548",
+        "name": "中壢公車站",
+        "name_en": "Zhongli Bus Station",
+        "line": "118",
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "1229"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.223778,
+          24.954254
+        ]
+      }
+    }
+  ]
+}

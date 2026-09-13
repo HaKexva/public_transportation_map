@@ -31,7 +31,7 @@ module Geojson
     # Skip south-yard spurs that dip below the passenger corridor near 富岡 / 新富.
     EXCLUDE_REGIONS_BY_SLUG = {
       "western_trunk_north" => [
-        { min_lon: 121.055, max_lon: 121.092, min_lat: 24.920, max_lat: 24.935, shelf_lat: 24.931 }
+        { min_lon: 121.068, max_lon: 121.092, min_lat: 24.920, max_lat: 24.931, shelf_lat: 24.931 }
       ]
     }.freeze
 

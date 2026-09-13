@@ -5,15 +5,16 @@ module Transit
     CLOCK_ZONE = ActiveSupport::TimeZone["Taipei"]
     MAX_TRIPS_PER_ROUTE = 800
 
-    def initialize(date:, route_ids:)
+    def initialize(date:, route_ids:, datasets: ScheduleDataset.active.to_a)
       @date = date.is_a?(Date) ? date : CLOCK_ZONE.parse(date.to_s).to_date
       @route_ids = Array(route_ids).map(&:to_s).reject(&:blank?).uniq
+      @datasets = Array(datasets)
     end
 
     def call
-      return { date: @date.iso8601, routes: [] } if @route_ids.empty?
+      return { date: @date.iso8601, routes: [] } if @route_ids.empty? || @datasets.blank?
 
-      calendar_ids = ServiceCalendarResolver.calendar_ids_for_date(@date)
+      calendar_ids = ServiceCalendarResolver.calendar_ids_for_date(@date, datasets: @datasets)
       return { date: @date.iso8601, routes: [] } if calendar_ids.empty?
 
       densifier = ScheduleDensifier.new

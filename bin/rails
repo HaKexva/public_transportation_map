@@ -1,4 +1,8 @@
-#!/usr/bin/env ruby
+#!/usr/bin/env sh
+# shellcheck disable=SC1091
+. "$(dirname "$0")/ruby-env"
+exec ruby -x "$0" "$@"
+#!ruby
 APP_PATH = File.expand_path("../config/application", __dir__)
 require_relative "../config/boot"
 require "rails/commands"

@@ -51,15 +51,27 @@ namespace :transit do
     end
   end
 
-  desc "Import TRA/HSR/metro schedules from TDX API (requires TDX_CLIENT_ID and TDX_CLIENT_SECRET)"
+  desc "Import TRA ODS + TDX HSR/metro schedules (HSR/metro need TDX_CLIENT_ID and TDX_CLIENT_SECRET)"
   task import_schedules: :environment do
-    unless Transit::TdxClient.configured?
+    $stdout.sync = true
+    systems = ENV.fetch("SYSTEMS", "tra,hsr,metro").split(",").map(&:strip).reject(&:empty?)
+    tdx_needed = (systems & %w[hsr metro]).any?
+    if tdx_needed && !Transit::TdxClient.configured?
       abort "Missing TDX credentials. Set TDX_CLIENT_ID and TDX_CLIENT_SECRET in .env or Rails credentials."
     end
 
+    dataset = ENV["DATASET_ID"].presence && ScheduleDataset.find(ENV["DATASET_ID"])
+
+    unless dataset
+      other = Transit::OtherTransitScheduleSeeder.seed!
+      sugar = Transit::SugarRailwayScheduleSeeder.seed!
+      puts "Other schedules: dataset ##{other.dataset.id} (#{other.trips} trips, #{other.headways} headways)"
+      puts "Sugar railway: dataset ##{sugar.dataset.id} (#{sugar.trips} trips, #{sugar.headways} headways)"
+    end
+
     systems = ENV.fetch("SYSTEMS", "tra,hsr,metro").split(",").map(&:strip).reject(&:empty?)
-    result = Transit::ScheduleImporter.import!(systems: systems)
-    puts "Imported dataset ##{result.dataset.id}: #{result.trips} trips, #{result.headways} headway rules (#{result.skipped} skipped)"
+    result = Transit::ScheduleImporter.import!(systems: systems, dataset: dataset)
+    puts "Imported TDX dataset ##{result.dataset.id}: #{result.trips} trips, #{result.headways} headway rules (#{result.skipped} skipped)"
   end
 
   desc "Sync catalog and load sample + other + sugar railway schedules"

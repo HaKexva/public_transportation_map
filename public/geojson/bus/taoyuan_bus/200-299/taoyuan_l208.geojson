@@ -1,0 +1,563 @@
+{
+  "type": "FeatureCollection",
+  "name": "L208",
+  "properties": {
+    "id": "taoyuan_l208",
+    "name": "L208",
+    "name_en": "L208",
+    "ref": "L208",
+    "color": "#b91c1c",
+    "city_id": "Taoyuan",
+    "source": "TDX Bus Shape / StopOfRoute",
+    "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/6560/map/833/image",
+    "operator_id": "1",
+    "operator": "桃園客運",
+    "operator_en": "Taoyuan Bus Co., Ltd."
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "L208",
+        "name": "L208",
+        "name_en": "L208",
+        "color": "#b91c1c",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            121.22459,
+            24.96544
+          ],
+          [
+            121.22467,
+            24.96587
+          ],
+          [
+            121.22796,
+            24.96544
+          ],
+          [
+            121.22821,
+            24.96537
+          ],
+          [
+            121.22837,
+            24.96522
+          ],
+          [
+            121.22975,
+            24.96327
+          ],
+          [
+            121.22824,
+            24.96237
+          ],
+          [
+            121.22666,
+            24.9614
+          ],
+          [
+            121.22766,
+            24.96008
+          ],
+          [
+            121.22827132891048,
+            24.957787474949917
+          ],
+          [
+            121.22827361374968,
+            24.957747652078094
+          ],
+          [
+            121.22825990268632,
+            24.957709609555955
+          ],
+          [
+            121.22823201669748,
+            24.95767869492776
+          ],
+          [
+            121.22819375113298,
+            24.95765911574839
+          ],
+          [
+            121.22815031402772,
+            24.957653536790993
+          ],
+          [
+            121.22810733382184,
+            24.957662832464923
+          ],
+          [
+            121.22272,
+            24.95984
+          ],
+          [
+            121.21964,
+            24.96016
+          ],
+          [
+            121.21951,
+            24.95915
+          ],
+          [
+            121.21938,
+            24.95815
+          ],
+          [
+            121.22242,
+            24.95771
+          ],
+          [
+            121.22694,
+            24.95598
+          ],
+          [
+            121.22656,
+            24.95514
+          ],
+          [
+            121.22328,
+            24.95641
+          ],
+          [
+            121.22258,
+            24.95496
+          ],
+          [
+            121.22207,
+            24.9539
+          ],
+          [
+            121.2218,
+            24.95328
+          ],
+          [
+            121.2216,
+            24.95306
+          ],
+          [
+            121.22141,
+            24.95292
+          ],
+          [
+            121.21827,
+            24.95074
+          ],
+          [
+            121.21865,
+            24.95388
+          ],
+          [
+            121.21879,
+            24.95502
+          ],
+          [
+            121.21776,
+            24.95522
+          ],
+          [
+            121.21587,
+            24.95558
+          ],
+          [
+            121.21648,
+            24.9586
+          ],
+          [
+            121.21706,
+            24.96148
+          ],
+          [
+            121.21689,
+            24.96196
+          ],
+          [
+            121.21827,
+            24.96251
+          ],
+          [
+            121.21913,
+            24.96261
+          ],
+          [
+            121.21997,
+            24.96264
+          ],
+          [
+            121.22406,
+            24.96228
+          ],
+          [
+            121.22458,
+            24.96536
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO12495",
+        "name": "中壢區公所",
+        "name_en": "Zhongli District Office",
+        "line": "L208",
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "526"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.224642,
+          24.965457
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO1183",
+        "name": "中壢聯合辦公大樓",
+        "name_en": "Zhongli United Office Building",
+        "line": "L208",
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "362"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.229233,
+          24.963061
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO12592",
+        "name": "中壢社福館",
+        "name_en": "Zhongli Social Welfare Center",
+        "line": "L208",
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "690"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.227831,
+          24.959141
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO12593",
+        "name": "桃園市立圖書館中壢分館",
+        "name_en": "Zhongli Branch, Taoyuan Public Library",
+        "line": "L208",
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "691"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.226514,
+          24.958437
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO12594",
+        "name": "中壢監理站",
+        "name_en": "Zhongli Motor Vehicles Office",
+        "line": "L208",
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "368"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.223399,
+          24.959661
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO12595",
+        "name": "捷運老街溪站(中央西路)",
+        "name_en": "MRT Laojie River Station(Zhongyang W. Rd.)",
+        "line": "L208",
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4476"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.219678,
+          24.957955
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO9322",
+        "name": "中央新生路口",
+        "name_en": "Zhongyang-ShinSheng Road Intersection",
+        "line": "L208",
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "692"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.222563,
+          24.957569
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO12597",
+        "name": "中央公園",
+        "name_en": "Zhongyang Park",
+        "line": "L208",
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "696"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.225446,
+          24.956425
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO1712",
+        "name": "中山復興路口",
+        "name_en": "Jhongshan Fusing Rd. Intersection",
+        "line": "L208",
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "4046"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.224386,
+          24.956072
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO12599",
+        "name": "中壢分局",
+        "name_en": "Zhongli Police Station",
+        "line": "L208",
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "697"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.222187,
+          24.954379
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO12600",
+        "name": "中壢國中",
+        "name_en": "Zhongli Junior High School",
+        "line": "L208",
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "6692"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.219449,
+          24.951736
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO12601",
+        "name": "老街溪河川教育中心",
+        "name_en": "Laojie River Education Center",
+        "line": "L208",
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "701"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.218717,
+          24.953675
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO12602",
+        "name": "第二公有市場",
+        "name_en": "Xinming Public Retail Market",
+        "line": "L208",
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "703"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.216139,
+          24.956395
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO12603",
+        "name": "新明國小(明德路)",
+        "name_en": "Xinming Elementary School(Mingde Road)",
+        "line": "L208",
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "330"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.216759,
+          24.959236
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO12604",
+        "name": "中壢觀光夜市",
+        "name_en": "Zhongli Tourist Night Market",
+        "line": "L208",
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "704"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.217214,
+          24.961999
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO12606",
+        "name": "興國市場",
+        "name_en": "ShingGuo Market",
+        "line": "L208",
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "630"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.219388,
+          24.962528
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO12605",
+        "name": "SOGO百貨(元化路)",
+        "name_en": "SOGO Department Stores(Yuanhua Rd.)",
+        "line": "L208",
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "706"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.222472,
+          24.962272
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "TAO12457",
+        "name": "中壢區公所",
+        "name_en": "Civil Affairs Office of Zhongli District",
+        "line": "L208",
+        "color": "#b91c1c",
+        "direction": 0,
+        "station_id": "527"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.224605,
+          24.965203
+        ]
+      }
+    }
+  ]
+}

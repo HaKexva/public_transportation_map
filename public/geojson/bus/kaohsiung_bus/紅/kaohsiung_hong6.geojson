@@ -1,0 +1,619 @@
+{
+  "type": "FeatureCollection",
+  "name": "紅6",
+  "properties": {
+    "id": "kaohsiung_hong6",
+    "name": "紅6",
+    "name_en": "紅6",
+    "ref": "紅6",
+    "color": "#9a3412",
+    "city_id": "Kaohsiung",
+    "source": "TDX Bus Shape / StopOfRoute",
+    "official_map_url": "http://ibus.tbkc.gov.tw/cms/api/route/806/map/1054/image",
+    "operator_id": "10360",
+    "operator": "港都客運",
+    "operator_en": "Great-City-Life Bus Co., Ltd."
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "紅6",
+        "name": "紅6",
+        "name_en": "紅6",
+        "color": "#9a3412",
+        "direction": 0
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.32905,
+            22.5796
+          ],
+          [
+            120.3319,
+            22.57623
+          ],
+          [
+            120.33203,
+            22.57599
+          ],
+          [
+            120.33211,
+            22.57575
+          ],
+          [
+            120.33216,
+            22.57449
+          ],
+          [
+            120.3323,
+            22.57425
+          ],
+          [
+            120.33584,
+            22.57005
+          ],
+          [
+            120.33633,
+            22.56975
+          ],
+          [
+            120.33747438576408,
+            22.569483070191687
+          ],
+          [
+            120.337513164269,
+            22.569466459474533
+          ],
+          [
+            120.33754303430713,
+            22.5694378426276
+          ],
+          [
+            120.3375597759528,
+            22.56940112601494
+          ],
+          [
+            120.33756112974105,
+            22.569361264937985
+          ],
+          [
+            120.33754691296359,
+            22.56932363907741
+          ],
+          [
+            120.33751935635921,
+            22.569293561266758
+          ],
+          [
+            120.3367,
+            22.56868
+          ],
+          [
+            120.3375,
+            22.56776
+          ],
+          [
+            120.33858,
+            22.56634
+          ],
+          [
+            120.3388,
+            22.56595
+          ],
+          [
+            120.33895,
+            22.56556
+          ],
+          [
+            120.33901,
+            22.56513
+          ],
+          [
+            120.3407,
+            22.5653
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "route",
+        "ref": "紅6",
+        "name": "紅6",
+        "name_en": "紅6",
+        "color": "#9a3412",
+        "direction": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.34064,
+            22.5654
+          ],
+          [
+            120.34066,
+            22.56529
+          ],
+          [
+            120.33726094444147,
+            22.564937549630958
+          ],
+          [
+            120.33722214130408,
+            22.56492693894823
+          ],
+          [
+            120.33718949812044,
+            22.56490459029819
+          ],
+          [
+            120.33716704115707,
+            22.5648732078474
+          ],
+          [
+            120.337157478254,
+            22.564836575663005
+          ],
+          [
+            120.33716196249735,
+            22.564799110820207
+          ],
+          [
+            120.33717972168948,
+            22.564765624310954
+          ],
+          [
+            120.338,
+            22.56373
+          ],
+          [
+            120.3355,
+            22.56225
+          ],
+          [
+            120.33292,
+            22.56606
+          ],
+          [
+            120.33006,
+            22.56969
+          ],
+          [
+            120.32850559709983,
+            22.57145919211357
+          ],
+          [
+            120.3284967366257,
+            22.5714717706319
+          ],
+          [
+            120.32849071423722,
+            22.571485998894968
+          ],
+          [
+            120.32848795943512,
+            22.571501073528342
+          ],
+          [
+            120.32848858944627,
+            22.571516353051884
+          ],
+          [
+            120.32849257746135,
+            22.57153118726661
+          ],
+          [
+            120.32849962207956,
+            22.571544746651366
+          ],
+          [
+            120.32859,
+            22.57168
+          ],
+          [
+            120.32798,
+            22.57247
+          ],
+          [
+            120.32726,
+            22.57342
+          ],
+          [
+            120.32712,
+            22.57349
+          ],
+          [
+            120.32668,
+            22.5738
+          ],
+          [
+            120.32585,
+            22.57486
+          ],
+          [
+            120.32513,
+            22.57544
+          ],
+          [
+            120.32397,
+            22.57682
+          ],
+          [
+            120.32861,
+            22.58015
+          ],
+          [
+            120.32905,
+            22.5796
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10080610521",
+        "name": "捷運草衙站(翠亨南路)",
+        "name_en": "MRT Caoya Station(Cueiheng S. Rd.)",
+        "line": "紅6",
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "3934"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.329002,
+          22.579562
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10080620021",
+        "name": "金福路口(翠亨南路)",
+        "name_en": "Jinfu Rd. Intersection(Cueiheng S. Rd.)",
+        "line": "紅6",
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "3962"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.33105,
+          22.57712
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10080620091",
+        "name": "高雄花市",
+        "name_en": "Kaohsiung Flower Market",
+        "line": "紅6",
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "3963"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.33206,
+          22.57458
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10080620031",
+        "name": "崇安街口",
+        "name_en": "Chongan St. Intersection",
+        "line": "紅6",
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "3964"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.33387,
+          22.57238
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10080620061",
+        "name": "豐田街口",
+        "name_en": "Fongtian St. Intersection",
+        "line": "紅6",
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "3965"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.335099,
+          22.570716
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10080630351",
+        "name": "小港國中",
+        "name_en": "Siaogang Junior High School",
+        "line": "紅6",
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "3616"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.337808,
+          22.567262
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10080626961",
+        "name": "小港站",
+        "name_en": "Siaogang Station",
+        "line": "紅6",
+        "color": "#9a3412",
+        "direction": 0,
+        "station_id": "2458"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.340708,
+          22.56522
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10080610832",
+        "name": "小港站",
+        "name_en": "Siaogang Station",
+        "line": "紅6",
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "2460"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.34063,
+          22.565363
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10080610152",
+        "name": "小港行政中心",
+        "name_en": "Siaogang Administration Center",
+        "line": "紅6",
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "1340"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.338194,
+          22.56514
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10080620142",
+        "name": "三里活動中心",
+        "name_en": "Sanli Community Center",
+        "line": "紅6",
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "4291"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.337498,
+          22.564257
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10080620112",
+        "name": "小港國小",
+        "name_en": "Siaogang Elementary School",
+        "line": "紅6",
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "3941"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.335407,
+          22.562528
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10080610242",
+        "name": "小港路口",
+        "name_en": "Siaogang Rd. Intersection",
+        "line": "紅6",
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "2913"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.334521,
+          22.563889
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10080610252",
+        "name": "小港天主教堂",
+        "name_en": "Siaogang Catholic Church",
+        "line": "紅6",
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "2855"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.333417,
+          22.565471
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10080610312",
+        "name": "港後路口",
+        "name_en": "Ganghou Rd. Intersection",
+        "line": "紅6",
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "1777"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.332152,
+          22.567125
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10080610352",
+        "name": "平和路",
+        "name_en": "Pinghe Rd.",
+        "line": "紅6",
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "3726"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.331071,
+          22.5686
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10080610402",
+        "name": "金福路口(草衙三路)",
+        "name_en": "Jinfu Rd. Intersection(Caoya 3rd Rd.)",
+        "line": "紅6",
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "2062"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.329741,
+          22.570107
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10080610412",
+        "name": "佛公",
+        "name_en": "Fogong",
+        "line": "紅6",
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "1782"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.324852,
+          22.575824
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KHH10080618422",
+        "name": "捷運草衙站(翠亨南路)",
+        "name_en": "MRT Caoya Station(Cueiheng S. Rd.)",
+        "line": "紅6",
+        "color": "#9a3412",
+        "direction": 1,
+        "station_id": "3934"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.329002,
+          22.579562
+        ]
+      }
+    }
+  ]
+}

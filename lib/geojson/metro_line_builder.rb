@@ -1845,10 +1845,12 @@ module Geojson
       end
     end
 
-    # NLSC/OSM discovery follows the 富岡機廠 south yard between 新富 and 北湖; keep the east-west passenger corridor.
+    # NLSC/OSM can follow the 富岡機廠 south yard east of 新富. Only lift that
+    # yard: west of 新富 the passenger line already turns southwest toward
+    # 北湖 / 湖口 / 新豐, and a wider lon window flattened it onto lat 24.931.
     def clip_western_trunk_fugang_depot_spur!(route_features)
       floor_lat = 24.931
-      lon_min = 121.040
+      lon_min = 121.068
       lon_max = 121.090
 
       route_features.each do |feature|
