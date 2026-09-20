@@ -6,13 +6,14 @@
     "name": "F901A",
     "name_en": "F901A",
     "ref": "F901A",
-    "color": "#b91c1c",
+    "color": "#6B8F9A",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/9018/map/2298/image",
     "operator_id": "1",
     "operator": "桃園客運",
-    "operator_en": "Taoyuan Bus Co., Ltd."
+    "operator_en": "Taoyuan Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "F901A",
         "name": "F901A",
         "name_en": "F901A",
-        "color": "#b91c1c",
-        "direction": 0
+        "color": "#6B8F9A",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -18675,6 +18677,10 @@
           [
             121.35095,
             24.81446
+          ],
+          [
+            121.3511,
+            24.81501
           ]
         ]
       }
@@ -18687,7 +18693,7 @@
         "name": "復興",
         "name_en": "Fuxing",
         "line": "F901A",
-        "color": "#b91c1c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "4089"
       },
@@ -18707,7 +18713,7 @@
         "name": "角板山公園",
         "name_en": "角板山公園",
         "line": "F901A",
-        "color": "#b91c1c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "2346"
       },
@@ -18727,7 +18733,7 @@
         "name": "介壽國中",
         "name_en": "介壽國中",
         "line": "F901A",
-        "color": "#b91c1c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "2347"
       },
@@ -18747,7 +18753,7 @@
         "name": "水源地",
         "name_en": "水源地",
         "line": "F901A",
-        "color": "#b91c1c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "2350"
       },
@@ -18767,7 +18773,7 @@
         "name": "成福路口",
         "name_en": "成福路口",
         "line": "F901A",
-        "color": "#b91c1c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "4087"
       },
@@ -18787,7 +18793,7 @@
         "name": "下霞雲坪",
         "name_en": "下霞雲坪",
         "line": "F901A",
-        "color": "#b91c1c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "2342"
       },
@@ -18807,7 +18813,7 @@
         "name": "托兒所",
         "name_en": "托兒所",
         "line": "F901A",
-        "color": "#b91c1c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "2340"
       },
@@ -18827,7 +18833,7 @@
         "name": "峭壁站",
         "name_en": "Chiaobi",
         "line": "F901A",
-        "color": "#b91c1c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "6899"
       },
@@ -18847,7 +18853,7 @@
         "name": "霞雲坪",
         "name_en": "霞雲坪",
         "line": "F901A",
-        "color": "#b91c1c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "2339"
       },
@@ -18867,7 +18873,7 @@
         "name": "合流",
         "name_en": "合流",
         "line": "F901A",
-        "color": "#b91c1c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "2336"
       },
@@ -18887,7 +18893,7 @@
         "name": "復興橋",
         "name_en": "復興橋",
         "line": "F901A",
-        "color": "#b91c1c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "2334"
       },
@@ -18907,7 +18913,7 @@
         "name": "羅浮派出所",
         "name_en": "Police Substation",
         "line": "F901A",
-        "color": "#b91c1c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "2332"
       },
@@ -18927,7 +18933,7 @@
         "name": "羅浮國小",
         "name_en": "羅浮國小",
         "line": "F901A",
-        "color": "#b91c1c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "2328"
       },
@@ -18947,7 +18953,7 @@
         "name": "羅浮多功能辦公廳",
         "name_en": "Luofu Multifunctional Office",
         "line": "F901A",
-        "color": "#b91c1c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "298"
       },
@@ -18967,7 +18973,7 @@
         "name": "羅浮",
         "name_en": "羅浮",
         "line": "F901A",
-        "color": "#b91c1c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "2326"
       },
@@ -18987,7 +18993,7 @@
         "name": "羅浮口",
         "name_en": "羅浮口",
         "line": "F901A",
-        "color": "#b91c1c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "2324"
       },
@@ -19007,7 +19013,7 @@
         "name": "佳嵐",
         "name_en": "Jialan",
         "line": "F901A",
-        "color": "#b91c1c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "6959"
       },
@@ -19027,7 +19033,7 @@
         "name": "下溪口台",
         "name_en": "下溪口台",
         "line": "F901A",
-        "color": "#b91c1c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "6594"
       },
@@ -19047,7 +19053,7 @@
         "name": "溪口台",
         "name_en": "Xikoutai",
         "line": "F901A",
-        "color": "#b91c1c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3383"
       },
@@ -19067,7 +19073,7 @@
         "name": "阿類溪",
         "name_en": "Alei River",
         "line": "F901A",
-        "color": "#b91c1c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "5080"
       },
@@ -19087,7 +19093,7 @@
         "name": "上阿類溪",
         "name_en": "Above Alei River",
         "line": "F901A",
-        "color": "#b91c1c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "7039"
       },
@@ -19107,7 +19113,7 @@
         "name": "阿類溪尾",
         "name_en": "Ahlexiwei",
         "line": "F901A",
-        "color": "#b91c1c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "6924"
       },
@@ -19127,7 +19133,7 @@
         "name": "奎輝",
         "name_en": "Kuihui",
         "line": "F901A",
-        "color": "#b91c1c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3393"
       },
@@ -19147,7 +19153,7 @@
         "name": "田尾",
         "name_en": "Tianwei",
         "line": "F901A",
-        "color": "#b91c1c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3395"
       },
@@ -19167,7 +19173,7 @@
         "name": "長興",
         "name_en": "長興",
         "line": "F901A",
-        "color": "#b91c1c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3401"
       },
@@ -19187,7 +19193,7 @@
         "name": "高遶",
         "name_en": "高遶",
         "line": "F901A",
-        "color": "#b91c1c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3408"
       },
@@ -19207,7 +19213,7 @@
         "name": "下高遶",
         "name_en": "Xiagaorao",
         "line": "F901A",
-        "color": "#b91c1c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "6874"
       },
@@ -19227,7 +19233,7 @@
         "name": "市界",
         "name_en": "Shijie",
         "line": "F901A",
-        "color": "#b91c1c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "5075"
       },
@@ -19247,7 +19253,7 @@
         "name": "下高遶",
         "name_en": "Xiagaorao",
         "line": "F901A",
-        "color": "#b91c1c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "6875"
       },
@@ -19267,7 +19273,7 @@
         "name": "高遶",
         "name_en": "高遶",
         "line": "F901A",
-        "color": "#b91c1c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3407"
       },
@@ -19287,7 +19293,7 @@
         "name": "長興",
         "name_en": "長興",
         "line": "F901A",
-        "color": "#b91c1c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3402"
       },
@@ -19307,7 +19313,7 @@
         "name": "田尾",
         "name_en": "Tianwei",
         "line": "F901A",
-        "color": "#b91c1c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3396"
       },
@@ -19327,7 +19333,7 @@
         "name": "奎輝",
         "name_en": "Kuihui",
         "line": "F901A",
-        "color": "#b91c1c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3394"
       },
@@ -19347,7 +19353,7 @@
         "name": "安息日教會",
         "name_en": "Seventh-day Adventist Church",
         "line": "F901A",
-        "color": "#b91c1c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "6945"
       },
@@ -19367,7 +19373,7 @@
         "name": "五鄰庫斯",
         "name_en": "Keihui 5th Neighborhood",
         "line": "F901A",
-        "color": "#b91c1c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "6946"
       },
@@ -19387,7 +19393,7 @@
         "name": "光輝教會",
         "name_en": "Glorious Church",
         "line": "F901A",
-        "color": "#b91c1c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "6948"
       },
@@ -19407,7 +19413,7 @@
         "name": "嘎色鬧",
         "name_en": "Ksunu",
         "line": "F901A",
-        "color": "#b91c1c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "5074"
       },
@@ -19427,7 +19433,7 @@
         "name": "光輝教會",
         "name_en": "Glorious Church",
         "line": "F901A",
-        "color": "#b91c1c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "6947"
       },
@@ -19447,7 +19453,7 @@
         "name": "五鄰庫斯",
         "name_en": "Keihui 5th Neighborhood",
         "line": "F901A",
-        "color": "#b91c1c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "6949"
       },
@@ -19467,7 +19473,7 @@
         "name": "安息日教會",
         "name_en": "Seventh-day Adventist Church",
         "line": "F901A",
-        "color": "#b91c1c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "6950"
       },
@@ -19487,7 +19493,7 @@
         "name": "阿類溪尾",
         "name_en": "Ahlexiwei",
         "line": "F901A",
-        "color": "#b91c1c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "6925"
       },
@@ -19507,7 +19513,7 @@
         "name": "上阿類溪",
         "name_en": "Above Alei River",
         "line": "F901A",
-        "color": "#b91c1c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "7040"
       },
@@ -19527,7 +19533,7 @@
         "name": "阿類溪",
         "name_en": "Alei River",
         "line": "F901A",
-        "color": "#b91c1c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "5079"
       },
@@ -19547,7 +19553,7 @@
         "name": "溪口台",
         "name_en": "Xikoutai",
         "line": "F901A",
-        "color": "#b91c1c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3384"
       },
@@ -19567,7 +19573,7 @@
         "name": "佳嵐",
         "name_en": "Jialan",
         "line": "F901A",
-        "color": "#b91c1c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "6958"
       },
@@ -19587,7 +19593,7 @@
         "name": "羅浮口",
         "name_en": "羅浮口",
         "line": "F901A",
-        "color": "#b91c1c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "2323"
       },
@@ -19607,7 +19613,7 @@
         "name": "羅浮",
         "name_en": "羅浮",
         "line": "F901A",
-        "color": "#b91c1c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "2325"
       },
@@ -19627,7 +19633,7 @@
         "name": "羅浮多功能辦公廳",
         "name_en": "Luofu Multifunctional Office",
         "line": "F901A",
-        "color": "#b91c1c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "297"
       },
@@ -19647,7 +19653,7 @@
         "name": "羅浮國小",
         "name_en": "羅浮國小",
         "line": "F901A",
-        "color": "#b91c1c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "2327"
       },
@@ -19667,7 +19673,7 @@
         "name": "羅浮派出所",
         "name_en": "Police Substation",
         "line": "F901A",
-        "color": "#b91c1c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "2331"
       },
@@ -19687,7 +19693,7 @@
         "name": "復興橋",
         "name_en": "復興橋",
         "line": "F901A",
-        "color": "#b91c1c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "2333"
       },
@@ -19707,7 +19713,7 @@
         "name": "合流",
         "name_en": "合流",
         "line": "F901A",
-        "color": "#b91c1c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "2337"
       },
@@ -19727,7 +19733,7 @@
         "name": "霞雲坪",
         "name_en": "霞雲坪",
         "line": "F901A",
-        "color": "#b91c1c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "2338"
       },
@@ -19747,7 +19753,7 @@
         "name": "峭壁站",
         "name_en": "Chiaobi",
         "line": "F901A",
-        "color": "#b91c1c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "6898"
       },
@@ -19767,7 +19773,7 @@
         "name": "托兒所",
         "name_en": "托兒所",
         "line": "F901A",
-        "color": "#b91c1c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "2341"
       },
@@ -19787,7 +19793,7 @@
         "name": "下霞雲坪",
         "name_en": "下霞雲坪",
         "line": "F901A",
-        "color": "#b91c1c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "2343"
       },
@@ -19807,7 +19813,7 @@
         "name": "成福路口",
         "name_en": "成福路口",
         "line": "F901A",
-        "color": "#b91c1c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "4086"
       },
@@ -19827,7 +19833,7 @@
         "name": "水源地",
         "name_en": "水源地",
         "line": "F901A",
-        "color": "#b91c1c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "2349"
       },
@@ -19847,7 +19853,7 @@
         "name": "介壽國中",
         "name_en": "介壽國中",
         "line": "F901A",
-        "color": "#b91c1c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "2348"
       },
@@ -19867,7 +19873,7 @@
         "name": "角板山公園",
         "name_en": "角板山公園",
         "line": "F901A",
-        "color": "#b91c1c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "2345"
       },
@@ -19887,7 +19893,7 @@
         "name": "復興",
         "name_en": "Fuxing",
         "line": "F901A",
-        "color": "#b91c1c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "4088"
       },

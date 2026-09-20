@@ -6,13 +6,14 @@
     "name": "F138新古庄",
     "name_en": "F138新古庄",
     "ref": "F138新古庄",
-    "color": "#1e3a8a",
+    "color": "#6B8F9A",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.gov.taipei/File/Get/52743c5a-3a6e-4c50-8195-3426ac959814?v=639248448771411091",
     "operator_id": "16229",
     "operator": "三芝區公所",
-    "operator_en": "Sanzhi District Office"
+    "operator_en": "Sanzhi District Office",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "F138新古庄",
         "name": "F138新古庄",
         "name_en": "F138新古庄",
-        "color": "#1e3a8a",
-        "direction": 0
+        "color": "#6B8F9A",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1379,6 +1381,10 @@
           [
             121.50140888967,
             25.2588075507751
+          ],
+          [
+            121.500382286852,
+            25.2590527992126
           ]
         ]
       }
@@ -1391,7 +1397,7 @@
         "name": "二號倉庫",
         "name_en": "No.2 Warehouse",
         "line": "F138新古庄",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75281"
       },
@@ -1411,7 +1417,7 @@
         "name": "新庄子路口",
         "name_en": "Xinzhuangzi Rd. Entrance",
         "line": "F138新古庄",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75398"
       },
@@ -1431,7 +1437,7 @@
         "name": "磚窯",
         "name_en": "Brick kilns",
         "line": "F138新古庄",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75401"
       },
@@ -1451,7 +1457,7 @@
         "name": "快樂別墅",
         "name_en": "Happy Villa",
         "line": "F138新古庄",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75390"
       },
@@ -1471,7 +1477,7 @@
         "name": "陽光海岸別墅",
         "name_en": "Sunshine Coast Villa",
         "line": "F138新古庄",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165609427"
       },
@@ -1491,7 +1497,7 @@
         "name": "民主水口公王廟",
         "name_en": "Minzhu Shuikou Gongwang Temple",
         "line": "F138新古庄",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75389"
       },
@@ -1511,7 +1517,7 @@
         "name": "八仙宮",
         "name_en": "Baxian Temple",
         "line": "F138新古庄",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165609420"
       },
@@ -1531,7 +1537,7 @@
         "name": "12鄰103號前",
         "name_en": "Neighborhood 12 No.103",
         "line": "F138新古庄",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165604549"
       },
@@ -1551,7 +1557,7 @@
         "name": "大田寮",
         "name_en": "Datianliao",
         "line": "F138新古庄",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75386"
       },
@@ -1571,7 +1577,7 @@
         "name": "三棧橋",
         "name_en": "Sanzhan Bridge",
         "line": "F138新古庄",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75385"
       },
@@ -1591,7 +1597,7 @@
         "name": "車路崎",
         "name_en": "Cheluqi",
         "line": "F138新古庄",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165610358"
       },
@@ -1611,7 +1617,7 @@
         "name": "二號倉庫",
         "name_en": "No.2 Warehouse",
         "line": "F138新古庄",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75281"
       },

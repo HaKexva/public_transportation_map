@@ -6,13 +6,14 @@
     "name": "8168A（台灣好行縱谷鹿野線）",
     "name_en": "8168A (台灣好行縱谷鹿野線)",
     "ref": "8168A",
-    "color": "#be123c",
+    "color": "#166534",
     "city_id": "InterCity",
     "source": "TDX Bus Shape / StopOfRoute",
     "via": "台灣好行縱谷鹿野線",
     "official_map_url": "https://web.taiwanbus.tw/MISUploadData/Schematic/file/8168.jpg",
     "operator_id": "113",
-    "operator": "東台灣客運"
+    "operator": "東台灣客運",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "8168A",
         "name": "8168A（台灣好行縱谷鹿野線）",
         "name_en": "8168A (台灣好行縱谷鹿野線)",
-        "color": "#be123c",
-        "direction": 0
+        "color": "#166534",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -9131,6 +9133,10 @@
           [
             121.147563,
             22.752775
+          ],
+          [
+            121.147453,
+            22.752073
           ]
         ]
       }
@@ -9143,7 +9149,7 @@
         "name": "台東轉運站",
         "name_en": "Taitung Bus Station",
         "line": "8168A（台灣好行縱谷鹿野線）",
-        "color": "#be123c",
+        "color": "#166534",
         "direction": 0
       },
       "geometry": {
@@ -9162,7 +9168,7 @@
         "name": "公教會館",
         "name_en": "Taitung Hotel for Teachers and  Public Workers",
         "line": "8168A（台灣好行縱谷鹿野線）",
-        "color": "#be123c",
+        "color": "#166534",
         "direction": 0
       },
       "geometry": {
@@ -9181,7 +9187,7 @@
         "name": "娜路彎大酒店",
         "name_en": "Formosan Naruwan Hotel",
         "line": "8168A（台灣好行縱谷鹿野線）",
-        "color": "#be123c",
+        "color": "#166534",
         "direction": 0
       },
       "geometry": {
@@ -9200,7 +9206,7 @@
         "name": "台東火車站",
         "name_en": "TRA Taitung Station",
         "line": "8168A（台灣好行縱谷鹿野線）",
-        "color": "#be123c",
+        "color": "#166534",
         "direction": 0
       },
       "geometry": {
@@ -9219,7 +9225,7 @@
         "name": "卑南遺址公園",
         "name_en": "Beinan Cultural Park",
         "line": "8168A（台灣好行縱谷鹿野線）",
-        "color": "#be123c",
+        "color": "#166534",
         "direction": 0
       },
       "geometry": {
@@ -9238,7 +9244,7 @@
         "name": "原生應用植物園",
         "name_en": "Yuen Sen Applied Botanical Garden",
         "line": "8168A（台灣好行縱谷鹿野線）",
-        "color": "#be123c",
+        "color": "#166534",
         "direction": 0
       },
       "geometry": {
@@ -9257,7 +9263,7 @@
         "name": "四維",
         "name_en": "Siwei",
         "line": "8168A（台灣好行縱谷鹿野線）",
-        "color": "#be123c",
+        "color": "#166534",
         "direction": 0
       },
       "geometry": {
@@ -9276,7 +9282,7 @@
         "name": "鹿野高台",
         "name_en": "Luye Gaotai",
         "line": "8168A（台灣好行縱谷鹿野線）",
-        "color": "#be123c",
+        "color": "#166534",
         "direction": 0
       },
       "geometry": {
@@ -9295,7 +9301,7 @@
         "name": "鹿野遊客中心",
         "name_en": "Luye Visitor Center",
         "line": "8168A（台灣好行縱谷鹿野線）",
-        "color": "#be123c",
+        "color": "#166534",
         "direction": 0
       },
       "geometry": {
@@ -9314,7 +9320,7 @@
         "name": "四維",
         "name_en": "Siwei",
         "line": "8168A（台灣好行縱谷鹿野線）",
-        "color": "#be123c",
+        "color": "#166534",
         "direction": 0
       },
       "geometry": {
@@ -9333,7 +9339,7 @@
         "name": "娜路彎大酒店",
         "name_en": "Formosan Naruwan Hotel",
         "line": "8168A（台灣好行縱谷鹿野線）",
-        "color": "#be123c",
+        "color": "#166534",
         "direction": 0
       },
       "geometry": {
@@ -9352,7 +9358,7 @@
         "name": "公教會館",
         "name_en": "Taitung Hotel for Teachers and  Public Workers",
         "line": "8168A（台灣好行縱谷鹿野線）",
-        "color": "#be123c",
+        "color": "#166534",
         "direction": 0
       },
       "geometry": {
@@ -9371,7 +9377,7 @@
         "name": "台東轉運站",
         "name_en": "Taitung Bus Station",
         "line": "8168A（台灣好行縱谷鹿野線）",
-        "color": "#be123c",
+        "color": "#166534",
         "direction": 0
       },
       "geometry": {

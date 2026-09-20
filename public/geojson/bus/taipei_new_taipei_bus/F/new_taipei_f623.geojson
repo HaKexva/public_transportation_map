@@ -6,13 +6,14 @@
     "name": "F623",
     "name_en": "F623",
     "ref": "F623",
-    "color": "#3f6212",
+    "color": "#6B8F9A",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.gov.taipei/File/Get/18d95ee9-e9b2-4850-9253-8e559cdc209c?v=639248448792680783",
     "operator_id": "16243",
     "operator": "三峽區公所",
-    "operator_en": "Sanxia District Office"
+    "operator_en": "Sanxia District Office",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "F623",
         "name": "F623",
         "name_en": "F623",
-        "color": "#3f6212",
-        "direction": 0
+        "color": "#6B8F9A",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -671,6 +673,10 @@
           [
             121.369392049355,
             24.9360169027357
+          ],
+          [
+            121.369244800198,
+            24.9360188925892
           ]
         ]
       }
@@ -683,7 +689,7 @@
         "name": "三峽國小(三峽國民運動中心)",
         "name_en": "Sanxia Elementary School(Sanxia Civil Sports Center)",
         "line": "F623",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3266"
       },
@@ -703,7 +709,7 @@
         "name": "中山公園",
         "name_en": "Zhongshan Park",
         "line": "F623",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72733"
       },
@@ -723,7 +729,7 @@
         "name": "三峽區公所",
         "name_en": "Sanxia District Office",
         "line": "F623",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72709"
       },
@@ -743,7 +749,7 @@
         "name": "三峽老街",
         "name_en": "Sanxia Old St.",
         "line": "F623",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72706"
       },
@@ -763,7 +769,7 @@
         "name": "民權街170巷口",
         "name_en": "Minquan Street, 170 alley",
         "line": "F623",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72775"
       },
@@ -783,7 +789,7 @@
         "name": "中園國小",
         "name_en": "Zhongyuan Elementary School",
         "line": "F623",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72743"
       },
@@ -803,7 +809,7 @@
         "name": "福利旺社區",
         "name_en": "Fuliwang Community",
         "line": "F623",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73013"
       },
@@ -823,7 +829,7 @@
         "name": "麻醉藥廠",
         "name_en": "Anesthesia Pharmaceutical Factory",
         "line": "F623",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72988"
       },
@@ -843,7 +849,7 @@
         "name": "弘道1",
         "name_en": "Hongdao 1",
         "line": "F623",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72759"
       },
@@ -863,7 +869,7 @@
         "name": "弘道2",
         "name_en": "Hongdao 2",
         "line": "F623",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72761"
       },
@@ -883,7 +889,7 @@
         "name": "弘道3",
         "name_en": "Hongdao 3",
         "line": "F623",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72763"
       },
@@ -903,7 +909,7 @@
         "name": "弘道4",
         "name_en": "Hongdao 4",
         "line": "F623",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72765"
       },
@@ -923,7 +929,7 @@
         "name": "弘道5",
         "name_en": "Hongdao 5",
         "line": "F623",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72767"
       },
@@ -943,7 +949,7 @@
         "name": "弘道6",
         "name_en": "Hongdao 6",
         "line": "F623",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72769"
       },
@@ -963,7 +969,7 @@
         "name": "福慶宮",
         "name_en": "Fuqing Temple",
         "line": "F623",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72817"
       },
@@ -983,7 +989,7 @@
         "name": "福慶宮",
         "name_en": "Fuqing Temple",
         "line": "F623",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72816"
       },
@@ -1003,7 +1009,7 @@
         "name": "弘道6",
         "name_en": "Hongdao 6",
         "line": "F623",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72768"
       },
@@ -1023,7 +1029,7 @@
         "name": "弘道5",
         "name_en": "Hongdao 5",
         "line": "F623",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72766"
       },
@@ -1043,7 +1049,7 @@
         "name": "弘道4",
         "name_en": "Hongdao 4",
         "line": "F623",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72764"
       },
@@ -1063,7 +1069,7 @@
         "name": "弘道3",
         "name_en": "Hongdao 3",
         "line": "F623",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72762"
       },
@@ -1083,7 +1089,7 @@
         "name": "弘道2",
         "name_en": "Hongdao 2",
         "line": "F623",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72760"
       },
@@ -1103,7 +1109,7 @@
         "name": "弘道1",
         "name_en": "Hongdao 1",
         "line": "F623",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72758"
       },
@@ -1123,7 +1129,7 @@
         "name": "麻醉藥廠",
         "name_en": "Anesthesia Pharmaceutical Factory",
         "line": "F623",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72987"
       },
@@ -1143,7 +1149,7 @@
         "name": "福利旺社區",
         "name_en": "Fuliwang Community",
         "line": "F623",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73012"
       },
@@ -1163,7 +1169,7 @@
         "name": "中園國小",
         "name_en": "Zhongyuan Elementary School",
         "line": "F623",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72742"
       },
@@ -1183,7 +1189,7 @@
         "name": "民權街170巷口",
         "name_en": "Minquan Street, 170 alley",
         "line": "F623",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72775"
       },
@@ -1203,7 +1209,7 @@
         "name": "三峽老街",
         "name_en": "Sanxia Old St.",
         "line": "F623",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72704"
       },
@@ -1223,7 +1229,7 @@
         "name": "三峽區公所",
         "name_en": "Sanxia District Office",
         "line": "F623",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72708"
       },
@@ -1243,7 +1249,7 @@
         "name": "中山公園",
         "name_en": "Zhongshan Park",
         "line": "F623",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72734"
       },
@@ -1263,7 +1269,7 @@
         "name": "三峽國小(三峽國民運動中心)",
         "name_en": "Sanxia Elementary School(Sanxia Civil Sports Center)",
         "line": "F623",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3267"
       },

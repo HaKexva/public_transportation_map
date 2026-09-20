@@ -6,11 +6,12 @@
     "name": "T624",
     "name_en": "T624",
     "ref": "T624",
-    "color": "#7c2d12",
+    "color": "#4f46e5",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "operator_id": "29",
-    "operator": "九億租車"
+    "operator": "九億租車",
+    "loop": true
   },
   "features": [
     {
@@ -20,8 +21,9 @@
         "ref": "T624",
         "name": "T624",
         "name_en": "T624",
-        "color": "#7c2d12",
-        "direction": 0
+        "color": "#4f46e5",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -529,6 +531,10 @@
           [
             121.08333,
             24.93472
+          ],
+          [
+            121.08344,
+            24.93474
           ]
         ]
       }
@@ -541,7 +547,7 @@
         "name": "富岡火車站",
         "name_en": "Fugang Railway Station",
         "line": "T624",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "1168"
       },
@@ -561,7 +567,7 @@
         "name": "大井頭",
         "name_en": "Dajintou",
         "line": "T624",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "948"
       },
@@ -581,7 +587,7 @@
         "name": "伯公岡公園",
         "name_en": "Bogonggang Park",
         "line": "T624",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "1166"
       },
@@ -601,7 +607,7 @@
         "name": "富岡運動公園",
         "name_en": "Fugang Sports Park",
         "line": "T624",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "7530"
       },
@@ -621,7 +627,7 @@
         "name": "新富一街",
         "name_en": "Xinfu 1st St.",
         "line": "T624",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "7531"
       },
@@ -641,7 +647,7 @@
         "name": "新富二街口",
         "name_en": "Sinfu 2nd St. Intersection",
         "line": "T624",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "1358"
       },
@@ -661,7 +667,7 @@
         "name": "員豐橋",
         "name_en": "Yuanfeng Bridge",
         "line": "T624",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "2028"
       },
@@ -681,7 +687,7 @@
         "name": "員本里活動中心",
         "name_en": "Yuanben Village Activity Center",
         "line": "T624",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "5918"
       },
@@ -701,7 +707,7 @@
         "name": "泰祥宮",
         "name_en": "Taisiang Temple",
         "line": "T624",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "1356"
       },
@@ -721,7 +727,7 @@
         "name": "瑞員便利商店",
         "name_en": "Ruiyuan Convenience Store",
         "line": "T624",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "6389"
       },
@@ -741,7 +747,7 @@
         "name": "富東",
         "name_en": "Fudong",
         "line": "T624",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "506"
       },
@@ -761,7 +767,7 @@
         "name": "清龍新村",
         "name_en": "Qinglong Village",
         "line": "T624",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "508"
       },
@@ -781,7 +787,7 @@
         "name": "磚窯",
         "name_en": "Zhuanyao",
         "line": "T624",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "936"
       },
@@ -801,7 +807,7 @@
         "name": "新富一街",
         "name_en": "Xinfu 1st Street",
         "line": "T624",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "5921"
       },
@@ -821,7 +827,7 @@
         "name": "聯華公司",
         "name_en": "Lianhua Company",
         "line": "T624",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "938"
       },
@@ -841,7 +847,7 @@
         "name": "福德",
         "name_en": "Fude",
         "line": "T624",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "940"
       },
@@ -861,7 +867,7 @@
         "name": "富岡口",
         "name_en": "Fugangkou",
         "line": "T624",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "944"
       },
@@ -881,7 +887,7 @@
         "name": "富岡火車站",
         "name_en": "Fugang Railway Station",
         "line": "T624",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "1168"
       },

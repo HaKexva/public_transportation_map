@@ -6,12 +6,13 @@
     "name": "L329",
     "name_en": "L329",
     "ref": "L329",
-    "color": "#1e3a8a",
+    "color": "#c2410c",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/43290/map/1395/image",
     "operator_id": "24",
-    "operator": "勁揚通運"
+    "operator": "勁揚通運",
+    "loop": true
   },
   "features": [
     {
@@ -21,8 +22,9 @@
         "ref": "L329",
         "name": "L329",
         "name_en": "L329",
-        "color": "#1e3a8a",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -866,6 +868,10 @@
           [
             121.33717,
             24.9923
+          ],
+          [
+            121.3371,
+            24.9922
           ]
         ]
       }
@@ -878,7 +884,7 @@
         "name": "龜山區公所",
         "name_en": "Guishan District Office",
         "line": "L329",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5454"
       },
@@ -898,7 +904,7 @@
         "name": "龜山後街",
         "name_en": "Gueishanhou Street",
         "line": "L329",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5278"
       },
@@ -918,7 +924,7 @@
         "name": "龜山國中",
         "name_en": "Guishan Junior High School",
         "line": "L329",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5349"
       },
@@ -938,7 +944,7 @@
         "name": "千禧新城",
         "name_en": "Qianxixincheng",
         "line": "L329",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "3724"
       },
@@ -958,7 +964,7 @@
         "name": "中正公園",
         "name_en": "Zhongzheng Park",
         "line": "L329",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5462"
       },
@@ -978,7 +984,7 @@
         "name": "自強北路",
         "name_en": "Ziqiang North Rd.",
         "line": "L329",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5460"
       },
@@ -998,7 +1004,7 @@
         "name": "太子地球村",
         "name_en": "Taizidiqiucun",
         "line": "L329",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "4299"
       },
@@ -1018,7 +1024,7 @@
         "name": "半嶺",
         "name_en": "Banling",
         "line": "L329",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "4632"
       },
@@ -1038,7 +1044,7 @@
         "name": "茶專路",
         "name_en": "ChaJhuan Road",
         "line": "L329",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5482"
       },
@@ -1058,7 +1064,7 @@
         "name": "美和園社區",
         "name_en": "Meiheyuan Community",
         "line": "L329",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "4657"
       },
@@ -1078,7 +1084,7 @@
         "name": "優美街",
         "name_en": "Youmei St.",
         "line": "L329",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5484"
       },
@@ -1098,7 +1104,7 @@
         "name": "大景小城社區",
         "name_en": "Dajinxiaocheng Community",
         "line": "L329",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5483"
       },
@@ -1118,7 +1124,7 @@
         "name": "優美街",
         "name_en": "Youmei St.",
         "line": "L329",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5485"
       },
@@ -1138,7 +1144,7 @@
         "name": "圓堡社區一",
         "name_en": "Yuanbao Community 1",
         "line": "L329",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "6377"
       },
@@ -1158,7 +1164,7 @@
         "name": "紅寶社區",
         "name_en": "Hongbao Community",
         "line": "L329",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "3356"
       },
@@ -1178,7 +1184,7 @@
         "name": "歡囍成家社區",
         "name_en": "Huanxichengjia Community",
         "line": "L329",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5486"
       },
@@ -1198,7 +1204,7 @@
         "name": "壽山巖",
         "name_en": "Shoushanyen",
         "line": "L329",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "4627"
       },
@@ -1218,7 +1224,7 @@
         "name": "嶺頂",
         "name_en": "Lingding",
         "line": "L329",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "4629"
       },
@@ -1238,7 +1244,7 @@
         "name": "圓堡社區",
         "name_en": "Yuanbao Community",
         "line": "L329",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5108"
       },
@@ -1258,7 +1264,7 @@
         "name": "美和園社區",
         "name_en": "Meiheyuan Community",
         "line": "L329",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "4658"
       },
@@ -1278,7 +1284,7 @@
         "name": "茶專路",
         "name_en": "ChaJhuan Road",
         "line": "L329",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "3355"
       },
@@ -1298,7 +1304,7 @@
         "name": "半嶺",
         "name_en": "Banling",
         "line": "L329",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "4631"
       },
@@ -1318,7 +1324,7 @@
         "name": "太子地球村",
         "name_en": "Taizidiqiucun",
         "line": "L329",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "4300"
       },
@@ -1338,7 +1344,7 @@
         "name": "自強北路",
         "name_en": "Ziqiang North Rd.",
         "line": "L329",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5459"
       },
@@ -1358,7 +1364,7 @@
         "name": "中正公園",
         "name_en": "Zhongzheng Park",
         "line": "L329",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5461"
       },
@@ -1378,7 +1384,7 @@
         "name": "千禧新城",
         "name_en": "Qianxixincheng",
         "line": "L329",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "3723"
       },
@@ -1398,7 +1404,7 @@
         "name": "龜山國中",
         "name_en": "Guishan Junior High School",
         "line": "L329",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5348"
       },
@@ -1418,7 +1424,7 @@
         "name": "龜山後街",
         "name_en": "Gueishanhou Street",
         "line": "L329",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5277"
       },
@@ -1438,7 +1444,7 @@
         "name": "龜山區公所",
         "name_en": "Guishan District Office",
         "line": "L329",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5454"
       },

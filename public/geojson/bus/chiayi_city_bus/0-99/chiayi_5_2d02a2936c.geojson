@@ -6,12 +6,13 @@
     "name": "樂活5路",
     "name_en": "樂活5路",
     "ref": "樂活5路",
-    "color": "#0f766e",
+    "color": "#7c2d12",
     "city_id": "Chiayi",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://web.taiwanbus.tw/MISUploadData/Schematic/file/0128.jpg",
     "operator_id": "108",
-    "operator": "捷乘交通有限公司"
+    "operator": "捷乘交通有限公司",
+    "loop": true
   },
   "features": [
     {
@@ -21,8 +22,9 @@
         "ref": "樂活5路",
         "name": "樂活5路",
         "name_en": "樂活5路",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#7c2d12",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -2605,8 +2607,9 @@
         "ref": "樂活5路",
         "name": "樂活5路",
         "name_en": "樂活5路",
-        "color": "#0f766e",
-        "direction": 1
+        "color": "#7c2d12",
+        "direction": 1,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -5154,7 +5157,7 @@
         "name": "轉運中心",
         "name_en": "Chiayi City Transit Center",
         "line": "樂活5路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "142513"
       },
@@ -5174,7 +5177,7 @@
         "name": "育人國小",
         "name_en": "YuRen Elementary School",
         "line": "樂活5路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "142973"
       },
@@ -5194,7 +5197,7 @@
         "name": "大溪路大安街口1",
         "name_en": "Dasi road daan kou street corner 1",
         "line": "樂活5路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "142975"
       },
@@ -5214,7 +5217,7 @@
         "name": "大溪路大安街口2",
         "name_en": "Dasi road daan kou street corner 2",
         "line": "樂活5路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "142977"
       },
@@ -5234,7 +5237,7 @@
         "name": "紫薇宮",
         "name_en": "Zihwei temple",
         "line": "樂活5路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "142978"
       },
@@ -5254,7 +5257,7 @@
         "name": "何庄",
         "name_en": "he jhuang",
         "line": "樂活5路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "142979"
       },
@@ -5274,7 +5277,7 @@
         "name": "真武宮",
         "name_en": "Jhenwu temple",
         "line": "樂活5路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "142981"
       },
@@ -5294,7 +5297,7 @@
         "name": "玉山路816巷口",
         "name_en": "Yushan road 816 street corner",
         "line": "樂活5路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "142982"
       },
@@ -5314,7 +5317,7 @@
         "name": "彰武宮",
         "name_en": "Jhangwu temple",
         "line": "樂活5路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "142983"
       },
@@ -5334,7 +5337,7 @@
         "name": "榮民醫院",
         "name_en": "Chiayi branch Taichung veterans general hospital",
         "line": "樂活5路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "142984"
       },
@@ -5354,7 +5357,7 @@
         "name": "轉運中心",
         "name_en": "Chiayi City Transit Center",
         "line": "樂活5路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 1,
         "station_id": "142513"
       },
@@ -5374,7 +5377,7 @@
         "name": "榮民醫院",
         "name_en": "Chiayi branch Taichung veterans general hospital",
         "line": "樂活5路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 1,
         "station_id": "142984"
       },
@@ -5394,7 +5397,7 @@
         "name": "彰武宮",
         "name_en": "Jhangwu temple",
         "line": "樂活5路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 1,
         "station_id": "142983"
       },
@@ -5414,7 +5417,7 @@
         "name": "玉山路816巷口",
         "name_en": "Yushan road 816 street corner",
         "line": "樂活5路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 1,
         "station_id": "142982"
       },
@@ -5434,7 +5437,7 @@
         "name": "真武宮",
         "name_en": "Jhenwu temple",
         "line": "樂活5路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 1,
         "station_id": "142981"
       },
@@ -5454,7 +5457,7 @@
         "name": "何庄",
         "name_en": "he jhuang",
         "line": "樂活5路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 1,
         "station_id": "142980"
       },
@@ -5474,7 +5477,7 @@
         "name": "紫薇宮",
         "name_en": "Zihwei temple",
         "line": "樂活5路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 1,
         "station_id": "142978"
       },
@@ -5494,7 +5497,7 @@
         "name": "大溪路大安街口2",
         "name_en": "Dasi road daan kou street corner 2",
         "line": "樂活5路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 1,
         "station_id": "142977"
       },
@@ -5514,7 +5517,7 @@
         "name": "大溪路大安街口1",
         "name_en": "Dasi road daan kou street corner 1",
         "line": "樂活5路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 1,
         "station_id": "142975"
       },
@@ -5534,7 +5537,7 @@
         "name": "育人國小",
         "name_en": "YuRen Elementary School",
         "line": "樂活5路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 1,
         "station_id": "142974"
       },

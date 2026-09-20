@@ -6,13 +6,14 @@
     "name": "189",
     "name_en": "189",
     "ref": "189",
-    "color": "#b91c1c",
+    "color": "#b45309",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/189/map/2352/image",
     "operator_id": "1",
     "operator": "桃園客運",
-    "operator_en": "Taoyuan Bus Co., Ltd."
+    "operator_en": "Taoyuan Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "189",
         "name": "189",
         "name_en": "189",
-        "color": "#b91c1c",
-        "direction": 0
+        "color": "#b45309",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -3319,6 +3321,10 @@
           [
             121.31399,
             24.98657
+          ],
+          [
+            121.31424,
+            24.98665
           ]
         ]
       }
@@ -3331,7 +3337,7 @@
         "name": "桃園後站",
         "name_en": "Taoyuan Rear Station",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6870"
       },
@@ -3351,7 +3357,7 @@
         "name": "聖保祿醫院",
         "name_en": "Saint Pauls Hospital",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "872"
       },
@@ -3371,7 +3377,7 @@
         "name": "建國路口",
         "name_en": "Jianguo Road Intersection",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3066"
       },
@@ -3391,7 +3397,7 @@
         "name": "中華民族路口",
         "name_en": "Zhonghua and Minzu Road Intersection",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1115"
       },
@@ -3411,7 +3417,7 @@
         "name": "南華街口",
         "name_en": "Nanhua Street Intersection",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3202"
       },
@@ -3431,7 +3437,7 @@
         "name": "南門市場",
         "name_en": "Nanmen Market",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "862"
       },
@@ -3451,7 +3457,7 @@
         "name": "中山三民路口",
         "name_en": "Zhongshan and Sanmin Rd. Intersection",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "859"
       },
@@ -3471,7 +3477,7 @@
         "name": "中山育樂街口",
         "name_en": "Zhongshan and Yule St. Intersection",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "278"
       },
@@ -3491,7 +3497,7 @@
         "name": "桃園市政府",
         "name_en": "Taoyuan City Government",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "335"
       },
@@ -3511,7 +3517,7 @@
         "name": "土地改革館",
         "name_en": "Land Reform Museum",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1695"
       },
@@ -3531,7 +3537,7 @@
         "name": "中山正光路口",
         "name_en": "Zhongshan Zhenguang Road Intersection",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2099"
       },
@@ -3551,7 +3557,7 @@
         "name": "中山中平路口",
         "name_en": "Zhongshan and Zhongping Road Intersection",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2101"
       },
@@ -3571,7 +3577,7 @@
         "name": "中山國小",
         "name_en": "Zhongshan Elementary School",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1697"
       },
@@ -3591,7 +3597,7 @@
         "name": "武陵高中",
         "name_en": "Wu-Ling Senior High School",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "932"
       },
@@ -3611,7 +3617,7 @@
         "name": "宏太社區",
         "name_en": "Hungtai Community",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2821"
       },
@@ -3631,7 +3637,7 @@
         "name": "龍安街14巷",
         "name_en": "Ln. 14, Longan St.",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6128"
       },
@@ -3651,7 +3657,7 @@
         "name": "龍安市場",
         "name_en": "Lungan Market",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4642"
       },
@@ -3671,7 +3677,7 @@
         "name": "龍安國強一街口",
         "name_en": "Longan and Guoqiang 1st St. Intersection",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6249"
       },
@@ -3691,7 +3697,7 @@
         "name": "龍安街",
         "name_en": "Long-an Street",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2732"
       },
@@ -3711,7 +3717,7 @@
         "name": "文中路橋",
         "name_en": "Wunjhonglu Bridge",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6226"
       },
@@ -3731,7 +3737,7 @@
         "name": "文山國小(中興國中)",
         "name_en": "Wenshan Elementary School (Chung Hsing Junior High School)",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1852"
       },
@@ -3751,7 +3757,7 @@
         "name": "向陽運動公園",
         "name_en": "Xiangyang Park",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6982"
       },
@@ -3771,7 +3777,7 @@
         "name": "桃園市政府消防局",
         "name_en": "Taoyuan Fire Department",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6431"
       },
@@ -3791,7 +3797,7 @@
         "name": "力行路口",
         "name_en": "Lixing Road Intersection",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "382"
       },
@@ -3811,7 +3817,7 @@
         "name": "蓮華寺",
         "name_en": "Lianhua Temple",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "384"
       },
@@ -3831,7 +3837,7 @@
         "name": "永安溫州街口",
         "name_en": "Yongan Wunjhou St. Intersection",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "386"
       },
@@ -3851,7 +3857,7 @@
         "name": "南埔里活動中心",
         "name_en": "Nanpuli Activity Center",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "388"
       },
@@ -3871,7 +3877,7 @@
         "name": "大興西永安路口",
         "name_en": "Dasing West and Yongan Rd. Intersection",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "376"
       },
@@ -3891,7 +3897,7 @@
         "name": "寶慶路口",
         "name_en": "Baoqing Road Intersection",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1192"
       },
@@ -3911,7 +3917,7 @@
         "name": "中埔一街口",
         "name_en": "Zhongpu 1st  Street Corner",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4369"
       },
@@ -3931,7 +3937,7 @@
         "name": "中正藝文特區",
         "name_en": "Taoyuan Arts Center",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3084"
       },
@@ -3951,7 +3957,7 @@
         "name": "南平中正路口",
         "name_en": "Nanping - Zhongzheng Rd Intersection",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3756"
       },
@@ -3971,7 +3977,7 @@
         "name": "南平同安街口",
         "name_en": "Nanping Rd. and Tongan St. Intersection",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3984"
       },
@@ -3991,7 +3997,7 @@
         "name": "經國南平路口",
         "name_en": "Jingguo and Nanping Rd. Intersection",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1792"
       },
@@ -4011,7 +4017,7 @@
         "name": "中悅春天",
         "name_en": "Jungyuechuentian",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1794"
       },
@@ -4031,7 +4037,7 @@
         "name": "經國莊敬路口",
         "name_en": "Jingguo Zhuangjing Road Intersection",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1796"
       },
@@ -4051,7 +4057,7 @@
         "name": "經國轉運站(幸福路口)",
         "name_en": "JingGuo Bus Station (Xingfu Rd. Intersection)",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1798"
       },
@@ -4071,7 +4077,7 @@
         "name": "經國轉運站(水汴一路口)",
         "name_en": "Jingguo Bus Station(Shuibian 1st Rd. Inter.)",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2820"
       },
@@ -4091,7 +4097,7 @@
         "name": "經國轉運站(幸福路口)",
         "name_en": "JingGuo Bus Station (Xingfu Rd. Intersection)",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1799"
       },
@@ -4111,7 +4117,7 @@
         "name": "經國莊敬路口",
         "name_en": "Jingguo Zhuangjing Road Intersection",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1797"
       },
@@ -4131,7 +4137,7 @@
         "name": "中悅春天",
         "name_en": "Jungyuechuentian",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1795"
       },
@@ -4151,7 +4157,7 @@
         "name": "經國南平路口",
         "name_en": "Jingguo and Nanping Rd. Intersection",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1793"
       },
@@ -4171,7 +4177,7 @@
         "name": "南平同安街口",
         "name_en": "Nanping Rd. and Tongan St. Intersection",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3983"
       },
@@ -4191,7 +4197,7 @@
         "name": "南平中正路口",
         "name_en": "Nanping - Zhongzheng Rd Intersection",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3757"
       },
@@ -4211,7 +4217,7 @@
         "name": "中正藝文特區",
         "name_en": "Taoyuan Arts Center",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3085"
       },
@@ -4231,7 +4237,7 @@
         "name": "城市大亨",
         "name_en": "Cheng Shi Da Heng",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1512"
       },
@@ -4251,7 +4257,7 @@
         "name": "中埔一街口",
         "name_en": "Zhongpu 1st  Street Corner",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4368"
       },
@@ -4271,7 +4277,7 @@
         "name": "寶慶路口",
         "name_en": "Baoqing Road Intersection",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1191"
       },
@@ -4291,7 +4297,7 @@
         "name": "南埔里活動中心",
         "name_en": "Nanpuli Activity Center",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "389"
       },
@@ -4311,7 +4317,7 @@
         "name": "永安溫州街口",
         "name_en": "Yongan Wunjhou St. Intersection",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "387"
       },
@@ -4331,7 +4337,7 @@
         "name": "蓮華寺",
         "name_en": "Lianhua Temple",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "385"
       },
@@ -4351,7 +4357,7 @@
         "name": "力行路口",
         "name_en": "Lixing Road Intersection",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "383"
       },
@@ -4371,7 +4377,7 @@
         "name": "桃園市政府消防局",
         "name_en": "Taoyuan Fire Department",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4279"
       },
@@ -4391,7 +4397,7 @@
         "name": "向陽運動公園",
         "name_en": "Xiangyang Park",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6977"
       },
@@ -4411,7 +4417,7 @@
         "name": "文山國小",
         "name_en": "Wenshan Elementary School",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1851"
       },
@@ -4431,7 +4437,7 @@
         "name": "中興國中",
         "name_en": "Chung Hsing Junior High School",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3523"
       },
@@ -4451,7 +4457,7 @@
         "name": "文中路橋",
         "name_en": "Wunjhonglu Bridge",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6225"
       },
@@ -4471,7 +4477,7 @@
         "name": "龍安街",
         "name_en": "Long-an Street",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2731"
       },
@@ -4491,7 +4497,7 @@
         "name": "龍安國強一街口",
         "name_en": "Longan and Guoqiang 1st St. Intersection",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1855"
       },
@@ -4511,7 +4517,7 @@
         "name": "龍安市場",
         "name_en": "Lungan Market",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4641"
       },
@@ -4531,7 +4537,7 @@
         "name": "宏太社區",
         "name_en": "Hungtai Community",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2822"
       },
@@ -4551,7 +4557,7 @@
         "name": "武陵高中",
         "name_en": "Wu-Ling Senior High School",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "933"
       },
@@ -4571,7 +4577,7 @@
         "name": "新名人賞",
         "name_en": "Sin Ming Ren Shang",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5084"
       },
@@ -4591,7 +4597,7 @@
         "name": "中山國小",
         "name_en": "Zhongshan Elementary School",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1698"
       },
@@ -4611,7 +4617,7 @@
         "name": "中山中平路口",
         "name_en": "Zhongshan and Zhongping Road Intersection",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2100"
       },
@@ -4631,7 +4637,7 @@
         "name": "中山正光路口",
         "name_en": "Zhongshan Zhenguang Road Intersection",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2098"
       },
@@ -4651,7 +4657,7 @@
         "name": "土地改革館",
         "name_en": "Land Reform Museum",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1696"
       },
@@ -4671,7 +4677,7 @@
         "name": "桃園市政府",
         "name_en": "Taoyuan City Government",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "334"
       },
@@ -4691,7 +4697,7 @@
         "name": "中山育樂街口",
         "name_en": "Zhongshan and Yule St. Intersection",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "279"
       },
@@ -4711,7 +4717,7 @@
         "name": "中山三民路口",
         "name_en": "Zhongshan and Sanmin Rd. Intersection",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "860"
       },
@@ -4731,7 +4737,7 @@
         "name": "三民中山路口",
         "name_en": "SanMin and JungShan Rd. Intersection",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1749"
       },
@@ -4751,7 +4757,7 @@
         "name": "南門市場",
         "name_en": "Nanmen Market",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "861"
       },
@@ -4771,7 +4777,7 @@
         "name": "南華街口",
         "name_en": "Nanhua Street Intersection",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3201"
       },
@@ -4791,7 +4797,7 @@
         "name": "中華民族路口",
         "name_en": "Zhonghua and Minzu Road Intersection",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1114"
       },
@@ -4811,7 +4817,7 @@
         "name": "建國路口",
         "name_en": "JianGuo Road Intersection",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3067"
       },
@@ -4831,7 +4837,7 @@
         "name": "聖保祿醫院",
         "name_en": "Saint Pauls Hospital",
         "line": "189",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "871"
       },

@@ -6,13 +6,14 @@
     "name": "F932-0600",
     "name_en": "F932-0600",
     "ref": "F932-0600",
-    "color": "#2563eb",
+    "color": "#6B8F9A",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.gov.taipei/File/Get/83482ca0-137c-4d52-87b3-6a13c7e3c473?v=639248448831043404",
     "operator_id": "16253",
     "operator": "金山區公所",
-    "operator_en": "Jinshan District Office"
+    "operator_en": "Jinshan District Office",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "F932-0600",
         "name": "F932-0600",
         "name_en": "F932-0600",
-        "color": "#2563eb",
-        "direction": 0
+        "color": "#6B8F9A",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -691,6 +693,10 @@
           [
             121.636746266145,
             25.22239054591
+          ],
+          [
+            121.636689134583,
+            25.222419195979
           ]
         ]
       }
@@ -703,7 +709,7 @@
         "name": "金山區公所",
         "name_en": "Jinshan District Office",
         "line": "F932-0600",
-        "color": "#2563eb",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "20314"
       },
@@ -723,7 +729,7 @@
         "name": "重和里朝天宮",
         "name_en": "Chonghe Village Chaotien Temple",
         "line": "F932-0600",
-        "color": "#2563eb",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165604037"
       },
@@ -743,7 +749,7 @@
         "name": "六股中路",
         "name_en": "Liuguzhong Rd.",
         "line": "F932-0600",
-        "color": "#2563eb",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70527"
       },
@@ -763,7 +769,7 @@
         "name": "磺溪中橋",
         "name_en": "Huangxizhong Bridge",
         "line": "F932-0600",
-        "color": "#2563eb",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165610388"
       },
@@ -783,7 +789,7 @@
         "name": "金山區公所",
         "name_en": "Jinshan District Office",
         "line": "F932-0600",
-        "color": "#2563eb",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603304"
       },

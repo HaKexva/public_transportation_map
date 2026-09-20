@@ -6,13 +6,14 @@
     "name": "F151-0810",
     "name_en": "F151-0810",
     "ref": "F151-0810",
-    "color": "#0B7A3E",
+    "color": "#6B8F9A",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.gov.taipei/File/Get/e516c1e9-44ea-40b5-8bc3-6ceefa08b528?v=639248448771567384",
     "operator_id": "16231",
     "operator": "石門區公所",
-    "operator_en": "Shimen District Office"
+    "operator_en": "Shimen District Office",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "F151-0810",
         "name": "F151-0810",
         "name_en": "F151-0810",
-        "color": "#0B7A3E",
-        "direction": 0
+        "color": "#6B8F9A",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -2071,6 +2073,10 @@
           [
             121.567575468732,
             25.2914914368233
+          ],
+          [
+            121.566961349655,
+            25.2909626609418
           ]
         ]
       }
@@ -2083,7 +2089,7 @@
         "name": "衛生所",
         "name_en": "Health Center",
         "line": "F151-0810",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75562"
       },
@@ -2103,7 +2109,7 @@
         "name": "石門分校",
         "name_en": "Shimen Campus",
         "line": "F151-0810",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75531"
       },
@@ -2123,7 +2129,7 @@
         "name": "尖山湖",
         "name_en": "Jianshanhu",
         "line": "F151-0810",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75537"
       },
@@ -2143,7 +2149,7 @@
         "name": "順天聖母廟",
         "name_en": "Shuntian Shengmu Temple",
         "line": "F151-0810",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75551"
       },
@@ -2163,7 +2169,7 @@
         "name": "尖山湖",
         "name_en": "Jianshanhu",
         "line": "F151-0810",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75536"
       },
@@ -2183,7 +2189,7 @@
         "name": "石門分校",
         "name_en": "Shimen Campus",
         "line": "F151-0810",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75530"
       },
@@ -2203,7 +2209,7 @@
         "name": "廖宅",
         "name_en": "Liaozhai",
         "line": "F151-0810",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75552"
       },
@@ -2223,7 +2229,7 @@
         "name": "石門坑路",
         "name_en": "Shimenkeng Rd.",
         "line": "F151-0810",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75532"
       },
@@ -2243,7 +2249,7 @@
         "name": "石門區公所",
         "name_en": "Shimen District office",
         "line": "F151-0810",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75534"
       },

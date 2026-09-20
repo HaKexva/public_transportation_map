@@ -6,13 +6,14 @@
     "name": "52C",
     "name_en": "52C",
     "ref": "52C",
-    "color": "#9a3412",
+    "color": "#115e59",
     "city_id": "Kaohsiung",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ibus.tbkc.gov.tw/cms/api/route/523/map/405/image",
     "operator_id": "10360",
     "operator": "港都客運",
-    "operator_en": "Great-City-Life Bus Co., Ltd."
+    "operator_en": "Great-City-Life Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,7 +23,7 @@
         "ref": "52C",
         "name": "52C",
         "name_en": "52C",
-        "color": "#9a3412",
+        "color": "#115e59",
         "direction": 1
       },
       "geometry": {
@@ -86,8 +87,9 @@
         "ref": "52C",
         "name": "52C",
         "name_en": "52C",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#115e59",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -171,6 +173,10 @@
           [
             120.30107,
             22.62486
+          ],
+          [
+            120.30102,
+            22.62477
           ]
         ]
       }
@@ -183,7 +189,7 @@
         "name": "捷運中央公園站",
         "name_en": "MRT Central Park Station",
         "line": "52C",
-        "color": "#9a3412",
+        "color": "#115e59",
         "direction": 0,
         "station_id": "2293"
       },
@@ -203,7 +209,7 @@
         "name": "高雄女中(真愛碼頭)",
         "name_en": "Kaohsiung Girls' Senior High School(Love Pier)",
         "line": "52C",
-        "color": "#9a3412",
+        "color": "#115e59",
         "direction": 0,
         "station_id": "333"
       },
@@ -223,7 +229,7 @@
         "name": "捷運中央公園站",
         "name_en": "MRT Central Park Station",
         "line": "52C",
-        "color": "#9a3412",
+        "color": "#115e59",
         "direction": 0,
         "station_id": "2293"
       },

@@ -6,13 +6,14 @@
     "name": "52副",
     "name_en": "52副",
     "ref": "52副",
-    "color": "#c2410c",
+    "color": "#db2777",
     "city_id": "Taichung",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://citybus.taichung.gov.tw/ebus/strapi/uploads/52_and_1150720_e8da7ec6cd.jpeg",
     "operator_id": "19",
     "operator": "中鹿客運",
-    "operator_en": "Chung-Lu Bus Co., Ltd."
+    "operator_en": "Chung-Lu Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "52副",
         "name": "52副",
         "name_en": "52副",
-        "color": "#c2410c",
-        "direction": 0
+        "color": "#db2777",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -331,6 +333,10 @@
           [
             120.70002,
             24.16338
+          ],
+          [
+            120.69989,
+            24.1634
           ]
         ]
       }
@@ -342,8 +348,9 @@
         "ref": "52副",
         "name": "52副",
         "name_en": "52副",
-        "color": "#c2410c",
-        "direction": 1
+        "color": "#db2777",
+        "direction": 1,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -619,6 +626,10 @@
           [
             120.70001,
             24.16322
+          ],
+          [
+            120.69986,
+            24.16323
           ]
         ]
       }
@@ -631,7 +642,7 @@
         "name": "太原車站",
         "name_en": "Taiyuan Station",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "6638"
       },
@@ -651,7 +662,7 @@
         "name": "豬事圓滿公園",
         "name_en": "ZhushiYuanman Park",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "4238"
       },
@@ -671,7 +682,7 @@
         "name": "興進路",
         "name_en": "Xingjin Road",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "7225"
       },
@@ -691,7 +702,7 @@
         "name": "進化國瑞街口",
         "name_en": "Jinhua-Guorui Intersection",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "242"
       },
@@ -711,7 +722,7 @@
         "name": "進化天祥街口",
         "name_en": "Jinhua-Tianxiang Intersection",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "950"
       },
@@ -731,7 +742,7 @@
         "name": "北屯國小(進化北路)",
         "name_en": "Beitun Elementary School(Jinhua N. Road)",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "3626"
       },
@@ -751,7 +762,7 @@
         "name": "北屯市場",
         "name_en": "Beitun Market",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "954"
       },
@@ -771,7 +782,7 @@
         "name": "稅務新村",
         "name_en": "Shuiwu Community",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "980"
       },
@@ -791,7 +802,7 @@
         "name": "進化北榮華街口",
         "name_en": "Jinhua N.-Ronghua Intersection",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "807"
       },
@@ -811,7 +822,7 @@
         "name": "進化北永興街口",
         "name_en": "Jinhua N.-Yongxing Intersection",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "762"
       },
@@ -831,7 +842,7 @@
         "name": "衛道新世界",
         "name_en": "Weidao Community",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "989"
       },
@@ -851,7 +862,7 @@
         "name": "大道公廟(進化北路)",
         "name_en": "Dadaogong Temple(Jinhua N. Road)",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "439"
       },
@@ -871,7 +882,7 @@
         "name": "八0三醫院中清分院",
         "name_en": "Taichung Armed Forces general hospital(Zhongqing Department)",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "975"
       },
@@ -891,7 +902,7 @@
         "name": "忠明忠太東路口",
         "name_en": "Zhongming-Zhongtai E. Intersection",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "967"
       },
@@ -911,7 +922,7 @@
         "name": "忠明西屯路口",
         "name_en": "Zhongming-Xitun Intersection",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "962"
       },
@@ -931,7 +942,7 @@
         "name": "忠明臺灣大道口",
         "name_en": "Zhongming-Taiwan Boulevard Intersection",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "948"
       },
@@ -951,7 +962,7 @@
         "name": "忠明南精誠七街口",
         "name_en": "Zhongming S.-Jingcheng 7th Intersection",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "985"
       },
@@ -971,7 +982,7 @@
         "name": "公益公園(忠明南路)",
         "name_en": "Gongyi Park(Zhongming S. Road)",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "5926"
       },
@@ -991,7 +1002,7 @@
         "name": "忠明南向上路口",
         "name_en": "Zhongming S.-Xiangshang Intersection",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "230"
       },
@@ -1011,7 +1022,7 @@
         "name": "土庫停車場(國美館)",
         "name_en": "Tuku Parking Lot(National Taiwan Museum of Fine Arts)",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "614"
       },
@@ -1031,7 +1042,7 @@
         "name": "忠明南五權西路口",
         "name_en": "Zhongming S.-Wuquan W. Intersection",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "968"
       },
@@ -1051,7 +1062,7 @@
         "name": "大勇國小",
         "name_en": "Dayong Elementary School",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "696"
       },
@@ -1071,7 +1082,7 @@
         "name": "崇倫國中(忠明南路)",
         "name_en": "Chung-Lun Junior High School(Zhongming S. Road)",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "723"
       },
@@ -1091,7 +1102,7 @@
         "name": "忠明南三民西路口",
         "name_en": "Zhongming S.-Sanmin W. Intersection",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "942"
       },
@@ -1111,7 +1122,7 @@
         "name": "和平里(忠明南路)",
         "name_en": "Heping Village(Zhongming S. Road)",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "965"
       },
@@ -1131,7 +1142,7 @@
         "name": "忠明南平路口",
         "name_en": "Zhongming-Nanping Intersection",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "2880"
       },
@@ -1151,7 +1162,7 @@
         "name": "忠明南美村南路口",
         "name_en": "Zhongmin S.-Meicun S. Intersection",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "2691"
       },
@@ -1171,7 +1182,7 @@
         "name": "健康公園",
         "name_en": "Jiankang Park",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "977"
       },
@@ -1191,7 +1202,7 @@
         "name": "忠明南五權南路口",
         "name_en": "Zhongming S.-Wuquan S. Intersection",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "970"
       },
@@ -1211,7 +1222,7 @@
         "name": "興大美村路口",
         "name_en": "Xingda-Meicun Intersection",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "38"
       },
@@ -1231,7 +1242,7 @@
         "name": "中興大學(興大路)",
         "name_en": "Chung Hsing University(Xingda Road)",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "702"
       },
@@ -1251,7 +1262,7 @@
         "name": "興大郵局",
         "name_en": "Xingda Post Office",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "3428"
       },
@@ -1271,7 +1282,7 @@
         "name": "中興大學(國光路)",
         "name_en": "Chung Hsing University(Guoguang Road)",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "6292"
       },
@@ -1291,7 +1302,7 @@
         "name": "忠明南國光路口",
         "name_en": "Zhongming S.-Guoguang Intersection",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "2506"
       },
@@ -1311,7 +1322,7 @@
         "name": "明德高中(明德街)",
         "name_en": "Mingder Senior High School(Mingde Street)",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "1269"
       },
@@ -1331,7 +1342,7 @@
         "name": "南門仔",
         "name_en": "Nanmenzi",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "870"
       },
@@ -1351,7 +1362,7 @@
         "name": "興大附農(臺中路)",
         "name_en": "NCHU Affiliated Agricultural Senior High School(Taichung Road)",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "722"
       },
@@ -1371,7 +1382,7 @@
         "name": "興大附農(建成路)",
         "name_en": "NCHU Affiliated agricultural Senior High School(Jiancheng Road)",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "955"
       },
@@ -1391,7 +1402,7 @@
         "name": "建成立德街口",
         "name_en": "Jiancheng-Lide Intersection",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "1734"
       },
@@ -1411,7 +1422,7 @@
         "name": "大智忠孝路口",
         "name_en": "Dazhi-Zhongxiao Intersection",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "1176"
       },
@@ -1431,7 +1442,7 @@
         "name": "新時代購物中心",
         "name_en": "Mode Mall",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "1211"
       },
@@ -1451,7 +1462,7 @@
         "name": "臺中車站(大智北路)",
         "name_en": "Taichung Station(Dazhi North Road)",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "7193"
       },
@@ -1471,7 +1482,7 @@
         "name": "干城站",
         "name_en": "Gancheng Station",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "46"
       },
@@ -1491,7 +1502,7 @@
         "name": "立體停車場(自由路)",
         "name_en": "Parking Tower(Zih You Road)",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "4467"
       },
@@ -1511,7 +1522,7 @@
         "name": "自由富台東街口",
         "name_en": "Ziyou-Futai E. Intersection",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "5151"
       },
@@ -1531,7 +1542,7 @@
         "name": "自由進德路口",
         "name_en": "Ziyou-jinde Intersection",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "5100"
       },
@@ -1551,7 +1562,7 @@
         "name": "中國醫東區分院",
         "name_en": "China Medical University Hospital East District Branch",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "5053"
       },
@@ -1571,7 +1582,7 @@
         "name": "進德國小",
         "name_en": "Jinde Elementary School",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "983"
       },
@@ -1591,7 +1602,7 @@
         "name": "合作市場",
         "name_en": "Hezuo Market",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "221"
       },
@@ -1611,7 +1622,7 @@
         "name": "進化力行路口",
         "name_en": "Jinhua-Lixing Intersection",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "941"
       },
@@ -1631,7 +1642,7 @@
         "name": "進化興進路口",
         "name_en": "Jinhua-Xingjin Intersection",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "991"
       },
@@ -1651,7 +1662,7 @@
         "name": "興進路",
         "name_en": "Xingjin Road",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "7223"
       },
@@ -1671,7 +1682,7 @@
         "name": "豬事圓滿公園",
         "name_en": "ZhushiYuanman Park",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "4239"
       },
@@ -1691,7 +1702,7 @@
         "name": "太原車站",
         "name_en": "Taiyuan Station",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "6638"
       },
@@ -1711,7 +1722,7 @@
         "name": "太原車站",
         "name_en": "Taiyuan Station",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 1,
         "station_id": "6637"
       },
@@ -1731,7 +1742,7 @@
         "name": "豬事圓滿公園",
         "name_en": "ZhushiYuanman Park",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 1,
         "station_id": "4238"
       },
@@ -1751,7 +1762,7 @@
         "name": "興進路",
         "name_en": "Xingjin Road",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 1,
         "station_id": "7225"
       },
@@ -1771,7 +1782,7 @@
         "name": "進化興進路口",
         "name_en": "Jinhua-Xingjin Intersection",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 1,
         "station_id": "990"
       },
@@ -1791,7 +1802,7 @@
         "name": "進化力行路口",
         "name_en": "Jinhua-Lixing Intersection",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 1,
         "station_id": "940"
       },
@@ -1811,7 +1822,7 @@
         "name": "合作市場",
         "name_en": "Hezuo Market",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 1,
         "station_id": "222"
       },
@@ -1831,7 +1842,7 @@
         "name": "進德國小",
         "name_en": "Jinde Elementary School",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 1,
         "station_id": "982"
       },
@@ -1851,7 +1862,7 @@
         "name": "中國醫東區分院",
         "name_en": "China Medical University Hospital East District Branch",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 1,
         "station_id": "5054"
       },
@@ -1871,7 +1882,7 @@
         "name": "自由進德路口",
         "name_en": "Ziyou-jinde Intersection",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 1,
         "station_id": "5099"
       },
@@ -1891,7 +1902,7 @@
         "name": "自由富台東街口",
         "name_en": "Ziyou-Futai E. Intersection",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 1,
         "station_id": "5152"
       },
@@ -1911,7 +1922,7 @@
         "name": "立體停車場(自由路)",
         "name_en": "Parking Tower(Zih You Road)",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 1,
         "station_id": "4468"
       },
@@ -1931,7 +1942,7 @@
         "name": "干城站",
         "name_en": "Gancheng Station",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 1,
         "station_id": "46"
       },
@@ -1951,7 +1962,7 @@
         "name": "臺中車站(大智北路)",
         "name_en": "Taichung Station(Dazhi North Road)",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 1,
         "station_id": "7192"
       },
@@ -1971,7 +1982,7 @@
         "name": "新時代購物中心",
         "name_en": "Mode Mall",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 1,
         "station_id": "1210"
       },
@@ -1991,7 +2002,7 @@
         "name": "大智忠孝路口",
         "name_en": "Dazhi-Zhongxiao Intersection",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 1,
         "station_id": "1175"
       },
@@ -2011,7 +2022,7 @@
         "name": "建成大智路口",
         "name_en": "Jiancheng-Dazhi Intersection",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 1,
         "station_id": "5755"
       },
@@ -2031,7 +2042,7 @@
         "name": "建成立德街口",
         "name_en": "Jiancheng-Lide Intersection",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 1,
         "station_id": "1735"
       },
@@ -2051,7 +2062,7 @@
         "name": "興大附農(臺中路)",
         "name_en": "NCHU Affiliated Agricultural Senior High School(Taichung Road)",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 1,
         "station_id": "721"
       },
@@ -2071,7 +2082,7 @@
         "name": "南門仔",
         "name_en": "Nanmenzi",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 1,
         "station_id": "871"
       },
@@ -2091,7 +2102,7 @@
         "name": "明德高中(臺中路)",
         "name_en": "Ming-Der Senior High School(Taichung Road)",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 1,
         "station_id": "5091"
       },
@@ -2111,7 +2122,7 @@
         "name": "明德高中(明德街)",
         "name_en": "Mingder Senior High School(Mingde Street)",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 1,
         "station_id": "1270"
       },
@@ -2131,7 +2142,7 @@
         "name": "忠明南國光路口",
         "name_en": "Zhongming S.-Guoguang Intersection",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 1,
         "station_id": "2507"
       },
@@ -2151,7 +2162,7 @@
         "name": "中興大學(國光路)",
         "name_en": "Chung Hsing University(Guoguang Road)",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 1,
         "station_id": "6291"
       },
@@ -2171,7 +2182,7 @@
         "name": "興大郵局",
         "name_en": "Xingda Post Office",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 1,
         "station_id": "3427"
       },
@@ -2191,7 +2202,7 @@
         "name": "中興大學(興大路)",
         "name_en": "Chung Hsing University(Xingda Road)",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 1,
         "station_id": "703"
       },
@@ -2211,7 +2222,7 @@
         "name": "興大美村路口",
         "name_en": "Xingda-Meicun Intersection",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 1,
         "station_id": "38"
       },
@@ -2231,7 +2242,7 @@
         "name": "興大忠明南路口",
         "name_en": "Xingda-Zhongming S. Intersection",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 1,
         "station_id": "4859"
       },
@@ -2251,7 +2262,7 @@
         "name": "忠明南五權南路口",
         "name_en": "Zhongming S.-Wuquan S. Intersection",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 1,
         "station_id": "970"
       },
@@ -2271,7 +2282,7 @@
         "name": "健康公園",
         "name_en": "Jiankang Park",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 1,
         "station_id": "976"
       },
@@ -2291,7 +2302,7 @@
         "name": "忠明南美村南路口",
         "name_en": "Zhongmin S.-Meicun S. Intersection",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 1,
         "station_id": "2691"
       },
@@ -2311,7 +2322,7 @@
         "name": "和平里(忠明南路)",
         "name_en": "Heping Village(Zhongming S. Road)",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 1,
         "station_id": "964"
       },
@@ -2331,7 +2342,7 @@
         "name": "忠明南三民西路口",
         "name_en": "Zhongming S.-Sanmin W. Intersection",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 1,
         "station_id": "943"
       },
@@ -2351,7 +2362,7 @@
         "name": "崇倫國中(忠明南路)",
         "name_en": "Chung-Lun Junior High School(Zhongming S. Road)",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 1,
         "station_id": "724"
       },
@@ -2371,7 +2382,7 @@
         "name": "大勇國小",
         "name_en": "Dayong Elementary School",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 1,
         "station_id": "697"
       },
@@ -2391,7 +2402,7 @@
         "name": "忠明南五權西路口",
         "name_en": "Zhongming S.-Wuquan W. Intersection",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 1,
         "station_id": "969"
       },
@@ -2411,7 +2422,7 @@
         "name": "土庫停車場(國美館)",
         "name_en": "Tuku Parking Lot(National Taiwan Museum of Fine Arts)",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 1,
         "station_id": "615"
       },
@@ -2431,7 +2442,7 @@
         "name": "忠明南向上路口",
         "name_en": "Zhongming S.-Xiangshang Intersection",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 1,
         "station_id": "229"
       },
@@ -2451,7 +2462,7 @@
         "name": "公益公園(忠明南路)",
         "name_en": "Gongyi Park(Zhongming S. Road)",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 1,
         "station_id": "5925"
       },
@@ -2471,7 +2482,7 @@
         "name": "忠明南精誠七街口",
         "name_en": "Zhongming S.-Jingcheng 7th Intersection",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 1,
         "station_id": "984"
       },
@@ -2491,7 +2502,7 @@
         "name": "忠明臺灣大道口",
         "name_en": "Zhongming-Taiwan Boulevard Intersection",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 1,
         "station_id": "949"
       },
@@ -2511,7 +2522,7 @@
         "name": "忠誠公園（忠明路）",
         "name_en": "Zhongcheng Park(Zhongming Road)",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 1,
         "station_id": "10830"
       },
@@ -2531,7 +2542,7 @@
         "name": "忠明西屯路口",
         "name_en": "Zhongming-Xitun Intersection",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 1,
         "station_id": "963"
       },
@@ -2551,7 +2562,7 @@
         "name": "忠明忠太東路口",
         "name_en": "Zhongming-Zhongtai E. Intersection",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 1,
         "station_id": "966"
       },
@@ -2571,7 +2582,7 @@
         "name": "八0三醫院中清分院",
         "name_en": "Taichung Armed Forces general hospital(Zhongqing Department)",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 1,
         "station_id": "974"
       },
@@ -2591,7 +2602,7 @@
         "name": "大道公廟(進化北路)",
         "name_en": "Dadaogong Temple(Jinhua N. Road)",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 1,
         "station_id": "438"
       },
@@ -2611,7 +2622,7 @@
         "name": "衛道新世界",
         "name_en": "Weidao Community",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 1,
         "station_id": "988"
       },
@@ -2631,7 +2642,7 @@
         "name": "進化北永興街口",
         "name_en": "Jinhua N.-Yongxing Intersection",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 1,
         "station_id": "763"
       },
@@ -2651,7 +2662,7 @@
         "name": "進化北榮華街口",
         "name_en": "Jinhua N.-Ronghua Intersection",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 1,
         "station_id": "807"
       },
@@ -2671,7 +2682,7 @@
         "name": "稅務新村",
         "name_en": "Shuiwu Community",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 1,
         "station_id": "981"
       },
@@ -2691,7 +2702,7 @@
         "name": "北屯市場",
         "name_en": "Beitun Market",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 1,
         "station_id": "954"
       },
@@ -2711,7 +2722,7 @@
         "name": "進化天祥街口",
         "name_en": "Jinhua-Tianxiang Intersection",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 1,
         "station_id": "951"
       },
@@ -2731,7 +2742,7 @@
         "name": "進化國瑞街口",
         "name_en": "Jinhua-Guorui Intersection",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 1,
         "station_id": "241"
       },
@@ -2751,7 +2762,7 @@
         "name": "興進路",
         "name_en": "Xingjin Road",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 1,
         "station_id": "7223"
       },
@@ -2771,7 +2782,7 @@
         "name": "豬事圓滿公園",
         "name_en": "ZhushiYuanman Park",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 1,
         "station_id": "4239"
       },
@@ -2791,7 +2802,7 @@
         "name": "太原車站",
         "name_en": "Taiyuan Station",
         "line": "52副",
-        "color": "#c2410c",
+        "color": "#db2777",
         "direction": 1,
         "station_id": "6637"
       },

@@ -6,13 +6,14 @@
     "name": "F138內橫山",
     "name_en": "F138內橫山",
     "ref": "F138內橫山",
-    "color": "#1e3a8a",
+    "color": "#6B8F9A",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.gov.taipei/File/Get/239bf5f5-36e5-4f6c-a509-2c03d9edfa8b?v=639248448782872868",
     "operator_id": "16229",
     "operator": "三芝區公所",
-    "operator_en": "Sanzhi District Office"
+    "operator_en": "Sanzhi District Office",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "F138內橫山",
         "name": "F138內橫山",
         "name_en": "F138內橫山",
-        "color": "#1e3a8a",
-        "direction": 0
+        "color": "#6B8F9A",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1931,6 +1933,10 @@
           [
             121.501099944935,
             25.2589906694259
+          ],
+          [
+            121.501068035151,
+            25.2589210480774
           ]
         ]
       }
@@ -1943,7 +1949,7 @@
         "name": "二號倉庫",
         "name_en": "No.2 Warehouse",
         "line": "F138內橫山",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75281"
       },
@@ -1963,7 +1969,7 @@
         "name": "芝柏山莊",
         "name_en": "Zhibo village",
         "line": "F138內橫山",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75460"
       },
@@ -1983,7 +1989,7 @@
         "name": "陳厝坑路口",
         "name_en": "Chen Clan pit Entrance",
         "line": "F138內橫山",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75474"
       },
@@ -2003,7 +2009,7 @@
         "name": "大坑",
         "name_en": "Dakeng",
         "line": "F138內橫山",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75452"
       },
@@ -2023,7 +2029,7 @@
         "name": "橫山",
         "name_en": "Hengshan",
         "line": "F138內橫山",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75470"
       },
@@ -2043,7 +2049,7 @@
         "name": "橫山國小",
         "name_en": "Hengshan Elementary School",
         "line": "F138內橫山",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75472"
       },
@@ -2063,7 +2069,7 @@
         "name": "橫山十三鄰",
         "name_en": "Neighborhood 13 Hengshan",
         "line": "F138內橫山",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75475"
       },
@@ -2083,7 +2089,7 @@
         "name": "戲埔一站",
         "name_en": "Xipu 1",
         "line": "F138內橫山",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75476"
       },
@@ -2103,7 +2109,7 @@
         "name": "橫山十七鄰",
         "name_en": "Neighborhood 17 Hengshan",
         "line": "F138內橫山",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75477"
       },
@@ -2123,7 +2129,7 @@
         "name": "內橫山(妙法寺)",
         "name_en": "Neihengshan",
         "line": "F138內橫山",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603698"
       },
@@ -2143,7 +2149,7 @@
         "name": "茶寮",
         "name_en": "Chaliao",
         "line": "F138內橫山",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75478"
       },
@@ -2163,7 +2169,7 @@
         "name": "橫山十四鄰",
         "name_en": "Neighborhood 14 Hengshan",
         "line": "F138內橫山",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75479"
       },
@@ -2183,7 +2189,7 @@
         "name": "橫山十三鄰",
         "name_en": "Neighborhood 13 Hengshan",
         "line": "F138內橫山",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75475"
       },
@@ -2203,7 +2209,7 @@
         "name": "橫山國小",
         "name_en": "Hengshan Elementary School",
         "line": "F138內橫山",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75473"
       },
@@ -2223,7 +2229,7 @@
         "name": "橫山",
         "name_en": "Hengshan",
         "line": "F138內橫山",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75471"
       },
@@ -2243,7 +2249,7 @@
         "name": "大坑",
         "name_en": "Dakeng",
         "line": "F138內橫山",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75453"
       },
@@ -2263,7 +2269,7 @@
         "name": "陳厝坑路口",
         "name_en": "Chen Clan pit Entrance",
         "line": "F138內橫山",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603699"
       },
@@ -2283,7 +2289,7 @@
         "name": "芝柏山莊",
         "name_en": "Zhibo village",
         "line": "F138內橫山",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75461"
       },
@@ -2303,7 +2309,7 @@
         "name": "三芝國中",
         "name_en": "Sanzhi Junior High School",
         "line": "F138內橫山",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75286"
       },

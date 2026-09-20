@@ -6,13 +6,14 @@
     "name": "F151-1810",
     "name_en": "F151-1810",
     "ref": "F151-1810",
-    "color": "#0B7A3E",
+    "color": "#6B8F9A",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.gov.taipei/File/Get/c736c39a-f2e5-4a4e-a5c4-4e9e86514c30?v=639248448789747945",
     "operator_id": "16231",
     "operator": "石門區公所",
-    "operator_en": "Shimen District Office"
+    "operator_en": "Shimen District Office",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "F151-1810",
         "name": "F151-1810",
         "name_en": "F151-1810",
-        "color": "#0B7A3E",
-        "direction": 0
+        "color": "#6B8F9A",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1935,6 +1937,10 @@
           [
             121.567567257015,
             25.2914908502722
+          ],
+          [
+            121.566919704522,
+            25.2909911086736
           ]
         ]
       }
@@ -1947,7 +1953,7 @@
         "name": "石門分駐所",
         "name_en": "Shimen Police Station",
         "line": "F151-1810",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165610299"
       },
@@ -1967,7 +1973,7 @@
         "name": "石門坑路",
         "name_en": "Shimenkeng Rd.",
         "line": "F151-1810",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75532"
       },
@@ -1987,7 +1993,7 @@
         "name": "茶葉工廠",
         "name_en": "Tea Factory",
         "line": "F151-1810",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75542"
       },
@@ -2007,7 +2013,7 @@
         "name": "石門分校",
         "name_en": "Shimen Campus",
         "line": "F151-1810",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75531"
       },
@@ -2027,7 +2033,7 @@
         "name": "尖山湖",
         "name_en": "Jianshanhu",
         "line": "F151-1810",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75536"
       },
@@ -2047,7 +2053,7 @@
         "name": "石門分校",
         "name_en": "Shimen Campus",
         "line": "F151-1810",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75530"
       },
@@ -2067,7 +2073,7 @@
         "name": "茶葉工廠",
         "name_en": "Tea Factory",
         "line": "F151-1810",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75541"
       },
@@ -2087,7 +2093,7 @@
         "name": "石門區公所",
         "name_en": "Shimen District office",
         "line": "F151-1810",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75534"
       },

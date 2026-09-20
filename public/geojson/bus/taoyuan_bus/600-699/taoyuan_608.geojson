@@ -6,13 +6,14 @@
     "name": "608",
     "name_en": "608",
     "ref": "608",
-    "color": "#7c3aed",
+    "color": "#16A34A",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/6080/map/2182/image",
     "operator_id": "9",
     "operator": "三重客運",
-    "operator_en": "San Chung Bus Co., Ltd."
+    "operator_en": "San Chung Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "608",
         "name": "608",
         "name_en": "608",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#16A34A",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -4727,6 +4729,10 @@
           [
             121.41697,
             25.0124
+          ],
+          [
+            121.41694,
+            25.01231
           ]
         ]
       }
@@ -4739,7 +4745,7 @@
         "name": "俊興俊安街口",
         "name_en": "Junxing & Jun'an Intersection",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6884"
       },
@@ -4759,7 +4765,7 @@
         "name": "俊興街",
         "name_en": "Junxing St.",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6885"
       },
@@ -4779,7 +4785,7 @@
         "name": "俊興三龍街口",
         "name_en": "Junxing & Sanlong Intersection",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6886"
       },
@@ -4799,7 +4805,7 @@
         "name": "裕民國小",
         "name_en": "Yumin Elementary School",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6887"
       },
@@ -4819,7 +4825,7 @@
         "name": "丹鳳高中",
         "name_en": "Danfeng High School",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6888"
       },
@@ -4839,7 +4845,7 @@
         "name": "中正龍安路口",
         "name_en": "Zhongzheng and Longan Intersection",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6889"
       },
@@ -4859,7 +4865,7 @@
         "name": "捷運迴龍站",
         "name_en": "MRT Huilong Station",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "3365"
       },
@@ -4879,7 +4885,7 @@
         "name": "迴龍派出所",
         "name_en": "Huilong Police Station",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "4611"
       },
@@ -4899,7 +4905,7 @@
         "name": "迴龍商場",
         "name_en": "Huilong Market",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "5185"
       },
@@ -4919,7 +4925,7 @@
         "name": "龍華科技大學",
         "name_en": "Lunghwa University of Science and Technology",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "3363"
       },
@@ -4939,7 +4945,7 @@
         "name": "大慶蓮莊",
         "name_en": "Daqinglianzhuang",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6558"
       },
@@ -4959,7 +4965,7 @@
         "name": "龍壽里",
         "name_en": "Longshou Village",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "4615"
       },
@@ -4979,7 +4985,7 @@
         "name": "福惠寺",
         "name_en": "Fuhui Temple",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "4617"
       },
@@ -4999,7 +5005,7 @@
         "name": "尖山腳",
         "name_en": "Jianshanjiao",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "4619"
       },
@@ -5019,7 +5025,7 @@
         "name": "南龍壽",
         "name_en": "Nanlongshou",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "4621"
       },
@@ -5039,7 +5045,7 @@
         "name": "東影",
         "name_en": "Dongying",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "4623"
       },
@@ -5059,7 +5065,7 @@
         "name": "六股",
         "name_en": "Liugu",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "4625"
       },
@@ -5079,7 +5085,7 @@
         "name": "壽山巖",
         "name_en": "Shoushanyen",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "4627"
       },
@@ -5099,7 +5105,7 @@
         "name": "嶺頂",
         "name_en": "Lingding",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "4629"
       },
@@ -5119,7 +5125,7 @@
         "name": "圓堡社區",
         "name_en": "Yuanbao Community",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "5108"
       },
@@ -5139,7 +5145,7 @@
         "name": "美和園社區",
         "name_en": "Meiheyuan Community",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "4658"
       },
@@ -5159,7 +5165,7 @@
         "name": "茶專路",
         "name_en": "Chazhuan Road",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "3355"
       },
@@ -5179,7 +5185,7 @@
         "name": "半嶺一",
         "name_en": "Banling 1",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "928"
       },
@@ -5199,7 +5205,7 @@
         "name": "長壽振興路口",
         "name_en": "ChangShou and JhenSing Rd. Intersection",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "5107"
       },
@@ -5219,7 +5225,7 @@
         "name": "長壽長峰路口",
         "name_en": "ChangShou and ChangFong Rd. Intersection",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "5179"
       },
@@ -5239,7 +5245,7 @@
         "name": "長壽育英街口",
         "name_en": "Changshou Yuying St. Intersection",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "3790"
       },
@@ -5259,7 +5265,7 @@
         "name": "龜山國中",
         "name_en": "Guishan Junior High School",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "5348"
       },
@@ -5279,7 +5285,7 @@
         "name": "龜山",
         "name_en": "Guishan",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6288"
       },
@@ -5299,7 +5305,7 @@
         "name": "萬壽中興路口",
         "name_en": "Wanshou Jhongsing Rd. Intersection",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "3592"
       },
@@ -5319,7 +5325,7 @@
         "name": "陸光二村",
         "name_en": "Luguang 2nd Village",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "3589"
       },
@@ -5339,7 +5345,7 @@
         "name": "拔仔埔",
         "name_en": "Bazipu",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "3587"
       },
@@ -5359,7 +5365,7 @@
         "name": "頂興路口",
         "name_en": "Dingxing Road Intersection",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "3579"
       },
@@ -5379,7 +5385,7 @@
         "name": "桃園巨蛋",
         "name_en": "Taoyuan Arena",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "5237"
       },
@@ -5399,7 +5405,7 @@
         "name": "虎頭山創新園區",
         "name_en": "Hutoushan Innovation Hub",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "4212"
       },
@@ -5419,7 +5425,7 @@
         "name": "桃園高中",
         "name_en": "National Taoyuan High School",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "4053"
       },
@@ -5439,7 +5445,7 @@
         "name": "技訓中心",
         "name_en": "Technology - Vocation Training Center",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "4126"
       },
@@ -5459,7 +5465,7 @@
         "name": "桃園榮民醫院",
         "name_en": "TVGH, Taoyuan Branch",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "5016"
       },
@@ -5479,7 +5485,7 @@
         "name": "北區國稅局(大有路)",
         "name_en": "Northern Area, Ministry of Finance(Dayou Road)",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "5052"
       },
@@ -5499,7 +5505,7 @@
         "name": "大有民光東路口",
         "name_en": "Dayou & Minguang East Intersection",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "3422"
       },
@@ -5519,7 +5525,7 @@
         "name": "寶山街口",
         "name_en": "Baoshan Street Intersection",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "3425"
       },
@@ -5539,7 +5545,7 @@
         "name": "公園都市",
         "name_en": "Gongyuandushi",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "1327"
       },
@@ -5559,7 +5565,7 @@
         "name": "會稽國中",
         "name_en": "Kuai Ji Junior High School",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "3981"
       },
@@ -5579,7 +5585,7 @@
         "name": "福山街口",
         "name_en": "Fushan St. Intersection",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "3505"
       },
@@ -5599,7 +5605,7 @@
         "name": "大業路郵局",
         "name_en": "Daye Post Office",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "3506"
       },
@@ -5619,7 +5625,7 @@
         "name": "寶山街口(慈濟靜思堂)",
         "name_en": "Baoshan St. Intersection (Tzu Chi Meditation Hall)",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "3070"
       },
@@ -5639,7 +5645,7 @@
         "name": "福元街口",
         "name_en": "Fuyuan St. Intersection",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "3419"
       },
@@ -5659,7 +5665,7 @@
         "name": "民光東福元街口",
         "name_en": "Minguang E. Fuyuan St. Intersection",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6202"
       },
@@ -5679,7 +5685,7 @@
         "name": "民光東路",
         "name_en": "Minguang E. Rd.",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "3420"
       },
@@ -5699,7 +5705,7 @@
         "name": "大有民光東路口",
         "name_en": "Dayou & Minguang East Intersection",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "3423"
       },
@@ -5719,7 +5725,7 @@
         "name": "北區國稅局(大有路)",
         "name_en": "Northern Area, Ministry of Finance(Dayou Road)",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "5053"
       },
@@ -5739,7 +5745,7 @@
         "name": "桃園榮民醫院",
         "name_en": "TVGH, Taoyuan Branch",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "5017"
       },
@@ -5759,7 +5765,7 @@
         "name": "技訓中心",
         "name_en": "Technology - Vocation Training Center",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "4127"
       },
@@ -5779,7 +5785,7 @@
         "name": "桃園高中",
         "name_en": "National Taoyuan Senior High School",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "4054"
       },
@@ -5799,7 +5805,7 @@
         "name": "虎頭山創新園區",
         "name_en": "Hutoushan Innovation Hub",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "4211"
       },
@@ -5819,7 +5825,7 @@
         "name": "桃園巨蛋",
         "name_en": "Taoyuan Arena",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "5236"
       },
@@ -5839,7 +5845,7 @@
         "name": "頂興路口",
         "name_en": "Dingxing Road Intersection",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "3578"
       },
@@ -5859,7 +5865,7 @@
         "name": "拔仔埔",
         "name_en": "Bazipu",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "3586"
       },
@@ -5879,7 +5885,7 @@
         "name": "陸光二村",
         "name_en": "Luguang 2nd Village",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "3588"
       },
@@ -5899,7 +5905,7 @@
         "name": "萬壽中興路口",
         "name_en": "Wanshou Jhongsing Rd. Intersection",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "3590"
       },
@@ -5919,7 +5925,7 @@
         "name": "龜山",
         "name_en": "Guishan",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "3591"
       },
@@ -5939,7 +5945,7 @@
         "name": "龜山國中",
         "name_en": "Guishan Junior High School",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "5349"
       },
@@ -5959,7 +5965,7 @@
         "name": "長壽育英街口",
         "name_en": "Changshou Yuying St. Intersection",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "3791"
       },
@@ -5979,7 +5985,7 @@
         "name": "長壽長峰路口",
         "name_en": "ChangShou and ChangFong Rd. Intersection",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "5178"
       },
@@ -5999,7 +6005,7 @@
         "name": "長壽振興路口",
         "name_en": "ChangShou and JhenSing Rd. Intersection",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "5106"
       },
@@ -6019,7 +6025,7 @@
         "name": "半嶺一",
         "name_en": "Banling 1",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "929"
       },
@@ -6039,7 +6045,7 @@
         "name": "茶專路",
         "name_en": "Chazhuan Road",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "3354"
       },
@@ -6059,7 +6065,7 @@
         "name": "美和園社區",
         "name_en": "Meiheyuan Community",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "4657"
       },
@@ -6079,7 +6085,7 @@
         "name": "嶺頂",
         "name_en": "Lingding",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "4630"
       },
@@ -6099,7 +6105,7 @@
         "name": "壽山巖",
         "name_en": "Shoushanyen",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "4628"
       },
@@ -6119,7 +6125,7 @@
         "name": "六股",
         "name_en": "Liugu",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "4626"
       },
@@ -6139,7 +6145,7 @@
         "name": "東影",
         "name_en": "Dongying",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "4624"
       },
@@ -6159,7 +6165,7 @@
         "name": "南龍壽",
         "name_en": "Nanlongshou",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "4622"
       },
@@ -6179,7 +6185,7 @@
         "name": "尖山腳",
         "name_en": "Jianshanjiao",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "4620"
       },
@@ -6199,7 +6205,7 @@
         "name": "福惠寺",
         "name_en": "Fuhui Temple",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "4618"
       },
@@ -6219,7 +6225,7 @@
         "name": "龍壽里",
         "name_en": "Longshou Village",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "4616"
       },
@@ -6239,7 +6245,7 @@
         "name": "大慶蓮莊",
         "name_en": "Daqinglianzhuang",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "927"
       },
@@ -6259,7 +6265,7 @@
         "name": "龍華科技大學",
         "name_en": "Lunghwa University of Science and Technology",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "3362"
       },
@@ -6279,7 +6285,7 @@
         "name": "迴龍商場",
         "name_en": "Huilong Market",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "5184"
       },
@@ -6299,7 +6305,7 @@
         "name": "迴龍派出所",
         "name_en": "Huilong Police Station",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "4612"
       },
@@ -6319,7 +6325,7 @@
         "name": "捷運迴龍站",
         "name_en": "MRT Huilong Station",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "3364"
       },
@@ -6339,7 +6345,7 @@
         "name": "中正龍安路口",
         "name_en": "Zhongzheng-Longan Intersection",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6890"
       },
@@ -6359,7 +6365,7 @@
         "name": "丹鳳高中",
         "name_en": "Danfeng High School",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6891"
       },
@@ -6379,7 +6385,7 @@
         "name": "裕民國小",
         "name_en": "Yumin Elementary School",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6892"
       },
@@ -6399,7 +6405,7 @@
         "name": "俊興三龍街口",
         "name_en": "Junxing & Sanlong Intersection",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6893"
       },
@@ -6419,7 +6425,7 @@
         "name": "俊興街",
         "name_en": "Junxing St.",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6894"
       },
@@ -6439,7 +6445,7 @@
         "name": "俊興俊安街口",
         "name_en": "Junxing & Jun'an Intersection",
         "line": "608",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6895"
       },

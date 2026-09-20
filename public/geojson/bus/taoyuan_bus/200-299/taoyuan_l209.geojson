@@ -6,13 +6,14 @@
     "name": "L209",
     "name_en": "L209",
     "ref": "L209",
-    "color": "#b91c1c",
+    "color": "#b45309",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/6580/map/2100/image",
     "operator_id": "1",
     "operator": "桃園客運",
-    "operator_en": "Taoyuan Bus Co., Ltd."
+    "operator_en": "Taoyuan Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "L209",
         "name": "L209",
         "name_en": "L209",
-        "color": "#b91c1c",
-        "direction": 0
+        "color": "#b45309",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -699,6 +701,10 @@
           [
             121.22457,
             24.96534
+          ],
+          [
+            121.22459,
+            24.96544
           ]
         ]
       }
@@ -711,7 +717,7 @@
         "name": "中壢區公所",
         "name_en": "Zhongli District Office",
         "line": "L209",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "526"
       },
@@ -731,7 +737,7 @@
         "name": "南園二路",
         "name_en": "Nanyuan 2nd Rd.",
         "line": "L209",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "708"
       },
@@ -751,7 +757,7 @@
         "name": "曦園社區",
         "name_en": "Xiyuan Community",
         "line": "L209",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "709"
       },
@@ -771,7 +777,7 @@
         "name": "忠福國小",
         "name_en": "Jhongfu Elementary School",
         "line": "L209",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "711"
       },
@@ -791,7 +797,7 @@
         "name": "萬能科技大學",
         "name_en": "Vanung University",
         "line": "L209",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "269"
       },
@@ -811,7 +817,7 @@
         "name": "謝厝",
         "name_en": "Xiecuo",
         "line": "L209",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "264"
       },
@@ -831,7 +837,7 @@
         "name": "大江購物中心",
         "name_en": "Metrowalk Shoping Center",
         "line": "L209",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "262"
       },
@@ -851,7 +857,7 @@
         "name": "鄉界",
         "name_en": "Xiangjie",
         "line": "L209",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "260"
       },
@@ -871,7 +877,7 @@
         "name": "寶城",
         "name_en": "Baocheng",
         "line": "L209",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "257"
       },
@@ -891,7 +897,7 @@
         "name": "岡崎",
         "name_en": "Gangqi",
         "line": "L209",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "254"
       },
@@ -911,7 +917,7 @@
         "name": "青昇宮(青埔王公廟)",
         "name_en": "Qingsheng Temple",
         "line": "L209",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "716"
       },
@@ -931,7 +937,7 @@
         "name": "青昇一街口",
         "name_en": "Qingsheng 1st St. Intersection",
         "line": "L209",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "717"
       },
@@ -951,7 +957,7 @@
         "name": "高鐵桃園站(3號出口)",
         "name_en": "THSR,Taoyuan Station",
         "line": "L209",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "719"
       },
@@ -971,7 +977,7 @@
         "name": "青埔國小",
         "name_en": "Qingpu Elementary School",
         "line": "L209",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6704"
       },
@@ -991,7 +997,7 @@
         "name": "廣天寺",
         "name_en": "Guangtian Temple",
         "line": "L209",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6393"
       },
@@ -1011,7 +1017,7 @@
         "name": "同心公園",
         "name_en": "Tongxin Park",
         "line": "L209",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "724"
       },
@@ -1031,7 +1037,7 @@
         "name": "青埔五街口",
         "name_en": "Qingpu 5th St. Intersection",
         "line": "L209",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "725"
       },
@@ -1051,7 +1057,7 @@
         "name": "M+社區",
         "name_en": "M+ Community",
         "line": "L209",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "726"
       },
@@ -1071,7 +1077,7 @@
         "name": "高鐵站前公園",
         "name_en": "Gaotiezhanqian Park",
         "line": "L209",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "727"
       },
@@ -1091,7 +1097,7 @@
         "name": "青昇宮(青埔王公廟)",
         "name_en": "Qingsheng Temple",
         "line": "L209",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6938"
       },
@@ -1111,7 +1117,7 @@
         "name": "岡崎",
         "name_en": "Gangqi",
         "line": "L209",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "253"
       },
@@ -1131,7 +1137,7 @@
         "name": "寶城",
         "name_en": "Baocheng",
         "line": "L209",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "258"
       },
@@ -1151,7 +1157,7 @@
         "name": "鄉界",
         "name_en": "Xiangjie",
         "line": "L209",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "259"
       },
@@ -1171,7 +1177,7 @@
         "name": "大江購物中心",
         "name_en": "Metrowalk Shoping Center",
         "line": "L209",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "261"
       },
@@ -1191,7 +1197,7 @@
         "name": "謝厝",
         "name_en": "Xiecuo",
         "line": "L209",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "263"
       },
@@ -1211,7 +1217,7 @@
         "name": "萬能科技大學",
         "name_en": "Vanung University",
         "line": "L209",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "268"
       },
@@ -1231,7 +1237,7 @@
         "name": "忠福國小",
         "name_en": "Jhongfu Elementary School",
         "line": "L209",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "7030"
       },
@@ -1251,7 +1257,7 @@
         "name": "曦園社區",
         "name_en": "Xiyuan Community",
         "line": "L209",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "710"
       },
@@ -1271,7 +1277,7 @@
         "name": "南園二路",
         "name_en": "Nanyuan 2nd Rd.",
         "line": "L209",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "707"
       },
@@ -1291,7 +1297,7 @@
         "name": "中壢區公所",
         "name_en": "Civil Affairs Office of Zhongli District",
         "line": "L209",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "527"
       },

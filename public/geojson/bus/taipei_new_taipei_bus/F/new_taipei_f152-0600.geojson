@@ -6,13 +6,14 @@
     "name": "F152-0600",
     "name_en": "F152-0600",
     "ref": "F152-0600",
-    "color": "#0B7A3E",
+    "color": "#6B8F9A",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.gov.taipei/File/Get/A140CE1F-92EF-4711-8E1F-8989B0C540E8?v=639248448788654109",
     "operator_id": "16231",
     "operator": "石門區公所",
-    "operator_en": "Shimen District Office"
+    "operator_en": "Shimen District Office",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "F152-0600",
         "name": "F152-0600",
         "name_en": "F152-0600",
-        "color": "#0B7A3E",
-        "direction": 0
+        "color": "#6B8F9A",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1051,6 +1053,10 @@
           [
             121.545898019183,
             25.2892027085543
+          ],
+          [
+            121.54589076696,
+            25.2892418705628
           ]
         ]
       }
@@ -1063,7 +1069,7 @@
         "name": "老梅",
         "name_en": "Laomei",
         "line": "F152-0600",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75539"
       },
@@ -1083,7 +1089,7 @@
         "name": "白沙灣",
         "name_en": "Baisha Bay",
         "line": "F152-0600",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75486"
       },
@@ -1103,7 +1109,7 @@
         "name": "嘉祿工業",
         "name_en": "Karo's Industria",
         "line": "F152-0600",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75402"
       },
@@ -1123,7 +1129,7 @@
         "name": "德茂",
         "name_en": "Demao",
         "line": "F152-0600",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75502"
       },
@@ -1143,7 +1149,7 @@
         "name": "白沙灣",
         "name_en": "Baisha Bay",
         "line": "F152-0600",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75485"
       },
@@ -1163,7 +1169,7 @@
         "name": "富基漁港",
         "name_en": "Fuji Fishing Harbor",
         "line": "F152-0600",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75497"
       },
@@ -1183,7 +1189,7 @@
         "name": "崁子腳",
         "name_en": "Kanzijiao",
         "line": "F152-0600",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75512"
       },
@@ -1203,7 +1209,7 @@
         "name": "富貴角燈塔",
         "name_en": "Fugui Cape Lighthouse",
         "line": "F152-0600",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75506"
       },
@@ -1223,7 +1229,7 @@
         "name": "老梅",
         "name_en": "Laomei",
         "line": "F152-0600",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75538"
       },

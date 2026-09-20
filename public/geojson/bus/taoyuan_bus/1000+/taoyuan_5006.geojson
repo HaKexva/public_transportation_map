@@ -6,13 +6,14 @@
     "name": "5006",
     "name_en": "5006",
     "ref": "5006",
-    "color": "#b91c1c",
+    "color": "#b45309",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/5006/map/2003/image",
     "operator_id": "1",
     "operator": "桃園客運",
-    "operator_en": "Taoyuan Bus Co., Ltd."
+    "operator_en": "Taoyuan Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "5006",
         "name": "5006",
         "name_en": "5006",
-        "color": "#b91c1c",
-        "direction": 0
+        "color": "#b45309",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -423,6 +425,10 @@
           [
             121.22395,
             24.95299
+          ],
+          [
+            121.22398,
+            24.95306
           ]
         ]
       }
@@ -435,7 +441,7 @@
         "name": "中壢總站",
         "name_en": "Zhongli Bus Terminal",
         "line": "5006",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4123"
       },
@@ -455,7 +461,7 @@
         "name": "第一銀行",
         "name_en": "First Bank",
         "line": "5006",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "124"
       },
@@ -475,7 +481,7 @@
         "name": "第一市場",
         "name_en": "First Market",
         "line": "5006",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1402"
       },
@@ -495,7 +501,7 @@
         "name": "義民路口",
         "name_en": "Yimin Road Intersection",
         "line": "5006",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4546"
       },
@@ -515,7 +521,7 @@
         "name": "消防隊",
         "name_en": "Fire Brigade",
         "line": "5006",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4548"
       },
@@ -535,7 +541,7 @@
         "name": "育達路口",
         "name_en": "Yuda Road Intersection",
         "line": "5006",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4550"
       },
@@ -555,7 +561,7 @@
         "name": "育達高中",
         "name_en": "Yuda High School",
         "line": "5006",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2414"
       },
@@ -575,7 +581,7 @@
         "name": "大伯公",
         "name_en": "Dabogong",
         "line": "5006",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2421"
       },
@@ -595,7 +601,7 @@
         "name": "復旦集會所",
         "name_en": "Fudan United Meeting Office",
         "line": "5006",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3035"
       },
@@ -615,7 +621,7 @@
         "name": "文化國小",
         "name_en": "Wenhua Elementary School",
         "line": "5006",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3022"
       },
@@ -635,7 +641,7 @@
         "name": "復旦中學",
         "name_en": "Fudan High School",
         "line": "5006",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2423"
       },
@@ -655,7 +661,7 @@
         "name": "上中原",
         "name_en": "Shangzhongyuan",
         "line": "5006",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4552"
       },
@@ -675,7 +681,7 @@
         "name": "下中原",
         "name_en": "Xiazhongyuan",
         "line": "5006",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4554"
       },
@@ -695,7 +701,7 @@
         "name": "復旦新村",
         "name_en": "Fudan Village",
         "line": "5006",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3116"
       },
@@ -715,7 +721,7 @@
         "name": "七星工廠",
         "name_en": "Qixing Factory",
         "line": "5006",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4556"
       },
@@ -735,7 +741,7 @@
         "name": "高山下",
         "name_en": "Gaoshanxia",
         "line": "5006",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3118"
       },
@@ -755,7 +761,7 @@
         "name": "高山下",
         "name_en": "Gaoshanxia",
         "line": "5006",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3119"
       },
@@ -775,7 +781,7 @@
         "name": "七星工廠",
         "name_en": "Qixing Factory",
         "line": "5006",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4557"
       },
@@ -795,7 +801,7 @@
         "name": "復旦新村",
         "name_en": "Fudan Village",
         "line": "5006",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3117"
       },
@@ -815,7 +821,7 @@
         "name": "下中原",
         "name_en": "Xiazhongyuan",
         "line": "5006",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4555"
       },
@@ -835,7 +841,7 @@
         "name": "上中原",
         "name_en": "Shangzhongyuan",
         "line": "5006",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4553"
       },
@@ -855,7 +861,7 @@
         "name": "復旦中學",
         "name_en": "Fudan High School",
         "line": "5006",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2424"
       },
@@ -875,7 +881,7 @@
         "name": "文化國小",
         "name_en": "Wenhua Elementary School",
         "line": "5006",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3021"
       },
@@ -895,7 +901,7 @@
         "name": "復旦集會所",
         "name_en": "Fudan United Meeting Office",
         "line": "5006",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3036"
       },
@@ -915,7 +921,7 @@
         "name": "大伯公",
         "name_en": "Dabogong",
         "line": "5006",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2422"
       },
@@ -935,7 +941,7 @@
         "name": "育達高中",
         "name_en": "Yuda High School",
         "line": "5006",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2413"
       },
@@ -955,7 +961,7 @@
         "name": "育達路口",
         "name_en": "Yuda Road Intersection",
         "line": "5006",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4551"
       },
@@ -975,7 +981,7 @@
         "name": "消防隊",
         "name_en": "Fire Brigade",
         "line": "5006",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4549"
       },
@@ -995,7 +1001,7 @@
         "name": "義民路口",
         "name_en": "Yimin Road Intersection",
         "line": "5006",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4547"
       },
@@ -1015,7 +1021,7 @@
         "name": "第一銀行",
         "name_en": "First Bank",
         "line": "5006",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "125"
       },

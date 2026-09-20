@@ -6,13 +6,14 @@
     "name": "5009",
     "name_en": "5009",
     "ref": "5009",
-    "color": "#b91c1c",
+    "color": "#b45309",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/5009/map/2245/image",
     "operator_id": "1",
     "operator": "桃園客運",
-    "operator_en": "Taoyuan Bus Co., Ltd."
+    "operator_en": "Taoyuan Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "5009",
         "name": "5009",
         "name_en": "5009",
-        "color": "#b91c1c",
-        "direction": 0
+        "color": "#b45309",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -3467,6 +3469,10 @@
           [
             121.31105,
             24.98986
+          ],
+          [
+            121.31091,
+            24.98982
           ]
         ]
       }
@@ -3479,7 +3485,7 @@
         "name": "桃花園飯店",
         "name_en": "Tao Garden Hotel",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1948"
       },
@@ -3499,7 +3505,7 @@
         "name": "復興橋",
         "name_en": "Fuxing Bridge",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2335"
       },
@@ -3519,7 +3525,7 @@
         "name": "東山里",
         "name_en": "DungShan Village",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3503"
       },
@@ -3539,7 +3545,7 @@
         "name": "萬壽山鶯路口",
         "name_en": "Wanshou Shanying Rd. Intersection",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3884"
       },
@@ -3559,7 +3565,7 @@
         "name": "青果中心",
         "name_en": "Cingguo Fruits Center",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3577"
       },
@@ -3579,7 +3585,7 @@
         "name": "頂興路口",
         "name_en": "Dingxing Road Intersection",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3578"
       },
@@ -3599,7 +3605,7 @@
         "name": "拔仔埔",
         "name_en": "Bazipu",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3586"
       },
@@ -3619,7 +3625,7 @@
         "name": "陸光二村",
         "name_en": "Luguang 2nd Village",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3588"
       },
@@ -3639,7 +3645,7 @@
         "name": "萬壽中興路口",
         "name_en": "Wanshou Jhongsing Rd. Intersection",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3590"
       },
@@ -3659,7 +3665,7 @@
         "name": "龜山",
         "name_en": "Guishan",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3591"
       },
@@ -3679,7 +3685,7 @@
         "name": "壽山",
         "name_en": "Shoushan",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2961"
       },
@@ -3699,7 +3705,7 @@
         "name": "地磅",
         "name_en": "Dibang",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "931"
       },
@@ -3719,7 +3725,7 @@
         "name": "太子地球村",
         "name_en": "Taizidiqiucun",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4299"
       },
@@ -3739,7 +3745,7 @@
         "name": "半嶺",
         "name_en": "Banling",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4632"
       },
@@ -3759,7 +3765,7 @@
         "name": "半嶺一",
         "name_en": "Banling 1",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "929"
       },
@@ -3779,7 +3785,7 @@
         "name": "茶專路",
         "name_en": "Chazhuan Road",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3354"
       },
@@ -3799,7 +3805,7 @@
         "name": "美和園社區",
         "name_en": "Meiheyuan Community",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4657"
       },
@@ -3819,7 +3825,7 @@
         "name": "嶺頂",
         "name_en": "Lingding",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4630"
       },
@@ -3839,7 +3845,7 @@
         "name": "壽山巖",
         "name_en": "Shoushanyen",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4628"
       },
@@ -3859,7 +3865,7 @@
         "name": "六股",
         "name_en": "Liugu",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4626"
       },
@@ -3879,7 +3885,7 @@
         "name": "東影",
         "name_en": "Dongying",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4624"
       },
@@ -3899,7 +3905,7 @@
         "name": "南龍壽",
         "name_en": "Nanlongshou",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4622"
       },
@@ -3919,7 +3925,7 @@
         "name": "尖山腳",
         "name_en": "Jianshanjiao",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4620"
       },
@@ -3939,7 +3945,7 @@
         "name": "福惠寺",
         "name_en": "Fuhui Temple",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4618"
       },
@@ -3959,7 +3965,7 @@
         "name": "龍壽里",
         "name_en": "Longshou Village",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4616"
       },
@@ -3979,7 +3985,7 @@
         "name": "大慶連莊",
         "name_en": "Daqinglianzhuang",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4614"
       },
@@ -3999,7 +4005,7 @@
         "name": "龍華科技大學",
         "name_en": "Lunghwa University of Science and Technology",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3362"
       },
@@ -4019,7 +4025,7 @@
         "name": "迴龍商場",
         "name_en": "Huilong Market",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5184"
       },
@@ -4039,7 +4045,7 @@
         "name": "迴龍派出所",
         "name_en": "Huilong Police Station",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4612"
       },
@@ -4059,7 +4065,7 @@
         "name": "捷運迴龍站",
         "name_en": "MRT Huilong Station",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3364"
       },
@@ -4079,7 +4085,7 @@
         "name": "丹鳳國小(新北大道)",
         "name_en": "Danfeng Elementary School",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6559"
       },
@@ -4099,7 +4105,7 @@
         "name": "鳳山街口",
         "name_en": "Fengshan St. Entrance",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4729"
       },
@@ -4119,7 +4125,7 @@
         "name": "青山路口",
         "name_en": "Qingshan Rd. Intersection",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5352"
       },
@@ -4139,7 +4145,7 @@
         "name": "新北大道(天祥街口)",
         "name_en": "New Taipei Blvd(Tiansiang St. Intersection)",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3826"
       },
@@ -4159,7 +4165,7 @@
         "name": "新北大道壽山路口",
         "name_en": "New Taipei Blvd., Shoushan Rd. Entrance",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6921"
       },
@@ -4179,7 +4185,7 @@
         "name": "捷運泰山貴和站(明志路)",
         "name_en": "MRT Taishan Guihe Station (Mingzhi Road)",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6219"
       },
@@ -4199,7 +4205,7 @@
         "name": "捷運泰山貴和站(貴陽街)",
         "name_en": "MRT Taishan Guihe Station(Guiyang St.)",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6220"
       },
@@ -4219,7 +4225,7 @@
         "name": "丹鳳一",
         "name_en": "Danfong 1",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1736"
       },
@@ -4239,7 +4245,7 @@
         "name": "雙鳳富國路口",
         "name_en": "Shunagfeng Fuguo Rd.",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6043"
       },
@@ -4259,7 +4265,7 @@
         "name": "丹鳳國小",
         "name_en": "Danfeng Elementary School",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5110"
       },
@@ -4279,7 +4285,7 @@
         "name": "捷運迴龍站",
         "name_en": "MRT Huilong Station",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6923"
       },
@@ -4299,7 +4305,7 @@
         "name": "迴龍派出所",
         "name_en": "Huilong Police Station",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4611"
       },
@@ -4319,7 +4325,7 @@
         "name": "迴龍商場",
         "name_en": "Huilong Market",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5185"
       },
@@ -4339,7 +4345,7 @@
         "name": "龍華科技大學",
         "name_en": "Lunghwa University of Science and Technology",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3363"
       },
@@ -4359,7 +4365,7 @@
         "name": "大慶連莊",
         "name_en": "Daqinglianzhuang",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4613"
       },
@@ -4379,7 +4385,7 @@
         "name": "龍壽里",
         "name_en": "Longshou Village",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4615"
       },
@@ -4399,7 +4405,7 @@
         "name": "福惠寺",
         "name_en": "Fuhui Temple",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4617"
       },
@@ -4419,7 +4425,7 @@
         "name": "尖山腳",
         "name_en": "Jianshanjiao",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4619"
       },
@@ -4439,7 +4445,7 @@
         "name": "南龍壽",
         "name_en": "Nanlongshou",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4621"
       },
@@ -4459,7 +4465,7 @@
         "name": "東影",
         "name_en": "Dongying",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4623"
       },
@@ -4479,7 +4485,7 @@
         "name": "六股",
         "name_en": "Liugu",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4625"
       },
@@ -4499,7 +4505,7 @@
         "name": "壽山巖",
         "name_en": "Shoushanyen",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4627"
       },
@@ -4519,7 +4525,7 @@
         "name": "嶺頂",
         "name_en": "Lingding",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4629"
       },
@@ -4539,7 +4545,7 @@
         "name": "美和園社區",
         "name_en": "Meiheyuan Community",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4658"
       },
@@ -4559,7 +4565,7 @@
         "name": "茶專路",
         "name_en": "Chazhuan Road",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3355"
       },
@@ -4579,7 +4585,7 @@
         "name": "半嶺",
         "name_en": "Banling",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4631"
       },
@@ -4599,7 +4605,7 @@
         "name": "地磅",
         "name_en": "Dibang",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "930"
       },
@@ -4619,7 +4625,7 @@
         "name": "壽山",
         "name_en": "Shoushan",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2960"
       },
@@ -4639,7 +4645,7 @@
         "name": "龜山",
         "name_en": "Guishan",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6288"
       },
@@ -4659,7 +4665,7 @@
         "name": "萬壽中興路口",
         "name_en": "Wanshou Jhongsing Rd. Intersection",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3592"
       },
@@ -4679,7 +4685,7 @@
         "name": "陸光二村",
         "name_en": "Luguang 2nd Village",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3589"
       },
@@ -4699,7 +4705,7 @@
         "name": "拔仔埔",
         "name_en": "Bazipu",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3587"
       },
@@ -4719,7 +4725,7 @@
         "name": "頂興路口",
         "name_en": "Dingxing Road Intersection",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3579"
       },
@@ -4739,7 +4745,7 @@
         "name": "萬壽山鶯路口",
         "name_en": "Wanshou Shanying Rd. Intersection",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3883"
       },
@@ -4759,7 +4765,7 @@
         "name": "東山里",
         "name_en": "Dongshan Village",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3504"
       },
@@ -4779,7 +4785,7 @@
         "name": "桃花園飯店",
         "name_en": "Tao Garden Hotel",
         "line": "5009",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1949"
       },

@@ -196,10 +196,7 @@ module Geojson
     end
 
     def manifest_bus
-      path = Rails.root.join("public/geojson/routes.json")
-      return [] unless path.exist?
-
-      JSON.parse(File.read(path)).fetch("bus", [])
+      Geojson::RoutesManifestWriter.bus_entries
     end
 
     def write_reports!(report)

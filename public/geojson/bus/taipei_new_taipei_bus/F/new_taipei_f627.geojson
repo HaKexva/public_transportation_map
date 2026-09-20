@@ -6,13 +6,14 @@
     "name": "F627",
     "name_en": "F627",
     "ref": "F627",
-    "color": "#3f6212",
+    "color": "#6B8F9A",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.gov.taipei/File/Get/e0538f84-b645-45c1-811d-b689d2dcdb4b?v=639248448811646842",
     "operator_id": "16243",
     "operator": "三峽區公所",
-    "operator_en": "Sanxia District Office"
+    "operator_en": "Sanxia District Office",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "F627",
         "name": "F627",
         "name_en": "F627",
-        "color": "#3f6212",
-        "direction": 0
+        "color": "#6B8F9A",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -2651,6 +2653,10 @@
           [
             121.36887947167,
             24.9359918323397
+          ],
+          [
+            121.368893546154,
+            24.9359517741922
           ]
         ]
       }
@@ -2663,7 +2669,7 @@
         "name": "三峽國小(三峽國民運動中心)",
         "name_en": "Sanxia Elementary School(Sanxia Civil Sports Center)",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3267"
       },
@@ -2683,7 +2689,7 @@
         "name": "新興街口",
         "name_en": "Xinxing St. Entrance",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "18009"
       },
@@ -2703,7 +2709,7 @@
         "name": "三峽老街(民生街)",
         "name_en": "Sanxia Old St.(Minsheng St.)",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3263"
       },
@@ -2723,7 +2729,7 @@
         "name": "三峽區農會",
         "name_en": "Sanxia Farmers Association",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72710"
       },
@@ -2743,7 +2749,7 @@
         "name": "長泰街(長泰街41巷口)",
         "name_en": "Changtai St. (Lane 41 Changtai St.)",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72783"
       },
@@ -2763,7 +2769,7 @@
         "name": "介壽國小",
         "name_en": "Jieshou Elementary School",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165606457"
       },
@@ -2783,7 +2789,7 @@
         "name": "礁溪行政大樓",
         "name_en": "Jiaoxi Admin. Building",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72829"
       },
@@ -2803,7 +2809,7 @@
         "name": "光明路永安街口",
         "name_en": "Guangming & Yongan Intersection",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165609397"
       },
@@ -2823,7 +2829,7 @@
         "name": "永安街186巷口",
         "name_en": "Zhongyang Community",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165609405"
       },
@@ -2843,7 +2849,7 @@
         "name": "安溪國中",
         "name_en": "Anxi Junior High School",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72927"
       },
@@ -2863,7 +2869,7 @@
         "name": "台塑",
         "name_en": "Formosa Plastic Co.",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72903"
       },
@@ -2883,7 +2889,7 @@
         "name": "福華電子",
         "name_en": "Fuhua Electronics Company",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603741"
       },
@@ -2903,7 +2909,7 @@
         "name": "溪墘",
         "name_en": "XiQian",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73007"
       },
@@ -2923,7 +2929,7 @@
         "name": "車寮",
         "name_en": "Cheliao",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72944"
       },
@@ -2943,7 +2949,7 @@
         "name": "中正路二段",
         "name_en": "Zhongzheng Rd. Sec. 2",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72880"
       },
@@ -2963,7 +2969,7 @@
         "name": "大埔路中正路口",
         "name_en": "Dapu & Zhongzheng Intersection",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603738"
       },
@@ -2983,7 +2989,7 @@
         "name": "大埔路口",
         "name_en": "Dapu Rd. Entrance",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72866"
       },
@@ -3003,7 +3009,7 @@
         "name": "大埔國小",
         "name_en": "Dapu Elementary School",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72864"
       },
@@ -3023,7 +3029,7 @@
         "name": "苗圃",
         "name_en": "Miaopu",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72973"
       },
@@ -3043,7 +3049,7 @@
         "name": "二橋",
         "name_en": "Erqiao",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72835"
       },
@@ -3063,7 +3069,7 @@
         "name": "陽明區",
         "name_en": "Yangming Campus",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73001"
       },
@@ -3083,7 +3089,7 @@
         "name": "春暉學苑",
         "name_en": "Chunhui Xueyuan",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72965"
       },
@@ -3103,7 +3109,7 @@
         "name": "互助橋",
         "name_en": "Huzhu Bridge",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72895"
       },
@@ -3123,7 +3129,7 @@
         "name": "濟公廟路口",
         "name_en": "Jigong Temple Entrance",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72827"
       },
@@ -3143,7 +3149,7 @@
         "name": "合作橋",
         "name_en": "Hezuo Bridge",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72924"
       },
@@ -3163,7 +3169,7 @@
         "name": "醒心橋",
         "name_en": "Xingxin Bridge",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73020"
       },
@@ -3183,7 +3189,7 @@
         "name": "湊合",
         "name_en": "Couhe Bridge",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72998"
       },
@@ -3203,7 +3209,7 @@
         "name": "金敏橋",
         "name_en": "Jinmin Bridge",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72959"
       },
@@ -3223,7 +3229,7 @@
         "name": "五寮4號",
         "name_en": "No.4 Wuliao",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72896"
       },
@@ -3243,7 +3249,7 @@
         "name": "歡樂谷",
         "name_en": "Huanlegu",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73033"
       },
@@ -3263,7 +3269,7 @@
         "name": "菜園地",
         "name_en": "Caiyuandi",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73000"
       },
@@ -3283,7 +3289,7 @@
         "name": "增產橋",
         "name_en": "Zengchan Bridge",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73017"
       },
@@ -3303,7 +3309,7 @@
         "name": "鐘鼎山林",
         "name_en": "Zhongding Shanlin",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73030"
       },
@@ -3323,7 +3329,7 @@
         "name": "富國橋",
         "name_en": "Fuguo Bridge",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72989"
       },
@@ -3343,7 +3349,7 @@
         "name": "十間厝",
         "name_en": "Shijiancuo",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72843"
       },
@@ -3363,7 +3369,7 @@
         "name": "土地公廟",
         "name_en": "Tudigong Temple",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72847"
       },
@@ -3383,7 +3389,7 @@
         "name": "五寮國小",
         "name_en": "Wuliao Elementary School",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72897"
       },
@@ -3403,7 +3409,7 @@
         "name": "尚義橋",
         "name_en": "Shangyi Bridge",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165610475"
       },
@@ -3423,7 +3429,7 @@
         "name": "吊橋頭",
         "name_en": "Diaoqiaotou",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75690"
       },
@@ -3443,7 +3449,7 @@
         "name": "向天坡",
         "name_en": "Xiangtianpo",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75691"
       },
@@ -3463,7 +3469,7 @@
         "name": "新峰",
         "name_en": "Xinfeng",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75693"
       },
@@ -3483,7 +3489,7 @@
         "name": "五寮15鄰",
         "name_en": "Wuliao",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75689"
       },
@@ -3503,7 +3509,7 @@
         "name": "新峰",
         "name_en": "Xinfeng",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75693"
       },
@@ -3523,7 +3529,7 @@
         "name": "向天坡",
         "name_en": "Xiangtianpo",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75691"
       },
@@ -3543,7 +3549,7 @@
         "name": "吊橋頭",
         "name_en": "Diaoqiaotou",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75690"
       },
@@ -3563,7 +3569,7 @@
         "name": "尚義橋",
         "name_en": "Shangyi Bridge",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75692"
       },
@@ -3583,7 +3589,7 @@
         "name": "五寮國小",
         "name_en": "Wuliao Elementary School",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72897"
       },
@@ -3603,7 +3609,7 @@
         "name": "土地公廟",
         "name_en": "Tudigong Temple",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72847"
       },
@@ -3623,7 +3629,7 @@
         "name": "十間厝",
         "name_en": "Shijiancuo",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72843"
       },
@@ -3643,7 +3649,7 @@
         "name": "富國橋",
         "name_en": "Fuguo Bridge",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72989"
       },
@@ -3663,7 +3669,7 @@
         "name": "鐘鼎山林",
         "name_en": "Zhongding Shanlin",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73030"
       },
@@ -3683,7 +3689,7 @@
         "name": "增產橋",
         "name_en": "Zengchan Bridge",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73017"
       },
@@ -3703,7 +3709,7 @@
         "name": "菜園地",
         "name_en": "Caiyuandi",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73000"
       },
@@ -3723,7 +3729,7 @@
         "name": "歡樂谷",
         "name_en": "Huanlegu",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73033"
       },
@@ -3743,7 +3749,7 @@
         "name": "五寮4號",
         "name_en": "No.4 Wuliao",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72896"
       },
@@ -3763,7 +3769,7 @@
         "name": "金敏橋",
         "name_en": "Jinmin Bridge",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72959"
       },
@@ -3783,7 +3789,7 @@
         "name": "湊合",
         "name_en": "Couhe",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72997"
       },
@@ -3803,7 +3809,7 @@
         "name": "醒心橋",
         "name_en": "Xingxin Bridge",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73019"
       },
@@ -3823,7 +3829,7 @@
         "name": "合作橋",
         "name_en": "Hezuo Bridge",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72923"
       },
@@ -3843,7 +3849,7 @@
         "name": "濟公廟路口",
         "name_en": "Jigong Temple Entrance",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72827"
       },
@@ -3863,7 +3869,7 @@
         "name": "互助橋",
         "name_en": "Huzhu Bridge",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72894"
       },
@@ -3883,7 +3889,7 @@
         "name": "春暉學苑",
         "name_en": "Chunhui Xueyuan",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72965"
       },
@@ -3903,7 +3909,7 @@
         "name": "陽明區",
         "name_en": "Yangming Campus",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73002"
       },
@@ -3923,7 +3929,7 @@
         "name": "二橋",
         "name_en": "Erqiao",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72836"
       },
@@ -3943,7 +3949,7 @@
         "name": "苗圃",
         "name_en": "Miaopu",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72972"
       },
@@ -3963,7 +3969,7 @@
         "name": "大埔國小",
         "name_en": "Dapu Elementary School",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72865"
       },
@@ -3983,7 +3989,7 @@
         "name": "大埔路口",
         "name_en": "Dapu Rd. Entrance",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72866"
       },
@@ -4003,7 +4009,7 @@
         "name": "大埔路中正路口",
         "name_en": "Dapu & Zhongzheng Intersection",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72867"
       },
@@ -4023,7 +4029,7 @@
         "name": "中正路二段",
         "name_en": "Zhongzheng Rd. Sec. 2",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72879"
       },
@@ -4043,7 +4049,7 @@
         "name": "車寮",
         "name_en": "Cheliao",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72943"
       },
@@ -4063,7 +4069,7 @@
         "name": "溪墘",
         "name_en": "XiQian",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73006"
       },
@@ -4083,7 +4089,7 @@
         "name": "福華電子",
         "name_en": "Fuhua Electronics Company",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73015"
       },
@@ -4103,7 +4109,7 @@
         "name": "台塑",
         "name_en": "Formosa Plastic Co.",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72902"
       },
@@ -4123,7 +4129,7 @@
         "name": "安溪國中",
         "name_en": "Anxi Junior High School",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3287"
       },
@@ -4143,7 +4149,7 @@
         "name": "永安街186巷口",
         "name_en": "Zhongyang Community",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165609404"
       },
@@ -4163,7 +4169,7 @@
         "name": "光明路永安街口",
         "name_en": "Guangming & Yongan Intersection",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72917"
       },
@@ -4183,7 +4189,7 @@
         "name": "礁溪行政大樓",
         "name_en": "Jiaoxi Admin. Building",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72829"
       },
@@ -4203,7 +4209,7 @@
         "name": "介壽國小",
         "name_en": "Jieshou Elementary School",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165606458"
       },
@@ -4223,7 +4229,7 @@
         "name": "長泰街(長泰街41巷口)",
         "name_en": "Changtai St. (Lane 41 Changtai St.)",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72783"
       },
@@ -4243,7 +4249,7 @@
         "name": "三峽區農會",
         "name_en": "Sanxia Farmers Association",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165609385"
       },
@@ -4263,7 +4269,7 @@
         "name": "三峽老街(民生街)",
         "name_en": "Sanxia Old St.(Minsheng St.)",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3263"
       },
@@ -4283,7 +4289,7 @@
         "name": "新興街口",
         "name_en": "Xinxing St. Entrance",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3300"
       },
@@ -4303,7 +4309,7 @@
         "name": "三峽國小(三峽國民運動中心)",
         "name_en": "Sanxia Elementary School(Sanxia Civil Sports Center)",
         "line": "F627",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3266"
       },

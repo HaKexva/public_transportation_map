@@ -6,13 +6,14 @@
     "name": "19繞復國墩峰上回程不繞料羅新頭",
     "name_en": "19繞復國墩峰上回程不繞料羅新頭",
     "ref": "19繞復國墩峰上回程不繞料羅新頭",
-    "color": "#86198f",
+    "color": "#3730a3",
     "city_id": "KinmenCounty",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.kinmen.gov.tw/api/route/193/map/260/image",
     "operator_id": "0001",
     "operator": "金門",
-    "operator_en": "City Bus and Ferry Management Office, Kinmen County"
+    "operator_en": "City Bus and Ferry Management Office, Kinmen County",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "19繞復國墩峰上回程不繞料羅新頭",
         "name": "19繞復國墩峰上回程不繞料羅新頭",
         "name_en": "19繞復國墩峰上回程不繞料羅新頭",
-        "color": "#86198f",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -551,6 +553,10 @@
           [
             118.41399,
             24.44246
+          ],
+          [
+            118.41381,
+            24.44218
           ]
         ]
       }
@@ -563,7 +569,7 @@
         "name": "山外站",
         "name_en": "Shanwai Station",
         "line": "19繞復國墩峰上回程不繞料羅新頭",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "29"
       },
@@ -583,7 +589,7 @@
         "name": "武德新莊",
         "name_en": "Wude Xinzhuang",
         "line": "19繞復國墩峰上回程不繞料羅新頭",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "30"
       },
@@ -603,7 +609,7 @@
         "name": "市港路",
         "name_en": "Shigang Road",
         "line": "19繞復國墩峰上回程不繞料羅新頭",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "992"
       },
@@ -623,7 +629,7 @@
         "name": "信義新村",
         "name_en": "Sinyi New Residential Quarter",
         "line": "19繞復國墩峰上回程不繞料羅新頭",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "581"
       },
@@ -643,7 +649,7 @@
         "name": "前港路口",
         "name_en": "Qiangang Rd. Entrance",
         "line": "19繞復國墩峰上回程不繞料羅新頭",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "582"
       },
@@ -663,7 +669,7 @@
         "name": "新頭",
         "name_en": "Xintou",
         "line": "19繞復國墩峰上回程不繞料羅新頭",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "583"
       },
@@ -683,7 +689,7 @@
         "name": "花崗石廠",
         "name_en": "Granite Works",
         "line": "19繞復國墩峰上回程不繞料羅新頭",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "584"
       },
@@ -703,7 +709,7 @@
         "name": "裕祺工廠",
         "name_en": "YuQi Factory",
         "line": "19繞復國墩峰上回程不繞料羅新頭",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "585"
       },
@@ -723,7 +729,7 @@
         "name": "料羅圓環(金港路)",
         "name_en": "Liaoluo Cirque",
         "line": "19繞復國墩峰上回程不繞料羅新頭",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "586"
       },
@@ -743,7 +749,7 @@
         "name": "媽祖廟",
         "name_en": "MaZu Temple",
         "line": "19繞復國墩峰上回程不繞料羅新頭",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "587"
       },
@@ -763,7 +769,7 @@
         "name": "料羅",
         "name_en": "Liaoluo ",
         "line": "19繞復國墩峰上回程不繞料羅新頭",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "588"
       },
@@ -783,7 +789,7 @@
         "name": "港警所",
         "name_en": "Harbor Police Office",
         "line": "19繞復國墩峰上回程不繞料羅新頭",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "589"
       },
@@ -803,7 +809,7 @@
         "name": "南石滬公園",
         "name_en": "Mining District",
         "line": "19繞復國墩峰上回程不繞料羅新頭",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "590"
       },
@@ -823,7 +829,7 @@
         "name": "料羅新村",
         "name_en": "Liaoluo Xincun",
         "line": "19繞復國墩峰上回程不繞料羅新頭",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "591"
       },
@@ -843,7 +849,7 @@
         "name": "新塘",
         "name_en": "Xintang",
         "line": "19繞復國墩峰上回程不繞料羅新頭",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "592"
       },
@@ -863,7 +869,7 @@
         "name": "庵邊(四維路)",
         "name_en": "Anbian",
         "line": "19繞復國墩峰上回程不繞料羅新頭",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "614"
       },
@@ -883,7 +889,7 @@
         "name": "土樓",
         "name_en": "Tulou",
         "line": "19繞復國墩峰上回程不繞料羅新頭",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "615"
       },
@@ -903,7 +909,7 @@
         "name": "東村",
         "name_en": "Dongcun",
         "line": "19繞復國墩峰上回程不繞料羅新頭",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "616"
       },
@@ -923,7 +929,7 @@
         "name": "峰上路口",
         "name_en": "Fengshang Rd.",
         "line": "19繞復國墩峰上回程不繞料羅新頭",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "617"
       },
@@ -943,7 +949,7 @@
         "name": "峰上",
         "name_en": "Fengshang",
         "line": "19繞復國墩峰上回程不繞料羅新頭",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "618"
       },
@@ -963,7 +969,7 @@
         "name": "峰上路口",
         "name_en": "Fengshang Rd.",
         "line": "19繞復國墩峰上回程不繞料羅新頭",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "619"
       },
@@ -983,7 +989,7 @@
         "name": "東村",
         "name_en": "Dongcun",
         "line": "19繞復國墩峰上回程不繞料羅新頭",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "620"
       },
@@ -1003,7 +1009,7 @@
         "name": "西村一",
         "name_en": "Xicun 1",
         "line": "19繞復國墩峰上回程不繞料羅新頭",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "621"
       },
@@ -1023,7 +1029,7 @@
         "name": "西村二",
         "name_en": "Xicun 2",
         "line": "19繞復國墩峰上回程不繞料羅新頭",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "594"
       },
@@ -1043,7 +1049,7 @@
         "name": "西埔",
         "name_en": "Xipu",
         "line": "19繞復國墩峰上回程不繞料羅新頭",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "595"
       },
@@ -1063,7 +1069,7 @@
         "name": "下湖",
         "name_en": "Xiahu",
         "line": "19繞復國墩峰上回程不繞料羅新頭",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "596"
       },
@@ -1083,7 +1089,7 @@
         "name": "溪邊",
         "name_en": "Xibian",
         "line": "19繞復國墩峰上回程不繞料羅新頭",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "597"
       },
@@ -1103,7 +1109,7 @@
         "name": "復國墩",
         "name_en": "Fuguodun",
         "line": "19繞復國墩峰上回程不繞料羅新頭",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "622"
       },
@@ -1123,7 +1129,7 @@
         "name": "溪邊",
         "name_en": "Xibian",
         "line": "19繞復國墩峰上回程不繞料羅新頭",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "623"
       },
@@ -1143,7 +1149,7 @@
         "name": "下湖",
         "name_en": "Xiahu",
         "line": "19繞復國墩峰上回程不繞料羅新頭",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "598"
       },
@@ -1163,7 +1169,7 @@
         "name": "西埔",
         "name_en": "Xipu",
         "line": "19繞復國墩峰上回程不繞料羅新頭",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "599"
       },
@@ -1183,7 +1189,7 @@
         "name": "西村二",
         "name_en": "Xicun 2",
         "line": "19繞復國墩峰上回程不繞料羅新頭",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "600"
       },
@@ -1203,7 +1209,7 @@
         "name": "畜試所(太湖路三段)",
         "name_en": "Kinmen County Livestock Research Institute",
         "line": "19繞復國墩峰上回程不繞料羅新頭",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "642"
       },
@@ -1223,7 +1229,7 @@
         "name": "中正公園",
         "name_en": "Chiang Kai-shek Park",
         "line": "19繞復國墩峰上回程不繞料羅新頭",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "628"
       },
@@ -1243,7 +1249,7 @@
         "name": "金湖國中一",
         "name_en": "Jinhu Junior High School 1",
         "line": "19繞復國墩峰上回程不繞料羅新頭",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "629"
       },
@@ -1263,7 +1269,7 @@
         "name": "金湖國中",
         "name_en": "Jinhu Junior High School",
         "line": "19繞復國墩峰上回程不繞料羅新頭",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "630"
       },
@@ -1283,7 +1289,7 @@
         "name": "護國寺(金湖免稅廣場)",
         "name_en": "Huguo Temple",
         "line": "19繞復國墩峰上回程不繞料羅新頭",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "631"
       },
@@ -1303,7 +1309,7 @@
         "name": "山外站",
         "name_en": "Shanwai Station",
         "line": "19繞復國墩峰上回程不繞料羅新頭",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "29"
       },

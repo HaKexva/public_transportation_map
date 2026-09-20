@@ -6,11 +6,12 @@
     "name": "505（經安一路）",
     "name_en": "505 (via 安一路)",
     "ref": "505",
-    "color": "#9f1239",
+    "color": "#6b21a8",
     "city_id": "Keelung",
     "source": "TDX Bus Shape / StopOfRoute",
     "via": "安一路",
-    "official_map_url": "https://web.taiwanbus.tw/MISUploadData/Schematic/file/0932.jpg"
+    "official_map_url": "https://web.taiwanbus.tw/MISUploadData/Schematic/file/0932.jpg",
+    "loop": true
   },
   "features": [
     {
@@ -20,8 +21,9 @@
         "ref": "505",
         "name": "505（經安一路）",
         "name_en": "505 (via 安一路)",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#6b21a8",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -3993,6 +3995,10 @@
           [
             121.69389,
             25.15838
+          ],
+          [
+            121.69389,
+            25.15837
           ]
         ]
       }
@@ -4005,7 +4011,7 @@
         "name": "武隆街105巷",
         "name_en": "Ln. 105 Wulong St.",
         "line": "505（經安一路）",
-        "color": "#9f1239",
+        "color": "#6b21a8",
         "direction": 0,
         "station_id": "141205"
       },
@@ -4025,7 +4031,7 @@
         "name": "隆聖國小",
         "name_en": "Longsheng Elementary School",
         "line": "505（經安一路）",
-        "color": "#9f1239",
+        "color": "#6b21a8",
         "direction": 0,
         "station_id": "141207"
       },
@@ -4045,7 +4051,7 @@
         "name": "武聖街口",
         "name_en": "Wusheng St. Intersection",
         "line": "505（經安一路）",
-        "color": "#9f1239",
+        "color": "#6b21a8",
         "direction": 0,
         "station_id": "141208"
       },
@@ -4065,7 +4071,7 @@
         "name": "藍天麗地社區",
         "name_en": "Lantianlidi Community",
         "line": "505（經安一路）",
-        "color": "#9f1239",
+        "color": "#6b21a8",
         "direction": 0,
         "station_id": "140741"
       },
@@ -4085,7 +4091,7 @@
         "name": "石山",
         "name_en": "Shishan",
         "line": "505（經安一路）",
-        "color": "#9f1239",
+        "color": "#6b21a8",
         "direction": 0,
         "station_id": "141209"
       },
@@ -4105,7 +4111,7 @@
         "name": "大武崙工業區",
         "name_en": "Tapurun Industry Park",
         "line": "505（經安一路）",
-        "color": "#9f1239",
+        "color": "#6b21a8",
         "direction": 0,
         "station_id": "141210"
       },
@@ -4125,7 +4131,7 @@
         "name": "三層站",
         "name_en": "Sanceng Bus Station",
         "line": "505（經安一路）",
-        "color": "#9f1239",
+        "color": "#6b21a8",
         "direction": 0,
         "station_id": "141217"
       },
@@ -4145,7 +4151,7 @@
         "name": "大武崙",
         "name_en": "Tapurun",
         "line": "505（經安一路）",
-        "color": "#9f1239",
+        "color": "#6b21a8",
         "direction": 0,
         "station_id": "141218"
       },
@@ -4165,7 +4171,7 @@
         "name": "金山鐵店",
         "name_en": "Jinshan Iron Stores",
         "line": "505（經安一路）",
-        "color": "#9f1239",
+        "color": "#6b21a8",
         "direction": 0,
         "station_id": "141220"
       },
@@ -4185,7 +4191,7 @@
         "name": "情人湖路口",
         "name_en": "Lovers Lake Rd. Intersection",
         "line": "505（經安一路）",
-        "color": "#9f1239",
+        "color": "#6b21a8",
         "direction": 0,
         "station_id": "141221"
       },
@@ -4205,7 +4211,7 @@
         "name": "武嶺街口",
         "name_en": "Wuling St.Intersection",
         "line": "505（經安一路）",
-        "color": "#9f1239",
+        "color": "#6b21a8",
         "direction": 0,
         "station_id": "141222"
       },
@@ -4225,7 +4231,7 @@
         "name": "忠聯倉儲",
         "name_en": "Zhonglian Warehouse",
         "line": "505（經安一路）",
-        "color": "#9f1239",
+        "color": "#6b21a8",
         "direction": 0,
         "station_id": "141223"
       },
@@ -4245,7 +4251,7 @@
         "name": "興寮里",
         "name_en": "Xingliao Village",
         "line": "505（經安一路）",
-        "color": "#9f1239",
+        "color": "#6b21a8",
         "direction": 0,
         "station_id": "141224"
       },
@@ -4265,7 +4271,7 @@
         "name": "石皮瀨",
         "name_en": "Shipilai",
         "line": "505（經安一路）",
-        "color": "#9f1239",
+        "color": "#6b21a8",
         "direction": 0,
         "station_id": "141226"
       },
@@ -4285,7 +4291,7 @@
         "name": "鶯歌里(安一路口)",
         "name_en": "Yingge Village (An 1st Rd.)",
         "line": "505（經安一路）",
-        "color": "#9f1239",
+        "color": "#6b21a8",
         "direction": 0,
         "station_id": "141198"
       },
@@ -4305,7 +4311,7 @@
         "name": "安一路387號",
         "name_en": "No. 387 Anyi Rd.",
         "line": "505（經安一路）",
-        "color": "#9f1239",
+        "color": "#6b21a8",
         "direction": 0,
         "station_id": "141299"
       },
@@ -4325,7 +4331,7 @@
         "name": "仁愛之家",
         "name_en": "Senior Citizens Home of Compassion",
         "line": "505（經安一路）",
-        "color": "#9f1239",
+        "color": "#6b21a8",
         "direction": 0,
         "station_id": "141308"
       },
@@ -4345,7 +4351,7 @@
         "name": "安樂高中",
         "name_en": "Anle Senior High School",
         "line": "505（經安一路）",
-        "color": "#9f1239",
+        "color": "#6b21a8",
         "direction": 0,
         "station_id": "141307"
       },
@@ -4365,7 +4371,7 @@
         "name": "干城新村",
         "name_en": "Ganchengxincun",
         "line": "505（經安一路）",
-        "color": "#9f1239",
+        "color": "#6b21a8",
         "direction": 0,
         "station_id": "141306"
       },
@@ -4385,7 +4391,7 @@
         "name": "崇德路口",
         "name_en": "Chongde Rd. Intersection",
         "line": "505（經安一路）",
-        "color": "#9f1239",
+        "color": "#6b21a8",
         "direction": 0,
         "station_id": "141313"
       },
@@ -4405,7 +4411,7 @@
         "name": "慈雲寺",
         "name_en": "Ciyun Temple",
         "line": "505（經安一路）",
-        "color": "#9f1239",
+        "color": "#6b21a8",
         "direction": 0,
         "station_id": "141215"
       },
@@ -4425,7 +4431,7 @@
         "name": "安樂國小",
         "name_en": "Anle Elementary School",
         "line": "505（經安一路）",
-        "color": "#9f1239",
+        "color": "#6b21a8",
         "direction": 0,
         "station_id": "141314"
       },
@@ -4445,7 +4451,7 @@
         "name": "安樂市場",
         "name_en": "Anle Market",
         "line": "505（經安一路）",
-        "color": "#9f1239",
+        "color": "#6b21a8",
         "direction": 0,
         "station_id": "141315"
       },
@@ -4465,7 +4471,7 @@
         "name": "忠四路",
         "name_en": "Zhong 4th Rd.",
         "line": "505（經安一路）",
-        "color": "#9f1239",
+        "color": "#6b21a8",
         "direction": 0,
         "station_id": "140649"
       },
@@ -4485,7 +4491,7 @@
         "name": "仁五路(東和大樓)",
         "name_en": "Ren 5th Rd.",
         "line": "505（經安一路）",
-        "color": "#9f1239",
+        "color": "#6b21a8",
         "direction": 0,
         "station_id": "140629"
       },
@@ -4505,7 +4511,7 @@
         "name": "仁二路(二信循環站)",
         "name_en": "Ren 2nd Rd. (Erxin Loop Station )",
         "line": "505（經安一路）",
-        "color": "#9f1239",
+        "color": "#6b21a8",
         "direction": 0,
         "station_id": "140620"
       },
@@ -4525,7 +4531,7 @@
         "name": "基隆轉運站",
         "name_en": "Keelung Transit Station",
         "line": "505（經安一路）",
-        "color": "#9f1239",
+        "color": "#6b21a8",
         "direction": 0,
         "station_id": "143441"
       },
@@ -4545,7 +4551,7 @@
         "name": "民治里活動中心",
         "name_en": "Minzhi Village Activity Center",
         "line": "505（經安一路）",
-        "color": "#9f1239",
+        "color": "#6b21a8",
         "direction": 0,
         "station_id": "141126"
       },
@@ -4565,7 +4571,7 @@
         "name": "城隍廟",
         "name_en": "Chenghuang Temple",
         "line": "505（經安一路）",
-        "color": "#9f1239",
+        "color": "#6b21a8",
         "direction": 0,
         "station_id": "140647"
       },
@@ -4585,7 +4591,7 @@
         "name": "安樂市場",
         "name_en": "Anle Market",
         "line": "505（經安一路）",
-        "color": "#9f1239",
+        "color": "#6b21a8",
         "direction": 0,
         "station_id": "141187"
       },
@@ -4605,7 +4611,7 @@
         "name": "安樂國小",
         "name_en": "Anle Elementary School",
         "line": "505（經安一路）",
-        "color": "#9f1239",
+        "color": "#6b21a8",
         "direction": 0,
         "station_id": "141188"
       },
@@ -4625,7 +4631,7 @@
         "name": "慈雲寺",
         "name_en": "Ciyun Temple",
         "line": "505（經安一路）",
-        "color": "#9f1239",
+        "color": "#6b21a8",
         "direction": 0,
         "station_id": "141189"
       },
@@ -4645,7 +4651,7 @@
         "name": "干城新村",
         "name_en": "Ganchengxincun",
         "line": "505（經安一路）",
-        "color": "#9f1239",
+        "color": "#6b21a8",
         "direction": 0,
         "station_id": "141190"
       },
@@ -4665,7 +4671,7 @@
         "name": "安樂高中",
         "name_en": "Anle Senior High School",
         "line": "505（經安一路）",
-        "color": "#9f1239",
+        "color": "#6b21a8",
         "direction": 0,
         "station_id": "141191"
       },
@@ -4685,7 +4691,7 @@
         "name": "仁愛之家",
         "name_en": "Senior Citizens Home of Compassion",
         "line": "505（經安一路）",
-        "color": "#9f1239",
+        "color": "#6b21a8",
         "direction": 0,
         "station_id": "141194"
       },
@@ -4705,7 +4711,7 @@
         "name": "安一路387號",
         "name_en": "No. 387 Anyi Rd.",
         "line": "505（經安一路）",
-        "color": "#9f1239",
+        "color": "#6b21a8",
         "direction": 0,
         "station_id": "141196"
       },
@@ -4725,7 +4731,7 @@
         "name": "君茂食品",
         "name_en": "Junmao Foodstuff",
         "line": "505（經安一路）",
-        "color": "#9f1239",
+        "color": "#6b21a8",
         "direction": 0,
         "station_id": "141197"
       },
@@ -4745,7 +4751,7 @@
         "name": "石皮瀨",
         "name_en": "Shipilai",
         "line": "505（經安一路）",
-        "color": "#9f1239",
+        "color": "#6b21a8",
         "direction": 0,
         "station_id": "140673"
       },
@@ -4765,7 +4771,7 @@
         "name": "興寮里",
         "name_en": "Xingliao Village",
         "line": "505（經安一路）",
-        "color": "#9f1239",
+        "color": "#6b21a8",
         "direction": 0,
         "station_id": "140674"
       },
@@ -4785,7 +4791,7 @@
         "name": "忠聯倉儲",
         "name_en": "Zhonglian Warehouse",
         "line": "505（經安一路）",
-        "color": "#9f1239",
+        "color": "#6b21a8",
         "direction": 0,
         "station_id": "140675"
       },
@@ -4805,7 +4811,7 @@
         "name": "東方巴黎社區",
         "name_en": "Dongfangbali Community",
         "line": "505（經安一路）",
-        "color": "#9f1239",
+        "color": "#6b21a8",
         "direction": 0,
         "station_id": "140676"
       },
@@ -4825,7 +4831,7 @@
         "name": "武嶺街口",
         "name_en": "Wuling St.Intersection",
         "line": "505（經安一路）",
-        "color": "#9f1239",
+        "color": "#6b21a8",
         "direction": 0,
         "station_id": "140677"
       },
@@ -4845,7 +4851,7 @@
         "name": "情人湖路口",
         "name_en": "Lovers Lake Rd. Intersection",
         "line": "505（經安一路）",
-        "color": "#9f1239",
+        "color": "#6b21a8",
         "direction": 0,
         "station_id": "140735"
       },
@@ -4865,7 +4871,7 @@
         "name": "金山鐵店",
         "name_en": "Jinshan Iron Stores",
         "line": "505（經安一路）",
-        "color": "#9f1239",
+        "color": "#6b21a8",
         "direction": 0,
         "station_id": "140736"
       },
@@ -4885,7 +4891,7 @@
         "name": "大武崙",
         "name_en": "Tapurun",
         "line": "505（經安一路）",
-        "color": "#9f1239",
+        "color": "#6b21a8",
         "direction": 0,
         "station_id": "140737"
       },
@@ -4905,7 +4911,7 @@
         "name": "三層站",
         "name_en": "Sanceng Bus Station",
         "line": "505（經安一路）",
-        "color": "#9f1239",
+        "color": "#6b21a8",
         "direction": 0,
         "station_id": "140738"
       },
@@ -4925,7 +4931,7 @@
         "name": "大武崙工業區",
         "name_en": "Tapurun Industry Park",
         "line": "505（經安一路）",
-        "color": "#9f1239",
+        "color": "#6b21a8",
         "direction": 0,
         "station_id": "140739"
       },
@@ -4945,7 +4951,7 @@
         "name": "石山",
         "name_en": "Shishan",
         "line": "505（經安一路）",
-        "color": "#9f1239",
+        "color": "#6b21a8",
         "direction": 0,
         "station_id": "140740"
       },
@@ -4965,7 +4971,7 @@
         "name": "武聖街口",
         "name_en": "Wusheng St. Intersection",
         "line": "505（經安一路）",
-        "color": "#9f1239",
+        "color": "#6b21a8",
         "direction": 0,
         "station_id": "140742"
       },
@@ -4985,7 +4991,7 @@
         "name": "武隆街105巷",
         "name_en": "Ln. 105 Wulong St.",
         "line": "505（經安一路）",
-        "color": "#9f1239",
+        "color": "#6b21a8",
         "direction": 0,
         "station_id": "140743"
       },

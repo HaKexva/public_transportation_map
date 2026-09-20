@@ -6,13 +6,14 @@
     "name": "12右繞",
     "name_en": "12右繞",
     "ref": "12右繞",
-    "color": "#86198f",
+    "color": "#3730a3",
     "city_id": "KinmenCounty",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.kinmen.gov.tw/api/route/125/map/256/image",
     "operator_id": "0001",
     "operator": "金門",
-    "operator_en": "City Bus and Ferry Management Office, Kinmen County"
+    "operator_en": "City Bus and Ferry Management Office, Kinmen County",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "12右繞",
         "name": "12右繞",
         "name_en": "12右繞",
-        "color": "#86198f",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -571,6 +573,10 @@
           [
             118.31993,
             24.43324
+          ],
+          [
+            118.32005,
+            24.43291
           ]
         ]
       }
@@ -583,7 +589,7 @@
         "name": "金城站",
         "name_en": "Jincheng Station",
         "line": "12右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "0"
       },
@@ -603,7 +609,7 @@
         "name": "工業區",
         "name_en": "Industrial District",
         "line": "12右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "1"
       },
@@ -623,7 +629,7 @@
         "name": "農產中心",
         "name_en": "Nongchan Center",
         "line": "12右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "2"
       },
@@ -643,7 +649,7 @@
         "name": "龍門大鎮",
         "name_en": "Longmendajhen",
         "line": "12右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "3"
       },
@@ -663,7 +669,7 @@
         "name": "消合社",
         "name_en": "Siaoho Society",
         "line": "12右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "4"
       },
@@ -683,7 +689,7 @@
         "name": "榜林圓環(林堡路)",
         "name_en": "Banglin Cirque",
         "line": "12右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "142"
       },
@@ -703,7 +709,7 @@
         "name": "前厝一",
         "name_en": "Qiancuo 1",
         "line": "12右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "143"
       },
@@ -723,7 +729,7 @@
         "name": "前厝",
         "name_en": "Qiancuo",
         "line": "12右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "144"
       },
@@ -743,7 +749,7 @@
         "name": "頂堡",
         "name_en": "Dingbao",
         "line": "12右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "145"
       },
@@ -763,7 +769,7 @@
         "name": "東堡溝",
         "name_en": "Dongbaogou",
         "line": "12右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "146"
       },
@@ -783,7 +789,7 @@
         "name": "西山一",
         "name_en": "Xishan 1",
         "line": "12右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "1027"
       },
@@ -803,7 +809,7 @@
         "name": "西山",
         "name_en": "Xishan",
         "line": "12右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "501"
       },
@@ -823,7 +829,7 @@
         "name": "嚨口路口",
         "name_en": "Longkou Rd.",
         "line": "12右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "502"
       },
@@ -843,7 +849,7 @@
         "name": "嚨口山",
         "name_en": "LongKouShan",
         "line": "12右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "503"
       },
@@ -863,7 +869,7 @@
         "name": "嚨口",
         "name_en": "LongKou",
         "line": "12右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "504"
       },
@@ -883,7 +889,7 @@
         "name": "嚨口山",
         "name_en": "LongKouShan",
         "line": "12右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "505"
       },
@@ -903,7 +909,7 @@
         "name": "東一點紅",
         "name_en": "DongYiDianHong",
         "line": "12右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "506"
       },
@@ -923,7 +929,7 @@
         "name": "西堡",
         "name_en": "SiBao",
         "line": "12右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "507"
       },
@@ -943,7 +949,7 @@
         "name": "西堡一",
         "name_en": "SiBao",
         "line": "12右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "508"
       },
@@ -963,7 +969,7 @@
         "name": "寶靈殿",
         "name_en": "BaoLingDian",
         "line": "12右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "509"
       },
@@ -983,7 +989,7 @@
         "name": "中堡",
         "name_en": "Zhongbao",
         "line": "12右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "512"
       },
@@ -1003,7 +1009,7 @@
         "name": "中堡一",
         "name_en": "JhongBao",
         "line": "12右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "513"
       },
@@ -1023,7 +1029,7 @@
         "name": "東堡路口",
         "name_en": "Dongbao Entrance",
         "line": "12右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "514"
       },
@@ -1043,7 +1049,7 @@
         "name": "東堡",
         "name_en": "Dongbao",
         "line": "12右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "515"
       },
@@ -1063,7 +1069,7 @@
         "name": "東堡溝",
         "name_en": "Dongbaogou",
         "line": "12右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "169"
       },
@@ -1083,7 +1089,7 @@
         "name": "頂堡",
         "name_en": "Dingbao",
         "line": "12右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "170"
       },
@@ -1103,7 +1109,7 @@
         "name": "前厝",
         "name_en": "Qiancuo",
         "line": "12右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "171"
       },
@@ -1123,7 +1129,7 @@
         "name": "前厝一",
         "name_en": "Qiancuo 1",
         "line": "12右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "172"
       },
@@ -1143,7 +1149,7 @@
         "name": "榜林圓環(林堡路)",
         "name_en": "Banglin Cirque",
         "line": "12右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "173"
       },
@@ -1163,7 +1169,7 @@
         "name": "消合社",
         "name_en": "Siaoho Society",
         "line": "12右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "54"
       },
@@ -1183,7 +1189,7 @@
         "name": "龍門大鎮",
         "name_en": "Longmendajhen",
         "line": "12右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "55"
       },
@@ -1203,7 +1209,7 @@
         "name": "農產中心",
         "name_en": "Nongchan Center",
         "line": "12右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "56"
       },
@@ -1223,7 +1229,7 @@
         "name": "工業區",
         "name_en": "Industrial District",
         "line": "12右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "57"
       },
@@ -1243,7 +1249,7 @@
         "name": "金城站",
         "name_en": "Jincheng Station",
         "line": "12右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "0"
       },

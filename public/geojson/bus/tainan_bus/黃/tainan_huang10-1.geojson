@@ -6,12 +6,13 @@
     "name": "黃10-1",
     "name_en": "黃10-1",
     "ref": "黃10-1",
-    "color": "#ea580c",
+    "color": "#7c3aed",
     "city_id": "Tainan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://busmap.tainan.gov.tw/ebus/resources/PathPic/zh_TW/1707.jpg",
     "operator_id": "16253",
-    "operator": "中華衛星台南車隊"
+    "operator": "中華衛星台南車隊",
+    "loop": true
   },
   "features": [
     {
@@ -21,8 +22,9 @@
         "ref": "黃10-1",
         "name": "黃10-1",
         "name_en": "黃10-1",
-        "color": "#ea580c",
-        "direction": 2
+        "color": "#7c3aed",
+        "direction": 2,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -3278,6 +3280,10 @@
           [
             120.41367,
             23.34759
+          ],
+          [
+            120.41367,
+            23.34758
           ]
         ]
       }
@@ -3290,7 +3296,7 @@
         "name": "白河站",
         "name_en": "Baihe Bus Station",
         "line": "黃10-1",
-        "color": "#ea580c",
+        "color": "#7c3aed",
         "direction": 2,
         "station_id": "7465"
       },
@@ -3310,7 +3316,7 @@
         "name": "山產市場",
         "name_en": "Shanchan Market",
         "line": "黃10-1",
-        "color": "#ea580c",
+        "color": "#7c3aed",
         "direction": 2,
         "station_id": "2092"
       },
@@ -3330,7 +3336,7 @@
         "name": "念佛會",
         "name_en": "Nianfohuei",
         "line": "黃10-1",
-        "color": "#ea580c",
+        "color": "#7c3aed",
         "direction": 2,
         "station_id": "7530"
       },
@@ -3350,7 +3356,7 @@
         "name": "凹底",
         "name_en": "Aodi",
         "line": "黃10-1",
-        "color": "#ea580c",
+        "color": "#7c3aed",
         "direction": 2,
         "station_id": "7531"
       },
@@ -3370,7 +3376,7 @@
         "name": "畚箕湖",
         "name_en": "Benjihu",
         "line": "黃10-1",
-        "color": "#ea580c",
+        "color": "#7c3aed",
         "direction": 2,
         "station_id": "7532"
       },
@@ -3390,7 +3396,7 @@
         "name": "東畚箕湖",
         "name_en": "East of Benjihu",
         "line": "黃10-1",
-        "color": "#ea580c",
+        "color": "#7c3aed",
         "direction": 2,
         "station_id": "8960"
       },
@@ -3410,7 +3416,7 @@
         "name": "河東",
         "name_en": "Hedong",
         "line": "黃10-1",
-        "color": "#ea580c",
+        "color": "#7c3aed",
         "direction": 2,
         "station_id": "7533"
       },
@@ -3430,7 +3436,7 @@
         "name": "竹林路口",
         "name_en": "Jhulin Rd. Intersection",
         "line": "黃10-1",
-        "color": "#ea580c",
+        "color": "#7c3aed",
         "direction": 2,
         "station_id": "7044"
       },
@@ -3450,7 +3456,7 @@
         "name": "大林(白河)",
         "name_en": "Dalin(Baihe)",
         "line": "黃10-1",
-        "color": "#ea580c",
+        "color": "#7c3aed",
         "direction": 2,
         "station_id": "8533"
       },
@@ -3470,7 +3476,7 @@
         "name": "大林中山堂",
         "name_en": "Dalin Jhongshan Hall",
         "line": "黃10-1",
-        "color": "#ea580c",
+        "color": "#7c3aed",
         "direction": 2,
         "station_id": "7045"
       },
@@ -3490,7 +3496,7 @@
         "name": "檨子林",
         "name_en": "Shezihlin",
         "line": "黃10-1",
-        "color": "#ea580c",
+        "color": "#7c3aed",
         "direction": 2,
         "station_id": "1729"
       },
@@ -3510,7 +3516,7 @@
         "name": "下厝仔",
         "name_en": "Siacuozih",
         "line": "黃10-1",
-        "color": "#ea580c",
+        "color": "#7c3aed",
         "direction": 2,
         "station_id": "7046"
       },
@@ -3530,7 +3536,7 @@
         "name": "大林里",
         "name_en": "Dalin Vil.",
         "line": "黃10-1",
-        "color": "#ea580c",
+        "color": "#7c3aed",
         "direction": 2,
         "station_id": "1794"
       },
@@ -3550,7 +3556,7 @@
         "name": "大林里東",
         "name_en": "East of Dalin Vil.",
         "line": "黃10-1",
-        "color": "#ea580c",
+        "color": "#7c3aed",
         "direction": 2,
         "station_id": "8561"
       },
@@ -3570,7 +3576,7 @@
         "name": "山頂仔",
         "name_en": "Shandingzih",
         "line": "黃10-1",
-        "color": "#ea580c",
+        "color": "#7c3aed",
         "direction": 2,
         "station_id": "8525"
       },
@@ -3590,7 +3596,7 @@
         "name": "檨仔坑",
         "name_en": "Shezihkeng",
         "line": "黃10-1",
-        "color": "#ea580c",
+        "color": "#7c3aed",
         "direction": 2,
         "station_id": "7047"
       },
@@ -3610,7 +3616,7 @@
         "name": "台影文化城",
         "name_en": "Taiwan Film ＆ TV Town",
         "line": "黃10-1",
-        "color": "#ea580c",
+        "color": "#7c3aed",
         "direction": 2,
         "station_id": "1157"
       },
@@ -3630,7 +3636,7 @@
         "name": "石廟-萬里長城",
         "name_en": "Shihmiao(Great Wall)",
         "line": "黃10-1",
-        "color": "#ea580c",
+        "color": "#7c3aed",
         "direction": 2,
         "station_id": "7048"
       },
@@ -3650,7 +3656,7 @@
         "name": "三重溪",
         "name_en": "Sanchong River",
         "line": "黃10-1",
-        "color": "#ea580c",
+        "color": "#7c3aed",
         "direction": 2,
         "station_id": "7049"
       },
@@ -3670,7 +3676,7 @@
         "name": "籠仔內",
         "name_en": "Longzihnei",
         "line": "黃10-1",
-        "color": "#ea580c",
+        "color": "#7c3aed",
         "direction": 2,
         "station_id": "7050"
       },
@@ -3690,7 +3696,7 @@
         "name": "六溪國小",
         "name_en": "Liousi Elementary School",
         "line": "黃10-1",
-        "color": "#ea580c",
+        "color": "#7c3aed",
         "direction": 2,
         "station_id": "7051"
       },
@@ -3710,7 +3716,7 @@
         "name": "六溪部落",
         "name_en": "Liousi Tribe",
         "line": "黃10-1",
-        "color": "#ea580c",
+        "color": "#7c3aed",
         "direction": 2,
         "station_id": "8527"
       },
@@ -3730,7 +3736,7 @@
         "name": "六重溪",
         "name_en": "Liouchong River",
         "line": "黃10-1",
-        "color": "#ea580c",
+        "color": "#7c3aed",
         "direction": 2,
         "station_id": "7052"
       },
@@ -3750,7 +3756,7 @@
         "name": "南勢仔",
         "name_en": "Nanshihzih",
         "line": "黃10-1",
-        "color": "#ea580c",
+        "color": "#7c3aed",
         "direction": 2,
         "station_id": "8529"
       },
@@ -3770,7 +3776,7 @@
         "name": "禪源",
         "name_en": "Chanyuan",
         "line": "黃10-1",
-        "color": "#ea580c",
+        "color": "#7c3aed",
         "direction": 2,
         "station_id": "1584"
       },
@@ -3790,7 +3796,7 @@
         "name": "頂埔",
         "name_en": "Dingpu",
         "line": "黃10-1",
-        "color": "#ea580c",
+        "color": "#7c3aed",
         "direction": 2,
         "station_id": "8531"
       },
@@ -3810,7 +3816,7 @@
         "name": "鎮安宮",
         "name_en": "Jhen-an Temple",
         "line": "黃10-1",
-        "color": "#ea580c",
+        "color": "#7c3aed",
         "direction": 2,
         "station_id": "8416"
       },
@@ -3830,7 +3836,7 @@
         "name": "六戶仔",
         "name_en": "Liouhuzih",
         "line": "黃10-1",
-        "color": "#ea580c",
+        "color": "#7c3aed",
         "direction": 2,
         "station_id": "1281"
       },
@@ -3850,7 +3856,7 @@
         "name": "內坑仔",
         "name_en": "Neikengzai",
         "line": "黃10-1",
-        "color": "#ea580c",
+        "color": "#7c3aed",
         "direction": 2,
         "station_id": "1768"
       },
@@ -3870,7 +3876,7 @@
         "name": "關嶺里水湖",
         "name_en": "Guanling  Vil. lake",
         "line": "黃10-1",
-        "color": "#ea580c",
+        "color": "#7c3aed",
         "direction": 2,
         "station_id": "2734"
       },
@@ -3890,7 +3896,7 @@
         "name": "崁下仔",
         "name_en": "Kansiazih",
         "line": "黃10-1",
-        "color": "#ea580c",
+        "color": "#7c3aed",
         "direction": 2,
         "station_id": "1282"
       },
@@ -3910,7 +3916,7 @@
         "name": "檳榔腳",
         "name_en": "Binlangjiao",
         "line": "黃10-1",
-        "color": "#ea580c",
+        "color": "#7c3aed",
         "direction": 2,
         "station_id": "1283"
       },
@@ -3930,7 +3936,7 @@
         "name": "鹽水坑",
         "name_en": "Yanshueikeng",
         "line": "黃10-1",
-        "color": "#ea580c",
+        "color": "#7c3aed",
         "direction": 2,
         "station_id": "1469"
       },
@@ -3950,7 +3956,7 @@
         "name": "香路古道",
         "name_en": "Sianglu Historic Trail",
         "line": "黃10-1",
-        "color": "#ea580c",
+        "color": "#7c3aed",
         "direction": 2,
         "station_id": "1779"
       },
@@ -3970,7 +3976,7 @@
         "name": "石牌",
         "name_en": "Shihpai",
         "line": "黃10-1",
-        "color": "#ea580c",
+        "color": "#7c3aed",
         "direction": 2,
         "station_id": "1284"
       },
@@ -3990,7 +3996,7 @@
         "name": "六重溪",
         "name_en": "Liouchong River",
         "line": "黃10-1",
-        "color": "#ea580c",
+        "color": "#7c3aed",
         "direction": 2,
         "station_id": "7053"
       },
@@ -4010,7 +4016,7 @@
         "name": "六溪部落",
         "name_en": "Liousi Tribe",
         "line": "黃10-1",
-        "color": "#ea580c",
+        "color": "#7c3aed",
         "direction": 2,
         "station_id": "8528"
       },
@@ -4030,7 +4036,7 @@
         "name": "六溪國小",
         "name_en": "Liousi Elementary School",
         "line": "黃10-1",
-        "color": "#ea580c",
+        "color": "#7c3aed",
         "direction": 2,
         "station_id": "7054"
       },
@@ -4050,7 +4056,7 @@
         "name": "白河玉天宮",
         "name_en": "Baihe Yutian Temple",
         "line": "黃10-1",
-        "color": "#ea580c",
+        "color": "#7c3aed",
         "direction": 2,
         "station_id": "1896"
       },
@@ -4070,7 +4076,7 @@
         "name": "弄仔內",
         "name_en": "Nongzihnei",
         "line": "黃10-1",
-        "color": "#ea580c",
+        "color": "#7c3aed",
         "direction": 2,
         "station_id": "1895"
       },
@@ -4090,7 +4096,7 @@
         "name": "籠仔內",
         "name_en": "Longzihnei",
         "line": "黃10-1",
-        "color": "#ea580c",
+        "color": "#7c3aed",
         "direction": 2,
         "station_id": "7055"
       },
@@ -4110,7 +4116,7 @@
         "name": "三重溪",
         "name_en": "Sanchong River",
         "line": "黃10-1",
-        "color": "#ea580c",
+        "color": "#7c3aed",
         "direction": 2,
         "station_id": "7056"
       },
@@ -4130,7 +4136,7 @@
         "name": "石廟-萬里長城",
         "name_en": "Shihmiao(Great Wall)",
         "line": "黃10-1",
-        "color": "#ea580c",
+        "color": "#7c3aed",
         "direction": 2,
         "station_id": "7057"
       },
@@ -4150,7 +4156,7 @@
         "name": "台影文化城",
         "name_en": "Taiwan Film ＆ TV Town",
         "line": "黃10-1",
-        "color": "#ea580c",
+        "color": "#7c3aed",
         "direction": 2,
         "station_id": "1158"
       },
@@ -4170,7 +4176,7 @@
         "name": "檨仔坑",
         "name_en": "Shezihkeng",
         "line": "黃10-1",
-        "color": "#ea580c",
+        "color": "#7c3aed",
         "direction": 2,
         "station_id": "7058"
       },
@@ -4190,7 +4196,7 @@
         "name": "山頂仔",
         "name_en": "Shandingzih",
         "line": "黃10-1",
-        "color": "#ea580c",
+        "color": "#7c3aed",
         "direction": 2,
         "station_id": "8526"
       },
@@ -4210,7 +4216,7 @@
         "name": "大林里東",
         "name_en": "East of Dalin Vil.",
         "line": "黃10-1",
-        "color": "#ea580c",
+        "color": "#7c3aed",
         "direction": 2,
         "station_id": "8562"
       },
@@ -4230,7 +4236,7 @@
         "name": "大林里",
         "name_en": "Dalin Vil.",
         "line": "黃10-1",
-        "color": "#ea580c",
+        "color": "#7c3aed",
         "direction": 2,
         "station_id": "1795"
       },
@@ -4250,7 +4256,7 @@
         "name": "下厝仔",
         "name_en": "Siacuozih",
         "line": "黃10-1",
-        "color": "#ea580c",
+        "color": "#7c3aed",
         "direction": 2,
         "station_id": "7059"
       },
@@ -4270,7 +4276,7 @@
         "name": "檨子林",
         "name_en": "Shezihlin",
         "line": "黃10-1",
-        "color": "#ea580c",
+        "color": "#7c3aed",
         "direction": 2,
         "station_id": "1730"
       },
@@ -4290,7 +4296,7 @@
         "name": "大林中山堂",
         "name_en": "Dalin Jhongshan Hall",
         "line": "黃10-1",
-        "color": "#ea580c",
+        "color": "#7c3aed",
         "direction": 2,
         "station_id": "7060"
       },
@@ -4310,7 +4316,7 @@
         "name": "大林(白河)",
         "name_en": "Dalin(Baihe)",
         "line": "黃10-1",
-        "color": "#ea580c",
+        "color": "#7c3aed",
         "direction": 2,
         "station_id": "8534"
       },
@@ -4330,7 +4336,7 @@
         "name": "竹林路口",
         "name_en": "Jhulin Rd. Intersection",
         "line": "黃10-1",
-        "color": "#ea580c",
+        "color": "#7c3aed",
         "direction": 2,
         "station_id": "7061"
       },
@@ -4350,7 +4356,7 @@
         "name": "河東",
         "name_en": "Hedong",
         "line": "黃10-1",
-        "color": "#ea580c",
+        "color": "#7c3aed",
         "direction": 2,
         "station_id": "7564"
       },
@@ -4370,7 +4376,7 @@
         "name": "東畚箕湖",
         "name_en": "East of Benjihu",
         "line": "黃10-1",
-        "color": "#ea580c",
+        "color": "#7c3aed",
         "direction": 2,
         "station_id": "8961"
       },
@@ -4390,7 +4396,7 @@
         "name": "畚箕湖",
         "name_en": "Benjihu",
         "line": "黃10-1",
-        "color": "#ea580c",
+        "color": "#7c3aed",
         "direction": 2,
         "station_id": "8585"
       },
@@ -4410,7 +4416,7 @@
         "name": "凹底",
         "name_en": "Aodi",
         "line": "黃10-1",
-        "color": "#ea580c",
+        "color": "#7c3aed",
         "direction": 2,
         "station_id": "7566"
       },
@@ -4430,7 +4436,7 @@
         "name": "念佛會",
         "name_en": "Nianfohuei",
         "line": "黃10-1",
-        "color": "#ea580c",
+        "color": "#7c3aed",
         "direction": 2,
         "station_id": "7567"
       },
@@ -4450,7 +4456,7 @@
         "name": "山產市場",
         "name_en": "Shanchan Market ",
         "line": "黃10-1",
-        "color": "#ea580c",
+        "color": "#7c3aed",
         "direction": 2,
         "station_id": "2093"
       },
@@ -4470,7 +4476,7 @@
         "name": "白河站",
         "name_en": "Baihe Bus Station",
         "line": "黃10-1",
-        "color": "#ea580c",
+        "color": "#7c3aed",
         "direction": 2,
         "station_id": "7465"
       },

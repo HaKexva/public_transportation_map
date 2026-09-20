@@ -6,13 +6,14 @@
     "name": "L112",
     "name_en": "L112",
     "ref": "L112",
-    "color": "#b91c1c",
+    "color": "#b45309",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/6112/map/2223/image",
     "operator_id": "1",
     "operator": "桃園客運",
-    "operator_en": "Taoyuan Bus Co., Ltd."
+    "operator_en": "Taoyuan Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "L112",
         "name": "L112",
         "name_en": "L112",
-        "color": "#b91c1c",
-        "direction": 0
+        "color": "#b45309",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -799,6 +801,10 @@
           [
             121.30027,
             24.99263
+          ],
+          [
+            121.30008,
+            24.99277
           ]
         ]
       }
@@ -811,7 +817,7 @@
         "name": "桃園市政府",
         "name_en": "Taoyuan City Government",
         "line": "L112",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "336"
       },
@@ -831,7 +837,7 @@
         "name": "台電大樓",
         "name_en": "Taipower Building",
         "line": "L112",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2085"
       },
@@ -851,7 +857,7 @@
         "name": "桃園火車站",
         "name_en": "Taoyuan Train Station",
         "line": "L112",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6549"
       },
@@ -871,7 +877,7 @@
         "name": "台電大樓",
         "name_en": "Taipower Building",
         "line": "L112",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2084"
       },
@@ -891,7 +897,7 @@
         "name": "桃園市政府",
         "name_en": "Taoyuan City Government",
         "line": "L112",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "336"
       },

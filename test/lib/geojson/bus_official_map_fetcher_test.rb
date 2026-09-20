@@ -70,6 +70,13 @@ class GeojsonBusOfficialMapFetcherTest < ActiveSupport::TestCase
     )
   end
 
+  test "keeps kinmen non-cms api image urls as direct" do
+    url = "http://ebus.kinmen.gov.tw/api/route/92/map/152/image"
+    fetcher = StubFetcher.new({})
+
+    assert_equal url, fetcher.resolve_direct_image_url(url)
+  end
+
   test "drops taoyuan SPA and lienchiang homepage urls" do
     fetcher = StubFetcher.new({})
 

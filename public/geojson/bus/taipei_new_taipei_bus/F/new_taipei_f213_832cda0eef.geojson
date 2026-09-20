@@ -6,13 +6,14 @@
     "name": "F213黎明",
     "name_en": "F213黎明",
     "ref": "F213黎明",
-    "color": "#d97706",
+    "color": "#6B8F9A",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.gov.taipei/File/Get/595d7669-9887-4a2c-9c3e-efd605cf49c1?v=639248448784226636",
     "operator_id": "16233",
     "operator": "泰山區公所",
-    "operator_en": "Taishan District Office"
+    "operator_en": "Taishan District Office",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "F213黎明",
         "name": "F213黎明",
         "name_en": "F213黎明",
-        "color": "#d97706",
-        "direction": 0
+        "color": "#6B8F9A",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -775,6 +777,10 @@
           [
             121.433965801477,
             25.0562557952193
+          ],
+          [
+            121.433931448161,
+            25.056367895514
           ]
         ]
       }
@@ -787,7 +793,7 @@
         "name": "泰山公有市場",
         "name_en": "Taishan Market",
         "line": "F213黎明",
-        "color": "#d97706",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165604760"
       },
@@ -807,7 +813,7 @@
         "name": "福泰里",
         "name_en": "Futai Village",
         "line": "F213黎明",
-        "color": "#d97706",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "36075"
       },
@@ -827,7 +833,7 @@
         "name": "泰山分駐所",
         "name_en": "Taishan Precinct",
         "line": "F213黎明",
-        "color": "#d97706",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "36076"
       },
@@ -847,7 +853,7 @@
         "name": "泰山國小",
         "name_en": "Taishan Elementary School",
         "line": "F213黎明",
-        "color": "#d97706",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "36077"
       },
@@ -867,7 +873,7 @@
         "name": "憲訓中心",
         "name_en": "Military Police Training Center",
         "line": "F213黎明",
-        "color": "#d97706",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "36078"
       },
@@ -887,7 +893,7 @@
         "name": "泰山國中",
         "name_en": "Taishan Jr. High School",
         "line": "F213黎明",
-        "color": "#d97706",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "36079"
       },
@@ -907,7 +913,7 @@
         "name": "山腳溪橋",
         "name_en": "Shanjiaoxi Bridge",
         "line": "F213黎明",
-        "color": "#d97706",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "36080"
       },
@@ -927,7 +933,7 @@
         "name": "黎明技術學院",
         "name_en": "LeeMing Institute Of Technology",
         "line": "F213黎明",
-        "color": "#d97706",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73768"
       },
@@ -947,7 +953,7 @@
         "name": "圓通寺",
         "name_en": "Yuantong Temple",
         "line": "F213黎明",
-        "color": "#d97706",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165609296"
       },
@@ -967,7 +973,7 @@
         "name": "大科路30號",
         "name_en": "No.30 Dake Rd.",
         "line": "F213黎明",
-        "color": "#d97706",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73757"
       },
@@ -987,7 +993,7 @@
         "name": "大科路63號",
         "name_en": "No.63 Dake Rd.",
         "line": "F213黎明",
-        "color": "#d97706",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165604048"
       },
@@ -1007,7 +1013,7 @@
         "name": "鎮安宮",
         "name_en": "Zhenan Temple",
         "line": "F213黎明",
-        "color": "#d97706",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165604051"
       },
@@ -1027,7 +1033,7 @@
         "name": "勝隆土雞城",
         "name_en": "Shenglong",
         "line": "F213黎明",
-        "color": "#d97706",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73763"
       },
@@ -1047,7 +1053,7 @@
         "name": "自強路37號",
         "name_en": "No.37 Ziqiang Rd.",
         "line": "F213黎明",
-        "color": "#d97706",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73759"
       },
@@ -1067,7 +1073,7 @@
         "name": "普興宮",
         "name_en": "Puxing Temple",
         "line": "F213黎明",
-        "color": "#d97706",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73777"
       },
@@ -1087,7 +1093,7 @@
         "name": "聖王宮",
         "name_en": "Shengwang Temple",
         "line": "F213黎明",
-        "color": "#d97706",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73755"
       },
@@ -1107,7 +1113,7 @@
         "name": "山腳溪橋",
         "name_en": "Shanjiaoxi Bridge",
         "line": "F213黎明",
-        "color": "#d97706",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3608"
       },
@@ -1127,7 +1133,7 @@
         "name": "泰山國中",
         "name_en": "Taishan Jr. High School",
         "line": "F213黎明",
-        "color": "#d97706",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3626"
       },
@@ -1147,7 +1153,7 @@
         "name": "憲訓中心",
         "name_en": "Military Police Training Center",
         "line": "F213黎明",
-        "color": "#d97706",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3636"
       },
@@ -1167,7 +1173,7 @@
         "name": "泰山國小",
         "name_en": "Taishan Elementary School",
         "line": "F213黎明",
-        "color": "#d97706",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3625"
       },
@@ -1187,7 +1193,7 @@
         "name": "泰山分駐所",
         "name_en": "Taishan Police Station",
         "line": "F213黎明",
-        "color": "#d97706",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3621"
       },
@@ -1207,7 +1213,7 @@
         "name": "福泰里",
         "name_en": "Futai Village",
         "line": "F213黎明",
-        "color": "#d97706",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3634"
       },
@@ -1227,7 +1233,7 @@
         "name": "泰山公有市場",
         "name_en": "Taishan Market",
         "line": "F213黎明",
-        "color": "#d97706",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165604760"
       },

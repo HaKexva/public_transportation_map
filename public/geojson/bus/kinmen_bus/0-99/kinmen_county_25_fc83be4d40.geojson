@@ -6,13 +6,14 @@
     "name": "25幸福巴士繞山后二",
     "name_en": "25幸福巴士繞山后二",
     "ref": "25幸福巴士繞山后二",
-    "color": "#86198f",
+    "color": "#3730a3",
     "city_id": "KinmenCounty",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.kinmen.gov.tw/api/route/252/map/220/image",
     "operator_id": "0001",
     "operator": "金門",
-    "operator_en": "City Bus and Ferry Management Office, Kinmen County"
+    "operator_en": "City Bus and Ferry Management Office, Kinmen County",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "25幸福巴士繞山后二",
         "name": "25幸福巴士繞山后二",
         "name_en": "25幸福巴士繞山后二",
-        "color": "#86198f",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1063,6 +1065,10 @@
           [
             118.41402,
             24.44245
+          ],
+          [
+            118.41377,
+            24.4422
           ]
         ]
       }
@@ -1075,7 +1081,7 @@
         "name": "山外站",
         "name_en": "Shanwai Station",
         "line": "25幸福巴士繞山后二",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "29"
       },
@@ -1095,7 +1101,7 @@
         "name": "黃海路",
         "name_en": "Huanghai Rd.",
         "line": "25幸福巴士繞山后二",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "516"
       },
@@ -1115,7 +1121,7 @@
         "name": "監理站",
         "name_en": "Motor Vehicles Office",
         "line": "25幸福巴士繞山后二",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "517"
       },
@@ -1135,7 +1141,7 @@
         "name": "南雄",
         "name_en": "Nanxiong",
         "line": "25幸福巴士繞山后二",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "518"
       },
@@ -1155,7 +1161,7 @@
         "name": "下莊",
         "name_en": "Xiazhuang",
         "line": "25幸福巴士繞山后二",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "519"
       },
@@ -1175,7 +1181,7 @@
         "name": "陽明山",
         "name_en": "YangMingShan",
         "line": "25幸福巴士繞山后二",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "520"
       },
@@ -1195,7 +1201,7 @@
         "name": "前埔村內",
         "name_en": "Qianpu Village",
         "line": "25幸福巴士繞山后二",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "1029"
       },
@@ -1215,7 +1221,7 @@
         "name": "陽明",
         "name_en": "Yangming",
         "line": "25幸福巴士繞山后二",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "521"
       },
@@ -1235,7 +1241,7 @@
         "name": "鵲山",
         "name_en": "Queshan",
         "line": "25幸福巴士繞山后二",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "522"
       },
@@ -1255,7 +1261,7 @@
         "name": "屏東",
         "name_en": "Pingdong",
         "line": "25幸福巴士繞山后二",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "523"
       },
@@ -1275,7 +1281,7 @@
         "name": "東店",
         "name_en": "Dongdian",
         "line": "25幸福巴士繞山后二",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "524"
       },
@@ -1295,7 +1301,7 @@
         "name": "太武社區三",
         "name_en": "Taiwu Community 3",
         "line": "25幸福巴士繞山后二",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "525"
       },
@@ -1315,7 +1321,7 @@
         "name": "陽翟東",
         "name_en": "YangZhaidong",
         "line": "25幸福巴士繞山后二",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "526"
       },
@@ -1335,7 +1341,7 @@
         "name": "西吳",
         "name_en": "Xiwu",
         "line": "25幸福巴士繞山后二",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "700"
       },
@@ -1355,7 +1361,7 @@
         "name": "東珩",
         "name_en": "Dongheng",
         "line": "25幸福巴士繞山后二",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "701"
       },
@@ -1375,7 +1381,7 @@
         "name": "東山前一",
         "name_en": "DongShangqian 1",
         "line": "25幸福巴士繞山后二",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "703"
       },
@@ -1395,7 +1401,7 @@
         "name": "西山前",
         "name_en": "Xishanqian",
         "line": "25幸福巴士繞山后二",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "704"
       },
@@ -1415,7 +1421,7 @@
         "name": "西山前一",
         "name_en": "Xishanqian 1",
         "line": "25幸福巴士繞山后二",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "705"
       },
@@ -1435,7 +1441,7 @@
         "name": "山西二",
         "name_en": "Shanxi 2",
         "line": "25幸福巴士繞山后二",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "708"
       },
@@ -1455,7 +1461,7 @@
         "name": "山西一",
         "name_en": "Shanxi 1",
         "line": "25幸福巴士繞山后二",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "709"
       },
@@ -1475,7 +1481,7 @@
         "name": "獅山",
         "name_en": "Shi Mountain",
         "line": "25幸福巴士繞山后二",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "710"
       },
@@ -1495,7 +1501,7 @@
         "name": "山后二",
         "name_en": "ShanHou 2",
         "line": "25幸福巴士繞山后二",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "711"
       },
@@ -1515,7 +1521,7 @@
         "name": "山后一",
         "name_en": "ShanHou 1",
         "line": "25幸福巴士繞山后二",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "712"
       },
@@ -1535,7 +1541,7 @@
         "name": "山后",
         "name_en": "ShanHou",
         "line": "25幸福巴士繞山后二",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "713"
       },
@@ -1555,7 +1561,7 @@
         "name": "民俗文化村",
         "name_en": "Folk Culture Village",
         "line": "25幸福巴士繞山后二",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "714"
       },
@@ -1575,7 +1581,7 @@
         "name": "碧山陳氏宗祠",
         "name_en": "Bishan Chen Clan Ancestral Hall",
         "line": "25幸福巴士繞山后二",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "1030"
       },
@@ -1595,7 +1601,7 @@
         "name": "睿友學校",
         "name_en": "Ruiyou School",
         "line": "25幸福巴士繞山后二",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "1031"
       },
@@ -1615,7 +1621,7 @@
         "name": "碧山",
         "name_en": "Bishan",
         "line": "25幸福巴士繞山后二",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "716"
       },
@@ -1635,7 +1641,7 @@
         "name": "安瀾國小",
         "name_en": "An Lan Elementary School",
         "line": "25幸福巴士繞山后二",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "529"
       },
@@ -1655,7 +1661,7 @@
         "name": "陽翟東",
         "name_en": "YangZhaidong",
         "line": "25幸福巴士繞山后二",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "530"
       },
@@ -1675,7 +1681,7 @@
         "name": "太武社區三",
         "name_en": "Taiwu Community III",
         "line": "25幸福巴士繞山后二",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "553"
       },
@@ -1695,7 +1701,7 @@
         "name": "東店",
         "name_en": "Dongdian",
         "line": "25幸福巴士繞山后二",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "554"
       },
@@ -1715,7 +1721,7 @@
         "name": "屏東",
         "name_en": "Pingdong",
         "line": "25幸福巴士繞山后二",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "555"
       },
@@ -1735,7 +1741,7 @@
         "name": "鵲山",
         "name_en": "Queshan",
         "line": "25幸福巴士繞山后二",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "556"
       },
@@ -1755,7 +1761,7 @@
         "name": "陽明",
         "name_en": "Yangming",
         "line": "25幸福巴士繞山后二",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "557"
       },
@@ -1775,7 +1781,7 @@
         "name": "前埔村內",
         "name_en": "Qianpu Village",
         "line": "25幸福巴士繞山后二",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "1029"
       },
@@ -1795,7 +1801,7 @@
         "name": "陽明山",
         "name_en": "YangMingShan",
         "line": "25幸福巴士繞山后二",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "558"
       },
@@ -1815,7 +1821,7 @@
         "name": "下莊",
         "name_en": "Xiazhuang",
         "line": "25幸福巴士繞山后二",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "559"
       },
@@ -1835,7 +1841,7 @@
         "name": "南雄",
         "name_en": "Nanxiong",
         "line": "25幸福巴士繞山后二",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "560"
       },
@@ -1855,7 +1861,7 @@
         "name": "監理站",
         "name_en": "Motor Vehicles Office",
         "line": "25幸福巴士繞山后二",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "561"
       },
@@ -1875,7 +1881,7 @@
         "name": "黃海路",
         "name_en": "Huanghai Rd.",
         "line": "25幸福巴士繞山后二",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "562"
       },
@@ -1895,7 +1901,7 @@
         "name": "山外站",
         "name_en": "Shanwai Station",
         "line": "25幸福巴士繞山后二",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "29"
       },

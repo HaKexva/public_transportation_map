@@ -6,13 +6,14 @@
     "name": "236",
     "name_en": "236",
     "ref": "236",
-    "color": "#b91c1c",
+    "color": "#b45309",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/2360/map/2013/image",
     "operator_id": "1",
     "operator": "桃園客運",
-    "operator_en": "Taoyuan Bus Co., Ltd."
+    "operator_en": "Taoyuan Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "236",
         "name": "236",
         "name_en": "236",
-        "color": "#b91c1c",
-        "direction": 0
+        "color": "#b45309",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1307,6 +1309,10 @@
           [
             121.33718,
             24.99228
+          ],
+          [
+            121.33706,
+            24.99218
           ]
         ]
       }
@@ -1319,7 +1325,7 @@
         "name": "龜山區公所",
         "name_en": "Guishan District Office",
         "line": "236",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5454"
       },
@@ -1339,7 +1345,7 @@
         "name": "龜山後街",
         "name_en": "Gueishanhou Street",
         "line": "236",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5278"
       },
@@ -1359,7 +1365,7 @@
         "name": "龜山國中",
         "name_en": "Guishan Junior High School",
         "line": "236",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5349"
       },
@@ -1379,7 +1385,7 @@
         "name": "千禧新城",
         "name_en": "Qianxixincheng",
         "line": "236",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3724"
       },
@@ -1399,7 +1405,7 @@
         "name": "中正公園",
         "name_en": "Zhongzheng Park",
         "line": "236",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5462"
       },
@@ -1419,7 +1425,7 @@
         "name": "自強萬壽路口",
         "name_en": "ZihCiang and WanShou Rd. Intersection",
         "line": "236",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5176"
       },
@@ -1439,7 +1445,7 @@
         "name": "太子地球村",
         "name_en": "Taizidiqiucun",
         "line": "236",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4299"
       },
@@ -1459,7 +1465,7 @@
         "name": "半嶺",
         "name_en": "Banling",
         "line": "236",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4632"
       },
@@ -1479,7 +1485,7 @@
         "name": "萬壽茶專路口",
         "name_en": "Wanshou Chazhuan Rd. Intersection",
         "line": "236",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6584"
       },
@@ -1499,7 +1505,7 @@
         "name": "幸美街66號",
         "name_en": "Xingmei St., No. 66",
         "line": "236",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6457"
       },
@@ -1519,7 +1525,7 @@
         "name": "幸美街",
         "name_en": "Xingmei St.",
         "line": "236",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5613"
       },
@@ -1539,7 +1545,7 @@
         "name": "幸美七街",
         "name_en": "Xingmei 7th St.",
         "line": "236",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5615"
       },
@@ -1559,7 +1565,7 @@
         "name": "幸美九街",
         "name_en": "Xingmei 9th St.",
         "line": "236",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5617"
       },
@@ -1579,7 +1585,7 @@
         "name": "大江山社區",
         "name_en": "Dajiangshan Community",
         "line": "236",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5619"
       },
@@ -1599,7 +1605,7 @@
         "name": "台北小城",
         "name_en": "Taipeixiaocheng",
         "line": "236",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4860"
       },
@@ -1619,7 +1625,7 @@
         "name": "牽手成家",
         "name_en": "Qianshochengchia",
         "line": "236",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5621"
       },
@@ -1639,7 +1645,7 @@
         "name": "大江山側門",
         "name_en": "Side Door of Dajianshan",
         "line": "236",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5622"
       },
@@ -1659,7 +1665,7 @@
         "name": "福源國小",
         "name_en": "Fuyuan Elementary School",
         "line": "236",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4804"
       },
@@ -1679,7 +1685,7 @@
         "name": "大丘田",
         "name_en": "Daqiutian",
         "line": "236",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "315"
       },
@@ -1699,7 +1705,7 @@
         "name": "湖山街92號",
         "name_en": "Hushan St., No. 92",
         "line": "236",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5624"
       },
@@ -1719,7 +1725,7 @@
         "name": "湖山街189巷",
         "name_en": "Hushan St., Ln. 189",
         "line": "236",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5626"
       },
@@ -1739,7 +1745,7 @@
         "name": "湖山街305號",
         "name_en": "Hushan Street No. 305",
         "line": "236",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2790"
       },
@@ -1759,7 +1765,7 @@
         "name": "天公廟",
         "name_en": "Tiangong Temple",
         "line": "236",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5434"
       },
@@ -1779,7 +1785,7 @@
         "name": "海萍路20號",
         "name_en": "Haiping Rd., No. 20",
         "line": "236",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5627"
       },
@@ -1799,7 +1805,7 @@
         "name": "合家歡",
         "name_en": "Hejiahuan",
         "line": "236",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5629"
       },
@@ -1819,7 +1825,7 @@
         "name": "綠野山莊",
         "name_en": "Luye Shanzhuang",
         "line": "236",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5630"
       },
@@ -1839,7 +1845,7 @@
         "name": "大同路明成街口",
         "name_en": "Datong Rd. Mingcheng St.",
         "line": "236",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4797"
       },
@@ -1859,7 +1865,7 @@
         "name": "大同新村",
         "name_en": "Datong Village",
         "line": "236",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3801"
       },
@@ -1879,7 +1885,7 @@
         "name": "大同路口",
         "name_en": "Datong Road Intersection",
         "line": "236",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3595"
       },
@@ -1899,7 +1905,7 @@
         "name": "龜山國小",
         "name_en": "Guishan Elementary School",
         "line": "236",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4357"
       },
@@ -1919,7 +1925,7 @@
         "name": "龜山區公所",
         "name_en": "Guishan District Office",
         "line": "236",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5454"
       },

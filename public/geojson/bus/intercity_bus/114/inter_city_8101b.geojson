@@ -6,13 +6,14 @@
     "name": "8101B（台灣好行東部海岸線(上午半日)）",
     "name_en": "8101B (台灣好行東部海岸線(上午半日))",
     "ref": "8101B",
-    "color": "#ea580c",
+    "color": "#a21caf",
     "city_id": "InterCity",
     "source": "TDX Bus Shape / StopOfRoute",
     "via": "台灣好行東部海岸線(上午半日)",
     "official_map_url": "https://web.taiwanbus.tw/MISUploadData/Schematic/file/8101.jpg",
     "operator_id": "114",
-    "operator": "興東客運"
+    "operator": "興東客運",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "8101B",
         "name": "8101B（台灣好行東部海岸線(上午半日)）",
         "name_en": "8101B (台灣好行東部海岸線(上午半日))",
-        "color": "#ea580c",
-        "direction": 0
+        "color": "#a21caf",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -8623,6 +8625,10 @@
           [
             121.14754,
             22.75275
+          ],
+          [
+            121.14764,
+            22.75192
           ]
         ]
       }
@@ -8635,7 +8641,7 @@
         "name": "台東轉運站",
         "name_en": "Taitung Bus Station",
         "line": "8101B（台灣好行東部海岸線(上午半日)）",
-        "color": "#ea580c",
+        "color": "#a21caf",
         "direction": 0
       },
       "geometry": {
@@ -8654,7 +8660,7 @@
         "name": "台東火車站",
         "name_en": "TRA Taitung Station",
         "line": "8101B（台灣好行東部海岸線(上午半日)）",
-        "color": "#ea580c",
+        "color": "#a21caf",
         "direction": 0
       },
       "geometry": {
@@ -8673,7 +8679,7 @@
         "name": "阿美族民俗中心",
         "name_en": "Amis Folk Center",
         "line": "8101B（台灣好行東部海岸線(上午半日)）",
-        "color": "#ea580c",
+        "color": "#a21caf",
         "direction": 0
       },
       "geometry": {
@@ -8692,7 +8698,7 @@
         "name": "江賢二藝術園區",
         "name_en": "PAUL CHIANG ART CENTER",
         "line": "8101B（台灣好行東部海岸線(上午半日)）",
-        "color": "#ea580c",
+        "color": "#a21caf",
         "direction": 0
       },
       "geometry": {
@@ -8711,7 +8717,7 @@
         "name": "台東轉運站",
         "name_en": "Taitung Bus Station",
         "line": "8101B（台灣好行東部海岸線(上午半日)）",
-        "color": "#ea580c",
+        "color": "#a21caf",
         "direction": 0
       },
       "geometry": {

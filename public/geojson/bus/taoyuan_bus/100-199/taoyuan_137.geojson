@@ -6,13 +6,14 @@
     "name": "137",
     "name_en": "137",
     "ref": "137",
-    "color": "#b91c1c",
+    "color": "#b45309",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/3110/map/1870/image",
     "operator_id": "1",
     "operator": "桃園客運",
-    "operator_en": "Taoyuan Bus Co., Ltd."
+    "operator_en": "Taoyuan Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "137",
         "name": "137",
         "name_en": "137",
-        "color": "#b91c1c",
-        "direction": 0
+        "color": "#b45309",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -747,6 +749,10 @@
           [
             121.31243,
             24.99031
+          ],
+          [
+            121.31181,
+            24.9912
           ]
         ]
       }
@@ -759,7 +765,7 @@
         "name": "統領百貨",
         "name_en": "Tonlin Department Store",
         "line": "137",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1223"
       },
@@ -779,7 +785,7 @@
         "name": "成功路",
         "name_en": "Chenggong Road",
         "line": "137",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4200"
       },
@@ -799,7 +805,7 @@
         "name": "民生成功路口",
         "name_en": "Minsheng and ChengGung Rd. Intersection",
         "line": "137",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4144"
       },
@@ -819,7 +825,7 @@
         "name": "復興橋",
         "name_en": "FuShing Bridge",
         "line": "137",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2335"
       },
@@ -839,7 +845,7 @@
         "name": "東山里",
         "name_en": "DungShan Village",
         "line": "137",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3503"
       },
@@ -859,7 +865,7 @@
         "name": "萬壽山鶯路口",
         "name_en": "Wanshou Shanying Rd. Intersection",
         "line": "137",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3884"
       },
@@ -879,7 +885,7 @@
         "name": "山鶯萬壽路口",
         "name_en": "Shanying Rd/Wanshou Rd Intersectipn",
         "line": "137",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3881"
       },
@@ -899,7 +905,7 @@
         "name": "明碁電腦",
         "name_en": "BENQ",
         "line": "137",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2780"
       },
@@ -919,7 +925,7 @@
         "name": "山鶯中興路口",
         "name_en": "Shanying Zhongxing Intersection",
         "line": "137",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5267"
       },
@@ -939,7 +945,7 @@
         "name": "中興路口",
         "name_en": "Zhongxing Rd. Intersection",
         "line": "137",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6250"
       },
@@ -959,7 +965,7 @@
         "name": "國光巷",
         "name_en": "Guoguang Lane",
         "line": "137",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4974"
       },
@@ -979,7 +985,7 @@
         "name": "山鶯明興街口",
         "name_en": "Shanying Ming Hing street",
         "line": "137",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5472"
       },
@@ -999,7 +1005,7 @@
         "name": "明興街",
         "name_en": "Mingxing Street",
         "line": "137",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4972"
       },
@@ -1019,7 +1025,7 @@
         "name": "吳厝",
         "name_en": "Wucuo",
         "line": "137",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2552"
       },
@@ -1039,7 +1045,7 @@
         "name": "福德宮",
         "name_en": "FuDe Temple",
         "line": "137",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "994"
       },
@@ -1059,7 +1065,7 @@
         "name": "明興街口",
         "name_en": "Mingxing Street Intersection",
         "line": "137",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4605"
       },
@@ -1079,7 +1085,7 @@
         "name": "貿易一村",
         "name_en": "MauYi 1st Village",
         "line": "137",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4316"
       },
@@ -1099,7 +1105,7 @@
         "name": "貿商新城",
         "name_en": "MauShang New Village",
         "line": "137",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5282"
       },
@@ -1119,7 +1125,7 @@
         "name": "自強南路",
         "name_en": "TzJiang South Road",
         "line": "137",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5291"
       },
@@ -1139,7 +1145,7 @@
         "name": "中華街口",
         "name_en": "JungHua Street Intersection",
         "line": "137",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5283"
       },
@@ -1159,7 +1165,7 @@
         "name": "龜山國小",
         "name_en": "Guishan Elementary School",
         "line": "137",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4358"
       },
@@ -1179,7 +1185,7 @@
         "name": "大同路口",
         "name_en": "Datong Road Intersection",
         "line": "137",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3596"
       },
@@ -1199,7 +1205,7 @@
         "name": "大同新村",
         "name_en": "Datong Village",
         "line": "137",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3800"
       },
@@ -1219,7 +1225,7 @@
         "name": "德明路口",
         "name_en": "Deming Road Intersection",
         "line": "137",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3819"
       },
@@ -1239,7 +1245,7 @@
         "name": "銘傳資管大樓",
         "name_en": "Ming Chuan Info. & Mgmt. Building",
         "line": "137",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3821"
       },
@@ -1259,7 +1265,7 @@
         "name": "銘傳設計大樓",
         "name_en": "Ming Chuan Design Building",
         "line": "137",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3822"
       },
@@ -1279,7 +1285,7 @@
         "name": "銘傳郵政代辦所",
         "name_en": "Ming Chuan Postal Agency",
         "line": "137",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3823"
       },
@@ -1299,7 +1305,7 @@
         "name": "德明路口",
         "name_en": "Deming Road Intersection",
         "line": "137",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3820"
       },
@@ -1319,7 +1325,7 @@
         "name": "大同新村",
         "name_en": "Datong Village",
         "line": "137",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3801"
       },
@@ -1339,7 +1345,7 @@
         "name": "壽山高中(中興路)",
         "name_en": "Shou-Shan Senior High School (Zhongxing Rd.)",
         "line": "137",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3597"
       },
@@ -1359,7 +1365,7 @@
         "name": "龜山後街",
         "name_en": "Gueishanhou Street",
         "line": "137",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5277"
       },
@@ -1379,7 +1385,7 @@
         "name": "中興路中山街口",
         "name_en": "Zhongxing Rd. and Zhongshan St. Intersection",
         "line": "137",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6722"
       },
@@ -1399,7 +1405,7 @@
         "name": "新興市場",
         "name_en": "ShinShing Market",
         "line": "137",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5281"
       },
@@ -1419,7 +1425,7 @@
         "name": "大林派出所",
         "name_en": "Dalin Police Station",
         "line": "137",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5476"
       },
@@ -1439,7 +1445,7 @@
         "name": "山頂里",
         "name_en": "ShanDing Village",
         "line": "137",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4318"
       },
@@ -1459,7 +1465,7 @@
         "name": "明興街口",
         "name_en": "Mingxing Street Intersection",
         "line": "137",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4604"
       },
@@ -1479,7 +1485,7 @@
         "name": "福德宮",
         "name_en": "FuDe Temple",
         "line": "137",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1001"
       },
@@ -1499,7 +1505,7 @@
         "name": "吳厝",
         "name_en": "Wucuo",
         "line": "137",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2551"
       },
@@ -1519,7 +1525,7 @@
         "name": "明興街",
         "name_en": "Mingxing Street",
         "line": "137",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4971"
       },
@@ -1539,7 +1545,7 @@
         "name": "山鶯明興街口",
         "name_en": "Shanying Ming Hing street",
         "line": "137",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5473"
       },
@@ -1559,7 +1565,7 @@
         "name": "國光巷",
         "name_en": "Guoguang Lane",
         "line": "137",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4973"
       },
@@ -1579,7 +1585,7 @@
         "name": "中興路口",
         "name_en": "Zhongxing Rd. Intersection",
         "line": "137",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6534"
       },
@@ -1599,7 +1605,7 @@
         "name": "山鶯中興路口",
         "name_en": "Shanying Zhongxing Intersection",
         "line": "137",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5266"
       },
@@ -1619,7 +1625,7 @@
         "name": "明碁電腦",
         "name_en": "BENQ",
         "line": "137",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2779"
       },
@@ -1639,7 +1645,7 @@
         "name": "山鶯萬壽路口",
         "name_en": "Shanying Rd/Wanshou Rd Intersectipn",
         "line": "137",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3882"
       },
@@ -1659,7 +1665,7 @@
         "name": "萬壽山鶯路口",
         "name_en": "Wanshou Shanying Rd. Intersection",
         "line": "137",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3883"
       },
@@ -1679,7 +1685,7 @@
         "name": "東山里",
         "name_en": "DungShan Village",
         "line": "137",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3504"
       },
@@ -1699,7 +1705,7 @@
         "name": "桃園公車站",
         "name_en": "Taoyuan Bus Station",
         "line": "137",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4215"
       },

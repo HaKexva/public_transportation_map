@@ -6,13 +6,14 @@
     "name": "臺北觀光巴士紅線",
     "name_en": "臺北觀光巴士紅線",
     "ref": "臺北觀光巴士紅線",
-    "color": "#7c3aed",
+    "color": "#16A34A",
     "city_id": "Taipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.gov.taipei/File/Get/45aa3031-4884-4270-87f2-fbb0beecf373?v=639248448913392297",
     "operator_id": "400",
     "operator": "三重客運",
-    "operator_en": "San Chung Bus Co., Ltd."
+    "operator_en": "San Chung Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "臺北觀光巴士紅線",
         "name": "臺北觀光巴士紅線",
         "name_en": "臺北觀光巴士紅線",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#16A34A",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1051,6 +1053,10 @@
           [
             121.51776023204899,
             25.04645623952559
+          ],
+          [
+            121.51670931308954,
+            25.046472221290227
           ]
         ]
       }
@@ -1062,8 +1068,9 @@
         "ref": "臺北觀光巴士紅線",
         "name": "臺北觀光巴士紅線",
         "name_en": "臺北觀光巴士紅線",
-        "color": "#7c3aed",
-        "direction": 1
+        "color": "#16A34A",
+        "direction": 1,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1711,6 +1718,10 @@
           [
             121.517759110725,
             25.0464649018118
+          ],
+          [
+            121.517142588863,
+            25.0463508230149
           ]
         ]
       }
@@ -1723,7 +1734,7 @@
         "name": "臺北車站(忠孝)",
         "name_en": "Taipei Main Sta. (Zhongxiao)",
         "line": "臺北觀光巴士紅線",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "1000082"
       },
@@ -1743,7 +1754,7 @@
         "name": "捷運西門站",
         "name_en": "MRT Ximen Sta.",
         "line": "臺北觀光巴士紅線",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "1000079"
       },
@@ -1763,7 +1774,7 @@
         "name": "小南門",
         "name_en": "Xiaonanmen",
         "line": "臺北觀光巴士紅線",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "1000080"
       },
@@ -1783,7 +1794,7 @@
         "name": "萬華車站",
         "name_en": "Wanhua Station",
         "line": "臺北觀光巴士紅線",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "70034"
       },
@@ -1803,7 +1814,7 @@
         "name": "捷運龍山寺站",
         "name_en": "MRT Longshan Temple Sta.",
         "line": "臺北觀光巴士紅線",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "1794"
       },
@@ -1823,7 +1834,7 @@
         "name": "小南門",
         "name_en": "Xiaonanmen",
         "line": "臺北觀光巴士紅線",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "50691"
       },
@@ -1843,7 +1854,7 @@
         "name": "中正紀念堂",
         "name_en": "C.K.S. Memorial Hall",
         "line": "臺北觀光巴士紅線",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "1946"
       },
@@ -1863,7 +1874,7 @@
         "name": "信義永康街口(捷運東門站)",
         "name_en": "Xinyi & Yongkang Intersection (MRT Dongmen Sta.)",
         "line": "臺北觀光巴士紅線",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "2116"
       },
@@ -1883,7 +1894,7 @@
         "name": "捷運大安森林公園站",
         "name_en": "MRT Daan Park Sta.",
         "line": "臺北觀光巴士紅線",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "1000057"
       },
@@ -1903,7 +1914,7 @@
         "name": "捷運大安站(信義)",
         "name_en": "MRT Daan Sta. (Xinyi)",
         "line": "臺北觀光巴士紅線",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "1000109"
       },
@@ -1923,7 +1934,7 @@
         "name": "信義敦化路口",
         "name_en": "Xinyi & Dunhua Intersection",
         "line": "臺北觀光巴士紅線",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "2286"
       },
@@ -1943,7 +1954,7 @@
         "name": "信義通化街口",
         "name_en": "Xinyi & Tonghua Intersection",
         "line": "臺北觀光巴士紅線",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "2131"
       },
@@ -1963,7 +1974,7 @@
         "name": "101國際購物中心",
         "name_en": "Taipei 101",
         "line": "臺北觀光巴士紅線",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "2044"
       },
@@ -1983,7 +1994,7 @@
         "name": "松壽路口",
         "name_en": "Songshou Rd. Entrance",
         "line": "臺北觀光巴士紅線",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "2105"
       },
@@ -2003,7 +2014,7 @@
         "name": "捷運市政府站",
         "name_en": "MRT Taipei City Hall Sta.",
         "line": "臺北觀光巴士紅線",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "2149"
       },
@@ -2023,7 +2034,7 @@
         "name": "捷運國父紀念館站(忠孝)",
         "name_en": "MRT Sun Yat-sen Memorial Hall Sta. (Zhongxiao)",
         "line": "臺北觀光巴士紅線",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "389"
       },
@@ -2043,7 +2054,7 @@
         "name": "捷運忠孝敦化站",
         "name_en": "MRT Zhongxiao Dunhua Sta.",
         "line": "臺北觀光巴士紅線",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "372"
       },
@@ -2063,7 +2074,7 @@
         "name": "頂好市場",
         "name_en": "Dinghao Market",
         "line": "臺北觀光巴士紅線",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "3932"
       },
@@ -2083,7 +2094,7 @@
         "name": "捷運忠孝復興站",
         "name_en": "MRT Zhongxiao Fuxing Sta.",
         "line": "臺北觀光巴士紅線",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "3933"
       },
@@ -2103,7 +2114,7 @@
         "name": "華山文創園區",
         "name_en": "Huashan Cultural and Creative Industries Park",
         "line": "臺北觀光巴士紅線",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "2015"
       },
@@ -2123,7 +2134,7 @@
         "name": "臺北車站(忠孝)",
         "name_en": "Taipei Main Sta. (Zhongxiao)",
         "line": "臺北觀光巴士紅線",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "1165609645"
       },

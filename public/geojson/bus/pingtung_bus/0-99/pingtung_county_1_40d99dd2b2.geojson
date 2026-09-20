@@ -6,12 +6,13 @@
     "name": "幸福瑪家1路",
     "name_en": "幸福瑪家1路",
     "ref": "幸福瑪家1路",
-    "color": "#b91c1c",
+    "color": "#9333ea",
     "city_id": "PingtungCounty",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://web.taiwanbus.tw/MISUploadData/Schematic/file/0187.jpg",
     "operator_id": "94",
-    "operator": "屏東縣瑪家鄉公所"
+    "operator": "屏東縣瑪家鄉公所",
+    "loop": true
   },
   "features": [
     {
@@ -21,8 +22,9 @@
         "ref": "幸福瑪家1路",
         "name": "幸福瑪家1路",
         "name_en": "幸福瑪家1路",
-        "color": "#b91c1c",
-        "direction": 0
+        "color": "#9333ea",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -6578,6 +6580,10 @@
           [
             120.64919,
             22.70886
+          ],
+          [
+            120.64921,
+            22.70888
           ]
         ]
       }
@@ -6589,8 +6595,9 @@
         "ref": "幸福瑪家1路",
         "name": "幸福瑪家1路",
         "name_en": "幸福瑪家1路",
-        "color": "#b91c1c",
-        "direction": 1
+        "color": "#9333ea",
+        "direction": 1,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -13110,7 +13117,7 @@
         "name": "瑪家鄉公所",
         "name_en": "Majia Township Office",
         "line": "幸福瑪家1路",
-        "color": "#b91c1c",
+        "color": "#9333ea",
         "direction": 0,
         "station_id": "139963"
       },
@@ -13130,7 +13137,7 @@
         "name": "北葉活動中心",
         "name_en": "Beiye Village Activity Center",
         "line": "幸福瑪家1路",
-        "color": "#b91c1c",
+        "color": "#9333ea",
         "direction": 0,
         "station_id": "145462"
       },
@@ -13150,7 +13157,7 @@
         "name": "涼山村口涼亭",
         "name_en": "Liang-Shan Village",
         "line": "幸福瑪家1路",
-        "color": "#b91c1c",
+        "color": "#9333ea",
         "direction": 0,
         "station_id": "139964"
       },
@@ -13170,7 +13177,7 @@
         "name": "佳義國小前路口",
         "name_en": "Jia Yi Elementary School",
         "line": "幸福瑪家1路",
-        "color": "#b91c1c",
+        "color": "#9333ea",
         "direction": 0,
         "station_id": "139965"
       },
@@ -13190,7 +13197,7 @@
         "name": "排灣村活動中心",
         "name_en": "Pai-Wan Village Activity Center",
         "line": "幸福瑪家1路",
-        "color": "#b91c1c",
+        "color": "#9333ea",
         "direction": 0,
         "station_id": "139966"
       },
@@ -13210,7 +13217,7 @@
         "name": "老埤村T字路口7-11",
         "name_en": "Lao-Pi Village",
         "line": "幸福瑪家1路",
-        "color": "#b91c1c",
+        "color": "#9333ea",
         "direction": 0,
         "station_id": "139967"
       },
@@ -13230,7 +13237,7 @@
         "name": "內埔國中",
         "name_en": "Neipu Junior High School",
         "line": "幸福瑪家1路",
-        "color": "#b91c1c",
+        "color": "#9333ea",
         "direction": 0,
         "station_id": "139968"
       },
@@ -13250,7 +13257,7 @@
         "name": "佳義國小前路口",
         "name_en": "Jia Yi Elementary School",
         "line": "幸福瑪家1路",
-        "color": "#b91c1c",
+        "color": "#9333ea",
         "direction": 0,
         "station_id": "139965"
       },
@@ -13270,7 +13277,7 @@
         "name": "涼山村口涼亭",
         "name_en": "Liang-Shan Village",
         "line": "幸福瑪家1路",
-        "color": "#b91c1c",
+        "color": "#9333ea",
         "direction": 0,
         "station_id": "139964"
       },
@@ -13290,7 +13297,7 @@
         "name": "水門7-11",
         "name_en": "Shuimen Village",
         "line": "幸福瑪家1路",
-        "color": "#b91c1c",
+        "color": "#9333ea",
         "direction": 0,
         "station_id": "145464"
       },
@@ -13310,7 +13317,7 @@
         "name": "瑪家國中",
         "name_en": "Ma Jia Junior High School",
         "line": "幸福瑪家1路",
-        "color": "#b91c1c",
+        "color": "#9333ea",
         "direction": 0,
         "station_id": "139969"
       },
@@ -13330,7 +13337,7 @@
         "name": "瑪家鄉公所",
         "name_en": "Majia Township Office",
         "line": "幸福瑪家1路",
-        "color": "#b91c1c",
+        "color": "#9333ea",
         "direction": 1,
         "station_id": "139963"
       },
@@ -13350,7 +13357,7 @@
         "name": "瑪家國中",
         "name_en": "Ma Jia Junior High School",
         "line": "幸福瑪家1路",
-        "color": "#b91c1c",
+        "color": "#9333ea",
         "direction": 1,
         "station_id": "139969"
       },
@@ -13370,7 +13377,7 @@
         "name": "水門7-11",
         "name_en": "Shuimen Village",
         "line": "幸福瑪家1路",
-        "color": "#b91c1c",
+        "color": "#9333ea",
         "direction": 1,
         "station_id": "145465"
       },
@@ -13390,7 +13397,7 @@
         "name": "涼山村口涼亭",
         "name_en": "Liang-Shan Village",
         "line": "幸福瑪家1路",
-        "color": "#b91c1c",
+        "color": "#9333ea",
         "direction": 1,
         "station_id": "139964"
       },
@@ -13410,7 +13417,7 @@
         "name": "佳義國小前路口",
         "name_en": "Jia Yi Elementary School",
         "line": "幸福瑪家1路",
-        "color": "#b91c1c",
+        "color": "#9333ea",
         "direction": 1,
         "station_id": "139965"
       },
@@ -13430,7 +13437,7 @@
         "name": "排灣村活動中心",
         "name_en": "Pai-Wan Village Activity Center",
         "line": "幸福瑪家1路",
-        "color": "#b91c1c",
+        "color": "#9333ea",
         "direction": 1,
         "station_id": "139966"
       },
@@ -13450,7 +13457,7 @@
         "name": "老埤村T字路口7-11",
         "name_en": "Lao-Pi Village",
         "line": "幸福瑪家1路",
-        "color": "#b91c1c",
+        "color": "#9333ea",
         "direction": 1,
         "station_id": "145468"
       },
@@ -13470,7 +13477,7 @@
         "name": "內埔國中",
         "name_en": "Neipu Junior High School",
         "line": "幸福瑪家1路",
-        "color": "#b91c1c",
+        "color": "#9333ea",
         "direction": 1,
         "station_id": "139968"
       },
@@ -13490,7 +13497,7 @@
         "name": "佳義國小前路口",
         "name_en": "Jia Yi Elementary School",
         "line": "幸福瑪家1路",
-        "color": "#b91c1c",
+        "color": "#9333ea",
         "direction": 1,
         "station_id": "139965"
       },
@@ -13510,7 +13517,7 @@
         "name": "涼山村口涼亭",
         "name_en": "Liang-Shan Village",
         "line": "幸福瑪家1路",
-        "color": "#b91c1c",
+        "color": "#9333ea",
         "direction": 1,
         "station_id": "139964"
       },
@@ -13530,7 +13537,7 @@
         "name": "北葉活動中心",
         "name_en": "Beiye Village Activity Center",
         "line": "幸福瑪家1路",
-        "color": "#b91c1c",
+        "color": "#9333ea",
         "direction": 1,
         "station_id": "145463"
       },

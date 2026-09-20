@@ -6,13 +6,14 @@
     "name": "L721",
     "name_en": "L721",
     "ref": "L721",
-    "color": "#b91c1c",
+    "color": "#b45309",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/57210/map/581/image",
     "operator_id": "1",
     "operator": "桃園客運",
-    "operator_en": "Taoyuan Bus Co., Ltd."
+    "operator_en": "Taoyuan Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "L721",
         "name": "L721",
         "name_en": "L721",
-        "color": "#b91c1c",
-        "direction": 0
+        "color": "#b45309",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -731,6 +733,10 @@
           [
             121.21681,
             24.86398
+          ],
+          [
+            121.21661,
+            24.86391
           ]
         ]
       }
@@ -743,7 +749,7 @@
         "name": "龍潭區衛生所",
         "name_en": "Longtan District Health Center",
         "line": "L721",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "810"
       },
@@ -763,7 +769,7 @@
         "name": "五福街",
         "name_en": "Wufu St.",
         "line": "L721",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "805"
       },
@@ -783,7 +789,7 @@
         "name": "大昌健行路口",
         "name_en": "Dachang and Jiansing Rd. Intersection",
         "line": "L721",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "804"
       },
@@ -803,7 +809,7 @@
         "name": "永興公園",
         "name_en": "Youngxing Park",
         "line": "L721",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3922"
       },
@@ -823,7 +829,7 @@
         "name": "花園國宅",
         "name_en": "Garden Public Housing Community",
         "line": "L721",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3923"
       },
@@ -843,7 +849,7 @@
         "name": "武漢國小",
         "name_en": "Wuhan Elementary School",
         "line": "L721",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3925"
       },
@@ -863,7 +869,7 @@
         "name": "東興",
         "name_en": "Dongxing",
         "line": "L721",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3927"
       },
@@ -883,7 +889,7 @@
         "name": "中興路55巷口",
         "name_en": "Intersection of Lane 55, Zhongxing Rd.",
         "line": "L721",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3929"
       },
@@ -903,7 +909,7 @@
         "name": "民豐一街47號",
         "name_en": "No. 47, Minfeng 1st St.",
         "line": "L721",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4444"
       },
@@ -923,7 +929,7 @@
         "name": "民豐一街",
         "name_en": "Minfeng 1st St.",
         "line": "L721",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3932"
       },
@@ -943,7 +949,7 @@
         "name": "興中宮",
         "name_en": "Singjhong Temple",
         "line": "L721",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3933"
       },
@@ -963,7 +969,7 @@
         "name": "龍平路",
         "name_en": "LungPing Road",
         "line": "L721",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3935"
       },
@@ -983,7 +989,7 @@
         "name": "武中路422巷口",
         "name_en": "Intersection of Lane 422, Wujhong Rd.",
         "line": "L721",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3937"
       },
@@ -1003,7 +1009,7 @@
         "name": "武漢國中",
         "name_en": "Wuhan Junior High School",
         "line": "L721",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3939"
       },
@@ -1023,7 +1029,7 @@
         "name": "布查花園",
         "name_en": "Bucha Garden",
         "line": "L721",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3941"
       },
@@ -1043,7 +1049,7 @@
         "name": "中興路336巷",
         "name_en": "Lane 336, Zhongxing Rd.",
         "line": "L721",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3943"
       },
@@ -1063,7 +1069,7 @@
         "name": "國聯",
         "name_en": "Guolian",
         "line": "L721",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3945"
       },
@@ -1083,7 +1089,7 @@
         "name": "健行路",
         "name_en": "Jianxing Raod",
         "line": "L721",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "623"
       },
@@ -1103,7 +1109,7 @@
         "name": "花園國宅",
         "name_en": "Garden Public Housing Community",
         "line": "L721",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3924"
       },
@@ -1123,7 +1129,7 @@
         "name": "永興公園",
         "name_en": "Youngxing Park",
         "line": "L721",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3921"
       },
@@ -1143,7 +1149,7 @@
         "name": "龍潭運動公園",
         "name_en": "Longtan Sport Park",
         "line": "L721",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4260"
       },
@@ -1163,7 +1169,7 @@
         "name": "龍潭區衛生所",
         "name_en": "Longtan District Health Center",
         "line": "L721",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "810"
       },

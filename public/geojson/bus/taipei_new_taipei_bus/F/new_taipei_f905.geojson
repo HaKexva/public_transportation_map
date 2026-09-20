@@ -6,13 +6,14 @@
     "name": "F905",
     "name_en": "F905",
     "ref": "F905",
-    "color": "#166534",
+    "color": "#6B8F9A",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.gov.taipei/File/Get/ec60e539-0d58-47fa-8021-417fa32bafd4?v=639248448824303207",
     "operator_id": "16254",
     "operator": "汐止區公所",
-    "operator_en": "Xizhi District Office"
+    "operator_en": "Xizhi District Office",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "F905",
         "name": "F905",
         "name_en": "F905",
-        "color": "#166534",
-        "direction": 0
+        "color": "#6B8F9A",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -2975,6 +2977,10 @@
           [
             121.662685284841,
             25.0696172720871
+          ],
+          [
+            121.661915304428,
+            25.0692394345553
           ]
         ]
       }
@@ -2986,7 +2992,7 @@
         "ref": "F905",
         "name": "F905",
         "name_en": "F905",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 1
       },
       "geometry": {
@@ -8451,7 +8457,7 @@
         "name": "汐止",
         "name_en": "Xizhi",
         "line": "F905",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1001113"
       },
@@ -8471,7 +8477,7 @@
         "name": "汐止公園",
         "name_en": "Xizhi Park",
         "line": "F905",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "7630"
       },
@@ -8491,7 +8497,7 @@
         "name": "黃昏市場",
         "name_en": "Sunset Market",
         "line": "F905",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165609095"
       },
@@ -8511,7 +8517,7 @@
         "name": "秀峰高中(忠孝東路)",
         "name_en": "Xioufong High School(Zhongxiao E. Rd.)",
         "line": "F905",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "2758"
       },
@@ -8531,7 +8537,7 @@
         "name": "汐止火車站(忠孝東路)",
         "name_en": "Xizhi Rail Sta.(Zhongxiao E. Rd.)",
         "line": "F905",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165606065"
       },
@@ -8551,7 +8557,7 @@
         "name": "茄苳路口",
         "name_en": "Qiedong Rd. Entrance",
         "line": "F905",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70853"
       },
@@ -8571,7 +8577,7 @@
         "name": "公教住宅",
         "name_en": "Civil Service Housing",
         "line": "F905",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "620"
       },
@@ -8591,7 +8597,7 @@
         "name": "茄苳里活動中心",
         "name_en": "Qiedong Village Activity Center",
         "line": "F905",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "71052"
       },
@@ -8611,7 +8617,7 @@
         "name": "茄苳腳",
         "name_en": "Jiadongjiao",
         "line": "F905",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "7696"
       },
@@ -8631,7 +8637,7 @@
         "name": "大安街口",
         "name_en": "Daan St. Entrance",
         "line": "F905",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70821"
       },
@@ -8651,7 +8657,7 @@
         "name": "保長坑",
         "name_en": "Baochangkeng",
         "line": "F905",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "2780"
       },
@@ -8671,7 +8677,7 @@
         "name": "汐平路一段32號",
         "name_en": "No.32 Sec.1 Xiping Rd.",
         "line": "F905",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70829"
       },
@@ -8691,7 +8697,7 @@
         "name": "新台五路橋下",
         "name_en": "Xintaiwu Bridge",
         "line": "F905",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70839"
       },
@@ -8711,7 +8717,7 @@
         "name": "汐平路一段134號",
         "name_en": "No.134 Sec. 1 Xiping Rd.",
         "line": "F905",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "71047"
       },
@@ -8731,7 +8737,7 @@
         "name": "石門坑福德宮",
         "name_en": "Shimenkeng Fude Temple",
         "line": "F905",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "71104"
       },
@@ -8751,7 +8757,7 @@
         "name": "汐平路一段170號路口",
         "name_en": "No.170 Sec.1 Xiping Rd. Entrance",
         "line": "F905",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "71042"
       },
@@ -8771,7 +8777,7 @@
         "name": "汐平路一段182號路口",
         "name_en": "No.182 Sec.1 Xiping Rd. Entrance",
         "line": "F905",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70828"
       },
@@ -8791,7 +8797,7 @@
         "name": "小坑路口",
         "name_en": "Xiaokeng Rd. Entrance",
         "line": "F905",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "71041"
       },
@@ -8811,7 +8817,7 @@
         "name": "忠孝橋",
         "name_en": "Zhongxiao Bridge",
         "line": "F905",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70833"
       },
@@ -8831,7 +8837,7 @@
         "name": "土地公廟",
         "name_en": "Tudigong Temple",
         "line": "F905",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70372"
       },
@@ -8851,7 +8857,7 @@
         "name": "姜子寮",
         "name_en": "Jiangziliao",
         "line": "F905",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "71095"
       },
@@ -8871,7 +8877,7 @@
         "name": "姜子寮路口",
         "name_en": "Jiangziliao Rd. Entrance",
         "line": "F905",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "71096"
       },
@@ -8891,7 +8897,7 @@
         "name": "大圓山寺",
         "name_en": "Dayuanshan Temple",
         "line": "F905",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "71082"
       },
@@ -8911,7 +8917,7 @@
         "name": "東山派出所",
         "name_en": "Dongshan Police Station",
         "line": "F905",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "71093"
       },
@@ -8931,7 +8937,7 @@
         "name": "東山國小",
         "name_en": "Dongshan Elementary School",
         "line": "F905",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "71094"
       },
@@ -8951,7 +8957,7 @@
         "name": "汐平路二段88號路口",
         "name_en": "No.88 Sec.2 Xiping Rd. Entrance",
         "line": "F905",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "71088"
       },
@@ -8971,7 +8977,7 @@
         "name": "仁愛橋",
         "name_en": "Renai Bridge",
         "line": "F905",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "71086"
       },
@@ -8991,7 +8997,7 @@
         "name": "汐平路二段88號路口",
         "name_en": "No.88 Sec.2 Xiping Rd. Entrance",
         "line": "F905",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603613"
       },
@@ -9011,7 +9017,7 @@
         "name": "東山國小",
         "name_en": "Dongshan Elementary School",
         "line": "F905",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603615"
       },
@@ -9031,7 +9037,7 @@
         "name": "東山派出所",
         "name_en": "Dongshan Police Station",
         "line": "F905",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603614"
       },
@@ -9051,7 +9057,7 @@
         "name": "大圓山寺",
         "name_en": "Dayuanshan Temple",
         "line": "F905",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "71083"
       },
@@ -9071,7 +9077,7 @@
         "name": "姜子寮路口",
         "name_en": "Jiangziliao Rd. Entrance",
         "line": "F905",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603616"
       },
@@ -9091,7 +9097,7 @@
         "name": "忠孝橋",
         "name_en": "Zhongxiao Bridge",
         "line": "F905",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603579"
       },
@@ -9111,7 +9117,7 @@
         "name": "小坑路口",
         "name_en": "Xiaokeng Rd. Entrance",
         "line": "F905",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603605"
       },
@@ -9131,7 +9137,7 @@
         "name": "汐平路一段182號路口",
         "name_en": "No.182 Sec.1 Xiping Rd. Entrance",
         "line": "F905",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603578"
       },
@@ -9151,7 +9157,7 @@
         "name": "汐平路一段170號路口",
         "name_en": "No.170 Sec.1 Xiping Rd. Entrance",
         "line": "F905",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165608906"
       },
@@ -9171,7 +9177,7 @@
         "name": "石門坑福德宮",
         "name_en": "Shimenkeng Fude Temple",
         "line": "F905",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603618"
       },
@@ -9191,7 +9197,7 @@
         "name": "汐平路一段134號",
         "name_en": "No.134 Sec. 1 Xiping Rd.",
         "line": "F905",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165608942"
       },
@@ -9211,7 +9217,7 @@
         "name": "新台五路保新街口",
         "name_en": "Baoxin St. Intersection",
         "line": "F905",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "71109"
       },
@@ -9231,7 +9237,7 @@
         "name": "保新街67號",
         "name_en": "No.67 Baoxin St.",
         "line": "F905",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603398"
       },
@@ -9251,7 +9257,7 @@
         "name": "保新大同路口",
         "name_en": "Baoxin & Datong Intersection",
         "line": "F905",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165609362"
       },
@@ -9271,7 +9277,7 @@
         "name": "摩天鎮",
         "name_en": "Motian Community",
         "line": "F905",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "2805"
       },
@@ -9291,7 +9297,7 @@
         "name": "亞太科技園區",
         "name_en": "Asia Pacific Technology Park",
         "line": "F905",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "7615"
       },
@@ -9311,7 +9317,7 @@
         "name": "保長國小",
         "name_en": "Baochang Elementary School",
         "line": "F905",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603845"
       },
@@ -9331,7 +9337,7 @@
         "name": "保長坑",
         "name_en": "Baochangkeng",
         "line": "F905",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "7633"
       },
@@ -9351,7 +9357,7 @@
         "name": "保安里",
         "name_en": "Baoan Village",
         "line": "F905",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "7625"
       },
@@ -9371,7 +9377,7 @@
         "name": "茄苳腳",
         "name_en": "Jiadongjiao",
         "line": "F905",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3865"
       },
@@ -9391,7 +9397,7 @@
         "name": "茄苳里活動中心",
         "name_en": "Qiedong Village Activity Center",
         "line": "F905",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603608"
       },
@@ -9411,7 +9417,7 @@
         "name": "公教住宅",
         "name_en": "Civil Service Housing",
         "line": "F905",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "7697"
       },
@@ -9431,7 +9437,7 @@
         "name": "茄苳路口",
         "name_en": "Qiedong Rd. Entrance",
         "line": "F905",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70854"
       },
@@ -9451,7 +9457,7 @@
         "name": "汐止火車站(忠孝東路)",
         "name_en": "Xizhi Rail Sta.(Zhongxiao E. Rd.)",
         "line": "F905",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70966"
       },
@@ -9471,7 +9477,7 @@
         "name": "秀峰高中(忠孝東路)",
         "name_en": "Xioufong High School(Zhongxiao E. Rd.)",
         "line": "F905",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "2759"
       },
@@ -9491,7 +9497,7 @@
         "name": "黃昏市場",
         "name_en": "Sunset Market",
         "line": "F905",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165609075"
       },
@@ -9511,7 +9517,7 @@
         "name": "汐止公園",
         "name_en": "Xizhi Park",
         "line": "F905",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165604554"
       },
@@ -9531,7 +9537,7 @@
         "name": "汐止火車站",
         "name_en": "Xizhi Rail Sta.",
         "line": "F905",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165610015"
       },

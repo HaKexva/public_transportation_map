@@ -6,13 +6,14 @@
     "name": "708A",
     "name_en": "708A",
     "ref": "708A",
-    "color": "#7c3aed",
+    "color": "#16A34A",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/7081/map/1810/image",
     "operator_id": "9",
     "operator": "三重客運",
-    "operator_en": "San Chung Bus Co., Ltd."
+    "operator_en": "San Chung Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "708A",
         "name": "708A",
         "name_en": "708A",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#16A34A",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1595,6 +1597,10 @@
           [
             121.37403,
             25.05281
+          ],
+          [
+            121.37435,
+            25.05304
           ]
         ]
       }
@@ -1607,7 +1613,7 @@
         "name": "華亞園區",
         "name_en": "Gongxi Station(Hwa Ya Technology Park)",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6652"
       },
@@ -1627,7 +1633,7 @@
         "name": "桃園酒廠",
         "name_en": "Taooyuan Sake Brewery",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6557"
       },
@@ -1647,7 +1653,7 @@
         "name": "長庚醫院",
         "name_en": "Chang-Gung Memorial Hospital",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6869"
       },
@@ -1667,7 +1673,7 @@
         "name": "醫學大樓",
         "name_en": "Medical Building",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "4472"
       },
@@ -1687,7 +1693,7 @@
         "name": "華夏大飯店",
         "name_en": "Highness Hotel",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "3515"
       },
@@ -1707,7 +1713,7 @@
         "name": "桃園長庚轉運站",
         "name_en": "Taoyuan Chang Gung Bus Terminal",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6713"
       },
@@ -1727,7 +1733,7 @@
         "name": "文化二路八德路口",
         "name_en": "Wenhua 2nd Rd. and Bade Rd. Intersection",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6493"
       },
@@ -1747,7 +1753,7 @@
         "name": "長榮",
         "name_en": "Evergreen",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "4370"
       },
@@ -1767,7 +1773,7 @@
         "name": "土地公廟",
         "name_en": "Land Temple",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "199"
       },
@@ -1787,7 +1793,7 @@
         "name": "光明國小",
         "name_en": "Guanming Elementary School",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "3783"
       },
@@ -1807,7 +1813,7 @@
         "name": "光明郵局",
         "name_en": "Guangming post office",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "3829"
       },
@@ -1827,7 +1833,7 @@
         "name": "麗寶經典",
         "name_en": "Libao Classic",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "3831"
       },
@@ -1847,7 +1853,7 @@
         "name": "奉化忠孝西路口",
         "name_en": "Fenghua Zhongxiao West Road Intersection",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "3834"
       },
@@ -1867,7 +1873,7 @@
         "name": "奉化南順一街口",
         "name_en": "Fenghua Nanshun 1st Street Intersection",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "3784"
       },
@@ -1887,7 +1893,7 @@
         "name": "南竹奉化路口",
         "name_en": "Nanzhu Fenghua Road Intersection",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "3242"
       },
@@ -1907,7 +1913,7 @@
         "name": "光明國中(南竹路)",
         "name_en": "Guang-Ming Junior High School(Nanzhu Rd.)",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "3243"
       },
@@ -1927,7 +1933,7 @@
         "name": "光明公園",
         "name_en": "Guangming Park",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "636"
       },
@@ -1947,7 +1953,7 @@
         "name": "光明聯福",
         "name_en": "Bright Lianfu",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "3240"
       },
@@ -1967,7 +1973,7 @@
         "name": "台茂",
         "name_en": "Taimall",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "3744"
       },
@@ -1987,7 +1993,7 @@
         "name": "下南崁",
         "name_en": "Xianankan",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "1373"
       },
@@ -2007,7 +2013,7 @@
         "name": "長榮南山路口",
         "name_en": "Changrong and Nanshan Rd. Intersection",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "5328"
       },
@@ -2027,7 +2033,7 @@
         "name": "南山長榮路口",
         "name_en": "Nanshan Changrong Rd. Intersection",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "4320"
       },
@@ -2047,7 +2053,7 @@
         "name": "內厝橋",
         "name_en": "Neicuo Bridge",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "5130"
       },
@@ -2067,7 +2073,7 @@
         "name": "埔尾",
         "name_en": "Puwei",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "2903"
       },
@@ -2087,7 +2093,7 @@
         "name": "水泥公司",
         "name_en": "Cement Company",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "5132"
       },
@@ -2107,7 +2113,7 @@
         "name": "中崙公司",
         "name_en": "Zhonglun Company",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "5134"
       },
@@ -2127,7 +2133,7 @@
         "name": "公埔",
         "name_en": "Gongpu",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "5136"
       },
@@ -2147,7 +2153,7 @@
         "name": "佑新公司",
         "name_en": "Youxin Company",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "5138"
       },
@@ -2167,7 +2173,7 @@
         "name": "群鹿公司",
         "name_en": "Qunlu Company",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "5140"
       },
@@ -2187,7 +2193,7 @@
         "name": "山鼻",
         "name_en": "Shanbi",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6587"
       },
@@ -2207,7 +2213,7 @@
         "name": "捷運山鼻站",
         "name_en": "MRT Shanbi Station",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "4747"
       },
@@ -2227,7 +2233,7 @@
         "name": "捷運山鼻站",
         "name_en": "MRT Shanbi Station",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "4748"
       },
@@ -2247,7 +2253,7 @@
         "name": "山鼻",
         "name_en": "Shanbi",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6588"
       },
@@ -2267,7 +2273,7 @@
         "name": "群鹿公司",
         "name_en": "Qunlu Company",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "5141"
       },
@@ -2287,7 +2293,7 @@
         "name": "佑新公司",
         "name_en": "Youxin Company",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "5139"
       },
@@ -2307,7 +2313,7 @@
         "name": "公埔",
         "name_en": "Gongpu",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "5137"
       },
@@ -2327,7 +2333,7 @@
         "name": "中崙公司",
         "name_en": "Zhonglun Company",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "5135"
       },
@@ -2347,7 +2353,7 @@
         "name": "水泥公司",
         "name_en": "Cement Company",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "5133"
       },
@@ -2367,7 +2373,7 @@
         "name": "埔尾",
         "name_en": "Puwei",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "2904"
       },
@@ -2387,7 +2393,7 @@
         "name": "內厝橋",
         "name_en": "Neicuo Bridge",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "5131"
       },
@@ -2407,7 +2413,7 @@
         "name": "南山長榮路口",
         "name_en": "Nanshan Changrong Rd. Intersection",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "4319"
       },
@@ -2427,7 +2433,7 @@
         "name": "長榮南山路口",
         "name_en": "Changrong and Nanshan Rd. Intersection",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "5329"
       },
@@ -2447,7 +2453,7 @@
         "name": "下南崁",
         "name_en": "Xianankan",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "1372"
       },
@@ -2467,7 +2473,7 @@
         "name": "台茂",
         "name_en": "Taimall",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "7078"
       },
@@ -2487,7 +2493,7 @@
         "name": "光明聯福",
         "name_en": "Bright Lianfu",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "3239"
       },
@@ -2507,7 +2513,7 @@
         "name": "光明公園",
         "name_en": "Guangming Park",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "637"
       },
@@ -2527,7 +2533,7 @@
         "name": "光明國中",
         "name_en": "Guang-Ming Junior High School",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "3244"
       },
@@ -2547,7 +2553,7 @@
         "name": "南竹奉化路口",
         "name_en": "Nanzhu Fenghua Road Intersection",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "3241"
       },
@@ -2567,7 +2573,7 @@
         "name": "奉化南順一街口",
         "name_en": "Fenghua Nanshun 1st Street Intersection",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "3785"
       },
@@ -2587,7 +2593,7 @@
         "name": "奉化忠孝西路口",
         "name_en": "Fenghua Zhongxiao West Road Intersection",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "3833"
       },
@@ -2607,7 +2613,7 @@
         "name": "麗寶經典",
         "name_en": "Libao Classic",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "3832"
       },
@@ -2627,7 +2633,7 @@
         "name": "光明郵局",
         "name_en": "Guangming post office",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "3830"
       },
@@ -2647,7 +2653,7 @@
         "name": "光明國小",
         "name_en": "Guanming Elementary School",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "3782"
       },
@@ -2667,7 +2673,7 @@
         "name": "土地公廟",
         "name_en": "Tudigong Temple",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "3827"
       },
@@ -2687,7 +2693,7 @@
         "name": "長榮",
         "name_en": "Evergreen",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "4371"
       },
@@ -2707,7 +2713,7 @@
         "name": "捷運林口站(龜山一路)",
         "name_en": "MRT Linkou Station (Guishan 1st Rd.)",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "5332"
       },
@@ -2727,7 +2733,7 @@
         "name": "桃園長庚轉運站",
         "name_en": "Taoyuan Chang Gung Bus Terminal",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6713"
       },
@@ -2747,7 +2753,7 @@
         "name": "華夏大飯店",
         "name_en": "Highness Hotel",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "3516"
       },
@@ -2767,7 +2773,7 @@
         "name": "醫學大樓",
         "name_en": "Medical Building",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "4473"
       },
@@ -2787,7 +2793,7 @@
         "name": "長庚醫院",
         "name_en": "Chang-Gung Memorial Hospital",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "5064"
       },
@@ -2807,7 +2813,7 @@
         "name": "捷運長庚醫院站",
         "name_en": "MRT Chang-Gung Memorial Hospital Station",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6683"
       },
@@ -2827,7 +2833,7 @@
         "name": "管理中心",
         "name_en": "Management Center",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6684"
       },
@@ -2847,7 +2853,7 @@
         "name": "桃園酒廠",
         "name_en": "Taooyuan Sake Brewery",
         "line": "708A",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6556"
       },

@@ -6,13 +6,14 @@
     "name": "F922北基",
     "name_en": "F922北基",
     "ref": "F922北基",
-    "color": "#3f6212",
+    "color": "#6B8F9A",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.gov.taipei/File/Get/d2807838-07f6-46f9-bbab-1f371c970af3?v=639248448825084327",
     "operator_id": "16252",
     "operator": "萬里區公所",
-    "operator_en": "Wanli District Office"
+    "operator_en": "Wanli District Office",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "F922北基",
         "name": "F922北基",
         "name_en": "F922北基",
-        "color": "#3f6212",
-        "direction": 0
+        "color": "#6B8F9A",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -859,6 +861,10 @@
           [
             121.689512004695,
             25.1796089952186
+          ],
+          [
+            121.689509563133,
+            25.1796199822442
           ]
         ]
       }
@@ -871,7 +877,7 @@
         "name": "萬里公有零售市場",
         "name_en": "Wanli Public Market",
         "line": "F922北基",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165609006"
       },
@@ -891,7 +897,7 @@
         "name": "萬里區公所",
         "name_en": "Wanli District office",
         "line": "F922北基",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70502"
       },
@@ -911,7 +917,7 @@
         "name": "北基忠五街",
         "name_en": "Beiji & Zhongwu St. Intersection",
         "line": "F922北基",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70442"
       },
@@ -931,7 +937,7 @@
         "name": "中華海事",
         "name_en": "The Association Of Marine Affairs Chinese",
         "line": "F922北基",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165605320"
       },
@@ -951,7 +957,7 @@
         "name": "北基大勇路",
         "name_en": "Beiji & Dayong Rd. Intersection",
         "line": "F922北基",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70441"
       },
@@ -971,7 +977,7 @@
         "name": "北基仁四街公園",
         "name_en": "Beiji Ren 4th St. Park",
         "line": "F922北基",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73581"
       },
@@ -991,7 +997,7 @@
         "name": "孝七街",
         "name_en": "Xiao 7th St.",
         "line": "F922北基",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165605321"
       },
@@ -1011,7 +1017,7 @@
         "name": "孝一街",
         "name_en": "Xiao 1st St.",
         "line": "F922北基",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165605322"
       },
@@ -1031,7 +1037,7 @@
         "name": "忠三街",
         "name_en": "Zhong 3rd St.",
         "line": "F922北基",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165605323"
       },
@@ -1051,7 +1057,7 @@
         "name": "萬里區公所",
         "name_en": "Wanli District office",
         "line": "F922北基",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70502"
       },
@@ -1071,7 +1077,7 @@
         "name": "萬里公有零售市場",
         "name_en": "Wanli Public Market",
         "line": "F922北基",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165609006"
       },

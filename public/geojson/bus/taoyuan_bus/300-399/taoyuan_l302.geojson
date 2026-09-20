@@ -6,13 +6,14 @@
     "name": "L302",
     "name_en": "L302",
     "ref": "L302",
-    "color": "#7c3aed",
+    "color": "#be123c",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/53020/map/506/image",
     "operator_id": "6",
     "operator": "亞通客運",
-    "operator_en": "Yatung Bus Co., Ltd."
+    "operator_en": "Yatung Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "L302",
         "name": "L302",
         "name_en": "L302",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#be123c",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1111,6 +1113,10 @@
           [
             121.2949,
             25.04643
+          ],
+          [
+            121.29468,
+            25.04664
           ]
         ]
       }
@@ -1122,8 +1128,9 @@
         "ref": "L302",
         "name": "L302",
         "name_en": "L302",
-        "color": "#7c3aed",
-        "direction": 1
+        "color": "#be123c",
+        "direction": 1,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1491,6 +1498,10 @@
           [
             121.29488,
             25.04638
+          ],
+          [
+            121.29472,
+            25.04665
           ]
         ]
       }
@@ -1503,7 +1514,7 @@
         "name": "蘆竹區公所",
         "name_en": "Luzhu District Office",
         "line": "L302",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "4653"
       },
@@ -1523,7 +1534,7 @@
         "name": "南美國小",
         "name_en": "Nanmei Elementary School",
         "line": "L302",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5279"
       },
@@ -1543,7 +1554,7 @@
         "name": "長榮吉邸",
         "name_en": "Changrongjidi",
         "line": "L302",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "435"
       },
@@ -1563,7 +1574,7 @@
         "name": "南崁國小",
         "name_en": "Nankan Elementary School",
         "line": "L302",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "2086"
       },
@@ -1583,7 +1594,7 @@
         "name": "中山長春路口",
         "name_en": "Jhongshan Jhangchun Rd. Intersection",
         "line": "L302",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "2090"
       },
@@ -1603,7 +1614,7 @@
         "name": "長榮花園",
         "name_en": "Changrong Garden",
         "line": "L302",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5331"
       },
@@ -1623,7 +1634,7 @@
         "name": "歐洲之星",
         "name_en": "Ouzhouzhixing",
         "line": "L302",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "4846"
       },
@@ -1643,7 +1654,7 @@
         "name": "六福長興路口",
         "name_en": "Lioufu  Changsing Rd. Intersection",
         "line": "L302",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5564"
       },
@@ -1663,7 +1674,7 @@
         "name": "唐順雅居",
         "name_en": "Tangshunyaju",
         "line": "L302",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5559"
       },
@@ -1683,7 +1694,7 @@
         "name": "中悅花廣",
         "name_en": "Zhongyuehuaguang",
         "line": "L302",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5558"
       },
@@ -1703,7 +1714,7 @@
         "name": "豪景四季站",
         "name_en": "Haujingsiji Stop",
         "line": "L302",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5556"
       },
@@ -1723,7 +1734,7 @@
         "name": "甜蜜進行曲",
         "name_en": "Tianmijinxingqu",
         "line": "L302",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5555"
       },
@@ -1743,7 +1754,7 @@
         "name": "長榮新邸",
         "name_en": "Changrongxindi",
         "line": "L302",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5565"
       },
@@ -1763,7 +1774,7 @@
         "name": "福祿一街",
         "name_en": "Fulu 1st St.",
         "line": "L302",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5567"
       },
@@ -1783,7 +1794,7 @@
         "name": "薇閣",
         "name_en": "Wego",
         "line": "L302",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5569"
       },
@@ -1803,7 +1814,7 @@
         "name": "五福六路",
         "name_en": "Wufu 6th Rd.",
         "line": "L302",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5571"
       },
@@ -1823,7 +1834,7 @@
         "name": "五福宮",
         "name_en": "Wufu Temple",
         "line": "L302",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "4852"
       },
@@ -1843,7 +1854,7 @@
         "name": "南崁高中",
         "name_en": "Nankan Municipal Senior High School",
         "line": "L302",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "4854"
       },
@@ -1863,7 +1874,7 @@
         "name": "羊稠活動中心",
         "name_en": "Yangchou Activity Center",
         "line": "L302",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "2768"
       },
@@ -1883,7 +1894,7 @@
         "name": "中山長春路口",
         "name_en": "Jhongshan Jhangchun Rd. Intersection",
         "line": "L302",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "2091"
       },
@@ -1903,7 +1914,7 @@
         "name": "南崁國小",
         "name_en": "Nankan Elementary School",
         "line": "L302",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "2088"
       },
@@ -1923,7 +1934,7 @@
         "name": "竹城采都",
         "name_en": "Jhucheng Caidou",
         "line": "L302",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5271"
       },
@@ -1943,7 +1954,7 @@
         "name": "吉林長春",
         "name_en": "Jilinzhangchun",
         "line": "L302",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5573"
       },
@@ -1963,7 +1974,7 @@
         "name": "仁愛五福路口",
         "name_en": "Renai Wufu Rd. Intersection",
         "line": "L302",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "4981"
       },
@@ -1983,7 +1994,7 @@
         "name": "蘆竹郵局",
         "name_en": "Luzhu Post Office",
         "line": "L302",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "4135"
       },
@@ -2003,7 +2014,7 @@
         "name": "南山六福",
         "name_en": "Nanshan Liufu",
         "line": "L302",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5128"
       },
@@ -2023,7 +2034,7 @@
         "name": "婦幼館",
         "name_en": "Women and Children Center",
         "line": "L302",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "4465"
       },
@@ -2043,7 +2054,7 @@
         "name": "南崁菜市場",
         "name_en": "Nankan Market",
         "line": "L302",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5398"
       },
@@ -2063,7 +2074,7 @@
         "name": "蘆竹區公所",
         "name_en": "Luzhu District Office",
         "line": "L302",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "4652"
       },
@@ -2083,7 +2094,7 @@
         "name": "蘆竹區公所",
         "name_en": "Luzhu District Office",
         "line": "L302",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 1,
         "station_id": "4653"
       },
@@ -2103,7 +2114,7 @@
         "name": "南崁菜市場",
         "name_en": "Nankan Market",
         "line": "L302",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 1,
         "station_id": "5397"
       },
@@ -2123,7 +2134,7 @@
         "name": "婦幼館",
         "name_en": "Women and Children Center",
         "line": "L302",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 1,
         "station_id": "4464"
       },
@@ -2143,7 +2154,7 @@
         "name": "南山六福",
         "name_en": "Nanshan Liufu",
         "line": "L302",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 1,
         "station_id": "5129"
       },
@@ -2163,7 +2174,7 @@
         "name": "蘆竹郵局",
         "name_en": "Luzhu Post Office",
         "line": "L302",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 1,
         "station_id": "4136"
       },
@@ -2183,7 +2194,7 @@
         "name": "電通市",
         "name_en": "Diantongshi Community",
         "line": "L302",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 1,
         "station_id": "4991"
       },
@@ -2203,7 +2214,7 @@
         "name": "吉林長春",
         "name_en": "Jilinzhangchun",
         "line": "L302",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 1,
         "station_id": "5574"
       },
@@ -2223,7 +2234,7 @@
         "name": "竹城采都",
         "name_en": "Jhucheng Caidou",
         "line": "L302",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 1,
         "station_id": "5272"
       },
@@ -2243,7 +2254,7 @@
         "name": "南崁國小",
         "name_en": "Nankan Elementary School",
         "line": "L302",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 1,
         "station_id": "2089"
       },
@@ -2263,7 +2274,7 @@
         "name": "中山長春路口",
         "name_en": "Jhongshan Jhangchun Rd. Intersection",
         "line": "L302",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 1,
         "station_id": "2090"
       },
@@ -2283,7 +2294,7 @@
         "name": "羊稠活動中心",
         "name_en": "Yangchou Activity Center",
         "line": "L302",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 1,
         "station_id": "2769"
       },
@@ -2303,7 +2314,7 @@
         "name": "南崁高中",
         "name_en": "Nankan Municipal Senior High School",
         "line": "L302",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 1,
         "station_id": "4855"
       },
@@ -2323,7 +2334,7 @@
         "name": "五福宮",
         "name_en": "Wufu Temple",
         "line": "L302",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 1,
         "station_id": "4853"
       },
@@ -2343,7 +2354,7 @@
         "name": "五福六路",
         "name_en": "Wufu 6th Rd.",
         "line": "L302",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 1,
         "station_id": "5572"
       },
@@ -2363,7 +2374,7 @@
         "name": "薇閣",
         "name_en": "Wego",
         "line": "L302",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 1,
         "station_id": "5570"
       },
@@ -2383,7 +2394,7 @@
         "name": "福祿一街",
         "name_en": "Fulu 1st St.",
         "line": "L302",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 1,
         "station_id": "5568"
       },
@@ -2403,7 +2414,7 @@
         "name": "長榮新邸",
         "name_en": "Changrongxindi",
         "line": "L302",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 1,
         "station_id": "5566"
       },
@@ -2423,7 +2434,7 @@
         "name": "六福長興路口",
         "name_en": "Lioufu  Changsing Rd. Intersection",
         "line": "L302",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 1,
         "station_id": "5564"
       },
@@ -2443,7 +2454,7 @@
         "name": "唐順雅居",
         "name_en": "Tangshunyaju",
         "line": "L302",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 1,
         "station_id": "5559"
       },
@@ -2463,7 +2474,7 @@
         "name": "中悅花廣",
         "name_en": "Zhongyuehuaguang",
         "line": "L302",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 1,
         "station_id": "5558"
       },
@@ -2483,7 +2494,7 @@
         "name": "豪景四季站",
         "name_en": "Haujingsiji Stop",
         "line": "L302",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 1,
         "station_id": "5557"
       },
@@ -2503,7 +2514,7 @@
         "name": "甜蜜進行曲",
         "name_en": "Tianmijinxingqu",
         "line": "L302",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 1,
         "station_id": "5555"
       },
@@ -2523,7 +2534,7 @@
         "name": "歐洲之星",
         "name_en": "Ouzhouzhixing",
         "line": "L302",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 1,
         "station_id": "4847"
       },
@@ -2543,7 +2554,7 @@
         "name": "長榮花園",
         "name_en": "Changrong Garden",
         "line": "L302",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 1,
         "station_id": "5330"
       },
@@ -2563,7 +2574,7 @@
         "name": "中山長春路口",
         "name_en": "Jhongshan Jhangchun Rd. Intersection",
         "line": "L302",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 1,
         "station_id": "2091"
       },
@@ -2583,7 +2594,7 @@
         "name": "南崁國小",
         "name_en": "Nankan Elementary School",
         "line": "L302",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 1,
         "station_id": "2087"
       },
@@ -2603,7 +2614,7 @@
         "name": "長榮吉邸",
         "name_en": "Changrongjidi",
         "line": "L302",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 1,
         "station_id": "434"
       },
@@ -2623,7 +2634,7 @@
         "name": "南美國小",
         "name_en": "Nanmei Elementary School",
         "line": "L302",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 1,
         "station_id": "5280"
       },
@@ -2643,7 +2654,7 @@
         "name": "蘆竹區公所",
         "name_en": "Luzhu District Office",
         "line": "L302",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 1,
         "station_id": "4652"
       },

@@ -6,12 +6,13 @@
     "name": "L317A",
     "name_en": "L317A",
     "ref": "L317A",
-    "color": "#1e3a8a",
+    "color": "#c2410c",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/53171/map/2456/image",
     "operator_id": "24",
-    "operator": "勁揚通運"
+    "operator": "勁揚通運",
+    "loop": true
   },
   "features": [
     {
@@ -21,8 +22,9 @@
         "ref": "L317A",
         "name": "L317A",
         "name_en": "L317A",
-        "color": "#1e3a8a",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -3242,6 +3244,10 @@
           [
             121.33724,
             24.99229
+          ],
+          [
+            121.33706,
+            24.99217
           ]
         ]
       }
@@ -3254,7 +3260,7 @@
         "name": "龜山區公所",
         "name_en": "Guishan District Office",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5454"
       },
@@ -3274,7 +3280,7 @@
         "name": "龜山農會",
         "name_en": "GueiShan Farmers Association",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5285"
       },
@@ -3294,7 +3300,7 @@
         "name": "覺海寺",
         "name_en": "Juehai Temple",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5455"
       },
@@ -3314,7 +3320,7 @@
         "name": "自強國小",
         "name_en": "Ziqiang Elementary School",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5457"
       },
@@ -3334,7 +3340,7 @@
         "name": "太子地球村",
         "name_en": "Taizidiqiucun",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "4299"
       },
@@ -3354,7 +3360,7 @@
         "name": "龍廷社區",
         "name_en": "Longting Community",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "4374"
       },
@@ -3374,7 +3380,7 @@
         "name": "裕元紡織",
         "name_en": "Yuyuan Textile",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "4376"
       },
@@ -3394,7 +3400,7 @@
         "name": "水池",
         "name_en": "Shuichi",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5487"
       },
@@ -3414,7 +3420,7 @@
         "name": "中央造幣廠",
         "name_en": "Central Mint",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "4382"
       },
@@ -3434,7 +3440,7 @@
         "name": "長庚護理之家",
         "name_en": "Nursing house, Changgeng Medical Pondasyon",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5489"
       },
@@ -3454,7 +3460,7 @@
         "name": "長庚養生村",
         "name_en": "Chang Gung Health and Culture Village",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5490"
       },
@@ -3474,7 +3480,7 @@
         "name": "長庚養生村C棟",
         "name_en": "Chang Gung Health and Culture Village Building C",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "6348"
       },
@@ -3494,7 +3500,7 @@
         "name": "北天宮",
         "name_en": "Beitian Temple",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "4386"
       },
@@ -3514,7 +3520,7 @@
         "name": "集會所",
         "name_en": "Assembly Place",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5491"
       },
@@ -3534,7 +3540,7 @@
         "name": "桃園分院路口",
         "name_en": "Taoyuan Branch Intersection",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5493"
       },
@@ -3554,7 +3560,7 @@
         "name": "桃園分院",
         "name_en": "Taoyuan Branch",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "4470"
       },
@@ -3574,7 +3580,7 @@
         "name": "桃園分院路口",
         "name_en": "Taoyuan Branch Intersection",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5494"
       },
@@ -3594,7 +3600,7 @@
         "name": "大埔橋",
         "name_en": "Dapu Bridge",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "4393"
       },
@@ -3614,7 +3620,7 @@
         "name": "大埔國小",
         "name_en": "Dapu Elementary School",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5495"
       },
@@ -3634,7 +3640,7 @@
         "name": "振天宮",
         "name_en": "Zhentian Temple",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "4395"
       },
@@ -3654,7 +3660,7 @@
         "name": "大埔",
         "name_en": "Dapu",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "4400"
       },
@@ -3674,7 +3680,7 @@
         "name": "體育大學",
         "name_en": "National Taiwan Sport University",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5497"
       },
@@ -3694,7 +3700,7 @@
         "name": "文學路口",
         "name_en": "Wenxue Rd. Intersection",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5104"
       },
@@ -3714,7 +3720,7 @@
         "name": "文青二路口",
         "name_en": "Wuncing 2nd Rd. Intersection",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5105"
       },
@@ -3734,7 +3740,7 @@
         "name": "捷運體育大學站",
         "name_en": "MRT National Taiwan Sport University Station",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5326"
       },
@@ -3754,7 +3760,7 @@
         "name": "樂善寺",
         "name_en": "Leshan Temple",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5500"
       },
@@ -3774,7 +3780,7 @@
         "name": "后厝",
         "name_en": "Houcuo",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "4986"
       },
@@ -3794,7 +3800,7 @@
         "name": "大埔派出所",
         "name_en": "Dapu Police Station",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5501"
       },
@@ -3814,7 +3820,7 @@
         "name": "文光街口",
         "name_en": "Wenguan St. Intersection",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5503"
       },
@@ -3834,7 +3840,7 @@
         "name": "文德路",
         "name_en": "Wende Rd.",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5505"
       },
@@ -3854,7 +3860,7 @@
         "name": "長庚國小",
         "name_en": "Chang Gung Primary School",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5507"
       },
@@ -3874,7 +3880,7 @@
         "name": "長庚里第六站",
         "name_en": "Chang Gung Village 6th Stop",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "1339"
       },
@@ -3894,7 +3900,7 @@
         "name": "長庚活動中心",
         "name_en": "Chang Gung Activity Center",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5508"
       },
@@ -3914,7 +3920,7 @@
         "name": "樂善公園",
         "name_en": "Leshan Park Station",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "6687"
       },
@@ -3934,7 +3940,7 @@
         "name": "文德路",
         "name_en": "Wende Rd.",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5506"
       },
@@ -3954,7 +3960,7 @@
         "name": "林口長庚醫院",
         "name_en": "Linkou Chang Gung Memorial Hospital",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "2538"
       },
@@ -3974,7 +3980,7 @@
         "name": "公園路口",
         "name_en": "Gongyuan Rd. Intersection",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5268"
       },
@@ -3994,7 +4000,7 @@
         "name": "大崗國中",
         "name_en": "Da Gang Junior High School",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5510"
       },
@@ -4014,7 +4020,7 @@
         "name": "文華國小",
         "name_en": "Wenhua Elementary School",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "3751"
       },
@@ -4034,7 +4040,7 @@
         "name": "文化七路65號",
         "name_en": "Wenhua 7th Rd., No. 65",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5512"
       },
@@ -4054,7 +4060,7 @@
         "name": "文化七路",
         "name_en": "Wenhua 7th Rd.",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "3752"
       },
@@ -4074,7 +4080,7 @@
         "name": "大湖國小",
         "name_en": "Dahu Elementary School",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5515"
       },
@@ -4094,7 +4100,7 @@
         "name": "大湖國小",
         "name_en": "Dahu Elementary School",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5514"
       },
@@ -4114,7 +4120,7 @@
         "name": "文化三路78巷",
         "name_en": "Wenhua 3rd Rd., Ln. 78",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5516"
       },
@@ -4134,7 +4140,7 @@
         "name": "憲訓中心",
         "name_en": "Military Police Training Center",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "6520"
       },
@@ -4154,7 +4160,7 @@
         "name": "公西",
         "name_en": "Gongxi",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "4891"
       },
@@ -4174,7 +4180,7 @@
         "name": "復興街",
         "name_en": "Fuxing St.",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5518"
       },
@@ -4194,7 +4200,7 @@
         "name": "大湖紀念公園",
         "name_en": "Dahu Memorial Park",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "1233"
       },
@@ -4214,7 +4220,7 @@
         "name": "坪頂",
         "name_en": "Pinding",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5520"
       },
@@ -4234,7 +4240,7 @@
         "name": "大湖",
         "name_en": "Dahu",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5083"
       },
@@ -4254,7 +4260,7 @@
         "name": "大崗國小",
         "name_en": "Dagang Elementary School",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "4460"
       },
@@ -4274,7 +4280,7 @@
         "name": "大崗郵局",
         "name_en": "Dagang Post Office",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5522"
       },
@@ -4294,7 +4300,7 @@
         "name": "新世紀",
         "name_en": "Xinshiji",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5524"
       },
@@ -4314,7 +4320,7 @@
         "name": "頂湖",
         "name_en": "Dinghu",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "492"
       },
@@ -4334,7 +4340,7 @@
         "name": "樹人路26巷口",
         "name_en": "Shuren Road, Lane 26 Intersection",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "7031"
       },
@@ -4354,7 +4360,7 @@
         "name": "中央警察大學",
         "name_en": "Central Police University",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "7033"
       },
@@ -4374,7 +4380,7 @@
         "name": "金湖新村",
         "name_en": "Jinhu Village",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5526"
       },
@@ -4394,7 +4400,7 @@
         "name": "下湖九號",
         "name_en": "Xiahu No.9",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5528"
       },
@@ -4414,7 +4420,7 @@
         "name": "春發商店",
         "name_en": "Chunfa store",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5530"
       },
@@ -4434,7 +4440,7 @@
         "name": "下湖街口",
         "name_en": "Xiahu St. Intersection",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5532"
       },
@@ -4454,7 +4460,7 @@
         "name": "忠義路二段92巷",
         "name_en": "Zhongyi Rd., Sec.2 Ln. 92",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5534"
       },
@@ -4474,7 +4480,7 @@
         "name": "林厝",
         "name_en": "Lincuo",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "92"
       },
@@ -4494,7 +4500,7 @@
         "name": "大崗一鄰橋",
         "name_en": "Dagang Neighborhood 1, Bridge",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5536"
       },
@@ -4514,7 +4520,7 @@
         "name": "光華路二段46號",
         "name_en": "No.46, Guanhua Rd., Sec. 2",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5538"
       },
@@ -4534,7 +4540,7 @@
         "name": "上楓樹林",
         "name_en": "Shanfenshulin",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "4692"
       },
@@ -4554,7 +4560,7 @@
         "name": "楓樹林",
         "name_en": "Fenshulin",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5540"
       },
@@ -4574,7 +4580,7 @@
         "name": "忠義路宏洲街口",
         "name_en": "Zhongyi Rd. and Horngjou St. Intersection",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "6677"
       },
@@ -4594,7 +4600,7 @@
         "name": "楓樹忠義路口",
         "name_en": "Fongshu Jhongyi Rd. Intersection",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5063"
       },
@@ -4614,7 +4620,7 @@
         "name": "楓樹三街",
         "name_en": "Fengshu 3rd St.",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5542"
       },
@@ -4634,7 +4640,7 @@
         "name": "楓樹忠義路口",
         "name_en": "Fongshu Jhongyi Rd. Intersection",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5062"
       },
@@ -4654,7 +4660,7 @@
         "name": "楓樹國小",
         "name_en": "Feng-Shu Primary School",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5544"
       },
@@ -4674,7 +4680,7 @@
         "name": "精忠五村",
         "name_en": "Jinzhong 5th Village",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "4714"
       },
@@ -4694,7 +4700,7 @@
         "name": "千禧土地公廟",
         "name_en": "Qianxi Land God Temple",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5546"
       },
@@ -4714,7 +4720,7 @@
         "name": "中正公園",
         "name_en": "Zhongzheng Park",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5461"
       },
@@ -4734,7 +4740,7 @@
         "name": "千禧新城",
         "name_en": "Qianxixincheng",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "3723"
       },
@@ -4754,7 +4760,7 @@
         "name": "龜山國中",
         "name_en": "Guishan Junior High School",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5348"
       },
@@ -4774,7 +4780,7 @@
         "name": "永和街口",
         "name_en": "Yonghe St. Intersection",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5463"
       },
@@ -4794,7 +4800,7 @@
         "name": "陸光路口",
         "name_en": "Luguang Rd. Intersection",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5465"
       },
@@ -4814,7 +4820,7 @@
         "name": "同心一路",
         "name_en": "Tongxin 1st Rd.",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "4738"
       },
@@ -4834,7 +4840,7 @@
         "name": "同心二路",
         "name_en": "Tongxin 2nd Rd.",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5467"
       },
@@ -4854,7 +4860,7 @@
         "name": "同心二路",
         "name_en": "Tongxin 2nd Rd.",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5468"
       },
@@ -4874,7 +4880,7 @@
         "name": "同心一路",
         "name_en": "Tongxin 1st Rd.",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "4737"
       },
@@ -4894,7 +4900,7 @@
         "name": "中興路口",
         "name_en": "Zhongxing Rd. Intersection",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "4976"
       },
@@ -4914,7 +4920,7 @@
         "name": "龜山區公所",
         "name_en": "Guishan District Office",
         "line": "L317A",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5454"
       },

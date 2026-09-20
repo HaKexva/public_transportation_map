@@ -6,13 +6,14 @@
     "name": "122",
     "name_en": "122",
     "ref": "122",
-    "color": "#9a3412",
+    "color": "#2563eb",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/122/map/1205/image",
     "operator_id": "2",
     "operator": "中壢客運",
-    "operator_en": "Chungli Bus Co., Ltd."
+    "operator_en": "Chungli Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "122",
         "name": "122",
         "name_en": "122",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -751,6 +753,10 @@
           [
             121.22372,
             24.95327
+          ],
+          [
+            121.22427,
+            24.95348
           ]
         ]
       }
@@ -763,7 +769,7 @@
         "name": "中壢客運中壢總站",
         "name_en": "Zhongli Bus Main Station",
         "line": "122",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "126"
       },
@@ -783,7 +789,7 @@
         "name": "中壢監理站",
         "name_en": "Zhongli Motor Vehicles Office",
         "line": "122",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "369"
       },
@@ -803,7 +809,7 @@
         "name": "新街",
         "name_en": "Xin street",
         "line": "122",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "364"
       },
@@ -823,7 +829,7 @@
         "name": "中壢聯合辦公大樓",
         "name_en": "Zhongli United Office Building",
         "line": "122",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "363"
       },
@@ -843,7 +849,7 @@
         "name": "中壢簡易庭",
         "name_en": "Zhongli Simple Court",
         "line": "122",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "361"
       },
@@ -863,7 +869,7 @@
         "name": "中園育樂街口",
         "name_en": "Jhongyuan Yule St. Intersection",
         "line": "122",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "3797"
       },
@@ -883,7 +889,7 @@
         "name": "中園福州二街口",
         "name_en": "Jhongyuan Fujhou 2nd St. Intersection",
         "line": "122",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "277"
       },
@@ -903,7 +909,7 @@
         "name": "中福派出所",
         "name_en": "Zhongfu Police Station",
         "line": "122",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "6445"
       },
@@ -923,7 +929,7 @@
         "name": "啟英高中",
         "name_en": "Chiying Senior High School",
         "line": "122",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "275"
       },
@@ -943,7 +949,7 @@
         "name": "玉尊宮",
         "name_en": "Yuzun Temple",
         "line": "122",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "273"
       },
@@ -963,7 +969,7 @@
         "name": "土地宮",
         "name_en": "Tudi Temple",
         "line": "122",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "4656"
       },
@@ -983,7 +989,7 @@
         "name": "桃園大圳橋",
         "name_en": "Taoyuan Dazhen Bridge",
         "line": "122",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "271"
       },
@@ -1003,7 +1009,7 @@
         "name": "萬能科技大學",
         "name_en": "Vanung University",
         "line": "122",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "269"
       },
@@ -1023,7 +1029,7 @@
         "name": "賴厝",
         "name_en": "Laicuo",
         "line": "122",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "267"
       },
@@ -1043,7 +1049,7 @@
         "name": "謝厝",
         "name_en": "Xiecuo",
         "line": "122",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "264"
       },
@@ -1063,7 +1069,7 @@
         "name": "大江購物中心",
         "name_en": "Metrowalk Shoping Center",
         "line": "122",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "262"
       },
@@ -1083,7 +1089,7 @@
         "name": "鄉界",
         "name_en": "Xiangjie",
         "line": "122",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "260"
       },
@@ -1103,7 +1109,7 @@
         "name": "鄉界",
         "name_en": "Xiangjie",
         "line": "122",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "259"
       },
@@ -1123,7 +1129,7 @@
         "name": "大江購物中心",
         "name_en": "Metrowalk Shoping Center",
         "line": "122",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "261"
       },
@@ -1143,7 +1149,7 @@
         "name": "謝厝",
         "name_en": "Xiecuo",
         "line": "122",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "263"
       },
@@ -1163,7 +1169,7 @@
         "name": "賴厝",
         "name_en": "Laicuo",
         "line": "122",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "266"
       },
@@ -1183,7 +1189,7 @@
         "name": "萬能科技大學",
         "name_en": "Vanung University",
         "line": "122",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "268"
       },
@@ -1203,7 +1209,7 @@
         "name": "桃園大圳橋",
         "name_en": "Taoyuan Dazhen Bridge",
         "line": "122",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "270"
       },
@@ -1223,7 +1229,7 @@
         "name": "玉尊宮",
         "name_en": "Yuzun Temple",
         "line": "122",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "272"
       },
@@ -1243,7 +1249,7 @@
         "name": "啟英高中",
         "name_en": "Chiying Senior High School",
         "line": "122",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "274"
       },
@@ -1263,7 +1269,7 @@
         "name": "中福派出所",
         "name_en": "Zhongfu Police Station",
         "line": "122",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "6446"
       },
@@ -1283,7 +1289,7 @@
         "name": "中園福州二街口",
         "name_en": "Jhongyuan Fujhou 2nd St. Intersection",
         "line": "122",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "276"
       },
@@ -1303,7 +1309,7 @@
         "name": "中園育樂街口",
         "name_en": "Jhongyuan Yule St. Intersection",
         "line": "122",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "3796"
       },
@@ -1323,7 +1329,7 @@
         "name": "台灣拉鍊",
         "name_en": "YKK",
         "line": "122",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "358"
       },
@@ -1343,7 +1349,7 @@
         "name": "中壢簡易庭",
         "name_en": "Zhongli Simple Court",
         "line": "122",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "360"
       },
@@ -1363,7 +1369,7 @@
         "name": "中壢聯合辦公大樓",
         "name_en": "Zhongli United Office Building",
         "line": "122",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "362"
       },
@@ -1383,7 +1389,7 @@
         "name": "新街",
         "name_en": "Xin street",
         "line": "122",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "295"
       },
@@ -1403,7 +1409,7 @@
         "name": "中壢監理站",
         "name_en": "Zhongli Motor Vehicles Office",
         "line": "122",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "367"
       },
@@ -1423,7 +1429,7 @@
         "name": "中央東路",
         "name_en": "Zhongyang E. Rd.",
         "line": "122",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "2104"
       },

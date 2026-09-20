@@ -6,13 +6,14 @@
     "name": "701A",
     "name_en": "701A",
     "ref": "701A",
-    "color": "#b91c1c",
+    "color": "#b45309",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/7011/map/2439/image",
     "operator_id": "1",
     "operator": "桃園客運",
-    "operator_en": "Taoyuan Bus Co., Ltd."
+    "operator_en": "Taoyuan Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "701A",
         "name": "701A",
         "name_en": "701A",
-        "color": "#b91c1c",
-        "direction": 0
+        "color": "#b45309",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1083,6 +1085,10 @@
           [
             121.23642,
             24.87764
+          ],
+          [
+            121.23641,
+            24.87773
           ]
         ]
       }
@@ -1095,7 +1101,7 @@
         "name": "國軍桃園總醫院",
         "name_en": "Taoyuan Armed Forces General Hospital",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5032"
       },
@@ -1115,7 +1121,7 @@
         "name": "國軍醫院(中興路)",
         "name_en": "Taoyuan Armed Forces General Hospital(Zhongxing Rd.)",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4252"
       },
@@ -1135,7 +1141,7 @@
         "name": "郵局",
         "name_en": "Post Office",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4254"
       },
@@ -1155,7 +1161,7 @@
         "name": "聯合社區",
         "name_en": "Lianhe Community",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4256"
       },
@@ -1175,7 +1181,7 @@
         "name": "龍興駕訓班",
         "name_en": "Longxing Driving School",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2182"
       },
@@ -1195,7 +1201,7 @@
         "name": "黃泥塘",
         "name_en": "Huangnitang",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4258"
       },
@@ -1215,7 +1221,7 @@
         "name": "龍潭行政園區(中興路)",
         "name_en": "Longtan Administration Area(Zhongxing Rd.)",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4133"
       },
@@ -1235,7 +1241,7 @@
         "name": "龍潭運動公園",
         "name_en": "Longtan Sport Park",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4260"
       },
@@ -1255,7 +1261,7 @@
         "name": "龍潭加油站",
         "name_en": "Longtan Gas Station",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4755"
       },
@@ -1275,7 +1281,7 @@
         "name": "第二市場",
         "name_en": "Second Market",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2922"
       },
@@ -1295,7 +1301,7 @@
         "name": "佳佳商場",
         "name_en": "JiaJia Market",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2518"
       },
@@ -1315,7 +1321,7 @@
         "name": "大同社區",
         "name_en": "Datong Community",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1495"
       },
@@ -1335,7 +1341,7 @@
         "name": "大同龍華路口",
         "name_en": "DaTong and LongHua Rd. Intersection",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4490"
       },
@@ -1355,7 +1361,7 @@
         "name": "龍潭高中",
         "name_en": "Lung Tan Senior High School",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2520"
       },
@@ -1375,7 +1381,7 @@
         "name": "龍潭",
         "name_en": "Longtan",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6082"
       },
@@ -1395,7 +1401,7 @@
         "name": "上伯公",
         "name_en": "Shangbogong",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3668"
       },
@@ -1415,7 +1421,7 @@
         "name": "東龍中豐路口",
         "name_en": "Donglong and Zhongfeng Rd. Intersection",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2522"
       },
@@ -1435,7 +1441,7 @@
         "name": "敏盛醫院",
         "name_en": "Min-Sheng General Hospital",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "218"
       },
@@ -1455,7 +1461,7 @@
         "name": "百年大鎮",
         "name_en": "BaiNianDaJen",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2526"
       },
@@ -1475,7 +1481,7 @@
         "name": "潛龍國小",
         "name_en": "Chianlong Elementary School",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4330"
       },
@@ -1495,7 +1501,7 @@
         "name": "大漢新村",
         "name_en": "Dahan Village",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2055"
       },
@@ -1515,7 +1521,7 @@
         "name": "烏樹林",
         "name_en": "Wushulin",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2528"
       },
@@ -1535,7 +1541,7 @@
         "name": "忠恕家園",
         "name_en": "Zhongshu Home",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3669"
       },
@@ -1555,7 +1561,7 @@
         "name": "建龍新村",
         "name_en": "Jianlong Village",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2053"
       },
@@ -1575,7 +1581,7 @@
         "name": "虎嶺",
         "name_en": "HuLing",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2530"
       },
@@ -1595,7 +1601,7 @@
         "name": "永豐市場",
         "name_en": "Yongfeng Market",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3645"
       },
@@ -1615,7 +1621,7 @@
         "name": "山子頂",
         "name_en": "Shanziding",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1585"
       },
@@ -1635,7 +1641,7 @@
         "name": "莊敬里",
         "name_en": "Zhuangjing Village",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3777"
       },
@@ -1655,7 +1661,7 @@
         "name": "華夏山莊",
         "name_en": "Huaxia Village",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1806"
       },
@@ -1675,7 +1681,7 @@
         "name": "平南國中",
         "name_en": "Pingnan Junior High School",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1571"
       },
@@ -1695,7 +1701,7 @@
         "name": "安樂新村",
         "name_en": "Anle Community",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1707"
       },
@@ -1715,7 +1721,7 @@
         "name": "南勢",
         "name_en": "Nanshi",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1565"
       },
@@ -1735,7 +1741,7 @@
         "name": "長壽新村",
         "name_en": "Changshou Village",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1823"
       },
@@ -1755,7 +1761,7 @@
         "name": "王厝",
         "name_en": "Wangcuo",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "73"
       },
@@ -1775,7 +1781,7 @@
         "name": "北勢橋",
         "name_en": "Beishi Bridge",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3740"
       },
@@ -1795,7 +1801,7 @@
         "name": "新貴里",
         "name_en": "Xingui Village",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "731"
       },
@@ -1815,7 +1821,7 @@
         "name": "非常大地",
         "name_en": "Feichangdadi",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "431"
       },
@@ -1835,7 +1841,7 @@
         "name": "第一製藥廠",
         "name_en": "1st Pharmaceutical Factory",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4331"
       },
@@ -1855,7 +1861,7 @@
         "name": "平鎮區公所(中豐路)",
         "name_en": "Civil Affairs Office of Pingzhen District (Zhongfeng Road)",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2040"
       },
@@ -1875,7 +1881,7 @@
         "name": "中壢國中(中豐路)",
         "name_en": "Zhongli Junior High School(Zhongfong Rd.)",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "700"
       },
@@ -1895,7 +1901,7 @@
         "name": "中壢分局",
         "name_en": "Zhongli Police Station",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "698"
       },
@@ -1915,7 +1921,7 @@
         "name": "中央東路",
         "name_en": "Zhongyang East Road",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2104"
       },
@@ -1935,7 +1941,7 @@
         "name": "中壢分局",
         "name_en": "Zhongli Police Station",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "697"
       },
@@ -1955,7 +1961,7 @@
         "name": "中壢國中(中豐路)",
         "name_en": "Zhongli Junior High School(Zhongfong Rd.)",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "699"
       },
@@ -1975,7 +1981,7 @@
         "name": "平鎮區公所(中豐路)",
         "name_en": "Civil Affairs Office of Pingzhen District (Zhongfeng Road)",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2041"
       },
@@ -1995,7 +2001,7 @@
         "name": "第一製藥廠",
         "name_en": "1st Pharmaceutical Factory",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4332"
       },
@@ -2015,7 +2021,7 @@
         "name": "非常大地",
         "name_en": "Feichangdadi",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "430"
       },
@@ -2035,7 +2041,7 @@
         "name": "新貴里",
         "name_en": "Xingui Village",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "730"
       },
@@ -2055,7 +2061,7 @@
         "name": "北勢橋",
         "name_en": "Beishi Bridge",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3741"
       },
@@ -2075,7 +2081,7 @@
         "name": "王厝",
         "name_en": "Wangcuo",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "68"
       },
@@ -2095,7 +2101,7 @@
         "name": "長壽新村",
         "name_en": "Changshou Village",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1824"
       },
@@ -2115,7 +2121,7 @@
         "name": "南勢",
         "name_en": "Nanshi",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1564"
       },
@@ -2135,7 +2141,7 @@
         "name": "安樂新村",
         "name_en": "Anle Community",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1708"
       },
@@ -2155,7 +2161,7 @@
         "name": "平南國中",
         "name_en": "Pingnan Junior High School",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1570"
       },
@@ -2175,7 +2181,7 @@
         "name": "華夏山莊",
         "name_en": "Huaxia Village",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1807"
       },
@@ -2195,7 +2201,7 @@
         "name": "莊敬里",
         "name_en": "Zhuangjing Village",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3776"
       },
@@ -2215,7 +2221,7 @@
         "name": "山子頂",
         "name_en": "Shanziding",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1584"
       },
@@ -2235,7 +2241,7 @@
         "name": "永豐市場",
         "name_en": "Yongfeng Market",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3644"
       },
@@ -2255,7 +2261,7 @@
         "name": "虎嶺",
         "name_en": "HuLing",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2531"
       },
@@ -2275,7 +2281,7 @@
         "name": "建龍新村",
         "name_en": "Jianlong Village",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2054"
       },
@@ -2295,7 +2301,7 @@
         "name": "忠恕家園",
         "name_en": "Zhongshu Home",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3670"
       },
@@ -2315,7 +2321,7 @@
         "name": "烏樹林",
         "name_en": "Wushulin",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2529"
       },
@@ -2335,7 +2341,7 @@
         "name": "大漢新村",
         "name_en": "Dahan Village",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2056"
       },
@@ -2355,7 +2361,7 @@
         "name": "潛龍國小",
         "name_en": "Chianlong Elementary School",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4329"
       },
@@ -2375,7 +2381,7 @@
         "name": "百年大鎮",
         "name_en": "BaiNianDaJen",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2527"
       },
@@ -2395,7 +2401,7 @@
         "name": "敏盛醫院",
         "name_en": "Min-Sheng General Hospital",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "219"
       },
@@ -2415,7 +2421,7 @@
         "name": "東龍中豐路口",
         "name_en": "Donglong and Zhongfeng Rd. Intersection",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2523"
       },
@@ -2435,7 +2441,7 @@
         "name": "上伯公",
         "name_en": "Shangbogong",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3667"
       },
@@ -2455,7 +2461,7 @@
         "name": "龍潭",
         "name_en": "Longtan",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6081"
       },
@@ -2475,7 +2481,7 @@
         "name": "龍潭高中",
         "name_en": "Lung Tan Senior High School",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2521"
       },
@@ -2495,7 +2501,7 @@
         "name": "大同龍華路口",
         "name_en": "DaTong and LongHua Rd. Intersection",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4491"
       },
@@ -2515,7 +2521,7 @@
         "name": "大同社區",
         "name_en": "Datong Community",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1492"
       },
@@ -2535,7 +2541,7 @@
         "name": "佳佳商場",
         "name_en": "JiaJia Market",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2519"
       },
@@ -2555,7 +2561,7 @@
         "name": "第二市場",
         "name_en": "Second Market",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2921"
       },
@@ -2575,7 +2581,7 @@
         "name": "龍潭運動公園",
         "name_en": "Longtan Sport Park",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4261"
       },
@@ -2595,7 +2601,7 @@
         "name": "龍潭行政園區(中興路)",
         "name_en": "Longtan Administration Area(Zhongxing Rd.)",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4134"
       },
@@ -2615,7 +2621,7 @@
         "name": "黃泥塘",
         "name_en": "Huangnitang",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4259"
       },
@@ -2635,7 +2641,7 @@
         "name": "龍興駕訓班",
         "name_en": "Longxing Driving School",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2183"
       },
@@ -2655,7 +2661,7 @@
         "name": "聯合社區",
         "name_en": "Lianhe Community",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4257"
       },
@@ -2675,7 +2681,7 @@
         "name": "郵局",
         "name_en": "Post Office",
         "line": "701A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4255"
       },

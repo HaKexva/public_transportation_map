@@ -6,13 +6,14 @@
     "name": "F521",
     "name_en": "F521",
     "ref": "F521",
-    "color": "#c2410c",
+    "color": "#6B8F9A",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.gov.taipei/File/Get/a29c11ac-2763-4bf8-b2c7-1a12dcbec05a?v=639248448792402376",
     "operator_id": "16240",
     "operator": "永和區公所",
-    "operator_en": "Yonghe District Office"
+    "operator_en": "Yonghe District Office",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "F521",
         "name": "F521",
         "name_en": "F521",
-        "color": "#c2410c",
-        "direction": 0
+        "color": "#6B8F9A",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -275,6 +277,10 @@
           [
             121.515478135582,
             25.0138469637971
+          ],
+          [
+            121.515610924123,
+            25.0142628675287
           ]
         ]
       }
@@ -287,7 +293,7 @@
         "name": "捷運頂溪站",
         "name_en": "MRT Dingxi Sta.",
         "line": "F521",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165606035"
       },
@@ -307,7 +313,7 @@
         "name": "中興街口",
         "name_en": "Zhongshan Rd. Entrance",
         "line": "F521",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3002"
       },
@@ -327,7 +333,7 @@
         "name": "保福路口",
         "name_en": "Baofu Rd. Entrance",
         "line": "F521",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72333"
       },
@@ -347,7 +353,7 @@
         "name": "仁愛路口",
         "name_en": "Renai Rd. Entrance",
         "line": "F521",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603801"
       },
@@ -367,7 +373,7 @@
         "name": "保安路口",
         "name_en": "Baoan Rd. Entrance",
         "line": "F521",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72320"
       },
@@ -387,7 +393,7 @@
         "name": "保安路",
         "name_en": "Baoan Rd.",
         "line": "F521",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72332"
       },
@@ -407,7 +413,7 @@
         "name": "仁愛公園",
         "name_en": "Renai Park",
         "line": "F521",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603812"
       },
@@ -427,7 +433,7 @@
         "name": "永平路口",
         "name_en": "Yongping St. Entrance",
         "line": "F521",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72331"
       },
@@ -447,7 +453,7 @@
         "name": "永平高中正門",
         "name_en": "Yongping High School",
         "line": "F521",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72357"
       },
@@ -467,7 +473,7 @@
         "name": "永平高中",
         "name_en": "Yongping High School",
         "line": "F521",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3086"
       },
@@ -487,7 +493,7 @@
         "name": "中山路口",
         "name_en": "Zhongshan Rd. Entrance",
         "line": "F521",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72348"
       },
@@ -507,7 +513,7 @@
         "name": "仁愛公園",
         "name_en": "Renai Park",
         "line": "F521",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "9634"
       },
@@ -527,7 +533,7 @@
         "name": "莊仁橋",
         "name_en": "Zhuangren Bridge",
         "line": "F521",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "9633"
       },
@@ -547,7 +553,7 @@
         "name": "保順里",
         "name_en": "Baoshun Village",
         "line": "F521",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603807"
       },
@@ -567,7 +573,7 @@
         "name": "環河西路",
         "name_en": "Huanhe W. Rd.",
         "line": "F521",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72342"
       },
@@ -587,7 +593,7 @@
         "name": "保順路口",
         "name_en": "Baoshun Rd. Entrance",
         "line": "F521",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72340"
       },
@@ -607,7 +613,7 @@
         "name": "新生里",
         "name_en": "Xinsheng Village",
         "line": "F521",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72407"
       },
@@ -627,7 +633,7 @@
         "name": "大業安養堂",
         "name_en": "Daye Senior Citizens Home Department",
         "line": "F521",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72343"
       },
@@ -647,7 +653,7 @@
         "name": "頂溪國小",
         "name_en": "Dingxi Elementary School",
         "line": "F521",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72322"
       },
@@ -667,7 +673,7 @@
         "name": "捷運頂溪站",
         "name_en": "MRT Dingxi Sta.",
         "line": "F521",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165606035"
       },

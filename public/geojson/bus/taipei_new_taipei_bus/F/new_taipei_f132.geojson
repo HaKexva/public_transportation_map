@@ -6,13 +6,14 @@
     "name": "F132",
     "name_en": "F132",
     "ref": "F132",
-    "color": "#1e3a8a",
+    "color": "#6B8F9A",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.gov.taipei/File/Get/05ecd40f-00db-4c41-8fa6-97f572806dea?v=639248448782716634",
     "operator_id": "16229",
     "operator": "三芝區公所",
-    "operator_en": "Sanzhi District Office"
+    "operator_en": "Sanzhi District Office",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "F132",
         "name": "F132",
         "name_en": "F132",
-        "color": "#1e3a8a",
-        "direction": 0
+        "color": "#6B8F9A",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -3963,6 +3965,10 @@
           [
             121.501471412731,
             25.2588922096231
+          ],
+          [
+            121.500738892973,
+            25.2590117008728
           ]
         ]
       }
@@ -3975,7 +3981,7 @@
         "name": "二號倉庫",
         "name_en": "No.2 Warehouse",
         "line": "F132",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75281"
       },
@@ -3995,7 +4001,7 @@
         "name": "埔頭坑",
         "name_en": "Putoukeng",
         "line": "F132",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165609422"
       },
@@ -4015,7 +4021,7 @@
         "name": "名人文物館",
         "name_en": "Celebrity Museum",
         "line": "F132",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603692"
       },
@@ -4035,7 +4041,7 @@
         "name": "八賢活動中心",
         "name_en": "Baxian Activity Center",
         "line": "F132",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75404"
       },
@@ -4055,7 +4061,7 @@
         "name": "八賢十站",
         "name_en": "Baxian 10th Stop",
         "line": "F132",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75403"
       },
@@ -4075,7 +4081,7 @@
         "name": "德賢一路口",
         "name_en": "Dexian 1st Rd. Entrance",
         "line": "F132",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603696"
       },
@@ -4095,7 +4101,7 @@
         "name": "木馬埕",
         "name_en": "Mumacheng",
         "line": "F132",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75411"
       },
@@ -4115,7 +4121,7 @@
         "name": "木屐寮",
         "name_en": "Mujiliao",
         "line": "F132",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75410"
       },
@@ -4135,7 +4141,7 @@
         "name": "龍嚴",
         "name_en": "Longyan",
         "line": "F132",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75446"
       },
@@ -4155,7 +4161,7 @@
         "name": "示範公墓",
         "name_en": "Charnel House",
         "line": "F132",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75414"
       },
@@ -4175,7 +4181,7 @@
         "name": "二坪頂",
         "name_en": "Erpingding",
         "line": "F132",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165609419"
       },
@@ -4195,7 +4201,7 @@
         "name": "示範公墓",
         "name_en": "Charnel House",
         "line": "F132",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603691"
       },
@@ -4215,7 +4221,7 @@
         "name": "龍嚴",
         "name_en": "Longyan",
         "line": "F132",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75446"
       },
@@ -4235,7 +4241,7 @@
         "name": "木屐寮",
         "name_en": "Mujiliao",
         "line": "F132",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603689"
       },
@@ -4255,7 +4261,7 @@
         "name": "木馬埕",
         "name_en": "Mumacheng",
         "line": "F132",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603690"
       },
@@ -4275,7 +4281,7 @@
         "name": "德賢一路口",
         "name_en": "Dexian 1st Rd. Entrance",
         "line": "F132",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75443"
       },
@@ -4295,7 +4301,7 @@
         "name": "八賢十站",
         "name_en": "Baxian 10th Stop",
         "line": "F132",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75403"
       },
@@ -4315,7 +4321,7 @@
         "name": "八賢活動中心",
         "name_en": "Baxian Activity Center",
         "line": "F132",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603688"
       },
@@ -4335,7 +4341,7 @@
         "name": "名人文物館",
         "name_en": "Celebrity Museum",
         "line": "F132",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75415"
       },
@@ -4355,7 +4361,7 @@
         "name": "埔頭坑",
         "name_en": "Putoukeng",
         "line": "F132",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165609422"
       },
@@ -4375,7 +4381,7 @@
         "name": "二號倉庫",
         "name_en": "No.2 Warehouse",
         "line": "F132",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603686"
       },

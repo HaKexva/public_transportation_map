@@ -6,11 +6,12 @@
     "name": "505（經長庚醫院、台北大鎮）",
     "name_en": "505 (via 長庚醫院, 台北大鎮)",
     "ref": "505",
-    "color": "#9f1239",
+    "color": "#be123c",
     "city_id": "Keelung",
     "source": "TDX Bus Shape / StopOfRoute",
     "via": "長庚醫院、台北大鎮",
-    "official_map_url": "https://web.taiwanbus.tw/MISUploadData/Schematic/file/0935.jpg"
+    "official_map_url": "https://web.taiwanbus.tw/MISUploadData/Schematic/file/0935.jpg",
+    "loop": true
   },
   "features": [
     {
@@ -20,8 +21,9 @@
         "ref": "505",
         "name": "505（經長庚醫院、台北大鎮）",
         "name_en": "505 (via 長庚醫院, 台北大鎮)",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#be123c",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -4829,6 +4831,10 @@
           [
             121.69389,
             25.15838
+          ],
+          [
+            121.69389,
+            25.15837
           ]
         ]
       }
@@ -4841,7 +4847,7 @@
         "name": "武隆街105巷",
         "name_en": "Ln. 105 Wulong St.",
         "line": "505（經長庚醫院、台北大鎮）",
-        "color": "#9f1239",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "141205"
       },
@@ -4861,7 +4867,7 @@
         "name": "隆聖國小",
         "name_en": "Longsheng Elementary School",
         "line": "505（經長庚醫院、台北大鎮）",
-        "color": "#9f1239",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "141207"
       },
@@ -4881,7 +4887,7 @@
         "name": "武聖街口",
         "name_en": "Wusheng St. Intersection",
         "line": "505（經長庚醫院、台北大鎮）",
-        "color": "#9f1239",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "141208"
       },
@@ -4901,7 +4907,7 @@
         "name": "藍天麗地社區",
         "name_en": "Lantianlidi Community",
         "line": "505（經長庚醫院、台北大鎮）",
-        "color": "#9f1239",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "140741"
       },
@@ -4921,7 +4927,7 @@
         "name": "石山",
         "name_en": "Shishan",
         "line": "505（經長庚醫院、台北大鎮）",
-        "color": "#9f1239",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "141209"
       },
@@ -4941,7 +4947,7 @@
         "name": "大武崙工業區",
         "name_en": "Tapurun Industry Park",
         "line": "505（經長庚醫院、台北大鎮）",
-        "color": "#9f1239",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "141210"
       },
@@ -4961,7 +4967,7 @@
         "name": "三層站",
         "name_en": "Sanceng Bus Station",
         "line": "505（經長庚醫院、台北大鎮）",
-        "color": "#9f1239",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "141217"
       },
@@ -4981,7 +4987,7 @@
         "name": "大武崙",
         "name_en": "Tapurun",
         "line": "505（經長庚醫院、台北大鎮）",
-        "color": "#9f1239",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "141218"
       },
@@ -5001,7 +5007,7 @@
         "name": "金山鐵店",
         "name_en": "Jinshan Iron Stores",
         "line": "505（經長庚醫院、台北大鎮）",
-        "color": "#9f1239",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "141220"
       },
@@ -5021,7 +5027,7 @@
         "name": "情人湖路口",
         "name_en": "Lovers Lake Rd. Intersection",
         "line": "505（經長庚醫院、台北大鎮）",
-        "color": "#9f1239",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "141221"
       },
@@ -5041,7 +5047,7 @@
         "name": "武嶺街口",
         "name_en": "Wuling St.Intersection",
         "line": "505（經長庚醫院、台北大鎮）",
-        "color": "#9f1239",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "141222"
       },
@@ -5061,7 +5067,7 @@
         "name": "忠聯倉儲",
         "name_en": "Zhonglian Warehouse",
         "line": "505（經長庚醫院、台北大鎮）",
-        "color": "#9f1239",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "141223"
       },
@@ -5081,7 +5087,7 @@
         "name": "興寮里",
         "name_en": "Xingliao Village",
         "line": "505（經長庚醫院、台北大鎮）",
-        "color": "#9f1239",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "141224"
       },
@@ -5101,7 +5107,7 @@
         "name": "石皮瀨",
         "name_en": "Shipilai",
         "line": "505（經長庚醫院、台北大鎮）",
-        "color": "#9f1239",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "141226"
       },
@@ -5121,7 +5127,7 @@
         "name": "新山淨水場",
         "name_en": "Hsinshan Water Purification Station",
         "line": "505（經長庚醫院、台北大鎮）",
-        "color": "#9f1239",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "141200"
       },
@@ -5141,7 +5147,7 @@
         "name": "麥金路樂利三街口",
         "name_en": "Maijin &amp; Leli 3rd St. Intetsection",
         "line": "505（經長庚醫院、台北大鎮）",
-        "color": "#9f1239",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "140687"
       },
@@ -5161,7 +5167,7 @@
         "name": "婦幼福利中心",
         "name_en": "Women and Children Welfare Center",
         "line": "505（經長庚醫院、台北大鎮）",
-        "color": "#9f1239",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "140689"
       },
@@ -5181,7 +5187,7 @@
         "name": "長庚醫院(橘郡社區)",
         "name_en": "Keelung City Zhanggeng Memorial Hospital (Jujun Community)",
         "line": "505（經長庚醫院、台北大鎮）",
-        "color": "#9f1239",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "140690"
       },
@@ -5201,7 +5207,7 @@
         "name": "安樂區行政大樓",
         "name_en": "Administration Building of Anle District",
         "line": "505（經長庚醫院、台北大鎮）",
-        "color": "#9f1239",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "140692"
       },
@@ -5221,7 +5227,7 @@
         "name": "安樂郵局",
         "name_en": "Anle Post Office",
         "line": "505（經長庚醫院、台北大鎮）",
-        "color": "#9f1239",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "140694"
       },
@@ -5241,7 +5247,7 @@
         "name": "電信大樓",
         "name_en": "Telecommunication Building",
         "line": "505（經長庚醫院、台北大鎮）",
-        "color": "#9f1239",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "140695"
       },
@@ -5261,7 +5267,7 @@
         "name": "自強隧道口",
         "name_en": "Ziqiang Tunnel",
         "line": "505（經長庚醫院、台北大鎮）",
-        "color": "#9f1239",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "140672"
       },
@@ -5281,7 +5287,7 @@
         "name": "安樂路一段81巷口",
         "name_en": "Entrance to Lane 81, Section 1, Anle Road",
         "line": "505（經長庚醫院、台北大鎮）",
-        "color": "#9f1239",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "140655"
       },
@@ -5301,7 +5307,7 @@
         "name": "光華國宅",
         "name_en": "Guanghua Public Housing",
         "line": "505（經長庚醫院、台北大鎮）",
-        "color": "#9f1239",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "140697"
       },
@@ -5321,7 +5327,7 @@
         "name": "成功市場",
         "name_en": "Chenggong Market",
         "line": "505（經長庚醫院、台北大鎮）",
-        "color": "#9f1239",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "140698"
       },
@@ -5341,7 +5347,7 @@
         "name": "仁五路(東和大樓)",
         "name_en": "Ren 5th Rd.",
         "line": "505（經長庚醫院、台北大鎮）",
-        "color": "#9f1239",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "140629"
       },
@@ -5361,7 +5367,7 @@
         "name": "仁二路(二信循環站)",
         "name_en": "Ren 2nd Rd. (Erxin Loop Station )",
         "line": "505（經長庚醫院、台北大鎮）",
-        "color": "#9f1239",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "140620"
       },
@@ -5381,7 +5387,7 @@
         "name": "基隆轉運站",
         "name_en": "Keelung Transit Station",
         "line": "505（經長庚醫院、台北大鎮）",
-        "color": "#9f1239",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "143441"
       },
@@ -5401,7 +5407,7 @@
         "name": "民治里活動中心",
         "name_en": "Minzhi Village Activity Center",
         "line": "505（經長庚醫院、台北大鎮）",
-        "color": "#9f1239",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "141126"
       },
@@ -5421,7 +5427,7 @@
         "name": "城隍廟",
         "name_en": "Chenghuang Temple",
         "line": "505（經長庚醫院、台北大鎮）",
-        "color": "#9f1239",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "140647"
       },
@@ -5441,7 +5447,7 @@
         "name": "忠四路",
         "name_en": "Zhong 4th Rd.",
         "line": "505（經長庚醫院、台北大鎮）",
-        "color": "#9f1239",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "140649"
       },
@@ -5461,7 +5467,7 @@
         "name": "光華國宅",
         "name_en": "Guanghua Public Housing",
         "line": "505（經長庚醫院、台北大鎮）",
-        "color": "#9f1239",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "140651"
       },
@@ -5481,7 +5487,7 @@
         "name": "安樂路一段81巷口",
         "name_en": "Entrance to Lane 81, Section 1, Anle Road",
         "line": "505（經長庚醫院、台北大鎮）",
-        "color": "#9f1239",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "144214"
       },
@@ -5501,7 +5507,7 @@
         "name": "老大公廟",
         "name_en": "Laodagong Temple",
         "line": "505（經長庚醫院、台北大鎮）",
-        "color": "#9f1239",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "140664"
       },
@@ -5521,7 +5527,7 @@
         "name": "電信大樓",
         "name_en": "Telecommunication Building",
         "line": "505（經長庚醫院、台北大鎮）",
-        "color": "#9f1239",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "140680"
       },
@@ -5541,7 +5547,7 @@
         "name": "安樂郵局",
         "name_en": "Anle Post Office",
         "line": "505（經長庚醫院、台北大鎮）",
-        "color": "#9f1239",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "140681"
       },
@@ -5561,7 +5567,7 @@
         "name": "安樂區行政大樓",
         "name_en": "Administration Building of Anle District",
         "line": "505（經長庚醫院、台北大鎮）",
-        "color": "#9f1239",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "140682"
       },
@@ -5581,7 +5587,7 @@
         "name": "長庚醫院",
         "name_en": "Keelung City Zhanggeng Memorial Hospital",
         "line": "505（經長庚醫院、台北大鎮）",
-        "color": "#9f1239",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "140660"
       },
@@ -5601,7 +5607,7 @@
         "name": "婦幼福利中心",
         "name_en": "Women and Children Welfare Center",
         "line": "505（經長庚醫院、台北大鎮）",
-        "color": "#9f1239",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "140668"
       },
@@ -5621,7 +5627,7 @@
         "name": "麥金路樂利三街口",
         "name_en": "Maijin &amp; Leli 3rd St. Intetsection",
         "line": "505（經長庚醫院、台北大鎮）",
-        "color": "#9f1239",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "140669"
       },
@@ -5641,7 +5647,7 @@
         "name": "安和二街",
         "name_en": "Anhe 2nd St.",
         "line": "505（經長庚醫院、台北大鎮）",
-        "color": "#9f1239",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "140670"
       },
@@ -5661,7 +5667,7 @@
         "name": "新山淨水場",
         "name_en": "Hsinshan Water Purification Station",
         "line": "505（經長庚醫院、台北大鎮）",
-        "color": "#9f1239",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "140671"
       },
@@ -5681,7 +5687,7 @@
         "name": "石皮瀨",
         "name_en": "Shipilai",
         "line": "505（經長庚醫院、台北大鎮）",
-        "color": "#9f1239",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "140673"
       },
@@ -5701,7 +5707,7 @@
         "name": "興寮里",
         "name_en": "Xingliao Village",
         "line": "505（經長庚醫院、台北大鎮）",
-        "color": "#9f1239",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "140674"
       },
@@ -5721,7 +5727,7 @@
         "name": "忠聯倉儲",
         "name_en": "Zhonglian Warehouse",
         "line": "505（經長庚醫院、台北大鎮）",
-        "color": "#9f1239",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "140675"
       },
@@ -5741,7 +5747,7 @@
         "name": "東方巴黎社區",
         "name_en": "Dongfangbali Community",
         "line": "505（經長庚醫院、台北大鎮）",
-        "color": "#9f1239",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "141261"
       },
@@ -5761,7 +5767,7 @@
         "name": "武嶺街口",
         "name_en": "Wuling St.Intersection",
         "line": "505（經長庚醫院、台北大鎮）",
-        "color": "#9f1239",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "140677"
       },
@@ -5781,7 +5787,7 @@
         "name": "基金一路208巷口",
         "name_en": "Ln. 208 Jijin 1st Rd. Intersection",
         "line": "505（經長庚醫院、台北大鎮）",
-        "color": "#9f1239",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "141393"
       },
@@ -5801,7 +5807,7 @@
         "name": "國花社區",
         "name_en": "Guohua Community",
         "line": "505（經長庚醫院、台北大鎮）",
-        "color": "#9f1239",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "141394"
       },
@@ -5821,7 +5827,7 @@
         "name": "台北大鎮",
         "name_en": "Taibeidazhen",
         "line": "505（經長庚醫院、台北大鎮）",
-        "color": "#9f1239",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "141486"
       },
@@ -5841,7 +5847,7 @@
         "name": "台北大鎮",
         "name_en": "Taibeidazhen",
         "line": "505（經長庚醫院、台北大鎮）",
-        "color": "#9f1239",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "141395"
       },
@@ -5861,7 +5867,7 @@
         "name": "情人湖路口",
         "name_en": "Lovers Lake Rd. Intersection",
         "line": "505（經長庚醫院、台北大鎮）",
-        "color": "#9f1239",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "140735"
       },
@@ -5881,7 +5887,7 @@
         "name": "金山鐵店",
         "name_en": "Jinshan Iron Stores",
         "line": "505（經長庚醫院、台北大鎮）",
-        "color": "#9f1239",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "140736"
       },
@@ -5901,7 +5907,7 @@
         "name": "大武崙",
         "name_en": "Tapurun",
         "line": "505（經長庚醫院、台北大鎮）",
-        "color": "#9f1239",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "140737"
       },
@@ -5921,7 +5927,7 @@
         "name": "三層站",
         "name_en": "Sanceng Bus Station",
         "line": "505（經長庚醫院、台北大鎮）",
-        "color": "#9f1239",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "140738"
       },
@@ -5941,7 +5947,7 @@
         "name": "大武崙工業區",
         "name_en": "Tapurun Industry Park",
         "line": "505（經長庚醫院、台北大鎮）",
-        "color": "#9f1239",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "140739"
       },
@@ -5961,7 +5967,7 @@
         "name": "石山",
         "name_en": "Shishan",
         "line": "505（經長庚醫院、台北大鎮）",
-        "color": "#9f1239",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "140740"
       },
@@ -5981,7 +5987,7 @@
         "name": "武聖街口",
         "name_en": "Wusheng St. Intersection",
         "line": "505（經長庚醫院、台北大鎮）",
-        "color": "#9f1239",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "140742"
       },
@@ -6001,7 +6007,7 @@
         "name": "武隆街105巷",
         "name_en": "Ln. 105 Wulong St.",
         "line": "505（經長庚醫院、台北大鎮）",
-        "color": "#9f1239",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "140743"
       },

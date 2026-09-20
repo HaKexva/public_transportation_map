@@ -6,13 +6,14 @@
     "name": "F656",
     "name_en": "F656",
     "ref": "F656",
-    "color": "#15803d",
+    "color": "#6B8F9A",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.gov.taipei/File/Get/646cb531-6c75-4bd3-a111-236dcc5539a4?v=639248448800206753",
     "operator_id": "16244",
     "operator": "鶯歌區公所",
-    "operator_en": "Yingge District Office"
+    "operator_en": "Yingge District Office",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "F656",
         "name": "F656",
         "name_en": "F656",
-        "color": "#15803d",
-        "direction": 0
+        "color": "#6B8F9A",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -883,6 +885,10 @@
           [
             121.354967362861,
             24.9551038480606
+          ],
+          [
+            121.355009735312,
+            24.9550307555819
           ]
         ]
       }
@@ -895,7 +901,7 @@
         "name": "鶯歌火車站",
         "name_en": "Yingge Rail Sta.",
         "line": "F656",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73363"
       },
@@ -915,7 +921,7 @@
         "name": "南鶯國慶115巷口",
         "name_en": "Nanying Ln. 115 Guoqing St. Entrance",
         "line": "F656",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3377"
       },
@@ -935,7 +941,7 @@
         "name": "三號公園南興宮",
         "name_en": "No.3 Park Nanxing Temple",
         "line": "F656",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73362"
       },
@@ -955,7 +961,7 @@
         "name": "同慶里活動中心",
         "name_en": "Tongqing Village Activity Center",
         "line": "F656",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165608615"
       },
@@ -975,7 +981,7 @@
         "name": "鶯歌國中",
         "name_en": "Yingge Junior High School",
         "line": "F656",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165610045"
       },
@@ -995,7 +1001,7 @@
         "name": "建國路與鶯桃路口",
         "name_en": "Jianguo & Yingtao Intersection",
         "line": "F656",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165608616"
       },
@@ -1015,7 +1021,7 @@
         "name": "永昌里",
         "name_en": "Yongchang Village",
         "line": "F656",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165608606"
       },
@@ -1035,7 +1041,7 @@
         "name": "農會(永昌里)",
         "name_en": "Farmers Association(Yongchang Village)",
         "line": "F656",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165608617"
       },
@@ -1055,7 +1061,7 @@
         "name": "昌福國小",
         "name_en": "Changfu Elementary School",
         "line": "F656",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165605718"
       },
@@ -1075,7 +1081,7 @@
         "name": "鶯桃路182巷口",
         "name_en": "Lane 182 Yingtao Rd. Intersection",
         "line": "F656",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165605094"
       },
@@ -1095,7 +1101,7 @@
         "name": "永吉街口",
         "name_en": "Yongji St. Entrance",
         "line": "F656",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73441"
       },
@@ -1115,7 +1121,7 @@
         "name": "捷運永吉公園站",
         "name_en": "MRT Yongji Park Sta.",
         "line": "F656",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165605448"
       },
@@ -1135,7 +1141,7 @@
         "name": "福安街口",
         "name_en": "Fuan St. Entrance",
         "line": "F656",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165608618"
       },
@@ -1155,7 +1161,7 @@
         "name": "鶯桃鳳鳴路口",
         "name_en": "Yingtao & Fengming Intersection",
         "line": "F656",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165605450"
       },
@@ -1175,7 +1181,7 @@
         "name": "鳳鳴國中(永和街口)",
         "name_en": "MRT Yingtao Fude Sta.(Yingtao Rd.)",
         "line": "F656",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165609726"
       },
@@ -1195,7 +1201,7 @@
         "name": "鳳鳴活動中心",
         "name_en": "Fengming Activity Center",
         "line": "F656",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73418"
       },
@@ -1215,7 +1221,7 @@
         "name": "鳳鳴國小",
         "name_en": "Fengming Elementary School",
         "line": "F656",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73419"
       },
@@ -1235,7 +1241,7 @@
         "name": "永和街174巷",
         "name_en": "Lane 174 Yonghe St.",
         "line": "F656",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73385"
       },
@@ -1255,7 +1261,7 @@
         "name": "鳳鳴火車站",
         "name_en": "Fengming Rail Sta.",
         "line": "F656",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73422"
       },
@@ -1275,7 +1281,7 @@
         "name": "鳳福鳳三路口",
         "name_en": "Fengfu & Feng 3rd Rd. Intersection",
         "line": "F656",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165609745"
       },
@@ -1295,7 +1301,7 @@
         "name": "鳳福公園",
         "name_en": "Fengfu Park",
         "line": "F656",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165606235"
       },
@@ -1315,7 +1321,7 @@
         "name": "鳳吉一街94號",
         "name_en": "No.94 Fengji 1st St.",
         "line": "F656",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73448"
       },
@@ -1335,7 +1341,7 @@
         "name": "鶯桃路二段27號",
         "name_en": "No.27 Sec. 2 Yingtao Rd.",
         "line": "F656",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73430"
       },
@@ -1355,7 +1361,7 @@
         "name": "鶯桃路668巷口",
         "name_en": "Lane 668 Yingtao Rd. Intersection",
         "line": "F656",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73429"
       },
@@ -1375,7 +1381,7 @@
         "name": "金金戲院",
         "name_en": "Jinjin Theater",
         "line": "F656",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73400"
       },
@@ -1395,7 +1401,7 @@
         "name": "捷運鶯桃福德站(鶯桃路)",
         "name_en": "MRT Yingtao Fude Sta.(Yingtao Rd.)",
         "line": "F656",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73386"
       },
@@ -1415,7 +1421,7 @@
         "name": "鳳鳴街口",
         "name_en": "Fengming St. Entrance",
         "line": "F656",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73421"
       },
@@ -1435,7 +1441,7 @@
         "name": "福安街口",
         "name_en": "Fuan St. Entrance",
         "line": "F656",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165605446"
       },
@@ -1455,7 +1461,7 @@
         "name": "永吉國小",
         "name_en": "Yongji Elementary School",
         "line": "F656",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73329"
       },
@@ -1475,7 +1481,7 @@
         "name": "鶯桃路285巷41號",
         "name_en": "No.41 Lane 285 Yingtao Rd.",
         "line": "F656",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73428"
       },
@@ -1495,7 +1501,7 @@
         "name": "捷運永吉公園站",
         "name_en": "MRT Yongji Park Sta.",
         "line": "F656",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73450"
       },
@@ -1515,7 +1521,7 @@
         "name": "永吉街口",
         "name_en": "Yongji St. Entrance",
         "line": "F656",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165606935"
       },
@@ -1535,7 +1541,7 @@
         "name": "鶯桃路182巷口",
         "name_en": "Lane 182 Yingtao Rd. Intersection",
         "line": "F656",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73361"
       },
@@ -1555,7 +1561,7 @@
         "name": "昌福國小",
         "name_en": "Changfu Elementary School",
         "line": "F656",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73342"
       },
@@ -1575,7 +1581,7 @@
         "name": "農會(永昌里)",
         "name_en": "Farmers Association(Yongchang Village)",
         "line": "F656",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73357"
       },
@@ -1595,7 +1601,7 @@
         "name": "永昌里",
         "name_en": "Yongchang Village",
         "line": "F656",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73330"
       },
@@ -1615,7 +1621,7 @@
         "name": "建國路與鶯桃路口",
         "name_en": "Jianguo & Yingtao Intersection",
         "line": "F656",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73343"
       },
@@ -1635,7 +1641,7 @@
         "name": "鶯歌國中",
         "name_en": "Yingge Junior High School",
         "line": "F656",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73364"
       },
@@ -1655,7 +1661,7 @@
         "name": "同慶里活動中心",
         "name_en": "Tongqing Village Activity Center",
         "line": "F656",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73331"
       },
@@ -1675,7 +1681,7 @@
         "name": "三號公園南興宮",
         "name_en": "No.3 Park Nanxing Temple",
         "line": "F656",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73316"
       },
@@ -1695,7 +1701,7 @@
         "name": "南鶯國慶115巷口",
         "name_en": "Nanying Ln. 115 Guoqing St. Entrance",
         "line": "F656",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73348"
       },
@@ -1715,7 +1721,7 @@
         "name": "鶯歌火車站",
         "name_en": "Yingge Rail Sta.",
         "line": "F656",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73363"
       },

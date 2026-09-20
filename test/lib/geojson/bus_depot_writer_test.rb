@@ -32,6 +32,14 @@ class GeojsonBusDepotWriterTest < ActiveSupport::TestCase
           "ref" => "KELMKT",
           "name" => "立體停車場(五股公有市場)",
           "coordinates" => [ 121.45, 25.08 ]
+        },
+        {
+          "feature_type" => "station",
+          "ref" => "NANGANG",
+          "station_id" => "MRTDEPOT",
+          "name" => "南港機廠",
+          "stop_role" => "depot",
+          "coordinates" => [ 121.60, 25.05 ]
         }
       ]
     )
@@ -45,14 +53,24 @@ class GeojsonBusDepotWriterTest < ActiveSupport::TestCase
           "station_id" => "DEPOT1",
           "name" => "暖暖分站(調度站)",
           "coordinates" => [ 121.7401, 25.1001 ]
+        },
+        {
+          "feature_type" => "station",
+          "ref" => "ZHONG",
+          "name" => "中壢總站",
+          "coordinates" => [ 121.22, 24.95 ]
         }
       ]
     )
 
     result = Geojson::BusDepotWriter.write!(path: @out, bus_root: @root)
-    assert_equal 1, result.depots.length
-    depot = result.depots.first
-    assert_equal "暖暖分站(調度站)", depot["name"]
+    names = result.depots.map { |depot| depot["name"] }
+    assert_includes names, "暖暖分站(調度站)"
+    assert_includes names, "中壢總站"
+    refute_includes names, "南港機廠"
+    refute_includes names, "立體停車場(五股公有市場)"
+
+    depot = result.depots.find { |entry| entry["name"] == "暖暖分站(調度站)" }
     assert_equal %w[keelung_602 keelung_603], depot["routes"]
     assert_in_delta 121.74, depot["lon"], 0.001
     assert_in_delta 25.10, depot["lat"], 0.001

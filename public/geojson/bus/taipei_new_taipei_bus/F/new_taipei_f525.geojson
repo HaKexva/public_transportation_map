@@ -6,13 +6,14 @@
     "name": "F525",
     "name_en": "F525",
     "ref": "F525",
-    "color": "#c2410c",
+    "color": "#6B8F9A",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.gov.taipei/File/Get/6aff01bf-2f96-4731-94d8-397f11c30cbc?v=639248448803990623",
     "operator_id": "16240",
     "operator": "永和區公所",
-    "operator_en": "Yonghe District Office"
+    "operator_en": "Yonghe District Office",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "F525",
         "name": "F525",
         "name_en": "F525",
-        "color": "#c2410c",
-        "direction": 0
+        "color": "#6B8F9A",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -351,6 +353,10 @@
           [
             121.520017987472,
             24.9978804521907
+          ],
+          [
+            121.519996099084,
+            24.9978764724837
           ]
         ]
       }
@@ -363,7 +369,7 @@
         "name": "民權圖書館",
         "name_en": "Minquan Library",
         "line": "F525",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72392"
       },
@@ -383,7 +389,7 @@
         "name": "民生路",
         "name_en": "MinSheng Rd.",
         "line": "F525",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72400"
       },
@@ -403,7 +409,7 @@
         "name": "得和路",
         "name_en": "Dehe Rd.",
         "line": "F525",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165608395"
       },
@@ -423,7 +429,7 @@
         "name": "中興新村",
         "name_en": "Zhongxing New Village",
         "line": "F525",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165606016"
       },
@@ -443,7 +449,7 @@
         "name": "潭安里",
         "name_en": "Tanan Village",
         "line": "F525",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72408"
       },
@@ -463,7 +469,7 @@
         "name": "智光商職",
         "name_en": "Chih-Kuang Senior Commercial & Industrial Vocational High School",
         "line": "F525",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3035"
       },
@@ -483,7 +489,7 @@
         "name": "宜安吉立",
         "name_en": "Yianjili",
         "line": "F525",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603217"
       },
@@ -503,7 +509,7 @@
         "name": "潭墘",
         "name_en": "Tanqian",
         "line": "F525",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3161"
       },
@@ -523,7 +529,7 @@
         "name": "潭墘里",
         "name_en": "Tanqian Village",
         "line": "F525",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72413"
       },
@@ -543,7 +549,7 @@
         "name": "永安市場一",
         "name_en": "Yongan Market",
         "line": "F525",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603393"
       },
@@ -563,7 +569,7 @@
         "name": "中安街",
         "name_en": "8月23日 Memorial Park",
         "line": "F525",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3061"
       },
@@ -583,7 +589,7 @@
         "name": "捷運永安市場站",
         "name_en": "MRT Yongan Market Sta.",
         "line": "F525",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72317"
       },
@@ -603,7 +609,7 @@
         "name": "永和路口",
         "name_en": "Yongan Market 2",
         "line": "F525",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3015"
       },
@@ -623,7 +629,7 @@
         "name": "自由街口",
         "name_en": "Ziyou St. Entrance",
         "line": "F525",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72380"
       },
@@ -643,7 +649,7 @@
         "name": "永和衛生所",
         "name_en": "Yonghe Health Center",
         "line": "F525",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72346"
       },
@@ -663,7 +669,7 @@
         "name": "復興商工",
         "name_en": "Fu-Hsin Trade and Arts School",
         "line": "F525",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72363"
       },
@@ -683,7 +689,7 @@
         "name": "台電永和服務所",
         "name_en": "Taipower Yonghe Service Center",
         "line": "F525",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72399"
       },
@@ -703,7 +709,7 @@
         "name": "秀林里",
         "name_en": "Xiulin Village",
         "line": "F525",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72382"
       },
@@ -723,7 +729,7 @@
         "name": "秀朗路",
         "name_en": "Xiulang Rd.",
         "line": "F525",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72388"
       },
@@ -743,7 +749,7 @@
         "name": "秀得里",
         "name_en": "Xiude Village",
         "line": "F525",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72394"
       },
@@ -763,7 +769,7 @@
         "name": "民富里",
         "name_en": "Minfu Village",
         "line": "F525",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72404"
       },
@@ -783,7 +789,7 @@
         "name": "劉厝",
         "name_en": "Liucuo",
         "line": "F525",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165606305"
       },
@@ -803,7 +809,7 @@
         "name": "得和路(民生路)",
         "name_en": "Dehe Rd.(Minsheng Rd.)",
         "line": "F525",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "9651"
       },
@@ -823,7 +829,7 @@
         "name": "民生路",
         "name_en": "MinSheng Rd.",
         "line": "F525",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72401"
       },
@@ -843,7 +849,7 @@
         "name": "遠東愛買",
         "name_en": "Far Eastern Ai Mai",
         "line": "F525",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72403"
       },
@@ -863,7 +869,7 @@
         "name": "民權圖書館",
         "name_en": "Minquan Library",
         "line": "F525",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72392"
       },

@@ -6,12 +6,13 @@
     "name": "幸福來義16路",
     "name_en": "幸福來義16路",
     "ref": "幸福來義16路",
-    "color": "#0B7A3E",
+    "color": "#d97706",
     "city_id": "PingtungCounty",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://web.taiwanbus.tw/MISUploadData/Schematic/file/0996.jpg",
     "operator_id": "96",
-    "operator": "屏東縣來義鄉公所"
+    "operator": "屏東縣來義鄉公所",
+    "loop": true
   },
   "features": [
     {
@@ -21,8 +22,9 @@
         "ref": "幸福來義16路",
         "name": "幸福來義16路",
         "name_en": "幸福來義16路",
-        "color": "#0B7A3E",
-        "direction": 0
+        "color": "#d97706",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -3085,8 +3087,9 @@
         "ref": "幸福來義16路",
         "name": "幸福來義16路",
         "name_en": "幸福來義16路",
-        "color": "#0B7A3E",
-        "direction": 1
+        "color": "#d97706",
+        "direction": 1,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -6150,7 +6153,7 @@
         "name": "來義鄉公所",
         "name_en": "Laiyi Township Office",
         "line": "幸福來義16路",
-        "color": "#0B7A3E",
+        "color": "#d97706",
         "direction": 0,
         "station_id": "118441"
       },
@@ -6170,7 +6173,7 @@
         "name": "潮州圖書館",
         "name_en": "Chaozhou Town Library",
         "line": "幸福來義16路",
-        "color": "#0B7A3E",
+        "color": "#d97706",
         "direction": 0,
         "station_id": "143780"
       },
@@ -6190,7 +6193,7 @@
         "name": "古樓國小",
         "name_en": "Gulou Community Assembly Hall",
         "line": "幸福來義16路",
-        "color": "#0B7A3E",
+        "color": "#d97706",
         "direction": 0,
         "station_id": "145467"
       },
@@ -6210,7 +6213,7 @@
         "name": "來義國小",
         "name_en": "Laiyi Elementary School",
         "line": "幸福來義16路",
-        "color": "#0B7A3E",
+        "color": "#d97706",
         "direction": 0,
         "station_id": "129104"
       },
@@ -6230,7 +6233,7 @@
         "name": "來義鄉公所",
         "name_en": "Laiyi Township Office",
         "line": "幸福來義16路",
-        "color": "#0B7A3E",
+        "color": "#d97706",
         "direction": 1,
         "station_id": "118430"
       },
@@ -6250,7 +6253,7 @@
         "name": "來義國小",
         "name_en": "Laiyi Elementary School",
         "line": "幸福來義16路",
-        "color": "#0B7A3E",
+        "color": "#d97706",
         "direction": 1,
         "station_id": "129104"
       },
@@ -6270,7 +6273,7 @@
         "name": "古樓國小",
         "name_en": "Gulou Community Assembly Hall",
         "line": "幸福來義16路",
-        "color": "#0B7A3E",
+        "color": "#d97706",
         "direction": 1,
         "station_id": "145467"
       },
@@ -6290,7 +6293,7 @@
         "name": "潮州圖書館",
         "name_en": "Chaozhou Town Library",
         "line": "幸福來義16路",
-        "color": "#0B7A3E",
+        "color": "#d97706",
         "direction": 1,
         "station_id": "143780"
       },

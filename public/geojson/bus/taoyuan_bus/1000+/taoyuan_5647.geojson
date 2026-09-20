@@ -6,13 +6,14 @@
     "name": "5647",
     "name_en": "5647",
     "ref": "5647",
-    "color": "#7c3aed",
+    "color": "#be123c",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/5647/map/1786/image",
     "operator_id": "6",
     "operator": "亞通客運",
-    "operator_en": "Yatung Bus Co., Ltd."
+    "operator_en": "Yatung Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "5647",
         "name": "5647",
         "name_en": "5647",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#be123c",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1251,6 +1253,10 @@
           [
             121.21167,
             24.86551
+          ],
+          [
+            121.21112,
+            24.86483
           ]
         ]
       }
@@ -1263,7 +1269,7 @@
         "name": "龍潭",
         "name_en": "Longtan",
         "line": "5647",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6081"
       },
@@ -1283,7 +1289,7 @@
         "name": "信義路口",
         "name_en": "Xinyi Rd. Intersection",
         "line": "5647",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "771"
       },
@@ -1303,7 +1309,7 @@
         "name": "南龍潭",
         "name_en": "Nanlongtan",
         "line": "5647",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "769"
       },
@@ -1323,7 +1329,7 @@
         "name": "龍聖",
         "name_en": "Longsheng",
         "line": "5647",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "2928"
       },
@@ -1343,7 +1349,7 @@
         "name": "凌雲岡",
         "name_en": "Lingyungang",
         "line": "5647",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "2930"
       },
@@ -1363,7 +1369,7 @@
         "name": "慈惠宮",
         "name_en": "Cihui Temple",
         "line": "5647",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "2932"
       },
@@ -1383,7 +1389,7 @@
         "name": "春源",
         "name_en": "Chunyuan",
         "line": "5647",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "2955"
       },
@@ -1403,7 +1409,7 @@
         "name": "德龍國小",
         "name_en": "Delong Elementary School",
         "line": "5647",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "2934"
       },
@@ -1423,7 +1429,7 @@
         "name": "八張犁",
         "name_en": "Bazhangli",
         "line": "5647",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "2936"
       },
@@ -1443,7 +1449,7 @@
         "name": "大庄",
         "name_en": "Dazhuang",
         "line": "5647",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1197"
       },
@@ -1463,7 +1469,7 @@
         "name": "徐厝",
         "name_en": "Xucuo",
         "line": "5647",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "965"
       },
@@ -1483,7 +1489,7 @@
         "name": "金車公司",
         "name_en": "King Car Company",
         "line": "5647",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "2938"
       },
@@ -1503,7 +1509,7 @@
         "name": "倚翠園",
         "name_en": "Yicuiyuan",
         "line": "5647",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "2942"
       },
@@ -1523,7 +1529,7 @@
         "name": "鎮興里",
         "name_en": "Zhenxing Village",
         "line": "5647",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "2944"
       },
@@ -1543,7 +1549,7 @@
         "name": "陳屋",
         "name_en": "Chenwu",
         "line": "5647",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "2745"
       },
@@ -1563,7 +1569,7 @@
         "name": "試驗廠",
         "name_en": "Shiyanchang",
         "line": "5647",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "2946"
       },
@@ -1583,7 +1589,7 @@
         "name": "茶業改良場",
         "name_en": "Tea Research and Extension Station",
         "line": "5647",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1335"
       },
@@ -1603,7 +1609,7 @@
         "name": "三龍新村",
         "name_en": "Sanlong Village",
         "line": "5647",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "2948"
       },
@@ -1623,7 +1629,7 @@
         "name": "瑞埔國小",
         "name_en": "Ruipu Elementary School",
         "line": "5647",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "2950"
       },
@@ -1643,7 +1649,7 @@
         "name": "埔心市場",
         "name_en": "Puxin Market",
         "line": "5647",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "4843"
       },
@@ -1663,7 +1669,7 @@
         "name": "中興路",
         "name_en": "Zhongxing Rd.",
         "line": "5647",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "2953"
       },
@@ -1683,7 +1689,7 @@
         "name": "瑞埔國小",
         "name_en": "Ruipu Elementary School",
         "line": "5647",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "2951"
       },
@@ -1703,7 +1709,7 @@
         "name": "三龍新村",
         "name_en": "Sanlong Village",
         "line": "5647",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "2949"
       },
@@ -1723,7 +1729,7 @@
         "name": "茶業改良場",
         "name_en": "Tea Research and Extension Station",
         "line": "5647",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1336"
       },
@@ -1743,7 +1749,7 @@
         "name": "試驗廠",
         "name_en": "Shiyanchang",
         "line": "5647",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "2947"
       },
@@ -1763,7 +1769,7 @@
         "name": "陳屋",
         "name_en": "Chenwu",
         "line": "5647",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "2746"
       },
@@ -1783,7 +1789,7 @@
         "name": "鎮興里",
         "name_en": "Zhenxing Village",
         "line": "5647",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "2945"
       },
@@ -1803,7 +1809,7 @@
         "name": "倚翠園",
         "name_en": "Yicuiyuan",
         "line": "5647",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "2943"
       },
@@ -1823,7 +1829,7 @@
         "name": "金車公司",
         "name_en": "King Car Company",
         "line": "5647",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "2939"
       },
@@ -1843,7 +1849,7 @@
         "name": "徐厝",
         "name_en": "Xucuo",
         "line": "5647",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "966"
       },
@@ -1863,7 +1869,7 @@
         "name": "大庄",
         "name_en": "Dazhuang",
         "line": "5647",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1198"
       },
@@ -1883,7 +1889,7 @@
         "name": "八張犁",
         "name_en": "Bazhangli",
         "line": "5647",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "2937"
       },
@@ -1903,7 +1909,7 @@
         "name": "德龍國小",
         "name_en": "Delong Elementary School",
         "line": "5647",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "2935"
       },
@@ -1923,7 +1929,7 @@
         "name": "春源",
         "name_en": "Chunyuan",
         "line": "5647",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "2954"
       },
@@ -1943,7 +1949,7 @@
         "name": "慈惠宮",
         "name_en": "Cihui Temple",
         "line": "5647",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "2933"
       },
@@ -1963,7 +1969,7 @@
         "name": "凌雲岡",
         "name_en": "Lingyungang",
         "line": "5647",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "2931"
       },
@@ -1983,7 +1989,7 @@
         "name": "龍聖",
         "name_en": "Longsheng",
         "line": "5647",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "2929"
       },
@@ -2003,7 +2009,7 @@
         "name": "南龍潭",
         "name_en": "Nanlongtan",
         "line": "5647",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "768"
       },
@@ -2023,7 +2029,7 @@
         "name": "信義路口",
         "name_en": "Xinyi Rd. Intersection",
         "line": "5647",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "772"
       },
@@ -2043,7 +2049,7 @@
         "name": "龍潭",
         "name_en": "Longtan",
         "line": "5647",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6082"
       },

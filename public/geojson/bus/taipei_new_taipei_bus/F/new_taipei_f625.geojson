@@ -6,13 +6,14 @@
     "name": "F625",
     "name_en": "F625",
     "ref": "F625",
-    "color": "#3f6212",
+    "color": "#6B8F9A",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.gov.taipei/File/Get/dae8b131-8beb-4358-afc3-a521751b9303?v=639248448792402376",
     "operator_id": "16243",
     "operator": "三峽區公所",
-    "operator_en": "Sanxia District Office"
+    "operator_en": "Sanxia District Office",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "F625",
         "name": "F625",
         "name_en": "F625",
-        "color": "#3f6212",
-        "direction": 0
+        "color": "#6B8F9A",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -827,6 +829,10 @@
           [
             121.367153464201,
             24.9364994422022
+          ],
+          [
+            121.367173362736,
+            24.9364934726418
           ]
         ]
       }
@@ -839,7 +845,7 @@
         "name": "大仁路大勇路口",
         "name_en": "Daren & Dayong Intersection",
         "line": "F625",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72726"
       },
@@ -859,7 +865,7 @@
         "name": "中山公園",
         "name_en": "Zhongshan Park",
         "line": "F625",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72733"
       },
@@ -879,7 +885,7 @@
         "name": "中山路仁愛街口",
         "name_en": "Zhōngshān Road, rén'ài Street",
         "line": "F625",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72819"
       },
@@ -899,7 +905,7 @@
         "name": "三峽教會",
         "name_en": "Sanxia Church",
         "line": "F625",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72713"
       },
@@ -919,7 +925,7 @@
         "name": "榕樹下(三峽)",
         "name_en": "Rongshuxia",
         "line": "F625",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72813"
       },
@@ -939,7 +945,7 @@
         "name": "大同路",
         "name_en": "Datong Rd.",
         "line": "F625",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603739"
       },
@@ -959,7 +965,7 @@
         "name": "麻醉藥廠",
         "name_en": "Anesthesia Pharmaceutical Factory",
         "line": "F625",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72988"
       },
@@ -979,7 +985,7 @@
         "name": "麻園一",
         "name_en": "Mayuan 1",
         "line": "F625",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72981"
       },
@@ -999,7 +1005,7 @@
         "name": "麻園二",
         "name_en": "Mayuan 2",
         "line": "F625",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72984"
       },
@@ -1019,7 +1025,7 @@
         "name": "麻園三",
         "name_en": "Mayuan 3",
         "line": "F625",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72985"
       },
@@ -1039,7 +1045,7 @@
         "name": "苓林橋",
         "name_en": "Linglin Bridge",
         "line": "F625",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72970"
       },
@@ -1059,7 +1065,7 @@
         "name": "二鬮路23巷口",
         "name_en": "Erjiou Rd.",
         "line": "F625",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72839"
       },
@@ -1079,7 +1085,7 @@
         "name": "土地公廟",
         "name_en": "Tudigong Temple",
         "line": "F625",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72849"
       },
@@ -1099,7 +1105,7 @@
         "name": "薇多綠雅社區",
         "name_en": "Weiduo Luya Community",
         "line": "F625",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73016"
       },
@@ -1119,7 +1125,7 @@
         "name": "中央社區",
         "name_en": "Zhongyang Community",
         "line": "F625",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72875"
       },
@@ -1139,7 +1145,7 @@
         "name": "加州陽光社區",
         "name_en": "Jiazhou Yangguang Community",
         "line": "F625",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72900"
       },
@@ -1159,7 +1165,7 @@
         "name": "中正路3段32號",
         "name_en": "No.32 Sec. 3 Zhongzheng Rd.",
         "line": "F625",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603752"
       },
@@ -1179,7 +1185,7 @@
         "name": "嘉利別墅社區",
         "name_en": "Jiali Villa Community",
         "line": "F625",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165609400"
       },
@@ -1199,7 +1205,7 @@
         "name": "系製中心",
         "name_en": "Xizhi Center",
         "line": "F625",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603736"
       },
@@ -1219,7 +1225,7 @@
         "name": "五鬮社區",
         "name_en": "Wujiou Community",
         "line": "F625",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603757"
       },
@@ -1239,7 +1245,7 @@
         "name": "系製中心",
         "name_en": "Xizhi Center",
         "line": "F625",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603736"
       },
@@ -1259,7 +1265,7 @@
         "name": "嘉利別墅社區",
         "name_en": "Jiali Villa Community",
         "line": "F625",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165609401"
       },
@@ -1279,7 +1285,7 @@
         "name": "中正路3段32號",
         "name_en": "No.32,Src. 3,Zhongzheng Rd.",
         "line": "F625",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603752"
       },
@@ -1299,7 +1305,7 @@
         "name": "加州陽光社區",
         "name_en": "Jiazhou Yangguang Community",
         "line": "F625",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72900"
       },
@@ -1319,7 +1325,7 @@
         "name": "中央社區",
         "name_en": "Zhongyang Community",
         "line": "F625",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72875"
       },
@@ -1339,7 +1345,7 @@
         "name": "柑樹路中正路口",
         "name_en": "Ganshu & Zhongzheng Intersection",
         "line": "F625",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72966"
       },
@@ -1359,7 +1365,7 @@
         "name": "明德中學",
         "name_en": "Mingde High School",
         "line": "F625",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72951"
       },
@@ -1379,7 +1385,7 @@
         "name": "柑樹路中正路口",
         "name_en": "Ganshu & Zhongzheng Intersection",
         "line": "F625",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72966"
       },
@@ -1399,7 +1405,7 @@
         "name": "中央社區",
         "name_en": "Zhongyang Community 2",
         "line": "F625",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72874"
       },
@@ -1419,7 +1425,7 @@
         "name": "土地公廟",
         "name_en": "Tudigong Temple",
         "line": "F625",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72849"
       },
@@ -1439,7 +1445,7 @@
         "name": "二鬮路23巷口",
         "name_en": "Erjiou Rd.",
         "line": "F625",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72840"
       },
@@ -1459,7 +1465,7 @@
         "name": "苓林橋",
         "name_en": "Linglin Bridge",
         "line": "F625",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72971"
       },
@@ -1479,7 +1485,7 @@
         "name": "麻園三",
         "name_en": "Mayuan 3",
         "line": "F625",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72986"
       },
@@ -1499,7 +1505,7 @@
         "name": "麻園二",
         "name_en": "Mayuan 2",
         "line": "F625",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72983"
       },
@@ -1519,7 +1525,7 @@
         "name": "麻園一",
         "name_en": "Mayuan 1",
         "line": "F625",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72982"
       },
@@ -1539,7 +1545,7 @@
         "name": "麻醉藥廠",
         "name_en": "Anesthesia Pharmaceutical Factory",
         "line": "F625",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72987"
       },
@@ -1559,7 +1565,7 @@
         "name": "大同路",
         "name_en": "Datong Rd.",
         "line": "F625",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72853"
       },
@@ -1579,7 +1585,7 @@
         "name": "榕樹下(三峽)",
         "name_en": "Rongshuxia",
         "line": "F625",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72813"
       },
@@ -1599,7 +1605,7 @@
         "name": "三峽教會",
         "name_en": "Sanxia Church",
         "line": "F625",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72714"
       },
@@ -1619,7 +1625,7 @@
         "name": "中山路仁愛街口",
         "name_en": "Zhōngshān Road, rén'ài Street",
         "line": "F625",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72819"
       },
@@ -1639,7 +1645,7 @@
         "name": "中山公園",
         "name_en": "Zhongsha Park",
         "line": "F625",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72734"
       },
@@ -1659,7 +1665,7 @@
         "name": "大仁路",
         "name_en": "Daren Rd.",
         "line": "F625",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72723"
       },
@@ -1679,7 +1685,7 @@
         "name": "大仁路大勇路口",
         "name_en": "Daren & Dayong Intersection",
         "line": "F625",
-        "color": "#3f6212",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72725"
       },

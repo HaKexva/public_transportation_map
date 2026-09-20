@@ -6,13 +6,14 @@
     "name": "50",
     "name_en": "50",
     "ref": "50",
-    "color": "#9f1239",
+    "color": "#92400e",
     "city_id": "Hsinchu",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://web.taiwanbus.tw/MISUploadData/Schematic/file/0500.jpg",
     "operator_id": "67",
     "operator": "金牌客運",
-    "operator_en": "Champion Bus Co., Ltd."
+    "operator_en": "Champion Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "50",
         "name": "50",
         "name_en": "50",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#92400e",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -2259,6 +2261,10 @@
           [
             120.94213,
             24.7971
+          ],
+          [
+            120.94214,
+            24.79711
           ]
         ]
       }
@@ -2271,7 +2277,7 @@
         "name": "香山區公所",
         "name_en": "Xiangshan District Office",
         "line": "50",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130144"
       },
@@ -2291,7 +2297,7 @@
         "name": "香山行政大樓",
         "name_en": "Siangshan Administration Building",
         "line": "50",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "137881"
       },
@@ -2311,7 +2317,7 @@
         "name": "香山國小",
         "name_en": "Xiangshan Elementary School",
         "line": "50",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130194"
       },
@@ -2331,7 +2337,7 @@
         "name": "聖德宮",
         "name_en": "Shengde Temple",
         "line": "50",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130146"
       },
@@ -2351,7 +2357,7 @@
         "name": "頂埔社區",
         "name_en": "Dingpu Community",
         "line": "50",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130359"
       },
@@ -2371,7 +2377,7 @@
         "name": "信義幼稚園",
         "name_en": "Xinyi Kindergarten",
         "line": "50",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130148"
       },
@@ -2391,7 +2397,7 @@
         "name": "警光路",
         "name_en": "Jingguang Rd.",
         "line": "50",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130149"
       },
@@ -2411,7 +2417,7 @@
         "name": "林森路口",
         "name_en": "Linsen Road Entrance",
         "line": "50",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130141"
       },
@@ -2431,7 +2437,7 @@
         "name": "國泰醫院",
         "name_en": "Hsinchu Cathay General Hospital",
         "line": "50",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130142"
       },
@@ -2451,7 +2457,7 @@
         "name": "南門市場",
         "name_en": "Nan Men Market",
         "line": "50",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130143"
       },
@@ -2471,7 +2477,7 @@
         "name": "火車站",
         "name_en": "Train Station",
         "line": "50",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130150"
       },
@@ -2491,7 +2497,7 @@
         "name": "新竹女中",
         "name_en": "National Hsinchu Girls&#39; Senior High school",
         "line": "50",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130151"
       },
@@ -2511,7 +2517,7 @@
         "name": "國賓大飯店",
         "name_en": "Ambassador Hotel",
         "line": "50",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130152"
       },
@@ -2531,7 +2537,7 @@
         "name": "民生民族路口",
         "name_en": "Minsheng Minzu Rd. Intersection",
         "line": "50",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130153"
       },
@@ -2551,7 +2557,7 @@
         "name": "民生中央路口",
         "name_en": "Minsheng Zhongyang Rd. Intersection",
         "line": "50",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130154"
       },
@@ -2571,7 +2577,7 @@
         "name": "經國北大路口",
         "name_en": "Jing Guo Bei Da Road Entrance",
         "line": "50",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130155"
       },
@@ -2591,7 +2597,7 @@
         "name": "果菜市場",
         "name_en": "Guo Cai Market",
         "line": "50",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130156"
       },
@@ -2611,7 +2617,7 @@
         "name": "台大新竹分院",
         "name_en": "National Taiwan University Hospital Hsinchu Branch",
         "line": "50",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130157"
       },
@@ -2631,7 +2637,7 @@
         "name": "金華里",
         "name_en": "Jinhua Village",
         "line": "50",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130158"
       },
@@ -2651,7 +2657,7 @@
         "name": "光華國中",
         "name_en": "Guang Hua Junior High School",
         "line": "50",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130159"
       },
@@ -2671,7 +2677,7 @@
         "name": "湳雅公園(大潤發)",
         "name_en": "Nanya Park(RT-Mart)",
         "line": "50",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130160"
       },
@@ -2691,7 +2697,7 @@
         "name": "湳中街口",
         "name_en": "Nanzhong St. Intersection",
         "line": "50",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130161"
       },
@@ -2711,7 +2717,7 @@
         "name": "武陵社區",
         "name_en": "Wuling Community",
         "line": "50",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130162"
       },
@@ -2731,7 +2737,7 @@
         "name": "國軍新竹地區醫院",
         "name_en": "Hsin Chu Armed Force Hospital",
         "line": "50",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130163"
       },
@@ -2751,7 +2757,7 @@
         "name": "竹光1站",
         "name_en": "Zhuguang 1st Stop",
         "line": "50",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "132291"
       },
@@ -2771,7 +2777,7 @@
         "name": "竹光2站",
         "name_en": "Zhuguang 2nd Stop",
         "line": "50",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "132292"
       },
@@ -2791,7 +2797,7 @@
         "name": "竹光3站",
         "name_en": "Zhuguang 3th Stop",
         "line": "50",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "132293"
       },
@@ -2811,7 +2817,7 @@
         "name": "竹光國中",
         "name_en": "Zhu Guang Junior High School",
         "line": "50",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "137586"
       },
@@ -2831,7 +2837,7 @@
         "name": "經國西大路口",
         "name_en": "Jingguo Xida Road Intersection",
         "line": "50",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "137588"
       },
@@ -2851,7 +2857,7 @@
         "name": "民富國小",
         "name_en": "Minfu Elementary School",
         "line": "50",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130165"
       },
@@ -2871,7 +2877,7 @@
         "name": "西門市場",
         "name_en": "Xi Men Market",
         "line": "50",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130106"
       },
@@ -2891,7 +2897,7 @@
         "name": "西門口",
         "name_en": "Ximenkou",
         "line": "50",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130166"
       },
@@ -2911,7 +2917,7 @@
         "name": "中山路",
         "name_en": "Zhongshan Rd.",
         "line": "50",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130167"
       },
@@ -2931,7 +2937,7 @@
         "name": "中和路",
         "name_en": "ZhongHe Rd.",
         "line": "50",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130168"
       },
@@ -2951,7 +2957,7 @@
         "name": "台貿四村",
         "name_en": "Taimao 4th Village",
         "line": "50",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130100"
       },
@@ -2971,7 +2977,7 @@
         "name": "大鵬新城",
         "name_en": "Dapeng Xincheng",
         "line": "50",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130169"
       },
@@ -2991,7 +2997,7 @@
         "name": "頂埔社區",
         "name_en": "Dingpu Community",
         "line": "50",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130147"
       },
@@ -3011,7 +3017,7 @@
         "name": "聖德宮",
         "name_en": "Shengde Temple",
         "line": "50",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130171"
       },
@@ -3031,7 +3037,7 @@
         "name": "香山國小",
         "name_en": "Xiangshan Elementary School",
         "line": "50",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130194"
       },
@@ -3051,7 +3057,7 @@
         "name": "香山行政大樓",
         "name_en": "Siangshan Administration Building",
         "line": "50",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "137882"
       },
@@ -3071,7 +3077,7 @@
         "name": "香山區公所",
         "name_en": "Xiangshan District Office",
         "line": "50",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "141862"
       },

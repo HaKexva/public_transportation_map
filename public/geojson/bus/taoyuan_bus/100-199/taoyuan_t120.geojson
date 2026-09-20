@@ -6,11 +6,12 @@
     "name": "T120",
     "name_en": "T120",
     "ref": "T120",
-    "color": "#7c2d12",
+    "color": "#4f46e5",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "operator_id": "29",
-    "operator": "九億租車"
+    "operator": "九億租車",
+    "loop": true
   },
   "features": [
     {
@@ -20,8 +21,9 @@
         "ref": "T120",
         "name": "T120",
         "name_en": "T120",
-        "color": "#7c2d12",
-        "direction": 0
+        "color": "#4f46e5",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -2145,6 +2147,10 @@
           [
             121.31864,
             24.96048
+          ],
+          [
+            121.31869,
+            24.96003
           ]
         ]
       }
@@ -2157,7 +2163,7 @@
         "name": "八德轉運站",
         "name_en": "Bade Bus Station",
         "line": "T120",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "6882"
       },
@@ -2177,7 +2183,7 @@
         "name": "大成龍門社區",
         "name_en": "Dacheng Longmen Community",
         "line": "T120",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "1271"
       },
@@ -2197,7 +2203,7 @@
         "name": "大千公園",
         "name_en": "Daqian Park",
         "line": "T120",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "5869"
       },
@@ -2217,7 +2223,7 @@
         "name": "陸光四村",
         "name_en": "The 4th village of Lu guang",
         "line": "T120",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "1258"
       },
@@ -2237,7 +2243,7 @@
         "name": "陸光活動中心",
         "name_en": "Luguang Activity Center",
         "line": "T120",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "5680"
       },
@@ -2257,7 +2263,7 @@
         "name": "福國北街",
         "name_en": "FuGuo North Street",
         "line": "T120",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "2083"
       },
@@ -2277,7 +2283,7 @@
         "name": "景雲新村",
         "name_en": "JingYun New Village",
         "line": "T120",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "4528"
       },
@@ -2297,7 +2303,7 @@
         "name": "大湳市場",
         "name_en": "Danan Market",
         "line": "T120",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "3766"
       },
@@ -2317,7 +2323,7 @@
         "name": "和平路口",
         "name_en": "Heping Rd. Intersection",
         "line": "T120",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "4481"
       },
@@ -2337,7 +2343,7 @@
         "name": "香榭麗舍",
         "name_en": "Champs Elysees",
         "line": "T120",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "7832"
       },
@@ -2357,7 +2363,7 @@
         "name": "大成國中(和平路)",
         "name_en": "Dacheng Junior High School(Heping Rd.)",
         "line": "T120",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "6842"
       },
@@ -2377,7 +2383,7 @@
         "name": "惠爾得公司",
         "name_en": "Welltech Company",
         "line": "T120",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "1221"
       },
@@ -2397,7 +2403,7 @@
         "name": "西坡路口",
         "name_en": "Shipo Road Intersection",
         "line": "T120",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "1934"
       },
@@ -2417,7 +2423,7 @@
         "name": "指玄街口",
         "name_en": "Zhixuan Street Intersection",
         "line": "T120",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "7817"
       },
@@ -2437,7 +2443,7 @@
         "name": "榮興路189巷",
         "name_en": "Lane 189 Rongxing Road",
         "line": "T120",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "7821"
       },
@@ -2457,7 +2463,7 @@
         "name": "八德生態公園",
         "name_en": "Bade Ecology Park",
         "line": "T120",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "5851"
       },
@@ -2477,7 +2483,7 @@
         "name": "竹篙厝",
         "name_en": "Zhugaocuo",
         "line": "T120",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "2696"
       },
@@ -2497,7 +2503,7 @@
         "name": "興豐中油站",
         "name_en": "Xinfeng Petrol Station",
         "line": "T120",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "5852"
       },
@@ -2517,7 +2523,7 @@
         "name": "瑞聯社區",
         "name_en": "Ruilian Community",
         "line": "T120",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "1217"
       },
@@ -2537,7 +2543,7 @@
         "name": "中華神學院",
         "name_en": "China Evangelical Seminary",
         "line": "T120",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "6134"
       },
@@ -2557,7 +2563,7 @@
         "name": "和平社區活動中心",
         "name_en": "He Ping Community Center",
         "line": "T120",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "4326"
       },
@@ -2577,7 +2583,7 @@
         "name": "和平路772巷",
         "name_en": "Heping Rd., Ln. 772",
         "line": "T120",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "5836"
       },
@@ -2597,7 +2603,7 @@
         "name": "大草厝",
         "name_en": "Da Cao Cuo",
         "line": "T120",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "7811"
       },
@@ -2617,7 +2623,7 @@
         "name": "捷運鶯桃福德站(福德一路)",
         "name_en": "MRT Yingtao Fude Station",
         "line": "T120",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "7284"
       },
@@ -2637,7 +2643,7 @@
         "name": "鳳鳴國中(永和街口)",
         "name_en": "Fengming Junior High School Yonghe Street Intersection",
         "line": "T120",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "7835"
       },
@@ -2657,7 +2663,7 @@
         "name": "捷運鶯桃福德站(福德一路)",
         "name_en": "MRT Yingtao Fude Station",
         "line": "T120",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "7285"
       },
@@ -2677,7 +2683,7 @@
         "name": "八德轉運站",
         "name_en": "Bade Transit Station",
         "line": "T120",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "7804"
       },

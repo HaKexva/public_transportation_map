@@ -6,13 +6,14 @@
     "name": "L216",
     "name_en": "L216",
     "ref": "L216",
-    "color": "#b91c1c",
+    "color": "#b45309",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/6750/map/1014/image",
     "operator_id": "1",
     "operator": "桃園客運",
-    "operator_en": "Taoyuan Bus Co., Ltd."
+    "operator_en": "Taoyuan Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "L216",
         "name": "L216",
         "name_en": "L216",
-        "color": "#b91c1c",
-        "direction": 0
+        "color": "#b45309",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1427,6 +1429,10 @@
           [
             121.21762,
             24.94549
+          ],
+          [
+            121.21759,
+            24.94555
           ]
         ]
       }
@@ -1439,7 +1445,7 @@
         "name": "平鎮區公所",
         "name_en": "Pingzhen District Office",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1551"
       },
@@ -1459,7 +1465,7 @@
         "name": "和平市場",
         "name_en": "Heping Market",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1550"
       },
@@ -1479,7 +1485,7 @@
         "name": "金陵路口",
         "name_en": "Jinling Road Intersection",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2817"
       },
@@ -1499,7 +1505,7 @@
         "name": "中壢後火車站",
         "name_en": "Zhongli rear train station",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2618"
       },
@@ -1519,7 +1525,7 @@
         "name": "中壢家商",
         "name_en": "National ChungLi Vocational High School",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1709"
       },
@@ -1539,7 +1545,7 @@
         "name": "中壢國中(延平路)",
         "name_en": "Zhongli Junior High School(Yanping Rd.)",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6692"
       },
@@ -1559,7 +1565,7 @@
         "name": "新勢國小(新勢公園)",
         "name_en": "Hsin-Shin Elementary School (Hsin-Shih Park)",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2418"
       },
@@ -1579,7 +1585,7 @@
         "name": "新榮路",
         "name_en": "Xinrong Rd.",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3050"
       },
@@ -1599,7 +1605,7 @@
         "name": "振興西路",
         "name_en": "Zhenxing W. Rd.",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3048"
       },
@@ -1619,7 +1625,7 @@
         "name": "水利會",
         "name_en": "Irrigation Association",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2813"
       },
@@ -1639,7 +1645,7 @@
         "name": "元氣東京",
         "name_en": "Yuanqidongjing Community",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3046"
       },
@@ -1659,7 +1665,7 @@
         "name": "廣平街口",
         "name_en": "Guangping St. Intersection",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3044"
       },
@@ -1679,7 +1685,7 @@
         "name": "廣東路口",
         "name_en": "Guangdong Road Intersection",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3042"
       },
@@ -1699,7 +1705,7 @@
         "name": "合作街口",
         "name_en": "Hezuo St. Intersection",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3040"
       },
@@ -1719,7 +1725,7 @@
         "name": "復旦國小",
         "name_en": "Fudan Elementary School",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3038"
       },
@@ -1739,7 +1745,7 @@
         "name": "復旦集會所",
         "name_en": "Fudan United Meeting Office",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3034"
       },
@@ -1759,7 +1765,7 @@
         "name": "文化國小",
         "name_en": "Wenhua Elementary School",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3022"
       },
@@ -1779,7 +1785,7 @@
         "name": "文化街",
         "name_en": "Wenhua St.",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6680"
       },
@@ -1799,7 +1805,7 @@
         "name": "聯新國際醫院",
         "name_en": "Landseed International Hospital",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1111"
       },
@@ -1819,7 +1825,7 @@
         "name": "平興國小",
         "name_en": "Pingxing Elementary School",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2807"
       },
@@ -1839,7 +1845,7 @@
         "name": "宋屋國小",
         "name_en": "Song-Wu Elementary School",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6682"
       },
@@ -1859,7 +1865,7 @@
         "name": "新光",
         "name_en": "Xinguang",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2293"
       },
@@ -1879,7 +1885,7 @@
         "name": "掬水軒",
         "name_en": "Jushuixuan",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3020"
       },
@@ -1899,7 +1905,7 @@
         "name": "平德路一",
         "name_en": "Pingde Rd. 1",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3018"
       },
@@ -1919,7 +1925,7 @@
         "name": "平德路二",
         "name_en": "Pingde Rd. 2",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3016"
       },
@@ -1939,7 +1945,7 @@
         "name": "新光路二段二",
         "name_en": "Xinquang Rd. Sec. 2 B",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1941"
       },
@@ -1959,7 +1965,7 @@
         "name": "松濤園",
         "name_en": "Songtaoyuan Community",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1939"
       },
@@ -1979,7 +1985,7 @@
         "name": "新光路三段",
         "name_en": "Xinquang Rd. Sec. 3",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1832"
       },
@@ -1999,7 +2005,7 @@
         "name": "技嘉科技",
         "name_en": "Giantec Technologies Co., Ltd.",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1830"
       },
@@ -2019,7 +2025,7 @@
         "name": "南平路121巷",
         "name_en": "Nanping Rd. Lane 121",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1828"
       },
@@ -2039,7 +2045,7 @@
         "name": "中豐路口",
         "name_en": "Zhongfeng Road Intersection",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1826"
       },
@@ -2059,7 +2065,7 @@
         "name": "長壽新村",
         "name_en": "Changshou New Village",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1824"
       },
@@ -2079,7 +2085,7 @@
         "name": "南京路",
         "name_en": "Nanjing Rd.",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1822"
       },
@@ -2099,7 +2105,7 @@
         "name": "上海路口",
         "name_en": "Shanghai Street Intersection",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2757"
       },
@@ -2119,7 +2125,7 @@
         "name": "城市之星",
         "name_en": "Chengshi zhixing Community",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1821"
       },
@@ -2139,7 +2145,7 @@
         "name": "鎮安宮",
         "name_en": "Zhen-an Temple",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3014"
       },
@@ -2159,7 +2165,7 @@
         "name": "八角塘",
         "name_en": "Bajiaotang",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3012"
       },
@@ -2179,7 +2185,7 @@
         "name": "南平路二段516巷",
         "name_en": "Nanping Road, Sec. 2, Lane 156",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1337"
       },
@@ -2199,7 +2205,7 @@
         "name": "千頃堂",
         "name_en": "Qianqingtang",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3010"
       },
@@ -2219,7 +2225,7 @@
         "name": "埔心火車站",
         "name_en": "Puxin Train Station",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3008"
       },
@@ -2239,7 +2245,7 @@
         "name": "中興路",
         "name_en": "Zhongxing Rd.",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2953"
       },
@@ -2259,7 +2265,7 @@
         "name": "瑞埔國小",
         "name_en": "Ruipu Elementary School",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2951"
       },
@@ -2279,7 +2285,7 @@
         "name": "茶業改良場",
         "name_en": "Tea Research and Extension Station",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1336"
       },
@@ -2299,7 +2305,7 @@
         "name": "中興中庸路口",
         "name_en": "Zhongxing and Zhongyong Rd. Intersection",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6135"
       },
@@ -2319,7 +2325,7 @@
         "name": "陳屋",
         "name_en": "Chenwu",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2746"
       },
@@ -2339,7 +2345,7 @@
         "name": "鎮興里",
         "name_en": "Zhenxing Vil.",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3006"
       },
@@ -2359,7 +2365,7 @@
         "name": "倚翠園",
         "name_en": "Yicuiyuan",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2943"
       },
@@ -2379,7 +2385,7 @@
         "name": "金車公司",
         "name_en": "King Car Company",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2939"
       },
@@ -2399,7 +2405,7 @@
         "name": "徐厝",
         "name_en": "Xucuo",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6311"
       },
@@ -2419,7 +2425,7 @@
         "name": "湧光路577巷",
         "name_en": "Yongguang Rd. Lane 577",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3004"
       },
@@ -2439,7 +2445,7 @@
         "name": "湧光路",
         "name_en": "Yongguang Rd.",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3002"
       },
@@ -2459,7 +2465,7 @@
         "name": "湧光福德祠",
         "name_en": "Yonghuang Fude Temple",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3000"
       },
@@ -2479,7 +2485,7 @@
         "name": "湧光里集會所",
         "name_en": "Yongguang Village Activity Center",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1739"
       },
@@ -2499,7 +2505,7 @@
         "name": "湧興路",
         "name_en": "Yongxing Rd.",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2998"
       },
@@ -2519,7 +2525,7 @@
         "name": "土地銀行",
         "name_en": "Landbank of Taiwan",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1803"
       },
@@ -2539,7 +2545,7 @@
         "name": "湧豐里",
         "name_en": "Yongfeng Village",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1804"
       },
@@ -2559,7 +2565,7 @@
         "name": "華夏山莊",
         "name_en": "Huaxia Village",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1806"
       },
@@ -2579,7 +2585,7 @@
         "name": "平南國中",
         "name_en": "Pingnan Junior High School",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1571"
       },
@@ -2599,7 +2605,7 @@
         "name": "南勢國小",
         "name_en": "Nanshih Elementary School",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1567"
       },
@@ -2619,7 +2625,7 @@
         "name": "南勢",
         "name_en": "Nanshi",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1565"
       },
@@ -2639,7 +2645,7 @@
         "name": "大全聯",
         "name_en": "MEGA PX MART",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2925"
       },
@@ -2659,7 +2665,7 @@
         "name": "南東路215巷口",
         "name_en": "Entrance to Lane 215, Nandong Rd.",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "857"
       },
@@ -2679,7 +2685,7 @@
         "name": "南東路",
         "name_en": "Nandong Rd.",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2876"
       },
@@ -2699,7 +2705,7 @@
         "name": "關爺南路241巷",
         "name_en": "Guanye S. Rd. Lane 241",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2198"
       },
@@ -2719,7 +2725,7 @@
         "name": "關爺南路158巷",
         "name_en": "Guanye South Road, Lane 158",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1228"
       },
@@ -2739,7 +2745,7 @@
         "name": "關爺北路36巷",
         "name_en": "Guanye N. Rd. Lane 36",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1559"
       },
@@ -2759,7 +2765,7 @@
         "name": "關爺北路140巷",
         "name_en": "Guanye N. Rd. Lane 140",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1557"
       },
@@ -2779,7 +2785,7 @@
         "name": "平鎮高中(德育路二段)",
         "name_en": "Pingjen High School (section 2, Deyu road)",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1555"
       },
@@ -2799,7 +2805,7 @@
         "name": "城市CRV",
         "name_en": "Chengshi CRV Community",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2797"
       },
@@ -2819,7 +2825,7 @@
         "name": "振平街口",
         "name_en": "Zhenping St. Intersection",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2874"
       },
@@ -2839,7 +2845,7 @@
         "name": "北勢派出所",
         "name_en": "Peishih Police Station",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2872"
       },
@@ -2859,7 +2865,7 @@
         "name": "平鎮區公所",
         "name_en": "Civil Affairs Office of Pingzhen District",
         "line": "L216",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1551"
       },

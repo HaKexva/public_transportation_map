@@ -6,11 +6,12 @@
     "name": "T100",
     "name_en": "T100",
     "ref": "T100",
-    "color": "#0f766e",
+    "color": "#1e3a8a",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "operator_id": "19",
-    "operator": "捷乘客運"
+    "operator": "捷乘客運",
+    "loop": true
   },
   "features": [
     {
@@ -20,8 +21,9 @@
         "ref": "T100",
         "name": "T100",
         "name_en": "T100",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -557,6 +559,10 @@
           [
             121.30167,
             24.9945
+          ],
+          [
+            121.30154,
+            24.99455
           ]
         ]
       }
@@ -568,8 +574,9 @@
         "ref": "T100",
         "name": "T100",
         "name_en": "T100",
-        "color": "#0f766e",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1049,6 +1056,10 @@
           [
             121.30169,
             24.99448
+          ],
+          [
+            121.30152,
+            24.99457
           ]
         ]
       }
@@ -1061,7 +1072,7 @@
         "name": "桃園區公所",
         "name_en": "Taoyuan District Office",
         "line": "T100",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "6850"
       },
@@ -1081,7 +1092,7 @@
         "name": "廈門正光路口",
         "name_en": "Xiamen Zhengguang Rd Intersection",
         "line": "T100",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "3111"
       },
@@ -1101,7 +1112,7 @@
         "name": "向陽運動公園",
         "name_en": "Xiangyang Park",
         "line": "T100",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "6982"
       },
@@ -1121,7 +1132,7 @@
         "name": "正光慈文路口",
         "name_en": "Zhengguang Ciwen Rd Intersection",
         "line": "T100",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "6981"
       },
@@ -1141,7 +1152,7 @@
         "name": "中路運動公園",
         "name_en": "Zhonglu Sports Park",
         "line": "T100",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "6993"
       },
@@ -1161,7 +1172,7 @@
         "name": "永安北路",
         "name_en": "Yungan North Road",
         "line": "T100",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "390"
       },
@@ -1181,7 +1192,7 @@
         "name": "中埔國小",
         "name_en": "Zhongpu Elementary School",
         "line": "T100",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "1528"
       },
@@ -1201,7 +1212,7 @@
         "name": "臺灣桃園地方法院檢察署",
         "name_en": "New District Court",
         "line": "T100",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "3993"
       },
@@ -1221,7 +1232,7 @@
         "name": "中路微型轉運站",
         "name_en": "Zhonglu Micro Transit Hub",
         "line": "T100",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "3518"
       },
@@ -1241,7 +1252,7 @@
         "name": "國際路",
         "name_en": "Guoji Road",
         "line": "T100",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "2096"
       },
@@ -1261,7 +1272,7 @@
         "name": "國際文中路口",
         "name_en": "Guoji and Wenzhong Rd. Intersection",
         "line": "T100",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "3521"
       },
@@ -1281,7 +1292,7 @@
         "name": "國際路二段",
         "name_en": "Sec.2  GuoJi Road",
         "line": "T100",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "2094"
       },
@@ -1301,7 +1312,7 @@
         "name": "國強一街口",
         "name_en": "Guoqiang 1st St. Entrance",
         "line": "T100",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "3548"
       },
@@ -1321,7 +1332,7 @@
         "name": "迪斯奈社區",
         "name_en": "Disinai Community",
         "line": "T100",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "4635"
       },
@@ -1341,7 +1352,7 @@
         "name": "上海路口",
         "name_en": "Shanghai Street Intersection",
         "line": "T100",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "6518"
       },
@@ -1361,7 +1372,7 @@
         "name": "龍安街口",
         "name_en": "Lungan Street Intersection",
         "line": "T100",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "1870"
       },
@@ -1381,7 +1392,7 @@
         "name": "戶政地政所",
         "name_en": "Household Administration and Land Office",
         "line": "T100",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "3530"
       },
@@ -1401,7 +1412,7 @@
         "name": "宏太社區",
         "name_en": "Hungtai Community",
         "line": "T100",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "2822"
       },
@@ -1421,7 +1432,7 @@
         "name": "新名人賞",
         "name_en": "Sin Ming Ren Shang",
         "line": "T100",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "5084"
       },
@@ -1441,7 +1452,7 @@
         "name": "中山國小",
         "name_en": "Zhongshan Elementary School",
         "line": "T100",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "1698"
       },
@@ -1461,7 +1472,7 @@
         "name": "中山中平路口",
         "name_en": "Zhongshan and Zhongping Road Intersection",
         "line": "T100",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "2100"
       },
@@ -1481,7 +1492,7 @@
         "name": "亞洲電台",
         "name_en": "ASIA FM",
         "line": "T100",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "2067"
       },
@@ -1501,7 +1512,7 @@
         "name": "中山正光路口",
         "name_en": "Zhongshan Zhenguang Road Intersection",
         "line": "T100",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "2098"
       },
@@ -1521,7 +1532,7 @@
         "name": "土地改革館",
         "name_en": "Land Reform Museum",
         "line": "T100",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "1696"
       },
@@ -1541,7 +1552,7 @@
         "name": "桃園市政府",
         "name_en": "Taoyuan City Government",
         "line": "T100",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "334"
       },
@@ -1561,7 +1572,7 @@
         "name": "莒光街口",
         "name_en": "Juguang St. Intersection",
         "line": "T100",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "3055"
       },
@@ -1581,7 +1592,7 @@
         "name": "忠二路口",
         "name_en": "Zhonger Road Intersection",
         "line": "T100",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "3108"
       },
@@ -1601,7 +1612,7 @@
         "name": "桃園區公所",
         "name_en": "Taoyuan District Office",
         "line": "T100",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "6850"
       },
@@ -1621,7 +1632,7 @@
         "name": "桃園區公所",
         "name_en": "Taoyuan District Office",
         "line": "T100",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "6850"
       },
@@ -1641,7 +1652,7 @@
         "name": "忠二路口",
         "name_en": "Zhonger Road Intersection",
         "line": "T100",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "3109"
       },
@@ -1661,7 +1672,7 @@
         "name": "莒光街口",
         "name_en": "Juguang St. Intersection",
         "line": "T100",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "3056"
       },
@@ -1681,7 +1692,7 @@
         "name": "桃園市政府",
         "name_en": "Taoyuan City Government",
         "line": "T100",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "335"
       },
@@ -1701,7 +1712,7 @@
         "name": "土地改革館",
         "name_en": "Land Reform Museum",
         "line": "T100",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "1695"
       },
@@ -1721,7 +1732,7 @@
         "name": "中山正光路口",
         "name_en": "Zhongshan Zhenguang Road Intersection",
         "line": "T100",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "2099"
       },
@@ -1741,7 +1752,7 @@
         "name": "亞洲電台",
         "name_en": "ASIA FM",
         "line": "T100",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "2066"
       },
@@ -1761,7 +1772,7 @@
         "name": "中山中平路口",
         "name_en": "Zhongshan and Zhongping Road Intersection",
         "line": "T100",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "2101"
       },
@@ -1781,7 +1792,7 @@
         "name": "中山國小",
         "name_en": "Zhongshan Elementary School",
         "line": "T100",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "1697"
       },
@@ -1801,7 +1812,7 @@
         "name": "武陵高中",
         "name_en": "Wu-Ling Senior High School",
         "line": "T100",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "932"
       },
@@ -1821,7 +1832,7 @@
         "name": "宏太社區",
         "name_en": "Hungtai Community",
         "line": "T100",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "2821"
       },
@@ -1841,7 +1852,7 @@
         "name": "戶政地政所",
         "name_en": "Household Administration and Land Office",
         "line": "T100",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "3531"
       },
@@ -1861,7 +1872,7 @@
         "name": "龍安街口",
         "name_en": "Lungan Street Intersection",
         "line": "T100",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "1871"
       },
@@ -1881,7 +1892,7 @@
         "name": "上海路口",
         "name_en": "Shanghai Street Intersection",
         "line": "T100",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "6519"
       },
@@ -1901,7 +1912,7 @@
         "name": "迪斯耐社區",
         "name_en": "Disinai Community",
         "line": "T100",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "3544"
       },
@@ -1921,7 +1932,7 @@
         "name": "國強一街",
         "name_en": "Guoqiang 1st St.",
         "line": "T100",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "3546"
       },
@@ -1941,7 +1952,7 @@
         "name": "國際路二段",
         "name_en": "Sec.2  GuoJi Road",
         "line": "T100",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "2095"
       },
@@ -1961,7 +1972,7 @@
         "name": "國際文中路口",
         "name_en": "Guoji and Wenzhong Rd. Intersection",
         "line": "T100",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "3522"
       },
@@ -1981,7 +1992,7 @@
         "name": "國際路",
         "name_en": "Guoji Road",
         "line": "T100",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "2097"
       },
@@ -2001,7 +2012,7 @@
         "name": "中路微型轉運站",
         "name_en": "Zhonglu Micro Transit Hub",
         "line": "T100",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "3519"
       },
@@ -2021,7 +2032,7 @@
         "name": "臺灣桃園地方法院檢察署",
         "name_en": "Taiwan Taoyuan District Court & Prosecutors Office",
         "line": "T100",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "3994"
       },
@@ -2041,7 +2052,7 @@
         "name": "中埔國小",
         "name_en": "Zhongpu Elementary School",
         "line": "T100",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "1529"
       },
@@ -2061,7 +2072,7 @@
         "name": "永安北路",
         "name_en": "Yungan North Road",
         "line": "T100",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "391"
       },
@@ -2081,7 +2092,7 @@
         "name": "中路運動公園",
         "name_en": "Zhonglu Sports Park",
         "line": "T100",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "6992"
       },
@@ -2101,7 +2112,7 @@
         "name": "正光慈文路口",
         "name_en": "Zhengguang Ciwen Rd Intersection",
         "line": "T100",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "6978"
       },
@@ -2121,7 +2132,7 @@
         "name": "向陽運動公園",
         "name_en": "Xiangyang Park",
         "line": "T100",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "6977"
       },
@@ -2141,7 +2152,7 @@
         "name": "廈門正光路口",
         "name_en": "Xiamen Zhengguang Rd Intersection",
         "line": "T100",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "3110"
       },
@@ -2161,7 +2172,7 @@
         "name": "桃園區公所",
         "name_en": "Taoyuan District Office",
         "line": "T100",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "6850"
       },

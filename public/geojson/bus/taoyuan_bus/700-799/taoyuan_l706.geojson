@@ -6,12 +6,13 @@
     "name": "L706",
     "name_en": "L706",
     "ref": "L706",
-    "color": "#0f766e",
+    "color": "#1e3a8a",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/57060/map/2389/image",
     "operator_id": "19",
-    "operator": "捷乘客運"
+    "operator": "捷乘客運",
+    "loop": true
   },
   "features": [
     {
@@ -21,8 +22,9 @@
         "ref": "L706",
         "name": "L706",
         "name_en": "L706",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -2062,6 +2064,10 @@
           [
             121.28798,
             24.88105
+          ],
+          [
+            121.28797,
+            24.88105
           ]
         ]
       }
@@ -2074,7 +2080,7 @@
         "name": "大溪總站",
         "name_en": "Daxi Bus Terminal",
         "line": "L706",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "4288"
       },
@@ -2094,7 +2100,7 @@
         "name": "台電",
         "name_en": "Taiwan Power Company",
         "line": "L706",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "5254"
       },
@@ -2114,7 +2120,7 @@
         "name": "大溪高中",
         "name_en": "Daxi Senior High School",
         "line": "L706",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "4291"
       },
@@ -2134,7 +2140,7 @@
         "name": "至善高中",
         "name_en": "Zhishan High School",
         "line": "L706",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "4293"
       },
@@ -2154,7 +2160,7 @@
         "name": "頂田心",
         "name_en": "Dingtianxin",
         "line": "L706",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "2458"
       },
@@ -2174,7 +2180,7 @@
         "name": "益興",
         "name_en": "Yixing",
         "line": "L706",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "3475"
       },
@@ -2194,7 +2200,7 @@
         "name": "內柵(瑞安路二段)",
         "name_en": "Rueian Rd. Sec. 2",
         "line": "L706",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "5753"
       },
@@ -2214,7 +2220,7 @@
         "name": "蓮座山觀音寺",
         "name_en": "Lianzoushan Guanyin Temple",
         "line": "L706",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "5751"
       },
@@ -2234,7 +2240,7 @@
         "name": "崁津",
         "name_en": "Kanjin",
         "line": "L706",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "5749"
       },
@@ -2254,7 +2260,7 @@
         "name": "大溪觀光橋",
         "name_en": "Daxi Sightseeing bridge",
         "line": "L706",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "5747"
       },
@@ -2274,7 +2280,7 @@
         "name": "崎腳",
         "name_en": "Qijiao",
         "line": "L706",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "1411"
       },
@@ -2294,7 +2300,7 @@
         "name": "稅務局(大溪分局)",
         "name_en": "Department of Taxation (Daxi Branch)",
         "line": "L706",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "6277"
       },
@@ -2314,7 +2320,7 @@
         "name": "建漢公司",
         "name_en": "Jianghan Company",
         "line": "L706",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "4204"
       },
@@ -2334,7 +2340,7 @@
         "name": "埔頂(仁和國小)",
         "name_en": "Puding(Renhe Elementary School)",
         "line": "L706",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "182"
       },
@@ -2354,7 +2360,7 @@
         "name": "大溪山水",
         "name_en": "Daxi landscape",
         "line": "L706",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "3641"
       },
@@ -2374,7 +2380,7 @@
         "name": "仁和國中",
         "name_en": "Jenho Junior High School",
         "line": "L706",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "2610"
       },
@@ -2394,7 +2400,7 @@
         "name": "復興新城",
         "name_en": "Fuxing Xincheng",
         "line": "L706",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "3959"
       },
@@ -2414,7 +2420,7 @@
         "name": "員樹林",
         "name_en": "YuanShuLin",
         "line": "L706",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "3966"
       },
@@ -2434,7 +2440,7 @@
         "name": "南興里",
         "name_en": "Nanxing Village",
         "line": "L706",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "2462"
       },
@@ -2454,7 +2460,7 @@
         "name": "南興國小",
         "name_en": "Nanxing Elementary School",
         "line": "L706",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "5745"
       },
@@ -2474,7 +2480,7 @@
         "name": "仁和路口",
         "name_en": "Renhe Rd. Intersection",
         "line": "L706",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "3369"
       },
@@ -2494,7 +2500,7 @@
         "name": "埔頂八街口",
         "name_en": "Puding 8th St., Intersection",
         "line": "L706",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "4736"
       },
@@ -2514,7 +2520,7 @@
         "name": "仁善國小",
         "name_en": "Renshan Elementary School",
         "line": "L706",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "3956"
       },
@@ -2534,7 +2540,7 @@
         "name": "仁善(埔頂公園)",
         "name_en": "Renshan (Puding Park)",
         "line": "L706",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "6694"
       },
@@ -2554,7 +2560,7 @@
         "name": "長興街口",
         "name_en": "Changxin St. Intersection",
         "line": "L706",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "5738"
       },
@@ -2574,7 +2580,7 @@
         "name": "崎頂圖書館",
         "name_en": "Qiding Park",
         "line": "L706",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "5740"
       },
@@ -2594,7 +2600,7 @@
         "name": "介壽公園路口",
         "name_en": "Jieshou & Gongyuan Rd. Intersection",
         "line": "L706",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "3877"
       },
@@ -2614,7 +2620,7 @@
         "name": "太武",
         "name_en": "Taiwu",
         "line": "L706",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "3879"
       },
@@ -2634,7 +2640,7 @@
         "name": "崎頂",
         "name_en": "Qiding",
         "line": "L706",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "237"
       },
@@ -2654,7 +2660,7 @@
         "name": "崎腳",
         "name_en": "Qijiao",
         "line": "L706",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "1412"
       },
@@ -2674,7 +2680,7 @@
         "name": "觀音寺",
         "name_en": "Guanyin Temple",
         "line": "L706",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "4120"
       },
@@ -2694,7 +2700,7 @@
         "name": "新街尾",
         "name_en": "Xinjiewei",
         "line": "L706",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "6386"
       },
@@ -2714,7 +2720,7 @@
         "name": "大溪總站",
         "name_en": "Daxi Bus Terminal",
         "line": "L706",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "4288"
       },

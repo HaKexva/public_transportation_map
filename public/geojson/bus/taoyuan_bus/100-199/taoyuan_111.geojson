@@ -6,13 +6,14 @@
     "name": "111",
     "name_en": "111",
     "ref": "111",
-    "color": "#b91c1c",
+    "color": "#b45309",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/3480/map/1669/image",
     "operator_id": "1",
     "operator": "桃園客運",
-    "operator_en": "Taoyuan Bus Co., Ltd."
+    "operator_en": "Taoyuan Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "111",
         "name": "111",
         "name_en": "111",
-        "color": "#b91c1c",
-        "direction": 0
+        "color": "#b45309",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -607,6 +609,10 @@
           [
             121.22379,
             24.95435
+          ],
+          [
+            121.22378,
+            24.9543
           ]
         ]
       }
@@ -619,7 +625,7 @@
         "name": "中壢公車站",
         "name_en": "Zhongli Bus Station",
         "line": "111",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1229"
       },
@@ -639,7 +645,7 @@
         "name": "中壢分局",
         "name_en": "Zhongli Police District",
         "line": "111",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "697"
       },
@@ -659,7 +665,7 @@
         "name": "和平市場",
         "name_en": "Heping Market",
         "line": "111",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1549"
       },
@@ -679,7 +685,7 @@
         "name": "平鎮區公所(和平路)",
         "name_en": "Civil Affairs Office of Pingzhen District (Heping Rd.)",
         "line": "111",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2428"
       },
@@ -699,7 +705,7 @@
         "name": "紫雲宮",
         "name_en": "TzYun Temple",
         "line": "111",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2427"
       },
@@ -719,7 +725,7 @@
         "name": "金山街口",
         "name_en": "JinShan Street Corner",
         "line": "111",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2430"
       },
@@ -739,7 +745,7 @@
         "name": "北勢新村",
         "name_en": "Beishi Village",
         "line": "111",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2432"
       },
@@ -759,7 +765,7 @@
         "name": "平鎮高中",
         "name_en": "Pingjen High School",
         "line": "111",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1108"
       },
@@ -779,7 +785,7 @@
         "name": "第一製藥廠",
         "name_en": "1st Pharmaceutical Factory",
         "line": "111",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4332"
       },
@@ -799,7 +805,7 @@
         "name": "非常大地",
         "name_en": "Feichangdadi",
         "line": "111",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "430"
       },
@@ -819,7 +825,7 @@
         "name": "新貴里",
         "name_en": "Xingui Village",
         "line": "111",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "730"
       },
@@ -839,7 +845,7 @@
         "name": "李屋",
         "name_en": "Liwu",
         "line": "111",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3985"
       },
@@ -859,7 +865,7 @@
         "name": "北勢橋",
         "name_en": "Beishi Bridge",
         "line": "111",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3741"
       },
@@ -879,7 +885,7 @@
         "name": "下王屋",
         "name_en": "Xiawangwu",
         "line": "111",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3988"
       },
@@ -899,7 +905,7 @@
         "name": "王屋",
         "name_en": "Wangwu",
         "line": "111",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3989"
       },
@@ -919,7 +925,7 @@
         "name": "長壽新村",
         "name_en": "Changshou Village",
         "line": "111",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1824"
       },
@@ -939,7 +945,7 @@
         "name": "南京路口",
         "name_en": "Nanjing Road Intersection",
         "line": "111",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2400"
       },
@@ -959,7 +965,7 @@
         "name": "福德祠",
         "name_en": "Fude Shrine",
         "line": "111",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2757"
       },
@@ -979,7 +985,7 @@
         "name": "平鎮分局",
         "name_en": "Pingzhen Police Station",
         "line": "111",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1818"
       },
@@ -999,7 +1005,7 @@
         "name": "中庸路口",
         "name_en": "ZungYung Road Intersection",
         "line": "111",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2402"
       },
@@ -1019,7 +1025,7 @@
         "name": "長沙街口",
         "name_en": "Changsha Street Intersection",
         "line": "111",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2403"
       },
@@ -1039,7 +1045,7 @@
         "name": "上海路口",
         "name_en": "Shanghai Rd. Intersection",
         "line": "111",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6655"
       },
@@ -1059,7 +1065,7 @@
         "name": "平鎮分局",
         "name_en": "Pingzhen Police Station",
         "line": "111",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1817"
       },
@@ -1079,7 +1085,7 @@
         "name": "福德祠",
         "name_en": "Fude Shrine",
         "line": "111",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2753"
       },
@@ -1099,7 +1105,7 @@
         "name": "南京路口",
         "name_en": "Nanjing Road Intersection",
         "line": "111",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2401"
       },
@@ -1119,7 +1125,7 @@
         "name": "長壽新村",
         "name_en": "Changshou Village",
         "line": "111",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1823"
       },
@@ -1139,7 +1145,7 @@
         "name": "王屋",
         "name_en": "Wangwu",
         "line": "111",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3990"
       },
@@ -1159,7 +1165,7 @@
         "name": "下王屋",
         "name_en": "Xiawangwu",
         "line": "111",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3987"
       },
@@ -1179,7 +1185,7 @@
         "name": "北勢橋",
         "name_en": "Beishi Bridge",
         "line": "111",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3740"
       },
@@ -1199,7 +1205,7 @@
         "name": "李屋",
         "name_en": "Liwu",
         "line": "111",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3986"
       },
@@ -1219,7 +1225,7 @@
         "name": "新貴里",
         "name_en": "Xingui Village",
         "line": "111",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "731"
       },
@@ -1239,7 +1245,7 @@
         "name": "非常大地",
         "name_en": "Feichangdadi",
         "line": "111",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "431"
       },
@@ -1259,7 +1265,7 @@
         "name": "平鎮圖書分館",
         "name_en": "Pingzhen Branch Taoyuan Public Library",
         "line": "111",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2799"
       },
@@ -1279,7 +1285,7 @@
         "name": "平鎮高中",
         "name_en": "Pingjen High School",
         "line": "111",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1109"
       },
@@ -1299,7 +1305,7 @@
         "name": "北勢新村",
         "name_en": "Beishi Village",
         "line": "111",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2433"
       },
@@ -1319,7 +1325,7 @@
         "name": "金山街口",
         "name_en": "JinShan Street Corner",
         "line": "111",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2431"
       },
@@ -1339,7 +1345,7 @@
         "name": "紫雲宮",
         "name_en": "TzYun Temple",
         "line": "111",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2426"
       },
@@ -1359,7 +1365,7 @@
         "name": "平鎮區公所(和平路)",
         "name_en": "Civil Affairs Office of Pingzhen District (Heping Rd.)",
         "line": "111",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2429"
       },
@@ -1379,7 +1385,7 @@
         "name": "和平市場",
         "name_en": "Heping Market",
         "line": "111",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1550"
       },
@@ -1399,7 +1405,7 @@
         "name": "中壢公車站",
         "name_en": "Zhongli Bus Station",
         "line": "111",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1229"
       },

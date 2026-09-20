@@ -6,12 +6,13 @@
     "name": "幸福溪口2路",
     "name_en": "幸福溪口2路",
     "ref": "幸福溪口2路",
-    "color": "#0369a1",
+    "color": "#1e3a8a",
     "city_id": "ChiayiCounty",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://web.taiwanbus.tw/MISUploadData/Schematic/file/0172.jpg",
     "operator_id": "115",
-    "operator": "台一大車隊"
+    "operator": "台一大車隊",
+    "loop": true
   },
   "features": [
     {
@@ -21,8 +22,9 @@
         "ref": "幸福溪口2路",
         "name": "幸福溪口2路",
         "name_en": "幸福溪口2路",
-        "color": "#0369a1",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -2481,8 +2483,9 @@
         "ref": "幸福溪口2路",
         "name": "幸福溪口2路",
         "name_en": "幸福溪口2路",
-        "color": "#0369a1",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -4938,7 +4941,7 @@
         "name": "溪口",
         "name_en": "Xikou",
         "line": "幸福溪口2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "142234"
       },
@@ -4958,7 +4961,7 @@
         "name": "溪口農會",
         "name_en": "Xikou Famers&#39; Association",
         "line": "幸福溪口2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "142236"
       },
@@ -4978,7 +4981,7 @@
         "name": "溪口國小",
         "name_en": "Xikou Elementary School",
         "line": "幸福溪口2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "142238"
       },
@@ -4998,7 +5001,7 @@
         "name": "後港社區活動中心",
         "name_en": "Hougang Community Center",
         "line": "幸福溪口2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "142265"
       },
@@ -5018,7 +5021,7 @@
         "name": "後港北極殿",
         "name_en": "Hougang Beiji Temple",
         "line": "幸福溪口2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "142267"
       },
@@ -5038,7 +5041,7 @@
         "name": "溪明社區活動中心(溝明)",
         "name_en": "Ximing Community Center(Gouming)",
         "line": "幸福溪口2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "142269"
       },
@@ -5058,7 +5061,7 @@
         "name": "奉安宮",
         "name_en": "Fengan Temple",
         "line": "幸福溪口2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "142271"
       },
@@ -5078,7 +5081,7 @@
         "name": "崙尾陳姓宗祠",
         "name_en": "The Chen Family Ancestral Hall in Lunwei",
         "line": "幸福溪口2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "142273"
       },
@@ -5098,7 +5101,7 @@
         "name": "東崙尾",
         "name_en": "Donglunwei",
         "line": "幸福溪口2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "142275"
       },
@@ -5118,7 +5121,7 @@
         "name": "美北公埕",
         "name_en": "Meibei Gongcheng",
         "line": "幸福溪口2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "142277"
       },
@@ -5138,7 +5141,7 @@
         "name": "崙尾合作社",
         "name_en": "Lunwei Cooperative",
         "line": "幸福溪口2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "142279"
       },
@@ -5158,7 +5161,7 @@
         "name": "本廳大帝宮",
         "name_en": "Benting Dadi Temple",
         "line": "幸福溪口2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "142281"
       },
@@ -5178,7 +5181,7 @@
         "name": "本廳抽水站",
         "name_en": "Benting Pumping Station",
         "line": "幸福溪口2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "142283"
       },
@@ -5198,7 +5201,7 @@
         "name": "厝子活動中心",
         "name_en": "Cuozi Community Center",
         "line": "幸福溪口2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "142285"
       },
@@ -5218,7 +5221,7 @@
         "name": "妙崙三仙宮",
         "name_en": "Miaulun Sanxian Temple",
         "line": "幸福溪口2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "142286"
       },
@@ -5238,7 +5241,7 @@
         "name": "溪口",
         "name_en": "Xikou",
         "line": "幸福溪口2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "142235"
       },
@@ -5258,7 +5261,7 @@
         "name": "妙崙三仙宮",
         "name_en": "Miaulun Sanxian Temple",
         "line": "幸福溪口2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "142287"
       },
@@ -5278,7 +5281,7 @@
         "name": "厝子活動中心",
         "name_en": "Cuozi Community Center",
         "line": "幸福溪口2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "142285"
       },
@@ -5298,7 +5301,7 @@
         "name": "本廳抽水站",
         "name_en": "Benting Pumping Station",
         "line": "幸福溪口2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "142284"
       },
@@ -5318,7 +5321,7 @@
         "name": "本廳大帝宮",
         "name_en": "Benting Dadi Temple",
         "line": "幸福溪口2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "142282"
       },
@@ -5338,7 +5341,7 @@
         "name": "崙尾合作社",
         "name_en": "Lunwei Cooperative",
         "line": "幸福溪口2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "142280"
       },
@@ -5358,7 +5361,7 @@
         "name": "美北公埕",
         "name_en": "Meibei Gongcheng",
         "line": "幸福溪口2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "142278"
       },
@@ -5378,7 +5381,7 @@
         "name": "東崙尾",
         "name_en": "Donglunwei",
         "line": "幸福溪口2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "142276"
       },
@@ -5398,7 +5401,7 @@
         "name": "崙尾陳姓宗祠",
         "name_en": "The Chen Family Ancestral Hall in Lunwei",
         "line": "幸福溪口2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "142274"
       },
@@ -5418,7 +5421,7 @@
         "name": "奉安宮",
         "name_en": "Fengan Temple",
         "line": "幸福溪口2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "142271"
       },
@@ -5438,7 +5441,7 @@
         "name": "溪明社區活動中心(溝明)",
         "name_en": "Ximing Community Center(Gouming)",
         "line": "幸福溪口2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "142270"
       },
@@ -5458,7 +5461,7 @@
         "name": "後港北極殿",
         "name_en": "Hougang Beiji Temple",
         "line": "幸福溪口2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "142268"
       },
@@ -5478,7 +5481,7 @@
         "name": "後港社區活動中心",
         "name_en": "Hougang Community Center",
         "line": "幸福溪口2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "142266"
       },
@@ -5498,7 +5501,7 @@
         "name": "溪口國小",
         "name_en": "Xikou Elementary School",
         "line": "幸福溪口2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "142239"
       },
@@ -5518,7 +5521,7 @@
         "name": "溪口農會",
         "name_en": "Xikou Famers&#39; Association",
         "line": "幸福溪口2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "142237"
       },

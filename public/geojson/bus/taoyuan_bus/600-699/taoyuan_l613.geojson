@@ -6,13 +6,14 @@
     "name": "L613",
     "name_en": "L613",
     "ref": "L613",
-    "color": "#0891b2",
+    "color": "#3f6212",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/827/map/2317/image",
     "operator_id": "8",
     "operator": "金台通運",
-    "operator_en": "Jintai Transport Co., Ltd."
+    "operator_en": "Jintai Transport Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "L613",
         "name": "L613",
         "name_en": "L613",
-        "color": "#0891b2",
-        "direction": 0
+        "color": "#3f6212",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1387,6 +1389,10 @@
           [
             121.14595,
             24.91514
+          ],
+          [
+            121.1459,
+            24.91525
           ]
         ]
       }
@@ -1399,7 +1405,7 @@
         "name": "楊梅後火車站",
         "name_en": "TRA, Yangmei Rear Station",
         "line": "L613",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 0,
         "station_id": "2728"
       },
@@ -1419,7 +1425,7 @@
         "name": "三陽高平路",
         "name_en": "Sanyang Gaoping Rd.",
         "line": "L613",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 0,
         "station_id": "3730"
       },
@@ -1439,7 +1445,7 @@
         "name": "童話森林社區",
         "name_en": "Tonghua senlin Community",
         "line": "L613",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 0,
         "station_id": "2787"
       },
@@ -1459,7 +1465,7 @@
         "name": "鵬程萬里社區",
         "name_en": "Pengchengwanli Community",
         "line": "L613",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 0,
         "station_id": "6002"
       },
@@ -1479,7 +1485,7 @@
         "name": "楊梅火車站",
         "name_en": "TRA, Yangmei Station",
         "line": "L613",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 0,
         "station_id": "896"
       },
@@ -1499,7 +1505,7 @@
         "name": "新街",
         "name_en": "Xin street",
         "line": "L613",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 0,
         "station_id": "366"
       },
@@ -1519,7 +1525,7 @@
         "name": "楊梅區公所",
         "name_en": "Yangmei District Office",
         "line": "L613",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 0,
         "station_id": "893"
       },
@@ -1539,7 +1545,7 @@
         "name": "雅聞觀光工廠",
         "name_en": "Arwin Charisma Museum Tourist Factory",
         "line": "L613",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 0,
         "station_id": "5998"
       },
@@ -1559,7 +1565,7 @@
         "name": "天成醫院",
         "name_en": "Ten-Chen Hospital",
         "line": "L613",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 0,
         "station_id": "3731"
       },
@@ -1579,7 +1585,7 @@
         "name": "楊梅交流道",
         "name_en": "Yangmei Junction",
         "line": "L613",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 0,
         "station_id": "3733"
       },
@@ -1599,7 +1605,7 @@
         "name": "楊梅工業區",
         "name_en": "Yangmei Industrial Park",
         "line": "L613",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 0,
         "station_id": "6079"
       },
@@ -1619,7 +1625,7 @@
         "name": "怡聯貨櫃場",
         "name_en": "United Terminals Limited",
         "line": "L613",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 0,
         "station_id": "6629"
       },
@@ -1639,7 +1645,7 @@
         "name": "埔心後火車站",
         "name_en": "Puxin Rear Train Station",
         "line": "L613",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 0,
         "station_id": "5988"
       },
@@ -1659,7 +1665,7 @@
         "name": "純青湖",
         "name_en": "Chunqing Lake",
         "line": "L613",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 0,
         "station_id": "3233"
       },
@@ -1679,7 +1685,7 @@
         "name": "埔心牧場",
         "name_en": "Puxin Ranch",
         "line": "L613",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 0,
         "station_id": "2958"
       },
@@ -1699,7 +1705,7 @@
         "name": "宿舍站",
         "name_en": "Dorm. Station",
         "line": "L613",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 0,
         "station_id": "4992"
       },
@@ -1719,7 +1725,7 @@
         "name": "郭元益觀光工廠",
         "name_en": "Kuo Yuan Ye Museum of Cake and Pastry",
         "line": "L613",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 0,
         "station_id": "5999"
       },
@@ -1739,7 +1745,7 @@
         "name": "青年路1",
         "name_en": "Qingnian Rd. 1st Stop",
         "line": "L613",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 0,
         "station_id": "6000"
       },
@@ -1759,7 +1765,7 @@
         "name": "青年路2",
         "name_en": "Qingnian Rd. 2nd Stop",
         "line": "L613",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 0,
         "station_id": "6001"
       },
@@ -1779,7 +1785,7 @@
         "name": "幼獅路三段85巷",
         "name_en": "Youshi Rd., Sec. 3 Ln. 85",
         "line": "L613",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 0,
         "station_id": "1176"
       },
@@ -1799,7 +1805,7 @@
         "name": "高山活動中心",
         "name_en": "Gaoshan Community Center",
         "line": "L613",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 0,
         "station_id": "511"
       },
@@ -1819,7 +1825,7 @@
         "name": "幼獅路三段416巷",
         "name_en": "Youshi Rd., Sec. 3 Ln. 416",
         "line": "L613",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 0,
         "station_id": "1174"
       },
@@ -1839,7 +1845,7 @@
         "name": "梅高幼獅路",
         "name_en": "Meigao Youshi Intersection",
         "line": "L613",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 0,
         "station_id": "2121"
       },
@@ -1859,7 +1865,7 @@
         "name": "楊梅後火車站",
         "name_en": "TRA, Yangmei Rear Station",
         "line": "L613",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 0,
         "station_id": "2728"
       },

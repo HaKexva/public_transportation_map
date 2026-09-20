@@ -6,13 +6,14 @@
     "name": "661",
     "name_en": "661",
     "ref": "661",
-    "color": "#155e75",
+    "color": "#0e7490",
     "city_id": "Taichung",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://citybus.taichung.gov.tw/ebus/strapi/uploads/661_a87c62021c.jpeg",
     "operator_id": "24",
     "operator": "建明客運",
-    "operator_en": "Free Go Bus Co., Ltd."
+    "operator_en": "Free Go Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "661",
         "name": "661",
         "name_en": "661",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#0e7490",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1831,6 +1833,10 @@
           [
             120.63041,
             24.34017
+          ],
+          [
+            120.62936,
+            24.34039
           ]
         ]
       }
@@ -1842,8 +1848,9 @@
         "ref": "661",
         "name": "661",
         "name_en": "661",
-        "color": "#155e75",
-        "direction": 1
+        "color": "#0e7490",
+        "direction": 1,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -3623,6 +3630,10 @@
           [
             120.63041,
             24.34018
+          ],
+          [
+            120.62936,
+            24.34039
           ]
         ]
       }
@@ -3635,7 +3646,7 @@
         "name": "致用高中",
         "name_en": "Chih-Yung Senior High School",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 0,
         "station_id": "2592"
       },
@@ -3655,7 +3666,7 @@
         "name": "中正紀念館",
         "name_en": "Zhongzheng Memorial Hall",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 0,
         "station_id": "10623"
       },
@@ -3675,7 +3686,7 @@
         "name": "大甲高中(水源路)",
         "name_en": "Dajia Senior High School(Shuiyuan Road)",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 0,
         "station_id": "4"
       },
@@ -3695,7 +3706,7 @@
         "name": "南陽里(中山路)",
         "name_en": "Nanyang Village(Zhongshan Road)",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 0,
         "station_id": "1906"
       },
@@ -3715,7 +3726,7 @@
         "name": "大甲",
         "name_en": "Dajia",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 0,
         "station_id": "132"
       },
@@ -3735,7 +3746,7 @@
         "name": "大甲車站(中山路)",
         "name_en": "Dajia Station(Zhongshan Road)",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 0,
         "station_id": "62"
       },
@@ -3755,7 +3766,7 @@
         "name": "文昌祠",
         "name_en": "Wenchang Temple",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 0,
         "station_id": "1597"
       },
@@ -3775,7 +3786,7 @@
         "name": "大甲區公所",
         "name_en": "Dajia District Office",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 0,
         "station_id": "2326"
       },
@@ -3795,7 +3806,7 @@
         "name": "大甲國中",
         "name_en": "Dajia Junior High School",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 0,
         "station_id": "644"
       },
@@ -3815,7 +3826,7 @@
         "name": "文武公園",
         "name_en": "Wenwu Park",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 0,
         "station_id": "4723"
       },
@@ -3835,7 +3846,7 @@
         "name": "社尾玉橋",
         "name_en": "Sheweiyu Bridge",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 0,
         "station_id": "6316"
       },
@@ -3855,7 +3866,7 @@
         "name": "下社尾",
         "name_en": "Xiashewei",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 0,
         "station_id": "5156"
       },
@@ -3875,7 +3886,7 @@
         "name": "德元宮",
         "name_en": "Deyuan Temple",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 0,
         "station_id": "6322"
       },
@@ -3895,7 +3906,7 @@
         "name": "東西八南北三路口",
         "name_en": "Dongxi 8th Nanbei 3rd Intersection",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 0,
         "station_id": "6197"
       },
@@ -3915,7 +3926,7 @@
         "name": "廣安宮",
         "name_en": "Guang'an Temple",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 0,
         "station_id": "6561"
       },
@@ -3935,7 +3946,7 @@
         "name": "東西七路一段438巷口",
         "name_en": "Dongxi 7th Road Sec.1 438th Lane",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 0,
         "station_id": "458"
       },
@@ -3955,7 +3966,7 @@
         "name": "東西七路一段500巷口",
         "name_en": "Dongxi 7th Road Sec.1 500th Lane",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 0,
         "station_id": "6153"
       },
@@ -3975,7 +3986,7 @@
         "name": "紀厝",
         "name_en": "Jicuo",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 0,
         "station_id": "5055"
       },
@@ -3995,7 +4006,7 @@
         "name": "東西七路二段",
         "name_en": "Dongxi 7th Road Sec.2",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 0,
         "station_id": "85"
       },
@@ -4015,7 +4026,7 @@
         "name": "東西七南北六路口",
         "name_en": "Dongxi 7th Nanbei 6rd Intersection",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 0,
         "station_id": "2555"
       },
@@ -4035,7 +4046,7 @@
         "name": "西安里(東西七路)",
         "name_en": "Xian Village(Dongxi 7th Road)",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 0,
         "station_id": "2472"
       },
@@ -4055,7 +4066,7 @@
         "name": "南北七東西七路口",
         "name_en": "Nanbei 7rd Dongxi 7th Intersection",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 0,
         "station_id": "6315"
       },
@@ -4075,7 +4086,7 @@
         "name": "南北七東西六路口",
         "name_en": "Nanbei 7rd Dongxi 6th Intersection",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 0,
         "station_id": "395"
       },
@@ -4095,7 +4106,7 @@
         "name": "福住里",
         "name_en": "Fuzhu Village",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 0,
         "station_id": "3731"
       },
@@ -4115,7 +4126,7 @@
         "name": "南北七東西四路口",
         "name_en": "Nanbei 7th-Dongxi 4th Intersection",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 0,
         "station_id": "3729"
       },
@@ -4135,7 +4146,7 @@
         "name": "永安國小(東西四路)",
         "name_en": "Yongan Elementary School(Dongxi 4th Road)",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 0,
         "station_id": "3727"
       },
@@ -4155,7 +4166,7 @@
         "name": "東西四路200巷口",
         "name_en": "Dongxi 4th Rd. 200th Lane",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 0,
         "station_id": "3725"
       },
@@ -4175,7 +4186,7 @@
         "name": "靖安宮",
         "name_en": "Jingan Temple",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 0,
         "station_id": "3723"
       },
@@ -4195,7 +4206,7 @@
         "name": "東西四路141巷口",
         "name_en": "Dongxi 4th Road 141st Lane",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 0,
         "station_id": "10200"
       },
@@ -4215,7 +4226,7 @@
         "name": "東西四南北五路口",
         "name_en": "Dongxi 4th-Nanbei 5th Intersection",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 0,
         "station_id": "3721"
       },
@@ -4235,7 +4246,7 @@
         "name": "東西四路76巷口",
         "name_en": "Dongxi 4rd 76th Lane",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 0,
         "station_id": "2469"
       },
@@ -4255,7 +4266,7 @@
         "name": "東西四南北四路口",
         "name_en": "Dongxi 4th Nanbei 4rd Intersection",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 0,
         "station_id": "6569"
       },
@@ -4275,7 +4286,7 @@
         "name": "南北四東西五路口",
         "name_en": "Nanbei 4rd Dongxi 5th Intersection",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 0,
         "station_id": "6325"
       },
@@ -4295,7 +4306,7 @@
         "name": "南北四東西六路口",
         "name_en": "Nanbei 4rd Dongxi 6th Intersection",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 0,
         "station_id": "6229"
       },
@@ -4315,7 +4326,7 @@
         "name": "南北四東西七路口",
         "name_en": "Nanbei 4rd Dongxi 7th Intersection",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 0,
         "station_id": "6330"
       },
@@ -4335,7 +4346,7 @@
         "name": "東西七路一段309巷口",
         "name_en": "Dongxi 7th Road Sec.1 309th Lane",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 0,
         "station_id": "2258"
       },
@@ -4355,7 +4366,7 @@
         "name": "東西七南北三路口",
         "name_en": "Dongxi 7th Nanbei 3rd Intersection",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 0,
         "station_id": "6297"
       },
@@ -4375,7 +4386,7 @@
         "name": "東西七路一段",
         "name_en": "Dongxi 7th Road Sec.1",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 0,
         "station_id": "5052"
       },
@@ -4395,7 +4406,7 @@
         "name": "東西七路一段166巷口",
         "name_en": "Dongxi 7th Road Sec.1 166th Lane",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 0,
         "station_id": "2433"
       },
@@ -4415,7 +4426,7 @@
         "name": "東西七南北一路口",
         "name_en": "Dongxi 7th Nanbei 1rd Intersection",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 0,
         "station_id": "2098"
       },
@@ -4435,7 +4446,7 @@
         "name": "東西七路一段38巷口",
         "name_en": "Dongxi 7th Road Sec.1 38th Lane",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 0,
         "station_id": "5737"
       },
@@ -4455,7 +4466,7 @@
         "name": "鐵砧山(中山路)",
         "name_en": "Tiezhen Mountain(Zhongshan Road)",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 0,
         "station_id": "1911"
       },
@@ -4475,7 +4486,7 @@
         "name": "頂店",
         "name_en": "Dingdian",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 0,
         "station_id": "1909"
       },
@@ -4495,7 +4506,7 @@
         "name": "永信藥品頂店工廠",
         "name_en": "YUNGSHIN PHARM IND. CO.LTD Dingdian Factory",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 0,
         "station_id": "290"
       },
@@ -4515,7 +4526,7 @@
         "name": "大同診所",
         "name_en": "Datong Clinic",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 0,
         "station_id": "1907"
       },
@@ -4535,7 +4546,7 @@
         "name": "大甲郵局",
         "name_en": "Dajia Post Office",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 0,
         "station_id": "646"
       },
@@ -4555,7 +4566,7 @@
         "name": "大甲車站(中山路)",
         "name_en": "Dajia Station(Zhongshan Road)",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 0,
         "station_id": "61"
       },
@@ -4575,7 +4586,7 @@
         "name": "大甲",
         "name_en": "Dajia",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 0,
         "station_id": "134"
       },
@@ -4595,7 +4606,7 @@
         "name": "南陽里(中山路)",
         "name_en": "Nanyang Village(Zhongshan Road)",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 0,
         "station_id": "1905"
       },
@@ -4615,7 +4626,7 @@
         "name": "大甲高中(水源路)",
         "name_en": "Dajia Senior High School(Shuiyuan Road)",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 0,
         "station_id": "3"
       },
@@ -4635,7 +4646,7 @@
         "name": "中正紀念館",
         "name_en": "Zhongzheng Memorial Hall",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 0,
         "station_id": "10622"
       },
@@ -4655,7 +4666,7 @@
         "name": "致用高中",
         "name_en": "Chih-Yung Senior High School",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 0,
         "station_id": "2591"
       },
@@ -4675,7 +4686,7 @@
         "name": "致用高中",
         "name_en": "Chih-Yung Senior High School",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 1,
         "station_id": "2592"
       },
@@ -4695,7 +4706,7 @@
         "name": "中正紀念館",
         "name_en": "Zhongzheng Memorial Hall",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 1,
         "station_id": "10623"
       },
@@ -4715,7 +4726,7 @@
         "name": "大甲高中(水源路)",
         "name_en": "Dajia Senior High School(Shuiyuan Road)",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 1,
         "station_id": "4"
       },
@@ -4735,7 +4746,7 @@
         "name": "南陽里(中山路)",
         "name_en": "Nanyang Village(Zhongshan Road)",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 1,
         "station_id": "1906"
       },
@@ -4755,7 +4766,7 @@
         "name": "大甲",
         "name_en": "Dajia",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 1,
         "station_id": "132"
       },
@@ -4775,7 +4786,7 @@
         "name": "大甲車站(中山路)",
         "name_en": "Dajia Station(Zhongshan Road)",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 1,
         "station_id": "6957"
       },
@@ -4795,7 +4806,7 @@
         "name": "大甲郵局",
         "name_en": "Dajia Post Office",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 1,
         "station_id": "647"
       },
@@ -4815,7 +4826,7 @@
         "name": "大同診所",
         "name_en": "Datong Clinic",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 1,
         "station_id": "1908"
       },
@@ -4835,7 +4846,7 @@
         "name": "永信藥品頂店工廠",
         "name_en": "YUNGSHIN PHARM IND. CO.LTD Dingdian Factory",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 1,
         "station_id": "289"
       },
@@ -4855,7 +4866,7 @@
         "name": "頂店",
         "name_en": "Dingdian",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 1,
         "station_id": "1910"
       },
@@ -4875,7 +4886,7 @@
         "name": "鐵砧山(中山路)",
         "name_en": "Tiezhen Mountain(Zhongshan Road)",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 1,
         "station_id": "1912"
       },
@@ -4895,7 +4906,7 @@
         "name": "東西七路一段38巷口",
         "name_en": "Dongxi 7th Road Sec.1 38th Lane",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 1,
         "station_id": "5738"
       },
@@ -4915,7 +4926,7 @@
         "name": "東西七南北一路口",
         "name_en": "Dongxi 7th Nanbei 1rd Intersection",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 1,
         "station_id": "2099"
       },
@@ -4935,7 +4946,7 @@
         "name": "東西七路一段166巷口",
         "name_en": "Dongxi 7th Road Sec.1 166th Lane",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 1,
         "station_id": "2432"
       },
@@ -4955,7 +4966,7 @@
         "name": "東西七路一段",
         "name_en": "Dongxi 7th Road Sec.1",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 1,
         "station_id": "5051"
       },
@@ -4975,7 +4986,7 @@
         "name": "東西七南北三路口",
         "name_en": "Dongxi 7th Nanbei 3rd Intersection",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 1,
         "station_id": "6298"
       },
@@ -4995,7 +5006,7 @@
         "name": "東西七路一段309巷口",
         "name_en": "Dongxi 7th Road Sec.1 309th Lane",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 1,
         "station_id": "2259"
       },
@@ -5015,7 +5026,7 @@
         "name": "南北四東西七路口",
         "name_en": "Nanbei 4rd Dongxi 7th Intersection",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 1,
         "station_id": "6331"
       },
@@ -5035,7 +5046,7 @@
         "name": "南北四東西六路口",
         "name_en": "Nanbei 4rd Dongxi 6th Intersection",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 1,
         "station_id": "6230"
       },
@@ -5055,7 +5066,7 @@
         "name": "南北四東西五路口",
         "name_en": "Nanbei 4rd Dongxi 5th Intersection",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 1,
         "station_id": "6324"
       },
@@ -5075,7 +5086,7 @@
         "name": "東西四南北四路口",
         "name_en": "Dongxi 4th Nanbei 4rd Intersection",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 1,
         "station_id": "6570"
       },
@@ -5095,7 +5106,7 @@
         "name": "東西四路76巷口",
         "name_en": "Dongxi 4rd 76th Lane",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 1,
         "station_id": "2470"
       },
@@ -5115,7 +5126,7 @@
         "name": "東西四南北五路口",
         "name_en": "Dongxi 4th-Nanbei 5th Intersection",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 1,
         "station_id": "3720"
       },
@@ -5135,7 +5146,7 @@
         "name": "東西四路141巷口",
         "name_en": "Dongxi 4th Road 141st Lane",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 1,
         "station_id": "10199"
       },
@@ -5155,7 +5166,7 @@
         "name": "靖安宮",
         "name_en": "Jingan Temple",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 1,
         "station_id": "3722"
       },
@@ -5175,7 +5186,7 @@
         "name": "東西四路200巷口",
         "name_en": "Dongxi 4th Rd. 200th Lane",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 1,
         "station_id": "3724"
       },
@@ -5195,7 +5206,7 @@
         "name": "永安國小(東西四路)",
         "name_en": "Yongan Elementary School(Dongxi 4th Road)",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 1,
         "station_id": "3726"
       },
@@ -5215,7 +5226,7 @@
         "name": "南北七東西四路口",
         "name_en": "Nanbei 7th-Dongxi 4th Intersection",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 1,
         "station_id": "3728"
       },
@@ -5235,7 +5246,7 @@
         "name": "福住里",
         "name_en": "Fuzhu Village",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 1,
         "station_id": "3730"
       },
@@ -5255,7 +5266,7 @@
         "name": "南北七東西六路口",
         "name_en": "Nanbei 7rd Dongxi 6th Intersection",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 1,
         "station_id": "394"
       },
@@ -5275,7 +5286,7 @@
         "name": "南北七東西七路口",
         "name_en": "Nanbei 7rd Dongxi 7th Intersection",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 1,
         "station_id": "6314"
       },
@@ -5295,7 +5306,7 @@
         "name": "西安里(東西七路)",
         "name_en": "Xian Village(Dongxi 7th Road)",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 1,
         "station_id": "2471"
       },
@@ -5315,7 +5326,7 @@
         "name": "東西七南北六路口",
         "name_en": "Dongxi 7th Nanbei 6rd Intersection",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 1,
         "station_id": "2556"
       },
@@ -5335,7 +5346,7 @@
         "name": "東西七路二段",
         "name_en": "Dongxi 7th Road Sec.2",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 1,
         "station_id": "84"
       },
@@ -5355,7 +5366,7 @@
         "name": "紀厝",
         "name_en": "Jicuo",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 1,
         "station_id": "5056"
       },
@@ -5375,7 +5386,7 @@
         "name": "東西七路一段500巷口",
         "name_en": "Dongxi 7th Road Sec.1 500th Lane",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 1,
         "station_id": "6154"
       },
@@ -5395,7 +5406,7 @@
         "name": "東西七路一段438巷口",
         "name_en": "Dongxi 7th Road Sec.1 438th Lane",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 1,
         "station_id": "457"
       },
@@ -5415,7 +5426,7 @@
         "name": "廣安宮",
         "name_en": "Guang'an Temple",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 1,
         "station_id": "6562"
       },
@@ -5435,7 +5446,7 @@
         "name": "東西八南北三路口",
         "name_en": "Dongxi 8th Nanbei 3rd Intersection",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 1,
         "station_id": "6196"
       },
@@ -5455,7 +5466,7 @@
         "name": "德元宮",
         "name_en": "Deyuan Temple",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 1,
         "station_id": "6323"
       },
@@ -5475,7 +5486,7 @@
         "name": "下社尾",
         "name_en": "Xiashewei",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 1,
         "station_id": "5155"
       },
@@ -5495,7 +5506,7 @@
         "name": "社尾玉橋",
         "name_en": "Sheweiyu Bridge",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 1,
         "station_id": "6317"
       },
@@ -5515,7 +5526,7 @@
         "name": "文武公園",
         "name_en": "Wenwu Park",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 1,
         "station_id": "4722"
       },
@@ -5535,7 +5546,7 @@
         "name": "大甲國中",
         "name_en": "Dajia Junior High School",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 1,
         "station_id": "645"
       },
@@ -5555,7 +5566,7 @@
         "name": "大甲區公所",
         "name_en": "Dajia District Office",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 1,
         "station_id": "2325"
       },
@@ -5575,7 +5586,7 @@
         "name": "文昌祠",
         "name_en": "Wenchang Temple",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 1,
         "station_id": "1596"
       },
@@ -5595,7 +5606,7 @@
         "name": "大甲車站(中山路)",
         "name_en": "Dajia Station(Zhongshan Road)",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 1,
         "station_id": "61"
       },
@@ -5615,7 +5626,7 @@
         "name": "大甲",
         "name_en": "Dajia",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 1,
         "station_id": "134"
       },
@@ -5635,7 +5646,7 @@
         "name": "南陽里(中山路)",
         "name_en": "Nanyang Village(Zhongshan Road)",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 1,
         "station_id": "1905"
       },
@@ -5655,7 +5666,7 @@
         "name": "大甲高中(水源路)",
         "name_en": "Dajia Senior High School(Shuiyuan Road)",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 1,
         "station_id": "3"
       },
@@ -5675,7 +5686,7 @@
         "name": "中正紀念館",
         "name_en": "Zhongzheng Memorial Hall",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 1,
         "station_id": "10622"
       },
@@ -5695,7 +5706,7 @@
         "name": "致用高中",
         "name_en": "Chih-Yung Senior High School",
         "line": "661",
-        "color": "#155e75",
+        "color": "#0e7490",
         "direction": 1,
         "station_id": "2591"
       },

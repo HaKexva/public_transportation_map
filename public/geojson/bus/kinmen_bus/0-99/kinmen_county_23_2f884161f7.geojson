@@ -6,13 +6,14 @@
     "name": "23繞林務所",
     "name_en": "23繞林務所",
     "ref": "23繞林務所",
-    "color": "#86198f",
+    "color": "#3730a3",
     "city_id": "KinmenCounty",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.kinmen.gov.tw/api/route/232/map/219/image",
     "operator_id": "0001",
     "operator": "金門",
-    "operator_en": "City Bus and Ferry Management Office, Kinmen County"
+    "operator_en": "City Bus and Ferry Management Office, Kinmen County",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "23繞林務所",
         "name": "23繞林務所",
         "name_en": "23繞林務所",
-        "color": "#86198f",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -651,6 +653,10 @@
           [
             118.41401,
             24.44243
+          ],
+          [
+            118.41379,
+            24.44219
           ]
         ]
       }
@@ -663,7 +669,7 @@
         "name": "山外站",
         "name_en": "Shanwai Station",
         "line": "23繞林務所",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "29"
       },
@@ -683,7 +689,7 @@
         "name": "護國寺(金湖免稅廣場)",
         "name_en": "Huguo Temple",
         "line": "23繞林務所",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "645"
       },
@@ -703,7 +709,7 @@
         "name": "金湖國中",
         "name_en": "Jinhu Junior High School",
         "line": "23繞林務所",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "635"
       },
@@ -723,7 +729,7 @@
         "name": "金門高職",
         "name_en": "Kinmen Agricultural and Industrial Vacational Seni",
         "line": "23繞林務所",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "646"
       },
@@ -743,7 +749,7 @@
         "name": "金湖綜合體育館",
         "name_en": "Vocational Ranch",
         "line": "23繞林務所",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "647"
       },
@@ -763,7 +769,7 @@
         "name": "下莊",
         "name_en": "Xiazhuang",
         "line": "23繞林務所",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "931"
       },
@@ -783,7 +789,7 @@
         "name": "建華",
         "name_en": "Jianhua",
         "line": "23繞林務所",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "648"
       },
@@ -803,7 +809,7 @@
         "name": "后壟一",
         "name_en": "Houlong 1",
         "line": "23繞林務所",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "649"
       },
@@ -823,7 +829,7 @@
         "name": "裕民農莊",
         "name_en": "Yumin Grange",
         "line": "23繞林務所",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "650"
       },
@@ -843,7 +849,7 @@
         "name": "惠民農莊",
         "name_en": "Huimin Grange",
         "line": "23繞林務所",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "651"
       },
@@ -863,7 +869,7 @@
         "name": "南機路口",
         "name_en": "Nanji Rd",
         "line": "23繞林務所",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "652"
       },
@@ -883,7 +889,7 @@
         "name": "福田家園",
         "name_en": "Futianjiayuan",
         "line": "23繞林務所",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "653"
       },
@@ -903,7 +909,7 @@
         "name": "松柏園",
         "name_en": "Songbo Elder Care center",
         "line": "23繞林務所",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "654"
       },
@@ -923,7 +929,7 @@
         "name": "福田家園",
         "name_en": "Futianjiayuan",
         "line": "23繞林務所",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "655"
       },
@@ -943,7 +949,7 @@
         "name": "南機路口",
         "name_en": "Nanji Rd.",
         "line": "23繞林務所",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "986"
       },
@@ -963,7 +969,7 @@
         "name": "惠民農莊",
         "name_en": "Huimin Grange",
         "line": "23繞林務所",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "656"
       },
@@ -983,7 +989,7 @@
         "name": "裕民農莊",
         "name_en": "Yumin Grange",
         "line": "23繞林務所",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "657"
       },
@@ -1003,7 +1009,7 @@
         "name": "裕民農莊一",
         "name_en": "Yuminnongjhuang",
         "line": "23繞林務所",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "658"
       },
@@ -1023,7 +1029,7 @@
         "name": "農試所",
         "name_en": "Nongyeshiyansuo",
         "line": "23繞林務所",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "659"
       },
@@ -1043,7 +1049,7 @@
         "name": "后壟",
         "name_en": "Houlong",
         "line": "23繞林務所",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "660"
       },
@@ -1063,7 +1069,7 @@
         "name": "后壟路口",
         "name_en": "Houlong Rd.",
         "line": "23繞林務所",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "661"
       },
@@ -1083,7 +1089,7 @@
         "name": "下新厝二",
         "name_en": "Xiaxincuo 2",
         "line": "23繞林務所",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "662"
       },
@@ -1103,7 +1109,7 @@
         "name": "下新厝",
         "name_en": "Xiaxincuo",
         "line": "23繞林務所",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "663"
       },
@@ -1123,7 +1129,7 @@
         "name": "東沙尾",
         "name_en": "Dongshawei",
         "line": "23繞林務所",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "664"
       },
@@ -1143,7 +1149,7 @@
         "name": "新前墩",
         "name_en": "Xinqiandun",
         "line": "23繞林務所",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "665"
       },
@@ -1163,7 +1169,7 @@
         "name": "埔華路",
         "name_en": "Buhua Rd.",
         "line": "23繞林務所",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "666"
       },
@@ -1183,7 +1189,7 @@
         "name": "東山",
         "name_en": "DongShang",
         "line": "23繞林務所",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "667"
       },
@@ -1203,7 +1209,7 @@
         "name": "內洋",
         "name_en": "Neiyuan",
         "line": "23繞林務所",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "668"
       },
@@ -1223,7 +1229,7 @@
         "name": "叉路口",
         "name_en": "Intersection",
         "line": "23繞林務所",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "669"
       },
@@ -1243,7 +1249,7 @@
         "name": "大地",
         "name_en": "Dabao",
         "line": "23繞林務所",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "670"
       },
@@ -1263,7 +1269,7 @@
         "name": "大地一",
         "name_en": "Dadi 1",
         "line": "23繞林務所",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "671"
       },
@@ -1283,7 +1289,7 @@
         "name": "大地二",
         "name_en": "Dadi 2",
         "line": "23繞林務所",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "672"
       },
@@ -1303,7 +1309,7 @@
         "name": "大地三",
         "name_en": "Dadi 3",
         "line": "23繞林務所",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "969"
       },
@@ -1323,7 +1329,7 @@
         "name": "田浦",
         "name_en": "Tianpu",
         "line": "23繞林務所",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "673"
       },
@@ -1343,7 +1349,7 @@
         "name": "大地三",
         "name_en": "Dadi 3",
         "line": "23繞林務所",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "970"
       },
@@ -1363,7 +1369,7 @@
         "name": "大地二",
         "name_en": "Dadi 2",
         "line": "23繞林務所",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "674"
       },
@@ -1383,7 +1389,7 @@
         "name": "大地一",
         "name_en": "Dadi 1",
         "line": "23繞林務所",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "675"
       },
@@ -1403,7 +1409,7 @@
         "name": "大地",
         "name_en": "Dabao",
         "line": "23繞林務所",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "676"
       },
@@ -1423,7 +1429,7 @@
         "name": "叉路口",
         "name_en": "Intersection",
         "line": "23繞林務所",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "677"
       },
@@ -1443,7 +1449,7 @@
         "name": "內洋",
         "name_en": "Neiyuan",
         "line": "23繞林務所",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "678"
       },
@@ -1463,7 +1469,7 @@
         "name": "東山",
         "name_en": "DongShang",
         "line": "23繞林務所",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "679"
       },
@@ -1483,7 +1489,7 @@
         "name": "埔華路",
         "name_en": "Buhua Rd.",
         "line": "23繞林務所",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "680"
       },
@@ -1503,7 +1509,7 @@
         "name": "新前墩",
         "name_en": "Xinqiandun",
         "line": "23繞林務所",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "681"
       },
@@ -1523,7 +1529,7 @@
         "name": "東沙尾",
         "name_en": "Dongshawei",
         "line": "23繞林務所",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "682"
       },
@@ -1543,7 +1549,7 @@
         "name": "下新厝一",
         "name_en": "Xiaxincuo 1",
         "line": "23繞林務所",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "683"
       },
@@ -1563,7 +1569,7 @@
         "name": "林務所",
         "name_en": "Forestry Center",
         "line": "23繞林務所",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "684"
       },
@@ -1583,7 +1589,7 @@
         "name": "下新厝一",
         "name_en": "Xiaxincuo 1",
         "line": "23繞林務所",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "685"
       },
@@ -1603,7 +1609,7 @@
         "name": "下新厝",
         "name_en": "Xiaxincuo",
         "line": "23繞林務所",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "686"
       },
@@ -1623,7 +1629,7 @@
         "name": "下新厝二",
         "name_en": "Xiaxincuo 2",
         "line": "23繞林務所",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "687"
       },
@@ -1643,7 +1649,7 @@
         "name": "后壟路口",
         "name_en": "Houlong Rd.",
         "line": "23繞林務所",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "688"
       },
@@ -1663,7 +1669,7 @@
         "name": "青年農莊",
         "name_en": "Qingniannongzhuang",
         "line": "23繞林務所",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "689"
       },
@@ -1683,7 +1689,7 @@
         "name": "太湖新居",
         "name_en": "Taihu Xinju",
         "line": "23繞林務所",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "690"
       },
@@ -1703,7 +1709,7 @@
         "name": "建華一",
         "name_en": "Jianhua 1",
         "line": "23繞林務所",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "691"
       },
@@ -1723,7 +1729,7 @@
         "name": "建華",
         "name_en": "Jianhua",
         "line": "23繞林務所",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "692"
       },
@@ -1743,7 +1749,7 @@
         "name": "下莊",
         "name_en": "Xiazhuang",
         "line": "23繞林務所",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "930"
       },
@@ -1763,7 +1769,7 @@
         "name": "金湖綜合體育館",
         "name_en": "Vocational Ranch",
         "line": "23繞林務所",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "693"
       },
@@ -1783,7 +1789,7 @@
         "name": "金門高職",
         "name_en": "Kinmen Agricultural and Industrial Vacational Seni",
         "line": "23繞林務所",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "694"
       },
@@ -1803,7 +1809,7 @@
         "name": "金湖國中",
         "name_en": "Jinhu Junior High School",
         "line": "23繞林務所",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "630"
       },
@@ -1823,7 +1829,7 @@
         "name": "護國寺(金湖免稅廣場)",
         "name_en": "Huguo Temple",
         "line": "23繞林務所",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "631"
       },
@@ -1843,7 +1849,7 @@
         "name": "山外站",
         "name_en": "Shanwai Station",
         "line": "23繞林務所",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "29"
       },

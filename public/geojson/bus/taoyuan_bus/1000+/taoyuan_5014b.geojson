@@ -6,12 +6,13 @@
     "name": "5014B",
     "name_en": "5014B",
     "ref": "5014B",
-    "color": "#b91c1c",
+    "color": "#b45309",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "operator_id": "1",
     "operator": "桃園客運",
-    "operator_en": "Taoyuan Bus Co., Ltd."
+    "operator_en": "Taoyuan Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -21,8 +22,9 @@
         "ref": "5014B",
         "name": "5014B",
         "name_en": "5014B",
-        "color": "#b91c1c",
-        "direction": 0
+        "color": "#b45309",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -630,6 +632,10 @@
           [
             121.31365,
             24.99071
+          ],
+          [
+            121.31389,
+            24.99071
           ]
         ]
       }
@@ -642,7 +648,7 @@
         "name": "今日飯店",
         "name_en": "Hotel Today",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4777"
       },
@@ -662,7 +668,7 @@
         "name": "民生成功路口",
         "name_en": "Minsheng and ChengGung Rd. Intersection",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4143"
       },
@@ -682,7 +688,7 @@
         "name": "關帝廟",
         "name_en": "Guandi Temple",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1391"
       },
@@ -702,7 +708,7 @@
         "name": "鴻福寺",
         "name_en": "Hong Fu temple",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4778"
       },
@@ -722,7 +728,7 @@
         "name": "北門口",
         "name_en": "Beimen Station",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "991"
       },
@@ -742,7 +748,7 @@
         "name": "北門新村",
         "name_en": "Beimen Village",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "972"
       },
@@ -762,7 +768,7 @@
         "name": "臺灣菸酒公司",
         "name_en": "Taiwan Tobacco & Liquor Corporation",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3612"
       },
@@ -782,7 +788,7 @@
         "name": "北門國小",
         "name_en": "Beimen Elementary School",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4780"
       },
@@ -802,7 +808,7 @@
         "name": "文昌國中",
         "name_en": "Wunchang Junior High School",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4782"
       },
@@ -822,7 +828,7 @@
         "name": "瓦斯公司",
         "name_en": "Gas Corporation",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4784"
       },
@@ -842,7 +848,7 @@
         "name": "大興路口",
         "name_en": "Daxing Road Intersection",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4786"
       },
@@ -862,7 +868,7 @@
         "name": "永吉新村",
         "name_en": "Yongji Village",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4788"
       },
@@ -882,7 +888,7 @@
         "name": "新埔國宅",
         "name_en": "Xinpu Public Housing",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4859"
       },
@@ -902,7 +908,7 @@
         "name": "春日健行路口",
         "name_en": "Chunri Jianxing Road Intersection",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3082"
       },
@@ -922,7 +928,7 @@
         "name": "鹽庫西街口",
         "name_en": "Yanku West Street Intersection",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3432"
       },
@@ -942,7 +948,7 @@
         "name": "水汴頭",
         "name_en": "Shuibiantou",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3434"
       },
@@ -962,7 +968,7 @@
         "name": "許厝",
         "name_en": "Xucuo",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1020"
       },
@@ -982,7 +988,7 @@
         "name": "煉油廠",
         "name_en": "Refinery",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4790"
       },
@@ -1002,7 +1008,7 @@
         "name": "民生北路一段54巷口",
         "name_en": "Lane 54, Section 1, Minsheng North Road",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2278"
       },
@@ -1022,7 +1028,7 @@
         "name": "甘蔗園橋",
         "name_en": "Ganzheyuan Bridge",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4838"
       },
@@ -1042,7 +1048,7 @@
         "name": "力捷公司",
         "name_en": "Lijie Company",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2764"
       },
@@ -1062,7 +1068,7 @@
         "name": "南上里",
         "name_en": "Nanshang Village",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2786"
       },
@@ -1082,7 +1088,7 @@
         "name": "甘蔗園",
         "name_en": "Sugarcane Farm",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2784"
       },
@@ -1102,7 +1108,7 @@
         "name": "頂南崁",
         "name_en": "Dingnankan",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2782"
       },
@@ -1122,7 +1128,7 @@
         "name": "大同公司",
         "name_en": "Datung Company",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3677"
       },
@@ -1142,7 +1148,7 @@
         "name": "蘆竹區公所",
         "name_en": "Luzhu District Office",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4653"
       },
@@ -1162,7 +1168,7 @@
         "name": "南美國小",
         "name_en": "Nanmei Elementary School",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5279"
       },
@@ -1182,7 +1188,7 @@
         "name": "南上路口",
         "name_en": "Nanshang Road Intersection",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2147"
       },
@@ -1202,7 +1208,7 @@
         "name": "長榮吉邸",
         "name_en": "Changrongjidi",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "435"
       },
@@ -1222,7 +1228,7 @@
         "name": "南崁國小",
         "name_en": "Nankan Elementary School",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "7013"
       },
@@ -1242,7 +1248,7 @@
         "name": "中山長春路口",
         "name_en": "Jhongshan Jhangchun Rd. Intersection",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2090"
       },
@@ -1262,7 +1268,7 @@
         "name": "長榮花園",
         "name_en": "Changrong Garden",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2617"
       },
@@ -1282,7 +1288,7 @@
         "name": "歐洲之星",
         "name_en": "Ouzhouzhixing",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4846"
       },
@@ -1302,7 +1308,7 @@
         "name": "六福中山路口",
         "name_en": "Liufu and Zhongshan Rd. Intersection",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3309"
       },
@@ -1322,7 +1328,7 @@
         "name": "快樂GO社區",
         "name_en": "Happy Go Community",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4848"
       },
@@ -1342,7 +1348,7 @@
         "name": "天悅社區",
         "name_en": "Tianyue Community",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4850"
       },
@@ -1362,7 +1368,7 @@
         "name": "五福宮",
         "name_en": "Wufu Temple",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "7056"
       },
@@ -1382,7 +1388,7 @@
         "name": "南崁高中",
         "name_en": "Nankan Municipal Senior High School",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4854"
       },
@@ -1402,7 +1408,7 @@
         "name": "吉林路口",
         "name_en": "Jilin Road Intersection",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4655"
       },
@@ -1422,7 +1428,7 @@
         "name": "光復路(錦興國小)",
         "name_en": "Guangfu Rd. (Jinxing Elementary School)",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "7055"
       },
@@ -1442,7 +1448,7 @@
         "name": "光明國中",
         "name_en": "Guang-Ming Junior High School",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6053"
       },
@@ -1462,7 +1468,7 @@
         "name": "南竹南昌路口",
         "name_en": "Nanzhu and Nanchang Rd. Intersection",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4835"
       },
@@ -1482,7 +1488,7 @@
         "name": "南竹奉化路口",
         "name_en": "Nanzhu Fenghua Road Intersection",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3241"
       },
@@ -1502,7 +1508,7 @@
         "name": "奉化南順一街口",
         "name_en": "Fenghua Nanshun 1st Street Intersection",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3785"
       },
@@ -1522,7 +1528,7 @@
         "name": "奉化忠孝西路口",
         "name_en": "Fenghua Zhongxiao West Road Intersection",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3833"
       },
@@ -1542,7 +1548,7 @@
         "name": "麗寶經典",
         "name_en": "Libao Classic",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3832"
       },
@@ -1562,7 +1568,7 @@
         "name": "光明郵局",
         "name_en": "Guangming post office",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3830"
       },
@@ -1582,7 +1588,7 @@
         "name": "星河社區",
         "name_en": "Shinghe Community",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4837"
       },
@@ -1602,7 +1608,7 @@
         "name": "土地公廟",
         "name_en": "Tudigong Temple",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3828"
       },
@@ -1622,7 +1628,7 @@
         "name": "大同公司",
         "name_en": "Datung Company",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3678"
       },
@@ -1642,7 +1648,7 @@
         "name": "頂南崁",
         "name_en": "Dingnankan",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2781"
       },
@@ -1662,7 +1668,7 @@
         "name": "甘蔗園",
         "name_en": "Sugarcane Farm",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2783"
       },
@@ -1682,7 +1688,7 @@
         "name": "南上里",
         "name_en": "Nanshang Village",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2785"
       },
@@ -1702,7 +1708,7 @@
         "name": "力捷公司",
         "name_en": "Lijie Company",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2765"
       },
@@ -1722,7 +1728,7 @@
         "name": "甘蔗園橋",
         "name_en": "Ganzheyuan Bridge",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4839"
       },
@@ -1742,7 +1748,7 @@
         "name": "民生北路一段54巷口",
         "name_en": "Lane 54, Section 1, Minsheng North Road",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2279"
       },
@@ -1762,7 +1768,7 @@
         "name": "煉油廠",
         "name_en": "Refinery",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4791"
       },
@@ -1782,7 +1788,7 @@
         "name": "許厝",
         "name_en": "Xucuo",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1021"
       },
@@ -1802,7 +1808,7 @@
         "name": "水汴頭",
         "name_en": "Shuibiantou",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3435"
       },
@@ -1822,7 +1828,7 @@
         "name": "鹽庫西街口",
         "name_en": "Yanku West Street Intersection",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3433"
       },
@@ -1842,7 +1848,7 @@
         "name": "春日健行路口",
         "name_en": "Chunri Jianxing Road Intersection",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3083"
       },
@@ -1862,7 +1868,7 @@
         "name": "新埔國宅",
         "name_en": "Xinpu Residence",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4858"
       },
@@ -1882,7 +1888,7 @@
         "name": "永吉新村",
         "name_en": "Yongji Village",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4789"
       },
@@ -1902,7 +1908,7 @@
         "name": "大興路口",
         "name_en": "Daxing Road Intersection",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4787"
       },
@@ -1922,7 +1928,7 @@
         "name": "瓦斯公司",
         "name_en": "Gas Corporation",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4785"
       },
@@ -1942,7 +1948,7 @@
         "name": "文昌國中",
         "name_en": "Wunchang Junior High School",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4783"
       },
@@ -1962,7 +1968,7 @@
         "name": "北門國小",
         "name_en": "Beimen Elementary School",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4781"
       },
@@ -1982,7 +1988,7 @@
         "name": "臺灣菸酒公司",
         "name_en": "Taiwan Tobacco & Liquor Corporation",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3613"
       },
@@ -2002,7 +2008,7 @@
         "name": "北門新村",
         "name_en": "Beimen Village",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "971"
       },
@@ -2022,7 +2028,7 @@
         "name": "北門口",
         "name_en": "Beimen Station",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "988"
       },
@@ -2042,7 +2048,7 @@
         "name": "鴻福寺",
         "name_en": "Hong Fu temple",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4779"
       },
@@ -2062,7 +2068,7 @@
         "name": "關帝廟",
         "name_en": "Guandi Temple",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1390"
       },
@@ -2082,7 +2088,7 @@
         "name": "成功路",
         "name_en": "Chenggong Rd.",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4201"
       },
@@ -2102,7 +2108,7 @@
         "name": "復興中正路口(桃園火車站)",
         "name_en": "Fuxing and Zhongzheng Rd. Int.(Taoyuan Station)",
         "line": "5014B",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1340"
       },

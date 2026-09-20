@@ -6,12 +6,13 @@
     "name": "727A",
     "name_en": "727A",
     "ref": "727A",
-    "color": "#7c3aed",
+    "color": "#be123c",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "operator_id": "6",
     "operator": "亞通客運",
-    "operator_en": "Yatung Bus Co., Ltd."
+    "operator_en": "Yatung Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -21,8 +22,9 @@
         "ref": "727A",
         "name": "727A",
         "name_en": "727A",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#be123c",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1150,6 +1152,10 @@
           [
             121.32505,
             24.99364
+          ],
+          [
+            121.32468,
+            24.99438
           ]
         ]
       }
@@ -1162,7 +1168,7 @@
         "name": "桃園巨蛋",
         "name_en": "Taoyuan Arena",
         "line": "727A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5236"
       },
@@ -1182,7 +1188,7 @@
         "name": "體育館",
         "name_en": "Gymnasium",
         "line": "727A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "4333"
       },
@@ -1202,7 +1208,7 @@
         "name": "虎頭山創新園區",
         "name_en": "Hutoushan Innovation Hub",
         "line": "727A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "4212"
       },
@@ -1222,7 +1228,7 @@
         "name": "桃園高中",
         "name_en": "National Taoyuan High School",
         "line": "727A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "4053"
       },
@@ -1242,7 +1248,7 @@
         "name": "技訓中心",
         "name_en": "Technology - Vocation Training Center",
         "line": "727A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "4126"
       },
@@ -1262,7 +1268,7 @@
         "name": "桃園榮民醫院",
         "name_en": "TVGH, Taoyuan Branch",
         "line": "727A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5016"
       },
@@ -1282,7 +1288,7 @@
         "name": "北區國稅局(大有路)",
         "name_en": "Northern Area, Ministry of Finance(Dayou Road)",
         "line": "727A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5052"
       },
@@ -1302,7 +1308,7 @@
         "name": "大有民光東路口",
         "name_en": "Dayou & Minguang East Intersection",
         "line": "727A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "3422"
       },
@@ -1322,7 +1328,7 @@
         "name": "寶山街口",
         "name_en": "Baoshan Street Intersection",
         "line": "727A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "3425"
       },
@@ -1342,7 +1348,7 @@
         "name": "公園都市",
         "name_en": "Gongyuandushi",
         "line": "727A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1327"
       },
@@ -1362,7 +1368,7 @@
         "name": "會稽國中",
         "name_en": "Kuai Ji Junior High School",
         "line": "727A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "3981"
       },
@@ -1382,7 +1388,7 @@
         "name": "大興大業路口",
         "name_en": "Daxin Road and Daya Road Intersection",
         "line": "727A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "3980"
       },
@@ -1402,7 +1408,7 @@
         "name": "大興春日路口",
         "name_en": "Daxing and Chunrih Rd. Intersection",
         "line": "727A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "2957"
       },
@@ -1422,7 +1428,7 @@
         "name": "大興西同安街口",
         "name_en": "Daxing W. and Tongan St. Intersection",
         "line": "727A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "4208"
       },
@@ -1442,7 +1448,7 @@
         "name": "大興西新埔六街口",
         "name_en": "Daxing west Shinpu Sixth Street Corner",
         "line": "727A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "4306"
       },
@@ -1462,7 +1468,7 @@
         "name": "城市大亨",
         "name_en": "Cheng Shi Da Heng",
         "line": "727A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1512"
       },
@@ -1482,7 +1488,7 @@
         "name": "中埔一街口",
         "name_en": "Zhongpu 1st  Street Corner",
         "line": "727A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "4368"
       },
@@ -1502,7 +1508,7 @@
         "name": "寶慶路口",
         "name_en": "Baoqing Road Intersection",
         "line": "727A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1191"
       },
@@ -1522,7 +1528,7 @@
         "name": "大興西永安路口",
         "name_en": "Dasing West and Yongan Rd. Intersection",
         "line": "727A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "377"
       },
@@ -1542,7 +1548,7 @@
         "name": "中路運動公園",
         "name_en": "Zhonglu Sports Park",
         "line": "727A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6992"
       },
@@ -1562,7 +1568,7 @@
         "name": "風禾公園",
         "name_en": "Fenghe Park",
         "line": "727A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "7035"
       },
@@ -1582,7 +1588,7 @@
         "name": "國際路",
         "name_en": "Guoji Road",
         "line": "727A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "2097"
       },
@@ -1602,7 +1608,7 @@
         "name": "永寧轉運站",
         "name_en": "Yongning Bus Station",
         "line": "727A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6954"
       },
@@ -1622,7 +1628,7 @@
         "name": "國際路",
         "name_en": "Guoji Road",
         "line": "727A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "2096"
       },
@@ -1642,7 +1648,7 @@
         "name": "風禾公園",
         "name_en": "Fenghe Park",
         "line": "727A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "7036"
       },
@@ -1662,7 +1668,7 @@
         "name": "中路運動公園",
         "name_en": "Zhonglu Sports Park",
         "line": "727A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6993"
       },
@@ -1682,7 +1688,7 @@
         "name": "大興西正光路口",
         "name_en": "Daxing W. and Zhengguang Rd. Intersection",
         "line": "727A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6404"
       },
@@ -1702,7 +1708,7 @@
         "name": "大興西永安路口",
         "name_en": "Dasing West and Yongan Rd. Intersection",
         "line": "727A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "376"
       },
@@ -1722,7 +1728,7 @@
         "name": "寶慶路口",
         "name_en": "Baoqing Road Intersection",
         "line": "727A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1192"
       },
@@ -1742,7 +1748,7 @@
         "name": "中埔一街口",
         "name_en": "Zhongpu 1st  Street Corner",
         "line": "727A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "4369"
       },
@@ -1762,7 +1768,7 @@
         "name": "城市大亨",
         "name_en": "Cheng Shi Da Heng",
         "line": "727A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1513"
       },
@@ -1782,7 +1788,7 @@
         "name": "大興西新埔六街口",
         "name_en": "Daxing W. and Xinpu 6th St. Intersection",
         "line": "727A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "4305"
       },
@@ -1802,7 +1808,7 @@
         "name": "大興春日路口",
         "name_en": "Daxing and Chunrih Rd. Intersection",
         "line": "727A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "2956"
       },
@@ -1822,7 +1828,7 @@
         "name": "大興大業路口",
         "name_en": "Daxin Road and Daya Road Intersection",
         "line": "727A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "3979"
       },
@@ -1842,7 +1848,7 @@
         "name": "會稽國中",
         "name_en": "Kuai Ji Junior High School",
         "line": "727A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "3982"
       },
@@ -1862,7 +1868,7 @@
         "name": "大興大有路口",
         "name_en": "Daxing and Dayou Rd. Intersection",
         "line": "727A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5054"
       },
@@ -1882,7 +1888,7 @@
         "name": "公園都市",
         "name_en": "Gongyuandushi",
         "line": "727A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1328"
       },
@@ -1902,7 +1908,7 @@
         "name": "寶山街口",
         "name_en": "Baoshan Street Intersection",
         "line": "727A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "3426"
       },
@@ -1922,7 +1928,7 @@
         "name": "大有民光東路口",
         "name_en": "Dayou & Minguang East Intersection",
         "line": "727A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "3423"
       },
@@ -1942,7 +1948,7 @@
         "name": "北區國稅局(大有路)",
         "name_en": "Northern Area, Ministry of Finance(Dayou Road)",
         "line": "727A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5053"
       },
@@ -1962,7 +1968,7 @@
         "name": "桃園榮民醫院",
         "name_en": "TVGH, Taoyuan Branch",
         "line": "727A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5017"
       },
@@ -1982,7 +1988,7 @@
         "name": "技訓中心",
         "name_en": "Technology - Vocation Training Center",
         "line": "727A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "4127"
       },
@@ -2002,7 +2008,7 @@
         "name": "桃園高中",
         "name_en": "National Taoyuan Senior High School",
         "line": "727A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "4054"
       },
@@ -2022,7 +2028,7 @@
         "name": "虎頭山創新園區",
         "name_en": "Hutoushan Innovation Hub",
         "line": "727A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "4211"
       },

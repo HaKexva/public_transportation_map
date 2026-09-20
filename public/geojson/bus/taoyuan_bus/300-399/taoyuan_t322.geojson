@@ -6,11 +6,12 @@
     "name": "T322",
     "name_en": "T322",
     "ref": "T322",
-    "color": "#7c2d12",
+    "color": "#4f46e5",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "operator_id": "29",
-    "operator": "九億租車"
+    "operator": "九億租車",
+    "loop": true
   },
   "features": [
     {
@@ -20,8 +21,9 @@
         "ref": "T322",
         "name": "T322",
         "name_en": "T322",
-        "color": "#7c2d12",
-        "direction": 0
+        "color": "#4f46e5",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -785,7 +787,7 @@
         "name": "華亞三路199巷口",
         "name_en": "Lane 199 Huaya Third Road Entrance",
         "line": "T322",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "7829"
       },
@@ -805,7 +807,7 @@
         "name": "樂學二三路口",
         "name_en": "Lexue 2nd and 3rd Rd. Intersection",
         "line": "T322",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "6672"
       },
@@ -825,7 +827,7 @@
         "name": "郵政物流園區",
         "name_en": "Postal Logistics Park",
         "line": "T322",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "7831"
       },
@@ -845,7 +847,7 @@
         "name": "文青國中小",
         "name_en": "Wen Ching Junior & Primary School",
         "line": "T322",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "6976"
       },
@@ -865,7 +867,7 @@
         "name": "文化一樂善二路口",
         "name_en": "Wenhua 1st Rd. & Leshan 2nd Rd. Intersection",
         "line": "T322",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "6197"
       },
@@ -885,7 +887,7 @@
         "name": "捷運體育大學站",
         "name_en": "MRT National Taiwan Sport University Station",
         "line": "T322",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "5326"
       },
@@ -905,7 +907,7 @@
         "name": "樂善寺",
         "name_en": "Leshan Temple",
         "line": "T322",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "5500"
       },
@@ -925,7 +927,7 @@
         "name": "華亞三路199巷口",
         "name_en": "Lane 199 Huaya Third Road Entrance",
         "line": "T322",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "7829"
       },

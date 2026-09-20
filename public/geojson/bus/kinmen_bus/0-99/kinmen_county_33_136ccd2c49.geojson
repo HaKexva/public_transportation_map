@@ -6,13 +6,14 @@
     "name": "33幸福巴士",
     "name_en": "33幸福巴士",
     "ref": "33幸福巴士",
-    "color": "#86198f",
+    "color": "#3730a3",
     "city_id": "KinmenCounty",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.kinmen.gov.tw/api/route/331/map/257/image",
     "operator_id": "0001",
     "operator": "金門",
-    "operator_en": "City Bus and Ferry Management Office, Kinmen County"
+    "operator_en": "City Bus and Ferry Management Office, Kinmen County",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "33幸福巴士",
         "name": "33幸福巴士",
         "name_en": "33幸福巴士",
-        "color": "#86198f",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -407,6 +409,10 @@
           [
             118.4131,
             24.48922
+          ],
+          [
+            118.41287,
+            24.48887
           ]
         ]
       }
@@ -419,7 +425,7 @@
         "name": "沙美站",
         "name_en": "Shamei Station",
         "line": "33幸福巴士",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "266"
       },
@@ -439,7 +445,7 @@
         "name": "后浦頭",
         "name_en": "Houputou",
         "line": "33幸福巴士",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "547"
       },
@@ -459,7 +465,7 @@
         "name": "后水頭",
         "name_en": "Houshuitou",
         "line": "33幸福巴士",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "548"
       },
@@ -479,7 +485,7 @@
         "name": "東蕭",
         "name_en": "Dongxiao",
         "line": "33幸福巴士",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "549"
       },
@@ -499,7 +505,7 @@
         "name": "蔡店",
         "name_en": "Caidian",
         "line": "33幸福巴士",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "550"
       },
@@ -519,7 +525,7 @@
         "name": "金沙公墓",
         "name_en": "Jinsha Cemetary",
         "line": "33幸福巴士",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "551"
       },
@@ -539,7 +545,7 @@
         "name": "陽翟一",
         "name_en": "YangZhai 1",
         "line": "33幸福巴士",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "972"
       },
@@ -559,7 +565,7 @@
         "name": "陽翟",
         "name_en": "YangZhai",
         "line": "33幸福巴士",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "552"
       },
@@ -579,7 +585,7 @@
         "name": "太武社區三",
         "name_en": "Taiwu Community 3",
         "line": "33幸福巴士",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "553"
       },
@@ -599,7 +605,7 @@
         "name": "東店",
         "name_en": "Dongdian",
         "line": "33幸福巴士",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "554"
       },
@@ -619,7 +625,7 @@
         "name": "屏東",
         "name_en": "Pingdong",
         "line": "33幸福巴士",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "555"
       },
@@ -639,7 +645,7 @@
         "name": "鵲山",
         "name_en": "Queshan",
         "line": "33幸福巴士",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "522"
       },
@@ -659,7 +665,7 @@
         "name": "陽明",
         "name_en": "Yangming",
         "line": "33幸福巴士",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "786"
       },
@@ -679,7 +685,7 @@
         "name": "林務所",
         "name_en": "Foresty Research Institute",
         "line": "33幸福巴士",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "787"
       },
@@ -699,7 +705,7 @@
         "name": "下新厝一",
         "name_en": "Xiaxincuo 1",
         "line": "33幸福巴士",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "685"
       },
@@ -719,7 +725,7 @@
         "name": "東沙尾",
         "name_en": "Dongshawei",
         "line": "33幸福巴士",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "664"
       },
@@ -739,7 +745,7 @@
         "name": "新前墩",
         "name_en": "Xinqiandun",
         "line": "33幸福巴士",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "665"
       },
@@ -759,7 +765,7 @@
         "name": "埔華路",
         "name_en": "Buhua Rd.",
         "line": "33幸福巴士",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "666"
       },
@@ -779,7 +785,7 @@
         "name": "東山",
         "name_en": "DongShang",
         "line": "33幸福巴士",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "667"
       },
@@ -799,7 +805,7 @@
         "name": "內洋",
         "name_en": "Neiyuan",
         "line": "33幸福巴士",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "668"
       },
@@ -819,7 +825,7 @@
         "name": "叉路口",
         "name_en": "Intersection",
         "line": "33幸福巴士",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "669"
       },
@@ -839,7 +845,7 @@
         "name": "大地",
         "name_en": "Dabao",
         "line": "33幸福巴士",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "670"
       },
@@ -859,7 +865,7 @@
         "name": "大地一",
         "name_en": "Dadi 1",
         "line": "33幸福巴士",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "671"
       },
@@ -879,7 +885,7 @@
         "name": "大地二",
         "name_en": "Dadi 2",
         "line": "33幸福巴士",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "672"
       },
@@ -899,7 +905,7 @@
         "name": "大地三",
         "name_en": "Dadi 3",
         "line": "33幸福巴士",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "969"
       },
@@ -919,7 +925,7 @@
         "name": "田浦",
         "name_en": "Tianpu",
         "line": "33幸福巴士",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "673"
       },
@@ -939,7 +945,7 @@
         "name": "大地三",
         "name_en": "Dadi 3",
         "line": "33幸福巴士",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "970"
       },
@@ -959,7 +965,7 @@
         "name": "大地二",
         "name_en": "Dadi 2",
         "line": "33幸福巴士",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "674"
       },
@@ -979,7 +985,7 @@
         "name": "大地一",
         "name_en": "Dadi 1",
         "line": "33幸福巴士",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "675"
       },
@@ -999,7 +1005,7 @@
         "name": "大地",
         "name_en": "Dabao",
         "line": "33幸福巴士",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "676"
       },
@@ -1019,7 +1025,7 @@
         "name": "叉路口",
         "name_en": "Intersection",
         "line": "33幸福巴士",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "677"
       },
@@ -1039,7 +1045,7 @@
         "name": "內洋",
         "name_en": "Neiyuan",
         "line": "33幸福巴士",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "678"
       },
@@ -1059,7 +1065,7 @@
         "name": "東山",
         "name_en": "DongShang",
         "line": "33幸福巴士",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "679"
       },
@@ -1079,7 +1085,7 @@
         "name": "埔華路",
         "name_en": "Buhua Rd.",
         "line": "33幸福巴士",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "680"
       },
@@ -1099,7 +1105,7 @@
         "name": "新前墩",
         "name_en": "Xinqiandun",
         "line": "33幸福巴士",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "681"
       },
@@ -1119,7 +1125,7 @@
         "name": "東沙尾",
         "name_en": "Dongshawei",
         "line": "33幸福巴士",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "682"
       },
@@ -1139,7 +1145,7 @@
         "name": "下新厝一",
         "name_en": "Xiaxincuo 1",
         "line": "33幸福巴士",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "683"
       },
@@ -1159,7 +1165,7 @@
         "name": "林務所",
         "name_en": "Forestry Center",
         "line": "33幸福巴士",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "684"
       },
@@ -1179,7 +1185,7 @@
         "name": "陽明",
         "name_en": "Yangming",
         "line": "33幸福巴士",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "788"
       },
@@ -1199,7 +1205,7 @@
         "name": "鵲山",
         "name_en": "Queshan",
         "line": "33幸福巴士",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "563"
       },
@@ -1219,7 +1225,7 @@
         "name": "屏東",
         "name_en": "Pingdong",
         "line": "33幸福巴士",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "523"
       },
@@ -1239,7 +1245,7 @@
         "name": "東店",
         "name_en": "Dongdian",
         "line": "33幸福巴士",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "524"
       },
@@ -1259,7 +1265,7 @@
         "name": "太武社區三",
         "name_en": "Taiwu Community 3",
         "line": "33幸福巴士",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "525"
       },
@@ -1279,7 +1285,7 @@
         "name": "陽翟",
         "name_en": "YangZhai",
         "line": "33幸福巴士",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "531"
       },
@@ -1299,7 +1305,7 @@
         "name": "金沙公墓",
         "name_en": "Jinsha Cemetary",
         "line": "33幸福巴士",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "532"
       },
@@ -1319,7 +1325,7 @@
         "name": "蔡店",
         "name_en": "Caidian",
         "line": "33幸福巴士",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "533"
       },
@@ -1339,7 +1345,7 @@
         "name": "東蕭",
         "name_en": "Dongxiao",
         "line": "33幸福巴士",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "534"
       },
@@ -1359,7 +1365,7 @@
         "name": "后水頭",
         "name_en": "Houshuitou",
         "line": "33幸福巴士",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "535"
       },
@@ -1379,7 +1385,7 @@
         "name": "后浦頭",
         "name_en": "Houputou",
         "line": "33幸福巴士",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "536"
       },
@@ -1399,7 +1405,7 @@
         "name": "沙美站",
         "name_en": "Shamei Station",
         "line": "33幸福巴士",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "266"
       },

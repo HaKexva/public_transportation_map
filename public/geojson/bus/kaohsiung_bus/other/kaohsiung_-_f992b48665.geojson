@@ -6,12 +6,13 @@
     "name": "大湖線-海埔海山三興宮",
     "name_en": "大湖線-海埔海山三興宮",
     "ref": "大湖線-海埔海山三興宮",
-    "color": "#0B7A3E",
+    "color": "#0891b2",
     "city_id": "Kaohsiung",
     "source": "TDX Bus Shape / StopOfRoute",
     "operator_id": "20010",
     "operator": "中華衛星大車隊",
-    "operator_en": "Ks Taxi"
+    "operator_en": "Ks Taxi",
+    "loop": true
   },
   "features": [
     {
@@ -21,8 +22,9 @@
         "ref": "大湖線-海埔海山三興宮",
         "name": "大湖線-海埔海山三興宮",
         "name_en": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
-        "direction": 0
+        "color": "#0891b2",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -3198,6 +3200,10 @@
           [
             120.25238,
             22.87735
+          ],
+          [
+            120.25235,
+            22.87765
           ]
         ]
       }
@@ -3209,8 +3215,9 @@
         "ref": "大湖線-海埔海山三興宮",
         "name": "大湖線-海埔海山三興宮",
         "name_en": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
-        "direction": 1
+        "color": "#0891b2",
+        "direction": 1,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -6098,6 +6105,10 @@
           [
             120.2524,
             22.87731
+          ],
+          [
+            120.25235,
+            22.87765
           ]
         ]
       }
@@ -6110,7 +6121,7 @@
         "name": "大湖火車站",
         "name_en": "Dahu Train Station",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 0,
         "station_id": "1094"
       },
@@ -6130,7 +6141,7 @@
         "name": "東方路口(東方技術學院)",
         "name_en": "Dongfang Rd.(Tung Fang Design University)",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 0,
         "station_id": "2008"
       },
@@ -6150,7 +6161,7 @@
         "name": "湖內分局",
         "name_en": "Hunei Precinct",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 0,
         "station_id": "3602"
       },
@@ -6170,7 +6181,7 @@
         "name": "大湖",
         "name_en": "Dahu",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 0,
         "station_id": "2010"
       },
@@ -6190,7 +6201,7 @@
         "name": "田尾里",
         "name_en": "Tianwei Village",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 0,
         "station_id": "2014"
       },
@@ -6210,7 +6221,7 @@
         "name": "台農飼料廠",
         "name_en": "Taiwan Farmers Feed Mill",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 0,
         "station_id": "1100"
       },
@@ -6230,7 +6241,7 @@
         "name": "牛蹄寮(富樂夢觀光工廠)",
         "name_en": "Nioutiliao(FLOMO Stationery Museum)",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 0,
         "station_id": "1102"
       },
@@ -6250,7 +6261,7 @@
         "name": "太爺(湖內國中)",
         "name_en": "Taiye(Hunei Junior High School)",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 0,
         "station_id": "1104"
       },
@@ -6270,7 +6281,7 @@
         "name": "太爺(中正路一段)",
         "name_en": "Taiye(Jhongjheng Rd. Section 1)",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 0,
         "station_id": "1998"
       },
@@ -6290,7 +6301,7 @@
         "name": "仁佑診所",
         "name_en": "Renyou Clinic",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 0,
         "station_id": "2016"
       },
@@ -6310,7 +6321,7 @@
         "name": "圍內",
         "name_en": "Weinei",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 0,
         "station_id": "2018"
       },
@@ -6330,7 +6341,7 @@
         "name": "葉厝甲",
         "name_en": "Yecuojia",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 0,
         "station_id": "2020"
       },
@@ -6350,7 +6361,7 @@
         "name": "湖內農會",
         "name_en": "Hunei Farmers' Association",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 0,
         "station_id": "2022"
       },
@@ -6370,7 +6381,7 @@
         "name": "湖內區公所(圍子內)",
         "name_en": "Hunei District Office(Weizihnei)",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 0,
         "station_id": "2024"
       },
@@ -6390,7 +6401,7 @@
         "name": "文賢里",
         "name_en": "Wunsian Village",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 0,
         "station_id": "2026"
       },
@@ -6410,7 +6421,7 @@
         "name": "中賢里",
         "name_en": "Jhongsian Village",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 0,
         "station_id": "1025"
       },
@@ -6430,7 +6441,7 @@
         "name": "新庄路口(中正路二段)",
         "name_en": "Sinjhuang Rd. Intersection(Jhongjheng Rd. Sec. 2)",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 0,
         "station_id": "4765"
       },
@@ -6450,7 +6461,7 @@
         "name": "草仔寮-湖內",
         "name_en": "Cao Zih Liao-Hu Nei",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 0,
         "station_id": "2028"
       },
@@ -6470,7 +6481,7 @@
         "name": "白砂崙",
         "name_en": "Baishalun",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 0,
         "station_id": "2030"
       },
@@ -6490,7 +6501,7 @@
         "name": "南白砂崙",
         "name_en": "South Baishalun",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 0,
         "station_id": "2032"
       },
@@ -6510,7 +6521,7 @@
         "name": "茄萣電信局(白雲寺)",
         "name_en": "Cieding Telecom Office(Baiyun Temple)",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 0,
         "station_id": "2004"
       },
@@ -6530,7 +6541,7 @@
         "name": "茄萣區公所(茄萣國中)",
         "name_en": "Cieding District office(Jiading Juinior High School)",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 0,
         "station_id": "2034"
       },
@@ -6550,7 +6561,7 @@
         "name": "茄萣國小",
         "name_en": "Cieding Primary School",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 0,
         "station_id": "4769"
       },
@@ -6570,7 +6581,7 @@
         "name": "曾厝",
         "name_en": "Zeng Cuo",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 0,
         "station_id": "2036"
       },
@@ -6590,7 +6601,7 @@
         "name": "頂茄萣",
         "name_en": "Dingcieding",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 0,
         "station_id": "2038"
       },
@@ -6610,7 +6621,7 @@
         "name": "茄萣農會(下茄萣)",
         "name_en": "Qieding District Farmers' Association(XiaQieding)",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 0,
         "station_id": "2040"
       },
@@ -6630,7 +6641,7 @@
         "name": "光萣",
         "name_en": "Guang Ding",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 0,
         "station_id": "2042"
       },
@@ -6650,7 +6661,7 @@
         "name": "成功橋",
         "name_en": "Cheng Gong Bridge",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 0,
         "station_id": "2044"
       },
@@ -6670,7 +6681,7 @@
         "name": "濱海路一段",
         "name_en": "Binhai Rd. Sec. 1",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 0,
         "station_id": "4771"
       },
@@ -6690,7 +6701,7 @@
         "name": "北崎漏",
         "name_en": "North Cilou",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 0,
         "station_id": "2110"
       },
@@ -6710,7 +6721,7 @@
         "name": "崎漏",
         "name_en": "Cilou",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 0,
         "station_id": "2108"
       },
@@ -6730,7 +6741,7 @@
         "name": "崎漏農會活動中心",
         "name_en": "Community Center of Cilou Farmers' Association",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 0,
         "station_id": "4773"
       },
@@ -6750,7 +6761,7 @@
         "name": "興達港觀光魚市",
         "name_en": "Singda Harbor Tourism Fish Market",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 0,
         "station_id": "4775"
       },
@@ -6770,7 +6781,7 @@
         "name": "崎漏電信局",
         "name_en": "Cilou Telecom Office",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 0,
         "station_id": "1260"
       },
@@ -6790,7 +6801,7 @@
         "name": "興達國小",
         "name_en": "Sinda Elementary School",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 0,
         "station_id": "1214"
       },
@@ -6810,7 +6821,7 @@
         "name": "興達港海巡署基地",
         "name_en": "Coast Guard Base of Singda Harbor",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 0,
         "station_id": "2112"
       },
@@ -6830,7 +6841,7 @@
         "name": "興達港(正大路)",
         "name_en": "Singda Fishing Port(Jhengda Rd.)",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 0,
         "station_id": "2106"
       },
@@ -6850,7 +6861,7 @@
         "name": "情人碼頭",
         "name_en": "Lovers' Wharf",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 0,
         "station_id": "2104"
       },
@@ -6870,7 +6881,7 @@
         "name": "假日市集",
         "name_en": "Holiday Market",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 0,
         "station_id": "2092"
       },
@@ -6890,7 +6901,7 @@
         "name": "興達遠洋漁港",
         "name_en": "Singda Deep Sea Fishing Port",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 0,
         "station_id": "2102"
       },
@@ -6910,7 +6921,7 @@
         "name": "東方路2巷口",
         "name_en": "Dongfang Rd. Lane Entrance 2",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 0,
         "station_id": "4898"
       },
@@ -6930,7 +6941,7 @@
         "name": "海埔海山活動中心站",
         "name_en": "Haipu Haishan Community Activity Center",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 0,
         "station_id": "5510"
       },
@@ -6950,7 +6961,7 @@
         "name": "三興宮站",
         "name_en": "Sanxing Temple",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 0,
         "station_id": "5512"
       },
@@ -6970,7 +6981,7 @@
         "name": "海埔海山活動中心站",
         "name_en": "Haipu Haishan Community Activity Center",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 0,
         "station_id": "5511"
       },
@@ -6990,7 +7001,7 @@
         "name": "民族街口",
         "name_en": "Minzu St. Intersection",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 0,
         "station_id": "4777"
       },
@@ -7010,7 +7021,7 @@
         "name": "明寧靖王公園",
         "name_en": "Ningjing(Prince of the Ming Dynasty) Park",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 0,
         "station_id": "4779"
       },
@@ -7030,7 +7041,7 @@
         "name": "東方設計學院",
         "name_en": "Tung Fang Design University",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 0,
         "station_id": "4781"
       },
@@ -7050,7 +7061,7 @@
         "name": "大湖火車站",
         "name_en": "Dahu Train Station",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 0,
         "station_id": "1095"
       },
@@ -7070,7 +7081,7 @@
         "name": "大湖火車站",
         "name_en": "Dahu Train Station",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 1,
         "station_id": "1094"
       },
@@ -7090,7 +7101,7 @@
         "name": "東方設計學院",
         "name_en": "Tung Fang Design University",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 1,
         "station_id": "4782"
       },
@@ -7110,7 +7121,7 @@
         "name": "明寧靖王公園",
         "name_en": "Ningjing(Prince of the Ming Dynasty) Park",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 1,
         "station_id": "4780"
       },
@@ -7130,7 +7141,7 @@
         "name": "民族街口",
         "name_en": "Minzu St. Intersection",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 1,
         "station_id": "4778"
       },
@@ -7150,7 +7161,7 @@
         "name": "海埔海山活動中心站",
         "name_en": "Haipu Haishan Community Activity Center",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 1,
         "station_id": "5510"
       },
@@ -7170,7 +7181,7 @@
         "name": "三興宮站",
         "name_en": "Sanxing Temple",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 1,
         "station_id": "5512"
       },
@@ -7190,7 +7201,7 @@
         "name": "海埔海山活動中心站",
         "name_en": "Haipu Haishan Community Activity Center",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 1,
         "station_id": "5511"
       },
@@ -7210,7 +7221,7 @@
         "name": "東方路2巷口",
         "name_en": "Dongfang Rd. Lane Entrance 2",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 1,
         "station_id": "4899"
       },
@@ -7230,7 +7241,7 @@
         "name": "興達遠洋漁港",
         "name_en": "Singda Deep Sea Fishing Port",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 1,
         "station_id": "2101"
       },
@@ -7250,7 +7261,7 @@
         "name": "假日市集",
         "name_en": "Holiday Market",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 1,
         "station_id": "2091"
       },
@@ -7270,7 +7281,7 @@
         "name": "情人碼頭",
         "name_en": "Lovers' Wharf",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 1,
         "station_id": "2103"
       },
@@ -7290,7 +7301,7 @@
         "name": "興達港(正大路)",
         "name_en": "Singda Fishing Port(Jhengda Rd.)",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 1,
         "station_id": "2105"
       },
@@ -7310,7 +7321,7 @@
         "name": "興達港海巡署基地",
         "name_en": "Coast Guard Base of Singda Harbor",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 1,
         "station_id": "2111"
       },
@@ -7330,7 +7341,7 @@
         "name": "興達國小",
         "name_en": "Sinda Elementary School",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 1,
         "station_id": "1213"
       },
@@ -7350,7 +7361,7 @@
         "name": "崎漏電信局",
         "name_en": "Cilou Telecom Office",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 1,
         "station_id": "1261"
       },
@@ -7370,7 +7381,7 @@
         "name": "興達港立體停車場",
         "name_en": "Singda Harbor Parking Tower",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 1,
         "station_id": "2078"
       },
@@ -7390,7 +7401,7 @@
         "name": "興達港觀光魚市",
         "name_en": "Singda Harbor Tourism Fish Market",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 1,
         "station_id": "4776"
       },
@@ -7410,7 +7421,7 @@
         "name": "崎漏農會活動中心",
         "name_en": "Community Center of Cilou Farmers' Association",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 1,
         "station_id": "4774"
       },
@@ -7430,7 +7441,7 @@
         "name": "崎漏",
         "name_en": "Cilou",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 1,
         "station_id": "2107"
       },
@@ -7450,7 +7461,7 @@
         "name": "北崎漏",
         "name_en": "North Cilou",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 1,
         "station_id": "2109"
       },
@@ -7470,7 +7481,7 @@
         "name": "濱海路一段",
         "name_en": "Binhai Rd. Sec. 1",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 1,
         "station_id": "4772"
       },
@@ -7490,7 +7501,7 @@
         "name": "成功橋",
         "name_en": "Cheng Gong Bridge",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 1,
         "station_id": "2045"
       },
@@ -7510,7 +7521,7 @@
         "name": "光萣",
         "name_en": "Guang Ding",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 1,
         "station_id": "2043"
       },
@@ -7530,7 +7541,7 @@
         "name": "茄萣農會(下茄萣)",
         "name_en": "Qieding District Farmers' Association(XiaQieding)",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 1,
         "station_id": "2041"
       },
@@ -7550,7 +7561,7 @@
         "name": "頂茄萣",
         "name_en": "Dingcieding",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 1,
         "station_id": "2039"
       },
@@ -7570,7 +7581,7 @@
         "name": "曾厝",
         "name_en": "Zeng Cuo",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 1,
         "station_id": "2037"
       },
@@ -7590,7 +7601,7 @@
         "name": "茄萣國小",
         "name_en": "Cieding Primary School",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 1,
         "station_id": "4770"
       },
@@ -7610,7 +7621,7 @@
         "name": "茄萣區公所(茄萣國中)",
         "name_en": "Cieding District office(Jiading Juinior High School)",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 1,
         "station_id": "2035"
       },
@@ -7630,7 +7641,7 @@
         "name": "茄萣電信局(白雲寺)",
         "name_en": "Cieding Telecom Office(Baiyun Temple)",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 1,
         "station_id": "2005"
       },
@@ -7650,7 +7661,7 @@
         "name": "南白砂崙",
         "name_en": "South Baishalun",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 1,
         "station_id": "2033"
       },
@@ -7670,7 +7681,7 @@
         "name": "白砂崙",
         "name_en": "Baishalun",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 1,
         "station_id": "2031"
       },
@@ -7690,7 +7701,7 @@
         "name": "草仔寮-湖內",
         "name_en": "Cao Zih Liao-Hu Nei",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 1,
         "station_id": "2029"
       },
@@ -7710,7 +7721,7 @@
         "name": "新庄路口(中正路二段)",
         "name_en": "Xinzhuang Road Intersection (Second Section of Zhongzheng Road)",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 1,
         "station_id": "4766"
       },
@@ -7730,7 +7741,7 @@
         "name": "中賢里",
         "name_en": "Zhongxian Lane",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 1,
         "station_id": "1026"
       },
@@ -7750,7 +7761,7 @@
         "name": "文賢里",
         "name_en": "Wenxian Lane",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 1,
         "station_id": "2027"
       },
@@ -7770,7 +7781,7 @@
         "name": "湖內區公所(圍子內)",
         "name_en": "Hunei District Office (Weizi Nei)",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 1,
         "station_id": "2025"
       },
@@ -7790,7 +7801,7 @@
         "name": "湖內農會",
         "name_en": "Hunei Farmers Association",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 1,
         "station_id": "2023"
       },
@@ -7810,7 +7821,7 @@
         "name": "葉厝甲",
         "name_en": "Ye Cuojia",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 1,
         "station_id": "2021"
       },
@@ -7830,7 +7841,7 @@
         "name": "圍內",
         "name_en": "WeiNei",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 1,
         "station_id": "2019"
       },
@@ -7850,7 +7861,7 @@
         "name": "仁佑診所",
         "name_en": "Renyou Clinic",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 1,
         "station_id": "2017"
       },
@@ -7870,7 +7881,7 @@
         "name": "太爺(中正路一段)",
         "name_en": "Taiye (section 1, Zhongzheng Road)",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 1,
         "station_id": "1999"
       },
@@ -7890,7 +7901,7 @@
         "name": "太爺(湖內國中)",
         "name_en": "Taiye (Hunei Junior High School)",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 1,
         "station_id": "1105"
       },
@@ -7910,7 +7921,7 @@
         "name": "牛蹄寮(富樂夢觀光工廠)",
         "name_en": "Nioutiliao(FLOMO Stationery Museum)",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 1,
         "station_id": "1103"
       },
@@ -7930,7 +7941,7 @@
         "name": "台農飼料廠",
         "name_en": "Taiwan Farmers Feed Mill",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 1,
         "station_id": "1101"
       },
@@ -7950,7 +7961,7 @@
         "name": "田尾里",
         "name_en": "Tianwei Village",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 1,
         "station_id": "2015"
       },
@@ -7970,7 +7981,7 @@
         "name": "大湖",
         "name_en": "Dahu",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 1,
         "station_id": "2011"
       },
@@ -7990,7 +8001,7 @@
         "name": "湖內分局",
         "name_en": "Hunei Precinct",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 1,
         "station_id": "3601"
       },
@@ -8010,7 +8021,7 @@
         "name": "東方路口(東方技術學院)",
         "name_en": "Dongfang Rd.(Tung Fang Design University)",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 1,
         "station_id": "2009"
       },
@@ -8030,7 +8041,7 @@
         "name": "大湖火車站",
         "name_en": "Dahu Train Station",
         "line": "大湖線-海埔海山三興宮",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 1,
         "station_id": "1095"
       },

@@ -6,13 +6,14 @@
     "name": "202",
     "name_en": "202",
     "ref": "202",
-    "color": "#b91c1c",
+    "color": "#b45309",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/2020/map/2283/image",
     "operator_id": "1",
     "operator": "桃園客運",
-    "operator_en": "Taoyuan Bus Co., Ltd."
+    "operator_en": "Taoyuan Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "202",
         "name": "202",
         "name_en": "202",
-        "color": "#b91c1c",
-        "direction": 0
+        "color": "#b45309",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1551,6 +1553,10 @@
           [
             121.38789,
             25.03154
+          ],
+          [
+            121.38761,
+            25.03169
           ]
         ]
       }
@@ -1562,8 +1568,9 @@
         "ref": "202",
         "name": "202",
         "name_en": "202",
-        "color": "#b91c1c",
-        "direction": 1
+        "color": "#b45309",
+        "direction": 1,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -2923,6 +2930,10 @@
           [
             121.38774,
             25.03159
+          ],
+          [
+            121.38776,
+            25.03155
           ]
         ]
       }
@@ -2935,7 +2946,7 @@
         "name": "體育大學行政教學大樓",
         "name_en": "National Taiwan Sport University Administrative ed",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4398"
       },
@@ -2955,7 +2966,7 @@
         "name": "長庚大學",
         "name_en": "Changgung University",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4861"
       },
@@ -2975,7 +2986,7 @@
         "name": "國立體育大學體育館",
         "name_en": "National Taiwan Sport University Gymnasium",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5289"
       },
@@ -2995,7 +3006,7 @@
         "name": "文青二文藝街口",
         "name_en": "Wuncing 2nd Rd. Wunyi St. Intersection",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5102"
       },
@@ -3015,7 +3026,7 @@
         "name": "文學路口",
         "name_en": "Wenxue Rd. Intersection",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5104"
       },
@@ -3035,7 +3046,7 @@
         "name": "文青二路口",
         "name_en": "Wuncing 2nd Rd. Intersection",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5105"
       },
@@ -3055,7 +3066,7 @@
         "name": "捷運體育大學站",
         "name_en": "MRT National Taiwan Sport University Station",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5326"
       },
@@ -3075,7 +3086,7 @@
         "name": "文化一樂善二路口",
         "name_en": "Wenhua 1st. and Leshan 2nd. Rd. Intersection",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6196"
       },
@@ -3095,7 +3106,7 @@
         "name": "文青國中小",
         "name_en": "Wen Ching Junior & Primary School",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6976"
       },
@@ -3115,7 +3126,7 @@
         "name": "文桃文吉路口",
         "name_en": "Wentao Wenji Rd. Intersection",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4475"
       },
@@ -3135,7 +3146,7 @@
         "name": "文桃牛角坡路口",
         "name_en": "Wentao Rd. and Niujiaopo Rd. Intersection",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6855"
       },
@@ -3155,7 +3166,7 @@
         "name": "樂學二三路口",
         "name_en": "Lexue 2nd and 3rd Rd. Intersection",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6672"
       },
@@ -3175,7 +3186,7 @@
         "name": "樂善國小",
         "name_en": "Leshan Elementary School",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6673"
       },
@@ -3195,7 +3206,7 @@
         "name": "樂善公園",
         "name_en": "Leshan Park",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6687"
       },
@@ -3215,7 +3226,7 @@
         "name": "文德路",
         "name_en": "Wunde Rd.",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5506"
       },
@@ -3235,7 +3246,7 @@
         "name": "文明路29巷",
         "name_en": "Wenming Road Lane.29",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6715"
       },
@@ -3255,7 +3266,7 @@
         "name": "南亞塑膠",
         "name_en": "Nan Ya Plastics Corporation",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5288"
       },
@@ -3275,7 +3286,7 @@
         "name": "林口長庚醫院",
         "name_en": "Linkou Chang Gung Memorial Hospital",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2538"
       },
@@ -3295,7 +3306,7 @@
         "name": "大坪頂公園",
         "name_en": "Da Ping Ding Park",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4434"
       },
@@ -3315,7 +3326,7 @@
         "name": "文華國小",
         "name_en": "Wenhua Elementary School",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3751"
       },
@@ -3335,7 +3346,7 @@
         "name": "文化七路",
         "name_en": "Wenhua 7th Rd.",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3752"
       },
@@ -3355,7 +3366,7 @@
         "name": "坪頂",
         "name_en": "Pingding",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5520"
       },
@@ -3375,7 +3386,7 @@
         "name": "大湖",
         "name_en": "Dahu",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5083"
       },
@@ -3395,7 +3406,7 @@
         "name": "婦幼館",
         "name_en": "Woman and Children Hall",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4462"
       },
@@ -3415,7 +3426,7 @@
         "name": "工四工業區",
         "name_en": "Gongsi Industrial Park",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4466"
       },
@@ -3435,7 +3446,7 @@
         "name": "頂湖路",
         "name_en": "Dinghu Road",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4468"
       },
@@ -3455,7 +3466,7 @@
         "name": "頂湖二街",
         "name_en": "Dinghu 2nd St.",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5059"
       },
@@ -3475,7 +3486,7 @@
         "name": "頂湖九街",
         "name_en": "Dinghu 9th St.",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5045"
       },
@@ -3495,7 +3506,7 @@
         "name": "長庚醫院桃園分院",
         "name_en": "Chang Gung Memorial Hospital, Taoyuan Branch",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4470"
       },
@@ -3515,7 +3526,7 @@
         "name": "西勢湖",
         "name_en": "Xishihu",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6527"
       },
@@ -3535,7 +3546,7 @@
         "name": "大埔橋",
         "name_en": "Dapu Bridge",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4393"
       },
@@ -3555,7 +3566,7 @@
         "name": "大埔國小",
         "name_en": "Dapu Elementary School",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5495"
       },
@@ -3575,7 +3586,7 @@
         "name": "振天宮",
         "name_en": "Zhentian Temple",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4395"
       },
@@ -3595,7 +3606,7 @@
         "name": "大埔",
         "name_en": "Dapu",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4400"
       },
@@ -3615,7 +3626,7 @@
         "name": "國立體育大學體育館",
         "name_en": "National Sports University Gymnasium",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5290"
       },
@@ -3635,7 +3646,7 @@
         "name": "體育大學行政教學大樓",
         "name_en": "National Taiwan Sport University Administrative and Teaching Building",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4398"
       },
@@ -3655,7 +3666,7 @@
         "name": "體育大學行政教學大樓",
         "name_en": "National Taiwan Sport University Administrative ed",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 1,
         "station_id": "4398"
       },
@@ -3675,7 +3686,7 @@
         "name": "長庚大學",
         "name_en": "Changgung University",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 1,
         "station_id": "4861"
       },
@@ -3695,7 +3706,7 @@
         "name": "國立體育大學體育館",
         "name_en": "National Taiwan Sport University Gymnasium",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 1,
         "station_id": "5289"
       },
@@ -3715,7 +3726,7 @@
         "name": "大埔",
         "name_en": "Dapu",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 1,
         "station_id": "4401"
       },
@@ -3735,7 +3746,7 @@
         "name": "振天宮",
         "name_en": "Zhentian Temple",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 1,
         "station_id": "4396"
       },
@@ -3755,7 +3766,7 @@
         "name": "大埔國小",
         "name_en": "Dapu Elementary School",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 1,
         "station_id": "5496"
       },
@@ -3775,7 +3786,7 @@
         "name": "大埔橋",
         "name_en": "Dapu Bridge",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 1,
         "station_id": "4394"
       },
@@ -3795,7 +3806,7 @@
         "name": "西勢湖",
         "name_en": "Xishihu",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 1,
         "station_id": "4392"
       },
@@ -3815,7 +3826,7 @@
         "name": "長庚醫院桃園分院",
         "name_en": "Chang Gung Memorial Hospital, Taoyuan Branch",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 1,
         "station_id": "4470"
       },
@@ -3835,7 +3846,7 @@
         "name": "頂湖九街",
         "name_en": "Dinghu 9th St.",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 1,
         "station_id": "5044"
       },
@@ -3855,7 +3866,7 @@
         "name": "頂湖二街",
         "name_en": "Dinghu 2nd St.",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 1,
         "station_id": "5060"
       },
@@ -3875,7 +3886,7 @@
         "name": "頂湖路",
         "name_en": "Dinghu Road",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 1,
         "station_id": "4469"
       },
@@ -3895,7 +3906,7 @@
         "name": "工四工業區",
         "name_en": "Gongsi Industrial Park",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 1,
         "station_id": "4467"
       },
@@ -3915,7 +3926,7 @@
         "name": "婦幼館",
         "name_en": "Woman and Children Hall",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 1,
         "station_id": "4463"
       },
@@ -3935,7 +3946,7 @@
         "name": "大湖",
         "name_en": "Dahu",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 1,
         "station_id": "5082"
       },
@@ -3955,7 +3966,7 @@
         "name": "坪頂",
         "name_en": "Pingding",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 1,
         "station_id": "5521"
       },
@@ -3975,7 +3986,7 @@
         "name": "文化七路",
         "name_en": "Wenhua 7th Rd.",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 1,
         "station_id": "3753"
       },
@@ -3995,7 +4006,7 @@
         "name": "文華國小",
         "name_en": "Wenhua Elementary School",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 1,
         "station_id": "3750"
       },
@@ -4015,7 +4026,7 @@
         "name": "大坪頂公園",
         "name_en": "Da Ping Ding Park",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 1,
         "station_id": "4435"
       },
@@ -4035,7 +4046,7 @@
         "name": "林口長庚醫院",
         "name_en": "Linkou Changgung Memorial Hospital",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 1,
         "station_id": "2539"
       },
@@ -4055,7 +4066,7 @@
         "name": "南亞塑膠",
         "name_en": "Nan Ya Plastics Corporation",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 1,
         "station_id": "5287"
       },
@@ -4075,7 +4086,7 @@
         "name": "文德路",
         "name_en": "Wunde Rd.",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 1,
         "station_id": "5505"
       },
@@ -4095,7 +4106,7 @@
         "name": "樂善公園",
         "name_en": "Leshan Park",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 1,
         "station_id": "6851"
       },
@@ -4115,7 +4126,7 @@
         "name": "樂善國小",
         "name_en": "Leshan Elementary School",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 1,
         "station_id": "6676"
       },
@@ -4135,7 +4146,7 @@
         "name": "文桃牛角坡路口",
         "name_en": "Wentao Rd. and Niujiaopo Rd. Intersection",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 1,
         "station_id": "6854"
       },
@@ -4155,7 +4166,7 @@
         "name": "文桃文吉路口",
         "name_en": "Wentao Wenji Rd. Intersection",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 1,
         "station_id": "4474"
       },
@@ -4175,7 +4186,7 @@
         "name": "文青國中小",
         "name_en": "Wen Ching Junior & Primary School",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 1,
         "station_id": "6976"
       },
@@ -4195,7 +4206,7 @@
         "name": "文化一樂善二路口",
         "name_en": "Wenhua 1st. and Leshan 2nd. Rd. Intersection",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 1,
         "station_id": "6197"
       },
@@ -4215,7 +4226,7 @@
         "name": "捷運體育大學站",
         "name_en": "MRT National Taiwan Sport University Station",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 1,
         "station_id": "6195"
       },
@@ -4235,7 +4246,7 @@
         "name": "文青二文藝街口",
         "name_en": "Wuncing 2nd Rd. Wunyi St. Intersection",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 1,
         "station_id": "5102"
       },
@@ -4255,7 +4266,7 @@
         "name": "文學路口",
         "name_en": "Wenxue Rd. Intersection",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 1,
         "station_id": "5104"
       },
@@ -4275,7 +4286,7 @@
         "name": "文青二路口",
         "name_en": "Wuncing 2nd Rd. Intersection",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 1,
         "station_id": "5105"
       },
@@ -4295,7 +4306,7 @@
         "name": "國立體育大學體育館",
         "name_en": "National Sports University Gymnasium",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 1,
         "station_id": "5290"
       },
@@ -4315,7 +4326,7 @@
         "name": "體育大學行政教學大樓",
         "name_en": "National Taiwan Sport University Administrative ed",
         "line": "202",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 1,
         "station_id": "4398"
       },

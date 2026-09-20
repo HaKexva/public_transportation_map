@@ -6,13 +6,14 @@
     "name": "513",
     "name_en": "513",
     "ref": "513",
-    "color": "#7c3aed",
+    "color": "#2563eb",
     "city_id": "PingtungCounty",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://web.taiwanbus.tw/MISUploadData/Schematic/file/0513.jpg",
     "operator_id": "29",
     "operator": "屏東客運",
-    "operator_en": "Pingtung Bus Co., Ltd."
+    "operator_en": "Pingtung Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "513",
         "name": "513",
         "name_en": "513",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -907,6 +909,10 @@
           [
             120.48517,
             22.66972
+          ],
+          [
+            120.48516,
+            22.66972
           ]
         ]
       }
@@ -918,8 +924,9 @@
         "ref": "513",
         "name": "513",
         "name_en": "513",
-        "color": "#7c3aed",
-        "direction": 1
+        "color": "#2563eb",
+        "direction": 1,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1891,7 +1898,7 @@
         "name": "屏東轉運站",
         "name_en": "Pingtung Bus Station",
         "line": "513",
-        "color": "#7c3aed",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "134333"
       },
@@ -1911,7 +1918,7 @@
         "name": "光復和平路口",
         "name_en": "Guangfu-Heping Intersection",
         "line": "513",
-        "color": "#7c3aed",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "134350"
       },
@@ -1931,7 +1938,7 @@
         "name": "屏東西市場",
         "name_en": "Pingtung West Market",
         "line": "513",
-        "color": "#7c3aed",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "143547"
       },
@@ -1951,7 +1958,7 @@
         "name": "大同高中2",
         "name_en": "Datung senior high school Second stop",
         "line": "513",
-        "color": "#7c3aed",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "137831"
       },
@@ -1971,7 +1978,7 @@
         "name": "自由崇明路口",
         "name_en": "Ziyou-Chongming Intersection",
         "line": "513",
-        "color": "#7c3aed",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "137832"
       },
@@ -1991,7 +1998,7 @@
         "name": "環保公園",
         "name_en": "Chonglan Environmental protection Park",
         "line": "513",
-        "color": "#7c3aed",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "137833"
       },
@@ -2011,7 +2018,7 @@
         "name": "廣東一站",
         "name_en": "Guangdong First Stop",
         "line": "513",
-        "color": "#7c3aed",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "137834"
       },
@@ -2031,7 +2038,7 @@
         "name": "廣東二站",
         "name_en": "Guangdong Second Stop",
         "line": "513",
-        "color": "#7c3aed",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "137835"
       },
@@ -2051,7 +2058,7 @@
         "name": "廣東三站",
         "name_en": "Guangdong third Stop",
         "line": "513",
-        "color": "#7c3aed",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "137836"
       },
@@ -2071,7 +2078,7 @@
         "name": "萬福宮",
         "name_en": "Wanfu Temple",
         "line": "513",
-        "color": "#7c3aed",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "135164"
       },
@@ -2091,7 +2098,7 @@
         "name": "廣東橋",
         "name_en": "Guangdong Bridge",
         "line": "513",
-        "color": "#7c3aed",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "135167"
       },
@@ -2111,7 +2118,7 @@
         "name": "千禧公園",
         "name_en": "Millennium Park",
         "line": "513",
-        "color": "#7c3aed",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "135168"
       },
@@ -2131,7 +2138,7 @@
         "name": "陸興高中",
         "name_en": "Lushin Senior High School",
         "line": "513",
-        "color": "#7c3aed",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "135169"
       },
@@ -2151,7 +2158,7 @@
         "name": "屏大附小",
         "name_en": "Affiliated Experimental Elementary School Of Pingt",
         "line": "513",
-        "color": "#7c3aed",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "137837"
       },
@@ -2171,7 +2178,7 @@
         "name": "廣南站",
         "name_en": "Guangdong South. Rd",
         "line": "513",
-        "color": "#7c3aed",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "137838"
       },
@@ -2191,7 +2198,7 @@
         "name": "南區市場",
         "name_en": "Nanqu Market",
         "line": "513",
-        "color": "#7c3aed",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "137839"
       },
@@ -2211,7 +2218,7 @@
         "name": "屏東轉運站",
         "name_en": "Pingtung Bus Station",
         "line": "513",
-        "color": "#7c3aed",
+        "color": "#2563eb",
         "direction": 1,
         "station_id": "134333"
       },
@@ -2231,7 +2238,7 @@
         "name": "南區市場",
         "name_en": "Nanqu Market",
         "line": "513",
-        "color": "#7c3aed",
+        "color": "#2563eb",
         "direction": 1,
         "station_id": "137853"
       },
@@ -2251,7 +2258,7 @@
         "name": "廣南站",
         "name_en": "Guangdong South. Rd",
         "line": "513",
-        "color": "#7c3aed",
+        "color": "#2563eb",
         "direction": 1,
         "station_id": "137870"
       },
@@ -2271,7 +2278,7 @@
         "name": "屏大附小",
         "name_en": "Affiliated Experimental Elementary School Of Pingt",
         "line": "513",
-        "color": "#7c3aed",
+        "color": "#2563eb",
         "direction": 1,
         "station_id": "137871"
       },
@@ -2291,7 +2298,7 @@
         "name": "陸興高中",
         "name_en": "Lushin Senior High School",
         "line": "513",
-        "color": "#7c3aed",
+        "color": "#2563eb",
         "direction": 1,
         "station_id": "135156"
       },
@@ -2311,7 +2318,7 @@
         "name": "千禧公園",
         "name_en": "Millennium Park",
         "line": "513",
-        "color": "#7c3aed",
+        "color": "#2563eb",
         "direction": 1,
         "station_id": "135168"
       },
@@ -2331,7 +2338,7 @@
         "name": "廣東橋",
         "name_en": "Guangdong Bridge",
         "line": "513",
-        "color": "#7c3aed",
+        "color": "#2563eb",
         "direction": 1,
         "station_id": "135167"
       },
@@ -2351,7 +2358,7 @@
         "name": "萬福宮",
         "name_en": "Wanfu Temple",
         "line": "513",
-        "color": "#7c3aed",
+        "color": "#2563eb",
         "direction": 1,
         "station_id": "135164"
       },
@@ -2371,7 +2378,7 @@
         "name": "廣東三站",
         "name_en": "Guangdong third Stop",
         "line": "513",
-        "color": "#7c3aed",
+        "color": "#2563eb",
         "direction": 1,
         "station_id": "137872"
       },
@@ -2391,7 +2398,7 @@
         "name": "廣東二站",
         "name_en": "Guangdong Second Stop",
         "line": "513",
-        "color": "#7c3aed",
+        "color": "#2563eb",
         "direction": 1,
         "station_id": "137873"
       },
@@ -2411,7 +2418,7 @@
         "name": "廣東一站",
         "name_en": "Guangdong First Stop",
         "line": "513",
-        "color": "#7c3aed",
+        "color": "#2563eb",
         "direction": 1,
         "station_id": "137834"
       },
@@ -2431,7 +2438,7 @@
         "name": "環保公園",
         "name_en": "Chonglan Environmental protection Park",
         "line": "513",
-        "color": "#7c3aed",
+        "color": "#2563eb",
         "direction": 1,
         "station_id": "137874"
       },
@@ -2451,7 +2458,7 @@
         "name": "自由崇明路口",
         "name_en": "Ziyou-Chongming Intersection",
         "line": "513",
-        "color": "#7c3aed",
+        "color": "#2563eb",
         "direction": 1,
         "station_id": "137875"
       },
@@ -2471,7 +2478,7 @@
         "name": "大同高中2",
         "name_en": "Datung senior high school Second stop",
         "line": "513",
-        "color": "#7c3aed",
+        "color": "#2563eb",
         "direction": 1,
         "station_id": "137876"
       },
@@ -2491,7 +2498,7 @@
         "name": "屏東西市場",
         "name_en": "Pingtung West Market",
         "line": "513",
-        "color": "#7c3aed",
+        "color": "#2563eb",
         "direction": 1,
         "station_id": "143548"
       },
@@ -2511,7 +2518,7 @@
         "name": "光復和平路口",
         "name_en": "Guangfu-Heping Intersection",
         "line": "513",
-        "color": "#7c3aed",
+        "color": "#2563eb",
         "direction": 1,
         "station_id": "134337"
       },

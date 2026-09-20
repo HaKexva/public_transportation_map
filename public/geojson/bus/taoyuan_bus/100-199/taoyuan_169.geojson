@@ -6,13 +6,14 @@
     "name": "169",
     "name_en": "169",
     "ref": "169",
-    "color": "#b91c1c",
+    "color": "#b45309",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/3300/map/2184/image",
     "operator_id": "1",
     "operator": "桃園客運",
-    "operator_en": "Taoyuan Bus Co., Ltd."
+    "operator_en": "Taoyuan Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "169",
         "name": "169",
         "name_en": "169",
-        "color": "#b91c1c",
-        "direction": 0
+        "color": "#b45309",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -623,6 +625,10 @@
           [
             121.22437,
             24.95693
+          ],
+          [
+            121.22388,
+            24.9572
           ]
         ]
       }
@@ -635,7 +641,7 @@
         "name": "中央延平路口",
         "name_en": "Zhongyang and Yanping Road Intersection",
         "line": "169",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4643"
       },
@@ -655,7 +661,7 @@
         "name": "中壢農會",
         "name_en": "Zhongli Farmers Association",
         "line": "169",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3773"
       },
@@ -675,7 +681,7 @@
         "name": "中央市場",
         "name_en": "Zhongyang Market",
         "line": "169",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "580"
       },
@@ -695,7 +701,7 @@
         "name": "埔頂橋",
         "name_en": "PuDing Bridge",
         "line": "169",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "752"
       },
@@ -715,7 +721,7 @@
         "name": "中山東路口",
         "name_en": "Zhongshan East Road Intersection",
         "line": "169",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "512"
       },
@@ -735,7 +741,7 @@
         "name": "中山東中北路口",
         "name_en": "Zhongshan E. and Zhongbei Rd. Intersection",
         "line": "169",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "639"
       },
@@ -755,7 +761,7 @@
         "name": "普仁(中原夜市)",
         "name_en": "PuRen(Zhongyuan Night Market)",
         "line": "169",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "920"
       },
@@ -775,7 +781,7 @@
         "name": "普仁新村",
         "name_en": "Puren Village",
         "line": "169",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "607"
       },
@@ -795,7 +801,7 @@
         "name": "環中東路口",
         "name_en": "Huanzhong E. Road Intersection",
         "line": "169",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1187"
       },
@@ -815,7 +821,7 @@
         "name": "榮民服務處",
         "name_en": "Taoyuan County Veterans Service Office",
         "line": "169",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "605"
       },
@@ -835,7 +841,7 @@
         "name": "普仁國小",
         "name_en": "Puren Elementary School",
         "line": "169",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "603"
       },
@@ -855,7 +861,7 @@
         "name": "金鋒市場",
         "name_en": "JinFeng Market",
         "line": "169",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3278"
       },
@@ -875,7 +881,7 @@
         "name": "六泰新村",
         "name_en": "LiouTai New Village",
         "line": "169",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1130"
       },
@@ -895,7 +901,7 @@
         "name": "龍慈路口",
         "name_en": "Longci Road Intersection",
         "line": "169",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3247"
       },
@@ -915,7 +921,7 @@
         "name": "仁美",
         "name_en": "RenMei",
         "line": "169",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "694"
       },
@@ -935,7 +941,7 @@
         "name": "電信器材場",
         "name_en": "Telcom Equipment Market",
         "line": "169",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4596"
       },
@@ -955,7 +961,7 @@
         "name": "富台國小",
         "name_en": "Fu-Tai Elementary School",
         "line": "169",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3292"
       },
@@ -975,7 +981,7 @@
         "name": "富台",
         "name_en": "Futai",
         "line": "169",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "839"
       },
@@ -995,7 +1001,7 @@
         "name": "北區健保署(榮民南路)",
         "name_en": "NHIA(RungMin S. Road)",
         "line": "169",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "799"
       },
@@ -1015,7 +1021,7 @@
         "name": "萬寶龍社區",
         "name_en": "WanBauLung Community",
         "line": "169",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3370"
       },
@@ -1035,7 +1041,7 @@
         "name": "榮民南華勛街口",
         "name_en": "Rongmin S. and Huaxun St. Intersection",
         "line": "169",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4533"
       },
@@ -1055,7 +1061,7 @@
         "name": "榮民南仁慈路口",
         "name_en": "Rongmin S. and Renci Rd. Intersection",
         "line": "169",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4531"
       },
@@ -1075,7 +1081,7 @@
         "name": "金車公司",
         "name_en": "KingCar Industrial Co.  Ltd.",
         "line": "169",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2940"
       },
@@ -1095,7 +1101,7 @@
         "name": "活動中心",
         "name_en": "Activity Center",
         "line": "169",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "299"
       },
@@ -1115,7 +1121,7 @@
         "name": "華勛五村",
         "name_en": "HuaShiun 5th Village",
         "line": "169",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5240"
       },
@@ -1135,7 +1141,7 @@
         "name": "華勛街141巷",
         "name_en": "Huashiun Street Lane 141",
         "line": "169",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "576"
       },
@@ -1155,7 +1161,7 @@
         "name": "華勛市場",
         "name_en": "HuaShiun Market",
         "line": "169",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5047"
       },
@@ -1175,7 +1181,7 @@
         "name": "土地公",
         "name_en": "TuDiGung",
         "line": "169",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1068"
       },
@@ -1195,7 +1201,7 @@
         "name": "榮美社區",
         "name_en": "RungMei Community",
         "line": "169",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5234"
       },
@@ -1215,7 +1221,7 @@
         "name": "仁美里",
         "name_en": "RenMei Village",
         "line": "169",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1128"
       },
@@ -1235,7 +1241,7 @@
         "name": "榮民南龍東路口",
         "name_en": "Rongmin S. and Longdong Rd. Intersection",
         "line": "169",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4977"
       },
@@ -1255,7 +1261,7 @@
         "name": "榮民南路",
         "name_en": "RungMin S. Road",
         "line": "169",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6289"
       },
@@ -1275,7 +1281,7 @@
         "name": "萬寶龍社區",
         "name_en": "WanBauLung Community",
         "line": "169",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3371"
       },
@@ -1295,7 +1301,7 @@
         "name": "北區健保署(榮民南路)",
         "name_en": "NHIA(RungMin S. Road)",
         "line": "169",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "800"
       },
@@ -1315,7 +1321,7 @@
         "name": "富台",
         "name_en": "Futai",
         "line": "169",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "840"
       },
@@ -1335,7 +1341,7 @@
         "name": "富台國小",
         "name_en": "Fu-Tai Elementary School",
         "line": "169",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3293"
       },
@@ -1355,7 +1361,7 @@
         "name": "電信器材場",
         "name_en": "Telcom Equipment Market",
         "line": "169",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4597"
       },
@@ -1375,7 +1381,7 @@
         "name": "仁美",
         "name_en": "RenMei",
         "line": "169",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "695"
       },
@@ -1395,7 +1401,7 @@
         "name": "龍慈路口",
         "name_en": "Longci Road Intersection",
         "line": "169",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6912"
       },
@@ -1415,7 +1421,7 @@
         "name": "六泰新村",
         "name_en": "LiouTai New Village",
         "line": "169",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1131"
       },
@@ -1435,7 +1441,7 @@
         "name": "金鋒市場",
         "name_en": "JinFeng Market",
         "line": "169",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3279"
       },
@@ -1455,7 +1461,7 @@
         "name": "普仁國小",
         "name_en": "Puren Elementary School",
         "line": "169",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "604"
       },
@@ -1475,7 +1481,7 @@
         "name": "榮民服務處",
         "name_en": "Taoyuan County Veterans Service Office",
         "line": "169",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "606"
       },
@@ -1495,7 +1501,7 @@
         "name": "環中東路口",
         "name_en": "Huanzhong E. Road Intersection",
         "line": "169",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1188"
       },
@@ -1515,7 +1521,7 @@
         "name": "普仁新村",
         "name_en": "Puren Village",
         "line": "169",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "608"
       },
@@ -1535,7 +1541,7 @@
         "name": "普仁(中原夜市)",
         "name_en": "PuRen(Zhongyuan Night Market)",
         "line": "169",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "921"
       },
@@ -1555,7 +1561,7 @@
         "name": "中山東中北路口",
         "name_en": "Zhongshan E. and Zhongbei Rd. Intersection",
         "line": "169",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "640"
       },
@@ -1575,7 +1581,7 @@
         "name": "中山東路口",
         "name_en": "Zhongshan East Road Intersection",
         "line": "169",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "513"
       },
@@ -1595,7 +1601,7 @@
         "name": "埔頂橋",
         "name_en": "PuDing Bridge",
         "line": "169",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "751"
       },
@@ -1615,7 +1621,7 @@
         "name": "中央市場",
         "name_en": "Zhongyang Market",
         "line": "169",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "579"
       },
@@ -1635,7 +1641,7 @@
         "name": "中壢農會",
         "name_en": "Zhongli Farmers Association",
         "line": "169",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3772"
       },
@@ -1655,7 +1661,7 @@
         "name": "中央延平路口",
         "name_en": "Zhongyang and Yanping Road Intersection",
         "line": "169",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4643"
       },

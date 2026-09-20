@@ -6,13 +6,14 @@
     "name": "7B",
     "name_en": "7B",
     "ref": "7B",
-    "color": "#86198f",
+    "color": "#3730a3",
     "city_id": "KinmenCounty",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.kinmen.gov.tw/api/route/713/map/110/image",
     "operator_id": "0001",
     "operator": "金門",
-    "operator_en": "City Bus and Ferry Management Office, Kinmen County"
+    "operator_en": "City Bus and Ferry Management Office, Kinmen County",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "7B",
         "name": "7B",
         "name_en": "7B",
-        "color": "#86198f",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -623,6 +625,10 @@
           [
             118.31994,
             24.43323
+          ],
+          [
+            118.32005,
+            24.43291
           ]
         ]
       }
@@ -635,7 +641,7 @@
         "name": "金城站",
         "name_en": "Jincheng Station",
         "line": "7B",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "424"
       },
@@ -655,7 +661,7 @@
         "name": "衛生所",
         "name_en": "Health Center",
         "line": "7B",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "58"
       },
@@ -675,7 +681,7 @@
         "name": "中正國小",
         "name_en": "ZhongZheng Elementary School",
         "line": "7B",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "59"
       },
@@ -695,7 +701,7 @@
         "name": "金城國中",
         "name_en": "Jincheng Junior High School",
         "line": "7B",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "61"
       },
@@ -715,7 +721,7 @@
         "name": "體育館",
         "name_en": "Gymnasium",
         "line": "7B",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "62"
       },
@@ -735,7 +741,7 @@
         "name": "夏墅",
         "name_en": "Xiashu",
         "line": "7B",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "381"
       },
@@ -755,7 +761,7 @@
         "name": "延平郡王祠",
         "name_en": "Koxinga Shrine (Yanping Junwang Temple)",
         "line": "7B",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "382"
       },
@@ -775,7 +781,7 @@
         "name": "延平路",
         "name_en": "YanPing Road",
         "line": "7B",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "982"
       },
@@ -795,7 +801,7 @@
         "name": "后豐港",
         "name_en": "Houfenggang",
         "line": "7B",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "425"
       },
@@ -815,7 +821,7 @@
         "name": "向陽吉第二",
         "name_en": "Xiangyangji 2",
         "line": "7B",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "384"
       },
@@ -835,7 +841,7 @@
         "name": "三叉路口",
         "name_en": "Three-Way Intersections",
         "line": "7B",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "353"
       },
@@ -855,7 +861,7 @@
         "name": "金豐路一",
         "name_en": "Jinfeng Road 1",
         "line": "7B",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "1010"
       },
@@ -875,7 +881,7 @@
         "name": "金門港旅運中心",
         "name_en": "Kinmen Port Passenger Center",
         "line": "7B",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "1041"
       },
@@ -895,7 +901,7 @@
         "name": "水頭旅服中心",
         "name_en": "ShuiTou Service Center",
         "line": "7B",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "975"
       },
@@ -915,7 +921,7 @@
         "name": "稚暉亭",
         "name_en": "Jhihhuei Tin",
         "line": "7B",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "386"
       },
@@ -935,7 +941,7 @@
         "name": "廟口",
         "name_en": "Miaokou",
         "line": "7B",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "373"
       },
@@ -955,7 +961,7 @@
         "name": "水頭村莊",
         "name_en": "Shuitou Village",
         "line": "7B",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "374"
       },
@@ -975,7 +981,7 @@
         "name": "水頭圓環",
         "name_en": "Shuitou Cirque ",
         "line": "7B",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "335"
       },
@@ -995,7 +1001,7 @@
         "name": "金城後山",
         "name_en": "Jincheng HouSan",
         "line": "7B",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "336"
       },
@@ -1015,7 +1021,7 @@
         "name": "西海路二段",
         "name_en": "Sihai Rd.",
         "line": "7B",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "337"
       },
@@ -1035,7 +1041,7 @@
         "name": "宏玻陶瓷廠",
         "name_en": "Hongbo Ceramic Factory",
         "line": "7B",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "338"
       },
@@ -1055,7 +1061,7 @@
         "name": "三叉路口",
         "name_en": "Three-Way Intersections",
         "line": "7B",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "339"
       },
@@ -1075,7 +1081,7 @@
         "name": "向陽吉第一",
         "name_en": "Xiangyangji 1",
         "line": "7B",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "375"
       },
@@ -1095,7 +1101,7 @@
         "name": "空中大學",
         "name_en": "National Open University",
         "line": "7B",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "376"
       },
@@ -1115,7 +1121,7 @@
         "name": "水試所",
         "name_en": "Fisheries Research Institute",
         "line": "7B",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "377"
       },
@@ -1135,7 +1141,7 @@
         "name": "體育館",
         "name_en": "Gymnasium",
         "line": "7B",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "131"
       },
@@ -1155,7 +1161,7 @@
         "name": "金城國中",
         "name_en": "Jincheng Junior High School",
         "line": "7B",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "132"
       },
@@ -1175,7 +1181,7 @@
         "name": "中正國小",
         "name_en": "ZhongZheng Elementary School",
         "line": "7B",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "134"
       },
@@ -1195,7 +1201,7 @@
         "name": "衛生所",
         "name_en": "Health Center",
         "line": "7B",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "135"
       },
@@ -1215,7 +1221,7 @@
         "name": "金城站",
         "name_en": "Jincheng Station",
         "line": "7B",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "0"
       },

@@ -6,13 +6,14 @@
     "name": "226",
     "name_en": "226",
     "ref": "226",
-    "color": "#b91c1c",
+    "color": "#b45309",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/2260/map/2469/image",
     "operator_id": "1",
     "operator": "桃園客運",
-    "operator_en": "Taoyuan Bus Co., Ltd."
+    "operator_en": "Taoyuan Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "226",
         "name": "226",
         "name_en": "226",
-        "color": "#b91c1c",
-        "direction": 0
+        "color": "#b45309",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -987,6 +989,10 @@
           [
             121.2864,
             25.00436
+          ],
+          [
+            121.28644,
+            25.00424
           ]
         ]
       }
@@ -999,7 +1005,7 @@
         "name": "中路微型轉運站",
         "name_en": "Zhonglu Micro Transit Hub",
         "line": "226",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3519"
       },
@@ -1019,7 +1025,7 @@
         "name": "臺灣桃園地方法院及地方檢察署",
         "name_en": "Taiwan Taoyuan District Court & Prosecutors Office",
         "line": "226",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3992"
       },
@@ -1039,7 +1045,7 @@
         "name": "中路運動公園",
         "name_en": "Zhonglu Sports Park",
         "line": "226",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6992"
       },
@@ -1059,7 +1065,7 @@
         "name": "正光慈文路口",
         "name_en": "Zhengguang Ciwen Rd Intersection",
         "line": "226",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6978"
       },
@@ -1079,7 +1085,7 @@
         "name": "向陽運動公園",
         "name_en": "Xiangyang Park",
         "line": "226",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6977"
       },
@@ -1099,7 +1105,7 @@
         "name": "廈門正光路口",
         "name_en": "Xiamen Zhengguang Rd Intersection",
         "line": "226",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3110"
       },
@@ -1119,7 +1125,7 @@
         "name": "桃園區公所",
         "name_en": "Taoyuan District Office",
         "line": "226",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6850"
       },
@@ -1139,7 +1145,7 @@
         "name": "府前郵局",
         "name_en": "Fuqian Post Office",
         "line": "226",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "858"
       },
@@ -1159,7 +1165,7 @@
         "name": "桃園市政府",
         "name_en": "Taoyuan City Government",
         "line": "226",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "334"
       },
@@ -1179,7 +1185,7 @@
         "name": "中山育樂街口",
         "name_en": "Zhongshan and Yule St. Intersection",
         "line": "226",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "279"
       },
@@ -1199,7 +1205,7 @@
         "name": "中山三民路口",
         "name_en": "Zhongshan and Sanmin Rd. Intersection",
         "line": "226",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "860"
       },
@@ -1219,7 +1225,7 @@
         "name": "三民中山路口",
         "name_en": "SanMin and JungShan Rd. Intersection",
         "line": "226",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1749"
       },
@@ -1239,7 +1245,7 @@
         "name": "南門市場",
         "name_en": "Nanmen Market",
         "line": "226",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "861"
       },
@@ -1259,7 +1265,7 @@
         "name": "建國三民路口",
         "name_en": "JianGuo and Sanmin Rd. Intersection",
         "line": "226",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3330"
       },
@@ -1279,7 +1285,7 @@
         "name": "建國郵局",
         "name_en": "Jiangou Post Office",
         "line": "226",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3328"
       },
@@ -1299,7 +1305,7 @@
         "name": "建國路口",
         "name_en": "JianGuo Road Intersection",
         "line": "226",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3067"
       },
@@ -1319,7 +1325,7 @@
         "name": "福豐公園",
         "name_en": "Fufeng Park",
         "line": "226",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3326"
       },
@@ -1339,7 +1345,7 @@
         "name": "福豐街口",
         "name_en": "Fufeng St. Intersection",
         "line": "226",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3324"
       },
@@ -1359,7 +1365,7 @@
         "name": "大林延平路口",
         "name_en": "DalinYanping Rd., Intersection",
         "line": "226",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6064"
       },
@@ -1379,7 +1385,7 @@
         "name": "長安街口",
         "name_en": "Changan St. Intersection",
         "line": "226",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3322"
       },
@@ -1399,7 +1405,7 @@
         "name": "林森路6巷",
         "name_en": "Linsen Rd. Lane 6",
         "line": "226",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3351"
       },
@@ -1419,7 +1425,7 @@
         "name": "林森路",
         "name_en": "Linsen Rd.",
         "line": "226",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3318"
       },
@@ -1439,7 +1445,7 @@
         "name": "紹興街口",
         "name_en": "Shaoxing St. Intersection",
         "line": "226",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3319"
       },
@@ -1459,7 +1465,7 @@
         "name": "宋天宮",
         "name_en": "Songtien Temple",
         "line": "226",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3317"
       },
@@ -1479,7 +1485,7 @@
         "name": "大林寺",
         "name_en": "Dalin Temple",
         "line": "226",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6062"
       },
@@ -1499,7 +1505,7 @@
         "name": "昆明路",
         "name_en": "Kunming Rd.",
         "line": "226",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3315"
       },
@@ -1519,7 +1525,7 @@
         "name": "建國國小",
         "name_en": "Jianguo Elementary School",
         "line": "226",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3311"
       },
@@ -1539,7 +1545,7 @@
         "name": "桃園婦女館",
         "name_en": "Center for Women",
         "line": "226",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "874"
       },
@@ -1559,7 +1565,7 @@
         "name": "延平公園",
         "name_en": "Yanping Park",
         "line": "226",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "891"
       },
@@ -1579,7 +1585,7 @@
         "name": "百年富邑",
         "name_en": "Bainianfuyi",
         "line": "226",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "889"
       },
@@ -1599,7 +1605,7 @@
         "name": "大灣店",
         "name_en": "Dawandian",
         "line": "226",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6435"
       },
@@ -1619,7 +1625,7 @@
         "name": "桃鶯樹仁二街口",
         "name_en": "Taoy-Ing Shu-Ren 2 Street",
         "line": "226",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5293"
       },
@@ -1639,7 +1645,7 @@
         "name": "住都飯店",
         "name_en": "Chuto Hotel",
         "line": "226",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3382"
       },
@@ -1659,7 +1665,7 @@
         "name": "樹仁三街",
         "name_en": "Shuren 3th St.",
         "line": "226",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "886"
       },
@@ -1679,7 +1685,7 @@
         "name": "榮華街63巷",
         "name_en": "Ronghua St. Lane 63",
         "line": "226",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "884"
       },
@@ -1699,7 +1705,7 @@
         "name": "榮華街64巷",
         "name_en": "Ronghua St. Lane 64",
         "line": "226",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "882"
       },
@@ -1719,7 +1725,7 @@
         "name": "大樹派出所",
         "name_en": "Dashu Police Station",
         "line": "226",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "880"
       },
@@ -1739,7 +1745,7 @@
         "name": "建德國小",
         "name_en": "Jian De Elementary School",
         "line": "226",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "878"
       },
@@ -1759,7 +1765,7 @@
         "name": "延平路口",
         "name_en": "Yanping Road Intersection",
         "line": "226",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "876"
       },
@@ -1779,7 +1785,7 @@
         "name": "桃園婦女館",
         "name_en": "Center for Women",
         "line": "226",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "873"
       },
@@ -1799,7 +1805,7 @@
         "name": "聖保祿醫院",
         "name_en": "St. Pauls Hospital",
         "line": "226",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6582"
       },
@@ -1819,7 +1825,7 @@
         "name": "德豐街口",
         "name_en": "Defeng St. Entrance",
         "line": "226",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6479"
       },
@@ -1839,7 +1845,7 @@
         "name": "南豐三街",
         "name_en": "Nanfeng 3th St.",
         "line": "226",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "868"
       },
@@ -1859,7 +1865,7 @@
         "name": "陽明高中",
         "name_en": "National Yang Ming senior high school",
         "line": "226",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "867"
       },
@@ -1879,7 +1885,7 @@
         "name": "南豐二街口",
         "name_en": "Nanfeng 2nd St. Intersection",
         "line": "226",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "866"
       },
@@ -1899,7 +1905,7 @@
         "name": "漢中路口",
         "name_en": "Hanzhong Road Intersection",
         "line": "226",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "864"
       },
@@ -1919,7 +1925,7 @@
         "name": "建國路252巷",
         "name_en": "Ln. 252 JianGuo Rd.",
         "line": "226",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6437"
       },
@@ -1939,7 +1945,7 @@
         "name": "南門市場",
         "name_en": "Nanmen Market",
         "line": "226",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "862"
       },
@@ -1959,7 +1965,7 @@
         "name": "中山三民路口",
         "name_en": "Zhongshan and Sanmin Rd. Intersection",
         "line": "226",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "859"
       },
@@ -1979,7 +1985,7 @@
         "name": "中山育樂街口",
         "name_en": "Zhongshan and Yule St. Intersection",
         "line": "226",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "278"
       },
@@ -1999,7 +2005,7 @@
         "name": "桃園市政府",
         "name_en": "Taoyuan City Government",
         "line": "226",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "335"
       },
@@ -2019,7 +2025,7 @@
         "name": "桃園區公所(正門)",
         "name_en": "Civil Affairs Office of Taoyuan District(Front Door)",
         "line": "226",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6856"
       },
@@ -2039,7 +2045,7 @@
         "name": "文化局",
         "name_en": "Dept. of Cultural Affairs",
         "line": "226",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1854"
       },
@@ -2059,7 +2065,7 @@
         "name": "廈門正光路口",
         "name_en": "Xiamen Zhengguang Rd Intersection",
         "line": "226",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3111"
       },
@@ -2079,7 +2085,7 @@
         "name": "向陽運動公園",
         "name_en": "Xiangyang Park",
         "line": "226",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6982"
       },
@@ -2099,7 +2105,7 @@
         "name": "正光慈文路口",
         "name_en": "Zhengguang Ciwen Rd Intersection",
         "line": "226",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6981"
       },
@@ -2119,7 +2125,7 @@
         "name": "中路運動公園",
         "name_en": "Zhonglu Sports Park",
         "line": "226",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6993"
       },
@@ -2139,7 +2145,7 @@
         "name": "中路微型轉運站",
         "name_en": "Zhonglu Micro Transit Hub",
         "line": "226",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3519"
       },

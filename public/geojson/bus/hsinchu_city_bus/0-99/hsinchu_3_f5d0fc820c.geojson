@@ -6,13 +6,14 @@
     "name": "世博3號",
     "name_en": "世博3號",
     "ref": "世博3號",
-    "color": "#0e7490",
+    "color": "#92400e",
     "city_id": "Hsinchu",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://web.taiwanbus.tw/MISUploadData/Schematic/file/0573.jpg",
     "operator_id": "13",
     "operator": "新竹客運",
-    "operator_en": "Hsinchu Bus Co., Ltd."
+    "operator_en": "Hsinchu Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "世博3號",
         "name": "世博3號",
         "name_en": "世博3號",
-        "color": "#0e7490",
-        "direction": 0
+        "color": "#92400e",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -2495,6 +2497,10 @@
           [
             120.97585,
             24.80143
+          ],
+          [
+            120.97586,
+            24.80144
           ]
         ]
       }
@@ -2507,7 +2513,7 @@
         "name": "後站(公園路口)",
         "name_en": "Rear Station",
         "line": "世博3號",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "131851"
       },
@@ -2527,7 +2533,7 @@
         "name": "體育館",
         "name_en": "Gymnasium",
         "line": "世博3號",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "131852"
       },
@@ -2547,7 +2553,7 @@
         "name": "體育場",
         "name_en": "Stadium",
         "line": "世博3號",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "131853"
       },
@@ -2567,7 +2573,7 @@
         "name": "大潤發1站",
         "name_en": "RT-Mart 1st Stop",
         "line": "世博3號",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "131854"
       },
@@ -2587,7 +2593,7 @@
         "name": "新光路口",
         "name_en": "Xin Guang Road Entrance",
         "line": "世博3號",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "131805"
       },
@@ -2607,7 +2613,7 @@
         "name": "世博台灣館",
         "name_en": "Hsinchu Taiwan Pavilion Expo Park",
         "line": "世博3號",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "131787"
       },
@@ -2627,7 +2633,7 @@
         "name": "愛買2站",
         "name_en": "Far Eastern Amart 2nd Stop",
         "line": "世博3號",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "131857"
       },
@@ -2647,7 +2653,7 @@
         "name": "愛買1站",
         "name_en": "Far Eastern Amart 1st Stop",
         "line": "世博3號",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "131858"
       },
@@ -2667,7 +2673,7 @@
         "name": "公學新城",
         "name_en": "Gong Xue Xin Cheng",
         "line": "世博3號",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130595"
       },
@@ -2687,7 +2693,7 @@
         "name": "孟竹國宅",
         "name_en": "Meng Zhu Public Housing",
         "line": "世博3號",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130596"
       },
@@ -2707,7 +2713,7 @@
         "name": "忠貞新村",
         "name_en": "Zhong Zhen Xin Village",
         "line": "世博3號",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130597"
       },
@@ -2727,7 +2733,7 @@
         "name": "文教新村",
         "name_en": "Wen Jiao Xin Village",
         "line": "世博3號",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "131862"
       },
@@ -2747,7 +2753,7 @@
         "name": "建功高中",
         "name_en": "Chien-Kung Senior High School",
         "line": "世博3號",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "131863"
       },
@@ -2767,7 +2773,7 @@
         "name": "金城一路站",
         "name_en": "Jin Cheng Yi Lu Zhan",
         "line": "世博3號",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "138108"
       },
@@ -2787,7 +2793,7 @@
         "name": "陽明交大光復路",
         "name_en": "NYCU Guangfu Road",
         "line": "世博3號",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130211"
       },
@@ -2807,7 +2813,7 @@
         "name": "科學園區",
         "name_en": "Hsinchu Science Park",
         "line": "世博3號",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "131865"
       },
@@ -2827,7 +2833,7 @@
         "name": "和平",
         "name_en": "He Ping",
         "line": "世博3號",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130213"
       },
@@ -2847,7 +2853,7 @@
         "name": "光武國中",
         "name_en": "Guang Wu Junior High School",
         "line": "世博3號",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130214"
       },
@@ -2867,7 +2873,7 @@
         "name": "科學園區別墅",
         "name_en": "Hsinchu Science Park Villa",
         "line": "世博3號",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130215"
       },
@@ -2887,7 +2893,7 @@
         "name": "日光燈",
         "name_en": "Ri Guang Deng",
         "line": "世博3號",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130216"
       },
@@ -2907,7 +2913,7 @@
         "name": "仙水",
         "name_en": "Xian Shui",
         "line": "世博3號",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130217"
       },
@@ -2927,7 +2933,7 @@
         "name": "世界高中",
         "name_en": "World Senior High School",
         "line": "世博3號",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130218"
       },
@@ -2947,7 +2953,7 @@
         "name": "金山八街",
         "name_en": "Jin Shan 8 Street",
         "line": "世博3號",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "131870"
       },
@@ -2967,7 +2973,7 @@
         "name": "集福宮",
         "name_en": "Ji Fu Temple",
         "line": "世博3號",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "131871"
       },
@@ -2987,7 +2993,7 @@
         "name": "金山公園",
         "name_en": "Jin Shan Park",
         "line": "世博3號",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "131872"
       },
@@ -3007,7 +3013,7 @@
         "name": "華清社區",
         "name_en": "Hua Qing Community",
         "line": "世博3號",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "131873"
       },
@@ -3027,7 +3033,7 @@
         "name": "新科國中",
         "name_en": "HsinKe Junior High School",
         "line": "世博3號",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "131874"
       },
@@ -3047,7 +3053,7 @@
         "name": "關東橋",
         "name_en": "Guan Dong Qiao",
         "line": "世博3號",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130225"
       },
@@ -3067,7 +3073,7 @@
         "name": "世界高中",
         "name_en": "World Senior High School",
         "line": "世博3號",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130226"
       },
@@ -3087,7 +3093,7 @@
         "name": "仙水",
         "name_en": "Xian Shui",
         "line": "世博3號",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130227"
       },
@@ -3107,7 +3113,7 @@
         "name": "日光燈",
         "name_en": "Ri Guang Deng",
         "line": "世博3號",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130228"
       },
@@ -3127,7 +3133,7 @@
         "name": "科學園區別墅",
         "name_en": "Hsinchu Science Park Villa",
         "line": "世博3號",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130229"
       },
@@ -3147,7 +3153,7 @@
         "name": "光武國中",
         "name_en": "Guang Wu Junior High School",
         "line": "世博3號",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130230"
       },
@@ -3167,7 +3173,7 @@
         "name": "和平",
         "name_en": "He Ping",
         "line": "世博3號",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130231"
       },
@@ -3187,7 +3193,7 @@
         "name": "科學園區",
         "name_en": "Hsinchu Science Park",
         "line": "世博3號",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130232"
       },
@@ -3207,7 +3213,7 @@
         "name": "陽明交大光復路",
         "name_en": "NYCU Guangfu Road",
         "line": "世博3號",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "131880"
       },
@@ -3227,7 +3233,7 @@
         "name": "金城一路站",
         "name_en": "Jin Cheng Yi Lu Zhan",
         "line": "世博3號",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "138109"
       },
@@ -3247,7 +3253,7 @@
         "name": "建功高中",
         "name_en": "Chien-Kung Senior High School",
         "line": "世博3號",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130308"
       },
@@ -3267,7 +3273,7 @@
         "name": "文教新村",
         "name_en": "Wen Jiao Xin Village",
         "line": "世博3號",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130266"
       },
@@ -3287,7 +3293,7 @@
         "name": "忠貞新村",
         "name_en": "Zhong Zhen Xin Village",
         "line": "世博3號",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130590"
       },
@@ -3307,7 +3313,7 @@
         "name": "孟竹國宅",
         "name_en": "Meng Zhu Public Housing",
         "line": "世博3號",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130591"
       },
@@ -3327,7 +3333,7 @@
         "name": "公學新城",
         "name_en": "Gong Xue Xin Cheng",
         "line": "世博3號",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130592"
       },
@@ -3347,7 +3353,7 @@
         "name": "愛買1站",
         "name_en": "Far Eastern Amart 1st Stop",
         "line": "世博3號",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130593"
       },
@@ -3367,7 +3373,7 @@
         "name": "愛買2站",
         "name_en": "Far Eastern Amart 2nd Stop",
         "line": "世博3號",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "131887"
       },
@@ -3387,7 +3393,7 @@
         "name": "新光路口",
         "name_en": "Xin Guang Road Entrance",
         "line": "世博3號",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "131788"
       },
@@ -3407,7 +3413,7 @@
         "name": "大潤發1站",
         "name_en": "RT-Mart 1st Stop",
         "line": "世博3號",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "131890"
       },
@@ -3427,7 +3433,7 @@
         "name": "體育場",
         "name_en": "Stadium",
         "line": "世博3號",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "131891"
       },
@@ -3447,7 +3453,7 @@
         "name": "體育館",
         "name_en": "Gym",
         "line": "世博3號",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "131892"
       },

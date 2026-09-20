@@ -6,13 +6,14 @@
     "name": "717",
     "name_en": "717",
     "ref": "717",
-    "color": "#1e3a8a",
+    "color": "#ea580c",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/717/map/2080/image",
     "operator_id": "4",
     "operator": "統聯客運",
-    "operator_en": "United Highway Bus Co., Ltd."
+    "operator_en": "United Highway Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "717",
         "name": "717",
         "name_en": "717",
-        "color": "#1e3a8a",
-        "direction": 0
+        "color": "#ea580c",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1795,6 +1797,10 @@
           [
             121.24424,
             24.92537
+          ],
+          [
+            121.2441,
+            24.92536
           ]
         ]
       }
@@ -1807,7 +1813,7 @@
         "name": "龍岡圓環",
         "name_en": "Longgang Circle",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "585"
       },
@@ -1827,7 +1833,7 @@
         "name": "供應站",
         "name_en": "Fareware Service",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4496"
       },
@@ -1847,7 +1853,7 @@
         "name": "龍東路",
         "name_en": "Longdong Road",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "583"
       },
@@ -1867,7 +1873,7 @@
         "name": "貿易七村",
         "name_en": "MauYi 7th Village",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4498"
       },
@@ -1887,7 +1893,7 @@
         "name": "忠貞",
         "name_en": "Zhongzhen",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "2927"
       },
@@ -1907,7 +1913,7 @@
         "name": "龍文街口",
         "name_en": "Longwen Street Intersection",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "627"
       },
@@ -1927,7 +1933,7 @@
         "name": "基安二村",
         "name_en": "Jian 2nd Village",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4500"
       },
@@ -1947,7 +1953,7 @@
         "name": "龍東中山東路口",
         "name_en": "Longdong and Zhongshan East Road Intersection",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "581"
       },
@@ -1967,7 +1973,7 @@
         "name": "陸軍專科學校",
         "name_en": "Army Academy R.O.C.",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "3572"
       },
@@ -1987,7 +1993,7 @@
         "name": "榮民南華勛街口",
         "name_en": "Rongmin S. Rd and Huaxun St intersection",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4533"
       },
@@ -2007,7 +2013,7 @@
         "name": "榮民南仁慈路口",
         "name_en": "Rongmin S. Rd and Renci Rd intersection",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4531"
       },
@@ -2027,7 +2033,7 @@
         "name": "金車公司",
         "name_en": "King Car Company",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "2940"
       },
@@ -2047,7 +2053,7 @@
         "name": "晉元榮民南路口",
         "name_en": "Jinyuan Rd and Rongmin S. Rd intersection",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4502"
       },
@@ -2067,7 +2073,7 @@
         "name": "晉元華勛街口",
         "name_en": "Jinyuan Rd. and Huaxun St. intersection",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4504"
       },
@@ -2087,7 +2093,7 @@
         "name": "晉元仁德三街口",
         "name_en": "Jinyuan Rd. and Rende 3rd St. intersection",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4506"
       },
@@ -2107,7 +2113,7 @@
         "name": "仁美新村",
         "name_en": "Renmei New Village",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4508"
       },
@@ -2127,7 +2133,7 @@
         "name": "仁德公園",
         "name_en": "Rende Park",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4510"
       },
@@ -2147,7 +2153,7 @@
         "name": "崁頂廣福路口",
         "name_en": "Kanding and Guangfu Rd intersection",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4514"
       },
@@ -2167,7 +2173,7 @@
         "name": "廣福路1142巷",
         "name_en": "Guangfu Road 1142 lane",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4516"
       },
@@ -2187,7 +2193,7 @@
         "name": "廣福路1008巷",
         "name_en": "Guangfu Rd., Ln. 1008",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "5722"
       },
@@ -2207,7 +2213,7 @@
         "name": "廣福路879巷",
         "name_en": "Guangfu Road 879 lane",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4518"
       },
@@ -2227,7 +2233,7 @@
         "name": "廣興路口",
         "name_en": "Guangxing Rd. Intersection",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "1123"
       },
@@ -2247,7 +2253,7 @@
         "name": "中祥食品",
         "name_en": "Chung Hsiang Foods",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4520"
       },
@@ -2267,7 +2273,7 @@
         "name": "廣福路530巷",
         "name_en": "Guangfu Rd., Ln. 530",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4522"
       },
@@ -2287,7 +2293,7 @@
         "name": "廣福路389巷",
         "name_en": "Guangfu Rd., Ln. 389",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4524"
       },
@@ -2307,7 +2313,7 @@
         "name": "廣福路(廣隆街口)",
         "name_en": "Guanfu Rd.(Guanlung St. Intersection)",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4526"
       },
@@ -2327,7 +2333,7 @@
         "name": "景雲新村",
         "name_en": "JingYun New Village",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4528"
       },
@@ -2347,7 +2353,7 @@
         "name": "大湳市場",
         "name_en": "Danan Market",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "3767"
       },
@@ -2367,7 +2373,7 @@
         "name": "大湳站(G04)",
         "name_en": "Danan Station(G04)",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "1724"
       },
@@ -2387,7 +2393,7 @@
         "name": "陸光四村",
         "name_en": "Luguang 4th Village",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "1257"
       },
@@ -2407,7 +2413,7 @@
         "name": "介壽大智路口",
         "name_en": "Jieshou & Dazhi Rd. Intersection",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "3144"
       },
@@ -2427,7 +2433,7 @@
         "name": "大義里",
         "name_en": "Dayi Village",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "1259"
       },
@@ -2447,7 +2453,7 @@
         "name": "大成龍門社區",
         "name_en": "Dacheng Lungmen Community",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "1271"
       },
@@ -2467,7 +2473,7 @@
         "name": "八德轉運站",
         "name_en": "Bade Bus Station",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "6882"
       },
@@ -2487,7 +2493,7 @@
         "name": "永寧轉運站",
         "name_en": "Yongning Bus Station",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "6954"
       },
@@ -2507,7 +2513,7 @@
         "name": "大成龍門社區",
         "name_en": "Dacheng Lungmen Community",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "1272"
       },
@@ -2527,7 +2533,7 @@
         "name": "大義里",
         "name_en": "Dayi Village",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "1260"
       },
@@ -2547,7 +2553,7 @@
         "name": "介壽大智路口",
         "name_en": "Jieshou & Dazhi Rd. Intersection",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "7014"
       },
@@ -2567,7 +2573,7 @@
         "name": "陸光四村",
         "name_en": "The 4th village of Lu guang",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "1258"
       },
@@ -2587,7 +2593,7 @@
         "name": "大湳站(G04)",
         "name_en": "Danan Station(G04)",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "1723"
       },
@@ -2607,7 +2613,7 @@
         "name": "大湳市場",
         "name_en": "Danan Market",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "3766"
       },
@@ -2627,7 +2633,7 @@
         "name": "景雲新村",
         "name_en": "JingYun New Village",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4529"
       },
@@ -2647,7 +2653,7 @@
         "name": "廣福路(廣隆街口)",
         "name_en": "Guanfu Rd.(Guanlung St. Intersection)",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4527"
       },
@@ -2667,7 +2673,7 @@
         "name": "廣福路389巷",
         "name_en": "Guangfu Rd., Ln. 389",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4525"
       },
@@ -2687,7 +2693,7 @@
         "name": "廣福路530巷",
         "name_en": "Guangfu Rd., Ln. 530",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4523"
       },
@@ -2707,7 +2713,7 @@
         "name": "中祥食品",
         "name_en": "Chung Hsiang Foods",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4521"
       },
@@ -2727,7 +2733,7 @@
         "name": "廣興路口",
         "name_en": "Guangxing Rd. Intersection",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "1122"
       },
@@ -2747,7 +2753,7 @@
         "name": "廣福路879巷",
         "name_en": "Guangfu Road 879 lane",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4519"
       },
@@ -2767,7 +2773,7 @@
         "name": "廣福路1008巷",
         "name_en": "Guangfu Rd., Ln. 1008",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "5723"
       },
@@ -2787,7 +2793,7 @@
         "name": "廣福路1142巷",
         "name_en": "Guangfu Road 1142 lane",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4517"
       },
@@ -2807,7 +2813,7 @@
         "name": "崁頂廣福路口",
         "name_en": "Kanding and Guangfu Rd intersection",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4515"
       },
@@ -2827,7 +2833,7 @@
         "name": "仁德公園",
         "name_en": "Rende Park",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4511"
       },
@@ -2847,7 +2853,7 @@
         "name": "仁美新村",
         "name_en": "Renmei New Village",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4509"
       },
@@ -2867,7 +2873,7 @@
         "name": "晉元仁德三街口",
         "name_en": "Jinyuan Rd. and Rende 3rd St. intersection",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4507"
       },
@@ -2887,7 +2893,7 @@
         "name": "晉元華勛街口",
         "name_en": "Jinyuan Rd. and Huaxun St. intersection",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4505"
       },
@@ -2907,7 +2913,7 @@
         "name": "晉元榮民南路口",
         "name_en": "Jinyuan Rd and Rongmin S. Rd intersection",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4503"
       },
@@ -2927,7 +2933,7 @@
         "name": "金車公司",
         "name_en": "King Car Company",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "2941"
       },
@@ -2947,7 +2953,7 @@
         "name": "榮民南仁慈路口",
         "name_en": "Rongmin S. Rd / Renci Rd intersection",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4530"
       },
@@ -2967,7 +2973,7 @@
         "name": "榮民南華勛街口",
         "name_en": "Rongmin S. Rd and Huaxun St intersection",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4532"
       },
@@ -2987,7 +2993,7 @@
         "name": "陸軍專科學校",
         "name_en": "Army Academy R.O.C.",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "3573"
       },
@@ -3007,7 +3013,7 @@
         "name": "龍東中山東路口",
         "name_en": "Longdong and Zhongshan East Road Intersection",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "582"
       },
@@ -3027,7 +3033,7 @@
         "name": "基安二村",
         "name_en": "Jian 2nd Village",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4501"
       },
@@ -3047,7 +3053,7 @@
         "name": "龍文街口",
         "name_en": "Longwen Street Intersection",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "628"
       },
@@ -3067,7 +3073,7 @@
         "name": "忠貞",
         "name_en": "Zhongzhen",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "2926"
       },
@@ -3087,7 +3093,7 @@
         "name": "貿易七村",
         "name_en": "MauYi 7th Village",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4499"
       },
@@ -3107,7 +3113,7 @@
         "name": "龍東路",
         "name_en": "Longdong Road",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "584"
       },
@@ -3127,7 +3133,7 @@
         "name": "供應站",
         "name_en": "Fareware Service",
         "line": "717",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4497"
       },

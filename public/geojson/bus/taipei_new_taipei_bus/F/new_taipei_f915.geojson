@@ -6,13 +6,14 @@
     "name": "F915",
     "name_en": "F915",
     "ref": "F915",
-    "color": "#166534",
+    "color": "#6B8F9A",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.gov.taipei/File/Get/2b9a1e8e-4aa7-4a5b-9764-9b3939b5f05a?v=639248448824928084",
     "operator_id": "16254",
     "operator": "汐止區公所",
-    "operator_en": "Xizhi District Office"
+    "operator_en": "Xizhi District Office",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "F915",
         "name": "F915",
         "name_en": "F915",
-        "color": "#166534",
-        "direction": 0
+        "color": "#6B8F9A",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1403,6 +1405,10 @@
           [
             121.628246434193,
             25.0697061565605
+          ],
+          [
+            121.628205309756,
+            25.0696789527158
           ]
         ]
       }
@@ -1414,7 +1420,7 @@
         "ref": "F915",
         "name": "F915",
         "name_en": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 1
       },
       "geometry": {
@@ -2107,7 +2113,7 @@
         "name": "北峰里(中興路)",
         "name_en": "Beifeng Village(Zhongxing Rd.)",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "2732"
       },
@@ -2127,7 +2133,7 @@
         "name": "金龍市場",
         "name_en": "Jinlong Market",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70834"
       },
@@ -2147,7 +2153,7 @@
         "name": "世電社區",
         "name_en": "Shidian Community",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "2729"
       },
@@ -2167,7 +2173,7 @@
         "name": "社后消防隊",
         "name_en": "Shehou Fire Brigade",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "7687"
       },
@@ -2187,7 +2193,7 @@
         "name": "南陽街口",
         "name_en": "Nanyang St. Entrance",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165609359"
       },
@@ -2207,7 +2213,7 @@
         "name": "福德二路371號",
         "name_en": "No.371 Fude 2nd Rd.",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165609325"
       },
@@ -2227,7 +2233,7 @@
         "name": "環河市民活動中心",
         "name_en": "Huanhe Community Center",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70887"
       },
@@ -2247,7 +2253,7 @@
         "name": "環河里",
         "name_en": "Huanhe Village",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "7650"
       },
@@ -2267,7 +2273,7 @@
         "name": "泛碟科技",
         "name_en": "Pandisk Technology Co.",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "7647"
       },
@@ -2287,7 +2293,7 @@
         "name": "大樹木業",
         "name_en": "Dashu Wood Co.",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "7648"
       },
@@ -2307,7 +2313,7 @@
         "name": "北峰國小",
         "name_en": "Beifeng Elementary School",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "6753"
       },
@@ -2327,7 +2333,7 @@
         "name": "社后派出所",
         "name_en": "Shehou Police Station",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "2772"
       },
@@ -2347,7 +2353,7 @@
         "name": "工建路",
         "name_en": "Gongjian Rd.",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70934"
       },
@@ -2367,7 +2373,7 @@
         "name": "水都社區",
         "name_en": "Shuidu Community",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165609355"
       },
@@ -2387,7 +2393,7 @@
         "name": "忠孝里活動中心",
         "name_en": "Zhongxiao Village Community Center",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "2763"
       },
@@ -2407,7 +2413,7 @@
         "name": "樟樹二路口",
         "name_en": "Zhangshu 2nd Rd. Entrance",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603598"
       },
@@ -2427,7 +2433,7 @@
         "name": "樟樹灣",
         "name_en": "Zhang Shu Wan",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "2812"
       },
@@ -2447,7 +2453,7 @@
         "name": "南樟樹灣",
         "name_en": "South Zhang Shu River Band",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165609065"
       },
@@ -2467,7 +2473,7 @@
         "name": "遠東世界中心",
         "name_en": "Far East World Center",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1001151"
       },
@@ -2487,7 +2493,7 @@
         "name": "東方科學園區",
         "name_en": "Oriental Science Park",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "2765"
       },
@@ -2507,7 +2513,7 @@
         "name": "連興街口",
         "name_en": "Lianxing St. Intersection",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "7656"
       },
@@ -2527,7 +2533,7 @@
         "name": "汐止農會",
         "name_en": "Xizhi Farmers Association",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "2750"
       },
@@ -2547,7 +2553,7 @@
         "name": "汐止行政中心",
         "name_en": "Xizhi Administration Center",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "2740"
       },
@@ -2567,7 +2573,7 @@
         "name": "秀峰高中(忠孝東路)",
         "name_en": "Xioufong High School(Zhongxiao E. Rd.)",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "2758"
       },
@@ -2587,7 +2593,7 @@
         "name": "汐止火車站(忠孝東路)",
         "name_en": "Xizhi Rail Sta.(Zhongxiao E. Rd.)",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165606065"
       },
@@ -2607,7 +2613,7 @@
         "name": "茄苳路口",
         "name_en": "Qiedong Rd. Entrance",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70853"
       },
@@ -2627,7 +2633,7 @@
         "name": "摩登家庭社區",
         "name_en": "Modern Family Community",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1001152"
       },
@@ -2647,7 +2653,7 @@
         "name": "橋東",
         "name_en": "Qiaodong",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "477"
       },
@@ -2667,7 +2673,7 @@
         "name": "崇義高中(忠孝東路)",
         "name_en": "Chongyi Senior High School(Zhongxiao E. Rd.)",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1001150"
       },
@@ -2687,7 +2693,7 @@
         "name": "東方山河社區",
         "name_en": "Dongfang Shanhe Community",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70852"
       },
@@ -2707,7 +2713,7 @@
         "name": "國泰醫院",
         "name_en": "Cathay General Hospital",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "7632"
       },
@@ -2727,7 +2733,7 @@
         "name": "汐止",
         "name_en": "Xizhi",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1001113"
       },
@@ -2747,7 +2753,7 @@
         "name": "汐止公園",
         "name_en": "Xizhi Park",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "7630"
       },
@@ -2767,7 +2773,7 @@
         "name": "汐止公園",
         "name_en": "Xizhi Park",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165604554"
       },
@@ -2787,7 +2793,7 @@
         "name": "汐止火車站",
         "name_en": "Xizhi Rail Sta.",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70890"
       },
@@ -2807,7 +2813,7 @@
         "name": "國泰醫院",
         "name_en": "Cathay General Hospital",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "2816"
       },
@@ -2827,7 +2833,7 @@
         "name": "崇義高中(忠孝東路)",
         "name_en": "Chongyi Senior High School(Zhongxiao E. Rd.)",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1001149"
       },
@@ -2847,7 +2853,7 @@
         "name": "橋東",
         "name_en": "Qiaodong",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "2815"
       },
@@ -2867,7 +2873,7 @@
         "name": "摩登家庭社區",
         "name_en": "Modern Family Community",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1000869"
       },
@@ -2887,7 +2893,7 @@
         "name": "茄苳路口",
         "name_en": "Qiedong Rd. Entrance",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70854"
       },
@@ -2907,7 +2913,7 @@
         "name": "汐止火車站(忠孝東路)",
         "name_en": "Xizhi Rail Sta.(Zhongxiao E. Rd.)",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70966"
       },
@@ -2927,7 +2933,7 @@
         "name": "秀峰高中(忠孝東路)",
         "name_en": "Xioufong High School(Zhongxiao E. Rd.)",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "2759"
       },
@@ -2947,7 +2953,7 @@
         "name": "汐止行政中心",
         "name_en": "Xizhi Administration Center",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "2741"
       },
@@ -2967,7 +2973,7 @@
         "name": "汐止農會",
         "name_en": "XiZhi Farmers Association",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "7655"
       },
@@ -2987,7 +2993,7 @@
         "name": "連興街口",
         "name_en": "Lianxing St. Entrance",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "2793"
       },
@@ -3007,7 +3013,7 @@
         "name": "東方科學園區",
         "name_en": "Oriental Science Park",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "7660"
       },
@@ -3027,7 +3033,7 @@
         "name": "遠東世界中心",
         "name_en": "Far East World Center",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "2803"
       },
@@ -3047,7 +3053,7 @@
         "name": "南樟樹灣",
         "name_en": "South Zhang Shu River Band",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "2781"
       },
@@ -3067,7 +3073,7 @@
         "name": "樟樹灣",
         "name_en": "Zhang Shu Wan",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "2811"
       },
@@ -3087,7 +3093,7 @@
         "name": "樟樹二路口",
         "name_en": "Zhangshu 2nd Rd. Entrance",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165608915"
       },
@@ -3107,7 +3113,7 @@
         "name": "忠孝里活動中心",
         "name_en": "Zhongxiao Village Community Center",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "7680"
       },
@@ -3127,7 +3133,7 @@
         "name": "水都社區",
         "name_en": "Shuidu Community",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70938"
       },
@@ -3147,7 +3153,7 @@
         "name": "工建路",
         "name_en": "Gongjian Rd.",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "7624"
       },
@@ -3167,7 +3173,7 @@
         "name": "社后派出所",
         "name_en": "Shehou Police Station",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "7621"
       },
@@ -3187,7 +3193,7 @@
         "name": "台北奇蹟",
         "name_en": "Taipei Miracle",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "7674"
       },
@@ -3207,7 +3213,7 @@
         "name": "柏克力托兒所",
         "name_en": "Bokeli Day Care Center",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1001451"
       },
@@ -3227,7 +3233,7 @@
         "name": "生活大國社區",
         "name_en": "Shenghuo Daguo Community",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70873"
       },
@@ -3247,7 +3253,7 @@
         "name": "人情味小鎮",
         "name_en": "Renchingwei Xiaozhen Community",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "2718"
       },
@@ -3267,7 +3273,7 @@
         "name": "康福里",
         "name_en": "Kangfu Village",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "7652"
       },
@@ -3287,7 +3293,7 @@
         "name": "興福里",
         "name_en": "Xingfu Village",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "4172"
       },
@@ -3307,7 +3313,7 @@
         "name": "大汐止百貨",
         "name_en": "Daxizhi Department Stores",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "7686"
       },
@@ -3327,7 +3333,7 @@
         "name": "世電社區",
         "name_en": "Shidian Community",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "7619"
       },
@@ -3347,7 +3353,7 @@
         "name": "金龍市場",
         "name_en": "Jinlong Market",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70835"
       },
@@ -3367,7 +3373,7 @@
         "name": "北峰里(中興路)",
         "name_en": "Beifeng Village(Zhongxing Rd.)",
         "line": "F915",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "7617"
       },

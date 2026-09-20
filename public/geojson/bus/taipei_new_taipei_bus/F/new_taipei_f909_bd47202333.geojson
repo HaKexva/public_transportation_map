@@ -6,13 +6,14 @@
     "name": "F909伯爵",
     "name_en": "F909伯爵",
     "ref": "F909伯爵",
-    "color": "#166534",
+    "color": "#6B8F9A",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.gov.taipei/File/Get/1f110e0e-796d-4c0f-b7f6-ad885094876c?v=639248448824459349",
     "operator_id": "16254",
     "operator": "汐止區公所",
-    "operator_en": "Xizhi District Office"
+    "operator_en": "Xizhi District Office",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "F909伯爵",
         "name": "F909伯爵",
         "name_en": "F909伯爵",
-        "color": "#166534",
-        "direction": 0
+        "color": "#6B8F9A",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1079,6 +1081,10 @@
           [
             121.662542537233,
             25.0695485351093
+          ],
+          [
+            121.661845425653,
+            25.0692157337051
           ]
         ]
       }
@@ -1091,7 +1097,7 @@
         "name": "汐止",
         "name_en": "Xizhi",
         "line": "F909伯爵",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1001113"
       },
@@ -1111,7 +1117,7 @@
         "name": "汐止公園",
         "name_en": "Xizhi Park",
         "line": "F909伯爵",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "7630"
       },
@@ -1131,7 +1137,7 @@
         "name": "江北橋頭",
         "name_en": "Jiangbei Bridge",
         "line": "F909伯爵",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70991"
       },
@@ -1151,7 +1157,7 @@
         "name": "江北社區",
         "name_en": "Jiangbei Community",
         "line": "F909伯爵",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70989"
       },
@@ -1171,7 +1177,7 @@
         "name": "汐萬路一段",
         "name_en": "Xiwan Rd. Sec.1",
         "line": "F909伯爵",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70988"
       },
@@ -1191,7 +1197,7 @@
         "name": "電力公司",
         "name_en": "Taiwan Power Company",
         "line": "F909伯爵",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70997"
       },
@@ -1211,7 +1217,7 @@
         "name": "土地公廟",
         "name_en": "Tudigong Temple",
         "line": "F909伯爵",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603401"
       },
@@ -1231,7 +1237,7 @@
         "name": "北港溪口",
         "name_en": "Beigang Xikou",
         "line": "F909伯爵",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603417"
       },
@@ -1251,7 +1257,7 @@
         "name": "孝友別墅",
         "name_en": "Xiaoyou Villa",
         "line": "F909伯爵",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70994"
       },
@@ -1271,7 +1277,7 @@
         "name": "川口",
         "name_en": "Chuankou",
         "line": "F909伯爵",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603879"
       },
@@ -1291,7 +1297,7 @@
         "name": "川口橋",
         "name_en": "Chuankou Bridge",
         "line": "F909伯爵",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603876"
       },
@@ -1311,7 +1317,7 @@
         "name": "連峰街口",
         "name_en": "Lianfeng St. Entrance",
         "line": "F909伯爵",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603630"
       },
@@ -1331,7 +1337,7 @@
         "name": "蓬萊山莊",
         "name_en": "Penglai Village",
         "line": "F909伯爵",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "71099"
       },
@@ -1351,7 +1357,7 @@
         "name": "伯爵街14巷口(仁愛特區)",
         "name_en": "Lane 14 Bojue St. Intersection(Renai Zone)",
         "line": "F909伯爵",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603609"
       },
@@ -1371,7 +1377,7 @@
         "name": "伯爵街12巷口",
         "name_en": "Lane 12 Bojue St. Intersection",
         "line": "F909伯爵",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165604511"
       },
@@ -1391,7 +1397,7 @@
         "name": "伯爵街39巷口",
         "name_en": "Lane 39 Bojue St. Intersection",
         "line": "F909伯爵",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603869"
       },
@@ -1411,7 +1417,7 @@
         "name": "伯爵街47巷口",
         "name_en": "Lane 47 Bojue St. Intersection",
         "line": "F909伯爵",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "71106"
       },
@@ -1431,7 +1437,7 @@
         "name": "伯爵街52巷口",
         "name_en": "Lane 52 Bojue St. Intersection",
         "line": "F909伯爵",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "71107"
       },
@@ -1451,7 +1457,7 @@
         "name": "伯爵街59巷口",
         "name_en": "Lane 59 Bojue St. Intersection",
         "line": "F909伯爵",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70977"
       },
@@ -1471,7 +1477,7 @@
         "name": "博市社區(歡天館)",
         "name_en": "Boshi Community",
         "line": "F909伯爵",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70981"
       },
@@ -1491,7 +1497,7 @@
         "name": "伯爵街59巷口",
         "name_en": "Lane 59 Bojue St. Intersection",
         "line": "F909伯爵",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603597"
       },
@@ -1511,7 +1517,7 @@
         "name": "伯爵街52巷口",
         "name_en": "Lane 52 Bojue St. Intersection",
         "line": "F909伯爵",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603444"
       },
@@ -1531,7 +1537,7 @@
         "name": "伯爵街47巷口",
         "name_en": "Lane 47 Bojue St. Intersection",
         "line": "F909伯爵",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603442"
       },
@@ -1551,7 +1557,7 @@
         "name": "伯爵街39巷口",
         "name_en": "Lane 39 Bojue St. Intersection",
         "line": "F909伯爵",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "71105"
       },
@@ -1571,7 +1577,7 @@
         "name": "伯爵街12巷口",
         "name_en": "Lane 12 Bojue St. Intersection",
         "line": "F909伯爵",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "71061"
       },
@@ -1591,7 +1597,7 @@
         "name": "伯爵街14巷口(仁愛特區)",
         "name_en": "Lane 14 Bojue St. Intersection(Renai Zone)",
         "line": "F909伯爵",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165610384"
       },
@@ -1611,7 +1617,7 @@
         "name": "蓬萊山莊",
         "name_en": "Penglai Village",
         "line": "F909伯爵",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "71099"
       },
@@ -1631,7 +1637,7 @@
         "name": "連峰街口",
         "name_en": "Lianfeng St. Entrance",
         "line": "F909伯爵",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "71097"
       },
@@ -1651,7 +1657,7 @@
         "name": "川口橋",
         "name_en": "Chuankou Bridge",
         "line": "F909伯爵",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603848"
       },
@@ -1671,7 +1677,7 @@
         "name": "川口",
         "name_en": "Chuankou",
         "line": "F909伯爵",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "71085"
       },
@@ -1691,7 +1697,7 @@
         "name": "孝友別墅",
         "name_en": "Xiaoyou Villa",
         "line": "F909伯爵",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "71089"
       },
@@ -1711,7 +1717,7 @@
         "name": "北港溪口",
         "name_en": "Beigang Xikou",
         "line": "F909伯爵",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70974"
       },
@@ -1731,7 +1737,7 @@
         "name": "土地公廟",
         "name_en": "Tudigong Temple",
         "line": "F909伯爵",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70984"
       },
@@ -1751,7 +1757,7 @@
         "name": "電力公司",
         "name_en": "Taiwan Power Company",
         "line": "F909伯爵",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70998"
       },
@@ -1771,7 +1777,7 @@
         "name": "汐萬路一段",
         "name_en": "Xiwan Rd. Sec.1",
         "line": "F909伯爵",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70983"
       },
@@ -1791,7 +1797,7 @@
         "name": "江北社區",
         "name_en": "Jiangbei Community",
         "line": "F909伯爵",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70990"
       },
@@ -1811,7 +1817,7 @@
         "name": "江北橋頭",
         "name_en": "Jiangbei Bridge",
         "line": "F909伯爵",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70992"
       },
@@ -1831,7 +1837,7 @@
         "name": "汐止公園",
         "name_en": "Xizhi Park",
         "line": "F909伯爵",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165604554"
       },
@@ -1851,7 +1857,7 @@
         "name": "汐止火車站",
         "name_en": "Xizhi Rail Sta.",
         "line": "F909伯爵",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165610015"
       },

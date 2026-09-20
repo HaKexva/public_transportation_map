@@ -6,11 +6,12 @@
     "name": "T121",
     "name_en": "T121",
     "ref": "T121",
-    "color": "#7c2d12",
+    "color": "#4f46e5",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "operator_id": "29",
-    "operator": "九億租車"
+    "operator": "九億租車",
+    "loop": true
   },
   "features": [
     {
@@ -20,8 +21,9 @@
         "ref": "T121",
         "name": "T121",
         "name_en": "T121",
-        "color": "#7c2d12",
-        "direction": 0
+        "color": "#4f46e5",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1821,6 +1823,10 @@
           [
             121.30034,
             24.96468
+          ],
+          [
+            121.30032,
+            24.96378
           ]
         ]
       }
@@ -1833,7 +1839,7 @@
         "name": "介壽大智路口",
         "name_en": "Jieshou & Dazhi Rd. Intersection",
         "line": "T121",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "3144"
       },
@@ -1853,7 +1859,7 @@
         "name": "龍吟社區",
         "name_en": "Longying Community",
         "line": "T121",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "3558"
       },
@@ -1873,7 +1879,7 @@
         "name": "國際名邸社區(護國宮)",
         "name_en": "Guoji Mingdi Community (Huguo Temple)",
         "line": "T121",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "6036"
       },
@@ -1893,7 +1899,7 @@
         "name": "國聯街口",
         "name_en": "Guolian St. Intersection",
         "line": "T121",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "5726"
       },
@@ -1913,7 +1919,7 @@
         "name": "新興高中",
         "name_en": "ShinShing High School",
         "line": "T121",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "4769"
       },
@@ -1933,7 +1939,7 @@
         "name": "桃園醫院",
         "name_en": "Taoyuan General Hospital",
         "line": "T121",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "3745"
       },
@@ -1953,7 +1959,7 @@
         "name": "漁管處",
         "name_en": "Fishery Management Department",
         "line": "T121",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "5090"
       },
@@ -1973,7 +1979,7 @@
         "name": "元智大學",
         "name_en": "Yuan Ze University",
         "line": "T121",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "553"
       },
@@ -1993,7 +1999,7 @@
         "name": "興仁國小",
         "name_en": "ShingRen Elementary School",
         "line": "T121",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "556"
       },
@@ -2013,7 +2019,7 @@
         "name": "興仁公園",
         "name_en": "Singren Park",
         "line": "T121",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "4415"
       },
@@ -2033,7 +2039,7 @@
         "name": "篤行五村",
         "name_en": "DuShing 5th Village",
         "line": "T121",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "558"
       },
@@ -2053,7 +2059,7 @@
         "name": "白鷺市民活動中心",
         "name_en": "白鷺市民活動中心",
         "line": "T121",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "7826"
       },
@@ -2073,7 +2079,7 @@
         "name": "廣興路口",
         "name_en": "Guangxing Rd. Intersection",
         "line": "T121",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "1122"
       },
@@ -2093,7 +2099,7 @@
         "name": "中祥食品",
         "name_en": "Chung Hsiang Foods",
         "line": "T121",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "4520"
       },
@@ -2113,7 +2119,7 @@
         "name": "廣福路530巷",
         "name_en": "Guangfu Rd., Ln. 530",
         "line": "T121",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "4522"
       },
@@ -2133,7 +2139,7 @@
         "name": "廣福路389巷",
         "name_en": "Guangfu Rd., Ln. 389",
         "line": "T121",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "4524"
       },
@@ -2153,7 +2159,7 @@
         "name": "廣福路(廣隆街口)",
         "name_en": "Guanfu Rd.(Guanlung St. Intersection)",
         "line": "T121",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "4526"
       },
@@ -2173,7 +2179,7 @@
         "name": "陸光國宅",
         "name_en": "Luguang Public Housing",
         "line": "T121",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "1868"
       },
@@ -2193,7 +2199,7 @@
         "name": "陸光活動中心",
         "name_en": "Luguang Activity Center",
         "line": "T121",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "5679"
       },
@@ -2213,7 +2219,7 @@
         "name": "陸光四村",
         "name_en": "The 4th village of Lu guang",
         "line": "T121",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "1258"
       },
@@ -2233,7 +2239,7 @@
         "name": "介壽大智路口",
         "name_en": "Jieshou & Dazhi Rd. Intersection",
         "line": "T121",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "3143"
       },

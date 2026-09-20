@@ -36,6 +36,15 @@ class Transit::StationInfoQueryTest < ActiveSupport::TestCase
             "Elevator" => true,
             "ExitPosition" => { "PositionLon" => 121.42, "PositionLat" => 24.96 }
           }
+        ],
+        [ "v2/Rail/Metro/StationFacility/TRTC", "StationID eq 'BL01'" ] => [
+          {
+            "StationID" => "BL01",
+            "Elevators" => [ { "Description" => "往月台", "FloorLevel" => "B1" } ],
+            "Toilets" => [ { "Description" => "付費區外", "FloorLevel" => "1F" } ],
+            "InformationSpots" => [ { "Description" => "詢問處", "FloorLevel" => "1F" } ],
+            "DrinkingFountains" => []
+          }
         ]
       }
     )
@@ -50,7 +59,10 @@ class Transit::StationInfoQueryTest < ActiveSupport::TestCase
     assert_equal "1號出口", payload[:exits].first[:name]
     assert payload[:accessibility][:elevator]
     assert payload[:accessibility][:escalator]
-    assert_equal "tdx_station_exit", payload[:source]
+    assert payload[:accessibility][:toilet]
+    assert_equal 3, payload[:facilities].length
+    assert_includes payload[:source], "tdx_station_exit"
+    assert_includes payload[:source], "tdx_station_facility"
   end
 
   test "returns empty payload when ref missing" do

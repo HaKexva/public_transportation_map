@@ -1750,6 +1750,78 @@
   opacity: 0.85;
 }
 
+.route-info-panel__details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+}
+
+.route-info-panel__row {
+  display: grid;
+  grid-template-columns: 3.5rem 1fr;
+  gap: 0.4rem;
+  align-items: start;
+}
+
+.route-info-panel__label {
+  color: var(--muted-foreground);
+}
+
+.route-overlap-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.route-overlap-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0.55rem 0.6rem;
+  border: 1px solid color-mix(in oklch, var(--border) 80%, transparent);
+  border-radius: 0.55rem;
+}
+
+.route-overlap-card.is-primary {
+  border-color: color-mix(in oklch, var(--foreground) 28%, transparent);
+}
+
+.route-overlap-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.78rem;
+}
+
+.route-overlap-card__name {
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.route-overlap-card__sub {
+  font-size: 0.7rem;
+  color: var(--muted-foreground);
+}
+
+.route-overlap-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.route-overlap-card__detail {
+  border: 0;
+  background: transparent;
+  color: var(--foreground);
+  font-size: 0.72rem;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+}
+
 .vehicle-marker-icon--ghost {
   background: transparent !important;
   border: 0 !important;
@@ -1911,6 +1983,19 @@
   margin-top: 0.15rem;
   font-size: 0.68rem;
   color: var(--muted-foreground);
+}
+
+.station-info__facilities {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin-top: 0.55rem;
+}
+
+.station-info__facility {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
 }
 
 .map-float-panel__head {

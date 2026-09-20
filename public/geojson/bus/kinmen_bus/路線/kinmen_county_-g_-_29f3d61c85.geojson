@@ -6,13 +6,14 @@
     "name": "台灣好行-G線-金門大橋烈嶼線",
     "name_en": "台灣好行-G線-金門大橋烈嶼線",
     "ref": "台灣好行-G線-金門大橋烈嶼線",
-    "color": "#86198f",
+    "color": "#3730a3",
     "city_id": "KinmenCounty",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.kinmen.gov.tw/extend/route20230601/881.png",
     "operator_id": "0001",
     "operator": "金門",
-    "operator_en": "City Bus and Ferry Management Office, Kinmen County"
+    "operator_en": "City Bus and Ferry Management Office, Kinmen County",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "台灣好行-G線-金門大橋烈嶼線",
         "name": "台灣好行-G線-金門大橋烈嶼線",
         "name_en": "台灣好行-G線-金門大橋烈嶼線",
-        "color": "#86198f",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1551,6 +1553,10 @@
           [
             118.31994,
             24.43324
+          ],
+          [
+            118.32004,
+            24.43289
           ]
         ]
       }
@@ -1563,7 +1569,7 @@
         "name": "金城站",
         "name_en": "Jincheng Station",
         "line": "台灣好行-G線-金門大橋烈嶼線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "0"
       },
@@ -1583,7 +1589,7 @@
         "name": "金門大橋(湖下端下車導覽)",
         "name_en": "Kinmen bridge(HuXioa off car trip)",
         "line": "台灣好行-G線-金門大橋烈嶼線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "1020"
       },
@@ -1603,7 +1609,7 @@
         "name": "勇士堡、鐵漢堡",
         "name_en": "Fort Warrior,Tough guy",
         "line": "台灣好行-G線-金門大橋烈嶼線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "1021"
       },
@@ -1623,7 +1629,7 @@
         "name": "湖井頭戰史館",
         "name_en": "Kojingtou War History Museum",
         "line": "台灣好行-G線-金門大橋烈嶼線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "1022"
       },
@@ -1643,7 +1649,7 @@
         "name": "雙口海灘",
         "name_en": "Shuangkou Beach",
         "line": "台灣好行-G線-金門大橋烈嶼線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "1023"
       },
@@ -1663,7 +1669,7 @@
         "name": "沙溪堡",
         "name_en": "Shuangkou Beach",
         "line": "台灣好行-G線-金門大橋烈嶼線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "1024"
       },
@@ -1683,7 +1689,7 @@
         "name": "后麟步槍模擬射擊館",
         "name_en": "Houlin Rifle Simulation Shooting Hall",
         "line": "台灣好行-G線-金門大橋烈嶼線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "1025"
       },
@@ -1703,7 +1709,7 @@
         "name": "金城站",
         "name_en": "Jincheng Station",
         "line": "台灣好行-G線-金門大橋烈嶼線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "0"
       },

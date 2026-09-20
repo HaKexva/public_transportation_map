@@ -6,13 +6,14 @@
     "name": "雙層巴士",
     "name_en": "雙層巴士",
     "ref": "雙層巴士",
-    "color": "#15803d",
+    "color": "#a21caf",
     "city_id": "Tainan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://busmap.tainan.gov.tw/ebus/resources/PathPic/zh_TW/1901.jpg",
     "operator_id": "10001",
     "operator": "府城客運",
-    "operator_en": "TainanCityBus"
+    "operator_en": "TainanCityBus",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "雙層巴士",
         "name": "雙層巴士",
         "name_en": "雙層巴士",
-        "color": "#15803d",
-        "direction": 2
+        "color": "#a21caf",
+        "direction": 2,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -559,6 +561,10 @@
           [
             120.21068,
             22.99749
+          ],
+          [
+            120.21067,
+            22.99749
           ]
         ]
       }
@@ -571,7 +577,7 @@
         "name": "臺南火車站(成功路A)",
         "name_en": "Tainan Train Station(Chenggong Rd. A)",
         "line": "雙層巴士",
-        "color": "#15803d",
+        "color": "#a21caf",
         "direction": 2,
         "station_id": "1091"
       },
@@ -591,7 +597,7 @@
         "name": "赤崁樓",
         "name_en": "Chihkan Tower",
         "line": "雙層巴士",
-        "color": "#15803d",
+        "color": "#a21caf",
         "direction": 2,
         "station_id": "321"
       },
@@ -611,7 +617,7 @@
         "name": "中正商圈",
         "name_en": "Jhongjheng Commercial District",
         "line": "雙層巴士",
-        "color": "#15803d",
+        "color": "#a21caf",
         "direction": 2,
         "station_id": "1402"
       },
@@ -631,7 +637,7 @@
         "name": "安平漁人碼頭",
         "name_en": "Anping Fisherman’s Wharf",
         "line": "雙層巴士",
-        "color": "#15803d",
+        "color": "#a21caf",
         "direction": 2,
         "station_id": "1279"
       },
@@ -651,7 +657,7 @@
         "name": "億載金城",
         "name_en": "Eternal Golden Castle",
         "line": "雙層巴士",
-        "color": "#15803d",
+        "color": "#a21caf",
         "direction": 2,
         "station_id": "1400"
       },
@@ -671,7 +677,7 @@
         "name": "小西門(西門路)",
         "name_en": "Siaosimen(Simen Rd.)",
         "line": "雙層巴士",
-        "color": "#15803d",
+        "color": "#a21caf",
         "direction": 2,
         "station_id": "9281"
       },
@@ -691,7 +697,7 @@
         "name": "孔廟(臺灣文學館、臺南市美術館1館)",
         "name_en": "Confucius Temple(Museum of Taiwan Literature、Tainan Art Museum 1 Bldg.)",
         "line": "雙層巴士",
-        "color": "#15803d",
+        "color": "#a21caf",
         "direction": 2,
         "station_id": "284"
       },
@@ -711,7 +717,7 @@
         "name": "臺南火車站(成功路A)",
         "name_en": "Tainan Train Station(Chenggong Rd. A)",
         "line": "雙層巴士",
-        "color": "#15803d",
+        "color": "#a21caf",
         "direction": 2,
         "station_id": "1091"
       },

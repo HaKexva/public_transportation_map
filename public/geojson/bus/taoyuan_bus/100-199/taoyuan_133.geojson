@@ -6,13 +6,14 @@
     "name": "133",
     "name_en": "133",
     "ref": "133",
-    "color": "#9a3412",
+    "color": "#2563eb",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/133/map/1429/image",
     "operator_id": "2",
     "operator": "中壢客運",
-    "operator_en": "Chungli Bus Co., Ltd."
+    "operator_en": "Chungli Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "133",
         "name": "133",
         "name_en": "133",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -563,6 +565,10 @@
           [
             121.22401,
             24.95291
+          ],
+          [
+            121.22429,
+            24.95326
           ]
         ]
       }
@@ -575,7 +581,7 @@
         "name": "中壢客運中壢總站",
         "name_en": "Zhongli Bus Main Station",
         "line": "133",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "126"
       },
@@ -595,7 +601,7 @@
         "name": "第一銀行",
         "name_en": "First Bank",
         "line": "133",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "124"
       },
@@ -615,7 +621,7 @@
         "name": "第一市場",
         "name_en": "First Market",
         "line": "133",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "1402"
       },
@@ -635,7 +641,7 @@
         "name": "舊社",
         "name_en": "Jiushe",
         "line": "133",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "217"
       },
@@ -655,7 +661,7 @@
         "name": "新明國中(民族路)",
         "name_en": "Xinming Junior High School(Minzu Rd.)",
         "line": "133",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "6292"
       },
@@ -675,7 +681,7 @@
         "name": "廣興",
         "name_en": "Guangxing",
         "line": "133",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "213"
       },
@@ -695,7 +701,7 @@
         "name": "仁愛新村",
         "name_en": "Renai Village",
         "line": "133",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "211"
       },
@@ -715,7 +721,7 @@
         "name": "青果市場",
         "name_en": "Qingguo Market",
         "line": "133",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "208"
       },
@@ -735,7 +741,7 @@
         "name": "五權",
         "name_en": "Wuchiuan",
         "line": "133",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "15"
       },
@@ -755,7 +761,7 @@
         "name": "高雙里",
         "name_en": "Gaoshuang Village",
         "line": "133",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "204"
       },
@@ -775,7 +781,7 @@
         "name": "三民五興路口",
         "name_en": "Sanmin and Wuxing Road Intersection",
         "line": "133",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "202"
       },
@@ -795,7 +801,7 @@
         "name": "土地公廟",
         "name_en": "Tudigong Temple",
         "line": "133",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "198"
       },
@@ -815,7 +821,7 @@
         "name": "三民中正路口",
         "name_en": "Sanmin and Zhongzheng Rd. Intersection",
         "line": "133",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "5065"
       },
@@ -835,7 +841,7 @@
         "name": "中央大學正門",
         "name_en": "The Front Door of Central University",
         "line": "133",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "1225"
       },
@@ -855,7 +861,7 @@
         "name": "中央大學警衛室",
         "name_en": "National Central University Guard Room",
         "line": "133",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "224"
       },
@@ -875,7 +881,7 @@
         "name": "中大湖",
         "name_en": "Zhongda Lake",
         "line": "133",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "2148"
       },
@@ -895,7 +901,7 @@
         "name": "中央大學依仁堂",
         "name_en": "Yiren Hall, National Central University",
         "line": "133",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "196"
       },
@@ -915,7 +921,7 @@
         "name": "中央大學後門",
         "name_en": "The Back Door of Central University",
         "line": "133",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "225"
       },
@@ -935,7 +941,7 @@
         "name": "中央大學觀景台",
         "name_en": "National Central University Observatory",
         "line": "133",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "227"
       },
@@ -955,7 +961,7 @@
         "name": "中央大學正門",
         "name_en": "The Front Door of Central University",
         "line": "133",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "1226"
       },
@@ -975,7 +981,7 @@
         "name": "三民中正路口",
         "name_en": "Sanmin and Zhongzheng Rd. Intersection",
         "line": "133",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "5066"
       },
@@ -995,7 +1001,7 @@
         "name": "土地公廟",
         "name_en": "Tudigong Temple",
         "line": "133",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "197"
       },
@@ -1015,7 +1021,7 @@
         "name": "三民五興路口",
         "name_en": "Sanmin and Wuxing Road Intersection",
         "line": "133",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "201"
       },
@@ -1035,7 +1041,7 @@
         "name": "高雙里",
         "name_en": "Gaoshuang Village",
         "line": "133",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "203"
       },
@@ -1055,7 +1061,7 @@
         "name": "祐民醫院",
         "name_en": "Youmin Hospital",
         "line": "133",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "205"
       },
@@ -1075,7 +1081,7 @@
         "name": "五權",
         "name_en": "Wuchiuan",
         "line": "133",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "16"
       },
@@ -1095,7 +1101,7 @@
         "name": "青果市場",
         "name_en": "Qingguo Market",
         "line": "133",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "207"
       },
@@ -1115,7 +1121,7 @@
         "name": "仁愛新村",
         "name_en": "Renai Village",
         "line": "133",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "210"
       },
@@ -1135,7 +1141,7 @@
         "name": "廣興",
         "name_en": "Guangxing",
         "line": "133",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "212"
       },
@@ -1155,7 +1161,7 @@
         "name": "新明國中(民族路)",
         "name_en": "Xinming Junior High School(Minzu Rd.)",
         "line": "133",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "6293"
       },
@@ -1175,7 +1181,7 @@
         "name": "舊社",
         "name_en": "Jiushe",
         "line": "133",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "216"
       },
@@ -1195,7 +1201,7 @@
         "name": "河川教育中心",
         "name_en": "River Education Center",
         "line": "133",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "123"
       },
@@ -1215,7 +1221,7 @@
         "name": "第一銀行",
         "name_en": "First Bank",
         "line": "133",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "125"
       },
@@ -1235,7 +1241,7 @@
         "name": "中壢客運中壢總站",
         "name_en": "Zhongli Bus Zhongli Main Station",
         "line": "133",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "126"
       },

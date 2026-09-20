@@ -6,13 +6,14 @@
     "name": "F301",
     "name_en": "F301",
     "ref": "F301",
-    "color": "#92400e",
+    "color": "#6B8F9A",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.gov.taipei/File/Get/1d2982bf-c420-4582-be52-1abe45567e2e?v=639248448805865652",
     "operator_id": "16236",
     "operator": "三重區公所",
-    "operator_en": "Sanchong District Office"
+    "operator_en": "Sanchong District Office",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "F301",
         "name": "F301",
         "name_en": "F301",
-        "color": "#92400e",
-        "direction": 0
+        "color": "#6B8F9A",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -759,6 +761,10 @@
           [
             121.487994919737,
             25.0614702906225
+          ],
+          [
+            121.488025705913,
+            25.0613697253568
           ]
         ]
       }
@@ -771,7 +777,7 @@
         "name": "三重區公所(新北大道)",
         "name_en": "Sanchong City Office(New Taipei Blvd.)",
         "line": "F301",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "13210"
       },
@@ -791,7 +797,7 @@
         "name": "捷運菜寮站",
         "name_en": "MRT Cailiao Sta.",
         "line": "F301",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1000651"
       },
@@ -811,7 +817,7 @@
         "name": "菜寮(重新路)",
         "name_en": "Cailiao(Chongxin Rd.)",
         "line": "F301",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "13213"
       },
@@ -831,7 +837,7 @@
         "name": "五谷王廟",
         "name_en": "Wuguwang Temple",
         "line": "F301",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1000966"
       },
@@ -851,7 +857,7 @@
         "name": "捷運先嗇宮站",
         "name_en": "MRT Xianse Temple Sta.",
         "line": "F301",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "4688"
       },
@@ -871,7 +877,7 @@
         "name": "中興北街21號",
         "name_en": "No.21 Zhongxin North St.",
         "line": "F301",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603919"
       },
@@ -891,7 +897,7 @@
         "name": "中興北街123號",
         "name_en": "No.123 Zhongxin North St.",
         "line": "F301",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603712"
       },
@@ -911,7 +917,7 @@
         "name": "中興北街興德路口",
         "name_en": "Zhongxin North & Xingde Intersection",
         "line": "F301",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603713"
       },
@@ -931,7 +937,7 @@
         "name": "中興北街175巷口",
         "name_en": "Zhongxin North St. 175th Lane Entrance",
         "line": "F301",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73534"
       },
@@ -951,7 +957,7 @@
         "name": "光復路二段58號",
         "name_en": "No.58 Sec. 2 Guangfu Rd.",
         "line": "F301",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73543"
       },
@@ -971,7 +977,7 @@
         "name": "光復路一段138號",
         "name_en": "No.138 Sec. 1 Guangfu Rd.",
         "line": "F301",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73541"
       },
@@ -991,7 +997,7 @@
         "name": "光復路一段78號",
         "name_en": "No.78 Sec. 1 Guangfu Rd.",
         "line": "F301",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73542"
       },
@@ -1011,7 +1017,7 @@
         "name": "神農街口",
         "name_en": "Shennong St.",
         "line": "F301",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73551"
       },
@@ -1031,7 +1037,7 @@
         "name": "先嗇宮",
         "name_en": "Xianse Temple",
         "line": "F301",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73540"
       },
@@ -1051,7 +1057,7 @@
         "name": "清傳商職",
         "name_en": "Ching-Chwan Commercial High School",
         "line": "F301",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73548"
       },
@@ -1071,7 +1077,7 @@
         "name": "神農街369號",
         "name_en": "No.369 Shennong St.",
         "line": "F301",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165609965"
       },
@@ -1091,7 +1097,7 @@
         "name": "頂文路1號",
         "name_en": "No.1 Dingwen Rd.",
         "line": "F301",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165609556"
       },
@@ -1111,7 +1117,7 @@
         "name": "親水公園",
         "name_en": "Riverside Park",
         "line": "F301",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603640"
       },
@@ -1131,7 +1137,7 @@
         "name": "博愛新村",
         "name_en": "Boai New Village",
         "line": "F301",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "13217"
       },
@@ -1151,7 +1157,7 @@
         "name": "二重國小",
         "name_en": "Er Chong Elementary School",
         "line": "F301",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603710"
       },
@@ -1171,7 +1177,7 @@
         "name": "二重國中",
         "name_en": "Er Chong Junior High School",
         "line": "F301",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603718"
       },
@@ -1191,7 +1197,7 @@
         "name": "忠孝路口",
         "name_en": "Zhongxiao Rd. Entrance",
         "line": "F301",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "10619"
       },
@@ -1211,7 +1217,7 @@
         "name": "果菜市場",
         "name_en": "Wholesale Fruit and Vegetable Market",
         "line": "F301",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "10622"
       },
@@ -1231,7 +1237,7 @@
         "name": "明志國中",
         "name_en": "Mingzhi Junior High School",
         "line": "F301",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3431"
       },
@@ -1251,7 +1257,7 @@
         "name": "三重運動場",
         "name_en": "Sanchong Stadium",
         "line": "F301",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73454"
       },
@@ -1271,7 +1277,7 @@
         "name": "大同路口",
         "name_en": "Datong Rd. Entrance",
         "line": "F301",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1000149"
       },
@@ -1291,7 +1297,7 @@
         "name": "中山藝術公園",
         "name_en": "Zhongshan Art park",
         "line": "F301",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1000083"
       },
@@ -1311,7 +1317,7 @@
         "name": "三重區公所(新北大道)",
         "name_en": "Sanchong City Office(New Taipei Blvd.)",
         "line": "F301",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3394"
       },

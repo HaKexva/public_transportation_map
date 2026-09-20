@@ -6,12 +6,13 @@
     "name": "紅13",
     "name_en": "紅13",
     "ref": "紅13",
-    "color": "#0B7A3E",
+    "color": "#0891b2",
     "city_id": "Kaohsiung",
     "source": "TDX Bus Shape / StopOfRoute",
     "operator_id": "20010",
     "operator": "中華衛星大車隊",
-    "operator_en": "Ks Taxi"
+    "operator_en": "Ks Taxi",
+    "loop": true
   },
   "features": [
     {
@@ -21,8 +22,9 @@
         "ref": "紅13",
         "name": "紅13",
         "name_en": "紅13",
-        "color": "#0B7A3E",
-        "direction": 0
+        "color": "#0891b2",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -2114,6 +2116,10 @@
           [
             120.34048,
             22.5653
+          ],
+          [
+            120.34051,
+            22.56529
           ]
         ]
       }
@@ -2126,7 +2132,7 @@
         "name": "小港站",
         "name_en": "Siaogang Station",
         "line": "紅13",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 0,
         "station_id": "2458"
       },
@@ -2146,7 +2152,7 @@
         "name": "小港分局",
         "name_en": "Siaogang Precinct",
         "line": "紅13",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 0,
         "station_id": "3137"
       },
@@ -2166,7 +2172,7 @@
         "name": "捷運小港站",
         "name_en": "MRT Siaogang Station",
         "line": "紅13",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 0,
         "station_id": "2905"
       },
@@ -2186,7 +2192,7 @@
         "name": "紅毛港文化園區",
         "name_en": "Hongmaogang Culture Park",
         "line": "紅13",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 0,
         "station_id": "2447"
       },
@@ -2206,7 +2212,7 @@
         "name": "捷運小港站",
         "name_en": "MRT Siaogang Station",
         "line": "紅13",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 0,
         "station_id": "2906"
       },
@@ -2226,7 +2232,7 @@
         "name": "小港分局",
         "name_en": "Siaogang Precinct",
         "line": "紅13",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 0,
         "station_id": "3138"
       },
@@ -2246,7 +2252,7 @@
         "name": "小港站",
         "name_en": "Siaogang Station",
         "line": "紅13",
-        "color": "#0B7A3E",
+        "color": "#0891b2",
         "direction": 0,
         "station_id": "2460"
       },

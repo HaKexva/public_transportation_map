@@ -6,13 +6,14 @@
     "name": "20不繞復國墩",
     "name_en": "20不繞復國墩",
     "ref": "20不繞復國墩",
-    "color": "#86198f",
+    "color": "#3730a3",
     "city_id": "KinmenCounty",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.kinmen.gov.tw/api/route/203/map/214/image",
     "operator_id": "0001",
     "operator": "金門",
-    "operator_en": "City Bus and Ferry Management Office, Kinmen County"
+    "operator_en": "City Bus and Ferry Management Office, Kinmen County",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "20不繞復國墩",
         "name": "20不繞復國墩",
         "name_en": "20不繞復國墩",
-        "color": "#86198f",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -319,6 +321,10 @@
           [
             118.41399,
             24.44247
+          ],
+          [
+            118.4138,
+            24.44218
           ]
         ]
       }
@@ -331,7 +337,7 @@
         "name": "山外站",
         "name_en": "Shanwai Station",
         "line": "20不繞復國墩",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "29"
       },
@@ -351,7 +357,7 @@
         "name": "護國寺(金湖免稅廣場)",
         "name_en": "Huguo Temple",
         "line": "20不繞復國墩",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "634"
       },
@@ -371,7 +377,7 @@
         "name": "金湖國中",
         "name_en": "Jinhu Junior High School",
         "line": "20不繞復國墩",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "635"
       },
@@ -391,7 +397,7 @@
         "name": "金湖國中一",
         "name_en": "Jinhu Junior High School 1",
         "line": "20不繞復國墩",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "636"
       },
@@ -411,7 +417,7 @@
         "name": "中正公園",
         "name_en": "Chiang Kai-shek Park",
         "line": "20不繞復國墩",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "637"
       },
@@ -431,7 +437,7 @@
         "name": "畜試所(太湖路三段)",
         "name_en": "Kinmen County Livestock Research Institute",
         "line": "20不繞復國墩",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "644"
       },
@@ -451,7 +457,7 @@
         "name": "西村一",
         "name_en": "Xicun 1",
         "line": "20不繞復國墩",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "1047"
       },
@@ -471,7 +477,7 @@
         "name": "東村",
         "name_en": "Dongcun",
         "line": "20不繞復國墩",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "616"
       },
@@ -491,7 +497,7 @@
         "name": "峰上路口",
         "name_en": "Fengshang Rd.",
         "line": "20不繞復國墩",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "619"
       },
@@ -511,7 +517,7 @@
         "name": "峰上",
         "name_en": "Fengshang",
         "line": "20不繞復國墩",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "618"
       },
@@ -531,7 +537,7 @@
         "name": "峰上路口",
         "name_en": "Fengshang Rd.",
         "line": "20不繞復國墩",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "617"
       },
@@ -551,7 +557,7 @@
         "name": "東村",
         "name_en": "Dongcun",
         "line": "20不繞復國墩",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "620"
       },
@@ -571,7 +577,7 @@
         "name": "土樓",
         "name_en": "Tulou",
         "line": "20不繞復國墩",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "1046"
       },
@@ -591,7 +597,7 @@
         "name": "庵邊(四維路)",
         "name_en": "Anbian",
         "line": "20不繞復國墩",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "614"
       },
@@ -611,7 +617,7 @@
         "name": "柏村國小",
         "name_en": "Baicun Elementary School",
         "line": "20不繞復國墩",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "632"
       },
@@ -631,7 +637,7 @@
         "name": "料羅圓環(柏村路)",
         "name_en": "Liaoluo Cirque",
         "line": "20不繞復國墩",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "624"
       },
@@ -651,7 +657,7 @@
         "name": "皇家酒廠",
         "name_en": "Royal liquor",
         "line": "20不繞復國墩",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "1048"
       },
@@ -671,7 +677,7 @@
         "name": "農場",
         "name_en": "Ranch",
         "line": "20不繞復國墩",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "639"
       },
@@ -691,7 +697,7 @@
         "name": "畜試所(三多路)",
         "name_en": "Kinmen County Livestock Research Institute",
         "line": "20不繞復國墩",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "638"
       },
@@ -711,7 +717,7 @@
         "name": "中正公園",
         "name_en": "Chiang Kai-shek Park",
         "line": "20不繞復國墩",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "628"
       },
@@ -731,7 +737,7 @@
         "name": "金湖國中一",
         "name_en": "Jinhu Junior High School 1",
         "line": "20不繞復國墩",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "629"
       },
@@ -751,7 +757,7 @@
         "name": "金湖國中",
         "name_en": "Jinhu Junior High School",
         "line": "20不繞復國墩",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "630"
       },
@@ -771,7 +777,7 @@
         "name": "護國寺(金湖免稅廣場)",
         "name_en": "Huguo Temple",
         "line": "20不繞復國墩",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "643"
       },
@@ -791,7 +797,7 @@
         "name": "山外站",
         "name_en": "Shanwai Station",
         "line": "20不繞復國墩",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "29"
       },

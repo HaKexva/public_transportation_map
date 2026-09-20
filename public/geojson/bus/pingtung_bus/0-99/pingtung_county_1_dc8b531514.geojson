@@ -6,12 +6,13 @@
     "name": "幸福泰武1路",
     "name_en": "幸福泰武1路",
     "ref": "幸福泰武1路",
-    "color": "#166534",
+    "color": "#db2777",
     "city_id": "PingtungCounty",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://web.taiwanbus.tw/MISUploadData/Schematic/file/0193.jpg",
     "operator_id": "95",
-    "operator": "屏東縣泰武鄉公所"
+    "operator": "屏東縣泰武鄉公所",
+    "loop": true
   },
   "features": [
     {
@@ -21,8 +22,9 @@
         "ref": "幸福泰武1路",
         "name": "幸福泰武1路",
         "name_en": "幸福泰武1路",
-        "color": "#166534",
-        "direction": 0
+        "color": "#db2777",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -11886,7 +11888,7 @@
         "name": "泰武鄉公所",
         "name_en": "Taiwu Township Office",
         "line": "幸福泰武1路",
-        "color": "#166534",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "140003"
       },
@@ -11906,7 +11908,7 @@
         "name": "法蒂瑪教堂",
         "name_en": "Fatima Church",
         "line": "幸福泰武1路",
-        "color": "#166534",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "139998"
       },
@@ -11926,7 +11928,7 @@
         "name": "泰小幼兒園",
         "name_en": "Taiwu Kindergarten",
         "line": "幸福泰武1路",
-        "color": "#166534",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "139999"
       },
@@ -11946,7 +11948,7 @@
         "name": "成志路",
         "name_en": "Cheng-Zhi Road",
         "line": "幸福泰武1路",
-        "color": "#166534",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "140000"
       },
@@ -11966,7 +11968,7 @@
         "name": "萬安部落",
         "name_en": "Wan-An Tribe",
         "line": "幸福泰武1路",
-        "color": "#166534",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "140001"
       },
@@ -11986,7 +11988,7 @@
         "name": "馬仕部落",
         "name_en": "Ma-Shi Tribe",
         "line": "幸福泰武1路",
-        "color": "#166534",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "143705"
       },
@@ -12006,7 +12008,7 @@
         "name": "平和部落",
         "name_en": "Ping-He Tribe",
         "line": "幸福泰武1路",
-        "color": "#166534",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "140005"
       },
@@ -12026,7 +12028,7 @@
         "name": "武潭部落",
         "name_en": "Wu-Tan Tribe",
         "line": "幸福泰武1路",
-        "color": "#166534",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "140008"
       },
@@ -12046,7 +12048,7 @@
         "name": "舊武潭部落",
         "name_en": "Old Wu-Tan Tribe",
         "line": "幸福泰武1路",
-        "color": "#166534",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "140011"
       },
@@ -12066,7 +12068,7 @@
         "name": "佳興部落",
         "name_en": "Jia-Xing Tribe",
         "line": "幸福泰武1路",
-        "color": "#166534",
+        "color": "#db2777",
         "direction": 0,
         "station_id": "140014"
       },

@@ -6,13 +6,14 @@
     "name": "F133假日",
     "name_en": "F133假日",
     "ref": "F133假日",
-    "color": "#1e3a8a",
+    "color": "#6B8F9A",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.gov.taipei/File/Get/2aef2076-3a69-471e-a8b0-52c91d18982f?v=639248448782872868",
     "operator_id": "16229",
     "operator": "三芝區公所",
-    "operator_en": "Sanzhi District Office"
+    "operator_en": "Sanzhi District Office",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "F133假日",
         "name": "F133假日",
         "name_en": "F133假日",
-        "color": "#1e3a8a",
-        "direction": 0
+        "color": "#6B8F9A",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1763,6 +1765,10 @@
           [
             121.501907117443,
             25.2587604113198
+          ],
+          [
+            121.501854901432,
+            25.2588343840027
           ]
         ]
       }
@@ -1775,7 +1781,7 @@
         "name": "二號倉庫",
         "name_en": "No.2 Warehouse",
         "line": "F133假日",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603686"
       },
@@ -1795,7 +1801,7 @@
         "name": "福德七鄰",
         "name_en": "Neighborhood 7 Fude",
         "line": "F133假日",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75440"
       },
@@ -1815,7 +1821,7 @@
         "name": "福德十五站",
         "name_en": "Fude 15 Stop",
         "line": "F133假日",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75441"
       },
@@ -1835,7 +1841,7 @@
         "name": "後店",
         "name_en": "Houdian",
         "line": "F133假日",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75417"
       },
@@ -1855,7 +1861,7 @@
         "name": "福惠宮",
         "name_en": "Fuhui Temple",
         "line": "F133假日",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165609423"
       },
@@ -1875,7 +1881,7 @@
         "name": "金母宮",
         "name_en": "Jinmu Temple",
         "line": "F133假日",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165609426"
       },
@@ -1895,7 +1901,7 @@
         "name": "後店",
         "name_en": "Houdian",
         "line": "F133假日",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75416"
       },
@@ -1915,7 +1921,7 @@
         "name": "福德十五站",
         "name_en": "Fude 15 Stop",
         "line": "F133假日",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603695"
       },
@@ -1935,7 +1941,7 @@
         "name": "福德七鄰",
         "name_en": "Neighborhood 7 Fude",
         "line": "F133假日",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603694"
       },
@@ -1955,7 +1961,7 @@
         "name": "三芝國中",
         "name_en": "Sanzhi Junior High School",
         "line": "F133假日",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75285"
       },

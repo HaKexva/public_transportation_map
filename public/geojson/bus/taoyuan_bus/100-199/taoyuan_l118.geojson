@@ -6,13 +6,14 @@
     "name": "L118",
     "name_en": "L118",
     "ref": "L118",
-    "color": "#b91c1c",
+    "color": "#b45309",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/51180/map/980/image",
     "operator_id": "1",
     "operator": "桃園客運",
-    "operator_en": "Taoyuan Bus Co., Ltd."
+    "operator_en": "Taoyuan Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "L118",
         "name": "L118",
         "name_en": "L118",
-        "color": "#b91c1c",
-        "direction": 0
+        "color": "#b45309",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1879,6 +1881,10 @@
           [
             121.28122,
             24.92555
+          ],
+          [
+            121.28122,
+            24.9256
           ]
         ]
       }
@@ -1891,7 +1897,7 @@
         "name": "深耕十期社區",
         "name_en": "Shengeng Community, Phase 10",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3812"
       },
@@ -1911,7 +1917,7 @@
         "name": "鎮南宮",
         "name_en": "Zhen Nan  Temple",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4404"
       },
@@ -1931,7 +1937,7 @@
         "name": "八德區公所(三元宮)",
         "name_en": "Bade District Office (Sanyuan Temple)",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2062"
       },
@@ -1951,7 +1957,7 @@
         "name": "福興社區",
         "name_en": "Fuxing Community",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4724"
       },
@@ -1971,7 +1977,7 @@
         "name": "廣興仁德路口",
         "name_en": "Guanxing and Rende Road Intersection",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1353"
       },
@@ -1991,7 +1997,7 @@
         "name": "福爾摩沙社區",
         "name_en": "Formosa Community",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4923"
       },
@@ -2011,7 +2017,7 @@
         "name": "永華機械",
         "name_en": "KYB Manufacturing Taiwan Co, Ltd.",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5684"
       },
@@ -2031,7 +2037,7 @@
         "name": "廣興國小",
         "name_en": "Guangxing Elementary School",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4698"
       },
@@ -2051,7 +2057,7 @@
         "name": "廣興活動中心",
         "name_en": "Guang Sing activity Center",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6058"
       },
@@ -2071,7 +2077,7 @@
         "name": "新興路口",
         "name_en": "Xinxing Rd. Intersection",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4922"
       },
@@ -2091,7 +2097,7 @@
         "name": "力霸街口",
         "name_en": "Liba St. Intersection",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5682"
       },
@@ -2111,7 +2117,7 @@
         "name": "過路坡",
         "name_en": "Guolupo",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5071"
       },
@@ -2131,7 +2137,7 @@
         "name": "大湳市場",
         "name_en": "Danan Market",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3767"
       },
@@ -2151,7 +2157,7 @@
         "name": "大湳站(G04)",
         "name_en": "Danan Station(G04)",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1724"
       },
@@ -2171,7 +2177,7 @@
         "name": "陸光活動中心",
         "name_en": "Luguang Activity Center",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5680"
       },
@@ -2191,7 +2197,7 @@
         "name": "八德區綜合大樓",
         "name_en": "Bade District Multifunction Building",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5678"
       },
@@ -2211,7 +2217,7 @@
         "name": "永福西街",
         "name_en": "Yungfu West St.",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2081"
       },
@@ -2231,7 +2237,7 @@
         "name": "國際路口",
         "name_en": "Guoji Rd. Intersection",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3528"
       },
@@ -2251,7 +2257,7 @@
         "name": "廣隆街口",
         "name_en": "Guanglong St. Intersection",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5676"
       },
@@ -2271,7 +2277,7 @@
         "name": "廣福路530巷",
         "name_en": "Guangfu Rd., Ln. 530",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4523"
       },
@@ -2291,7 +2297,7 @@
         "name": "廣福路580巷",
         "name_en": "Guangfu Rd., Ln. 580",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5674"
       },
@@ -2311,7 +2317,7 @@
         "name": "廣興路口",
         "name_en": "Guangxing Rd. Intersection",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1122"
       },
@@ -2331,7 +2337,7 @@
         "name": "永豐南路",
         "name_en": "YungFeng South Road",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4918"
       },
@@ -2351,7 +2357,7 @@
         "name": "元聖宮",
         "name_en": "Yuansheng Temple",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5672"
       },
@@ -2371,7 +2377,7 @@
         "name": "茄苳路",
         "name_en": "Jiadong Rd.",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5669"
       },
@@ -2391,7 +2397,7 @@
         "name": "茄苳路725巷",
         "name_en": "Jiadong Rd., Ln. 725",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5667"
       },
@@ -2411,7 +2417,7 @@
         "name": "愛買別莊社區",
         "name_en": "Aimaibiezhuang Community",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5665"
       },
@@ -2431,7 +2437,7 @@
         "name": "高城八街口",
         "name_en": "Gaochengba 8th St. Intersection",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5663"
       },
@@ -2451,7 +2457,7 @@
         "name": "高城二街",
         "name_en": "Gaocheng 2nd St.",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5661"
       },
@@ -2471,7 +2477,7 @@
         "name": "高城居易社區",
         "name_en": "Gaocheng Community",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5093"
       },
@@ -2491,7 +2497,7 @@
         "name": "龍壽街口",
         "name_en": "Longshou St. Intersection",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5659"
       },
@@ -2511,7 +2517,7 @@
         "name": "桃園醫院門診中心",
         "name_en": "Taoyuan General Hospital(Outpatient Center)",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "551"
       },
@@ -2531,7 +2537,7 @@
         "name": "桃園療養院",
         "name_en": "Taoyuan Psychiatric Center, Ministry of Health and Welfare",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5657"
       },
@@ -2551,7 +2557,7 @@
         "name": "新興高中",
         "name_en": "Shin Shing High School",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4769"
       },
@@ -2571,7 +2577,7 @@
         "name": "國聯街口",
         "name_en": "Guolian St. Intersection",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5727"
       },
@@ -2591,7 +2597,7 @@
         "name": "泰豐街口",
         "name_en": "TaiFeng Street Intersection",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4767"
       },
@@ -2611,7 +2617,7 @@
         "name": "永興橋",
         "name_en": "Yongxing Bridge",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4765"
       },
@@ -2631,7 +2637,7 @@
         "name": "寶豐街口",
         "name_en": "Baofeng St. Intersection",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5725"
       },
@@ -2651,7 +2657,7 @@
         "name": "元聖宮",
         "name_en": "Yuansheng Temple",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5671"
       },
@@ -2671,7 +2677,7 @@
         "name": "廣福路879巷",
         "name_en": "Guangfu Rd., Ln. 879",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4519"
       },
@@ -2691,7 +2697,7 @@
         "name": "廣福路1008巷",
         "name_en": "Guangfu Rd., Ln. 1008",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5723"
       },
@@ -2711,7 +2717,7 @@
         "name": "廣福路1120巷",
         "name_en": "Guangfu Rd., Ln. 1120",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5721"
       },
@@ -2731,7 +2737,7 @@
         "name": "象福宮",
         "name_en": "Xiangfu Temple",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5719"
       },
@@ -2751,7 +2757,7 @@
         "name": "廣福路1357巷",
         "name_en": "Guangfu Rd., Ln. 1375",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5887"
       },
@@ -2771,7 +2777,7 @@
         "name": "下溪尾坡面",
         "name_en": "Xizxiwei Slope",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5717"
       },
@@ -2791,7 +2797,7 @@
         "name": "溪尾坡面",
         "name_en": "Xiwei Slope",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5715"
       },
@@ -2811,7 +2817,7 @@
         "name": "大伙房6鄰",
         "name_en": "Dahuofang, Neighborhood 6",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5713"
       },
@@ -2831,7 +2837,7 @@
         "name": "大伙房",
         "name_en": "Dahuofang",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5711"
       },
@@ -2851,7 +2857,7 @@
         "name": "崁頂路",
         "name_en": "Kanding Rd.",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4569"
       },
@@ -2871,7 +2877,7 @@
         "name": "金城街",
         "name_en": "Jincheng St.",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5889"
       },
@@ -2891,7 +2897,7 @@
         "name": "龍東中山東路口",
         "name_en": "Longdong and Zhongshan East Road Intersection",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "582"
       },
@@ -2911,7 +2917,7 @@
         "name": "龍安集會所",
         "name_en": "Long An Assembly hall",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6114"
       },
@@ -2931,7 +2937,7 @@
         "name": "龍江路二",
         "name_en": "Longjiang Rd. 2nd Stop",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5709"
       },
@@ -2951,7 +2957,7 @@
         "name": "龍江路一",
         "name_en": "Longjiang Rd. 1st Stop",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5707"
       },
@@ -2971,7 +2977,7 @@
         "name": "龍宮街",
         "name_en": "Longgong St.",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5705"
       },
@@ -2991,7 +2997,7 @@
         "name": "新生路口",
         "name_en": "Xinsheng Rd. Intersection",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5245"
       },
@@ -3011,7 +3017,7 @@
         "name": "霄裡路三",
         "name_en": "Xiaoli Rd. 3rd Stop",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5703"
       },
@@ -3031,7 +3037,7 @@
         "name": "謝姓宗祠",
         "name_en": "The Xie Ancestral Hall",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5701"
       },
@@ -3051,7 +3057,7 @@
         "name": "霄裡路451巷",
         "name_en": "Xiaoli Rd., Ln. 451",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5699"
       },
@@ -3071,7 +3077,7 @@
         "name": "霄裡路201巷",
         "name_en": "Xiaoli Rd., Ln. 201",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5697"
       },
@@ -3091,7 +3097,7 @@
         "name": "霄裡活動中心",
         "name_en": "Xiaoli Activity Center",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5695"
       },
@@ -3111,7 +3117,7 @@
         "name": "玉元宮",
         "name_en": "Yuyuan Temple",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5693"
       },
@@ -3131,7 +3137,7 @@
         "name": "新興路1155巷口",
         "name_en": "Xinxing Rd., Ln. 1155 Intersection",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4264"
       },
@@ -3151,7 +3157,7 @@
         "name": "伯公廟",
         "name_en": "Bogong Temple",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4265"
       },
@@ -3171,7 +3177,7 @@
         "name": "竹園社區",
         "name_en": "Zhuyuan Community",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5691"
       },
@@ -3191,7 +3197,7 @@
         "name": "竹園街",
         "name_en": "Zhuyuan St.",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5689"
       },
@@ -3211,7 +3217,7 @@
         "name": "連城橋",
         "name_en": "Liancheng Bridge",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5687"
       },
@@ -3231,7 +3237,7 @@
         "name": "八德區公所(三元宮)",
         "name_en": "Bade District Office (Sanyuan Temple)",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2063"
       },
@@ -3251,7 +3257,7 @@
         "name": "興仁里",
         "name_en": "Xingren Village",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3806"
       },
@@ -3271,7 +3277,7 @@
         "name": "興仁路(成功大道)",
         "name_en": "Xingren Rd.(Chenggong Avenue)",
         "line": "L118",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5685"
       },

@@ -6,13 +6,14 @@
     "name": "213",
     "name_en": "213",
     "ref": "213",
-    "color": "#1e3a8a",
+    "color": "#ea580c",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/213/map/1221/image",
     "operator_id": "4",
     "operator": "統聯客運",
-    "operator_en": "United Highway Bus Co., Ltd."
+    "operator_en": "United Highway Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "213",
         "name": "213",
         "name_en": "213",
-        "color": "#1e3a8a",
-        "direction": 0
+        "color": "#ea580c",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -2111,6 +2113,10 @@
           [
             121.31094,
             24.98989
+          ],
+          [
+            121.31065,
+            24.98974
           ]
         ]
       }
@@ -2123,7 +2129,7 @@
         "name": "桃花園飯店",
         "name_en": "Tao Garden Hotel",
         "line": "213",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "1948"
       },
@@ -2143,7 +2149,7 @@
         "name": "成功路",
         "name_en": "Chenggong Road",
         "line": "213",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4200"
       },
@@ -2163,7 +2169,7 @@
         "name": "東門國小",
         "name_en": "Dongmen Elementary School",
         "line": "213",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "3081"
       },
@@ -2183,7 +2189,7 @@
         "name": "中央街口(成功路二段)",
         "name_en": "Zhongyang St. Intersection(Chenggong Rd. Sec.2)",
         "line": "213",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "3078"
       },
@@ -2203,7 +2209,7 @@
         "name": "地方稅務局",
         "name_en": "Department of Taxation, Taoyuan",
         "line": "213",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "3414"
       },
@@ -2223,7 +2229,7 @@
         "name": "體育館(北科附工)",
         "name_en": "Gymnasium",
         "line": "213",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4333"
       },
@@ -2243,7 +2249,7 @@
         "name": "虎頭山創新園區",
         "name_en": "Hutoushan Innovation Hub",
         "line": "213",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4212"
       },
@@ -2263,7 +2269,7 @@
         "name": "桃園高中",
         "name_en": "National Taoyuan High School",
         "line": "213",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4053"
       },
@@ -2283,7 +2289,7 @@
         "name": "技訓中心",
         "name_en": "Technology - Vocation Training Center",
         "line": "213",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4126"
       },
@@ -2303,7 +2309,7 @@
         "name": "桃園榮民醫院",
         "name_en": "TVGH, Taoyuan Branch",
         "line": "213",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "5016"
       },
@@ -2323,7 +2329,7 @@
         "name": "桃園忠烈祠暨神社文化園區",
         "name_en": "Taoyuan Martyrs' Shrine and Cultural Park",
         "line": "213",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4234"
       },
@@ -2343,7 +2349,7 @@
         "name": "虎頭山環保公園",
         "name_en": "Hutoushan Environmental Park",
         "line": "213",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "6120"
       },
@@ -2363,7 +2369,7 @@
         "name": "中油灌裝工場",
         "name_en": "Oil refinery",
         "line": "213",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "6122"
       },
@@ -2383,7 +2389,7 @@
         "name": "龜山苗圃",
         "name_en": "guei shan miao pu",
         "line": "213",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "6124"
       },
@@ -2403,7 +2409,7 @@
         "name": "國光發電廠",
         "name_en": "Kuokuang Power Plant",
         "line": "213",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "6126"
       },
@@ -2423,7 +2429,7 @@
         "name": "樹人金湖路口",
         "name_en": "Shuren Jinhu Road Intersection",
         "line": "213",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "6521"
       },
@@ -2443,7 +2449,7 @@
         "name": "中央警察大學",
         "name_en": "Central Police University",
         "line": "213",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "7034"
       },
@@ -2463,7 +2469,7 @@
         "name": "樹人路26巷口",
         "name_en": "Shuren Road, Lane 26 Intersection",
         "line": "213",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "7032"
       },
@@ -2483,7 +2489,7 @@
         "name": "頂湖",
         "name_en": "Dinghu",
         "line": "213",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "493"
       },
@@ -2503,7 +2509,7 @@
         "name": "新世紀",
         "name_en": "Xinshiji",
         "line": "213",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "5525"
       },
@@ -2523,7 +2529,7 @@
         "name": "大崗郵局",
         "name_en": "Dagang Post Office",
         "line": "213",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "5523"
       },
@@ -2543,7 +2549,7 @@
         "name": "大湖",
         "name_en": "Dahu",
         "line": "213",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "5082"
       },
@@ -2563,7 +2569,7 @@
         "name": "坪頂",
         "name_en": "Pinding",
         "line": "213",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "5521"
       },
@@ -2583,7 +2589,7 @@
         "name": "文化七路口",
         "name_en": "Wenhua 7th Road Intersection",
         "line": "213",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4457"
       },
@@ -2603,7 +2609,7 @@
         "name": "醫學大樓",
         "name_en": "Medical Building",
         "line": "213",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4472"
       },
@@ -2623,7 +2629,7 @@
         "name": "華夏大飯店",
         "name_en": "Highness Hotel",
         "line": "213",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "3515"
       },
@@ -2643,7 +2649,7 @@
         "name": "桃園長庚轉運站",
         "name_en": "Taoyuan Chang Gung Bus Terminal",
         "line": "213",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "6713"
       },
@@ -2663,7 +2669,7 @@
         "name": "長庚醫院",
         "name_en": "Chang Gung Memorial Hospital",
         "line": "213",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "6869"
       },
@@ -2683,7 +2689,7 @@
         "name": "中國科技大樓",
         "name_en": "China Technology Building",
         "line": "213",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4454"
       },
@@ -2703,7 +2709,7 @@
         "name": "坪頂",
         "name_en": "Pinding",
         "line": "213",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "5520"
       },
@@ -2723,7 +2729,7 @@
         "name": "大湖",
         "name_en": "Dahu",
         "line": "213",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "5083"
       },
@@ -2743,7 +2749,7 @@
         "name": "大崗郵局",
         "name_en": "Dagang Post Office",
         "line": "213",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "5522"
       },
@@ -2763,7 +2769,7 @@
         "name": "新世紀",
         "name_en": "Xinshiji",
         "line": "213",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "5524"
       },
@@ -2783,7 +2789,7 @@
         "name": "頂湖",
         "name_en": "Dinghu",
         "line": "213",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "492"
       },
@@ -2803,7 +2809,7 @@
         "name": "樹人路26巷口",
         "name_en": "Shuren Road, Lane 26 Intersection",
         "line": "213",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "7031"
       },
@@ -2823,7 +2829,7 @@
         "name": "中央警察大學",
         "name_en": "Central Police University",
         "line": "213",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "7033"
       },
@@ -2843,7 +2849,7 @@
         "name": "樹人金湖路口",
         "name_en": "Shuren Jinhu Road Intersection",
         "line": "213",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "6522"
       },
@@ -2863,7 +2869,7 @@
         "name": "國光發電廠",
         "name_en": "Kuokuang Power Plant",
         "line": "213",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "6127"
       },
@@ -2883,7 +2889,7 @@
         "name": "龜山苗圃",
         "name_en": "guei shan miao pu",
         "line": "213",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "6125"
       },
@@ -2903,7 +2909,7 @@
         "name": "中油灌裝工場",
         "name_en": "Oil refinery",
         "line": "213",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "6123"
       },
@@ -2923,7 +2929,7 @@
         "name": "虎頭山環保公園",
         "name_en": "Hutoushan Environmental Park",
         "line": "213",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "6121"
       },
@@ -2943,7 +2949,7 @@
         "name": "桃園忠烈祠暨神社文化園區",
         "name_en": "Taoyuan Martyrs' Shrine and Cultural Park",
         "line": "213",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4235"
       },
@@ -2963,7 +2969,7 @@
         "name": "桃園榮民醫院",
         "name_en": "TVGH, Taoyuan Branch",
         "line": "213",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "5017"
       },
@@ -2983,7 +2989,7 @@
         "name": "技訓中心",
         "name_en": "Technology - Vocation Training Center",
         "line": "213",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4127"
       },
@@ -3003,7 +3009,7 @@
         "name": "桃園高中",
         "name_en": "National Taoyuan Senior High School",
         "line": "213",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4054"
       },
@@ -3023,7 +3029,7 @@
         "name": "虎頭山創新園區",
         "name_en": "Hutoushan Innovation Hub",
         "line": "213",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4211"
       },
@@ -3043,7 +3049,7 @@
         "name": "體育館(北科附工)",
         "name_en": "Gymnasium",
         "line": "213",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4334"
       },
@@ -3063,7 +3069,7 @@
         "name": "地方稅務局",
         "name_en": "Department of Taxation, Taoyuan",
         "line": "213",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "3415"
       },
@@ -3083,7 +3089,7 @@
         "name": "中央街口(成功路二段)",
         "name_en": "Zhongyang St. Intersection(Chenggong Rd. Sec.2)",
         "line": "213",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "3077"
       },
@@ -3103,7 +3109,7 @@
         "name": "東門國小",
         "name_en": "Dongmen Elementary School",
         "line": "213",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "3080"
       },
@@ -3123,7 +3129,7 @@
         "name": "成功路",
         "name_en": "Chenggong Road",
         "line": "213",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4201"
       },
@@ -3143,7 +3149,7 @@
         "name": "桃花園飯店",
         "name_en": "Tao Garden Hotel",
         "line": "213",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "1949"
       },

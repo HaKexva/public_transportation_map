@@ -6,13 +6,14 @@
     "name": "228",
     "name_en": "228",
     "ref": "228",
-    "color": "#b91c1c",
+    "color": "#b45309",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/2280/map/2470/image",
     "operator_id": "1",
     "operator": "桃園客運",
-    "operator_en": "Taoyuan Bus Co., Ltd."
+    "operator_en": "Taoyuan Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "228",
         "name": "228",
         "name_en": "228",
-        "color": "#b91c1c",
-        "direction": 0
+        "color": "#b45309",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -2599,6 +2601,10 @@
           [
             121.2864,
             25.00428
+          ],
+          [
+            121.28641,
+            25.00423
           ]
         ]
       }
@@ -2611,7 +2617,7 @@
         "name": "中路微型轉運站",
         "name_en": "Zhonglu Micro Transit Hub",
         "line": "228",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3519"
       },
@@ -2631,7 +2637,7 @@
         "name": "臺灣桃園地方法院及地方檢察署",
         "name_en": "Taiwan Taoyuan District Court & Prosecutors Office",
         "line": "228",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3992"
       },
@@ -2651,7 +2657,7 @@
         "name": "中路運動公園",
         "name_en": "Zhonglu Sports Park",
         "line": "228",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6992"
       },
@@ -2671,7 +2677,7 @@
         "name": "正光慈文路口",
         "name_en": "Zhengguang Ciwen Rd Intersection",
         "line": "228",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6978"
       },
@@ -2691,7 +2697,7 @@
         "name": "桃園區公所",
         "name_en": "Taoyuan District Office",
         "line": "228",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6850"
       },
@@ -2711,7 +2717,7 @@
         "name": "廈門正光路口",
         "name_en": "Xiamen Zhengguang Rd Intersection",
         "line": "228",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3111"
       },
@@ -2731,7 +2737,7 @@
         "name": "文山國小",
         "name_en": "Wen-Shan Primary School",
         "line": "228",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1851"
       },
@@ -2751,7 +2757,7 @@
         "name": "中興國中",
         "name_en": "Chung Hsing Junior High School",
         "line": "228",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3523"
       },
@@ -2771,7 +2777,7 @@
         "name": "國際路二段",
         "name_en": "Sec.2  GuoJi Road",
         "line": "228",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2094"
       },
@@ -2791,7 +2797,7 @@
         "name": "國強一街口",
         "name_en": "Guoqiang 1st St. Entrance",
         "line": "228",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3548"
       },
@@ -2811,7 +2817,7 @@
         "name": "迪斯耐社區",
         "name_en": "Disinai Community",
         "line": "228",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3545"
       },
@@ -2831,7 +2837,7 @@
         "name": "上海路口",
         "name_en": "Shanghai Street Intersection",
         "line": "228",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6518"
       },
@@ -2851,7 +2857,7 @@
         "name": "龍安國強一街口",
         "name_en": "Longan and Guoqiang 1st St. Intersection",
         "line": "228",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1855"
       },
@@ -2871,7 +2877,7 @@
         "name": "龍安市場",
         "name_en": "Lungan Market",
         "line": "228",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4641"
       },
@@ -2891,7 +2897,7 @@
         "name": "宏太社區",
         "name_en": "Hungtai Community",
         "line": "228",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2822"
       },
@@ -2911,7 +2917,7 @@
         "name": "武陵高中",
         "name_en": "Wu-Ling Senior High School",
         "line": "228",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "933"
       },
@@ -2931,7 +2937,7 @@
         "name": "新名人賞",
         "name_en": "Sin Ming Ren Shang",
         "line": "228",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5084"
       },
@@ -2951,7 +2957,7 @@
         "name": "國際路口",
         "name_en": "Guoji Road Intersection",
         "line": "228",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3527"
       },
@@ -2971,7 +2977,7 @@
         "name": "國際京城",
         "name_en": "Guojijingcheng",
         "line": "228",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3550"
       },
@@ -2991,7 +2997,7 @@
         "name": "中山國小",
         "name_en": "Zhongshan Elementary School",
         "line": "228",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1699"
       },
@@ -3011,7 +3017,7 @@
         "name": "中德里",
         "name_en": "Zhongde Village",
         "line": "228",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6402"
       },
@@ -3031,7 +3037,7 @@
         "name": "中德里市民活動中心",
         "name_en": "Zhongde Village Civil Activity Center",
         "line": "228",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3551"
       },
@@ -3051,7 +3057,7 @@
         "name": "中山里活動中心",
         "name_en": "Zhongshan Village Community Center",
         "line": "228",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3553"
       },
@@ -3071,7 +3077,7 @@
         "name": "大湳給水廠",
         "name_en": "Danan Water Treatment Plant",
         "line": "228",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3556"
       },
@@ -3091,7 +3097,7 @@
         "name": "國際名邸社區(護國宮)",
         "name_en": "International Luxury Community (Huguo Temple)",
         "line": "228",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6035"
       },
@@ -3111,7 +3117,7 @@
         "name": "龍吟社區",
         "name_en": "Longying Community",
         "line": "228",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3557"
       },
@@ -3131,7 +3137,7 @@
         "name": "崇德社區",
         "name_en": "Chongde Community",
         "line": "228",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3559"
       },
@@ -3151,7 +3157,7 @@
         "name": "中路北街口",
         "name_en": "Zhonglu N. St. Intersection",
         "line": "228",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3561"
       },
@@ -3171,7 +3177,7 @@
         "name": "崇德社區",
         "name_en": "Chongde Community",
         "line": "228",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3560"
       },
@@ -3191,7 +3197,7 @@
         "name": "龍吟社區",
         "name_en": "Longying Community",
         "line": "228",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3558"
       },
@@ -3211,7 +3217,7 @@
         "name": "國際名邸社區(護國宮)",
         "name_en": "International Luxury Community (Huguo Temple)",
         "line": "228",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6036"
       },
@@ -3231,7 +3237,7 @@
         "name": "大湳給水廠",
         "name_en": "Danan Water Treatment Plant",
         "line": "228",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3555"
       },
@@ -3251,7 +3257,7 @@
         "name": "中山里活動中心",
         "name_en": "Zhongshan Village Community Center",
         "line": "228",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3554"
       },
@@ -3271,7 +3277,7 @@
         "name": "中德里市民活動中心",
         "name_en": "Zhongde Village Civil Activity Center",
         "line": "228",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3552"
       },
@@ -3291,7 +3297,7 @@
         "name": "中德里",
         "name_en": "Zhongde Village",
         "line": "228",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2078"
       },
@@ -3311,7 +3317,7 @@
         "name": "中山國小",
         "name_en": "Zhongshan Elementary School",
         "line": "228",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1700"
       },
@@ -3331,7 +3337,7 @@
         "name": "中平路口",
         "name_en": "Jhongping Road Intersection",
         "line": "228",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3562"
       },
@@ -3351,7 +3357,7 @@
         "name": "亞洲電台",
         "name_en": "ASIA FM",
         "line": "228",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2066"
       },
@@ -3371,7 +3377,7 @@
         "name": "中平吉昌街口",
         "name_en": "Zhongping Rd. and Jichang St. Intersection",
         "line": "228",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6730"
       },
@@ -3391,7 +3397,7 @@
         "name": "中山正光路口",
         "name_en": "Zhongshan Zhenguang Road Intersection",
         "line": "228",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2098"
       },
@@ -3411,7 +3417,7 @@
         "name": "土地改革館",
         "name_en": "Land Reform Museum",
         "line": "228",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1696"
       },
@@ -3431,7 +3437,7 @@
         "name": "桃園區公所(正門)",
         "name_en": "Civil Affairs Office of Taoyuan District(Front Door)",
         "line": "228",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6856"
       },
@@ -3451,7 +3457,7 @@
         "name": "文化局",
         "name_en": "Dept. of Cultural Affairs",
         "line": "228",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1854"
       },
@@ -3471,7 +3477,7 @@
         "name": "向陽運動公園",
         "name_en": "Xiangyang Park",
         "line": "228",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6982"
       },
@@ -3491,7 +3497,7 @@
         "name": "正光慈文路口",
         "name_en": "Zhengguang Ciwen Rd Intersection",
         "line": "228",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6981"
       },
@@ -3511,7 +3517,7 @@
         "name": "中路運動公園",
         "name_en": "Zhonglu Sports Park",
         "line": "228",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6993"
       },
@@ -3531,7 +3537,7 @@
         "name": "中路微型轉運站",
         "name_en": "Zhonglu Micro Transit Hub",
         "line": "228",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3519"
       },

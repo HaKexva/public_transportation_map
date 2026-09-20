@@ -6,12 +6,13 @@
     "name": "891",
     "name_en": "891",
     "ref": "891",
-    "color": "#1d4ed8",
+    "color": "#b45309",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.gov.taipei/File/Get/3209967a-2b9b-4cce-b253-b9240d3f7f31?v=639248448739799610",
     "operator_id": "16190",
-    "operator": "基隆客運"
+    "operator": "基隆客運",
+    "loop": true
   },
   "features": [
     {
@@ -21,8 +22,9 @@
         "ref": "891",
         "name": "891",
         "name_en": "891",
-        "color": "#1d4ed8",
-        "direction": 0
+        "color": "#b45309",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -3434,6 +3436,10 @@
           [
             121.855943080924,
             25.1084160730447
+          ],
+          [
+            121.856182727947,
+            25.108452709729
           ]
         ]
       }
@@ -3446,7 +3452,7 @@
         "name": "金瓜石(黃金博物館)",
         "name_en": "Jinguashih(Gold Ecological Park)",
         "line": "891",
-        "color": "#1d4ed8",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "71511"
       },
@@ -3466,7 +3472,7 @@
         "name": "瓜山國小(戰俘營)",
         "name_en": "GuaShan Elementary School (Pow Camp)",
         "line": "891",
-        "color": "#1d4ed8",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "71485"
       },
@@ -3486,7 +3492,7 @@
         "name": "勸濟堂",
         "name_en": "Quanji Temple",
         "line": "891",
-        "color": "#1d4ed8",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "71524"
       },
@@ -3506,7 +3512,7 @@
         "name": "黃金瀑布",
         "name_en": "Gold Waterfall",
         "line": "891",
-        "color": "#1d4ed8",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "71373"
       },
@@ -3526,7 +3532,7 @@
         "name": "長仁社區(新巴士)",
         "name_en": "Changren Community(New Bus)",
         "line": "891",
-        "color": "#1d4ed8",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1165606025"
       },
@@ -3546,7 +3552,7 @@
         "name": "長仁社區",
         "name_en": "Changren Community",
         "line": "891",
-        "color": "#1d4ed8",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "71340"
       },
@@ -3566,7 +3572,7 @@
         "name": "茹川橋",
         "name_en": "Ruchuan Bridge",
         "line": "891",
-        "color": "#1d4ed8",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "71361"
       },
@@ -3586,7 +3592,7 @@
         "name": "水湳洞",
         "name_en": "Shuinan Dong",
         "line": "891",
-        "color": "#1d4ed8",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "71526"
       },
@@ -3606,7 +3612,7 @@
         "name": "水湳洞遊客中心",
         "name_en": "Shuinandong Visitor Center",
         "line": "891",
-        "color": "#1d4ed8",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "71347"
       },
@@ -3626,7 +3632,7 @@
         "name": "銅礦",
         "name_en": "Tongkuang",
         "line": "891",
-        "color": "#1d4ed8",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1165610290"
       },
@@ -3646,7 +3652,7 @@
         "name": "福興宮",
         "name_en": "Fuxing Temple",
         "line": "891",
-        "color": "#1d4ed8",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "71523"
       },
@@ -3666,7 +3672,7 @@
         "name": "石山社區",
         "name_en": "Shishan Community",
         "line": "891",
-        "color": "#1d4ed8",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "71488"
       },
@@ -3686,7 +3692,7 @@
         "name": "山尖步道",
         "name_en": "Shanjian Hiking Trail",
         "line": "891",
-        "color": "#1d4ed8",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "71479"
       },
@@ -3706,7 +3712,7 @@
         "name": "浪漫公路口",
         "name_en": "Langman Highway Entrance",
         "line": "891",
-        "color": "#1d4ed8",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "71505"
       },
@@ -3726,7 +3732,7 @@
         "name": "保民堂",
         "name_en": "Baomin Temple",
         "line": "891",
-        "color": "#1d4ed8",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "71495"
       },
@@ -3746,7 +3752,7 @@
         "name": "金瓜石(黃金博物館)",
         "name_en": "Jinguashih(Gold Ecological Park)",
         "line": "891",
-        "color": "#1d4ed8",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "71511"
       },

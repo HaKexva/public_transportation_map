@@ -6,12 +6,13 @@
     "name": "309",
     "name_en": "309",
     "ref": "309",
-    "color": "#6b21a8",
+    "color": "#a21caf",
     "city_id": "HualienCounty",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://web.taiwanbus.tw/MISUploadData/Schematic/file/0027.jpg",
     "operator_id": "114",
-    "operator": "興東客運"
+    "operator": "興東客運",
+    "loop": true
   },
   "features": [
     {
@@ -21,8 +22,9 @@
         "ref": "309",
         "name": "309",
         "name_en": "309",
-        "color": "#6b21a8",
-        "direction": 0
+        "color": "#a21caf",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -16186,6 +16188,10 @@
           [
             121.31237,
             23.33148
+          ],
+          [
+            121.31235,
+            23.33137
           ]
         ]
       }
@@ -16198,7 +16204,7 @@
         "name": "玉里火車站",
         "name_en": "Yuli Station",
         "line": "309",
-        "color": "#6b21a8",
+        "color": "#a21caf",
         "direction": 0,
         "station_id": "139519"
       },
@@ -16218,7 +16224,7 @@
         "name": "安通溫泉",
         "name_en": "An-Tong Hot Spring",
         "line": "309",
-        "color": "#6b21a8",
+        "color": "#a21caf",
         "direction": 0,
         "station_id": "129352"
       },
@@ -16238,7 +16244,7 @@
         "name": "寧埔休憩區",
         "name_en": "Ningpu Recreation Area",
         "line": "309",
-        "color": "#6b21a8",
+        "color": "#a21caf",
         "direction": 0,
         "station_id": "139520"
       },
@@ -16258,7 +16264,7 @@
         "name": "長濱鄉公所",
         "name_en": "Changbin Township Office",
         "line": "309",
-        "color": "#6b21a8",
+        "color": "#a21caf",
         "direction": 0,
         "station_id": "33539"
       },
@@ -16278,7 +16284,7 @@
         "name": "奚卜蘭遊客中心",
         "name_en": "Xibulan Visitor Center",
         "line": "309",
-        "color": "#6b21a8",
+        "color": "#a21caf",
         "direction": 0,
         "station_id": "139523"
       },
@@ -16298,7 +16304,7 @@
         "name": "石梯坪",
         "name_en": "Shitiping",
         "line": "309",
-        "color": "#6b21a8",
+        "color": "#a21caf",
         "direction": 0,
         "station_id": "139522"
       },
@@ -16318,7 +16324,7 @@
         "name": "北回歸線",
         "name_en": "Tropic of Cancer Marker",
         "line": "309",
-        "color": "#6b21a8",
+        "color": "#a21caf",
         "direction": 0,
         "station_id": "139521"
       },
@@ -16338,7 +16344,7 @@
         "name": "金剛大道",
         "name_en": "Jin Gang Boulevard",
         "line": "309",
-        "color": "#6b21a8",
+        "color": "#a21caf",
         "direction": 0,
         "station_id": "139524"
       },
@@ -16358,7 +16364,7 @@
         "name": "金剛好事館",
         "name_en": "Changbin Farmer&#39;s Association",
         "line": "309",
-        "color": "#6b21a8",
+        "color": "#a21caf",
         "direction": 0,
         "station_id": "139525"
       },
@@ -16378,7 +16384,7 @@
         "name": "長濱鄉公所",
         "name_en": "Changbin Township Office",
         "line": "309",
-        "color": "#6b21a8",
+        "color": "#a21caf",
         "direction": 0,
         "station_id": "33539"
       },
@@ -16398,7 +16404,7 @@
         "name": "寧埔休憩區",
         "name_en": "Ningpu Recreation Area",
         "line": "309",
-        "color": "#6b21a8",
+        "color": "#a21caf",
         "direction": 0,
         "station_id": "139526"
       },
@@ -16418,7 +16424,7 @@
         "name": "安通溫泉",
         "name_en": "Antong Hot Spring",
         "line": "309",
-        "color": "#6b21a8",
+        "color": "#a21caf",
         "direction": 0,
         "station_id": "129353"
       },

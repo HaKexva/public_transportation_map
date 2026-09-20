@@ -6,12 +6,13 @@
     "name": "F152-0950",
     "name_en": "F152-0950",
     "ref": "F152-0950",
-    "color": "#0B7A3E",
+    "color": "#6B8F9A",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "operator_id": "16231",
     "operator": "石門區公所",
-    "operator_en": "Shimen District Office"
+    "operator_en": "Shimen District Office",
+    "loop": true
   },
   "features": [
     {
@@ -21,8 +22,9 @@
         "ref": "F152-0950",
         "name": "F152-0950",
         "name_en": "F152-0950",
-        "color": "#0B7A3E",
-        "direction": 0
+        "color": "#6B8F9A",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1406,6 +1408,10 @@
           [
             121.545696885543,
             25.289256439693
+          ],
+          [
+            121.545696769972,
+            25.2892306296162
           ]
         ]
       }
@@ -1418,7 +1424,7 @@
         "name": "老梅",
         "name_en": "Laomei",
         "line": "F152-0950",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75538"
       },
@@ -1438,7 +1444,7 @@
         "name": "大丘田",
         "name_en": "Daqiutian",
         "line": "F152-0950",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75524"
       },
@@ -1458,7 +1464,7 @@
         "name": "樹仔下",
         "name_en": "Shuzaixia",
         "line": "F152-0950",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75513"
       },
@@ -1478,7 +1484,7 @@
         "name": "豬槽潭",
         "name_en": "Zhucaotan",
         "line": "F152-0950",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75567"
       },
@@ -1498,7 +1504,7 @@
         "name": "青山橋",
         "name_en": "Qingshan Bridge",
         "line": "F152-0950",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75569"
       },
@@ -1518,7 +1524,7 @@
         "name": "青山瀑布",
         "name_en": "Qingshan Waterfall",
         "line": "F152-0950",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75570"
       },
@@ -1538,7 +1544,7 @@
         "name": "尖山湖頂",
         "name_en": "Jianshan Huding",
         "line": "F152-0950",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75571"
       },
@@ -1558,7 +1564,7 @@
         "name": "老梅",
         "name_en": "Laomei",
         "line": "F152-0950",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75539"
       },

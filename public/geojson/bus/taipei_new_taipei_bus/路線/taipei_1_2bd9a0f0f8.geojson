@@ -6,13 +6,14 @@
     "name": "兒樂1號線",
     "name_en": "兒樂1號線",
     "ref": "兒樂1號線",
-    "color": "#115e59",
+    "color": "#DC2626",
     "city_id": "Taipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.gov.taipei/File/Get/eca0afec-8377-4718-a8ad-ad4a4415d364?v=639248448913548493",
     "operator_id": "5300",
     "operator": "光華巴士",
-    "operator_en": "Kuang-Hua Bus Co., Ltd."
+    "operator_en": "Kuang-Hua Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "兒樂1號線",
         "name": "兒樂1號線",
         "name_en": "兒樂1號線",
-        "color": "#115e59",
-        "direction": 0
+        "color": "#DC2626",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -415,6 +417,10 @@
           [
             121.5145480871799,
             25.09624626520631
+          ],
+          [
+            121.51474127579608,
+            25.096291870739517
           ]
         ]
       }
@@ -426,8 +432,9 @@
         "ref": "兒樂1號線",
         "name": "兒樂1號線",
         "name_en": "兒樂1號線",
-        "color": "#115e59",
-        "direction": 1
+        "color": "#DC2626",
+        "direction": 1,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -639,6 +646,10 @@
           [
             121.512392758071,
             25.1015512020177
+          ],
+          [
+            121.512391107625,
+            25.1015277381376
           ]
         ]
       }
@@ -651,7 +662,7 @@
         "name": "兒童新樂園",
         "name_en": "Taipei Children's Amusement Park",
         "line": "兒樂1號線",
-        "color": "#115e59",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "1165603310"
       },
@@ -671,7 +682,7 @@
         "name": "捷運芝山站(福國)",
         "name_en": "MRT Zhishan Sta. (Fuguo)",
         "line": "兒樂1號線",
-        "color": "#115e59",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "7262"
       },
@@ -691,7 +702,7 @@
         "name": "捷運士林站(中正)",
         "name_en": "MRT Shilin Sta. (Zhongzheng)",
         "line": "兒樂1號線",
-        "color": "#115e59",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "797"
       },
@@ -711,7 +722,7 @@
         "name": "天文科學館",
         "name_en": "Astronomical Museum",
         "line": "兒樂1號線",
-        "color": "#115e59",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "572"
       },
@@ -731,7 +742,7 @@
         "name": "國立科教館",
         "name_en": "National Taiwan Science Education Center",
         "line": "兒樂1號線",
-        "color": "#115e59",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "790"
       },
@@ -751,7 +762,7 @@
         "name": "兒童新樂園",
         "name_en": "Taipei Children's Amusement Park",
         "line": "兒樂1號線",
-        "color": "#115e59",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "1165603310"
       },

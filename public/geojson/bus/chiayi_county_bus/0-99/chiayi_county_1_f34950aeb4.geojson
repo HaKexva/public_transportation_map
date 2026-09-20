@@ -6,13 +6,14 @@
     "name": "幸福六腳1路",
     "name_en": "幸福六腳1路",
     "ref": "幸福六腳1路",
-    "color": "#3730a3",
+    "color": "#9f1239",
     "city_id": "ChiayiCounty",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://web.taiwanbus.tw/MISUploadData/Schematic/file/0035.jpg",
     "operator_id": "22",
     "operator": "嘉義縣公車處",
-    "operator_en": "Chiayi County Bus Service Administration"
+    "operator_en": "Chiayi County Bus Service Administration",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "幸福六腳1路",
         "name": "幸福六腳1路",
         "name_en": "幸福六腳1路",
-        "color": "#3730a3",
-        "direction": 0
+        "color": "#9f1239",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -5063,6 +5065,10 @@
           [
             120.32343,
             23.45858
+          ],
+          [
+            120.32258,
+            23.45859
           ]
         ]
       }
@@ -5075,7 +5081,7 @@
         "name": "高鐵嘉義站",
         "name_en": "HSR Chiayi Station",
         "line": "幸福六腳1路",
-        "color": "#3730a3",
+        "color": "#9f1239",
         "direction": 0,
         "station_id": "135580"
       },
@@ -5095,7 +5101,7 @@
         "name": "長庚醫院",
         "name_en": "Changgung Hospital",
         "line": "幸福六腳1路",
-        "color": "#3730a3",
+        "color": "#9f1239",
         "direction": 0,
         "station_id": "136620"
       },
@@ -5115,7 +5121,7 @@
         "name": "小槺榔",
         "name_en": "Xiaokanglang",
         "line": "幸福六腳1路",
-        "color": "#3730a3",
+        "color": "#9f1239",
         "direction": 0,
         "station_id": "140453"
       },
@@ -5135,7 +5141,7 @@
         "name": "雙溪口",
         "name_en": "Shuangxikou",
         "line": "幸福六腳1路",
-        "color": "#3730a3",
+        "color": "#9f1239",
         "direction": 0,
         "station_id": "140487"
       },
@@ -5155,7 +5161,7 @@
         "name": "蒜南",
         "name_en": "Suannan",
         "line": "幸福六腳1路",
-        "color": "#3730a3",
+        "color": "#9f1239",
         "direction": 0,
         "station_id": "139224"
       },
@@ -5175,7 +5181,7 @@
         "name": "蒜頭",
         "name_en": "Suantou",
         "line": "幸福六腳1路",
-        "color": "#3730a3",
+        "color": "#9f1239",
         "direction": 0,
         "station_id": "139225"
       },
@@ -5195,7 +5201,7 @@
         "name": "蒜頭國小",
         "name_en": "Suantou Elementary School",
         "line": "幸福六腳1路",
-        "color": "#3730a3",
+        "color": "#9f1239",
         "direction": 0,
         "station_id": "139226"
       },
@@ -5215,7 +5221,7 @@
         "name": "六嘉國中",
         "name_en": "Liujia Junior high school",
         "line": "幸福六腳1路",
-        "color": "#3730a3",
+        "color": "#9f1239",
         "direction": 0,
         "station_id": "140455"
       },
@@ -5235,7 +5241,7 @@
         "name": "大塗師",
         "name_en": "Datushi",
         "line": "幸福六腳1路",
-        "color": "#3730a3",
+        "color": "#9f1239",
         "direction": 0,
         "station_id": "140456"
       },
@@ -5255,7 +5261,7 @@
         "name": "潭墘",
         "name_en": "Tanqian",
         "line": "幸福六腳1路",
-        "color": "#3730a3",
+        "color": "#9f1239",
         "direction": 0,
         "station_id": "140458"
       },
@@ -5275,7 +5281,7 @@
         "name": "中溝",
         "name_en": "Zhonggou",
         "line": "幸福六腳1路",
-        "color": "#3730a3",
+        "color": "#9f1239",
         "direction": 0,
         "station_id": "140459"
       },
@@ -5295,7 +5301,7 @@
         "name": "順天宮",
         "name_en": "ShunTian Temple",
         "line": "幸福六腳1路",
-        "color": "#3730a3",
+        "color": "#9f1239",
         "direction": 0,
         "station_id": "140460"
       },
@@ -5315,7 +5321,7 @@
         "name": "崩山村",
         "name_en": "Bengshan Village",
         "line": "幸福六腳1路",
-        "color": "#3730a3",
+        "color": "#9f1239",
         "direction": 0,
         "station_id": "140461"
       },
@@ -5335,7 +5341,7 @@
         "name": "菜寮仔",
         "name_en": "Cailiauzi",
         "line": "幸福六腳1路",
-        "color": "#3730a3",
+        "color": "#9f1239",
         "direction": 0,
         "station_id": "140489"
       },
@@ -5355,7 +5361,7 @@
         "name": "林內1",
         "name_en": "Linnei(1)",
         "line": "幸福六腳1路",
-        "color": "#3730a3",
+        "color": "#9f1239",
         "direction": 0,
         "station_id": "140463"
       },
@@ -5375,7 +5381,7 @@
         "name": "更寮",
         "name_en": "Gengliao",
         "line": "幸福六腳1路",
-        "color": "#3730a3",
+        "color": "#9f1239",
         "direction": 0,
         "station_id": "140464"
       },
@@ -5395,7 +5401,7 @@
         "name": "大橋頭",
         "name_en": "Daqiaotou",
         "line": "幸福六腳1路",
-        "color": "#3730a3",
+        "color": "#9f1239",
         "direction": 0,
         "station_id": "140465"
       },
@@ -5415,7 +5421,7 @@
         "name": "下双溪",
         "name_en": "Xiashuangxi",
         "line": "幸福六腳1路",
-        "color": "#3730a3",
+        "color": "#9f1239",
         "direction": 0,
         "station_id": "140466"
       },
@@ -5435,7 +5441,7 @@
         "name": "占富厝",
         "name_en": "Zhanfucuo",
         "line": "幸福六腳1路",
-        "color": "#3730a3",
+        "color": "#9f1239",
         "direction": 0,
         "station_id": "140467"
       },
@@ -5455,7 +5461,7 @@
         "name": "溪厝村",
         "name_en": "Xicuo Village",
         "line": "幸福六腳1路",
-        "color": "#3730a3",
+        "color": "#9f1239",
         "direction": 0,
         "station_id": "138431"
       },
@@ -5475,7 +5481,7 @@
         "name": "蒜頭國小",
         "name_en": "Suantou Elementary School",
         "line": "幸福六腳1路",
-        "color": "#3730a3",
+        "color": "#9f1239",
         "direction": 0,
         "station_id": "138425"
       },
@@ -5495,7 +5501,7 @@
         "name": "蒜頭",
         "name_en": "Suantou",
         "line": "幸福六腳1路",
-        "color": "#3730a3",
+        "color": "#9f1239",
         "direction": 0,
         "station_id": "138427"
       },
@@ -5515,7 +5521,7 @@
         "name": "蒜南",
         "name_en": "Suannan",
         "line": "幸福六腳1路",
-        "color": "#3730a3",
+        "color": "#9f1239",
         "direction": 0,
         "station_id": "138428"
       },
@@ -5535,7 +5541,7 @@
         "name": "雙溪口",
         "name_en": "Shuangxikou",
         "line": "幸福六腳1路",
-        "color": "#3730a3",
+        "color": "#9f1239",
         "direction": 0,
         "station_id": "140488"
       },
@@ -5555,7 +5561,7 @@
         "name": "小槺榔",
         "name_en": "Xiaokanglang",
         "line": "幸福六腳1路",
-        "color": "#3730a3",
+        "color": "#9f1239",
         "direction": 0,
         "station_id": "140469"
       },
@@ -5575,7 +5581,7 @@
         "name": "長庚醫院",
         "name_en": "Changgung Hospital",
         "line": "幸福六腳1路",
-        "color": "#3730a3",
+        "color": "#9f1239",
         "direction": 0,
         "station_id": "136629"
       },

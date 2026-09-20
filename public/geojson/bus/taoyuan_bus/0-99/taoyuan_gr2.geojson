@@ -6,13 +6,14 @@
     "name": "GR2",
     "name_en": "GR2",
     "ref": "GR2",
-    "color": "#b91c1c",
+    "color": "#b45309",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/6070/map/1968/image",
     "operator_id": "1",
     "operator": "桃園客運",
-    "operator_en": "Taoyuan Bus Co., Ltd."
+    "operator_en": "Taoyuan Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "GR2",
         "name": "GR2",
         "name_en": "GR2",
-        "color": "#b91c1c",
-        "direction": 0
+        "color": "#b45309",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -2359,6 +2361,10 @@
           [
             121.31263,
             24.99147
+          ],
+          [
+            121.31297,
+            24.9905
           ]
         ]
       }
@@ -2371,7 +2377,7 @@
         "name": "桃園公車站",
         "name_en": "Taoyuan Bus Station",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4215"
       },
@@ -2391,7 +2397,7 @@
         "name": "南華中華路口",
         "name_en": "Nanhua and Zhonghua Rd. Intersection",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3353"
       },
@@ -2411,7 +2417,7 @@
         "name": "南華街口",
         "name_en": "Nanhua Street Intersection",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3202"
       },
@@ -2431,7 +2437,7 @@
         "name": "三民建國路口",
         "name_en": "Sanmin and Jianguo Rd. Intersection",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3200"
       },
@@ -2451,7 +2457,7 @@
         "name": "三民介壽路口",
         "name_en": "SanMin and JieShou Rd. Intersection",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3198"
       },
@@ -2471,7 +2477,7 @@
         "name": "桃園監理站",
         "name_en": "Taoyuan Motor Vehicles Office",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "922"
       },
@@ -2491,7 +2497,7 @@
         "name": "利台",
         "name_en": "Litai",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3196"
       },
@@ -2511,7 +2517,7 @@
         "name": "力行街口",
         "name_en": "Lixing Street Intersection",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3194"
       },
@@ -2531,7 +2537,7 @@
         "name": "無線電台",
         "name_en": "Radio Station",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "396"
       },
@@ -2551,7 +2557,7 @@
         "name": "小大湳",
         "name_en": "Xiaodanan",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1721"
       },
@@ -2571,7 +2577,7 @@
         "name": "忠勇西街站(G05)",
         "name_en": "Zhongyong West Street station(G05)",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3141"
       },
@@ -2591,7 +2597,7 @@
         "name": "介壽大智路口",
         "name_en": "Jieshou & Dazhi Rd. Intersection",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3143"
       },
@@ -2611,7 +2617,7 @@
         "name": "陸光四村",
         "name_en": "The 4th village of Lu guang",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1258"
       },
@@ -2631,7 +2637,7 @@
         "name": "大湳站(G04)",
         "name_en": "Danan Station(G04)",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1723"
       },
@@ -2651,7 +2657,7 @@
         "name": "瑞祥社區",
         "name_en": "Rueixiang Community",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1274"
       },
@@ -2671,7 +2677,7 @@
         "name": "鴻昌社區",
         "name_en": "Hungchang Community",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1241"
       },
@@ -2691,7 +2697,7 @@
         "name": "麻園站(G03)",
         "name_en": "Mayuan station(G03)",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1725"
       },
@@ -2711,7 +2717,7 @@
         "name": "梅花社區",
         "name_en": "Meihua Community",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1243"
       },
@@ -2731,7 +2737,7 @@
         "name": "欣桃社區",
         "name_en": "Xintao Community",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1247"
       },
@@ -2751,7 +2757,7 @@
         "name": "松柏園",
         "name_en": "SungBoYuan",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3169"
       },
@@ -2771,7 +2777,7 @@
         "name": "瑞豐國小(桃園防災教育館)",
         "name_en": "Ruifeng Elementary School(Taoyuan Disaster Education Center)",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1249"
       },
@@ -2791,7 +2797,7 @@
         "name": "瑞發家園",
         "name_en": "Rueifajiayuan",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3171"
       },
@@ -2811,7 +2817,7 @@
         "name": "更寮腳(興豐路)",
         "name_en": "Gengliaojiao(Xingfeng Road)",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1727"
       },
@@ -2831,7 +2837,7 @@
         "name": "聯福巷",
         "name_en": "Lianfu Ln.",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1729"
       },
@@ -2851,7 +2857,7 @@
         "name": "興豐友聯街口",
         "name_en": "Singfong and Youlian St. Intersection",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2517"
       },
@@ -2871,7 +2877,7 @@
         "name": "豐田路",
         "name_en": "Fengtian Rd.",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4478"
       },
@@ -2891,7 +2897,7 @@
         "name": "豐田豐德路口",
         "name_en": "Fengtian and Fengde Road Intersection",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3802"
       },
@@ -2911,7 +2917,7 @@
         "name": "遠雄艾菲爾",
         "name_en": "Far Glory Eiffel",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3803"
       },
@@ -2931,7 +2937,7 @@
         "name": "興仁里",
         "name_en": "Xingren Village",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3805"
       },
@@ -2951,7 +2957,7 @@
         "name": "八德區公所(三元宮)",
         "name_en": "Bade District Office (Sanyuan Temple)",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2062"
       },
@@ -2971,7 +2977,7 @@
         "name": "八德教養院",
         "name_en": "BaDe Home for The Disabled",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1209"
       },
@@ -2991,7 +2997,7 @@
         "name": "崙子路口",
         "name_en": "Lunzi Rd. Intersection",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1207"
       },
@@ -3011,7 +3017,7 @@
         "name": "仁德公園",
         "name_en": "Rende Park",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4512"
       },
@@ -3031,7 +3037,7 @@
         "name": "仁德廣興路口",
         "name_en": "Rende guangsing Rd. Intersection",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4534"
       },
@@ -3051,7 +3057,7 @@
         "name": "溪濱公園",
         "name_en": "Xibin Park",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4536"
       },
@@ -3071,7 +3077,7 @@
         "name": "建德長興路口",
         "name_en": "Jiande and Changxing Road Intersection",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4494"
       },
@@ -3091,7 +3097,7 @@
         "name": "興豐中正路口",
         "name_en": "Xingfeng and Zhongzheng Rd. Intersection",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6988"
       },
@@ -3111,7 +3117,7 @@
         "name": "八德區公所(農會)",
         "name_en": "Bade District Office (Farmers Assoc.)",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3584"
       },
@@ -3131,7 +3137,7 @@
         "name": "八德國中",
         "name_en": "Bade Junior High School",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1732"
       },
@@ -3151,7 +3157,7 @@
         "name": "興豐友聯街口",
         "name_en": "Singfong and Youlian St. Intersection",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2516"
       },
@@ -3171,7 +3177,7 @@
         "name": "聯福巷",
         "name_en": "Lianfu Ln.",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1730"
       },
@@ -3191,7 +3197,7 @@
         "name": "更寮腳(介壽路)",
         "name_en": "Gengliaojiao (Jieshou Road)",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1252"
       },
@@ -3211,7 +3217,7 @@
         "name": "瑞發家園",
         "name_en": "Rueifajiayuan",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3172"
       },
@@ -3231,7 +3237,7 @@
         "name": "瑞豐國小(桃園防災教育館)",
         "name_en": "Ruifeng Elementary School(Taoyuan Disaster Education Center)",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1250"
       },
@@ -3251,7 +3257,7 @@
         "name": "松柏園",
         "name_en": "SungBoYuan",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3170"
       },
@@ -3271,7 +3277,7 @@
         "name": "欣桃社區",
         "name_en": "Xintao Community",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1248"
       },
@@ -3291,7 +3297,7 @@
         "name": "梅花社區",
         "name_en": "Meihua Community",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1244"
       },
@@ -3311,7 +3317,7 @@
         "name": "麻園站(G03)",
         "name_en": "Mayuan station(G03)",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1726"
       },
@@ -3331,7 +3337,7 @@
         "name": "鴻昌社區",
         "name_en": "Hungchang Community",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1242"
       },
@@ -3351,7 +3357,7 @@
         "name": "瑞祥社區",
         "name_en": "Rueixiang Community",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1273"
       },
@@ -3371,7 +3377,7 @@
         "name": "大湳站(G04)",
         "name_en": "Danan Station(G04)",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1724"
       },
@@ -3391,7 +3397,7 @@
         "name": "陸光四村",
         "name_en": "Luguang 4th Village",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1257"
       },
@@ -3411,7 +3417,7 @@
         "name": "介壽大智路口",
         "name_en": "Jieshou & Dazhi Rd. Intersection",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3144"
       },
@@ -3431,7 +3437,7 @@
         "name": "忠勇西街站(G05)",
         "name_en": "Zhongyong West Street station(G05)",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3142"
       },
@@ -3451,7 +3457,7 @@
         "name": "小大湳",
         "name_en": "Xiaodanan",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1722"
       },
@@ -3471,7 +3477,7 @@
         "name": "無線電台",
         "name_en": "Radio Station",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "397"
       },
@@ -3491,7 +3497,7 @@
         "name": "力行街口",
         "name_en": "Lixing Street Intersection",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3193"
       },
@@ -3511,7 +3517,7 @@
         "name": "利台",
         "name_en": "Litai",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3195"
       },
@@ -3531,7 +3537,7 @@
         "name": "桃園監理站",
         "name_en": "Taoyuan Motor Vehicles Office",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "923"
       },
@@ -3551,7 +3557,7 @@
         "name": "三民介壽路口",
         "name_en": "SanMin and JieShou Rd. Intersection",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3197"
       },
@@ -3571,7 +3577,7 @@
         "name": "三民建國路口",
         "name_en": "Sanmin and Jianguo Rd. Intersection",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3199"
       },
@@ -3591,7 +3597,7 @@
         "name": "南華街口",
         "name_en": "Nanhua Street Intersection",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3201"
       },
@@ -3611,7 +3617,7 @@
         "name": "中華民族路口",
         "name_en": "Zhonghua and Minzu Road Intersection",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1114"
       },
@@ -3631,7 +3637,7 @@
         "name": "統領百貨",
         "name_en": "Tonlin Department Store",
         "line": "GR2",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1223"
       },

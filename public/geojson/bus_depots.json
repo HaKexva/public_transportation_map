@@ -1,43 +1,233 @@
 [
   {
-    "id": "bus_depot_sid_4650",
-    "name": "南港機廠",
+    "id": "bus_depot_sid_140984",
+    "name": "七堵分站",
     "routes": [
-      "taipei_212_4e93db5f09",
-      "taipei_212_e441102b0e",
-      "taipei_270",
-      "taipei_270qu",
-      "taipei_88",
-      "taipei_lan20",
-      "taipei_lan25",
-      "taipei_lan51",
-      "taipei_zong19"
+      "keelung_503_0eb4b29e2b",
+      "keelung_503_fa39357bf4",
+      "keelung_606_0bb8f07f86",
+      "keelung_701_9c903308da",
+      "keelung_701_c1570e8e12",
+      "keelung_702",
+      "keelung_703"
     ],
-    "lon": 121.601113,
-    "lat": 25.051558,
+    "lon": 121.710168,
+    "lat": 25.097375,
     "station_ids": [
-      "4650"
+      "140984"
     ],
     "grade": "調度站"
   },
   {
-    "id": "bus_depot_sid_4651",
-    "name": "南港機廠",
+    "id": "bus_depot_sid_1165604674",
+    "name": "三重客運五股站",
     "routes": [
-      "taipei_212_4e93db5f09",
-      "taipei_212_e441102b0e",
-      "taipei_270",
-      "taipei_270qu",
-      "taipei_88",
-      "taipei_lan20",
-      "taipei_lan25",
-      "taipei_lan51",
-      "taipei_zong19"
+      "taipei_641"
     ],
-    "lon": 121.604234,
-    "lat": 25.051682,
+    "lon": 121.428434,
+    "lat": 25.090746,
     "station_ids": [
-      "4651"
+      "1165604674"
+    ],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_sid_1165608566",
+    "name": "三重客運新莊站",
+    "routes": [
+      "taipei_299"
+    ],
+    "lon": 121.427621,
+    "lat": 25.004889,
+    "station_ids": [
+      "1165608566"
+    ],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_sid_75269",
+    "name": "三重客運淡水站",
+    "routes": [
+      "new_taipei_857",
+      "new_taipei_hong23"
+    ],
+    "lon": 121.42826,
+    "lat": 25.197763,
+    "station_ids": [
+      "75269"
+    ],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_sid_6662",
+    "name": "三重客運迴龍站",
+    "routes": [
+      "taoyuan_607"
+    ],
+    "lon": 121.39453,
+    "lat": 25.01578,
+    "station_ids": [
+      "6662"
+    ],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_24.95_121.22_",
+    "name": "中壢客運中壢總站",
+    "routes": [
+      "inter_city_1862",
+      "inter_city_1862a",
+      "inter_city_2022",
+      "inter_city_9001"
+    ],
+    "lon": 121.224258,
+    "lat": 24.953458,
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_sid_126",
+    "name": "中壢客運中壢總站",
+    "routes": [
+      "taoyuan_112n",
+      "taoyuan_122",
+      "taoyuan_133",
+      "taoyuan_133a",
+      "taoyuan_133b",
+      "taoyuan_167",
+      "taoyuan_167a",
+      "taoyuan_170"
+    ],
+    "lon": 121.224161,
+    "lat": 24.953365,
+    "station_ids": [
+      "126"
+    ],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_sid_4123",
+    "name": "中壢總站",
+    "routes": [
+      "taoyuan_5006",
+      "taoyuan_5017",
+      "taoyuan_5025",
+      "taoyuan_5026",
+      "taoyuan_503",
+      "taoyuan_5032",
+      "taoyuan_5033",
+      "taoyuan_5035",
+      "taoyuan_5038",
+      "taoyuan_5039",
+      "taoyuan_5041",
+      "taoyuan_5042",
+      "taoyuan_5043",
+      "taoyuan_5043a",
+      "taoyuan_505",
+      "taoyuan_5077",
+      "taoyuan_5078",
+      "taoyuan_5081",
+      "taoyuan_5081a",
+      "taoyuan_5082",
+      "taoyuan_5087",
+      "taoyuan_5087a",
+      "taoyuan_5089",
+      "taoyuan_5112",
+      "taoyuan_5118"
+    ],
+    "lon": 121.223906,
+    "lat": 24.953018,
+    "station_ids": [
+      "4123"
+    ],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_sid_140750",
+    "name": "八斗子分站",
+    "routes": [
+      "keelung_103_xiangfeng",
+      "keelung_103_zhongzheng",
+      "keelung_107",
+      "keelung_108",
+      "keelung_203_1475bab86e",
+      "keelung_203_5756201e00",
+      "keelung_203_d0269a6042",
+      "keelung_203_effa7d7e3a"
+    ],
+    "lon": 121.790565,
+    "lat": 25.143455,
+    "station_ids": [
+      "140750"
+    ],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_sid_141318",
+    "name": "八斗子分站",
+    "routes": [
+      "keelung_108",
+      "keelung_108_1c4f09c9fd"
+    ],
+    "lon": 121.790768,
+    "lat": 25.143521,
+    "station_ids": [
+      "141318"
+    ],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_sid_142476",
+    "name": "公車總站",
+    "routes": [
+      "penghu_county_001",
+      "penghu_county_002",
+      "penghu_county_003",
+      "penghu_county_004"
+    ],
+    "lon": 119.56427,
+    "lat": 23.56734,
+    "station_ids": [
+      "142476"
+    ],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_sid_144119",
+    "name": "勝利八街總站",
+    "routes": [
+      "hsinchu_county_9_2aaa56566f"
+    ],
+    "lon": 121.03161,
+    "lat": 24.82424,
+    "station_ids": [
+      "144119"
+    ],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_sid_144773",
+    "name": "北埔老街/北埔客運站",
+    "routes": [
+      "hsinchu_county_ffc67b63b0"
+    ],
+    "lon": 121.056965,
+    "lat": 24.700827,
+    "station_ids": [
+      "144773"
+    ],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_sid_141021",
+    "name": "四腳亭分站",
+    "routes": [
+      "keelung_601"
+    ],
+    "lon": 121.763109,
+    "lat": 25.098562,
+    "station_ids": [
+      "141021"
     ],
     "grade": "調度站"
   },
@@ -56,15 +246,303 @@
     "grade": "調度站"
   },
   {
-    "id": "bus_depot_sid_1165609346",
-    "name": "安坑輕軌機廠",
+    "id": "bus_depot_24.14_120.69_",
+    "name": "國光客運臺中車站",
     "routes": [
-      "new_taipei_6_0b59618a22"
+      "inter_city_1805",
+      "inter_city_1826",
+      "inter_city_1827",
+      "inter_city_1827b",
+      "inter_city_1851",
+      "inter_city_1852",
+      "inter_city_1852a",
+      "inter_city_1860",
+      "inter_city_1861",
+      "inter_city_1863",
+      "inter_city_1866",
+      "inter_city_1866b",
+      "inter_city_1870"
     ],
-    "lon": 121.486764,
-    "lat": 24.943024,
+    "lon": 120.685721,
+    "lat": 24.14138,
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_sid_139242",
+    "name": "國光客運麟洛站",
+    "routes": [
+      "pingtung_county_509"
+    ],
+    "lon": 120.5293,
+    "lat": 22.64797,
     "station_ids": [
-      "1165609346"
+      "139242"
+    ],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_23.97_120.96_",
+    "name": "埔里總站",
+    "routes": [
+      "inter_city_6650",
+      "inter_city_6650a",
+      "inter_city_6650b",
+      "inter_city_6651",
+      "inter_city_6651a",
+      "inter_city_6651b",
+      "inter_city_6651c",
+      "inter_city_6652",
+      "inter_city_6656",
+      "inter_city_6657",
+      "inter_city_6658",
+      "inter_city_6659",
+      "inter_city_6660",
+      "inter_city_6660a",
+      "inter_city_6661",
+      "inter_city_6661a",
+      "inter_city_6662",
+      "inter_city_6663",
+      "inter_city_6664",
+      "inter_city_6665",
+      "inter_city_6665a",
+      "inter_city_6667",
+      "inter_city_6667a",
+      "inter_city_6668",
+      "inter_city_6668b"
+    ],
+    "lon": 120.96243,
+    "lat": 23.96853,
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_sid_132311",
+    "name": "埔里總站",
+    "routes": [
+      "nantou_county_1"
+    ],
+    "lon": 120.96246,
+    "lat": 23.96848,
+    "station_ids": [
+      "132311"
+    ],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_sid_74743",
+    "name": "埤島里總站",
+    "routes": [
+      "new_taipei_f109"
+    ],
+    "lon": 121.460833,
+    "lat": 25.196183,
+    "station_ids": [
+      "74743"
+    ],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_sid_1165609515",
+    "name": "基隆客運瑞芳站",
+    "routes": [
+      "new_taipei_825",
+      "new_taipei_846"
+    ],
+    "lon": 121.790845,
+    "lat": 25.11011,
+    "station_ids": [
+      "1165609515"
+    ],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_sid_4288",
+    "name": "大溪總站",
+    "routes": [
+      "taoyuan_212",
+      "taoyuan_212a",
+      "taoyuan_263",
+      "taoyuan_5000",
+      "taoyuan_506",
+      "taoyuan_5090",
+      "taoyuan_5091",
+      "taoyuan_5093",
+      "taoyuan_5094",
+      "taoyuan_5096",
+      "taoyuan_5096a",
+      "taoyuan_5097",
+      "taoyuan_5098",
+      "taoyuan_5099",
+      "taoyuan_5099a",
+      "taoyuan_5101",
+      "taoyuan_5104",
+      "taoyuan_5104a",
+      "taoyuan_5104b",
+      "taoyuan_5105",
+      "taoyuan_5106",
+      "taoyuan_5106a",
+      "taoyuan_5106b",
+      "taoyuan_5107",
+      "taoyuan_5107a",
+      "taoyuan_5107b",
+      "taoyuan_5107c",
+      "taoyuan_5109",
+      "taoyuan_5109a",
+      "taoyuan_5110",
+      "taoyuan_5110a",
+      "taoyuan_5112",
+      "taoyuan_702",
+      "taoyuan_l701",
+      "taoyuan_l701a",
+      "taoyuan_l705",
+      "taoyuan_l706",
+      "taoyuan_l712"
+    ],
+    "lon": 121.287885,
+    "lat": 24.881172,
+    "station_ids": [
+      "4288"
+    ],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_sid_143585",
+    "name": "太魯閣客運場站",
+    "routes": [
+      "hualien_county_302"
+    ],
+    "lon": 121.641907,
+    "lat": 24.120913,
+    "station_ids": [
+      "143585"
+    ],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_sid_143608",
+    "name": "太魯閣客運場站",
+    "routes": [
+      "hualien_county_302"
+    ],
+    "lon": 121.641897,
+    "lat": 24.121109,
+    "station_ids": [
+      "143608"
+    ],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_sid_6989",
+    "name": "平鎮總站",
+    "routes": [
+      "taoyuan_5644a"
+    ],
+    "lon": 121.202431,
+    "lat": 24.910771,
+    "station_ids": [
+      "6989"
+    ],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_22.64_120.30_",
+    "name": "建國客運站",
+    "routes": [
+      "inter_city_1610",
+      "inter_city_1610a",
+      "inter_city_1610b",
+      "inter_city_1610c",
+      "inter_city_1610d",
+      "inter_city_1610e",
+      "inter_city_1610f",
+      "inter_city_1610g",
+      "inter_city_1621",
+      "inter_city_1621a",
+      "inter_city_1621b",
+      "inter_city_1621c",
+      "inter_city_1621d",
+      "inter_city_1621e",
+      "inter_city_1650",
+      "inter_city_1650a",
+      "inter_city_1650d",
+      "inter_city_1651",
+      "inter_city_1651a",
+      "inter_city_1651b",
+      "inter_city_1660",
+      "inter_city_1838",
+      "inter_city_1838a",
+      "inter_city_1862",
+      "inter_city_1862a",
+      "inter_city_1872",
+      "inter_city_1872a",
+      "inter_city_7512",
+      "inter_city_7512b",
+      "inter_city_7512c",
+      "inter_city_7512d",
+      "inter_city_7512e",
+      "inter_city_7512f",
+      "inter_city_7513",
+      "inter_city_7513a",
+      "inter_city_7513b",
+      "inter_city_7513c",
+      "inter_city_7513d",
+      "inter_city_7513e",
+      "inter_city_7513f",
+      "inter_city_7513g",
+      "inter_city_7513h",
+      "inter_city_7513i",
+      "inter_city_7513j",
+      "inter_city_7513k",
+      "inter_city_7513l"
+    ],
+    "lon": 120.302799,
+    "lat": 22.637668,
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_sid_73284",
+    "name": "指南客運樹林站",
+    "routes": [
+      "new_taipei_799",
+      "new_taipei_800",
+      "new_taipei_847",
+      "new_taipei_847qu",
+      "new_taipei_880"
+    ],
+    "lon": 121.399619,
+    "lat": 24.972523,
+    "station_ids": [
+      "73284"
+    ],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_sid_776",
+    "name": "新竹客運楊梅站",
+    "routes": [
+      "taoyuan_252",
+      "taoyuan_252a"
+    ],
+    "lon": 121.148319,
+    "lat": 24.913132,
+    "station_ids": [
+      "776"
+    ],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_sid_777",
+    "name": "新竹客運楊梅站",
+    "routes": [
+      "taoyuan_252",
+      "taoyuan_252a"
+    ],
+    "lon": 121.148611,
+    "lat": 24.912906,
+    "station_ids": [
+      "777"
     ],
     "grade": "調度站"
   },
@@ -118,6 +596,228 @@
     "grade": "調度站"
   },
   {
+    "id": "bus_depot_25.01_121.46_",
+    "name": "板橋客運站",
+    "routes": [
+      "inter_city_1820b",
+      "inter_city_1821",
+      "inter_city_1851",
+      "inter_city_1852",
+      "inter_city_1852a"
+    ],
+    "lon": 121.46328,
+    "lat": 25.01484,
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.02_121.47_",
+    "name": "板橋客運站",
+    "routes": [
+      "inter_city_1660",
+      "inter_city_1820b",
+      "inter_city_1821",
+      "inter_city_1851",
+      "inter_city_1852",
+      "inter_city_1852a",
+      "inter_city_1915",
+      "inter_city_1915a",
+      "inter_city_1915b",
+      "inter_city_1915c",
+      "inter_city_1915d",
+      "inter_city_1916",
+      "inter_city_1917",
+      "inter_city_1917a",
+      "inter_city_1962",
+      "inter_city_7504",
+      "inter_city_7505",
+      "inter_city_7505a",
+      "inter_city_7505b",
+      "inter_city_7505c",
+      "inter_city_7505d"
+    ],
+    "lon": 121.465174,
+    "lat": 25.015484,
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_sid_1787",
+    "name": "桃園客運新屋站",
+    "routes": [
+      "taoyuan_5025",
+      "taoyuan_5027b",
+      "taoyuan_5027c",
+      "taoyuan_5028",
+      "taoyuan_5031a",
+      "taoyuan_5032",
+      "taoyuan_5033",
+      "taoyuan_5035",
+      "taoyuan_5039",
+      "taoyuan_505",
+      "taoyuan_t801"
+    ],
+    "lon": 121.102547,
+    "lat": 24.972854,
+    "station_ids": [
+      "1787"
+    ],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_sid_6548",
+    "name": "桃園客運新屋站",
+    "routes": [
+      "taoyuan_l601"
+    ],
+    "lon": 121.102919,
+    "lat": 24.972912,
+    "station_ids": [
+      "6548"
+    ],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_sid_6711",
+    "name": "桃園客運新屋站",
+    "routes": [
+      "taoyuan_l601"
+    ],
+    "lon": 121.102547,
+    "lat": 24.972854,
+    "station_ids": [
+      "6711"
+    ],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_sid_6871",
+    "name": "桃園客運桃園總站",
+    "routes": [
+      "taoyuan_502"
+    ],
+    "lon": 121.314149,
+    "lat": 24.98657,
+    "station_ids": [
+      "6871"
+    ],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_sid_3204",
+    "name": "桃園總站",
+    "routes": [
+      "taoyuan_103",
+      "taoyuan_103a",
+      "taoyuan_109",
+      "taoyuan_206",
+      "taoyuan_206a",
+      "taoyuan_302",
+      "taoyuan_5014",
+      "taoyuan_gr"
+    ],
+    "lon": 121.314085,
+    "lat": 24.986559,
+    "station_ids": [
+      "3204"
+    ],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_24.99_121.31_",
+    "name": "桃客總站",
+    "routes": [
+      "inter_city_9005",
+      "inter_city_9005a",
+      "inter_city_9023"
+    ],
+    "lon": 121.314159,
+    "lat": 24.986677,
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_sid_5123",
+    "name": "桃客總站",
+    "routes": [
+      "taoyuan_5000",
+      "taoyuan_5008",
+      "taoyuan_5010",
+      "taoyuan_5011",
+      "taoyuan_5044",
+      "taoyuan_5053",
+      "taoyuan_5053a",
+      "taoyuan_5056",
+      "taoyuan_5057",
+      "taoyuan_5057a",
+      "taoyuan_5057b",
+      "taoyuan_5057c",
+      "taoyuan_5060",
+      "taoyuan_5060a",
+      "taoyuan_5065",
+      "taoyuan_5068",
+      "taoyuan_5090",
+      "taoyuan_5096",
+      "taoyuan_5096a"
+    ],
+    "lon": 121.314079,
+    "lat": 24.986658,
+    "station_ids": [
+      "5123"
+    ],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_sid_1165610536",
+    "name": "淡水客運八里站",
+    "routes": [
+      "new_taipei_878",
+      "new_taipei_878qu",
+      "new_taipei_963",
+      "new_taipei_hong13",
+      "new_taipei_hong22",
+      "taipei_682"
+    ],
+    "lon": 121.405981,
+    "lat": 25.153505,
+    "station_ids": [
+      "1165610536"
+    ],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_sid_141273",
+    "name": "深美分站",
+    "routes": [
+      "keelung_204_32c0655506",
+      "keelung_204_5756201e00",
+      "keelung_204_89f616f610",
+      "keelung_204_e89b0cfcd8"
+    ],
+    "lon": 121.77806,
+    "lat": 25.135878,
+    "station_ids": [
+      "141273"
+    ],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_24.11_120.61_",
+    "name": "烏日客運南站",
+    "routes": [
+      "inter_city_1621",
+      "inter_city_1621a",
+      "inter_city_1621b",
+      "inter_city_1621c",
+      "inter_city_1621d",
+      "inter_city_1621e"
+    ],
+    "lon": 120.613607,
+    "lat": 24.108732,
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
     "id": "bus_depot_sid_11045",
     "name": "統聯客運干城停車場",
     "routes": [
@@ -131,67 +831,204 @@
     "grade": "調度站"
   },
   {
-    "id": "bus_depot_sid_3655",
-    "name": "鐵路機廠",
+    "id": "bus_depot_sid_2911",
+    "name": "統聯客運永康站",
     "routes": [
-      "kaohsiung_100_ganxian_44d150a983",
-      "kaohsiung_100qu_c4dd0eec6b",
-      "kaohsiung_hong21_3ece402a64",
-      "kaohsiung_hong21_a53155c383"
+      "tainan_103",
+      "tainan_6"
     ],
-    "lon": 120.33225,
-    "lat": 22.617133,
+    "lon": 120.24886,
+    "lat": 22.99869,
     "station_ids": [
-      "3655"
+      "2911"
     ],
     "grade": "調度站"
   },
   {
-    "id": "bus_depot_sid_3656",
-    "name": "鐵路機廠",
+    "id": "bus_depot_sid_5699",
+    "name": "美濃客運站",
     "routes": [
-      "kaohsiung_100_ganxian_44d150a983",
-      "kaohsiung_100qu_c4dd0eec6b",
-      "kaohsiung_hong21_3ece402a64",
-      "kaohsiung_hong21_a53155c383"
+      "kaohsiung_t510",
+      "kaohsiung_t518_-_b9794b2932",
+      "kaohsiung_t518b"
     ],
-    "lon": 120.332133,
-    "lat": 22.616978,
+    "lon": 120.541513,
+    "lat": 22.901716,
     "station_ids": [
-      "3656"
+      "5699"
     ],
     "grade": "調度站"
   },
   {
-    "id": "bus_depot_sid_2148",
-    "name": "高鐵總機廠",
+    "id": "bus_depot_sid_1165605965",
+    "name": "蘆洲總站",
     "routes": [
-      "kaohsiung_7c",
-      "kaohsiung_95a",
-      "kaohsiung_97",
-      "kaohsiung_hong58b"
+      "new_taipei_ju25",
+      "taipei_261"
     ],
-    "lon": 120.345855,
-    "lat": 22.759847,
+    "lon": 121.465175,
+    "lat": 25.090152,
     "station_ids": [
-      "2148"
+      "1165605965"
     ],
     "grade": "調度站"
   },
   {
-    "id": "bus_depot_sid_2149",
-    "name": "高鐵總機廠",
+    "id": "bus_depot_sid_15067",
+    "name": "蘆洲總站",
     "routes": [
-      "kaohsiung_7c",
-      "kaohsiung_95a",
-      "kaohsiung_97",
-      "kaohsiung_hong58b"
+      "new_taipei_581",
+      "new_taipei_704",
+      "new_taipei_785",
+      "new_taipei_806",
+      "new_taipei_f312",
+      "taipei_225",
+      "taipei_225qu",
+      "taipei_232",
+      "taipei_232_68f0d59b7e",
+      "taipei_306",
+      "taipei_508",
+      "taipei_ganxian_ae0a6f178c",
+      "taipei_neiketongqinzhuanche6"
     ],
-    "lon": 120.347144,
-    "lat": 22.759943,
+    "lon": 121.465972,
+    "lat": 25.089147,
     "station_ids": [
-      "2149"
+      "15067"
     ],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_sid_3698",
+    "name": "蘆洲總站",
+    "routes": [
+      "new_taipei_-_51349aee13",
+      "new_taipei_-_c0b0b046fb",
+      "new_taipei_581",
+      "new_taipei_704",
+      "new_taipei_785",
+      "new_taipei_806",
+      "new_taipei_811",
+      "new_taipei_899",
+      "new_taipei_f319",
+      "new_taipei_lan1",
+      "taipei_225",
+      "taipei_225qu",
+      "taipei_232",
+      "taipei_232_68f0d59b7e",
+      "taipei_306",
+      "taipei_508",
+      "taipei_508qu",
+      "taipei_ganxian_ae0a6f178c",
+      "taipei_neiketongqinzhuanche6"
+    ],
+    "lon": 121.465804,
+    "lat": 25.089056,
+    "station_ids": [
+      "3698"
+    ],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_sid_852",
+    "name": "陽明山總站",
+    "routes": [
+      "taipei_108",
+      "taipei_108qu",
+      "taipei_260",
+      "taipei_260qu",
+      "taipei_hong5",
+      "taipei_zhuanche124_aa390c042a"
+    ],
+    "lon": 121.54603,
+    "lat": 25.15148,
+    "station_ids": [
+      "852"
+    ],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_24.69_120.91_",
+    "name": "頭份總站",
+    "routes": [
+      "inter_city_5801",
+      "inter_city_5801a",
+      "inter_city_5803",
+      "inter_city_5803a",
+      "inter_city_5804",
+      "inter_city_5805",
+      "inter_city_5805a",
+      "inter_city_5806",
+      "inter_city_5807",
+      "inter_city_5807a",
+      "inter_city_5810",
+      "inter_city_5812",
+      "inter_city_5813",
+      "inter_city_5813a",
+      "inter_city_5823"
+    ],
+    "lon": 120.91074,
+    "lat": 24.686377,
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_sid_135823",
+    "name": "馬公總站",
+    "routes": [
+      "penghu_county_01",
+      "penghu_county_0e",
+      "penghu_county_0w",
+      "penghu_county_11",
+      "penghu_county_12",
+      "penghu_county_13",
+      "penghu_county_21",
+      "penghu_county_22",
+      "penghu_county_23",
+      "penghu_county_25",
+      "penghu_county_31",
+      "penghu_county_32",
+      "penghu_county_33",
+      "penghu_county_34",
+      "penghu_county_35",
+      "penghu_county_51",
+      "penghu_county_52"
+    ],
+    "lon": 119.564268,
+    "lat": 23.56734,
+    "station_ids": [
+      "135823"
+    ],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_sid_136003",
+    "name": "馬公總站",
+    "routes": [
+      "penghu_county_31",
+      "penghu_county_32",
+      "penghu_county_33",
+      "penghu_county_34"
+    ],
+    "lon": 119.56427,
+    "lat": 23.56734,
+    "station_ids": [
+      "136003"
+    ],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_24.86_121.22_",
+    "name": "龍潭總站",
+    "routes": [
+      "inter_city_1851",
+      "inter_city_1852",
+      "inter_city_1852a",
+      "inter_city_5350"
+    ],
+    "lon": 121.22261,
+    "lat": 24.86401,
+    "station_ids": [],
     "grade": "調度站"
   }
 ]

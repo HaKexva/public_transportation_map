@@ -6,12 +6,13 @@
     "name": "0左",
     "name_en": "0左",
     "ref": "0左",
-    "color": "#9333ea",
+    "color": "#0f766e",
     "city_id": "Tainan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://busmap.tainan.gov.tw/ebus/resources/PathPic/zh_TW/10450.jpg",
     "operator_id": "16201",
-    "operator": "統聯客運(台南)"
+    "operator": "統聯客運(台南)",
+    "loop": true
   },
   "features": [
     {
@@ -21,8 +22,9 @@
         "ref": "0左",
         "name": "0左",
         "name_en": "0左",
-        "color": "#9333ea",
-        "direction": 2
+        "color": "#0f766e",
+        "direction": 2,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1754,6 +1756,10 @@
           [
             120.21068,
             22.99751
+          ],
+          [
+            120.21067,
+            22.99751
           ]
         ]
       }
@@ -1766,7 +1772,7 @@
         "name": "臺南火車站(成功路A)",
         "name_en": "Tainan Train Station(Chenggong Rd. A)",
         "line": "0左",
-        "color": "#9333ea",
+        "color": "#0f766e",
         "direction": 2,
         "station_id": "1091"
       },
@@ -1786,7 +1792,7 @@
         "name": "成功路",
         "name_en": "Chenggong Rd",
         "line": "0左",
-        "color": "#9333ea",
+        "color": "#0f766e",
         "direction": 2,
         "station_id": "8850"
       },
@@ -1806,7 +1812,7 @@
         "name": "公園國小",
         "name_en": "Gongyuan Elementary School",
         "line": "0左",
-        "color": "#9333ea",
+        "color": "#0f766e",
         "direction": 2,
         "station_id": "3401"
       },
@@ -1826,7 +1832,7 @@
         "name": "臺南轉運站",
         "name_en": "Tainan Bus Station",
         "line": "0左",
-        "color": "#9333ea",
+        "color": "#0f766e",
         "direction": 2,
         "station_id": "9213"
       },
@@ -1846,7 +1852,7 @@
         "name": "公園北路口",
         "name_en": "Gongyuan N. Rd. Intersection",
         "line": "0左",
-        "color": "#9333ea",
+        "color": "#0f766e",
         "direction": 2,
         "station_id": "9286"
       },
@@ -1866,7 +1872,7 @@
         "name": "公園北路",
         "name_en": "Gongyuan N. Rd.",
         "line": "0左",
-        "color": "#9333ea",
+        "color": "#0f766e",
         "direction": 2,
         "station_id": "419"
       },
@@ -1886,7 +1892,7 @@
         "name": "民德國中",
         "name_en": "Min-De Junior High School",
         "line": "0左",
-        "color": "#9333ea",
+        "color": "#0f766e",
         "direction": 2,
         "station_id": "764"
       },
@@ -1906,7 +1912,7 @@
         "name": "大全聯(台南店)",
         "name_en": "MEGA PXMART(Tainan Store)",
         "line": "0左",
-        "color": "#9333ea",
+        "color": "#0f766e",
         "direction": 2,
         "station_id": "454"
       },
@@ -1926,7 +1932,7 @@
         "name": "立德公園",
         "name_en": "Lide Park",
         "line": "0左",
-        "color": "#9333ea",
+        "color": "#0f766e",
         "direction": 2,
         "station_id": "2929"
       },
@@ -1946,7 +1952,7 @@
         "name": "和緯育德路口",
         "name_en": "Hewei Rd. ＆ Yude Rd.",
         "line": "0左",
-        "color": "#9333ea",
+        "color": "#0f766e",
         "direction": 2,
         "station_id": "1888"
       },
@@ -1966,7 +1972,7 @@
         "name": "花園夜市(和緯路)",
         "name_en": "Flower Night Market(Hewei Rd.)",
         "line": "0左",
-        "color": "#9333ea",
+        "color": "#0f766e",
         "direction": 2,
         "station_id": "1449"
       },
@@ -1986,7 +1992,7 @@
         "name": "花園夜市(海安路)",
         "name_en": "Flower Night Market(Hai-an Rd.)",
         "line": "0左",
-        "color": "#9333ea",
+        "color": "#0f766e",
         "direction": 2,
         "station_id": "474"
       },
@@ -2006,7 +2012,7 @@
         "name": "臨安海安路口",
         "name_en": "Lin-an Rd. ＆ Hai-an Rd.",
         "line": "0左",
-        "color": "#9333ea",
+        "color": "#0f766e",
         "direction": 2,
         "station_id": "455"
       },
@@ -2026,7 +2032,7 @@
         "name": "金華成功路口",
         "name_en": "Jinhua Rd. ＆ Chenggong Rd.",
         "line": "0左",
-        "color": "#9333ea",
+        "color": "#0f766e",
         "direction": 2,
         "station_id": "469"
       },
@@ -2046,7 +2052,7 @@
         "name": "協進國小(金華路)",
         "name_en": "Sie-Jin Elementary School(Jinhua Rd.)",
         "line": "0左",
-        "color": "#9333ea",
+        "color": "#0f766e",
         "direction": 2,
         "station_id": "477"
       },
@@ -2066,7 +2072,7 @@
         "name": "河樂廣場(金華路)",
         "name_en": "The Spring(Jinhua Rd.)",
         "line": "0左",
-        "color": "#9333ea",
+        "color": "#0f766e",
         "direction": 2,
         "station_id": "476"
       },
@@ -2086,7 +2092,7 @@
         "name": "南華街口",
         "name_en": "Nan-Hua St. Intersection",
         "line": "0左",
-        "color": "#9333ea",
+        "color": "#0f766e",
         "direction": 2,
         "station_id": "663"
       },
@@ -2106,7 +2112,7 @@
         "name": "生活美學館",
         "name_en": "National Tainan Living Art Center",
         "line": "0左",
-        "color": "#9333ea",
+        "color": "#0f766e",
         "direction": 2,
         "station_id": "664"
       },
@@ -2126,7 +2132,7 @@
         "name": "永華市政中心(府前路)",
         "name_en": "Tainan City Hall(Fu-Cian Rd.)",
         "line": "0左",
-        "color": "#9333ea",
+        "color": "#0f766e",
         "direction": 2,
         "station_id": "1430"
       },
@@ -2146,7 +2152,7 @@
         "name": "二二八公園",
         "name_en": "228 Park",
         "line": "0左",
-        "color": "#9333ea",
+        "color": "#0f766e",
         "direction": 2,
         "station_id": "1432"
       },
@@ -2166,7 +2172,7 @@
         "name": "南台別院",
         "name_en": "Nan Tai Temple",
         "line": "0左",
-        "color": "#9333ea",
+        "color": "#0f766e",
         "direction": 2,
         "station_id": "687"
       },
@@ -2186,7 +2192,7 @@
         "name": "臺南市議會",
         "name_en": "Tainan City Council",
         "line": "0左",
-        "color": "#9333ea",
+        "color": "#0f766e",
         "direction": 2,
         "station_id": "666"
       },
@@ -2206,7 +2212,7 @@
         "name": "文南路口",
         "name_en": "Wunnan Rd. Intersection",
         "line": "0左",
-        "color": "#9333ea",
+        "color": "#0f766e",
         "direction": 2,
         "station_id": "667"
       },
@@ -2226,7 +2232,7 @@
         "name": "水萍塭公園",
         "name_en": "Shueipingwun Park",
         "line": "0左",
-        "color": "#9333ea",
+        "color": "#0f766e",
         "direction": 2,
         "station_id": "5103"
       },
@@ -2246,7 +2252,7 @@
         "name": "客家文化會館",
         "name_en": "Hakka Culture Museum",
         "line": "0左",
-        "color": "#9333ea",
+        "color": "#0f766e",
         "direction": 2,
         "station_id": "456"
       },
@@ -2266,7 +2272,7 @@
         "name": "夏林路五妃街口",
         "name_en": "Sialin Rd. ＆ Wufei St.",
         "line": "0左",
-        "color": "#9333ea",
+        "color": "#0f766e",
         "direction": 2,
         "station_id": "470"
       },
@@ -2286,7 +2292,7 @@
         "name": "健康西門路口",
         "name_en": "Jiankang Rd. ＆ Simen Rd.",
         "line": "0左",
-        "color": "#9333ea",
+        "color": "#0f766e",
         "direction": 2,
         "station_id": "453"
       },
@@ -2306,7 +2312,7 @@
         "name": "家齊高中",
         "name_en": "Chia-Chi Senior High School",
         "line": "0左",
-        "color": "#9333ea",
+        "color": "#0f766e",
         "direction": 2,
         "station_id": "279"
       },
@@ -2326,7 +2332,7 @@
         "name": "臺南高商",
         "name_en": "TNCVS",
         "line": "0左",
-        "color": "#9333ea",
+        "color": "#0f766e",
         "direction": 2,
         "station_id": "520"
       },
@@ -2346,7 +2352,7 @@
         "name": "體育公園(臺南大學)",
         "name_en": "Athletic Park(National University of Tainan)",
         "line": "0左",
-        "color": "#9333ea",
+        "color": "#0f766e",
         "direction": 2,
         "station_id": "521"
       },
@@ -2366,7 +2372,7 @@
         "name": "竹溪寺(健康路)",
         "name_en": "Jhusi Temple(Jian-Kang Rd.)",
         "line": "0左",
-        "color": "#9333ea",
+        "color": "#0f766e",
         "direction": 2,
         "station_id": "522"
       },
@@ -2386,7 +2392,7 @@
         "name": "大東夜市",
         "name_en": "Dadong Night Market",
         "line": "0左",
-        "color": "#9333ea",
+        "color": "#0f766e",
         "direction": 2,
         "station_id": "8847"
       },
@@ -2406,7 +2412,7 @@
         "name": "勝利國小、藝非凡美術館",
         "name_en": "Sheng-Li Elementary School、Mezzo Art",
         "line": "0左",
-        "color": "#9333ea",
+        "color": "#0f766e",
         "direction": 2,
         "station_id": "462"
       },
@@ -2426,7 +2432,7 @@
         "name": "長榮女中",
         "name_en": "Chang Jung Girls’ Senior High School",
         "line": "0左",
-        "color": "#9333ea",
+        "color": "#0f766e",
         "direction": 2,
         "station_id": "463"
       },
@@ -2446,7 +2452,7 @@
         "name": "長榮東寧路口",
         "name_en": "Jhangrong Rd. ＆ Dongning Rd.",
         "line": "0左",
-        "color": "#9333ea",
+        "color": "#0f766e",
         "direction": 2,
         "station_id": "464"
       },
@@ -2466,7 +2472,7 @@
         "name": "大學路口",
         "name_en": "Dasyue Rd. Intersection",
         "line": "0左",
-        "color": "#9333ea",
+        "color": "#0f766e",
         "direction": 2,
         "station_id": "472"
       },
@@ -2486,7 +2492,7 @@
         "name": "成大自強校區",
         "name_en": "Zih-Ciang Campus NCKU",
         "line": "0左",
-        "color": "#9333ea",
+        "color": "#0f766e",
         "direction": 2,
         "station_id": "465"
       },
@@ -2506,7 +2512,7 @@
         "name": "長榮小東路口",
         "name_en": "Jhangrong Rd. ＆ Siaodong Rd.",
         "line": "0左",
-        "color": "#9333ea",
+        "color": "#0f766e",
         "direction": 2,
         "station_id": "473"
       },
@@ -2526,7 +2532,7 @@
         "name": "長榮東豐路口",
         "name_en": "Jhangrong Rd. ＆ Dongfeng Rd.",
         "line": "0左",
-        "color": "#9333ea",
+        "color": "#0f766e",
         "direction": 2,
         "station_id": "466"
       },
@@ -2546,7 +2552,7 @@
         "name": "長榮路四段",
         "name_en": "Sec. 4 Changrong Rd.",
         "line": "0左",
-        "color": "#9333ea",
+        "color": "#0f766e",
         "direction": 2,
         "station_id": "467"
       },
@@ -2566,7 +2572,7 @@
         "name": "中樓",
         "name_en": "Jhonglou",
         "line": "0左",
-        "color": "#9333ea",
+        "color": "#0f766e",
         "direction": 2,
         "station_id": "546"
       },
@@ -2586,7 +2592,7 @@
         "name": "勝利北路",
         "name_en": "Sheng-Li North Road",
         "line": "0左",
-        "color": "#9333ea",
+        "color": "#0f766e",
         "direction": 2,
         "station_id": "545"
       },
@@ -2606,7 +2612,7 @@
         "name": "成大醫院(勝利路)",
         "name_en": "Cheng Kung University Hospital(Sheng-Li Rd.)",
         "line": "0左",
-        "color": "#9333ea",
+        "color": "#0f766e",
         "direction": 2,
         "station_id": "574"
       },
@@ -2626,7 +2632,7 @@
         "name": "小東路",
         "name_en": "Siao-Dong Road",
         "line": "0左",
-        "color": "#9333ea",
+        "color": "#0f766e",
         "direction": 2,
         "station_id": "211"
       },
@@ -2646,7 +2652,7 @@
         "name": "臺南公園(北門路)",
         "name_en": "Tainan Park(Beimen Rd.)",
         "line": "0左",
-        "color": "#9333ea",
+        "color": "#0f766e",
         "direction": 2,
         "station_id": "2249"
       },
@@ -2666,7 +2672,7 @@
         "name": "臺南火車站(成功路A)",
         "name_en": "Tainan Train Station(Chenggong Rd. A)",
         "line": "0左",
-        "color": "#9333ea",
+        "color": "#0f766e",
         "direction": 2,
         "station_id": "1091"
       },

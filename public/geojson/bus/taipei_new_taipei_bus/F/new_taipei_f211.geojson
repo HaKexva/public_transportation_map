@@ -6,13 +6,14 @@
     "name": "F211",
     "name_en": "F211",
     "ref": "F211",
-    "color": "#d97706",
+    "color": "#6B8F9A",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.gov.taipei/File/Get/595d7669-9887-4a2c-9c3e-efd605cf49c1?v=639248448795553076",
     "operator_id": "16233",
     "operator": "泰山區公所",
-    "operator_en": "Taishan District Office"
+    "operator_en": "Taishan District Office",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "F211",
         "name": "F211",
         "name_en": "F211",
-        "color": "#d97706",
-        "direction": 0
+        "color": "#6B8F9A",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -607,6 +609,10 @@
           [
             121.433553142567,
             25.0565429855207
+          ],
+          [
+            121.433896890283,
+            25.0563455931429
           ]
         ]
       }
@@ -619,7 +625,7 @@
         "name": "泰山公有市場",
         "name_en": "Taishan Market",
         "line": "F211",
-        "color": "#d97706",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165604760"
       },
@@ -639,7 +645,7 @@
         "name": "義學里",
         "name_en": "Yixue Village",
         "line": "F211",
-        "color": "#d97706",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "36063"
       },
@@ -659,7 +665,7 @@
         "name": "文程路口",
         "name_en": "Wencheng Rd. Entrance",
         "line": "F211",
-        "color": "#d97706",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3612"
       },
@@ -679,7 +685,7 @@
         "name": "明志里",
         "name_en": "Mingzhi Village",
         "line": "F211",
-        "color": "#d97706",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1000984"
       },
@@ -699,7 +705,7 @@
         "name": "明志國小",
         "name_en": "Mingzhi Elementary School",
         "line": "F211",
-        "color": "#d97706",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "36065"
       },
@@ -719,7 +725,7 @@
         "name": "泰山巖",
         "name_en": "Taishanyan",
         "line": "F211",
-        "color": "#d97706",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3631"
       },
@@ -739,7 +745,7 @@
         "name": "明志科技大學",
         "name_en": "Mingchi U. of Technology",
         "line": "F211",
-        "color": "#d97706",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1000985"
       },
@@ -759,7 +765,7 @@
         "name": "宏泰新村",
         "name_en": "Hongtai New Village",
         "line": "F211",
-        "color": "#d97706",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3616"
       },
@@ -779,7 +785,7 @@
         "name": "下坡角",
         "name_en": "Xiapojiao",
         "line": "F211",
-        "color": "#d97706",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "36068"
       },
@@ -799,7 +805,7 @@
         "name": "捷運泰山貴和站(貴陽街)",
         "name_en": "MRT Taishan Guihe Station",
         "line": "F211",
-        "color": "#d97706",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165604650"
       },
@@ -819,7 +825,7 @@
         "name": "捷運泰山貴和站(明志路)",
         "name_en": "MRT Taishan Guihe Station(Mingzhi Rd.)",
         "line": "F211",
-        "color": "#d97706",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "50406"
       },
@@ -839,7 +845,7 @@
         "name": "下坡角",
         "name_en": "Xiapojiao",
         "line": "F211",
-        "color": "#d97706",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3605"
       },
@@ -859,7 +865,7 @@
         "name": "宏泰新村",
         "name_en": "Hongtai New Village",
         "line": "F211",
-        "color": "#d97706",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "36067"
       },
@@ -879,7 +885,7 @@
         "name": "明志科技大學",
         "name_en": "Mingchi U. of Technology",
         "line": "F211",
-        "color": "#d97706",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3618"
       },
@@ -899,7 +905,7 @@
         "name": "泰山巖",
         "name_en": "Taishanyan",
         "line": "F211",
-        "color": "#d97706",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "36066"
       },
@@ -919,7 +925,7 @@
         "name": "明志國小",
         "name_en": "Mingzhi Elementary School",
         "line": "F211",
-        "color": "#d97706",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3619"
       },
@@ -939,7 +945,7 @@
         "name": "明志里",
         "name_en": "Mingzhi Village",
         "line": "F211",
-        "color": "#d97706",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3617"
       },
@@ -959,7 +965,7 @@
         "name": "文程路口",
         "name_en": "Wencheng Rd. Entrance",
         "line": "F211",
-        "color": "#d97706",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "36064"
       },
@@ -979,7 +985,7 @@
         "name": "義學里",
         "name_en": "Yixue Village",
         "line": "F211",
-        "color": "#d97706",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3633"
       },
@@ -999,7 +1005,7 @@
         "name": "同榮里",
         "name_en": "Tongrong Village",
         "line": "F211",
-        "color": "#d97706",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "36062"
       },
@@ -1019,7 +1025,7 @@
         "name": "泰山高中",
         "name_en": "Taishan Senior High School",
         "line": "F211",
-        "color": "#d97706",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "36061"
       },
@@ -1039,7 +1045,7 @@
         "name": "泰山公有市場一",
         "name_en": "Taishan Public Market 1",
         "line": "F211",
-        "color": "#d97706",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73745"
       },

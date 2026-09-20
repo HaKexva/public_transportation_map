@@ -6,13 +6,14 @@
     "name": "5060",
     "name_en": "5060",
     "ref": "5060",
-    "color": "#b91c1c",
+    "color": "#b45309",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/5060/map/1965/image",
     "operator_id": "1",
     "operator": "桃園客運",
-    "operator_en": "Taoyuan Bus Co., Ltd."
+    "operator_en": "Taoyuan Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "5060",
         "name": "5060",
         "name_en": "5060",
-        "color": "#b91c1c",
-        "direction": 0
+        "color": "#b45309",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1943,6 +1945,10 @@
           [
             121.31405,
             24.98657
+          ],
+          [
+            121.31414,
+            24.98657
           ]
         ]
       }
@@ -1955,7 +1961,7 @@
         "name": "桃客總站",
         "name_en": "Taoyuan Bus Terminal",
         "line": "5060",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5123"
       },
@@ -1975,7 +1981,7 @@
         "name": "建國國小",
         "name_en": "Jianguo Elementary School",
         "line": "5060",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3312"
       },
@@ -1995,7 +2001,7 @@
         "name": "桃園婦女館",
         "name_en": "Center for Women",
         "line": "5060",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "874"
       },
@@ -2015,7 +2021,7 @@
         "name": "延平路口",
         "name_en": "Yanping Road Intersection",
         "line": "5060",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "875"
       },
@@ -2035,7 +2041,7 @@
         "name": "福豐國中",
         "name_en": "Fu-Fong Junior High School",
         "line": "5060",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4606"
       },
@@ -2055,7 +2061,7 @@
         "name": "旭登護理之家",
         "name_en": "Syu Dend Nursing Home",
         "line": "5060",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4128"
       },
@@ -2075,7 +2081,7 @@
         "name": "德豐街口",
         "name_en": "Defeng St. Entrance",
         "line": "5060",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6479"
       },
@@ -2095,7 +2101,7 @@
         "name": "桃園監理站",
         "name_en": "Taoyuan Motor Vehicles Office",
         "line": "5060",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "922"
       },
@@ -2115,7 +2121,7 @@
         "name": "利台",
         "name_en": "Litai",
         "line": "5060",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3196"
       },
@@ -2135,7 +2141,7 @@
         "name": "力行街口",
         "name_en": "Lixing Street Intersection",
         "line": "5060",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3194"
       },
@@ -2155,7 +2161,7 @@
         "name": "無線電台",
         "name_en": "Radio Station",
         "line": "5060",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "396"
       },
@@ -2175,7 +2181,7 @@
         "name": "小大湳",
         "name_en": "Xiaodanan",
         "line": "5060",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1721"
       },
@@ -2195,7 +2201,7 @@
         "name": "忠勇西街站(G05)",
         "name_en": "Zhongyong West Street station(G05)",
         "line": "5060",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3141"
       },
@@ -2215,7 +2221,7 @@
         "name": "介壽大智路口",
         "name_en": "Jieshou & Dazhi Rd. Intersection",
         "line": "5060",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3143"
       },
@@ -2235,7 +2241,7 @@
         "name": "陸光四村",
         "name_en": "The 4th village of Lu guang",
         "line": "5060",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1258"
       },
@@ -2255,7 +2261,7 @@
         "name": "大湳站(G04)",
         "name_en": "Danan Station(G04)",
         "line": "5060",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1723"
       },
@@ -2275,7 +2281,7 @@
         "name": "瑞祥社區",
         "name_en": "Rueixiang Community",
         "line": "5060",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1274"
       },
@@ -2295,7 +2301,7 @@
         "name": "鴻昌社區",
         "name_en": "Hungchang Community",
         "line": "5060",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1241"
       },
@@ -2315,7 +2321,7 @@
         "name": "麻園站(G03)",
         "name_en": "Mayuan station(G03)",
         "line": "5060",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1725"
       },
@@ -2335,7 +2341,7 @@
         "name": "梅花社區",
         "name_en": "Meihua Community",
         "line": "5060",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1243"
       },
@@ -2355,7 +2361,7 @@
         "name": "欣桃社區",
         "name_en": "Xintao Community",
         "line": "5060",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1247"
       },
@@ -2375,7 +2381,7 @@
         "name": "松柏園",
         "name_en": "Songboyuan",
         "line": "5060",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3169"
       },
@@ -2395,7 +2401,7 @@
         "name": "瑞豐國小(桃園防災教育館)",
         "name_en": "Ruifeng Elementary School(Taoyuan Disaster Education Center)",
         "line": "5060",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1249"
       },
@@ -2415,7 +2421,7 @@
         "name": "瑞發家園",
         "name_en": "Rueifajiayuan",
         "line": "5060",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3171"
       },
@@ -2435,7 +2441,7 @@
         "name": "興豐路口",
         "name_en": "Xingfeng Road Intersection",
         "line": "5060",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4608"
       },
@@ -2455,7 +2461,7 @@
         "name": "家榮社區",
         "name_en": "Jiarong Community",
         "line": "5060",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4323"
       },
@@ -2475,7 +2481,7 @@
         "name": "國防大學",
         "name_en": "National Defence University",
         "line": "5060",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4250"
       },
@@ -2495,7 +2501,7 @@
         "name": "榮民安養中心",
         "name_en": "Veterans Elderly Center",
         "line": "5060",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2640"
       },
@@ -2515,7 +2521,7 @@
         "name": "榮民之家",
         "name_en": "Veterans Home",
         "line": "5060",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1212"
       },
@@ -2535,7 +2541,7 @@
         "name": "榮民之家",
         "name_en": "Veterans Home",
         "line": "5060",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1213"
       },
@@ -2555,7 +2561,7 @@
         "name": "榮民安養中心",
         "name_en": "Veterans Elderly Center",
         "line": "5060",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2641"
       },
@@ -2575,7 +2581,7 @@
         "name": "慈濟靜思堂",
         "name_en": "Tzu Chi Buddhist Temple",
         "line": "5060",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6133"
       },
@@ -2595,7 +2601,7 @@
         "name": "國防大學",
         "name_en": "National Defence University",
         "line": "5060",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4251"
       },
@@ -2615,7 +2621,7 @@
         "name": "家榮社區",
         "name_en": "Jiarong Community",
         "line": "5060",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4324"
       },
@@ -2635,7 +2641,7 @@
         "name": "更寮腳(介壽路)",
         "name_en": "Gengliaojiao (Jieshou Road)",
         "line": "5060",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1252"
       },
@@ -2655,7 +2661,7 @@
         "name": "瑞發家園",
         "name_en": "Rueifajiayuan",
         "line": "5060",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3172"
       },
@@ -2675,7 +2681,7 @@
         "name": "瑞豐國小(桃園防災教育館)",
         "name_en": "Ruifeng Elementary School(Taoyuan Disaster Education Center)",
         "line": "5060",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1250"
       },
@@ -2695,7 +2701,7 @@
         "name": "松柏園",
         "name_en": "Songboyuan",
         "line": "5060",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3170"
       },
@@ -2715,7 +2721,7 @@
         "name": "欣桃社區",
         "name_en": "Xintao Community",
         "line": "5060",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1248"
       },
@@ -2735,7 +2741,7 @@
         "name": "梅花社區",
         "name_en": "Meihua Community",
         "line": "5060",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1244"
       },
@@ -2755,7 +2761,7 @@
         "name": "麻園站(G03)",
         "name_en": "Mayuan station(G03)",
         "line": "5060",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1726"
       },
@@ -2775,7 +2781,7 @@
         "name": "鴻昌社區",
         "name_en": "Hungchang Community",
         "line": "5060",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1242"
       },
@@ -2795,7 +2801,7 @@
         "name": "瑞祥社區",
         "name_en": "Rueixiang Community",
         "line": "5060",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1273"
       },
@@ -2815,7 +2821,7 @@
         "name": "大湳站(G04)",
         "name_en": "Danan Station(G04)",
         "line": "5060",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1724"
       },
@@ -2835,7 +2841,7 @@
         "name": "陸光四村",
         "name_en": "Luguang 4th Village",
         "line": "5060",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1257"
       },
@@ -2855,7 +2861,7 @@
         "name": "介壽大智路口",
         "name_en": "Jieshou & Dazhi Rd. Intersection",
         "line": "5060",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3144"
       },
@@ -2875,7 +2881,7 @@
         "name": "忠勇西街站(G05)",
         "name_en": "Zhongyong West Street station(G05)",
         "line": "5060",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3142"
       },
@@ -2895,7 +2901,7 @@
         "name": "小大湳",
         "name_en": "Xiaodanan",
         "line": "5060",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1722"
       },
@@ -2915,7 +2921,7 @@
         "name": "無線電台",
         "name_en": "Radio Station",
         "line": "5060",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "397"
       },
@@ -2935,7 +2941,7 @@
         "name": "力行街口",
         "name_en": "Lixing Street Intersection",
         "line": "5060",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3193"
       },
@@ -2955,7 +2961,7 @@
         "name": "利台",
         "name_en": "Litai",
         "line": "5060",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3195"
       },
@@ -2975,7 +2981,7 @@
         "name": "桃園監理站",
         "name_en": "Taoyuan Motor Vehicles Office",
         "line": "5060",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "923"
       },
@@ -2995,7 +3001,7 @@
         "name": "建國國中",
         "name_en": "Chien Kuo Junior High School",
         "line": "5060",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6740"
       },
@@ -3015,7 +3021,7 @@
         "name": "介新街",
         "name_en": "Jiexin St.",
         "line": "5060",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6741"
       },
@@ -3035,7 +3041,7 @@
         "name": "旭登護理之家",
         "name_en": "Syu Dend Nursing Home",
         "line": "5060",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4129"
       },
@@ -3055,7 +3061,7 @@
         "name": "福豐國中",
         "name_en": "Fu-Fong Junior High School",
         "line": "5060",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4607"
       },
@@ -3075,7 +3081,7 @@
         "name": "延平路口",
         "name_en": "Yanping Road Intersection",
         "line": "5060",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "876"
       },
@@ -3095,7 +3101,7 @@
         "name": "桃園婦女館",
         "name_en": "Center for Women",
         "line": "5060",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "873"
       },
@@ -3115,7 +3121,7 @@
         "name": "建國國小",
         "name_en": "Jianguo Elementary School",
         "line": "5060",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3313"
       },

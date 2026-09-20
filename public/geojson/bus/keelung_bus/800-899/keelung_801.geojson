@@ -6,7 +6,7 @@
     "name": "801",
     "name_en": "801",
     "ref": "801",
-    "color": "#9f1239",
+    "color": "#7c2d12",
     "city_id": "Keelung",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://web.taiwanbus.tw/MISUploadData/Schematic/file/0384.jpg"
@@ -19,7 +19,7 @@
         "ref": "801",
         "name": "801",
         "name_en": "801",
-        "color": "#9f1239",
+        "color": "#7c2d12",
         "direction": 0
       },
       "geometry": {
@@ -2492,703 +2492,7 @@
           [
             121.76799,
             25.12787
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "KEE306803",
-        "name": "安樂市場",
-        "name_en": "Anle Market",
-        "line": "801",
-        "color": "#9f1239",
-        "direction": 0,
-        "station_id": "141187"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.733771,
-          25.132045
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "KEE306804",
-        "name": "安樂國小",
-        "name_en": "Anle Elementary School",
-        "line": "801",
-        "color": "#9f1239",
-        "direction": 0,
-        "station_id": "141188"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.732518,
-          25.132426
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "KEE306831",
-        "name": "慈雲寺",
-        "name_en": "Ciyun Temple",
-        "line": "801",
-        "color": "#9f1239",
-        "direction": 0,
-        "station_id": "141215"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.731083,
-          25.132676
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "KEE306921",
-        "name": "干城新村",
-        "name_en": "Ganchengxincun",
-        "line": "801",
-        "color": "#9f1239",
-        "direction": 0,
-        "station_id": "141306"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.728396,
-          25.132346
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "KEE306922",
-        "name": "安樂高中",
-        "name_en": "Anle Senior High School",
-        "line": "801",
-        "color": "#9f1239",
-        "direction": 0,
-        "station_id": "141307"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.729475,
-          25.133928
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "KEE306923",
-        "name": "仁愛之家",
-        "name_en": "Senior Citizens Home of Compassion",
-        "line": "801",
-        "color": "#9f1239",
-        "direction": 0,
-        "station_id": "141308"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.728446,
-          25.13431
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "KEE306956",
-        "name": "安一路387號",
-        "name_en": "No. 387 Anyi Rd.",
-        "line": "801",
-        "color": "#9f1239",
-        "direction": 0,
-        "station_id": "141299"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.726923,
-          25.13378
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "KEE306813",
-        "name": "君茂食品",
-        "name_en": "Junmao Foodstuff",
-        "line": "801",
-        "color": "#9f1239",
-        "direction": 0,
-        "station_id": "141197"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.725233,
-          25.134966
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "KEE306814",
-        "name": "鶯歌里(安一路口)",
-        "name_en": "Yingge Village (An 1st Rd.)",
-        "line": "801",
-        "color": "#9f1239",
-        "direction": 0,
-        "station_id": "141198"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.724203,
-          25.135741
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "KEE306816",
-        "name": "新山淨水場",
-        "name_en": "Hsinshan Water Purification Station",
-        "line": "801",
-        "color": "#9f1239",
-        "direction": 0,
-        "station_id": "141200"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.72028,
-          25.132995
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "KEE306874",
-        "name": "安和二街",
-        "name_en": "Anhe 2nd St.",
-        "line": "801",
-        "color": "#9f1239",
-        "direction": 0,
-        "station_id": "141258"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.720033,
-          25.12925
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "KEE306298",
-        "name": "麥金路樂利三街口",
-        "name_en": "Maijin &amp; Leli 3rd St. Intetsection",
-        "line": "801",
-        "color": "#9f1239",
-        "direction": 0,
-        "station_id": "140687"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.719543,
-          25.127529
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "KEE306300",
-        "name": "婦幼福利中心",
-        "name_en": "Women and Children Welfare Center",
-        "line": "801",
-        "color": "#9f1239",
-        "direction": 0,
-        "station_id": "140689"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.719741,
-          25.124969
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "KEE306301",
-        "name": "長庚醫院(橘郡社區)",
-        "name_en": "Keelung City Zhanggeng Memorial Hospital (Jujun Community)",
-        "line": "801",
-        "color": "#9f1239",
-        "direction": 0,
-        "station_id": "140690"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.721816,
-          25.121013
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "KEE306303",
-        "name": "安樂區行政大樓",
-        "name_en": "Administration Building of Anle District",
-        "line": "801",
-        "color": "#9f1239",
-        "direction": 0,
-        "station_id": "140692"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.723583,
-          25.12093
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "KEE306305",
-        "name": "安樂郵局",
-        "name_en": "Anle Post Office",
-        "line": "801",
-        "color": "#9f1239",
-        "direction": 0,
-        "station_id": "140694"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.724844,
-          25.122163
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "KEE306306",
-        "name": "電信大樓",
-        "name_en": "Telecommunication Building",
-        "line": "801",
-        "color": "#9f1239",
-        "direction": 0,
-        "station_id": "140695"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.725656,
-          25.122753
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "KEE306283",
-        "name": "自強隧道口",
-        "name_en": "Ziqiang Tunnel",
-        "line": "801",
-        "color": "#9f1239",
-        "direction": 0,
-        "station_id": "140672"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.73255,
-          25.127712
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "KEE306653",
-        "name": "安樂路一段81巷口",
-        "name_en": "Entrance to Lane 81, Section 1, Anle Road",
-        "line": "801",
-        "color": "#9f1239",
-        "direction": 0,
-        "station_id": "140655"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.734995,
-          25.1292
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "KEE306308",
-        "name": "光華國宅",
-        "name_en": "Guanghua Public Housing",
-        "line": "801",
-        "color": "#9f1239",
-        "direction": 0,
-        "station_id": "140697"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.736678,
-          25.128476
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "KEE306309",
-        "name": "成功市場",
-        "name_en": "Chenggong Market",
-        "line": "801",
-        "color": "#9f1239",
-        "direction": 0,
-        "station_id": "140698"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.73740599999999,
-          25.127383
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "KEE306241",
-        "name": "仁五路(東和大樓)",
-        "name_en": "Ren 5th Rd.",
-        "line": "801",
-        "color": "#9f1239",
-        "direction": 0,
-        "station_id": "140629"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.740671,
-          25.127423
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "KEE306232",
-        "name": "仁二路(二信循環站)",
-        "name_en": "Ren 2nd Rd. (Erxin Loop Station )",
-        "line": "801",
-        "color": "#9f1239",
-        "direction": 0,
-        "station_id": "140620"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.743128,
-          25.129771
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "KEE306240",
-        "name": "基隆市政府",
-        "name_en": "Keelung City Government",
-        "line": "801",
-        "color": "#9f1239",
-        "direction": 0,
-        "station_id": "140628"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.745104,
-          25.131453
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "KEE306239",
-        "name": "衛生福利部基隆醫院",
-        "name_en": "Ministry of Health and Welfare - Keelung Hospital",
-        "line": "801",
-        "color": "#9f1239",
-        "direction": 0,
-        "station_id": "140627"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.747775,
-          25.130225
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "KEE306238",
-        "name": "信義區公所",
-        "name_en": "Sinyi District Office",
-        "line": "801",
-        "color": "#9f1239",
-        "direction": 0,
-        "station_id": "140626"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.750885,
-          25.129626
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "KEE306237",
-        "name": "崇右影藝科技大學",
-        "name_en": "Chungyu University of Film and Arts",
-        "line": "801",
-        "color": "#9f1239",
-        "direction": 0,
-        "station_id": "140625"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.75333,
-          25.129345
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "KEE306568",
-        "name": "市立體育館",
-        "name_en": "Keelung City Gymnasium",
-        "line": "801",
-        "color": "#9f1239",
-        "direction": 0,
-        "station_id": "140954"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.755403,
-          25.129126
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "KEE306235",
-        "name": "基隆女中",
-        "name_en": "National Keelung Girls` Senior High School",
-        "line": "801",
-        "color": "#9f1239",
-        "direction": 0,
-        "station_id": "140623"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.7595,
-          25.128483
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "KEE306219",
-        "name": "光華巷口",
-        "name_en": "Guanghua Intersection",
-        "line": "801",
-        "color": "#9f1239",
-        "direction": 0,
-        "station_id": "140607"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.760408,
-          25.127781
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "KEE306324",
-        "name": "東橋",
-        "name_en": "Dong Bridge",
-        "line": "801",
-        "color": "#9f1239",
-        "direction": 0,
-        "station_id": "140713"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.762725,
-          25.127638
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "KEE306215",
-        "name": "地方法院",
-        "name_en": "Taiwan Keelung District Court",
-        "line": "801",
-        "color": "#9f1239",
-        "direction": 0,
-        "station_id": "140603"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.76416,
-          25.128088
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "KEE306213",
-        "name": "東光市場",
-        "name_en": "Dongguang Market",
-        "line": "801",
-        "color": "#9f1239",
-        "direction": 0,
-        "station_id": "140601"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.765605,
-          25.127508
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "KEE306210",
-        "name": "信義國中",
-        "name_en": "Sinyi Junior High School",
-        "line": "801",
-        "color": "#9f1239",
-        "direction": 0,
-        "station_id": "140598"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.76805,
-          25.127838
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "route",
-        "ref": "801",
-        "name": "801",
-        "name_en": "801",
-        "color": "#9f1239",
-        "direction": 0
-      },
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
+          ],
           [
             121.76799,
             25.12787
@@ -6044,483 +5348,7 @@
           [
             121.76792,
             25.12783
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "KEE306209",
-        "name": "信義國中",
-        "name_en": "Sinyi Junior High School",
-        "line": "801",
-        "color": "#9f1239",
-        "direction": 0,
-        "station_id": "140597"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.768063,
-          25.127936
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "KEE306212",
-        "name": "東光市場",
-        "name_en": "Dongguang Market",
-        "line": "801",
-        "color": "#9f1239",
-        "direction": 0,
-        "station_id": "140600"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.766105,
-          25.127454
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "KEE306214",
-        "name": "地方法院",
-        "name_en": "Taiwan Keelung District Court",
-        "line": "801",
-        "color": "#9f1239",
-        "direction": 0,
-        "station_id": "140602"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.764244,
-          25.128286
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "KEE306216",
-        "name": "東明市場",
-        "name_en": "Dongming Market",
-        "line": "801",
-        "color": "#9f1239",
-        "direction": 0,
-        "station_id": "140604"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.763053,
-          25.128185
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "KEE306218",
-        "name": "市立醫院",
-        "name_en": "Keelung City Municipal Hospital",
-        "line": "801",
-        "color": "#9f1239",
-        "direction": 0,
-        "station_id": "140606"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.760955,
-          25.128723
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "KEE306220",
-        "name": "基隆女中",
-        "name_en": "National Keelung Girls` Senior High School",
-        "line": "801",
-        "color": "#9f1239",
-        "direction": 0,
-        "station_id": "140608"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.758885,
-          25.128583
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "KEE306222",
-        "name": "義九路口",
-        "name_en": "Yi 9th Rd. Intersection",
-        "line": "801",
-        "color": "#9f1239",
-        "direction": 0,
-        "station_id": "140610"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.755788,
-          25.128506
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "KEE306224",
-        "name": "義七路口",
-        "name_en": "Yi 7th Rd. Intersection",
-        "line": "801",
-        "color": "#9f1239",
-        "direction": 0,
-        "station_id": "140612"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.75243,
-          25.12851
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "KEE306226",
-        "name": "義六路口",
-        "name_en": "Yi 6th Rd. Intersection",
-        "line": "801",
-        "color": "#9f1239",
-        "direction": 0,
-        "station_id": "140614"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.750706,
-          25.128586
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "KEE306228",
-        "name": "義四路口",
-        "name_en": "Yi 4th Rd. Intersection",
-        "line": "801",
-        "color": "#9f1239",
-        "direction": 0,
-        "station_id": "140616"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.747723,
-          25.128961
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "KEE306230",
-        "name": "義二路口",
-        "name_en": "Yi 2nd Rd. Intersection",
-        "line": "801",
-        "color": "#9f1239",
-        "direction": 0,
-        "station_id": "140618"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.746175,
-          25.129801
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "KEE309534",
-        "name": "基隆轉運站",
-        "name_en": "Keelung Transit Station",
-        "line": "801",
-        "color": "#9f1239",
-        "direction": 0,
-        "station_id": "143441"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.739089,
-          25.133076
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "KEE309535",
-        "name": "民治里活動中心",
-        "name_en": "Minzhi Village Activity Center",
-        "line": "801",
-        "color": "#9f1239",
-        "direction": 0,
-        "station_id": "141126"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.740028,
-          25.134482
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "KEE306258",
-        "name": "城隍廟",
-        "name_en": "Chenghuang Temple",
-        "line": "801",
-        "color": "#9f1239",
-        "direction": 0,
-        "station_id": "140647"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.740415,
-          25.131096
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "KEE306261",
-        "name": "忠四路",
-        "name_en": "Zhong 4th Rd.",
-        "line": "801",
-        "color": "#9f1239",
-        "direction": 0,
-        "station_id": "140649"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.739596,
-          25.128031
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "KEE306602",
-        "name": "仁愛區行政中心",
-        "name_en": "Renai District Office",
-        "line": "801",
-        "color": "#9f1239",
-        "direction": 0,
-        "station_id": "140988"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.73653,
-          25.124965
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "KEE306263",
-        "name": "光華國宅",
-        "name_en": "Guanghua Public Housing",
-        "line": "801",
-        "color": "#9f1239",
-        "direction": 0,
-        "station_id": "140651"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.736416,
-          25.12885
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "KEE306267",
-        "name": "安樂路一段81巷口",
-        "name_en": "Entrance to Lane 81, Section 1, Anle Road",
-        "line": "801",
-        "color": "#9f1239",
-        "direction": 0,
-        "station_id": "144214"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.735343,
-          25.129374
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "KEE306276",
-        "name": "老大公廟",
-        "name_en": "Laodagong Temple",
-        "line": "801",
-        "color": "#9f1239",
-        "direction": 0,
-        "station_id": "140664"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.733406,
-          25.128869
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "KEE306291",
-        "name": "電信大樓",
-        "name_en": "Telecommunication Building",
-        "line": "801",
-        "color": "#9f1239",
-        "direction": 0,
-        "station_id": "140680"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.725131,
-          25.122336
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "KEE306292",
-        "name": "安樂郵局",
-        "name_en": "Anle Post Office",
-        "line": "801",
-        "color": "#9f1239",
-        "direction": 0,
-        "station_id": "140681"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.724202,
-          25.121549
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "KEE306293",
-        "name": "安樂區行政大樓",
-        "name_en": "Administration Building of Anle District",
-        "line": "801",
-        "color": "#9f1239",
-        "direction": 0,
-        "station_id": "140682"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.723518,
-          25.120786
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "station",
-        "ref": "KEE306272",
-        "name": "長庚醫院",
-        "name_en": "Keelung City Zhanggeng Memorial Hospital",
-        "line": "801",
-        "color": "#9f1239",
-        "direction": 0,
-        "station_id": "140660"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.721803,
-          25.12109
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "route",
-        "ref": "801",
-        "name": "801",
-        "name_en": "801",
-        "color": "#9f1239",
-        "direction": 0
-      },
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
+          ],
           [
             121.76808,
             25.1279
@@ -8561,6 +7389,1146 @@
             121.71971,
             25.1251
           ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KEE306803",
+        "name": "安樂市場",
+        "name_en": "Anle Market",
+        "line": "801",
+        "color": "#7c2d12",
+        "direction": 0,
+        "station_id": "141187"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.733771,
+          25.132045
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KEE306804",
+        "name": "安樂國小",
+        "name_en": "Anle Elementary School",
+        "line": "801",
+        "color": "#7c2d12",
+        "direction": 0,
+        "station_id": "141188"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.732518,
+          25.132426
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KEE306831",
+        "name": "慈雲寺",
+        "name_en": "Ciyun Temple",
+        "line": "801",
+        "color": "#7c2d12",
+        "direction": 0,
+        "station_id": "141215"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.731083,
+          25.132676
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KEE306921",
+        "name": "干城新村",
+        "name_en": "Ganchengxincun",
+        "line": "801",
+        "color": "#7c2d12",
+        "direction": 0,
+        "station_id": "141306"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.728396,
+          25.132346
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KEE306922",
+        "name": "安樂高中",
+        "name_en": "Anle Senior High School",
+        "line": "801",
+        "color": "#7c2d12",
+        "direction": 0,
+        "station_id": "141307"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.729475,
+          25.133928
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KEE306923",
+        "name": "仁愛之家",
+        "name_en": "Senior Citizens Home of Compassion",
+        "line": "801",
+        "color": "#7c2d12",
+        "direction": 0,
+        "station_id": "141308"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.728446,
+          25.13431
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KEE306956",
+        "name": "安一路387號",
+        "name_en": "No. 387 Anyi Rd.",
+        "line": "801",
+        "color": "#7c2d12",
+        "direction": 0,
+        "station_id": "141299"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.726923,
+          25.13378
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KEE306813",
+        "name": "君茂食品",
+        "name_en": "Junmao Foodstuff",
+        "line": "801",
+        "color": "#7c2d12",
+        "direction": 0,
+        "station_id": "141197"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.725233,
+          25.134966
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KEE306814",
+        "name": "鶯歌里(安一路口)",
+        "name_en": "Yingge Village (An 1st Rd.)",
+        "line": "801",
+        "color": "#7c2d12",
+        "direction": 0,
+        "station_id": "141198"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.724203,
+          25.135741
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KEE306816",
+        "name": "新山淨水場",
+        "name_en": "Hsinshan Water Purification Station",
+        "line": "801",
+        "color": "#7c2d12",
+        "direction": 0,
+        "station_id": "141200"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.72028,
+          25.132995
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KEE306874",
+        "name": "安和二街",
+        "name_en": "Anhe 2nd St.",
+        "line": "801",
+        "color": "#7c2d12",
+        "direction": 0,
+        "station_id": "141258"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.720033,
+          25.12925
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KEE306298",
+        "name": "麥金路樂利三街口",
+        "name_en": "Maijin &amp; Leli 3rd St. Intetsection",
+        "line": "801",
+        "color": "#7c2d12",
+        "direction": 0,
+        "station_id": "140687"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.719543,
+          25.127529
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KEE306300",
+        "name": "婦幼福利中心",
+        "name_en": "Women and Children Welfare Center",
+        "line": "801",
+        "color": "#7c2d12",
+        "direction": 0,
+        "station_id": "140689"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.719741,
+          25.124969
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KEE306301",
+        "name": "長庚醫院(橘郡社區)",
+        "name_en": "Keelung City Zhanggeng Memorial Hospital (Jujun Community)",
+        "line": "801",
+        "color": "#7c2d12",
+        "direction": 0,
+        "station_id": "140690"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.721816,
+          25.121013
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KEE306303",
+        "name": "安樂區行政大樓",
+        "name_en": "Administration Building of Anle District",
+        "line": "801",
+        "color": "#7c2d12",
+        "direction": 0,
+        "station_id": "140692"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.723583,
+          25.12093
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KEE306305",
+        "name": "安樂郵局",
+        "name_en": "Anle Post Office",
+        "line": "801",
+        "color": "#7c2d12",
+        "direction": 0,
+        "station_id": "140694"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.724844,
+          25.122163
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KEE306306",
+        "name": "電信大樓",
+        "name_en": "Telecommunication Building",
+        "line": "801",
+        "color": "#7c2d12",
+        "direction": 0,
+        "station_id": "140695"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.725656,
+          25.122753
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KEE306283",
+        "name": "自強隧道口",
+        "name_en": "Ziqiang Tunnel",
+        "line": "801",
+        "color": "#7c2d12",
+        "direction": 0,
+        "station_id": "140672"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.73255,
+          25.127712
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KEE306653",
+        "name": "安樂路一段81巷口",
+        "name_en": "Entrance to Lane 81, Section 1, Anle Road",
+        "line": "801",
+        "color": "#7c2d12",
+        "direction": 0,
+        "station_id": "140655"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.734995,
+          25.1292
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KEE306308",
+        "name": "光華國宅",
+        "name_en": "Guanghua Public Housing",
+        "line": "801",
+        "color": "#7c2d12",
+        "direction": 0,
+        "station_id": "140697"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.736678,
+          25.128476
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KEE306309",
+        "name": "成功市場",
+        "name_en": "Chenggong Market",
+        "line": "801",
+        "color": "#7c2d12",
+        "direction": 0,
+        "station_id": "140698"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.73740599999999,
+          25.127383
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KEE306241",
+        "name": "仁五路(東和大樓)",
+        "name_en": "Ren 5th Rd.",
+        "line": "801",
+        "color": "#7c2d12",
+        "direction": 0,
+        "station_id": "140629"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.740671,
+          25.127423
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KEE306232",
+        "name": "仁二路(二信循環站)",
+        "name_en": "Ren 2nd Rd. (Erxin Loop Station )",
+        "line": "801",
+        "color": "#7c2d12",
+        "direction": 0,
+        "station_id": "140620"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.743128,
+          25.129771
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KEE306240",
+        "name": "基隆市政府",
+        "name_en": "Keelung City Government",
+        "line": "801",
+        "color": "#7c2d12",
+        "direction": 0,
+        "station_id": "140628"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.745104,
+          25.131453
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KEE306239",
+        "name": "衛生福利部基隆醫院",
+        "name_en": "Ministry of Health and Welfare - Keelung Hospital",
+        "line": "801",
+        "color": "#7c2d12",
+        "direction": 0,
+        "station_id": "140627"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.747775,
+          25.130225
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KEE306238",
+        "name": "信義區公所",
+        "name_en": "Sinyi District Office",
+        "line": "801",
+        "color": "#7c2d12",
+        "direction": 0,
+        "station_id": "140626"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.750885,
+          25.129626
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KEE306237",
+        "name": "崇右影藝科技大學",
+        "name_en": "Chungyu University of Film and Arts",
+        "line": "801",
+        "color": "#7c2d12",
+        "direction": 0,
+        "station_id": "140625"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.75333,
+          25.129345
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KEE306568",
+        "name": "市立體育館",
+        "name_en": "Keelung City Gymnasium",
+        "line": "801",
+        "color": "#7c2d12",
+        "direction": 0,
+        "station_id": "140954"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.755403,
+          25.129126
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KEE306235",
+        "name": "基隆女中",
+        "name_en": "National Keelung Girls` Senior High School",
+        "line": "801",
+        "color": "#7c2d12",
+        "direction": 0,
+        "station_id": "140623"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.7595,
+          25.128483
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KEE306219",
+        "name": "光華巷口",
+        "name_en": "Guanghua Intersection",
+        "line": "801",
+        "color": "#7c2d12",
+        "direction": 0,
+        "station_id": "140607"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.760408,
+          25.127781
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KEE306324",
+        "name": "東橋",
+        "name_en": "Dong Bridge",
+        "line": "801",
+        "color": "#7c2d12",
+        "direction": 0,
+        "station_id": "140713"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.762725,
+          25.127638
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KEE306215",
+        "name": "地方法院",
+        "name_en": "Taiwan Keelung District Court",
+        "line": "801",
+        "color": "#7c2d12",
+        "direction": 0,
+        "station_id": "140603"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.76416,
+          25.128088
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KEE306213",
+        "name": "東光市場",
+        "name_en": "Dongguang Market",
+        "line": "801",
+        "color": "#7c2d12",
+        "direction": 0,
+        "station_id": "140601"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.765605,
+          25.127508
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KEE306210",
+        "name": "信義國中",
+        "name_en": "Sinyi Junior High School",
+        "line": "801",
+        "color": "#7c2d12",
+        "direction": 0,
+        "station_id": "140598"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.76805,
+          25.127838
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KEE306209",
+        "name": "信義國中",
+        "name_en": "Sinyi Junior High School",
+        "line": "801",
+        "color": "#7c2d12",
+        "direction": 0,
+        "station_id": "140597"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.768063,
+          25.127936
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KEE306212",
+        "name": "東光市場",
+        "name_en": "Dongguang Market",
+        "line": "801",
+        "color": "#7c2d12",
+        "direction": 0,
+        "station_id": "140600"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.766105,
+          25.127454
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KEE306214",
+        "name": "地方法院",
+        "name_en": "Taiwan Keelung District Court",
+        "line": "801",
+        "color": "#7c2d12",
+        "direction": 0,
+        "station_id": "140602"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.764244,
+          25.128286
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KEE306216",
+        "name": "東明市場",
+        "name_en": "Dongming Market",
+        "line": "801",
+        "color": "#7c2d12",
+        "direction": 0,
+        "station_id": "140604"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.763053,
+          25.128185
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KEE306218",
+        "name": "市立醫院",
+        "name_en": "Keelung City Municipal Hospital",
+        "line": "801",
+        "color": "#7c2d12",
+        "direction": 0,
+        "station_id": "140606"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.760955,
+          25.128723
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KEE306220",
+        "name": "基隆女中",
+        "name_en": "National Keelung Girls` Senior High School",
+        "line": "801",
+        "color": "#7c2d12",
+        "direction": 0,
+        "station_id": "140608"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.758885,
+          25.128583
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KEE306222",
+        "name": "義九路口",
+        "name_en": "Yi 9th Rd. Intersection",
+        "line": "801",
+        "color": "#7c2d12",
+        "direction": 0,
+        "station_id": "140610"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.755788,
+          25.128506
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KEE306224",
+        "name": "義七路口",
+        "name_en": "Yi 7th Rd. Intersection",
+        "line": "801",
+        "color": "#7c2d12",
+        "direction": 0,
+        "station_id": "140612"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.75243,
+          25.12851
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KEE306226",
+        "name": "義六路口",
+        "name_en": "Yi 6th Rd. Intersection",
+        "line": "801",
+        "color": "#7c2d12",
+        "direction": 0,
+        "station_id": "140614"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.750706,
+          25.128586
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KEE306228",
+        "name": "義四路口",
+        "name_en": "Yi 4th Rd. Intersection",
+        "line": "801",
+        "color": "#7c2d12",
+        "direction": 0,
+        "station_id": "140616"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.747723,
+          25.128961
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KEE306230",
+        "name": "義二路口",
+        "name_en": "Yi 2nd Rd. Intersection",
+        "line": "801",
+        "color": "#7c2d12",
+        "direction": 0,
+        "station_id": "140618"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.746175,
+          25.129801
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KEE309534",
+        "name": "基隆轉運站",
+        "name_en": "Keelung Transit Station",
+        "line": "801",
+        "color": "#7c2d12",
+        "direction": 0,
+        "station_id": "143441"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.739089,
+          25.133076
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KEE309535",
+        "name": "民治里活動中心",
+        "name_en": "Minzhi Village Activity Center",
+        "line": "801",
+        "color": "#7c2d12",
+        "direction": 0,
+        "station_id": "141126"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.740028,
+          25.134482
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KEE306258",
+        "name": "城隍廟",
+        "name_en": "Chenghuang Temple",
+        "line": "801",
+        "color": "#7c2d12",
+        "direction": 0,
+        "station_id": "140647"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.740415,
+          25.131096
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KEE306261",
+        "name": "忠四路",
+        "name_en": "Zhong 4th Rd.",
+        "line": "801",
+        "color": "#7c2d12",
+        "direction": 0,
+        "station_id": "140649"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.739596,
+          25.128031
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KEE306602",
+        "name": "仁愛區行政中心",
+        "name_en": "Renai District Office",
+        "line": "801",
+        "color": "#7c2d12",
+        "direction": 0,
+        "station_id": "140988"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.73653,
+          25.124965
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KEE306263",
+        "name": "光華國宅",
+        "name_en": "Guanghua Public Housing",
+        "line": "801",
+        "color": "#7c2d12",
+        "direction": 0,
+        "station_id": "140651"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.736416,
+          25.12885
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KEE306267",
+        "name": "安樂路一段81巷口",
+        "name_en": "Entrance to Lane 81, Section 1, Anle Road",
+        "line": "801",
+        "color": "#7c2d12",
+        "direction": 0,
+        "station_id": "144214"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.735343,
+          25.129374
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KEE306276",
+        "name": "老大公廟",
+        "name_en": "Laodagong Temple",
+        "line": "801",
+        "color": "#7c2d12",
+        "direction": 0,
+        "station_id": "140664"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.733406,
+          25.128869
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KEE306291",
+        "name": "電信大樓",
+        "name_en": "Telecommunication Building",
+        "line": "801",
+        "color": "#7c2d12",
+        "direction": 0,
+        "station_id": "140680"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.725131,
+          25.122336
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KEE306292",
+        "name": "安樂郵局",
+        "name_en": "Anle Post Office",
+        "line": "801",
+        "color": "#7c2d12",
+        "direction": 0,
+        "station_id": "140681"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.724202,
+          25.121549
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KEE306293",
+        "name": "安樂區行政大樓",
+        "name_en": "Administration Building of Anle District",
+        "line": "801",
+        "color": "#7c2d12",
+        "direction": 0,
+        "station_id": "140682"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.723518,
+          25.120786
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "KEE306272",
+        "name": "長庚醫院",
+        "name_en": "Keelung City Zhanggeng Memorial Hospital",
+        "line": "801",
+        "color": "#7c2d12",
+        "direction": 0,
+        "station_id": "140660"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.721803,
+          25.12109
         ]
       }
     }

@@ -6,12 +6,13 @@
     "name": "F723下石嘈",
     "name_en": "F723下石嘈",
     "ref": "F723下石嘈",
-    "color": "#dc2626",
+    "color": "#6B8F9A",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "operator_id": "16247",
     "operator": "坪林區公所",
-    "operator_en": "Pinglin District Office"
+    "operator_en": "Pinglin District Office",
+    "loop": true
   },
   "features": [
     {
@@ -21,8 +22,9 @@
         "ref": "F723下石嘈",
         "name": "F723下石嘈",
         "name_en": "F723下石嘈",
-        "color": "#dc2626",
-        "direction": 0
+        "color": "#6B8F9A",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1982,6 +1984,10 @@
           [
             121.713231018285,
             24.9379689489901
+          ],
+          [
+            121.713219085605,
+            24.9379752602976
           ]
         ]
       }
@@ -1994,7 +2000,7 @@
         "name": "坪林國中",
         "name_en": "Pinglin Junior High School",
         "line": "F723下石嘈",
-        "color": "#dc2626",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72267"
       },
@@ -2014,7 +2020,7 @@
         "name": "坪林區公所",
         "name_en": "Pinglin District Office",
         "line": "F723下石嘈",
-        "color": "#dc2626",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165605092"
       },
@@ -2034,7 +2040,7 @@
         "name": "協德宮牌樓",
         "name_en": "Xiede Temple Arch Gate",
         "line": "F723下石嘈",
-        "color": "#dc2626",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165609985"
       },
@@ -2054,7 +2060,7 @@
         "name": "保安宮牌樓",
         "name_en": "Baoan Temple Arch Gate",
         "line": "F723下石嘈",
-        "color": "#dc2626",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165609987"
       },
@@ -2074,7 +2080,7 @@
         "name": "鶯子瀨",
         "name_en": "Yingzilai",
         "line": "F723下石嘈",
-        "color": "#dc2626",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165604858"
       },
@@ -2094,7 +2100,7 @@
         "name": "保安宮",
         "name_en": "Baoan Temple",
         "line": "F723下石嘈",
-        "color": "#dc2626",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73274"
       },
@@ -2114,7 +2120,7 @@
         "name": "清雲橋頭",
         "name_en": "Qingyun Bridge",
         "line": "F723下石嘈",
-        "color": "#dc2626",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165604859"
       },
@@ -2134,7 +2140,7 @@
         "name": "清雲農場",
         "name_en": "Qingyun Farm",
         "line": "F723下石嘈",
-        "color": "#dc2626",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165604860"
       },
@@ -2154,7 +2160,7 @@
         "name": "清雲橋頭",
         "name_en": "Qingyun Bridge",
         "line": "F723下石嘈",
-        "color": "#dc2626",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165604859"
       },
@@ -2174,7 +2180,7 @@
         "name": "保安宮",
         "name_en": "Baoan Temple",
         "line": "F723下石嘈",
-        "color": "#dc2626",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73274"
       },
@@ -2194,7 +2200,7 @@
         "name": "鶯子瀨",
         "name_en": "Yingzilai",
         "line": "F723下石嘈",
-        "color": "#dc2626",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165609375"
       },
@@ -2214,7 +2220,7 @@
         "name": "保安宮牌樓",
         "name_en": "Baoan Temple Arch Gate",
         "line": "F723下石嘈",
-        "color": "#dc2626",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165609988"
       },
@@ -2234,7 +2240,7 @@
         "name": "金華茶莊",
         "name_en": "JIN HUA CHA JHUANG",
         "line": "F723下石嘈",
-        "color": "#dc2626",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165610397"
       },
@@ -2254,7 +2260,7 @@
         "name": "九芎林",
         "name_en": "Jiuqionlin",
         "line": "F723下石嘈",
-        "color": "#dc2626",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165610005"
       },
@@ -2274,7 +2280,7 @@
         "name": "協德宮牌樓",
         "name_en": "Xiede Temple Arch Gate",
         "line": "F723下石嘈",
-        "color": "#dc2626",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165609986"
       },
@@ -2294,7 +2300,7 @@
         "name": "坪林國中",
         "name_en": "Pinglin Junior High School",
         "line": "F723下石嘈",
-        "color": "#dc2626",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72266"
       },

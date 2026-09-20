@@ -6,13 +6,14 @@
     "name": "5086A",
     "name_en": "5086A",
     "ref": "5086A",
-    "color": "#b91c1c",
+    "color": "#b45309",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/50861/map/1914/image",
     "operator_id": "1",
     "operator": "桃園客運",
-    "operator_en": "Taoyuan Bus Co., Ltd."
+    "operator_en": "Taoyuan Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "5086A",
         "name": "5086A",
         "name_en": "5086A",
-        "color": "#b91c1c",
-        "direction": 0
+        "color": "#b45309",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1615,6 +1617,10 @@
           [
             121.19876,
             25.06379
+          ],
+          [
+            121.19869,
+            25.06377
           ]
         ]
       }
@@ -1627,7 +1633,7 @@
         "name": "大園車站",
         "name_en": "Dayuan Station",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4957"
       },
@@ -1647,7 +1653,7 @@
         "name": "大園農會",
         "name_en": "Dayuan Farmer Assc.",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1392"
       },
@@ -1667,7 +1673,7 @@
         "name": "橫峰",
         "name_en": "Hengfeng",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1394"
       },
@@ -1687,7 +1693,7 @@
         "name": "橫山橋",
         "name_en": "Hengshan Bridge",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1396"
       },
@@ -1707,7 +1713,7 @@
         "name": "捷運大園站",
         "name_en": "MRT Dayuan Station",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5345"
       },
@@ -1727,7 +1733,7 @@
         "name": "海豐",
         "name_en": "Haifeng",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1398"
       },
@@ -1747,7 +1753,7 @@
         "name": "快樂新村",
         "name_en": "Kuaile Village",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1401"
       },
@@ -1767,7 +1773,7 @@
         "name": "埔心",
         "name_en": "Puxin",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "45"
       },
@@ -1787,7 +1793,7 @@
         "name": "埔心街郵局",
         "name_en": "Puxing St. Post Office",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6697"
       },
@@ -1807,7 +1813,7 @@
         "name": "埔心國小",
         "name_en": "Pu Shin Elementary School",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "41"
       },
@@ -1827,7 +1833,7 @@
         "name": "大埔心",
         "name_en": "Dapuxin",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "40"
       },
@@ -1847,7 +1853,7 @@
         "name": "黃厝",
         "name_en": "Huangcuo",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "28"
       },
@@ -1867,7 +1873,7 @@
         "name": "三塊厝",
         "name_en": "Sankuai Tsuo",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "24"
       },
@@ -1887,7 +1893,7 @@
         "name": "五權牧場",
         "name_en": "Wuchuan Ranch",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "17"
       },
@@ -1907,7 +1913,7 @@
         "name": "五權",
         "name_en": "Wuchiuan",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "13"
       },
@@ -1927,7 +1933,7 @@
         "name": "五權國小",
         "name_en": "Wuchuan Elementary School",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "12"
       },
@@ -1947,7 +1953,7 @@
         "name": "五塊厝",
         "name_en": "Wukuaicuo",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "7"
       },
@@ -1967,7 +1973,7 @@
         "name": "呂厝",
         "name_en": "Lucuo",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6483"
       },
@@ -1987,7 +1993,7 @@
         "name": "李厝",
         "name_en": "Licuo",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "114"
       },
@@ -2007,7 +2013,7 @@
         "name": "郭祿五金",
         "name_en": "Guolu Hardware Store",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3798"
       },
@@ -2027,7 +2033,7 @@
         "name": "崎腳",
         "name_en": "Qijiao",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1408"
       },
@@ -2047,7 +2053,7 @@
         "name": "大新路",
         "name_en": "Daxin Road",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1416"
       },
@@ -2067,7 +2073,7 @@
         "name": "華通公司",
         "name_en": "Huatong Company",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1009"
       },
@@ -2087,7 +2093,7 @@
         "name": "新庄村",
         "name_en": "Xinzhuang Village",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1419"
       },
@@ -2107,7 +2113,7 @@
         "name": "廟前",
         "name_en": "MiauChian",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2022"
       },
@@ -2127,7 +2133,7 @@
         "name": "胡厝",
         "name_en": "Hucuo",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1543"
       },
@@ -2147,7 +2153,7 @@
         "name": "蘆竹親子館(大竹)",
         "name_en": "Luzhu Parent-child Center(Dazhu)",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3654"
       },
@@ -2167,7 +2173,7 @@
         "name": "大竹",
         "name_en": "Dazhu",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3651"
       },
@@ -2187,7 +2193,7 @@
         "name": "上大竹",
         "name_en": "Shangdaju",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3649"
       },
@@ -2207,7 +2213,7 @@
         "name": "宏邦大鎮",
         "name_en": "HungBangDaJen",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1962"
       },
@@ -2227,7 +2233,7 @@
         "name": "八股坡",
         "name_en": "BaGuPo",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1959"
       },
@@ -2247,7 +2253,7 @@
         "name": "富吉",
         "name_en": "Fuji",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2011"
       },
@@ -2267,7 +2273,7 @@
         "name": "開南大學",
         "name_en": "Kainan University",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1420"
       },
@@ -2287,7 +2293,7 @@
         "name": "水頭埤",
         "name_en": "Shuitoubi",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6159"
       },
@@ -2307,7 +2313,7 @@
         "name": "八角店(開南大學)",
         "name_en": "BaJiauDian(Kainan University)",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3611"
       },
@@ -2327,7 +2333,7 @@
         "name": "三和公司",
         "name_en": "Sanho Enterprise Co. Ltd.",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1537"
       },
@@ -2347,7 +2353,7 @@
         "name": "十三號坡",
         "name_en": "Shi san hao po",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1535"
       },
@@ -2367,7 +2373,7 @@
         "name": "星見橋",
         "name_en": "Xingjian bridge",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1531"
       },
@@ -2387,7 +2393,7 @@
         "name": "中埔國小",
         "name_en": "Zhongpu Elementary School",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1529"
       },
@@ -2407,7 +2413,7 @@
         "name": "埔子",
         "name_en": "Puzi",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1527"
       },
@@ -2427,7 +2433,7 @@
         "name": "永安北路",
         "name_en": "Yungan North Road",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "391"
       },
@@ -2447,7 +2453,7 @@
         "name": "南埔里活動中心",
         "name_en": "Nanpuli Activity Center",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "389"
       },
@@ -2467,7 +2473,7 @@
         "name": "永安溫州街口",
         "name_en": "Yongan Wunjhou St. Intersection",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "387"
       },
@@ -2487,7 +2493,7 @@
         "name": "蓮華寺",
         "name_en": "Lianhua Temple",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "385"
       },
@@ -2507,7 +2513,7 @@
         "name": "力行路口",
         "name_en": "Lixing Road Intersection",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "383"
       },
@@ -2527,7 +2533,7 @@
         "name": "民安路口",
         "name_en": "Minan Road Intersection",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "381"
       },
@@ -2547,7 +2553,7 @@
         "name": "九崁店",
         "name_en": "JiouKanDian",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "379"
       },
@@ -2567,7 +2573,7 @@
         "name": "永安路口",
         "name_en": "Yong-an Road Intersection",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "375"
       },
@@ -2587,7 +2593,7 @@
         "name": "博愛路口",
         "name_en": "Bo-ai Road Intersection",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1112"
       },
@@ -2607,7 +2613,7 @@
         "name": "民族路口",
         "name_en": "Minzu Road Intersection",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1113"
       },
@@ -2627,7 +2633,7 @@
         "name": "桃花園飯店",
         "name_en": "Tao Garden Hotel",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1948"
       },
@@ -2647,7 +2653,7 @@
         "name": "統領百貨",
         "name_en": "Tonlin Department Store",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1223"
       },
@@ -2667,7 +2673,7 @@
         "name": "民族路口",
         "name_en": "Minzu Road Intersection",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "7287"
       },
@@ -2687,7 +2693,7 @@
         "name": "永安路口",
         "name_en": "Yongan Road Intersection",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "374"
       },
@@ -2707,7 +2713,7 @@
         "name": "九崁店",
         "name_en": "JiouKanDian",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "378"
       },
@@ -2727,7 +2733,7 @@
         "name": "民安路口",
         "name_en": "Minan Road Intersection",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "380"
       },
@@ -2747,7 +2753,7 @@
         "name": "力行路口",
         "name_en": "Lixing Road Intersection",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "382"
       },
@@ -2767,7 +2773,7 @@
         "name": "蓮華寺",
         "name_en": "LianHua Temple",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "384"
       },
@@ -2787,7 +2793,7 @@
         "name": "永安溫州街口",
         "name_en": "Yongan Wunjhou St. Intersection",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "386"
       },
@@ -2807,7 +2813,7 @@
         "name": "南埔里活動中心",
         "name_en": "Nanpuli Activity Center",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "388"
       },
@@ -2827,7 +2833,7 @@
         "name": "永安北路",
         "name_en": "Yungan North Road",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "390"
       },
@@ -2847,7 +2853,7 @@
         "name": "埔子",
         "name_en": "Puzi",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1526"
       },
@@ -2867,7 +2873,7 @@
         "name": "中埔國小",
         "name_en": "Zhongpu Elementary School",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1528"
       },
@@ -2887,7 +2893,7 @@
         "name": "星見橋",
         "name_en": "Xingjian bridge",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1530"
       },
@@ -2907,7 +2913,7 @@
         "name": "十三號坡",
         "name_en": "Shi san hao po",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1532"
       },
@@ -2927,7 +2933,7 @@
         "name": "三和公司",
         "name_en": "Sanho Enterprise Co. Ltd.",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1536"
       },
@@ -2947,7 +2953,7 @@
         "name": "八角店(開南大學)",
         "name_en": "BaJiauDian(Kainan University)",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3610"
       },
@@ -2967,7 +2973,7 @@
         "name": "水頭埤",
         "name_en": "Shuitoubi",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6159"
       },
@@ -2987,7 +2993,7 @@
         "name": "富吉",
         "name_en": "Fuji",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2010"
       },
@@ -3007,7 +3013,7 @@
         "name": "八股坡",
         "name_en": "BaGuPo",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1958"
       },
@@ -3027,7 +3033,7 @@
         "name": "宏邦大鎮",
         "name_en": "HungBangDaJen",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1961"
       },
@@ -3047,7 +3053,7 @@
         "name": "上大竹",
         "name_en": "Shangdaju",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3648"
       },
@@ -3067,7 +3073,7 @@
         "name": "大竹",
         "name_en": "Dazhu",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3650"
       },
@@ -3087,7 +3093,7 @@
         "name": "蘆竹親子館(大竹)",
         "name_en": "Luzhu Parent-child Center(Dazhu)",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3653"
       },
@@ -3107,7 +3113,7 @@
         "name": "胡厝",
         "name_en": "Hucuo",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1544"
       },
@@ -3127,7 +3133,7 @@
         "name": "廟前",
         "name_en": "MiauChian",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2024"
       },
@@ -3147,7 +3153,7 @@
         "name": "新庄村",
         "name_en": "Xinzhuang Village",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1418"
       },
@@ -3167,7 +3173,7 @@
         "name": "華通公司",
         "name_en": "Huatong Company",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1008"
       },
@@ -3187,7 +3193,7 @@
         "name": "大新路",
         "name_en": "Daxin Road",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1417"
       },
@@ -3207,7 +3213,7 @@
         "name": "崎腳",
         "name_en": "Qijiao",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1407"
       },
@@ -3227,7 +3233,7 @@
         "name": "郭祿五金",
         "name_en": "Guolu Hardware Store",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3799"
       },
@@ -3247,7 +3253,7 @@
         "name": "李厝",
         "name_en": "Licuo",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "115"
       },
@@ -3267,7 +3273,7 @@
         "name": "呂厝",
         "name_en": "Lucuo",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6484"
       },
@@ -3287,7 +3293,7 @@
         "name": "五塊厝",
         "name_en": "Wukuaicuo",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "8"
       },
@@ -3307,7 +3313,7 @@
         "name": "五權國小",
         "name_en": "Wuchuan Elementary School",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "11"
       },
@@ -3327,7 +3333,7 @@
         "name": "五權",
         "name_en": "Wuchiuan",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "14"
       },
@@ -3347,7 +3353,7 @@
         "name": "五權牧場",
         "name_en": "Wuchuan Ranch",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "18"
       },
@@ -3367,7 +3373,7 @@
         "name": "中油街",
         "name_en": "JungYou Street",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4842"
       },
@@ -3387,7 +3393,7 @@
         "name": "奈德公司",
         "name_en": "Naide Company",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3655"
       },
@@ -3407,7 +3413,7 @@
         "name": "三塊厝",
         "name_en": "Sankuai Tsuo",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "23"
       },
@@ -3427,7 +3433,7 @@
         "name": "黃厝",
         "name_en": "Huangcuo",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "27"
       },
@@ -3447,7 +3453,7 @@
         "name": "大埔心",
         "name_en": "Dapuxin",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "39"
       },
@@ -3467,7 +3473,7 @@
         "name": "埔心國小",
         "name_en": "Puxin Elementary School",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "42"
       },
@@ -3487,7 +3493,7 @@
         "name": "埔心街郵局",
         "name_en": "Puxing St. Post Office",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6698"
       },
@@ -3507,7 +3513,7 @@
         "name": "埔心",
         "name_en": "Puxin",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "46"
       },
@@ -3527,7 +3533,7 @@
         "name": "快樂新村",
         "name_en": "Kuaile Village",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1400"
       },
@@ -3547,7 +3553,7 @@
         "name": "海豐",
         "name_en": "Haifeng",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1399"
       },
@@ -3567,7 +3573,7 @@
         "name": "捷運大園站",
         "name_en": "MRT Dayuan Station",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5345"
       },
@@ -3587,7 +3593,7 @@
         "name": "橫山橋",
         "name_en": "Hengshan Bridge",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1397"
       },
@@ -3607,7 +3613,7 @@
         "name": "橫峰",
         "name_en": "Hengfeng",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1395"
       },
@@ -3627,7 +3633,7 @@
         "name": "大園農會",
         "name_en": "Dayuan Farmer Assc.",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1393"
       },
@@ -3647,7 +3653,7 @@
         "name": "大園車站",
         "name_en": "Dayuan Station",
         "line": "5086A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4958"
       },

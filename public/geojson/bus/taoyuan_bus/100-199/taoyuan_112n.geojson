@@ -6,13 +6,14 @@
     "name": "112N",
     "name_en": "112N",
     "ref": "112N",
-    "color": "#9a3412",
+    "color": "#2563eb",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/112/map/1208/image",
     "operator_id": "2",
     "operator": "中壢客運",
-    "operator_en": "Chungli Bus Co., Ltd."
+    "operator_en": "Chungli Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "112N",
         "name": "112N",
         "name_en": "112N",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -467,6 +469,10 @@
           [
             121.22432,
             24.95328
+          ],
+          [
+            121.22439,
+            24.95352
           ]
         ]
       }
@@ -479,7 +485,7 @@
         "name": "中壢客運中壢總站",
         "name_en": "Zhongli Bus Main Station",
         "line": "112N",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "126"
       },
@@ -499,7 +505,7 @@
         "name": "中壢農會",
         "name_en": "Zhongli Farmers Association",
         "line": "112N",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "3773"
       },
@@ -519,7 +525,7 @@
         "name": "中央市場",
         "name_en": "Zhongyang Market",
         "line": "112N",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "580"
       },
@@ -539,7 +545,7 @@
         "name": "埔頂橋",
         "name_en": "PuDing Bridge",
         "line": "112N",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "752"
       },
@@ -559,7 +565,7 @@
         "name": "中山東路口",
         "name_en": "Zhongshan East Road Intersection",
         "line": "112N",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "512"
       },
@@ -579,7 +585,7 @@
         "name": "中山東中北路口",
         "name_en": "Zhongshan E. and Zhongbei Rd. Intersection",
         "line": "112N",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "639"
       },
@@ -599,7 +605,7 @@
         "name": "普仁(中原夜市)",
         "name_en": "PuRen(Zhongyuan Night Market)",
         "line": "112N",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "920"
       },
@@ -619,7 +625,7 @@
         "name": "普仁新村",
         "name_en": "Puren Village",
         "line": "112N",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "607"
       },
@@ -639,7 +645,7 @@
         "name": "環中東路口",
         "name_en": "Huanzhong E. Road Intersection",
         "line": "112N",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "1187"
       },
@@ -659,7 +665,7 @@
         "name": "榮民服務處",
         "name_en": "Taoyuan County Veterans Service Office",
         "line": "112N",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "605"
       },
@@ -679,7 +685,7 @@
         "name": "普仁國小",
         "name_en": "Puren Elementary School",
         "line": "112N",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "603"
       },
@@ -699,7 +705,7 @@
         "name": "金鋒市場",
         "name_en": "JinFeng Market",
         "line": "112N",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "3278"
       },
@@ -719,7 +725,7 @@
         "name": "六泰新村",
         "name_en": "LiouTai New Village",
         "line": "112N",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "1130"
       },
@@ -739,7 +745,7 @@
         "name": "龍慈路口",
         "name_en": "Longci Road Intersection",
         "line": "112N",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "3247"
       },
@@ -759,7 +765,7 @@
         "name": "仁美",
         "name_en": "RenMei",
         "line": "112N",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "694"
       },
@@ -779,7 +785,7 @@
         "name": "電信器材場",
         "name_en": "Telcom Equipment Market",
         "line": "112N",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "4596"
       },
@@ -799,7 +805,7 @@
         "name": "富台國小",
         "name_en": "Fu-Tai Elementary School",
         "line": "112N",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "3292"
       },
@@ -819,7 +825,7 @@
         "name": "富台",
         "name_en": "Futai",
         "line": "112N",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "839"
       },
@@ -839,7 +845,7 @@
         "name": "龍文街正義路口",
         "name_en": "Longwun St. and Jhengyi Rd. Intersection",
         "line": "112N",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "4662"
       },
@@ -859,7 +865,7 @@
         "name": "龍東中山東路口",
         "name_en": "Longdong and Zhongshan East Road Intersection",
         "line": "112N",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "582"
       },
@@ -879,7 +885,7 @@
         "name": "基安二村",
         "name_en": "JiAn 2nd Village",
         "line": "112N",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "4501"
       },
@@ -899,7 +905,7 @@
         "name": "龍文街口",
         "name_en": "Longwen Street Intersection",
         "line": "112N",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "628"
       },
@@ -919,7 +925,7 @@
         "name": "忠貞",
         "name_en": "Zhongzhen",
         "line": "112N",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "2926"
       },
@@ -939,7 +945,7 @@
         "name": "貿易七村",
         "name_en": "MauYi 7th Village",
         "line": "112N",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "4499"
       },
@@ -959,7 +965,7 @@
         "name": "龍東路",
         "name_en": "Longdong Road",
         "line": "112N",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "584"
       },
@@ -979,7 +985,7 @@
         "name": "供應站",
         "name_en": "Fareware Service",
         "line": "112N",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "4497"
       },
@@ -999,7 +1005,7 @@
         "name": "龍岡圓環",
         "name_en": "LungGang Circle",
         "line": "112N",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "586"
       },
@@ -1019,7 +1025,7 @@
         "name": "龍江公寓",
         "name_en": "Longjiang Apartment",
         "line": "112N",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "588"
       },
@@ -1039,7 +1045,7 @@
         "name": "伯公廟",
         "name_en": "Bogong Temple",
         "line": "112N",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "4267"
       },
@@ -1059,7 +1065,7 @@
         "name": "游泳路口",
         "name_en": "Youyong Road Intersection",
         "line": "112N",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "590"
       },
@@ -1079,7 +1085,7 @@
         "name": "龍岡森林公園",
         "name_en": "Lunggang Forest Park",
         "line": "112N",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "4565"
       },
@@ -1099,7 +1105,7 @@
         "name": "馬祖新村",
         "name_en": "MaTzu Village",
         "line": "112N",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "592"
       },
@@ -1119,7 +1125,7 @@
         "name": "龍仁龍泉街口",
         "name_en": "Longren and Longcyuan St. Intersection",
         "line": "112N",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "3774"
       },
@@ -1139,7 +1145,7 @@
         "name": "頂石頭",
         "name_en": "Dingshitou",
         "line": "112N",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "2407"
       },
@@ -1159,7 +1165,7 @@
         "name": "中興莊",
         "name_en": "JungShingJuang",
         "line": "112N",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "4563"
       },
@@ -1179,7 +1185,7 @@
         "name": "龍岡國小",
         "name_en": "LungGang Elementary School",
         "line": "112N",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "247"
       },
@@ -1199,7 +1205,7 @@
         "name": "健行科技大學",
         "name_en": "Chien Hsin University of Science and Technology",
         "line": "112N",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "618"
       },
@@ -1219,7 +1225,7 @@
         "name": "龍岡橋",
         "name_en": "LungGang Bridge",
         "line": "112N",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "2405"
       },
@@ -1239,7 +1245,7 @@
         "name": "中北路口",
         "name_en": "ZungBei Road Intersection",
         "line": "112N",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "4711"
       },
@@ -1259,7 +1265,7 @@
         "name": "中壢分局",
         "name_en": "Zhongli Police Station",
         "line": "112N",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "698"
       },
@@ -1279,7 +1285,7 @@
         "name": "中壢客運中壢總站",
         "name_en": "Zhongli Bus Zhongli Main Station",
         "line": "112N",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "126"
       },

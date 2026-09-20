@@ -6,13 +6,14 @@
     "name": "黃12-2",
     "name_en": "黃12-2",
     "ref": "黃12-2",
-    "color": "#0891b2",
+    "color": "#3f6212",
     "city_id": "Tainan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://busmap.tainan.gov.tw/ebus/resources/PathPic/zh_TW/1805.jpg",
     "operator_id": "10190",
     "operator": "新營客運",
-    "operator_en": "Sinying Bus Co., Ltd."
+    "operator_en": "Sinying Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "黃12-2",
         "name": "黃12-2",
         "name_en": "黃12-2",
-        "color": "#0891b2",
-        "direction": 2
+        "color": "#3f6212",
+        "direction": 2,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -2231,7 +2233,7 @@
         "name": "關子嶺勞工育樂中心",
         "name_en": "Guanzihling Labor Recreation Center",
         "line": "黃12-2",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 2,
         "station_id": "2761"
       },
@@ -2251,7 +2253,7 @@
         "name": "關子嶺教會",
         "name_en": "Guanzihling Church",
         "line": "黃12-2",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 2,
         "station_id": "8342"
       },
@@ -2271,7 +2273,7 @@
         "name": "頂關子嶺",
         "name_en": "Dingguanzihling",
         "line": "黃12-2",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 2,
         "station_id": "7249"
       },
@@ -2291,7 +2293,7 @@
         "name": "南寮路口",
         "name_en": "Nanliao Rd. Intersection",
         "line": "黃12-2",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 2,
         "station_id": "7250"
       },
@@ -2311,7 +2313,7 @@
         "name": "枕頭山",
         "name_en": "Pillow Mountain",
         "line": "黃12-2",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 2,
         "station_id": "1735"
       },
@@ -2331,7 +2333,7 @@
         "name": "水火同源",
         "name_en": "Fountain of Flame",
         "line": "黃12-2",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 2,
         "station_id": "8625"
       },
@@ -2351,7 +2353,7 @@
         "name": "火山碧雲寺",
         "name_en": "Huo Shan Bi Yun Temple",
         "line": "黃12-2",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 2,
         "station_id": "8626"
       },
@@ -2371,7 +2373,7 @@
         "name": "半嶺",
         "name_en": "Banling",
         "line": "黃12-2",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 2,
         "station_id": "1915"
       },
@@ -2391,7 +2393,7 @@
         "name": "大仙寺",
         "name_en": "Dasian Temple",
         "line": "黃12-2",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 2,
         "station_id": "8627"
       },
@@ -2411,7 +2413,7 @@
         "name": "仙草埔",
         "name_en": "Siancaopu",
         "line": "黃12-2",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 2,
         "station_id": "7541"
       },
@@ -2431,7 +2433,7 @@
         "name": "白河榮家",
         "name_en": "Baihe Veterans Home",
         "line": "黃12-2",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 2,
         "station_id": "7542"
       },
@@ -2451,7 +2453,7 @@
         "name": "灰窯",
         "name_en": "Hueiyao",
         "line": "黃12-2",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 2,
         "station_id": "7543"
       },
@@ -2471,7 +2473,7 @@
         "name": "羌仔崙",
         "name_en": "Ciangzihlun",
         "line": "黃12-2",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 2,
         "station_id": "7544"
       },
@@ -2491,7 +2493,7 @@
         "name": "麒麟隧道口",
         "name_en": "Kirin Tunnel Entrance",
         "line": "黃12-2",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 2,
         "station_id": "1688"
       },
@@ -2511,7 +2513,7 @@
         "name": "粗坑",
         "name_en": "Cukeng",
         "line": "黃12-2",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 2,
         "station_id": "7545"
       },
@@ -2531,7 +2533,7 @@
         "name": "寶泉橋",
         "name_en": "Baocyuan Bridge",
         "line": "黃12-2",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 2,
         "station_id": "7546"
       },
@@ -2551,7 +2553,7 @@
         "name": "好漢坡",
         "name_en": "Haohanpo",
         "line": "黃12-2",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 2,
         "station_id": "7547"
       },
@@ -2571,7 +2573,7 @@
         "name": "關子嶺",
         "name_en": "Guanzihling",
         "line": "黃12-2",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 2,
         "station_id": "7548"
       },
@@ -2591,7 +2593,7 @@
         "name": "嶺頂旅遊資訊站",
         "name_en": "Lingding Visitor Information Station",
         "line": "黃12-2",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 2,
         "station_id": "1591"
       },
@@ -2611,7 +2613,7 @@
         "name": "關子嶺勞工育樂中心",
         "name_en": "Guanzihling Labor Recreation Center",
         "line": "黃12-2",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 2,
         "station_id": "2761"
       },

@@ -6,10 +6,11 @@
     "name": "608",
     "name_en": "608",
     "ref": "608",
-    "color": "#9f1239",
+    "color": "#dc2626",
     "city_id": "Keelung",
     "source": "TDX Bus Shape / StopOfRoute",
-    "official_map_url": "https://web.taiwanbus.tw/MISUploadData/Schematic/file/0372.jpg"
+    "official_map_url": "https://web.taiwanbus.tw/MISUploadData/Schematic/file/0372.jpg",
+    "loop": true
   },
   "features": [
     {
@@ -19,8 +20,9 @@
         "ref": "608",
         "name": "608",
         "name_en": "608",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#dc2626",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1048,7 +1050,7 @@
         "name": "基隆火車站(南站)",
         "name_en": "Keelung Railway Station S.",
         "line": "608",
-        "color": "#9f1239",
+        "color": "#dc2626",
         "direction": 0,
         "station_id": "141049"
       },
@@ -1068,7 +1070,7 @@
         "name": "仁五路(東和大樓)",
         "name_en": "Ren 5th Rd.",
         "line": "608",
-        "color": "#9f1239",
+        "color": "#dc2626",
         "direction": 0,
         "station_id": "140629"
       },
@@ -1088,7 +1090,7 @@
         "name": "南榮路口",
         "name_en": "Nanrong Rd. Intersection",
         "line": "608",
-        "color": "#9f1239",
+        "color": "#dc2626",
         "direction": 0,
         "station_id": "141048"
       },
@@ -1108,7 +1110,7 @@
         "name": "三坑",
         "name_en": "Sankeng",
         "line": "608",
-        "color": "#9f1239",
+        "color": "#dc2626",
         "direction": 0,
         "station_id": "141046"
       },
@@ -1128,7 +1130,7 @@
         "name": "南新街",
         "name_en": "Nanxin St.",
         "line": "608",
-        "color": "#9f1239",
+        "color": "#dc2626",
         "direction": 0,
         "station_id": "141305"
       },
@@ -1148,7 +1150,7 @@
         "name": "三坑",
         "name_en": "Sankeng",
         "line": "608",
-        "color": "#9f1239",
+        "color": "#dc2626",
         "direction": 0,
         "station_id": "141045"
       },
@@ -1168,7 +1170,7 @@
         "name": "南榮路口",
         "name_en": "Nanrong Rd. Intersection",
         "line": "608",
-        "color": "#9f1239",
+        "color": "#dc2626",
         "direction": 0,
         "station_id": "141047"
       },
@@ -1188,7 +1190,7 @@
         "name": "仁二路(二信循環站)",
         "name_en": "Ren 2nd Rd. (Erxin Loop Station )",
         "line": "608",
-        "color": "#9f1239",
+        "color": "#dc2626",
         "direction": 0,
         "station_id": "140620"
       },

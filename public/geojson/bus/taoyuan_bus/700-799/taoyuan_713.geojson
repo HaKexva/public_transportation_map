@@ -6,13 +6,14 @@
     "name": "713",
     "name_en": "713",
     "ref": "713",
-    "color": "#1e3a8a",
+    "color": "#ea580c",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/713/map/2077/image",
     "operator_id": "4",
     "operator": "統聯客運",
-    "operator_en": "United Highway Bus Co., Ltd."
+    "operator_en": "United Highway Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "713",
         "name": "713",
         "name_en": "713",
-        "color": "#1e3a8a",
-        "direction": 0
+        "color": "#ea580c",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1927,6 +1929,10 @@
           [
             121.28121,
             24.92881
+          ],
+          [
+            121.28102,
+            24.9297
           ]
         ]
       }
@@ -1939,7 +1945,7 @@
         "name": "建德興豐路口(G01)",
         "name_en": "Jiande Xingfeng Intersection (G01)",
         "line": "713",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "3809"
       },
@@ -1959,7 +1965,7 @@
         "name": "深耕十期社區",
         "name_en": "Shengeng Community,Phase 10",
         "line": "713",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "3811"
       },
@@ -1979,7 +1985,7 @@
         "name": "豐德中正路口",
         "name_en": "Fengde Zhongzheng Intersection",
         "line": "713",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "3813"
       },
@@ -1999,7 +2005,7 @@
         "name": "興仁里",
         "name_en": "Xingren Village",
         "line": "713",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "3805"
       },
@@ -2019,7 +2025,7 @@
         "name": "八德區公所(三元宮)",
         "name_en": "Bade District Office (Sanyuan Temple)",
         "line": "713",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "2062"
       },
@@ -2039,7 +2045,7 @@
         "name": "八德教養院",
         "name_en": "Bade Home for the Disabled",
         "line": "713",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "1209"
       },
@@ -2059,7 +2065,7 @@
         "name": "崙子路口",
         "name_en": "Lunzi Road Intersection",
         "line": "713",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "1207"
       },
@@ -2079,7 +2085,7 @@
         "name": "崙子",
         "name_en": "Lunzi",
         "line": "713",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "1205"
       },
@@ -2099,7 +2105,7 @@
         "name": "建國仁德一路口",
         "name_en": "Jianguo and Rende 1st Rd.",
         "line": "713",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "2064"
       },
@@ -2119,7 +2125,7 @@
         "name": "大雅新城",
         "name_en": "Daya Village",
         "line": "713",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "1203"
       },
@@ -2139,7 +2145,7 @@
         "name": "大庄",
         "name_en": "Dazhuang",
         "line": "713",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "1199"
       },
@@ -2159,7 +2165,7 @@
         "name": "富榮",
         "name_en": "Furong",
         "line": "713",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4"
       },
@@ -2179,7 +2185,7 @@
         "name": "大千社區",
         "name_en": "Dachian Community",
         "line": "713",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "1195"
       },
@@ -2199,7 +2205,7 @@
         "name": "建國大勤街口",
         "name_en": "Jianguodaqin intersection",
         "line": "713",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "2068"
       },
@@ -2219,7 +2225,7 @@
         "name": "藝墅天地",
         "name_en": "Yishu tiandi",
         "line": "713",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4322"
       },
@@ -2239,7 +2245,7 @@
         "name": "打鐵店",
         "name_en": "Datiedian",
         "line": "713",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "2070"
       },
@@ -2259,7 +2265,7 @@
         "name": "建國公園",
         "name_en": "JianGuo Park",
         "line": "713",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4480"
       },
@@ -2279,7 +2285,7 @@
         "name": "和平路口",
         "name_en": "Heping Rd. Intersection",
         "line": "713",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4481"
       },
@@ -2299,7 +2305,7 @@
         "name": "香榭儷舍",
         "name_en": "Xiangxielishe",
         "line": "713",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "1936"
       },
@@ -2319,7 +2325,7 @@
         "name": "大成國中(東勇街)",
         "name_en": "Dacheng Junior High School(Dongyong St.)",
         "line": "713",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "6317"
       },
@@ -2339,7 +2345,7 @@
         "name": "大千里",
         "name_en": "Daqian township",
         "line": "713",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "1292"
       },
@@ -2359,7 +2365,7 @@
         "name": "八德轉運站",
         "name_en": "Bade Bus Station",
         "line": "713",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "6882"
       },
@@ -2379,7 +2385,7 @@
         "name": "永寧轉運站",
         "name_en": "Yongning Bus Station",
         "line": "713",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "6954"
       },
@@ -2399,7 +2405,7 @@
         "name": "大千里",
         "name_en": "Daqian township",
         "line": "713",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "1291"
       },
@@ -2419,7 +2425,7 @@
         "name": "大成國中(東勇街)",
         "name_en": "Dacheng Junior High School(Dongyong St.)",
         "line": "713",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "6883"
       },
@@ -2439,7 +2445,7 @@
         "name": "香榭儷舍",
         "name_en": "Xiangxielishe",
         "line": "713",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "1937"
       },
@@ -2459,7 +2465,7 @@
         "name": "和平路口",
         "name_en": "Heping Rd. Intersection",
         "line": "713",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4482"
       },
@@ -2479,7 +2485,7 @@
         "name": "建國大成街口",
         "name_en": "Jianguo Dacheng Intersection",
         "line": "713",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4594"
       },
@@ -2499,7 +2505,7 @@
         "name": "打鐵店",
         "name_en": "Datiedian",
         "line": "713",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "2071"
       },
@@ -2519,7 +2525,7 @@
         "name": "藝墅天地",
         "name_en": "Yishu tiandi",
         "line": "713",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4321"
       },
@@ -2539,7 +2545,7 @@
         "name": "建國大勤街口",
         "name_en": "Jianguodaqin intersection",
         "line": "713",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "2069"
       },
@@ -2559,7 +2565,7 @@
         "name": "大千社區",
         "name_en": "Dachian Community",
         "line": "713",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "1194"
       },
@@ -2579,7 +2585,7 @@
         "name": "富榮",
         "name_en": "Furong",
         "line": "713",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "3"
       },
@@ -2599,7 +2605,7 @@
         "name": "大庄",
         "name_en": "Dazhuang",
         "line": "713",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "1196"
       },
@@ -2619,7 +2625,7 @@
         "name": "大雅新城",
         "name_en": "Daya Village",
         "line": "713",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "1202"
       },
@@ -2639,7 +2645,7 @@
         "name": "建國仁德一路口",
         "name_en": "Jianguo and Rende 1st Rd.",
         "line": "713",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "2065"
       },
@@ -2659,7 +2665,7 @@
         "name": "崙子",
         "name_en": "Lunzi",
         "line": "713",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "1204"
       },
@@ -2679,7 +2685,7 @@
         "name": "崙子路口",
         "name_en": "Lunzi Road Intersection",
         "line": "713",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "1206"
       },
@@ -2699,7 +2705,7 @@
         "name": "八德教養院",
         "name_en": "Bade Home for the Disabled",
         "line": "713",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "1208"
       },
@@ -2719,7 +2725,7 @@
         "name": "八德區公所(三元宮)",
         "name_en": "Bade District Office (Sanyuan Temple)",
         "line": "713",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "2063"
       },
@@ -2739,7 +2745,7 @@
         "name": "興仁里",
         "name_en": "Xingren Village",
         "line": "713",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "3806"
       },
@@ -2759,7 +2765,7 @@
         "name": "豐德中正路口",
         "name_en": "Fengde Zhongzheng intersection",
         "line": "713",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "3814"
       },
@@ -2779,7 +2785,7 @@
         "name": "深耕十期社區",
         "name_en": "Shengeng Community, Phase 10",
         "line": "713",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "3812"
       },
@@ -2799,7 +2805,7 @@
         "name": "建德興豐路口(G01)",
         "name_en": "Jiande Xingfeng intersection (G01)",
         "line": "713",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "3810"
       },

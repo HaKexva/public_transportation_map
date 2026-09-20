@@ -6,12 +6,13 @@
     "name": "L310",
     "name_en": "L310",
     "ref": "L310",
-    "color": "#1e3a8a",
+    "color": "#c2410c",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/53100/map/482/image",
     "operator_id": "24",
-    "operator": "勁揚通運"
+    "operator": "勁揚通運",
+    "loop": true
   },
   "features": [
     {
@@ -21,8 +22,9 @@
         "ref": "L310",
         "name": "L310",
         "name_en": "L310",
-        "color": "#1e3a8a",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1390,6 +1392,10 @@
           [
             121.33722,
             24.9923
+          ],
+          [
+            121.33708,
+            24.99218
           ]
         ]
       }
@@ -1402,7 +1408,7 @@
         "name": "龜山區公所",
         "name_en": "Guishan District Office",
         "line": "L310",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5454"
       },
@@ -1422,7 +1428,7 @@
         "name": "龜山國小",
         "name_en": "Guishan Elementary School",
         "line": "L310",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "4358"
       },
@@ -1442,7 +1448,7 @@
         "name": "覺海寺",
         "name_en": "Juehai Temple",
         "line": "L310",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5455"
       },
@@ -1462,7 +1468,7 @@
         "name": "自強國小",
         "name_en": "Ziqiang Elementary School",
         "line": "L310",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5457"
       },
@@ -1482,7 +1488,7 @@
         "name": "自強北路",
         "name_en": "Ziqiang North Rd.",
         "line": "L310",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5459"
       },
@@ -1502,7 +1508,7 @@
         "name": "中正公園",
         "name_en": "Zhongzheng Park",
         "line": "L310",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5461"
       },
@@ -1522,7 +1528,7 @@
         "name": "千禧新城",
         "name_en": "Qianxixincheng",
         "line": "L310",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "3723"
       },
@@ -1542,7 +1548,7 @@
         "name": "龜山國中",
         "name_en": "Guishan Junior High School",
         "line": "L310",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5348"
       },
@@ -1562,7 +1568,7 @@
         "name": "永和街口",
         "name_en": "Yonghe St. Intersection",
         "line": "L310",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5463"
       },
@@ -1582,7 +1588,7 @@
         "name": "陸光路口",
         "name_en": "Luguang Rd. Intersection",
         "line": "L310",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5465"
       },
@@ -1602,7 +1608,7 @@
         "name": "同心一路",
         "name_en": "Tongxin 1st Rd.",
         "line": "L310",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "4738"
       },
@@ -1622,7 +1628,7 @@
         "name": "同心二路",
         "name_en": "Tongxin 2nd Rd.",
         "line": "L310",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5467"
       },
@@ -1642,7 +1648,7 @@
         "name": "同心一路",
         "name_en": "Tongxin 1st Rd.",
         "line": "L310",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "4737"
       },
@@ -1662,7 +1668,7 @@
         "name": "陸光路口",
         "name_en": "Luguang Rd. Intersection",
         "line": "L310",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5466"
       },
@@ -1682,7 +1688,7 @@
         "name": "長壽路",
         "name_en": "Changshou Rd.",
         "line": "L310",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "4367"
       },
@@ -1702,7 +1708,7 @@
         "name": "桃園高中",
         "name_en": "National Taoyuan High School",
         "line": "L310",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "4053"
       },
@@ -1722,7 +1728,7 @@
         "name": "桃園榮民醫院",
         "name_en": "TVGH, Taoyuan Branch",
         "line": "L310",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5016"
       },
@@ -1742,7 +1748,7 @@
         "name": "桃園榮民醫院二",
         "name_en": "TVGH, Taoyuan Branch Stop 2",
         "line": "L310",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5469"
       },
@@ -1762,7 +1768,7 @@
         "name": "桃園高中",
         "name_en": "National Taoyuan Senior High School",
         "line": "L310",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "4054"
       },
@@ -1782,7 +1788,7 @@
         "name": "山鶯路",
         "name_en": "Shanyin Rd.",
         "line": "L310",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5470"
       },
@@ -1802,7 +1808,7 @@
         "name": "明碁電腦",
         "name_en": "BENQ",
         "line": "L310",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "2780"
       },
@@ -1822,7 +1828,7 @@
         "name": "工程隊",
         "name_en": "Engineer Brigade",
         "line": "L310",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5471"
       },
@@ -1842,7 +1848,7 @@
         "name": "中興路口",
         "name_en": "Zhongxing Rd. Intersection",
         "line": "L310",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "6250"
       },
@@ -1862,7 +1868,7 @@
         "name": "山鶯明興街口",
         "name_en": "Shanying Ming Hing street",
         "line": "L310",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5472"
       },
@@ -1882,7 +1888,7 @@
         "name": "宏德新村",
         "name_en": "Hongde Village",
         "line": "L310",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5474"
       },
@@ -1902,7 +1908,7 @@
         "name": "明興街",
         "name_en": "Mingxing Street",
         "line": "L310",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "4972"
       },
@@ -1922,7 +1928,7 @@
         "name": "福德宮",
         "name_en": "FuDe Temple",
         "line": "L310",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "994"
       },
@@ -1942,7 +1948,7 @@
         "name": "貿易一村",
         "name_en": "Maoyi 1st Village",
         "line": "L310",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "4316"
       },
@@ -1962,7 +1968,7 @@
         "name": "活動中心",
         "name_en": "Activity Center",
         "line": "L310",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "304"
       },
@@ -1982,7 +1988,7 @@
         "name": "幸福十五街",
         "name_en": "Xingfu 15st St.",
         "line": "L310",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "1309"
       },
@@ -2002,7 +2008,7 @@
         "name": "幸福二十三街",
         "name_en": "Xingfu 23st St.",
         "line": "L310",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "1311"
       },
@@ -2022,7 +2028,7 @@
         "name": "幸福二十九街",
         "name_en": "Xingfu 29th St.",
         "line": "L310",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "1313"
       },
@@ -2042,7 +2048,7 @@
         "name": "幸福二十九街",
         "name_en": "Xingfu 29st St.",
         "line": "L310",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "1314"
       },
@@ -2062,7 +2068,7 @@
         "name": "幸福二十三街",
         "name_en": "Xingfu 23st St.",
         "line": "L310",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "1312"
       },
@@ -2082,7 +2088,7 @@
         "name": "幸福十五街",
         "name_en": "Xingfu 15st St.",
         "line": "L310",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "1310"
       },
@@ -2102,7 +2108,7 @@
         "name": "活動中心",
         "name_en": "Activity Center",
         "line": "L310",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "305"
       },
@@ -2122,7 +2128,7 @@
         "name": "大林派出所",
         "name_en": "Dalin Police Station",
         "line": "L310",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5475"
       },
@@ -2142,7 +2148,7 @@
         "name": "貿商社區",
         "name_en": "Maoshang Community",
         "line": "L310",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5477"
       },
@@ -2162,7 +2168,7 @@
         "name": "龜山分局",
         "name_en": "Guishan Precinct",
         "line": "L310",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5478"
       },
@@ -2182,7 +2188,7 @@
         "name": "龜山區公所",
         "name_en": "Guishan District Office",
         "line": "L310",
-        "color": "#1e3a8a",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5454"
       },

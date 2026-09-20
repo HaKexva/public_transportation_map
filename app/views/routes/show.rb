@@ -17,6 +17,7 @@ module Views
             map_initial_route_id_value: @route["id"],
             map_routes_manifest_url_value: static_geojson_url("geojson/routes.json"),
             map_metro_depots_url_value: static_geojson_url("geojson/metro_depots.json"),
+            map_bus_depots_url_value: static_geojson_url("geojson/bus_depots.json"),
             map_out_of_station_transfers_url_value: static_geojson_url("geojson/out_of_station_transfers.json")
           },
           aria: { busy: "true" }

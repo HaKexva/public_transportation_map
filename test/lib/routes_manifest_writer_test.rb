@@ -48,19 +48,23 @@ class RoutesManifestWriterTest < ActiveSupport::TestCase
     path.delete if path.exist?
   end
 
-  test "bus manifest entries omit stop names so the dashboard HTML stays small" do
+  test "bus manifest is written separately without stop names" do
     path = Rails.root.join("tmp", "routes_manifest_test_#{name}.json")
-    Geojson::RoutesManifestWriter.write!(path: path)
+    bus_path = Rails.root.join("tmp", "bus_manifest_test_#{name}.json")
+    Geojson::RoutesManifestWriter.write!(path: path, bus_path: bus_path)
 
     manifest = JSON.parse(path.read)
-    buses = manifest.fetch("bus")
+    assert_nil manifest["bus"]
+
+    buses = Geojson::RoutesManifestWriter.bus_entries(bus_path: bus_path)
     skip "import Keelung buses first" if buses.empty?
 
     sample = buses.find { |entry| entry["id"].to_s.start_with?("keelung_") } || buses.first
     assert sample
     assert_nil sample["station_names"]
   ensure
-    path.delete if path.exist?
+    path.delete if path&.exist?
+    bus_path.delete if bus_path&.exist?
   end
 
   test "manifest entries use distinct refs for colliding line codes" do

@@ -6,13 +6,14 @@
     "name": "F903",
     "name_en": "F903",
     "ref": "F903",
-    "color": "#166534",
+    "color": "#6B8F9A",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.gov.taipei/File/Get/eab6649b-f90d-4350-9c6f-8aea8b499157?v=639248448813022105",
     "operator_id": "16254",
     "operator": "汐止區公所",
-    "operator_en": "Xizhi District Office"
+    "operator_en": "Xizhi District Office",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "F903",
         "name": "F903",
         "name_en": "F903",
-        "color": "#166534",
-        "direction": 0
+        "color": "#6B8F9A",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -6203,6 +6205,10 @@
           [
             121.662816095559,
             25.0696994441851
+          ],
+          [
+            121.662072633304,
+            25.0693604085516
           ]
         ]
       }
@@ -6214,7 +6220,7 @@
         "ref": "F903",
         "name": "F903",
         "name_en": "F903",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 1
       },
       "geometry": {
@@ -10303,7 +10309,7 @@
         "name": "汐止",
         "name_en": "Xizhi",
         "line": "F903",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1001113"
       },
@@ -10323,7 +10329,7 @@
         "name": "汐止公園",
         "name_en": "Xizhi Park",
         "line": "F903",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "7630"
       },
@@ -10343,7 +10349,7 @@
         "name": "大同路二段312巷10號",
         "name_en": "No.10 Lane 312 Datong Rd.",
         "line": "F903",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603407"
       },
@@ -10363,7 +10369,7 @@
         "name": "新興路12號",
         "name_en": "No.12 Xinxing Rd.",
         "line": "F903",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165608939"
       },
@@ -10383,7 +10389,7 @@
         "name": "自強里活動中心",
         "name_en": "Ziqiang Village Activity Center",
         "line": "F903",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603890"
       },
@@ -10403,7 +10409,7 @@
         "name": "莊敬街5號",
         "name_en": "NO.5 Zhuangjing St.",
         "line": "F903",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165608932"
       },
@@ -10423,7 +10429,7 @@
         "name": "青山國中",
         "name_en": "Qingshan Junior High School",
         "line": "F903",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603847"
       },
@@ -10443,7 +10449,7 @@
         "name": "莊敬街口",
         "name_en": "Zhuangjing St. Entrance",
         "line": "F903",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603846"
       },
@@ -10463,7 +10469,7 @@
         "name": "汐碇路口",
         "name_en": "Xiding Rd. Entrance",
         "line": "F903",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165610436"
       },
@@ -10483,7 +10489,7 @@
         "name": "薄荷社區",
         "name_en": "Bohe Community",
         "line": "F903",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603410"
       },
@@ -10503,7 +10509,7 @@
         "name": "福德土地公",
         "name_en": "Fude Tudigong",
         "line": "F903",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603593"
       },
@@ -10523,7 +10529,7 @@
         "name": "白雲寺",
         "name_en": "Baiyun Temple",
         "line": "F903",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165608937"
       },
@@ -10543,7 +10549,7 @@
         "name": "汐碇路光復街169號",
         "name_en": "No.169 Xiding Rd. & Guangfu St.",
         "line": "F903",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603589"
       },
@@ -10563,7 +10569,7 @@
         "name": "汐碇路370巷",
         "name_en": "Lane 370 Xiding Rd.",
         "line": "F903",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603414"
       },
@@ -10583,7 +10589,7 @@
         "name": "森林小學",
         "name_en": "Forest Elementary school",
         "line": "F903",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70929"
       },
@@ -10603,7 +10609,7 @@
         "name": "白雲茶園",
         "name_en": "Baiyun Tea Garden",
         "line": "F903",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70925"
       },
@@ -10623,7 +10629,7 @@
         "name": "光明里",
         "name_en": "Guangming Village",
         "line": "F903",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "50109"
       },
@@ -10643,7 +10649,7 @@
         "name": "大崎頭",
         "name_en": "Daqitou",
         "line": "F903",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603595"
       },
@@ -10663,7 +10669,7 @@
         "name": "天道靈泉",
         "name_en": "Tiandaolingquan",
         "line": "F903",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603888"
       },
@@ -10683,7 +10689,7 @@
         "name": "梅友亭",
         "name_en": "Meiyou Pavilion",
         "line": "F903",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70928"
       },
@@ -10703,7 +10709,7 @@
         "name": "踏翠亭",
         "name_en": "Tacui Pavilion",
         "line": "F903",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165608936"
       },
@@ -10723,7 +10729,7 @@
         "name": "天道清修院",
         "name_en": "Tiandao Qingxiu Temple",
         "line": "F903",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "71185"
       },
@@ -10743,7 +10749,7 @@
         "name": "踏翠亭",
         "name_en": "Tacui Pavilion",
         "line": "F903",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "71066"
       },
@@ -10763,7 +10769,7 @@
         "name": "梅友亭",
         "name_en": "Meiyou Pavilion",
         "line": "F903",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603591"
       },
@@ -10783,7 +10789,7 @@
         "name": "天道靈泉",
         "name_en": "Tiandaolingquan",
         "line": "F903",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603888"
       },
@@ -10803,7 +10809,7 @@
         "name": "大崎頭",
         "name_en": "Daqitou",
         "line": "F903",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165608935"
       },
@@ -10823,7 +10829,7 @@
         "name": "光明里",
         "name_en": "Guangming Village",
         "line": "F903",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1001305"
       },
@@ -10843,7 +10849,7 @@
         "name": "白雲茶園",
         "name_en": "Baiyun Tea Garden",
         "line": "F903",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603590"
       },
@@ -10863,7 +10869,7 @@
         "name": "森林小學",
         "name_en": "Forest Elementary school",
         "line": "F903",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165608934"
       },
@@ -10883,7 +10889,7 @@
         "name": "汐碇路370巷",
         "name_en": "Lane 370 Xiding Rd.",
         "line": "F903",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165610097"
       },
@@ -10903,7 +10909,7 @@
         "name": "汐碇路光復街169號",
         "name_en": "No.169 Xiding Rd. & Guangfu St.",
         "line": "F903",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70920"
       },
@@ -10923,7 +10929,7 @@
         "name": "白雲寺",
         "name_en": "Baiyun Temple",
         "line": "F903",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165608938"
       },
@@ -10943,7 +10949,7 @@
         "name": "福德土地公",
         "name_en": "Fude Tudigong",
         "line": "F903",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70950"
       },
@@ -10963,7 +10969,7 @@
         "name": "薄荷社區",
         "name_en": "Bohe Community",
         "line": "F903",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603409"
       },
@@ -10983,7 +10989,7 @@
         "name": "汐碇路口",
         "name_en": "Xiding Rd. Entrance",
         "line": "F903",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603411"
       },
@@ -11003,7 +11009,7 @@
         "name": "莊敬街口",
         "name_en": "Zhuangjing St. Entrance",
         "line": "F903",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72578"
       },
@@ -11023,7 +11029,7 @@
         "name": "青山國中",
         "name_en": "Qingshan Junior High School",
         "line": "F903",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70893"
       },
@@ -11043,7 +11049,7 @@
         "name": "莊敬街5號",
         "name_en": "NO.5 Zhuangjing St.",
         "line": "F903",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70954"
       },
@@ -11063,7 +11069,7 @@
         "name": "自強里活動中心",
         "name_en": "Ziqiang Village Activity Center",
         "line": "F903",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603878"
       },
@@ -11083,7 +11089,7 @@
         "name": "新興路12號",
         "name_en": "No.12 Xinxing Rd.",
         "line": "F903",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165608940"
       },
@@ -11103,7 +11109,7 @@
         "name": "大同路二段312巷10號",
         "name_en": "No.10 Lane 312 Datong Rd.",
         "line": "F903",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603408"
       },
@@ -11123,7 +11129,7 @@
         "name": "汐止公園",
         "name_en": "Xizhi Park",
         "line": "F903",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165604554"
       },
@@ -11143,7 +11149,7 @@
         "name": "汐止火車站",
         "name_en": "Xizhi Rail Sta.",
         "line": "F903",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165610015"
       },

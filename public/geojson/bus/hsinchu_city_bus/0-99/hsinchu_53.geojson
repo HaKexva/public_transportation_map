@@ -6,13 +6,14 @@
     "name": "53",
     "name_en": "53",
     "ref": "53",
-    "color": "#9f1239",
+    "color": "#92400e",
     "city_id": "Hsinchu",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://web.taiwanbus.tw/MISUploadData/Schematic/file/0530.jpg",
     "operator_id": "67",
     "operator": "金牌客運",
-    "operator_en": "Champion Bus Co., Ltd."
+    "operator_en": "Champion Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "53",
         "name": "53",
         "name_en": "53",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#92400e",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -2955,6 +2957,10 @@
           [
             121.02141,
             24.78812
+          ],
+          [
+            121.02144,
+            24.78812
           ]
         ]
       }
@@ -2967,7 +2973,7 @@
         "name": "新莊車站",
         "name_en": "Xinzhuang Station",
         "line": "53",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130672"
       },
@@ -2987,7 +2993,7 @@
         "name": "關埔公園",
         "name_en": "Guan Pu Park",
         "line": "53",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130698"
       },
@@ -3007,7 +3013,7 @@
         "name": "慈濟路口",
         "name_en": "Ci Ji Road Entrance",
         "line": "53",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130697"
       },
@@ -3027,7 +3033,7 @@
         "name": "交流道口",
         "name_en": "Interchange Entrance",
         "line": "53",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130696"
       },
@@ -3047,7 +3053,7 @@
         "name": "東美路",
         "name_en": "Dong Mei Road",
         "line": "53",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130372"
       },
@@ -3067,7 +3073,7 @@
         "name": "水利路",
         "name_en": "Shui Li Road",
         "line": "53",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130373"
       },
@@ -3087,7 +3093,7 @@
         "name": "旭家經貿",
         "name_en": "Xu Jia Jing Mao",
         "line": "53",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130374"
       },
@@ -3107,7 +3113,7 @@
         "name": "九甲埔",
         "name_en": "Jiu Jia Pu",
         "line": "53",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130375"
       },
@@ -3127,7 +3133,7 @@
         "name": "千甲社區",
         "name_en": "Qian Jia Community",
         "line": "53",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "138105"
       },
@@ -3147,7 +3153,7 @@
         "name": "原興路口",
         "name_en": "Yuan Xing Road Entrance",
         "line": "53",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130376"
       },
@@ -3167,7 +3173,7 @@
         "name": "千甲車站",
         "name_en": "Qian Jia Station",
         "line": "53",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130377"
       },
@@ -3187,7 +3193,7 @@
         "name": "水源",
         "name_en": "Shui Yuan",
         "line": "53",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130378"
       },
@@ -3207,7 +3213,7 @@
         "name": "愛買2站",
         "name_en": "Far Eastern Amart 2nd Stop",
         "line": "53",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130379"
       },
@@ -3227,7 +3233,7 @@
         "name": "馬偕醫院",
         "name_en": "Mackay Memorial Hospital, HsinChu",
         "line": "53",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "131831"
       },
@@ -3247,7 +3253,7 @@
         "name": "二分局",
         "name_en": "Second Police Bureau",
         "line": "53",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130381"
       },
@@ -3267,7 +3273,7 @@
         "name": "東光忠孝路口",
         "name_en": "Dong Guang Zhong Xiao Road Entrance",
         "line": "53",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130382"
       },
@@ -3287,7 +3293,7 @@
         "name": "監理站",
         "name_en": "Hsinchu Motor Vehicles Office",
         "line": "53",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130383"
       },
@@ -3307,7 +3313,7 @@
         "name": "果菜市場",
         "name_en": "Guo Cai Market",
         "line": "53",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "141863"
       },
@@ -3327,7 +3333,7 @@
         "name": "經國北大路口",
         "name_en": "Jing Guo Bei Da Road Entrance",
         "line": "53",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130155"
       },
@@ -3347,7 +3353,7 @@
         "name": "國華街口",
         "name_en": "Guo Hua Street Entrance",
         "line": "53",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130390"
       },
@@ -3367,7 +3373,7 @@
         "name": "中正經國路口",
         "name_en": "Zhong Zheng Jing  Guo Road Entrance",
         "line": "53",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130389"
       },
@@ -3387,7 +3393,7 @@
         "name": "鄭氏家廟",
         "name_en": "Zheng's Family shrine",
         "line": "53",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130388"
       },
@@ -3407,7 +3413,7 @@
         "name": "市政府",
         "name_en": "Hsinchu City Government",
         "line": "53",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130331"
       },
@@ -3427,7 +3433,7 @@
         "name": "美術館",
         "name_en": "Art Gallery",
         "line": "53",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130386"
       },
@@ -3447,7 +3453,7 @@
         "name": "巨城購物",
         "name_en": "Big City Mall",
         "line": "53",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130385"
       },
@@ -3467,7 +3473,7 @@
         "name": "三民國中",
         "name_en": "San Min Junior High School",
         "line": "53",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "135386"
       },
@@ -3487,7 +3493,7 @@
         "name": "監理站",
         "name_en": "Hsinchu Motor Vehicles Office",
         "line": "53",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130391"
       },
@@ -3507,7 +3513,7 @@
         "name": "東光忠孝路口",
         "name_en": "Dong Guang Zhong Xiao Road Entrance",
         "line": "53",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130392"
       },
@@ -3527,7 +3533,7 @@
         "name": "二分局",
         "name_en": "Second Police Bureau",
         "line": "53",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130747"
       },
@@ -3547,7 +3553,7 @@
         "name": "馬偕醫院",
         "name_en": "Mackay Memorial Hospital, HsinChu",
         "line": "53",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "131828"
       },
@@ -3567,7 +3573,7 @@
         "name": "愛買2站",
         "name_en": "Far Eastern Amart 2nd Stop",
         "line": "53",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130395"
       },
@@ -3587,7 +3593,7 @@
         "name": "水源",
         "name_en": "Shui Yuan",
         "line": "53",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130396"
       },
@@ -3607,7 +3613,7 @@
         "name": "千甲車站",
         "name_en": "Qian Jia Station",
         "line": "53",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130397"
       },
@@ -3627,7 +3633,7 @@
         "name": "原興路口",
         "name_en": "Yuan Xing Road Entrance",
         "line": "53",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130398"
       },
@@ -3647,7 +3653,7 @@
         "name": "千甲社區",
         "name_en": "Qian Jia Community",
         "line": "53",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "138106"
       },
@@ -3667,7 +3673,7 @@
         "name": "九甲埔",
         "name_en": "Jiu Jia Pu",
         "line": "53",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130399"
       },
@@ -3687,7 +3693,7 @@
         "name": "旭家經貿",
         "name_en": "Xu Jia Jing Mao",
         "line": "53",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130400"
       },
@@ -3707,7 +3713,7 @@
         "name": "水利路",
         "name_en": "Shui Li Road",
         "line": "53",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130401"
       },
@@ -3727,7 +3733,7 @@
         "name": "東美路",
         "name_en": "Dong Mei Road",
         "line": "53",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130402"
       },
@@ -3747,7 +3753,7 @@
         "name": "交流道口",
         "name_en": "Interchange Entrance",
         "line": "53",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130371"
       },
@@ -3767,7 +3773,7 @@
         "name": "慈濟路口",
         "name_en": "Ci Ji Road Entrance",
         "line": "53",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130404"
       },
@@ -3787,7 +3793,7 @@
         "name": "關埔公園",
         "name_en": "Guan Pu Park",
         "line": "53",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130369"
       },

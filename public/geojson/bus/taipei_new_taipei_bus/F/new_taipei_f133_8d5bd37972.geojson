@@ -6,13 +6,14 @@
     "name": "F133末班",
     "name_en": "F133末班",
     "ref": "F133末班",
-    "color": "#1e3a8a",
+    "color": "#6B8F9A",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.gov.taipei/File/Get/2aef2076-3a69-471e-a8b0-52c91d18982f?v=639248448782872868",
     "operator_id": "16229",
     "operator": "三芝區公所",
-    "operator_en": "Sanzhi District Office"
+    "operator_en": "Sanzhi District Office",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "F133末班",
         "name": "F133末班",
         "name_en": "F133末班",
-        "color": "#1e3a8a",
-        "direction": 0
+        "color": "#6B8F9A",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -2507,6 +2509,10 @@
           [
             121.501266746082,
             25.258850701506
+          ],
+          [
+            121.501355223212,
+            25.2588303952794
           ]
         ]
       }
@@ -2519,7 +2525,7 @@
         "name": "二號倉庫",
         "name_en": "No.2 Warehouse",
         "line": "F133末班",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75281"
       },
@@ -2539,7 +2545,7 @@
         "name": "埔頭坑",
         "name_en": "Putoukeng",
         "line": "F133末班",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165609422"
       },
@@ -2559,7 +2565,7 @@
         "name": "八賢活動中心",
         "name_en": "Baxian Activity Center",
         "line": "F133末班",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75404"
       },
@@ -2579,7 +2585,7 @@
         "name": "木屐寮",
         "name_en": "Mujiliao",
         "line": "F133末班",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603689"
       },
@@ -2599,7 +2605,7 @@
         "name": "後店",
         "name_en": "Houdian",
         "line": "F133末班",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75417"
       },
@@ -2619,7 +2625,7 @@
         "name": "金母宮",
         "name_en": "Jinmu Temple",
         "line": "F133末班",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165609426"
       },
@@ -2639,7 +2645,7 @@
         "name": "後店",
         "name_en": "Houdian",
         "line": "F133末班",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75416"
       },
@@ -2659,7 +2665,7 @@
         "name": "福德十五站",
         "name_en": "Fude 15 Stop",
         "line": "F133末班",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603695"
       },
@@ -2679,7 +2685,7 @@
         "name": "福德七鄰",
         "name_en": "Neighborhood 7 Fude",
         "line": "F133末班",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603694"
       },
@@ -2699,7 +2705,7 @@
         "name": "三芝國中",
         "name_en": "Sanzhi Junior High School",
         "line": "F133末班",
-        "color": "#1e3a8a",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75285"
       },

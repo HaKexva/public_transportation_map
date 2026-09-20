@@ -6,13 +6,14 @@
     "name": "151",
     "name_en": "151",
     "ref": "151",
-    "color": "#b91c1c",
+    "color": "#b45309",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/3191/map/2248/image",
     "operator_id": "1",
     "operator": "桃園客運",
-    "operator_en": "Taoyuan Bus Co., Ltd."
+    "operator_en": "Taoyuan Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "151",
         "name": "151",
         "name_en": "151",
-        "color": "#b91c1c",
-        "direction": 0
+        "color": "#b45309",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1203,6 +1205,10 @@
           [
             121.31253,
             24.99144
+          ],
+          [
+            121.31216,
+            24.99132
           ]
         ]
       }
@@ -1215,7 +1221,7 @@
         "name": "統領百貨",
         "name_en": "Tonlin Department Store",
         "line": "151",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1223"
       },
@@ -1235,7 +1241,7 @@
         "name": "桃園郵局",
         "name_en": "Taoyuan Post Office",
         "line": "151",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "357"
       },
@@ -1255,7 +1261,7 @@
         "name": "永和市場",
         "name_en": "Yonghe Market",
         "line": "151",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "370"
       },
@@ -1275,7 +1281,7 @@
         "name": "中正三民路口",
         "name_en": "Zhongzheng and Sanming Rd. Intersection",
         "line": "151",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3060"
       },
@@ -1295,7 +1301,7 @@
         "name": "中正二街口",
         "name_en": "Zhongzheng 2nd Street Intersection",
         "line": "151",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1330"
       },
@@ -1315,7 +1321,7 @@
         "name": "北埔路口",
         "name_en": "Beipu Rd. Entrance",
         "line": "151",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1332"
       },
@@ -1335,7 +1341,7 @@
         "name": "中正信光路口",
         "name_en": "Zhongzheng and Xinguang St. Intersection",
         "line": "151",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4301"
       },
@@ -1355,7 +1361,7 @@
         "name": "中正慈文路口",
         "name_en": "Zhongzheng and Ciwen Rd. Intersection",
         "line": "151",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4304"
       },
@@ -1375,7 +1381,7 @@
         "name": "慈文國中",
         "name_en": "TszWen Junior High School",
         "line": "151",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1406"
       },
@@ -1395,7 +1401,7 @@
         "name": "中正藝文特區",
         "name_en": "Taoyuan Arts Center",
         "line": "151",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3084"
       },
@@ -1415,7 +1421,7 @@
         "name": "中正中寧街口",
         "name_en": "Zhongzheng Zhongning Road Intersection",
         "line": "151",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1190"
       },
@@ -1435,7 +1441,7 @@
         "name": "中正同德十一街口",
         "name_en": "Jhongjheng Tongde 11th St. Intersection",
         "line": "151",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3920"
       },
@@ -1455,7 +1461,7 @@
         "name": "莊敬路口",
         "name_en": "Zhuangjing Road Intersection",
         "line": "151",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1376"
       },
@@ -1475,7 +1481,7 @@
         "name": "莊敬中正路口",
         "name_en": "Zhuangjing - Zhongzheng Rd. Intersection",
         "line": "151",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4365"
       },
@@ -1495,7 +1501,7 @@
         "name": "尊爵飯店",
         "name_en": "Monarch Plaza Hotel",
         "line": "151",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6270"
       },
@@ -1515,7 +1521,7 @@
         "name": "中正公園(同安街)",
         "name_en": "Zhongzheng Park (Tongan St.)",
         "line": "151",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6179"
       },
@@ -1535,7 +1541,7 @@
         "name": "永昌新城",
         "name_en": "YungChang New Community",
         "line": "151",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1333"
       },
@@ -1555,7 +1561,7 @@
         "name": "同安親子公園",
         "name_en": "TungAn Park for family relationship",
         "line": "151",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1354"
       },
@@ -1575,7 +1581,7 @@
         "name": "新埔公園",
         "name_en": "Xinpu Park",
         "line": "151",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4308"
       },
@@ -1595,7 +1601,7 @@
         "name": "中正慈文路口",
         "name_en": "Zhongzheng and Ciwen Rd. Intersection",
         "line": "151",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4303"
       },
@@ -1615,7 +1621,7 @@
         "name": "中正信光路口",
         "name_en": "Zhongzheng and Xinguang St. Intersection",
         "line": "151",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4302"
       },
@@ -1635,7 +1641,7 @@
         "name": "北埔路口",
         "name_en": "Beipu Rd. Entrance",
         "line": "151",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1331"
       },
@@ -1655,7 +1661,7 @@
         "name": "中正二街口",
         "name_en": "Zhongzheng 2nd Street Intersection",
         "line": "151",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1329"
       },
@@ -1675,7 +1681,7 @@
         "name": "中正三民路口",
         "name_en": "Zhongzheng and Sanming Rd. Intersection",
         "line": "151",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3061"
       },
@@ -1695,7 +1701,7 @@
         "name": "永和市場",
         "name_en": "Yonghe Market",
         "line": "151",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "371"
       },
@@ -1715,7 +1721,7 @@
         "name": "桃園郵局",
         "name_en": "Taoyuan Post Office",
         "line": "151",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "356"
       },

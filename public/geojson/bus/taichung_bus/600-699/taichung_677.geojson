@@ -6,13 +6,14 @@
     "name": "677",
     "name_en": "677",
     "ref": "677",
-    "color": "#4f46e5",
+    "color": "#c2410c",
     "city_id": "Taichung",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://citybus.taichung.gov.tw/ebus/strapi/uploads/677_537f5c28cd.jpeg",
     "operator_id": "4",
     "operator": "巨業交通",
-    "operator_en": "Geya Bus Co., Ltd."
+    "operator_en": "Geya Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "677",
         "name": "677",
         "name_en": "677",
-        "color": "#4f46e5",
-        "direction": 0
+        "color": "#c2410c",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -287,6 +289,10 @@
           [
             120.56108,
             24.23778
+          ],
+          [
+            120.56106,
+            24.23784
           ]
         ]
       }
@@ -298,8 +304,9 @@
         "ref": "677",
         "name": "677",
         "name_en": "677",
-        "color": "#4f46e5",
-        "direction": 1
+        "color": "#c2410c",
+        "direction": 1,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -783,6 +790,10 @@
           [
             120.56074,
             24.23787
+          ],
+          [
+            120.561,
+            24.23778
           ]
         ]
       }
@@ -795,7 +806,7 @@
         "name": "巨業沙鹿站",
         "name_en": "Geya-Shalu Bus Station",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "661"
       },
@@ -815,7 +826,7 @@
         "name": "第一銀行(沙鹿分行)",
         "name_en": "First Bank Shalu Branch",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "1890"
       },
@@ -835,7 +846,7 @@
         "name": "中港國小",
         "name_en": "Zhonggang Elementary School",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "1338"
       },
@@ -855,7 +866,7 @@
         "name": "臺灣大道民和路口",
         "name_en": "Taiwan Boulevard-Minhe Intersection",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "1321"
       },
@@ -875,7 +886,7 @@
         "name": "東大庄",
         "name_en": "Dongdazhuang",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "1360"
       },
@@ -895,7 +906,7 @@
         "name": "中港高中(臺灣大道)",
         "name_en": "Chung Gang Senior High School(Taiwan Boulevard)",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "2003"
       },
@@ -915,7 +926,7 @@
         "name": "童綜合醫院(梧棲院區)",
         "name_en": "Tungs MetroHarbor Hosp.(Wuqi)",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "114"
       },
@@ -935,7 +946,7 @@
         "name": "大庄(浩天宮)",
         "name_en": "Dazhuang(Haotian Temple)",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "10954"
       },
@@ -955,7 +966,7 @@
         "name": "大庄橋",
         "name_en": "Dazhuang Bridge",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "1997"
       },
@@ -975,7 +986,7 @@
         "name": "珍珠港",
         "name_en": "Pearl Harbor restaurant",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "1995"
       },
@@ -995,7 +1006,7 @@
         "name": "興農里",
         "name_en": "Xingnong Village",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "1993"
       },
@@ -1015,7 +1026,7 @@
         "name": "興農中排",
         "name_en": "Xingnong Medium Drain",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "3402"
       },
@@ -1035,7 +1046,7 @@
         "name": "八張犁",
         "name_en": "Bazhangli",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "1989"
       },
@@ -1055,7 +1066,7 @@
         "name": "興農社區",
         "name_en": "Xingnong Community",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "6387"
       },
@@ -1075,7 +1086,7 @@
         "name": "永寧國小",
         "name_en": "Yongning Eelmentary School",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "1987"
       },
@@ -1095,7 +1106,7 @@
         "name": "園子",
         "name_en": "Yuanzi",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "1985"
       },
@@ -1115,7 +1126,7 @@
         "name": "永寧里",
         "name_en": "Yongning Village",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "1983"
       },
@@ -1135,7 +1146,7 @@
         "name": "中央永興路口",
         "name_en": "Zhongyang-Yongxing Intersection",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "3321"
       },
@@ -1155,7 +1166,7 @@
         "name": "百姓公",
         "name_en": "Baixinggong",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "1981"
       },
@@ -1175,7 +1186,7 @@
         "name": "安良港",
         "name_en": "Anlianggang",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "1979"
       },
@@ -1195,7 +1206,7 @@
         "name": "海尾巷",
         "name_en": "Haiwei Lane",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "1977"
       },
@@ -1215,7 +1226,7 @@
         "name": "高園子",
         "name_en": "Gaoyuanzi",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "5851"
       },
@@ -1235,7 +1246,7 @@
         "name": "崙仔頂",
         "name_en": "Lunziding",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "1973"
       },
@@ -1255,7 +1266,7 @@
         "name": "忠和",
         "name_en": "Zhonghe",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "1971"
       },
@@ -1275,7 +1286,7 @@
         "name": "一號橋",
         "name_en": "No. 1 Bridge",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "1969"
       },
@@ -1295,7 +1306,7 @@
         "name": "三德",
         "name_en": "Sande",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "1967"
       },
@@ -1315,7 +1326,7 @@
         "name": "龍井市場",
         "name_en": "Longjing Market",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "1965"
       },
@@ -1335,7 +1346,7 @@
         "name": "海埔厝庄頭",
         "name_en": "HaiPuCuo ZhuangTou",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "815"
       },
@@ -1355,7 +1366,7 @@
         "name": "龍津",
         "name_en": "Longjin",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "693"
       },
@@ -1375,7 +1386,7 @@
         "name": "二號橋(中央路)",
         "name_en": "No. 2 Bridge(Zhongyang Road)",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "1961"
       },
@@ -1395,7 +1406,7 @@
         "name": "臨港東中央路口",
         "name_en": "Lingang E.-Zhongyang Intersection",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "6579"
       },
@@ -1415,7 +1426,7 @@
         "name": "龍北路口",
         "name_en": "Longbei Intersection",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "1957"
       },
@@ -1435,7 +1446,7 @@
         "name": "田中社區",
         "name_en": "Tianzhong Community",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "1959"
       },
@@ -1455,7 +1466,7 @@
         "name": "福田宮",
         "name_en": "Futian Temple",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "1955"
       },
@@ -1475,7 +1486,7 @@
         "name": "南田中",
         "name_en": "Nantianzhong",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "1953"
       },
@@ -1495,7 +1506,7 @@
         "name": "龍井國小",
         "name_en": "Longjing Elementary School",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "1951"
       },
@@ -1515,7 +1526,7 @@
         "name": "茄投奉天宮",
         "name_en": "Qietou Fengtian Temple",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "1946"
       },
@@ -1535,7 +1546,7 @@
         "name": "茄投中",
         "name_en": "Qietouzhong",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "3610"
       },
@@ -1555,7 +1566,7 @@
         "name": "茄投尾",
         "name_en": "Qietouwei",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "3405"
       },
@@ -1575,7 +1586,7 @@
         "name": "茄投中",
         "name_en": "Qietouzhong",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "3609"
       },
@@ -1595,7 +1606,7 @@
         "name": "茄投奉天宮",
         "name_en": "Qietou Fengtian Temple",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "1947"
       },
@@ -1615,7 +1626,7 @@
         "name": "上莊頭",
         "name_en": "Shanzhuangtou",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "1944"
       },
@@ -1635,7 +1646,7 @@
         "name": "莊頭",
         "name_en": "Zhuangtou",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "1942"
       },
@@ -1655,7 +1666,7 @@
         "name": "竹坑口",
         "name_en": "Zhukengkou",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "1854"
       },
@@ -1675,7 +1686,7 @@
         "name": "村內入口",
         "name_en": "Village Entrance",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "1044"
       },
@@ -1695,7 +1706,7 @@
         "name": "深水",
         "name_en": "Shenshui",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "1859"
       },
@@ -1715,7 +1726,7 @@
         "name": "龍崗",
         "name_en": "Longgang",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "1861"
       },
@@ -1735,7 +1746,7 @@
         "name": "龍井加油站",
         "name_en": "Longjing Gas Station",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "1863"
       },
@@ -1755,7 +1766,7 @@
         "name": "龍井區公所",
         "name_en": "Longjing District Office",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "1865"
       },
@@ -1775,7 +1786,7 @@
         "name": "龍井車站",
         "name_en": "Longjing Station",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "1867"
       },
@@ -1795,7 +1806,7 @@
         "name": "龍泉",
         "name_en": "Longquan",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "1869"
       },
@@ -1815,7 +1826,7 @@
         "name": "龍目井",
         "name_en": "Longmujing",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "1873"
       },
@@ -1835,7 +1846,7 @@
         "name": "鷺山",
         "name_en": "Lushan",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "1875"
       },
@@ -1855,7 +1866,7 @@
         "name": "南山腳",
         "name_en": "Nanshanjiao",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "1878"
       },
@@ -1875,7 +1886,7 @@
         "name": "龍山國小(山腳里)",
         "name_en": "Longshan Elementary School(shanjiao Village)",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "110"
       },
@@ -1895,7 +1906,7 @@
         "name": "沙田太平路口",
         "name_en": "Shatian-Taiping Intersection",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "1879"
       },
@@ -1915,7 +1926,7 @@
         "name": "南勢里",
         "name_en": "Nanshi Village",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "1881"
       },
@@ -1935,7 +1946,7 @@
         "name": "沙田天仁街口",
         "name_en": "Shatian-Tianren Intersection",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "1884"
       },
@@ -1955,7 +1966,7 @@
         "name": "文光國小",
         "name_en": "Wenguang Elementary School",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "3534"
       },
@@ -1975,7 +1986,7 @@
         "name": "沙田光華路口",
         "name_en": "Shatian-Guanghua Intersection",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "6428"
       },
@@ -1995,7 +2006,7 @@
         "name": "興仁里(沙田路)",
         "name_en": "Xingren Village(Shatian Road)",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "1885"
       },
@@ -2015,7 +2026,7 @@
         "name": "沙鹿光田醫院",
         "name_en": "Shalu Kuang Tien General Hospital",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "3461"
       },
@@ -2035,7 +2046,7 @@
         "name": "沙鹿車站",
         "name_en": "Shalu Station",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "2121"
       },
@@ -2055,7 +2066,7 @@
         "name": "沙鹿市場",
         "name_en": "Shalu Market",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "1887"
       },
@@ -2075,7 +2086,7 @@
         "name": "巨業沙鹿站",
         "name_en": "Geya-Shalu Bus Station",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 0,
         "station_id": "661"
       },
@@ -2095,7 +2106,7 @@
         "name": "巨業沙鹿站",
         "name_en": "Geya-Shalu Bus Station",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "661"
       },
@@ -2115,7 +2126,7 @@
         "name": "沙鹿市場",
         "name_en": "Shalu Market",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "1887"
       },
@@ -2135,7 +2146,7 @@
         "name": "沙鹿車站",
         "name_en": "Shalu Station",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "2121"
       },
@@ -2155,7 +2166,7 @@
         "name": "沙鹿光田醫院",
         "name_en": "Shalu Kuang Tien General Hospital",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "3461"
       },
@@ -2175,7 +2186,7 @@
         "name": "興仁里(沙田路)",
         "name_en": "Xingren Village(Shatian Road)",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "1886"
       },
@@ -2195,7 +2206,7 @@
         "name": "沙田光華路口",
         "name_en": "Shatian-Guanghua Intersection",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "6427"
       },
@@ -2215,7 +2226,7 @@
         "name": "文光國小",
         "name_en": "Wenguang Elementary School",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "3533"
       },
@@ -2235,7 +2246,7 @@
         "name": "沙田天仁街口",
         "name_en": "Shatian-Tianren Intersection",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "1884"
       },
@@ -2255,7 +2266,7 @@
         "name": "南勢里",
         "name_en": "Nanshi Village",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "1882"
       },
@@ -2275,7 +2286,7 @@
         "name": "沙田太平路口",
         "name_en": "Shatian-Taiping Intersection",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "1880"
       },
@@ -2295,7 +2306,7 @@
         "name": "龍山國小(山腳里)",
         "name_en": "Longshan Elementary School(shanjiao Village)",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "109"
       },
@@ -2315,7 +2326,7 @@
         "name": "南山腳",
         "name_en": "Nanshanjiao",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "1878"
       },
@@ -2335,7 +2346,7 @@
         "name": "鷺山",
         "name_en": "Lushan",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "1876"
       },
@@ -2355,7 +2366,7 @@
         "name": "龍目井",
         "name_en": "Longmujing",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "1874"
       },
@@ -2375,7 +2386,7 @@
         "name": "龍泉",
         "name_en": "Longquan",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "1870"
       },
@@ -2395,7 +2406,7 @@
         "name": "龍井車站",
         "name_en": "Longjing Station",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "1868"
       },
@@ -2415,7 +2426,7 @@
         "name": "龍井區公所",
         "name_en": "Longjing District Office",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "1866"
       },
@@ -2435,7 +2446,7 @@
         "name": "龍井加油站",
         "name_en": "Longjing Gas Station",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "1864"
       },
@@ -2455,7 +2466,7 @@
         "name": "龍崗",
         "name_en": "Longgang",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "1862"
       },
@@ -2475,7 +2486,7 @@
         "name": "深水",
         "name_en": "Shenshui",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "1860"
       },
@@ -2495,7 +2506,7 @@
         "name": "村內入口",
         "name_en": "Village Entrance",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "1044"
       },
@@ -2515,7 +2526,7 @@
         "name": "竹坑口",
         "name_en": "Zhukengkou",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "1857"
       },
@@ -2535,7 +2546,7 @@
         "name": "莊頭",
         "name_en": "Zhuangtou",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "1943"
       },
@@ -2555,7 +2566,7 @@
         "name": "上莊頭",
         "name_en": "Shanzhuangtou",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "1945"
       },
@@ -2575,7 +2586,7 @@
         "name": "茄投奉天宮",
         "name_en": "Qietou Fengtian Temple",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "1946"
       },
@@ -2595,7 +2606,7 @@
         "name": "茄投中",
         "name_en": "Qietouzhong",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "3610"
       },
@@ -2615,7 +2626,7 @@
         "name": "茄投尾",
         "name_en": "Qietouwei",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "3405"
       },
@@ -2635,7 +2646,7 @@
         "name": "茄投中",
         "name_en": "Qietouzhong",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "3609"
       },
@@ -2655,7 +2666,7 @@
         "name": "茄投奉天宮",
         "name_en": "Qietou Fengtian Temple",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "1947"
       },
@@ -2675,7 +2686,7 @@
         "name": "龍井國小",
         "name_en": "Longjing Elementary School",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "1950"
       },
@@ -2695,7 +2706,7 @@
         "name": "南田中",
         "name_en": "Nantianzhong",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "1952"
       },
@@ -2715,7 +2726,7 @@
         "name": "福田宮",
         "name_en": "Futian Temple",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "1954"
       },
@@ -2735,7 +2746,7 @@
         "name": "田中社區",
         "name_en": "Tianzhong Community",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "1958"
       },
@@ -2755,7 +2766,7 @@
         "name": "龍北路口",
         "name_en": "Longbei Intersection",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "1956"
       },
@@ -2775,7 +2786,7 @@
         "name": "臨港東中央路口",
         "name_en": "Lingang E.-Zhongyang Intersection",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "6579"
       },
@@ -2795,7 +2806,7 @@
         "name": "二號橋(中央路)",
         "name_en": "No. 2 Bridge(Zhongyang Road)",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "1960"
       },
@@ -2815,7 +2826,7 @@
         "name": "龍津",
         "name_en": "Longjin",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "692"
       },
@@ -2835,7 +2846,7 @@
         "name": "海埔厝庄頭",
         "name_en": "HaiPuCuo ZhuangTou",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "816"
       },
@@ -2855,7 +2866,7 @@
         "name": "龍井市場",
         "name_en": "Longjing Market",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "1964"
       },
@@ -2875,7 +2886,7 @@
         "name": "三德",
         "name_en": "Sande",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "1966"
       },
@@ -2895,7 +2906,7 @@
         "name": "一號橋",
         "name_en": "No. 1 Bridge",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "1968"
       },
@@ -2915,7 +2926,7 @@
         "name": "忠和",
         "name_en": "Zhonghe",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "1970"
       },
@@ -2935,7 +2946,7 @@
         "name": "崙仔頂",
         "name_en": "Lunziding",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "1972"
       },
@@ -2955,7 +2966,7 @@
         "name": "高園子",
         "name_en": "Gaoyuanzi",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "5852"
       },
@@ -2975,7 +2986,7 @@
         "name": "海尾巷",
         "name_en": "Haiwei Lane",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "1976"
       },
@@ -2995,7 +3006,7 @@
         "name": "安良港",
         "name_en": "Anlianggang",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "1978"
       },
@@ -3015,7 +3026,7 @@
         "name": "百姓公",
         "name_en": "Baixinggong",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "1980"
       },
@@ -3035,7 +3046,7 @@
         "name": "中央永興路口",
         "name_en": "Zhongyang-Yongxing Intersection",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "3322"
       },
@@ -3055,7 +3066,7 @@
         "name": "永寧里",
         "name_en": "Yongning Village",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "1982"
       },
@@ -3075,7 +3086,7 @@
         "name": "園子",
         "name_en": "Yuanzi",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "1984"
       },
@@ -3095,7 +3106,7 @@
         "name": "永寧國小",
         "name_en": "Yongning Eelmentary School",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "1986"
       },
@@ -3115,7 +3126,7 @@
         "name": "興農社區",
         "name_en": "Xingnong Community",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "6387"
       },
@@ -3135,7 +3146,7 @@
         "name": "八張犁",
         "name_en": "Bazhangli",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "1988"
       },
@@ -3155,7 +3166,7 @@
         "name": "興農中排",
         "name_en": "Xingnong Medium Drain",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "3402"
       },
@@ -3175,7 +3186,7 @@
         "name": "興農里",
         "name_en": "Xingnong Village",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "1992"
       },
@@ -3195,7 +3206,7 @@
         "name": "珍珠港",
         "name_en": "Pearl Harbor restaurant",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "1994"
       },
@@ -3215,7 +3226,7 @@
         "name": "大庄橋",
         "name_en": "Dazhuang Bridge",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "1996"
       },
@@ -3235,7 +3246,7 @@
         "name": "大庄(浩天宮)",
         "name_en": "Dazhuang(Haotian Temple)",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "1998"
       },
@@ -3255,7 +3266,7 @@
         "name": "邱厝庄",
         "name_en": "Qiucuozhuang",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "2000"
       },
@@ -3275,7 +3286,7 @@
         "name": "童綜合醫院(梧棲院區)",
         "name_en": "Tungs MetroHarbor Hosp.(Wuqi)",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "113"
       },
@@ -3295,7 +3306,7 @@
         "name": "中港高中(臺灣大道)",
         "name_en": "Chung Gang Senior High School(Taiwan Boulevard)",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "2002"
       },
@@ -3315,7 +3326,7 @@
         "name": "東大庄",
         "name_en": "Dongdazhuang",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "1359"
       },
@@ -3335,7 +3346,7 @@
         "name": "臺灣大道民和路口",
         "name_en": "Taiwan Boulevard-Minhe Intersection",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "1320"
       },
@@ -3355,7 +3366,7 @@
         "name": "中港國小",
         "name_en": "Zhonggang Elementary School",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "1337"
       },
@@ -3375,7 +3386,7 @@
         "name": "第一銀行(沙鹿分行)",
         "name_en": "First Bank Shalu Branch",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "1890"
       },
@@ -3395,7 +3406,7 @@
         "name": "巨業沙鹿站",
         "name_en": "Geya-Shalu Bus Station",
         "line": "677",
-        "color": "#4f46e5",
+        "color": "#c2410c",
         "direction": 1,
         "station_id": "661"
       },

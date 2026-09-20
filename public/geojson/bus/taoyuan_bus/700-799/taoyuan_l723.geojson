@@ -6,13 +6,14 @@
     "name": "L723",
     "name_en": "L723",
     "ref": "L723",
-    "color": "#b91c1c",
+    "color": "#b45309",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/57230/map/583/image",
     "operator_id": "1",
     "operator": "桃園客運",
-    "operator_en": "Taoyuan Bus Co., Ltd."
+    "operator_en": "Taoyuan Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "L723",
         "name": "L723",
         "name_en": "L723",
-        "color": "#b91c1c",
-        "direction": 0
+        "color": "#b45309",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -999,6 +1001,10 @@
           [
             121.21661,
             24.86381
+          ],
+          [
+            121.21655,
+            24.8639
           ]
         ]
       }
@@ -1011,7 +1017,7 @@
         "name": "龍潭區衛生所",
         "name_en": "Longtan District Health Center",
         "line": "L723",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "810"
       },
@@ -1031,7 +1037,7 @@
         "name": "五福街",
         "name_en": "Wufu St.",
         "line": "L723",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "805"
       },
@@ -1051,7 +1057,7 @@
         "name": "大昌健行路口",
         "name_en": "Dachang and Jiansing Rd. Intersection",
         "line": "L723",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "804"
       },
@@ -1071,7 +1077,7 @@
         "name": "龍潭行政園區(中興路)",
         "name_en": "Longtan Administration Area(Zhongxing Rd.)",
         "line": "L723",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4134"
       },
@@ -1091,7 +1097,7 @@
         "name": "成功新村",
         "name_en": "Chenggong Village",
         "line": "L723",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2734"
       },
@@ -1111,7 +1117,7 @@
         "name": "茶工廠",
         "name_en": "Tea Factory",
         "line": "L723",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2189"
       },
@@ -1131,7 +1137,7 @@
         "name": "成功路377巷",
         "name_en": "Ln. 377, Chenggong Rd.",
         "line": "L723",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6163"
       },
@@ -1151,7 +1157,7 @@
         "name": "伯公下",
         "name_en": "Bogongxia",
         "line": "L723",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2608"
       },
@@ -1171,7 +1177,7 @@
         "name": "新天地社區",
         "name_en": "Sintiandi Community",
         "line": "L723",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1967"
       },
@@ -1191,7 +1197,7 @@
         "name": "燈潭",
         "name_en": "Dengtan",
         "line": "L723",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1970"
       },
@@ -1211,7 +1217,7 @@
         "name": "魏家祠堂",
         "name_en": "Wei Family hall",
         "line": "L723",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6165"
       },
@@ -1231,7 +1237,7 @@
         "name": "潛龍堡社區",
         "name_en": "Cianlongbao Community",
         "line": "L723",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1971"
       },
@@ -1251,7 +1257,7 @@
         "name": "龍平中豐路口",
         "name_en": "Longping and Zhongfong Rd. Intersection",
         "line": "L723",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6701"
       },
@@ -1271,7 +1277,7 @@
         "name": "工五路",
         "name_en": "Gong 5th Rd.",
         "line": "L723",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1973"
       },
@@ -1291,7 +1297,7 @@
         "name": "大庄",
         "name_en": "Dazhuang",
         "line": "L723",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1197"
       },
@@ -1311,7 +1317,7 @@
         "name": "湧光路623巷口",
         "name_en": "Yongguang Rd. Lane 623",
         "line": "L723",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1977"
       },
@@ -1331,7 +1337,7 @@
         "name": "湧光路577巷口",
         "name_en": "Yongguang Rd. Lane 577",
         "line": "L723",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3004"
       },
@@ -1351,7 +1357,7 @@
         "name": "湧光路",
         "name_en": "Yongguang Rd.",
         "line": "L723",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3002"
       },
@@ -1371,7 +1377,7 @@
         "name": "優聖美地社區",
         "name_en": "Youshengmeidi Community",
         "line": "L723",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1978"
       },
@@ -1391,7 +1397,7 @@
         "name": "中央",
         "name_en": "Zhongyang",
         "line": "L723",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1980"
       },
@@ -1411,7 +1417,7 @@
         "name": "中央土地廟",
         "name_en": "Jhongyang Land Temple",
         "line": "L723",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1982"
       },
@@ -1431,7 +1437,7 @@
         "name": "大漢社區",
         "name_en": "Dahan Community",
         "line": "L723",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1984"
       },
@@ -1451,7 +1457,7 @@
         "name": "百年大鎮",
         "name_en": "Bainiandazhen",
         "line": "L723",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2527"
       },
@@ -1471,7 +1477,7 @@
         "name": "大榮",
         "name_en": "Darong",
         "line": "L723",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2057"
       },
@@ -1491,7 +1497,7 @@
         "name": "富樂新村",
         "name_en": "Fule New Village",
         "line": "L723",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2058"
       },
@@ -1511,7 +1517,7 @@
         "name": "中正新境界",
         "name_en": "Jhongjheng Sinjingjie Villa",
         "line": "L723",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2060"
       },
@@ -1531,7 +1537,7 @@
         "name": "龍潭分局",
         "name_en": "Longtan Precinct",
         "line": "L723",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3671"
       },
@@ -1551,7 +1557,7 @@
         "name": "桃客龍潭站",
         "name_en": "Taoyuan bus Lungtan Station",
         "line": "L723",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2535"
       },
@@ -1571,7 +1577,7 @@
         "name": "龍潭區衛生所",
         "name_en": "Longtan District Health Center",
         "line": "L723",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "810"
       },

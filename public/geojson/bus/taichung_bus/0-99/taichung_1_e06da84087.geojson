@@ -6,12 +6,13 @@
     "name": "梨山1路",
     "name_en": "梨山1路",
     "ref": "梨山1路",
-    "color": "#115e59",
+    "color": "#0369a1",
     "city_id": "Taichung",
     "source": "TDX Bus Shape / StopOfRoute",
     "operator_id": "201",
     "operator": "臺中市和平區梨山社區發展協會",
-    "official_map_url": "https://citybus.taichung.gov.tw/ebus/strapi/uploads/1_f944e75a53.jpeg"
+    "official_map_url": "https://citybus.taichung.gov.tw/ebus/strapi/uploads/1_f944e75a53.jpeg",
+    "loop": true
   },
   "features": [
     {
@@ -21,8 +22,9 @@
         "ref": "梨山1路",
         "name": "梨山1路",
         "name_en": "梨山1路",
-        "color": "#115e59",
-        "direction": 0
+        "color": "#0369a1",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -5425,8 +5427,9 @@
         "ref": "梨山1路",
         "name": "梨山1路",
         "name_en": "梨山1路",
-        "color": "#115e59",
-        "direction": 1
+        "color": "#0369a1",
+        "direction": 1,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -10826,7 +10829,7 @@
         "name": "梨山",
         "name_en": "Li-shan",
         "line": "梨山1路",
-        "color": "#115e59",
+        "color": "#0369a1",
         "direction": 0,
         "station_id": "6634"
       },
@@ -10846,7 +10849,7 @@
         "name": "松茂",
         "name_en": "Songmao",
         "line": "梨山1路",
-        "color": "#115e59",
+        "color": "#0369a1",
         "direction": 0,
         "station_id": "6517"
       },
@@ -10866,7 +10869,7 @@
         "name": "環山部落",
         "name_en": "Huanshan tribe",
         "line": "梨山1路",
-        "color": "#115e59",
+        "color": "#0369a1",
         "direction": 0,
         "station_id": "10194"
       },
@@ -10886,7 +10889,7 @@
         "name": "松茂",
         "name_en": "Songmao",
         "line": "梨山1路",
-        "color": "#115e59",
+        "color": "#0369a1",
         "direction": 0,
         "station_id": "6516"
       },
@@ -10906,7 +10909,7 @@
         "name": "梨山衛生所",
         "name_en": "Li-shan Health Clinic",
         "line": "梨山1路",
-        "color": "#115e59",
+        "color": "#0369a1",
         "direction": 0,
         "station_id": "2152"
       },
@@ -10926,7 +10929,7 @@
         "name": "新佳陽部落",
         "name_en": "XinJiaYang tribe",
         "line": "梨山1路",
-        "color": "#115e59",
+        "color": "#0369a1",
         "direction": 0,
         "station_id": "10195"
       },
@@ -10946,7 +10949,7 @@
         "name": "梨山",
         "name_en": "Li-shan",
         "line": "梨山1路",
-        "color": "#115e59",
+        "color": "#0369a1",
         "direction": 0,
         "station_id": "6634"
       },
@@ -10966,7 +10969,7 @@
         "name": "梨山",
         "name_en": "Li-shan",
         "line": "梨山1路",
-        "color": "#115e59",
+        "color": "#0369a1",
         "direction": 1,
         "station_id": "6634"
       },
@@ -10986,7 +10989,7 @@
         "name": "新佳陽部落",
         "name_en": "XinJiaYang tribe",
         "line": "梨山1路",
-        "color": "#115e59",
+        "color": "#0369a1",
         "direction": 1,
         "station_id": "10195"
       },
@@ -11006,7 +11009,7 @@
         "name": "梨山衛生所",
         "name_en": "Li-shan Health Clinic",
         "line": "梨山1路",
-        "color": "#115e59",
+        "color": "#0369a1",
         "direction": 1,
         "station_id": "2152"
       },
@@ -11026,7 +11029,7 @@
         "name": "松茂",
         "name_en": "Songmao",
         "line": "梨山1路",
-        "color": "#115e59",
+        "color": "#0369a1",
         "direction": 1,
         "station_id": "6517"
       },
@@ -11046,7 +11049,7 @@
         "name": "環山部落",
         "name_en": "Huanshan tribe",
         "line": "梨山1路",
-        "color": "#115e59",
+        "color": "#0369a1",
         "direction": 1,
         "station_id": "10194"
       },
@@ -11066,7 +11069,7 @@
         "name": "松茂",
         "name_en": "Songmao",
         "line": "梨山1路",
-        "color": "#115e59",
+        "color": "#0369a1",
         "direction": 1,
         "station_id": "6516"
       },
@@ -11086,7 +11089,7 @@
         "name": "梨山",
         "name_en": "Li-shan",
         "line": "梨山1路",
-        "color": "#115e59",
+        "color": "#0369a1",
         "direction": 1,
         "station_id": "6634"
       },

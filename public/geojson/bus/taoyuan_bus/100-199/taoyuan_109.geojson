@@ -6,13 +6,14 @@
     "name": "109",
     "name_en": "109",
     "ref": "109",
-    "color": "#b91c1c",
+    "color": "#b45309",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/3460/map/1565/image",
     "operator_id": "1",
     "operator": "桃園客運",
-    "operator_en": "Taoyuan Bus Co., Ltd."
+    "operator_en": "Taoyuan Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "109",
         "name": "109",
         "name_en": "109",
-        "color": "#b91c1c",
-        "direction": 0
+        "color": "#b45309",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -555,6 +557,10 @@
           [
             121.31405,
             24.98652
+          ],
+          [
+            121.31424,
+            24.98678
           ]
         ]
       }
@@ -567,7 +573,7 @@
         "name": "桃園總站",
         "name_en": "Taoyuan Main Station",
         "line": "109",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3204"
       },
@@ -587,7 +593,7 @@
         "name": "聖保祿醫院",
         "name_en": "St. Pauls Hospital",
         "line": "109",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "872"
       },
@@ -607,7 +613,7 @@
         "name": "建國路口",
         "name_en": "Jianguo Road Intersection",
         "line": "109",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3066"
       },
@@ -627,7 +633,7 @@
         "name": "介壽建國路口",
         "name_en": "JieShou and JianGuo Rd. Intersection",
         "line": "109",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2150"
       },
@@ -647,7 +653,7 @@
         "name": "介壽保羅街口",
         "name_en": "JieShou and Baoluo St. Intersection",
         "line": "109",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2329"
       },
@@ -667,7 +673,7 @@
         "name": "桃園監理站",
         "name_en": "Taoyuan Motor Vehicles Office",
         "line": "109",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "922"
       },
@@ -687,7 +693,7 @@
         "name": "利台",
         "name_en": "Litai",
         "line": "109",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3196"
       },
@@ -707,7 +713,7 @@
         "name": "力行街口",
         "name_en": "Lixing Street Intersection",
         "line": "109",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3194"
       },
@@ -727,7 +733,7 @@
         "name": "大福街口",
         "name_en": "Dafu St. Intersection",
         "line": "109",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5872"
       },
@@ -747,7 +753,7 @@
         "name": "大地花園",
         "name_en": "DaDi Garden",
         "line": "109",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6140"
       },
@@ -767,7 +773,7 @@
         "name": "東培公司",
         "name_en": "TUNGPEI INDUSTRIAL CO.  LTD.",
         "line": "109",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6138"
       },
@@ -787,7 +793,7 @@
         "name": "大明街口",
         "name_en": "Daming Street Intersection",
         "line": "109",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2074"
       },
@@ -807,7 +813,7 @@
         "name": "桃德路",
         "name_en": "TauDe Road",
         "line": "109",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2076"
       },
@@ -827,7 +833,7 @@
         "name": "中德里",
         "name_en": "Zhongde Village",
         "line": "109",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2079"
       },
@@ -847,7 +853,7 @@
         "name": "永福西街",
         "name_en": "Yungfu West St.",
         "line": "109",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2080"
       },
@@ -867,7 +873,7 @@
         "name": "陸光國宅",
         "name_en": "Luguang Public Housing",
         "line": "109",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1869"
       },
@@ -887,7 +893,7 @@
         "name": "福國北街",
         "name_en": "FuGuo North Street",
         "line": "109",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2082"
       },
@@ -907,7 +913,7 @@
         "name": "廣福路(廣隆街口)",
         "name_en": "Guanfu Rd.(Guanlung St. Intersection)",
         "line": "109",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4527"
       },
@@ -927,7 +933,7 @@
         "name": "廣福路389巷",
         "name_en": "Guangfu Rd., Ln. 389",
         "line": "109",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4525"
       },
@@ -947,7 +953,7 @@
         "name": "廣福路530巷",
         "name_en": "Guangfu Rd., Ln. 530",
         "line": "109",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4523"
       },
@@ -967,7 +973,7 @@
         "name": "中祥食品",
         "name_en": "Chung Hsiang Foods",
         "line": "109",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4521"
       },
@@ -987,7 +993,7 @@
         "name": "廣興路口",
         "name_en": "Guangxing Rd. Intersection",
         "line": "109",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1122"
       },
@@ -1007,7 +1013,7 @@
         "name": "元聖宮",
         "name_en": "Yuansheng Temple",
         "line": "109",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6524"
       },
@@ -1027,7 +1033,7 @@
         "name": "寶豐街口",
         "name_en": "Baofeng St. Intersection",
         "line": "109",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5724"
       },
@@ -1047,7 +1053,7 @@
         "name": "聯明街口",
         "name_en": "Lianming St. Intersection",
         "line": "109",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6525"
       },
@@ -1067,7 +1073,7 @@
         "name": "泰豐街口",
         "name_en": "TaiFeng Street Intersection",
         "line": "109",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4766"
       },
@@ -1087,7 +1093,7 @@
         "name": "國聯街口",
         "name_en": "Guolian St. Intersection",
         "line": "109",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5726"
       },
@@ -1107,7 +1113,7 @@
         "name": "新興高中",
         "name_en": "Xinxing High School",
         "line": "109",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4768"
       },
@@ -1127,7 +1133,7 @@
         "name": "新興高中",
         "name_en": "ShinShing High School",
         "line": "109",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4769"
       },
@@ -1147,7 +1153,7 @@
         "name": "國聯街口",
         "name_en": "Guolian St. Intersection",
         "line": "109",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5727"
       },
@@ -1167,7 +1173,7 @@
         "name": "泰豐街口",
         "name_en": "TaiFeng Street Intersection",
         "line": "109",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4767"
       },
@@ -1187,7 +1193,7 @@
         "name": "聯明街口",
         "name_en": "Lianming St. Intersection",
         "line": "109",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6526"
       },
@@ -1207,7 +1213,7 @@
         "name": "寶豐街口",
         "name_en": "Baofeng St. Intersection",
         "line": "109",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5725"
       },
@@ -1227,7 +1233,7 @@
         "name": "元聖宮",
         "name_en": "Yuansheng Temple",
         "line": "109",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6523"
       },
@@ -1247,7 +1253,7 @@
         "name": "廣興路口",
         "name_en": "Guangxing Rd. Intersection",
         "line": "109",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1123"
       },
@@ -1267,7 +1273,7 @@
         "name": "中祥食品",
         "name_en": "Chung Hsiang Foods",
         "line": "109",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4520"
       },
@@ -1287,7 +1293,7 @@
         "name": "廣福路530巷",
         "name_en": "Guangfu Rd., Ln. 530",
         "line": "109",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4522"
       },
@@ -1307,7 +1313,7 @@
         "name": "廣福路389巷",
         "name_en": "Guangfu Rd., Ln. 389",
         "line": "109",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4524"
       },
@@ -1327,7 +1333,7 @@
         "name": "廣福路(廣隆街口)",
         "name_en": "Guanfu Rd.(Guanlung St. Intersection)",
         "line": "109",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4526"
       },
@@ -1347,7 +1353,7 @@
         "name": "福國北街",
         "name_en": "FuGuo North Street",
         "line": "109",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2083"
       },
@@ -1367,7 +1373,7 @@
         "name": "陸光國宅",
         "name_en": "Luguang Public Housing",
         "line": "109",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1868"
       },
@@ -1387,7 +1393,7 @@
         "name": "永福西街",
         "name_en": "Yungfu West St.",
         "line": "109",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2081"
       },
@@ -1407,7 +1413,7 @@
         "name": "中德里",
         "name_en": "Zhongde Village",
         "line": "109",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6401"
       },
@@ -1427,7 +1433,7 @@
         "name": "桃德路",
         "name_en": "TauDe Road",
         "line": "109",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2077"
       },
@@ -1447,7 +1453,7 @@
         "name": "大明街口",
         "name_en": "Daming Street Intersection",
         "line": "109",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2075"
       },
@@ -1467,7 +1473,7 @@
         "name": "東培公司",
         "name_en": "TUNGPEI INDUSTRIAL CO.  LTD.",
         "line": "109",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6137"
       },
@@ -1487,7 +1493,7 @@
         "name": "大地花園",
         "name_en": "DaDi Garden",
         "line": "109",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6139"
       },
@@ -1507,7 +1513,7 @@
         "name": "大福街口",
         "name_en": "Dafu St. Intersection",
         "line": "109",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5871"
       },
@@ -1527,7 +1533,7 @@
         "name": "力行街口",
         "name_en": "Lixing Street Intersection",
         "line": "109",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3193"
       },
@@ -1547,7 +1553,7 @@
         "name": "利台",
         "name_en": "Litai",
         "line": "109",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3195"
       },
@@ -1567,7 +1573,7 @@
         "name": "桃園監理站",
         "name_en": "Taoyuan Motor Vehicles Office",
         "line": "109",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "923"
       },
@@ -1587,7 +1593,7 @@
         "name": "介壽保羅街口",
         "name_en": "JieShou and Baoluo St. Intersection",
         "line": "109",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2330"
       },
@@ -1607,7 +1613,7 @@
         "name": "介壽建國路口",
         "name_en": "JieShou and JianGuo Rd. Intersection",
         "line": "109",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2151"
       },
@@ -1627,7 +1633,7 @@
         "name": "建國路口",
         "name_en": "JianGuo Road Intersection",
         "line": "109",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3067"
       },
@@ -1647,7 +1653,7 @@
         "name": "聖保祿醫院",
         "name_en": "St. Pauls Hospital",
         "line": "109",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "871"
       },

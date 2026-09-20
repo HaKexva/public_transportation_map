@@ -6,13 +6,14 @@
     "name": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
     "name_en": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
     "ref": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-    "color": "#86198f",
+    "color": "#3730a3",
     "city_id": "KinmenCounty",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.kinmen.gov.tw/api/route/1534/map/117/image",
     "operator_id": "0001",
     "operator": "金門",
-    "operator_en": "City Bus and Ferry Management Office, Kinmen County"
+    "operator_en": "City Bus and Ferry Management Office, Kinmen County",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
         "name": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
         "name_en": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1279,6 +1281,10 @@
           [
             118.31995,
             24.4332
+          ],
+          [
+            118.32011,
+            24.43291
           ]
         ]
       }
@@ -1291,7 +1297,7 @@
         "name": "金城站",
         "name_en": "Jincheng Station",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "0"
       },
@@ -1311,7 +1317,7 @@
         "name": "迴龍廟",
         "name_en": "Hueilong Temple",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "129"
       },
@@ -1331,7 +1337,7 @@
         "name": "北堤路",
         "name_en": "Beiti Rd.",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "130"
       },
@@ -1351,7 +1357,7 @@
         "name": "體育館",
         "name_en": "Gymnasium",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "131"
       },
@@ -1371,7 +1377,7 @@
         "name": "金城國中",
         "name_en": "Jincheng Junior High School",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "132"
       },
@@ -1391,7 +1397,7 @@
         "name": "金門高中",
         "name_en": "Kinmen Senior High School",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "387"
       },
@@ -1411,7 +1417,7 @@
         "name": "舊渡口",
         "name_en": "Jiudukou",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "388"
       },
@@ -1431,7 +1437,7 @@
         "name": "長鴻山莊",
         "name_en": "Changhong Village",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "389"
       },
@@ -1451,7 +1457,7 @@
         "name": "將軍廟",
         "name_en": "Jiangjun Temple",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "390"
       },
@@ -1471,7 +1477,7 @@
         "name": "下埔下",
         "name_en": "Xiapuxia",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "391"
       },
@@ -1491,7 +1497,7 @@
         "name": "修車廠",
         "name_en": "Vehicles Maintenance Works",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "392"
       },
@@ -1511,7 +1517,7 @@
         "name": "前山",
         "name_en": "Qianshan",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "935"
       },
@@ -1531,7 +1537,7 @@
         "name": "金門橋頭",
         "name_en": "Kinmen Bridge Head",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "1002"
       },
@@ -1551,7 +1557,7 @@
         "name": "烈嶼橋頭(黃厝)",
         "name_en": "Liehyu Bridge Head(Huangcu)",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "1003"
       },
@@ -1571,7 +1577,7 @@
         "name": "黃厝",
         "name_en": "Huangcu",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "792"
       },
@@ -1591,7 +1597,7 @@
         "name": "林邊",
         "name_en": "Linbia",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "793"
       },
@@ -1611,7 +1617,7 @@
         "name": "埔頭",
         "name_en": "Putou",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "794"
       },
@@ -1631,7 +1637,7 @@
         "name": "庵下",
         "name_en": "Anxi",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "795"
       },
@@ -1651,7 +1657,7 @@
         "name": "后宅",
         "name_en": "Houzha",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "796"
       },
@@ -1671,7 +1677,7 @@
         "name": "金陵山莊",
         "name_en": "Jincheng Village",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "797"
       },
@@ -1691,7 +1697,7 @@
         "name": "烈嶼分院",
         "name_en": "Liehyu subdivision of the Kinmen County Hospital",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "798"
       },
@@ -1711,7 +1717,7 @@
         "name": "西路",
         "name_en": "Xil",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "799"
       },
@@ -1731,7 +1737,7 @@
         "name": "八達樓子",
         "name_en": "Bada Towe",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "807"
       },
@@ -1751,7 +1757,7 @@
         "name": "烈嶼國中",
         "name_en": "Lieyu Junior High Schoo",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "808"
       },
@@ -1771,7 +1777,7 @@
         "name": "南塘",
         "name_en": "Nantan",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "809"
       },
@@ -1791,7 +1797,7 @@
         "name": "福壽山",
         "name_en": "FuShou Mountain",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "810"
       },
@@ -1811,7 +1817,7 @@
         "name": "楊厝",
         "name_en": "Yangcu",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "811"
       },
@@ -1831,7 +1837,7 @@
         "name": "東埔池",
         "name_en": "DongPu Pool",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "812"
       },
@@ -1851,7 +1857,7 @@
         "name": "青岐路口",
         "name_en": "Qingqi Rd.",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "813"
       },
@@ -1871,7 +1877,7 @@
         "name": "青岐",
         "name_en": "Qingqi",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "814"
       },
@@ -1891,7 +1897,7 @@
         "name": "石鼓山",
         "name_en": "Shigusha",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "815"
       },
@@ -1911,7 +1917,7 @@
         "name": "萬聖宮",
         "name_en": "Wansheng Templ",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "816"
       },
@@ -1931,7 +1937,7 @@
         "name": "東勢",
         "name_en": "DongShi",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "817"
       },
@@ -1951,7 +1957,7 @@
         "name": "上庫",
         "name_en": "Shangk",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "818"
       },
@@ -1971,7 +1977,7 @@
         "name": "高厝",
         "name_en": "GaoCuo",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "819"
       },
@@ -1991,7 +1997,7 @@
         "name": "上林一",
         "name_en": "Shangli 1",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "820"
       },
@@ -2011,7 +2017,7 @@
         "name": "上林",
         "name_en": "Shangli",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "821"
       },
@@ -2031,7 +2037,7 @@
         "name": "中墩",
         "name_en": "Zhongdu",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "822"
       },
@@ -2051,7 +2057,7 @@
         "name": "西方",
         "name_en": "Xifang",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "823"
       },
@@ -2071,7 +2077,7 @@
         "name": "下田",
         "name_en": "Xiatia",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "824"
       },
@@ -2091,7 +2097,7 @@
         "name": "雙口",
         "name_en": "Shuangko",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "825"
       },
@@ -2111,7 +2117,7 @@
         "name": "東坑",
         "name_en": "Dongken",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "826"
       },
@@ -2131,7 +2137,7 @@
         "name": "湖井頭",
         "name_en": "Hujingto",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "827"
       },
@@ -2151,7 +2157,7 @@
         "name": "雙口",
         "name_en": "Shuangko",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "828"
       },
@@ -2171,7 +2177,7 @@
         "name": "下田",
         "name_en": "Xiatia",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "829"
       },
@@ -2191,7 +2197,7 @@
         "name": "西方",
         "name_en": "Xifang",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "830"
       },
@@ -2211,7 +2217,7 @@
         "name": "西方社區",
         "name_en": "Western Community",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "831"
       },
@@ -2231,7 +2237,7 @@
         "name": "金陵山莊",
         "name_en": "Jincheng Village",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "797"
       },
@@ -2251,7 +2257,7 @@
         "name": "烈嶼分院",
         "name_en": "Liehyu subdivision of the Kinmen County Hospital",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "798"
       },
@@ -2271,7 +2277,7 @@
         "name": "西路",
         "name_en": "Xil",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "799"
       },
@@ -2291,7 +2297,7 @@
         "name": "西宅",
         "name_en": "Xizha",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "800"
       },
@@ -2311,7 +2317,7 @@
         "name": "東林",
         "name_en": "Dongli",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "801"
       },
@@ -2331,7 +2337,7 @@
         "name": "東林尾",
         "name_en": "Donglinwei",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "802"
       },
@@ -2351,7 +2357,7 @@
         "name": "烈嶼車站",
         "name_en": "Liehyu Station",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "803"
       },
@@ -2371,7 +2377,7 @@
         "name": "湖下忠義廟",
         "name_en": "HuXiaZhongYiMiao",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "958"
       },
@@ -2391,7 +2397,7 @@
         "name": "湖下",
         "name_en": "Huxia",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "789"
       },
@@ -2411,7 +2417,7 @@
         "name": "后頭一",
         "name_en": "Houtou 1",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "790"
       },
@@ -2431,7 +2437,7 @@
         "name": "后頭",
         "name_en": "Houto",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "791"
       },
@@ -2451,7 +2457,7 @@
         "name": "烈嶼橋頭(后頭)",
         "name_en": "Liehyu Bridge Head(Houto)",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "1006"
       },
@@ -2471,7 +2477,7 @@
         "name": "金門橋頭",
         "name_en": "Kinmen Bridge Head",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "1001"
       },
@@ -2491,7 +2497,7 @@
         "name": "前山",
         "name_en": "Qianshan",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "934"
       },
@@ -2511,7 +2517,7 @@
         "name": "修車廠",
         "name_en": "Vehicles Maintenance Works",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "479"
       },
@@ -2531,7 +2537,7 @@
         "name": "下埔下",
         "name_en": "Xiapuxia",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "480"
       },
@@ -2551,7 +2557,7 @@
         "name": "將軍廟",
         "name_en": "Jiangjun Temple",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "481"
       },
@@ -2571,7 +2577,7 @@
         "name": "長鴻山莊",
         "name_en": "Changhong Village",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "482"
       },
@@ -2591,7 +2597,7 @@
         "name": "舊渡口",
         "name_en": "Jiudukou",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "483"
       },
@@ -2611,7 +2617,7 @@
         "name": "金門高中",
         "name_en": "Kinmen Senior High School",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "484"
       },
@@ -2631,7 +2637,7 @@
         "name": "金城國中",
         "name_en": "Jincheng Junior High School",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "61"
       },
@@ -2651,7 +2657,7 @@
         "name": "體育館",
         "name_en": "Gymnasium",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "62"
       },
@@ -2671,7 +2677,7 @@
         "name": "北堤路",
         "name_en": "Beiti Rd.",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "63"
       },
@@ -2691,7 +2697,7 @@
         "name": "迴龍廟",
         "name_en": "Hueilong Temple",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "64"
       },
@@ -2711,7 +2717,7 @@
         "name": "東門",
         "name_en": "Dongmen",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "345"
       },
@@ -2731,7 +2737,7 @@
         "name": "金城站",
         "name_en": "Jincheng Station",
         "line": "15B往烈嶼 (黃厝進/后頭出) 繞北提",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "0"
       },

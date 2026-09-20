@@ -6,13 +6,14 @@
     "name": "722",
     "name_en": "722",
     "ref": "722",
-    "color": "#7c3aed",
+    "color": "#be123c",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/7220/map/2357/image",
     "operator_id": "6",
     "operator": "亞通客運",
-    "operator_en": "Yatung Bus Co., Ltd."
+    "operator_en": "Yatung Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "722",
         "name": "722",
         "name_en": "722",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#be123c",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -2331,6 +2333,10 @@
           [
             121.14828,
             24.91349
+          ],
+          [
+            121.14841,
+            24.91342
           ]
         ]
       }
@@ -2343,7 +2349,7 @@
         "name": "楊梅站",
         "name_en": "Yangmei Station",
         "line": "722",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6072"
       },
@@ -2363,7 +2369,7 @@
         "name": "楊梅火車站",
         "name_en": "TRA, Yangmei Station",
         "line": "722",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "896"
       },
@@ -2383,7 +2389,7 @@
         "name": "新街",
         "name_en": "Xin street",
         "line": "722",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "366"
       },
@@ -2403,7 +2409,7 @@
         "name": "大成路",
         "name_en": "Dacheng Rd.",
         "line": "722",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1491"
       },
@@ -2423,7 +2429,7 @@
         "name": "荖坑溪橋",
         "name_en": "Laokengxi Bridge",
         "line": "722",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "4650"
       },
@@ -2443,7 +2449,7 @@
         "name": "東電化",
         "name_en": "Dongdianhua",
         "line": "722",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6073"
       },
@@ -2463,7 +2469,7 @@
         "name": "天成醫院",
         "name_en": "Tiancheng Hospital",
         "line": "722",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "3731"
       },
@@ -2483,7 +2489,7 @@
         "name": "大金山",
         "name_en": "Dajinshan",
         "line": "722",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6083"
       },
@@ -2503,7 +2509,7 @@
         "name": "楊梅交流道",
         "name_en": "Yangmei Interchange",
         "line": "722",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "3733"
       },
@@ -2523,7 +2529,7 @@
         "name": "頭重溪",
         "name_en": "Touchongxi",
         "line": "722",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1834"
       },
@@ -2543,7 +2549,7 @@
         "name": "楊梅工業區",
         "name_en": "Yangmei Industrial Park",
         "line": "722",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6079"
       },
@@ -2563,7 +2569,7 @@
         "name": "瑞塘里",
         "name_en": "Ruitang Village",
         "line": "722",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5258"
       },
@@ -2583,7 +2589,7 @@
         "name": "四維新村",
         "name_en": "Siwei Village",
         "line": "722",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5239"
       },
@@ -2603,7 +2609,7 @@
         "name": "永美路",
         "name_en": "Yongmei Rd.",
         "line": "722",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "3646"
       },
@@ -2623,7 +2629,7 @@
         "name": "埔心火車站",
         "name_en": "Puxin train station",
         "line": "722",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "3007"
       },
@@ -2643,7 +2649,7 @@
         "name": "仁美路",
         "name_en": "Renmei Road",
         "line": "722",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "3779"
       },
@@ -2663,7 +2669,7 @@
         "name": "仁美國中",
         "name_en": "Renmei Junior High School",
         "line": "722",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "3229"
       },
@@ -2683,7 +2689,7 @@
         "name": "銘德",
         "name_en": "Mingde",
         "line": "722",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "3231"
       },
@@ -2703,7 +2709,7 @@
         "name": "純青湖",
         "name_en": "Chunqing Lake",
         "line": "722",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "3233"
       },
@@ -2723,7 +2729,7 @@
         "name": "埔心牧場",
         "name_en": "Puxin Ranch",
         "line": "722",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "2958"
       },
@@ -2743,7 +2749,7 @@
         "name": "幼獅工業區",
         "name_en": "Youth Industrial Park",
         "line": "722",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "3598"
       },
@@ -2763,7 +2769,7 @@
         "name": "青年路口",
         "name_en": "Qingnian Rd. Intersection",
         "line": "722",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "3600"
       },
@@ -2783,7 +2789,7 @@
         "name": "忠孝路口",
         "name_en": "Zhongxiao Rd. Entrance",
         "line": "722",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6926"
       },
@@ -2803,7 +2809,7 @@
         "name": "大智街口",
         "name_en": "Dazhi St. Entrance",
         "line": "722",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6927"
       },
@@ -2823,7 +2829,7 @@
         "name": "三重國小",
         "name_en": "San-Chong Elementary School",
         "line": "722",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6915"
       },
@@ -2843,7 +2849,7 @@
         "name": "捷運三重國小站",
         "name_en": "MRT Sanchong Elementary School Station",
         "line": "722",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6916"
       },
@@ -2863,7 +2869,7 @@
         "name": "德林寺(三和路)",
         "name_en": "Delin Temple san he road",
         "line": "722",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6274"
       },
@@ -2883,7 +2889,7 @@
         "name": "青年路口",
         "name_en": "Qingnian Rd. Intersection",
         "line": "722",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "3601"
       },
@@ -2903,7 +2909,7 @@
         "name": "幼獅工業區",
         "name_en": "Youth Industrial Park",
         "line": "722",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "3599"
       },
@@ -2923,7 +2929,7 @@
         "name": "埔心牧場",
         "name_en": "Puxin Ranch",
         "line": "722",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "2959"
       },
@@ -2943,7 +2949,7 @@
         "name": "純青湖",
         "name_en": "Chunqing Lake",
         "line": "722",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6917"
       },
@@ -2963,7 +2969,7 @@
         "name": "銘德",
         "name_en": "Mingde",
         "line": "722",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "3232"
       },
@@ -2983,7 +2989,7 @@
         "name": "仁美國中",
         "name_en": "Renmei Junior High School",
         "line": "722",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "3230"
       },
@@ -3003,7 +3009,7 @@
         "name": "仁美路",
         "name_en": "Renmei Road",
         "line": "722",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "3778"
       },
@@ -3023,7 +3029,7 @@
         "name": "埔心火車站",
         "name_en": "Puxin Train Station",
         "line": "722",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "3008"
       },
@@ -3043,7 +3049,7 @@
         "name": "永美路",
         "name_en": "Yongmei Rd.",
         "line": "722",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "3647"
       },
@@ -3063,7 +3069,7 @@
         "name": "四維新村",
         "name_en": "Siwei Village",
         "line": "722",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5238"
       },
@@ -3083,7 +3089,7 @@
         "name": "瑞塘里",
         "name_en": "Ruitang Village",
         "line": "722",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5259"
       },
@@ -3103,7 +3109,7 @@
         "name": "楊梅工業區",
         "name_en": "Yangmei Industrial Park",
         "line": "722",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6080"
       },
@@ -3123,7 +3129,7 @@
         "name": "頭重溪",
         "name_en": "Touchongxi",
         "line": "722",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1833"
       },
@@ -3143,7 +3149,7 @@
         "name": "楊梅交流道",
         "name_en": "Yangmei Interchange",
         "line": "722",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "3734"
       },
@@ -3163,7 +3169,7 @@
         "name": "大金山",
         "name_en": "Dajinshan",
         "line": "722",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6084"
       },
@@ -3183,7 +3189,7 @@
         "name": "天成醫院",
         "name_en": "Tiancheng Hospital",
         "line": "722",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "3732"
       },
@@ -3203,7 +3209,7 @@
         "name": "東電化",
         "name_en": "Dongdianhua",
         "line": "722",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6074"
       },
@@ -3223,7 +3229,7 @@
         "name": "荖坑溪橋",
         "name_en": "Laokengxi Bridge",
         "line": "722",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "4651"
       },
@@ -3243,7 +3249,7 @@
         "name": "大成路",
         "name_en": "Dacheng Rd.",
         "line": "722",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1490"
       },
@@ -3263,7 +3269,7 @@
         "name": "新街",
         "name_en": "Xin street",
         "line": "722",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "365"
       },
@@ -3283,7 +3289,7 @@
         "name": "楊梅火車站",
         "name_en": "TRA Yongmei Station",
         "line": "722",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "897"
       },

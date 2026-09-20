@@ -6,13 +6,14 @@
     "name": "157",
     "name_en": "157",
     "ref": "157",
-    "color": "#b91c1c",
+    "color": "#b45309",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/3440/map/1957/image",
     "operator_id": "1",
     "operator": "桃園客運",
-    "operator_en": "Taoyuan Bus Co., Ltd."
+    "operator_en": "Taoyuan Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "157",
         "name": "157",
         "name_en": "157",
-        "color": "#b91c1c",
-        "direction": 0
+        "color": "#b45309",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -2987,6 +2989,10 @@
           [
             121.31216,
             24.99132
+          ],
+          [
+            121.3126,
+            24.99037
           ]
         ]
       }
@@ -2999,7 +3005,7 @@
         "name": "桃園公車站",
         "name_en": "Taoyuan Bus Station",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4215"
       },
@@ -3019,7 +3025,7 @@
         "name": "南華中華路口",
         "name_en": "Nanhua and Zhonghua Rd. Intersection",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3353"
       },
@@ -3039,7 +3045,7 @@
         "name": "南華街口",
         "name_en": "Nanhua Street Intersection",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3202"
       },
@@ -3059,7 +3065,7 @@
         "name": "三民建國路口",
         "name_en": "SanMin and JianGuo Rd. Intersection",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3200"
       },
@@ -3079,7 +3085,7 @@
         "name": "三民介壽路口",
         "name_en": "SanMin and JieShou Rd. Intersection",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3198"
       },
@@ -3099,7 +3105,7 @@
         "name": "桃園監理站",
         "name_en": "Taoyuan Motor Vehicles Office",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "922"
       },
@@ -3119,7 +3125,7 @@
         "name": "利台",
         "name_en": "Litai",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3196"
       },
@@ -3139,7 +3145,7 @@
         "name": "力行街口",
         "name_en": "Lixing Street Intersection",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3194"
       },
@@ -3159,7 +3165,7 @@
         "name": "無線電台",
         "name_en": "Radio Station",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "396"
       },
@@ -3179,7 +3185,7 @@
         "name": "小大湳",
         "name_en": "Xiaodanan",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1721"
       },
@@ -3199,7 +3205,7 @@
         "name": "忠勇西街站(G05)",
         "name_en": "Zhongyong West Street station(G05)",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3141"
       },
@@ -3219,7 +3225,7 @@
         "name": "介壽大智路口",
         "name_en": "Jieshou & Dazhi Rd. Intersection",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3143"
       },
@@ -3239,7 +3245,7 @@
         "name": "陸光四村",
         "name_en": "The 4th village of Lu guang",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1258"
       },
@@ -3259,7 +3265,7 @@
         "name": "大湳站(G04)",
         "name_en": "Danan Station(G04)",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1723"
       },
@@ -3279,7 +3285,7 @@
         "name": "瑞祥社區",
         "name_en": "Rueixiang Community",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1274"
       },
@@ -3299,7 +3305,7 @@
         "name": "鴻昌社區",
         "name_en": "Hungchang Community",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1241"
       },
@@ -3319,7 +3325,7 @@
         "name": "麻園站(G03)",
         "name_en": "Mayuan station(G03)",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1725"
       },
@@ -3339,7 +3345,7 @@
         "name": "梅花社區",
         "name_en": "Meihua Community",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1243"
       },
@@ -3359,7 +3365,7 @@
         "name": "欣桃社區",
         "name_en": "Xintao Community",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1247"
       },
@@ -3379,7 +3385,7 @@
         "name": "松柏園",
         "name_en": "SungBoYuan",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3169"
       },
@@ -3399,7 +3405,7 @@
         "name": "瑞豐國小(桃園防災教育館)",
         "name_en": "Ruifeng Elementary School(Taoyuan Disaster Education Center)",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1249"
       },
@@ -3419,7 +3425,7 @@
         "name": "瑞發家園",
         "name_en": "Rueifajiayuan",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3171"
       },
@@ -3439,7 +3445,7 @@
         "name": "更寮腳(興豐路)",
         "name_en": "Gengliaojiao(Xingfeng Road)",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1727"
       },
@@ -3459,7 +3465,7 @@
         "name": "聯福巷",
         "name_en": "Lianfu Ln.",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1729"
       },
@@ -3479,7 +3485,7 @@
         "name": "興豐友聯街口",
         "name_en": "Singfong and Youlian St. Intersection",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2517"
       },
@@ -3499,7 +3505,7 @@
         "name": "八德國中",
         "name_en": "BaDe Junior High School",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1731"
       },
@@ -3519,7 +3525,7 @@
         "name": "八德區公所(農會)",
         "name_en": "Bade District Office (Farmers Assoc.)",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3585"
       },
@@ -3539,7 +3545,7 @@
         "name": "福興社區",
         "name_en": "Fuxing Community",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4724"
       },
@@ -3559,7 +3565,7 @@
         "name": "廣興仁德路口",
         "name_en": "Guanxing and Rende Road Intersection",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1353"
       },
@@ -3579,7 +3585,7 @@
         "name": "福爾摩沙社區",
         "name_en": "Formosa Community",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4923"
       },
@@ -3599,7 +3605,7 @@
         "name": "永華機械",
         "name_en": "KYB Manufacturing Taiwan Co, Ltd.",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5684"
       },
@@ -3619,7 +3625,7 @@
         "name": "廣興國小",
         "name_en": "Guangxing Elementary School",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4698"
       },
@@ -3639,7 +3645,7 @@
         "name": "新興路口",
         "name_en": "Xinxing Road Intersection",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4920"
       },
@@ -3659,7 +3665,7 @@
         "name": "廣興路980巷",
         "name_en": "Ln. 980,Guangxing Rd",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6057"
       },
@@ -3679,7 +3685,7 @@
         "name": "永豐南路",
         "name_en": "YungFeng South Road",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4918"
       },
@@ -3699,7 +3705,7 @@
         "name": "元聖宮",
         "name_en": "Yuansheng Temple",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6524"
       },
@@ -3719,7 +3725,7 @@
         "name": "寶豐街口",
         "name_en": "Baofeng St. Intersection",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5724"
       },
@@ -3739,7 +3745,7 @@
         "name": "聯明街口",
         "name_en": "Lianming St. Intersection",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6525"
       },
@@ -3759,7 +3765,7 @@
         "name": "泰豐街口",
         "name_en": "TaiFeng Street Intersection",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4766"
       },
@@ -3779,7 +3785,7 @@
         "name": "國聯街口",
         "name_en": "Guolian St. Intersection",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5726"
       },
@@ -3799,7 +3805,7 @@
         "name": "新興高中",
         "name_en": "Xinxing High School",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4768"
       },
@@ -3819,7 +3825,7 @@
         "name": "新興高中",
         "name_en": "ShinShing High School",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4769"
       },
@@ -3839,7 +3845,7 @@
         "name": "國聯街口",
         "name_en": "Guolian St. Intersection",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5727"
       },
@@ -3859,7 +3865,7 @@
         "name": "泰豐街口",
         "name_en": "TaiFeng Street Intersection",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4767"
       },
@@ -3879,7 +3885,7 @@
         "name": "聯明街口",
         "name_en": "Lianming St. Intersection",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6526"
       },
@@ -3899,7 +3905,7 @@
         "name": "寶豐街口",
         "name_en": "Baofeng St. Intersection",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5725"
       },
@@ -3919,7 +3925,7 @@
         "name": "元聖宮",
         "name_en": "Yuansheng Temple",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6523"
       },
@@ -3939,7 +3945,7 @@
         "name": "永豐南路",
         "name_en": "YungFeng South Road",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4919"
       },
@@ -3959,7 +3965,7 @@
         "name": "廣興路980巷",
         "name_en": "Ln. 980,Guangxing Rd",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6056"
       },
@@ -3979,7 +3985,7 @@
         "name": "新興路口",
         "name_en": "Xinxing Road Intersection",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6245"
       },
@@ -3999,7 +4005,7 @@
         "name": "廣興國小",
         "name_en": "Guangxing Elementary School",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4697"
       },
@@ -4019,7 +4025,7 @@
         "name": "永華機械",
         "name_en": "KYB Manufacturing Taiwan Co, Ltd.",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5683"
       },
@@ -4039,7 +4045,7 @@
         "name": "福爾摩沙社區",
         "name_en": "Formosa Community",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4924"
       },
@@ -4059,7 +4065,7 @@
         "name": "廣興仁德路口",
         "name_en": "Guanxing and Rende Road Intersection",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1352"
       },
@@ -4079,7 +4085,7 @@
         "name": "福興社區",
         "name_en": "Fuxing Community",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4725"
       },
@@ -4099,7 +4105,7 @@
         "name": "八德區公所(農會)",
         "name_en": "Bade District Office (Farmers Assoc.)",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3584"
       },
@@ -4119,7 +4125,7 @@
         "name": "八德國中",
         "name_en": "BaDe Junior High School",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1732"
       },
@@ -4139,7 +4145,7 @@
         "name": "興豐友聯街口",
         "name_en": "Singfong and Youlian St. Intersection",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2516"
       },
@@ -4159,7 +4165,7 @@
         "name": "聯福巷",
         "name_en": "Lianfu Ln.",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1730"
       },
@@ -4179,7 +4185,7 @@
         "name": "更寮腳(介壽路)",
         "name_en": "Gengliaojiao (Jieshou Road)",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1252"
       },
@@ -4199,7 +4205,7 @@
         "name": "瑞發家園",
         "name_en": "Rueifajiayuan",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3172"
       },
@@ -4219,7 +4225,7 @@
         "name": "瑞豐國小(桃園防災教育館)",
         "name_en": "Ruifeng Elementary School(Taoyuan Disaster Education Center)",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1250"
       },
@@ -4239,7 +4245,7 @@
         "name": "松柏園",
         "name_en": "SungBoYuan",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3170"
       },
@@ -4259,7 +4265,7 @@
         "name": "欣桃社區",
         "name_en": "Xintao Community",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1248"
       },
@@ -4279,7 +4285,7 @@
         "name": "梅花社區",
         "name_en": "Meihua Community",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1244"
       },
@@ -4299,7 +4305,7 @@
         "name": "麻園站(G03)",
         "name_en": "Mayuan station(G03)",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1726"
       },
@@ -4319,7 +4325,7 @@
         "name": "鴻昌社區",
         "name_en": "Hungchang Community",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1242"
       },
@@ -4339,7 +4345,7 @@
         "name": "瑞祥社區",
         "name_en": "Rueixiang Community",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1273"
       },
@@ -4359,7 +4365,7 @@
         "name": "大湳站(G04)",
         "name_en": "Danan Station(G04)",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1724"
       },
@@ -4379,7 +4385,7 @@
         "name": "陸光四村",
         "name_en": "Luguang 4th Village",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1257"
       },
@@ -4399,7 +4405,7 @@
         "name": "介壽大智路口",
         "name_en": "Jieshou & Dazhi Rd. Intersection",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3144"
       },
@@ -4419,7 +4425,7 @@
         "name": "忠勇西街站(G05)",
         "name_en": "Zhongyong West Street station(G05)",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3142"
       },
@@ -4439,7 +4445,7 @@
         "name": "小大湳",
         "name_en": "Xiaodanan",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1722"
       },
@@ -4459,7 +4465,7 @@
         "name": "無線電台",
         "name_en": "Radio Station",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "397"
       },
@@ -4479,7 +4485,7 @@
         "name": "力行街口",
         "name_en": "Lixing Street Intersection",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3193"
       },
@@ -4499,7 +4505,7 @@
         "name": "利台",
         "name_en": "Litai",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3195"
       },
@@ -4519,7 +4525,7 @@
         "name": "桃園監理站",
         "name_en": "Taoyuan Motor Vehicles Office",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "923"
       },
@@ -4539,7 +4545,7 @@
         "name": "三民介壽路口",
         "name_en": "SanMin and JieShou Rd. Intersection",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3197"
       },
@@ -4559,7 +4565,7 @@
         "name": "三民建國路口",
         "name_en": "SanMin and JianGuo Rd. Intersection",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3199"
       },
@@ -4579,7 +4585,7 @@
         "name": "南華街口",
         "name_en": "Nanhua Street Intersection",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3201"
       },
@@ -4599,7 +4605,7 @@
         "name": "中華民族路口",
         "name_en": "Zhonghua and Minzu Road Intersection",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1114"
       },
@@ -4619,7 +4625,7 @@
         "name": "統領百貨",
         "name_en": "Tonlin Department Store",
         "line": "157",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1223"
       },

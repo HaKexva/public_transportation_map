@@ -6,13 +6,14 @@
     "name": "52",
     "name_en": "52",
     "ref": "52",
-    "color": "#9f1239",
+    "color": "#92400e",
     "city_id": "Hsinchu",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://web.taiwanbus.tw/MISUploadData/Schematic/file/0520.jpg",
     "operator_id": "67",
     "operator": "金牌客運",
-    "operator_en": "Champion Bus Co., Ltd."
+    "operator_en": "Champion Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "52",
         "name": "52",
         "name_en": "52",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#92400e",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -2379,23 +2381,7 @@
           [
             121.02148,
             24.78826
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "feature_type": "route",
-        "ref": "52",
-        "name": "52",
-        "name_en": "52",
-        "color": "#9f1239",
-        "direction": 0
-      },
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
+          ],
           [
             121.02148,
             24.78826
@@ -4843,7 +4829,7 @@
         "name": "新莊車站",
         "name_en": "Xinzhuang Station",
         "line": "52",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "144871"
       },
@@ -4863,7 +4849,7 @@
         "name": "關埔公園",
         "name_en": "Guan Pu Park",
         "line": "52",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130698"
       },
@@ -4883,7 +4869,7 @@
         "name": "慈濟路口",
         "name_en": "Ci Ji Road Entrance",
         "line": "52",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130697"
       },
@@ -4903,7 +4889,7 @@
         "name": "好市多",
         "name_en": "Costco",
         "line": "52",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130587"
       },
@@ -4923,7 +4909,7 @@
         "name": "埔頂庄",
         "name_en": "Pudingzhuang",
         "line": "52",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130588"
       },
@@ -4943,7 +4929,7 @@
         "name": "華夏金城",
         "name_en": "Huaxia Jincheng",
         "line": "52",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130589"
       },
@@ -4963,7 +4949,7 @@
         "name": "建功公園",
         "name_en": "Jiangong Park",
         "line": "52",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130307"
       },
@@ -4983,7 +4969,7 @@
         "name": "建功高中",
         "name_en": "Chien-Kung Senior High School",
         "line": "52",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130308"
       },
@@ -5003,7 +4989,7 @@
         "name": "文教新村",
         "name_en": "Wen Jiao Xin Village",
         "line": "52",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130266"
       },
@@ -5023,7 +5009,7 @@
         "name": "忠貞新村",
         "name_en": "Zhong Zhen Xin Village",
         "line": "52",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130590"
       },
@@ -5043,7 +5029,7 @@
         "name": "孟竹國宅",
         "name_en": "Meng Zhu Public Housing",
         "line": "52",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130591"
       },
@@ -5063,7 +5049,7 @@
         "name": "公學新城",
         "name_en": "Gong Xue Xin Cheng",
         "line": "52",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130592"
       },
@@ -5083,7 +5069,7 @@
         "name": "愛買1站",
         "name_en": "Far Eastern Amart 1st Stop",
         "line": "52",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130593"
       },
@@ -5103,7 +5089,7 @@
         "name": "馬偕醫院",
         "name_en": "Mackay Memorial Hospital, HsinChu",
         "line": "52",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "131831"
       },
@@ -5123,7 +5109,7 @@
         "name": "二分局",
         "name_en": "Second Police Bureau",
         "line": "52",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130381"
       },
@@ -5143,7 +5129,7 @@
         "name": "東光忠孝路口",
         "name_en": "Dong Guang Zhong Xiao Road Entrance",
         "line": "52",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130382"
       },
@@ -5163,7 +5149,7 @@
         "name": "監理站",
         "name_en": "Hsinchu Motor Vehicles Office",
         "line": "52",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130383"
       },
@@ -5183,7 +5169,7 @@
         "name": "果菜市場",
         "name_en": "Fruits and Vegetables Market",
         "line": "52",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130185"
       },
@@ -5203,7 +5189,7 @@
         "name": "經國北大路口",
         "name_en": "Jing Guo Bei Da Road Entrance",
         "line": "52",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130186"
       },
@@ -5223,7 +5209,7 @@
         "name": "國華街口",
         "name_en": "Guo Hua Street Entrance",
         "line": "52",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130390"
       },
@@ -5243,7 +5229,7 @@
         "name": "中正經國路口",
         "name_en": "Zhong Zheng Jing  Guo Road Entrance",
         "line": "52",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130603"
       },
@@ -5263,7 +5249,7 @@
         "name": "鄭氏家廟",
         "name_en": "Zheng's Family shrine",
         "line": "52",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130602"
       },
@@ -5283,7 +5269,7 @@
         "name": "市政府",
         "name_en": "Hsinchu City Government",
         "line": "52",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130331"
       },
@@ -5303,7 +5289,7 @@
         "name": "美術館",
         "name_en": "Art Gallery",
         "line": "52",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130386"
       },
@@ -5323,7 +5309,7 @@
         "name": "巨城購物",
         "name_en": "Big City Mall",
         "line": "52",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130385"
       },
@@ -5343,7 +5329,7 @@
         "name": "三民國中",
         "name_en": "San Min Junior High School",
         "line": "52",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "135386"
       },
@@ -5363,7 +5349,7 @@
         "name": "監理站",
         "name_en": "Hsinchu Motor Vehicles Office",
         "line": "52",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130391"
       },
@@ -5383,7 +5369,7 @@
         "name": "東光忠孝路口",
         "name_en": "Dong Guang Zhong Xiao Road Entrance",
         "line": "52",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130392"
       },
@@ -5403,7 +5389,7 @@
         "name": "二分局",
         "name_en": "Second Police Bureau",
         "line": "52",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130747"
       },
@@ -5423,7 +5409,7 @@
         "name": "馬偕醫院",
         "name_en": "Mackay Memorial Hospital, HsinChu",
         "line": "52",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "131828"
       },
@@ -5443,7 +5429,7 @@
         "name": "愛買1站",
         "name_en": "Far Eastern Amart 1st Stop",
         "line": "52",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130594"
       },
@@ -5463,7 +5449,7 @@
         "name": "公學新城",
         "name_en": "Gong Xue Xin Cheng",
         "line": "52",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130595"
       },
@@ -5483,7 +5469,7 @@
         "name": "孟竹國宅",
         "name_en": "Meng Zhu Public Housing",
         "line": "52",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130596"
       },
@@ -5503,7 +5489,7 @@
         "name": "忠貞新村",
         "name_en": "Zhong Zhen Xin Village",
         "line": "52",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130597"
       },
@@ -5523,7 +5509,7 @@
         "name": "文教新村",
         "name_en": "Wen Jiao Xin Village",
         "line": "52",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130259"
       },
@@ -5543,7 +5529,7 @@
         "name": "建功高中",
         "name_en": "Chien-Kung Senior High School",
         "line": "52",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130265"
       },
@@ -5563,7 +5549,7 @@
         "name": "建功公園",
         "name_en": "Jiangong Park",
         "line": "52",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130263"
       },
@@ -5583,7 +5569,7 @@
         "name": "華夏金城",
         "name_en": "Huaxia Jincheng",
         "line": "52",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130598"
       },
@@ -5603,7 +5589,7 @@
         "name": "埔頂庄",
         "name_en": "Pudingzhuang",
         "line": "52",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130599"
       },
@@ -5623,7 +5609,7 @@
         "name": "好市多",
         "name_en": "Costco",
         "line": "52",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "139391"
       },
@@ -5643,7 +5629,7 @@
         "name": "慈濟路口",
         "name_en": "Ci Ji Road Entrance",
         "line": "52",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130404"
       },
@@ -5663,7 +5649,7 @@
         "name": "關埔公園",
         "name_en": "Guan Pu Park",
         "line": "52",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130369"
       },
@@ -5683,7 +5669,7 @@
         "name": "國軍新竹地區醫院",
         "name_en": "Hsin Chu Armed Force Hospital",
         "line": "52",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130163"
       },
@@ -5703,7 +5689,7 @@
         "name": "竹光新村",
         "name_en": "Zhu Guang Xin Village",
         "line": "52",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130521"
       },
@@ -5723,7 +5709,7 @@
         "name": "中正城北街口",
         "name_en": "Zhong Zheng Cheng Bei Street Entrance",
         "line": "52",
-        "color": "#9f1239",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130476"
       },

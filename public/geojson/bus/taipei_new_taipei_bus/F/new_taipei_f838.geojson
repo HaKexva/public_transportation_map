@@ -6,13 +6,14 @@
     "name": "F838",
     "name_en": "F838",
     "ref": "F838",
-    "color": "#7c2d12",
+    "color": "#6B8F9A",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.gov.taipei/File/Get/5fdf658f-664d-4a49-9fb7-90bd28f4138f?v=639248448818209359",
     "operator_id": "16251",
     "operator": "貢寮區公所",
-    "operator_en": "Gongliao District Office"
+    "operator_en": "Gongliao District Office",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "F838",
         "name": "F838",
         "name_en": "F838",
-        "color": "#7c2d12",
-        "direction": 0
+        "color": "#6B8F9A",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -3775,6 +3777,10 @@
           [
             121.908557386343,
             25.0222033500447
+          ],
+          [
+            121.908554565706,
+            25.0221718529289
           ]
         ]
       }
@@ -3787,7 +3793,7 @@
         "name": "貢寮火車站",
         "name_en": "Gongliao Rail Sta.",
         "line": "F838",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "71917"
       },
@@ -3807,7 +3813,7 @@
         "name": "貢寮行政大樓",
         "name_en": "Gongliao Administration Building",
         "line": "F838",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165608745"
       },
@@ -3827,7 +3833,7 @@
         "name": "龍門運動公園",
         "name_en": "Longmen Sports Park",
         "line": "F838",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165604828"
       },
@@ -3847,7 +3853,7 @@
         "name": "鹽寮",
         "name_en": "Yanliao",
         "line": "F838",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "71979"
       },
@@ -3867,7 +3873,7 @@
         "name": "砲台山",
         "name_en": "Paotai Mountain",
         "line": "F838",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "71963"
       },
@@ -3887,7 +3893,7 @@
         "name": "石碇橋",
         "name_en": "Jianshanjiao St. Shiding Bridge",
         "line": "F838",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "71954"
       },
@@ -3907,7 +3913,7 @@
         "name": "澳底廟口",
         "name_en": "Aodi Temple Entrance",
         "line": "F838",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "71976"
       },
@@ -3927,7 +3933,7 @@
         "name": "澳底公園",
         "name_en": "Aodi Park",
         "line": "F838",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "71952"
       },
@@ -3947,7 +3953,7 @@
         "name": "澳底醫療救護中心",
         "name_en": "Aodi health protection Station",
         "line": "F838",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "71970"
       },
@@ -3967,7 +3973,7 @@
         "name": "貢寮區漁會",
         "name_en": "Gongliao Fishermen's Assn.",
         "line": "F838",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165604065"
       },
@@ -3987,7 +3993,7 @@
         "name": "澳底國小",
         "name_en": "Aodi Elementary School",
         "line": "F838",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165604066"
       },
@@ -4007,7 +4013,7 @@
         "name": "五美市民活動中心",
         "name_en": "Wumei Community Activity Center",
         "line": "F838",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165608955"
       },
@@ -4027,7 +4033,7 @@
         "name": "丹裡街54號",
         "name_en": "No.54 Danli St.",
         "line": "F838",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165609318"
       },
@@ -4047,7 +4053,7 @@
         "name": "文秀坑橋",
         "name_en": "Wenxiukeng Bridge",
         "line": "F838",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "71905"
       },
@@ -4067,7 +4073,7 @@
         "name": "雙板橋",
         "name_en": "Shuangban Bridge",
         "line": "F838",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165604062"
       },
@@ -4087,7 +4093,7 @@
         "name": "久松蘭園路口",
         "name_en": "Jiusong Lanyuan Rd. Entrance",
         "line": "F838",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "71901"
       },
@@ -4107,7 +4113,7 @@
         "name": "福安廟",
         "name_en": "Fuan Temple",
         "line": "F838",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "71933"
       },
@@ -4127,7 +4133,7 @@
         "name": "五美市民活動中心",
         "name_en": "Wumei Community Activity Center",
         "line": "F838",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "71863"
       },
@@ -4147,7 +4153,7 @@
         "name": "澳底公園",
         "name_en": "Aodi Park",
         "line": "F838",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "71952"
       },
@@ -4167,7 +4173,7 @@
         "name": "澳底醫療救護中心",
         "name_en": "Aodi health protection Station",
         "line": "F838",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "71970"
       },
@@ -4187,7 +4193,7 @@
         "name": "貢寮區漁會",
         "name_en": "Gongliao Fishermen's Assn.",
         "line": "F838",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165604065"
       },
@@ -4207,7 +4213,7 @@
         "name": "澳底國小",
         "name_en": "Aodi Elementary School",
         "line": "F838",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165604066"
       },
@@ -4227,7 +4233,7 @@
         "name": "澳底",
         "name_en": "Aodi",
         "line": "F838",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "71969"
       },
@@ -4247,7 +4253,7 @@
         "name": "媽祖廟",
         "name_en": "Mazu Temple",
         "line": "F838",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "71951"
       },
@@ -4267,7 +4273,7 @@
         "name": "石碇橋",
         "name_en": "Shiding Bridge",
         "line": "F838",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "71953"
       },
@@ -4287,7 +4293,7 @@
         "name": "砲台山",
         "name_en": "Paotai Mountain",
         "line": "F838",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "71962"
       },
@@ -4307,7 +4313,7 @@
         "name": "鹽寮",
         "name_en": "Yanliao",
         "line": "F838",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "71980"
       },
@@ -4327,7 +4333,7 @@
         "name": "龍門運動公園",
         "name_en": "Longmen Sports Park",
         "line": "F838",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165604827"
       },
@@ -4347,7 +4353,7 @@
         "name": "龍門停車場",
         "name_en": "Longmen Parking Tower",
         "line": "F838",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "71853"
       },
@@ -4367,7 +4373,7 @@
         "name": "龍門街11-2號",
         "name_en": "No.11-2 Longmen St.",
         "line": "F838",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165608961"
       },
@@ -4387,7 +4393,7 @@
         "name": "舊社",
         "name_en": "Jiushe",
         "line": "F838",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "71946"
       },
@@ -4407,7 +4413,7 @@
         "name": "貢寮行政大樓",
         "name_en": "Gongliao Administration Building",
         "line": "F838",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165608745"
       },
@@ -4427,7 +4433,7 @@
         "name": "貢寮火車站",
         "name_en": "Gongliao Rail Sta.",
         "line": "F838",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "71918"
       },

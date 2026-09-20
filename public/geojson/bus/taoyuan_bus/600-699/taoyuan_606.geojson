@@ -6,13 +6,14 @@
     "name": "606",
     "name_en": "606",
     "ref": "606",
-    "color": "#7c3aed",
+    "color": "#16A34A",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/6060/map/1815/image",
     "operator_id": "9",
     "operator": "三重客運",
-    "operator_en": "San Chung Bus Co., Ltd."
+    "operator_en": "San Chung Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "606",
         "name": "606",
         "name_en": "606",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#16A34A",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -783,6 +785,10 @@
           [
             121.3853,
             25.04106
+          ],
+          [
+            121.3853,
+            25.04099
           ]
         ]
       }
@@ -795,7 +801,7 @@
         "name": "捷運體育大學站",
         "name_en": "MRT National Taiwan Sport University Station",
         "line": "606",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "5327"
       },
@@ -815,7 +821,7 @@
         "name": "樂善寺",
         "name_en": "Leshan Temple",
         "line": "606",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "5500"
       },
@@ -835,7 +841,7 @@
         "name": "後厝",
         "name_en": "Houcuo",
         "line": "606",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6846"
       },
@@ -855,7 +861,7 @@
         "name": "大崗國中",
         "name_en": "Da Gang Junior High School",
         "line": "606",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6540"
       },
@@ -875,7 +881,7 @@
         "name": "文化二路",
         "name_en": "Wenhua 2nd Road",
         "line": "606",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6666"
       },
@@ -895,7 +901,7 @@
         "name": "公園路口",
         "name_en": "Gongyuan Rd. Intersection",
         "line": "606",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6664"
       },
@@ -915,7 +921,7 @@
         "name": "長庚醫院",
         "name_en": "Chang-Gung Memorial Hospital",
         "line": "606",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "5064"
       },
@@ -935,7 +941,7 @@
         "name": "南亞塑膠",
         "name_en": "Nan Ya Plastics Corporation",
         "line": "606",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "5287"
       },
@@ -955,7 +961,7 @@
         "name": "文明路",
         "name_en": "Wenming Road",
         "line": "606",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "3816"
       },
@@ -975,7 +981,7 @@
         "name": "文明文德二路口",
         "name_en": "Wenming and Wende 2nd. Rd. Intersection",
         "line": "606",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6847"
       },
@@ -995,7 +1001,7 @@
         "name": "樂學二三路口",
         "name_en": "Lexue 2nd and 3rd Rd. Intersection",
         "line": "606",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6672"
       },
@@ -1015,7 +1021,7 @@
         "name": "樂善國小",
         "name_en": "Leshan Elementary School",
         "line": "606",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6673"
       },
@@ -1035,7 +1041,7 @@
         "name": "文達樂學路口",
         "name_en": "Wenda and Lexue Road Intersection",
         "line": "606",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6674"
       },
@@ -1055,7 +1061,7 @@
         "name": "文化一樂善二路口",
         "name_en": "Wenhua 1st. and Leshan 2nd. Rd. Intersection",
         "line": "606",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6197"
       },
@@ -1075,7 +1081,7 @@
         "name": "捷運體育大學站",
         "name_en": "MRT National Taiwan Sport University Station",
         "line": "606",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "5327"
       },

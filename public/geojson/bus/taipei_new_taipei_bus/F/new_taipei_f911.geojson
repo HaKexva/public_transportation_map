@@ -6,13 +6,14 @@
     "name": "F911",
     "name_en": "F911",
     "ref": "F911",
-    "color": "#166534",
+    "color": "#6B8F9A",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.gov.taipei/File/Get/7b720bfe-b661-45f4-a518-40867523fc81?v=639248448824928084",
     "operator_id": "16254",
     "operator": "汐止區公所",
-    "operator_en": "Xizhi District Office"
+    "operator_en": "Xizhi District Office",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "F911",
         "name": "F911",
         "name_en": "F911",
-        "color": "#166534",
-        "direction": 0
+        "color": "#6B8F9A",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1235,6 +1237,10 @@
           [
             121.662582148639,
             25.0695742289947
+          ],
+          [
+            121.661830881188,
+            25.0691759114527
           ]
         ]
       }
@@ -1246,7 +1252,7 @@
         "ref": "F911",
         "name": "F911",
         "name_en": "F911",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 1
       },
       "geometry": {
@@ -1879,7 +1885,7 @@
         "name": "汐止",
         "name_en": "Xizhi",
         "line": "F911",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1001113"
       },
@@ -1899,7 +1905,7 @@
         "name": "汐止公園",
         "name_en": "Xizhi Park",
         "line": "F911",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "7630"
       },
@@ -1919,7 +1925,7 @@
         "name": "黃昏市場",
         "name_en": "Sunset Market",
         "line": "F911",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165609095"
       },
@@ -1939,7 +1945,7 @@
         "name": "汐止區公所(仁愛路)",
         "name_en": "Xizhi District Office(Renai Rd.)",
         "line": "F911",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70956"
       },
@@ -1959,7 +1965,7 @@
         "name": "靜修禪院",
         "name_en": "Jingxiu Temple",
         "line": "F911",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70982"
       },
@@ -1979,7 +1985,7 @@
         "name": "環山路口",
         "name_en": "Huanshan Rd. Entrance",
         "line": "F911",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165605495"
       },
@@ -1999,7 +2005,7 @@
         "name": "世運村",
         "name_en": "Shiyun Village",
         "line": "F911",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70889"
       },
@@ -2019,7 +2025,7 @@
         "name": "馥記山莊",
         "name_en": "Fuji Village",
         "line": "F911",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165605497"
       },
@@ -2039,7 +2045,7 @@
         "name": "六角亭",
         "name_en": "Liujiao Pavilion",
         "line": "F911",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165605498"
       },
@@ -2059,7 +2065,7 @@
         "name": "天秀宮",
         "name_en": "Tianxiu Temple",
         "line": "F911",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70918"
       },
@@ -2079,7 +2085,7 @@
         "name": "六角亭",
         "name_en": "Liujiao Pavilion",
         "line": "F911",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70898"
       },
@@ -2099,7 +2105,7 @@
         "name": "馥記山莊",
         "name_en": "Fuji Village",
         "line": "F911",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "71068"
       },
@@ -2119,7 +2125,7 @@
         "name": "世運村",
         "name_en": "Shiyun Village",
         "line": "F911",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165605496"
       },
@@ -2139,7 +2145,7 @@
         "name": "環山路口",
         "name_en": "Huanshan Rd. Entrance",
         "line": "F911",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "71067"
       },
@@ -2159,7 +2165,7 @@
         "name": "靜修禪院",
         "name_en": "Jingxiu Temple",
         "line": "F911",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165608916"
       },
@@ -2179,7 +2185,7 @@
         "name": "汐止區公所(仁愛路)",
         "name_en": "Xizhi District Office(Renai Rd.)",
         "line": "F911",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603895"
       },
@@ -2199,7 +2205,7 @@
         "name": "黃昏市場",
         "name_en": "Sunset Market",
         "line": "F911",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165609075"
       },
@@ -2219,7 +2225,7 @@
         "name": "汐止公園",
         "name_en": "Xizhi Park",
         "line": "F911",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165604554"
       },
@@ -2239,7 +2245,7 @@
         "name": "汐止火車站",
         "name_en": "Xizhi Rail Sta.",
         "line": "F911",
-        "color": "#166534",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165610015"
       },

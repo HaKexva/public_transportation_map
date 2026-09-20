@@ -24,6 +24,7 @@ module Views
             map_auto_default_layers_value: "false",
             map_routes_manifest_url_value: static_geojson_url("geojson/routes.json"),
             map_metro_depots_url_value: static_geojson_url("geojson/metro_depots.json"),
+            map_bus_depots_url_value: static_geojson_url("geojson/bus_depots.json"),
             map_out_of_station_transfers_url_value: static_geojson_url("geojson/out_of_station_transfers.json")
           },
           aria: { busy: "true" }
@@ -217,6 +218,7 @@ module Views
             note: t("map.legend_markers.airport_mrt_transfer.note")
           },
           { label: t("map.legend_markers.depot"), type: :depot, color: "#64748B" },
+          { label: t("map.legend_markers.bus_dispatch"), type: :bus_dispatch, color: "#2563eb" },
           { label: t("map.legend_markers.out_of_station.label"), type: :out_of_station, color: "#737373", note: t("map.legend_markers.out_of_station.note") },
           { label: t("map.legend_markers.angle_station"), type: :angle_station, color: "#00AFE2" }
         ]
@@ -447,6 +449,12 @@ module Views
         when :depot
           div(
             class: "metro-depot-marker map-legend-depot-marker",
+            style: "--depot-color: #{item[:color]}",
+            aria: { hidden: true }
+          )
+        when :bus_dispatch
+          div(
+            class: "bus-depot-marker map-legend-depot-marker",
             style: "--depot-color: #{item[:color]}",
             aria: { hidden: true }
           )
@@ -745,6 +753,14 @@ module Views
                 render RubyUI::Text.new(as: "span", size: "2", class: "truncate font-medium leading-tight") { label }
               end
             end
+            unless city_routes.empty?
+              render_compact_select_all(
+                id: "bus-GreaterTaipei",
+                action: "click->map#stopCheckboxEvent change->map#toggleRouteGroup",
+                bus_group_param: "GreaterTaipei",
+                label: t("map.select_all_bus_city", label: label)
+              )
+            end
           end
 
           render RubyUI::CollapsibleContent.new(class: "hidden pl-3") do
@@ -781,6 +797,14 @@ module Views
                 render_fold_chevron
                 render RubyUI::Text.new(as: "span", size: "2", class: "truncate font-medium leading-tight") { label }
               end
+            end
+            unless city_routes.empty?
+              render_compact_select_all(
+                id: "bus-#{city.id}",
+                action: "click->map#stopCheckboxEvent change->map#toggleRouteGroup",
+                bus_group_param: city.id,
+                label: t("map.select_all_bus_city", label: label)
+              )
             end
           end
 
@@ -930,13 +954,14 @@ module Views
         end
       end
 
-      def render_compact_select_all(id:, action:, label:, metro_system_param: nil, route_ids_param: nil)
+      def render_compact_select_all(id:, action:, label:, metro_system_param: nil, route_ids_param: nil, bus_group_param: nil)
         checkbox_data = {
-          map_target: route_ids_param.present? ? "layerCheckbox routeGroupCheckbox" : "layerCheckbox",
+          map_target: (route_ids_param.present? || bus_group_param.present?) ? "layerCheckbox routeGroupCheckbox" : "layerCheckbox",
           action: action
         }
         checkbox_data[:map_metro_system_param] = metro_system_param if metro_system_param
         checkbox_data[:map_route_ids_param] = route_ids_param if route_ids_param.present?
+        checkbox_data[:map_bus_group_param] = bus_group_param if bus_group_param.present?
 
         label(class: "inline-flex shrink-0 cursor-pointer items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground") do
           input(

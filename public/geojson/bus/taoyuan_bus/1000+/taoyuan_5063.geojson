@@ -6,13 +6,14 @@
     "name": "5063",
     "name_en": "5063",
     "ref": "5063",
-    "color": "#b91c1c",
+    "color": "#b45309",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/5063/map/2355/image",
     "operator_id": "1",
     "operator": "桃園客運",
-    "operator_en": "Taoyuan Bus Co., Ltd."
+    "operator_en": "Taoyuan Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "5063",
         "name": "5063",
         "name_en": "5063",
-        "color": "#b91c1c",
-        "direction": 0
+        "color": "#b45309",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1247,6 +1249,10 @@
           [
             121.31547,
             24.98993
+          ],
+          [
+            121.31501,
+            24.98987
           ]
         ]
       }
@@ -1259,7 +1265,7 @@
         "name": "桃園火車站",
         "name_en": "Taoyuan Train Station",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6549"
       },
@@ -1279,7 +1285,7 @@
         "name": "萬壽山鶯路口",
         "name_en": "Wanshou Shanying Rd. Intersection",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3884"
       },
@@ -1299,7 +1305,7 @@
         "name": "青果中心",
         "name_en": "Cingguo Fruits Center",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3577"
       },
@@ -1319,7 +1325,7 @@
         "name": "頂興路口",
         "name_en": "Dingxing Road Intersection",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3578"
       },
@@ -1339,7 +1345,7 @@
         "name": "拔仔埔",
         "name_en": "Bazipu",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3586"
       },
@@ -1359,7 +1365,7 @@
         "name": "陸光二村",
         "name_en": "Luguang 2nd Village",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3588"
       },
@@ -1379,7 +1385,7 @@
         "name": "萬壽中興路口",
         "name_en": "Wanshou Jhongsing Rd. Intersection",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3590"
       },
@@ -1399,7 +1405,7 @@
         "name": "龜山",
         "name_en": "Guishan",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3591"
       },
@@ -1419,7 +1425,7 @@
         "name": "龜山國中",
         "name_en": "Guei Shan Junior High School",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5349"
       },
@@ -1439,7 +1445,7 @@
         "name": "千禧新城",
         "name_en": "Qianxixincheng",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3724"
       },
@@ -1459,7 +1465,7 @@
         "name": "陸光三村",
         "name_en": "Luguang 3rd Village",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6265"
       },
@@ -1479,7 +1485,7 @@
         "name": "精忠五村",
         "name_en": "Jingzhong 5th Village",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6266"
       },
@@ -1499,7 +1505,7 @@
         "name": "楓樹社區",
         "name_en": "Fengshu Community",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6109"
       },
@@ -1519,7 +1525,7 @@
         "name": "宏洲公司",
         "name_en": "Hongzhou Company",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4707"
       },
@@ -1539,7 +1545,7 @@
         "name": "洪厝",
         "name_en": "Hongcuo",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1966"
       },
@@ -1559,7 +1565,7 @@
         "name": "卓厝",
         "name_en": "Zhuocuo",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6107"
       },
@@ -1579,7 +1585,7 @@
         "name": "楓樹林",
         "name_en": "Fengshulin",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5541"
       },
@@ -1599,7 +1605,7 @@
         "name": "楓樹坑",
         "name_en": "Fengshukeng",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6105"
       },
@@ -1619,7 +1625,7 @@
         "name": "上楓樹林",
         "name_en": "Shangfengshulin",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4693"
       },
@@ -1639,7 +1645,7 @@
         "name": "上卓厝",
         "name_en": "Shangzhuocuo",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6213"
       },
@@ -1659,7 +1665,7 @@
         "name": "光華坑",
         "name_en": "Guanghuakeng",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6111"
       },
@@ -1679,7 +1685,7 @@
         "name": "中湖",
         "name_en": "Zhonghu",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6103"
       },
@@ -1699,7 +1705,7 @@
         "name": "下湖",
         "name_en": "Xiahu",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6267"
       },
@@ -1719,7 +1725,7 @@
         "name": "大崗",
         "name_en": "Dagang",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6211"
       },
@@ -1739,7 +1745,7 @@
         "name": "警察大學",
         "name_en": "Central Police University",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6400"
       },
@@ -1759,7 +1765,7 @@
         "name": "頂湖",
         "name_en": "Dinghu",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "493"
       },
@@ -1779,7 +1785,7 @@
         "name": "新世紀",
         "name_en": "Xinshiji",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5525"
       },
@@ -1799,7 +1805,7 @@
         "name": "大崗郵局",
         "name_en": "Dagang Post Office",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5523"
       },
@@ -1819,7 +1825,7 @@
         "name": "大湖",
         "name_en": "Dahu",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5082"
       },
@@ -1839,7 +1845,7 @@
         "name": "坪頂",
         "name_en": "Pingding",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5521"
       },
@@ -1859,7 +1865,7 @@
         "name": "大湖紀念公園",
         "name_en": "Dahu Memorial Park",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1234"
       },
@@ -1879,7 +1885,7 @@
         "name": "忠義路口",
         "name_en": "Zhongyi Road Intersection",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6102"
       },
@@ -1899,7 +1905,7 @@
         "name": "復興街",
         "name_en": "Fuxing Street",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5519"
       },
@@ -1919,7 +1925,7 @@
         "name": "公西",
         "name_en": "Gongxi",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4892"
       },
@@ -1939,7 +1945,7 @@
         "name": "捷運林口站(龜山一路)",
         "name_en": "MRT Linkou Station (Guishan 1st Rd.)",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5332"
       },
@@ -1959,7 +1965,7 @@
         "name": "華夏大飯店",
         "name_en": "Highness Hotel",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3516"
       },
@@ -1979,7 +1985,7 @@
         "name": "醫學大樓",
         "name_en": "Medical Building",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4473"
       },
@@ -1999,7 +2005,7 @@
         "name": "長庚醫院",
         "name_en": "Chang-Gung Memorial Hospital",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5064"
       },
@@ -2019,7 +2025,7 @@
         "name": "崇林國中",
         "name_en": "Chonglin Junior High School",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4690"
       },
@@ -2039,7 +2045,7 @@
         "name": "國家檔案館",
         "name_en": "National Archives",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1475"
       },
@@ -2059,7 +2065,7 @@
         "name": "林口國中",
         "name_en": "Linkou Junior High School",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4688"
       },
@@ -2079,7 +2085,7 @@
         "name": "馥都社區",
         "name_en": "Wenhua Fudu Community",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5275"
       },
@@ -2099,7 +2105,7 @@
         "name": "東湖頭",
         "name_en": "Donghutou",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4686"
       },
@@ -2119,7 +2125,7 @@
         "name": "湖南里",
         "name_en": "Hunan Village",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4684"
       },
@@ -2139,7 +2145,7 @@
         "name": "頭湖路口",
         "name_en": "Touhu Road Intersection",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4682"
       },
@@ -2159,7 +2165,7 @@
         "name": "林口農會",
         "name_en": "Linkou Farmer Assc.",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4680"
       },
@@ -2179,7 +2185,7 @@
         "name": "中山路口",
         "name_en": "Zhongshan Road Intersection",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4677"
       },
@@ -2199,7 +2205,7 @@
         "name": "林口",
         "name_en": "Linkou",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4675"
       },
@@ -2219,7 +2225,7 @@
         "name": "醒吾科技大學",
         "name_en": "Hsing Wu University",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4673"
       },
@@ -2239,7 +2245,7 @@
         "name": "醒吾科技大學",
         "name_en": "Hsing Wu University of Technology",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4672"
       },
@@ -2259,7 +2265,7 @@
         "name": "林口",
         "name_en": "Linkou",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4674"
       },
@@ -2279,7 +2285,7 @@
         "name": "中山路口",
         "name_en": "Zhongshan Road Intersection",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4676"
       },
@@ -2299,7 +2305,7 @@
         "name": "林口農會",
         "name_en": "Linkou Farmer Assc.",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4679"
       },
@@ -2319,7 +2325,7 @@
         "name": "頭湖路口",
         "name_en": "Touhu Road Intersection",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4681"
       },
@@ -2339,7 +2345,7 @@
         "name": "湖南里",
         "name_en": "Hunan Village",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4683"
       },
@@ -2359,7 +2365,7 @@
         "name": "東湖頭",
         "name_en": "Donghutou",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4685"
       },
@@ -2379,7 +2385,7 @@
         "name": "馥都社區",
         "name_en": "Wenhua Fudu Community",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5276"
       },
@@ -2399,7 +2405,7 @@
         "name": "林口國中",
         "name_en": "Linkou Junior High School",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4687"
       },
@@ -2419,7 +2425,7 @@
         "name": "國家檔案館",
         "name_en": "National Archives",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1474"
       },
@@ -2439,7 +2445,7 @@
         "name": "崇林國中",
         "name_en": "Chonglin Junior High School",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4689"
       },
@@ -2459,7 +2465,7 @@
         "name": "林口長庚醫院",
         "name_en": "Linkou Chang Gung Memorial Hospital",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2538"
       },
@@ -2479,7 +2485,7 @@
         "name": "醫學大樓",
         "name_en": "Medical Building",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4472"
       },
@@ -2499,7 +2505,7 @@
         "name": "華夏大飯店",
         "name_en": "Highness Hotel",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3515"
       },
@@ -2519,7 +2525,7 @@
         "name": "上公西",
         "name_en": "Shanggongxi",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6555"
       },
@@ -2539,7 +2545,7 @@
         "name": "公西",
         "name_en": "Gongxi",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4891"
       },
@@ -2559,7 +2565,7 @@
         "name": "復興街",
         "name_en": "Fuxing Street",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5518"
       },
@@ -2579,7 +2585,7 @@
         "name": "忠義路口",
         "name_en": "Zhongyi Road Intersection",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6101"
       },
@@ -2599,7 +2605,7 @@
         "name": "大湖紀念公園",
         "name_en": "Dahu Memorial Park",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1233"
       },
@@ -2619,7 +2625,7 @@
         "name": "坪頂",
         "name_en": "Pingding",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5520"
       },
@@ -2639,7 +2645,7 @@
         "name": "大湖",
         "name_en": "Dahu",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5083"
       },
@@ -2659,7 +2665,7 @@
         "name": "大崗郵局",
         "name_en": "Dagang Post Office",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5522"
       },
@@ -2679,7 +2685,7 @@
         "name": "新世紀",
         "name_en": "Xinshiji",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5524"
       },
@@ -2699,7 +2705,7 @@
         "name": "頂湖",
         "name_en": "Dinghu",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6268"
       },
@@ -2719,7 +2725,7 @@
         "name": "警察大學",
         "name_en": "Central Police University",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6264"
       },
@@ -2739,7 +2745,7 @@
         "name": "大崗",
         "name_en": "Dagang",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6212"
       },
@@ -2759,7 +2765,7 @@
         "name": "下湖",
         "name_en": "Xiahu",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4715"
       },
@@ -2779,7 +2785,7 @@
         "name": "中湖",
         "name_en": "Zhonghu",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6104"
       },
@@ -2799,7 +2805,7 @@
         "name": "光華坑",
         "name_en": "Guanghuakeng",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6112"
       },
@@ -2819,7 +2825,7 @@
         "name": "上卓厝",
         "name_en": "Shangzhuocuo",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6214"
       },
@@ -2839,7 +2845,7 @@
         "name": "上楓樹林",
         "name_en": "Shangfengshulin",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4692"
       },
@@ -2859,7 +2865,7 @@
         "name": "楓樹坑",
         "name_en": "Fengshukeng",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6106"
       },
@@ -2879,7 +2885,7 @@
         "name": "楓樹林",
         "name_en": "Fengshulin",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5540"
       },
@@ -2899,7 +2905,7 @@
         "name": "卓厝",
         "name_en": "Zhuocuo",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6108"
       },
@@ -2919,7 +2925,7 @@
         "name": "洪厝",
         "name_en": "Hongcuo",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1965"
       },
@@ -2939,7 +2945,7 @@
         "name": "宏洲公司",
         "name_en": "Hongzhou Company",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6263"
       },
@@ -2959,7 +2965,7 @@
         "name": "楓樹社區",
         "name_en": "Fengshu Community",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6110"
       },
@@ -2979,7 +2985,7 @@
         "name": "精忠五村",
         "name_en": "Jingzhong 5th Village",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4714"
       },
@@ -2999,7 +3005,7 @@
         "name": "陸光三村",
         "name_en": "Luguang 3rd Village",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4712"
       },
@@ -3019,7 +3025,7 @@
         "name": "千禧新城",
         "name_en": "Qianxixincheng",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3723"
       },
@@ -3039,7 +3045,7 @@
         "name": "龜山國中",
         "name_en": "Guishan Junior High School",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5348"
       },
@@ -3059,7 +3065,7 @@
         "name": "龜山",
         "name_en": "Guishan",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6288"
       },
@@ -3079,7 +3085,7 @@
         "name": "萬壽中興路口",
         "name_en": "Wanshou Jhongsing Rd. Intersection",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3592"
       },
@@ -3099,7 +3105,7 @@
         "name": "陸光二村",
         "name_en": "Luguang 2nd Village",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3589"
       },
@@ -3119,7 +3125,7 @@
         "name": "拔仔埔",
         "name_en": "Bazipu",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3587"
       },
@@ -3139,7 +3145,7 @@
         "name": "頂興路口",
         "name_en": "Dingxing Road Intersection",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3579"
       },
@@ -3159,7 +3165,7 @@
         "name": "萬壽山鶯路口",
         "name_en": "Wanshou Shanying Rd. Intersection",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3883"
       },
@@ -3179,7 +3185,7 @@
         "name": "東山里",
         "name_en": "DungShan Village",
         "line": "5063",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3504"
       },

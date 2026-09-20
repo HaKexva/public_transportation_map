@@ -6,13 +6,14 @@
     "name": "紅57區間車",
     "name_en": "紅57區間車",
     "ref": "紅57區間車",
-    "color": "#9a3412",
+    "color": "#115e59",
     "city_id": "Kaohsiung",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ibus.tbkc.gov.tw/cms/api/route/8571/map/1798/image",
     "operator_id": "10360",
     "operator": "港都客運",
-    "operator_en": "Great-City-Life Bus Co., Ltd."
+    "operator_en": "Great-City-Life Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,7 +23,7 @@
         "ref": "紅57區間車",
         "name": "紅57區間車",
         "name_en": "紅57區間車",
-        "color": "#9a3412",
+        "color": "#115e59",
         "direction": 1
       },
       "geometry": {
@@ -522,8 +523,9 @@
         "ref": "紅57區間車",
         "name": "紅57區間車",
         "name_en": "紅57區間車",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#115e59",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -719,6 +721,10 @@
           [
             120.30613,
             22.71901
+          ],
+          [
+            120.3061,
+            22.71916
           ]
         ]
       }
@@ -731,7 +737,7 @@
         "name": "捷運楠梓科技園區站(園區內)",
         "name_en": "MRT Nanzih Technology Industrial Park (Industrial Park)",
         "line": "紅57區間車",
-        "color": "#9a3412",
+        "color": "#115e59",
         "direction": 0,
         "station_id": "1982"
       },
@@ -751,7 +757,7 @@
         "name": "中一街",
         "name_en": "Jhongyi St.",
         "line": "紅57區間車",
-        "color": "#9a3412",
+        "color": "#115e59",
         "direction": 0,
         "station_id": "1265"
       },
@@ -771,7 +777,7 @@
         "name": "東三街",
         "name_en": "E. 3rd St.",
         "line": "紅57區間車",
-        "color": "#9a3412",
+        "color": "#115e59",
         "direction": 0,
         "station_id": "2552"
       },
@@ -791,7 +797,7 @@
         "name": "新經一路",
         "name_en": "Sinjing 1st Rd.",
         "line": "紅57區間車",
-        "color": "#9a3412",
+        "color": "#115e59",
         "direction": 0,
         "station_id": "3112"
       },
@@ -811,7 +817,7 @@
         "name": "東六新經路口",
         "name_en": "E. 6th Sinjing Rd. Intersection",
         "line": "紅57區間車",
-        "color": "#9a3412",
+        "color": "#115e59",
         "direction": 0,
         "station_id": "1763"
       },
@@ -831,7 +837,7 @@
         "name": "員工服務中心",
         "name_en": "Employee Service Center",
         "line": "紅57區間車",
-        "color": "#9a3412",
+        "color": "#115e59",
         "direction": 0,
         "station_id": "1974"
       },
@@ -851,7 +857,7 @@
         "name": "中二街",
         "name_en": "Jhonger St.",
         "line": "紅57區間車",
-        "color": "#9a3412",
+        "color": "#115e59",
         "direction": 0,
         "station_id": "5006"
       },
@@ -871,7 +877,7 @@
         "name": "中三街",
         "name_en": "Jhongsan St.",
         "line": "紅57區間車",
-        "color": "#9a3412",
+        "color": "#115e59",
         "direction": 0,
         "station_id": "4823"
       },
@@ -891,7 +897,7 @@
         "name": "經六內環北路口",
         "name_en": "Jing 6th neihuan N. Rd. Intersection",
         "line": "紅57區間車",
-        "color": "#9a3412",
+        "color": "#115e59",
         "direction": 0,
         "station_id": "2544"
       },
@@ -911,7 +917,7 @@
         "name": "經六路",
         "name_en": "Jing 6th Rd.",
         "line": "紅57區間車",
-        "color": "#9a3412",
+        "color": "#115e59",
         "direction": 0,
         "station_id": "1838"
       },
@@ -931,7 +937,7 @@
         "name": "經六西二街口",
         "name_en": "Jing 6th W. 2nd St. Intersection",
         "line": "紅57區間車",
-        "color": "#9a3412",
+        "color": "#115e59",
         "direction": 0,
         "station_id": "2545"
       },
@@ -951,7 +957,7 @@
         "name": "經五開發路口",
         "name_en": "Jing 5th Kaifa Rd. Intersection",
         "line": "紅57區間車",
-        "color": "#9a3412",
+        "color": "#115e59",
         "direction": 0,
         "station_id": "1399"
       },
@@ -971,7 +977,7 @@
         "name": "捷運楠梓科技園區站(園區內)",
         "name_en": "MRT Nanzih Technology Industrial Park (Industrial Park)",
         "line": "紅57區間車",
-        "color": "#9a3412",
+        "color": "#115e59",
         "direction": 0,
         "station_id": "1982"
       },

@@ -6,13 +6,14 @@
     "name": "62",
     "name_en": "62",
     "ref": "62",
-    "color": "#155e75",
+    "color": "#4f46e5",
     "city_id": "HsinchuCounty",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://web.taiwanbus.tw/MISUploadData/Schematic/file/0082.jpg",
     "operator_id": "18",
     "operator": "科技之星交通",
-    "operator_en": "KJ-Star Bus Co., Ltd."
+    "operator_en": "KJ-Star Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "62",
         "name": "62",
         "name_en": "62",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#4f46e5",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -5475,6 +5477,10 @@
           [
             121.00888,
             24.82738
+          ],
+          [
+            121.00905,
+            24.82745
           ]
         ]
       }
@@ -5487,7 +5493,7 @@
         "name": "家樂福",
         "name_en": "Carrefour",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "133181"
       },
@@ -5507,7 +5513,7 @@
         "name": "衛生所",
         "name_en": "Township Health Station",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "133286"
       },
@@ -5527,7 +5533,7 @@
         "name": "新仁大安醫院",
         "name_en": "Xinren Daan Hospital",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "133287"
       },
@@ -5547,7 +5553,7 @@
         "name": "竹北火車站",
         "name_en": "TRA Zhubei Station",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "133197"
       },
@@ -5567,7 +5573,7 @@
         "name": "彰化銀行",
         "name_en": "Chang Hwa Bank",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "133347"
       },
@@ -5587,7 +5593,7 @@
         "name": "棕櫚泉社區",
         "name_en": "Zong Lyu Chyuan Community",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "143362"
       },
@@ -5607,7 +5613,7 @@
         "name": "南茂科技",
         "name_en": "Chipmos",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "135819"
       },
@@ -5627,7 +5633,7 @@
         "name": "中泰",
         "name_en": "Jhong Tai",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "143364"
       },
@@ -5647,7 +5653,7 @@
         "name": "泰和里",
         "name_en": "Tai Han Village",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "133350"
       },
@@ -5667,7 +5673,7 @@
         "name": "中泰路口",
         "name_en": "Zhong Tai Rd. Intersection",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "133192"
       },
@@ -5687,7 +5693,7 @@
         "name": "市公所",
         "name_en": "ZhuBei City Office",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "133185"
       },
@@ -5707,7 +5713,7 @@
         "name": "飛利浦站",
         "name_en": "Fei Li Pu",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "142763"
       },
@@ -5727,7 +5733,7 @@
         "name": "泰和一街口",
         "name_en": "TaiHe 1st St. Intersection",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "133351"
       },
@@ -5747,7 +5753,7 @@
         "name": "東華",
         "name_en": "Dung Hua",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "133352"
       },
@@ -5767,7 +5773,7 @@
         "name": "貓兒錠口",
         "name_en": "MaoerDingKou",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "133353"
       },
@@ -5787,7 +5793,7 @@
         "name": "田中央",
         "name_en": "Tianzhongyang",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "138592"
       },
@@ -5807,7 +5813,7 @@
         "name": "大眉",
         "name_en": "DaMei",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "133354"
       },
@@ -5827,7 +5833,7 @@
         "name": "逸境新村",
         "name_en": "YiJing Village",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "133355"
       },
@@ -5847,7 +5853,7 @@
         "name": "鳳山崎",
         "name_en": "FengShanQi",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "133356"
       },
@@ -5867,7 +5873,7 @@
         "name": "土地公",
         "name_en": "Tudigong",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "138594"
       },
@@ -5887,7 +5893,7 @@
         "name": "田九厝",
         "name_en": "TianJiuCuo",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "133357"
       },
@@ -5907,7 +5913,7 @@
         "name": "金興",
         "name_en": "JinXing",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "133358"
       },
@@ -5927,7 +5933,7 @@
         "name": "上園頂",
         "name_en": "Shang Yuan Ding",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "143366"
       },
@@ -5947,7 +5953,7 @@
         "name": "園頂",
         "name_en": "YuanDing",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "133359"
       },
@@ -5967,7 +5973,7 @@
         "name": "青山鳳凰宮",
         "name_en": "Qingshanfenghuanggong",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "138596"
       },
@@ -5987,7 +5993,7 @@
         "name": "東勢口",
         "name_en": "DongShiKou",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "133360"
       },
@@ -6007,7 +6013,7 @@
         "name": "鳳岡國中",
         "name_en": "FengGang Junior High School",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "133361"
       },
@@ -6027,7 +6033,7 @@
         "name": "鳳岡國小",
         "name_en": "FengGang Elementary School",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "133362"
       },
@@ -6047,7 +6053,7 @@
         "name": "稻花香",
         "name_en": "Daohuaxiang",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "138598"
       },
@@ -6067,7 +6073,7 @@
         "name": "庄頭",
         "name_en": "Zhuang Tou",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "133363"
       },
@@ -6087,7 +6093,7 @@
         "name": "崇義村",
         "name_en": "Chongyi Village",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "138600"
       },
@@ -6107,7 +6113,7 @@
         "name": "崁頂",
         "name_en": "Kan Ding",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "133364"
       },
@@ -6127,7 +6133,7 @@
         "name": "德惠宮",
         "name_en": "De Hui Temple",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "133365"
       },
@@ -6147,7 +6153,7 @@
         "name": "崁仔腳",
         "name_en": "KanZiJiao",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "133366"
       },
@@ -6167,7 +6173,7 @@
         "name": "拔仔窟",
         "name_en": "BaZaiKu",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "133367"
       },
@@ -6187,7 +6193,7 @@
         "name": "園仔頂",
         "name_en": "YuanZaiDing",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "133369"
       },
@@ -6207,7 +6213,7 @@
         "name": "田心子",
         "name_en": "TianXinZi",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "133368"
       },
@@ -6227,7 +6233,7 @@
         "name": "尚海灘",
         "name_en": "Shanghaitan",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "138602"
       },
@@ -6247,7 +6253,7 @@
         "name": "庄尾",
         "name_en": "ZhuangWei",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "133370"
       },
@@ -6267,7 +6273,7 @@
         "name": "山腳",
         "name_en": "ShanJiao",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "133371"
       },
@@ -6287,7 +6293,7 @@
         "name": "蓮花寺入口",
         "name_en": "LianHua Temple Entrance",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "133372"
       },
@@ -6307,7 +6313,7 @@
         "name": "蓮花寺",
         "name_en": "LianHua Temple",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "133373"
       },
@@ -6327,7 +6333,7 @@
         "name": "蓮花寺入口",
         "name_en": "LianHua Temple Entrance",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "133374"
       },
@@ -6347,7 +6353,7 @@
         "name": "山腳",
         "name_en": "ShanJiao",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "133375"
       },
@@ -6367,7 +6373,7 @@
         "name": "庄尾",
         "name_en": "ZhuangWei",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "133376"
       },
@@ -6387,7 +6393,7 @@
         "name": "尚海灘",
         "name_en": "Shanghaitan",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "138603"
       },
@@ -6407,7 +6413,7 @@
         "name": "田心子",
         "name_en": "TianXinZi",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "133378"
       },
@@ -6427,7 +6433,7 @@
         "name": "園仔頂",
         "name_en": "YuanZaiDing",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "133377"
       },
@@ -6447,7 +6453,7 @@
         "name": "拔仔窟",
         "name_en": "BaZaiKu",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "133379"
       },
@@ -6467,7 +6473,7 @@
         "name": "崁仔腳",
         "name_en": "KanZiJiao",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "133380"
       },
@@ -6487,7 +6493,7 @@
         "name": "德惠宮",
         "name_en": "De Hui Temple",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "133381"
       },
@@ -6507,7 +6513,7 @@
         "name": "崁頂",
         "name_en": "Kan Ding",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "133382"
       },
@@ -6527,7 +6533,7 @@
         "name": "崇義村",
         "name_en": "Chongyi Village",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "138601"
       },
@@ -6547,7 +6553,7 @@
         "name": "庄頭",
         "name_en": "Zhuang Tou",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "133383"
       },
@@ -6567,7 +6573,7 @@
         "name": "稻花香",
         "name_en": "Daohuaxiang",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "138599"
       },
@@ -6587,7 +6593,7 @@
         "name": "鳳岡國小",
         "name_en": "FengGang Elementary School",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "133384"
       },
@@ -6607,7 +6613,7 @@
         "name": "鳳岡國中",
         "name_en": "FengGang Junior High School",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "133385"
       },
@@ -6627,7 +6633,7 @@
         "name": "東勢口",
         "name_en": "DongShiKou",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "133386"
       },
@@ -6647,7 +6653,7 @@
         "name": "青山鳳凰宮",
         "name_en": "Qingshanfenghuanggong",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "138597"
       },
@@ -6667,7 +6673,7 @@
         "name": "園頂",
         "name_en": "YuanDing",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "133387"
       },
@@ -6687,7 +6693,7 @@
         "name": "上園頂",
         "name_en": "Shang Yuan Ding",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "143367"
       },
@@ -6707,7 +6713,7 @@
         "name": "金興",
         "name_en": "JinXing",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "133388"
       },
@@ -6727,7 +6733,7 @@
         "name": "田九厝",
         "name_en": "TianJiuCuo",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "133389"
       },
@@ -6747,7 +6753,7 @@
         "name": "土地公",
         "name_en": "Tudigong",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "138595"
       },
@@ -6767,7 +6773,7 @@
         "name": "鳳山崎",
         "name_en": "FengShanQi",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "133390"
       },
@@ -6787,7 +6793,7 @@
         "name": "逸境新村",
         "name_en": "YiJing Village",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "133391"
       },
@@ -6807,7 +6813,7 @@
         "name": "大眉",
         "name_en": "DaMei",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "133392"
       },
@@ -6827,7 +6833,7 @@
         "name": "田中央",
         "name_en": "Tianzhongyang",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "138593"
       },
@@ -6847,7 +6853,7 @@
         "name": "貓兒錠口",
         "name_en": "MaoerDingKou",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "133393"
       },
@@ -6867,7 +6873,7 @@
         "name": "中和街口",
         "name_en": "ZhongHe St. Intersection",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "133394"
       },
@@ -6887,7 +6893,7 @@
         "name": "碧友富貴",
         "name_en": "Bi You Fu Guei",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "139951"
       },
@@ -6907,7 +6913,7 @@
         "name": "泰和一街口",
         "name_en": "TaiHe 1st St. Intersection",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "133395"
       },
@@ -6927,7 +6933,7 @@
         "name": "泰和里",
         "name_en": "Tai Han Village",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "133397"
       },
@@ -6947,7 +6953,7 @@
         "name": "中泰",
         "name_en": "Jhong Tai",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "143365"
       },
@@ -6967,7 +6973,7 @@
         "name": "南茂科技",
         "name_en": "Chipmos",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "135820"
       },
@@ -6987,7 +6993,7 @@
         "name": "棕櫚泉社區",
         "name_en": "Zong Lyu Chyuan Community",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "143363"
       },
@@ -7007,7 +7013,7 @@
         "name": "彰化銀行",
         "name_en": "Chang Hwa Bank",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "133400"
       },
@@ -7027,7 +7033,7 @@
         "name": "竹北火車站",
         "name_en": "TRA Zhubei Station",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "133335"
       },
@@ -7047,7 +7053,7 @@
         "name": "新仁大安醫院",
         "name_en": "Xinren Daan Hospital",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "133333"
       },
@@ -7067,7 +7073,7 @@
         "name": "衛生所",
         "name_en": "Township Health Station",
         "line": "62",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "133334"
       },

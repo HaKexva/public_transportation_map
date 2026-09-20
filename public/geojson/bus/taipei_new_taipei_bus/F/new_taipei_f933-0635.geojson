@@ -6,13 +6,14 @@
     "name": "F933-0635",
     "name_en": "F933-0635",
     "ref": "F933-0635",
-    "color": "#2563eb",
+    "color": "#6B8F9A",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.gov.taipei/File/Get/8928dda0-f97b-4b04-82eb-9b2dbfd3c7eb?v=639248448831355875",
     "operator_id": "16253",
     "operator": "金山區公所",
-    "operator_en": "Jinshan District Office"
+    "operator_en": "Jinshan District Office",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "F933-0635",
         "name": "F933-0635",
         "name_en": "F933-0635",
-        "color": "#2563eb",
-        "direction": 0
+        "color": "#6B8F9A",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1371,6 +1373,10 @@
           [
             121.636211820085,
             25.22232000357
+          ],
+          [
+            121.636251935814,
+            25.222283230818
           ]
         ]
       }
@@ -1383,7 +1389,7 @@
         "name": "金山區公所",
         "name_en": "Jinshan District Office",
         "line": "F933-0635",
-        "color": "#2563eb",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603304"
       },
@@ -1403,7 +1409,7 @@
         "name": "下六股",
         "name_en": "Xialiugu Village",
         "line": "F933-0635",
-        "color": "#2563eb",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70526"
       },
@@ -1423,7 +1429,7 @@
         "name": "重和里",
         "name_en": "Chonghe Village",
         "line": "F933-0635",
-        "color": "#2563eb",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165604036"
       },
@@ -1443,7 +1449,7 @@
         "name": "六股里潭子內",
         "name_en": "Liugu Village Tanzinei",
         "line": "F933-0635",
-        "color": "#2563eb",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70529"
       },
@@ -1463,7 +1469,7 @@
         "name": "三界壇路99巷",
         "name_en": "Lane 99 Sanjietan Rd.",
         "line": "F933-0635",
-        "color": "#2563eb",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70521"
       },
@@ -1483,7 +1489,7 @@
         "name": "金山區公所",
         "name_en": "Jinshan District Office",
         "line": "F933-0635",
-        "color": "#2563eb",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "20314"
       },

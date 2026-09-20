@@ -6,13 +6,14 @@
     "name": "F202",
     "name_en": "F202",
     "ref": "F202",
-    "color": "#7c2d12",
+    "color": "#6B8F9A",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.gov.taipei/File/Get/0b0ddc93-7eb2-4503-b0e5-438281e6756a?v=639248448795553076",
     "operator_id": "16232",
     "operator": "新莊區公所",
-    "operator_en": "Xinzhuang District Office"
+    "operator_en": "Xinzhuang District Office",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "F202",
         "name": "F202",
         "name_en": "F202",
-        "color": "#7c2d12",
-        "direction": 0
+        "color": "#6B8F9A",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -899,6 +901,10 @@
           [
             121.444823408113,
             25.0478585941774
+          ],
+          [
+            121.444852337221,
+            25.0478561834184
           ]
         ]
       }
@@ -911,7 +917,7 @@
         "name": "新莊高中",
         "name_en": "Xinzhuang High School",
         "line": "F202",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "20397"
       },
@@ -931,7 +937,7 @@
         "name": "新莊高中(新莊文藝中心)",
         "name_en": "Xinzhuang High School(Xinzhuang Culture & Arts Center)",
         "line": "F202",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "8206"
       },
@@ -951,7 +957,7 @@
         "name": "中平國中",
         "name_en": "Zhongping Junior High School",
         "line": "F202",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73620"
       },
@@ -971,7 +977,7 @@
         "name": "榮富國小",
         "name_en": "Rongfu Elementary School",
         "line": "F202",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "4139"
       },
@@ -991,7 +997,7 @@
         "name": "中信街3號",
         "name_en": "No.3 Zhongxin St.",
         "line": "F202",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73611"
       },
@@ -1011,7 +1017,7 @@
         "name": "昌隆街",
         "name_en": "Changlong St.",
         "line": "F202",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73637"
       },
@@ -1031,7 +1037,7 @@
         "name": "福壽公園",
         "name_en": "Fushou Park",
         "line": "F202",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73648"
       },
@@ -1051,7 +1057,7 @@
         "name": "頭前國中",
         "name_en": "Touqian Junior High School",
         "line": "F202",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165604215"
       },
@@ -1071,7 +1077,7 @@
         "name": "思源新北大道路口",
         "name_en": "Siyuan Rd. & New Taipei Blvd. Intersection",
         "line": "F202",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3733"
       },
@@ -1091,7 +1097,7 @@
         "name": "捷運新北產業園區站",
         "name_en": "MRT New Taipei Industrial Park Sta.",
         "line": "F202",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165604600"
       },
@@ -1111,7 +1117,7 @@
         "name": "五工福慧路口",
         "name_en": "Wugong and Fuhui Intersection",
         "line": "F202",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "74519"
       },
@@ -1131,7 +1137,7 @@
         "name": "管理中心",
         "name_en": "Management Center",
         "line": "F202",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "235"
       },
@@ -1151,7 +1157,7 @@
         "name": "五工三路口",
         "name_en": "Wugong 3rd. Rd. Entrance",
         "line": "F202",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "74528"
       },
@@ -1171,7 +1177,7 @@
         "name": "五工二路口",
         "name_en": "Wugong 2nd. Rd. Entrance",
         "line": "F202",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "74529"
       },
@@ -1191,7 +1197,7 @@
         "name": "興化國小",
         "name_en": "Xinghua Elementary School",
         "line": "F202",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3767"
       },
@@ -1211,7 +1217,7 @@
         "name": "台貿二村",
         "name_en": "Taimao Village 2",
         "line": "F202",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "50614"
       },
@@ -1231,7 +1237,7 @@
         "name": "和風大苑",
         "name_en": "Hefeng Dayuan",
         "line": "F202",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73585"
       },
@@ -1251,7 +1257,7 @@
         "name": "化成新北大道路口",
         "name_en": "Huacheng & New Taipei Blvd Intersection",
         "line": "F202",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1000778"
       },
@@ -1271,7 +1277,7 @@
         "name": "頭前庄",
         "name_en": "Touqianzhuang",
         "line": "F202",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3594"
       },
@@ -1291,7 +1297,7 @@
         "name": "善導庵",
         "name_en": "Shandao Temple",
         "line": "F202",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3555"
       },
@@ -1311,7 +1317,7 @@
         "name": "頭前國小",
         "name_en": "Touqian",
         "line": "F202",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3597"
       },
@@ -1331,7 +1337,7 @@
         "name": "頭前里",
         "name_en": "Touqian Village",
         "line": "F202",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3595"
       },
@@ -1351,7 +1357,7 @@
         "name": "頭前派出所",
         "name_en": "Touqian Police Station",
         "line": "F202",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3596"
       },
@@ -1371,7 +1377,7 @@
         "name": "全聯福利中心",
         "name_en": "Pxmart Co. Ltd.",
         "line": "F202",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73633"
       },
@@ -1391,7 +1397,7 @@
         "name": "復興路三段",
         "name_en": "Fuxing Rd. Sec. 3",
         "line": "F202",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "30048"
       },
@@ -1411,7 +1417,7 @@
         "name": "臺北醫院",
         "name_en": "Taipei Hospital",
         "line": "F202",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "50665"
       },
@@ -1431,7 +1437,7 @@
         "name": "捷運頭前庄站(思源路)",
         "name_en": "MRT Touqianzhuang Sta.",
         "line": "F202",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1000570"
       },
@@ -1451,7 +1457,7 @@
         "name": "福樂街自立街口",
         "name_en": "Fule & Zili Intersection",
         "line": "F202",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73664"
       },
@@ -1471,7 +1477,7 @@
         "name": "宏泰市場",
         "name_en": "Hongtai Market",
         "line": "F202",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73680"
       },
@@ -1491,7 +1497,7 @@
         "name": "財元廣場",
         "name_en": "Caiyuan Square",
         "line": "F202",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "329"
       },
@@ -1511,7 +1517,7 @@
         "name": "中港社區活動中心",
         "name_en": "Zhonggang Community Activity Center",
         "line": "F202",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73655"
       },
@@ -1531,7 +1537,7 @@
         "name": "新莊國小",
         "name_en": "Xinzhuang Elementary School",
         "line": "F202",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73598"
       },
@@ -1551,7 +1557,7 @@
         "name": "捷運新莊站",
         "name_en": "MRT Xinzhuang Station",
         "line": "F202",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73588"
       },
@@ -1571,7 +1577,7 @@
         "name": "新莊區公所",
         "name_en": "Xinzhuang District Office",
         "line": "F202",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73653"
       },
@@ -1591,7 +1597,7 @@
         "name": "新莊國民運動中心",
         "name_en": "No.76 Gongyuan Rd.",
         "line": "F202",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73578"
       },
@@ -1611,7 +1617,7 @@
         "name": "中華路118號",
         "name_en": "No.118 Zhonghua Rd.",
         "line": "F202",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73604"
       },
@@ -1631,7 +1637,7 @@
         "name": "中美市場",
         "name_en": "ZhongMei Market",
         "line": "F202",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1000606"
       },
@@ -1651,7 +1657,7 @@
         "name": "新莊田徑場(中和里)",
         "name_en": "Xinzhuang Athletic Field(Zhonghe Village)",
         "line": "F202",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3570"
       },
@@ -1671,7 +1677,7 @@
         "name": "中和街口(中和)",
         "name_en": "Zhonghe St. Intersection",
         "line": "F202",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73610"
       },
@@ -1691,7 +1697,7 @@
         "name": "中港國小",
         "name_en": "Zhonggang Elementary School",
         "line": "F202",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73614"
       },
@@ -1711,7 +1717,7 @@
         "name": "中港圖書館",
         "name_en": "Zhonggang Library",
         "line": "F202",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165604793"
       },
@@ -1731,7 +1737,7 @@
         "name": "中誠街114號",
         "name_en": "No.114 Zhongcheng St.",
         "line": "F202",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73615"
       },
@@ -1751,7 +1757,7 @@
         "name": "幸福路中和街口",
         "name_en": "Xingfu & Zhonghe Intersection",
         "line": "F202",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165604213"
       },
@@ -1771,7 +1777,7 @@
         "name": "新莊高中",
         "name_en": "Xinzhuang High School",
         "line": "F202",
-        "color": "#7c2d12",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "20396"
       },

@@ -6,13 +6,14 @@
     "name": "幸福巴士F652延伸線",
     "name_en": "幸福巴士F652延伸線",
     "ref": "幸福巴士F652延伸線",
-    "color": "#15803d",
+    "color": "#b45309",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.gov.taipei/File/Get/dda5261b-9967-447d-9b91-a8427e128b17?v=639248448913392297",
     "operator_id": "16244",
     "operator": "鶯歌區公所",
-    "operator_en": "Yingge District Office"
+    "operator_en": "Yingge District Office",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "幸福巴士F652延伸線",
         "name": "幸福巴士F652延伸線",
         "name_en": "幸福巴士F652延伸線",
-        "color": "#15803d",
-        "direction": 0
+        "color": "#b45309",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1791,6 +1793,10 @@
           [
             121.354215073226,
             24.9557152295785
+          ],
+          [
+            121.35427601671,
+            24.9556403750818
           ]
         ]
       }
@@ -1803,7 +1809,7 @@
         "name": "鶯歌區公所",
         "name_en": "Yingge District Office",
         "line": "幸福巴士F652延伸線",
-        "color": "#15803d",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1165604629"
       },
@@ -1823,7 +1829,7 @@
         "name": "中國砂輪",
         "name_en": "KINIK company",
         "line": "幸福巴士F652延伸線",
-        "color": "#15803d",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1165604890"
       },
@@ -1843,7 +1849,7 @@
         "name": "林長壽圖書館",
         "name_en": "Lin Chang Shou Library",
         "line": "幸福巴士F652延伸線",
-        "color": "#15803d",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1165604384"
       },
@@ -1863,7 +1869,7 @@
         "name": "中山路249巷",
         "name_en": "Lane 249 Zhongshan Rd.",
         "line": "幸福巴士F652延伸線",
-        "color": "#15803d",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "73437"
       },
@@ -1883,7 +1889,7 @@
         "name": "中山路292號",
         "name_en": "No.292 Zhongshan Rd.",
         "line": "幸福巴士F652延伸線",
-        "color": "#15803d",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1165604383"
       },
@@ -1903,7 +1909,7 @@
         "name": "余厝巷口",
         "name_en": "Yucuo Lane Entrance",
         "line": "幸福巴士F652延伸線",
-        "color": "#15803d",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1165604389"
       },
@@ -1923,7 +1929,7 @@
         "name": "大湖路148號",
         "name_en": "No.148 Dahu Rd.",
         "line": "幸福巴士F652延伸線",
-        "color": "#15803d",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "73320"
       },
@@ -1943,7 +1949,7 @@
         "name": "飛龍公司",
         "name_en": "Pentel Company",
         "line": "幸福巴士F652延伸線",
-        "color": "#15803d",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1165609735"
       },
@@ -1963,7 +1969,7 @@
         "name": "名湖社區",
         "name_en": "Minghu Community",
         "line": "幸福巴士F652延伸線",
-        "color": "#15803d",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "73332"
       },
@@ -1983,7 +1989,7 @@
         "name": "湖山分駐所",
         "name_en": "Hushan Police Station",
         "line": "幸福巴士F652延伸線",
-        "color": "#15803d",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1165604375"
       },
@@ -2003,7 +2009,7 @@
         "name": "大湖路與湖山路口",
         "name_en": "Dahu & Hushan Intersection",
         "line": "幸福巴士F652延伸線",
-        "color": "#15803d",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1165604399"
       },
@@ -2023,7 +2029,7 @@
         "name": "大同社區",
         "name_en": "Tatung Community",
         "line": "幸福巴士F652延伸線",
-        "color": "#15803d",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1165604395"
       },
@@ -2043,7 +2049,7 @@
         "name": "大湖路542號",
         "name_en": "No.542 Dahu Rd.",
         "line": "幸福巴士F652延伸線",
-        "color": "#15803d",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1165604365"
       },
@@ -2063,7 +2069,7 @@
         "name": "大湖路590巷巷口",
         "name_en": "Lane 590 Dahu Rd. Intersection",
         "line": "幸福巴士F652延伸線",
-        "color": "#15803d",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1165604385"
       },
@@ -2083,7 +2089,7 @@
         "name": "國際路口",
         "name_en": "Guoji Rd. Entrance",
         "line": "幸福巴士F652延伸線",
-        "color": "#15803d",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1165609737"
       },
@@ -2103,7 +2109,7 @@
         "name": "香賓街口",
         "name_en": "Xiangbin St. Entrance",
         "line": "幸福巴士F652延伸線",
-        "color": "#15803d",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "73344"
       },
@@ -2123,7 +2129,7 @@
         "name": "朝陽街口",
         "name_en": "Zhaoyang St. Entrance",
         "line": "幸福巴士F652延伸線",
-        "color": "#15803d",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "73352"
       },
@@ -2143,7 +2149,7 @@
         "name": "香賓街口",
         "name_en": "Xiangbin St. Entrance",
         "line": "幸福巴士F652延伸線",
-        "color": "#15803d",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1165604371"
       },
@@ -2163,7 +2169,7 @@
         "name": "大湖路700巷巷口",
         "name_en": "Lane 700 Dahu Rd. Intersection",
         "line": "幸福巴士F652延伸線",
-        "color": "#15803d",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "73372"
       },
@@ -2183,7 +2189,7 @@
         "name": "台北監獄",
         "name_en": "Taipei Prison",
         "line": "幸福巴士F652延伸線",
-        "color": "#15803d",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "73384"
       },
@@ -2203,7 +2209,7 @@
         "name": "鳳鳴火車站",
         "name_en": "Fengming Rail Sta.",
         "line": "幸福巴士F652延伸線",
-        "color": "#15803d",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1165610357"
       },
@@ -2223,7 +2229,7 @@
         "name": "大同社區",
         "name_en": "Tatung Community",
         "line": "幸福巴士F652延伸線",
-        "color": "#15803d",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "73317"
       },
@@ -2243,7 +2249,7 @@
         "name": "大湖路與湖山路口",
         "name_en": "Dahu & Hushan Intersection",
         "line": "幸福巴士F652延伸線",
-        "color": "#15803d",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1165609741"
       },
@@ -2263,7 +2269,7 @@
         "name": "湖山分駐所",
         "name_en": "Hushan Police Station",
         "line": "幸福巴士F652延伸線",
-        "color": "#15803d",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "73353"
       },
@@ -2283,7 +2289,7 @@
         "name": "名湖社區",
         "name_en": "Minghu Community",
         "line": "幸福巴士F652延伸線",
-        "color": "#15803d",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1165604367"
       },
@@ -2303,7 +2309,7 @@
         "name": "飛龍公司",
         "name_en": "Pentel Company",
         "line": "幸福巴士F652延伸線",
-        "color": "#15803d",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1165609736"
       },
@@ -2323,7 +2329,7 @@
         "name": "大湖路148號",
         "name_en": "No.148 Dahu Rd.",
         "line": "幸福巴士F652延伸線",
-        "color": "#15803d",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1165604363"
       },
@@ -2343,7 +2349,7 @@
         "name": "余厝巷口",
         "name_en": "Yucuo Lane Entrance",
         "line": "幸福巴士F652延伸線",
-        "color": "#15803d",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1165604370"
       },
@@ -2363,7 +2369,7 @@
         "name": "中山路292號",
         "name_en": "No.292 Zhongshan Rd.",
         "line": "幸福巴士F652延伸線",
-        "color": "#15803d",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "73438"
       },
@@ -2383,7 +2389,7 @@
         "name": "中山路249巷",
         "name_en": "Lane 249 Zhongshan Rd.",
         "line": "幸福巴士F652延伸線",
-        "color": "#15803d",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "73436"
       },
@@ -2403,7 +2409,7 @@
         "name": "林長壽圖書館",
         "name_en": "Lin Chang Shou Library",
         "line": "幸福巴士F652延伸線",
-        "color": "#15803d",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "73446"
       },
@@ -2423,7 +2429,7 @@
         "name": "中國砂輪",
         "name_en": "KINIK company",
         "line": "幸福巴士F652延伸線",
-        "color": "#15803d",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1165605436"
       },
@@ -2443,7 +2449,7 @@
         "name": "鶯歌區公所",
         "name_en": "Yingge District Office",
         "line": "幸福巴士F652延伸線",
-        "color": "#15803d",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1165605719"
       },
@@ -2463,7 +2469,7 @@
         "name": "南鶯國慶115巷口",
         "name_en": "Nanying Ln. 115 Guoqing St. Entrance",
         "line": "幸福巴士F652延伸線",
-        "color": "#15803d",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3377"
       },
@@ -2483,7 +2489,7 @@
         "name": "文化路140號",
         "name_en": "No.140 Wenhua Rd.",
         "line": "幸福巴士F652延伸線",
-        "color": "#15803d",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "73326"
       },
@@ -2503,7 +2509,7 @@
         "name": "陶瓷博物館",
         "name_en": "No.214 Wenhua Rd.",
         "line": "幸福巴士F652延伸線",
-        "color": "#15803d",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3382"
       },
@@ -2523,7 +2529,7 @@
         "name": "文化路254號",
         "name_en": "No.254 Wenhua Rd.",
         "line": "幸福巴士F652延伸線",
-        "color": "#15803d",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "73439"
       },
@@ -2543,7 +2549,7 @@
         "name": "三鶯路47號",
         "name_en": "No.47 Yingge Rd.",
         "line": "幸福巴士F652延伸線",
-        "color": "#15803d",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "73370"
       },
@@ -2563,7 +2569,7 @@
         "name": "三鶯福德宮",
         "name_en": "Sanying Fude Temple",
         "line": "幸福巴士F652延伸線",
-        "color": "#15803d",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "73371"
       },
@@ -2583,7 +2589,7 @@
         "name": "恩主公醫院",
         "name_en": "EnChuKong Hospital",
         "line": "幸福巴士F652延伸線",
-        "color": "#15803d",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "18003"
       },
@@ -2603,7 +2609,7 @@
         "name": "三鶯路47號",
         "name_en": "No.47 Yingge Rd.",
         "line": "幸福巴士F652延伸線",
-        "color": "#15803d",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "73370"
       },
@@ -2623,7 +2629,7 @@
         "name": "三鶯福德宮",
         "name_en": "Sanying Fude Temple",
         "line": "幸福巴士F652延伸線",
-        "color": "#15803d",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "73371"
       },
@@ -2643,7 +2649,7 @@
         "name": "文化路417號",
         "name_en": "No.417 Wenhua Rd.",
         "line": "幸福巴士F652延伸線",
-        "color": "#15803d",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "73380"
       },
@@ -2663,7 +2669,7 @@
         "name": "文化路351號",
         "name_en": "No.351 Wenhua Rd.",
         "line": "幸福巴士F652延伸線",
-        "color": "#15803d",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "73327"
       },
@@ -2683,7 +2689,7 @@
         "name": "鶯歌郵局",
         "name_en": "Yingge Post Office",
         "line": "幸福巴士F652延伸線",
-        "color": "#15803d",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3384"
       },
@@ -2703,7 +2709,7 @@
         "name": "鶯歌區公所",
         "name_en": "Yingge District Office",
         "line": "幸福巴士F652延伸線",
-        "color": "#15803d",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1165604629"
       },

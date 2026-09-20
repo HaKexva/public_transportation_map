@@ -6,10 +6,11 @@
     "name": "502",
     "name_en": "502",
     "ref": "502",
-    "color": "#9f1239",
+    "color": "#7c3aed",
     "city_id": "Keelung",
     "source": "TDX Bus Shape / StopOfRoute",
-    "official_map_url": "https://web.taiwanbus.tw/MISUploadData/Schematic/file/0449.jpg"
+    "official_map_url": "https://web.taiwanbus.tw/MISUploadData/Schematic/file/0449.jpg",
+    "loop": true
   },
   "features": [
     {
@@ -19,8 +20,9 @@
         "ref": "502",
         "name": "502",
         "name_en": "502",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#7c3aed",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -2412,6 +2414,10 @@
           [
             121.72253,
             25.12495
+          ],
+          [
+            121.72248,
+            25.12509
           ]
         ]
       }
@@ -2424,7 +2430,7 @@
         "name": "建德國小",
         "name_en": "Jiande Elementary School",
         "line": "502",
-        "color": "#9f1239",
+        "color": "#7c3aed",
         "direction": 0,
         "station_id": "140921"
       },
@@ -2444,7 +2450,7 @@
         "name": "安和一街271巷",
         "name_en": "Ln. 271 Anhe 1st St.",
         "line": "502",
-        "color": "#9f1239",
+        "color": "#7c3aed",
         "direction": 0,
         "station_id": "140922"
       },
@@ -2464,7 +2470,7 @@
         "name": "建德國中",
         "name_en": "Jiande Junior High School",
         "line": "502",
-        "color": "#9f1239",
+        "color": "#7c3aed",
         "direction": 0,
         "station_id": "140923"
       },
@@ -2484,7 +2490,7 @@
         "name": "建德山莊",
         "name_en": "Jiandeshanzhuang",
         "line": "502",
-        "color": "#9f1239",
+        "color": "#7c3aed",
         "direction": 0,
         "station_id": "140924"
       },
@@ -2504,7 +2510,7 @@
         "name": "安和一街137巷",
         "name_en": "Ln. 137 Anhe 1st St.",
         "line": "502",
-        "color": "#9f1239",
+        "color": "#7c3aed",
         "direction": 0,
         "station_id": "140925"
       },
@@ -2524,7 +2530,7 @@
         "name": "安和一街131巷",
         "name_en": "Ln. 131 Anhe 1st St.",
         "line": "502",
-        "color": "#9f1239",
+        "color": "#7c3aed",
         "direction": 0,
         "station_id": "140926"
       },
@@ -2544,7 +2550,7 @@
         "name": "安和一街123巷",
         "name_en": "Ln. 123 Anhe 1st St.",
         "line": "502",
-        "color": "#9f1239",
+        "color": "#7c3aed",
         "direction": 0,
         "station_id": "140927"
       },
@@ -2564,7 +2570,7 @@
         "name": "安和一街口",
         "name_en": "Anhe 1st St. Intersection",
         "line": "502",
-        "color": "#9f1239",
+        "color": "#7c3aed",
         "direction": 0,
         "station_id": "140920"
       },
@@ -2584,7 +2590,7 @@
         "name": "安和一街(土地公廟)(返)",
         "name_en": "Anhe 1st St.(Tudi Gong Temple)",
         "line": "502",
-        "color": "#9f1239",
+        "color": "#7c3aed",
         "direction": 0,
         "station_id": "140918"
       },
@@ -2604,7 +2610,7 @@
         "name": "安樂郵局",
         "name_en": "Anle Post Office",
         "line": "502",
-        "color": "#9f1239",
+        "color": "#7c3aed",
         "direction": 0,
         "station_id": "140694"
       },
@@ -2624,7 +2630,7 @@
         "name": "電信大樓",
         "name_en": "Telecommunication Building",
         "line": "502",
-        "color": "#9f1239",
+        "color": "#7c3aed",
         "direction": 0,
         "station_id": "140695"
       },
@@ -2644,7 +2650,7 @@
         "name": "自強隧道口",
         "name_en": "Ziqiang Tunnel",
         "line": "502",
-        "color": "#9f1239",
+        "color": "#7c3aed",
         "direction": 0,
         "station_id": "140672"
       },
@@ -2664,7 +2670,7 @@
         "name": "安樂路一段81巷口",
         "name_en": "Entrance to Lane 81, Section 1, Anle Road",
         "line": "502",
-        "color": "#9f1239",
+        "color": "#7c3aed",
         "direction": 0,
         "station_id": "140655"
       },
@@ -2684,7 +2690,7 @@
         "name": "光華國宅",
         "name_en": "Guanghua Public Housing",
         "line": "502",
-        "color": "#9f1239",
+        "color": "#7c3aed",
         "direction": 0,
         "station_id": "140697"
       },
@@ -2704,7 +2710,7 @@
         "name": "成功市場",
         "name_en": "Chenggong Market",
         "line": "502",
-        "color": "#9f1239",
+        "color": "#7c3aed",
         "direction": 0,
         "station_id": "140698"
       },
@@ -2724,7 +2730,7 @@
         "name": "仁五路(東和大樓)",
         "name_en": "Ren 5th Rd.",
         "line": "502",
-        "color": "#9f1239",
+        "color": "#7c3aed",
         "direction": 0,
         "station_id": "140629"
       },
@@ -2744,7 +2750,7 @@
         "name": "仁二路(二信循環站)",
         "name_en": "Ren 2nd Rd. (Erxin Loop Station )",
         "line": "502",
-        "color": "#9f1239",
+        "color": "#7c3aed",
         "direction": 0,
         "station_id": "140620"
       },
@@ -2764,7 +2770,7 @@
         "name": "基隆轉運站",
         "name_en": "Keelung Transit Station",
         "line": "502",
-        "color": "#9f1239",
+        "color": "#7c3aed",
         "direction": 0,
         "station_id": "143441"
       },
@@ -2784,7 +2790,7 @@
         "name": "民治里活動中心",
         "name_en": "Minzhi Village Activity Center",
         "line": "502",
-        "color": "#9f1239",
+        "color": "#7c3aed",
         "direction": 0,
         "station_id": "141126"
       },
@@ -2804,7 +2810,7 @@
         "name": "城隍廟",
         "name_en": "Chenghuang Temple",
         "line": "502",
-        "color": "#9f1239",
+        "color": "#7c3aed",
         "direction": 0,
         "station_id": "140647"
       },
@@ -2824,7 +2830,7 @@
         "name": "忠四路",
         "name_en": "Zhong 4th Rd.",
         "line": "502",
-        "color": "#9f1239",
+        "color": "#7c3aed",
         "direction": 0,
         "station_id": "140649"
       },
@@ -2844,7 +2850,7 @@
         "name": "光華國宅",
         "name_en": "Guanghua Public Housing",
         "line": "502",
-        "color": "#9f1239",
+        "color": "#7c3aed",
         "direction": 0,
         "station_id": "140651"
       },
@@ -2864,7 +2870,7 @@
         "name": "安樂路一段81巷口",
         "name_en": "Entrance to Lane 81, Section 1, Anle Road",
         "line": "502",
-        "color": "#9f1239",
+        "color": "#7c3aed",
         "direction": 0,
         "station_id": "144214"
       },
@@ -2884,7 +2890,7 @@
         "name": "老大公廟",
         "name_en": "Laodagong Temple",
         "line": "502",
-        "color": "#9f1239",
+        "color": "#7c3aed",
         "direction": 0,
         "station_id": "140664"
       },
@@ -2904,7 +2910,7 @@
         "name": "電信大樓",
         "name_en": "Telecommunication Building",
         "line": "502",
-        "color": "#9f1239",
+        "color": "#7c3aed",
         "direction": 0,
         "station_id": "140680"
       },
@@ -2924,7 +2930,7 @@
         "name": "安樂郵局",
         "name_en": "Anle Post Office",
         "line": "502",
-        "color": "#9f1239",
+        "color": "#7c3aed",
         "direction": 0,
         "station_id": "140681"
       },
@@ -2944,7 +2950,7 @@
         "name": "安和一街(土地公廟)",
         "name_en": "Anhe 1st St.(Tudi Gong Temple)",
         "line": "502",
-        "color": "#9f1239",
+        "color": "#7c3aed",
         "direction": 0,
         "station_id": "140919"
       },
@@ -2964,7 +2970,7 @@
         "name": "安和一街口",
         "name_en": "Anhe 1st St. Intersection",
         "line": "502",
-        "color": "#9f1239",
+        "color": "#7c3aed",
         "direction": 0,
         "station_id": "141875"
       },
@@ -2984,7 +2990,7 @@
         "name": "安和一街123巷",
         "name_en": "Ln. 123 Anhe 1st St.",
         "line": "502",
-        "color": "#9f1239",
+        "color": "#7c3aed",
         "direction": 0,
         "station_id": "141626"
       },
@@ -3004,7 +3010,7 @@
         "name": "安和一街131巷",
         "name_en": "Ln. 131 Anhe 1st St.",
         "line": "502",
-        "color": "#9f1239",
+        "color": "#7c3aed",
         "direction": 0,
         "station_id": "141625"
       },
@@ -3024,7 +3030,7 @@
         "name": "安和一街137巷",
         "name_en": "Ln. 137 Anhe 1st St.",
         "line": "502",
-        "color": "#9f1239",
+        "color": "#7c3aed",
         "direction": 0,
         "station_id": "141624"
       },
@@ -3044,7 +3050,7 @@
         "name": "建德山莊",
         "name_en": "Jiandeshanzhuang",
         "line": "502",
-        "color": "#9f1239",
+        "color": "#7c3aed",
         "direction": 0,
         "station_id": "141623"
       },
@@ -3064,7 +3070,7 @@
         "name": "建德國中",
         "name_en": "Jiande Junior High School",
         "line": "502",
-        "color": "#9f1239",
+        "color": "#7c3aed",
         "direction": 0,
         "station_id": "141622"
       },
@@ -3084,7 +3090,7 @@
         "name": "安和一街271巷",
         "name_en": "Ln. 271 Anhe 1st St.",
         "line": "502",
-        "color": "#9f1239",
+        "color": "#7c3aed",
         "direction": 0,
         "station_id": "141621"
       },
@@ -3104,7 +3110,7 @@
         "name": "建德國小",
         "name_en": "Jiande Elementary School",
         "line": "502",
-        "color": "#9f1239",
+        "color": "#7c3aed",
         "direction": 0,
         "station_id": "140921"
       },

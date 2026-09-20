@@ -6,13 +6,14 @@
     "name": "19",
     "name_en": "19",
     "ref": "19",
-    "color": "#86198f",
+    "color": "#3730a3",
     "city_id": "KinmenCounty",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.kinmen.gov.tw/api/route/191/map/204/image",
     "operator_id": "0001",
     "operator": "金門",
-    "operator_en": "City Bus and Ferry Management Office, Kinmen County"
+    "operator_en": "City Bus and Ferry Management Office, Kinmen County",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "19",
         "name": "19",
         "name_en": "19",
-        "color": "#86198f",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -335,6 +337,10 @@
           [
             118.41399,
             24.44246
+          ],
+          [
+            118.41381,
+            24.44218
           ]
         ]
       }
@@ -347,7 +353,7 @@
         "name": "山外站",
         "name_en": "Shanwai Station",
         "line": "19",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "29"
       },
@@ -367,7 +373,7 @@
         "name": "武德新莊",
         "name_en": "Wude Xinzhuang",
         "line": "19",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "30"
       },
@@ -387,7 +393,7 @@
         "name": "市港路",
         "name_en": "Shigang Road",
         "line": "19",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "992"
       },
@@ -407,7 +413,7 @@
         "name": "信義新村",
         "name_en": "Sinyi New Residential Quarter",
         "line": "19",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "581"
       },
@@ -427,7 +433,7 @@
         "name": "前港路口",
         "name_en": "Qiangang Rd. Entrance",
         "line": "19",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "582"
       },
@@ -447,7 +453,7 @@
         "name": "新頭",
         "name_en": "Xintou",
         "line": "19",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "583"
       },
@@ -467,7 +473,7 @@
         "name": "花崗石廠",
         "name_en": "Granite Works",
         "line": "19",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "584"
       },
@@ -487,7 +493,7 @@
         "name": "裕祺工廠",
         "name_en": "YuQi Factory",
         "line": "19",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "585"
       },
@@ -507,7 +513,7 @@
         "name": "料羅圓環(金港路)",
         "name_en": "Liaoluo Cirque",
         "line": "19",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "586"
       },
@@ -527,7 +533,7 @@
         "name": "媽祖廟",
         "name_en": "MaZu Temple",
         "line": "19",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "587"
       },
@@ -547,7 +553,7 @@
         "name": "料羅",
         "name_en": "Liaoluo ",
         "line": "19",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "588"
       },
@@ -567,7 +573,7 @@
         "name": "港警所",
         "name_en": "Harbor Police Office",
         "line": "19",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "589"
       },
@@ -587,7 +593,7 @@
         "name": "南石滬公園",
         "name_en": "Mining District",
         "line": "19",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "590"
       },
@@ -607,7 +613,7 @@
         "name": "料羅新村",
         "name_en": "Liaoluo Xincun",
         "line": "19",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "591"
       },
@@ -627,7 +633,7 @@
         "name": "新塘",
         "name_en": "Xintang",
         "line": "19",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "592"
       },
@@ -647,7 +653,7 @@
         "name": "庵邊(環島東路五段)",
         "name_en": "Anbian",
         "line": "19",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "593"
       },
@@ -667,7 +673,7 @@
         "name": "西村二",
         "name_en": "Xicun 2",
         "line": "19",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "594"
       },
@@ -687,7 +693,7 @@
         "name": "西埔",
         "name_en": "Xipu",
         "line": "19",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "595"
       },
@@ -707,7 +713,7 @@
         "name": "下湖",
         "name_en": "Xiahu",
         "line": "19",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "596"
       },
@@ -727,7 +733,7 @@
         "name": "溪邊",
         "name_en": "Xibian",
         "line": "19",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "597"
       },
@@ -747,7 +753,7 @@
         "name": "下湖",
         "name_en": "Xiahu",
         "line": "19",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "598"
       },
@@ -767,7 +773,7 @@
         "name": "西埔",
         "name_en": "Xipu",
         "line": "19",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "599"
       },
@@ -787,7 +793,7 @@
         "name": "西村二",
         "name_en": "Xicun 2",
         "line": "19",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "600"
       },
@@ -807,7 +813,7 @@
         "name": "庵邊(環島東路五段)",
         "name_en": "Anbian",
         "line": "19",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "601"
       },
@@ -827,7 +833,7 @@
         "name": "新塘",
         "name_en": "Xintang",
         "line": "19",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "602"
       },
@@ -847,7 +853,7 @@
         "name": "料羅新村",
         "name_en": "Liaoluo Xincun",
         "line": "19",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "603"
       },
@@ -867,7 +873,7 @@
         "name": "南石滬公園",
         "name_en": "Mining District",
         "line": "19",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "604"
       },
@@ -887,7 +893,7 @@
         "name": "港警所",
         "name_en": "Harbor Police Office",
         "line": "19",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "605"
       },
@@ -907,7 +913,7 @@
         "name": "料羅",
         "name_en": "Liaoluo ",
         "line": "19",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "606"
       },
@@ -927,7 +933,7 @@
         "name": "媽祖廟",
         "name_en": "MaZu Temple",
         "line": "19",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "607"
       },
@@ -947,7 +953,7 @@
         "name": "料羅圓環(金港路)",
         "name_en": "Liaoluo Cirque",
         "line": "19",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "608"
       },
@@ -967,7 +973,7 @@
         "name": "裕祺工廠",
         "name_en": "YuQi Factory",
         "line": "19",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "609"
       },
@@ -987,7 +993,7 @@
         "name": "花崗石廠",
         "name_en": "Granite Works",
         "line": "19",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "610"
       },
@@ -1007,7 +1013,7 @@
         "name": "新頭",
         "name_en": "Xintou",
         "line": "19",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "611"
       },
@@ -1027,7 +1033,7 @@
         "name": "前港路口",
         "name_en": "Qiangang Rd. Entrance",
         "line": "19",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "612"
       },
@@ -1047,7 +1053,7 @@
         "name": "信義新村",
         "name_en": "Sinyi New Residential Quarter",
         "line": "19",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "613"
       },
@@ -1067,7 +1073,7 @@
         "name": "市港路",
         "name_en": "Shigang Road",
         "line": "19",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "991"
       },
@@ -1087,7 +1093,7 @@
         "name": "武德新莊",
         "name_en": "Wude Xinzhuang",
         "line": "19",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "28"
       },
@@ -1107,7 +1113,7 @@
         "name": "山外站",
         "name_en": "Shanwai Station",
         "line": "19",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "29"
       },

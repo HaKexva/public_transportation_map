@@ -6,13 +6,14 @@
     "name": "台灣好行-A線-水頭翟山線",
     "name_en": "台灣好行-A線-水頭翟山線",
     "ref": "台灣好行-A線-水頭翟山線",
-    "color": "#86198f",
+    "color": "#3730a3",
     "city_id": "KinmenCounty",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.kinmen.gov.tw/extend/route20230601/a.png",
     "operator_id": "0001",
     "operator": "金門",
-    "operator_en": "City Bus and Ferry Management Office, Kinmen County"
+    "operator_en": "City Bus and Ferry Management Office, Kinmen County",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "台灣好行-A線-水頭翟山線",
         "name": "台灣好行-A線-水頭翟山線",
         "name_en": "台灣好行-A線-水頭翟山線",
-        "color": "#86198f",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1159,6 +1161,10 @@
           [
             118.31995,
             24.43326
+          ],
+          [
+            118.32007,
+            24.43291
           ]
         ]
       }
@@ -1171,7 +1177,7 @@
         "name": "金城站",
         "name_en": "Jincheng Station",
         "line": "台灣好行-A線-水頭翟山線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "0"
       },
@@ -1191,7 +1197,7 @@
         "name": "金城衛生所",
         "name_en": "Jincheng Health Center",
         "line": "台灣好行-A線-水頭翟山線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "866"
       },
@@ -1211,7 +1217,7 @@
         "name": "體育館",
         "name_en": "Gymnasium",
         "line": "台灣好行-A線-水頭翟山線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "62"
       },
@@ -1231,7 +1237,7 @@
         "name": "莒光樓",
         "name_en": "Juguang Tower",
         "line": "台灣好行-A線-水頭翟山線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "867"
       },
@@ -1251,7 +1257,7 @@
         "name": "空中大學",
         "name_en": "National Open University",
         "line": "台灣好行-A線-水頭翟山線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "367"
       },
@@ -1271,7 +1277,7 @@
         "name": "水頭聚落",
         "name_en": "Shuitou Village",
         "line": "台灣好行-A線-水頭翟山線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "868"
       },
@@ -1291,7 +1297,7 @@
         "name": "明遺古蹟",
         "name_en": "The Ming Dynasty Street",
         "line": "台灣好行-A線-水頭翟山線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "869"
       },
@@ -1311,7 +1317,7 @@
         "name": "文台寶塔",
         "name_en": "Wentai Pagoda",
         "line": "台灣好行-A線-水頭翟山線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "870"
       },
@@ -1331,7 +1337,7 @@
         "name": "翟山坑道",
         "name_en": "Zhaishan Tunnel",
         "line": "台灣好行-A線-水頭翟山線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "326"
       },
@@ -1351,7 +1357,7 @@
         "name": "珠山",
         "name_en": "Zhushan",
         "line": "台灣好行-A線-水頭翟山線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "223"
       },
@@ -1371,7 +1377,7 @@
         "name": "金城站",
         "name_en": "Jincheng Station",
         "line": "台灣好行-A線-水頭翟山線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "0"
       },

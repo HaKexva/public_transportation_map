@@ -6,13 +6,14 @@
     "name": "115A",
     "name_en": "115A",
     "ref": "115A",
-    "color": "#b91c1c",
+    "color": "#b45309",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/3520/map/1622/image",
     "operator_id": "1",
     "operator": "桃園客運",
-    "operator_en": "Taoyuan Bus Co., Ltd."
+    "operator_en": "Taoyuan Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "115A",
         "name": "115A",
         "name_en": "115A",
-        "color": "#b91c1c",
-        "direction": 0
+        "color": "#b45309",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -559,6 +561,10 @@
           [
             121.22455,
             24.9524
+          ],
+          [
+            121.22463,
+            24.95244
           ]
         ]
       }
@@ -571,7 +577,7 @@
         "name": "中壢後火車站",
         "name_en": "Zhongli Rear Train Station",
         "line": "115A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2618"
       },
@@ -591,7 +597,7 @@
         "name": "中北路口",
         "name_en": "ZungBei Road Intersection",
         "line": "115A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4710"
       },
@@ -611,7 +617,7 @@
         "name": "龍岡橋",
         "name_en": "LungGang Bridge",
         "line": "115A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2404"
       },
@@ -631,7 +637,7 @@
         "name": "健行科技大學",
         "name_en": "Chien Hsin University of Science and Technology",
         "line": "115A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "617"
       },
@@ -651,7 +657,7 @@
         "name": "龍岡國小",
         "name_en": "LungGang Elementary School",
         "line": "115A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "248"
       },
@@ -671,7 +677,7 @@
         "name": "中興莊",
         "name_en": "JungShingJuang",
         "line": "115A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4562"
       },
@@ -691,7 +697,7 @@
         "name": "頂石頭",
         "name_en": "Dingshitou",
         "line": "115A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2406"
       },
@@ -711,7 +717,7 @@
         "name": "龍仁龍泉路口",
         "name_en": "Longren and Longcyuan St. Intersection",
         "line": "115A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5033"
       },
@@ -731,7 +737,7 @@
         "name": "馬祖新村",
         "name_en": "MaTzu Village",
         "line": "115A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "591"
       },
@@ -751,7 +757,7 @@
         "name": "龍岡森林公園",
         "name_en": "Lunggang Forest Park",
         "line": "115A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4564"
       },
@@ -771,7 +777,7 @@
         "name": "游泳路口",
         "name_en": "Youyong Road Intersection",
         "line": "115A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "589"
       },
@@ -791,7 +797,7 @@
         "name": "伯公廟",
         "name_en": "Bogong Temple",
         "line": "115A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4266"
       },
@@ -811,7 +817,7 @@
         "name": "龍江公寓",
         "name_en": "Longjiang Apartment",
         "line": "115A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "587"
       },
@@ -831,7 +837,7 @@
         "name": "龍岡圓環",
         "name_en": "Longgang Circle",
         "line": "115A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "585"
       },
@@ -851,7 +857,7 @@
         "name": "配銷中心",
         "name_en": "Distribution Center",
         "line": "115A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4109"
       },
@@ -871,7 +877,7 @@
         "name": "龍南路",
         "name_en": "Longnan Road",
         "line": "115A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2238"
       },
@@ -891,7 +897,7 @@
         "name": "忠貞國小",
         "name_en": "Jongjen Elementary School",
         "line": "115A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4169"
       },
@@ -911,7 +917,7 @@
         "name": "平等路口",
         "name_en": "PingDeng Road Intersection",
         "line": "115A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2481"
       },
@@ -931,7 +937,7 @@
         "name": "平東路",
         "name_en": "Pingdong Road",
         "line": "115A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2469"
       },
@@ -951,7 +957,7 @@
         "name": "東安國小",
         "name_en": "DungAn Elementary School",
         "line": "115A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2453"
       },
@@ -971,7 +977,7 @@
         "name": "東安國中",
         "name_en": "DungAn Junior High School",
         "line": "115A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2232"
       },
@@ -991,7 +997,7 @@
         "name": "社子",
         "name_en": "Shezih",
         "line": "115A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2228"
       },
@@ -1011,7 +1017,7 @@
         "name": "龍岡醫院",
         "name_en": "LungGang Hospital",
         "line": "115A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2451"
       },
@@ -1031,7 +1037,7 @@
         "name": "冠興新村",
         "name_en": "GuanShing New Village",
         "line": "115A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2449"
       },
@@ -1051,7 +1057,7 @@
         "name": "平東加油站",
         "name_en": "PingDung Gas Station",
         "line": "115A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2447"
       },
@@ -1071,7 +1077,7 @@
         "name": "下東社",
         "name_en": "ShiaDungShe",
         "line": "115A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2445"
       },
@@ -1091,7 +1097,7 @@
         "name": "建安宮",
         "name_en": "JianAn Temple",
         "line": "115A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2443"
       },
@@ -1111,7 +1117,7 @@
         "name": "東勢國小",
         "name_en": "DungShr Elementary School",
         "line": "115A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4761"
       },
@@ -1131,7 +1137,7 @@
         "name": "東勢",
         "name_en": "Dongshi",
         "line": "115A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2597"
       },
@@ -1151,7 +1157,7 @@
         "name": "臺北商業大學(桃園校區)",
         "name_en": "National Taipei University of Business (Taoyuan Campus)",
         "line": "115A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2742"
       },
@@ -1171,7 +1177,7 @@
         "name": "東勢",
         "name_en": "Dongshi",
         "line": "115A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2598"
       },
@@ -1191,7 +1197,7 @@
         "name": "桃園纖維",
         "name_en": "TauYuan Textile",
         "line": "115A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2596"
       },
@@ -1211,7 +1217,7 @@
         "name": "曾家莊",
         "name_en": "Zengjiazhuang",
         "line": "115A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2594"
       },
@@ -1231,7 +1237,7 @@
         "name": "柑子園",
         "name_en": "GanTzYuan",
         "line": "115A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4759"
       },
@@ -1251,7 +1257,7 @@
         "name": "慈惠堂",
         "name_en": "Cihuitang",
         "line": "115A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2590"
       },
@@ -1271,7 +1277,7 @@
         "name": "北富里",
         "name_en": "Beifu Village",
         "line": "115A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2737"
       },
@@ -1291,7 +1297,7 @@
         "name": "莊屋",
         "name_en": "Zhuangwu",
         "line": "115A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2586"
       },
@@ -1311,7 +1317,7 @@
         "name": "獅子林",
         "name_en": "Shizilin",
         "line": "115A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2441"
       },
@@ -1331,7 +1337,7 @@
         "name": "正義街口",
         "name_en": "JengYi Street Street Intersection",
         "line": "115A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2439"
       },
@@ -1351,7 +1357,7 @@
         "name": "北勢",
         "name_en": "Beishi",
         "line": "115A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2257"
       },
@@ -1371,7 +1377,7 @@
         "name": "北勢國小",
         "name_en": "Beishi Elementary School",
         "line": "115A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2437"
       },
@@ -1391,7 +1397,7 @@
         "name": "北興加油站",
         "name_en": "Beixhing Gas Station",
         "line": "115A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2435"
       },
@@ -1411,7 +1417,7 @@
         "name": "北勢新村",
         "name_en": "Beishi Village",
         "line": "115A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2433"
       },
@@ -1431,7 +1437,7 @@
         "name": "金山街口",
         "name_en": "JinShan Street Corner",
         "line": "115A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2431"
       },
@@ -1451,7 +1457,7 @@
         "name": "紫雲宮",
         "name_en": "TzYun Temple",
         "line": "115A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2426"
       },
@@ -1471,7 +1477,7 @@
         "name": "平鎮區公所(和平路)",
         "name_en": "Civil Affairs Office of Pingzhen District (Heping Rd.)",
         "line": "115A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2429"
       },
@@ -1491,7 +1497,7 @@
         "name": "和平市場",
         "name_en": "Heping Market",
         "line": "115A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1550"
       },
@@ -1511,7 +1517,7 @@
         "name": "中壢後火車站",
         "name_en": "Zhongli Rear Train Station",
         "line": "115A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2618"
       },

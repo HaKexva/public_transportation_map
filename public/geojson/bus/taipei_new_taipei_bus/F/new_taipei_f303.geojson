@@ -6,13 +6,14 @@
     "name": "F303",
     "name_en": "F303",
     "ref": "F303",
-    "color": "#92400e",
+    "color": "#6B8F9A",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.gov.taipei/File/Get/0e73f31d-46a0-4a40-83a5-8256a9e67154?v=639248448792837170",
     "operator_id": "16236",
     "operator": "三重區公所",
-    "operator_en": "Sanchong District Office"
+    "operator_en": "Sanchong District Office",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "F303",
         "name": "F303",
         "name_en": "F303",
-        "color": "#92400e",
-        "direction": 0
+        "color": "#6B8F9A",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -867,6 +869,10 @@
           [
             121.488011691872,
             25.0614453263626
+          ],
+          [
+            121.48806205773,
+            25.0613679021294
           ]
         ]
       }
@@ -879,7 +885,7 @@
         "name": "三重區公所(新北大道)",
         "name_en": "Sanchong City Office(New Taipei Blvd.)",
         "line": "F303",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "13210"
       },
@@ -899,7 +905,7 @@
         "name": "大同公園",
         "name_en": "Tatung Park",
         "line": "F303",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603727"
       },
@@ -919,7 +925,7 @@
         "name": "力行路一段57號",
         "name_en": "No.57 Sec 1 Lixing Rd.",
         "line": "F303",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603722"
       },
@@ -939,7 +945,7 @@
         "name": "力行路一段83號",
         "name_en": "No.83 Sec 1 Lixing Rd.",
         "line": "F303",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603719"
       },
@@ -959,7 +965,7 @@
         "name": "新海瓦斯",
         "name_en": "Xinhai Gas",
         "line": "F303",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603721"
       },
@@ -979,7 +985,7 @@
         "name": "忠孝三民街口",
         "name_en": "Zhongxiao & Sanmin Intersection",
         "line": "F303",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "10441"
       },
@@ -999,7 +1005,7 @@
         "name": "東海高中",
         "name_en": "TungHai Senior High School",
         "line": "F303",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73567"
       },
@@ -1019,7 +1025,7 @@
         "name": "新北大都會公園",
         "name_en": "New Taipei Metropolitan Park",
         "line": "F303",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165605288"
       },
@@ -1039,7 +1045,7 @@
         "name": "二重國小",
         "name_en": "ErChong Elementary School",
         "line": "F303",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73528"
       },
@@ -1059,7 +1065,7 @@
         "name": "西班牙水花園",
         "name_en": "Spanish Water World",
         "line": "F303",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73527"
       },
@@ -1079,7 +1085,7 @@
         "name": "介壽龍莊",
         "name_en": "Long Zhuang Jieshou",
         "line": "F303",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603728"
       },
@@ -1099,7 +1105,7 @@
         "name": "車路頭街口",
         "name_en": "Chelutou St. Entrance",
         "line": "F303",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73516"
       },
@@ -1119,7 +1125,7 @@
         "name": "聯華街口",
         "name_en": "Lianhua St. Entrance",
         "line": "F303",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603730"
       },
@@ -1139,7 +1145,7 @@
         "name": "義天宮",
         "name_en": "Yitian Temple",
         "line": "F303",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "10436"
       },
@@ -1159,7 +1165,7 @@
         "name": "永福派出所",
         "name_en": "Yongfu Police Station",
         "line": "F303",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603709"
       },
@@ -1179,7 +1185,7 @@
         "name": "下竹圍街34號",
         "name_en": "No.34 Xiazhuwei St.",
         "line": "F303",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603707"
       },
@@ -1199,7 +1205,7 @@
         "name": "永福街124號",
         "name_en": "No.124 Yongfu St.",
         "line": "F303",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603708"
       },
@@ -1219,7 +1225,7 @@
         "name": "永福國小",
         "name_en": "Yongfu Elementary School",
         "line": "F303",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73460"
       },
@@ -1239,7 +1245,7 @@
         "name": "徐匯中學",
         "name_en": "St. Ignatius High School",
         "line": "F303",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "4972"
       },
@@ -1259,7 +1265,7 @@
         "name": "碧華布街",
         "name_en": "BEVERLY Cloth Street",
         "line": "F303",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603639"
       },
@@ -1279,7 +1285,7 @@
         "name": "美美新村",
         "name_en": "Meimei New Village",
         "line": "F303",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3442"
       },
@@ -1299,7 +1305,7 @@
         "name": "慈福派出所",
         "name_en": "Cifu Police Station",
         "line": "F303",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73559"
       },
@@ -1319,7 +1325,7 @@
         "name": "碧華寺",
         "name_en": "Bihua Temple",
         "line": "F303",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "10479"
       },
@@ -1339,7 +1345,7 @@
         "name": "碧華街273號",
         "name_en": "No.273 Bihua St.",
         "line": "F303",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165604556"
       },
@@ -1359,7 +1365,7 @@
         "name": "碧華街371號",
         "name_en": "No.371 Bihua St.",
         "line": "F303",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165604557"
       },
@@ -1379,7 +1385,7 @@
         "name": "莫札特社區",
         "name_en": "Mozart community",
         "line": "F303",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603731"
       },
@@ -1399,7 +1405,7 @@
         "name": "五華里",
         "name_en": "Wuhua Village",
         "line": "F303",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73503"
       },
@@ -1419,7 +1425,7 @@
         "name": "自強五華街口",
         "name_en": "Ziqiang & Wuhua Intersection",
         "line": "F303",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "10449"
       },
@@ -1439,7 +1445,7 @@
         "name": "自強路五段",
         "name_en": "Ziqiang Rd. Sec. 5",
         "line": "F303",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73498"
       },
@@ -1459,7 +1465,7 @@
         "name": "仁政街",
         "name_en": "Renzheng St.",
         "line": "F303",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603491"
       },
@@ -1479,7 +1485,7 @@
         "name": "溪尾街口",
         "name_en": "Xiwei St. Entrance",
         "line": "F303",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3471"
       },
@@ -1499,7 +1505,7 @@
         "name": "自強路口",
         "name_en": "Ziqiang Rd. Entrance",
         "line": "F303",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3426"
       },
@@ -1519,7 +1525,7 @@
         "name": "格致中學(自強路)",
         "name_en": "Ger-Jyh Senior High School(Ziqiang Rd.)",
         "line": "F303",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "10435"
       },
@@ -1539,7 +1545,7 @@
         "name": "永德里",
         "name_en": "Yongde Village",
         "line": "F303",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3424"
       },
@@ -1559,7 +1565,7 @@
         "name": "厚德國小",
         "name_en": "Houde Elementary School",
         "line": "F303",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3440"
       },
@@ -1579,7 +1585,7 @@
         "name": "六張街口",
         "name_en": "Liuzhang St. Intersection",
         "line": "F303",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3410"
       },
@@ -1599,7 +1605,7 @@
         "name": "修德國小",
         "name_en": "Xiude Elementary School",
         "line": "F303",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3448"
       },
@@ -1619,7 +1625,7 @@
         "name": "明志國中",
         "name_en": "Mingzhi Junior High School",
         "line": "F303",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3431"
       },
@@ -1639,7 +1645,7 @@
         "name": "三重區公所(新北大道)",
         "name_en": "Sanchong City Office(New Taipei Blvd.)",
         "line": "F303",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "13210"
       },

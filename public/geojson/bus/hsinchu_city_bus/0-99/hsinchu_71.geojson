@@ -6,13 +6,14 @@
     "name": "71",
     "name_en": "71",
     "ref": "71",
-    "color": "#155e75",
+    "color": "#4f46e5",
     "city_id": "Hsinchu",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://web.taiwanbus.tw/MISUploadData/Schematic/file/0710.jpg",
     "operator_id": "18",
     "operator": "科技之星交通",
-    "operator_en": "KJ-Star Bus Co., Ltd."
+    "operator_en": "KJ-Star Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "71",
         "name": "71",
         "name_en": "71",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#4f46e5",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -2267,6 +2269,10 @@
           [
             120.984638,
             24.807445
+          ],
+          [
+            120.9846,
+            24.80743
           ]
         ]
       }
@@ -2279,7 +2285,7 @@
         "name": "北新竹後站",
         "name_en": "North Hsinchu Rear Station",
         "line": "71",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "138107"
       },
@@ -2299,7 +2305,7 @@
         "name": "大潤發2站",
         "name_en": "RT-Mart 2nd Stop",
         "line": "71",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "132694"
       },
@@ -2319,7 +2325,7 @@
         "name": "老人大學",
         "name_en": "University for the elderly",
         "line": "71",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "136596"
       },
@@ -2339,7 +2345,7 @@
         "name": "後站",
         "name_en": "Rear Station",
         "line": "71",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "132661"
       },
@@ -2359,7 +2365,7 @@
         "name": "新竹轉運站",
         "name_en": "Hsin-Chu Bus Station",
         "line": "71",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "137273"
       },
@@ -2379,7 +2385,7 @@
         "name": "警察宿舍",
         "name_en": "Police Dormitory",
         "line": "71",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "132662"
       },
@@ -2399,7 +2405,7 @@
         "name": "東南街口",
         "name_en": "Dong Nan Street Entrance",
         "line": "71",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "132663"
       },
@@ -2419,7 +2425,7 @@
         "name": "竹蓮國小",
         "name_en": "Chu Lian Primary School",
         "line": "71",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "132664"
       },
@@ -2439,7 +2445,7 @@
         "name": "聖經書院",
         "name_en": "Presbyterian Bible College",
         "line": "71",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "132665"
       },
@@ -2459,7 +2465,7 @@
         "name": "高峰社區",
         "name_en": "Gao Feng Community",
         "line": "71",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "132666"
       },
@@ -2479,7 +2485,7 @@
         "name": "高峰植物園",
         "name_en": "Gao Feng Botanical Garden",
         "line": "71",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "132667"
       },
@@ -2499,7 +2505,7 @@
         "name": "雞蛋面",
         "name_en": "Ji Dan Mian",
         "line": "71",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "132668"
       },
@@ -2519,7 +2525,7 @@
         "name": "仙宮里",
         "name_en": "Xian Gong Village",
         "line": "71",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "136452"
       },
@@ -2539,7 +2545,7 @@
         "name": "仙宮里活動中心",
         "name_en": "Xian Gong Village Activity Center",
         "line": "71",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "132669"
       },
@@ -2559,7 +2565,7 @@
         "name": "下路北",
         "name_en": "Xia Lu Bei",
         "line": "71",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "132670"
       },
@@ -2579,7 +2585,7 @@
         "name": "高翠",
         "name_en": "Gao Cui",
         "line": "71",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "132671"
       },
@@ -2599,7 +2605,7 @@
         "name": "竹泰社區",
         "name_en": "Zhu Tai Community",
         "line": "71",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "132672"
       },
@@ -2619,7 +2625,7 @@
         "name": "高峰",
         "name_en": "Gao Feng",
         "line": "71",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "132673"
       },
@@ -2639,7 +2645,7 @@
         "name": "土雞城",
         "name_en": "Tu ji Cheng",
         "line": "71",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "132674"
       },
@@ -2659,7 +2665,7 @@
         "name": "青峰路口",
         "name_en": "Qing Feng Road Entrance",
         "line": "71",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "132675"
       },
@@ -2679,7 +2685,7 @@
         "name": "普天宮",
         "name_en": "Pu Tian Temple",
         "line": "71",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "132676"
       },
@@ -2699,7 +2705,7 @@
         "name": "煙波庭",
         "name_en": "Yan Bo Ting",
         "line": "71",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "137672"
       },
@@ -2719,7 +2725,7 @@
         "name": "財神廟",
         "name_en": "Cai Shen Temple",
         "line": "71",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "132677"
       },
@@ -2739,7 +2745,7 @@
         "name": "建華社區",
         "name_en": "Jianhua Community",
         "line": "71",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "137673"
       },
@@ -2759,7 +2765,7 @@
         "name": "聖經書院",
         "name_en": "Presbyterian Bible College",
         "line": "71",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "132689"
       },
@@ -2779,7 +2785,7 @@
         "name": "竹蓮國小",
         "name_en": "Chu Lian Primary School",
         "line": "71",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "132690"
       },
@@ -2799,7 +2805,7 @@
         "name": "東南街口",
         "name_en": "Dong Nan Street Entrance",
         "line": "71",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "132691"
       },
@@ -2819,7 +2825,7 @@
         "name": "警察宿舍",
         "name_en": "Police Dormitory",
         "line": "71",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "132692"
       },
@@ -2839,7 +2845,7 @@
         "name": "新竹轉運站",
         "name_en": "Hsin-Chu Bus Station",
         "line": "71",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "137274"
       },
@@ -2859,7 +2865,7 @@
         "name": "後站",
         "name_en": "Rear Station",
         "line": "71",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "132693"
       },
@@ -2879,7 +2885,7 @@
         "name": "公園",
         "name_en": "Hsinchu Park",
         "line": "71",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "131825"
       },
@@ -2899,7 +2905,7 @@
         "name": "大潤發2站",
         "name_en": "RT-Mart 2nd Stop",
         "line": "71",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "132694"
       },
@@ -2919,7 +2925,7 @@
         "name": "北新竹後站",
         "name_en": "North Hsinchu Rear Station",
         "line": "71",
-        "color": "#155e75",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "138107"
       },

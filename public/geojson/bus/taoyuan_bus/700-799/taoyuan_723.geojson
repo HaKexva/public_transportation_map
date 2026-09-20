@@ -6,13 +6,14 @@
     "name": "723",
     "name_en": "723",
     "ref": "723",
-    "color": "#7c3aed",
+    "color": "#be123c",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/7230/map/2257/image",
     "operator_id": "6",
     "operator": "亞通客運",
-    "operator_en": "Yatung Bus Co., Ltd."
+    "operator_en": "Yatung Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "723",
         "name": "723",
         "name_en": "723",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#be123c",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1319,6 +1321,10 @@
           [
             121.30016,
             25.02871
+          ],
+          [
+            121.30032,
+            25.02872
           ]
         ]
       }
@@ -1331,7 +1337,7 @@
         "name": "經國轉運站",
         "name_en": "Jingguo Bus Station",
         "line": "723",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6269"
       },
@@ -1351,7 +1357,7 @@
         "name": "經國轉運站(幸福路口)",
         "name_en": "JingGuo Bus Station (Xingfu Rd. Intersection)",
         "line": "723",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1799"
       },
@@ -1371,7 +1377,7 @@
         "name": "經國莊敬路口",
         "name_en": "Jingguo Zhuangjing Road Intersection",
         "line": "723",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1797"
       },
@@ -1391,7 +1397,7 @@
         "name": "中悅春天",
         "name_en": "Jungyuechuentian",
         "line": "723",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1795"
       },
@@ -1411,7 +1417,7 @@
         "name": "經國南平路口",
         "name_en": "Jingguo and Nanping Rd. Intersection",
         "line": "723",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1793"
       },
@@ -1431,7 +1437,7 @@
         "name": "巴黎富邑",
         "name_en": "BaLiFuYi Building",
         "line": "723",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1791"
       },
@@ -1451,7 +1457,7 @@
         "name": "敏盛醫院",
         "name_en": "Min-Sheng General Hospital",
         "line": "723",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "221"
       },
@@ -1471,7 +1477,7 @@
         "name": "大興西同安街口",
         "name_en": "Daxing W. and Tongan St. Intersection",
         "line": "723",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "4208"
       },
@@ -1491,7 +1497,7 @@
         "name": "大興西新埔六街口",
         "name_en": "Daxing west Shinpu Sixth Street Corner",
         "line": "723",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "4306"
       },
@@ -1511,7 +1517,7 @@
         "name": "中正藝文特區",
         "name_en": "Taoyuan Arts Center",
         "line": "723",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "3084"
       },
@@ -1531,7 +1537,7 @@
         "name": "中正中寧街口",
         "name_en": "Zhongzheng Zhongning Road Intersection",
         "line": "723",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1190"
       },
@@ -1551,7 +1557,7 @@
         "name": "中正同德十一街口",
         "name_en": "Jhongjheng Tongde 11th St. Intersection",
         "line": "723",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "3920"
       },
@@ -1571,7 +1577,7 @@
         "name": "莊敬路口",
         "name_en": "Zhuangjing Road Intersection",
         "line": "723",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1376"
       },
@@ -1591,7 +1597,7 @@
         "name": "莊敬中正路口",
         "name_en": "Zhuangjing - Zhongzheng Rd. Intersection",
         "line": "723",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "4365"
       },
@@ -1611,7 +1617,7 @@
         "name": "尊爵飯店",
         "name_en": "TzuenJiue Hotel",
         "line": "723",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1405"
       },
@@ -1631,7 +1637,7 @@
         "name": "長榮富豪",
         "name_en": "Changrongfuhao",
         "line": "723",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "3064"
       },
@@ -1651,7 +1657,7 @@
         "name": "經國轉運站(幸福路口)",
         "name_en": "JingGuo Bus Station (Xingfu Rd. Intersection)",
         "line": "723",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1798"
       },
@@ -1671,7 +1677,7 @@
         "name": "長榮加油站",
         "name_en": "Zhangrong Gas Station",
         "line": "723",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1368"
       },
@@ -1691,7 +1697,7 @@
         "name": "亞建公司",
         "name_en": "YaJian Company",
         "line": "723",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1370"
       },
@@ -1711,7 +1717,7 @@
         "name": "忠孝路口",
         "name_en": "Zhongxiao Rd. Entrance",
         "line": "723",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6926"
       },
@@ -1731,7 +1737,7 @@
         "name": "大智街口",
         "name_en": "Dazhi St. Entrance",
         "line": "723",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6927"
       },
@@ -1751,7 +1757,7 @@
         "name": "三重國小",
         "name_en": "San-Chong Elementary School",
         "line": "723",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6915"
       },
@@ -1771,7 +1777,7 @@
         "name": "捷運三重國小站",
         "name_en": "MRT Sanchong Elementary School Station",
         "line": "723",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6916"
       },
@@ -1791,7 +1797,7 @@
         "name": "德林寺",
         "name_en": "Delin Temple",
         "line": "723",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6928"
       },
@@ -1811,7 +1817,7 @@
         "name": "亞建公司",
         "name_en": "Yajian Company",
         "line": "723",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1371"
       },
@@ -1831,7 +1837,7 @@
         "name": "長榮加油站",
         "name_en": "Zhangrong Gas Station",
         "line": "723",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1369"
       },
@@ -1851,7 +1857,7 @@
         "name": "長榮富豪",
         "name_en": "Changrongfuhao",
         "line": "723",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "3065"
       },
@@ -1871,7 +1877,7 @@
         "name": "尊爵飯店",
         "name_en": "Monarch Plaza Hotel",
         "line": "723",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1404"
       },
@@ -1891,7 +1897,7 @@
         "name": "莊敬路口",
         "name_en": "Zhuangjing Road Intersection",
         "line": "723",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1377"
       },
@@ -1911,7 +1917,7 @@
         "name": "中正同德十一街口",
         "name_en": "Jhongjheng Tongde 11th St. Intersection",
         "line": "723",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "3919"
       },
@@ -1931,7 +1937,7 @@
         "name": "中正中寧街口",
         "name_en": "Zhongzheng Zhongning Road Intersection",
         "line": "723",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1189"
       },
@@ -1951,7 +1957,7 @@
         "name": "中正藝文特區",
         "name_en": "Taoyuan Arts Center",
         "line": "723",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "3085"
       },
@@ -1971,7 +1977,7 @@
         "name": "大興西新埔六街口",
         "name_en": "Daxing W. and Xinpu 6th St. Intersection",
         "line": "723",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "4305"
       },
@@ -1991,7 +1997,7 @@
         "name": "敏盛醫院",
         "name_en": "Min-Sheng General Hospital",
         "line": "723",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "220"
       },
@@ -2011,7 +2017,7 @@
         "name": "巴黎富邑",
         "name_en": "BaLiFuYi Building",
         "line": "723",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1790"
       },
@@ -2031,7 +2037,7 @@
         "name": "經國南平路口",
         "name_en": "Jingguo and Nanping Rd. Intersection",
         "line": "723",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1792"
       },
@@ -2051,7 +2057,7 @@
         "name": "中悅春天",
         "name_en": "Jungyuechuentian",
         "line": "723",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1794"
       },
@@ -2071,7 +2077,7 @@
         "name": "經國莊敬路口",
         "name_en": "Jingguo Zhuangjing Road Intersection",
         "line": "723",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1796"
       },

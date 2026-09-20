@@ -6,13 +6,14 @@
     "name": "135",
     "name_en": "135",
     "ref": "135",
-    "color": "#b91c1c",
+    "color": "#b45309",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/3450/map/1526/image",
     "operator_id": "1",
     "operator": "桃園客運",
-    "operator_en": "Taoyuan Bus Co., Ltd."
+    "operator_en": "Taoyuan Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "135",
         "name": "135",
         "name_en": "135",
-        "color": "#b91c1c",
-        "direction": 0
+        "color": "#b45309",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -799,6 +801,10 @@
           [
             121.22382,
             24.95441
+          ],
+          [
+            121.22371,
+            24.95419
           ]
         ]
       }
@@ -811,7 +817,7 @@
         "name": "中壢公車站",
         "name_en": "Zhongli Bus Station",
         "line": "135",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1229"
       },
@@ -831,7 +837,7 @@
         "name": "中央延平路口",
         "name_en": "Zhongyang and Yanping Road Intersection",
         "line": "135",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4644"
       },
@@ -851,7 +857,7 @@
         "name": "中央新生路口",
         "name_en": "Zhongyang-ShinSheng Road Intersection",
         "line": "135",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "693"
       },
@@ -871,7 +877,7 @@
         "name": "新生路",
         "name_en": "Xinsheng Road",
         "line": "135",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1421"
       },
@@ -891,7 +897,7 @@
         "name": "中美路口",
         "name_en": "Zhongmei Road Intersection",
         "line": "135",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1423"
       },
@@ -911,7 +917,7 @@
         "name": "SOGO百貨(新生路)",
         "name_en": "SOGO Department Stores(Xinsheng Road.)",
         "line": "135",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5036"
       },
@@ -931,7 +937,7 @@
         "name": "興國市場",
         "name_en": "ShingGuo Market",
         "line": "135",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "629"
       },
@@ -951,7 +957,7 @@
         "name": "柑園",
         "name_en": "Ganyuan",
         "line": "135",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "327"
       },
@@ -971,7 +977,7 @@
         "name": "捷運環北站",
         "name_en": "MRT Huanbei Station",
         "line": "135",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3754"
       },
@@ -991,7 +997,7 @@
         "name": "環北新生路口",
         "name_en": "Huanbei Xinsheng Rd. Intersection",
         "line": "135",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2770"
       },
@@ -1011,7 +1017,7 @@
         "name": "中壢區公所",
         "name_en": "Civil Affairs Office of Zhongli District",
         "line": "135",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "525"
       },
@@ -1031,7 +1037,7 @@
         "name": "土地公廟",
         "name_en": "Tudigong Temple",
         "line": "135",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6282"
       },
@@ -1051,7 +1057,7 @@
         "name": "福安三街口",
         "name_en": "Fuan 3rd St. Intersection",
         "line": "135",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1319"
       },
@@ -1071,7 +1077,7 @@
         "name": "中福市場",
         "name_en": "Zhongfu Market",
         "line": "135",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1321"
       },
@@ -1091,7 +1097,7 @@
         "name": "中園福州二街口",
         "name_en": "Jhongyuan Fujhou 2nd St. Intersection",
         "line": "135",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "277"
       },
@@ -1111,7 +1117,7 @@
         "name": "曦園社區",
         "name_en": "Xiyuan Community",
         "line": "135",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "709"
       },
@@ -1131,7 +1137,7 @@
         "name": "忠福國小",
         "name_en": "Jhongfu Elementary School",
         "line": "135",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "711"
       },
@@ -1151,7 +1157,7 @@
         "name": "啟英高中",
         "name_en": "Chiying Senior High School",
         "line": "135",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "274"
       },
@@ -1171,7 +1177,7 @@
         "name": "幸葉公司",
         "name_en": "Taiwan Clover Electronics",
         "line": "135",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1323"
       },
@@ -1191,7 +1197,7 @@
         "name": "憶華公司",
         "name_en": "YiHua Company",
         "line": "135",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1325"
       },
@@ -1211,7 +1217,7 @@
         "name": "內壢國中",
         "name_en": "Neili Junior High School",
         "line": "135",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "530"
       },
@@ -1231,7 +1237,7 @@
         "name": "復華街",
         "name_en": "Fuhua Street",
         "line": "135",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "534"
       },
@@ -1251,7 +1257,7 @@
         "name": "長春路",
         "name_en": "Changchun Road",
         "line": "135",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6832"
       },
@@ -1271,7 +1277,7 @@
         "name": "文成北街口",
         "name_en": "WenChenBei Street Intersection",
         "line": "135",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4730"
       },
@@ -1291,7 +1297,7 @@
         "name": "鍾愛社區",
         "name_en": "JungAi Community Station",
         "line": "135",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4732"
       },
@@ -1311,7 +1317,7 @@
         "name": "福華街口",
         "name_en": "FuHua Street Corner",
         "line": "135",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4733"
       },
@@ -1331,7 +1337,7 @@
         "name": "內壢高中",
         "name_en": "Neili High School",
         "line": "135",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "548"
       },
@@ -1351,7 +1357,7 @@
         "name": "忠孝路",
         "name_en": "JungShiau Road",
         "line": "135",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4734"
       },
@@ -1371,7 +1377,7 @@
         "name": "文成北街口",
         "name_en": "WenChenBei Street Intersection",
         "line": "135",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4731"
       },
@@ -1391,7 +1397,7 @@
         "name": "長春路",
         "name_en": "Changchun Road",
         "line": "135",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6831"
       },
@@ -1411,7 +1417,7 @@
         "name": "復華街",
         "name_en": "Fuhua Street",
         "line": "135",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "533"
       },
@@ -1431,7 +1437,7 @@
         "name": "內壢國中",
         "name_en": "Neili Junior High School",
         "line": "135",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "529"
       },
@@ -1451,7 +1457,7 @@
         "name": "憶華公司",
         "name_en": "YiHua Company",
         "line": "135",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1326"
       },
@@ -1471,7 +1477,7 @@
         "name": "幸葉公司",
         "name_en": "Taiwan Clover Electronics",
         "line": "135",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1324"
       },
@@ -1491,7 +1497,7 @@
         "name": "曦園社區",
         "name_en": "Xiyuan Community",
         "line": "135",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "709"
       },
@@ -1511,7 +1517,7 @@
         "name": "忠福國小",
         "name_en": "Jhongfu Elementary School",
         "line": "135",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "711"
       },
@@ -1531,7 +1537,7 @@
         "name": "啟英高中",
         "name_en": "Chiying Senior High School",
         "line": "135",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "274"
       },
@@ -1551,7 +1557,7 @@
         "name": "中福派出所",
         "name_en": "Zhongfu Police Station",
         "line": "135",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6446"
       },
@@ -1571,7 +1577,7 @@
         "name": "中園福州二街口",
         "name_en": "Jhongyuan Fujhou 2nd St. Intersection",
         "line": "135",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "276"
       },
@@ -1591,7 +1597,7 @@
         "name": "中福市場",
         "name_en": "Zhongfu Market",
         "line": "135",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1322"
       },
@@ -1611,7 +1617,7 @@
         "name": "福安三街口",
         "name_en": "Fuan 3rd St. Intersection",
         "line": "135",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1320"
       },
@@ -1631,7 +1637,7 @@
         "name": "土地公廟",
         "name_en": "Tudigong Temple",
         "line": "135",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6281"
       },
@@ -1651,7 +1657,7 @@
         "name": "中壢區公所",
         "name_en": "Civil Affairs Office of Zhongli District",
         "line": "135",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "528"
       },
@@ -1671,7 +1677,7 @@
         "name": "環北新生路口",
         "name_en": "Huanbei Xinsheng Rd. Intersection",
         "line": "135",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2771"
       },
@@ -1691,7 +1697,7 @@
         "name": "柑園",
         "name_en": "Ganyuan",
         "line": "135",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "326"
       },
@@ -1711,7 +1717,7 @@
         "name": "興國市場",
         "name_en": "ShingGuo Market",
         "line": "135",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "630"
       },
@@ -1731,7 +1737,7 @@
         "name": "SOGO百貨(新生路)",
         "name_en": "SOGO Department Stores(Xinsheng Road.)",
         "line": "135",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5037"
       },
@@ -1751,7 +1757,7 @@
         "name": "中美路口",
         "name_en": "Zhongmei Road Intersection",
         "line": "135",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1424"
       },
@@ -1771,7 +1777,7 @@
         "name": "新生路",
         "name_en": "Xinsheng Road",
         "line": "135",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1422"
       },
@@ -1791,7 +1797,7 @@
         "name": "中央新生路口",
         "name_en": "Zhongyang-ShinSheng Road Intersection",
         "line": "135",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "692"
       },
@@ -1811,7 +1817,7 @@
         "name": "中央延平路口",
         "name_en": "Zhongyang and Yanping Road Intersection",
         "line": "135",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4643"
       },
@@ -1831,7 +1837,7 @@
         "name": "中壢公車站",
         "name_en": "Zhongli Bus Station",
         "line": "135",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1229"
       },

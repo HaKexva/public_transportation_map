@@ -6,13 +6,14 @@
     "name": "716",
     "name_en": "716",
     "ref": "716",
-    "color": "#1e3a8a",
+    "color": "#ea580c",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/716/map/2079/image",
     "operator_id": "4",
     "operator": "統聯客運",
-    "operator_en": "United Highway Bus Co., Ltd."
+    "operator_en": "United Highway Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "716",
         "name": "716",
         "name_en": "716",
-        "color": "#1e3a8a",
-        "direction": 0
+        "color": "#ea580c",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1067,6 +1069,10 @@
           [
             121.31867,
             24.96006
+          ],
+          [
+            121.31874,
+            24.96005
           ]
         ]
       }
@@ -1079,7 +1085,7 @@
         "name": "八德轉運站",
         "name_en": "Bade Bus Station",
         "line": "716",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "6882"
       },
@@ -1099,7 +1105,7 @@
         "name": "永寧轉運站",
         "name_en": "Yongning Bus Station",
         "line": "716",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "6954"
       },

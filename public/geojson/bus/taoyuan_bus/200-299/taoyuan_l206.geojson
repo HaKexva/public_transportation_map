@@ -6,13 +6,14 @@
     "name": "L206",
     "name_en": "L206",
     "ref": "L206",
-    "color": "#b91c1c",
+    "color": "#b45309",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/6540/map/1899/image",
     "operator_id": "1",
     "operator": "桃園客運",
-    "operator_en": "Taoyuan Bus Co., Ltd."
+    "operator_en": "Taoyuan Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "L206",
         "name": "L206",
         "name_en": "L206",
-        "color": "#b91c1c",
-        "direction": 0
+        "color": "#b45309",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -863,6 +865,10 @@
           [
             121.22458,
             24.96537
+          ],
+          [
+            121.2246,
+            24.96544
           ]
         ]
       }
@@ -875,7 +881,7 @@
         "name": "中壢區公所",
         "name_en": "Zhongli District Office",
         "line": "L206",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "526"
       },
@@ -895,7 +901,7 @@
         "name": "中豐北路口",
         "name_en": "Zhongfeng N. Road Intersection",
         "line": "L206",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "524"
       },
@@ -915,7 +921,7 @@
         "name": "民權路口",
         "name_en": "Minquan Road Intersection",
         "line": "L206",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6496"
       },
@@ -935,7 +941,7 @@
         "name": "富貴新村",
         "name_en": "Fugui Village",
         "line": "L206",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "689"
       },
@@ -955,7 +961,7 @@
         "name": "江厝(拖吊場)",
         "name_en": "Jiang cuo (Zhongli Tow Pound)",
         "line": "L206",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "687"
       },
@@ -975,7 +981,7 @@
         "name": "水圳頭(快栽園)",
         "name_en": "Shuichoutou (Kuaizaiyuan)",
         "line": "L206",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "685"
       },
@@ -995,7 +1001,7 @@
         "name": "大丘田",
         "name_en": "Daqiutian",
         "line": "L206",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "313"
       },
@@ -1015,7 +1021,7 @@
         "name": "斗門埤",
         "name_en": "Doumenpi",
         "line": "L206",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "683"
       },
@@ -1035,7 +1041,7 @@
         "name": "芭里活動中心",
         "name_en": "Bali Activity Center",
         "line": "L206",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "681"
       },
@@ -1055,7 +1061,7 @@
         "name": "捷運桃園體育園區站(高鐵南路)",
         "name_en": "MRT Taoyuan Sports Park Station (Gaotie South Rd.)",
         "line": "L206",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4270"
       },
@@ -1075,7 +1081,7 @@
         "name": "文智文德路口",
         "name_en": "Wun Jhih and Wunde Rd.  Intersection",
         "line": "L206",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2185"
       },
@@ -1095,7 +1101,7 @@
         "name": "瑞士社區",
         "name_en": "Ruishi Community",
         "line": "L206",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "679"
       },
@@ -1115,7 +1121,7 @@
         "name": "青塘園",
         "name_en": "Qingtang Garden",
         "line": "L206",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "677"
       },
@@ -1135,7 +1141,7 @@
         "name": "青埔國中",
         "name_en": "Qingpu Junior High School",
         "line": "L206",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "250"
       },
@@ -1155,7 +1161,7 @@
         "name": "八大坵",
         "name_en": "Badaqiu",
         "line": "L206",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "290"
       },
@@ -1175,7 +1181,7 @@
         "name": "永裕路口",
         "name_en": "Yongyu Rd. Intersection",
         "line": "L206",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2824"
       },
@@ -1195,7 +1201,7 @@
         "name": "捷運桃園體育園區站(領航北路)",
         "name_en": "MRT Taoyuan Sports Park Station(Linghang N. Rd.)",
         "line": "L206",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6419"
       },
@@ -1215,7 +1221,7 @@
         "name": "大路下",
         "name_en": "Daluxia",
         "line": "L206",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "152"
       },
@@ -1235,7 +1241,7 @@
         "name": "黃厝",
         "name_en": "Huangcuo",
         "line": "L206",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "30"
       },
@@ -1255,7 +1261,7 @@
         "name": "圓光寺",
         "name_en": "Yuan Kuang Chan Monastery",
         "line": "L206",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "148"
       },
@@ -1275,7 +1281,7 @@
         "name": "圓光佛學院",
         "name_en": "Yuan Kuang Buddhist College",
         "line": "L206",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "146"
       },
@@ -1295,7 +1301,7 @@
         "name": "圓光佛學研究所",
         "name_en": "Yuan Kuang Institute of Buddist Studies",
         "line": "L206",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6902"
       },
@@ -1315,7 +1321,7 @@
         "name": "柑仔店",
         "name_en": "Orangemarket",
         "line": "L206",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "675"
       },
@@ -1335,7 +1341,7 @@
         "name": "崁頭厝",
         "name_en": "Kantoucuo",
         "line": "L206",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "673"
       },
@@ -1355,7 +1361,7 @@
         "name": "張厝",
         "name_en": "Zhangcuo",
         "line": "L206",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "667"
       },
@@ -1375,7 +1381,7 @@
         "name": "月眉社區活動中心",
         "name_en": "Yuemei Community Activity Center",
         "line": "L206",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "665"
       },
@@ -1395,7 +1401,7 @@
         "name": "游厝",
         "name_en": "Youcuo",
         "line": "L206",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "177"
       },
@@ -1415,7 +1421,7 @@
         "name": "月桃路381巷口",
         "name_en": "Intersection of Lane 318, Yuetao Rd.",
         "line": "L206",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4150"
       },
@@ -1435,7 +1441,7 @@
         "name": "山東國小",
         "name_en": "Shandong Elementary School",
         "line": "L206",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "663"
       },
@@ -1455,7 +1461,7 @@
         "name": "東地寮",
         "name_en": "Dongdiliao",
         "line": "L206",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "661"
       },
@@ -1475,7 +1481,7 @@
         "name": "圓光山東路口",
         "name_en": "Yuanguang Shandong Rd. Intersection",
         "line": "L206",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4157"
       },
@@ -1495,7 +1501,7 @@
         "name": "大莊路口",
         "name_en": "Dajhuang Road Intersection",
         "line": "L206",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "659"
       },
@@ -1515,7 +1521,7 @@
         "name": "月山路口",
         "name_en": "Yueshan Road Intersection",
         "line": "L206",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "657"
       },
@@ -1535,7 +1541,7 @@
         "name": "鳥仔厝",
         "name_en": "Niaozicuo",
         "line": "L206",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "476"
       },
@@ -1555,7 +1561,7 @@
         "name": "大崙國中",
         "name_en": "Dalun Junior High School",
         "line": "L206",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "481"
       },
@@ -1575,7 +1581,7 @@
         "name": "大崙",
         "name_en": "Dalun",
         "line": "L206",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "655"
       },
@@ -1595,7 +1601,7 @@
         "name": "崙頂",
         "name_en": "Lungding",
         "line": "L206",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "426"
       },
@@ -1615,7 +1621,7 @@
         "name": "三宏",
         "name_en": "Sanhong",
         "line": "L206",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "241"
       },
@@ -1635,7 +1641,7 @@
         "name": "崎頂",
         "name_en": "Qiding",
         "line": "L206",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "235"
       },
@@ -1655,7 +1661,7 @@
         "name": "三塊厝(魚市場)",
         "name_en": "Sankuaicuo(Fish Market)",
         "line": "L206",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "653"
       },
@@ -1675,7 +1681,7 @@
         "name": "中大路口",
         "name_en": "Zhongda Road Intersection",
         "line": "L206",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "651"
       },
@@ -1695,7 +1701,7 @@
         "name": "中央大學",
         "name_en": "National Central University",
         "line": "L206",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "647"
       },
@@ -1715,7 +1721,7 @@
         "name": "三民路口",
         "name_en": "Sanmin Road Intersection",
         "line": "L206",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "646"
       },
@@ -1735,7 +1741,7 @@
         "name": "天祥醫院(志廣路)",
         "name_en": "Armfulcare Hospital(Zhiguang Rd.)",
         "line": "L206",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1589"
       },
@@ -1755,7 +1761,7 @@
         "name": "志廣路口",
         "name_en": "Zhiguang Road Intersection",
         "line": "L206",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "517"
       },
@@ -1775,7 +1781,7 @@
         "name": "中壢高中(三光路)",
         "name_en": "Zhongli Senior High School(Sanguan Rd.)",
         "line": "L206",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "642"
       },
@@ -1795,7 +1801,7 @@
         "name": "國民運動中心",
         "name_en": "Civil Sports Center",
         "line": "L206",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4484"
       },
@@ -1815,7 +1821,7 @@
         "name": "光明公園",
         "name_en": "Guangming Park",
         "line": "L206",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "634"
       },
@@ -1835,7 +1841,7 @@
         "name": "興國市場",
         "name_en": "ShingGuo Market",
         "line": "L206",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "630"
       },
@@ -1855,7 +1861,7 @@
         "name": "SOGO百貨(元化路)",
         "name_en": "SOGO Department Stores(Yuanhua Rd.)",
         "line": "L206",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "706"
       },
@@ -1875,7 +1881,7 @@
         "name": "慈惠三街",
         "name_en": "Cihua 3rd St.",
         "line": "L206",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "626"
       },
@@ -1895,7 +1901,7 @@
         "name": "中壢區公所",
         "name_en": "Civil Affairs Office of Zhongli District",
         "line": "L206",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "527"
       },

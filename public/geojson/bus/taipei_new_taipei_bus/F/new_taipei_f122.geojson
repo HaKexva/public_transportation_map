@@ -6,13 +6,14 @@
     "name": "F122",
     "name_en": "F122",
     "ref": "F122",
-    "color": "#9f1239",
+    "color": "#6B8F9A",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.gov.taipei/File/Get/41812a88-a2b7-4fb4-b011-b039bca94da1?v=639248448776310375",
     "operator_id": "16230",
     "operator": "八里區公所",
-    "operator_en": "Bali District Office"
+    "operator_en": "Bali District Office",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "F122",
         "name": "F122",
         "name_en": "F122",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#6B8F9A",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1151,6 +1153,10 @@
           [
             121.404324902858,
             25.149834713255
+          ],
+          [
+            121.404584848593,
+            25.1500461680179
           ]
         ]
       }
@@ -1163,7 +1169,7 @@
         "name": "八里國小",
         "name_en": "Bali Elementary School",
         "line": "F122",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3778"
       },
@@ -1183,7 +1189,7 @@
         "name": "八里服務站",
         "name_en": "Bali Service Sta.",
         "line": "F122",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3776"
       },
@@ -1203,7 +1209,7 @@
         "name": "八里區農會",
         "name_en": "Bali District Farmers' Association",
         "line": "F122",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "15035"
       },
@@ -1223,7 +1229,7 @@
         "name": "舊城里",
         "name_en": "JiouCheng Village",
         "line": "F122",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3819"
       },
@@ -1243,7 +1249,7 @@
         "name": "八里",
         "name_en": "Bali",
         "line": "F122",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3774"
       },
@@ -1263,7 +1269,7 @@
         "name": "八里國中",
         "name_en": "Bali Junior High School",
         "line": "F122",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165606215"
       },
@@ -1283,7 +1289,7 @@
         "name": "八里國小",
         "name_en": "Bali Elementary School",
         "line": "F122",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3778"
       },

@@ -6,13 +6,14 @@
     "name": "F151-0840、1705",
     "name_en": "F151-0840、1705",
     "ref": "F151-0840、1705",
-    "color": "#0B7A3E",
+    "color": "#6B8F9A",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.gov.taipei/File/Get/e88c2de5-8931-4c21-a037-61275b1c2109?v=639248448788966586",
     "operator_id": "16231",
     "operator": "石門區公所",
-    "operator_en": "Shimen District Office"
+    "operator_en": "Shimen District Office",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "F151-0840、1705",
         "name": "F151-0840、1705",
         "name_en": "F151-0840、1705",
-        "color": "#0B7A3E",
-        "direction": 0
+        "color": "#6B8F9A",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1435,6 +1437,10 @@
           [
             121.567694177378,
             25.2916400334416
+          ],
+          [
+            121.567656098776,
+            25.2916544892074
           ]
         ]
       }
@@ -1447,7 +1453,7 @@
         "name": "石門區公所",
         "name_en": "Shimen District office",
         "line": "F151-0840、1705",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75534"
       },
@@ -1467,7 +1473,7 @@
         "name": "崩山口",
         "name_en": "Bengshankou",
         "line": "F151-0840、1705",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75547"
       },
@@ -1487,7 +1493,7 @@
         "name": "老梅",
         "name_en": "Laomei",
         "line": "F151-0840、1705",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75539"
       },
@@ -1507,7 +1513,7 @@
         "name": "山溪集會所",
         "name_en": "Shanxi Meeting Hall",
         "line": "F151-0840、1705",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75525"
       },
@@ -1527,7 +1533,7 @@
         "name": "大丘田",
         "name_en": "Daqiutian",
         "line": "F151-0840、1705",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165610506"
       },
@@ -1547,7 +1553,7 @@
         "name": "老梅",
         "name_en": "Laomei",
         "line": "F151-0840、1705",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75538"
       },
@@ -1567,7 +1573,7 @@
         "name": "崩山口",
         "name_en": "Bengshankou",
         "line": "F151-0840、1705",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75545"
       },
@@ -1587,7 +1593,7 @@
         "name": "石門區公所",
         "name_en": "Shimen District office",
         "line": "F151-0840、1705",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75534"
       },

@@ -6,13 +6,14 @@
     "name": "黃南路線逆行",
     "name_en": "黃南路線逆行",
     "ref": "黃南路線逆行",
-    "color": "#86198f",
+    "color": "#3730a3",
     "city_id": "KinmenCounty",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.kinmen.gov.tw/api/route/963/map/129/image",
     "operator_id": "0001",
     "operator": "金門",
-    "operator_en": "City Bus and Ferry Management Office, Kinmen County"
+    "operator_en": "City Bus and Ferry Management Office, Kinmen County",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "黃南路線逆行",
         "name": "黃南路線逆行",
         "name_en": "黃南路線逆行",
-        "color": "#86198f",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -663,6 +665,10 @@
           [
             118.25729,
             24.42675
+          ],
+          [
+            118.25713,
+            24.42675
           ]
         ]
       }
@@ -675,7 +681,7 @@
         "name": "烈嶼車站",
         "name_en": "Liehyu Station",
         "line": "黃南路線逆行",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "803"
       },
@@ -695,7 +701,7 @@
         "name": "湖下忠義廟",
         "name_en": "HuXiaZhongYiMiao",
         "line": "黃南路線逆行",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "958"
       },
@@ -715,7 +721,7 @@
         "name": "羅厝",
         "name_en": "LuoCuo",
         "line": "黃南路線逆行",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "956"
       },
@@ -735,7 +741,7 @@
         "name": "東林尾",
         "name_en": "Donglinwei",
         "line": "黃南路線逆行",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "773"
       },
@@ -755,7 +761,7 @@
         "name": "東林",
         "name_en": "Dongli",
         "line": "黃南路線逆行",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "774"
       },
@@ -775,7 +781,7 @@
         "name": "西宅",
         "name_en": "Xizha",
         "line": "黃南路線逆行",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "775"
       },
@@ -795,7 +801,7 @@
         "name": "西路",
         "name_en": "Xil",
         "line": "黃南路線逆行",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "776"
       },
@@ -815,7 +821,7 @@
         "name": "烈嶼分院",
         "name_en": "Liehyu subdivision of the Kinmen County Hospital",
         "line": "黃南路線逆行",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "777"
       },
@@ -835,7 +841,7 @@
         "name": "烈嶼分院停車場",
         "name_en": "Hospital parking lot",
         "line": "黃南路線逆行",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "964"
       },
@@ -855,7 +861,7 @@
         "name": "烈嶼分院",
         "name_en": "Liehyu subdivision of the Kinmen County Hospital",
         "line": "黃南路線逆行",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "777"
       },
@@ -875,7 +881,7 @@
         "name": "金陵山莊",
         "name_en": "Jincheng Village",
         "line": "黃南路線逆行",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "778"
       },
@@ -895,7 +901,7 @@
         "name": "西方社區",
         "name_en": "Western Community",
         "line": "黃南路線逆行",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "834"
       },
@@ -915,7 +921,7 @@
         "name": "西方",
         "name_en": "Xifang",
         "line": "黃南路線逆行",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "823"
       },
@@ -935,7 +941,7 @@
         "name": "下田",
         "name_en": "Xiatia",
         "line": "黃南路線逆行",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "824"
       },
@@ -955,7 +961,7 @@
         "name": "雙口",
         "name_en": "Shuangko",
         "line": "黃南路線逆行",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "825"
       },
@@ -975,7 +981,7 @@
         "name": "東坑",
         "name_en": "Dongken",
         "line": "黃南路線逆行",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "826"
       },
@@ -995,7 +1001,7 @@
         "name": "湖井頭",
         "name_en": "Hujingto",
         "line": "黃南路線逆行",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "837"
       },
@@ -1015,7 +1021,7 @@
         "name": "雙口",
         "name_en": "Shuangko",
         "line": "黃南路線逆行",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "828"
       },
@@ -1035,7 +1041,7 @@
         "name": "下田",
         "name_en": "Xiatia",
         "line": "黃南路線逆行",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "829"
       },
@@ -1055,7 +1061,7 @@
         "name": "西方",
         "name_en": "Xifang",
         "line": "黃南路線逆行",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "830"
       },
@@ -1075,7 +1081,7 @@
         "name": "中墩",
         "name_en": "Zhongdu",
         "line": "黃南路線逆行",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "838"
       },
@@ -1095,7 +1101,7 @@
         "name": "上林",
         "name_en": "Shangli",
         "line": "黃南路線逆行",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "839"
       },
@@ -1115,7 +1121,7 @@
         "name": "上林一",
         "name_en": "Shangli 1",
         "line": "黃南路線逆行",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "840"
       },
@@ -1135,7 +1141,7 @@
         "name": "高厝",
         "name_en": "GaoCuo",
         "line": "黃南路線逆行",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "841"
       },
@@ -1155,7 +1161,7 @@
         "name": "上庫",
         "name_en": "Shangk",
         "line": "黃南路線逆行",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "842"
       },
@@ -1175,7 +1181,7 @@
         "name": "東勢",
         "name_en": "DongShi",
         "line": "黃南路線逆行",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "843"
       },
@@ -1195,7 +1201,7 @@
         "name": "萬聖宮",
         "name_en": "Wansheng Templ",
         "line": "黃南路線逆行",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "844"
       },
@@ -1215,7 +1221,7 @@
         "name": "石鼓山",
         "name_en": "Shigusha",
         "line": "黃南路線逆行",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "864"
       },
@@ -1235,7 +1241,7 @@
         "name": "烈女廟",
         "name_en": "Chaste Maiden Temple",
         "line": "黃南路線逆行",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "846"
       },
@@ -1255,7 +1261,7 @@
         "name": "青岐三",
         "name_en": "Qingqi 3",
         "line": "黃南路線逆行",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "847"
       },
@@ -1275,7 +1281,7 @@
         "name": "青岐二",
         "name_en": "Qingqi 2",
         "line": "黃南路線逆行",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "848"
       },
@@ -1295,7 +1301,7 @@
         "name": "關帝廟",
         "name_en": "Guandi Temple",
         "line": "黃南路線逆行",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "849"
       },
@@ -1315,7 +1321,7 @@
         "name": "青岐一",
         "name_en": "Qingqi 1",
         "line": "黃南路線逆行",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "850"
       },
@@ -1335,7 +1341,7 @@
         "name": "青岐",
         "name_en": "Qingqi",
         "line": "黃南路線逆行",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "814"
       },
@@ -1355,7 +1361,7 @@
         "name": "青岐路口",
         "name_en": "Qingqi Rd.",
         "line": "黃南路線逆行",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "851"
       },
@@ -1375,7 +1381,7 @@
         "name": "東埔池",
         "name_en": "DongPu Pool",
         "line": "黃南路線逆行",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "852"
       },
@@ -1395,7 +1401,7 @@
         "name": "楊厝",
         "name_en": "Yangcu",
         "line": "黃南路線逆行",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "853"
       },
@@ -1415,7 +1421,7 @@
         "name": "福壽山",
         "name_en": "FuShou Mountain",
         "line": "黃南路線逆行",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "854"
       },
@@ -1435,7 +1441,7 @@
         "name": "南塘",
         "name_en": "Nantan",
         "line": "黃南路線逆行",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "855"
       },
@@ -1455,7 +1461,7 @@
         "name": "烈嶼國中",
         "name_en": "Lieyu Junior High Schoo",
         "line": "黃南路線逆行",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "856"
       },
@@ -1475,7 +1481,7 @@
         "name": "八達樓子",
         "name_en": "Bada Towe",
         "line": "黃南路線逆行",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "857"
       },
@@ -1495,7 +1501,7 @@
         "name": "西宅",
         "name_en": "Xizha",
         "line": "黃南路線逆行",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "800"
       },
@@ -1515,7 +1521,7 @@
         "name": "東林",
         "name_en": "Dongli",
         "line": "黃南路線逆行",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "801"
       },
@@ -1535,7 +1541,7 @@
         "name": "東林尾",
         "name_en": "Donglinwei",
         "line": "黃南路線逆行",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "802"
       },
@@ -1555,7 +1561,7 @@
         "name": "烈嶼車站",
         "name_en": "Liehyu Station",
         "line": "黃南路線逆行",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "803"
       },

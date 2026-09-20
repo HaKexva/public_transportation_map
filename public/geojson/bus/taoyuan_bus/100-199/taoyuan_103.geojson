@@ -6,13 +6,14 @@
     "name": "103",
     "name_en": "103",
     "ref": "103",
-    "color": "#b91c1c",
+    "color": "#b45309",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/3060/map/2443/image",
     "operator_id": "1",
     "operator": "桃園客運",
-    "operator_en": "Taoyuan Bus Co., Ltd."
+    "operator_en": "Taoyuan Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "103",
         "name": "103",
         "name_en": "103",
-        "color": "#b91c1c",
-        "direction": 0
+        "color": "#b45309",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -975,6 +977,10 @@
           [
             121.31423,
             24.98702
+          ],
+          [
+            121.31408,
+            24.98765
           ]
         ]
       }
@@ -987,7 +993,7 @@
         "name": "桃園總站",
         "name_en": "Taoyuan Main Station",
         "line": "103",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3204"
       },
@@ -1007,7 +1013,7 @@
         "name": "建國國小",
         "name_en": "Jianguo Elementary School",
         "line": "103",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3312"
       },
@@ -1027,7 +1033,7 @@
         "name": "桃園婦女館",
         "name_en": "Center for Women",
         "line": "103",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "874"
       },
@@ -1047,7 +1053,7 @@
         "name": "延平路口",
         "name_en": "Yanping Road Intersection",
         "line": "103",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "875"
       },
@@ -1067,7 +1073,7 @@
         "name": "福豐國中(樹仁二街)",
         "name_en": " Fu-Fong Junior High School (Shuren 2nd St.)",
         "line": "103",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6998"
       },
@@ -1087,7 +1093,7 @@
         "name": "建新公園",
         "name_en": "Jianxin Park",
         "line": "103",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6996"
       },
@@ -1107,7 +1113,7 @@
         "name": "白蘭社區",
         "name_en": "Bailan Community",
         "line": "103",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1931"
       },
@@ -1127,7 +1133,7 @@
         "name": "新加坡社區",
         "name_en": "ShinJiaPo",
         "line": "103",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1944"
       },
@@ -1147,7 +1153,7 @@
         "name": "國產社區",
         "name_en": "Goldsun Community",
         "line": "103",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1928"
       },
@@ -1167,7 +1173,7 @@
         "name": "大成龍門社區",
         "name_en": "Dacheng Lungmen Community",
         "line": "103",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1272"
       },
@@ -1187,7 +1193,7 @@
         "name": "大義里",
         "name_en": "Dayi Village",
         "line": "103",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1260"
       },
@@ -1207,7 +1213,7 @@
         "name": "陸光四村",
         "name_en": "The 4th village of Lu guang",
         "line": "103",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1258"
       },
@@ -1227,7 +1233,7 @@
         "name": "大湳站(G04)",
         "name_en": "Danan Station(G04)",
         "line": "103",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1723"
       },
@@ -1247,7 +1253,7 @@
         "name": "和平路口",
         "name_en": "Heping Rd. Intersection",
         "line": "103",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4481"
       },
@@ -1267,7 +1273,7 @@
         "name": "香榭儷舍",
         "name_en": "Xiangxielishe",
         "line": "103",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1936"
       },
@@ -1287,7 +1293,7 @@
         "name": "大成國中(和平路)",
         "name_en": "Dacheng Junior High School(Heping Rd.)",
         "line": "103",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6842"
       },
@@ -1307,7 +1313,7 @@
         "name": "惠爾得公司",
         "name_en": "Hueierde Company",
         "line": "103",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1221"
       },
@@ -1327,7 +1333,7 @@
         "name": "西坡路口",
         "name_en": "Shipo Road Intersection",
         "line": "103",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1934"
       },
@@ -1347,7 +1353,7 @@
         "name": "大安活動中心",
         "name_en": "DaAn Activity Center",
         "line": "103",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4432"
       },
@@ -1367,7 +1373,7 @@
         "name": "大安國小",
         "name_en": "Daan Elementary School",
         "line": "103",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1922"
       },
@@ -1387,7 +1393,7 @@
         "name": "八德轉運站",
         "name_en": "Bade Bus Station",
         "line": "103",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6882"
       },
@@ -1407,7 +1413,7 @@
         "name": "大草厝",
         "name_en": "DaTsauTsuo",
         "line": "103",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1926"
       },
@@ -1427,7 +1433,7 @@
         "name": "大安國小",
         "name_en": "Daan Elementary School",
         "line": "103",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1923"
       },
@@ -1447,7 +1453,7 @@
         "name": "大安活動中心",
         "name_en": "DaAn Activity Center",
         "line": "103",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4431"
       },
@@ -1467,7 +1473,7 @@
         "name": "西坡路口",
         "name_en": "Shipo Road Intersection",
         "line": "103",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1935"
       },
@@ -1487,7 +1493,7 @@
         "name": "惠爾得公司",
         "name_en": "Hueierde Company",
         "line": "103",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1220"
       },
@@ -1507,7 +1513,7 @@
         "name": "大成國中(和平路)",
         "name_en": "Dacheng Junior High School(Heping Rd.)",
         "line": "103",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6843"
       },
@@ -1527,7 +1533,7 @@
         "name": "香榭儷舍",
         "name_en": "Xiangxielishe",
         "line": "103",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1937"
       },
@@ -1547,7 +1553,7 @@
         "name": "和平路口",
         "name_en": "Heping Rd. Intersection",
         "line": "103",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4482"
       },
@@ -1567,7 +1573,7 @@
         "name": "大湳站(G04)",
         "name_en": "Danan Station(G04)",
         "line": "103",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1724"
       },
@@ -1587,7 +1593,7 @@
         "name": "陸光四村",
         "name_en": "Luguang 4th Village",
         "line": "103",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1257"
       },
@@ -1607,7 +1613,7 @@
         "name": "大義里",
         "name_en": "Dayi Village",
         "line": "103",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1259"
       },
@@ -1627,7 +1633,7 @@
         "name": "大成龍門社區",
         "name_en": "Dacheng Lungmen Community",
         "line": "103",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1271"
       },
@@ -1647,7 +1653,7 @@
         "name": "國產社區",
         "name_en": "Goldsun Community",
         "line": "103",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1929"
       },
@@ -1667,7 +1673,7 @@
         "name": "新加坡社區",
         "name_en": "ShinJiaPo",
         "line": "103",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1945"
       },
@@ -1687,7 +1693,7 @@
         "name": "白蘭社區",
         "name_en": "Bailan Community",
         "line": "103",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1930"
       },
@@ -1707,7 +1713,7 @@
         "name": "建新公園",
         "name_en": "Jianxin Park",
         "line": "103",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6995"
       },
@@ -1727,7 +1733,7 @@
         "name": "福豐國中(樹仁二街)",
         "name_en": " Fu-Fong Junior High School (Shuren 2nd St.)",
         "line": "103",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6997"
       },
@@ -1747,7 +1753,7 @@
         "name": "延平路口",
         "name_en": "Yanping Road Intersection",
         "line": "103",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "876"
       },
@@ -1767,7 +1773,7 @@
         "name": "桃園婦女館",
         "name_en": "Center for Women",
         "line": "103",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "873"
       },
@@ -1787,7 +1793,7 @@
         "name": "建國國小",
         "name_en": "Jianguo Elementary School",
         "line": "103",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3313"
       },

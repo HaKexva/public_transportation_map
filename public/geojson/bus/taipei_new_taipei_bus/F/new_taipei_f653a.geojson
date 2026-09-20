@@ -6,13 +6,14 @@
     "name": "F653A",
     "name_en": "F653A",
     "ref": "F653A",
-    "color": "#15803d",
+    "color": "#6B8F9A",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.gov.taipei/File/Get/ca681e9f-58aa-4ed7-ac8d-7db0261301f0?v=639248448800363074",
     "operator_id": "16244",
     "operator": "鶯歌區公所",
-    "operator_en": "Yingge District Office"
+    "operator_en": "Yingge District Office",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "F653A",
         "name": "F653A",
         "name_en": "F653A",
-        "color": "#15803d",
-        "direction": 0
+        "color": "#6B8F9A",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1083,6 +1085,10 @@
           [
             121.354963715379,
             24.9550812671751
+          ],
+          [
+            121.354958149745,
+            24.9551030797563
           ]
         ]
       }
@@ -1095,7 +1101,7 @@
         "name": "鶯歌火車站",
         "name_en": "Yingge Rail Sta.",
         "line": "F653A",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73363"
       },
@@ -1115,7 +1121,7 @@
         "name": "林長壽圖書館",
         "name_en": "Lin Chang Shou Library",
         "line": "F653A",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165604384"
       },
@@ -1135,7 +1141,7 @@
         "name": "中山路249巷",
         "name_en": "Lane 249 Zhongshan Rd.",
         "line": "F653A",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73437"
       },
@@ -1155,7 +1161,7 @@
         "name": "中山路292號",
         "name_en": "No.292 Zhongshan Rd.",
         "line": "F653A",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165604383"
       },
@@ -1175,7 +1181,7 @@
         "name": "余厝巷口",
         "name_en": "Yucuo Lane Entrance",
         "line": "F653A",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165604389"
       },
@@ -1195,7 +1201,7 @@
         "name": "大湖路148號",
         "name_en": "No.148 Dahu Rd.",
         "line": "F653A",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73320"
       },
@@ -1215,7 +1221,7 @@
         "name": "名湖社區",
         "name_en": "Minghu Community",
         "line": "F653A",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73332"
       },
@@ -1235,7 +1241,7 @@
         "name": "鶯歌幼兒園",
         "name_en": "Yingge preschool",
         "line": "F653A",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73336"
       },
@@ -1255,7 +1261,7 @@
         "name": "大湖路358號",
         "name_en": "No.358 Dahu Rd.",
         "line": "F653A",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73321"
       },
@@ -1275,7 +1281,7 @@
         "name": "中湖街70號",
         "name_en": "No.70 Zhonghu St.",
         "line": "F653A",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73325"
       },
@@ -1295,7 +1301,7 @@
         "name": "三湖宮",
         "name_en": "Shanfu Temple",
         "line": "F653A",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73434"
       },
@@ -1315,7 +1321,7 @@
         "name": "東湖里辦公處",
         "name_en": "Donghu Village Office",
         "line": "F653A",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73444"
       },
@@ -1335,7 +1341,7 @@
         "name": "池塘邊",
         "name_en": "Chitangbian",
         "line": "F653A",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73337"
       },
@@ -1355,7 +1361,7 @@
         "name": "大竹圍",
         "name_en": "Dazhuwei",
         "line": "F653A",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73318"
       },
@@ -1375,7 +1381,7 @@
         "name": "中湖街70號",
         "name_en": "No.70 Zhonghu St.",
         "line": "F653A",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165604366"
       },
@@ -1395,7 +1401,7 @@
         "name": "湖山分駐所",
         "name_en": "Hushan Police Station",
         "line": "F653A",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165604375"
       },
@@ -1415,7 +1421,7 @@
         "name": "大湖路與湖山路口",
         "name_en": "Dahu & Hushan Intersection",
         "line": "F653A",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165604399"
       },
@@ -1435,7 +1441,7 @@
         "name": "大同社區",
         "name_en": "Tatung Community",
         "line": "F653A",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73317"
       },
@@ -1455,7 +1461,7 @@
         "name": "湖山路土地公廟",
         "name_en": "Hushan Rd. Tudigong Temple",
         "line": "F653A",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73354"
       },
@@ -1475,7 +1481,7 @@
         "name": "國際二路6巷巷口",
         "name_en": "Lane 6 Guoji 3rd Rd. Intersection",
         "line": "F653A",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165610369"
       },
@@ -1495,7 +1501,7 @@
         "name": "國際二路22號",
         "name_en": "No.22 Guoji 2nd Rd.",
         "line": "F653A",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165604381"
       },
@@ -1515,7 +1521,7 @@
         "name": "香賓街口",
         "name_en": "Xiangbin St. Entrance",
         "line": "F653A",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73344"
       },
@@ -1535,7 +1541,7 @@
         "name": "朝陽街口",
         "name_en": "Zhaoyang St. Entrance",
         "line": "F653A",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73352"
       },
@@ -1555,7 +1561,7 @@
         "name": "大湖路700巷巷口",
         "name_en": "Lane 700 Dahu Rd. Intersection",
         "line": "F653A",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73372"
       },
@@ -1575,7 +1581,7 @@
         "name": "台北監獄",
         "name_en": "Taipei Prison",
         "line": "F653A",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73384"
       },
@@ -1595,7 +1601,7 @@
         "name": "鳳鳴火車站",
         "name_en": "Fengming Rail Sta.",
         "line": "F653A",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165610357"
       },
@@ -1615,7 +1621,7 @@
         "name": "西湖街225號",
         "name_en": "No.225 Xihu St.",
         "line": "F653A",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603488"
       },
@@ -1635,7 +1641,7 @@
         "name": "中山高架橋橋頭",
         "name_en": "Zhongshan High Trestle Bridge",
         "line": "F653A",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603484"
       },
@@ -1655,7 +1661,7 @@
         "name": "育樂街口",
         "name_en": "Yule St. Entrance",
         "line": "F653A",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73393"
       },
@@ -1675,7 +1681,7 @@
         "name": "惠隆宮",
         "name_en": "Huilong Temple",
         "line": "F653A",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603490"
       },
@@ -1695,7 +1701,7 @@
         "name": "建國國小",
         "name_en": "Jianguo Elementary School",
         "line": "F653A",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73406"
       },
@@ -1715,7 +1721,7 @@
         "name": "光明街與國慶街口",
         "name_en": "Guangming St. and Guoqing St.",
         "line": "F653A",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73349"
       },
@@ -1735,7 +1741,7 @@
         "name": "林長壽圖書館",
         "name_en": "Lin Chang Shou Library",
         "line": "F653A",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73446"
       },
@@ -1755,7 +1761,7 @@
         "name": "鶯歌火車站",
         "name_en": "Yingge Rail Sta.",
         "line": "F653A",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73363"
       },

@@ -6,10 +6,11 @@
     "name": "602",
     "name_en": "602",
     "ref": "602",
-    "color": "#9f1239",
+    "color": "#0f766e",
     "city_id": "Keelung",
     "source": "TDX Bus Shape / StopOfRoute",
-    "official_map_url": "https://web.taiwanbus.tw/MISUploadData/Schematic/file/0474.jpg"
+    "official_map_url": "https://web.taiwanbus.tw/MISUploadData/Schematic/file/0474.jpg",
+    "loop": true
   },
   "features": [
     {
@@ -19,8 +20,9 @@
         "ref": "602",
         "name": "602",
         "name_en": "602",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#0f766e",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -3444,6 +3446,10 @@
           [
             121.73712,
             25.10326
+          ],
+          [
+            121.73659,
+            25.10381
           ]
         ]
       }
@@ -3456,7 +3462,7 @@
         "name": "暖暖分站(調度站)",
         "name_en": "Nuannuan Substation",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "141051",
         "stop_role": "depot"
@@ -3477,7 +3483,7 @@
         "name": "威德廟",
         "name_en": "Weide Temple",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "141052"
       },
@@ -3497,7 +3503,7 @@
         "name": "暖暖火車站",
         "name_en": "Nuannuan Station",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "141053"
       },
@@ -3517,7 +3523,7 @@
         "name": "暖暖街16巷口",
         "name_en": "Ln. 16 Nuannuan St. Intersection",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "141060"
       },
@@ -3537,7 +3543,7 @@
         "name": "暖暖國小",
         "name_en": "Keelung Municipal Nuannuan Elementary School",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "141056"
       },
@@ -3557,7 +3563,7 @@
         "name": "東勢街土地廟",
         "name_en": "Dongshih St. (Tudi Temple)",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "141057"
       },
@@ -3577,7 +3583,7 @@
         "name": "環翠名盧",
         "name_en": "Huancuiminglu",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "141061"
       },
@@ -3597,7 +3603,7 @@
         "name": "碧嵐大地社區",
         "name_en": "Bilandadi Community",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "141063"
       },
@@ -3617,7 +3623,7 @@
         "name": "東興廟",
         "name_en": "Dongxing Temple",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "140859"
       },
@@ -3637,7 +3643,7 @@
         "name": "暖暖聖光堂",
         "name_en": "Nuan Holy Light Baptist Church",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "141064"
       },
@@ -3657,7 +3663,7 @@
         "name": "寫意山水社區",
         "name_en": "Xieyishanshui Community",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "140860"
       },
@@ -3677,7 +3683,7 @@
         "name": "暖西國小",
         "name_en": "Nuanshi Elementary School",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "140861"
       },
@@ -3697,7 +3703,7 @@
         "name": "教師研習中心",
         "name_en": "Teachers` In-Service Education Center",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "141080"
       },
@@ -3717,7 +3723,7 @@
         "name": "水源地",
         "name_en": "Shuiyuandi",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "140862"
       },
@@ -3737,7 +3743,7 @@
         "name": "正榮社區",
         "name_en": "Zhengrong Community",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "140863"
       },
@@ -3757,7 +3763,7 @@
         "name": "暖暖郵局",
         "name_en": "Keelung Nuannuan Post Office",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "140864"
       },
@@ -3777,7 +3783,7 @@
         "name": "暖暖國小",
         "name_en": "Keelung Municipal Nuannuan Elementary School",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "141110"
       },
@@ -3797,7 +3803,7 @@
         "name": "媽祖廟(安德宮)",
         "name_en": "Mazu Temple (Ande Temple)",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "141082"
       },
@@ -3817,7 +3823,7 @@
         "name": "暖暖火車站(回)",
         "name_en": "Nuannuan Station",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "141054"
       },
@@ -3837,7 +3843,7 @@
         "name": "暖暖高中",
         "name_en": "Nuannuan High School",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "141083"
       },
@@ -3857,7 +3863,7 @@
         "name": "市府宿舍",
         "name_en": "Keelung City Dormitory",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "143910"
       },
@@ -3877,7 +3883,7 @@
         "name": "過港郵局",
         "name_en": "Keelung Guogang Post Office",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "141091"
       },
@@ -3897,7 +3903,7 @@
         "name": "中漁新村",
         "name_en": "Zhongyuxincun",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "141098"
       },
@@ -3917,7 +3923,7 @@
         "name": "指修宮",
         "name_en": "Zhixiu Temple",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "141106"
       },
@@ -3937,7 +3943,7 @@
         "name": "八堵橋",
         "name_en": "Badu Bridge",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "140930"
       },
@@ -3957,7 +3963,7 @@
         "name": "海會寺",
         "name_en": "Haihui Temple",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "141033"
       },
@@ -3977,7 +3983,7 @@
         "name": "南榮公墓(英仁里)",
         "name_en": "Nanrong Cemetery",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "141035"
       },
@@ -3997,7 +4003,7 @@
         "name": "寶明寺",
         "name_en": "Baoming Temple",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "141037"
       },
@@ -4017,7 +4023,7 @@
         "name": "蓬萊隧道北口",
         "name_en": "Penglai Tunnel N. Exit",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "141040"
       },
@@ -4037,7 +4043,7 @@
         "name": "南榮國小",
         "name_en": "Nanrong Elementary School",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "141043"
       },
@@ -4057,7 +4063,7 @@
         "name": "三坑",
         "name_en": "Sankeng",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "141045"
       },
@@ -4077,7 +4083,7 @@
         "name": "南榮路口",
         "name_en": "Nanrong Rd. Intersection",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "141047"
       },
@@ -4097,7 +4103,7 @@
         "name": "仁二路(二信循環站)",
         "name_en": "Ren 2nd Rd. (Erxin Loop Station )",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "140620"
       },
@@ -4117,7 +4123,7 @@
         "name": "基隆火車站(南站)",
         "name_en": "Keelung Railway Station S.",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "141049"
       },
@@ -4137,7 +4143,7 @@
         "name": "仁五路(東和大樓)",
         "name_en": "Ren 5th Rd.",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "140629"
       },
@@ -4157,7 +4163,7 @@
         "name": "南榮路口",
         "name_en": "Nanrong Rd. Intersection",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "141048"
       },
@@ -4177,7 +4183,7 @@
         "name": "三坑",
         "name_en": "Sankeng",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "141046"
       },
@@ -4197,7 +4203,7 @@
         "name": "南榮國小",
         "name_en": "Nanrong Elementary School",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "141044"
       },
@@ -4217,7 +4223,7 @@
         "name": "蓬萊隧道北口",
         "name_en": "Penglai Tunnel N. Exit",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "141039"
       },
@@ -4237,7 +4243,7 @@
         "name": "寶明寺",
         "name_en": "Baoming Temple",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "141038"
       },
@@ -4257,7 +4263,7 @@
         "name": "南榮公墓(英仁里)",
         "name_en": "Nanrong Cemetery",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "141036"
       },
@@ -4277,7 +4283,7 @@
         "name": "海會寺",
         "name_en": "Haihui Temple",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "141034"
       },
@@ -4297,7 +4303,7 @@
         "name": "八堵橋",
         "name_en": "Badu Bridge",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "140654"
       },
@@ -4317,7 +4323,7 @@
         "name": "指修宮",
         "name_en": "Zhixiu Temple",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "141108"
       },
@@ -4337,7 +4343,7 @@
         "name": "中漁新村",
         "name_en": "Zhongyuxincun",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "141099"
       },
@@ -4357,7 +4363,7 @@
         "name": "過港郵局",
         "name_en": "Keelung Guogang Post Office",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "141092"
       },
@@ -4377,7 +4383,7 @@
         "name": "市府宿舍",
         "name_en": "Keelung City Dormitory",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "143911"
       },
@@ -4397,7 +4403,7 @@
         "name": "暖暖高中",
         "name_en": "Nuannuan High School",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "141084"
       },
@@ -4417,7 +4423,7 @@
         "name": "暖暖火車站(返)",
         "name_en": "Nuannuan Station",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "141054"
       },
@@ -4437,7 +4443,7 @@
         "name": "暖暖街16巷口(返)",
         "name_en": "Ln. 16 Nuannuan St. Intersection",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "141060"
       },
@@ -4457,7 +4463,7 @@
         "name": "暖暖國小(返)",
         "name_en": "Keelung Municipal Nuannuan Elementary School",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "141056"
       },
@@ -4477,7 +4483,7 @@
         "name": "暖暖郵局",
         "name_en": "Keelung Nuannuan Post Office",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "140872"
       },
@@ -4497,7 +4503,7 @@
         "name": "正榮社區",
         "name_en": "Zhengrong Community",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "140873"
       },
@@ -4517,7 +4523,7 @@
         "name": "水源地",
         "name_en": "Shuiyuandi",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "140874"
       },
@@ -4537,7 +4543,7 @@
         "name": "教師研習中心",
         "name_en": "Teachers` In-Service Education Center",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "141081"
       },
@@ -4557,7 +4563,7 @@
         "name": "暖西國小",
         "name_en": "Nuanshi Elementary School",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "140875"
       },
@@ -4577,7 +4583,7 @@
         "name": "寫意山水社區",
         "name_en": "Xieyishanshui Community",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "140876"
       },
@@ -4597,7 +4603,7 @@
         "name": "東興廟",
         "name_en": "Dongxing Temple",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "140877"
       },
@@ -4617,7 +4623,7 @@
         "name": "環翠名盧",
         "name_en": "Huancuiminglu",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "141062"
       },
@@ -4637,7 +4643,7 @@
         "name": "東勢街1-1號",
         "name_en": "No.1-1 Dongshih St.",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "141065"
       },
@@ -4657,7 +4663,7 @@
         "name": "東勢街土地廟",
         "name_en": "Dongshih St. (Tudi Temple)",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "141058"
       },
@@ -4677,7 +4683,7 @@
         "name": "暖暖區公所",
         "name_en": "Keelung City Nuannuan District Office",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "140865"
       },
@@ -4697,7 +4703,7 @@
         "name": "水源路",
         "name_en": "Shuiyuan Rd.",
         "line": "602",
-        "color": "#9f1239",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "140866"
       },

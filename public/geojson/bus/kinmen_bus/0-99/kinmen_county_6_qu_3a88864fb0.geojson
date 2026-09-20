@@ -6,13 +6,14 @@
     "name": "6去程繞城區",
     "name_en": "6去程繞城區",
     "ref": "6去程繞城區",
-    "color": "#86198f",
+    "color": "#3730a3",
     "city_id": "KinmenCounty",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.kinmen.gov.tw/api/route/611/map/191/image",
     "operator_id": "0001",
     "operator": "金門",
-    "operator_en": "City Bus and Ferry Management Office, Kinmen County"
+    "operator_en": "City Bus and Ferry Management Office, Kinmen County",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "6去程繞城區",
         "name": "6去程繞城區",
         "name_en": "6去程繞城區",
-        "color": "#86198f",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -639,6 +641,10 @@
           [
             118.31993,
             24.43325
+          ],
+          [
+            118.32006,
+            24.43291
           ]
         ]
       }
@@ -651,7 +657,7 @@
         "name": "金城站",
         "name_en": "Jincheng Station",
         "line": "6去程繞城區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "0"
       },
@@ -671,7 +677,7 @@
         "name": "衛生所",
         "name_en": "Health Center",
         "line": "6去程繞城區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "58"
       },
@@ -691,7 +697,7 @@
         "name": "中正國小",
         "name_en": "ZhongZheng Elementary School",
         "line": "6去程繞城區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "59"
       },
@@ -711,7 +717,7 @@
         "name": "金城國中",
         "name_en": "Jincheng Junior High School",
         "line": "6去程繞城區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "61"
       },
@@ -731,7 +737,7 @@
         "name": "體育館",
         "name_en": "Gymnasium",
         "line": "6去程繞城區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "62"
       },
@@ -751,7 +757,7 @@
         "name": "北堤路",
         "name_en": "Beiti Rd.",
         "line": "6去程繞城區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "63"
       },
@@ -771,7 +777,7 @@
         "name": "迴龍廟",
         "name_en": "Hueilong Temple",
         "line": "6去程繞城區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "64"
       },
@@ -791,7 +797,7 @@
         "name": "燦坤",
         "name_en": "TsannKuen",
         "line": "6去程繞城區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "177"
       },
@@ -811,7 +817,7 @@
         "name": "莒光樓",
         "name_en": "Juguang Tower",
         "line": "6去程繞城區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "178"
       },
@@ -831,7 +837,7 @@
         "name": "晶鑽社區",
         "name_en": "Jingzuan Community",
         "line": "6去程繞城區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "179"
       },
@@ -851,7 +857,7 @@
         "name": "吳厝",
         "name_en": "Wucuo",
         "line": "6去程繞城區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "180"
       },
@@ -871,7 +877,7 @@
         "name": "賢庵國小",
         "name_en": "Shyan An Primary School",
         "line": "6去程繞城區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "181"
       },
@@ -891,7 +897,7 @@
         "name": "官裡",
         "name_en": "Guanli",
         "line": "6去程繞城區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "182"
       },
@@ -911,7 +917,7 @@
         "name": "東社",
         "name_en": "Dongshe",
         "line": "6去程繞城區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "183"
       },
@@ -931,7 +937,7 @@
         "name": "燕南山",
         "name_en": "Yannanshan",
         "line": "6去程繞城區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "184"
       },
@@ -951,7 +957,7 @@
         "name": "珠山",
         "name_en": "Zhushan",
         "line": "6去程繞城區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "185"
       },
@@ -971,7 +977,7 @@
         "name": "古崗一",
         "name_en": "Gugang 1",
         "line": "6去程繞城區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "322"
       },
@@ -991,7 +997,7 @@
         "name": "古崗",
         "name_en": "Gugang",
         "line": "6去程繞城區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "323"
       },
@@ -1011,7 +1017,7 @@
         "name": "古崗湖",
         "name_en": "Gugang Lake ",
         "line": "6去程繞城區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "329"
       },
@@ -1031,7 +1037,7 @@
         "name": "舊東門",
         "name_en": "Jiu Dongmen",
         "line": "6去程繞城區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "330"
       },
@@ -1051,7 +1057,7 @@
         "name": "金門城一",
         "name_en": "Jinmencheng 1",
         "line": "6去程繞城區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "331"
       },
@@ -1071,7 +1077,7 @@
         "name": "金門城",
         "name_en": "Jinmencheng",
         "line": "6去程繞城區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "332"
       },
@@ -1091,7 +1097,7 @@
         "name": "金門城西",
         "name_en": "Jinmencheng Si",
         "line": "6去程繞城區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "333"
       },
@@ -1111,7 +1117,7 @@
         "name": "水頭圓環一",
         "name_en": "Shuitou Cirque 1",
         "line": "6去程繞城區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "334"
       },
@@ -1131,7 +1137,7 @@
         "name": "水頭圓環",
         "name_en": "Shuitou Cirque ",
         "line": "6去程繞城區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "335"
       },
@@ -1151,7 +1157,7 @@
         "name": "金城後山",
         "name_en": "Jincheng HouSan",
         "line": "6去程繞城區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "336"
       },
@@ -1171,7 +1177,7 @@
         "name": "西海路二段",
         "name_en": "Sihai Rd.",
         "line": "6去程繞城區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "337"
       },
@@ -1191,7 +1197,7 @@
         "name": "宏玻陶瓷廠",
         "name_en": "Hongbo Ceramic Factory",
         "line": "6去程繞城區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "338"
       },
@@ -1211,7 +1217,7 @@
         "name": "三叉路口",
         "name_en": "Three-Way Intersections",
         "line": "6去程繞城區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "339"
       },
@@ -1231,7 +1237,7 @@
         "name": "賢聚",
         "name_en": "Xiancuo",
         "line": "6去程繞城區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "340"
       },
@@ -1251,7 +1257,7 @@
         "name": "官路邊",
         "name_en": "Guanlubian",
         "line": "6去程繞城區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "341"
       },
@@ -1271,7 +1277,7 @@
         "name": "山前",
         "name_en": "Shangqian",
         "line": "6去程繞城區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "342"
       },
@@ -1291,7 +1297,7 @@
         "name": "新山前",
         "name_en": "Xinshangqian",
         "line": "6去程繞城區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "343"
       },
@@ -1311,7 +1317,7 @@
         "name": "吳厝活動中心",
         "name_en": "Wucuo activity center",
         "line": "6去程繞城區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "344"
       },
@@ -1331,7 +1337,7 @@
         "name": "晶鑽社區",
         "name_en": "Jingzuan Community",
         "line": "6去程繞城區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "229"
       },
@@ -1351,7 +1357,7 @@
         "name": "莒光樓",
         "name_en": "Juguang Tower",
         "line": "6去程繞城區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "230"
       },
@@ -1371,7 +1377,7 @@
         "name": "燦坤",
         "name_en": "TsannKuen",
         "line": "6去程繞城區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "231"
       },
@@ -1391,7 +1397,7 @@
         "name": "東門",
         "name_en": "Dongmen",
         "line": "6去程繞城區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "345"
       },
@@ -1411,7 +1417,7 @@
         "name": "金城站",
         "name_en": "Jincheng Station",
         "line": "6去程繞城區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "0"
       },

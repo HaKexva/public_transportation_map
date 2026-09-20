@@ -6,13 +6,14 @@
     "name": "723A",
     "name_en": "723A",
     "ref": "723A",
-    "color": "#7c3aed",
+    "color": "#be123c",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/7231/map/2258/image",
     "operator_id": "6",
     "operator": "亞通客運",
-    "operator_en": "Yatung Bus Co., Ltd."
+    "operator_en": "Yatung Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "723A",
         "name": "723A",
         "name_en": "723A",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#be123c",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -3423,6 +3425,10 @@
           [
             121.30018,
             25.02872
+          ],
+          [
+            121.30024,
+            25.02875
           ]
         ]
       }
@@ -3435,7 +3441,7 @@
         "name": "經國轉運站",
         "name_en": "Jingguo Bus Station",
         "line": "723A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6269"
       },
@@ -3455,7 +3461,7 @@
         "name": "經國轉運站(幸福路口)",
         "name_en": "JingGuo Bus Station (Xingfu Rd. Intersection)",
         "line": "723A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1799"
       },
@@ -3475,7 +3481,7 @@
         "name": "經國莊敬路口",
         "name_en": "Jingguo Zhuangjing Road Intersection",
         "line": "723A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1797"
       },
@@ -3495,7 +3501,7 @@
         "name": "中悅春天",
         "name_en": "Jungyuechuentian",
         "line": "723A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1795"
       },
@@ -3515,7 +3521,7 @@
         "name": "經國南平路口",
         "name_en": "Jingguo and Nanping Rd. Intersection",
         "line": "723A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1793"
       },
@@ -3535,7 +3541,7 @@
         "name": "南平同安街口",
         "name_en": "Nanping Rd. and Tongan St. Intersection",
         "line": "723A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "3983"
       },
@@ -3555,7 +3561,7 @@
         "name": "南平中正路口",
         "name_en": "Nanping - Zhongzheng Rd Intersection",
         "line": "723A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "3757"
       },
@@ -3575,7 +3581,7 @@
         "name": "中正中寧街口",
         "name_en": "Zhongzheng Zhongning Road Intersection",
         "line": "723A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1190"
       },
@@ -3595,7 +3601,7 @@
         "name": "中正同德十一街口",
         "name_en": "Jhongjheng Tongde 11th St. Intersection",
         "line": "723A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "3920"
       },
@@ -3615,7 +3621,7 @@
         "name": "莊敬路口",
         "name_en": "Zhuangjing Road Intersection",
         "line": "723A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1376"
       },
@@ -3635,7 +3641,7 @@
         "name": "中正莊二街口",
         "name_en": "Zhongzhengzhuang 2th Street Intersection",
         "line": "723A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5211"
       },
@@ -3655,7 +3661,7 @@
         "name": "中正橋",
         "name_en": "Zhengzheng Bridge",
         "line": "723A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5088"
       },
@@ -3675,7 +3681,7 @@
         "name": "忠孝路口",
         "name_en": "Zhongxiao Rd. Entrance",
         "line": "723A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6926"
       },
@@ -3695,7 +3701,7 @@
         "name": "大智街口",
         "name_en": "Dazhi St. Entrance",
         "line": "723A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6927"
       },
@@ -3715,7 +3721,7 @@
         "name": "三重國小",
         "name_en": "San-Chong Elementary School",
         "line": "723A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6915"
       },
@@ -3735,7 +3741,7 @@
         "name": "捷運三重國小站",
         "name_en": "MRT Sanchong Elementary School Station",
         "line": "723A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6916"
       },
@@ -3755,7 +3761,7 @@
         "name": "德林寺",
         "name_en": "Delin Temple",
         "line": "723A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6928"
       },
@@ -3775,7 +3781,7 @@
         "name": "中正橋",
         "name_en": "Zhengzheng Bridge",
         "line": "723A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5089"
       },
@@ -3795,7 +3801,7 @@
         "name": "中正莊二街口",
         "name_en": "Zhongzhengzhuang 2th Street Intersection",
         "line": "723A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6176"
       },
@@ -3815,7 +3821,7 @@
         "name": "莊敬路口",
         "name_en": "Zhuangjing Road Intersection",
         "line": "723A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1377"
       },
@@ -3835,7 +3841,7 @@
         "name": "中正同德十一街口",
         "name_en": "Jhongjheng Tongde 11th St. Intersection",
         "line": "723A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "3919"
       },
@@ -3855,7 +3861,7 @@
         "name": "南平中正路口",
         "name_en": "Nanping - Zhongzheng Rd Intersection",
         "line": "723A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "3756"
       },
@@ -3875,7 +3881,7 @@
         "name": "南平同安街口",
         "name_en": "Nanping Rd. and Tongan St. Intersection",
         "line": "723A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "3984"
       },
@@ -3895,7 +3901,7 @@
         "name": "經國南平路口",
         "name_en": "Jingguo and Nanping Rd. Intersection",
         "line": "723A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1792"
       },
@@ -3915,7 +3921,7 @@
         "name": "中悅春天",
         "name_en": "Jungyuechuentian",
         "line": "723A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1794"
       },
@@ -3935,7 +3941,7 @@
         "name": "經國莊敬路口",
         "name_en": "Jingguo Zhuangjing Road Intersection",
         "line": "723A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1796"
       },
@@ -3955,7 +3961,7 @@
         "name": "經國轉運站(幸福路口)",
         "name_en": "JingGuo Bus Station (Xingfu Rd. Intersection)",
         "line": "723A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1798"
       },

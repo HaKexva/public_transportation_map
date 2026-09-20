@@ -6,13 +6,14 @@
     "name": "L728",
     "name_en": "L728",
     "ref": "L728",
-    "color": "#b91c1c",
+    "color": "#b45309",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/57280/map/587/image",
     "operator_id": "1",
     "operator": "桃園客運",
-    "operator_en": "Taoyuan Bus Co., Ltd."
+    "operator_en": "Taoyuan Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "L728",
         "name": "L728",
         "name_en": "L728",
-        "color": "#b91c1c",
-        "direction": 0
+        "color": "#b45309",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -2603,6 +2605,10 @@
           [
             121.21672,
             24.86396
+          ],
+          [
+            121.21662,
+            24.86392
           ]
         ]
       }
@@ -2615,7 +2621,7 @@
         "name": "龍潭區衛生所",
         "name_en": "Longtan District Health Center",
         "line": "L728",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "810"
       },
@@ -2635,7 +2641,7 @@
         "name": "新龍路",
         "name_en": "Xinlong Rd.",
         "line": "L728",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "849"
       },
@@ -2655,7 +2661,7 @@
         "name": "新龍路450巷口",
         "name_en": "Ln. 450, Xinlong Rd.",
         "line": "L728",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6129"
       },
@@ -2675,7 +2681,7 @@
         "name": "中豐新龍路口",
         "name_en": "Jhongfong and Xinlong Rd. Intersection",
         "line": "L728",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6430"
       },
@@ -2695,7 +2701,7 @@
         "name": "亞洲工業",
         "name_en": "NIPPON PAINT",
         "line": "L728",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4158"
       },
@@ -2715,7 +2721,7 @@
         "name": "富鑽工業城",
         "name_en": "Fu Zuan Industrial city",
         "line": "L728",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4449"
       },
@@ -2735,7 +2741,7 @@
         "name": "高平水廠",
         "name_en": "Gaoping Water Plant",
         "line": "L728",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4160"
       },
@@ -2755,7 +2761,7 @@
         "name": "十股",
         "name_en": "Shihgu",
         "line": "L728",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4162"
       },
@@ -2775,7 +2781,7 @@
         "name": "湳窩站",
         "name_en": "Nanwo Station",
         "line": "L728",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6841"
       },
@@ -2795,7 +2801,7 @@
         "name": "龍源國小",
         "name_en": "Longyuan Elementary School",
         "line": "L728",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4164"
       },
@@ -2815,7 +2821,7 @@
         "name": "高平活動中心",
         "name_en": "Gaoping Community Center",
         "line": "L728",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4166"
       },
@@ -2835,7 +2841,7 @@
         "name": "車頭",
         "name_en": "Chetou",
         "line": "L728",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4356"
       },
@@ -2855,7 +2861,7 @@
         "name": "三元宮路口",
         "name_en": "Sanyuan Temple Intersection",
         "line": "L728",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4019"
       },
@@ -2875,7 +2881,7 @@
         "name": "高原國小",
         "name_en": "Gaoyuan Elementary school",
         "line": "L728",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4447"
       },
@@ -2895,7 +2901,7 @@
         "name": "渴望路口",
         "name_en": "Kewang Rd",
         "line": "L728",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4017"
       },
@@ -2915,7 +2921,7 @@
         "name": "法蘭朵社區",
         "name_en": "Falanduo Community",
         "line": "L728",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4015"
       },
@@ -2935,7 +2941,7 @@
         "name": "希望四季",
         "name_en": "Siwang Sihji",
         "line": "L728",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4013"
       },
@@ -2955,7 +2961,7 @@
         "name": "渴望會館",
         "name_en": "Aspire Resort",
         "line": "L728",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4008"
       },
@@ -2975,7 +2981,7 @@
         "name": "名人社區",
         "name_en": "Mingren Community",
         "line": "L728",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4010"
       },
@@ -2995,7 +3001,7 @@
         "name": "渴望三期社區",
         "name_en": "Kewang Third community",
         "line": "L728",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3762"
       },
@@ -3015,7 +3021,7 @@
         "name": "名人社區",
         "name_en": "Mingren Community",
         "line": "L728",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4011"
       },
@@ -3035,7 +3041,7 @@
         "name": "渴望會館",
         "name_en": "Aspire Resort",
         "line": "L728",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4009"
       },
@@ -3055,7 +3061,7 @@
         "name": "高平消防隊",
         "name_en": "Gaoping Fire Brigade",
         "line": "L728",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4007"
       },
@@ -3075,7 +3081,7 @@
         "name": "江夏科文祖堂",
         "name_en": "Jiangsia Ke Wun temple",
         "line": "L728",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3758"
       },
@@ -3095,7 +3101,7 @@
         "name": "泥橋子",
         "name_en": "Niciaozih",
         "line": "L728",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4005"
       },
@@ -3115,7 +3121,7 @@
         "name": "宜欣陽光",
         "name_en": "Yisin Yangguang",
         "line": "L728",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4003"
       },
@@ -3135,7 +3141,7 @@
         "name": "高原郵局",
         "name_en": "Gaoyuan Post Office",
         "line": "L728",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4001"
       },
@@ -3155,7 +3161,7 @@
         "name": "羅馬磁磚公司",
         "name_en": "Roma Tile Company",
         "line": "L728",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3760"
       },
@@ -3175,7 +3181,7 @@
         "name": "銅鑼圈",
         "name_en": "Tongluoquan",
         "line": "L728",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3998"
       },
@@ -3195,7 +3201,7 @@
         "name": "健康",
         "name_en": "Jiankang",
         "line": "L728",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3996"
       },
@@ -3215,7 +3221,7 @@
         "name": "中豐新龍路口",
         "name_en": "Jhongfong and Xinlong Rd. Intersection",
         "line": "L728",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6429"
       },
@@ -3235,7 +3241,7 @@
         "name": "新龍路450巷口",
         "name_en": "Ln. 450, Xinlong Rd.",
         "line": "L728",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6130"
       },
@@ -3255,7 +3261,7 @@
         "name": "新龍路",
         "name_en": "Xinlong Rd.",
         "line": "L728",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "850"
       },
@@ -3275,7 +3281,7 @@
         "name": "佳佳商場",
         "name_en": "Jiajia Market",
         "line": "L728",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2519"
       },
@@ -3295,7 +3301,7 @@
         "name": "龍潭區衛生所",
         "name_en": "Longtan District Health Center",
         "line": "L728",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "810"
       },

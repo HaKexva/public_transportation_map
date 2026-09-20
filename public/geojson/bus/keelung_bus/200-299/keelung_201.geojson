@@ -6,10 +6,11 @@
     "name": "201",
     "name_en": "201",
     "ref": "201",
-    "color": "#9f1239",
+    "color": "#7c2d12",
     "city_id": "Keelung",
     "source": "TDX Bus Shape / StopOfRoute",
-    "official_map_url": "https://web.taiwanbus.tw/MISUploadData/Schematic/file/0211.jpg"
+    "official_map_url": "https://web.taiwanbus.tw/MISUploadData/Schematic/file/0211.jpg",
+    "loop": true
   },
   "features": [
     {
@@ -19,8 +20,9 @@
         "ref": "201",
         "name": "201",
         "name_en": "201",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#7c2d12",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -2660,6 +2662,10 @@
           [
             121.77869,
             25.13663
+          ],
+          [
+            121.77857,
+            25.1364
           ]
         ]
       }
@@ -2672,7 +2678,7 @@
         "name": "深美國小(消防分隊)",
         "name_en": "Shen-Mei Elementary School ( Fire Units)",
         "line": "201",
-        "color": "#9f1239",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "140565"
       },
@@ -2692,7 +2698,7 @@
         "name": "深美街",
         "name_en": "Shenmei St.",
         "line": "201",
-        "color": "#9f1239",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "140570"
       },
@@ -2712,7 +2718,7 @@
         "name": "深溪路口",
         "name_en": "Shenxi Rd. Intersection",
         "line": "201",
-        "color": "#9f1239",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "140578"
       },
@@ -2732,7 +2738,7 @@
         "name": "第一特獎社區",
         "name_en": "Diyitejiang Community",
         "line": "201",
-        "color": "#9f1239",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "140580"
       },
@@ -2752,7 +2758,7 @@
         "name": "麗景江山社區",
         "name_en": "Lijingjiangshan Community",
         "line": "201",
-        "color": "#9f1239",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "140586"
       },
@@ -2772,7 +2778,7 @@
         "name": "孝忠里民活動中心",
         "name_en": "Xiaozhong Village Activity Center",
         "line": "201",
-        "color": "#9f1239",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "140588"
       },
@@ -2792,7 +2798,7 @@
         "name": "孝東路",
         "name_en": "Xiaodong Rd.",
         "line": "201",
-        "color": "#9f1239",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "140589"
       },
@@ -2812,7 +2818,7 @@
         "name": "住安城堡社區",
         "name_en": "Zhuan Castle Community",
         "line": "201",
-        "color": "#9f1239",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "140592"
       },
@@ -2832,7 +2838,7 @@
         "name": "培德工家",
         "name_en": "Peide Industrial and Commercial High School",
         "line": "201",
-        "color": "#9f1239",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "140594"
       },
@@ -2852,7 +2858,7 @@
         "name": "信義國中",
         "name_en": "Sinyi Junior High School",
         "line": "201",
-        "color": "#9f1239",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "140597"
       },
@@ -2872,7 +2878,7 @@
         "name": "東光市場",
         "name_en": "Dongguang Market",
         "line": "201",
-        "color": "#9f1239",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "140600"
       },
@@ -2892,7 +2898,7 @@
         "name": "地方法院",
         "name_en": "Taiwan Keelung District Court",
         "line": "201",
-        "color": "#9f1239",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "140602"
       },
@@ -2912,7 +2918,7 @@
         "name": "東明市場",
         "name_en": "Dongming Market",
         "line": "201",
-        "color": "#9f1239",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "140604"
       },
@@ -2932,7 +2938,7 @@
         "name": "市立醫院",
         "name_en": "Keelung City Municipal Hospital",
         "line": "201",
-        "color": "#9f1239",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "140606"
       },
@@ -2952,7 +2958,7 @@
         "name": "基隆女中",
         "name_en": "National Keelung Girls` Senior High School",
         "line": "201",
-        "color": "#9f1239",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "140608"
       },
@@ -2972,7 +2978,7 @@
         "name": "義九路口",
         "name_en": "Yi 9th Rd. Intersection",
         "line": "201",
-        "color": "#9f1239",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "140610"
       },
@@ -2992,7 +2998,7 @@
         "name": "義七路口",
         "name_en": "Yi 7th Rd. Intersection",
         "line": "201",
-        "color": "#9f1239",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "140612"
       },
@@ -3012,7 +3018,7 @@
         "name": "義六路口",
         "name_en": "Yi 6th Rd. Intersection",
         "line": "201",
-        "color": "#9f1239",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "140614"
       },
@@ -3032,7 +3038,7 @@
         "name": "義四路口",
         "name_en": "Yi 4th Rd. Intersection",
         "line": "201",
-        "color": "#9f1239",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "140616"
       },
@@ -3052,7 +3058,7 @@
         "name": "義二路口",
         "name_en": "Yi 2nd Rd. Intersection",
         "line": "201",
-        "color": "#9f1239",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "140618"
       },
@@ -3072,7 +3078,7 @@
         "name": "仁二路(二信循環站)",
         "name_en": "Ren 2nd Rd. (Erxin Loop Station )",
         "line": "201",
-        "color": "#9f1239",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "140620"
       },
@@ -3092,7 +3098,7 @@
         "name": "基隆轉運站",
         "name_en": "Keelung Transit Station",
         "line": "201",
-        "color": "#9f1239",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "143441"
       },
@@ -3112,7 +3118,7 @@
         "name": "民治里活動中心",
         "name_en": "Minzhi Village Activity Center",
         "line": "201",
-        "color": "#9f1239",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "141126"
       },
@@ -3132,7 +3138,7 @@
         "name": "忠一路孝一路口",
         "name_en": "Zhong 1st Rd. &amp; Xiao 1st Rd. Intersection",
         "line": "201",
-        "color": "#9f1239",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "140621"
       },
@@ -3152,7 +3158,7 @@
         "name": "電力公司",
         "name_en": "Taiwan Power Company of Keelung City",
         "line": "201",
-        "color": "#9f1239",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "140619"
       },
@@ -3172,7 +3178,7 @@
         "name": "愛六路口",
         "name_en": "Ai 6th Rd. Intersection",
         "line": "201",
-        "color": "#9f1239",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "140617"
       },
@@ -3192,7 +3198,7 @@
         "name": "劉銘傳路口",
         "name_en": "Liumingchuan Rd.",
         "line": "201",
-        "color": "#9f1239",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "140615"
       },
@@ -3212,7 +3218,7 @@
         "name": "愛九路口",
         "name_en": "Ai 9th Rd. Intersection",
         "line": "201",
-        "color": "#9f1239",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "140613"
       },
@@ -3232,7 +3238,7 @@
         "name": "仁一路27號",
         "name_en": "No.27 Ren 1st Rd.",
         "line": "201",
-        "color": "#9f1239",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "140611"
       },
@@ -3252,7 +3258,7 @@
         "name": "月眉路口",
         "name_en": "Yuemei Rd. Intersection",
         "line": "201",
-        "color": "#9f1239",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "140609"
       },
@@ -3272,7 +3278,7 @@
         "name": "光華巷口",
         "name_en": "Guanghua Intersection",
         "line": "201",
-        "color": "#9f1239",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "140607"
       },
@@ -3292,7 +3298,7 @@
         "name": "東橋",
         "name_en": "Dong Bridge",
         "line": "201",
-        "color": "#9f1239",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "140605"
       },
@@ -3312,7 +3318,7 @@
         "name": "地方法院",
         "name_en": "Taiwan Keelung District Court",
         "line": "201",
-        "color": "#9f1239",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "140603"
       },
@@ -3332,7 +3338,7 @@
         "name": "東光市場",
         "name_en": "Dongguang Market",
         "line": "201",
-        "color": "#9f1239",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "140601"
       },
@@ -3352,7 +3358,7 @@
         "name": "信義國中",
         "name_en": "Sinyi Junior High School",
         "line": "201",
-        "color": "#9f1239",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "140598"
       },
@@ -3372,7 +3378,7 @@
         "name": "韋昌嶺",
         "name_en": "Weichang Mountain",
         "line": "201",
-        "color": "#9f1239",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "140599"
       },
@@ -3392,7 +3398,7 @@
         "name": "培德工家",
         "name_en": "Peide Industrial and Commercial High School",
         "line": "201",
-        "color": "#9f1239",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "140595"
       },
@@ -3412,7 +3418,7 @@
         "name": "太陽宮廟",
         "name_en": "The Sun Palace Temple",
         "line": "201",
-        "color": "#9f1239",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "140596"
       },
@@ -3432,7 +3438,7 @@
         "name": "住安城堡社區",
         "name_en": "Zhuan Castle Community",
         "line": "201",
-        "color": "#9f1239",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "140593"
       },
@@ -3452,7 +3458,7 @@
         "name": "孝東路",
         "name_en": "Xiaodong Rd.",
         "line": "201",
-        "color": "#9f1239",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "140591"
       },
@@ -3472,7 +3478,7 @@
         "name": "麗景江山社區",
         "name_en": "Lijingjiangshan Community",
         "line": "201",
-        "color": "#9f1239",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "140587"
       },
@@ -3492,7 +3498,7 @@
         "name": "第一特獎社區",
         "name_en": "Diyitejiang Community",
         "line": "201",
-        "color": "#9f1239",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "140581"
       },
@@ -3512,7 +3518,7 @@
         "name": "又一村",
         "name_en": "Youyi Village",
         "line": "201",
-        "color": "#9f1239",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "140585"
       },
@@ -3532,7 +3538,7 @@
         "name": "深溪路口",
         "name_en": "Shenxi Rd. Intersection",
         "line": "201",
-        "color": "#9f1239",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "140584"
       },
@@ -3552,7 +3558,7 @@
         "name": "深美街",
         "name_en": "Shenmei St.",
         "line": "201",
-        "color": "#9f1239",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "140583"
       },
@@ -3572,7 +3578,7 @@
         "name": "深美國小(消防分隊)",
         "name_en": "Shen-Mei Elementary School ( Fire Units)",
         "line": "201",
-        "color": "#9f1239",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "140582"
       },

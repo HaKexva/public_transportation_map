@@ -6,12 +6,13 @@
     "name": "幸福獅子9路",
     "name_en": "幸福獅子9路",
     "ref": "幸福獅子9路",
-    "color": "#dc2626",
+    "color": "#0f766e",
     "city_id": "PingtungCounty",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://web.taiwanbus.tw/MISUploadData/Schematic/file/0259.jpg",
     "operator_id": "128",
-    "operator": "屏東縣獅子鄉公所"
+    "operator": "屏東縣獅子鄉公所",
+    "loop": true
   },
   "features": [
     {
@@ -21,8 +22,9 @@
         "ref": "幸福獅子9路",
         "name": "幸福獅子9路",
         "name_en": "幸福獅子9路",
-        "color": "#dc2626",
-        "direction": 0
+        "color": "#0f766e",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -14557,8 +14559,9 @@
         "ref": "幸福獅子9路",
         "name": "幸福獅子9路",
         "name_en": "幸福獅子9路",
-        "color": "#dc2626",
-        "direction": 1
+        "color": "#0f766e",
+        "direction": 1,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -30658,7 +30661,7 @@
         "name": "獅子鄉公所",
         "name_en": "Shizi Township Office",
         "line": "幸福獅子9路",
-        "color": "#dc2626",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "143850"
       },
@@ -30678,7 +30681,7 @@
         "name": "內文村辦公處",
         "name_en": "Neiwen Village Office",
         "line": "幸福獅子9路",
-        "color": "#dc2626",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "143851"
       },
@@ -30698,7 +30701,7 @@
         "name": "草埔衛生室",
         "name_en": "Caopu Health Room",
         "line": "幸福獅子9路",
-        "color": "#dc2626",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "143852"
       },
@@ -30718,7 +30721,7 @@
         "name": "伊屯部落",
         "name_en": "Yi Tun Tribe",
         "line": "幸福獅子9路",
-        "color": "#dc2626",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "143855"
       },
@@ -30738,7 +30741,7 @@
         "name": "丹路國小",
         "name_en": "Danlu Elementary school",
         "line": "幸福獅子9路",
-        "color": "#dc2626",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "144024"
       },
@@ -30758,7 +30761,7 @@
         "name": "新路",
         "name_en": "Xinlu",
         "line": "幸福獅子9路",
-        "color": "#dc2626",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "143858"
       },
@@ -30778,7 +30781,7 @@
         "name": "楓林循理教會",
         "name_en": "Methodist Fenglin Church",
         "line": "幸福獅子9路",
-        "color": "#dc2626",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "143859"
       },
@@ -30798,7 +30801,7 @@
         "name": "獅子鄉公所",
         "name_en": "Shizi Township Office",
         "line": "幸福獅子9路",
-        "color": "#dc2626",
+        "color": "#0f766e",
         "direction": 1,
         "station_id": "143879"
       },
@@ -30818,7 +30821,7 @@
         "name": "楓林循理教會",
         "name_en": "Methodist Fenglin Church",
         "line": "幸福獅子9路",
-        "color": "#dc2626",
+        "color": "#0f766e",
         "direction": 1,
         "station_id": "143859"
       },
@@ -30838,7 +30841,7 @@
         "name": "新路",
         "name_en": "Xinlu",
         "line": "幸福獅子9路",
-        "color": "#dc2626",
+        "color": "#0f766e",
         "direction": 1,
         "station_id": "143866"
       },
@@ -30858,7 +30861,7 @@
         "name": "丹路國小",
         "name_en": "Danlu Elementary school",
         "line": "幸福獅子9路",
-        "color": "#dc2626",
+        "color": "#0f766e",
         "direction": 1,
         "station_id": "143856"
       },
@@ -30878,7 +30881,7 @@
         "name": "伊屯部落",
         "name_en": "Yi Tun Tribe",
         "line": "幸福獅子9路",
-        "color": "#dc2626",
+        "color": "#0f766e",
         "direction": 1,
         "station_id": "143868"
       },
@@ -30898,7 +30901,7 @@
         "name": "草埔衛生室",
         "name_en": "內文村辦公處",
         "line": "幸福獅子9路",
-        "color": "#dc2626",
+        "color": "#0f766e",
         "direction": 1,
         "station_id": "143872"
       },
@@ -30918,7 +30921,7 @@
         "name": "內文村辦公處",
         "name_en": "Neiwen Village Office",
         "line": "幸福獅子9路",
-        "color": "#dc2626",
+        "color": "#0f766e",
         "direction": 1,
         "station_id": "144021"
       },

@@ -496,7 +496,8 @@ module Geojson
       via = variant_via(route, distinguish_via:, unlabeled_via:) || intercity_detour_via(route)
       slug = route_slug(route, distinguish_via:, unlabeled_via:)
       operator = operator_for(route)
-      color = route_color(operator[:name].presence || operator[:id].presence || slug)
+      color = Geojson::BusOperatorColors.for_route(ref: ref, name: operator[:name], id: operator[:id]) ||
+        route_color(operator[:name].presence || operator[:id].presence || slug)
       name = display_name(ref, via)
       name_en = display_name_en(ref, via)
       official_map_url = official_map_url_for(route)
@@ -506,24 +507,32 @@ module Geojson
         lines = self.class.parse_wkt_lines(shape["Geometry"] || shape["geometry"])
         next if lines.empty?
 
-        lines.map do |coordinates|
-          {
-            type: "Feature",
-            properties: {
-              feature_type: "route",
-              ref: ref,
-              name: name,
-              name_en: name_en,
-              color: color,
-              direction: shape["Direction"]
-            },
-            geometry: {
-              type: "LineString",
-              coordinates: Geojson::BusShapeSharpener.sharpen(coordinates)
-            }
+        coordinates = Geojson::BusLoopCloser.merge_line_strings(lines)
+        next if coordinates.length < 2
+
+        loop_stops = loop_stops_for_shape?(Array(stop_of_routes), shape["Direction"])
+        coordinates = Geojson::BusShapeSharpener.sharpen(coordinates)
+        coordinates = Geojson::BusLoopCloser.close_loop_coordinates(coordinates, force: loop_stops)
+
+        properties = {
+          feature_type: "route",
+          ref: ref,
+          name: name,
+          name_en: name_en,
+          color: color,
+          direction: shape["Direction"]
+        }
+        properties[:loop] = true if loop_stops || Geojson::BusLoopCloser.nearly_closed?(coordinates)
+
+        {
+          type: "Feature",
+          properties: properties,
+          geometry: {
+            type: "LineString",
+            coordinates: coordinates
           }
-        end
-      end.flatten
+        }
+      end
 
       return nil if line_features.empty?
 
@@ -539,6 +548,7 @@ module Geojson
         city_id: @city.id,
         source: "TDX Bus Shape / StopOfRoute"
       }
+      properties[:loop] = true if line_features.any? { |feature| feature.dig(:properties, :loop) || feature.dig("properties", "loop") }
       properties[:via] = via if via.present?
       properties[:official_map_url] = official_map_url if official_map_url.present?
       unless keelung?
@@ -580,6 +590,23 @@ module Geojson
       features
     end
 
+    def loop_stops_for_shape?(stop_of_routes, direction)
+      rows = Array(stop_of_routes).select { |row| row["Direction"].to_s == direction.to_s }
+      rows = Array(stop_of_routes) if rows.empty?
+      stops = rows.flat_map { |row| Array(row["Stops"]) }
+      return false if stops.length < 2
+
+      first = stop_identity(stops.first)
+      last = stop_identity(stops.last)
+      first.present? && first == last
+    end
+
+    def stop_identity(stop)
+      stop["StopUID"].to_s.presence ||
+        stop["StopID"].to_s.presence ||
+        zh_name(stop["StopName"]).presence
+    end
+
     def station_features_for(stop_rows, name:, color:)
       seen = {}
 
@@ -619,18 +646,49 @@ module Geojson
       end
     end
 
-    # Bus yards / dispatch sites that appear as StopOfRoute poles.
+    # Bus dispatch yards / operator terminals that appear as StopOfRoute poles.
+    # Never treat rail/metro 「機廠」 passenger-stop names as bus dispatch sites.
     def self.depot_stop_name?(name)
       text = name.to_s
       return false if text.blank?
-      return false if text.match?(/立體停車場|公有市場|公有停車場|寺停車場|博物館|藝文園區|花鐘/)
+      return false if text.match?(/立體停車場|公有市場|公有停車場|寺停車場|博物館|藝文園區|花鐘|林務局|招呼站/)
+      return false if rail_or_metro_yard_stop_name?(text)
 
       text.include?("調度站") ||
+        text.include?("調度場") ||
         text.match?(/客運.{0,24}停車場/) ||
         text.match?(/客運.{0,24}車場/) ||
+        text.match?(/客運.{0,24}場站/) ||
         text.match?(/(?:\A|[\(（])調度/) ||
-        text.match?(/機廠\z/) ||
-        text.match?(/調車場\z/)
+        text.match?(/調車場\z/) ||
+        bus_operator_station_name?(text) ||
+        bus_terminal_name?(text) ||
+        bus_substation_name?(text)
+    end
+
+    def self.rail_or_metro_yard_stop_name?(name)
+      text = name.to_s
+      text.include?("機廠") || text.match?(/高鐵總/)
+    end
+
+    def self.bus_terminal_name?(name)
+      text = name.to_s
+      return false if text.blank? || text == "總站"
+      return false if text.match?(/捷運|輕軌|高鐵/)
+
+      text.include?("總站")
+    end
+
+    def self.bus_substation_name?(name)
+      text = name.to_s
+      return false if text.blank? || text.match?(/林務/)
+
+      text.include?("分站")
+    end
+
+    def self.bus_operator_station_name?(name)
+      text = name.to_s
+      text.include?("客運站") || text.match?(/客運.{0,20}站\z/)
     end
 
     def write_collection!(collection)

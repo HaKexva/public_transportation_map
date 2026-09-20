@@ -6,13 +6,14 @@
     "name": "L717",
     "name_en": "L717",
     "ref": "L717",
-    "color": "#b91c1c",
+    "color": "#b45309",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/36520/map/1764/image",
     "operator_id": "1",
     "operator": "桃園客運",
-    "operator_en": "Taoyuan Bus Co., Ltd."
+    "operator_en": "Taoyuan Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "L717",
         "name": "L717",
         "name_en": "L717",
-        "color": "#b91c1c",
-        "direction": 0
+        "color": "#b45309",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -535,6 +537,10 @@
           [
             121.2123,
             24.86228
+          ],
+          [
+            121.21236,
+            24.86221
           ]
         ]
       }
@@ -547,7 +553,7 @@
         "name": "南天宮",
         "name_en": "Nantian Temple",
         "line": "L717",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "812"
       },
@@ -567,7 +573,7 @@
         "name": "龍元宮",
         "name_en": "Longyuan Temple",
         "line": "L717",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4280"
       },
@@ -587,7 +593,7 @@
         "name": "龍潭國小",
         "name_en": "Long Tan Elementary School",
         "line": "L717",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "852"
       },
@@ -607,7 +613,7 @@
         "name": "龍潭區農會",
         "name_en": "Lungtan District Farmers Association",
         "line": "L717",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6852"
       },
@@ -627,7 +633,7 @@
         "name": "新龍路",
         "name_en": "Xinlong Rd.",
         "line": "L717",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "850"
       },
@@ -647,7 +653,7 @@
         "name": "大同路二",
         "name_en": "Datong Rd. II",
         "line": "L717",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "848"
       },
@@ -667,7 +673,7 @@
         "name": "大同富山五街口",
         "name_en": "Datong Fushan 5th St. Intersection",
         "line": "L717",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4282"
       },
@@ -687,7 +693,7 @@
         "name": "大同路一",
         "name_en": "Datong Rd. I",
         "line": "L717",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "846"
       },
@@ -707,7 +713,7 @@
         "name": "龍潭國中",
         "name_en": "Longtan Junior High School",
         "line": "L717",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6398"
       },
@@ -727,7 +733,7 @@
         "name": "富華街四",
         "name_en": "Fuhua St. IV",
         "line": "L717",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "842"
       },
@@ -747,7 +753,7 @@
         "name": "富華街三",
         "name_en": "Fuhua St. III",
         "line": "L717",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "837"
       },
@@ -767,7 +773,7 @@
         "name": "富華街二",
         "name_en": "Fuhua St. II",
         "line": "L717",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "836"
       },
@@ -787,7 +793,7 @@
         "name": "富華街一",
         "name_en": "Fuhua St. I",
         "line": "L717",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "833"
       },
@@ -807,7 +813,7 @@
         "name": "富華街口",
         "name_en": "Fuhua St. Intersection",
         "line": "L717",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "832"
       },
@@ -827,7 +833,7 @@
         "name": "民生路",
         "name_en": "MinSheng Road",
         "line": "L717",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "829"
       },
@@ -847,7 +853,7 @@
         "name": "水仙社區",
         "name_en": "Shuixian Community",
         "line": "L717",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "827"
       },
@@ -867,7 +873,7 @@
         "name": "金龍路一",
         "name_en": "Jinlong Rd. I",
         "line": "L717",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "826"
       },
@@ -887,7 +893,7 @@
         "name": "金龍路二",
         "name_en": "Jinlong Rd.II",
         "line": "L717",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "824"
       },
@@ -907,7 +913,7 @@
         "name": "金龍路三",
         "name_en": "Jinlong Rd. III",
         "line": "L717",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "822"
       },
@@ -927,7 +933,7 @@
         "name": "綠青庭社區",
         "name_en": "Luqingting Community",
         "line": "L717",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "820"
       },
@@ -947,7 +953,7 @@
         "name": "金龍路四",
         "name_en": "Jinlong Rd. IV",
         "line": "L717",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "818"
       },
@@ -967,7 +973,7 @@
         "name": "金龍路112巷口",
         "name_en": "Jinlong Rd. Lane 112 Intersection",
         "line": "L717",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "816"
       },
@@ -987,7 +993,7 @@
         "name": "金龍一街",
         "name_en": "Jinlong 1st St.",
         "line": "L717",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "814"
       },
@@ -1007,7 +1013,7 @@
         "name": "南天宮",
         "name_en": "Nantian Temple",
         "line": "L717",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "812"
       },

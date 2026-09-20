@@ -6,13 +6,14 @@
     "name": "台灣好行-B線-古寧頭戰場線",
     "name_en": "台灣好行-B線-古寧頭戰場線",
     "ref": "台灣好行-B線-古寧頭戰場線",
-    "color": "#86198f",
+    "color": "#3730a3",
     "city_id": "KinmenCounty",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.kinmen.gov.tw/extend/route20230601/b.png",
     "operator_id": "0001",
     "operator": "金門",
-    "operator_en": "City Bus and Ferry Management Office, Kinmen County"
+    "operator_en": "City Bus and Ferry Management Office, Kinmen County",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "台灣好行-B線-古寧頭戰場線",
         "name": "台灣好行-B線-古寧頭戰場線",
         "name_en": "台灣好行-B線-古寧頭戰場線",
-        "color": "#86198f",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -731,6 +733,10 @@
           [
             118.31994,
             24.43324
+          ],
+          [
+            118.32005,
+            24.4329
           ]
         ]
       }
@@ -743,7 +749,7 @@
         "name": "金城民防坑道入口",
         "name_en": "Jincheng Tunnel Entrance",
         "line": "台灣好行-B線-古寧頭戰場線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "872"
       },
@@ -763,7 +769,7 @@
         "name": "體育館",
         "name_en": "Gymnasium",
         "line": "台灣好行-B線-古寧頭戰場線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "131"
       },
@@ -783,7 +789,7 @@
         "name": "西門里公所",
         "name_en": "Ximen Li office",
         "line": "台灣好行-B線-古寧頭戰場線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "873"
       },
@@ -803,7 +809,7 @@
         "name": "金城民防坑道出口",
         "name_en": "Jincheng Tunnel Exit",
         "line": "台灣好行-B線-古寧頭戰場線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "874"
       },
@@ -823,7 +829,7 @@
         "name": "金城衛生所",
         "name_en": "Jincheng Health Center",
         "line": "台灣好行-B線-古寧頭戰場線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "875"
       },
@@ -843,7 +849,7 @@
         "name": "救國團",
         "name_en": "China Youth Corps",
         "line": "台灣好行-B線-古寧頭戰場線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "876"
       },
@@ -863,7 +869,7 @@
         "name": "光前廟",
         "name_en": "Guangqian temple",
         "line": "台灣好行-B線-古寧頭戰場線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "440"
       },
@@ -883,7 +889,7 @@
         "name": "和平紀念園區",
         "name_en": "Peace Memorial Park",
         "line": "台灣好行-B線-古寧頭戰場線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "877"
       },
@@ -903,7 +909,7 @@
         "name": "北山洋樓",
         "name_en": "Beishan Old Western Style House",
         "line": "台灣好行-B線-古寧頭戰場線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "878"
       },
@@ -923,7 +929,7 @@
         "name": "古寧頭戰史館",
         "name_en": "Guningtou Battle Museum",
         "line": "台灣好行-B線-古寧頭戰場線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "471"
       },
@@ -943,7 +949,7 @@
         "name": "雙鯉濕地自然中心",
         "name_en": "Shuangli Wetlands Nature Center",
         "line": "台灣好行-B線-古寧頭戰場線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "879"
       },
@@ -963,7 +969,7 @@
         "name": "慈湖三角堡、觀景台",
         "name_en": "Cihu Triangle Fortress,Observation Desk",
         "line": "台灣好行-B線-古寧頭戰場線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "880"
       },
@@ -983,7 +989,7 @@
         "name": "金城站",
         "name_en": "Jincheng Station",
         "line": "台灣好行-B線-古寧頭戰場線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "0"
       },

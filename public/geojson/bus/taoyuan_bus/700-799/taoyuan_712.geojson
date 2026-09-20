@@ -6,13 +6,14 @@
     "name": "712",
     "name_en": "712",
     "ref": "712",
-    "color": "#b91c1c",
+    "color": "#b45309",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/712/map/2440/image",
     "operator_id": "1",
     "operator": "桃園客運",
-    "operator_en": "Taoyuan Bus Co., Ltd."
+    "operator_en": "Taoyuan Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "712",
         "name": "712",
         "name_en": "712",
-        "color": "#b91c1c",
-        "direction": 0
+        "color": "#b45309",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -2327,6 +2329,10 @@
           [
             121.21053,
             24.86671
+          ],
+          [
+            121.21036,
+            24.86682
           ]
         ]
       }
@@ -2339,7 +2345,7 @@
         "name": "桃客龍潭新站",
         "name_en": "Taoyuan Bus Longtan New Station",
         "line": "712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6217"
       },
@@ -2359,7 +2365,7 @@
         "name": "中正北龍路口",
         "name_en": "Zhongzheng Beilong Road Intersection",
         "line": "712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4059"
       },
@@ -2379,7 +2385,7 @@
         "name": "龍潭運動公園",
         "name_en": "Longtan Sport Park",
         "line": "712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4261"
       },
@@ -2399,7 +2405,7 @@
         "name": "龍潭行政園區(中興路)",
         "name_en": "Longtan Administration Area(Zhongxing Rd.)",
         "line": "712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4134"
       },
@@ -2419,7 +2425,7 @@
         "name": "黃泥塘",
         "name_en": "Huangnitang",
         "line": "712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4259"
       },
@@ -2439,7 +2445,7 @@
         "name": "龍興駕訓班",
         "name_en": "Longxing Driving School",
         "line": "712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2183"
       },
@@ -2459,7 +2465,7 @@
         "name": "聯合社區",
         "name_en": "Lianhe Community",
         "line": "712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4257"
       },
@@ -2479,7 +2485,7 @@
         "name": "郵局",
         "name_en": "Post Office",
         "line": "712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4255"
       },
@@ -2499,7 +2505,7 @@
         "name": "國軍醫院(中興路)",
         "name_en": "Taoyuan Armed Forces General Hospital(Zhongxing Rd.)",
         "line": "712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4253"
       },
@@ -2519,7 +2525,7 @@
         "name": "東興里",
         "name_en": "Dongxing Village",
         "line": "712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4249"
       },
@@ -2539,7 +2545,7 @@
         "name": "中興里",
         "name_en": "Zhongxing Village",
         "line": "712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4247"
       },
@@ -2559,7 +2565,7 @@
         "name": "郡國社區",
         "name_en": "Junguo Community",
         "line": "712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4245"
       },
@@ -2579,7 +2585,7 @@
         "name": "九座寮",
         "name_en": "Jiouzuoliao",
         "line": "712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4243"
       },
@@ -2599,7 +2605,7 @@
         "name": "馮媽崎",
         "name_en": "Fengmaqi",
         "line": "712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4241"
       },
@@ -2619,7 +2625,7 @@
         "name": "雄華",
         "name_en": "Xionghua",
         "line": "712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4239"
       },
@@ -2639,7 +2645,7 @@
         "name": "草厝江",
         "name_en": "Caocuojiang",
         "line": "712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4237"
       },
@@ -2659,7 +2665,7 @@
         "name": "萊茵城堡",
         "name_en": "Laiyinchengbao",
         "line": "712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4233"
       },
@@ -2679,7 +2685,7 @@
         "name": "新厝江",
         "name_en": "Xincuojiang",
         "line": "712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4210"
       },
@@ -2699,7 +2705,7 @@
         "name": "瑞源",
         "name_en": "Ruiyuan",
         "line": "712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4207"
       },
@@ -2719,7 +2725,7 @@
         "name": "員樹林農會",
         "name_en": "Farmers Assoc., Yuanshulin Branch",
         "line": "712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4753"
       },
@@ -2739,7 +2745,7 @@
         "name": "齋明寺",
         "name_en": "Zhaiming Temple",
         "line": "712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3964"
       },
@@ -2759,7 +2765,7 @@
         "name": "頂好新城",
         "name_en": "Dinghao Xincheng",
         "line": "712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3962"
       },
@@ -2779,7 +2785,7 @@
         "name": "永寧轉運站",
         "name_en": "Yongning Bus Station",
         "line": "712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6954"
       },
@@ -2799,7 +2805,7 @@
         "name": "頂好新城",
         "name_en": "Dinghao Xincheng",
         "line": "712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3961"
       },
@@ -2819,7 +2825,7 @@
         "name": "齋明寺",
         "name_en": "Zhaiming Temple",
         "line": "712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3963"
       },
@@ -2839,7 +2845,7 @@
         "name": "員樹林農會",
         "name_en": "Farmers Assoc., Yuanshulin Branch",
         "line": "712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4754"
       },
@@ -2859,7 +2865,7 @@
         "name": "瑞源",
         "name_en": "Ruiyuan",
         "line": "712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4206"
       },
@@ -2879,7 +2885,7 @@
         "name": "新厝江",
         "name_en": "Xincuojiang",
         "line": "712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4209"
       },
@@ -2899,7 +2905,7 @@
         "name": "萊茵城堡",
         "name_en": "Laiyinchengbao",
         "line": "712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4232"
       },
@@ -2919,7 +2925,7 @@
         "name": "草厝江",
         "name_en": "Caocuojiang",
         "line": "712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4236"
       },
@@ -2939,7 +2945,7 @@
         "name": "雄華",
         "name_en": "Xionghua",
         "line": "712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4238"
       },
@@ -2959,7 +2965,7 @@
         "name": "馮媽崎",
         "name_en": "Fengmaqi",
         "line": "712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4240"
       },
@@ -2979,7 +2985,7 @@
         "name": "九座寮",
         "name_en": "Jiouzuoliao",
         "line": "712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4242"
       },
@@ -2999,7 +3005,7 @@
         "name": "郡國社區",
         "name_en": "Junguo Community",
         "line": "712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4244"
       },
@@ -3019,7 +3025,7 @@
         "name": "中興里",
         "name_en": "Zhongxing Village",
         "line": "712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4246"
       },
@@ -3039,7 +3045,7 @@
         "name": "東興里",
         "name_en": "Dongxing Village",
         "line": "712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4248"
       },
@@ -3059,7 +3065,7 @@
         "name": "國軍醫院(中興路)",
         "name_en": "Taoyuan Armed Forces General Hospital(Zhongxing Rd.)",
         "line": "712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4252"
       },
@@ -3079,7 +3085,7 @@
         "name": "郵局",
         "name_en": "Post Office",
         "line": "712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4254"
       },
@@ -3099,7 +3105,7 @@
         "name": "聯合社區",
         "name_en": "Lianhe Community",
         "line": "712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4256"
       },
@@ -3119,7 +3125,7 @@
         "name": "龍興駕訓班",
         "name_en": "Longxing Driving School",
         "line": "712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2182"
       },
@@ -3139,7 +3145,7 @@
         "name": "黃泥塘",
         "name_en": "Huangnitang",
         "line": "712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4258"
       },
@@ -3159,7 +3165,7 @@
         "name": "龍潭行政園區(中興路)",
         "name_en": "Longtan Administration Area(Zhongxing Rd.)",
         "line": "712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4133"
       },
@@ -3179,7 +3185,7 @@
         "name": "龍潭運動公園",
         "name_en": "Longtan Sport Park",
         "line": "712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4260"
       },
@@ -3199,7 +3205,7 @@
         "name": "龍潭加油站",
         "name_en": "Longtan Gas Station",
         "line": "712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4755"
       },
@@ -3219,7 +3225,7 @@
         "name": "中正北龍路口",
         "name_en": "Zhongzheng Beilong Road Intersection",
         "line": "712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4058"
       },
@@ -3239,7 +3245,7 @@
         "name": "桃客龍潭新站",
         "name_en": "Taoyuan Bus Longtan New Station",
         "line": "712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6218"
       },

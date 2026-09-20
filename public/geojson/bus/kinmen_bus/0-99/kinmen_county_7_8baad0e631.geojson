@@ -6,13 +6,14 @@
     "name": "7回程繞古崗",
     "name_en": "7回程繞古崗",
     "ref": "7回程繞古崗",
-    "color": "#86198f",
+    "color": "#3730a3",
     "city_id": "KinmenCounty",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.kinmen.gov.tw/api/route/7111/map/92/image",
     "operator_id": "0001",
     "operator": "金門",
-    "operator_en": "City Bus and Ferry Management Office, Kinmen County"
+    "operator_en": "City Bus and Ferry Management Office, Kinmen County",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "7回程繞古崗",
         "name": "7回程繞古崗",
         "name_en": "7回程繞古崗",
-        "color": "#86198f",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -891,6 +893,10 @@
           [
             118.31994,
             24.43324
+          ],
+          [
+            118.32006,
+            24.43291
           ]
         ]
       }
@@ -903,7 +909,7 @@
         "name": "金城站",
         "name_en": "Jincheng Station",
         "line": "7回程繞古崗",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "0"
       },
@@ -923,7 +929,7 @@
         "name": "衛生所",
         "name_en": "Health Center",
         "line": "7回程繞古崗",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "58"
       },
@@ -943,7 +949,7 @@
         "name": "中正國小",
         "name_en": "ZhongZheng Elementary School",
         "line": "7回程繞古崗",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "59"
       },
@@ -963,7 +969,7 @@
         "name": "金城國中",
         "name_en": "Jincheng Junior High School",
         "line": "7回程繞古崗",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "61"
       },
@@ -983,7 +989,7 @@
         "name": "體育館",
         "name_en": "Gymnasium",
         "line": "7回程繞古崗",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "62"
       },
@@ -1003,7 +1009,7 @@
         "name": "水試所",
         "name_en": "Fisheries Research Institute",
         "line": "7回程繞古崗",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "366"
       },
@@ -1023,7 +1029,7 @@
         "name": "空中大學",
         "name_en": "National Open University",
         "line": "7回程繞古崗",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "367"
       },
@@ -1043,7 +1049,7 @@
         "name": "向陽吉第一",
         "name_en": "Xiangyangji 1",
         "line": "7回程繞古崗",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "368"
       },
@@ -1063,7 +1069,7 @@
         "name": "三叉路口",
         "name_en": "Three-Way Intersections",
         "line": "7回程繞古崗",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "353"
       },
@@ -1083,7 +1089,7 @@
         "name": "宏玻陶瓷廠",
         "name_en": "Hongbo Ceramic Factory",
         "line": "7回程繞古崗",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "354"
       },
@@ -1103,7 +1109,7 @@
         "name": "西海路二段",
         "name_en": "Sihai Rd.",
         "line": "7回程繞古崗",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "355"
       },
@@ -1123,7 +1129,7 @@
         "name": "金城後山",
         "name_en": "Jincheng HouSan",
         "line": "7回程繞古崗",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "356"
       },
@@ -1143,7 +1149,7 @@
         "name": "水頭圓環",
         "name_en": "Shuitou Cirque ",
         "line": "7回程繞古崗",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "357"
       },
@@ -1163,7 +1169,7 @@
         "name": "水頭村莊",
         "name_en": "Shuitou Village",
         "line": "7回程繞古崗",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "347"
       },
@@ -1183,7 +1189,7 @@
         "name": "廟口",
         "name_en": "Miaokou",
         "line": "7回程繞古崗",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "369"
       },
@@ -1203,7 +1209,7 @@
         "name": "稚暉亭",
         "name_en": "Jhihhuei Tin",
         "line": "7回程繞古崗",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "370"
       },
@@ -1223,7 +1229,7 @@
         "name": "水頭旅服中心",
         "name_en": "ShuiTou Service Center",
         "line": "7回程繞古崗",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "975"
       },
@@ -1243,7 +1249,7 @@
         "name": "金門港旅運中心",
         "name_en": "Kinmen Port Passenger Center",
         "line": "7回程繞古崗",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "1041"
       },
@@ -1263,7 +1269,7 @@
         "name": "金豐路一",
         "name_en": "Jinfeng Road 1",
         "line": "7回程繞古崗",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "1011"
       },
@@ -1283,7 +1289,7 @@
         "name": "宏玻陶瓷廠",
         "name_en": "Hongbo Ceramic Factory",
         "line": "7回程繞古崗",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "354"
       },
@@ -1303,7 +1309,7 @@
         "name": "西海路二段",
         "name_en": "Sihai Rd.",
         "line": "7回程繞古崗",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "355"
       },
@@ -1323,7 +1329,7 @@
         "name": "金城後山",
         "name_en": "Jincheng HouSan",
         "line": "7回程繞古崗",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "356"
       },
@@ -1343,7 +1349,7 @@
         "name": "水頭圓環",
         "name_en": "Shuitou Cirque ",
         "line": "7回程繞古崗",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "357"
       },
@@ -1363,7 +1369,7 @@
         "name": "水頭圓環一",
         "name_en": "Shuitou Cirque 1",
         "line": "7回程繞古崗",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "358"
       },
@@ -1383,7 +1389,7 @@
         "name": "金門城西",
         "name_en": "Jinmencheng Si",
         "line": "7回程繞古崗",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "359"
       },
@@ -1403,7 +1409,7 @@
         "name": "金門城",
         "name_en": "Jinmencheng",
         "line": "7回程繞古崗",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "360"
       },
@@ -1423,7 +1429,7 @@
         "name": "金門城一",
         "name_en": "Jinmencheng 1",
         "line": "7回程繞古崗",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "361"
       },
@@ -1443,7 +1449,7 @@
         "name": "舊東門",
         "name_en": "Jiu Dongmen",
         "line": "7回程繞古崗",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "362"
       },
@@ -1463,7 +1469,7 @@
         "name": "古崗湖",
         "name_en": "Gugang Lake ",
         "line": "7回程繞古崗",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "363"
       },
@@ -1483,7 +1489,7 @@
         "name": "古崗",
         "name_en": "Gugang",
         "line": "7回程繞古崗",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "364"
       },
@@ -1503,7 +1509,7 @@
         "name": "古崗一",
         "name_en": "Gugang 1",
         "line": "7回程繞古崗",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "365"
       },
@@ -1523,7 +1529,7 @@
         "name": "珠山",
         "name_en": "Zhushan",
         "line": "7回程繞古崗",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "223"
       },
@@ -1543,7 +1549,7 @@
         "name": "燕南山",
         "name_en": "Yannanshan",
         "line": "7回程繞古崗",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "224"
       },
@@ -1563,7 +1569,7 @@
         "name": "東社",
         "name_en": "Dongshe",
         "line": "7回程繞古崗",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "225"
       },
@@ -1583,7 +1589,7 @@
         "name": "官裡",
         "name_en": "Guanli",
         "line": "7回程繞古崗",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "226"
       },
@@ -1603,7 +1609,7 @@
         "name": "賢庵國小",
         "name_en": "Shyan An Primary School",
         "line": "7回程繞古崗",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "227"
       },
@@ -1623,7 +1629,7 @@
         "name": "吳厝",
         "name_en": "Wucuo",
         "line": "7回程繞古崗",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "228"
       },
@@ -1643,7 +1649,7 @@
         "name": "晶鑽社區",
         "name_en": "Jingzuan Community",
         "line": "7回程繞古崗",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "229"
       },
@@ -1663,7 +1669,7 @@
         "name": "莒光樓",
         "name_en": "Juguang Tower",
         "line": "7回程繞古崗",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "230"
       },
@@ -1683,7 +1689,7 @@
         "name": "燦坤",
         "name_en": "TsannKuen",
         "line": "7回程繞古崗",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "231"
       },
@@ -1703,7 +1709,7 @@
         "name": "東門",
         "name_en": "Dongmen",
         "line": "7回程繞古崗",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "345"
       },
@@ -1723,7 +1729,7 @@
         "name": "金城站",
         "name_en": "Jincheng Station",
         "line": "7回程繞古崗",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "0"
       },

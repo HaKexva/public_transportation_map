@@ -6,13 +6,14 @@
     "name": "兒樂2號線",
     "name_en": "兒樂2號線",
     "ref": "兒樂2號線",
-    "color": "#115e59",
+    "color": "#DC2626",
     "city_id": "Taipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.gov.taipei/File/Get/af388506-bb93-4445-8bf7-7e60771856ca?v=639248448913392297",
     "operator_id": "5300",
     "operator": "光華巴士",
-    "operator_en": "Kuang-Hua Bus Co., Ltd."
+    "operator_en": "Kuang-Hua Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "兒樂2號線",
         "name": "兒樂2號線",
         "name_en": "兒樂2號線",
-        "color": "#115e59",
-        "direction": 0
+        "color": "#DC2626",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -439,6 +441,10 @@
           [
             121.51467594865555,
             25.096246232025823
+          ],
+          [
+            121.514675948653,
+            25.0962462320247
           ]
         ]
       }
@@ -451,7 +457,7 @@
         "name": "兒童新樂園",
         "name_en": "Taipei Children's Amusement Park",
         "line": "兒樂2號線",
-        "color": "#115e59",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "1165603310"
       },
@@ -471,7 +477,7 @@
         "name": "福港街",
         "name_en": "Fugang St.",
         "line": "兒樂2號線",
-        "color": "#115e59",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "20379"
       },
@@ -491,7 +497,7 @@
         "name": "承德路四段",
         "name_en": "Chengde Rd. Sec. 4",
         "line": "兒樂2號線",
-        "color": "#115e59",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "1165610408"
       },
@@ -511,7 +517,7 @@
         "name": "大南路口",
         "name_en": "Danan Rd. Entrance",
         "line": "兒樂2號線",
-        "color": "#115e59",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "1000111"
       },
@@ -531,7 +537,7 @@
         "name": "捷運劍潭站(北藝中心)",
         "name_en": "MRT Jiantan Sta. (Taipei Performing Arts Center)",
         "line": "兒樂2號線",
-        "color": "#115e59",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "1000256"
       },
@@ -551,7 +557,7 @@
         "name": "士林市場(銘傳會館)",
         "name_en": "Shilin Market (Ming Chuan Hostel)",
         "line": "兒樂2號線",
-        "color": "#115e59",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "573"
       },
@@ -571,7 +577,7 @@
         "name": "公教住宅",
         "name_en": "Civil Service Housing",
         "line": "兒樂2號線",
-        "color": "#115e59",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "1000171"
       },
@@ -591,7 +597,7 @@
         "name": "士林區行政中心(基河)",
         "name_en": "Shilin Admin. Center",
         "line": "兒樂2號線",
-        "color": "#115e59",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "50628"
       },
@@ -611,7 +617,7 @@
         "name": "天文科學館",
         "name_en": "Astronomical Museum",
         "line": "兒樂2號線",
-        "color": "#115e59",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "572"
       },
@@ -631,7 +637,7 @@
         "name": "國立科教館",
         "name_en": "National Taiwan Science Education Center",
         "line": "兒樂2號線",
-        "color": "#115e59",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "790"
       },
@@ -651,7 +657,7 @@
         "name": "兒童新樂園",
         "name_en": "Taipei Children's Amusement Park",
         "line": "兒樂2號線",
-        "color": "#115e59",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "1165603310"
       },

@@ -6,12 +6,13 @@
     "name": "竹林線",
     "name_en": "竹林線",
     "ref": "竹林線",
-    "color": "#0f766e",
+    "color": "#7c2d12",
     "city_id": "HsinchuCounty",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://web.taiwanbus.tw/MISUploadData/Schematic/file/0134.jpg",
     "operator_id": "108",
-    "operator": "捷乘交通有限公司"
+    "operator": "捷乘交通有限公司",
+    "loop": true
   },
   "features": [
     {
@@ -21,8 +22,9 @@
         "ref": "竹林線",
         "name": "竹林線",
         "name_en": "竹林線",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#7c2d12",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -10178,7 +10180,7 @@
         "name": "五峰鄉公所",
         "name_en": "Wufeng Township Office",
         "line": "竹林線",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "131130"
       },
@@ -10198,7 +10200,7 @@
         "name": "五峰儲蓄互助社",
         "name_en": "Wufeng Credit Union",
         "line": "竹林線",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "143131"
       },
@@ -10218,7 +10220,7 @@
         "name": "真耶穌教會五峰教會",
         "name_en": "True Jesus Church Wufeng Church",
         "line": "竹林線",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "143132"
       },
@@ -10238,7 +10240,7 @@
         "name": "和平橋",
         "name_en": "he ping bridge",
         "line": "竹林線",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "143133"
       },
@@ -10258,7 +10260,7 @@
         "name": "和平部落",
         "name_en": "he ping tribe",
         "line": "竹林線",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "143134"
       },
@@ -10278,7 +10280,7 @@
         "name": "達谷婻教會",
         "name_en": "Tagunan church",
         "line": "竹林線",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "143135"
       },
@@ -10298,7 +10300,7 @@
         "name": "竹林村辦公處",
         "name_en": "Zhulin Village Office",
         "line": "竹林線",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "143136"
       },
@@ -10318,7 +10320,7 @@
         "name": "羅山部落",
         "name_en": "Luoshan Tribe",
         "line": "竹林線",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "143137"
       },
@@ -10338,7 +10340,7 @@
         "name": "真耶穌教會花園教會",
         "name_en": "True Jesus Church Huayuan Church",
         "line": "竹林線",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "143138"
       },
@@ -10358,7 +10360,7 @@
         "name": "花園部落",
         "name_en": "Huayuan tribe",
         "line": "竹林線",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "143091"
       },
@@ -10378,7 +10380,7 @@
         "name": "上比來",
         "name_en": "Shang Bi Lai",
         "line": "竹林線",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "143089"
       },
@@ -10398,7 +10400,7 @@
         "name": "樂賀安教會",
         "name_en": "Lehean Church",
         "line": "竹林線",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "143087"
       },
@@ -10418,7 +10420,7 @@
         "name": "五峰消防分隊花園小隊",
         "name_en": "Wufeng Fire Brigade Huayuan Team",
         "line": "竹林線",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "143085"
       },
@@ -10438,7 +10440,7 @@
         "name": "南口",
         "name_en": "Nankou",
         "line": "竹林線",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "143083"
       },
@@ -10458,7 +10460,7 @@
         "name": "十八兒路口",
         "name_en": "Shiba&#39;er intersection",
         "line": "竹林線",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "143081"
       },
@@ -10478,7 +10480,7 @@
         "name": "林家莊",
         "name_en": "Linjiazhuang",
         "line": "竹林線",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "131125"
       },
@@ -10498,7 +10500,7 @@
         "name": "五峰街口",
         "name_en": "Wufengjiekou",
         "line": "竹林線",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "143079"
       },

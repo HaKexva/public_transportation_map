@@ -6,13 +6,14 @@
     "name": "101",
     "name_en": "101",
     "ref": "101",
-    "color": "#a21caf",
+    "color": "#134e4a",
     "city_id": "TaitungCounty",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://web.taiwanbus.tw/MISUploadData/Schematic/file/0981.jpg",
     "operator_id": "75",
     "operator": "普悠瑪客運",
-    "operator_en": "Puyuma Bus Co., Ltd."
+    "operator_en": "Puyuma Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "101",
         "name": "101",
         "name_en": "101",
-        "color": "#a21caf",
-        "direction": 0
+        "color": "#134e4a",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -2799,6 +2801,10 @@
           [
             121.1231,
             22.79261
+          ],
+          [
+            121.12365,
+            22.79292
           ]
         ]
       }
@@ -2810,8 +2816,9 @@
         "ref": "101",
         "name": "101",
         "name_en": "101",
-        "color": "#a21caf",
-        "direction": 1
+        "color": "#134e4a",
+        "direction": 1,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -4659,6 +4666,10 @@
           [
             121.12473,
             22.79253
+          ],
+          [
+            121.12365,
+            22.79292
           ]
         ]
       }
@@ -4671,7 +4682,7 @@
         "name": "臺東火車站",
         "name_en": "Taitung Railway Station",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 0,
         "station_id": "132558"
       },
@@ -4691,7 +4702,7 @@
         "name": "拖吊場",
         "name_en": "Vehicle Impound Lot",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 0,
         "station_id": "138119"
       },
@@ -4711,7 +4722,7 @@
         "name": "棒球場",
         "name_en": "Taitung Baseball Stadium",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 0,
         "station_id": "138120"
       },
@@ -4731,7 +4742,7 @@
         "name": "寶桑國中",
         "name_en": "Bausun Junior High School",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 0,
         "station_id": "138121"
       },
@@ -4751,7 +4762,7 @@
         "name": "馬亨亨浙江路口",
         "name_en": "Mahengheng &amp; Jhejiang Rd. Intersection",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 0,
         "station_id": "138122"
       },
@@ -4771,7 +4782,7 @@
         "name": "臺東森林公園",
         "name_en": "Taitung Forest Park",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 0,
         "station_id": "138131"
       },
@@ -4791,7 +4802,7 @@
         "name": "寶町藝文中心",
         "name_en": "Baoding Art Center",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 0,
         "station_id": "138123"
       },
@@ -4811,7 +4822,7 @@
         "name": "中山中正路口",
         "name_en": "Jhongshan &amp; Jhongjheng Rd. Intersection",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 0,
         "station_id": "138124"
       },
@@ -4831,7 +4842,7 @@
         "name": "中華會館",
         "name_en": "Taitung Chinese Association",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 0,
         "station_id": "138125"
       },
@@ -4851,7 +4862,7 @@
         "name": "海濱公園",
         "name_en": "Seashore Park",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 0,
         "station_id": "132570"
       },
@@ -4871,7 +4882,7 @@
         "name": "大同路郵局",
         "name_en": "Datong Rd. Post Office",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 0,
         "station_id": "138126"
       },
@@ -4891,7 +4902,7 @@
         "name": "中華正氣路口",
         "name_en": "Jhonghua &amp; Jhengci Rd. Intersection",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 0,
         "station_id": "132568"
       },
@@ -4911,7 +4922,7 @@
         "name": "臺東轉運站",
         "name_en": "Taitung Bus Station",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 0,
         "station_id": "132566"
       },
@@ -4931,7 +4942,7 @@
         "name": "體育場",
         "name_en": "Taitung County Stadium",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 0,
         "station_id": "132585"
       },
@@ -4951,7 +4962,7 @@
         "name": "馬偕醫院",
         "name_en": "Mackay Memorial Hospital",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 0,
         "station_id": "132584"
       },
@@ -4971,7 +4982,7 @@
         "name": "後期聖徒教會",
         "name_en": "The Church of Jesus Christ of Latter-day Saints",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 0,
         "station_id": "132583"
       },
@@ -4991,7 +5002,7 @@
         "name": "臺東高商",
         "name_en": "Taitung Senior Commercial Vocational High School",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 0,
         "station_id": "132582"
       },
@@ -5011,7 +5022,7 @@
         "name": "聖母醫院",
         "name_en": "ST. Marry's Hospital",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 0,
         "station_id": "132581"
       },
@@ -5031,7 +5042,7 @@
         "name": "縣民服務中心",
         "name_en": "County Service Center",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 0,
         "station_id": "138111"
       },
@@ -5051,7 +5062,7 @@
         "name": "地方法院",
         "name_en": "Taitung District Court",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 0,
         "station_id": "144912"
       },
@@ -5071,7 +5082,7 @@
         "name": "美術館",
         "name_en": "Taitung Art Museum",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 0,
         "station_id": "132578"
       },
@@ -5091,7 +5102,7 @@
         "name": "基督教醫院",
         "name_en": "Taitung Christian Hospital",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 0,
         "station_id": "132590"
       },
@@ -5111,7 +5122,7 @@
         "name": "開封長安街口",
         "name_en": "Kaifong &amp; ChangAn St. Intersection",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 0,
         "station_id": "138112"
       },
@@ -5131,7 +5142,7 @@
         "name": "新生郵局",
         "name_en": "Sinsheng Post Office",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 0,
         "station_id": "138113"
       },
@@ -5151,7 +5162,7 @@
         "name": "臺東糖廠",
         "name_en": "Taitung Sugar Factory",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 0,
         "station_id": "132550"
       },
@@ -5171,7 +5182,7 @@
         "name": "東方大鎮",
         "name_en": "Dongfang Dajhen Community",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 0,
         "station_id": "138114"
       },
@@ -5191,7 +5202,7 @@
         "name": "娜路彎大酒店",
         "name_en": "Formosan Naruwan Hotel",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 0,
         "station_id": "138115"
       },
@@ -5211,7 +5222,7 @@
         "name": "卑南入口",
         "name_en": "Beinan Entrance",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 0,
         "station_id": "138116"
       },
@@ -5231,7 +5242,7 @@
         "name": "棒球場",
         "name_en": "Taitung Baseball Stadium",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 0,
         "station_id": "138117"
       },
@@ -5251,7 +5262,7 @@
         "name": "拖吊場",
         "name_en": "Vehicle Impound Lot",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 0,
         "station_id": "138118"
       },
@@ -5271,7 +5282,7 @@
         "name": "臺東火車站",
         "name_en": "Taitung Railway Station",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 0,
         "station_id": "142233"
       },
@@ -5291,7 +5302,7 @@
         "name": "臺東火車站",
         "name_en": "Taitung Railway Station",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 1,
         "station_id": "132558"
       },
@@ -5311,7 +5322,7 @@
         "name": "拖吊場",
         "name_en": "Vehicle Impound Lot",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 1,
         "station_id": "138119"
       },
@@ -5331,7 +5342,7 @@
         "name": "棒球場",
         "name_en": "Taitung Baseball Stadium",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 1,
         "station_id": "138120"
       },
@@ -5351,7 +5362,7 @@
         "name": "卑南入口",
         "name_en": "Beinan Entrance",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 1,
         "station_id": "138134"
       },
@@ -5371,7 +5382,7 @@
         "name": "娜路彎大酒店",
         "name_en": "Formosan Naruwan Hotel",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 1,
         "station_id": "138135"
       },
@@ -5391,7 +5402,7 @@
         "name": "東方大鎮",
         "name_en": "Dongfang Dajhen Community",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 1,
         "station_id": "138136"
       },
@@ -5411,7 +5422,7 @@
         "name": "臺東糖廠",
         "name_en": "Taitung Sugar Factory",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 1,
         "station_id": "132551"
       },
@@ -5431,7 +5442,7 @@
         "name": "新生郵局",
         "name_en": "Sinsheng Post Office",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 1,
         "station_id": "138137"
       },
@@ -5451,7 +5462,7 @@
         "name": "開封長安街口",
         "name_en": "Kaifong &amp; ChangAn St. Intersection",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 1,
         "station_id": "138138"
       },
@@ -5471,7 +5482,7 @@
         "name": "基督教醫院",
         "name_en": "Taitung Christian Hospital",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 1,
         "station_id": "138139"
       },
@@ -5491,7 +5502,7 @@
         "name": "美術館",
         "name_en": "Taitung Art Museum",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 1,
         "station_id": "138140"
       },
@@ -5511,7 +5522,7 @@
         "name": "地方法院",
         "name_en": "Taitung District Court",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 1,
         "station_id": "144913"
       },
@@ -5531,7 +5542,7 @@
         "name": "縣民服務中心",
         "name_en": "County Service Center",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 1,
         "station_id": "138141"
       },
@@ -5551,7 +5562,7 @@
         "name": "聖母醫院",
         "name_en": "ST. Marry's Hospital",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 1,
         "station_id": "132581"
       },
@@ -5571,7 +5582,7 @@
         "name": "臺東高商",
         "name_en": "Taitung Senior Commercial Vocational High School",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 1,
         "station_id": "132582"
       },
@@ -5591,7 +5602,7 @@
         "name": "後期聖徒教會",
         "name_en": "The Church of Jesus Christ of Latter-day Saints",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 1,
         "station_id": "132583"
       },
@@ -5611,7 +5622,7 @@
         "name": "馬偕醫院",
         "name_en": "Mackay Memorial Hospital",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 1,
         "station_id": "132584"
       },
@@ -5631,7 +5642,7 @@
         "name": "體育場",
         "name_en": "Taitung County Stadium",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 1,
         "station_id": "138142"
       },
@@ -5651,7 +5662,7 @@
         "name": "臺東轉運站",
         "name_en": "Taitung Bus Station",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 1,
         "station_id": "132566"
       },
@@ -5671,7 +5682,7 @@
         "name": "中華正氣路口",
         "name_en": "Jhonghua &amp; Jhengci Rd. Intersection",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 1,
         "station_id": "132568"
       },
@@ -5691,7 +5702,7 @@
         "name": "大同路郵局",
         "name_en": "Datong Rd. Post Office",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 1,
         "station_id": "138127"
       },
@@ -5711,7 +5722,7 @@
         "name": "海濱公園",
         "name_en": "Seashore Park",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 1,
         "station_id": "132570"
       },
@@ -5731,7 +5742,7 @@
         "name": "中華會館",
         "name_en": "Taitung Chinese Association",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 1,
         "station_id": "138128"
       },
@@ -5751,7 +5762,7 @@
         "name": "中山中正路口",
         "name_en": "Jhongshan &amp; Jhongjheng Rd. Intersection",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 1,
         "station_id": "138129"
       },
@@ -5771,7 +5782,7 @@
         "name": "寶町藝文中心",
         "name_en": "Baoding Art Center",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 1,
         "station_id": "138130"
       },
@@ -5791,7 +5802,7 @@
         "name": "臺東森林公園",
         "name_en": "Taitung Forest Park",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 1,
         "station_id": "132559"
       },
@@ -5811,7 +5822,7 @@
         "name": "馬亨亨浙江路口",
         "name_en": "Mahengheng &amp; Jhejiang Rd. Intersection",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 1,
         "station_id": "138132"
       },
@@ -5831,7 +5842,7 @@
         "name": "寶桑國中",
         "name_en": "Bausun Junior High School",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 1,
         "station_id": "138133"
       },
@@ -5851,7 +5862,7 @@
         "name": "棒球場",
         "name_en": "Taitung Baseball Stadium",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 1,
         "station_id": "138117"
       },
@@ -5871,7 +5882,7 @@
         "name": "拖吊場",
         "name_en": "Vehicle Impound Lot",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 1,
         "station_id": "138118"
       },
@@ -5891,7 +5902,7 @@
         "name": "臺東火車站",
         "name_en": "Taitung Railway Station",
         "line": "101",
-        "color": "#a21caf",
+        "color": "#134e4a",
         "direction": 1,
         "station_id": "142233"
       },

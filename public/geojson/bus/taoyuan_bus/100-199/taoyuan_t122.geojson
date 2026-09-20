@@ -6,11 +6,12 @@
     "name": "T122",
     "name_en": "T122",
     "ref": "T122",
-    "color": "#7c2d12",
+    "color": "#4f46e5",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "operator_id": "29",
-    "operator": "九億租車"
+    "operator": "九億租車",
+    "loop": true
   },
   "features": [
     {
@@ -20,8 +21,9 @@
         "ref": "T122",
         "name": "T122",
         "name_en": "T122",
-        "color": "#7c2d12",
-        "direction": 0
+        "color": "#4f46e5",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1397,6 +1399,10 @@
           [
             121.31864,
             24.96048
+          ],
+          [
+            121.31869,
+            24.96003
           ]
         ]
       }
@@ -1409,7 +1415,7 @@
         "name": "八德轉運站",
         "name_en": "Bade Bus Station",
         "line": "T122",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "6882"
       },
@@ -1429,7 +1435,7 @@
         "name": "捷運鶯桃福德站(福德一路)",
         "name_en": "MRT Yingtao Fude Station",
         "line": "T122",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "7284"
       },
@@ -1449,7 +1455,7 @@
         "name": "鳳鳴國中(永和街口)",
         "name_en": "Fengming Junior High School Yonghe Street Intersection",
         "line": "T122",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "7835"
       },
@@ -1469,7 +1475,7 @@
         "name": "鳳鳴國小(鶯歌路口)",
         "name_en": "Fengming Elementary School (Yingge Road Intersection)",
         "line": "T122",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "6932"
       },
@@ -1489,7 +1495,7 @@
         "name": "鳳鳴火車站",
         "name_en": "Fengming Rail Station",
         "line": "T122",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "6931"
       },
@@ -1509,7 +1515,7 @@
         "name": "鳳福公園",
         "name_en": "鳳福公園",
         "line": "T122",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "7834"
       },
@@ -1529,7 +1535,7 @@
         "name": "鳳吉一街94號",
         "name_en": "No.94 Fengji 1st St.",
         "line": "T122",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "7833"
       },
@@ -1549,7 +1555,7 @@
         "name": "廣行宮",
         "name_en": "Guangxing Temple",
         "line": "T122",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "5910"
       },
@@ -1569,7 +1575,7 @@
         "name": "東勇街400巷",
         "name_en": "東勇街400巷",
         "line": "T122",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "7820"
       },
@@ -1589,7 +1595,7 @@
         "name": "國產社區",
         "name_en": "Goldsun Community",
         "line": "T122",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "1928"
       },
@@ -1609,7 +1615,7 @@
         "name": "大千公園",
         "name_en": "Daqian Park",
         "line": "T122",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "5869"
       },
@@ -1629,7 +1635,7 @@
         "name": "大智公園路口",
         "name_en": "Dazhih and Gongyuan Rd. Intersection",
         "line": "T122",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "6230"
       },
@@ -1649,7 +1655,7 @@
         "name": "大義里",
         "name_en": "Dayi Village",
         "line": "T122",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "1259"
       },
@@ -1669,7 +1675,7 @@
         "name": "大成龍門社區",
         "name_en": "Dacheng Longmen Community",
         "line": "T122",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "1271"
       },
@@ -1689,7 +1695,7 @@
         "name": "八德轉運站",
         "name_en": "Bade Transit Station",
         "line": "T122",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "7804"
       },

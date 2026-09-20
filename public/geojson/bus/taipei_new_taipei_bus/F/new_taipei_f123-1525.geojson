@@ -6,13 +6,14 @@
     "name": "F123-1525",
     "name_en": "F123-1525",
     "ref": "F123-1525",
-    "color": "#9f1239",
+    "color": "#6B8F9A",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.gov.taipei/File/Get/51b3ceb5-0a37-47c8-9fa3-a8d362facc28?v=639248448765000296",
     "operator_id": "16230",
     "operator": "八里區公所",
-    "operator_en": "Bali District Office"
+    "operator_en": "Bali District Office",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "F123-1525",
         "name": "F123-1525",
         "name_en": "F123-1525",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#6B8F9A",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -4783,6 +4785,10 @@
           [
             121.396326291352,
             25.1429987014465
+          ],
+          [
+            121.396370333533,
+            25.1429452216549
           ]
         ]
       }
@@ -4795,7 +4801,7 @@
         "name": "廖添丁廟",
         "name_en": "Liaotianding Temple",
         "line": "F123-1525",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "74546"
       },
@@ -4815,7 +4821,7 @@
         "name": "八里分駐所",
         "name_en": "Bali Police Station",
         "line": "F123-1525",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "74541"
       },
@@ -4835,7 +4841,7 @@
         "name": "八里國中",
         "name_en": "Bali Junior High School",
         "line": "F123-1525",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165606215"
       },
@@ -4855,7 +4861,7 @@
         "name": "八里療養院",
         "name_en": "Bali Sanatorium",
         "line": "F123-1525",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "74589"
       },
@@ -4875,7 +4881,7 @@
         "name": "八里",
         "name_en": "Bali",
         "line": "F123-1525",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "15017"
       },
@@ -4895,7 +4901,7 @@
         "name": "舊城里",
         "name_en": "JiouCheng Village",
         "line": "F123-1525",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "15018"
       },
@@ -4915,7 +4921,7 @@
         "name": "八里區農會",
         "name_en": "Bali District Farmers' Association",
         "line": "F123-1525",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3780"
       },
@@ -4935,7 +4941,7 @@
         "name": "八里服務站",
         "name_en": "Bali Service Sta.",
         "line": "F123-1525",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "15033"
       },
@@ -4955,7 +4961,7 @@
         "name": "八里國小",
         "name_en": "Bali Elementary School",
         "line": "F123-1525",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "15034"
       },
@@ -4975,7 +4981,7 @@
         "name": "中廣公司",
         "name_en": "Broadcasting Corporation of China",
         "line": "F123-1525",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "15028"
       },
@@ -4995,7 +5001,7 @@
         "name": "山海觀",
         "name_en": "Shanhaiguan",
         "line": "F123-1525",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "4658"
       },
@@ -5015,7 +5021,7 @@
         "name": "八里行政中心(十三行博物館)",
         "name_en": "Bali District Administration Center(Shisanhung Museum)",
         "line": "F123-1525",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165605324"
       },
@@ -5035,7 +5041,7 @@
         "name": "田心",
         "name_en": "Tianxin",
         "line": "F123-1525",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "15029"
       },
@@ -5055,7 +5061,7 @@
         "name": "公田",
         "name_en": "Gongtian",
         "line": "F123-1525",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "15012"
       },
@@ -5075,7 +5081,7 @@
         "name": "埤頭里",
         "name_en": "Pitou Village",
         "line": "F123-1525",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "74551"
       },
@@ -5095,7 +5101,7 @@
         "name": "挖仔尾",
         "name_en": "Waziwei",
         "line": "F123-1525",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3804"
       },
@@ -5115,7 +5121,7 @@
         "name": "大竹圍",
         "name_en": "Dazhuwei",
         "line": "F123-1525",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "15031"
       },
@@ -5135,7 +5141,7 @@
         "name": "大崁國小",
         "name_en": "Dakan Elementary School",
         "line": "F123-1525",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "50409"
       },
@@ -5155,7 +5161,7 @@
         "name": "安老院",
         "name_en": "Senior Citizens Home",
         "line": "F123-1525",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3797"
       },
@@ -5175,7 +5181,7 @@
         "name": "大崁里",
         "name_en": "Dakan Village",
         "line": "F123-1525",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3783"
       },
@@ -5195,7 +5201,7 @@
         "name": "乙天宮",
         "name_en": "Yitian Temple",
         "line": "F123-1525",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3792"
       },
@@ -5215,7 +5221,7 @@
         "name": "西門",
         "name_en": "Ximen",
         "line": "F123-1525",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3802"
       },
@@ -5235,7 +5241,7 @@
         "name": "下街仔",
         "name_en": "Xiajie Zai",
         "line": "F123-1525",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3788"
       },
@@ -5255,7 +5261,7 @@
         "name": "渡船頭",
         "name_en": "Ferryboats' Dock",
         "line": "F123-1525",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3809"
       },
@@ -5275,7 +5281,7 @@
         "name": "水雲山莊",
         "name_en": "Shuiyun Shanzhuang",
         "line": "F123-1525",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3794"
       },
@@ -5295,7 +5301,7 @@
         "name": "米倉里",
         "name_en": "Micang Village",
         "line": "F123-1525",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3798"
       },
@@ -5315,7 +5321,7 @@
         "name": "觀音路口",
         "name_en": "Guanyin Rd. Entrance",
         "line": "F123-1525",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "15002"
       },
@@ -5335,7 +5341,7 @@
         "name": "米倉國小",
         "name_en": "Micang Elementary School",
         "line": "F123-1525",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3799"
       },
@@ -5355,7 +5361,7 @@
         "name": "米倉國小一",
         "name_en": null,
         "line": "F123-1525",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3801"
       },
@@ -5375,7 +5381,7 @@
         "name": "米倉里10鄰",
         "name_en": "Neighborhood 10 Micang Village",
         "line": "F123-1525",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165610482"
       },
@@ -5395,7 +5401,7 @@
         "name": "奉天宮",
         "name_en": "Fengtian Temple",
         "line": "F123-1525",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165610483"
       },
@@ -5415,7 +5421,7 @@
         "name": "福德宮入口",
         "name_en": "FuDe Palace Entrance",
         "line": "F123-1525",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165606218"
       },
@@ -5435,7 +5441,7 @@
         "name": "王母娘娘",
         "name_en": "Wang Mu Niang Niang",
         "line": "F123-1525",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165606221"
       },
@@ -5455,7 +5461,7 @@
         "name": "王母娘娘入口",
         "name_en": "WangMuNiangNiang Temple Entrance",
         "line": "F123-1525",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165606220"
       },
@@ -5475,7 +5481,7 @@
         "name": "老人果園",
         "name_en": "Elderly garden",
         "line": "F123-1525",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165606219"
       },
@@ -5495,7 +5501,7 @@
         "name": "水雲山莊",
         "name_en": "Shuiyun Shanzhuang",
         "line": "F123-1525",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "15024"
       },
@@ -5515,7 +5521,7 @@
         "name": "政霸實業",
         "name_en": "ZhengBa Industry",
         "line": "F123-1525",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165609925"
       },
@@ -5535,7 +5541,7 @@
         "name": "西龍巖前路口",
         "name_en": "XiLongYan Temple Entrance",
         "line": "F123-1525",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165606225"
       },
@@ -5555,7 +5561,7 @@
         "name": "傑華商店",
         "name_en": "JieHua Shop",
         "line": "F123-1525",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165606226"
       },
@@ -5575,7 +5581,7 @@
         "name": "八里療養院",
         "name_en": "Bali Sanatorium",
         "line": "F123-1525",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165606227"
       },
@@ -5595,7 +5601,7 @@
         "name": "八里國中",
         "name_en": "Bali Junior High School",
         "line": "F123-1525",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603684"
       },
@@ -5615,7 +5621,7 @@
         "name": "廖添丁廟",
         "name_en": "Liaotianding Temple",
         "line": "F123-1525",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "74547"
       },

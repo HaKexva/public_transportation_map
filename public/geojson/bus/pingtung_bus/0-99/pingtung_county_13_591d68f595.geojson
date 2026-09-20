@@ -6,12 +6,13 @@
     "name": "幸福來義13路",
     "name_en": "幸福來義13路",
     "ref": "幸福來義13路",
-    "color": "#0B7A3E",
+    "color": "#d97706",
     "city_id": "PingtungCounty",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://web.taiwanbus.tw/MISUploadData/Schematic/file/0977.jpg",
     "operator_id": "96",
-    "operator": "屏東縣來義鄉公所"
+    "operator": "屏東縣來義鄉公所",
+    "loop": true
   },
   "features": [
     {
@@ -21,8 +22,9 @@
         "ref": "幸福來義13路",
         "name": "幸福來義13路",
         "name_en": "幸福來義13路",
-        "color": "#0B7A3E",
-        "direction": 0
+        "color": "#d97706",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -3649,8 +3651,9 @@
         "ref": "幸福來義13路",
         "name": "幸福來義13路",
         "name_en": "幸福來義13路",
-        "color": "#0B7A3E",
-        "direction": 1
+        "color": "#d97706",
+        "direction": 1,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -7442,7 +7445,7 @@
         "name": "新來義石板屋",
         "name_en": "New Lai-Yi Tribe",
         "line": "幸福來義13路",
-        "color": "#0B7A3E",
+        "color": "#d97706",
         "direction": 0,
         "station_id": "143781"
       },
@@ -7462,7 +7465,7 @@
         "name": "潮州轉運站",
         "name_en": "Chaozhou Bus Station",
         "line": "幸福來義13路",
-        "color": "#0B7A3E",
+        "color": "#d97706",
         "direction": 0,
         "station_id": "142778"
       },
@@ -7482,7 +7485,7 @@
         "name": "二峰圳停車場",
         "name_en": "Erfeng Canal Parking Lot",
         "line": "幸福來義13路",
-        "color": "#0B7A3E",
+        "color": "#d97706",
         "direction": 0,
         "station_id": "145461"
       },
@@ -7502,7 +7505,7 @@
         "name": "新來義石板屋",
         "name_en": "New Lai-Yi Tribe",
         "line": "幸福來義13路",
-        "color": "#0B7A3E",
+        "color": "#d97706",
         "direction": 1,
         "station_id": "143781"
       },
@@ -7522,7 +7525,7 @@
         "name": "二峰圳停車場",
         "name_en": "Erfeng Canal Parking Lot",
         "line": "幸福來義13路",
-        "color": "#0B7A3E",
+        "color": "#d97706",
         "direction": 1,
         "station_id": "145461"
       },
@@ -7542,7 +7545,7 @@
         "name": "潮州轉運站",
         "name_en": "Chaozhou Bus Station",
         "line": "幸福來義13路",
-        "color": "#0B7A3E",
+        "color": "#d97706",
         "direction": 1,
         "station_id": "142778"
       },

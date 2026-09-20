@@ -6,13 +6,14 @@
     "name": "F123八療",
     "name_en": "F123八療",
     "ref": "F123八療",
-    "color": "#9f1239",
+    "color": "#6B8F9A",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.gov.taipei/File/Get/146cd5e7-16ef-44cc-b2c9-09de230ef5a5?v=639248448771567384",
     "operator_id": "16230",
     "operator": "八里區公所",
-    "operator_en": "Bali District Office"
+    "operator_en": "Bali District Office",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "F123八療",
         "name": "F123八療",
         "name_en": "F123八療",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#6B8F9A",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1023,6 +1025,10 @@
           [
             121.39765530237,
             25.1460157575759
+          ],
+          [
+            121.397709830571,
+            25.145822874238
           ]
         ]
       }
@@ -1035,7 +1041,7 @@
         "name": "八里分駐所",
         "name_en": "Bali Police Station",
         "line": "F123八療",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "74541"
       },
@@ -1055,7 +1061,7 @@
         "name": "八里國中",
         "name_en": "Bali Junior High School",
         "line": "F123八療",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165606215"
       },
@@ -1075,7 +1081,7 @@
         "name": "八里療養院",
         "name_en": "Bali Sanatorium",
         "line": "F123八療",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "74589"
       },
@@ -1095,7 +1101,7 @@
         "name": "八里國中",
         "name_en": "Bali Junior High School",
         "line": "F123八療",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603684"
       },
@@ -1115,7 +1121,7 @@
         "name": "八里分駐所",
         "name_en": "Bali Police Station",
         "line": "F123八療",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "74541"
       },

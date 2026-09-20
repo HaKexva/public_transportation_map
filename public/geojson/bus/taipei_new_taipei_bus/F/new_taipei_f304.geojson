@@ -6,13 +6,14 @@
     "name": "F304",
     "name_en": "F304",
     "ref": "F304",
-    "color": "#92400e",
+    "color": "#6B8F9A",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.gov.taipei/File/Get/cc88379e-4d41-4232-a720-070123acf4d9?v=639248448803990623",
     "operator_id": "16236",
     "operator": "三重區公所",
-    "operator_en": "Sanchong District Office"
+    "operator_en": "Sanchong District Office",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "F304",
         "name": "F304",
         "name_en": "F304",
-        "color": "#92400e",
-        "direction": 0
+        "color": "#6B8F9A",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -499,6 +501,10 @@
           [
             121.471411154215,
             25.06828143263
+          ],
+          [
+            121.470910634161,
+            25.0682887573137
           ]
         ]
       }
@@ -511,7 +517,7 @@
         "name": "大有公園",
         "name_en": "Dayou Park",
         "line": "F304",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165610525"
       },
@@ -531,7 +537,7 @@
         "name": "三蘆羽球館",
         "name_en": "Sunlu Badminton Hall",
         "line": "F304",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165610526"
       },
@@ -551,7 +557,7 @@
         "name": "頂崁街210巷",
         "name_en": "Ln. 210, Dingkan St.",
         "line": "F304",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165610527"
       },
@@ -571,7 +577,7 @@
         "name": "二重公園",
         "name_en": "Erchong Park",
         "line": "F304",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165610528"
       },
@@ -591,7 +597,7 @@
         "name": "水漾路二段與頂崁街口處",
         "name_en": "Sec. 2, Shuiyang Rd. - Dingkan St.",
         "line": "F304",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165610529"
       },
@@ -611,7 +617,7 @@
         "name": "水漾路一段與三陽路口",
         "name_en": "Sec. 1, Shuiyang Rd. - Sanyang Rd.",
         "line": "F304",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165610530"
       },
@@ -631,7 +637,7 @@
         "name": "捷運三重站",
         "name_en": "MRT Sanchong Station",
         "line": "F304",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73557"
       },
@@ -651,7 +657,7 @@
         "name": "成功一街",
         "name_en": "Chenggong 1st St.",
         "line": "F304",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165610533"
       },
@@ -671,7 +677,7 @@
         "name": "左岸京站",
         "name_en": "Zuo'an Jingzhan",
         "line": "F304",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165610532"
       },
@@ -691,7 +697,7 @@
         "name": "竹山寺",
         "name_en": "Zhushan Temple",
         "line": "F304",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165610531"
       },
@@ -711,7 +717,7 @@
         "name": "捷運三重站",
         "name_en": "MRT Sanchong Station",
         "line": "F304",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73557"
       },
@@ -731,7 +737,7 @@
         "name": "三重棒球場",
         "name_en": "Sanchong Baseball Stadium",
         "line": "F304",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165610534"
       },
@@ -751,7 +757,7 @@
         "name": "上河匯",
         "name_en": "Shanghehui",
         "line": "F304",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165610535"
       },
@@ -771,7 +777,7 @@
         "name": "新北大都會公園",
         "name_en": "New Taipei Metropolitan Park",
         "line": "F304",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165605288"
       },
@@ -791,7 +797,7 @@
         "name": "聯上大喜",
         "name_en": "Lianshang Daxi",
         "line": "F304",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165610613"
       },
@@ -811,7 +817,7 @@
         "name": "大有公園",
         "name_en": "Dayou Park",
         "line": "F304",
-        "color": "#92400e",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165610525"
       },

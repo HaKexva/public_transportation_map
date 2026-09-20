@@ -6,11 +6,12 @@
     "name": "T123",
     "name_en": "T123",
     "ref": "T123",
-    "color": "#7c2d12",
+    "color": "#4f46e5",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "operator_id": "29",
-    "operator": "九億租車"
+    "operator": "九億租車",
+    "loop": true
   },
   "features": [
     {
@@ -20,8 +21,9 @@
         "ref": "T123",
         "name": "T123",
         "name_en": "T123",
-        "color": "#7c2d12",
-        "direction": 0
+        "color": "#4f46e5",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1589,6 +1591,10 @@
           [
             121.281,
             24.92591
+          ],
+          [
+            121.28122,
+            24.92595
           ]
         ]
       }
@@ -1601,7 +1607,7 @@
         "name": "深耕十期社區",
         "name_en": "Shengeng Community, Phase 10",
         "line": "T123",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "3812"
       },
@@ -1621,7 +1627,7 @@
         "name": "建德興豐路口(G01)",
         "name_en": "Jiande Xingfeng Intersection (G01)",
         "line": "T123",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "3809"
       },
@@ -1641,7 +1647,7 @@
         "name": "興豐中正路口",
         "name_en": "Xingfeng and Zhongzheng Rd. Intersection",
         "line": "T123",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "6988"
       },
@@ -1661,7 +1667,7 @@
         "name": "八德區公所(三元宮)",
         "name_en": "Bade District Office (Sanyuan Temple)",
         "line": "T123",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "2062"
       },
@@ -1681,7 +1687,7 @@
         "name": "建德公園",
         "name_en": "Jiande Park",
         "line": "T123",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "5000"
       },
@@ -1701,7 +1707,7 @@
         "name": "長興二路口",
         "name_en": "Changxing 2nd Rd. Intersection",
         "line": "T123",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "4998"
       },
@@ -1721,7 +1727,7 @@
         "name": "連城橋(姜太公廟)",
         "name_en": "Liancheng Bridge(Jiang Taigong Temple)",
         "line": "T123",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "3807"
       },
@@ -1741,7 +1747,7 @@
         "name": "新明公司",
         "name_en": "Xinming Company",
         "line": "T123",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "2288"
       },
@@ -1761,7 +1767,7 @@
         "name": "竹園街",
         "name_en": "Zhuyuan St.",
         "line": "T123",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "5688"
       },
@@ -1781,7 +1787,7 @@
         "name": "竹園社區",
         "name_en": "Zhuyuan Community",
         "line": "T123",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "5690"
       },
@@ -1801,7 +1807,7 @@
         "name": "永樂橋",
         "name_en": "Yongle Bridge",
         "line": "T123",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "4772"
       },
@@ -1821,7 +1827,7 @@
         "name": "玉元宮",
         "name_en": "Yuyuan Temple",
         "line": "T123",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "5692"
       },
@@ -1841,7 +1847,7 @@
         "name": "霄裡",
         "name_en": "Xiaoli",
         "line": "T123",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "4571"
       },
@@ -1861,7 +1867,7 @@
         "name": "桃園北區客家會館",
         "name_en": "North Taoyuan City Hakka Cultural Hall",
         "line": "T123",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "6644"
       },
@@ -1881,7 +1887,7 @@
         "name": "忠貞市場",
         "name_en": "Zhongzhen Market",
         "line": "T123",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "2410"
       },
@@ -1901,7 +1907,7 @@
         "name": "龍宮街",
         "name_en": "Longgong St.",
         "line": "T123",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "5704"
       },
@@ -1921,7 +1927,7 @@
         "name": "新生路口",
         "name_en": "Xinsheng Rd. Intersection",
         "line": "T123",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "5244"
       },
@@ -1941,7 +1947,7 @@
         "name": "八德天化宮",
         "name_en": "八德天化宮",
         "line": "T123",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "7803"
       },
@@ -1961,7 +1967,7 @@
         "name": "龍南路429巷",
         "name_en": "龍南路429巷",
         "line": "T123",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "7836"
       },
@@ -1981,7 +1987,7 @@
         "name": "八德三后宮",
         "name_en": "八德三后宮",
         "line": "T123",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "7802"
       },
@@ -2001,7 +2007,7 @@
         "name": "深耕十期社區",
         "name_en": "Shengeng Community,Phase 10",
         "line": "T123",
-        "color": "#7c2d12",
+        "color": "#4f46e5",
         "direction": 0,
         "station_id": "3811"
       },

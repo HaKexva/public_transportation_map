@@ -6,13 +6,14 @@
     "name": "003",
     "name_en": "003",
     "ref": "003",
-    "color": "#155e75",
+    "color": "#0B7A3E",
     "city_id": "PenghuCounty",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://web.taiwanbus.tw/MISUploadData/Schematic/file/0164.jpg",
     "operator_id": "78",
     "operator": "澎湖縣公共車船管理處",
-    "operator_en": "City Bus and Ferry Management Office, Penghu County"
+    "operator_en": "City Bus and Ferry Management Office, Penghu County",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "003",
         "name": "003",
         "name_en": "003",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#0B7A3E",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -5175,7 +5177,7 @@
         "name": "馬公港站",
         "name_en": "Magong Port Station",
         "line": "003",
-        "color": "#155e75",
+        "color": "#0B7A3E",
         "direction": 0,
         "station_id": "141917"
       },
@@ -5195,7 +5197,7 @@
         "name": "公車總站",
         "name_en": "bus terminal",
         "line": "003",
-        "color": "#155e75",
+        "color": "#0B7A3E",
         "direction": 0,
         "station_id": "142476"
       },
@@ -5215,7 +5217,7 @@
         "name": "自由塔(勝國)站",
         "name_en": "Freedom Tower (Victory) Station",
         "line": "003",
-        "color": "#155e75",
+        "color": "#0B7A3E",
         "direction": 0,
         "station_id": "141918"
       },
@@ -5235,7 +5237,7 @@
         "name": "第三漁港(雅霖)站",
         "name_en": "Magong 3rd  Harbor",
         "line": "003",
-        "color": "#155e75",
+        "color": "#0B7A3E",
         "direction": 0,
         "station_id": "141919"
       },
@@ -5255,7 +5257,7 @@
         "name": "文澳(元泰、百世多麗)站",
         "name_en": "Wen&#39;ao (Yuen Tai, Best Western) Station",
         "line": "003",
-        "color": "#155e75",
+        "color": "#0B7A3E",
         "direction": 0,
         "station_id": "141920"
       },
@@ -5275,7 +5277,7 @@
         "name": "澎湖機場站",
         "name_en": "Penghu Airport(MZG)",
         "line": "003",
-        "color": "#155e75",
+        "color": "#0B7A3E",
         "direction": 0,
         "station_id": "141933"
       },
@@ -5295,7 +5297,7 @@
         "name": "北寮奎壁山",
         "name_en": "Beiliao Kueibishan",
         "line": "003",
-        "color": "#155e75",
+        "color": "#0B7A3E",
         "direction": 0,
         "station_id": "143146"
       },
@@ -5315,7 +5317,7 @@
         "name": "南寮社區",
         "name_en": "Nanliao Village",
         "line": "003",
-        "color": "#155e75",
+        "color": "#0B7A3E",
         "direction": 0,
         "station_id": "141934"
       },
@@ -5335,7 +5337,7 @@
         "name": "龍門閉鎖陣地",
         "name_en": "Longmen Military Bunker",
         "line": "003",
-        "color": "#155e75",
+        "color": "#0B7A3E",
         "direction": 0,
         "station_id": "141935"
       },
@@ -5355,7 +5357,7 @@
         "name": "澎湖生活博物館",
         "name_en": "Penghu Living Museum",
         "line": "003",
-        "color": "#155e75",
+        "color": "#0B7A3E",
         "direction": 0,
         "station_id": "139893"
       },
@@ -5375,7 +5377,7 @@
         "name": "文澳(元泰、百世多麗)站",
         "name_en": "Wen&#39;ao (Yuen Tai, Best Western) Station",
         "line": "003",
-        "color": "#155e75",
+        "color": "#0B7A3E",
         "direction": 0,
         "station_id": "141927"
       },
@@ -5395,7 +5397,7 @@
         "name": "第三漁港(雅霖)站",
         "name_en": "Magong 3rd  Harbor",
         "line": "003",
-        "color": "#155e75",
+        "color": "#0B7A3E",
         "direction": 0,
         "station_id": "139888"
       },
@@ -5415,7 +5417,7 @@
         "name": "自由塔(勝國)站",
         "name_en": "Freedom Tower (Victory) Station",
         "line": "003",
-        "color": "#155e75",
+        "color": "#0B7A3E",
         "direction": 0,
         "station_id": "141928"
       },

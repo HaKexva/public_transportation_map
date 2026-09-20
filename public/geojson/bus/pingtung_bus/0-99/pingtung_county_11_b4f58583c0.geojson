@@ -6,12 +6,13 @@
     "name": "幸福來義11路",
     "name_en": "幸福來義11路",
     "ref": "幸福來義11路",
-    "color": "#0B7A3E",
+    "color": "#d97706",
     "city_id": "PingtungCounty",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://web.taiwanbus.tw/MISUploadData/Schematic/file/0991.jpg",
     "operator_id": "96",
-    "operator": "屏東縣來義鄉公所"
+    "operator": "屏東縣來義鄉公所",
+    "loop": true
   },
   "features": [
     {
@@ -21,8 +22,9 @@
         "ref": "幸福來義11路",
         "name": "幸福來義11路",
         "name_en": "幸福來義11路",
-        "color": "#0B7A3E",
-        "direction": 0
+        "color": "#d97706",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -2810,7 +2812,7 @@
         "name": "丹林活動中心",
         "name_en": "Dan-Lin Activity Center",
         "line": "幸福來義11路",
-        "color": "#0B7A3E",
+        "color": "#d97706",
         "direction": 0,
         "station_id": "139917"
       },
@@ -2830,7 +2832,7 @@
         "name": "來義高中",
         "name_en": "Lai yi High school",
         "line": "幸福來義11路",
-        "color": "#0B7A3E",
+        "color": "#d97706",
         "direction": 0,
         "station_id": "143778"
       },
@@ -2850,7 +2852,7 @@
         "name": "文樂村文化聚會所",
         "name_en": "Wun-Le Village Cultural Assembly Hall",
         "line": "幸福來義11路",
-        "color": "#0B7A3E",
+        "color": "#d97706",
         "direction": 0,
         "station_id": "140185"
       },

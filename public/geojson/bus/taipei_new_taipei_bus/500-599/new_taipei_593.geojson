@@ -6,12 +6,13 @@
     "name": "593",
     "name_en": "593",
     "ref": "593",
-    "color": "#0B7A3E",
+    "color": "#DC2626",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.gov.taipei/File/Get/71546386-f3b2-48ed-bcd1-43b4ac72ac31?v=639248448676030794",
     "operator_id": "16186",
-    "operator": "淡水客運"
+    "operator": "淡水客運",
+    "loop": true
   },
   "features": [
     {
@@ -21,8 +22,9 @@
         "ref": "593",
         "name": "593",
         "name_en": "593",
-        "color": "#0B7A3E",
-        "direction": 0
+        "color": "#DC2626",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -742,6 +744,10 @@
           [
             121.447239732872,
             25.1675447971023
+          ],
+          [
+            121.447235774891,
+            25.1676143560437
           ]
         ]
       }
@@ -754,7 +760,7 @@
         "name": "捷運淡水站",
         "name_en": "MRT Tamsui Sta.",
         "line": "593",
-        "color": "#0B7A3E",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "3842"
       },
@@ -774,7 +780,7 @@
         "name": "永樂巷口(中山市場)",
         "name_en": "Yongle Lane Intersection(Zhongshan Market)",
         "line": "593",
-        "color": "#0B7A3E",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "14662"
       },
@@ -794,7 +800,7 @@
         "name": "重建街口",
         "name_en": "JhongJian St. Entrance",
         "line": "593",
-        "color": "#0B7A3E",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "180712"
       },
@@ -814,7 +820,7 @@
         "name": "淡水圖書館",
         "name_en": "Tamsui Liberry",
         "line": "593",
-        "color": "#0B7A3E",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "180710"
       },
@@ -834,7 +840,7 @@
         "name": "小白宮(淡水分局)",
         "name_en": "Little White House (Danshui Precinct)",
         "line": "593",
-        "color": "#0B7A3E",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "180708"
       },
@@ -854,7 +860,7 @@
         "name": "紅毛城(真理大學)",
         "name_en": "Fort Santo Domingo (Aletheia U.)",
         "line": "593",
-        "color": "#0B7A3E",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "180706"
       },
@@ -874,7 +880,7 @@
         "name": "獸醫研究所",
         "name_en": "VeterInary Research Institute",
         "line": "593",
-        "color": "#0B7A3E",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "18074"
       },
@@ -894,7 +900,7 @@
         "name": "滬尾藝文園區(忠烈祠)",
         "name_en": "Huwei Cultural and Arts Park(Martyrs' Shrine)",
         "line": "593",
-        "color": "#0B7A3E",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "18072"
       },
@@ -914,7 +920,7 @@
         "name": "油車口",
         "name_en": "YouCheKou",
         "line": "593",
-        "color": "#0B7A3E",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "18070"
       },
@@ -934,7 +940,7 @@
         "name": "淡江新村",
         "name_en": "Danjiang New Residentail Quarter",
         "line": "593",
-        "color": "#0B7A3E",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "18068"
       },
@@ -954,7 +960,7 @@
         "name": "天生國小",
         "name_en": "TianSheng Elementary School",
         "line": "593",
-        "color": "#0B7A3E",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "18066"
       },
@@ -974,7 +980,7 @@
         "name": "大河文明",
         "name_en": "Dahewenming",
         "line": "593",
-        "color": "#0B7A3E",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "74889"
       },
@@ -994,7 +1000,7 @@
         "name": "果嶺大道",
         "name_en": "Green Avenue",
         "line": "593",
-        "color": "#0B7A3E",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "75193"
       },
@@ -1014,7 +1020,7 @@
         "name": "天生社區",
         "name_en": "Tiansheng Community",
         "line": "593",
-        "color": "#0B7A3E",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "75172"
       },
@@ -1034,7 +1040,7 @@
         "name": "大庄福德廟",
         "name_en": "Dazhuang Fude Temple",
         "line": "593",
-        "color": "#0B7A3E",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "75166"
       },
@@ -1054,7 +1060,7 @@
         "name": "中正新民街口",
         "name_en": "Zhongzheng & Xinmin Intersection",
         "line": "593",
-        "color": "#0B7A3E",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "1165605885"
       },
@@ -1074,7 +1080,7 @@
         "name": "美人嶼社區",
         "name_en": "Meirenyu Community",
         "line": "593",
-        "color": "#0B7A3E",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "74877"
       },
@@ -1094,7 +1100,7 @@
         "name": "電信料庫",
         "name_en": "Telecommunications Materials",
         "line": "593",
-        "color": "#0B7A3E",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "75271"
       },
@@ -1114,7 +1120,7 @@
         "name": "沙崙里",
         "name_en": "Shalun Village",
         "line": "593",
-        "color": "#0B7A3E",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "74871"
       },
@@ -1134,7 +1140,7 @@
         "name": "長緹飯店",
         "name_en": "Long View Hotel",
         "line": "593",
-        "color": "#0B7A3E",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "75266"
       },
@@ -1154,7 +1160,7 @@
         "name": "淡海市民活動中心",
         "name_en": "DanHai Community Activity Center",
         "line": "593",
-        "color": "#0B7A3E",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "18063"
       },
@@ -1174,7 +1180,7 @@
         "name": "淡江豪景",
         "name_en": "Tamkang Haojing",
         "line": "593",
-        "color": "#0B7A3E",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "74880"
       },
@@ -1194,7 +1200,7 @@
         "name": "淡水轉運站",
         "name_en": "Tamsui Bus Station",
         "line": "593",
-        "color": "#0B7A3E",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "1165610553"
       },
@@ -1214,7 +1220,7 @@
         "name": "一信幼稚園",
         "name_en": "Yixin Kindergarten",
         "line": "593",
-        "color": "#0B7A3E",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "74887"
       },
@@ -1234,7 +1240,7 @@
         "name": "油車口",
         "name_en": "Youchekou",
         "line": "593",
-        "color": "#0B7A3E",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "18069"
       },
@@ -1254,7 +1260,7 @@
         "name": "滬尾藝文園區(忠烈祠)",
         "name_en": "Huwei Cultural and Arts Park(Martyrs' Shrine)",
         "line": "593",
-        "color": "#0B7A3E",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "18071"
       },
@@ -1274,7 +1280,7 @@
         "name": "獸醫研究所",
         "name_en": "VeterInary Research Institute",
         "line": "593",
-        "color": "#0B7A3E",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "18073"
       },
@@ -1294,7 +1300,7 @@
         "name": "紅毛城(真理大學)",
         "name_en": "Fort Santo Domingo (Aletheia U.)",
         "line": "593",
-        "color": "#0B7A3E",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "18075"
       },
@@ -1314,7 +1320,7 @@
         "name": "電力公司(滬尾漁港)",
         "name_en": "Taiwan Power Company(Huwei Fishing Harbor)",
         "line": "593",
-        "color": "#0B7A3E",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "74751"
       },
@@ -1334,7 +1340,7 @@
         "name": "郵局(滬尾偕醫館)",
         "name_en": "Post Office(Hobe MacKay Hospital)",
         "line": "593",
-        "color": "#0B7A3E",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "74961"
       },
@@ -1354,7 +1360,7 @@
         "name": "馬偕花園(客船碼頭)",
         "name_en": "Mackay Garden(Passenger Wharf))",
         "line": "593",
-        "color": "#0B7A3E",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "74761"
       },
@@ -1374,7 +1380,7 @@
         "name": "福佑宮(渡船頭)",
         "name_en": "Fuyou Temple(Ferry Pier)",
         "line": "593",
-        "color": "#0B7A3E",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "74762"
       },
@@ -1394,7 +1400,7 @@
         "name": "金色水岸口",
         "name_en": "Tamsui's Gold Coast Entrance",
         "line": "593",
-        "color": "#0B7A3E",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "74737"
       },
@@ -1414,7 +1420,7 @@
         "name": "淡水區農會",
         "name_en": "Tamsui Farmers Association",
         "line": "593",
-        "color": "#0B7A3E",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "75039"
       },
@@ -1434,7 +1440,7 @@
         "name": "捷運淡水站",
         "name_en": "MRT Tamsui Sta.",
         "line": "593",
-        "color": "#0B7A3E",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "3842"
       },

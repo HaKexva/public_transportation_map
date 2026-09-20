@@ -6,13 +6,14 @@
     "name": "F152-0635",
     "name_en": "F152-0635",
     "ref": "F152-0635",
-    "color": "#0B7A3E",
+    "color": "#6B8F9A",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.gov.taipei/File/Get/A140CE1F-92EF-4711-8E1F-8989B0C540E8?v=639248448777661085",
     "operator_id": "16231",
     "operator": "石門區公所",
-    "operator_en": "Shimen District Office"
+    "operator_en": "Shimen District Office",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "F152-0635",
         "name": "F152-0635",
         "name_en": "F152-0635",
-        "color": "#0B7A3E",
-        "direction": 0
+        "color": "#6B8F9A",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -355,6 +357,10 @@
           [
             121.545770742655,
             25.289247309731
+          ],
+          [
+            121.545762039986,
+            25.2892270035044
           ]
         ]
       }
@@ -367,7 +373,7 @@
         "name": "老梅",
         "name_en": "Laomei",
         "line": "F152-0635",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75538"
       },
@@ -387,7 +393,7 @@
         "name": "大丘田",
         "name_en": "Daqiutian",
         "line": "F152-0635",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75524"
       },
@@ -407,7 +413,7 @@
         "name": "樹仔下",
         "name_en": "Shuzaixia",
         "line": "F152-0635",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75513"
       },
@@ -427,7 +433,7 @@
         "name": "豬槽潭",
         "name_en": "Zhucaotan",
         "line": "F152-0635",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75567"
       },
@@ -447,7 +453,7 @@
         "name": "老梅",
         "name_en": "Laomei",
         "line": "F152-0635",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75539"
       },

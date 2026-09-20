@@ -6,13 +6,14 @@
     "name": "紅60區間",
     "name_en": "紅60區間",
     "ref": "紅60區間",
-    "color": "#3730a3",
+    "color": "#a21caf",
     "city_id": "Kaohsiung",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ibus.tbkc.gov.tw/cms/api/route/8602/map/1858/image",
     "operator_id": "10310",
     "operator": "南台灣客運",
-    "operator_en": "South Taiwan Bus Co., Ltd."
+    "operator_en": "South Taiwan Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,7 +23,7 @@
         "ref": "紅60區間",
         "name": "紅60區間",
         "name_en": "紅60區間",
-        "color": "#3730a3",
+        "color": "#a21caf",
         "direction": 1
       },
       "geometry": {
@@ -718,8 +719,9 @@
         "ref": "紅60區間",
         "name": "紅60區間",
         "name_en": "紅60區間",
-        "color": "#3730a3",
-        "direction": 0
+        "color": "#a21caf",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1071,6 +1073,10 @@
           [
             120.34689,
             22.7305
+          ],
+          [
+            120.34687,
+            22.73043
           ]
         ]
       }
@@ -1083,7 +1089,7 @@
         "name": "大社區公所",
         "name_en": "Dashe District Office",
         "line": "紅60區間",
-        "color": "#3730a3",
+        "color": "#a21caf",
         "direction": 0,
         "station_id": "6069"
       },
@@ -1103,7 +1109,7 @@
         "name": "新興路口",
         "name_en": "Xinxing Road Intersection",
         "line": "紅60區間",
-        "color": "#3730a3",
+        "color": "#a21caf",
         "direction": 0,
         "station_id": "6121"
       },
@@ -1123,7 +1129,7 @@
         "name": "民生路",
         "name_en": "Minsheng Road",
         "line": "紅60區間",
-        "color": "#3730a3",
+        "color": "#a21caf",
         "direction": 0,
         "station_id": "6122"
       },
@@ -1143,7 +1149,7 @@
         "name": "林子邊",
         "name_en": "Linzihbian",
         "line": "紅60區間",
-        "color": "#3730a3",
+        "color": "#a21caf",
         "direction": 0,
         "station_id": "1248"
       },
@@ -1163,7 +1169,7 @@
         "name": "金龍路",
         "name_en": "Jinlong Road",
         "line": "紅60區間",
-        "color": "#3730a3",
+        "color": "#a21caf",
         "direction": 0,
         "station_id": "6123"
       },
@@ -1183,7 +1189,7 @@
         "name": "大新路",
         "name_en": "Daxin Road",
         "line": "紅60區間",
-        "color": "#3730a3",
+        "color": "#a21caf",
         "direction": 0,
         "station_id": "6124"
       },
@@ -1203,7 +1209,7 @@
         "name": "三奶里",
         "name_en": "Sannai Village",
         "line": "紅60區間",
-        "color": "#3730a3",
+        "color": "#a21caf",
         "direction": 0,
         "station_id": "1250"
       },
@@ -1223,7 +1229,7 @@
         "name": "大吉路",
         "name_en": "Daji Road",
         "line": "紅60區間",
-        "color": "#3730a3",
+        "color": "#a21caf",
         "direction": 0,
         "station_id": "6125"
       },
@@ -1243,7 +1249,7 @@
         "name": "民權路",
         "name_en": "Minquan Road",
         "line": "紅60區間",
-        "color": "#3730a3",
+        "color": "#a21caf",
         "direction": 0,
         "station_id": "1285"
       },
@@ -1263,7 +1269,7 @@
         "name": "中山路(中正路口)",
         "name_en": "Zhongshan Road (Zhongzheng Rd.Intersection)",
         "line": "紅60區間",
-        "color": "#3730a3",
+        "color": "#a21caf",
         "direction": 0,
         "station_id": "1345"
       },
@@ -1283,7 +1289,7 @@
         "name": "大社區公所",
         "name_en": "Dashe District Office",
         "line": "紅60區間",
-        "color": "#3730a3",
+        "color": "#a21caf",
         "direction": 0,
         "station_id": "6069"
       },

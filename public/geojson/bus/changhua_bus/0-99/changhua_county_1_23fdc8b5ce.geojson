@@ -6,13 +6,14 @@
     "name": "1路",
     "name_en": "1路",
     "ref": "1路",
-    "color": "#65a30d",
+    "color": "#b91c1c",
     "city_id": "ChanghuaCounty",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://web.taiwanbus.tw/MISUploadData/Schematic/file/0703.jpg",
     "operator_id": "60",
     "operator": "彰化客運",
-    "operator_en": "Chang Hua Bus Co., Ltd."
+    "operator_en": "Chang Hua Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "1路",
         "name": "1路",
         "name_en": "1路",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -2135,7 +2137,7 @@
         "name": "彰化站",
         "name_en": "Changhua Station",
         "line": "1路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "134066"
       },
@@ -2155,7 +2157,7 @@
         "name": "民生路口",
         "name_en": "Minsheng intersection",
         "line": "1路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "134071"
       },
@@ -2175,7 +2177,7 @@
         "name": "車路口",
         "name_en": "Car intersection",
         "line": "1路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "134075"
       },
@@ -2195,7 +2197,7 @@
         "name": "市子尾",
         "name_en": "Shi Zai Wei",
         "line": "1路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "134082"
       },
@@ -2215,7 +2217,7 @@
         "name": "和調里",
         "name_en": "He Tiao Village",
         "line": "1路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "134085"
       },
@@ -2235,7 +2237,7 @@
         "name": "彰化縣原住民生活館",
         "name_en": "Changhua County Indigenous Peoples Activity Center",
         "line": "1路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "134087"
       },
@@ -2255,7 +2257,7 @@
         "name": "中庄子(彰南路)",
         "name_en": "Zhongzhuangzi",
         "line": "1路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "134090"
       },
@@ -2275,7 +2277,7 @@
         "name": "山子腳",
         "name_en": "Shanzijiao",
         "line": "1路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "134094"
       },
@@ -2295,7 +2297,7 @@
         "name": "安溪路",
         "name_en": "An Xi Road",
         "line": "1路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "134099"
       },
@@ -2315,7 +2317,7 @@
         "name": "大竹",
         "name_en": "Da Zhu",
         "line": "1路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "134103"
       },
@@ -2335,7 +2337,7 @@
         "name": "鮮乳廠",
         "name_en": "Milk Factory",
         "line": "1路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "134105"
       },
@@ -2355,7 +2357,7 @@
         "name": "香山里",
         "name_en": "Xiang Shang Village",
         "line": "1路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "134110"
       },
@@ -2375,7 +2377,7 @@
         "name": "牛埔里",
         "name_en": "Niu Pu Village",
         "line": "1路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "134113"
       },
@@ -2395,7 +2397,7 @@
         "name": "一德南路",
         "name_en": "Yi De South Road",
         "line": "1路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "134124"
       },
@@ -2415,7 +2417,7 @@
         "name": "台鳳社區",
         "name_en": "Tai Feng Community",
         "line": "1路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "134126"
       },
@@ -2435,7 +2437,7 @@
         "name": "廣鳳宮",
         "name_en": "Guang Feng Temple",
         "line": "1路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "134128"
       },
@@ -2455,7 +2457,7 @@
         "name": "台鳳社區",
         "name_en": "Tai Feng Community",
         "line": "1路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "134126"
       },
@@ -2475,7 +2477,7 @@
         "name": "一德南路",
         "name_en": "Yi De South Road",
         "line": "1路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "134124"
       },
@@ -2495,7 +2497,7 @@
         "name": "牛埔里",
         "name_en": "Niu Pu Village",
         "line": "1路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "142725"
       },
@@ -2515,7 +2517,7 @@
         "name": "香山里",
         "name_en": "Xiang Shang Village",
         "line": "1路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "134110"
       },
@@ -2535,7 +2537,7 @@
         "name": "鮮乳廠",
         "name_en": "Milk Factory",
         "line": "1路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "134105"
       },
@@ -2555,7 +2557,7 @@
         "name": "大竹",
         "name_en": "Da Zhu",
         "line": "1路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "134103"
       },
@@ -2575,7 +2577,7 @@
         "name": "安溪路",
         "name_en": "An Xi Road",
         "line": "1路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "134099"
       },
@@ -2595,7 +2597,7 @@
         "name": "山子腳",
         "name_en": "Shanzijiao",
         "line": "1路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "134094"
       },
@@ -2615,7 +2617,7 @@
         "name": "中庄子(彰南路)",
         "name_en": "Zhongzhuangzi",
         "line": "1路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "134090"
       },
@@ -2635,7 +2637,7 @@
         "name": "彰化縣原住民生活館",
         "name_en": "Changhua County Indigenous Peoples Activity Center",
         "line": "1路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "134087"
       },
@@ -2655,7 +2657,7 @@
         "name": "和調里",
         "name_en": "He Tiao Village",
         "line": "1路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "134085"
       },
@@ -2675,7 +2677,7 @@
         "name": "市子尾",
         "name_en": "Shi Zai Wei",
         "line": "1路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "134082"
       },
@@ -2695,7 +2697,7 @@
         "name": "車路口",
         "name_en": "Car intersection",
         "line": "1路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "139054"
       },
@@ -2715,7 +2717,7 @@
         "name": "民生路口",
         "name_en": "Minsheng intersection",
         "line": "1路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "134071"
       },
@@ -2735,7 +2737,7 @@
         "name": "彰化站",
         "name_en": "Changhua Station",
         "line": "1路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "134066"
       },

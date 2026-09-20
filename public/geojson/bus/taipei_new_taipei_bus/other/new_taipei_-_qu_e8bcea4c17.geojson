@@ -6,13 +6,14 @@
     "name": "捷運七張站-全球工業區",
     "name_en": "捷運七張站-全球工業區",
     "ref": "捷運七張站-全球工業區",
-    "color": "#0369a1",
+    "color": "#F97316",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.gov.taipei/File/Get/cef6230a-17ec-421e-87e9-53536ff98330?v=639248448851539353",
     "operator_id": "16176",
     "operator": "臺北客運",
-    "operator_en": "Taipei Bus Co., Ltd."
+    "operator_en": "Taipei Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "捷運七張站-全球工業區",
         "name": "捷運七張站-全球工業區",
         "name_en": "捷運七張站-全球工業區",
-        "color": "#0369a1",
-        "direction": 0
+        "color": "#F97316",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -287,6 +289,10 @@
           [
             121.542999065497,
             24.9755484293486
+          ],
+          [
+            121.543004501396,
+            24.9752712528076
           ]
         ]
       }
@@ -298,8 +304,9 @@
         "ref": "捷運七張站-全球工業區",
         "name": "捷運七張站-全球工業區",
         "name_en": "捷運七張站-全球工業區",
-        "color": "#0369a1",
-        "direction": 1
+        "color": "#F97316",
+        "direction": 1,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -519,6 +526,10 @@
           [
             121.551122016212,
             24.9833498223053
+          ],
+          [
+            121.551630160988,
+            24.9836696030695
           ]
         ]
       }
@@ -531,7 +542,7 @@
         "name": "捷運七張站",
         "name_en": "MRT Qizhang Sta.",
         "line": "捷運七張站-全球工業區",
-        "color": "#0369a1",
+        "color": "#F97316",
         "direction": 0,
         "station_id": "30102"
       },
@@ -551,7 +562,7 @@
         "name": "遠東世紀",
         "name_en": "Far Eastern Century",
         "line": "捷運七張站-全球工業區",
-        "color": "#0369a1",
+        "color": "#F97316",
         "direction": 0,
         "station_id": "1000557"
       },
@@ -571,7 +582,7 @@
         "name": "全球工業總部",
         "name_en": "Quanqiu Industrial Office",
         "line": "捷運七張站-全球工業區",
-        "color": "#0369a1",
+        "color": "#F97316",
         "direction": 0,
         "station_id": "1000558"
       },
@@ -591,7 +602,7 @@
         "name": "捷運七張站",
         "name_en": "MRT Qizhang Sta.",
         "line": "捷運七張站-全球工業區",
-        "color": "#0369a1",
+        "color": "#F97316",
         "direction": 0,
         "station_id": "30102"
       },
@@ -611,7 +622,7 @@
         "name": "遠東世紀",
         "name_en": "Far Eastern Century",
         "line": "捷運七張站-全球工業區",
-        "color": "#0369a1",
+        "color": "#F97316",
         "direction": 1,
         "station_id": "1000557"
       },
@@ -631,7 +642,7 @@
         "name": "全球工業總部",
         "name_en": "Quanqiu Industrial Office",
         "line": "捷運七張站-全球工業區",
-        "color": "#0369a1",
+        "color": "#F97316",
         "direction": 1,
         "station_id": "1000558"
       },
@@ -651,7 +662,7 @@
         "name": "捷運七張站",
         "name_en": "MRT Qizhang Sta.",
         "line": "捷運七張站-全球工業區",
-        "color": "#0369a1",
+        "color": "#F97316",
         "direction": 1,
         "station_id": "30102"
       },
@@ -671,7 +682,7 @@
         "name": "遠東世紀",
         "name_en": "Far Eastern Century",
         "line": "捷運七張站-全球工業區",
-        "color": "#0369a1",
+        "color": "#F97316",
         "direction": 1,
         "station_id": "1000557"
       },

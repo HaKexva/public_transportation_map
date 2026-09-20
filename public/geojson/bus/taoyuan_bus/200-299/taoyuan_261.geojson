@@ -6,13 +6,14 @@
     "name": "261",
     "name_en": "261",
     "ref": "261",
-    "color": "#b91c1c",
+    "color": "#b45309",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/2610/map/1873/image",
     "operator_id": "1",
     "operator": "桃園客運",
-    "operator_en": "Taoyuan Bus Co., Ltd."
+    "operator_en": "Taoyuan Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "261",
         "name": "261",
         "name_en": "261",
-        "color": "#b91c1c",
-        "direction": 0
+        "color": "#b45309",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1471,6 +1473,10 @@
           [
             121.31252,
             24.99034
+          ],
+          [
+            121.31207,
+            24.99129
           ]
         ]
       }
@@ -1483,7 +1489,7 @@
         "name": "統領百貨",
         "name_en": "Tonlin Department Store",
         "line": "261",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1223"
       },
@@ -1503,7 +1509,7 @@
         "name": "成功路",
         "name_en": "Chenggong Road",
         "line": "261",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4200"
       },
@@ -1523,7 +1529,7 @@
         "name": "民生成功路口",
         "name_en": "Minsheng and ChengGung Rd. Intersection",
         "line": "261",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4144"
       },
@@ -1543,7 +1549,7 @@
         "name": "東山里",
         "name_en": "Dongshan Village",
         "line": "261",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3503"
       },
@@ -1563,7 +1569,7 @@
         "name": "萬壽山鶯路口",
         "name_en": "Wanshou Shanying Rd. Intersection",
         "line": "261",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3884"
       },
@@ -1583,7 +1589,7 @@
         "name": "青果中心",
         "name_en": "Cingguo Fruits Center",
         "line": "261",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3577"
       },
@@ -1603,7 +1609,7 @@
         "name": "頂興路口",
         "name_en": "Dingxing Road Intersection",
         "line": "261",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3578"
       },
@@ -1623,7 +1629,7 @@
         "name": "拔仔埔",
         "name_en": "Bazipu",
         "line": "261",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3586"
       },
@@ -1643,7 +1649,7 @@
         "name": "陸光二村",
         "name_en": "Luguang 2nd Village",
         "line": "261",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3588"
       },
@@ -1663,7 +1669,7 @@
         "name": "萬壽中興路口",
         "name_en": "Wanshou Jhongsing Rd. Intersection",
         "line": "261",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3590"
       },
@@ -1683,7 +1689,7 @@
         "name": "龜山",
         "name_en": "Guishan",
         "line": "261",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3591"
       },
@@ -1703,7 +1709,7 @@
         "name": "壽山高中",
         "name_en": "Shou-Shan Senior High School",
         "line": "261",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3593"
       },
@@ -1723,7 +1729,7 @@
         "name": "大同新村",
         "name_en": "Datong Village",
         "line": "261",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3800"
       },
@@ -1743,7 +1749,7 @@
         "name": "德明路口",
         "name_en": "Deming Road Intersection",
         "line": "261",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3819"
       },
@@ -1763,7 +1769,7 @@
         "name": "銘傳資管大樓",
         "name_en": "Ming Chuan Info. & Mgmt. Building",
         "line": "261",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3821"
       },
@@ -1783,7 +1789,7 @@
         "name": "銘傳設計大樓",
         "name_en": "Ming Chuan Design Building",
         "line": "261",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3822"
       },
@@ -1803,7 +1809,7 @@
         "name": "銘傳郵政代辦所",
         "name_en": "Ming Chuan Postal Agency",
         "line": "261",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3823"
       },
@@ -1823,7 +1829,7 @@
         "name": "德明路口",
         "name_en": "Deming Road Intersection",
         "line": "261",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3820"
       },
@@ -1843,7 +1849,7 @@
         "name": "大同新村",
         "name_en": "Datong Village",
         "line": "261",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3801"
       },
@@ -1863,7 +1869,7 @@
         "name": "壽山高中",
         "name_en": "Shou-Shan Senior High School",
         "line": "261",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3594"
       },
@@ -1883,7 +1889,7 @@
         "name": "萬壽中興路口",
         "name_en": "Wanshou Jhongsing Rd. Intersection",
         "line": "261",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3592"
       },
@@ -1903,7 +1909,7 @@
         "name": "陸光二村",
         "name_en": "Luguang 2nd Village",
         "line": "261",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3589"
       },
@@ -1923,7 +1929,7 @@
         "name": "拔仔埔",
         "name_en": "Bazipu",
         "line": "261",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3587"
       },
@@ -1943,7 +1949,7 @@
         "name": "頂興路口",
         "name_en": "Dingxing Road Intersection",
         "line": "261",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3579"
       },
@@ -1963,7 +1969,7 @@
         "name": "萬壽山鶯路口",
         "name_en": "Wanshou Shanying Rd. Intersection",
         "line": "261",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3883"
       },
@@ -1983,7 +1989,7 @@
         "name": "東山里",
         "name_en": "Dongshan Village",
         "line": "261",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3504"
       },
@@ -2003,7 +2009,7 @@
         "name": "桃園公車站",
         "name_en": "Taoyuan Bus Station",
         "line": "261",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4215"
       },

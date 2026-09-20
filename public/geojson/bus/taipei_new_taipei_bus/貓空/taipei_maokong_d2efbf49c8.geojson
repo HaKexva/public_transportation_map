@@ -6,13 +6,14 @@
     "name": "貓空右線",
     "name_en": "貓空右線",
     "ref": "貓空右線",
-    "color": "#1e40af",
+    "color": "#9333EA",
     "city_id": "Taipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.gov.taipei/File/Get/53a9415f-e85d-4fa9-bad4-02239a0b4d3c?v=639248448907762003",
     "operator_id": "700",
     "operator": "欣欣客運",
-    "operator_en": "Shin-Shin Bus Co., Ltd."
+    "operator_en": "Shin-Shin Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "貓空右線",
         "name": "貓空右線",
         "name_en": "貓空右線",
-        "color": "#1e40af",
-        "direction": 0
+        "color": "#9333EA",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1423,6 +1425,10 @@
           [
             121.587965033235,
             24.9686067141272
+          ],
+          [
+            121.587965033235,
+            24.9686067141274
           ]
         ]
       }
@@ -1434,7 +1440,7 @@
         "ref": "貓空右線",
         "name": "貓空右線",
         "name_en": "貓空右線",
-        "color": "#1e40af",
+        "color": "#9333EA",
         "direction": 1
       },
       "geometry": {
@@ -3127,7 +3133,7 @@
         "name": "貓空纜車站",
         "name_en": "Maokong Gondola Stop",
         "line": "貓空右線",
-        "color": "#1e40af",
+        "color": "#9333EA",
         "direction": 0,
         "station_id": "2545"
       },
@@ -3147,7 +3153,7 @@
         "name": "石坡坑",
         "name_en": "Shipokeng",
         "line": "貓空右線",
-        "color": "#1e40af",
+        "color": "#9333EA",
         "direction": 0,
         "station_id": "1165610516"
       },
@@ -3167,7 +3173,7 @@
         "name": "田寮橋",
         "name_en": "Tianliao Bridge",
         "line": "貓空右線",
-        "color": "#1e40af",
+        "color": "#9333EA",
         "direction": 0,
         "station_id": "2399"
       },
@@ -3187,7 +3193,7 @@
         "name": "樟樹步道北口",
         "name_en": "North Entrance of Camphor Tree Trail",
         "line": "貓空右線",
-        "color": "#1e40af",
+        "color": "#9333EA",
         "direction": 0,
         "station_id": "1165606701"
       },
@@ -3207,7 +3213,7 @@
         "name": "樟山寺",
         "name_en": "Zhangshan Temple",
         "line": "貓空右線",
-        "color": "#1e40af",
+        "color": "#9333EA",
         "direction": 0,
         "station_id": "2527"
       },
@@ -3227,7 +3233,7 @@
         "name": "望遠亭(老泉里)",
         "name_en": "Wangyuan Pavilion (Laoquan Village)",
         "line": "貓空右線",
-        "color": "#1e40af",
+        "color": "#9333EA",
         "direction": 0,
         "station_id": "1165603229"
       },
@@ -3247,7 +3253,7 @@
         "name": "杏花林(老泉里)",
         "name_en": "Xinghualin (Laoquan Village)",
         "line": "貓空右線",
-        "color": "#1e40af",
+        "color": "#9333EA",
         "direction": 0,
         "station_id": "2407"
       },
@@ -3267,7 +3273,7 @@
         "name": "樟樹步道南口",
         "name_en": "South Entrance of Camphor Tree Trail",
         "line": "貓空右線",
-        "color": "#1e40af",
+        "color": "#9333EA",
         "direction": 0,
         "station_id": "2432"
       },
@@ -3287,7 +3293,7 @@
         "name": "瓦厝",
         "name_en": "Wacuo",
         "line": "貓空右線",
-        "color": "#1e40af",
+        "color": "#9333EA",
         "direction": 0,
         "station_id": "1165609285"
       },
@@ -3307,7 +3313,7 @@
         "name": "樟湖步道",
         "name_en": "Zhanghu Hiking Trail",
         "line": "貓空右線",
-        "color": "#1e40af",
+        "color": "#9333EA",
         "direction": 0,
         "station_id": "2530"
       },
@@ -3327,7 +3333,7 @@
         "name": "貓空纜車站",
         "name_en": "Maokong Gondola Stop",
         "line": "貓空右線",
-        "color": "#1e40af",
+        "color": "#9333EA",
         "direction": 0,
         "station_id": "2545"
       },

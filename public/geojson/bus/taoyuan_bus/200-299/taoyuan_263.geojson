@@ -6,13 +6,14 @@
     "name": "263",
     "name_en": "263",
     "ref": "263",
-    "color": "#b91c1c",
+    "color": "#b45309",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/2630/map/2158/image",
     "operator_id": "1",
     "operator": "桃園客運",
-    "operator_en": "Taoyuan Bus Co., Ltd."
+    "operator_en": "Taoyuan Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "263",
         "name": "263",
         "name_en": "263",
-        "color": "#b91c1c",
-        "direction": 0
+        "color": "#b45309",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -4303,6 +4305,10 @@
           [
             121.28801,
             24.88107
+          ],
+          [
+            121.28807,
+            24.88114
           ]
         ]
       }
@@ -4315,7 +4321,7 @@
         "name": "大溪總站",
         "name_en": "Daxi Bus Terminal",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4288"
       },
@@ -4335,7 +4341,7 @@
         "name": "大溪站",
         "name_en": "Daxi Station",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "127"
       },
@@ -4355,7 +4361,7 @@
         "name": "復興路",
         "name_en": "Fuxing Road",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6744"
       },
@@ -4375,7 +4381,7 @@
         "name": "大溪國中",
         "name_en": "Dasi Junior High School",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6272"
       },
@@ -4395,7 +4401,7 @@
         "name": "中華路口",
         "name_en": "Zhonghua Rd. Intersection",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6745"
       },
@@ -4415,7 +4421,7 @@
         "name": "一心里",
         "name_en": "Yixin Village",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6746"
       },
@@ -4435,7 +4441,7 @@
         "name": "百音電子",
         "name_en": "Pioneer Electronic",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6747"
       },
@@ -4455,7 +4461,7 @@
         "name": "石屯",
         "name_en": "Shitun",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6748"
       },
@@ -4475,7 +4481,7 @@
         "name": "月眉",
         "name_en": "Yuemei",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6823"
       },
@@ -4495,7 +4501,7 @@
         "name": "情人谷",
         "name_en": "Qingrengu",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6749"
       },
@@ -4515,7 +4521,7 @@
         "name": "旭橋",
         "name_en": "Xuqiao",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6750"
       },
@@ -4535,7 +4541,7 @@
         "name": "妙法寺",
         "name_en": "Miaofa Temple",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6751"
       },
@@ -4555,7 +4561,7 @@
         "name": "茶場",
         "name_en": "Tea Factory",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6752"
       },
@@ -4575,7 +4581,7 @@
         "name": "娘子坑",
         "name_en": "Niangzikeng",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6753"
       },
@@ -4595,7 +4601,7 @@
         "name": "中莊",
         "name_en": "Zhongzhuang",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6754"
       },
@@ -4615,7 +4621,7 @@
         "name": "上申",
         "name_en": "Shangshen",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6755"
       },
@@ -4635,7 +4641,7 @@
         "name": "永福",
         "name_en": "Yongfu",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6756"
       },
@@ -4655,7 +4661,7 @@
         "name": "永福國小",
         "name_en": "Yongfu Elementary School",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6757"
       },
@@ -4675,7 +4681,7 @@
         "name": "虎豹坑",
         "name_en": "Hubaokeng",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6758"
       },
@@ -4695,7 +4701,7 @@
         "name": "鎮安府",
         "name_en": "Zhenanfu",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6759"
       },
@@ -4715,7 +4721,7 @@
         "name": "德賢祠",
         "name_en": "Dexian Temple",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6760"
       },
@@ -4735,7 +4741,7 @@
         "name": "山員潭子",
         "name_en": "Shanyuantanzi",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6761"
       },
@@ -4755,7 +4761,7 @@
         "name": "松園",
         "name_en": "Songyuan",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6762"
       },
@@ -4775,7 +4781,7 @@
         "name": "小橋",
         "name_en": "Xiaoqiao",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6763"
       },
@@ -4795,7 +4801,7 @@
         "name": "三德公墓",
         "name_en": "Sande Cemetery",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6764"
       },
@@ -4815,7 +4821,7 @@
         "name": "五鬮",
         "name_en": "Wujiu",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6765"
       },
@@ -4835,7 +4841,7 @@
         "name": "光武嶺",
         "name_en": "Guangwuling",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6766"
       },
@@ -4855,7 +4861,7 @@
         "name": "嘉利社區",
         "name_en": "Jiali Community",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6767"
       },
@@ -4875,7 +4881,7 @@
         "name": "二鬮",
         "name_en": "Erjiu",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6768"
       },
@@ -4895,7 +4901,7 @@
         "name": "中央社區",
         "name_en": "Zhongyang Community",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6769"
       },
@@ -4915,7 +4921,7 @@
         "name": "明德中學",
         "name_en": "Mingder High School",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6770"
       },
@@ -4935,7 +4941,7 @@
         "name": "大埔",
         "name_en": "Dapu",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6771"
       },
@@ -4955,7 +4961,7 @@
         "name": "中正路二段",
         "name_en": "Zhongzheng Road Sec.2",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6772"
       },
@@ -4975,7 +4981,7 @@
         "name": "車寮",
         "name_en": "Cheliao",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6773"
       },
@@ -4995,7 +5001,7 @@
         "name": "溪墘",
         "name_en": "Xiqian",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6774"
       },
@@ -5015,7 +5021,7 @@
         "name": "大同橋一",
         "name_en": "Datong Bridge(1)",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6775"
       },
@@ -5035,7 +5041,7 @@
         "name": "大同橋",
         "name_en": "Datong Bridge",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6776"
       },
@@ -5055,7 +5061,7 @@
         "name": "台塑",
         "name_en": "Formosa Plastics",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6777"
       },
@@ -5075,7 +5081,7 @@
         "name": "新社區",
         "name_en": "Xinshequ",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6778"
       },
@@ -5095,7 +5101,7 @@
         "name": "三峽分局",
         "name_en": "Sanxia Police District",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6779"
       },
@@ -5115,7 +5121,7 @@
         "name": "礁溪里",
         "name_en": "Jiaoxi Village",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6780"
       },
@@ -5135,7 +5141,7 @@
         "name": "三峽老街(民生街)",
         "name_en": "Sanxia Old Street(Minsheng St.)",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6781"
       },
@@ -5155,7 +5161,7 @@
         "name": "文化路",
         "name_en": "Wenhua Road",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6782"
       },
@@ -5175,7 +5181,7 @@
         "name": "三峽國小(三峽國民運動中心)",
         "name_en": "Sansia E.S.(Sansia Civil Sports Center)",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6783"
       },
@@ -5195,7 +5201,7 @@
         "name": "文化路(大勇路口)",
         "name_en": "Fishing Factory",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6784"
       },
@@ -5215,7 +5221,7 @@
         "name": "恩主公醫院",
         "name_en": "En Chu Kong Hospital",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6785"
       },
@@ -5235,7 +5241,7 @@
         "name": "三鶯稅捐處",
         "name_en": "Dinghao Supermarket",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6786"
       },
@@ -5255,7 +5261,7 @@
         "name": "文化路(大勇路口)",
         "name_en": "Fishing Factory",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6787"
       },
@@ -5275,7 +5281,7 @@
         "name": "三峽國小(三峽國民運動中心)",
         "name_en": "Sansia E.S.(Sansia Civil Sports Center)",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6788"
       },
@@ -5295,7 +5301,7 @@
         "name": "新興街口",
         "name_en": "Xinxing Street Intersection",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6789"
       },
@@ -5315,7 +5321,7 @@
         "name": "三峽老街(民生街)",
         "name_en": "Sanxia Old Street(Minsheng St.)",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6830"
       },
@@ -5335,7 +5341,7 @@
         "name": "礁溪里",
         "name_en": "Jiaoxi Village",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6790"
       },
@@ -5355,7 +5361,7 @@
         "name": "三峽分局",
         "name_en": "Sanxia Police District",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6791"
       },
@@ -5375,7 +5381,7 @@
         "name": "新社區",
         "name_en": "Xinshequ",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6792"
       },
@@ -5395,7 +5401,7 @@
         "name": "台塑",
         "name_en": "Formosa Plastics",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6793"
       },
@@ -5415,7 +5421,7 @@
         "name": "大同橋",
         "name_en": "Datong Bridge",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6794"
       },
@@ -5435,7 +5441,7 @@
         "name": "大同橋一",
         "name_en": "Datong Bridge(1)",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6795"
       },
@@ -5455,7 +5461,7 @@
         "name": "溪墘",
         "name_en": "Xiqian",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6796"
       },
@@ -5475,7 +5481,7 @@
         "name": "車寮",
         "name_en": "Cheliao",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6797"
       },
@@ -5495,7 +5501,7 @@
         "name": "中正路二段",
         "name_en": "Zhongzheng Road Sec.2",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6798"
       },
@@ -5515,7 +5521,7 @@
         "name": "大埔",
         "name_en": "Dapu",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6799"
       },
@@ -5535,7 +5541,7 @@
         "name": "明德中學",
         "name_en": "Mingder High School",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6800"
       },
@@ -5555,7 +5561,7 @@
         "name": "中央社區",
         "name_en": "Zhongyang Community",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6801"
       },
@@ -5575,7 +5581,7 @@
         "name": "二鬮",
         "name_en": "Erjiu",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6802"
       },
@@ -5595,7 +5601,7 @@
         "name": "嘉利社區",
         "name_en": "Jiali Community",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6803"
       },
@@ -5615,7 +5621,7 @@
         "name": "光武嶺",
         "name_en": "Guangwuling",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6804"
       },
@@ -5635,7 +5641,7 @@
         "name": "五鬮",
         "name_en": "Wujiu",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6805"
       },
@@ -5655,7 +5661,7 @@
         "name": "三德公墓",
         "name_en": "Sande Cemetery",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6806"
       },
@@ -5675,7 +5681,7 @@
         "name": "小橋",
         "name_en": "Xiaoqiao",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6807"
       },
@@ -5695,7 +5701,7 @@
         "name": "松園",
         "name_en": "Songyuan",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6808"
       },
@@ -5715,7 +5721,7 @@
         "name": "山員潭子",
         "name_en": "Shanyuantanzi",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6809"
       },
@@ -5735,7 +5741,7 @@
         "name": "德賢祠",
         "name_en": "Dexian Temple",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6810"
       },
@@ -5755,7 +5761,7 @@
         "name": "鎮安府",
         "name_en": "Zhenanfu",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6811"
       },
@@ -5775,7 +5781,7 @@
         "name": "虎豹坑",
         "name_en": "Hubaokeng",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6812"
       },
@@ -5795,7 +5801,7 @@
         "name": "永福國小",
         "name_en": "Yongfu Elementary School",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6813"
       },
@@ -5815,7 +5821,7 @@
         "name": "永福",
         "name_en": "Yongfu",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6814"
       },
@@ -5835,7 +5841,7 @@
         "name": "上申",
         "name_en": "Shangshen",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6815"
       },
@@ -5855,7 +5861,7 @@
         "name": "中莊",
         "name_en": "Zhongzhuang",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6816"
       },
@@ -5875,7 +5881,7 @@
         "name": "娘子坑",
         "name_en": "Niangzikeng",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6817"
       },
@@ -5895,7 +5901,7 @@
         "name": "茶場",
         "name_en": "Tea Factory",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6818"
       },
@@ -5915,7 +5921,7 @@
         "name": "妙法寺",
         "name_en": "Miaofa Temple",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6819"
       },
@@ -5935,7 +5941,7 @@
         "name": "旭橋",
         "name_en": "Xuqiao",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6820"
       },
@@ -5955,7 +5961,7 @@
         "name": "情人谷",
         "name_en": "Qingrengu",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6821"
       },
@@ -5975,7 +5981,7 @@
         "name": "月眉",
         "name_en": "Yuemei",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6822"
       },
@@ -5995,7 +6001,7 @@
         "name": "石屯",
         "name_en": "Shitun",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6824"
       },
@@ -6015,7 +6021,7 @@
         "name": "百音電子",
         "name_en": "Pioneer Electronic",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6825"
       },
@@ -6035,7 +6041,7 @@
         "name": "一心里",
         "name_en": "Yixin Village",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6826"
       },
@@ -6055,7 +6061,7 @@
         "name": "中華路口",
         "name_en": "Zhonghua Rd. Intersection",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6827"
       },
@@ -6075,7 +6081,7 @@
         "name": "大溪國中",
         "name_en": "Dasi Junior High School",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6113"
       },
@@ -6095,7 +6101,7 @@
         "name": "復興路",
         "name_en": "Fuxing Road",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6828"
       },
@@ -6115,7 +6121,7 @@
         "name": "大溪站",
         "name_en": "Daxi Station",
         "line": "263",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "128"
       },

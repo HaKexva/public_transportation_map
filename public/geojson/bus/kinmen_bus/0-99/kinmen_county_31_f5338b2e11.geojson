@@ -6,13 +6,14 @@
     "name": "31先繞西吳",
     "name_en": "31先繞西吳",
     "ref": "31先繞西吳",
-    "color": "#86198f",
+    "color": "#3730a3",
     "city_id": "KinmenCounty",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.kinmen.gov.tw/api/route/3111/map/144/image",
     "operator_id": "0001",
     "operator": "金門",
-    "operator_en": "City Bus and Ferry Management Office, Kinmen County"
+    "operator_en": "City Bus and Ferry Management Office, Kinmen County",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "31先繞西吳",
         "name": "31先繞西吳",
         "name_en": "31先繞西吳",
-        "color": "#86198f",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -535,6 +537,10 @@
           [
             118.41297,
             24.48896
+          ],
+          [
+            118.4129,
+            24.48885
           ]
         ]
       }
@@ -547,7 +553,7 @@
         "name": "沙美站",
         "name_en": "Shamei Station",
         "line": "31先繞西吳",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "266"
       },
@@ -567,7 +573,7 @@
         "name": "后浦頭",
         "name_en": "Houputou",
         "line": "31先繞西吳",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "547"
       },
@@ -587,7 +593,7 @@
         "name": "后水頭",
         "name_en": "Houshuitou",
         "line": "31先繞西吳",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "548"
       },
@@ -607,7 +613,7 @@
         "name": "東蕭",
         "name_en": "Dongxiao",
         "line": "31先繞西吳",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "549"
       },
@@ -627,7 +633,7 @@
         "name": "蔡店",
         "name_en": "Caidian",
         "line": "31先繞西吳",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "550"
       },
@@ -647,7 +653,7 @@
         "name": "金沙公墓",
         "name_en": "Jinsha Cemetary",
         "line": "31先繞西吳",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "551"
       },
@@ -667,7 +673,7 @@
         "name": "陽翟一",
         "name_en": "YangZhai 1",
         "line": "31先繞西吳",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "972"
       },
@@ -687,7 +693,7 @@
         "name": "陽翟",
         "name_en": "YangZhai",
         "line": "31先繞西吳",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "552"
       },
@@ -707,7 +713,7 @@
         "name": "陽翟東",
         "name_en": "YangZhaidong",
         "line": "31先繞西吳",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "526"
       },
@@ -727,7 +733,7 @@
         "name": "西吳",
         "name_en": "Xiwu",
         "line": "31先繞西吳",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "700"
       },
@@ -747,7 +753,7 @@
         "name": "東珩",
         "name_en": "Dongheng",
         "line": "31先繞西吳",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "701"
       },
@@ -767,7 +773,7 @@
         "name": "東山前一",
         "name_en": "DongShangqian 1",
         "line": "31先繞西吳",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "703"
       },
@@ -787,7 +793,7 @@
         "name": "西山前",
         "name_en": "Xishanqian",
         "line": "31先繞西吳",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "704"
       },
@@ -807,7 +813,7 @@
         "name": "西山前一",
         "name_en": "Xishanqian 1",
         "line": "31先繞西吳",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "705"
       },
@@ -827,7 +833,7 @@
         "name": "山西二",
         "name_en": "Shanxi 2",
         "line": "31先繞西吳",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "708"
       },
@@ -847,7 +853,7 @@
         "name": "山西一",
         "name_en": "Shanxi 1",
         "line": "31先繞西吳",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "709"
       },
@@ -867,7 +873,7 @@
         "name": "獅山",
         "name_en": "Shi Mountain",
         "line": "31先繞西吳",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "710"
       },
@@ -887,7 +893,7 @@
         "name": "山后",
         "name_en": "ShanHou",
         "line": "31先繞西吳",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "713"
       },
@@ -907,7 +913,7 @@
         "name": "民俗文化村",
         "name_en": "Folk Culture Village",
         "line": "31先繞西吳",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "714"
       },
@@ -927,7 +933,7 @@
         "name": "碧山一",
         "name_en": "Bishan 1",
         "line": "31先繞西吳",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "715"
       },
@@ -947,7 +953,7 @@
         "name": "碧山",
         "name_en": "Bishan",
         "line": "31先繞西吳",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "716"
       },
@@ -967,7 +973,7 @@
         "name": "安瀾國小",
         "name_en": "An Lan Elementary School",
         "line": "31先繞西吳",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "529"
       },
@@ -987,7 +993,7 @@
         "name": "陽翟東",
         "name_en": "YangZhaidong",
         "line": "31先繞西吳",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "530"
       },
@@ -1007,7 +1013,7 @@
         "name": "陽翟",
         "name_en": "YangZhai",
         "line": "31先繞西吳",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "531"
       },
@@ -1027,7 +1033,7 @@
         "name": "金沙公墓",
         "name_en": "Jinsha Cemetary",
         "line": "31先繞西吳",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "532"
       },
@@ -1047,7 +1053,7 @@
         "name": "蔡店",
         "name_en": "Caidian",
         "line": "31先繞西吳",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "533"
       },
@@ -1067,7 +1073,7 @@
         "name": "東蕭",
         "name_en": "Dongxiao",
         "line": "31先繞西吳",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "534"
       },
@@ -1087,7 +1093,7 @@
         "name": "后水頭",
         "name_en": "Houshuitou",
         "line": "31先繞西吳",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "535"
       },
@@ -1107,7 +1113,7 @@
         "name": "后浦頭",
         "name_en": "Houputou",
         "line": "31先繞西吳",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "536"
       },
@@ -1127,7 +1133,7 @@
         "name": "沙美站",
         "name_en": "Shamei Station",
         "line": "31先繞西吳",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "266"
       },

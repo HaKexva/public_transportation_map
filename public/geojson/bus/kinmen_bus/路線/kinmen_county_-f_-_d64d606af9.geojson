@@ -6,13 +6,14 @@
     "name": "台灣好行-F線-尋城趣主題線",
     "name_en": "台灣好行-F線-尋城趣主題線",
     "ref": "台灣好行-F線-尋城趣主題線",
-    "color": "#86198f",
+    "color": "#3730a3",
     "city_id": "KinmenCounty",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.kinmen.gov.tw/extend/route20230601/f線.png",
     "operator_id": "0001",
     "operator": "金門",
-    "operator_en": "City Bus and Ferry Management Office, Kinmen County"
+    "operator_en": "City Bus and Ferry Management Office, Kinmen County",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "台灣好行-F線-尋城趣主題線",
         "name": "台灣好行-F線-尋城趣主題線",
         "name_en": "台灣好行-F線-尋城趣主題線",
-        "color": "#86198f",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1163,6 +1165,10 @@
           [
             118.31994,
             24.43323
+          ],
+          [
+            118.32006,
+            24.4329
           ]
         ]
       }
@@ -1175,7 +1181,7 @@
         "name": "金城站",
         "name_en": "Jincheng Station",
         "line": "台灣好行-F線-尋城趣主題線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "0"
       },
@@ -1195,7 +1201,7 @@
         "name": "官路邊古官道",
         "name_en": "Guanlubian Guguandao",
         "line": "台灣好行-F線-尋城趣主題線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "915"
       },
@@ -1215,7 +1221,7 @@
         "name": "北門",
         "name_en": "BeiMen",
         "line": "台灣好行-F線-尋城趣主題線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "916"
       },
@@ -1235,7 +1241,7 @@
         "name": "古地城隍廟",
         "name_en": "GuDi Chenghuang Temple",
         "line": "台灣好行-F線-尋城趣主題線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "917"
       },
@@ -1255,7 +1261,7 @@
         "name": "西門甕城",
         "name_en": "XiMen WengCheng",
         "line": "台灣好行-F線-尋城趣主題線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "918"
       },
@@ -1275,7 +1281,7 @@
         "name": "舊城牆",
         "name_en": "Old city wall",
         "line": "台灣好行-F線-尋城趣主題線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "919"
       },
@@ -1295,7 +1301,7 @@
         "name": "睢陽著節廟",
         "name_en": "Suiyangzhejie Temple",
         "line": "台灣好行-F線-尋城趣主題線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "920"
       },
@@ -1315,7 +1321,7 @@
         "name": "南門金酒舊廠",
         "name_en": "NanMen Old Kinmen Distillery",
         "line": "台灣好行-F線-尋城趣主題線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "921"
       },
@@ -1335,7 +1341,7 @@
         "name": "葉華成故居",
         "name_en": "Yeh Hue Cheng Former Residence",
         "line": "台灣好行-F線-尋城趣主題線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "928"
       },
@@ -1355,7 +1361,7 @@
         "name": "文台寶塔",
         "name_en": "Wentai Pagoda",
         "line": "台灣好行-F線-尋城趣主題線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "922"
       },
@@ -1375,7 +1381,7 @@
         "name": "漢影雲根",
         "name_en": "HanYingYunGen",
         "line": "台灣好行-F線-尋城趣主題線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "923"
       },
@@ -1395,7 +1401,7 @@
         "name": "古崗湖",
         "name_en": "Gugang Lake",
         "line": "台灣好行-F線-尋城趣主題線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "924"
       },
@@ -1415,7 +1421,7 @@
         "name": "金門城東門",
         "name_en": "Jincheng wall Dongmen",
         "line": "台灣好行-F線-尋城趣主題線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "925"
       },
@@ -1435,7 +1441,7 @@
         "name": "魯王疑塚",
         "name_en": "LuWangYiZhong",
         "line": "台灣好行-F線-尋城趣主題線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "926"
       },
@@ -1455,7 +1461,7 @@
         "name": "金城站",
         "name_en": "Jincheng Station",
         "line": "台灣好行-F線-尋城趣主題線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "0"
       },

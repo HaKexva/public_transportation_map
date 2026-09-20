@@ -6,13 +6,14 @@
     "name": "F931-1630",
     "name_en": "F931-1630",
     "ref": "F931-1630",
-    "color": "#2563eb",
+    "color": "#6B8F9A",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.gov.taipei/File/Get/609ee6b0-562e-405a-8a0b-4e088e434514?v=639248448824928084",
     "operator_id": "16253",
     "operator": "金山區公所",
-    "operator_en": "Jinshan District Office"
+    "operator_en": "Jinshan District Office",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "F931-1630",
         "name": "F931-1630",
         "name_en": "F931-1630",
-        "color": "#2563eb",
-        "direction": 0
+        "color": "#6B8F9A",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -3495,6 +3497,10 @@
           [
             121.636418379528,
             25.2223735042679
+          ],
+          [
+            121.636439064201,
+            25.2223283740723
           ]
         ]
       }
@@ -3507,7 +3513,7 @@
         "name": "金山區公所",
         "name_en": "Jinshan District Office",
         "line": "F931-1630",
-        "color": "#2563eb",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603304"
       },
@@ -3527,7 +3533,7 @@
         "name": "磺溪橋",
         "name_en": "HuangXi Bridge",
         "line": "F931-1630",
-        "color": "#2563eb",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165610385"
       },
@@ -3547,7 +3553,7 @@
         "name": "三界壇路99巷",
         "name_en": "Lane 99 Sanjietan Rd.",
         "line": "F931-1630",
-        "color": "#2563eb",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165609485"
       },
@@ -3567,7 +3573,7 @@
         "name": "六股里潭子內",
         "name_en": "Liugu Village Tanzinei",
         "line": "F931-1630",
-        "color": "#2563eb",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165604040"
       },
@@ -3587,7 +3593,7 @@
         "name": "重和里林莊橋",
         "name_en": "Chonghe Village Linzhuang Bridge",
         "line": "F931-1630",
-        "color": "#2563eb",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165607045"
       },
@@ -3607,7 +3613,7 @@
         "name": "重和里",
         "name_en": "Chonghe Village",
         "line": "F931-1630",
-        "color": "#2563eb",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70535"
       },
@@ -3627,7 +3633,7 @@
         "name": "葵扇湖",
         "name_en": "Kuishan Lake",
         "line": "F931-1630",
-        "color": "#2563eb",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165609565"
       },
@@ -3647,7 +3653,7 @@
         "name": "兩湖里",
         "name_en": "Lianghu Village",
         "line": "F931-1630",
-        "color": "#2563eb",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70532"
       },
@@ -3667,7 +3673,7 @@
         "name": "兩福宮",
         "name_en": "Liangfu Temple",
         "line": "F931-1630",
-        "color": "#2563eb",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165610332"
       },
@@ -3687,7 +3693,7 @@
         "name": "半嶺(李簡玉英路口)",
         "name_en": "Banling",
         "line": "F931-1630",
-        "color": "#2563eb",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70530"
       },
@@ -3707,7 +3713,7 @@
         "name": "金寶山",
         "name_en": "Jinbaoshan",
         "line": "F931-1630",
-        "color": "#2563eb",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70534"
       },
@@ -3727,7 +3733,7 @@
         "name": "朱銘美術館",
         "name_en": "Juming Museum",
         "line": "F931-1630",
-        "color": "#2563eb",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70543"
       },
@@ -3747,7 +3753,7 @@
         "name": "三界聖德宮",
         "name_en": "Sanjie Shengde Temple",
         "line": "F931-1630",
-        "color": "#2563eb",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70539"
       },
@@ -3767,7 +3773,7 @@
         "name": "磺溪橋",
         "name_en": "HuangXi Bridge",
         "line": "F931-1630",
-        "color": "#2563eb",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70574"
       },
@@ -3787,7 +3793,7 @@
         "name": "金山區公所",
         "name_en": "Jinshan District Office",
         "line": "F931-1630",
-        "color": "#2563eb",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "20314"
       },

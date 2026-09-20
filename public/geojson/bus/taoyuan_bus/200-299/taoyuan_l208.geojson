@@ -6,13 +6,14 @@
     "name": "L208",
     "name_en": "L208",
     "ref": "L208",
-    "color": "#b91c1c",
+    "color": "#b45309",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/6560/map/833/image",
     "operator_id": "1",
     "operator": "桃園客運",
-    "operator_en": "Taoyuan Bus Co., Ltd."
+    "operator_en": "Taoyuan Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "L208",
         "name": "L208",
         "name_en": "L208",
-        "color": "#b91c1c",
-        "direction": 0
+        "color": "#b45309",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -195,6 +197,10 @@
           [
             121.22458,
             24.96536
+          ],
+          [
+            121.22459,
+            24.96544
           ]
         ]
       }
@@ -207,7 +213,7 @@
         "name": "中壢區公所",
         "name_en": "Zhongli District Office",
         "line": "L208",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "526"
       },
@@ -227,7 +233,7 @@
         "name": "中壢聯合辦公大樓",
         "name_en": "Zhongli United Office Building",
         "line": "L208",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "362"
       },
@@ -247,7 +253,7 @@
         "name": "中壢社福館",
         "name_en": "Zhongli Social Welfare Center",
         "line": "L208",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "690"
       },
@@ -267,7 +273,7 @@
         "name": "桃園市立圖書館中壢分館",
         "name_en": "Zhongli Branch, Taoyuan Public Library",
         "line": "L208",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "691"
       },
@@ -287,7 +293,7 @@
         "name": "中壢監理站",
         "name_en": "Zhongli Motor Vehicles Office",
         "line": "L208",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "368"
       },
@@ -307,7 +313,7 @@
         "name": "捷運老街溪站(中央西路)",
         "name_en": "MRT Laojie River Station(Zhongyang W. Rd.)",
         "line": "L208",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4476"
       },
@@ -327,7 +333,7 @@
         "name": "中央新生路口",
         "name_en": "Zhongyang-ShinSheng Road Intersection",
         "line": "L208",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "692"
       },
@@ -347,7 +353,7 @@
         "name": "中央公園",
         "name_en": "Zhongyang Park",
         "line": "L208",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "696"
       },
@@ -367,7 +373,7 @@
         "name": "中山復興路口",
         "name_en": "Jhongshan Fusing Rd. Intersection",
         "line": "L208",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4046"
       },
@@ -387,7 +393,7 @@
         "name": "中壢分局",
         "name_en": "Zhongli Police Station",
         "line": "L208",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "697"
       },
@@ -407,7 +413,7 @@
         "name": "中壢國中",
         "name_en": "Zhongli Junior High School",
         "line": "L208",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6692"
       },
@@ -427,7 +433,7 @@
         "name": "老街溪河川教育中心",
         "name_en": "Laojie River Education Center",
         "line": "L208",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "701"
       },
@@ -447,7 +453,7 @@
         "name": "第二公有市場",
         "name_en": "Xinming Public Retail Market",
         "line": "L208",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "703"
       },
@@ -467,7 +473,7 @@
         "name": "新明國小(明德路)",
         "name_en": "Xinming Elementary School(Mingde Road)",
         "line": "L208",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "330"
       },
@@ -487,7 +493,7 @@
         "name": "中壢觀光夜市",
         "name_en": "Zhongli Tourist Night Market",
         "line": "L208",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "704"
       },
@@ -507,7 +513,7 @@
         "name": "興國市場",
         "name_en": "ShingGuo Market",
         "line": "L208",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "630"
       },
@@ -527,7 +533,7 @@
         "name": "SOGO百貨(元化路)",
         "name_en": "SOGO Department Stores(Yuanhua Rd.)",
         "line": "L208",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "706"
       },
@@ -547,7 +553,7 @@
         "name": "中壢區公所",
         "name_en": "Civil Affairs Office of Zhongli District",
         "line": "L208",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "527"
       },

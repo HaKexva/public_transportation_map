@@ -6,13 +6,14 @@
     "name": "L309B",
     "name_en": "L309B",
     "ref": "L309B",
-    "color": "#7c3aed",
+    "color": "#be123c",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/53092/map/259/image",
     "operator_id": "6",
     "operator": "亞通客運",
-    "operator_en": "Yatung Bus Co., Ltd."
+    "operator_en": "Yatung Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "L309B",
         "name": "L309B",
         "name_en": "L309B",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#be123c",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -2183,6 +2185,10 @@
           [
             121.29493,
             25.04634
+          ],
+          [
+            121.29465,
+            25.04669
           ]
         ]
       }
@@ -2195,7 +2201,7 @@
         "name": "蘆竹區公所",
         "name_en": "Luzhu District Office",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "4653"
       },
@@ -2215,7 +2221,7 @@
         "name": "南崁",
         "name_en": "NanKan",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "4578"
       },
@@ -2235,7 +2241,7 @@
         "name": "南崁中正",
         "name_en": "Nankan Zhongzheng",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "7006"
       },
@@ -2255,7 +2261,7 @@
         "name": "台茂",
         "name_en": "Taimall",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "3744"
       },
@@ -2275,7 +2281,7 @@
         "name": "下南崁",
         "name_en": "Xianankan",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1373"
       },
@@ -2295,7 +2301,7 @@
         "name": "南亞(好市多)",
         "name_en": "Nanya (Costco)",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "4064"
       },
@@ -2315,7 +2321,7 @@
         "name": "溪州",
         "name_en": "Xizhou",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5086"
       },
@@ -2335,7 +2341,7 @@
         "name": "義美",
         "name_en": "Yimei",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5428"
       },
@@ -2355,7 +2361,7 @@
         "name": "戶政地政衛生所",
         "name_en": "Household Administration, Land Office and Health Center",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5404"
       },
@@ -2375,7 +2381,7 @@
         "name": "長安路二段100號",
         "name_en": "No. 100, Sec. 2, Jhangan",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5402"
       },
@@ -2395,7 +2401,7 @@
         "name": "南山長安",
         "name_en": "Nanshan Changan",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5399"
       },
@@ -2415,7 +2421,7 @@
         "name": "中崙公司",
         "name_en": "Zhonglun Company",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5134"
       },
@@ -2435,7 +2441,7 @@
         "name": "公埔",
         "name_en": "Gongpu",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5137"
       },
@@ -2455,7 +2461,7 @@
         "name": "桃林鐵路長興站",
         "name_en": "Taolin Rail Rd. Bus Station Changxing Stop",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "4408"
       },
@@ -2475,7 +2481,7 @@
         "name": "長興路三段217號",
         "name_en": "Changxing Rd., Sec. 3, No. 217",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "4410"
       },
@@ -2495,7 +2501,7 @@
         "name": "噶舉瑪倉派佛學院",
         "name_en": "Kagyu Buddhist Institusyon",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "4313"
       },
@@ -2515,7 +2521,7 @@
         "name": "長榮空廚",
         "name_en": "Evergreen Sky Catering",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "3742"
       },
@@ -2535,7 +2541,7 @@
         "name": "長興活動中心",
         "name_en": "Changxin Activity Center",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "4770"
       },
@@ -2555,7 +2561,7 @@
         "name": "長榮空廚",
         "name_en": "Evergreen Sky Catering",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "3743"
       },
@@ -2575,7 +2581,7 @@
         "name": "噶舉瑪倉派佛學院",
         "name_en": "Kagyu Buddhist Institusyon",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "4314"
       },
@@ -2595,7 +2601,7 @@
         "name": "長興路三段217號",
         "name_en": "Changxing Rd., Sec. 3, No. 217",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "4411"
       },
@@ -2615,7 +2621,7 @@
         "name": "桃林鐵路長興站",
         "name_en": "Taolin Rail Rd. Bus Station Changxing Stop",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "4409"
       },
@@ -2635,7 +2641,7 @@
         "name": "群鹿公司",
         "name_en": "Qunlu Company",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5405"
       },
@@ -2655,7 +2661,7 @@
         "name": "山鼻",
         "name_en": "Shanbi",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6587"
       },
@@ -2675,7 +2681,7 @@
         "name": "捷運山鼻站",
         "name_en": "MRT Shanbi Station",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "4747"
       },
@@ -2695,7 +2701,7 @@
         "name": "大利新村",
         "name_en": "Dali Village",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5118"
       },
@@ -2715,7 +2721,7 @@
         "name": "山腳",
         "name_en": "Shanjiao",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5407"
       },
@@ -2735,7 +2741,7 @@
         "name": "御圃有機農場",
         "name_en": "Yupu Organic Farm",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5430"
       },
@@ -2755,7 +2761,7 @@
         "name": "蘆竹老人長期照顧中心",
         "name_en": "Luzhu Long Term Senile Citizen Daycare Center",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5431"
       },
@@ -2775,7 +2781,7 @@
         "name": "山腳國小",
         "name_en": "Shanjiao Elementary School",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5432"
       },
@@ -2795,7 +2801,7 @@
         "name": "天公廟",
         "name_en": "Tiangong Temple",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5433"
       },
@@ -2815,7 +2821,7 @@
         "name": "天竺宮",
         "name_en": "Tianjhu Temple",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5435"
       },
@@ -2835,7 +2841,7 @@
         "name": "欣興電子",
         "name_en": "Unimicron Corporation",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5436"
       },
@@ -2855,7 +2861,7 @@
         "name": "鄭厝",
         "name_en": "Zhengcuo",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1027"
       },
@@ -2875,7 +2881,7 @@
         "name": "坑口一站",
         "name_en": "Kengkou 1st Stop",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5437"
       },
@@ -2895,7 +2901,7 @@
         "name": "坑口第二活動中心",
         "name_en": "Kengkou 2nd Activity Center",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5438"
       },
@@ -2915,7 +2921,7 @@
         "name": "後壁厝",
         "name_en": "Houbicuo",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5169"
       },
@@ -2935,7 +2941,7 @@
         "name": "崎頭",
         "name_en": "Qitou",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5170"
       },
@@ -2955,7 +2961,7 @@
         "name": "海湖工業區",
         "name_en": "Haihu Industrial Area",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "3781"
       },
@@ -2975,7 +2981,7 @@
         "name": "良機公司",
         "name_en": "Liangchi Group",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5439"
       },
@@ -2995,7 +3001,7 @@
         "name": "海山西路口",
         "name_en": "Haishan West Rd. Intersection",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5172"
       },
@@ -3015,7 +3021,7 @@
         "name": "海山濱海",
         "name_en": "Haishan Binhai",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5440"
       },
@@ -3035,7 +3041,7 @@
         "name": "下海湖",
         "name_en": "Xiahaihu",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1389"
       },
@@ -3055,7 +3061,7 @@
         "name": "長生電力",
         "name_en": "Ever-Power",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5441"
       },
@@ -3075,7 +3081,7 @@
         "name": "濱海智海",
         "name_en": "Binhai Zhihai",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5442"
       },
@@ -3095,7 +3101,7 @@
         "name": "濱海海湖",
         "name_en": "Binhai Haihu",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5443"
       },
@@ -3115,7 +3121,7 @@
         "name": "海巡署",
         "name_en": "Coast Guard Administration, Executive Yuan",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5444"
       },
@@ -3135,7 +3141,7 @@
         "name": "金海社區",
         "name_en": "Jinhai Community",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5445"
       },
@@ -3155,7 +3161,7 @@
         "name": "崎頭",
         "name_en": "Qitou",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5171"
       },
@@ -3175,7 +3181,7 @@
         "name": "後壁厝",
         "name_en": "Houbicuo",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5168"
       },
@@ -3195,7 +3201,7 @@
         "name": "義芳化學",
         "name_en": "Yee Fong Chemical & Industrial Co., Ltd.",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5164"
       },
@@ -3215,7 +3221,7 @@
         "name": "海湖守望相助隊部",
         "name_en": "Haihu Shouwangxiangzhu  Brigade",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5446"
       },
@@ -3235,7 +3241,7 @@
         "name": "海湖國小",
         "name_en": "Haihu Elementary School",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5158"
       },
@@ -3255,7 +3261,7 @@
         "name": "海湖農會辦事處",
         "name_en": "Famers Assoc., Haihu Office",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5156"
       },
@@ -3275,7 +3281,7 @@
         "name": "華膳空廚路口",
         "name_en": "China Pacific Catering Services Intersection",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5447"
       },
@@ -3295,7 +3301,7 @@
         "name": "海湖橋",
         "name_en": "Haihu Bridge",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6379"
       },
@@ -3315,7 +3321,7 @@
         "name": "頭前",
         "name_en": "Touqian",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5153"
       },
@@ -3335,7 +3341,7 @@
         "name": "海山大有",
         "name_en": "Haishandayou",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5448"
       },
@@ -3355,7 +3361,7 @@
         "name": "圳岸",
         "name_en": "Zunan",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5151"
       },
@@ -3375,7 +3381,7 @@
         "name": "坑口二站",
         "name_en": "Kengkou 2nd Stop",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "4315"
       },
@@ -3395,7 +3401,7 @@
         "name": "海山山果",
         "name_en": "Haishan Shanguo",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5449"
       },
@@ -3415,7 +3421,7 @@
         "name": "趙厝份",
         "name_en": "Zhaocuofen",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5450"
       },
@@ -3435,7 +3441,7 @@
         "name": "養鹿場",
         "name_en": "Deer Ranch",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5451"
       },
@@ -3455,7 +3461,7 @@
         "name": "金谷超商",
         "name_en": "Jin Gu Convenience stores",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5067"
       },
@@ -3475,7 +3481,7 @@
         "name": "捷運坑口站",
         "name_en": "MRT Kengkou Station",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "4407"
       },
@@ -3495,7 +3501,7 @@
         "name": "松柏園藝",
         "name_en": "Pine and Cypress Gardenin",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5452"
       },
@@ -3515,7 +3521,7 @@
         "name": "誠聖宮",
         "name_en": "Chengsheng Temple",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5453"
       },
@@ -3535,7 +3541,7 @@
         "name": "圳岸",
         "name_en": "Zunan",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5151"
       },
@@ -3555,7 +3561,7 @@
         "name": "坑口二站",
         "name_en": "Kengkou 2nd Stop",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "4315"
       },
@@ -3575,7 +3581,7 @@
         "name": "山腳國中",
         "name_en": "Shanjiao Junior High School",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5145"
       },
@@ -3595,7 +3601,7 @@
         "name": "仁愛社區",
         "name_en": "Renai Community",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "4141"
       },
@@ -3615,7 +3621,7 @@
         "name": "山腳",
         "name_en": "Shanjiao",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5408"
       },
@@ -3635,7 +3641,7 @@
         "name": "大利新村",
         "name_en": "Dali Village",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5119"
       },
@@ -3655,7 +3661,7 @@
         "name": "捷運山鼻站",
         "name_en": "MRT Shanbi Station",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "4748"
       },
@@ -3675,7 +3681,7 @@
         "name": "山鼻",
         "name_en": "Shanbi",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6588"
       },
@@ -3695,7 +3701,7 @@
         "name": "群鹿公司",
         "name_en": "Qunlu Company",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5406"
       },
@@ -3715,7 +3721,7 @@
         "name": "桃林鐵路長興站",
         "name_en": "Taolin Rail Rd. Bus Station Changxing Stop",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "4408"
       },
@@ -3735,7 +3741,7 @@
         "name": "長興路三段217號",
         "name_en": "Changxing Rd., Sec. 3, No. 217",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "4410"
       },
@@ -3755,7 +3761,7 @@
         "name": "噶舉瑪倉派佛學院",
         "name_en": "Kagyu Buddhist Institusyon",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "4313"
       },
@@ -3775,7 +3781,7 @@
         "name": "長榮空廚",
         "name_en": "Evergreen Sky Catering",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "3742"
       },
@@ -3795,7 +3801,7 @@
         "name": "長興活動中心",
         "name_en": "Changxin Activity Center",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "4770"
       },
@@ -3815,7 +3821,7 @@
         "name": "長榮空廚",
         "name_en": "Evergreen Sky Catering",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "3743"
       },
@@ -3835,7 +3841,7 @@
         "name": "噶舉瑪倉派佛學院",
         "name_en": "Kagyu Buddhist Institusyon",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "4314"
       },
@@ -3855,7 +3861,7 @@
         "name": "長興路三段217號",
         "name_en": "Changxing Rd., Sec. 3, No. 217",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "4411"
       },
@@ -3875,7 +3881,7 @@
         "name": "桃林鐵路長興站",
         "name_en": "Taolin Rail Rd. Bus Station Changxing Stop",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "4409"
       },
@@ -3895,7 +3901,7 @@
         "name": "中崙公司",
         "name_en": "Zhonglun Company",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5135"
       },
@@ -3915,7 +3921,7 @@
         "name": "南山長安",
         "name_en": "Nanshan Changan",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5400"
       },
@@ -3935,7 +3941,7 @@
         "name": "長安路二段100號",
         "name_en": "No. 100, Sec. 2, Jhangan",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5401"
       },
@@ -3955,7 +3961,7 @@
         "name": "戶政地政衛生所",
         "name_en": "Household Administration, Land Office and Health Center",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5403"
       },
@@ -3975,7 +3981,7 @@
         "name": "義美",
         "name_en": "Yimei",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5427"
       },
@@ -3995,7 +4001,7 @@
         "name": "溪洲",
         "name_en": "Xizhou",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5087"
       },
@@ -4015,7 +4021,7 @@
         "name": "南亞(好市多)",
         "name_en": "Nanya (Costco)",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "4065"
       },
@@ -4035,7 +4041,7 @@
         "name": "下南崁",
         "name_en": "Xianankan",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1372"
       },
@@ -4055,7 +4061,7 @@
         "name": "台茂",
         "name_en": "Taimall",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "7078"
       },
@@ -4075,7 +4081,7 @@
         "name": "南崁中正",
         "name_en": "Nankan Zhongzheng",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5429"
       },
@@ -4095,7 +4101,7 @@
         "name": "南崁",
         "name_en": "NanKan",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "4579"
       },
@@ -4115,7 +4121,7 @@
         "name": "蘆竹區公所",
         "name_en": "Luzhu District Office",
         "line": "L309B",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "4652"
       },

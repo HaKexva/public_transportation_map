@@ -6,13 +6,14 @@
     "name": "台灣好行-C線-獅山民俗線(週一行駛)",
     "name_en": "台灣好行-C線-獅山民俗線(週一行駛)",
     "ref": "台灣好行-C線-獅山民俗線(週一行駛)",
-    "color": "#86198f",
+    "color": "#3730a3",
     "city_id": "KinmenCounty",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.kinmen.gov.tw/extend/route20230601/c.png",
     "operator_id": "0001",
     "operator": "金門",
-    "operator_en": "City Bus and Ferry Management Office, Kinmen County"
+    "operator_en": "City Bus and Ferry Management Office, Kinmen County",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "台灣好行-C線-獅山民俗線(週一行駛)",
         "name": "台灣好行-C線-獅山民俗線(週一行駛)",
         "name_en": "台灣好行-C線-獅山民俗線(週一行駛)",
-        "color": "#86198f",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -563,6 +565,10 @@
           [
             118.41402,
             24.44244
+          ],
+          [
+            118.41378,
+            24.44221
           ]
         ]
       }
@@ -575,7 +581,7 @@
         "name": "山外站",
         "name_en": "Shanwai Station",
         "line": "台灣好行-C線-獅山民俗線(週一行駛)",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "29"
       },
@@ -595,7 +601,7 @@
         "name": "沙美老街",
         "name_en": "Shamei Street",
         "line": "台灣好行-C線-獅山民俗線(週一行駛)",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "881"
       },
@@ -615,7 +621,7 @@
         "name": "沙青路",
         "name_en": "Shanching Road",
         "line": "台灣好行-C線-獅山民俗線(週一行駛)",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "882"
       },
@@ -635,7 +641,7 @@
         "name": "馬山觀測所",
         "name_en": "Mashan Observation Post",
         "line": "台灣好行-C線-獅山民俗線(週一行駛)",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "883"
       },
@@ -655,7 +661,7 @@
         "name": "獅山砲陣地",
         "name_en": "Shishan(Mt. Lion)Howitzer Front",
         "line": "台灣好行-C線-獅山民俗線(週一行駛)",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "884"
       },
@@ -675,7 +681,7 @@
         "name": "山后民俗文化村",
         "name_en": "Shanhou Folk Culture Village",
         "line": "台灣好行-C線-獅山民俗線(週一行駛)",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "885"
       },
@@ -695,7 +701,7 @@
         "name": "迎賓館",
         "name_en": "Guest Greeting Hall",
         "line": "台灣好行-C線-獅山民俗線(週一行駛)",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "886"
       },
@@ -715,7 +721,7 @@
         "name": "山外站",
         "name_en": "Shanwai Station",
         "line": "台灣好行-C線-獅山民俗線(週一行駛)",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "29"
       },

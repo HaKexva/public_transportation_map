@@ -20,6 +20,7 @@ module Geojson
     DIRECT_IMAGE_HINT = %r{
       /File/Get/|
       /strapi/uploads/|
+      /(?:cms/)?api/route/.+/(?:map/.+/)?image|
       /cms/api/.+/image|
       /cms/api/route/.+/map/|
       /MISUploadData/Schematic/|
@@ -355,7 +356,7 @@ module Geojson
         return true if current == resolved
 
         properties["official_map_url"] = resolved
-      elsif allow_clear && useless_portal?(url)
+      elsif allow_clear && (useless_portal?(url) || portal_url?(url))
         return true if current.blank?
 
         properties.delete("official_map_url")
@@ -374,10 +375,7 @@ module Geojson
     end
 
     def missing_slugs
-      path = Rails.root.join("public/geojson/routes.json")
-      return [] unless path.exist?
-
-      JSON.parse(path.read).fetch("bus", []).select { |route|
+      Geojson::RoutesManifestWriter.bus_entries.select { |route|
         route["official_map_url"].to_s.empty?
       }.map { |route| route["id"] }
     end

@@ -6,12 +6,13 @@
     "name": "樂活7路",
     "name_en": "樂活7路",
     "ref": "樂活7路",
-    "color": "#0f766e",
+    "color": "#7c2d12",
     "city_id": "Chiayi",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://web.taiwanbus.tw/MISUploadData/Schematic/file/0130.jpg",
     "operator_id": "108",
-    "operator": "捷乘交通有限公司"
+    "operator": "捷乘交通有限公司",
+    "loop": true
   },
   "features": [
     {
@@ -21,8 +22,9 @@
         "ref": "樂活7路",
         "name": "樂活7路",
         "name_en": "樂活7路",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#7c2d12",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -2625,8 +2627,9 @@
         "ref": "樂活7路",
         "name": "樂活7路",
         "name_en": "樂活7路",
-        "color": "#0f766e",
-        "direction": 1
+        "color": "#7c2d12",
+        "direction": 1,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -5378,7 +5381,7 @@
         "name": "五港宮(預約站)",
         "name_en": "Wugang temple",
         "line": "樂活7路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "142538"
       },
@@ -5398,7 +5401,7 @@
         "name": "順興宮",
         "name_en": "Shunsing temple",
         "line": "樂活7路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "142536"
       },
@@ -5418,7 +5421,7 @@
         "name": "湖興門市",
         "name_en": "Huxingmenshi",
         "line": "樂活7路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "143752"
       },
@@ -5438,7 +5441,7 @@
         "name": "南京路",
         "name_en": "Nanjing Minsheng South Road Station",
         "line": "樂活7路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "143754"
       },
@@ -5458,7 +5461,7 @@
         "name": "新民南京路口",
         "name_en": "Xinmin Nanjing intersection",
         "line": "樂活7路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "143763"
       },
@@ -5478,7 +5481,7 @@
         "name": "新庄",
         "name_en": "Xinzhuang",
         "line": "樂活7路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "142554"
       },
@@ -5498,7 +5501,7 @@
         "name": "杭州五街",
         "name_en": "Hangzhou Fifth Street",
         "line": "樂活7路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "143168"
       },
@@ -5518,7 +5521,7 @@
         "name": "重慶新民路口",
         "name_en": "Chongqing Xinmin Road Intersection",
         "line": "樂活7路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "143169"
       },
@@ -5538,7 +5541,7 @@
         "name": "重慶南京路口",
         "name_en": "Chongqing Nanjing intersection",
         "line": "樂活7路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "143170"
       },
@@ -5558,7 +5561,7 @@
         "name": "7-11嘉上門市",
         "name_en": "7-11 Jiashang store",
         "line": "樂活7路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "143171"
       },
@@ -5578,7 +5581,7 @@
         "name": "興嘉公園",
         "name_en": "Xingjia Park",
         "line": "樂活7路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "143185"
       },
@@ -5598,7 +5601,7 @@
         "name": "垂楊國小",
         "name_en": "Chnei-Yang Elementary School",
         "line": "樂活7路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "143187"
       },
@@ -5618,7 +5621,7 @@
         "name": "嘉義火車站",
         "name_en": "Chiayi Train Station",
         "line": "樂活7路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "138408"
       },
@@ -5638,7 +5641,7 @@
         "name": "彰化銀行",
         "name_en": "Chang Hwa Bank",
         "line": "樂活7路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "134275"
       },
@@ -5658,7 +5661,7 @@
         "name": "中央噴水站",
         "name_en": "central sprinkler station",
         "line": "樂活7路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "143765"
       },
@@ -5678,7 +5681,7 @@
         "name": "市政府(中山路)",
         "name_en": "City Hall(zhong shan Road)",
         "line": "樂活7路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "142525"
       },
@@ -5698,7 +5701,7 @@
         "name": "民族國小",
         "name_en": "Mintsu Elementary School",
         "line": "樂活7路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "143069"
       },
@@ -5718,7 +5721,7 @@
         "name": "嘉義高中",
         "name_en": "Chiayi Senior High School",
         "line": "樂活7路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "138639"
       },
@@ -5738,7 +5741,7 @@
         "name": "下山仔頂(大雅商圈)",
         "name_en": "Xiashanziding(Daya Shopping District)",
         "line": "樂活7路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "138008"
       },
@@ -5758,7 +5761,7 @@
         "name": "嘉義家職(嘉義市體育場)",
         "name_en": "Chiayi City Municipal stadium",
         "line": "樂活7路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "143768"
       },
@@ -5778,7 +5781,7 @@
         "name": "南順宮",
         "name_en": "Nanshun Palace",
         "line": "樂活7路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "143756"
       },
@@ -5798,7 +5801,7 @@
         "name": "南田市場",
         "name_en": "Nantian Market",
         "line": "樂活7路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "135237"
       },
@@ -5818,7 +5821,7 @@
         "name": "大業國中",
         "name_en": "Daye Junior High School",
         "line": "樂活7路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "138355"
       },
@@ -5838,7 +5841,7 @@
         "name": "順興宮",
         "name_en": "Shunsing temple",
         "line": "樂活7路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "142535"
       },
@@ -5858,7 +5861,7 @@
         "name": "五港宮(預約站)",
         "name_en": "Wugang temple",
         "line": "樂活7路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 0,
         "station_id": "142537"
       },
@@ -5878,7 +5881,7 @@
         "name": "五港宮(預約站)",
         "name_en": "Wugang temple",
         "line": "樂活7路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 1,
         "station_id": "142538"
       },
@@ -5898,7 +5901,7 @@
         "name": "順興宮",
         "name_en": "Shunsing temple",
         "line": "樂活7路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 1,
         "station_id": "142536"
       },
@@ -5918,7 +5921,7 @@
         "name": "大業國中",
         "name_en": "Daye Junior High School",
         "line": "樂活7路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 1,
         "station_id": "138356"
       },
@@ -5938,7 +5941,7 @@
         "name": "南田市場",
         "name_en": "Nantian Market",
         "line": "樂活7路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 1,
         "station_id": "143758"
       },
@@ -5958,7 +5961,7 @@
         "name": "南順宮",
         "name_en": "Nanshun Palace",
         "line": "樂活7路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 1,
         "station_id": "143757"
       },
@@ -5978,7 +5981,7 @@
         "name": "嘉義家職(體育場)",
         "name_en": "Chiayi City Municipal stadium",
         "line": "樂活7路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 1,
         "station_id": "143769"
       },
@@ -5998,7 +6001,7 @@
         "name": "下山仔頂(大雅商圈)",
         "name_en": "Xiashanziding(Daya Shopping District)",
         "line": "樂活7路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 1,
         "station_id": "138009"
       },
@@ -6018,7 +6021,7 @@
         "name": "嘉義高中",
         "name_en": "Chiayi Senior High School",
         "line": "樂活7路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 1,
         "station_id": "138640"
       },
@@ -6038,7 +6041,7 @@
         "name": "民族國小",
         "name_en": "Mintsu Elementary School",
         "line": "樂活7路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 1,
         "station_id": "143068"
       },
@@ -6058,7 +6061,7 @@
         "name": "市政府(中山路)",
         "name_en": "Chiayi City Hall(zhong shan Road)",
         "line": "樂活7路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 1,
         "station_id": "143767"
       },
@@ -6078,7 +6081,7 @@
         "name": "中央噴水站",
         "name_en": "central sprinkler station",
         "line": "樂活7路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 1,
         "station_id": "143766"
       },
@@ -6098,7 +6101,7 @@
         "name": "彰化銀行",
         "name_en": "Chang Hwa Bank",
         "line": "樂活7路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 1,
         "station_id": "138502"
       },
@@ -6118,7 +6121,7 @@
         "name": "嘉義火車站",
         "name_en": "Chiayi train station",
         "line": "樂活7路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 1,
         "station_id": "135230"
       },
@@ -6138,7 +6141,7 @@
         "name": "垂楊國小",
         "name_en": "Chnei-Yang Elementary School",
         "line": "樂活7路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 1,
         "station_id": "143188"
       },
@@ -6158,7 +6161,7 @@
         "name": "興嘉公園",
         "name_en": "Xingjia Park",
         "line": "樂活7路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 1,
         "station_id": "143186"
       },
@@ -6178,7 +6181,7 @@
         "name": "7-11嘉上門市",
         "name_en": "7-11 Jiashang store",
         "line": "樂活7路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 1,
         "station_id": "145397"
       },
@@ -6198,7 +6201,7 @@
         "name": "重慶南京路口",
         "name_en": "Chongqing Nanjing intersection",
         "line": "樂活7路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 1,
         "station_id": "143189"
       },
@@ -6218,7 +6221,7 @@
         "name": "重慶新民路口",
         "name_en": "Chongqing Xinmin Road Intersection",
         "line": "樂活7路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 1,
         "station_id": "143190"
       },
@@ -6238,7 +6241,7 @@
         "name": "杭州五街",
         "name_en": "Hangzhou Fifth Street",
         "line": "樂活7路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 1,
         "station_id": "145466"
       },
@@ -6258,7 +6261,7 @@
         "name": "新庄",
         "name_en": "Xinzhuang",
         "line": "樂活7路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 1,
         "station_id": "142553"
       },
@@ -6278,7 +6281,7 @@
         "name": "新民南京路口",
         "name_en": "Xinmin Nanjing intersection",
         "line": "樂活7路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 1,
         "station_id": "143764"
       },
@@ -6298,7 +6301,7 @@
         "name": "南京路",
         "name_en": "Nanjing Minsheng South Road Station",
         "line": "樂活7路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 1,
         "station_id": "143755"
       },
@@ -6318,7 +6321,7 @@
         "name": "湖興門市",
         "name_en": "Huxingmenshi",
         "line": "樂活7路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 1,
         "station_id": "143753"
       },
@@ -6338,7 +6341,7 @@
         "name": "順興宮",
         "name_en": "Shunsing temple",
         "line": "樂活7路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 1,
         "station_id": "142535"
       },
@@ -6358,7 +6361,7 @@
         "name": "五港宮(預約站)",
         "name_en": "Wugang temple",
         "line": "樂活7路",
-        "color": "#0f766e",
+        "color": "#7c2d12",
         "direction": 1,
         "station_id": "142537"
       },

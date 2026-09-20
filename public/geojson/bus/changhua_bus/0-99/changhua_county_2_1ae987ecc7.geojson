@@ -6,13 +6,14 @@
     "name": "2路",
     "name_en": "2路",
     "ref": "2路",
-    "color": "#65a30d",
+    "color": "#b91c1c",
     "city_id": "ChanghuaCounty",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://web.taiwanbus.tw/MISUploadData/Schematic/file/0704.jpg",
     "operator_id": "60",
     "operator": "彰化客運",
-    "operator_en": "Chang Hua Bus Co., Ltd."
+    "operator_en": "Chang Hua Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "2路",
         "name": "2路",
         "name_en": "2路",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -2747,7 +2749,7 @@
         "name": "彰化師大進德校區",
         "name_en": "Changhua Universtiy of Education",
         "line": "2路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "141812"
       },
@@ -2767,7 +2769,7 @@
         "name": "兒童公園",
         "name_en": "Children&#39;s Park",
         "line": "2路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "144903"
       },
@@ -2787,7 +2789,7 @@
         "name": "彰化(三民路)",
         "name_en": "Changhua Station",
         "line": "2路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "134137"
       },
@@ -2807,7 +2809,7 @@
         "name": "三角公園",
         "name_en": "Sanjiao Park",
         "line": "2路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "134089"
       },
@@ -2827,7 +2829,7 @@
         "name": "台銀前",
         "name_en": "Bank Of Taiwan",
         "line": "2路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "134098"
       },
@@ -2847,7 +2849,7 @@
         "name": "縣議會",
         "name_en": "County Council",
         "line": "2路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "134102"
       },
@@ -2867,7 +2869,7 @@
         "name": "華陽市場",
         "name_en": "Huayang Market",
         "line": "2路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "134108"
       },
@@ -2887,7 +2889,7 @@
         "name": "彰化中學",
         "name_en": "Changhua High School",
         "line": "2路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "134116"
       },
@@ -2907,7 +2909,7 @@
         "name": "彰商",
         "name_en": "Changhua Senior School of Commerce",
         "line": "2路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "134121"
       },
@@ -2927,7 +2929,7 @@
         "name": "保警新村",
         "name_en": "Bao Jing Village",
         "line": "2路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "134123"
       },
@@ -2947,7 +2949,7 @@
         "name": "華陽公園",
         "name_en": "Hua Yang Park",
         "line": "2路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "134125"
       },
@@ -2967,7 +2969,7 @@
         "name": "彰化師大師大校區站",
         "name_en": "Changhua Universtiy of Education",
         "line": "2路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "141418"
       },
@@ -2987,7 +2989,7 @@
         "name": "體育場",
         "name_en": "Stadium",
         "line": "2路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "134129"
       },
@@ -3007,7 +3009,7 @@
         "name": "介壽南路(彰化高中)",
         "name_en": "Jieshou South Road(Changhua Senior High School)",
         "line": "2路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "134130"
       },
@@ -3027,7 +3029,7 @@
         "name": "太極新村",
         "name_en": "Taiji Village",
         "line": "2路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "134131"
       },
@@ -3047,7 +3049,7 @@
         "name": "建國科大",
         "name_en": "Chienkuo University of Technology",
         "line": "2路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "134132"
       },
@@ -3067,7 +3069,7 @@
         "name": "大學前",
         "name_en": "University Front Gate",
         "line": "2路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "134133"
       },
@@ -3087,7 +3089,7 @@
         "name": "南郭國小",
         "name_en": "Nanguo Elementary School",
         "line": "2路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "134134"
       },
@@ -3107,7 +3109,7 @@
         "name": "彰化中學",
         "name_en": "Changhua High School",
         "line": "2路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "134118"
       },
@@ -3127,7 +3129,7 @@
         "name": "華陽市場",
         "name_en": "Huayang Market",
         "line": "2路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "134112"
       },
@@ -3147,7 +3149,7 @@
         "name": "縣議會",
         "name_en": "County Council",
         "line": "2路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "134104"
       },
@@ -3167,7 +3169,7 @@
         "name": "台銀前",
         "name_en": "Bank Of Taiwan",
         "line": "2路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "134098"
       },
@@ -3187,7 +3189,7 @@
         "name": "三角公園",
         "name_en": "Sanjiao Park",
         "line": "2路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "134096"
       },
@@ -3207,7 +3209,7 @@
         "name": "彰化(三民路)",
         "name_en": "Changhua Station",
         "line": "2路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "134076"
       },
@@ -3227,7 +3229,7 @@
         "name": "兒童公園",
         "name_en": "Children&#39;s Park",
         "line": "2路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "144904"
       },

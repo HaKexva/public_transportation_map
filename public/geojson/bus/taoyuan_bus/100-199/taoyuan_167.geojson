@@ -6,13 +6,14 @@
     "name": "167",
     "name_en": "167",
     "ref": "167",
-    "color": "#9a3412",
+    "color": "#2563eb",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/3283/map/2284/image",
     "operator_id": "2",
     "operator": "中壢客運",
-    "operator_en": "Chungli Bus Co., Ltd."
+    "operator_en": "Chungli Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "167",
         "name": "167",
         "name_en": "167",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -815,6 +817,10 @@
           [
             121.2243,
             24.95337
+          ],
+          [
+            121.22438,
+            24.95349
           ]
         ]
       }
@@ -827,7 +833,7 @@
         "name": "中壢客運中壢總站",
         "name_en": "Zhongli Bus Main Station",
         "line": "167",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "126"
       },
@@ -847,7 +853,7 @@
         "name": "中壢農會",
         "name_en": "Zhongli Farmers Association",
         "line": "167",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "3773"
       },
@@ -867,7 +873,7 @@
         "name": "中央市場",
         "name_en": "Zhongyang Market",
         "line": "167",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "580"
       },
@@ -887,7 +893,7 @@
         "name": "埔頂橋",
         "name_en": "PuDing Bridge",
         "line": "167",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "752"
       },
@@ -907,7 +913,7 @@
         "name": "中山東路口",
         "name_en": "Zhongshan East Road Intersection",
         "line": "167",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "512"
       },
@@ -927,7 +933,7 @@
         "name": "中原國小",
         "name_en": "JungYuan Elementary School",
         "line": "167",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "4428"
       },
@@ -947,7 +953,7 @@
         "name": "中原大學全人村",
         "name_en": "Chung Yuan Christian University Cyuanrencun",
         "line": "167",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "3581"
       },
@@ -967,7 +973,7 @@
         "name": "中原大學信實宿舍",
         "name_en": "Chung Yuan Christian University Sinshih Hall",
         "line": "167",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "4426"
       },
@@ -987,7 +993,7 @@
         "name": "營頭厝",
         "name_en": "YingTouTsuo",
         "line": "167",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "4424"
       },
@@ -1007,7 +1013,7 @@
         "name": "仁愛社區",
         "name_en": "Renai Community",
         "line": "167",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "4140"
       },
@@ -1027,7 +1033,7 @@
         "name": "功學社",
         "name_en": "K.H.S.Musical Instruments Co., Ltd.",
         "line": "167",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "3817"
       },
@@ -1047,7 +1053,7 @@
         "name": "榮民南路一",
         "name_en": "RungMin S. Road 1",
         "line": "167",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "6117"
       },
@@ -1067,7 +1073,7 @@
         "name": "華勛五村",
         "name_en": "HuaShiun 5th Village",
         "line": "167",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "5240"
       },
@@ -1087,7 +1093,7 @@
         "name": "華勛街141巷",
         "name_en": "Huashiun Street Lane 141",
         "line": "167",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "576"
       },
@@ -1107,7 +1113,7 @@
         "name": "華勛園",
         "name_en": "HuaShiunYuan",
         "line": "167",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "4545"
       },
@@ -1127,7 +1133,7 @@
         "name": "華富新村",
         "name_en": "Huafu New Village",
         "line": "167",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "5231"
       },
@@ -1147,7 +1153,7 @@
         "name": "華勛四村",
         "name_en": "HuaShiun 4th Village",
         "line": "167",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "6297"
       },
@@ -1167,7 +1173,7 @@
         "name": "福德宮",
         "name_en": "FuDe Temple",
         "line": "167",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "999"
       },
@@ -1187,7 +1193,7 @@
         "name": "幸福新村",
         "name_en": "Xingfu Village",
         "line": "167",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "567"
       },
@@ -1207,7 +1213,7 @@
         "name": "篤行六村",
         "name_en": "DuShing 6th Village",
         "line": "167",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "565"
       },
@@ -1227,7 +1233,7 @@
         "name": "榮民工廠",
         "name_en": "Veterans",
         "line": "167",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "4296"
       },
@@ -1247,7 +1253,7 @@
         "name": "中正國小",
         "name_en": "Chungcheng Elementary School",
         "line": "167",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "559"
       },
@@ -1267,7 +1273,7 @@
         "name": "篤行五村",
         "name_en": "DuShing 5th Village",
         "line": "167",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "558"
       },
@@ -1287,7 +1293,7 @@
         "name": "中正福德宮",
         "name_en": "FuDe Temple",
         "line": "167",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "5229"
       },
@@ -1307,7 +1313,7 @@
         "name": "榮安十三街",
         "name_en": "Rong-an 13th St.",
         "line": "167",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "562"
       },
@@ -1327,7 +1333,7 @@
         "name": "榮安五街口",
         "name_en": "Rongan 5rd Street Intersection",
         "line": "167",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "5261"
       },
@@ -1347,7 +1353,7 @@
         "name": "環中愛樂",
         "name_en": "HuanJungAiYue",
         "line": "167",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "1091"
       },
@@ -1367,7 +1373,7 @@
         "name": "環中榮安一街口",
         "name_en": "HuanJung RongAn 1 St. Intersection",
         "line": "167",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "1089"
       },
@@ -1387,7 +1393,7 @@
         "name": "陸光五村",
         "name_en": "LuGuang 5th Village",
         "line": "167",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "4063"
       },
@@ -1407,7 +1413,7 @@
         "name": "自強國中",
         "name_en": "TzChiang Junior High School",
         "line": "167",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "1085"
       },
@@ -1427,7 +1433,7 @@
         "name": "興仁永強街口",
         "name_en": "Xingren Road",
         "line": "167",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "1733"
       },
@@ -1447,7 +1453,7 @@
         "name": "內壢火車站",
         "name_en": "Neili Train Station",
         "line": "167",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "549"
       },
@@ -1467,7 +1473,7 @@
         "name": "上內壢",
         "name_en": "ShangNeiLi",
         "line": "167",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "1081"
       },
@@ -1487,7 +1493,7 @@
         "name": "日月光公司",
         "name_en": "Advanced Semiconductor Engineering Inc",
         "line": "167",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "3235"
       },
@@ -1507,7 +1513,7 @@
         "name": "自立新村",
         "name_en": "Zili Village",
         "line": "167",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "1079"
       },
@@ -1527,7 +1533,7 @@
         "name": "內壢國中",
         "name_en": "Neili Junior High School",
         "line": "167",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "532"
       },
@@ -1547,7 +1553,7 @@
         "name": "中壢工業區",
         "name_en": "Zhongli Industrial Zone",
         "line": "167",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "729"
       },
@@ -1567,7 +1573,7 @@
         "name": "中原",
         "name_en": "Chungyuan",
         "line": "167",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "1077"
       },
@@ -1587,7 +1593,7 @@
         "name": "台灣拉鍊",
         "name_en": "YKK",
         "line": "167",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "358"
       },
@@ -1607,7 +1613,7 @@
         "name": "中壢簡易庭",
         "name_en": "Zhongli Simple Court",
         "line": "167",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "360"
       },
@@ -1627,7 +1633,7 @@
         "name": "中壢聯合辦公大樓",
         "name_en": "Zhongli United Office Building",
         "line": "167",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "362"
       },
@@ -1647,7 +1653,7 @@
         "name": "新街",
         "name_en": "Xin street",
         "line": "167",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "295"
       },
@@ -1667,7 +1673,7 @@
         "name": "中壢監理站",
         "name_en": "Zhongli Motor Vehicles Office",
         "line": "167",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "367"
       },
@@ -1687,7 +1693,7 @@
         "name": "中央東路",
         "name_en": "Zhongyang E. Rd.",
         "line": "167",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "2104"
       },
@@ -1707,7 +1713,7 @@
         "name": "中壢客運中壢總站",
         "name_en": "Zhongli Bus Zhongli Main Station",
         "line": "167",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "126"
       },

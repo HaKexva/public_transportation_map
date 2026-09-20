@@ -6,10 +6,11 @@
     "name": "310",
     "name_en": "310",
     "ref": "310",
-    "color": "#9f1239",
+    "color": "#86198f",
     "city_id": "Keelung",
     "source": "TDX Bus Shape / StopOfRoute",
-    "official_map_url": "https://web.taiwanbus.tw/MISUploadData/Schematic/file/0436.jpg"
+    "official_map_url": "https://web.taiwanbus.tw/MISUploadData/Schematic/file/0436.jpg",
+    "loop": true
   },
   "features": [
     {
@@ -19,8 +20,9 @@
         "ref": "310",
         "name": "310",
         "name_en": "310",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#86198f",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -3912,6 +3914,10 @@
           [
             121.73879,
             25.13136
+          ],
+          [
+            121.73877,
+            25.13131
           ]
         ]
       }
@@ -3924,7 +3930,7 @@
         "name": "基隆火車站(南站)",
         "name_en": "Keelung Railway Station S.",
         "line": "310",
-        "color": "#9f1239",
+        "color": "#86198f",
         "direction": 0,
         "station_id": "141049"
       },
@@ -3944,7 +3950,7 @@
         "name": "孝二路",
         "name_en": "Xiao 2nd Rd.",
         "line": "310",
-        "color": "#9f1239",
+        "color": "#86198f",
         "direction": 0,
         "station_id": "141125"
       },
@@ -3964,7 +3970,7 @@
         "name": "三十一號橋",
         "name_en": "No. 31 Bridge",
         "line": "310",
-        "color": "#9f1239",
+        "color": "#86198f",
         "direction": 0,
         "station_id": "141167"
       },
@@ -3984,7 +3990,7 @@
         "name": "基隆轉運站",
         "name_en": "Keelung Transit Station",
         "line": "310",
-        "color": "#9f1239",
+        "color": "#86198f",
         "direction": 0,
         "station_id": "143441"
       },
@@ -4004,7 +4010,7 @@
         "name": "民治里活動中心",
         "name_en": "Minzhi Village Activity Center",
         "line": "310",
-        "color": "#9f1239",
+        "color": "#86198f",
         "direction": 0,
         "station_id": "141126"
       },
@@ -4024,7 +4030,7 @@
         "name": "碼頭工會",
         "name_en": "Longshoremen’s Association",
         "line": "310",
-        "color": "#9f1239",
+        "color": "#86198f",
         "direction": 0,
         "station_id": "141120"
       },
@@ -4044,7 +4050,7 @@
         "name": "中山區衛生所",
         "name_en": "Health Center of Zhongshan District",
         "line": "310",
-        "color": "#9f1239",
+        "color": "#86198f",
         "direction": 0,
         "station_id": "141119"
       },
@@ -4064,7 +4070,7 @@
         "name": "八號碼頭",
         "name_en": "No. 8 Wharf",
         "line": "310",
-        "color": "#9f1239",
+        "color": "#86198f",
         "direction": 0,
         "station_id": "141127"
       },
@@ -4084,7 +4090,7 @@
         "name": "健民街口",
         "name_en": "Jianmin St. Intersection",
         "line": "310",
-        "color": "#9f1239",
+        "color": "#86198f",
         "direction": 0,
         "station_id": "141128"
       },
@@ -4104,7 +4110,7 @@
         "name": "中華路口",
         "name_en": "Zhonghua Rd. Intersection",
         "line": "310",
-        "color": "#9f1239",
+        "color": "#86198f",
         "direction": 0,
         "station_id": "141172"
       },
@@ -4124,7 +4130,7 @@
         "name": "中華國小",
         "name_en": "Zhonghua Elementary School",
         "line": "310",
-        "color": "#9f1239",
+        "color": "#86198f",
         "direction": 0,
         "station_id": "141174"
       },
@@ -4144,7 +4150,7 @@
         "name": "忠勇之家",
         "name_en": "Home of Loyalty &amp; Brave",
         "line": "310",
-        "color": "#9f1239",
+        "color": "#86198f",
         "direction": 0,
         "station_id": "141181"
       },
@@ -4164,7 +4170,7 @@
         "name": "台肥基隆一廠",
         "name_en": "Keelung Taifei Factory",
         "line": "310",
-        "color": "#9f1239",
+        "color": "#86198f",
         "direction": 0,
         "station_id": "141183"
       },
@@ -4184,7 +4190,7 @@
         "name": "公誠二村",
         "name_en": "Gongchengercun",
         "line": "310",
-        "color": "#9f1239",
+        "color": "#86198f",
         "direction": 0,
         "station_id": "141185"
       },
@@ -4204,7 +4210,7 @@
         "name": "協和里",
         "name_en": "Xiehe Village",
         "line": "310",
-        "color": "#9f1239",
+        "color": "#86198f",
         "direction": 0,
         "station_id": "141192"
       },
@@ -4224,7 +4230,7 @@
         "name": "中山高中",
         "name_en": "Zhongshan Senior High School",
         "line": "310",
-        "color": "#9f1239",
+        "color": "#86198f",
         "direction": 0,
         "station_id": "141195"
       },
@@ -4244,7 +4250,7 @@
         "name": "文明路土地廟",
         "name_en": "Wenming Rd. Tudi Gong Temple",
         "line": "310",
-        "color": "#9f1239",
+        "color": "#86198f",
         "direction": 0,
         "station_id": "141359"
       },
@@ -4264,7 +4270,7 @@
         "name": "海興游泳池",
         "name_en": "Haixing Swimming Pool",
         "line": "310",
-        "color": "#9f1239",
+        "color": "#86198f",
         "direction": 0,
         "station_id": "141361"
       },
@@ -4284,7 +4290,7 @@
         "name": "情人湖濱海大道紀念碑",
         "name_en": "Lovers Lake - Binhai Blvd. Memorial Monument",
         "line": "310",
-        "color": "#9f1239",
+        "color": "#86198f",
         "direction": 0,
         "station_id": "141362"
       },
@@ -4304,7 +4310,7 @@
         "name": "湖海路一段16號",
         "name_en": "No.16 Sec. 1 Huhai Rd.",
         "line": "310",
-        "color": "#9f1239",
+        "color": "#86198f",
         "direction": 0,
         "station_id": "141363"
       },
@@ -4324,7 +4330,7 @@
         "name": "湖海路2.5公里處",
         "name_en": "Huhai Rd. 2.5K",
         "line": "310",
-        "color": "#9f1239",
+        "color": "#86198f",
         "direction": 0,
         "station_id": "141364"
       },
@@ -4344,7 +4350,7 @@
         "name": "大武崙沙灘",
         "name_en": "Tapurun Sandbeach",
         "line": "310",
-        "color": "#9f1239",
+        "color": "#86198f",
         "direction": 0,
         "station_id": "141360"
       },
@@ -4364,7 +4370,7 @@
         "name": "湖海路二段71號",
         "name_en": "No.71 Sec. 2 Huhai Rd.",
         "line": "310",
-        "color": "#9f1239",
+        "color": "#86198f",
         "direction": 0,
         "station_id": "141365"
       },
@@ -4384,7 +4390,7 @@
         "name": "湖海路2.5公里處",
         "name_en": "Huhai Rd. 2.5K",
         "line": "310",
-        "color": "#9f1239",
+        "color": "#86198f",
         "direction": 0,
         "station_id": "141366"
       },
@@ -4404,7 +4410,7 @@
         "name": "湖海路一段71號",
         "name_en": "No.71 Sec. 1 Huhai Rd.",
         "line": "310",
-        "color": "#9f1239",
+        "color": "#86198f",
         "direction": 0,
         "station_id": "143908"
       },
@@ -4424,7 +4430,7 @@
         "name": "湖海路一段16號",
         "name_en": "No.16 Sec. 1 Huhai Rd.",
         "line": "310",
-        "color": "#9f1239",
+        "color": "#86198f",
         "direction": 0,
         "station_id": "141369"
       },
@@ -4444,7 +4450,7 @@
         "name": "情人湖濱海大道紀念碑",
         "name_en": "Lovers Lake - Binhai Blvd. Memorial Monument",
         "line": "310",
-        "color": "#9f1239",
+        "color": "#86198f",
         "direction": 0,
         "station_id": "141370"
       },
@@ -4464,7 +4470,7 @@
         "name": "海興游泳池",
         "name_en": "Haixing Swimming Pool",
         "line": "310",
-        "color": "#9f1239",
+        "color": "#86198f",
         "direction": 0,
         "station_id": "141371"
       },
@@ -4484,7 +4490,7 @@
         "name": "文明路土地廟",
         "name_en": "Wenming Rd. Tudi Gong Temple",
         "line": "310",
-        "color": "#9f1239",
+        "color": "#86198f",
         "direction": 0,
         "station_id": "141372"
       },
@@ -4504,7 +4510,7 @@
         "name": "協和里",
         "name_en": "Xiehe Village",
         "line": "310",
-        "color": "#9f1239",
+        "color": "#86198f",
         "direction": 0,
         "station_id": "141193"
       },
@@ -4524,7 +4530,7 @@
         "name": "公誠二村",
         "name_en": "Gongchengercun",
         "line": "310",
-        "color": "#9f1239",
+        "color": "#86198f",
         "direction": 0,
         "station_id": "141186"
       },
@@ -4544,7 +4550,7 @@
         "name": "台肥基隆一廠",
         "name_en": "Keelung Taifei Factory",
         "line": "310",
-        "color": "#9f1239",
+        "color": "#86198f",
         "direction": 0,
         "station_id": "141184"
       },
@@ -4564,7 +4570,7 @@
         "name": "忠勇之家",
         "name_en": "Home of Loyalty &amp; Brave",
         "line": "310",
-        "color": "#9f1239",
+        "color": "#86198f",
         "direction": 0,
         "station_id": "141182"
       },
@@ -4584,7 +4590,7 @@
         "name": "中華國小",
         "name_en": "Zhonghua Elementary School",
         "line": "310",
-        "color": "#9f1239",
+        "color": "#86198f",
         "direction": 0,
         "station_id": "141175"
       },
@@ -4604,7 +4610,7 @@
         "name": "中華路口",
         "name_en": "Zhonghua Rd. Intersection",
         "line": "310",
-        "color": "#9f1239",
+        "color": "#86198f",
         "direction": 0,
         "station_id": "141173"
       },
@@ -4624,7 +4630,7 @@
         "name": "海三廠",
         "name_en": "Third Naval Shipyard",
         "line": "310",
-        "color": "#9f1239",
+        "color": "#86198f",
         "direction": 0,
         "station_id": "141114"
       },
@@ -4644,7 +4650,7 @@
         "name": "健民街口",
         "name_en": "Jianmin St. Intersection",
         "line": "310",
-        "color": "#9f1239",
+        "color": "#86198f",
         "direction": 0,
         "station_id": "141116"
       },
@@ -4664,7 +4670,7 @@
         "name": "八號碼頭",
         "name_en": "No. 8 Wharf",
         "line": "310",
-        "color": "#9f1239",
+        "color": "#86198f",
         "direction": 0,
         "station_id": "141117"
       },
@@ -4684,7 +4690,7 @@
         "name": "中山區衛生所",
         "name_en": "Health Center of Zhongshan District",
         "line": "310",
-        "color": "#9f1239",
+        "color": "#86198f",
         "direction": 0,
         "station_id": "141118"
       },
@@ -4704,7 +4710,7 @@
         "name": "碼頭工會",
         "name_en": "Longshoremen’s Association",
         "line": "310",
-        "color": "#9f1239",
+        "color": "#86198f",
         "direction": 0,
         "station_id": "141121"
       },
@@ -4724,7 +4730,7 @@
         "name": "民治里活動中心",
         "name_en": "Minzhi Village Activity Center",
         "line": "310",
-        "color": "#9f1239",
+        "color": "#86198f",
         "direction": 0,
         "station_id": "141122"
       },
@@ -4744,7 +4750,7 @@
         "name": "中山橋(高砂橋)",
         "name_en": "Zhongshan Bridge (Gaosha Bridge)",
         "line": "310",
-        "color": "#9f1239",
+        "color": "#86198f",
         "direction": 0,
         "station_id": "141123"
       },
@@ -4764,7 +4770,7 @@
         "name": "三十一號橋",
         "name_en": "No. 31 Bridge",
         "line": "310",
-        "color": "#9f1239",
+        "color": "#86198f",
         "direction": 0,
         "station_id": "141166"
       },
@@ -4784,7 +4790,7 @@
         "name": "仁五路(東和大樓)",
         "name_en": "Ren 5th Rd.",
         "line": "310",
-        "color": "#9f1239",
+        "color": "#86198f",
         "direction": 0,
         "station_id": "140629"
       },
@@ -4804,7 +4810,7 @@
         "name": "仁二路(二信循環站)",
         "name_en": "Ren 2nd Rd. (Erxin Loop Station )",
         "line": "310",
-        "color": "#9f1239",
+        "color": "#86198f",
         "direction": 0,
         "station_id": "140620"
       },

@@ -6,12 +6,13 @@
     "name": "湯泉-十四張-大坪林",
     "name_en": "湯泉-十四張-大坪林",
     "ref": "湯泉-十四張-大坪林",
-    "color": "#1e40af",
+    "color": "#9333EA",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.gov.taipei/File/Get/edc29e66-8848-48ae-bf63-1b2cba3693e8?v=639248448820376507",
     "operator_id": "16181",
-    "operator": "欣欣客運"
+    "operator": "欣欣客運",
+    "loop": true
   },
   "features": [
     {
@@ -21,8 +22,9 @@
         "ref": "湯泉-十四張-大坪林",
         "name": "湯泉-十四張-大坪林",
         "name_en": "湯泉-十四張-大坪林",
-        "color": "#1e40af",
-        "direction": 0
+        "color": "#9333EA",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -318,6 +320,10 @@
           [
             121.52373524894,
             24.977942196983
+          ],
+          [
+            121.52357963399,
+            24.9779168061176
           ]
         ]
       }
@@ -330,7 +336,7 @@
         "name": "湯泉櫻花(中山路口)",
         "name_en": "Tangquanyinghua(Zhongshan Entrance)",
         "line": "湯泉-十四張-大坪林",
-        "color": "#1e40af",
+        "color": "#9333EA",
         "direction": 0,
         "station_id": "72079"
       },
@@ -350,7 +356,7 @@
         "name": "湯泉美地",
         "name_en": "Tangquanmeidi",
         "line": "湯泉-十四張-大坪林",
-        "color": "#1e40af",
+        "color": "#9333EA",
         "direction": 0,
         "station_id": "1165605475"
       },
@@ -370,7 +376,7 @@
         "name": "溪園路255巷口",
         "name_en": "Lane 255 Xiyuan Rd.",
         "line": "湯泉-十四張-大坪林",
-        "color": "#1e40af",
+        "color": "#9333EA",
         "direction": 0,
         "station_id": "72086"
       },
@@ -390,7 +396,7 @@
         "name": "十四張路口",
         "name_en": "Shisizhang Road",
         "line": "湯泉-十四張-大坪林",
-        "color": "#1e40af",
+        "color": "#9333EA",
         "direction": 0,
         "station_id": "2891"
       },
@@ -410,7 +416,7 @@
         "name": "捷運十四張站",
         "name_en": "MRT Shisizhang Sta.",
         "line": "湯泉-十四張-大坪林",
-        "color": "#1e40af",
+        "color": "#9333EA",
         "direction": 0,
         "station_id": "1165605276"
       },
@@ -430,7 +436,7 @@
         "name": "莊敬中學(復興路)",
         "name_en": "Zhuangjing High School (Fuxing Rd.)",
         "line": "湯泉-十四張-大坪林",
-        "color": "#1e40af",
+        "color": "#9333EA",
         "direction": 0,
         "station_id": "2932"
       },
@@ -450,7 +456,7 @@
         "name": "慈濟醫院",
         "name_en": "Buddhist Tzu Chi General Hospital",
         "line": "湯泉-十四張-大坪林",
-        "color": "#1e40af",
+        "color": "#9333EA",
         "direction": 0,
         "station_id": "1001129"
       },
@@ -470,7 +476,7 @@
         "name": "民權路口",
         "name_en": "Minquan Rd. Entrance",
         "line": "湯泉-十四張-大坪林",
-        "color": "#1e40af",
+        "color": "#9333EA",
         "direction": 0,
         "station_id": "1000741"
       },
@@ -490,7 +496,7 @@
         "name": "捷運大坪林站",
         "name_en": "MRT Dapinglin Sta.",
         "line": "湯泉-十四張-大坪林",
-        "color": "#1e40af",
+        "color": "#9333EA",
         "direction": 0,
         "station_id": "30105"
       },
@@ -510,7 +516,7 @@
         "name": "民權路口",
         "name_en": "Minquan Rd. Entrance",
         "line": "湯泉-十四張-大坪林",
-        "color": "#1e40af",
+        "color": "#9333EA",
         "direction": 0,
         "station_id": "1000740"
       },
@@ -530,7 +536,7 @@
         "name": "捷運十四張站(民權路)",
         "name_en": "MRT Shisizhang Sta.(Minquan Rd.)",
         "line": "湯泉-十四張-大坪林",
-        "color": "#1e40af",
+        "color": "#9333EA",
         "direction": 0,
         "station_id": "1165605366"
       },
@@ -550,7 +556,7 @@
         "name": "湯泉櫻花(中山路口)",
         "name_en": "Tangquanyinghua(Zhongshan Entrance)",
         "line": "湯泉-十四張-大坪林",
-        "color": "#1e40af",
+        "color": "#9333EA",
         "direction": 0,
         "station_id": "72079"
       },

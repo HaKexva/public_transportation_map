@@ -6,13 +6,14 @@
     "name": "5101",
     "name_en": "5101",
     "ref": "5101",
-    "color": "#b91c1c",
+    "color": "#b45309",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/5101/map/2435/image",
     "operator_id": "1",
     "operator": "桃園客運",
-    "operator_en": "Taoyuan Bus Co., Ltd."
+    "operator_en": "Taoyuan Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "5101",
         "name": "5101",
         "name_en": "5101",
-        "color": "#b91c1c",
-        "direction": 0
+        "color": "#b45309",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1603,6 +1605,10 @@
           [
             121.288,
             24.88111
+          ],
+          [
+            121.28803,
+            24.88117
           ]
         ]
       }
@@ -1615,7 +1621,7 @@
         "name": "大溪總站",
         "name_en": "Daxi Bus Terminal",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4288"
       },
@@ -1635,7 +1641,7 @@
         "name": "大溪老街",
         "name_en": "Daxi Old Street",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6384"
       },
@@ -1655,7 +1661,7 @@
         "name": "觀音寺",
         "name_en": "Guanyin Temple",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4119"
       },
@@ -1675,7 +1681,7 @@
         "name": "栗子園",
         "name_en": "Liziyuan",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2918"
       },
@@ -1695,7 +1701,7 @@
         "name": "長崎腳",
         "name_en": "Zhangqijiao",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2916"
       },
@@ -1715,7 +1721,7 @@
         "name": "缺子",
         "name_en": "Quezi",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2914"
       },
@@ -1735,7 +1741,7 @@
         "name": "瑞興",
         "name_en": "Ruixing",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2912"
       },
@@ -1755,7 +1761,7 @@
         "name": "吳厝",
         "name_en": "Wucuo",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2545"
       },
@@ -1775,7 +1781,7 @@
         "name": "下崁",
         "name_en": "Xiakan",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2910"
       },
@@ -1795,7 +1801,7 @@
         "name": "五甲",
         "name_en": "Wujia",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2908"
       },
@@ -1815,7 +1821,7 @@
         "name": "大鶯路七張福德宮",
         "name_en": "Daying Rd. JhongJhuang Regulating Pond",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6918"
       },
@@ -1835,7 +1841,7 @@
         "name": "永安橋",
         "name_en": "Yong-an Bridge",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2499"
       },
@@ -1855,7 +1861,7 @@
         "name": "公館",
         "name_en": "Gongguan",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2906"
       },
@@ -1875,7 +1881,7 @@
         "name": "排水橋",
         "name_en": "Paishui Bridge",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2919"
       },
@@ -1895,7 +1901,7 @@
         "name": "埔尾",
         "name_en": "Puwei",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2902"
       },
@@ -1915,7 +1921,7 @@
         "name": "中興國小",
         "name_en": "Zhongxin Elementary School",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2900"
       },
@@ -1935,7 +1941,7 @@
         "name": "中新",
         "name_en": "Zhongxin",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2898"
       },
@@ -1955,7 +1961,7 @@
         "name": "中新派出所",
         "name_en": "Zhongxin Police Station",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2896"
       },
@@ -1975,7 +1981,7 @@
         "name": "咸豐",
         "name_en": "Xianfeng",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2894"
       },
@@ -1995,7 +2001,7 @@
         "name": "福德橋",
         "name_en": "Fude Bridge",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2892"
       },
@@ -2015,7 +2021,7 @@
         "name": "中正三路406巷",
         "name_en": "Zhongzheng 3rd Rd.,Ln. 420",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3794"
       },
@@ -2035,7 +2041,7 @@
         "name": "二橋活動中心",
         "name_en": "Erciao Activity Center",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2890"
       },
@@ -2055,7 +2061,7 @@
         "name": "頂橋頭",
         "name_en": "Dingqiaotou",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2888"
       },
@@ -2075,7 +2081,7 @@
         "name": "三口坡",
         "name_en": "Sankoupo",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2886"
       },
@@ -2095,7 +2101,7 @@
         "name": "鶯歌高職",
         "name_en": "Yingge Vocational High School",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2884"
       },
@@ -2115,7 +2121,7 @@
         "name": "二橋國小",
         "name_en": "Erqiao Elementary School",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2882"
       },
@@ -2135,7 +2141,7 @@
         "name": "二橋",
         "name_en": "Erqiao",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2880"
       },
@@ -2155,7 +2161,7 @@
         "name": "麗新社區",
         "name_en": "Lixin Community",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2878"
       },
@@ -2175,7 +2181,7 @@
         "name": "尖山路300號",
         "name_en": "ianshan Road No.300",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6645"
       },
@@ -2195,7 +2201,7 @@
         "name": "尖山路與國中街口",
         "name_en": "Jianshan Junior High School",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2828"
       },
@@ -2215,7 +2221,7 @@
         "name": "尖山活動中心",
         "name_en": "Jianshan activity Center",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4762"
       },
@@ -2235,7 +2241,7 @@
         "name": "尖山路181號",
         "name_en": "Jianshan Road No.181",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6718"
       },
@@ -2255,7 +2261,7 @@
         "name": "尖山公園",
         "name_en": "Jianshan Park",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2727"
       },
@@ -2275,7 +2281,7 @@
         "name": "東陽宮",
         "name_en": "Dongyang Temple",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2725"
       },
@@ -2295,7 +2301,7 @@
         "name": "加油站",
         "name_en": "Gas Station",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2276"
       },
@@ -2315,7 +2321,7 @@
         "name": "南鶯國慶115巷口",
         "name_en": "Nanying Guoqing Street Lane 115 Intersection",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6251"
       },
@@ -2335,7 +2341,7 @@
         "name": "中鶯",
         "name_en": "Zhongying",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6742"
       },
@@ -2355,7 +2361,7 @@
         "name": "鶯歌區公所",
         "name_en": "Yingge District Office",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6738"
       },
@@ -2375,7 +2381,7 @@
         "name": "鶯歌火車站",
         "name_en": "Yingge Railway Station",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6743"
       },
@@ -2395,7 +2401,7 @@
         "name": "南鶯國慶115巷口",
         "name_en": "Nanying Guoqing Street Lane 115 Intersection",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6060"
       },
@@ -2415,7 +2421,7 @@
         "name": "國慶街",
         "name_en": "Guoqing Street",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6061"
       },
@@ -2435,7 +2441,7 @@
         "name": "加油站",
         "name_en": "Gas Station",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2274"
       },
@@ -2455,7 +2461,7 @@
         "name": "東陽宮",
         "name_en": "Dongyang Temple",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2724"
       },
@@ -2475,7 +2481,7 @@
         "name": "尖山公園",
         "name_en": "Jianshan Park",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2726"
       },
@@ -2495,7 +2501,7 @@
         "name": "尖山路181號",
         "name_en": "Jianshan Road No.181",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6719"
       },
@@ -2515,7 +2521,7 @@
         "name": "尖山活動中心",
         "name_en": "Jianshan activity Center",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4763"
       },
@@ -2535,7 +2541,7 @@
         "name": "尖山路與國中街口",
         "name_en": "Jianshan Junior High School",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2827"
       },
@@ -2555,7 +2561,7 @@
         "name": "尖山路300-3號",
         "name_en": "ianshan Road No.300-3",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6646"
       },
@@ -2575,7 +2581,7 @@
         "name": "麗新社區",
         "name_en": "Lixin Community",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2877"
       },
@@ -2595,7 +2601,7 @@
         "name": "二橋",
         "name_en": "Erqiao",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2879"
       },
@@ -2615,7 +2621,7 @@
         "name": "二橋國小",
         "name_en": "Erqiao Elementary School",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2881"
       },
@@ -2635,7 +2641,7 @@
         "name": "鶯歌高職",
         "name_en": "Yingge Vocational High School",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2883"
       },
@@ -2655,7 +2661,7 @@
         "name": "三口坡",
         "name_en": "Sankoupo",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2885"
       },
@@ -2675,7 +2681,7 @@
         "name": "頂橋頭",
         "name_en": "Dingqiaotou",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2887"
       },
@@ -2695,7 +2701,7 @@
         "name": "二橋活動中心",
         "name_en": "Erciao Activity Center",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2889"
       },
@@ -2715,7 +2721,7 @@
         "name": "中正三路406巷",
         "name_en": "Zhongzheng 3rd Rd.,Ln. 420",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3795"
       },
@@ -2735,7 +2741,7 @@
         "name": "福德橋",
         "name_en": "Fude Bridge",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2891"
       },
@@ -2755,7 +2761,7 @@
         "name": "咸豐",
         "name_en": "Xianfeng",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2893"
       },
@@ -2775,7 +2781,7 @@
         "name": "中新派出所",
         "name_en": "Zhongxin Police Station",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2895"
       },
@@ -2795,7 +2801,7 @@
         "name": "中新",
         "name_en": "Zhongxin",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2897"
       },
@@ -2815,7 +2821,7 @@
         "name": "中興國小",
         "name_en": "Zhongxin Elementary School",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2899"
       },
@@ -2835,7 +2841,7 @@
         "name": "埔尾",
         "name_en": "Puwei",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2901"
       },
@@ -2855,7 +2861,7 @@
         "name": "排水橋",
         "name_en": "Paishui Bridge",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2920"
       },
@@ -2875,7 +2881,7 @@
         "name": "公館",
         "name_en": "Gongguan",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2905"
       },
@@ -2895,7 +2901,7 @@
         "name": "永安橋",
         "name_en": "Yong-an Bridge",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2498"
       },
@@ -2915,7 +2921,7 @@
         "name": "大鶯路七張福德宮",
         "name_en": "Daying Rd. JhongJhuang Regulating Pond",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6919"
       },
@@ -2935,7 +2941,7 @@
         "name": "五甲",
         "name_en": "Wujia",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2907"
       },
@@ -2955,7 +2961,7 @@
         "name": "下崁",
         "name_en": "Xiakan",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2909"
       },
@@ -2975,7 +2981,7 @@
         "name": "吳厝",
         "name_en": "Wucuo",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2544"
       },
@@ -2995,7 +3001,7 @@
         "name": "瑞興",
         "name_en": "Ruixing",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2911"
       },
@@ -3015,7 +3021,7 @@
         "name": "缺子",
         "name_en": "Quezi",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2913"
       },
@@ -3035,7 +3041,7 @@
         "name": "長崎腳",
         "name_en": "Zhangqijiao",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2915"
       },
@@ -3055,7 +3061,7 @@
         "name": "栗子園",
         "name_en": "Liziyuan",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2917"
       },
@@ -3075,7 +3081,7 @@
         "name": "觀音寺",
         "name_en": "Guanyin Temple",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4120"
       },
@@ -3095,7 +3101,7 @@
         "name": "新街尾",
         "name_en": "Xinjiewei",
         "line": "5101",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6386"
       },

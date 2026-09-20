@@ -6,12 +6,13 @@
     "name": "594",
     "name_en": "594",
     "ref": "594",
-    "color": "#0B7A3E",
+    "color": "#DC2626",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.gov.taipei/File/Get/6dfc2acd-9444-498c-85c3-1f224c8d1fa9?v=639248448676186799",
     "operator_id": "16186",
-    "operator": "淡水客運"
+    "operator": "淡水客運",
+    "loop": true
   },
   "features": [
     {
@@ -21,8 +22,9 @@
         "ref": "594",
         "name": "594",
         "name_en": "594",
-        "color": "#0B7A3E",
-        "direction": 0
+        "color": "#DC2626",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1066,6 +1068,10 @@
           [
             121.446597167998,
             25.1674952321003
+          ],
+          [
+            121.446581214742,
+            25.1674713022159
           ]
         ]
       }
@@ -1078,7 +1084,7 @@
         "name": "捷運淡水站",
         "name_en": "MRT Tamsui Sta.",
         "line": "594",
-        "color": "#0B7A3E",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "3842"
       },
@@ -1098,7 +1104,7 @@
         "name": "永樂巷口(中山市場)",
         "name_en": "Yongle Lane Intersection(Zhongshan Market)",
         "line": "594",
-        "color": "#0B7A3E",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "14662"
       },
@@ -1118,7 +1124,7 @@
         "name": "中興里活動中心",
         "name_en": "Zhongxin Village Activity Center",
         "line": "594",
-        "color": "#0B7A3E",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "75134"
       },
@@ -1138,7 +1144,7 @@
         "name": "英專路122巷口",
         "name_en": "Yingzhuan Rd. 122th. Lane Entrance",
         "line": "594",
-        "color": "#0B7A3E",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "75091"
       },
@@ -1158,7 +1164,7 @@
         "name": "鄧公國小",
         "name_en": "Denggong Elementary School",
         "line": "594",
-        "color": "#0B7A3E",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "74646"
       },
@@ -1178,7 +1184,7 @@
         "name": "祕密花園",
         "name_en": "Secret Garden",
         "line": "594",
-        "color": "#0B7A3E",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "75104"
       },
@@ -1198,7 +1204,7 @@
         "name": "淡江大學城",
         "name_en": "Tamkang University City",
         "line": "594",
-        "color": "#0B7A3E",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "74704"
       },
@@ -1218,7 +1224,7 @@
         "name": "淡大運動場",
         "name_en": "Tamkang Stadium",
         "line": "594",
-        "color": "#0B7A3E",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "75100"
       },
@@ -1238,7 +1244,7 @@
         "name": "淡江大學",
         "name_en": "Tamkang University",
         "line": "594",
-        "color": "#0B7A3E",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "4886"
       },
@@ -1258,7 +1264,7 @@
         "name": "海景天下社區",
         "name_en": "Haijing Tainxia Community",
         "line": "594",
-        "color": "#0B7A3E",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "74814"
       },
@@ -1278,7 +1284,7 @@
         "name": "巧克力花園",
         "name_en": "chocolate garden",
         "line": "594",
-        "color": "#0B7A3E",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "74765"
       },
@@ -1298,7 +1304,7 @@
         "name": "黃帝神宮",
         "name_en": "Huangdi Temple",
         "line": "594",
-        "color": "#0B7A3E",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "74790"
       },
@@ -1318,7 +1324,7 @@
         "name": "松濤學園",
         "name_en": "Songtao  campus Sta.",
         "line": "594",
-        "color": "#0B7A3E",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "1165604474"
       },
@@ -1338,7 +1344,7 @@
         "name": "淡江學園",
         "name_en": "Tamkang campus",
         "line": "594",
-        "color": "#0B7A3E",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "1165604475"
       },
@@ -1358,7 +1364,7 @@
         "name": "淡江大學城",
         "name_en": "Tamkang University City",
         "line": "594",
-        "color": "#0B7A3E",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "74983"
       },
@@ -1378,7 +1384,7 @@
         "name": "鄧公國小",
         "name_en": "Denggong Elementary School",
         "line": "594",
-        "color": "#0B7A3E",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "74652"
       },
@@ -1398,7 +1404,7 @@
         "name": "鄧公里",
         "name_en": "Denggong Village",
         "line": "594",
-        "color": "#0B7A3E",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "74645"
       },
@@ -1418,7 +1424,7 @@
         "name": "捷運淡水站",
         "name_en": "MRT Tamsui Sta.",
         "line": "594",
-        "color": "#0B7A3E",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "3842"
       },

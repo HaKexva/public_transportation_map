@@ -6,13 +6,14 @@
     "name": "232A",
     "name_en": "232A",
     "ref": "232A",
-    "color": "#b91c1c",
+    "color": "#b45309",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/2321/map/2187/image",
     "operator_id": "1",
     "operator": "桃園客運",
-    "operator_en": "Taoyuan Bus Co., Ltd."
+    "operator_en": "Taoyuan Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "232A",
         "name": "232A",
         "name_en": "232A",
-        "color": "#b91c1c",
-        "direction": 0
+        "color": "#b45309",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1563,6 +1565,10 @@
           [
             121.22458,
             24.96535
+          ],
+          [
+            121.22461,
+            24.96543
           ]
         ]
       }
@@ -1575,7 +1581,7 @@
         "name": "中壢區公所",
         "name_en": "Zhongli District Office",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "526"
       },
@@ -1595,7 +1601,7 @@
         "name": "新街國小",
         "name_en": "Xinjie Elementary School",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1070"
       },
@@ -1615,7 +1621,7 @@
         "name": "普義溪洲三街口",
         "name_en": "Puyi and Xizhou 3rd St. Intersection",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2020"
       },
@@ -1635,7 +1641,7 @@
         "name": "中北中山東路口",
         "name_en": "Zhongbei and Zhongshan E. Rd. Intersection",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4708"
       },
@@ -1655,7 +1661,7 @@
         "name": "中北東明街口",
         "name_en": "Zhongbei and Dongming St. Intersection",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6450"
       },
@@ -1675,7 +1681,7 @@
         "name": "中壢後火車站",
         "name_en": "Zhongli rear train station",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2815"
       },
@@ -1695,7 +1701,7 @@
         "name": "健行路",
         "name_en": "Jianxing Rd.",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "619"
       },
@@ -1715,7 +1721,7 @@
         "name": "健行科技大學(長沙路)",
         "name_en": "Chien Hsin University of Science and Technology(Changsha Rd.)",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "615"
       },
@@ -1735,7 +1741,7 @@
         "name": "東興國中",
         "name_en": "Dongsing Junior High School",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "613"
       },
@@ -1755,7 +1761,7 @@
         "name": "廣州路(大潤發後門)",
         "name_en": "Guangzhou Rd.(Rear RT-MART)",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "611"
       },
@@ -1775,7 +1781,7 @@
         "name": "莒光公園廣場",
         "name_en": "Juguang Park Square",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "609"
       },
@@ -1795,7 +1801,7 @@
         "name": "普仁新村",
         "name_en": "Puren Village",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "607"
       },
@@ -1815,7 +1821,7 @@
         "name": "榮民服務處",
         "name_en": "Taoyuan County Veterans Service Office",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "605"
       },
@@ -1835,7 +1841,7 @@
         "name": "普仁國小",
         "name_en": "Puren Elementary School",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "603"
       },
@@ -1855,7 +1861,7 @@
         "name": "龍興路(翰林華城)",
         "name_en": "Longxing Rd.(Hanlinhuacheng)",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "601"
       },
@@ -1875,7 +1881,7 @@
         "name": "後興路口",
         "name_en": "Houxing Road Intersection",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "599"
       },
@@ -1895,7 +1901,7 @@
         "name": "龍慈路",
         "name_en": "Longci Road",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "597"
       },
@@ -1915,7 +1921,7 @@
         "name": "龍智路",
         "name_en": "Longzhi Road",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "595"
       },
@@ -1935,7 +1941,7 @@
         "name": "龍興國中",
         "name_en": "Longxing Junior High School",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "593"
       },
@@ -1955,7 +1961,7 @@
         "name": "龍仁路",
         "name_en": "Longren Road",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6968"
       },
@@ -1975,7 +1981,7 @@
         "name": "馬祖新村",
         "name_en": "MaTzu Village",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "591"
       },
@@ -1995,7 +2001,7 @@
         "name": "龍岡森林公園",
         "name_en": "Lunggang Forest Park",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4564"
       },
@@ -2015,7 +2021,7 @@
         "name": "游泳路口",
         "name_en": "Youyong Road Intersection",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "589"
       },
@@ -2035,7 +2041,7 @@
         "name": "伯公廟",
         "name_en": "Bogong Temple",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4266"
       },
@@ -2055,7 +2061,7 @@
         "name": "龍江公寓",
         "name_en": "Longjiang Apartment",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "587"
       },
@@ -2075,7 +2081,7 @@
         "name": "龍岡圓環",
         "name_en": "Longgang Circle",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "585"
       },
@@ -2095,7 +2101,7 @@
         "name": "供應站",
         "name_en": "Fareware Service",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4496"
       },
@@ -2115,7 +2121,7 @@
         "name": "龍東路",
         "name_en": "Longdong Road",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "583"
       },
@@ -2135,7 +2141,7 @@
         "name": "貿易七村",
         "name_en": "MauYi 7th Village",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4498"
       },
@@ -2155,7 +2161,7 @@
         "name": "忠貞",
         "name_en": "Zhongzhen",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2927"
       },
@@ -2175,7 +2181,7 @@
         "name": "龍文街口",
         "name_en": "Longwen Street Intersection",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "627"
       },
@@ -2195,7 +2201,7 @@
         "name": "基安二村",
         "name_en": "Jian 2nd Village",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4500"
       },
@@ -2215,7 +2221,7 @@
         "name": "龍東中山東路口",
         "name_en": "Longdong and Zhongshan East Road Intersection",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "581"
       },
@@ -2235,7 +2241,7 @@
         "name": "龍文街正義路口",
         "name_en": "Longwun St. and Jhengyi Rd. Intersection",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4661"
       },
@@ -2255,7 +2261,7 @@
         "name": "北區健保署(榮民南路)",
         "name_en": "NHIA(RungMin S. Road)",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "799"
       },
@@ -2275,7 +2281,7 @@
         "name": "萬寶龍社區",
         "name_en": "WanBauLung Community",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3370"
       },
@@ -2295,7 +2301,7 @@
         "name": "榮民南龍東路口",
         "name_en": "Rongmin S. and Longdong Rd. Intersection",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4978"
       },
@@ -2315,7 +2321,7 @@
         "name": "仁美里",
         "name_en": "RenMei Village",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1129"
       },
@@ -2335,7 +2341,7 @@
         "name": "榮美社區",
         "name_en": "RungMei Community",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5235"
       },
@@ -2355,7 +2361,7 @@
         "name": "土地公",
         "name_en": "TuDiGung",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1069"
       },
@@ -2375,7 +2381,7 @@
         "name": "華勛市場",
         "name_en": "HuaShiun Market",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5046"
       },
@@ -2395,7 +2401,7 @@
         "name": "華祥三街",
         "name_en": "Huaxiang 3rd St.",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "573"
       },
@@ -2415,7 +2421,7 @@
         "name": "華勛福德宮",
         "name_en": "Huaxun Fude Temple",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2102"
       },
@@ -2435,7 +2441,7 @@
         "name": "仁美新村",
         "name_en": "Renmei New Village",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4508"
       },
@@ -2455,7 +2461,7 @@
         "name": "幸福新村",
         "name_en": "Xingfu Village",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "567"
       },
@@ -2475,7 +2481,7 @@
         "name": "篤行六村",
         "name_en": "DuShing 6th Village",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "565"
       },
@@ -2495,7 +2501,7 @@
         "name": "榮民工廠",
         "name_en": "Veteran Factory",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4295"
       },
@@ -2515,7 +2521,7 @@
         "name": "中正國小",
         "name_en": "Chungcheng Elementary School",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "559"
       },
@@ -2535,7 +2541,7 @@
         "name": "群益幼稚園",
         "name_en": "Chiunyi Kindergarten",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4230"
       },
@@ -2555,7 +2561,7 @@
         "name": "篤行五村",
         "name_en": "DuShing 5th Village",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "558"
       },
@@ -2575,7 +2581,7 @@
         "name": "興仁公園",
         "name_en": "Singren Park",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4416"
       },
@@ -2595,7 +2601,7 @@
         "name": "興仁國小",
         "name_en": "ShingRen Elementary School",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "555"
       },
@@ -2615,7 +2621,7 @@
         "name": "元智大學",
         "name_en": "Yuan Ze University",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "552"
       },
@@ -2635,7 +2641,7 @@
         "name": "桃園醫院門診中心",
         "name_en": "Taoyuan General Hospital(Outpatient Center)",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "551"
       },
@@ -2655,7 +2661,7 @@
         "name": "內壢",
         "name_en": "NeiLi",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2015"
       },
@@ -2675,7 +2681,7 @@
         "name": "內壢火車站",
         "name_en": "Neili Train Station",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "549"
       },
@@ -2695,7 +2701,7 @@
         "name": "內壢高中",
         "name_en": "Neili High School",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "547"
       },
@@ -2715,7 +2721,7 @@
         "name": "桃園市立圖書館內壢分館",
         "name_en": "Neili Branch, Taoyuan Public Library",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "545"
       },
@@ -2735,7 +2741,7 @@
         "name": "福華街口",
         "name_en": "FuHua Street Corner",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6451"
       },
@@ -2755,7 +2761,7 @@
         "name": "成章二街口",
         "name_en": "Chengzhang 2nd St. Intersection",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "543"
       },
@@ -2775,7 +2781,7 @@
         "name": "忠孝黃昏市場",
         "name_en": "Zhongxiao Evening Market",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "541"
       },
@@ -2795,7 +2801,7 @@
         "name": "紫竹林觀音寺",
         "name_en": "Zuzhulin Guanyin Temple",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "539"
       },
@@ -2815,7 +2821,7 @@
         "name": "蕭厝",
         "name_en": "Xiaocuo",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "733"
       },
@@ -2835,7 +2841,7 @@
         "name": "游厝",
         "name_en": "Youcuo",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "178"
       },
@@ -2855,7 +2861,7 @@
         "name": "邱厝",
         "name_en": "Qiucuo",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "458"
       },
@@ -2875,7 +2881,7 @@
         "name": "內定新城",
         "name_en": "Neiding Village",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "737"
       },
@@ -2895,7 +2901,7 @@
         "name": "內定國小",
         "name_en": "Nei Ding Elementary School",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6118"
       },
@@ -2915,7 +2921,7 @@
         "name": "國瑞汽車",
         "name_en": "Kuozui Moters, Ltd",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "739"
       },
@@ -2935,7 +2941,7 @@
         "name": "文化公園",
         "name_en": "Cultural Park",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "537"
       },
@@ -2955,7 +2961,7 @@
         "name": "長春路",
         "name_en": "Changchun Road",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "536"
       },
@@ -2975,7 +2981,7 @@
         "name": "復華街",
         "name_en": "Fuhua Street",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "533"
       },
@@ -2995,7 +3001,7 @@
         "name": "內壢國中(復興公園)",
         "name_en": "Neili Junior High School (Fuxing Park)",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6452"
       },
@@ -3015,7 +3021,7 @@
         "name": "憶華公司",
         "name_en": "YiHua Company",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1326"
       },
@@ -3035,7 +3041,7 @@
         "name": "幸葉公司",
         "name_en": "Taiwan Clover Electronics",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1324"
       },
@@ -3055,7 +3061,7 @@
         "name": "中福派出所",
         "name_en": "Zhongfu Police Station",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6446"
       },
@@ -3075,7 +3081,7 @@
         "name": "中園福州二街口",
         "name_en": "Jhongyuan Fujhou 2nd St. Intersection",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "276"
       },
@@ -3095,7 +3101,7 @@
         "name": "中福市場",
         "name_en": "Zhongfu Market",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1322"
       },
@@ -3115,7 +3121,7 @@
         "name": "福安三街口",
         "name_en": "Fuan 3rd St. Intersection",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1320"
       },
@@ -3135,7 +3141,7 @@
         "name": "土地公廟",
         "name_en": "Tudigong Temple",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6282"
       },
@@ -3155,7 +3161,7 @@
         "name": "中壢區公所",
         "name_en": "Civil Affairs Office of Zhongli District",
         "line": "232A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "527"
       },

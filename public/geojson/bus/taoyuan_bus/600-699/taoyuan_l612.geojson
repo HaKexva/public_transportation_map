@@ -6,13 +6,14 @@
     "name": "L612",
     "name_en": "L612",
     "ref": "L612",
-    "color": "#0891b2",
+    "color": "#3f6212",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/826/map/332/image",
     "operator_id": "8",
     "operator": "金台通運",
-    "operator_en": "Jintai Transport Co., Ltd."
+    "operator_en": "Jintai Transport Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "L612",
         "name": "L612",
         "name_en": "L612",
-        "color": "#0891b2",
-        "direction": 0
+        "color": "#3f6212",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -995,6 +997,10 @@
           [
             121.08356,
             24.93477
+          ],
+          [
+            121.08338,
+            24.93474
           ]
         ]
       }
@@ -1007,7 +1013,7 @@
         "name": "富岡火車站",
         "name_en": "Fugang Railway Station",
         "line": "L612",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 0,
         "station_id": "1169"
       },
@@ -1027,7 +1033,7 @@
         "name": "立訊光電",
         "name_en": "Svision Universal Visual Liability Company Limited",
         "line": "L612",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 0,
         "station_id": "1362"
       },
@@ -1047,7 +1053,7 @@
         "name": "富元街525巷口",
         "name_en": "Intersection of Lane 525,  Fuyuan St.",
         "line": "L612",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 0,
         "station_id": "3739"
       },
@@ -1067,7 +1073,7 @@
         "name": "富豐里3鄰",
         "name_en": "Fufeng Village 3rd Neighborhood",
         "line": "L612",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 0,
         "station_id": "2042"
       },
@@ -1087,7 +1093,7 @@
         "name": "高鐵橋下",
         "name_en": "Underneath the Bridge of THSR",
         "line": "L612",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 0,
         "station_id": "1347"
       },
@@ -1107,7 +1113,7 @@
         "name": "民安路196巷",
         "name_en": "Ln. 196, Minan Rd.",
         "line": "L612",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 0,
         "station_id": "5928"
       },
@@ -1127,7 +1133,7 @@
         "name": "廖厝",
         "name_en": "Liaocuo",
         "line": "L612",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 0,
         "station_id": "3161"
       },
@@ -1147,7 +1153,7 @@
         "name": "三湖",
         "name_en": "Sanhu",
         "line": "L612",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 0,
         "station_id": "1453"
       },
@@ -1167,7 +1173,7 @@
         "name": "上湖派出所",
         "name_en": "Shanghu Police Station",
         "line": "L612",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 0,
         "station_id": "5929"
       },
@@ -1187,7 +1193,7 @@
         "name": "莊厝",
         "name_en": "Zhuangcuo",
         "line": "L612",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 0,
         "station_id": "2045"
       },
@@ -1207,7 +1213,7 @@
         "name": "三元宮",
         "name_en": "Sanyuan Temple",
         "line": "L612",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 0,
         "station_id": "796"
       },
@@ -1227,7 +1233,7 @@
         "name": "楊湖天下",
         "name_en": "Yanghutianxia Community",
         "line": "L612",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 0,
         "station_id": "5930"
       },
@@ -1247,7 +1253,7 @@
         "name": "周厝",
         "name_en": "Zhoucuo",
         "line": "L612",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 0,
         "station_id": "1036"
       },
@@ -1267,7 +1273,7 @@
         "name": "土牛坡",
         "name_en": "Tu-niupo",
         "line": "L612",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 0,
         "station_id": "1438"
       },
@@ -1287,7 +1293,7 @@
         "name": "四湖",
         "name_en": "Sihu",
         "line": "L612",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 0,
         "station_id": "1436"
       },
@@ -1307,7 +1313,7 @@
         "name": "富民街",
         "name_en": "Fumin St.",
         "line": "L612",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 0,
         "station_id": "1363"
       },
@@ -1327,7 +1333,7 @@
         "name": "啟智訓練中心",
         "name_en": "Qi Zhi Vocational Training Center",
         "line": "L612",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 0,
         "station_id": "5931"
       },
@@ -1347,7 +1353,7 @@
         "name": "石碑",
         "name_en": "Shibei",
         "line": "L612",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 0,
         "station_id": "5932"
       },
@@ -1367,7 +1373,7 @@
         "name": "新富站",
         "name_en": "Xinfu Station",
         "line": "L612",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 0,
         "station_id": "6628"
       },
@@ -1387,7 +1393,7 @@
         "name": "謝厝",
         "name_en": "Xiecuo",
         "line": "L612",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 0,
         "station_id": "265"
       },
@@ -1407,7 +1413,7 @@
         "name": "水塔",
         "name_en": "Shuita",
         "line": "L612",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 0,
         "station_id": "956"
       },
@@ -1427,7 +1433,7 @@
         "name": "梅花新村",
         "name_en": "Meihua Village",
         "line": "L612",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 0,
         "station_id": "5933"
       },
@@ -1447,7 +1453,7 @@
         "name": "新明",
         "name_en": "Xinming",
         "line": "L612",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 0,
         "station_id": "952"
       },
@@ -1467,7 +1473,7 @@
         "name": "大井頭(福德宮)",
         "name_en": "Dajintou(Fude Temple)",
         "line": "L612",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 0,
         "station_id": "950"
       },
@@ -1487,7 +1493,7 @@
         "name": "富岡火車站",
         "name_en": "Fugang RailRd. Station",
         "line": "L612",
-        "color": "#0891b2",
+        "color": "#3f6212",
         "direction": 0,
         "station_id": "1169"
       },

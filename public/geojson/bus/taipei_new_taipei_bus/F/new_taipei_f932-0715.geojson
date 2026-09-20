@@ -6,13 +6,14 @@
     "name": "F932-0715",
     "name_en": "F932-0715",
     "ref": "F932-0715",
-    "color": "#2563eb",
+    "color": "#6B8F9A",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.gov.taipei/File/Get/83482ca0-137c-4d52-87b3-6a13c7e3c473?v=639248448820376507",
     "operator_id": "16253",
     "operator": "金山區公所",
-    "operator_en": "Jinshan District Office"
+    "operator_en": "Jinshan District Office",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "F932-0715",
         "name": "F932-0715",
         "name_en": "F932-0715",
-        "color": "#2563eb",
-        "direction": 0
+        "color": "#6B8F9A",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1843,6 +1845,10 @@
           [
             121.636119721792,
             25.2223101234777
+          ],
+          [
+            121.636151869188,
+            25.2222790747569
           ]
         ]
       }
@@ -1855,7 +1861,7 @@
         "name": "金山區公所",
         "name_en": "Jinshan District Office",
         "line": "F932-0715",
-        "color": "#2563eb",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603304"
       },
@@ -1875,7 +1881,7 @@
         "name": "跳石",
         "name_en": "Tiaoshi",
         "line": "F932-0715",
-        "color": "#2563eb",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70565"
       },
@@ -1895,7 +1901,7 @@
         "name": "濆水13鄰濆水37號",
         "name_en": "No.37,Neighborhood 13,Yishui",
         "line": "F932-0715",
-        "color": "#2563eb",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165609525"
       },
@@ -1915,7 +1921,7 @@
         "name": "濆水伍天宮",
         "name_en": "Yishui Wu Tiangong",
         "line": "F932-0715",
-        "color": "#2563eb",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165608565"
       },
@@ -1935,7 +1941,7 @@
         "name": "永民社區活動中心",
         "name_en": "Yungmin Community Activity Center",
         "line": "F932-0715",
-        "color": "#2563eb",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165607047"
       },
@@ -1955,7 +1961,7 @@
         "name": "西湖尖山",
         "name_en": "Xihu Jianshan",
         "line": "F932-0715",
-        "color": "#2563eb",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70552"
       },
@@ -1975,7 +1981,7 @@
         "name": "清泉鎮天宮",
         "name_en": "Qingquan Zhentian Temple",
         "line": "F932-0715",
-        "color": "#2563eb",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70591"
       },
@@ -1995,7 +2001,7 @@
         "name": "金山區公所",
         "name_en": "Jinshan District Office",
         "line": "F932-0715",
-        "color": "#2563eb",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "20314"
       },

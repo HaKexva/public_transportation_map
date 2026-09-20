@@ -319,25 +319,47 @@ namespace :geojson do
     Geojson::BusDepotWriter.write!
   end
 
-  desc "Recolor all bus GeoJSON by operator name (same operator → same color)"
+  desc "Recolor bus GeoJSON: known operators / F-prefix 新巴士 use brand colors; others share a palette by operator"
   task bus_recolor: :environment do
     palette = Geojson::BusImporter::PALETTE
-    paths = Dir.glob(Rails.root.join("public/geojson/bus/**/*.geojson"))
-    operator_names = paths.filter_map { |path|
-      JSON.parse(File.read(path)).dig("properties", "operator").presence
+    paths = Dir.glob(Rails.root.join("public/geojson/bus/**/*.geojson")).reject { |path|
+      File.basename(path).start_with?("_")
+    }
+
+    # Stable palette for operators without a fixed brand color (and not F-prefix 新巴士).
+    other_operators = paths.filter_map { |path|
+      props = JSON.parse(File.read(path))["properties"] || {}
+      next if Geojson::BusOperatorColors.for_route(
+        ref: props["ref"],
+        name: props["operator"],
+        id: props["operator_id"]
+      )
+
+      props["operator"].presence
     }.uniq.sort
-    color_for = operator_names.each_with_index.to_h { |name, index|
+    fallback_for = other_operators.each_with_index.to_h { |name, index|
       [ name, palette[index % palette.length] ]
     }
 
     updated = 0
+    branded = 0
     paths.each do |path|
       data = JSON.parse(File.read(path))
       properties = data["properties"] || {}
-      seed = properties["operator"].presence || properties["operator_id"].presence || properties["id"]
-      color = color_for[properties["operator"]] || palette[seed.to_s.hash.abs % palette.length]
+      brand = Geojson::BusOperatorColors.for_route(
+        ref: properties["ref"],
+        name: properties["operator"],
+        id: properties["operator_id"]
+      )
+      color =
+        brand ||
+        fallback_for[properties["operator"]] ||
+        palette[(properties["operator_id"].presence || properties["id"]).to_s.hash.abs % palette.length]
+
       next if properties["color"] == color &&
-        Array(data["features"]).all? { |feature| feature.dig("properties", "color").blank? || feature.dig("properties", "color") == color }
+        Array(data["features"]).all? { |feature|
+          feature.dig("properties", "color").blank? || feature.dig("properties", "color") == color
+        }
 
       properties["color"] = color
       data["properties"] = properties
@@ -348,9 +370,30 @@ namespace :geojson do
       end
       File.write(path, "#{JSON.pretty_generate(data)}\n")
       updated += 1
+      branded += 1 if brand
     end
+
     Geojson::RoutesManifestWriter.write!
-    puts "Recolored #{updated} bus GeoJSON files by operator (#{operator_names.size} operators)"
+    puts "Recolored #{updated} bus GeoJSON files (#{branded} brand-mapped, #{other_operators.size} other operators)"
+  end
+
+  desc "Merge fragmented bus MULTILINESTRINGs and close circular loop endpoints"
+  task bus_close_loops: :environment do
+    updated = 0
+    Dir.glob(Rails.root.join("public/geojson/bus/**/*.geojson")).each do |path|
+      next if File.basename(path).start_with?("_")
+
+      data = JSON.parse(File.read(path))
+      next unless Geojson::BusLoopCloser.process_collection!(data)
+
+      File.write(path, "#{JSON.pretty_generate(data)}\n")
+      updated += 1
+    rescue JSON::ParserError
+      next
+    end
+
+    Geojson::RoutesManifestWriter.write! if updated.positive?
+    puts "Closed/merged loop geometry in #{updated} bus GeoJSON files"
   end
 
   desc "Estimate TRA level-crossing points from corridor midpoints (not third-party dumps)"

@@ -4,7 +4,8 @@ require "fileutils"
 require "json"
 
 module Geojson
-  # Aggregates bus dispatch yards / operator parking poles into a depot catalog.
+  # Aggregates bus dispatch yards / operator terminals into a catalog.
+  # Rail/metro 「機廠」 markers live in metro_depots.json — never here.
   class BusDepotWriter
     OUTPUT_PATH = Rails.root.join("public/geojson/bus_depots.json")
     # ~1.1 km grid: opposite-direction poles and nearby yard gates merge.
@@ -92,9 +93,9 @@ module Geojson
     private
 
     def depot_feature?(properties)
-      return true if properties["stop_role"].to_s == "depot" || properties[:stop_role].to_s == "depot"
-
-      Geojson::BusImporter.depot_stop_name?(properties["name"] || properties[:name])
+      name = properties["name"] || properties[:name]
+      # Re-validate by name so stale stop_role=depot on 「…機廠」 poles are dropped.
+      Geojson::BusImporter.depot_stop_name?(name)
     end
 
     def depot_bucket_key(name:, lon:, lat:, station_id:)

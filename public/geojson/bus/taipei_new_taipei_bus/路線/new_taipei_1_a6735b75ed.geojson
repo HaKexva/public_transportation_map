@@ -6,12 +6,13 @@
     "name": "三鶯1線",
     "name_en": "三鶯1線",
     "ref": "三鶯1線",
-    "color": "#9a3412",
+    "color": "#EAB308",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.gov.taipei/File/Get/74f34f1e-cfc6-41ff-99ee-c263a1c5ea3b?v=639248448919101394",
     "operator_id": "16183",
-    "operator": "大南汽車"
+    "operator": "大南汽車",
+    "loop": true
   },
   "features": [
     {
@@ -21,8 +22,9 @@
         "ref": "三鶯1線",
         "name": "三鶯1線",
         "name_en": "三鶯1線",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#EAB308",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -382,6 +384,10 @@
           [
             121.355003847153,
             24.9550206876074
+          ],
+          [
+            121.354995301689,
+            24.9550328954136
           ]
         ]
       }
@@ -394,7 +400,7 @@
         "name": "鶯歌火車站",
         "name_en": "Yingge Rail Sta.",
         "line": "三鶯1線",
-        "color": "#9a3412",
+        "color": "#EAB308",
         "direction": 0,
         "station_id": "73363"
       },
@@ -414,7 +420,7 @@
         "name": "南鶯國慶115巷口",
         "name_en": "Nanying Ln. 115 Guoqing St. Entrance",
         "line": "三鶯1線",
-        "color": "#9a3412",
+        "color": "#EAB308",
         "direction": 0,
         "station_id": "3377"
       },
@@ -434,7 +440,7 @@
         "name": "建國路",
         "name_en": "Jianguo Rd.",
         "line": "三鶯1線",
-        "color": "#9a3412",
+        "color": "#EAB308",
         "direction": 0,
         "station_id": "73407"
       },
@@ -454,7 +460,7 @@
         "name": "三號公園南興宮",
         "name_en": "No.3 Park Nanxing Temple",
         "line": "三鶯1線",
-        "color": "#9a3412",
+        "color": "#EAB308",
         "direction": 0,
         "station_id": "73362"
       },
@@ -474,7 +480,7 @@
         "name": "同慶里活動中心",
         "name_en": "Tongqing Village Activity Center",
         "line": "三鶯1線",
-        "color": "#9a3412",
+        "color": "#EAB308",
         "direction": 0,
         "station_id": "1165608615"
       },
@@ -494,7 +500,7 @@
         "name": "鶯歌國中",
         "name_en": "Yingge Junior High School",
         "line": "三鶯1線",
-        "color": "#9a3412",
+        "color": "#EAB308",
         "direction": 0,
         "station_id": "1165610045"
       },
@@ -514,7 +520,7 @@
         "name": "鶯歌國中游泳池",
         "name_en": "Yingge Junior High School Swimming Pool",
         "line": "三鶯1線",
-        "color": "#9a3412",
+        "color": "#EAB308",
         "direction": 0,
         "station_id": "1165609648"
       },
@@ -534,7 +540,7 @@
         "name": "捷運國華站",
         "name_en": "MRT Guohua Sta.",
         "line": "三鶯1線",
-        "color": "#9a3412",
+        "color": "#EAB308",
         "direction": 0,
         "station_id": "1165609156"
       },
@@ -554,7 +560,7 @@
         "name": "育樂街口",
         "name_en": "Yule St. Entrance",
         "line": "三鶯1線",
-        "color": "#9a3412",
+        "color": "#EAB308",
         "direction": 0,
         "station_id": "73393"
       },
@@ -574,7 +580,7 @@
         "name": "育智路口",
         "name_en": "Yuzhi Rd. Entrance",
         "line": "三鶯1線",
-        "color": "#9a3412",
+        "color": "#EAB308",
         "direction": 0,
         "station_id": "1165606266"
       },
@@ -594,7 +600,7 @@
         "name": "光明街與國慶街口",
         "name_en": "Guangming St. and Guoqing St.",
         "line": "三鶯1線",
-        "color": "#9a3412",
+        "color": "#EAB308",
         "direction": 0,
         "station_id": "73349"
       },
@@ -614,7 +620,7 @@
         "name": "文昌街口",
         "name_en": "Wenchang St. Entrance",
         "line": "三鶯1線",
-        "color": "#9a3412",
+        "color": "#EAB308",
         "direction": 0,
         "station_id": "73328"
       },
@@ -634,7 +640,7 @@
         "name": "南鶯國慶115巷口",
         "name_en": "Nanying Ln. 115 Guoqing St. Entrance",
         "line": "三鶯1線",
-        "color": "#9a3412",
+        "color": "#EAB308",
         "direction": 0,
         "station_id": "73348"
       },
@@ -654,7 +660,7 @@
         "name": "鶯歌火車站",
         "name_en": "Yingge Rail Sta.",
         "line": "三鶯1線",
-        "color": "#9a3412",
+        "color": "#EAB308",
         "direction": 0,
         "station_id": "73363"
       },

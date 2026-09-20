@@ -6,12 +6,13 @@
     "name": "L705",
     "name_en": "L705",
     "ref": "L705",
-    "color": "#0f766e",
+    "color": "#1e3a8a",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/57050/map/1886/image",
     "operator_id": "19",
-    "operator": "捷乘客運"
+    "operator": "捷乘客運",
+    "loop": true
   },
   "features": [
     {
@@ -21,8 +22,9 @@
         "ref": "L705",
         "name": "L705",
         "name_en": "L705",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -2086,7 +2088,7 @@
         "name": "大溪總站",
         "name_en": "Daxi Bus Terminal",
         "line": "L705",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "4288"
       },
@@ -2106,7 +2108,7 @@
         "name": "大溪老街",
         "name_en": "Daxi Old Street",
         "line": "L705",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "6384"
       },
@@ -2126,7 +2128,7 @@
         "name": "觀音寺",
         "name_en": "Guanyin Temple",
         "line": "L705",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "4119"
       },
@@ -2146,7 +2148,7 @@
         "name": "崎腳",
         "name_en": "Qijiao",
         "line": "L705",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "1411"
       },
@@ -2166,7 +2168,7 @@
         "name": "崎頂",
         "name_en": "Qiding",
         "line": "L705",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "236"
       },
@@ -2186,7 +2188,7 @@
         "name": "太武",
         "name_en": "Taiwu",
         "line": "L705",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "3880"
       },
@@ -2206,7 +2208,7 @@
         "name": "崎頂圖書館",
         "name_en": "Qiding Park",
         "line": "L705",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "5741"
       },
@@ -2226,7 +2228,7 @@
         "name": "長興街口",
         "name_en": "Changxin St. Intersection",
         "line": "L705",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "5739"
       },
@@ -2246,7 +2248,7 @@
         "name": "仁善(埔頂公園)",
         "name_en": "Renshan (Puding Park)",
         "line": "L705",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "6693"
       },
@@ -2266,7 +2268,7 @@
         "name": "仁善國小",
         "name_en": "Renshan Elementary School",
         "line": "L705",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "3955"
       },
@@ -2286,7 +2288,7 @@
         "name": "埔頂八街口",
         "name_en": "Puding 8th St., Intersection",
         "line": "L705",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "4735"
       },
@@ -2306,7 +2308,7 @@
         "name": "仁和路口",
         "name_en": "Renhe Road Intersection",
         "line": "L705",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "3368"
       },
@@ -2326,7 +2328,7 @@
         "name": "南興國小",
         "name_en": "Nanxing Elementary School",
         "line": "L705",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "5746"
       },
@@ -2346,7 +2348,7 @@
         "name": "南興里",
         "name_en": "Nanxing Village",
         "line": "L705",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "2463"
       },
@@ -2366,7 +2368,7 @@
         "name": "員樹林",
         "name_en": "YuanShuLin",
         "line": "L705",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "3967"
       },
@@ -2386,7 +2388,7 @@
         "name": "復興新城",
         "name_en": "Fuxing Xincheng",
         "line": "L705",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "3960"
       },
@@ -2406,7 +2408,7 @@
         "name": "仁和國中",
         "name_en": "Jenho Junior High School",
         "line": "L705",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "2611"
       },
@@ -2426,7 +2428,7 @@
         "name": "大溪山水",
         "name_en": "Daxi landscape",
         "line": "L705",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "3640"
       },
@@ -2446,7 +2448,7 @@
         "name": "埔頂(仁和國小)",
         "name_en": "Puding(Renhe Elementary School)",
         "line": "L705",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "191"
       },
@@ -2466,7 +2468,7 @@
         "name": "建漢公司",
         "name_en": "Jianghan Company",
         "line": "L705",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "4205"
       },
@@ -2486,7 +2488,7 @@
         "name": "崎頂",
         "name_en": "Qiding",
         "line": "L705",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "237"
       },
@@ -2506,7 +2508,7 @@
         "name": "崎腳",
         "name_en": "Qijiao",
         "line": "L705",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "1415"
       },
@@ -2526,7 +2528,7 @@
         "name": "大溪觀光橋",
         "name_en": "Daxi Sightseeing bridge",
         "line": "L705",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "5748"
       },
@@ -2546,7 +2548,7 @@
         "name": "崁津",
         "name_en": "Kanjin",
         "line": "L705",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "5750"
       },
@@ -2566,7 +2568,7 @@
         "name": "蓮座山觀音寺",
         "name_en": "Lianzoushan Guanyin Temple",
         "line": "L705",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "5752"
       },
@@ -2586,7 +2588,7 @@
         "name": "內柵(瑞安路二段)",
         "name_en": "Neizha(Ruian Road Sec.2)",
         "line": "L705",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "5754"
       },
@@ -2606,7 +2608,7 @@
         "name": "益興",
         "name_en": "Yixing",
         "line": "L705",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "3476"
       },
@@ -2626,7 +2628,7 @@
         "name": "頂田心",
         "name_en": "Dingtianxin",
         "line": "L705",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "2459"
       },
@@ -2646,7 +2648,7 @@
         "name": "至善高中",
         "name_en": "Jhih shan Senior High School",
         "line": "L705",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "4294"
       },
@@ -2666,7 +2668,7 @@
         "name": "大溪高中",
         "name_en": "Daxi Senior High School",
         "line": "L705",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "4292"
       },
@@ -2686,7 +2688,7 @@
         "name": "台電",
         "name_en": "Taiwan Power Company",
         "line": "L705",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "5255"
       },
@@ -2706,7 +2708,7 @@
         "name": "大溪總站",
         "name_en": "Daxi Bus Terminal",
         "line": "L705",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "4288"
       },

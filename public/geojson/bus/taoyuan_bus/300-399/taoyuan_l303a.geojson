@@ -6,13 +6,14 @@
     "name": "L303A",
     "name_en": "L303A",
     "ref": "L303A",
-    "color": "#7c3aed",
+    "color": "#be123c",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/53031/map/1600/image",
     "operator_id": "6",
     "operator": "亞通客運",
-    "operator_en": "Yatung Bus Co., Ltd."
+    "operator_en": "Yatung Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "L303A",
         "name": "L303A",
         "name_en": "L303A",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#be123c",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1587,6 +1589,10 @@
           [
             121.29486,
             25.0464
+          ],
+          [
+            121.29468,
+            25.04668
           ]
         ]
       }
@@ -1599,7 +1605,7 @@
         "name": "蘆竹區公所",
         "name_en": "Luzhu District Office",
         "line": "L303A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "4653"
       },
@@ -1619,7 +1625,7 @@
         "name": "南崁菜市場",
         "name_en": "Nankan Market",
         "line": "L303A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5397"
       },
@@ -1639,7 +1645,7 @@
         "name": "南山路口",
         "name_en": "Nanshan Road Intersection",
         "line": "L303A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5575"
       },
@@ -1659,7 +1665,7 @@
         "name": "台灣企銀",
         "name_en": "Taiwan Business Bank",
         "line": "L303A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5576"
       },
@@ -1679,7 +1685,7 @@
         "name": "光明聯福",
         "name_en": "Bright Lianfu",
         "line": "L303A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "3239"
       },
@@ -1699,7 +1705,7 @@
         "name": "光明公園",
         "name_en": "Guangming Park",
         "line": "L303A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "637"
       },
@@ -1719,7 +1725,7 @@
         "name": "光明國中",
         "name_en": "Guang-Ming Junior High School",
         "line": "L303A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "3244"
       },
@@ -1739,7 +1745,7 @@
         "name": "南竹南昌路口",
         "name_en": "Nanzhu and Nanchang Rd. Intersection",
         "line": "L303A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "4835"
       },
@@ -1759,7 +1765,7 @@
         "name": "奉化南順一街口",
         "name_en": "Fenghua Nanshun 1st Street Intersection",
         "line": "L303A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "3785"
       },
@@ -1779,7 +1785,7 @@
         "name": "大聯邦社區",
         "name_en": "Dalianban Community",
         "line": "L303A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5578"
       },
@@ -1799,7 +1805,7 @@
         "name": "花都",
         "name_en": "Huadu",
         "line": "L303A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5580"
       },
@@ -1819,7 +1825,7 @@
         "name": "麗寶經典",
         "name_en": "Libao Classic",
         "line": "L303A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "3832"
       },
@@ -1839,7 +1845,7 @@
         "name": "頂好超商",
         "name_en": "Wellcome Supermarket",
         "line": "L303A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5582"
       },
@@ -1859,7 +1865,7 @@
         "name": "光明郵局",
         "name_en": "Guangming post office",
         "line": "L303A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "3830"
       },
@@ -1879,7 +1885,7 @@
         "name": "南福街口",
         "name_en": "Nanfu St. Intersection",
         "line": "L303A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5584"
       },
@@ -1899,7 +1905,7 @@
         "name": "光明國小前門",
         "name_en": "Guanming Elementary School",
         "line": "L303A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5586"
       },
@@ -1919,7 +1925,7 @@
         "name": "台北新領空",
         "name_en": "Taipeixinlingkong",
         "line": "L303A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5588"
       },
@@ -1939,7 +1945,7 @@
         "name": "星河社區",
         "name_en": "ShingHe Community",
         "line": "L303A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "4836"
       },
@@ -1959,7 +1965,7 @@
         "name": "特力居家",
         "name_en": "Decor House",
         "line": "L303A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5590"
       },
@@ -1979,7 +1985,7 @@
         "name": "亞建公司",
         "name_en": "YaJian Company",
         "line": "L303A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6708"
       },
@@ -1999,7 +2005,7 @@
         "name": "長榮加油站",
         "name_en": "Zhangrong Gas Station",
         "line": "L303A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1369"
       },
@@ -2019,7 +2025,7 @@
         "name": "經國轉運站(幸福路)",
         "name_en": "JingGuo Bus Station (Xingfu Rd.)",
         "line": "L303A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6048"
       },
@@ -2039,7 +2045,7 @@
         "name": "長榮加油站",
         "name_en": "Zhangrong Gas Station",
         "line": "L303A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1368"
       },
@@ -2059,7 +2065,7 @@
         "name": "亞建公司",
         "name_en": "YaJian Company",
         "line": "L303A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1370"
       },
@@ -2079,7 +2085,7 @@
         "name": "長榮",
         "name_en": "Evergreen",
         "line": "L303A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6737"
       },
@@ -2099,7 +2105,7 @@
         "name": "南榮托兒所",
         "name_en": "Nanrong Nursery",
         "line": "L303A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5592"
       },
@@ -2119,7 +2125,7 @@
         "name": "桃園街口",
         "name_en": "Taoyuan St. Intersection",
         "line": "L303A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5263"
       },
@@ -2139,7 +2145,7 @@
         "name": "南華一街",
         "name_en": "Nanhua 1st St.",
         "line": "L303A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5594"
       },
@@ -2159,7 +2165,7 @@
         "name": "蘆竹區公所",
         "name_en": "Luzhu District Office",
         "line": "L303A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "4653"
       },
@@ -2179,7 +2185,7 @@
         "name": "南上路41巷口",
         "name_en": "Nanshan Rd., Ln. 41 Intersection",
         "line": "L303A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6158"
       },
@@ -2199,7 +2205,7 @@
         "name": "南美國小",
         "name_en": "Nanmei Elementary School",
         "line": "L303A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5279"
       },
@@ -2219,7 +2225,7 @@
         "name": "黃昏市場",
         "name_en": "Evening Market",
         "line": "L303A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1890"
       },
@@ -2239,7 +2245,7 @@
         "name": "南上路250巷口",
         "name_en": "Nanshan Rd., Ln. 250 Intersection",
         "line": "L303A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6156"
       },
@@ -2259,7 +2265,7 @@
         "name": "南上路350巷口",
         "name_en": "Nanshan Rd., Ln. 350 Intersection",
         "line": "L303A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6154"
       },
@@ -2279,7 +2285,7 @@
         "name": "南上路441號",
         "name_en": "Nanshang Rd., No 441",
         "line": "L303A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6152"
       },
@@ -2299,7 +2305,7 @@
         "name": "南上路493巷口",
         "name_en": "Nanshan Rd., Ln. 493 Intersection",
         "line": "L303A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6150"
       },
@@ -2319,7 +2325,7 @@
         "name": "南上路566巷口",
         "name_en": "Nanshan Rd., Ln. 566 Intersection",
         "line": "L303A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6148"
       },
@@ -2339,7 +2345,7 @@
         "name": "慈慧慈惠堂",
         "name_en": "Cihui Cihuitang",
         "line": "L303A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6442"
       },
@@ -2359,7 +2365,7 @@
         "name": "大坑派出所",
         "name_en": "Dakeng Police Station",
         "line": "L303A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6146"
       },
@@ -2379,7 +2385,7 @@
         "name": "大坑社區",
         "name_en": "Dakeng Community",
         "line": "L303A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6144"
       },
@@ -2399,7 +2405,7 @@
         "name": "妙聖宮",
         "name_en": "Miaosheng Temple",
         "line": "L303A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6236"
       },
@@ -2419,7 +2425,7 @@
         "name": "大坑里12鄰",
         "name_en": "12th Neighborhood, Dakeng Vil.",
         "line": "L303A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6238"
       },
@@ -2439,7 +2445,7 @@
         "name": "富順汽車",
         "name_en": "Fu Shun Car Repair Garage",
         "line": "L303A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6240"
       },
@@ -2459,7 +2465,7 @@
         "name": "瑋銓工業",
         "name_en": "Wei Quan Industrial",
         "line": "L303A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6242"
       },
@@ -2479,7 +2485,7 @@
         "name": "威天宮",
         "name_en": "Taoyuan Weitian Temple",
         "line": "L303A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6244"
       },
@@ -2499,7 +2505,7 @@
         "name": "瑋銓工業",
         "name_en": "Wei Quan Industrial",
         "line": "L303A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6243"
       },
@@ -2519,7 +2525,7 @@
         "name": "富順汽車",
         "name_en": "Fu Shun Car Repair Garage",
         "line": "L303A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6241"
       },
@@ -2539,7 +2545,7 @@
         "name": "大坑里12鄰",
         "name_en": "12th Neighborhood, Dakeng Vil.",
         "line": "L303A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6239"
       },
@@ -2559,7 +2565,7 @@
         "name": "妙聖宮",
         "name_en": "Miaosheng Temple",
         "line": "L303A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6237"
       },
@@ -2579,7 +2585,7 @@
         "name": "大坑社區",
         "name_en": "Dakeng Community",
         "line": "L303A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6143"
       },
@@ -2599,7 +2605,7 @@
         "name": "大坑派出所",
         "name_en": "Dakeng Police Station",
         "line": "L303A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6145"
       },
@@ -2619,7 +2625,7 @@
         "name": "慈慧慈惠堂",
         "name_en": "Cihui Cihuitang",
         "line": "L303A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6442"
       },
@@ -2639,7 +2645,7 @@
         "name": "南上路566巷口",
         "name_en": "Nanshan Rd., Ln. 566 Intersection",
         "line": "L303A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6147"
       },
@@ -2659,7 +2665,7 @@
         "name": "南上路493巷口",
         "name_en": "Nanshan Rd., Ln. 493 Intersection",
         "line": "L303A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6149"
       },
@@ -2679,7 +2685,7 @@
         "name": "南上路441號",
         "name_en": "Nanshang Rd., No 441",
         "line": "L303A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6151"
       },
@@ -2699,7 +2705,7 @@
         "name": "南上路350巷口",
         "name_en": "Nanshan Rd., Ln. 350 Intersection",
         "line": "L303A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6153"
       },
@@ -2719,7 +2725,7 @@
         "name": "南上路250巷口",
         "name_en": "Nanshan Rd., Ln. 250 Intersection",
         "line": "L303A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6155"
       },
@@ -2739,7 +2745,7 @@
         "name": "黃昏市場",
         "name_en": "Evening Market",
         "line": "L303A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1889"
       },
@@ -2759,7 +2765,7 @@
         "name": "南美國小",
         "name_en": "Nanmei Elementary School",
         "line": "L303A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "5280"
       },
@@ -2779,7 +2785,7 @@
         "name": "南上路41巷口",
         "name_en": "Nanshan Rd., Ln. 41 Intersection",
         "line": "L303A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6157"
       },
@@ -2799,7 +2805,7 @@
         "name": "蘆竹區公所",
         "name_en": "Luzhu District Office",
         "line": "L303A",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "4652"
       },

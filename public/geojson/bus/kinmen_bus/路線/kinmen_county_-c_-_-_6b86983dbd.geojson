@@ -6,13 +6,14 @@
     "name": "台灣好行-C線-獅山民俗線(週二-週日行駛)",
     "name_en": "台灣好行-C線-獅山民俗線(週二-週日行駛)",
     "ref": "台灣好行-C線-獅山民俗線(週二-週日行駛)",
-    "color": "#86198f",
+    "color": "#3730a3",
     "city_id": "KinmenCounty",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.kinmen.gov.tw/extend/route20230601/c.png",
     "operator_id": "0001",
     "operator": "金門",
-    "operator_en": "City Bus and Ferry Management Office, Kinmen County"
+    "operator_en": "City Bus and Ferry Management Office, Kinmen County",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "台灣好行-C線-獅山民俗線(週二-週日行駛)",
         "name": "台灣好行-C線-獅山民俗線(週二-週日行駛)",
         "name_en": "台灣好行-C線-獅山民俗線(週二-週日行駛)",
-        "color": "#86198f",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -623,6 +625,10 @@
           [
             118.41397,
             24.44246
+          ],
+          [
+            118.41382,
+            24.44218
           ]
         ]
       }
@@ -635,7 +641,7 @@
         "name": "山外站",
         "name_en": "Shanwai Station",
         "line": "台灣好行-C線-獅山民俗線(週二-週日行駛)",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "29"
       },
@@ -655,7 +661,7 @@
         "name": "山后民俗文化村",
         "name_en": "Shanhou Folk Culture Village",
         "line": "台灣好行-C線-獅山民俗線(週二-週日行駛)",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "887"
       },
@@ -675,7 +681,7 @@
         "name": "獅山砲陣地",
         "name_en": "Shishan(Mt. Lion)Howitzer Front",
         "line": "台灣好行-C線-獅山民俗線(週二-週日行駛)",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "888"
       },
@@ -695,7 +701,7 @@
         "name": "馬山觀測所",
         "name_en": "Mashan Observation Post",
         "line": "台灣好行-C線-獅山民俗線(週二-週日行駛)",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "883"
       },
@@ -715,7 +721,7 @@
         "name": "文化園區",
         "name_en": "The History Folklore Museum",
         "line": "台灣好行-C線-獅山民俗線(週二-週日行駛)",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "889"
       },
@@ -735,7 +741,7 @@
         "name": "山外站",
         "name_en": "Shanwai Station",
         "line": "台灣好行-C線-獅山民俗線(週二-週日行駛)",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "29"
       },

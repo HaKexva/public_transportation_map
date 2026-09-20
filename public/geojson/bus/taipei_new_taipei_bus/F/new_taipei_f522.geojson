@@ -6,13 +6,14 @@
     "name": "F522",
     "name_en": "F522",
     "ref": "F522",
-    "color": "#c2410c",
+    "color": "#6B8F9A",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.gov.taipei/File/Get/b6cbfce7-d638-47b3-870c-00a4d9d1ce68?v=639248448803990623",
     "operator_id": "16240",
     "operator": "永和區公所",
-    "operator_en": "Yonghe District Office"
+    "operator_en": "Yonghe District Office",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "F522",
         "name": "F522",
         "name_en": "F522",
-        "color": "#c2410c",
-        "direction": 0
+        "color": "#6B8F9A",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -443,6 +445,10 @@
           [
             121.515295070261,
             25.0126660583993
+          ],
+          [
+            121.515298055042,
+            25.0126730228865
           ]
         ]
       }
@@ -455,7 +461,7 @@
         "name": "捷運頂溪站",
         "name_en": "MRT Dingxi Sta.",
         "line": "F522",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "9621"
       },
@@ -475,7 +481,7 @@
         "name": "中正橋頭",
         "name_en": "Zhongzheng Bridge Stop",
         "line": "F522",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "50809"
       },
@@ -495,7 +501,7 @@
         "name": "網溪里福德宮",
         "name_en": "Wangxi Village Fude Temple",
         "line": "F522",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72364"
       },
@@ -515,7 +521,7 @@
         "name": "博愛活動中心",
         "name_en": "Boai Activity Center",
         "line": "F522",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72319"
       },
@@ -535,7 +541,7 @@
         "name": "永德宮",
         "name_en": "Yongde Temple",
         "line": "F522",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72316"
       },
@@ -555,7 +561,7 @@
         "name": "環河東路",
         "name_en": "Huanhe E. Rd.",
         "line": "F522",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72367"
       },
@@ -575,7 +581,7 @@
         "name": "豫溪街口",
         "name_en": "Yuxi St. Entrance",
         "line": "F522",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72366"
       },
@@ -595,7 +601,7 @@
         "name": "環河東路三段",
         "name_en": "Huanhe E. Rd. Sec. 3",
         "line": "F522",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603658"
       },
@@ -615,7 +621,7 @@
         "name": "福和公園",
         "name_en": "Fuhe Park",
         "line": "F522",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72389"
       },
@@ -635,7 +641,7 @@
         "name": "大陸新村",
         "name_en": "Dalu New Village",
         "line": "F522",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72386"
       },
@@ -655,7 +661,7 @@
         "name": "民樂里一",
         "name_en": "Minle Village 1",
         "line": "F522",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72391"
       },
@@ -675,7 +681,7 @@
         "name": "民本里一",
         "name_en": "Minben Village 1",
         "line": "F522",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603818"
       },
@@ -695,7 +701,7 @@
         "name": "民本里",
         "name_en": "Minben Village",
         "line": "F522",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72358"
       },
@@ -715,7 +721,7 @@
         "name": "民樂里二",
         "name_en": "Minle Village 2",
         "line": "F522",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72402"
       },
@@ -735,7 +741,7 @@
         "name": "六合社區(成功路)",
         "name_en": "Liuhe Community(Chenggong Rd.)",
         "line": "F522",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603825"
       },
@@ -755,7 +761,7 @@
         "name": "核安會",
         "name_en": "Atomic Energy Council",
         "line": "F522",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603808"
       },
@@ -775,7 +781,7 @@
         "name": "永亨路",
         "name_en": "Yongheng Rd.",
         "line": "F522",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603805"
       },
@@ -795,7 +801,7 @@
         "name": "秀和里",
         "name_en": "Xiuhe Village",
         "line": "F522",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72381"
       },
@@ -815,7 +821,7 @@
         "name": "永和國中",
         "name_en": "Yonghe Junior High School",
         "line": "F522",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603659"
       },
@@ -835,7 +841,7 @@
         "name": "福和國中(永亨路)",
         "name_en": "Miramar Cinema",
         "line": "F522",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72375"
       },
@@ -855,7 +861,7 @@
         "name": "永和區公所(竹林路)",
         "name_en": "Yonghe City Office",
         "line": "F522",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72361"
       },
@@ -875,7 +881,7 @@
         "name": "網溪國小一",
         "name_en": "Wangxi Elementary School 1",
         "line": "F522",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "9663"
       },
@@ -895,7 +901,7 @@
         "name": "耕莘醫院",
         "name_en": "Cardinal Tien Hospita",
         "line": "F522",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72335"
       },
@@ -915,7 +921,7 @@
         "name": "捷運頂溪站",
         "name_en": "MRT Dingxi Sta.",
         "line": "F522",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "9621"
       },

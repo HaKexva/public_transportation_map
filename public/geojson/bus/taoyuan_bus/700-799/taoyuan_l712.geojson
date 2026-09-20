@@ -6,13 +6,14 @@
     "name": "L712",
     "name_en": "L712",
     "ref": "L712",
-    "color": "#b91c1c",
+    "color": "#b45309",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/57120/map/1888/image",
     "operator_id": "1",
     "operator": "桃園客運",
-    "operator_en": "Taoyuan Bus Co., Ltd."
+    "operator_en": "Taoyuan Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "L712",
         "name": "L712",
         "name_en": "L712",
-        "color": "#b91c1c",
-        "direction": 0
+        "color": "#b45309",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -2479,6 +2481,10 @@
           [
             121.28796,
             24.88115
+          ],
+          [
+            121.28795,
+            24.88111
           ]
         ]
       }
@@ -2491,7 +2497,7 @@
         "name": "大溪總站",
         "name_en": "Daxi Bus Terminal",
         "line": "L712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4288"
       },
@@ -2511,7 +2517,7 @@
         "name": "大溪站",
         "name_en": "Daxi Station",
         "line": "L712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "127"
       },
@@ -2531,7 +2537,7 @@
         "name": "復興路",
         "name_en": "Fuxing Road",
         "line": "L712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6744"
       },
@@ -2551,7 +2557,7 @@
         "name": "尾寮",
         "name_en": "Weiliao",
         "line": "L712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2623"
       },
@@ -2571,7 +2577,7 @@
         "name": "美華國小",
         "name_en": "Meihua Elementary School",
         "line": "L712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2625"
       },
@@ -2591,7 +2597,7 @@
         "name": "十全",
         "name_en": "Shiquan",
         "line": "L712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2627"
       },
@@ -2611,7 +2617,7 @@
         "name": "大溪電台",
         "name_en": "Daxi Radio",
         "line": "L712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5735"
       },
@@ -2631,7 +2637,7 @@
         "name": "美華社區活動中心",
         "name_en": "Meihua Community Activity Center",
         "line": "L712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5027"
       },
@@ -2651,7 +2657,7 @@
         "name": "小角仔",
         "name_en": "Xiaojiaozi",
         "line": "L712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2678"
       },
@@ -2671,7 +2677,7 @@
         "name": "紅瓦厝",
         "name_en": "Gongwacuo",
         "line": "L712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2680"
       },
@@ -2691,7 +2697,7 @@
         "name": "莿仔寮",
         "name_en": "Cizailiao",
         "line": "L712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5736"
       },
@@ -2711,7 +2717,7 @@
         "name": "三層",
         "name_en": "Sanceng",
         "line": "L712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2575"
       },
@@ -2731,7 +2737,7 @@
         "name": "變電所",
         "name_en": "Substation",
         "line": "L712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1655"
       },
@@ -2751,7 +2757,7 @@
         "name": "福安國小",
         "name_en": "Fuan Elementary School",
         "line": "L712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2571"
       },
@@ -2771,7 +2777,7 @@
         "name": "大溪陵寢",
         "name_en": "Daxi Mausoleum",
         "line": "L712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2569"
       },
@@ -2791,7 +2797,7 @@
         "name": "頭寮",
         "name_en": "Touliao",
         "line": "L712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2567"
       },
@@ -2811,7 +2817,7 @@
         "name": "草嶺",
         "name_en": "Caoling",
         "line": "L712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2399"
       },
@@ -2831,7 +2837,7 @@
         "name": "慈湖",
         "name_en": "Cihu",
         "line": "L712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1384"
       },
@@ -2851,7 +2857,7 @@
         "name": "洞口",
         "name_en": "Dongkou",
         "line": "L712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2392"
       },
@@ -2871,7 +2877,7 @@
         "name": "湳溝",
         "name_en": "Nangou",
         "line": "L712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2390"
       },
@@ -2891,7 +2897,7 @@
         "name": "曾厝",
         "name_en": "Zengcuo",
         "line": "L712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2386"
       },
@@ -2911,7 +2917,7 @@
         "name": "溪坪",
         "name_en": "Xiping",
         "line": "L712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2382"
       },
@@ -2931,7 +2937,7 @@
         "name": "百吉",
         "name_en": "Baiji",
         "line": "L712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2380"
       },
@@ -2951,7 +2957,7 @@
         "name": "保安",
         "name_en": "Bao-an",
         "line": "L712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2378"
       },
@@ -2971,7 +2977,7 @@
         "name": "四號橋",
         "name_en": "No.4 Bridge",
         "line": "L712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2376"
       },
@@ -2991,7 +2997,7 @@
         "name": "新峰",
         "name_en": "Xinfeng",
         "line": "L712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2374"
       },
@@ -3011,7 +3017,7 @@
         "name": "三民圓環",
         "name_en": "Sanmin Circle (Roundabout)",
         "line": "L712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5733"
       },
@@ -3031,7 +3037,7 @@
         "name": "三民圓環",
         "name_en": "Sanmin Circle (Roundabout)",
         "line": "L712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5734"
       },
@@ -3051,7 +3057,7 @@
         "name": "新峰",
         "name_en": "Xinfeng",
         "line": "L712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2373"
       },
@@ -3071,7 +3077,7 @@
         "name": "四號橋",
         "name_en": "No.4 Bridge",
         "line": "L712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2375"
       },
@@ -3091,7 +3097,7 @@
         "name": "保安",
         "name_en": "Bao-an",
         "line": "L712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2377"
       },
@@ -3111,7 +3117,7 @@
         "name": "百吉",
         "name_en": "Baiji",
         "line": "L712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2379"
       },
@@ -3131,7 +3137,7 @@
         "name": "溪坪",
         "name_en": "Xiping",
         "line": "L712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2381"
       },
@@ -3151,7 +3157,7 @@
         "name": "曾厝",
         "name_en": "Zengcuo",
         "line": "L712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2385"
       },
@@ -3171,7 +3177,7 @@
         "name": "承恩路口",
         "name_en": "Chengen Road Intersection",
         "line": "L712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2052"
       },
@@ -3191,7 +3197,7 @@
         "name": "內湳溝",
         "name_en": "Neinangou",
         "line": "L712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2698"
       },
@@ -3211,7 +3217,7 @@
         "name": "承恩",
         "name_en": "Cheng-en",
         "line": "L712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2700"
       },
@@ -3231,7 +3237,7 @@
         "name": "承恩橋",
         "name_en": "Cheng-en Bridge",
         "line": "L712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2702"
       },
@@ -3251,7 +3257,7 @@
         "name": "溝尾",
         "name_en": "Gouwei",
         "line": "L712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2704"
       },
@@ -3271,7 +3277,7 @@
         "name": "水圳頭",
         "name_en": "Shuichoutou",
         "line": "L712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "246"
       },
@@ -3291,7 +3297,7 @@
         "name": "懷德橋",
         "name_en": "Huaide Bridge",
         "line": "L712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2708"
       },
@@ -3311,7 +3317,7 @@
         "name": "水井",
         "name_en": "Shueijing",
         "line": "L712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5655"
       },
@@ -3331,7 +3337,7 @@
         "name": "萬聖堂",
         "name_en": "Temple of All Saints",
         "line": "L712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4696"
       },
@@ -3351,7 +3357,7 @@
         "name": "大灣坪",
         "name_en": "Dawanping",
         "line": "L712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5654"
       },
@@ -3371,7 +3377,7 @@
         "name": "壩頂",
         "name_en": "Bading",
         "line": "L712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5653"
       },
@@ -3391,7 +3397,7 @@
         "name": "石門圓環",
         "name_en": "Shimen Circle (Roundabout)",
         "line": "L712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5652"
       },
@@ -3411,7 +3417,7 @@
         "name": "福山巖",
         "name_en": "Fushanyen",
         "line": "L712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5656"
       },
@@ -3431,7 +3437,7 @@
         "name": "新溪洲",
         "name_en": "Xinxizhou",
         "line": "L712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3496"
       },
@@ -3451,7 +3457,7 @@
         "name": "石門新村",
         "name_en": "ShimenVillage",
         "line": "L712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3488"
       },
@@ -3471,7 +3477,7 @@
         "name": "埔尾水頭",
         "name_en": "Puweishuitou",
         "line": "L712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3484"
       },
@@ -3491,7 +3497,7 @@
         "name": "內柵廟",
         "name_en": "Neizha Temple",
         "line": "L712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3480"
       },
@@ -3511,7 +3517,7 @@
         "name": "內柵",
         "name_en": "Neizha",
         "line": "L712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3478"
       },
@@ -3531,7 +3537,7 @@
         "name": "益興",
         "name_en": "Yixing",
         "line": "L712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3476"
       },
@@ -3551,7 +3557,7 @@
         "name": "頂田心",
         "name_en": "Dingtianxin",
         "line": "L712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2459"
       },
@@ -3571,7 +3577,7 @@
         "name": "至善高中",
         "name_en": "Jhih shan Senior High School",
         "line": "L712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4294"
       },
@@ -3591,7 +3597,7 @@
         "name": "大溪高中",
         "name_en": "Daxi Senior High School",
         "line": "L712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4292"
       },
@@ -3611,7 +3617,7 @@
         "name": "台電",
         "name_en": "Taiwan Power Company",
         "line": "L712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5255"
       },
@@ -3631,7 +3637,7 @@
         "name": "大溪總站",
         "name_en": "Daxi Bus Terminal",
         "line": "L712",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4288"
       },

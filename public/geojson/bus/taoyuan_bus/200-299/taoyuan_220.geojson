@@ -6,13 +6,14 @@
     "name": "220",
     "name_en": "220",
     "ref": "220",
-    "color": "#b91c1c",
+    "color": "#b45309",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/22000/map/2463/image",
     "operator_id": "1",
     "operator": "桃園客運",
-    "operator_en": "Taoyuan Bus Co., Ltd."
+    "operator_en": "Taoyuan Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "220",
         "name": "220",
         "name_en": "220",
-        "color": "#b91c1c",
-        "direction": 0
+        "color": "#b45309",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -2451,6 +2453,10 @@
           [
             121.2864,
             25.00433
+          ],
+          [
+            121.28641,
+            25.00427
           ]
         ]
       }
@@ -2463,7 +2469,7 @@
         "name": "中路微型轉運站",
         "name_en": "Zhonglu Micro Transit Hub",
         "line": "220",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3519"
       },
@@ -2483,7 +2489,7 @@
         "name": "臺灣桃園地方法院及地方檢察署",
         "name_en": "Taiwan Taoyuan District Court & Prosecutors Office",
         "line": "220",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3992"
       },
@@ -2503,7 +2509,7 @@
         "name": "中路運動公園",
         "name_en": "Zhonglu Sports Park",
         "line": "220",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6992"
       },
@@ -2523,7 +2529,7 @@
         "name": "正光慈文路口",
         "name_en": "Zhengguang Ciwen Rd Intersection",
         "line": "220",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6978"
       },
@@ -2543,7 +2549,7 @@
         "name": "向陽運動公園",
         "name_en": "Xiangyang Park",
         "line": "220",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6977"
       },
@@ -2563,7 +2569,7 @@
         "name": "廈門正光路口",
         "name_en": "Xiamen Zhengguang Rd Intersection",
         "line": "220",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3110"
       },
@@ -2583,7 +2589,7 @@
         "name": "桃園區公所",
         "name_en": "Taoyuan District Office",
         "line": "220",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6850"
       },
@@ -2603,7 +2609,7 @@
         "name": "府前郵局",
         "name_en": "Fuqian Post Office",
         "line": "220",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "858"
       },
@@ -2623,7 +2629,7 @@
         "name": "振聲中學",
         "name_en": "St. Francis Xavier High School",
         "line": "220",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1849"
       },
@@ -2643,7 +2649,7 @@
         "name": "台電大樓",
         "name_en": "Taipower Building",
         "line": "220",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2085"
       },
@@ -2663,7 +2669,7 @@
         "name": "新光大樓",
         "name_en": "Xinguang Building",
         "line": "220",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2773"
       },
@@ -2683,7 +2689,7 @@
         "name": "桃花園飯店",
         "name_en": "Tao Garden Hotel",
         "line": "220",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1948"
       },
@@ -2703,7 +2709,7 @@
         "name": "桃園郵局",
         "name_en": "Xinguang Building",
         "line": "220",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "357"
       },
@@ -2723,7 +2729,7 @@
         "name": "永和市場",
         "name_en": "Yonghe Market",
         "line": "220",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "370"
       },
@@ -2743,7 +2749,7 @@
         "name": "三民民生路口",
         "name_en": "Sanmin and Minsheng Road Intersection",
         "line": "220",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1657"
       },
@@ -2763,7 +2769,7 @@
         "name": "新永和市場",
         "name_en": "New Yonghe Market",
         "line": "220",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6515"
       },
@@ -2783,7 +2789,7 @@
         "name": "三元街口",
         "name_en": "Sanyuan St. Intersection",
         "line": "220",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "792"
       },
@@ -2803,7 +2809,7 @@
         "name": "凱悅假期",
         "name_en": "Kaiyuejiaqi",
         "line": "220",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "788"
       },
@@ -2823,7 +2829,7 @@
         "name": "大業國小",
         "name_en": "Da-Yeh Elementary School",
         "line": "220",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3073"
       },
@@ -2843,7 +2849,7 @@
         "name": "福元街口",
         "name_en": "Fuyuan St. Intersection",
         "line": "220",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3418"
       },
@@ -2863,7 +2869,7 @@
         "name": "寶山街口(慈濟靜思堂)",
         "name_en": "Baoshan St. Intersection (Tzu Chi Meditation Hall)",
         "line": "220",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3071"
       },
@@ -2883,7 +2889,7 @@
         "name": "民有十三街口",
         "name_en": "Minyou 13th St. Intersection",
         "line": "220",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5029"
       },
@@ -2903,7 +2909,7 @@
         "name": "椰林書鄉",
         "name_en": "Yelinshusiang Community",
         "line": "220",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5030"
       },
@@ -2923,7 +2929,7 @@
         "name": "公園都市",
         "name_en": "Gongyuandushi",
         "line": "220",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1327"
       },
@@ -2943,7 +2949,7 @@
         "name": "會稽國中",
         "name_en": "Kuai Ji Junior High School",
         "line": "220",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3981"
       },
@@ -2963,7 +2969,7 @@
         "name": "大興大業路口",
         "name_en": "Daxin Road and Daya Road Intersection",
         "line": "220",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3980"
       },
@@ -2983,7 +2989,7 @@
         "name": "大興春日路口",
         "name_en": "Daxing and Chunrih Rd. Intersection",
         "line": "220",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2957"
       },
@@ -3003,7 +3009,7 @@
         "name": "敏盛醫院",
         "name_en": "Min-Sheng General Hospital",
         "line": "220",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "220"
       },
@@ -3023,7 +3029,7 @@
         "name": "巴黎富邑",
         "name_en": "BaLiFuYi Building",
         "line": "220",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1790"
       },
@@ -3043,7 +3049,7 @@
         "name": "經國南平路口",
         "name_en": "Jingguo and Nanping Rd. Intersection",
         "line": "220",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1792"
       },
@@ -3063,7 +3069,7 @@
         "name": "中悅春天",
         "name_en": "Jungyuechuentian",
         "line": "220",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1794"
       },
@@ -3083,7 +3089,7 @@
         "name": "經國莊敬路口",
         "name_en": "Jingguo Zhuangjing Road Intersection",
         "line": "220",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1796"
       },
@@ -3103,7 +3109,7 @@
         "name": "經國轉運站(幸福路口)",
         "name_en": "JingGuo Bus Station (Xingfu Rd. Intersection)",
         "line": "220",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1798"
       },
@@ -3123,7 +3129,7 @@
         "name": "經國轉運站(水汴一路口)",
         "name_en": "Jingguo Bus Station(Shuibian 1st Rd. Inter.)",
         "line": "220",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2820"
       },
@@ -3143,7 +3149,7 @@
         "name": "經國轉運站(幸福路口)",
         "name_en": "JingGuo Bus Station (Xingfu Rd. Intersection)",
         "line": "220",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1799"
       },
@@ -3163,7 +3169,7 @@
         "name": "長榮富豪",
         "name_en": "Changrongfuhao",
         "line": "220",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3065"
       },
@@ -3183,7 +3189,7 @@
         "name": "尊爵飯店",
         "name_en": "Monarch Plaza Hotel",
         "line": "220",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1404"
       },
@@ -3203,7 +3209,7 @@
         "name": "莊敬路口",
         "name_en": "Zhuangjing Road Intersection",
         "line": "220",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1377"
       },
@@ -3223,7 +3229,7 @@
         "name": "中正同德十一街口",
         "name_en": "Jhongjheng Tongde 11th St. Intersection",
         "line": "220",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3919"
       },
@@ -3243,7 +3249,7 @@
         "name": "中正中寧街口",
         "name_en": "Zhongzheng Zhongning Road Intersection",
         "line": "220",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1189"
       },
@@ -3263,7 +3269,7 @@
         "name": "中正藝文特區",
         "name_en": "Taoyuan Arts Center",
         "line": "220",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3085"
       },
@@ -3283,7 +3289,7 @@
         "name": "城市大亨",
         "name_en": "Cheng Shi Da Heng",
         "line": "220",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1512"
       },
@@ -3303,7 +3309,7 @@
         "name": "中埔一街口",
         "name_en": "Zhongpu 1st  Street Corner",
         "line": "220",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4368"
       },
@@ -3323,7 +3329,7 @@
         "name": "寶慶路口",
         "name_en": "Baoqing Road Intersection",
         "line": "220",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1191"
       },
@@ -3343,7 +3349,7 @@
         "name": "大興西永安路口",
         "name_en": "Dasing West and Yongan Rd. Intersection",
         "line": "220",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "377"
       },
@@ -3363,7 +3369,7 @@
         "name": "中路微型轉運站",
         "name_en": "Zhonglu Micro Transit Hub",
         "line": "220",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3519"
       },

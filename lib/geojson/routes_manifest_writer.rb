@@ -5,6 +5,7 @@ require "json"
 module Geojson
   class RoutesManifestWriter
     MANIFEST_PATH = Rails.root.join("public/geojson/routes.json")
+    BUS_MANIFEST_PATH = Rails.root.join("public/geojson/bus/manifest.json")
 
     SYSTEMS = {
       "taipei_metro" => -> { Geojson::TaipeiMetroCatalog::LINES },
@@ -47,12 +48,29 @@ module Geojson
       ]
     }.freeze
 
-    def self.write!(path: MANIFEST_PATH)
-      new(path: path).write!
+    def self.write!(path: MANIFEST_PATH, bus_path: :default)
+      resolved_bus_path =
+        case bus_path
+        when :default
+          path == MANIFEST_PATH ? BUS_MANIFEST_PATH : nil
+        else
+          bus_path
+        end
+      new(path: path, bus_path: resolved_bus_path).write!
     end
 
-    def initialize(path:)
+    def self.bus_entries(bus_path: BUS_MANIFEST_PATH)
+      return [] unless bus_path.exist?
+
+      payload = JSON.parse(bus_path.read)
+      payload.is_a?(Hash) ? payload.fetch("bus", []) : Array(payload)
+    rescue JSON::ParserError
+      []
+    end
+
+    def initialize(path:, bus_path: BUS_MANIFEST_PATH)
       @path = path
+      @bus_path = bus_path
     end
 
     def write!
@@ -73,15 +91,25 @@ module Geojson
         manifest[system_id] = entries
       end
 
-      bus_entries = bus_manifest_entries
-      manifest["bus"] = bus_entries if bus_entries.any?
+      if @bus_path
+        bus_entries = bus_manifest_entries
+        write_bus_manifest!(bus_entries)
+        puts "Wrote #{@bus_path} (#{bus_entries.length} bus routes)" if bus_entries.any?
+      end
 
       FileUtils.mkdir_p(@path.dirname)
       File.write(@path, JSON.pretty_generate(manifest))
-      puts "Wrote #{@path} (#{manifest.values.sum(&:length)} routes)"
+      puts "Wrote #{@path} (#{manifest.values.sum(&:length)} rail routes)"
     end
 
     private
+
+    def write_bus_manifest!(bus_entries)
+      return if bus_entries.empty?
+
+      FileUtils.mkdir_p(@bus_path.dirname)
+      File.write(@bus_path, JSON.pretty_generate({ "bus" => bus_entries }))
+    end
 
     def bus_manifest_entries
       bus_dir = Rails.root.join("public/geojson/bus")
@@ -89,6 +117,8 @@ module Geojson
 
       Dir.glob(bus_dir.join("**/*.geojson")).sort.filter_map do |path|
         file_path = Pathname.new(path)
+        next if file_path.basename.to_s.start_with?("_")
+
         data = JSON.parse(File.read(file_path))
         properties = data["properties"] || {}
         relative = file_path.relative_path_from(Rails.root.join("public"))

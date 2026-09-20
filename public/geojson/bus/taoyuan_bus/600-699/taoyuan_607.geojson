@@ -6,13 +6,14 @@
     "name": "607",
     "name_en": "607",
     "ref": "607",
-    "color": "#7c3aed",
+    "color": "#16A34A",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/6052/map/2359/image",
     "operator_id": "9",
     "operator": "三重客運",
-    "operator_en": "San Chung Bus Co., Ltd."
+    "operator_en": "San Chung Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "607",
         "name": "607",
         "name_en": "607",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#16A34A",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1099,6 +1101,10 @@
           [
             121.3744,
             25.05326
+          ],
+          [
+            121.37443,
+            25.0533
           ]
         ]
       }
@@ -1111,7 +1117,7 @@
         "name": "華亞園區",
         "name_en": "Gongxi Station(Hwa Ya Technology Park)",
         "line": "607",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6665"
       },
@@ -1131,7 +1137,7 @@
         "name": "大崗國中",
         "name_en": "Da Gang Junior High School",
         "line": "607",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6540"
       },
@@ -1151,7 +1157,7 @@
         "name": "文化二路",
         "name_en": "Wenhua 2nd Road",
         "line": "607",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6666"
       },
@@ -1171,7 +1177,7 @@
         "name": "公園路口",
         "name_en": "Gongyuan Rd. Intersection",
         "line": "607",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6664"
       },
@@ -1191,7 +1197,7 @@
         "name": "長庚醫院",
         "name_en": "Chang Gung Memorial Hospital",
         "line": "607",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "5064"
       },
@@ -1211,7 +1217,7 @@
         "name": "A8捷運長庚醫院站",
         "name_en": "A8 MRT Chang-Gung Memorial Hospital Station",
         "line": "607",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6861"
       },
@@ -1231,7 +1237,7 @@
         "name": "管理中心",
         "name_en": "Management Center",
         "line": "607",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6684"
       },
@@ -1251,7 +1257,7 @@
         "name": "桃園酒廠",
         "name_en": "Taooyuan Sake Brewery",
         "line": "607",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6556"
       },
@@ -1271,7 +1277,7 @@
         "name": "樂學二三路口",
         "name_en": "Lexue 2nd and 3rd Rd. Intersection",
         "line": "607",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6672"
       },
@@ -1291,7 +1297,7 @@
         "name": "樂善國小",
         "name_en": "Leshan Elementary School",
         "line": "607",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6673"
       },
@@ -1311,7 +1317,7 @@
         "name": "文達樂學路口",
         "name_en": "Wenda and Lexue Road Intersection",
         "line": "607",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6674"
       },
@@ -1331,7 +1337,7 @@
         "name": "文化一樂善二路口",
         "name_en": "Wenhua 1st. and Leshan 2nd. Rd. Intersection",
         "line": "607",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6197"
       },
@@ -1351,7 +1357,7 @@
         "name": "捷運體育大學站",
         "name_en": "MRT National Taiwan Sport University Station",
         "line": "607",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6195"
       },
@@ -1371,7 +1377,7 @@
         "name": "文青二文藝街口",
         "name_en": "Wuncing 2nd Rd. Wunyi St. Intersection",
         "line": "607",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "5102"
       },
@@ -1391,7 +1397,7 @@
         "name": "文學路口",
         "name_en": "Wenxue Rd. Intersection",
         "line": "607",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "5104"
       },
@@ -1411,7 +1417,7 @@
         "name": "文青二路口",
         "name_en": "Wuncing 2nd Rd. Intersection",
         "line": "607",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "5105"
       },
@@ -1431,7 +1437,7 @@
         "name": "福安宮",
         "name_en": "Fuan Temple",
         "line": "607",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6688"
       },
@@ -1451,7 +1457,7 @@
         "name": "青山路",
         "name_en": "Qingshan Road",
         "line": "607",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6661"
       },
@@ -1471,7 +1477,7 @@
         "name": "鳳山街口",
         "name_en": "Fengshan St. Entrance",
         "line": "607",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "4728"
       },
@@ -1491,7 +1497,7 @@
         "name": "丹鳳國小(新北大道)",
         "name_en": "Danfeng Elementary School(New Taipei Blvd)",
         "line": "607",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "5113"
       },
@@ -1511,7 +1517,7 @@
         "name": "捷運迴龍站",
         "name_en": "MRT Huilong Station",
         "line": "607",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "3365"
       },
@@ -1531,7 +1537,7 @@
         "name": "迴龍派出所",
         "name_en": "Huilong Police Station",
         "line": "607",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "4611"
       },
@@ -1551,7 +1557,7 @@
         "name": "迴龍商場",
         "name_en": "Huilong Market",
         "line": "607",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "5185"
       },
@@ -1571,7 +1577,7 @@
         "name": "龍華科技大學",
         "name_en": "Lunghwa University of Science and Technology",
         "line": "607",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "3363"
       },
@@ -1591,7 +1597,7 @@
         "name": "大慶蓮莊",
         "name_en": "Daqinglianzhuang",
         "line": "607",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6558"
       },
@@ -1611,7 +1617,7 @@
         "name": "龍壽里",
         "name_en": "Longshou Village",
         "line": "607",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "4615"
       },
@@ -1631,7 +1637,7 @@
         "name": "三重客運迴龍站",
         "name_en": "SanChung Bus Huilong Station",
         "line": "607",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6662"
       },
@@ -1651,7 +1657,7 @@
         "name": "龍壽里",
         "name_en": "Longshou Village",
         "line": "607",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "4616"
       },
@@ -1671,7 +1677,7 @@
         "name": "大慶蓮莊",
         "name_en": "Daqinglianzhuang",
         "line": "607",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "927"
       },
@@ -1691,7 +1697,7 @@
         "name": "龍華科技大學",
         "name_en": "Lunghwa University of Science and Technology",
         "line": "607",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "3362"
       },
@@ -1711,7 +1717,7 @@
         "name": "迴龍商場",
         "name_en": "Huilong Market",
         "line": "607",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "5184"
       },
@@ -1731,7 +1737,7 @@
         "name": "迴龍派出所",
         "name_en": "Huilong Police Station",
         "line": "607",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "4612"
       },
@@ -1751,7 +1757,7 @@
         "name": "捷運迴龍站",
         "name_en": "MRT Huilong Station",
         "line": "607",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "3364"
       },
@@ -1771,7 +1777,7 @@
         "name": "丹鳳國小(新北大道)",
         "name_en": "Danfeng Elementary School",
         "line": "607",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6559"
       },
@@ -1791,7 +1797,7 @@
         "name": "鳳山街口",
         "name_en": "Fengshan St. Entrance",
         "line": "607",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "4729"
       },
@@ -1811,7 +1817,7 @@
         "name": "青山路",
         "name_en": "Qingshan Road",
         "line": "607",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6663"
       },
@@ -1831,7 +1837,7 @@
         "name": "福安宮",
         "name_en": "Fuan Temple",
         "line": "607",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6689"
       },
@@ -1851,7 +1857,7 @@
         "name": "文青二文藝街口",
         "name_en": "Wuncing 2nd Rd. Wunyi St. Intersection",
         "line": "607",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "5102"
       },
@@ -1871,7 +1877,7 @@
         "name": "文學路口",
         "name_en": "Wenxue Rd. Intersection",
         "line": "607",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "5104"
       },
@@ -1891,7 +1897,7 @@
         "name": "文青二路口",
         "name_en": "Wuncing 2nd Rd. Intersection",
         "line": "607",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "5105"
       },
@@ -1911,7 +1917,7 @@
         "name": "捷運體育大學站",
         "name_en": "MRT National Taiwan Sport University Station",
         "line": "607",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "5326"
       },
@@ -1931,7 +1937,7 @@
         "name": "文化一樂善二路口",
         "name_en": "Wenhua 1st. and Leshan 2nd. Rd. Intersection",
         "line": "607",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6196"
       },
@@ -1951,7 +1957,7 @@
         "name": "文達樂學路口",
         "name_en": "Wenda and Lexue Road Intersection",
         "line": "607",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6675"
       },
@@ -1971,7 +1977,7 @@
         "name": "樂善國小",
         "name_en": "Leshan Elementary School",
         "line": "607",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6676"
       },
@@ -1991,7 +1997,7 @@
         "name": "高正鋼鐵",
         "name_en": "Gaozheng Steel Enterprise Company",
         "line": "607",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6862"
       },
@@ -2011,7 +2017,7 @@
         "name": "桃園酒廠",
         "name_en": "Taooyuan Sake Brewery",
         "line": "607",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6557"
       },
@@ -2031,7 +2037,7 @@
         "name": "管理中心",
         "name_en": "Management Center",
         "line": "607",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6725"
       },
@@ -2051,7 +2057,7 @@
         "name": "長庚醫院",
         "name_en": "Chang-Gung Memorial Hospital",
         "line": "607",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6869"
       },
@@ -2071,7 +2077,7 @@
         "name": "公園路口",
         "name_en": "Gongyuan Rd. Intersection",
         "line": "607",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "5268"
       },
@@ -2091,7 +2097,7 @@
         "name": "文化二路",
         "name_en": "Wenhua 2nd Road",
         "line": "607",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6660"
       },
@@ -2111,7 +2117,7 @@
         "name": "大崗國中",
         "name_en": "Da Gang Junior High School",
         "line": "607",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6541"
       },
@@ -2131,7 +2137,7 @@
         "name": "華亞園區",
         "name_en": "Gongxi Station(Hwa Ya Technology Park)",
         "line": "607",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6652"
       },

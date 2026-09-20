@@ -6,11 +6,12 @@
     "name": "307（經西定路、成功市場）",
     "name_en": "307 (via 西定路, 成功市場)",
     "ref": "307",
-    "color": "#9f1239",
+    "color": "#155e75",
     "city_id": "Keelung",
     "source": "TDX Bus Shape / StopOfRoute",
     "via": "西定路、成功市場",
-    "official_map_url": "https://web.taiwanbus.tw/MISUploadData/Schematic/file/0158.jpg"
+    "official_map_url": "https://web.taiwanbus.tw/MISUploadData/Schematic/file/0158.jpg",
+    "loop": true
   },
   "features": [
     {
@@ -20,8 +21,9 @@
         "ref": "307",
         "name": "307（經西定路、成功市場）",
         "name_en": "307 (via 西定路, 成功市場)",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#155e75",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -3029,6 +3031,10 @@
           [
             121.73883,
             25.13142
+          ],
+          [
+            121.7388,
+            25.13136
           ]
         ]
       }
@@ -3041,7 +3047,7 @@
         "name": "基隆火車站(南站)",
         "name_en": "Keelung Railway Station S.",
         "line": "307（經西定路、成功市場）",
-        "color": "#9f1239",
+        "color": "#155e75",
         "direction": 0,
         "station_id": "141049"
       },
@@ -3061,7 +3067,7 @@
         "name": "孝二路",
         "name_en": "Xiao 2nd Rd.",
         "line": "307（經西定路、成功市場）",
-        "color": "#9f1239",
+        "color": "#155e75",
         "direction": 0,
         "station_id": "141358"
       },
@@ -3081,7 +3087,7 @@
         "name": "中山派出所(舊四分局)",
         "name_en": "Zhongshan Police Office",
         "line": "307（經西定路、成功市場）",
-        "color": "#9f1239",
+        "color": "#155e75",
         "direction": 0,
         "station_id": "141214"
       },
@@ -3101,7 +3107,7 @@
         "name": "西定郵局(定國橋)",
         "name_en": "Xiding Post Office (Dingguo Bridge)",
         "line": "307（經西定路、成功市場）",
-        "color": "#9f1239",
+        "color": "#155e75",
         "direction": 0,
         "station_id": "141324"
       },
@@ -3121,7 +3127,7 @@
         "name": "聖心高中",
         "name_en": "Sacred Heart High School",
         "line": "307（經西定路、成功市場）",
-        "color": "#9f1239",
+        "color": "#155e75",
         "direction": 0,
         "station_id": "141322"
       },
@@ -3141,7 +3147,7 @@
         "name": "西定市場",
         "name_en": "Xiding Market",
         "line": "307（經西定路、成功市場）",
-        "color": "#9f1239",
+        "color": "#155e75",
         "direction": 0,
         "station_id": "141316"
       },
@@ -3161,7 +3167,7 @@
         "name": "花園新城",
         "name_en": "Huayuanxincheng",
         "line": "307（經西定路、成功市場）",
-        "color": "#9f1239",
+        "color": "#155e75",
         "direction": 0,
         "station_id": "141275"
       },
@@ -3181,7 +3187,7 @@
         "name": "烏橋頭",
         "name_en": "Wuqiaotou",
         "line": "307（經西定路、成功市場）",
-        "color": "#9f1239",
+        "color": "#155e75",
         "direction": 0,
         "station_id": "141266"
       },
@@ -3201,7 +3207,7 @@
         "name": "復興郵局",
         "name_en": "Keelung Fuxing Rd. Post Office",
         "line": "307（經西定路、成功市場）",
-        "color": "#9f1239",
+        "color": "#155e75",
         "direction": 0,
         "station_id": "141263"
       },
@@ -3221,7 +3227,7 @@
         "name": "復興路中和路口",
         "name_en": "復興路中和路口",
         "line": "307（經西定路、成功市場）",
-        "color": "#9f1239",
+        "color": "#155e75",
         "direction": 0,
         "station_id": "141260"
       },
@@ -3241,7 +3247,7 @@
         "name": "大竿林(一)",
         "name_en": "Daganlin",
         "line": "307（經西定路、成功市場）",
-        "color": "#9f1239",
+        "color": "#155e75",
         "direction": 0,
         "station_id": "141357"
       },
@@ -3261,7 +3267,7 @@
         "name": "大竿林(二)",
         "name_en": "Daganlin(二)",
         "line": "307（經西定路、成功市場）",
-        "color": "#9f1239",
+        "color": "#155e75",
         "direction": 0,
         "station_id": "141456"
       },
@@ -3281,7 +3287,7 @@
         "name": "喜市(中和路85巷16號)",
         "name_en": "Xi Market (No.16 Ln. 85 Zhonghe Rd.)",
         "line": "307（經西定路、成功市場）",
-        "color": "#9f1239",
+        "color": "#155e75",
         "direction": 0,
         "station_id": "141606"
       },
@@ -3301,7 +3307,7 @@
         "name": "中和國小",
         "name_en": "Zhonghe Elementary School",
         "line": "307（經西定路、成功市場）",
-        "color": "#9f1239",
+        "color": "#155e75",
         "direction": 0,
         "station_id": "141355"
       },
@@ -3321,7 +3327,7 @@
         "name": "麗景山莊",
         "name_en": "Lijingshanzhuang",
         "line": "307（經西定路、成功市場）",
-        "color": "#9f1239",
+        "color": "#155e75",
         "direction": 0,
         "station_id": "141353"
       },
@@ -3341,7 +3347,7 @@
         "name": "代天宮",
         "name_en": "Daitian Temple",
         "line": "307（經西定路、成功市場）",
-        "color": "#9f1239",
+        "color": "#155e75",
         "direction": 0,
         "station_id": "141351"
       },
@@ -3361,7 +3367,7 @@
         "name": "大慶大城社區",
         "name_en": "Daqingdacheng Community",
         "line": "307（經西定路、成功市場）",
-        "color": "#9f1239",
+        "color": "#155e75",
         "direction": 0,
         "station_id": "141349"
       },
@@ -3381,7 +3387,7 @@
         "name": "中和路168巷7弄19號",
         "name_en": "No.19 Aly. 7 Ln. 168 Zhonghe Rd.",
         "line": "307（經西定路、成功市場）",
-        "color": "#9f1239",
+        "color": "#155e75",
         "direction": 0,
         "station_id": "141607"
       },
@@ -3401,7 +3407,7 @@
         "name": "和慶里",
         "name_en": "Heqing Village",
         "line": "307（經西定路、成功市場）",
-        "color": "#9f1239",
+        "color": "#155e75",
         "direction": 0,
         "station_id": "141608"
       },
@@ -3421,7 +3427,7 @@
         "name": "中和路164巷5號",
         "name_en": "No.5 Ln. 164 Zhonghe Rd.",
         "line": "307（經西定路、成功市場）",
-        "color": "#9f1239",
+        "color": "#155e75",
         "direction": 0,
         "station_id": "141609"
       },
@@ -3441,7 +3447,7 @@
         "name": "中和路164巷20號",
         "name_en": "No.20 Ln. 164 Zhonghe Rd.",
         "line": "307（經西定路、成功市場）",
-        "color": "#9f1239",
+        "color": "#155e75",
         "direction": 0,
         "station_id": "141612"
       },
@@ -3461,7 +3467,7 @@
         "name": "麗景山莊",
         "name_en": "Lijingshanzhuang",
         "line": "307（經西定路、成功市場）",
-        "color": "#9f1239",
+        "color": "#155e75",
         "direction": 0,
         "station_id": "141352"
       },
@@ -3481,7 +3487,7 @@
         "name": "中和國小",
         "name_en": "Zhonghe Elementary School",
         "line": "307（經西定路、成功市場）",
-        "color": "#9f1239",
+        "color": "#155e75",
         "direction": 0,
         "station_id": "141354"
       },
@@ -3501,7 +3507,7 @@
         "name": "大竿林(一)",
         "name_en": "Daganlin",
         "line": "307（經西定路、成功市場）",
-        "color": "#9f1239",
+        "color": "#155e75",
         "direction": 0,
         "station_id": "141356"
       },
@@ -3521,7 +3527,7 @@
         "name": "復興路中和路口",
         "name_en": "Fuxing Rd. &amp; Zhonghe Rd. Intersection",
         "line": "307（經西定路、成功市場）",
-        "color": "#9f1239",
+        "color": "#155e75",
         "direction": 0,
         "station_id": "141257"
       },
@@ -3541,7 +3547,7 @@
         "name": "復興郵局",
         "name_en": "Keelung Fuxing Rd. Post Office",
         "line": "307（經西定路、成功市場）",
-        "color": "#9f1239",
+        "color": "#155e75",
         "direction": 0,
         "station_id": "141262"
       },
@@ -3561,7 +3567,7 @@
         "name": "西康里",
         "name_en": "Xikang Village",
         "line": "307（經西定路、成功市場）",
-        "color": "#9f1239",
+        "color": "#155e75",
         "direction": 0,
         "station_id": "141264"
       },
@@ -3581,7 +3587,7 @@
         "name": "烏橋頭",
         "name_en": "Wuqiaotou",
         "line": "307（經西定路、成功市場）",
-        "color": "#9f1239",
+        "color": "#155e75",
         "direction": 0,
         "station_id": "141265"
       },
@@ -3601,7 +3607,7 @@
         "name": "花園新城",
         "name_en": "Huayuanxincheng",
         "line": "307（經西定路、成功市場）",
-        "color": "#9f1239",
+        "color": "#155e75",
         "direction": 0,
         "station_id": "141274"
       },
@@ -3621,7 +3627,7 @@
         "name": "西定市場",
         "name_en": "Xiding Market",
         "line": "307（經西定路、成功市場）",
-        "color": "#9f1239",
+        "color": "#155e75",
         "direction": 0,
         "station_id": "141312"
       },
@@ -3641,7 +3647,7 @@
         "name": "聖心高中",
         "name_en": "Sacred Heart High School",
         "line": "307（經西定路、成功市場）",
-        "color": "#9f1239",
+        "color": "#155e75",
         "direction": 0,
         "station_id": "141317"
       },
@@ -3661,7 +3667,7 @@
         "name": "西定郵局(定國橋)",
         "name_en": "Xiding Post Office (Dingguo Bridge)",
         "line": "307（經西定路、成功市場）",
-        "color": "#9f1239",
+        "color": "#155e75",
         "direction": 0,
         "station_id": "141323"
       },
@@ -3681,7 +3687,7 @@
         "name": "中山派出所(舊四分局)",
         "name_en": "Zhongshan Police Office",
         "line": "307（經西定路、成功市場）",
-        "color": "#9f1239",
+        "color": "#155e75",
         "direction": 0,
         "station_id": "141328"
       },
@@ -3701,7 +3707,7 @@
         "name": "光華國宅",
         "name_en": "Guanghua Public Housing",
         "line": "307（經西定路、成功市場）",
-        "color": "#9f1239",
+        "color": "#155e75",
         "direction": 0,
         "station_id": "140697"
       },
@@ -3721,7 +3727,7 @@
         "name": "成功市場",
         "name_en": "Chenggong Market",
         "line": "307（經西定路、成功市場）",
-        "color": "#9f1239",
+        "color": "#155e75",
         "direction": 0,
         "station_id": "140698"
       },
@@ -3741,7 +3747,7 @@
         "name": "仁五路(東和大樓)",
         "name_en": "Ren 5th Rd.",
         "line": "307（經西定路、成功市場）",
-        "color": "#9f1239",
+        "color": "#155e75",
         "direction": 0,
         "station_id": "140629"
       },
@@ -3761,7 +3767,7 @@
         "name": "仁二路(二信循環站)",
         "name_en": "Ren 2nd Rd. (Erxin Loop Station )",
         "line": "307（經西定路、成功市場）",
-        "color": "#9f1239",
+        "color": "#155e75",
         "direction": 0,
         "station_id": "140620"
       },

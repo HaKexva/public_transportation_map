@@ -6,12 +6,13 @@
     "name": "幸福獅子10路",
     "name_en": "幸福獅子10路",
     "ref": "幸福獅子10路",
-    "color": "#dc2626",
+    "color": "#0f766e",
     "city_id": "PingtungCounty",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://web.taiwanbus.tw/MISUploadData/Schematic/file/0240.jpg",
     "operator_id": "128",
-    "operator": "屏東縣獅子鄉公所"
+    "operator": "屏東縣獅子鄉公所",
+    "loop": true
   },
   "features": [
     {
@@ -21,8 +22,9 @@
         "ref": "幸福獅子10路",
         "name": "幸福獅子10路",
         "name_en": "幸福獅子10路",
-        "color": "#dc2626",
-        "direction": 0
+        "color": "#0f766e",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -7834,6 +7836,10 @@
           [
             120.70562,
             22.20194
+          ],
+          [
+            120.70522,
+            22.20192
           ]
         ]
       }
@@ -7845,8 +7851,9 @@
         "ref": "幸福獅子10路",
         "name": "幸福獅子10路",
         "name_en": "幸福獅子10路",
-        "color": "#dc2626",
-        "direction": 1
+        "color": "#0f766e",
+        "direction": 1,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -15542,7 +15549,7 @@
         "name": "獅子鄉公所",
         "name_en": "Shizi Township Office",
         "line": "幸福獅子10路",
-        "color": "#dc2626",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "143850"
       },
@@ -15562,7 +15569,7 @@
         "name": "竹坑村辦公處",
         "name_en": "ZhuKeng Village Office",
         "line": "幸福獅子10路",
-        "color": "#dc2626",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "143881"
       },
@@ -15582,7 +15589,7 @@
         "name": "和平部落",
         "name_en": "He Ping Tribe",
         "line": "幸福獅子10路",
-        "color": "#dc2626",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "143877"
       },
@@ -15602,7 +15609,7 @@
         "name": "中心崙部落",
         "name_en": "Jhong Sin Lun Tribe",
         "line": "幸福獅子10路",
-        "color": "#dc2626",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "143875"
       },
@@ -15622,7 +15629,7 @@
         "name": "內獅牌樓",
         "name_en": "Neishi Archway",
         "line": "幸福獅子10路",
-        "color": "#dc2626",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "143873"
       },
@@ -15642,7 +15649,7 @@
         "name": "小內獅",
         "name_en": "Siao Nei Shih",
         "line": "幸福獅子10路",
-        "color": "#dc2626",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "143847"
       },
@@ -15662,7 +15669,7 @@
         "name": "南世村辦公處",
         "name_en": "Nanesiku Village Office",
         "line": "幸福獅子10路",
-        "color": "#dc2626",
+        "color": "#0f766e",
         "direction": 0,
         "station_id": "143845"
       },
@@ -15682,7 +15689,7 @@
         "name": "獅子鄉公所",
         "name_en": "Shizi Township Office",
         "line": "幸福獅子10路",
-        "color": "#dc2626",
+        "color": "#0f766e",
         "direction": 1,
         "station_id": "143879"
       },
@@ -15702,7 +15709,7 @@
         "name": "南世村辦公處",
         "name_en": "Nanesiku Village Office",
         "line": "幸福獅子10路",
-        "color": "#dc2626",
+        "color": "#0f766e",
         "direction": 1,
         "station_id": "143846"
       },
@@ -15722,7 +15729,7 @@
         "name": "小內獅",
         "name_en": "Siao Nei Shih",
         "line": "幸福獅子10路",
-        "color": "#dc2626",
+        "color": "#0f766e",
         "direction": 1,
         "station_id": "143848"
       },
@@ -15742,7 +15749,7 @@
         "name": "內獅牌樓",
         "name_en": "Neishi Archway",
         "line": "幸福獅子10路",
-        "color": "#dc2626",
+        "color": "#0f766e",
         "direction": 1,
         "station_id": "143874"
       },
@@ -15762,7 +15769,7 @@
         "name": "中心崙部落",
         "name_en": "Jhong Sin Lun Tribe",
         "line": "幸福獅子10路",
-        "color": "#dc2626",
+        "color": "#0f766e",
         "direction": 1,
         "station_id": "143876"
       },
@@ -15782,7 +15789,7 @@
         "name": "和平部落",
         "name_en": "He Ping Tribe",
         "line": "幸福獅子10路",
-        "color": "#dc2626",
+        "color": "#0f766e",
         "direction": 1,
         "station_id": "143878"
       },
@@ -15802,7 +15809,7 @@
         "name": "竹坑村辦公處",
         "name_en": "Zhu keng Village Office",
         "line": "幸福獅子10路",
-        "color": "#dc2626",
+        "color": "#0f766e",
         "direction": 1,
         "station_id": "143882"
       },

@@ -6,13 +6,14 @@
     "name": "221A",
     "name_en": "221A",
     "ref": "221A",
-    "color": "#b91c1c",
+    "color": "#b45309",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/22110/map/2466/image",
     "operator_id": "1",
     "operator": "桃園客運",
-    "operator_en": "Taoyuan Bus Co., Ltd."
+    "operator_en": "Taoyuan Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "221A",
         "name": "221A",
         "name_en": "221A",
-        "color": "#b91c1c",
-        "direction": 0
+        "color": "#b45309",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -743,6 +745,10 @@
           [
             121.28642,
             25.00436
+          ],
+          [
+            121.28645,
+            25.00422
           ]
         ]
       }
@@ -755,7 +761,7 @@
         "name": "中路微型轉運站",
         "name_en": "Zhonglu Micro Transit Hub",
         "line": "221A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3519"
       },
@@ -775,7 +781,7 @@
         "name": "臺灣桃園地方法院及地方檢察署",
         "name_en": "Taiwan Taoyuan District Court & Prosecutors Office",
         "line": "221A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3992"
       },
@@ -795,7 +801,7 @@
         "name": "大興西永安路口",
         "name_en": "Dasing West and Yongan Rd. Intersection",
         "line": "221A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "376"
       },
@@ -815,7 +821,7 @@
         "name": "同德三街口",
         "name_en": "Tongde Third Street Intersection",
         "line": "221A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6273"
       },
@@ -835,7 +841,7 @@
         "name": "中國龍社區",
         "name_en": "JungGuoLung Community",
         "line": "221A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1514"
       },
@@ -855,7 +861,7 @@
         "name": "南平路口",
         "name_en": "NanPing Road Intersection",
         "line": "221A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1515"
       },
@@ -875,7 +881,7 @@
         "name": "寶慶安慶街口",
         "name_en": "Baocing and Ancing St. Intersection",
         "line": "221A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1525"
       },
@@ -895,7 +901,7 @@
         "name": "中國江山",
         "name_en": "China Jiangshan",
         "line": "221A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1517"
       },
@@ -915,7 +921,7 @@
         "name": "日昇大道",
         "name_en": "Risheng Blvd.",
         "line": "221A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1519"
       },
@@ -935,7 +941,7 @@
         "name": "莊敬敬三街口",
         "name_en": "Zhuangjing Jing 3rd Street Intersection",
         "line": "221A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3094"
       },
@@ -955,7 +961,7 @@
         "name": "莊敬敬二街口",
         "name_en": "Zhuangjing Jing 2nd Street Intersection",
         "line": "221A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4121"
       },
@@ -975,7 +981,7 @@
         "name": "莊敬中正路口",
         "name_en": "Zhuangjing - Zhongzheng Rd. Intersection",
         "line": "221A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4365"
       },
@@ -995,7 +1001,7 @@
         "name": "尊爵飯店",
         "name_en": "TzuenJiue Hotel",
         "line": "221A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1405"
       },
@@ -1015,7 +1021,7 @@
         "name": "經國轉運站(幸福路口)",
         "name_en": "JingGuo Bus Station (Xingfu Rd. Intersection)",
         "line": "221A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1798"
       },
@@ -1035,7 +1041,7 @@
         "name": "許厝",
         "name_en": "Xucuo",
         "line": "221A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1021"
       },
@@ -1055,7 +1061,7 @@
         "name": "水汴頭",
         "name_en": "Shuibiantou",
         "line": "221A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3435"
       },
@@ -1075,7 +1081,7 @@
         "name": "鹽庫西街口",
         "name_en": "Yanku West Street Intersection",
         "line": "221A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3433"
       },
@@ -1095,7 +1101,7 @@
         "name": "健行路",
         "name_en": "Jianxing Raod",
         "line": "221A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "622"
       },
@@ -1115,7 +1121,7 @@
         "name": "健行鹽務路口",
         "name_en": "Jianxing and YanWu Rd. Intersection",
         "line": "221A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5056"
       },
@@ -1135,7 +1141,7 @@
         "name": "市立殯儀館",
         "name_en": "Municipal",
         "line": "221A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3431"
       },
@@ -1155,7 +1161,7 @@
         "name": "快樂公園",
         "name_en": "Kuaile Park",
         "line": "221A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6983"
       },
@@ -1175,7 +1181,7 @@
         "name": "興二街口",
         "name_en": "Xing 2nd Street intersection",
         "line": "221A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3428"
       },
@@ -1195,7 +1201,7 @@
         "name": "公園都市",
         "name_en": "Gongyuandushi",
         "line": "221A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1328"
       },
@@ -1215,7 +1221,7 @@
         "name": "寶山街口",
         "name_en": "Baoshan Street Intersection",
         "line": "221A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3426"
       },
@@ -1235,7 +1241,7 @@
         "name": "大有民光東路口",
         "name_en": "Dayou & Minguang East Intersection",
         "line": "221A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3423"
       },
@@ -1255,7 +1261,7 @@
         "name": "北區國稅局(大有路)",
         "name_en": "Northern Area, Ministry of Finance(Dayou Road)",
         "line": "221A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5053"
       },
@@ -1275,7 +1281,7 @@
         "name": "榮總門診大樓",
         "name_en": "TVGS, Taoyuan Branch",
         "line": "221A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3424"
       },
@@ -1295,7 +1301,7 @@
         "name": "北區國稅局(大有路)",
         "name_en": "Northern Area, Ministry of Finance(Dayou Road)",
         "line": "221A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5052"
       },
@@ -1315,7 +1321,7 @@
         "name": "民光東路",
         "name_en": "Minguang E. Rd.",
         "line": "221A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3421"
       },
@@ -1335,7 +1341,7 @@
         "name": "民光東福元街口",
         "name_en": "Minguang E. Fuyuan St. Intersection",
         "line": "221A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6203"
       },
@@ -1355,7 +1361,7 @@
         "name": "大業國小",
         "name_en": "Da-Yeh Elementary School",
         "line": "221A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3072"
       },
@@ -1375,7 +1381,7 @@
         "name": "凱悅假期",
         "name_en": "Kaiyuejiaqi",
         "line": "221A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "787"
       },
@@ -1395,7 +1401,7 @@
         "name": "三元街口",
         "name_en": "Sanyuan St. Intersection",
         "line": "221A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "791"
       },
@@ -1415,7 +1421,7 @@
         "name": "新永和市場",
         "name_en": "New Yonghe Market",
         "line": "221A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6516"
       },
@@ -1435,7 +1441,7 @@
         "name": "青溪國小",
         "name_en": "Qing Xi Elementary School",
         "line": "221A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3074"
       },
@@ -1455,7 +1461,7 @@
         "name": "自強路",
         "name_en": "Ziqiang Rd.",
         "line": "221A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6984"
       },
@@ -1475,7 +1481,7 @@
         "name": "體育館(北科附工)",
         "name_en": "Gymnasium",
         "line": "221A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4334"
       },
@@ -1495,7 +1501,7 @@
         "name": "地方稅務局",
         "name_en": "Department of Taxation, Taoyuan",
         "line": "221A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3415"
       },
@@ -1515,7 +1521,7 @@
         "name": "中央街口(成功路二段)",
         "name_en": "Zhongyang St. Intersection(Chenggong Rd. Sec.2)",
         "line": "221A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3077"
       },
@@ -1535,7 +1541,7 @@
         "name": "東門國小",
         "name_en": "Dongmen Elementary School",
         "line": "221A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3080"
       },
@@ -1555,7 +1561,7 @@
         "name": "民生成功路口",
         "name_en": "Minsheng and ChengGung Rd. Intersection",
         "line": "221A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4144"
       },
@@ -1575,7 +1581,7 @@
         "name": "桃園公車站",
         "name_en": "Taoyuan Bus Station",
         "line": "221A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6581"
       },
@@ -1595,7 +1601,7 @@
         "name": "桃花園飯店",
         "name_en": "Tao Garden Hotel",
         "line": "221A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1949"
       },
@@ -1615,7 +1621,7 @@
         "name": "新光大樓",
         "name_en": "Xinguang Building",
         "line": "221A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2772"
       },
@@ -1635,7 +1641,7 @@
         "name": "台電大樓",
         "name_en": "Taipower Building",
         "line": "221A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2084"
       },
@@ -1655,7 +1661,7 @@
         "name": "振聲中學",
         "name_en": "St. Francis Xavier High School",
         "line": "221A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1850"
       },
@@ -1675,7 +1681,7 @@
         "name": "桃園區公所(正門)",
         "name_en": "Civil Affairs Office of Taoyuan District(Front Door)",
         "line": "221A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6856"
       },
@@ -1695,7 +1701,7 @@
         "name": "莒光街口",
         "name_en": "Juguang St. Intersection",
         "line": "221A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3055"
       },
@@ -1715,7 +1721,7 @@
         "name": "中福街口",
         "name_en": "Zhongfu Street Intersection",
         "line": "221A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3057"
       },
@@ -1735,7 +1741,7 @@
         "name": "永安路",
         "name_en": "Yongan Rd.",
         "line": "221A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3059"
       },
@@ -1755,7 +1761,7 @@
         "name": "成功國小",
         "name_en": "ChengGung Elementary School",
         "line": "221A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "373"
       },
@@ -1775,7 +1781,7 @@
         "name": "中正三民路口",
         "name_en": "Zhongzheng and Sanming Rd. Intersection",
         "line": "221A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3060"
       },
@@ -1795,7 +1801,7 @@
         "name": "中正二街口",
         "name_en": "Zhongzheng 2nd Street Intersection",
         "line": "221A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1330"
       },
@@ -1815,7 +1821,7 @@
         "name": "埔新路口",
         "name_en": "Puxin Road Intersection",
         "line": "221A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6482"
       },
@@ -1835,7 +1841,7 @@
         "name": "中正三街口",
         "name_en": "Zhongzheng 3rd St. Intersection",
         "line": "221A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3062"
       },
@@ -1855,7 +1861,7 @@
         "name": "力行路口",
         "name_en": "Lixing Road Intersection",
         "line": "221A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "382"
       },
@@ -1875,7 +1881,7 @@
         "name": "蓮華寺",
         "name_en": "Lianhua Temple",
         "line": "221A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "384"
       },
@@ -1895,7 +1901,7 @@
         "name": "永安溫州街口",
         "name_en": "Yongan Wunjhou St. Intersection",
         "line": "221A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "386"
       },
@@ -1915,7 +1921,7 @@
         "name": "南埔里活動中心",
         "name_en": "Nanpuli Activity Center",
         "line": "221A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "388"
       },
@@ -1935,7 +1941,7 @@
         "name": "中路微型轉運站",
         "name_en": "Zhonglu Micro Transit Hub",
         "line": "221A",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3519"
       },

@@ -6,13 +6,14 @@
     "name": "F153-0830",
     "name_en": "F153-0830",
     "ref": "F153-0830",
-    "color": "#0B7A3E",
+    "color": "#6B8F9A",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.gov.taipei/File/Get/4bf92c38-a4e2-4abf-9419-2d31c4c83d7b?v=639248448777504878",
     "operator_id": "16231",
     "operator": "石門區公所",
-    "operator_en": "Shimen District Office"
+    "operator_en": "Shimen District Office",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "F153-0830",
         "name": "F153-0830",
         "name_en": "F153-0830",
-        "color": "#0B7A3E",
-        "direction": 0
+        "color": "#6B8F9A",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -3099,6 +3101,10 @@
           [
             121.56746370781,
             25.2912501391083
+          ],
+          [
+            121.56751447928,
+            25.2912332152849
           ]
         ]
       }
@@ -3111,7 +3117,7 @@
         "name": "石門區公所",
         "name_en": "Shimen District office",
         "line": "F153-0830",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75534"
       },
@@ -3131,7 +3137,7 @@
         "name": "草里",
         "name_en": "Caoli",
         "line": "F153-0830",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165609187"
       },
@@ -3151,7 +3157,7 @@
         "name": "阿里荖坑",
         "name_en": "Alilaokeng",
         "line": "F153-0830",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75608"
       },
@@ -3171,7 +3177,7 @@
         "name": "五爪崙(竹子湖)",
         "name_en": "Wuzhualun(Zhuzihu)",
         "line": "F153-0830",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165609191"
       },
@@ -3191,7 +3197,7 @@
         "name": "草埔尾",
         "name_en": "Caopuwei",
         "line": "F153-0830",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165609188"
       },
@@ -3211,7 +3217,7 @@
         "name": "茂林社區",
         "name_en": "Maolin Community",
         "line": "F153-0830",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75612"
       },
@@ -3231,7 +3237,7 @@
         "name": "妙濟寺",
         "name_en": "Miaoji Temple",
         "line": "F153-0830",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75606"
       },
@@ -3251,7 +3257,7 @@
         "name": "茂林社區",
         "name_en": "Maolin Community",
         "line": "F153-0830",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165610361"
       },
@@ -3271,7 +3277,7 @@
         "name": "乾華",
         "name_en": "Qianhua",
         "line": "F153-0830",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75622"
       },
@@ -3291,7 +3297,7 @@
         "name": "石門區公所",
         "name_en": "Shimen District office",
         "line": "F153-0830",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75534"
       },

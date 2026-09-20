@@ -6,13 +6,14 @@
     "name": "F123十三行文化公園經八療",
     "name_en": "F123十三行文化公園經八療",
     "ref": "F123十三行文化公園經八療",
-    "color": "#9f1239",
+    "color": "#6B8F9A",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.gov.taipei/File/Get/17b127fe-13a5-490e-800c-52f93f02185d?v=639248448782716634",
     "operator_id": "16230",
     "operator": "八里區公所",
-    "operator_en": "Bali District Office"
+    "operator_en": "Bali District Office",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "F123十三行文化公園經八療",
         "name": "F123十三行文化公園經八療",
         "name_en": "F123十三行文化公園經八療",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#6B8F9A",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -2291,6 +2293,10 @@
           [
             121.397678497202,
             25.1459518700567
+          ],
+          [
+            121.397707592473,
+            25.1458442378988
           ]
         ]
       }
@@ -2303,7 +2309,7 @@
         "name": "八里分駐所",
         "name_en": "Bali Police Station",
         "line": "F123十三行文化公園經八療",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "74541"
       },
@@ -2323,7 +2329,7 @@
         "name": "八里國中",
         "name_en": "Bali Junior High School",
         "line": "F123十三行文化公園經八療",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165606215"
       },
@@ -2343,7 +2349,7 @@
         "name": "八里療養院",
         "name_en": "Bali Sanatorium",
         "line": "F123十三行文化公園經八療",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "74589"
       },
@@ -2363,7 +2369,7 @@
         "name": "傑華商店",
         "name_en": "JieHua Shop",
         "line": "F123十三行文化公園經八療",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165606216"
       },
@@ -2383,7 +2389,7 @@
         "name": "西龍巖前路口",
         "name_en": "XiLongYan Temple Entrance",
         "line": "F123十三行文化公園經八療",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "74544"
       },
@@ -2403,7 +2409,7 @@
         "name": "政霸實業",
         "name_en": "ZhengBa Industry",
         "line": "F123十三行文化公園經八療",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165606217"
       },
@@ -2423,7 +2429,7 @@
         "name": "渡船頭",
         "name_en": "Ferryboats' Dock",
         "line": "F123十三行文化公園經八療",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "15023"
       },
@@ -2443,7 +2449,7 @@
         "name": "下街仔",
         "name_en": "Xiajie Zai",
         "line": "F123十三行文化公園經八療",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "15022"
       },
@@ -2463,7 +2469,7 @@
         "name": "西門",
         "name_en": "Ximen",
         "line": "F123十三行文化公園經八療",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "15021"
       },
@@ -2483,7 +2489,7 @@
         "name": "乙天宮",
         "name_en": "Yitian Temple",
         "line": "F123十三行文化公園經八療",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3770"
       },
@@ -2503,7 +2509,7 @@
         "name": "十三行文化公園",
         "name_en": "Shihsanhang Culture Park",
         "line": "F123十三行文化公園經八療",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "74558"
       },
@@ -2523,7 +2529,7 @@
         "name": "十三行文化公園",
         "name_en": "Shihsanhang Culture Park",
         "line": "F123十三行文化公園經八療",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "74557"
       },
@@ -2543,7 +2549,7 @@
         "name": "乙天宮",
         "name_en": "Yitian Temple",
         "line": "F123十三行文化公園經八療",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3792"
       },
@@ -2563,7 +2569,7 @@
         "name": "西門",
         "name_en": "Ximen",
         "line": "F123十三行文化公園經八療",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3802"
       },
@@ -2583,7 +2589,7 @@
         "name": "下街仔",
         "name_en": "Xiajie Zai",
         "line": "F123十三行文化公園經八療",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3788"
       },
@@ -2603,7 +2609,7 @@
         "name": "渡船頭",
         "name_en": "Ferryboats' Dock",
         "line": "F123十三行文化公園經八療",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3809"
       },
@@ -2623,7 +2629,7 @@
         "name": "政霸實業",
         "name_en": "ZhengBa Industry",
         "line": "F123十三行文化公園經八療",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165609925"
       },
@@ -2643,7 +2649,7 @@
         "name": "西龍巖前路口",
         "name_en": "XiLongYan Temple Entrance",
         "line": "F123十三行文化公園經八療",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165606225"
       },
@@ -2663,7 +2669,7 @@
         "name": "傑華商店",
         "name_en": "JieHua Shop",
         "line": "F123十三行文化公園經八療",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165606226"
       },
@@ -2683,7 +2689,7 @@
         "name": "八里療養院",
         "name_en": "Bali Sanatorium",
         "line": "F123十三行文化公園經八療",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165606227"
       },
@@ -2703,7 +2709,7 @@
         "name": "八里國中",
         "name_en": "Bali Junior High School",
         "line": "F123十三行文化公園經八療",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603684"
       },
@@ -2723,7 +2729,7 @@
         "name": "八里分駐所",
         "name_en": "Bali Police Station",
         "line": "F123十三行文化公園經八療",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "74541"
       },

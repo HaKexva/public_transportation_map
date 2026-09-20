@@ -6,10 +6,11 @@
     "name": "402",
     "name_en": "402",
     "ref": "402",
-    "color": "#9f1239",
+    "color": "#1e3a8a",
     "city_id": "Keelung",
     "source": "TDX Bus Shape / StopOfRoute",
-    "official_map_url": "https://web.taiwanbus.tw/MISUploadData/Schematic/file/0437.jpg"
+    "official_map_url": "https://web.taiwanbus.tw/MISUploadData/Schematic/file/0437.jpg",
+    "loop": true
   },
   "features": [
     {
@@ -19,8 +20,9 @@
         "ref": "402",
         "name": "402",
         "name_en": "402",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -4512,6 +4514,10 @@
           [
             121.68411,
             25.08222
+          ],
+          [
+            121.68413,
+            25.08222
           ]
         ]
       }
@@ -4524,7 +4530,7 @@
         "name": "堵南里",
         "name_en": "Dunan Village",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "141542"
       },
@@ -4544,7 +4550,7 @@
         "name": "堵南加油站",
         "name_en": "Dunan Gas Station",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "141549"
       },
@@ -4564,7 +4570,7 @@
         "name": "特殊教育學校",
         "name_en": "National Keelung Special Education School",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "141552"
       },
@@ -4584,7 +4590,7 @@
         "name": "溪頭街口",
         "name_en": "Xitou St. Intersection",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "141554"
       },
@@ -4604,7 +4610,7 @@
         "name": "大德路",
         "name_en": "Dade Rd.",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "141556"
       },
@@ -4624,7 +4630,7 @@
         "name": "堵南國小",
         "name_en": "Keelung City Dunan Elementary School",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "141505"
       },
@@ -4644,7 +4650,7 @@
         "name": "福一街口",
         "name_en": "Fu 1st St. Intersection",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "140993"
       },
@@ -4664,7 +4670,7 @@
         "name": "百福宮",
         "name_en": "Baifu Temple",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "140994"
       },
@@ -4684,7 +4690,7 @@
         "name": "百三街口",
         "name_en": "Bai 3rd St. Intersection",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "140962"
       },
@@ -4704,7 +4710,7 @@
         "name": "福二街口",
         "name_en": "Fu 2nd St. Intersection",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "140961"
       },
@@ -4724,7 +4730,7 @@
         "name": "福三街口",
         "name_en": "Fu 3rd St. Intersection",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "140959"
       },
@@ -4744,7 +4750,7 @@
         "name": "百福國中",
         "name_en": "Baifu Junior High School",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "140958"
       },
@@ -4764,7 +4770,7 @@
         "name": "百六街口",
         "name_en": "Bai 6th St. Intersection",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "140957"
       },
@@ -4784,7 +4790,7 @@
         "name": "監理站",
         "name_en": "Keelung Motor Vehicles Supervision Station",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "140956"
       },
@@ -4804,7 +4810,7 @@
         "name": "六堵科技園區",
         "name_en": "Liudu Industry Park",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "140955"
       },
@@ -4824,7 +4830,7 @@
         "name": "六堵代天府",
         "name_en": "Liudu Daitian Temple",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "141565"
       },
@@ -4844,7 +4850,7 @@
         "name": "六堵科技園區服務中心",
         "name_en": "Liudu Industry Park Service Center",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "140953"
       },
@@ -4864,7 +4870,7 @@
         "name": "六堵加油站",
         "name_en": "Liudu Gas Station",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "140952"
       },
@@ -4884,7 +4890,7 @@
         "name": "六堵嶺",
         "name_en": "Liuduling",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "140951"
       },
@@ -4904,7 +4910,7 @@
         "name": "幸福人生社區",
         "name_en": "Xingfurensheng Community",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "140948"
       },
@@ -4924,7 +4930,7 @@
         "name": "草濫",
         "name_en": "Caolan",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "140945"
       },
@@ -4944,7 +4950,7 @@
         "name": "光明路口",
         "name_en": "Guangming Rd. Intersection",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "140631"
       },
@@ -4964,7 +4970,7 @@
         "name": "陽明海運",
         "name_en": "Yangming Marine Transport Corporation",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "140637"
       },
@@ -4984,7 +4990,7 @@
         "name": "南七堵",
         "name_en": "Nanqidu",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "140643"
       },
@@ -5004,7 +5010,7 @@
         "name": "七堵郵局",
         "name_en": "Keelung Qidu Post Office",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "140788"
       },
@@ -5024,7 +5030,7 @@
         "name": "七堵國小",
         "name_en": "Qidu Elementary School",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "140645"
       },
@@ -5044,7 +5050,7 @@
         "name": "三分局",
         "name_en": "Third Police Substation",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "140789"
       },
@@ -5064,7 +5070,7 @@
         "name": "大華橋",
         "name_en": "Dahua Bridge",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "140791"
       },
@@ -5084,7 +5090,7 @@
         "name": "八堵加油站",
         "name_en": "Badu Gas Station",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "140792"
       },
@@ -5104,7 +5110,7 @@
         "name": "八堵火車站",
         "name_en": "Badu Railway Station",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "140793"
       },
@@ -5124,7 +5130,7 @@
         "name": "八南里",
         "name_en": "Banan Village",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "140653"
       },
@@ -5144,7 +5150,7 @@
         "name": "八堵橋",
         "name_en": "Badu Bridge",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "140930"
       },
@@ -5164,7 +5170,7 @@
         "name": "海會寺",
         "name_en": "Haihui Temple",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "141033"
       },
@@ -5184,7 +5190,7 @@
         "name": "南榮公墓(英仁里)",
         "name_en": "Nanrong Cemetery",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "141035"
       },
@@ -5204,7 +5210,7 @@
         "name": "寶明寺",
         "name_en": "Baoming Temple",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "141037"
       },
@@ -5224,7 +5230,7 @@
         "name": "蓬萊隧道北口",
         "name_en": "Penglai Tunnel N. Exit",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "141040"
       },
@@ -5244,7 +5250,7 @@
         "name": "南榮國小",
         "name_en": "Nanrong Elementary School",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "141043"
       },
@@ -5264,7 +5270,7 @@
         "name": "三坑",
         "name_en": "Sankeng",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "141045"
       },
@@ -5284,7 +5290,7 @@
         "name": "南榮路口",
         "name_en": "Nanrong Rd. Intersection",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "141047"
       },
@@ -5304,7 +5310,7 @@
         "name": "仁二路(二信循環站)",
         "name_en": "Ren 2nd Rd. (Erxin Loop Station )",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "140620"
       },
@@ -5324,7 +5330,7 @@
         "name": "基隆火車站(南站)",
         "name_en": "Keelung Railway Station S.",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "141049"
       },
@@ -5344,7 +5350,7 @@
         "name": "南榮路口",
         "name_en": "Nanrong Rd. Intersection",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "141048"
       },
@@ -5364,7 +5370,7 @@
         "name": "三坑",
         "name_en": "Sankeng",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "141046"
       },
@@ -5384,7 +5390,7 @@
         "name": "南榮國小",
         "name_en": "Nanrong Elementary School",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "141044"
       },
@@ -5404,7 +5410,7 @@
         "name": "蓬萊隧道北口",
         "name_en": "Penglai Tunnel N. Exit",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "141039"
       },
@@ -5424,7 +5430,7 @@
         "name": "寶明寺",
         "name_en": "Baoming Temple",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "141038"
       },
@@ -5444,7 +5450,7 @@
         "name": "南榮公墓(英仁里)",
         "name_en": "Nanrong Cemetery",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "141036"
       },
@@ -5464,7 +5470,7 @@
         "name": "海會寺",
         "name_en": "Haihui Temple",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "141034"
       },
@@ -5484,7 +5490,7 @@
         "name": "八堵橋",
         "name_en": "Badu Bridge",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "140654"
       },
@@ -5504,7 +5510,7 @@
         "name": "八堵火車站",
         "name_en": "Badu Railway Station",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "140652"
       },
@@ -5524,7 +5530,7 @@
         "name": "八堵加油站",
         "name_en": "Badu Gas Station",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "140650"
       },
@@ -5544,7 +5550,7 @@
         "name": "大華橋",
         "name_en": "Dahua Bridge",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "140648"
       },
@@ -5564,7 +5570,7 @@
         "name": "三分局",
         "name_en": "Third Police Substation",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "140646"
       },
@@ -5584,7 +5590,7 @@
         "name": "七堵國小",
         "name_en": "Qidu Elementary School",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "140868"
       },
@@ -5604,7 +5610,7 @@
         "name": "七堵郵局",
         "name_en": "Keelung Qidu Post Office",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "140644"
       },
@@ -5624,7 +5630,7 @@
         "name": "南七堵",
         "name_en": "Nanqidu",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "141085"
       },
@@ -5644,7 +5650,7 @@
         "name": "陽明海運",
         "name_en": "Yangming Marine Transport Corporation",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "141087"
       },
@@ -5664,7 +5670,7 @@
         "name": "光明路口",
         "name_en": "Guangming Rd. Intersection",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "141089"
       },
@@ -5684,7 +5690,7 @@
         "name": "草濫",
         "name_en": "Caolan",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "140943"
       },
@@ -5704,7 +5710,7 @@
         "name": "幸福人生社區",
         "name_en": "Xingfurensheng Community",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "140947"
       },
@@ -5724,7 +5730,7 @@
         "name": "六堵嶺",
         "name_en": "Liuduling",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "140950"
       },
@@ -5744,7 +5750,7 @@
         "name": "六堵加油站",
         "name_en": "Liudu Gas Station",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "141425"
       },
@@ -5764,7 +5770,7 @@
         "name": "六堵科技園區服務中心",
         "name_en": "Liudu Industry Park Service Center",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "141097"
       },
@@ -5784,7 +5790,7 @@
         "name": "六堵代天府",
         "name_en": "Liudu Daitian Temple",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "141100"
       },
@@ -5804,7 +5810,7 @@
         "name": "六堵科技園區",
         "name_en": "Liudu Industry Park",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "141105"
       },
@@ -5824,7 +5830,7 @@
         "name": "監理站",
         "name_en": "Keelung Motor Vehicles Supervision Station",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "141501"
       },
@@ -5844,7 +5850,7 @@
         "name": "百六街口",
         "name_en": "Bai 6th St. Intersection",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "140990"
       },
@@ -5864,7 +5870,7 @@
         "name": "百福國中",
         "name_en": "Baifu Junior High School",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "140989"
       },
@@ -5884,7 +5890,7 @@
         "name": "福三街口",
         "name_en": "Fu 3rd St. Intersection",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "141564"
       },
@@ -5904,7 +5910,7 @@
         "name": "福二街口",
         "name_en": "Fu 2nd St. Intersection",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "141560"
       },
@@ -5924,7 +5930,7 @@
         "name": "百三街口",
         "name_en": "Bai 3rd St. Intersection",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "141562"
       },
@@ -5944,7 +5950,7 @@
         "name": "百福宮",
         "name_en": "Baifu Temple",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "141561"
       },
@@ -5964,7 +5970,7 @@
         "name": "福一街口",
         "name_en": "Fu 1st St. Intersection",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "141558"
       },
@@ -5984,7 +5990,7 @@
         "name": "百七街口",
         "name_en": "Bai 7th St. Intersection",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "140992"
       },
@@ -6004,7 +6010,7 @@
         "name": "水漾會館",
         "name_en": "Shuiyang Hall",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "141559"
       },
@@ -6024,7 +6030,7 @@
         "name": "堵南國小",
         "name_en": "Keelung City Dunan Elementary School",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "141504"
       },
@@ -6044,7 +6050,7 @@
         "name": "大德路",
         "name_en": "Dade Rd.",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "141557"
       },
@@ -6064,7 +6070,7 @@
         "name": "溪頭街口",
         "name_en": "Xitou St. Intersection",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "141555"
       },
@@ -6084,7 +6090,7 @@
         "name": "特殊教育學校",
         "name_en": "National Keelung Special Education School",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "141553"
       },
@@ -6104,7 +6110,7 @@
         "name": "堵南加油站",
         "name_en": "Dunan Gas Station",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "141550"
       },
@@ -6124,7 +6130,7 @@
         "name": "堵南里",
         "name_en": "Dunan Village",
         "line": "402",
-        "color": "#9f1239",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "141545"
       },

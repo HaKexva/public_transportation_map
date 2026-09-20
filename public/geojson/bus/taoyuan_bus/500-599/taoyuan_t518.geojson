@@ -6,11 +6,12 @@
     "name": "T518",
     "name_en": "T518",
     "ref": "T518",
-    "color": "#701a75",
+    "color": "#9f1239",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "operator_id": "40",
-    "operator": "台灣真好"
+    "operator": "台灣真好",
+    "loop": true
   },
   "features": [
     {
@@ -20,8 +21,9 @@
         "ref": "T518",
         "name": "T518",
         "name_en": "T518",
-        "color": "#701a75",
-        "direction": 0
+        "color": "#9f1239",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -805,7 +807,7 @@
         "name": "觀音行政園區",
         "name_en": "Guanyin Administrative Zone",
         "line": "T518",
-        "color": "#701a75",
+        "color": "#9f1239",
         "direction": 0,
         "station_id": "3454"
       },
@@ -825,7 +827,7 @@
         "name": "橫圳頭",
         "name_en": "Hengzuntou",
         "line": "T518",
-        "color": "#701a75",
+        "color": "#9f1239",
         "direction": 0,
         "station_id": "2989"
       },
@@ -845,7 +847,7 @@
         "name": "三和",
         "name_en": "Sanhe",
         "line": "T518",
-        "color": "#701a75",
+        "color": "#9f1239",
         "direction": 0,
         "station_id": "2987"
       },
@@ -865,7 +867,7 @@
         "name": "美夢成真社區",
         "name_en": "Meimengchengzhen Community",
         "line": "T518",
-        "color": "#701a75",
+        "color": "#9f1239",
         "direction": 0,
         "station_id": "2985"
       },
@@ -885,7 +887,7 @@
         "name": "坑尾",
         "name_en": "Kengwei",
         "line": "T518",
-        "color": "#701a75",
+        "color": "#9f1239",
         "direction": 0,
         "station_id": "2981"
       },
@@ -905,7 +907,7 @@
         "name": "和興",
         "name_en": "Hexing",
         "line": "T518",
-        "color": "#701a75",
+        "color": "#9f1239",
         "direction": 0,
         "station_id": "2979"
       },
@@ -925,7 +927,7 @@
         "name": "新興",
         "name_en": "Xinxing",
         "line": "T518",
-        "color": "#701a75",
+        "color": "#9f1239",
         "direction": 0,
         "station_id": "340"
       },
@@ -945,7 +947,7 @@
         "name": "石橋",
         "name_en": "Stone Bridge",
         "line": "T518",
-        "color": "#701a75",
+        "color": "#9f1239",
         "direction": 0,
         "station_id": "2976"
       },
@@ -965,7 +967,7 @@
         "name": "坑尾村三鄰",
         "name_en": "Kengwei Village, Neighborhood 3",
         "line": "T518",
-        "color": "#701a75",
+        "color": "#9f1239",
         "direction": 0,
         "station_id": "5766"
       },
@@ -985,7 +987,7 @@
         "name": "昇和",
         "name_en": "Shenghe",
         "line": "T518",
-        "color": "#701a75",
+        "color": "#9f1239",
         "direction": 0,
         "station_id": "7065"
       },
@@ -1005,7 +1007,7 @@
         "name": "育仁路二段208巷",
         "name_en": "Lane 208, Section 2, Yuren Road",
         "line": "T518",
-        "color": "#701a75",
+        "color": "#9f1239",
         "direction": 0,
         "station_id": "7066"
       },
@@ -1025,7 +1027,7 @@
         "name": "向陽農場",
         "name_en": "Xiangyang Farm",
         "line": "T518",
-        "color": "#701a75",
+        "color": "#9f1239",
         "direction": 0,
         "station_id": "7067"
       },
@@ -1045,7 +1047,7 @@
         "name": "福德宮",
         "name_en": "Fude Temple",
         "line": "T518",
-        "color": "#701a75",
+        "color": "#9f1239",
         "direction": 0,
         "station_id": "7068"
       },
@@ -1065,7 +1067,7 @@
         "name": "金華路口",
         "name_en": "Jinhua Rd. Intersection",
         "line": "T518",
-        "color": "#701a75",
+        "color": "#9f1239",
         "direction": 0,
         "station_id": "5826"
       },
@@ -1085,7 +1087,7 @@
         "name": "大堀活動中心",
         "name_en": "Dajue Activity Center",
         "line": "T518",
-        "color": "#701a75",
+        "color": "#9f1239",
         "direction": 0,
         "station_id": "5828"
       },
@@ -1105,7 +1107,7 @@
         "name": "大田蓮園",
         "name_en": "Datianlianyuan",
         "line": "T518",
-        "color": "#701a75",
+        "color": "#9f1239",
         "direction": 0,
         "station_id": "5790"
       },
@@ -1125,7 +1127,7 @@
         "name": "大湖路二段668巷",
         "name_en": "Lane 668, Section 2, Dahu Road",
         "line": "T518",
-        "color": "#701a75",
+        "color": "#9f1239",
         "direction": 0,
         "station_id": "7069"
       },
@@ -1145,7 +1147,7 @@
         "name": "同心路",
         "name_en": "Tongxin Road",
         "line": "T518",
-        "color": "#701a75",
+        "color": "#9f1239",
         "direction": 0,
         "station_id": "7070"
       },
@@ -1165,7 +1167,7 @@
         "name": "東元",
         "name_en": "Dongyuan",
         "line": "T518",
-        "color": "#701a75",
+        "color": "#9f1239",
         "direction": 0,
         "station_id": "3468"
       },
@@ -1185,7 +1187,7 @@
         "name": "立隆",
         "name_en": "Lilong",
         "line": "T518",
-        "color": "#701a75",
+        "color": "#9f1239",
         "direction": 0,
         "station_id": "3466"
       },
@@ -1205,7 +1207,7 @@
         "name": "瑞祥",
         "name_en": "Ruixiang",
         "line": "T518",
-        "color": "#701a75",
+        "color": "#9f1239",
         "direction": 0,
         "station_id": "3462"
       },
@@ -1225,7 +1227,7 @@
         "name": "金湖",
         "name_en": "Jinhu",
         "line": "T518",
-        "color": "#701a75",
+        "color": "#9f1239",
         "direction": 0,
         "station_id": "3460"
       },
@@ -1245,7 +1247,7 @@
         "name": "上大坡腳",
         "name_en": "Shandapojia",
         "line": "T518",
-        "color": "#701a75",
+        "color": "#9f1239",
         "direction": 0,
         "station_id": "3456"
       },
@@ -1265,7 +1267,7 @@
         "name": "下大坡腳",
         "name_en": "Xiadapojiao",
         "line": "T518",
-        "color": "#701a75",
+        "color": "#9f1239",
         "direction": 0,
         "station_id": "1683"
       },
@@ -1285,7 +1287,7 @@
         "name": "許厝",
         "name_en": "Xucuo",
         "line": "T518",
-        "color": "#701a75",
+        "color": "#9f1239",
         "direction": 0,
         "station_id": "1019"
       },
@@ -1305,7 +1307,7 @@
         "name": "觀音行政園區",
         "name_en": "Guanyin administration area",
         "line": "T518",
-        "color": "#701a75",
+        "color": "#9f1239",
         "direction": 0,
         "station_id": "3453"
       },

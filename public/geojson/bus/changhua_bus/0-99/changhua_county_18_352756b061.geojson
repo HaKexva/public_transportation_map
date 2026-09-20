@@ -6,13 +6,14 @@
     "name": "18路",
     "name_en": "18路",
     "ref": "18路",
-    "color": "#65a30d",
+    "color": "#b91c1c",
     "city_id": "ChanghuaCounty",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://web.taiwanbus.tw/MISUploadData/Schematic/file/0465.jpg",
     "operator_id": "60",
     "operator": "彰化客運",
-    "operator_en": "Chang Hua Bus Co., Ltd."
+    "operator_en": "Chang Hua Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "18路",
         "name": "18路",
         "name_en": "18路",
-        "color": "#65a30d",
-        "direction": 0
+        "color": "#b91c1c",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1727,7 +1729,7 @@
         "name": "彰客彰化站",
         "name_en": "Changhua Station",
         "line": "18路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "137591"
       },
@@ -1747,7 +1749,7 @@
         "name": "三角公園",
         "name_en": "Sanjiao Park",
         "line": "18路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "141130"
       },
@@ -1767,7 +1769,7 @@
         "name": "縣議會",
         "name_en": "County Council",
         "line": "18路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "141131"
       },
@@ -1787,7 +1789,7 @@
         "name": "八卦山天空步道",
         "name_en": "Bagua Mountain Sky Trail",
         "line": "18路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "141132"
       },
@@ -1807,7 +1809,7 @@
         "name": "千禧廣場",
         "name_en": "Millennium Plaza",
         "line": "18路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "141133"
       },
@@ -1827,7 +1829,7 @@
         "name": "八卦山脈生態遊客中心",
         "name_en": "Bagua Mountain Ecological Visitor Center",
         "line": "18路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "141134"
       },
@@ -1847,7 +1849,7 @@
         "name": "C119軍機公園",
         "name_en": "C119 Military Aircraft Park",
         "line": "18路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "141135"
       },
@@ -1867,7 +1869,7 @@
         "name": "國立彰化生活美學館",
         "name_en": "National Changhua Life Aesthetics Museum",
         "line": "18路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "141136"
       },
@@ -1887,7 +1889,7 @@
         "name": "成功營區",
         "name_en": "Chenggong Camp",
         "line": "18路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "141137"
       },
@@ -1907,7 +1909,7 @@
         "name": "縣議會",
         "name_en": "County council",
         "line": "18路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "141138"
       },
@@ -1927,7 +1929,7 @@
         "name": "孔子廟",
         "name_en": "Confucius Temple",
         "line": "18路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "135708"
       },
@@ -1947,7 +1949,7 @@
         "name": "三角公園",
         "name_en": "Sanjiao Park",
         "line": "18路",
-        "color": "#65a30d",
+        "color": "#b91c1c",
         "direction": 0,
         "station_id": "141139"
       },

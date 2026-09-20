@@ -6,13 +6,14 @@
     "name": "27",
     "name_en": "27",
     "ref": "27",
-    "color": "#0e7490",
+    "color": "#92400e",
     "city_id": "Hsinchu",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://web.taiwanbus.tw/MISUploadData/Schematic/file/0270.jpg",
     "operator_id": "13",
     "operator": "新竹客運",
-    "operator_en": "Hsinchu Bus Co., Ltd."
+    "operator_en": "Hsinchu Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "27",
         "name": "27",
         "name_en": "27",
-        "color": "#0e7490",
-        "direction": 0
+        "color": "#92400e",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1227,6 +1229,10 @@
           [
             120.97112,
             24.80333
+          ],
+          [
+            120.97185,
+            24.80318
           ]
         ]
       }
@@ -1239,7 +1245,7 @@
         "name": "火車站",
         "name_en": "Train Station",
         "line": "27",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "144220"
       },
@@ -1259,7 +1265,7 @@
         "name": "東門市場",
         "name_en": "Dong  Men Market",
         "line": "27",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130082"
       },
@@ -1279,7 +1285,7 @@
         "name": "地方法院",
         "name_en": "District Court",
         "line": "27",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130309"
       },
@@ -1299,7 +1305,7 @@
         "name": "鄭氏家廟",
         "name_en": "Zheng's Family shrine",
         "line": "27",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130388"
       },
@@ -1319,7 +1325,7 @@
         "name": "中正經國路口",
         "name_en": "Zhong Zheng Jing Guo Road Entrance",
         "line": "27",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130389"
       },
@@ -1339,7 +1345,7 @@
         "name": "中正城北街口",
         "name_en": "Zhong Zheng Cheng Bei Street Entrance",
         "line": "27",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130476"
       },
@@ -1359,7 +1365,7 @@
         "name": "國軍新竹地區醫院",
         "name_en": "Hsin Chu Armed Force Hospital",
         "line": "27",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130178"
       },
@@ -1379,7 +1385,7 @@
         "name": "武陵社區",
         "name_en": "Wuling Community",
         "line": "27",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130179"
       },
@@ -1399,7 +1405,7 @@
         "name": "湳中街口",
         "name_en": "Nanzhong St. Intersection",
         "line": "27",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130180"
       },
@@ -1419,7 +1425,7 @@
         "name": "湳雅公園(大潤發)",
         "name_en": "Nanya Park(RT-Mart)",
         "line": "27",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130618"
       },
@@ -1439,7 +1445,7 @@
         "name": "湳雅",
         "name_en": "Nanya",
         "line": "27",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130571"
       },
@@ -1459,7 +1465,7 @@
         "name": "鄭厝",
         "name_en": "Zhengcuo",
         "line": "27",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130572"
       },
@@ -1479,7 +1485,7 @@
         "name": "舊社國小",
         "name_en": "Jioushe Elementary School",
         "line": "27",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130619"
       },
@@ -1499,7 +1505,7 @@
         "name": "金竹路",
         "name_en": "Jinzhu Road",
         "line": "27",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130620"
       },
@@ -1519,7 +1525,7 @@
         "name": "長壽會館",
         "name_en": "Changshou Assembly Hall",
         "line": "27",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130621"
       },
@@ -1539,7 +1545,7 @@
         "name": "荷蘭村",
         "name_en": "Dutch Village",
         "line": "27",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130622"
       },
@@ -1559,7 +1565,7 @@
         "name": "湳中街口",
         "name_en": "Nanzhong St. Intersection",
         "line": "27",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130161"
       },
@@ -1579,7 +1585,7 @@
         "name": "武陵社區",
         "name_en": "Wuling Community",
         "line": "27",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130162"
       },
@@ -1599,7 +1605,7 @@
         "name": "國軍新竹地區醫院",
         "name_en": "Hsin Chu Armed Force Hospital",
         "line": "27",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130163"
       },
@@ -1619,7 +1625,7 @@
         "name": "變電所",
         "name_en": "Transformer Substation",
         "line": "27",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130623"
       },
@@ -1639,7 +1645,7 @@
         "name": "如意新村",
         "name_en": "Ruyi New Village",
         "line": "27",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130624"
       },
@@ -1659,7 +1665,7 @@
         "name": "成功路口",
         "name_en": "Chenggong Road Intersection",
         "line": "27",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130625"
       },
@@ -1679,7 +1685,7 @@
         "name": "沙崙",
         "name_en": "Shalun",
         "line": "27",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130626"
       },
@@ -1699,7 +1705,7 @@
         "name": "文雅新村",
         "name_en": "Wenya New Village",
         "line": "27",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130627"
       },
@@ -1719,7 +1725,7 @@
         "name": "竹光3站",
         "name_en": "Zhuguang 3th Stop",
         "line": "27",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130628"
       },
@@ -1739,7 +1745,7 @@
         "name": "竹光2站",
         "name_en": "Zhuguang 2nd Stop",
         "line": "27",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130629"
       },
@@ -1759,7 +1765,7 @@
         "name": "竹光1站",
         "name_en": "Zhuguang 1st Stop",
         "line": "27",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130630"
       },
@@ -1779,7 +1785,7 @@
         "name": "竹光新村",
         "name_en": "Zhu Guang Xin Village",
         "line": "27",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130521"
       },
@@ -1799,7 +1805,7 @@
         "name": "中正城北街口",
         "name_en": "Zhong Zheng Cheng Bei Street Entrance",
         "line": "27",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130522"
       },
@@ -1819,7 +1825,7 @@
         "name": "中正經國路口",
         "name_en": "Zhong Zheng Jing Guo Road Entrance",
         "line": "27",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130603"
       },
@@ -1839,7 +1845,7 @@
         "name": "鄭氏家廟",
         "name_en": "Zheng's Family shrine",
         "line": "27",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130602"
       },
@@ -1859,7 +1865,7 @@
         "name": "地方法院",
         "name_en": "District Court",
         "line": "27",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130331"
       },
@@ -1879,7 +1885,7 @@
         "name": "東門市場",
         "name_en": "Dong Men Market",
         "line": "27",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130108"
       },
@@ -1899,7 +1905,7 @@
         "name": "火車站",
         "name_en": "Train Station",
         "line": "27",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130109"
       },

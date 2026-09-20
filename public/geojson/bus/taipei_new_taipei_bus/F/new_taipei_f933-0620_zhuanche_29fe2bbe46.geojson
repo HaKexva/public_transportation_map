@@ -6,13 +6,14 @@
     "name": "F933-0620學生專車",
     "name_en": "F933-0620學生專車",
     "ref": "F933-0620學生專車",
-    "color": "#2563eb",
+    "color": "#6B8F9A",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.gov.taipei/File/Get/8928dda0-f97b-4b04-82eb-9b2dbfd3c7eb?v=639248448831355875",
     "operator_id": "16253",
     "operator": "金山區公所",
-    "operator_en": "Jinshan District Office"
+    "operator_en": "Jinshan District Office",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "F933-0620學生專車",
         "name": "F933-0620學生專車",
         "name_en": "F933-0620學生專車",
-        "color": "#2563eb",
-        "direction": 0
+        "color": "#6B8F9A",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -2519,6 +2521,10 @@
           [
             121.636308348559,
             25.2222904391133
+          ],
+          [
+            121.636341778333,
+            25.2223038110231
           ]
         ]
       }
@@ -2531,7 +2537,7 @@
         "name": "金山區公所",
         "name_en": "Jinshan District Office",
         "line": "F933-0620學生專車",
-        "color": "#2563eb",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603304"
       },
@@ -2551,7 +2557,7 @@
         "name": "磺溪橋",
         "name_en": "HuangXi Bridge",
         "line": "F933-0620學生專車",
-        "color": "#2563eb",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165610385"
       },
@@ -2571,7 +2577,7 @@
         "name": "下六股",
         "name_en": "Xialiugu Village",
         "line": "F933-0620學生專車",
-        "color": "#2563eb",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70526"
       },
@@ -2591,7 +2597,7 @@
         "name": "六股中路",
         "name_en": "Liuguzhong Rd.",
         "line": "F933-0620學生專車",
-        "color": "#2563eb",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165604043"
       },
@@ -2611,7 +2617,7 @@
         "name": "重和里林莊橋",
         "name_en": "Chonghe Village Linzhuang Bridge",
         "line": "F933-0620學生專車",
-        "color": "#2563eb",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165607045"
       },
@@ -2631,7 +2637,7 @@
         "name": "天籟箱根",
         "name_en": "Tianlai Xianggen",
         "line": "F933-0620學生專車",
-        "color": "#2563eb",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70515"
       },
@@ -2651,7 +2657,7 @@
         "name": "重和里三和橋",
         "name_en": "Chonghe Village Sanhe Bridge",
         "line": "F933-0620學生專車",
-        "color": "#2563eb",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165607046"
       },
@@ -2671,7 +2677,7 @@
         "name": "六股里潭子內",
         "name_en": "Liugu Village Tanzinei",
         "line": "F933-0620學生專車",
-        "color": "#2563eb",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70529"
       },
@@ -2691,7 +2697,7 @@
         "name": "金山中學",
         "name_en": "JinShan Senior High School",
         "line": "F933-0620學生專車",
-        "color": "#2563eb",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "70607"
       },
@@ -2711,7 +2717,7 @@
         "name": "金山區公所",
         "name_en": "Jinshan District Office",
         "line": "F933-0620學生專車",
-        "color": "#2563eb",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603304"
       },

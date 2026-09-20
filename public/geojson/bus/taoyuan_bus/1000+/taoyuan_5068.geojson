@@ -6,13 +6,14 @@
     "name": "5068",
     "name_en": "5068",
     "ref": "5068",
-    "color": "#b91c1c",
+    "color": "#b45309",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/5068/map/2015/image",
     "operator_id": "1",
     "operator": "桃園客運",
-    "operator_en": "Taoyuan Bus Co., Ltd."
+    "operator_en": "Taoyuan Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "5068",
         "name": "5068",
         "name_en": "5068",
-        "color": "#b91c1c",
-        "direction": 0
+        "color": "#b45309",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1707,6 +1709,10 @@
           [
             121.31404,
             24.98658
+          ],
+          [
+            121.31414,
+            24.9866
           ]
         ]
       }
@@ -1719,7 +1725,7 @@
         "name": "桃客總站",
         "name_en": "Taoyuan Bus Terminal",
         "line": "5068",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5123"
       },
@@ -1739,7 +1745,7 @@
         "name": "聖保祿醫院",
         "name_en": "Saint Pauls Hospital",
         "line": "5068",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "872"
       },
@@ -1759,7 +1765,7 @@
         "name": "建國路口",
         "name_en": "Jianguo Road Intersection",
         "line": "5068",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3066"
       },
@@ -1779,7 +1785,7 @@
         "name": "桃花園飯店",
         "name_en": "Tao Garden Hotel",
         "line": "5068",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1948"
       },
@@ -1799,7 +1805,7 @@
         "name": "復興中正路口(桃園火車站)",
         "name_en": "Fuxing and Zhongzheng Rd. Int.(Taoyuan Station)",
         "line": "5068",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1340"
       },
@@ -1819,7 +1825,7 @@
         "name": "復興橋",
         "name_en": "Fuxing Bridge",
         "line": "5068",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2335"
       },
@@ -1839,7 +1845,7 @@
         "name": "東山里",
         "name_en": "DungShan Village",
         "line": "5068",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3503"
       },
@@ -1859,7 +1865,7 @@
         "name": "萬壽山鶯路口",
         "name_en": "Wanshou Shanying Rd. Intersection",
         "line": "5068",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3884"
       },
@@ -1879,7 +1885,7 @@
         "name": "青果中心",
         "name_en": "Cingguo Fruits Center",
         "line": "5068",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3577"
       },
@@ -1899,7 +1905,7 @@
         "name": "頂興路口",
         "name_en": "Dingxing Road Intersection",
         "line": "5068",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3578"
       },
@@ -1919,7 +1925,7 @@
         "name": "拔仔埔",
         "name_en": "Bazipu",
         "line": "5068",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3586"
       },
@@ -1939,7 +1945,7 @@
         "name": "陸光二村",
         "name_en": "Luguang 2nd Village",
         "line": "5068",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3588"
       },
@@ -1959,7 +1965,7 @@
         "name": "萬壽中興路口",
         "name_en": "Wanshou Jhongsing Rd. Intersection",
         "line": "5068",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3590"
       },
@@ -1979,7 +1985,7 @@
         "name": "龜山",
         "name_en": "Guishan",
         "line": "5068",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3591"
       },
@@ -1999,7 +2005,7 @@
         "name": "壽山高中",
         "name_en": "Shou-Shan Senior High School",
         "line": "5068",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3593"
       },
@@ -2019,7 +2025,7 @@
         "name": "大同新村",
         "name_en": "Datong Village",
         "line": "5068",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3800"
       },
@@ -2039,7 +2045,7 @@
         "name": "德明路口",
         "name_en": "Deming Road Intersection",
         "line": "5068",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3819"
       },
@@ -2059,7 +2065,7 @@
         "name": "下社",
         "name_en": "Xiashe",
         "line": "5068",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4792"
       },
@@ -2079,7 +2085,7 @@
         "name": "台森公司",
         "name_en": "Taisen Company",
         "line": "5068",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4794"
       },
@@ -2099,7 +2105,7 @@
         "name": "大同路明成街口",
         "name_en": "Datong Rd. Mingcheng St.",
         "line": "5068",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4796"
       },
@@ -2119,7 +2125,7 @@
         "name": "白馬社區",
         "name_en": "Baima Community",
         "line": "5068",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4798"
       },
@@ -2139,7 +2145,7 @@
         "name": "大丘田",
         "name_en": "Daqiutian",
         "line": "5068",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "314"
       },
@@ -2159,7 +2165,7 @@
         "name": "中華窯業",
         "name_en": "Zhonghua Ceramics",
         "line": "5068",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4800"
       },
@@ -2179,7 +2185,7 @@
         "name": "福源國小",
         "name_en": "Fuyuan Elementary School",
         "line": "5068",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4802"
       },
@@ -2199,7 +2205,7 @@
         "name": "石雲岩",
         "name_en": "Shiyunyan",
         "line": "5068",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4805"
       },
@@ -2219,7 +2225,7 @@
         "name": "石雲寺",
         "name_en": "Shiyun Temple",
         "line": "5068",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4807"
       },
@@ -2239,7 +2245,7 @@
         "name": "詹厝",
         "name_en": "Zhancuo",
         "line": "5068",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "470"
       },
@@ -2259,7 +2265,7 @@
         "name": "中一堂",
         "name_en": "Zhongyitang",
         "line": "5068",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4809"
       },
@@ -2279,7 +2285,7 @@
         "name": "圓光橋",
         "name_en": "Yuanguang Bridge",
         "line": "5068",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4811"
       },
@@ -2299,7 +2305,7 @@
         "name": "福山宮",
         "name_en": "Fushan Temple",
         "line": "5068",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4813"
       },
@@ -2319,7 +2325,7 @@
         "name": "福山宮",
         "name_en": "Fushan Temple",
         "line": "5068",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4814"
       },
@@ -2339,7 +2345,7 @@
         "name": "圓光橋",
         "name_en": "Yuanguang Bridge",
         "line": "5068",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4812"
       },
@@ -2359,7 +2365,7 @@
         "name": "中一堂",
         "name_en": "Zhongyitang",
         "line": "5068",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4810"
       },
@@ -2379,7 +2385,7 @@
         "name": "詹厝",
         "name_en": "Zhancuo",
         "line": "5068",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "471"
       },
@@ -2399,7 +2405,7 @@
         "name": "石雲寺",
         "name_en": "Shiyun Temple",
         "line": "5068",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4808"
       },
@@ -2419,7 +2425,7 @@
         "name": "石雲岩",
         "name_en": "Shiyunyan",
         "line": "5068",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4806"
       },
@@ -2439,7 +2445,7 @@
         "name": "福源國小",
         "name_en": "Fuyuan Elementary School",
         "line": "5068",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4803"
       },
@@ -2459,7 +2465,7 @@
         "name": "中華窯業",
         "name_en": "Zhonghua Ceramics",
         "line": "5068",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4801"
       },
@@ -2479,7 +2485,7 @@
         "name": "大江山側門",
         "name_en": "Side Door of Dajianshan",
         "line": "5068",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5623"
       },
@@ -2499,7 +2505,7 @@
         "name": "台北小城",
         "name_en": "Taipei Xiaocheng",
         "line": "5068",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4860"
       },
@@ -2519,7 +2525,7 @@
         "name": "大江山側門",
         "name_en": "Side Door of Dajianshan",
         "line": "5068",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5622"
       },
@@ -2539,7 +2545,7 @@
         "name": "大丘田",
         "name_en": "Daqiutian",
         "line": "5068",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "315"
       },
@@ -2559,7 +2565,7 @@
         "name": "白馬社區",
         "name_en": "Baima Community",
         "line": "5068",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4799"
       },
@@ -2579,7 +2585,7 @@
         "name": "大同路明成街口",
         "name_en": "Datong Rd. Mingcheng St.",
         "line": "5068",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4797"
       },
@@ -2599,7 +2605,7 @@
         "name": "台森公司",
         "name_en": "Taisen Company",
         "line": "5068",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4795"
       },
@@ -2619,7 +2625,7 @@
         "name": "下社",
         "name_en": "Xiashe",
         "line": "5068",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4793"
       },
@@ -2639,7 +2645,7 @@
         "name": "德明路口",
         "name_en": "Deming Road Intersection",
         "line": "5068",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3820"
       },
@@ -2659,7 +2665,7 @@
         "name": "大同新村",
         "name_en": "Datong Village",
         "line": "5068",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3801"
       },
@@ -2679,7 +2685,7 @@
         "name": "壽山高中",
         "name_en": "Shoushan High School",
         "line": "5068",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3594"
       },
@@ -2699,7 +2705,7 @@
         "name": "龜山",
         "name_en": "Guishan",
         "line": "5068",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6288"
       },
@@ -2719,7 +2725,7 @@
         "name": "萬壽中興路口",
         "name_en": "Wanshou Jhongsing Rd. Intersection",
         "line": "5068",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3592"
       },
@@ -2739,7 +2745,7 @@
         "name": "陸光二村",
         "name_en": "Luguang 2nd Village",
         "line": "5068",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3589"
       },
@@ -2759,7 +2765,7 @@
         "name": "拔仔埔",
         "name_en": "Bazipu",
         "line": "5068",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3587"
       },
@@ -2779,7 +2785,7 @@
         "name": "頂興路口",
         "name_en": "Dingxing Road Intersection",
         "line": "5068",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3579"
       },
@@ -2799,7 +2805,7 @@
         "name": "萬壽山鶯路口",
         "name_en": "Wanshou Shanying Rd. Intersection",
         "line": "5068",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3883"
       },
@@ -2819,7 +2825,7 @@
         "name": "東山里",
         "name_en": "Dongshan Village",
         "line": "5068",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3504"
       },
@@ -2839,7 +2845,7 @@
         "name": "桃花園飯店",
         "name_en": "Tao Garden Hotel",
         "line": "5068",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1949"
       },
@@ -2859,7 +2865,7 @@
         "name": "建國路口",
         "name_en": "JianGuo Road Intersection",
         "line": "5068",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3067"
       },
@@ -2879,7 +2885,7 @@
         "name": "聖保祿醫院",
         "name_en": "Saint Pauls Hospital",
         "line": "5068",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "871"
       },

@@ -6,13 +6,14 @@
     "name": "702",
     "name_en": "702",
     "ref": "702",
-    "color": "#b91c1c",
+    "color": "#b45309",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/7020/map/2381/image",
     "operator_id": "1",
     "operator": "桃園客運",
-    "operator_en": "Taoyuan Bus Co., Ltd."
+    "operator_en": "Taoyuan Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "702",
         "name": "702",
         "name_en": "702",
-        "color": "#b91c1c",
-        "direction": 0
+        "color": "#b45309",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -2787,6 +2789,10 @@
           [
             121.2878,
             24.88101
+          ],
+          [
+            121.28775,
+            24.88101
           ]
         ]
       }
@@ -2799,7 +2805,7 @@
         "name": "大溪總站",
         "name_en": "Daxi Bus Terminal",
         "line": "702",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4288"
       },
@@ -2819,7 +2825,7 @@
         "name": "大溪老街",
         "name_en": "Daxi Old Street",
         "line": "702",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6384"
       },
@@ -2839,7 +2845,7 @@
         "name": "觀音寺",
         "name_en": "Guanyin Temple",
         "line": "702",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4119"
       },
@@ -2859,7 +2865,7 @@
         "name": "崎腳",
         "name_en": "Qijiao",
         "line": "702",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1411"
       },
@@ -2879,7 +2885,7 @@
         "name": "稅務局(大溪分局)",
         "name_en": "Department of Taxation (Daxi Branch)",
         "line": "702",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6277"
       },
@@ -2899,7 +2905,7 @@
         "name": "建漢公司",
         "name_en": "Jianghan Company",
         "line": "702",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4204"
       },
@@ -2919,7 +2925,7 @@
         "name": "埔頂(仁和國小)",
         "name_en": "Puding(Renhe Elementary School)",
         "line": "702",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "182"
       },
@@ -2939,7 +2945,7 @@
         "name": "大溪山水",
         "name_en": "Daxi landscape",
         "line": "702",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3641"
       },
@@ -2959,7 +2965,7 @@
         "name": "仁和國中",
         "name_en": "Jenho Junior High School",
         "line": "702",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2610"
       },
@@ -2979,7 +2985,7 @@
         "name": "復興新城",
         "name_en": "Fuxing Xincheng",
         "line": "702",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3959"
       },
@@ -2999,7 +3005,7 @@
         "name": "員樹林",
         "name_en": "YuanShuLin",
         "line": "702",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3966"
       },
@@ -3019,7 +3025,7 @@
         "name": "吉安街口",
         "name_en": "JiAn Street Intersection",
         "line": "702",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4560"
       },
@@ -3039,7 +3045,7 @@
         "name": "大興西正光路口",
         "name_en": "Daxing W. and Zhengguang Rd. Intersection",
         "line": "702",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6404"
       },
@@ -3059,7 +3065,7 @@
         "name": "大興西永安路口",
         "name_en": "Dasing West and Yongan Rd. Intersection",
         "line": "702",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "376"
       },
@@ -3079,7 +3085,7 @@
         "name": "寶慶路口",
         "name_en": "Baoqing Road Intersection",
         "line": "702",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1192"
       },
@@ -3099,7 +3105,7 @@
         "name": "中埔一街口",
         "name_en": "Zhongpu 1st  Street Corner",
         "line": "702",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4369"
       },
@@ -3119,7 +3125,7 @@
         "name": "城市大亨",
         "name_en": "ChengShrDaHeng",
         "line": "702",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1513"
       },
@@ -3139,7 +3145,7 @@
         "name": "大興西新埔六街口",
         "name_en": "Daxing W. and Xinpu 6th St. Intersection",
         "line": "702",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4305"
       },
@@ -3159,7 +3165,7 @@
         "name": "敏盛醫院",
         "name_en": "Min-Sheng General Hospital",
         "line": "702",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "220"
       },
@@ -3179,7 +3185,7 @@
         "name": "巴黎富邑",
         "name_en": "BaLiFuYi Building",
         "line": "702",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1790"
       },
@@ -3199,7 +3205,7 @@
         "name": "經國南平路口",
         "name_en": "Jingguo and Nanping Rd. Intersection",
         "line": "702",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1792"
       },
@@ -3219,7 +3225,7 @@
         "name": "中悅春天",
         "name_en": "Jungyuechuentian",
         "line": "702",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1794"
       },
@@ -3239,7 +3245,7 @@
         "name": "經國莊敬路口",
         "name_en": "Jingguo Zhuangjing Road Intersection",
         "line": "702",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1796"
       },
@@ -3259,7 +3265,7 @@
         "name": "經國轉運站(幸福路口)",
         "name_en": "JingGuo Bus Station (Xingfu Rd. Intersection)",
         "line": "702",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1798"
       },
@@ -3279,7 +3285,7 @@
         "name": "長榮加油站",
         "name_en": "Zhangrong Gas Station",
         "line": "702",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1368"
       },
@@ -3299,7 +3305,7 @@
         "name": "亞建公司",
         "name_en": "YaJian Company",
         "line": "702",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1370"
       },
@@ -3319,7 +3325,7 @@
         "name": "桃園長庚轉運站",
         "name_en": "Taoyuan Chang Gung Bus Terminal",
         "line": "702",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6713"
       },
@@ -3339,7 +3345,7 @@
         "name": "亞建公司",
         "name_en": "YaJian Company",
         "line": "702",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1371"
       },
@@ -3359,7 +3365,7 @@
         "name": "長榮加油站",
         "name_en": "Zhangrong Gas Station",
         "line": "702",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1369"
       },
@@ -3379,7 +3385,7 @@
         "name": "經國轉運站(水汴一路口)",
         "name_en": "Jingguo Bus Station(Shuibian 1st Rd. Inter.)",
         "line": "702",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2820"
       },
@@ -3399,7 +3405,7 @@
         "name": "經國轉運站(幸福路口)",
         "name_en": "JingGuo Bus Station (Xingfu Rd. Intersection)",
         "line": "702",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1799"
       },
@@ -3419,7 +3425,7 @@
         "name": "經國莊敬路口",
         "name_en": "Jingguo Zhuangjing Road Intersection",
         "line": "702",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1797"
       },
@@ -3439,7 +3445,7 @@
         "name": "中悅春天",
         "name_en": "Jungyuechuentian",
         "line": "702",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1795"
       },
@@ -3459,7 +3465,7 @@
         "name": "經國南平路口",
         "name_en": "Jingguo and Nanping Rd. Intersection",
         "line": "702",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1793"
       },
@@ -3479,7 +3485,7 @@
         "name": "巴黎富邑",
         "name_en": "BaLiFuYi Building",
         "line": "702",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1791"
       },
@@ -3499,7 +3505,7 @@
         "name": "敏盛醫院",
         "name_en": "Min-Sheng General Hospital",
         "line": "702",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "221"
       },
@@ -3519,7 +3525,7 @@
         "name": "大興西同安街口",
         "name_en": "Daxing W. and Tongan St. Intersection",
         "line": "702",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4208"
       },
@@ -3539,7 +3545,7 @@
         "name": "城市大亨",
         "name_en": "ChengShrDaHeng",
         "line": "702",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1512"
       },
@@ -3559,7 +3565,7 @@
         "name": "中埔一街口",
         "name_en": "Zhongpu 1st  Street Corner",
         "line": "702",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4368"
       },
@@ -3579,7 +3585,7 @@
         "name": "寶慶路口",
         "name_en": "Baoqing Road Intersection",
         "line": "702",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1191"
       },
@@ -3599,7 +3605,7 @@
         "name": "大興西永安路口",
         "name_en": "Dasing West and Yongan Rd. Intersection",
         "line": "702",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "377"
       },
@@ -3619,7 +3625,7 @@
         "name": "大興西正光路口",
         "name_en": "Daxing W. and Zhengguang Rd. Intersection",
         "line": "702",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6403"
       },
@@ -3639,7 +3645,7 @@
         "name": "吉安街口",
         "name_en": "JiAn Street Intersection",
         "line": "702",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4561"
       },
@@ -3659,7 +3665,7 @@
         "name": "員樹林",
         "name_en": "YuanShuLin",
         "line": "702",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3967"
       },
@@ -3679,7 +3685,7 @@
         "name": "復興新城",
         "name_en": "Fuxing Xincheng",
         "line": "702",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3960"
       },
@@ -3699,7 +3705,7 @@
         "name": "仁和國中",
         "name_en": "Jenho Junior High School",
         "line": "702",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2611"
       },
@@ -3719,7 +3725,7 @@
         "name": "大溪山水",
         "name_en": "Daxi landscape",
         "line": "702",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3640"
       },
@@ -3739,7 +3745,7 @@
         "name": "埔頂(仁和國小)",
         "name_en": "Puding(Renhe Elementary School)",
         "line": "702",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "191"
       },
@@ -3759,7 +3765,7 @@
         "name": "建漢公司",
         "name_en": "Jianghan Company",
         "line": "702",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4205"
       },
@@ -3779,7 +3785,7 @@
         "name": "崎頂",
         "name_en": "Qiding",
         "line": "702",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "237"
       },
@@ -3799,7 +3805,7 @@
         "name": "崎腳",
         "name_en": "Qijiao",
         "line": "702",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1412"
       },
@@ -3819,7 +3825,7 @@
         "name": "觀音寺",
         "name_en": "Guanyin Temple",
         "line": "702",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4120"
       },
@@ -3839,7 +3845,7 @@
         "name": "大溪老街",
         "name_en": "Daxi Old Street",
         "line": "702",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6385"
       },

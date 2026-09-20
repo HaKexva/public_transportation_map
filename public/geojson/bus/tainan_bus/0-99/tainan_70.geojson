@@ -6,13 +6,14 @@
     "name": "70",
     "name_en": "70",
     "ref": "70",
-    "color": "#92400e",
+    "color": "#1d4ed8",
     "city_id": "Tainan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://busmap.tainan.gov.tw/ebus/resources/PathPic/zh_TW/1070.jpg",
     "operator_id": "10160",
     "operator": "興南客運",
-    "operator_en": "Shing Nan Bus Co., Ltd."
+    "operator_en": "Shing Nan Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "70",
         "name": "70",
         "name_en": "70",
-        "color": "#92400e",
-        "direction": 0
+        "color": "#1d4ed8",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -498,8 +500,9 @@
         "ref": "70",
         "name": "70",
         "name_en": "70",
-        "color": "#92400e",
-        "direction": 1
+        "color": "#1d4ed8",
+        "direction": 1,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1003,7 +1006,7 @@
         "name": "永華市政中心(府前路)",
         "name_en": "Tainan City Hall(Fu-Cian Rd.)",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 0,
         "station_id": "1431"
       },
@@ -1023,7 +1026,7 @@
         "name": "停2停車場",
         "name_en": "2nd public Parking Lot",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 0,
         "station_id": "1044"
       },
@@ -1043,7 +1046,7 @@
         "name": "民權路口",
         "name_en": "Mincyuan Rd. Intersection",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 0,
         "station_id": "1045"
       },
@@ -1063,7 +1066,7 @@
         "name": "西湖街口",
         "name_en": "Sihu St. Intersection",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 0,
         "station_id": "1060"
       },
@@ -1083,7 +1086,7 @@
         "name": "中華西路二段",
         "name_en": "Sec. 2 Jhonghua W. Rd.",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 0,
         "station_id": "1046"
       },
@@ -1103,7 +1106,7 @@
         "name": "賢北里",
         "name_en": "Sianbei Vil.",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 0,
         "station_id": "1802"
       },
@@ -1123,7 +1126,7 @@
         "name": "大港寮",
         "name_en": "Dagangliao",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 0,
         "station_id": "1804"
       },
@@ -1143,7 +1146,7 @@
         "name": "中華北文賢路口",
         "name_en": "Jhonghua N. Rd. & Wunsian Rd.",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 0,
         "station_id": "1806"
       },
@@ -1163,7 +1166,7 @@
         "name": "中華北路二段62巷口",
         "name_en": "Lane 62 Sec. 2 Jhonghua N. Rd. Intersection",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 0,
         "station_id": "2524"
       },
@@ -1183,7 +1186,7 @@
         "name": "文元里",
         "name_en": "Wunyuan Vil.",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 0,
         "station_id": "1831"
       },
@@ -1203,7 +1206,7 @@
         "name": "華德里",
         "name_en": "Huade Vil.",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 0,
         "station_id": "1834"
       },
@@ -1223,7 +1226,7 @@
         "name": "甲頂里",
         "name_en": "Jiading Vil.",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 0,
         "station_id": "1836"
       },
@@ -1243,7 +1246,7 @@
         "name": "奇美醫院",
         "name_en": "Chi Mei Medical Center",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 0,
         "station_id": "6200"
       },
@@ -1263,7 +1266,7 @@
         "name": "大橋",
         "name_en": "Daciao",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 0,
         "station_id": "511"
       },
@@ -1283,7 +1286,7 @@
         "name": "臺南高工",
         "name_en": "National Tainan Industrial High School",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 0,
         "station_id": "8611"
       },
@@ -1303,7 +1306,7 @@
         "name": "南工宿舍",
         "name_en": "Dormitory of Tainan Industrial High School",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 0,
         "station_id": "550"
       },
@@ -1323,7 +1326,7 @@
         "name": "崑山中學",
         "name_en": "Kun Shan Senior High School",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 0,
         "station_id": "514"
       },
@@ -1343,7 +1346,7 @@
         "name": "開元",
         "name_en": "Kaiyuan",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 0,
         "station_id": "548"
       },
@@ -1363,7 +1366,7 @@
         "name": "重興里",
         "name_en": "Jhongsing Vil.",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 0,
         "station_id": "1839"
       },
@@ -1383,7 +1386,7 @@
         "name": "東興里",
         "name_en": "Dongsing Vil.",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 0,
         "station_id": "1841"
       },
@@ -1403,7 +1406,7 @@
         "name": "成大醫院(小東路)",
         "name_en": "Cheng Kung University Hospital(Siaodong Rd.)",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 0,
         "station_id": "209"
       },
@@ -1423,7 +1426,7 @@
         "name": "成功大學",
         "name_en": "National Cheng Kung University",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 0,
         "station_id": "210"
       },
@@ -1443,7 +1446,7 @@
         "name": "小東路",
         "name_en": "Siao-Dong Road",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 0,
         "station_id": "211"
       },
@@ -1463,7 +1466,7 @@
         "name": "香格里拉飯店",
         "name_en": "Shangri-Las Far Eastern Plaza Hotel",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 0,
         "station_id": "9913"
       },
@@ -1483,7 +1486,7 @@
         "name": "成大光復校區",
         "name_en": "NCKU Guangfu Campus",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 0,
         "station_id": "8976"
       },
@@ -1503,7 +1506,7 @@
         "name": "臺南一中",
         "name_en": "Tainan First Senior High School",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 0,
         "station_id": "631"
       },
@@ -1523,7 +1526,7 @@
         "name": "成功新村",
         "name_en": "Chenggong New Village",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 0,
         "station_id": "632"
       },
@@ -1543,7 +1546,7 @@
         "name": "長榮女中",
         "name_en": "Chang Jung Girls’ Senior High School",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 0,
         "station_id": "409"
       },
@@ -1563,7 +1566,7 @@
         "name": "勝利國小、藝非凡美術館",
         "name_en": "Sheng-Li Elementary School",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 0,
         "station_id": "410"
       },
@@ -1583,7 +1586,7 @@
         "name": "大東夜市",
         "name_en": "Dadong Night Market",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 0,
         "station_id": "8804"
       },
@@ -1603,7 +1606,7 @@
         "name": "竹溪寺(健康路)",
         "name_en": "Jhusi Temple(Jian-Kang Rd.)",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 0,
         "station_id": "541"
       },
@@ -1623,7 +1626,7 @@
         "name": "體育公園(臺南大學)",
         "name_en": "Athletic Park(National University of Tainan)",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 0,
         "station_id": "542"
       },
@@ -1643,7 +1646,7 @@
         "name": "臺南高商",
         "name_en": "TNCVS",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 0,
         "station_id": "219"
       },
@@ -1663,7 +1666,7 @@
         "name": "家齊高中",
         "name_en": "Chia-Chi Senior High School",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 0,
         "station_id": "220"
       },
@@ -1683,7 +1686,7 @@
         "name": "健康西門路口",
         "name_en": "Jiankang Rd. ＆ Simen Rd.",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 0,
         "station_id": "452"
       },
@@ -1703,7 +1706,7 @@
         "name": "健康金華路口",
         "name_en": "Jiankang Rd. ＆ Jinhua Rd.",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 0,
         "station_id": "1868"
       },
@@ -1723,7 +1726,7 @@
         "name": "文南里",
         "name_en": "Wunnan Vil.",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 0,
         "station_id": "5102"
       },
@@ -1743,7 +1746,7 @@
         "name": "市政中心(永華路)",
         "name_en": "Tainan City Hall(Yonghua Rd.)",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 0,
         "station_id": "8864"
       },
@@ -1763,7 +1766,7 @@
         "name": "南台別院",
         "name_en": "Nan Tai Temple",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 0,
         "station_id": "685"
       },
@@ -1783,7 +1786,7 @@
         "name": "二二八公園",
         "name_en": "228 Park",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 0,
         "station_id": "1420"
       },
@@ -1803,7 +1806,7 @@
         "name": "永華市政中心(府前路)",
         "name_en": "Tainan City Hall(Fu-Cian Rd.)",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 0,
         "station_id": "1431"
       },
@@ -1823,7 +1826,7 @@
         "name": "永華市政中心(府前路)",
         "name_en": "Tainan City Hall(Fu-Cian Rd.)",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 1,
         "station_id": "1430"
       },
@@ -1843,7 +1846,7 @@
         "name": "二二八公園",
         "name_en": "228 Park",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 1,
         "station_id": "1432"
       },
@@ -1863,7 +1866,7 @@
         "name": "南台別院",
         "name_en": "Nan Tai Temple",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 1,
         "station_id": "687"
       },
@@ -1883,7 +1886,7 @@
         "name": "市政中心(永華路)",
         "name_en": "Tainan City Hall(Yonghua Rd.)",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 1,
         "station_id": "8865"
       },
@@ -1903,7 +1906,7 @@
         "name": "文南里",
         "name_en": "Wunnan Vil.",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 1,
         "station_id": "5131"
       },
@@ -1923,7 +1926,7 @@
         "name": "健康金華路口",
         "name_en": "Jiankang Rd. ＆ Jinhua Rd.",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 1,
         "station_id": "1869"
       },
@@ -1943,7 +1946,7 @@
         "name": "健康西門路口",
         "name_en": "Jiankang Rd. ＆ Simen Rd.",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 1,
         "station_id": "453"
       },
@@ -1963,7 +1966,7 @@
         "name": "家齊高中",
         "name_en": "Chia-Chi Senior High School",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 1,
         "station_id": "279"
       },
@@ -1983,7 +1986,7 @@
         "name": "臺南高商",
         "name_en": "TNCVS",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 1,
         "station_id": "520"
       },
@@ -2003,7 +2006,7 @@
         "name": "體育公園(臺南大學)",
         "name_en": "Athletic Park(National University of Tainan)",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 1,
         "station_id": "521"
       },
@@ -2023,7 +2026,7 @@
         "name": "竹溪寺(健康路)",
         "name_en": "Jhusi Temple(Jian-Kang Rd.)",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 1,
         "station_id": "522"
       },
@@ -2043,7 +2046,7 @@
         "name": "大東夜市",
         "name_en": "Dadong Night Market",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 1,
         "station_id": "8847"
       },
@@ -2063,7 +2066,7 @@
         "name": "勝利國小、藝非凡美術館",
         "name_en": "Sheng-Li Elementary School、Mezzo Art",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 1,
         "station_id": "462"
       },
@@ -2083,7 +2086,7 @@
         "name": "長榮女中",
         "name_en": "Chang Jung Girls’ Senior High School",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 1,
         "station_id": "463"
       },
@@ -2103,7 +2106,7 @@
         "name": "成功新村",
         "name_en": "Chenggong New Village",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 1,
         "station_id": "654"
       },
@@ -2123,7 +2126,7 @@
         "name": "臺南一中",
         "name_en": "Tainan First Senior High School",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 1,
         "station_id": "655"
       },
@@ -2143,7 +2146,7 @@
         "name": "成大光復校區",
         "name_en": "NCKU Guangfu Campus",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 1,
         "station_id": "8977"
       },
@@ -2163,7 +2166,7 @@
         "name": "香格里拉飯店",
         "name_en": "Shangri-Las Far Eastern Plaza Hotel",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 1,
         "station_id": "9914"
       },
@@ -2183,7 +2186,7 @@
         "name": "小東路",
         "name_en": "Siaodong Rd.",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 1,
         "station_id": "289"
       },
@@ -2203,7 +2206,7 @@
         "name": "成功大學",
         "name_en": "National Cheng Kung University",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 1,
         "station_id": "290"
       },
@@ -2223,7 +2226,7 @@
         "name": "成大醫院(小東路)",
         "name_en": "Cheng Kung University Hospital(Siaodong Rd.)",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 1,
         "station_id": "291"
       },
@@ -2243,7 +2246,7 @@
         "name": "東興里",
         "name_en": "Dongsing Vil.",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 1,
         "station_id": "1842"
       },
@@ -2263,7 +2266,7 @@
         "name": "重興里",
         "name_en": "Jhongsing Vil.",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 1,
         "station_id": "1840"
       },
@@ -2283,7 +2286,7 @@
         "name": "開元",
         "name_en": "Kaiyuan",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 1,
         "station_id": "515"
       },
@@ -2303,7 +2306,7 @@
         "name": "崑山中學",
         "name_en": "Kun Shan Senior High School",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 1,
         "station_id": "549"
       },
@@ -2323,7 +2326,7 @@
         "name": "南工宿舍",
         "name_en": "Dormitory of Tainan Industrial High School",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 1,
         "station_id": "513"
       },
@@ -2343,7 +2346,7 @@
         "name": "臺南高工",
         "name_en": "National Tainan Industrial High School",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 1,
         "station_id": "551"
       },
@@ -2363,7 +2366,7 @@
         "name": "大橋",
         "name_en": "Daciao",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 1,
         "station_id": "552"
       },
@@ -2383,7 +2386,7 @@
         "name": "奇美醫院",
         "name_en": "Chi Mei Medical Center",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 1,
         "station_id": "553"
       },
@@ -2403,7 +2406,7 @@
         "name": "甲頂里",
         "name_en": "Jiading Vil.",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 1,
         "station_id": "1837"
       },
@@ -2423,7 +2426,7 @@
         "name": "華德里",
         "name_en": "Huade Vil.",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 1,
         "station_id": "1835"
       },
@@ -2443,7 +2446,7 @@
         "name": "文元里",
         "name_en": "Wunyuan Vil.",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 1,
         "station_id": "1833"
       },
@@ -2463,7 +2466,7 @@
         "name": "中華北路二段62巷口",
         "name_en": "Lane 62 Sec. 2 Jhonghua N. Rd. Intersection",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 1,
         "station_id": "2525"
       },
@@ -2483,7 +2486,7 @@
         "name": "中華北文賢路口",
         "name_en": "Jhonghua N. Rd. & Wunsian Rd.",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 1,
         "station_id": "1808"
       },
@@ -2503,7 +2506,7 @@
         "name": "大港寮",
         "name_en": "Dagangliao",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 1,
         "station_id": "1805"
       },
@@ -2523,7 +2526,7 @@
         "name": "賢北里",
         "name_en": "Sianbei Vil.",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 1,
         "station_id": "1803"
       },
@@ -2543,7 +2546,7 @@
         "name": "中華西路二段",
         "name_en": "Sec. 2 Jhonghua W. Rd.",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 1,
         "station_id": "1055"
       },
@@ -2563,7 +2566,7 @@
         "name": "西湖街口",
         "name_en": "Sihu St. Intersection",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 1,
         "station_id": "1061"
       },
@@ -2583,7 +2586,7 @@
         "name": "民權路口",
         "name_en": "Mincyuan Rd. Intersection",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 1,
         "station_id": "1056"
       },
@@ -2603,7 +2606,7 @@
         "name": "停2停車場",
         "name_en": "2nd public Parking Lot",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 1,
         "station_id": "1057"
       },
@@ -2623,7 +2626,7 @@
         "name": "永華市政中心(府前路)",
         "name_en": "Tainan City Hall(Fu-Cian Rd.)",
         "line": "70",
-        "color": "#92400e",
+        "color": "#1d4ed8",
         "direction": 1,
         "station_id": "1430"
       },

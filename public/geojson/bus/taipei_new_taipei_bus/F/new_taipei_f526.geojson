@@ -6,13 +6,14 @@
     "name": "F526",
     "name_en": "F526",
     "ref": "F526",
-    "color": "#c2410c",
+    "color": "#6B8F9A",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.gov.taipei/File/Get/74bc954b-de53-4ee9-8f96-3564c4c90762?v=639248448792524278",
     "operator_id": "16240",
     "operator": "永和區公所",
-    "operator_en": "Yonghe District Office"
+    "operator_en": "Yonghe District Office",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "F526",
         "name": "F526",
         "name_en": "F526",
-        "color": "#c2410c",
-        "direction": 0
+        "color": "#6B8F9A",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -643,6 +645,10 @@
           [
             121.52794158399,
             24.9967183777642
+          ],
+          [
+            121.527925665162,
+            24.996696489376
           ]
         ]
       }
@@ -655,7 +661,7 @@
         "name": "民本里",
         "name_en": "Minben Village",
         "line": "F526",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72358"
       },
@@ -675,7 +681,7 @@
         "name": "民本里二",
         "name_en": "Minben Village 2",
         "line": "F526",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72360"
       },
@@ -695,7 +701,7 @@
         "name": "民樂里二",
         "name_en": "Minle Village 2",
         "line": "F526",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72402"
       },
@@ -715,7 +721,7 @@
         "name": "六合社區(成功路)",
         "name_en": "Liuhe Community(Chenggong Rd.)",
         "line": "F526",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603825"
       },
@@ -735,7 +741,7 @@
         "name": "核安會",
         "name_en": "Atomic Energy Council",
         "line": "F526",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603808"
       },
@@ -755,7 +761,7 @@
         "name": "永利路",
         "name_en": "Yongli Rd.",
         "line": "F526",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603822"
       },
@@ -775,7 +781,7 @@
         "name": "國防部福利站",
         "name_en": "National Defense Canteen",
         "line": "F526",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603819"
       },
@@ -795,7 +801,7 @@
         "name": "福和國中",
         "name_en": "Fuhe Junior High School",
         "line": "F526",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "50804"
       },
@@ -815,7 +821,7 @@
         "name": "永貞路",
         "name_en": "Yongzhen Rd.",
         "line": "F526",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72379"
       },
@@ -835,7 +841,7 @@
         "name": "永和國小(永貞路)",
         "name_en": "Yonghe Elementary School(Yongzhen Rd.)",
         "line": "F526",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165610578"
       },
@@ -855,7 +861,7 @@
         "name": "永安市場",
         "name_en": "Yongan Market",
         "line": "F526",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603394"
       },
@@ -875,7 +881,7 @@
         "name": "中安街",
         "name_en": "823 Memorial Park",
         "line": "F526",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3061"
       },
@@ -895,7 +901,7 @@
         "name": "安平里巡守隊",
         "name_en": "Anping Village Patrol",
         "line": "F526",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72544"
       },
@@ -915,7 +921,7 @@
         "name": "安平路",
         "name_en": "Anping Rd.",
         "line": "F526",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3095"
       },
@@ -935,7 +941,7 @@
         "name": "華泰新城",
         "name_en": "Huatai Xincheng",
         "line": "F526",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3147"
       },
@@ -955,7 +961,7 @@
         "name": "捷運永安市場站",
         "name_en": "MRT Yongan Market Sta.",
         "line": "F526",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72317"
       },
@@ -975,7 +981,7 @@
         "name": "永安市場",
         "name_en": "Yongan Market",
         "line": "F526",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165604628"
       },
@@ -995,7 +1001,7 @@
         "name": "永和國小(永貞路)",
         "name_en": "Yonghe Elementary School(Yongzhen Rd.)",
         "line": "F526",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165610577"
       },
@@ -1015,7 +1021,7 @@
         "name": "永貞路",
         "name_en": "Yongzhen Rd.",
         "line": "F526",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72378"
       },
@@ -1035,7 +1041,7 @@
         "name": "福和國中",
         "name_en": "Fuhe Junior High School",
         "line": "F526",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1000302"
       },
@@ -1055,7 +1061,7 @@
         "name": "永元永利路口",
         "name_en": "Yongyuan & Yongli Intersection",
         "line": "F526",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72387"
       },
@@ -1075,7 +1081,7 @@
         "name": "國防部福利站",
         "name_en": "National Defense Canteen",
         "line": "F526",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603804"
       },
@@ -1095,7 +1101,7 @@
         "name": "永利路",
         "name_en": "Yongli Rd.",
         "line": "F526",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603823"
       },
@@ -1115,7 +1121,7 @@
         "name": "原能會",
         "name_en": "Atomic Energy Council",
         "line": "F526",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72395"
       },
@@ -1135,7 +1141,7 @@
         "name": "福和公園",
         "name_en": "Fuhe Park",
         "line": "F526",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72389"
       },
@@ -1155,7 +1161,7 @@
         "name": "大陸新村",
         "name_en": "Dalu New Village",
         "line": "F526",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72386"
       },
@@ -1175,7 +1181,7 @@
         "name": "民樂里一",
         "name_en": "Minle Village 1",
         "line": "F526",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "72391"
       },
@@ -1195,7 +1201,7 @@
         "name": "民本里一",
         "name_en": "Minben Village",
         "line": "F526",
-        "color": "#c2410c",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603818"
       },

@@ -109,7 +109,15 @@ class GeojsonBusImporterTest < ActiveSupport::TestCase
     station = data["features"].find { |feature| feature.dig("properties", "feature_type") == "station" }
     assert_equal "depot", station.dig("properties", "stop_role")
     assert Geojson::BusImporter.depot_stop_name?("東南客運停車場")
+    assert Geojson::BusImporter.depot_stop_name?("中壢總站")
+    assert Geojson::BusImporter.depot_stop_name?("三重客運五股站")
+    assert Geojson::BusImporter.depot_stop_name?("八斗子分站")
     refute Geojson::BusImporter.depot_stop_name?("立體停車場(五股公有市場)")
+    refute Geojson::BusImporter.depot_stop_name?("南港機廠")
+    refute Geojson::BusImporter.depot_stop_name?("安坑輕軌機廠")
+    refute Geojson::BusImporter.depot_stop_name?("高鐵總機廠")
+    refute Geojson::BusImporter.depot_stop_name?("捷運北屯總站(敦富路)")
+    refute Geojson::BusImporter.depot_stop_name?("總站")
   ensure
     remove_keelung_fixture("keelung_901")
   end

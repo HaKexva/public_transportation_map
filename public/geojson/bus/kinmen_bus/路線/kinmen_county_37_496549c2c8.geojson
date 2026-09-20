@@ -6,13 +6,14 @@
     "name": "37路北南線",
     "name_en": "37路北南線",
     "ref": "37路北南線",
-    "color": "#86198f",
+    "color": "#3730a3",
     "city_id": "KinmenCounty",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.kinmen.gov.tw/api/route/371/map/121/image",
     "operator_id": "0001",
     "operator": "金門",
-    "operator_en": "City Bus and Ferry Management Office, Kinmen County"
+    "operator_en": "City Bus and Ferry Management Office, Kinmen County",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "37路北南線",
         "name": "37路北南線",
         "name_en": "37路北南線",
-        "color": "#86198f",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -799,6 +801,10 @@
           [
             118.25712,
             24.42677
+          ],
+          [
+            118.2571,
+            24.42672
           ]
         ]
       }
@@ -811,7 +817,7 @@
         "name": "烈嶼車站",
         "name_en": "Liehyu Station",
         "line": "37路北南線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "803"
       },
@@ -831,7 +837,7 @@
         "name": "湖下忠義廟",
         "name_en": "HuXiaZhongYiMiao",
         "line": "37路北南線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "958"
       },
@@ -851,7 +857,7 @@
         "name": "湖下",
         "name_en": "Huxi",
         "line": "37路北南線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "789"
       },
@@ -871,7 +877,7 @@
         "name": "后頭一",
         "name_en": "Houtou 1",
         "line": "37路北南線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "790"
       },
@@ -891,7 +897,7 @@
         "name": "后頭",
         "name_en": "Houto",
         "line": "37路北南線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "791"
       },
@@ -911,7 +917,7 @@
         "name": "烈嶼橋頭(后頭)",
         "name_en": "Liehyu Bridge Head(Houto)",
         "line": "37路北南線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "1006"
       },
@@ -931,7 +937,7 @@
         "name": "烈嶼橋頭(黃厝)",
         "name_en": "Liehyu Bridge Head(Huangcu)",
         "line": "37路北南線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "1003"
       },
@@ -951,7 +957,7 @@
         "name": "黃厝",
         "name_en": "Huangcu",
         "line": "37路北南線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "792"
       },
@@ -971,7 +977,7 @@
         "name": "林邊",
         "name_en": "Linbia",
         "line": "37路北南線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "793"
       },
@@ -991,7 +997,7 @@
         "name": "埔頭",
         "name_en": "Putou",
         "line": "37路北南線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "794"
       },
@@ -1011,7 +1017,7 @@
         "name": "庵下",
         "name_en": "Anxi",
         "line": "37路北南線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "795"
       },
@@ -1031,7 +1037,7 @@
         "name": "后宅",
         "name_en": "Houzha",
         "line": "37路北南線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "796"
       },
@@ -1051,7 +1057,7 @@
         "name": "金陵山莊",
         "name_en": "Jincheng Village",
         "line": "37路北南線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "797"
       },
@@ -1071,7 +1077,7 @@
         "name": "烈嶼分院",
         "name_en": "Liehyu subdivision of the Kinmen County Hospital",
         "line": "37路北南線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "798"
       },
@@ -1091,7 +1097,7 @@
         "name": "西路",
         "name_en": "Xil",
         "line": "37路北南線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "799"
       },
@@ -1111,7 +1117,7 @@
         "name": "八達樓子",
         "name_en": "Bada Towe",
         "line": "37路北南線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "807"
       },
@@ -1131,7 +1137,7 @@
         "name": "烈嶼國中",
         "name_en": "Lieyu Junior High Schoo",
         "line": "37路北南線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "808"
       },
@@ -1151,7 +1157,7 @@
         "name": "南塘",
         "name_en": "Nantan",
         "line": "37路北南線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "809"
       },
@@ -1171,7 +1177,7 @@
         "name": "福壽山",
         "name_en": "FuShou Mountain",
         "line": "37路北南線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "810"
       },
@@ -1191,7 +1197,7 @@
         "name": "楊厝",
         "name_en": "Yangcu",
         "line": "37路北南線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "811"
       },
@@ -1211,7 +1217,7 @@
         "name": "東埔池",
         "name_en": "DongPu Pool",
         "line": "37路北南線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "812"
       },
@@ -1231,7 +1237,7 @@
         "name": "青岐路口",
         "name_en": "Qingqi Rd.",
         "line": "37路北南線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "813"
       },
@@ -1251,7 +1257,7 @@
         "name": "青岐",
         "name_en": "Qingqi",
         "line": "37路北南線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "814"
       },
@@ -1271,7 +1277,7 @@
         "name": "石鼓山",
         "name_en": "Shigusha",
         "line": "37路北南線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "815"
       },
@@ -1291,7 +1297,7 @@
         "name": "萬聖宮",
         "name_en": "Wansheng Templ",
         "line": "37路北南線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "816"
       },
@@ -1311,7 +1317,7 @@
         "name": "東勢",
         "name_en": "DongShi",
         "line": "37路北南線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "817"
       },
@@ -1331,7 +1337,7 @@
         "name": "上庫",
         "name_en": "Shangk",
         "line": "37路北南線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "818"
       },
@@ -1351,7 +1357,7 @@
         "name": "高厝",
         "name_en": "GaoCuo",
         "line": "37路北南線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "819"
       },
@@ -1371,7 +1377,7 @@
         "name": "上林一",
         "name_en": "Shangli 1",
         "line": "37路北南線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "820"
       },
@@ -1391,7 +1397,7 @@
         "name": "上林",
         "name_en": "Shangli",
         "line": "37路北南線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "821"
       },
@@ -1411,7 +1417,7 @@
         "name": "中墩",
         "name_en": "Zhongdu",
         "line": "37路北南線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "822"
       },
@@ -1431,7 +1437,7 @@
         "name": "西方",
         "name_en": "Xifang",
         "line": "37路北南線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "823"
       },
@@ -1451,7 +1457,7 @@
         "name": "下田",
         "name_en": "Xiatia",
         "line": "37路北南線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "824"
       },
@@ -1471,7 +1477,7 @@
         "name": "雙口",
         "name_en": "Shuangko",
         "line": "37路北南線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "825"
       },
@@ -1491,7 +1497,7 @@
         "name": "東坑",
         "name_en": "Dongken",
         "line": "37路北南線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "826"
       },
@@ -1511,7 +1517,7 @@
         "name": "湖井頭",
         "name_en": "Hujingto",
         "line": "37路北南線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "827"
       },
@@ -1531,7 +1537,7 @@
         "name": "雙口",
         "name_en": "Shuangko",
         "line": "37路北南線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "828"
       },
@@ -1551,7 +1557,7 @@
         "name": "下田",
         "name_en": "Xiatia",
         "line": "37路北南線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "829"
       },
@@ -1571,7 +1577,7 @@
         "name": "西方",
         "name_en": "Xifang",
         "line": "37路北南線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "830"
       },
@@ -1591,7 +1597,7 @@
         "name": "西方社區",
         "name_en": "Western Community",
         "line": "37路北南線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "831"
       },
@@ -1611,7 +1617,7 @@
         "name": "金陵山莊",
         "name_en": "Jincheng Village",
         "line": "37路北南線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "797"
       },
@@ -1631,7 +1637,7 @@
         "name": "烈嶼分院",
         "name_en": "Liehyu subdivision of the Kinmen County Hospital",
         "line": "37路北南線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "798"
       },
@@ -1651,7 +1657,7 @@
         "name": "西路",
         "name_en": "Xil",
         "line": "37路北南線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "799"
       },
@@ -1671,7 +1677,7 @@
         "name": "西宅",
         "name_en": "Xizha",
         "line": "37路北南線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "800"
       },
@@ -1691,7 +1697,7 @@
         "name": "東林",
         "name_en": "Dongli",
         "line": "37路北南線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "801"
       },
@@ -1711,7 +1717,7 @@
         "name": "東林尾",
         "name_en": "Donglinwei",
         "line": "37路北南線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "802"
       },
@@ -1731,7 +1737,7 @@
         "name": "烈嶼車站",
         "name_en": "Liehyu Station",
         "line": "37路北南線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "803"
       },
@@ -1751,7 +1757,7 @@
         "name": "湖下忠義廟",
         "name_en": "HuXiaZhongYiMiao",
         "line": "37路北南線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "958"
       },
@@ -1771,7 +1777,7 @@
         "name": "湖下忠義廟",
         "name_en": "HuXiaZhongYiMiao",
         "line": "37路北南線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "955"
       },
@@ -1791,7 +1797,7 @@
         "name": "烈嶼車站",
         "name_en": "Liehyu Station",
         "line": "37路北南線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "772"
       },

@@ -6,13 +6,14 @@
     "name": "114路前山觀光預約線",
     "name_en": "114路前山觀光預約線",
     "ref": "114路前山觀光預約線",
-    "color": "#701a75",
+    "color": "#0B7A3E",
     "city_id": "HsinchuCounty",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://web.taiwanbus.tw/MISUploadData/Schematic/file/0176.jpg",
     "operator_id": "73",
     "operator": "尖石鄉公所",
-    "operator_en": "Jianshih Township Office"
+    "operator_en": "Jianshih Township Office",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "114路前山觀光預約線",
         "name": "114路前山觀光預約線",
         "name_en": "114路前山觀光預約線",
-        "color": "#701a75",
-        "direction": 0
+        "color": "#0B7A3E",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -15647,6 +15649,10 @@
           [
             121.18337,
             24.70352
+          ],
+          [
+            121.1834,
+            24.7035
           ]
         ]
       }
@@ -15659,7 +15665,7 @@
         "name": "內灣",
         "name_en": "Neiwan",
         "line": "114路前山觀光預約線",
-        "color": "#701a75",
+        "color": "#0B7A3E",
         "direction": 0,
         "station_id": "136757"
       },
@@ -15679,7 +15685,7 @@
         "name": "尖石鄉公所站",
         "name_en": "Hsinchu County Jianshih Township Office Station",
         "line": "114路前山觀光預約線",
-        "color": "#701a75",
+        "color": "#0B7A3E",
         "direction": 0,
         "station_id": "132200"
       },
@@ -15699,7 +15705,7 @@
         "name": "尖石岩",
         "name_en": "Jian Shi Yan",
         "line": "114路前山觀光預約線",
-        "color": "#701a75",
+        "color": "#0B7A3E",
         "direction": 0,
         "station_id": "136758"
       },
@@ -15719,7 +15725,7 @@
         "name": "石上湯屋渡假村交叉口",
         "name_en": "SHISHANG HOT SPRING VILLA Intersection",
         "line": "114路前山觀光預約線",
-        "color": "#701a75",
+        "color": "#0B7A3E",
         "direction": 0,
         "station_id": "136759"
       },
@@ -15739,7 +15745,7 @@
         "name": "薰衣草森林山腳下",
         "name_en": null,
         "line": "114路前山觀光預約線",
-        "color": "#701a75",
+        "color": "#0B7A3E",
         "direction": 0,
         "station_id": "136760"
       },
@@ -15759,7 +15765,7 @@
         "name": "峇里森林溫泉渡假村",
         "name_en": null,
         "line": "114路前山觀光預約線",
-        "color": "#701a75",
+        "color": "#0B7A3E",
         "direction": 0,
         "station_id": "136761"
       },
@@ -15779,7 +15785,7 @@
         "name": "北得拉曼步道路口",
         "name_en": null,
         "line": "114路前山觀光預約線",
-        "color": "#701a75",
+        "color": "#0B7A3E",
         "direction": 0,
         "station_id": "136762"
       },
@@ -15799,7 +15805,7 @@
         "name": "六號花園山腳下",
         "name_en": null,
         "line": "114路前山觀光預約線",
-        "color": "#701a75",
+        "color": "#0B7A3E",
         "direction": 0,
         "station_id": "136763"
       },
@@ -15819,7 +15825,7 @@
         "name": "煤源",
         "name_en": "Meiyuan",
         "line": "114路前山觀光預約線",
-        "color": "#701a75",
+        "color": "#0B7A3E",
         "direction": 0,
         "station_id": "136764"
       },
@@ -15839,7 +15845,7 @@
         "name": "八五山果園山腳下",
         "name_en": null,
         "line": "114路前山觀光預約線",
-        "color": "#701a75",
+        "color": "#0B7A3E",
         "direction": 0,
         "station_id": "136765"
       },
@@ -15859,7 +15865,7 @@
         "name": "數碼天空山腳下",
         "name_en": null,
         "line": "114路前山觀光預約線",
-        "color": "#701a75",
+        "color": "#0B7A3E",
         "direction": 0,
         "station_id": "136766"
       },
@@ -15879,7 +15885,7 @@
         "name": "凌空廊道",
         "name_en": null,
         "line": "114路前山觀光預約線",
-        "color": "#701a75",
+        "color": "#0B7A3E",
         "direction": 0,
         "station_id": "136767"
       },
@@ -15899,7 +15905,7 @@
         "name": "那羅部落香草",
         "name_en": null,
         "line": "114路前山觀光預約線",
-        "color": "#701a75",
+        "color": "#0B7A3E",
         "direction": 0,
         "station_id": "136768"
       },
@@ -15919,7 +15925,7 @@
         "name": "那羅文學林",
         "name_en": null,
         "line": "114路前山觀光預約線",
-        "color": "#701a75",
+        "color": "#0B7A3E",
         "direction": 0,
         "station_id": "136769"
       },
@@ -15939,7 +15945,7 @@
         "name": "青蛙石",
         "name_en": "Qingwashi",
         "line": "114路前山觀光預約線",
-        "color": "#701a75",
+        "color": "#0B7A3E",
         "direction": 0,
         "station_id": "136770"
       },
@@ -15959,7 +15965,7 @@
         "name": "天然谷溫泉",
         "name_en": "Tianrangu",
         "line": "114路前山觀光預約線",
-        "color": "#701a75",
+        "color": "#0B7A3E",
         "direction": 0,
         "station_id": "136771"
       },
@@ -15979,7 +15985,7 @@
         "name": "錦屏大橋",
         "name_en": "Jinping Bridge",
         "line": "114路前山觀光預約線",
-        "color": "#701a75",
+        "color": "#0B7A3E",
         "direction": 0,
         "station_id": "136772"
       },
@@ -15999,7 +16005,7 @@
         "name": "錦屏美人湯",
         "name_en": "Jin Ping Spring Resort",
         "line": "114路前山觀光預約線",
-        "color": "#701a75",
+        "color": "#0B7A3E",
         "direction": 0,
         "station_id": "136773"
       },
@@ -16019,7 +16025,7 @@
         "name": "梅花國小(甜柿果園)",
         "name_en": "Meihua Elementary School",
         "line": "114路前山觀光預約線",
-        "color": "#701a75",
+        "color": "#0B7A3E",
         "direction": 0,
         "station_id": "136774"
       },
@@ -16039,7 +16045,7 @@
         "name": "義梅營區",
         "name_en": "Yimei Camping area",
         "line": "114路前山觀光預約線",
-        "color": "#701a75",
+        "color": "#0B7A3E",
         "direction": 0,
         "station_id": "136775"
       },
@@ -16059,7 +16065,7 @@
         "name": "水茗漾庭園山腳下",
         "name_en": null,
         "line": "114路前山觀光預約線",
-        "color": "#701a75",
+        "color": "#0B7A3E",
         "direction": 0,
         "station_id": "136776"
       },
@@ -16079,7 +16085,7 @@
         "name": "義興大橋",
         "name_en": "Yixing Bridge",
         "line": "114路前山觀光預約線",
-        "color": "#701a75",
+        "color": "#0B7A3E",
         "direction": 0,
         "station_id": "136777"
       },
@@ -16099,7 +16105,7 @@
         "name": "北角吊橋",
         "name_en": "Beijiao Suspension Bridge",
         "line": "114路前山觀光預約線",
-        "color": "#701a75",
+        "color": "#0B7A3E",
         "direction": 0,
         "station_id": "136778"
       },
@@ -16119,7 +16125,7 @@
         "name": "綜合運動場",
         "name_en": null,
         "line": "114路前山觀光預約線",
-        "color": "#701a75",
+        "color": "#0B7A3E",
         "direction": 0,
         "station_id": "136781"
       },

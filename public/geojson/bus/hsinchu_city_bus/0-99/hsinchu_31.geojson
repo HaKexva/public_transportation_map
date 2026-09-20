@@ -6,13 +6,14 @@
     "name": "31",
     "name_en": "31",
     "ref": "31",
-    "color": "#0e7490",
+    "color": "#92400e",
     "city_id": "Hsinchu",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://web.taiwanbus.tw/MISUploadData/Schematic/file/0310.jpg",
     "operator_id": "13",
     "operator": "新竹客運",
-    "operator_en": "Hsinchu Bus Co., Ltd."
+    "operator_en": "Hsinchu Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "31",
         "name": "31",
         "name_en": "31",
-        "color": "#0e7490",
-        "direction": 0
+        "color": "#92400e",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1971,6 +1973,10 @@
           [
             120.97106,
             24.80349
+          ],
+          [
+            120.97189,
+            24.8033
           ]
         ]
       }
@@ -1983,7 +1989,7 @@
         "name": "火車站",
         "name_en": "Train Station",
         "line": "31",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "144220"
       },
@@ -2003,7 +2009,7 @@
         "name": "東門市場",
         "name_en": "Dong Men Market",
         "line": "31",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130082"
       },
@@ -2023,7 +2029,7 @@
         "name": "親仁里",
         "name_en": "Qin Ren Village",
         "line": "31",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130196"
       },
@@ -2043,7 +2049,7 @@
         "name": "東門國小",
         "name_en": "Tung Men Primary School",
         "line": "31",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130197"
       },
@@ -2063,7 +2069,7 @@
         "name": "公園",
         "name_en": "Park",
         "line": "31",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130198"
       },
@@ -2083,7 +2089,7 @@
         "name": "學園商場",
         "name_en": "Xue Yuan Market",
         "line": "31",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130199"
       },
@@ -2103,7 +2109,7 @@
         "name": "東山文教院",
         "name_en": "Dong Shan Wen Jiao Yuan",
         "line": "31",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130200"
       },
@@ -2123,7 +2129,7 @@
         "name": "新竹高中",
         "name_en": "National Hsinchu Senior High School",
         "line": "31",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130201"
       },
@@ -2143,7 +2149,7 @@
         "name": "新竹高商",
         "name_en": "National Hsinchu Commercial &amp; Vocational High School",
         "line": "31",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130202"
       },
@@ -2163,7 +2169,7 @@
         "name": "水源地",
         "name_en": "Shui Yuan Di",
         "line": "31",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130203"
       },
@@ -2183,7 +2189,7 @@
         "name": "學府路口",
         "name_en": "Xue Fu Road Entrance",
         "line": "31",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130204"
       },
@@ -2203,7 +2209,7 @@
         "name": "工研院光復院區",
         "name_en": "ITRI Kuang fu Compound",
         "line": "31",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130205"
       },
@@ -2223,7 +2229,7 @@
         "name": "馬偕醫院",
         "name_en": "Mackay Memorial Hospital, HsinChu",
         "line": "31",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130206"
       },
@@ -2243,7 +2249,7 @@
         "name": "海軍新村",
         "name_en": "Hai Jun Xin Village",
         "line": "31",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130207"
       },
@@ -2263,7 +2269,7 @@
         "name": "光復中學",
         "name_en": "Kuang-Fu Senior High School",
         "line": "31",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130208"
       },
@@ -2283,7 +2289,7 @@
         "name": "清華大學",
         "name_en": "National Tsing Hua University",
         "line": "31",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130209"
       },
@@ -2303,7 +2309,7 @@
         "name": "金城新村口",
         "name_en": "Jin Cheng Xin Village Kou",
         "line": "31",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130210"
       },
@@ -2323,7 +2329,7 @@
         "name": "陽明交大光復路",
         "name_en": "NYCU Guangfu Road",
         "line": "31",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130211"
       },
@@ -2343,7 +2349,7 @@
         "name": "科學園區",
         "name_en": "Hsinchu Science Park",
         "line": "31",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130212"
       },
@@ -2363,7 +2369,7 @@
         "name": "龍山社區口",
         "name_en": "Longshan Community",
         "line": "31",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130360"
       },
@@ -2383,7 +2389,7 @@
         "name": "民享一站",
         "name_en": "Minxiang 1st Stop",
         "line": "31",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130361"
       },
@@ -2403,7 +2409,7 @@
         "name": "民享二站",
         "name_en": "Minxiang 2nd Stop",
         "line": "31",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130362"
       },
@@ -2423,7 +2429,7 @@
         "name": "土地廟",
         "name_en": "Tudi Temple",
         "line": "31",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130363"
       },
@@ -2443,7 +2449,7 @@
         "name": "民有二街",
         "name_en": "Minyou 2nd Street",
         "line": "31",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130364"
       },
@@ -2463,7 +2469,7 @@
         "name": "科學一站",
         "name_en": "Science 1nd Station",
         "line": "31",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130365"
       },
@@ -2483,7 +2489,7 @@
         "name": "科學二站",
         "name_en": "Science 2rd Station",
         "line": "31",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "145165"
       },
@@ -2503,7 +2509,7 @@
         "name": "龍山社區口",
         "name_en": "Longshan Community",
         "line": "31",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130366"
       },
@@ -2523,7 +2529,7 @@
         "name": "科學園區",
         "name_en": "Hsinchu Science Park",
         "line": "31",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130232"
       },
@@ -2543,7 +2549,7 @@
         "name": "陽明交大光復路",
         "name_en": "NYCU Guangfu Road",
         "line": "31",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130233"
       },
@@ -2563,7 +2569,7 @@
         "name": "金城新村口",
         "name_en": "Jin Cheng Xin Village Kou",
         "line": "31",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130234"
       },
@@ -2583,7 +2589,7 @@
         "name": "文教新村",
         "name_en": "Wen Jiao Xin Village",
         "line": "31",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130235"
       },
@@ -2603,7 +2609,7 @@
         "name": "清華大學",
         "name_en": "National Tsing Hua University",
         "line": "31",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130236"
       },
@@ -2623,7 +2629,7 @@
         "name": "光復中學",
         "name_en": "Kuang-Fu Senior High School",
         "line": "31",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130237"
       },
@@ -2643,7 +2649,7 @@
         "name": "馬偕醫院",
         "name_en": "Mackay Memorial Hospital",
         "line": "31",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130238"
       },
@@ -2663,7 +2669,7 @@
         "name": "學府路口",
         "name_en": "Xue Fu Road Entrance",
         "line": "31",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130240"
       },
@@ -2683,7 +2689,7 @@
         "name": "水源地",
         "name_en": "Shuiyuandi",
         "line": "31",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130241"
       },
@@ -2703,7 +2709,7 @@
         "name": "新竹高商",
         "name_en": "National Hsinchu Commercial &amp; Vocational High School",
         "line": "31",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130242"
       },
@@ -2723,7 +2729,7 @@
         "name": "新竹高中",
         "name_en": "National Hsinchu Senior High School",
         "line": "31",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130243"
       },
@@ -2743,7 +2749,7 @@
         "name": "東山文教院",
         "name_en": "Dong Shan Wen Jiao Yuan",
         "line": "31",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130244"
       },
@@ -2763,7 +2769,7 @@
         "name": "學園商場",
         "name_en": "Xue Yuan Market",
         "line": "31",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130245"
       },
@@ -2783,7 +2789,7 @@
         "name": "公園",
         "name_en": "Park",
         "line": "31",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130246"
       },
@@ -2803,7 +2809,7 @@
         "name": "東門國小",
         "name_en": "Tung Men Primary School",
         "line": "31",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130248"
       },
@@ -2823,7 +2829,7 @@
         "name": "親仁里",
         "name_en": "Qin Ren Village",
         "line": "31",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130249"
       },
@@ -2843,7 +2849,7 @@
         "name": "東門市場",
         "name_en": "Dong Men Market",
         "line": "31",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130108"
       },
@@ -2863,7 +2869,7 @@
         "name": "火車站",
         "name_en": "Train Station",
         "line": "31",
-        "color": "#0e7490",
+        "color": "#92400e",
         "direction": 0,
         "station_id": "130109"
       },

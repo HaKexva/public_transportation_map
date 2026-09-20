@@ -6,12 +6,13 @@
     "name": "227A",
     "name_en": "227A",
     "ref": "227A",
-    "color": "#0f766e",
+    "color": "#1e3a8a",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/2272/map/2194/image",
     "operator_id": "19",
-    "operator": "捷乘客運"
+    "operator": "捷乘客運",
+    "loop": true
   },
   "features": [
     {
@@ -21,8 +22,9 @@
         "ref": "227A",
         "name": "227A",
         "name_en": "227A",
-        "color": "#0f766e",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -906,6 +908,10 @@
           [
             121.30169,
             24.99448
+          ],
+          [
+            121.30153,
+            24.99457
           ]
         ]
       }
@@ -918,7 +924,7 @@
         "name": "桃園區公所",
         "name_en": "Taoyuan District Office",
         "line": "227A",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "6850"
       },
@@ -938,7 +944,7 @@
         "name": "廈門正光路口",
         "name_en": "Xiamen Zhengguang Rd Intersection",
         "line": "227A",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "3111"
       },
@@ -958,7 +964,7 @@
         "name": "正光法治路口",
         "name_en": "Zhengguang Fazhi Rd Intersection",
         "line": "227A",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "3113"
       },
@@ -978,7 +984,7 @@
         "name": "中山正光路口",
         "name_en": "Zhongshan Zhenguang Road Intersection",
         "line": "227A",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "2099"
       },
@@ -998,7 +1004,7 @@
         "name": "信陽街口",
         "name_en": "Xinyang St. Intersection",
         "line": "227A",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "3114"
       },
@@ -1018,7 +1024,7 @@
         "name": "桃園看守所",
         "name_en": "Taoyuan Detention Center",
         "line": "227A",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "3525"
       },
@@ -1038,7 +1044,7 @@
         "name": "延壽街",
         "name_en": "Yanshou St.",
         "line": "227A",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "6438"
       },
@@ -1058,7 +1064,7 @@
         "name": "國際路二段",
         "name_en": "Sec.2  GuoJi Road",
         "line": "227A",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "2094"
       },
@@ -1078,7 +1084,7 @@
         "name": "國強一街口",
         "name_en": "Guoqiang 1st St. Entrance",
         "line": "227A",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "3548"
       },
@@ -1098,7 +1104,7 @@
         "name": "迪斯奈社區",
         "name_en": "Disinai Community",
         "line": "227A",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "4635"
       },
@@ -1118,7 +1124,7 @@
         "name": "上海路口",
         "name_en": "Shanghai Street Intersection",
         "line": "227A",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "6518"
       },
@@ -1138,7 +1144,7 @@
         "name": "龍安街口",
         "name_en": "Lungan Street Intersection",
         "line": "227A",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "1870"
       },
@@ -1158,7 +1164,7 @@
         "name": "戶政地政所",
         "name_en": "Household Administration and Land Office",
         "line": "227A",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "3530"
       },
@@ -1178,7 +1184,7 @@
         "name": "龍鳳三街",
         "name_en": "Longfeng 3rd St.",
         "line": "227A",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "3533"
       },
@@ -1198,7 +1204,7 @@
         "name": "文學苑社區",
         "name_en": "Wenxueyuan Community",
         "line": "227A",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "3534"
       },
@@ -1218,7 +1224,7 @@
         "name": "消防隊",
         "name_en": "Fire Brigade",
         "line": "227A",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "3537"
       },
@@ -1238,7 +1244,7 @@
         "name": "國豐六街口",
         "name_en": "GuoFeng 6th Street Corner",
         "line": "227A",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "4639"
       },
@@ -1258,7 +1264,7 @@
         "name": "藝術名廈",
         "name_en": "Yishumingxia",
         "line": "227A",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "3543"
       },
@@ -1278,7 +1284,7 @@
         "name": "國強十三街",
         "name_en": "Guoqiang 13th St.",
         "line": "227A",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "3539"
       },
@@ -1298,7 +1304,7 @@
         "name": "龍安國小",
         "name_en": "Lungan Elementary School",
         "line": "227A",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "345"
       },
@@ -1318,7 +1324,7 @@
         "name": "龍壽街273巷",
         "name_en": "Longshou St. Lane 273",
         "line": "227A",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "3540"
       },
@@ -1338,7 +1344,7 @@
         "name": "鶴年",
         "name_en": "HauNian",
         "line": "227A",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "347"
       },
@@ -1358,7 +1364,7 @@
         "name": "龍泉龍壽街口",
         "name_en": "Longcyuan and Longshou St. Intersection",
         "line": "227A",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "6439"
       },
@@ -1378,7 +1384,7 @@
         "name": "大展駕訓班",
         "name_en": "Daigen Driving School",
         "line": "227A",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "6440"
       },
@@ -1398,7 +1404,7 @@
         "name": "歐楓大郡",
         "name_en": "Oufongdajyun",
         "line": "227A",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "5061"
       },
@@ -1418,7 +1424,7 @@
         "name": "中山路1308巷",
         "name_en": "Ln. 1308, Zhongshan Rd.",
         "line": "227A",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "6444"
       },
@@ -1438,7 +1444,7 @@
         "name": "龍祥街90巷",
         "name_en": "Ln. 90, Longxiang St.",
         "line": "227A",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "6441"
       },
@@ -1458,7 +1464,7 @@
         "name": "龍山國小",
         "name_en": "LongShan Elementary School",
         "line": "227A",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "354"
       },
@@ -1478,7 +1484,7 @@
         "name": "桃園醫院門診中心",
         "name_en": "Taoyuan General Hospital(Outpatient Center)",
         "line": "227A",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "551"
       },
@@ -1498,7 +1504,7 @@
         "name": "龍壽里",
         "name_en": "Longshou Village",
         "line": "227A",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "6443"
       },
@@ -1518,7 +1524,7 @@
         "name": "金兆興",
         "name_en": "JinJauShing",
         "line": "227A",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "350"
       },
@@ -1538,7 +1544,7 @@
         "name": "鶴年",
         "name_en": "HauNian",
         "line": "227A",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "348"
       },
@@ -1558,7 +1564,7 @@
         "name": "龍壽街273巷",
         "name_en": "Longshou St. Lane 273",
         "line": "227A",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "3541"
       },
@@ -1578,7 +1584,7 @@
         "name": "果菜市場",
         "name_en": "Fruit and Vegetable Market",
         "line": "227A",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "1857"
       },
@@ -1598,7 +1604,7 @@
         "name": "龍安國小",
         "name_en": "Lungan Elementary School",
         "line": "227A",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "346"
       },
@@ -1618,7 +1624,7 @@
         "name": "國強十三街",
         "name_en": "Guoqiang 13th St.",
         "line": "227A",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "3538"
       },
@@ -1638,7 +1644,7 @@
         "name": "藝術名廈",
         "name_en": "Yishumingxia",
         "line": "227A",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "3542"
       },
@@ -1658,7 +1664,7 @@
         "name": "國豐六街口",
         "name_en": "GuoFeng 6th Street Corner",
         "line": "227A",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "4640"
       },
@@ -1678,7 +1684,7 @@
         "name": "消防隊",
         "name_en": "Fire Brigade",
         "line": "227A",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "3536"
       },
@@ -1698,7 +1704,7 @@
         "name": "文學苑社區",
         "name_en": "Wenxueyuan Community",
         "line": "227A",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "3535"
       },
@@ -1718,7 +1724,7 @@
         "name": "龍鳳三街",
         "name_en": "Longfeng 3rd St.",
         "line": "227A",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "3532"
       },
@@ -1738,7 +1744,7 @@
         "name": "戶政地政所",
         "name_en": "Household Administration and Land Office",
         "line": "227A",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "3531"
       },
@@ -1758,7 +1764,7 @@
         "name": "龍安街口",
         "name_en": "Lungan Street Intersection",
         "line": "227A",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "1871"
       },
@@ -1778,7 +1784,7 @@
         "name": "上海路口",
         "name_en": "Shanghai Street Intersection",
         "line": "227A",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "6519"
       },
@@ -1798,7 +1804,7 @@
         "name": "迪斯耐社區",
         "name_en": "Disinai Community",
         "line": "227A",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "3544"
       },
@@ -1818,7 +1824,7 @@
         "name": "國強一街",
         "name_en": "Guoqiang 1st St.",
         "line": "227A",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "3546"
       },
@@ -1838,7 +1844,7 @@
         "name": "國際路二段",
         "name_en": "Sec.2  GuoJi Road",
         "line": "227A",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "2095"
       },
@@ -1858,7 +1864,7 @@
         "name": "延壽街",
         "name_en": "Yanshou St.",
         "line": "227A",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "3547"
       },
@@ -1878,7 +1884,7 @@
         "name": "桃園看守所",
         "name_en": "Taoyuan Detention Center",
         "line": "227A",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "3526"
       },
@@ -1898,7 +1904,7 @@
         "name": "信陽街口",
         "name_en": "Xinyang St. Intersection",
         "line": "227A",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "3115"
       },
@@ -1918,7 +1924,7 @@
         "name": "正光法治路口",
         "name_en": "Zhengguang Fazhi Rd Intersection",
         "line": "227A",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "3112"
       },
@@ -1938,7 +1944,7 @@
         "name": "廈門正光路口",
         "name_en": "Xiamen Zhengguang Rd Intersection",
         "line": "227A",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "3110"
       },
@@ -1958,7 +1964,7 @@
         "name": "桃園區公所",
         "name_en": "Civil Affairs Office of Taoyuan District",
         "line": "227A",
-        "color": "#0f766e",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "6850"
       },

@@ -6,13 +6,14 @@
     "name": "133B",
     "name_en": "133B",
     "ref": "133B",
-    "color": "#9a3412",
+    "color": "#2563eb",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/1332/map/2390/image",
     "operator_id": "2",
     "operator": "中壢客運",
-    "operator_en": "Chungli Bus Co., Ltd."
+    "operator_en": "Chungli Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "133B",
         "name": "133B",
         "name_en": "133B",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -139,6 +141,10 @@
           [
             121.2234,
             24.95342
+          ],
+          [
+            121.22425,
+            24.95325
           ]
         ]
       }
@@ -151,7 +157,7 @@
         "name": "中壢客運中壢總站",
         "name_en": "Zhongli Bus Main Station",
         "line": "133B",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "126"
       },
@@ -171,7 +177,7 @@
         "name": "中央延平路口",
         "name_en": "Zhongyang and Yanping Road Intersection",
         "line": "133B",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "4644"
       },
@@ -191,7 +197,7 @@
         "name": "中央新生路口",
         "name_en": "Zhongyang-ShinSheng Road Intersection",
         "line": "133B",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "693"
       },
@@ -211,7 +217,7 @@
         "name": "捷運老街溪站(中央西路)",
         "name_en": "MRT Laojie River Station(Zhongyang W. Rd.)",
         "line": "133B",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "4477"
       },
@@ -231,7 +237,7 @@
         "name": "民權路口",
         "name_en": "Minquan Road Intersection",
         "line": "133B",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "6576"
       },
@@ -251,7 +257,7 @@
         "name": "新明國小",
         "name_en": "Xinming Elementary School",
         "line": "133B",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "331"
       },
@@ -271,7 +277,7 @@
         "name": "曉明幼稚園",
         "name_en": "Xiaoming Kindergarten",
         "line": "133B",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "5248"
       },
@@ -291,7 +297,7 @@
         "name": "華宏補習班",
         "name_en": "Huahong Cram School",
         "line": "133B",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "4646"
       },
@@ -311,7 +317,7 @@
         "name": "中壢高中(中央西路)",
         "name_en": "Zhongli High School(Zhongyang W. Rd.)",
         "line": "133B",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "6285"
       },
@@ -331,7 +337,7 @@
         "name": "中壢高中(中央西路)",
         "name_en": "Zhongli Senior High School(Zhongyang W. Rd.)",
         "line": "133B",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "6286"
       },
@@ -351,7 +357,7 @@
         "name": "華宏補習班",
         "name_en": "Huahong Cram School",
         "line": "133B",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "4645"
       },
@@ -371,7 +377,7 @@
         "name": "曉明幼稚園",
         "name_en": "Xiaoming Kindergarten",
         "line": "133B",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "5249"
       },
@@ -391,7 +397,7 @@
         "name": "新明國小",
         "name_en": "Xinming Elementary School",
         "line": "133B",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "332"
       },
@@ -411,7 +417,7 @@
         "name": "民權路口",
         "name_en": "Minquan Road Intersection",
         "line": "133B",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "6575"
       },
@@ -431,7 +437,7 @@
         "name": "捷運老街溪站(中央西路)",
         "name_en": "MRT Laojie River Station(Zhongyang W. Rd.)",
         "line": "133B",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "4476"
       },
@@ -451,7 +457,7 @@
         "name": "中央新生路口",
         "name_en": "Zhongyang-ShinSheng Road Intersection",
         "line": "133B",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "692"
       },
@@ -471,7 +477,7 @@
         "name": "中央延平路口",
         "name_en": "Zhongyang and Yanping Road Intersection",
         "line": "133B",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "4643"
       },
@@ -491,7 +497,7 @@
         "name": "中央東路",
         "name_en": "Zhongyang East Road",
         "line": "133B",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "2104"
       },
@@ -511,7 +517,7 @@
         "name": "中壢客運中壢總站",
         "name_en": "Zhongli Bus Zhongli Main Station",
         "line": "133B",
-        "color": "#9a3412",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "126"
       },

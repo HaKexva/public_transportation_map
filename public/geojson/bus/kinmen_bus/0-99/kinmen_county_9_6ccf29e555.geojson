@@ -6,13 +6,14 @@
     "name": "9右繞",
     "name_en": "9右繞",
     "ref": "9右繞",
-    "color": "#86198f",
+    "color": "#3730a3",
     "city_id": "KinmenCounty",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.kinmen.gov.tw/api/route/91/map/153/image",
     "operator_id": "0001",
     "operator": "金門",
-    "operator_en": "City Bus and Ferry Management Office, Kinmen County"
+    "operator_en": "City Bus and Ferry Management Office, Kinmen County",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "9右繞",
         "name": "9右繞",
         "name_en": "9右繞",
-        "color": "#86198f",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -551,6 +553,10 @@
           [
             118.31994,
             24.43324
+          ],
+          [
+            118.32005,
+            24.4329
           ]
         ]
       }
@@ -563,7 +569,7 @@
         "name": "金城站",
         "name_en": "Jincheng Station",
         "line": "9右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "0"
       },
@@ -583,7 +589,7 @@
         "name": "金城新莊",
         "name_en": "Jincheng Xinzhuang",
         "line": "9右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "233"
       },
@@ -603,7 +609,7 @@
         "name": "香格里拉",
         "name_en": "Sianggelila",
         "line": "9右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "468"
       },
@@ -623,7 +629,7 @@
         "name": "金門大學(環島西路)",
         "name_en": "National Quemoy University",
         "line": "9右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "974"
       },
@@ -643,7 +649,7 @@
         "name": "埔後",
         "name_en": "Puhou",
         "line": "9右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "469"
       },
@@ -663,7 +669,7 @@
         "name": "頂埔下",
         "name_en": "Dingpusia",
         "line": "9右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "470"
       },
@@ -683,7 +689,7 @@
         "name": "東坑路口",
         "name_en": "Dongkeng Rd. Entrance",
         "line": "9右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "436"
       },
@@ -703,7 +709,7 @@
         "name": "湖下路口",
         "name_en": "Huxia Rd. Entrance",
         "line": "9右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "437"
       },
@@ -723,7 +729,7 @@
         "name": "西浦頭一",
         "name_en": "Xiputou 1",
         "line": "9右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "438"
       },
@@ -743,7 +749,7 @@
         "name": "西浦頭",
         "name_en": "Xiputou",
         "line": "9右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "439"
       },
@@ -763,7 +769,7 @@
         "name": "光前廟",
         "name_en": "Guangqian temple",
         "line": "9右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "440"
       },
@@ -783,7 +789,7 @@
         "name": "慈湖農莊一",
         "name_en": "Ci Lake Grange 1",
         "line": "9右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "441"
       },
@@ -803,7 +809,7 @@
         "name": "慈湖農莊",
         "name_en": "Ci Lake Grange",
         "line": "9右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "442"
       },
@@ -823,7 +829,7 @@
         "name": "增賢書室",
         "name_en": "Zengsian Academy",
         "line": "9右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "443"
       },
@@ -843,7 +849,7 @@
         "name": "林厝",
         "name_en": "Linchuo",
         "line": "9右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "444"
       },
@@ -863,7 +869,7 @@
         "name": "林厝一",
         "name_en": "LinCuo 1",
         "line": "9右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "445"
       },
@@ -883,7 +889,7 @@
         "name": "古寧頭戰史館",
         "name_en": "Guningtou Battle Museum",
         "line": "9右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "471"
       },
@@ -903,7 +909,7 @@
         "name": "古寧頭村民活動中心",
         "name_en": "Guning Office",
         "line": "9右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "446"
       },
@@ -923,7 +929,7 @@
         "name": "雙鯉湖",
         "name_en": "Shuangli Lake wetland",
         "line": "9右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "472"
       },
@@ -943,7 +949,7 @@
         "name": "雙鯉湖濕地",
         "name_en": "Shuangli Lake wetland",
         "line": "9右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "990"
       },
@@ -963,7 +969,7 @@
         "name": "南山",
         "name_en": "Nanshan",
         "line": "9右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "449"
       },
@@ -983,7 +989,7 @@
         "name": "寧湖路",
         "name_en": "Ninghu Rd.",
         "line": "9右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "473"
       },
@@ -1003,7 +1009,7 @@
         "name": "慈湖觀景台",
         "name_en": "Cihhu Lake belvedere",
         "line": "9右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "474"
       },
@@ -1023,7 +1029,7 @@
         "name": "湖下四",
         "name_en": "Huxia 4",
         "line": "9右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "475"
       },
@@ -1043,7 +1049,7 @@
         "name": "湖下三",
         "name_en": "Huxia 3",
         "line": "9右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "476"
       },
@@ -1063,7 +1069,7 @@
         "name": "湖下二",
         "name_en": "Huxia 2",
         "line": "9右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "477"
       },
@@ -1083,7 +1089,7 @@
         "name": "湖下一",
         "name_en": "Huxia 1",
         "line": "9右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "478"
       },
@@ -1103,7 +1109,7 @@
         "name": "金門橋頭",
         "name_en": "Kinmen Bridge Head",
         "line": "9右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "1001"
       },
@@ -1123,7 +1129,7 @@
         "name": "前山",
         "name_en": "Qianshan",
         "line": "9右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "934"
       },
@@ -1143,7 +1149,7 @@
         "name": "修車廠",
         "name_en": "Vehicles Maintenance Works",
         "line": "9右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "479"
       },
@@ -1163,7 +1169,7 @@
         "name": "下埔下",
         "name_en": "Xiapuxia",
         "line": "9右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "480"
       },
@@ -1183,7 +1189,7 @@
         "name": "將軍廟",
         "name_en": "Jiangjun Temple",
         "line": "9右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "481"
       },
@@ -1203,7 +1209,7 @@
         "name": "長鴻山莊",
         "name_en": "Changhong Village",
         "line": "9右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "482"
       },
@@ -1223,7 +1229,7 @@
         "name": "舊渡口",
         "name_en": "Jiudukou",
         "line": "9右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "483"
       },
@@ -1243,7 +1249,7 @@
         "name": "金門高中",
         "name_en": "Kinmen Senior High School",
         "line": "9右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "484"
       },
@@ -1263,7 +1269,7 @@
         "name": "中正國小",
         "name_en": "ZhongZheng Elementary School",
         "line": "9右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "134"
       },
@@ -1283,7 +1289,7 @@
         "name": "衛生所",
         "name_en": "Health Center",
         "line": "9右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "135"
       },
@@ -1303,7 +1309,7 @@
         "name": "金城站",
         "name_en": "Jincheng Station",
         "line": "9右繞",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "0"
       },

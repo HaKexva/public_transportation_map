@@ -6,13 +6,14 @@
     "name": "002",
     "name_en": "002",
     "ref": "002",
-    "color": "#155e75",
+    "color": "#0B7A3E",
     "city_id": "PenghuCounty",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://web.taiwanbus.tw/MISUploadData/Schematic/file/0165.jpg",
     "operator_id": "78",
     "operator": "澎湖縣公共車船管理處",
-    "operator_en": "City Bus and Ferry Management Office, Penghu County"
+    "operator_en": "City Bus and Ferry Management Office, Penghu County",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "002",
         "name": "002",
         "name_en": "002",
-        "color": "#155e75",
-        "direction": 0
+        "color": "#0B7A3E",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -5295,7 +5297,7 @@
         "name": "馬公港站",
         "name_en": "Magong Port Station",
         "line": "002",
-        "color": "#155e75",
+        "color": "#0B7A3E",
         "direction": 0,
         "station_id": "141917"
       },
@@ -5315,7 +5317,7 @@
         "name": "公車總站",
         "name_en": "bus terminal",
         "line": "002",
-        "color": "#155e75",
+        "color": "#0B7A3E",
         "direction": 0,
         "station_id": "142476"
       },
@@ -5335,7 +5337,7 @@
         "name": "自由塔(勝國)站",
         "name_en": "Freedom Tower (Victory) Station",
         "line": "002",
-        "color": "#155e75",
+        "color": "#0B7A3E",
         "direction": 0,
         "station_id": "141918"
       },
@@ -5355,7 +5357,7 @@
         "name": "第三漁港(雅霖)站",
         "name_en": "Magong 3rd  Harbor",
         "line": "002",
-        "color": "#155e75",
+        "color": "#0B7A3E",
         "direction": 0,
         "station_id": "141919"
       },
@@ -5375,7 +5377,7 @@
         "name": "文澳(元泰、百世多麗)站",
         "name_en": "Wen&#39;ao (Yuen Tai, Best Western) Station",
         "line": "002",
-        "color": "#155e75",
+        "color": "#0B7A3E",
         "direction": 0,
         "station_id": "141920"
       },
@@ -5395,7 +5397,7 @@
         "name": "風櫃洞",
         "name_en": "Fongguei Cave",
         "line": "002",
-        "color": "#155e75",
+        "color": "#0B7A3E",
         "direction": 0,
         "station_id": "143149"
       },
@@ -5415,7 +5417,7 @@
         "name": "澎湖縣水產種苗繁殖場",
         "name_en": "Marine Life Propagation Station, Penghu County",
         "line": "002",
-        "color": "#155e75",
+        "color": "#0B7A3E",
         "direction": 0,
         "station_id": "143151"
       },
@@ -5435,7 +5437,7 @@
         "name": "山水沙灘",
         "name_en": "Sanshui Beach",
         "line": "002",
-        "color": "#155e75",
+        "color": "#0B7A3E",
         "direction": 0,
         "station_id": "143152"
       },
@@ -5455,7 +5457,7 @@
         "name": "鎖港子午塔",
         "name_en": "Shougang Zhongwu Pagodas",
         "line": "002",
-        "color": "#155e75",
+        "color": "#0B7A3E",
         "direction": 0,
         "station_id": "143154"
       },
@@ -5475,7 +5477,7 @@
         "name": "文澳(元泰、百世多麗)站",
         "name_en": "Wen&#39;ao (Yuen Tai, Best Western) Station",
         "line": "002",
-        "color": "#155e75",
+        "color": "#0B7A3E",
         "direction": 0,
         "station_id": "141927"
       },
@@ -5495,7 +5497,7 @@
         "name": "第三漁港(雅霖)站",
         "name_en": "Magong 3rd  Harbor",
         "line": "002",
-        "color": "#155e75",
+        "color": "#0B7A3E",
         "direction": 0,
         "station_id": "139888"
       },
@@ -5515,7 +5517,7 @@
         "name": "自由塔(勝國)站",
         "name_en": "Freedom Tower (Victory) Station",
         "line": "002",
-        "color": "#155e75",
+        "color": "#0B7A3E",
         "direction": 0,
         "station_id": "141928"
       },

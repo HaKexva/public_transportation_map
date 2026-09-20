@@ -6,13 +6,14 @@
     "name": "F652",
     "name_en": "F652",
     "ref": "F652",
-    "color": "#15803d",
+    "color": "#6B8F9A",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.gov.taipei/File/Get/a421a0a3-d353-450a-915a-3e61d1bb4c64?v=639248448811646842",
     "operator_id": "16244",
     "operator": "鶯歌區公所",
-    "operator_en": "Yingge District Office"
+    "operator_en": "Yingge District Office",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "F652",
         "name": "F652",
         "name_en": "F652",
-        "color": "#15803d",
-        "direction": 0
+        "color": "#6B8F9A",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -831,6 +833,10 @@
           [
             121.353549740944,
             24.9564331674601
+          ],
+          [
+            121.353527989506,
+            24.9564222917414
           ]
         ]
       }
@@ -842,7 +848,7 @@
         "ref": "F652",
         "name": "F652",
         "name_en": "F652",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 1
       },
       "geometry": {
@@ -1171,7 +1177,7 @@
         "name": "鶯歌區公所",
         "name_en": "Yingge District Office",
         "line": "F652",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165605719"
       },
@@ -1191,7 +1197,7 @@
         "name": "南鶯國慶115巷口",
         "name_en": "Nanying Ln. 115 Guoqing St. Entrance",
         "line": "F652",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3377"
       },
@@ -1211,7 +1217,7 @@
         "name": "文化路140號",
         "name_en": "No.140 Wenhua Rd.",
         "line": "F652",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73326"
       },
@@ -1231,7 +1237,7 @@
         "name": "陶瓷博物館",
         "name_en": "No.214 Wenhua Rd.",
         "line": "F652",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3382"
       },
@@ -1251,7 +1257,7 @@
         "name": "文化路254號",
         "name_en": "No.254 Wenhua Rd.",
         "line": "F652",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73439"
       },
@@ -1271,7 +1277,7 @@
         "name": "三鶯路47號",
         "name_en": "No.47 Yingge Rd.",
         "line": "F652",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73370"
       },
@@ -1291,7 +1297,7 @@
         "name": "三鶯福德宮",
         "name_en": "Sanying Fude Temple",
         "line": "F652",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73371"
       },
@@ -1311,7 +1317,7 @@
         "name": "恩主公醫院",
         "name_en": "EnChuKong Hospital",
         "line": "F652",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "18003"
       },
@@ -1331,7 +1337,7 @@
         "name": "三鶯路47號",
         "name_en": "No.47 Yingge Rd.",
         "line": "F652",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73370"
       },
@@ -1351,7 +1357,7 @@
         "name": "三鶯福德宮",
         "name_en": "Sanying Fude Temple",
         "line": "F652",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73371"
       },
@@ -1371,7 +1377,7 @@
         "name": "文化路417號",
         "name_en": "No.417 Wenhua Rd.",
         "line": "F652",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73380"
       },
@@ -1391,7 +1397,7 @@
         "name": "文化路351號",
         "name_en": "No.351 Wenhua Rd.",
         "line": "F652",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73327"
       },
@@ -1411,7 +1417,7 @@
         "name": "鶯歌郵局",
         "name_en": "Yingge Post Office",
         "line": "F652",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3384"
       },
@@ -1431,7 +1437,7 @@
         "name": "鶯歌區公所",
         "name_en": "Yingge District Office",
         "line": "F652",
-        "color": "#15803d",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165604629"
       },

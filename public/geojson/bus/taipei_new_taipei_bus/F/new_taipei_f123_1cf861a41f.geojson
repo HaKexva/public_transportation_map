@@ -6,13 +6,14 @@
     "name": "F123下罟經八療",
     "name_en": "F123下罟經八療",
     "ref": "F123下罟經八療",
-    "color": "#9f1239",
+    "color": "#6B8F9A",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.gov.taipei/File/Get/34aad85f-6f4e-4b6c-ae43-2ab8c2ed4a9a?v=639248448771567384",
     "operator_id": "16230",
     "operator": "八里區公所",
-    "operator_en": "Bali District Office"
+    "operator_en": "Bali District Office",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "F123下罟經八療",
         "name": "F123下罟經八療",
         "name_en": "F123下罟經八療",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#6B8F9A",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1247,6 +1249,10 @@
           [
             121.370412565531,
             25.1367453530154
+          ],
+          [
+            121.370421110995,
+            25.1367616300904
           ]
         ]
       }
@@ -1259,7 +1265,7 @@
         "name": "下罟掩埋場",
         "name_en": "Xiagu Landfill",
         "line": "F123下罟經八療",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "74535"
       },
@@ -1279,7 +1285,7 @@
         "name": "南嶽宮",
         "name_en": "Nanyue Temple",
         "line": "F123下罟經八療",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "74539"
       },
@@ -1299,7 +1305,7 @@
         "name": "八里分駐所",
         "name_en": "Bali Police Station",
         "line": "F123下罟經八療",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "74541"
       },
@@ -1319,7 +1325,7 @@
         "name": "八里國中",
         "name_en": "Bali Junior High School",
         "line": "F123下罟經八療",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165606215"
       },
@@ -1339,7 +1345,7 @@
         "name": "八里療養院",
         "name_en": "Bali Sanatorium",
         "line": "F123下罟經八療",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "74589"
       },
@@ -1359,7 +1365,7 @@
         "name": "八里國中",
         "name_en": "Bali Junior High School",
         "line": "F123下罟經八療",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165603684"
       },
@@ -1379,7 +1385,7 @@
         "name": "八里分駐所",
         "name_en": "Bali Police Station",
         "line": "F123下罟經八療",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "74541"
       },
@@ -1399,7 +1405,7 @@
         "name": "南嶽宮",
         "name_en": "Nanyue Temple",
         "line": "F123下罟經八療",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165610496"
       },
@@ -1419,7 +1425,7 @@
         "name": "下罟掩埋場",
         "name_en": "Xiagu Landfill",
         "line": "F123下罟經八療",
-        "color": "#9f1239",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "74535"
       },

@@ -6,13 +6,14 @@
     "name": "F212",
     "name_en": "F212",
     "ref": "F212",
-    "color": "#d97706",
+    "color": "#6B8F9A",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.gov.taipei/File/Get/595d7669-9887-4a2c-9c3e-efd605cf49c1?v=639248448784382774",
     "operator_id": "16233",
     "operator": "泰山區公所",
-    "operator_en": "Taishan District Office"
+    "operator_en": "Taishan District Office",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "F212",
         "name": "F212",
         "name_en": "F212",
-        "color": "#d97706",
-        "direction": 0
+        "color": "#6B8F9A",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -275,6 +277,10 @@
           [
             121.433917519121,
             25.0563709830716
+          ],
+          [
+            121.433955640856,
+            25.0563067105845
           ]
         ]
       }
@@ -287,7 +293,7 @@
         "name": "泰山公有市場",
         "name_en": "Taishan Market",
         "line": "F212",
-        "color": "#d97706",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165604760"
       },
@@ -307,7 +313,7 @@
         "name": "福泰里",
         "name_en": "Futai Village",
         "line": "F212",
-        "color": "#d97706",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "36075"
       },
@@ -327,7 +333,7 @@
         "name": "泰山分駐所",
         "name_en": "Taishan Precinct",
         "line": "F212",
-        "color": "#d97706",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "36076"
       },
@@ -347,7 +353,7 @@
         "name": "泰山國小",
         "name_en": "Taishan Elementary School",
         "line": "F212",
-        "color": "#d97706",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "36077"
       },
@@ -367,7 +373,7 @@
         "name": "憲訓中心",
         "name_en": "Xianxun Rd. Entrance",
         "line": "F212",
-        "color": "#d97706",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "36078"
       },
@@ -387,7 +393,7 @@
         "name": "泰山國中",
         "name_en": "Taishan Jr. High School",
         "line": "F212",
-        "color": "#d97706",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "36079"
       },
@@ -407,7 +413,7 @@
         "name": "山腳溪橋",
         "name_en": "Shanjiao Bridge",
         "line": "F212",
-        "color": "#d97706",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "36080"
       },
@@ -427,7 +433,7 @@
         "name": "堅實橋",
         "name_en": "Jianshi Bridge",
         "line": "F212",
-        "color": "#d97706",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "73754"
       },
@@ -447,7 +453,7 @@
         "name": "明志和平路口",
         "name_en": "Mingzhi and Heping Intersection",
         "line": "F212",
-        "color": "#d97706",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "36059"
       },
@@ -467,7 +473,7 @@
         "name": "泰山郵局",
         "name_en": "Taishan Post Office",
         "line": "F212",
-        "color": "#d97706",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3629"
       },
@@ -487,7 +493,7 @@
         "name": "泰山分駐所",
         "name_en": "Taishan Police Station",
         "line": "F212",
-        "color": "#d97706",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3621"
       },
@@ -507,7 +513,7 @@
         "name": "福泰里",
         "name_en": "Futai Village",
         "line": "F212",
-        "color": "#d97706",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "3634"
       },
@@ -527,7 +533,7 @@
         "name": "泰山公有市場",
         "name_en": "Taishan Market",
         "line": "F212",
-        "color": "#d97706",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165604760"
       },

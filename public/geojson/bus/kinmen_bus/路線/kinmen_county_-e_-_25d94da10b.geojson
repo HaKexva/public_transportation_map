@@ -6,13 +6,14 @@
     "name": "台灣好行-E線-風獅爺主題(上午)路線",
     "name_en": "台灣好行-E線-風獅爺主題(上午)路線",
     "ref": "台灣好行-E線-風獅爺主題(上午)路線",
-    "color": "#86198f",
+    "color": "#3730a3",
     "city_id": "KinmenCounty",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.kinmen.gov.tw/extend/route20230601/e.jpg",
     "operator_id": "0001",
     "operator": "金門",
-    "operator_en": "City Bus and Ferry Management Office, Kinmen County"
+    "operator_en": "City Bus and Ferry Management Office, Kinmen County",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "台灣好行-E線-風獅爺主題(上午)路線",
         "name": "台灣好行-E線-風獅爺主題(上午)路線",
         "name_en": "台灣好行-E線-風獅爺主題(上午)路線",
-        "color": "#86198f",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1783,6 +1785,10 @@
           [
             118.41397,
             24.44245
+          ],
+          [
+            118.41382,
+            24.44217
           ]
         ]
       }
@@ -1795,7 +1801,7 @@
         "name": "山外站",
         "name_en": "Shanwai Station",
         "line": "台灣好行-E線-風獅爺主題(上午)路線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "29"
       },
@@ -1815,7 +1821,7 @@
         "name": "瓊林",
         "name_en": "Qionglin",
         "line": "台灣好行-E線-風獅爺主題(上午)路線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "902"
       },
@@ -1835,7 +1841,7 @@
         "name": "中蘭",
         "name_en": "Zhonglan",
         "line": "台灣好行-E線-風獅爺主題(上午)路線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "243"
       },
@@ -1855,7 +1861,7 @@
         "name": "何厝",
         "name_en": "Hecuo",
         "line": "台灣好行-E線-風獅爺主題(上午)路線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "903"
       },
@@ -1875,7 +1881,7 @@
         "name": "斗門",
         "name_en": "Doumen",
         "line": "台灣好行-E線-風獅爺主題(上午)路線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "904"
       },
@@ -1895,7 +1901,7 @@
         "name": "下塘頭風獅爺",
         "name_en": "Xiaxtangtou Lion Statue",
         "line": "台灣好行-E線-風獅爺主題(上午)路線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "905"
       },
@@ -1915,7 +1921,7 @@
         "name": "浦邊下",
         "name_en": "Pubian Down",
         "line": "台灣好行-E線-風獅爺主題(上午)路線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "906"
       },
@@ -1935,7 +1941,7 @@
         "name": "浦邊上",
         "name_en": "Pubian Up",
         "line": "台灣好行-E線-風獅爺主題(上午)路線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "1035"
       },
@@ -1955,7 +1961,7 @@
         "name": "劉澳",
         "name_en": "Liouao",
         "line": "台灣好行-E線-風獅爺主題(上午)路線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "315"
       },
@@ -1975,7 +1981,7 @@
         "name": "呂厝下",
         "name_en": "Lyucuo Down",
         "line": "台灣好行-E線-風獅爺主題(上午)路線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "1036"
       },
@@ -1995,7 +2001,7 @@
         "name": "呂厝上",
         "name_en": "Lyucuo Up",
         "line": "台灣好行-E線-風獅爺主題(上午)路線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "1037"
       },
@@ -2015,7 +2021,7 @@
         "name": "后宅",
         "name_en": "Houzhai",
         "line": "台灣好行-E線-風獅爺主題(上午)路線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "277"
       },
@@ -2035,7 +2041,7 @@
         "name": "洋山下",
         "name_en": "Yangshan Down",
         "line": "台灣好行-E線-風獅爺主題(上午)路線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "1038"
       },
@@ -2055,7 +2061,7 @@
         "name": "洋山上",
         "name_en": "Yangshan Up",
         "line": "台灣好行-E線-風獅爺主題(上午)路線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "1039"
       },
@@ -2075,7 +2081,7 @@
         "name": "田墩",
         "name_en": "Tiandun",
         "line": "台灣好行-E線-風獅爺主題(上午)路線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "726"
       },
@@ -2095,7 +2101,7 @@
         "name": "西園",
         "name_en": "Xiyuan",
         "line": "台灣好行-E線-風獅爺主題(上午)路線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "908"
       },
@@ -2115,7 +2121,7 @@
         "name": "塘頭",
         "name_en": "Tangtou",
         "line": "台灣好行-E線-風獅爺主題(上午)路線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "909"
       },
@@ -2135,7 +2141,7 @@
         "name": "官澳",
         "name_en": "Guanao",
         "line": "台灣好行-E線-風獅爺主題(上午)路線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "910"
       },
@@ -2155,7 +2161,7 @@
         "name": "山外站",
         "name_en": "Shanwai Station",
         "line": "台灣好行-E線-風獅爺主題(上午)路線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "29"
       },

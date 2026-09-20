@@ -6,12 +6,13 @@
     "name": "幸福三地門3路",
     "name_en": "幸福三地門3路",
     "ref": "幸福三地門3路",
-    "color": "#166534",
+    "color": "#dc2626",
     "city_id": "PingtungCounty",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://web.taiwanbus.tw/MISUploadData/Schematic/file/0159.jpg",
     "operator_id": "99",
-    "operator": "屏東縣三地門鄉公所"
+    "operator": "屏東縣三地門鄉公所",
+    "loop": true
   },
   "features": [
     {
@@ -21,8 +22,9 @@
         "ref": "幸福三地門3路",
         "name": "幸福三地門3路",
         "name_en": "幸福三地門3路",
-        "color": "#166534",
-        "direction": 0
+        "color": "#dc2626",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -5825,8 +5827,9 @@
         "ref": "幸福三地門3路",
         "name": "幸福三地門3路",
         "name_en": "幸福三地門3路",
-        "color": "#166534",
-        "direction": 1
+        "color": "#dc2626",
+        "direction": 1,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -11630,7 +11633,7 @@
         "name": "三地門鄉公所",
         "name_en": "Sandimen Township Office",
         "line": "幸福三地門3路",
-        "color": "#166534",
+        "color": "#dc2626",
         "direction": 0,
         "station_id": "143405"
       },
@@ -11650,7 +11653,7 @@
         "name": "安坡村",
         "name_en": "An-Po Village",
         "line": "幸福三地門3路",
-        "color": "#166534",
+        "color": "#dc2626",
         "direction": 0,
         "station_id": "143460"
       },
@@ -11670,7 +11673,7 @@
         "name": "馬兒村",
         "name_en": "Ma-Er Village",
         "line": "幸福三地門3路",
-        "color": "#166534",
+        "color": "#dc2626",
         "direction": 0,
         "station_id": "140006"
       },
@@ -11690,7 +11693,7 @@
         "name": "泰山國小",
         "name_en": "Taishan Elementary School",
         "line": "幸福三地門3路",
-        "color": "#166534",
+        "color": "#dc2626",
         "direction": 0,
         "station_id": "143492"
       },
@@ -11710,7 +11713,7 @@
         "name": "三地門鄉公所",
         "name_en": "Sandimen Township Office",
         "line": "幸福三地門3路",
-        "color": "#166534",
+        "color": "#dc2626",
         "direction": 1,
         "station_id": "143405"
       },
@@ -11730,7 +11733,7 @@
         "name": "泰山國小",
         "name_en": "Taishan Elementary School",
         "line": "幸福三地門3路",
-        "color": "#166534",
+        "color": "#dc2626",
         "direction": 1,
         "station_id": "143497"
       },
@@ -11750,7 +11753,7 @@
         "name": "馬兒村",
         "name_en": "Ma-Er Village",
         "line": "幸福三地門3路",
-        "color": "#166534",
+        "color": "#dc2626",
         "direction": 1,
         "station_id": "140006"
       },
@@ -11770,7 +11773,7 @@
         "name": "安坡村",
         "name_en": "An-Po Village",
         "line": "幸福三地門3路",
-        "color": "#166534",
+        "color": "#dc2626",
         "direction": 1,
         "station_id": "143460"
       },

@@ -6,13 +6,14 @@
     "name": "239",
     "name_en": "239",
     "ref": "239",
-    "color": "#b91c1c",
+    "color": "#b45309",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/2390/map/2032/image",
     "operator_id": "1",
     "operator": "桃園客運",
-    "operator_en": "Taoyuan Bus Co., Ltd."
+    "operator_en": "Taoyuan Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "239",
         "name": "239",
         "name_en": "239",
-        "color": "#b91c1c",
-        "direction": 0
+        "color": "#b45309",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -2295,6 +2297,10 @@
           [
             121.21053,
             24.8667
+          ],
+          [
+            121.21043,
+            24.86685
           ]
         ]
       }
@@ -2307,7 +2313,7 @@
         "name": "桃客龍潭新站",
         "name_en": "Taoyuan Bus Longtan New Station",
         "line": "239",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6217"
       },
@@ -2327,7 +2333,7 @@
         "name": "中正北龍路口",
         "name_en": "Zhongzheng Beilong Road Intersection",
         "line": "239",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4059"
       },
@@ -2347,7 +2353,7 @@
         "name": "第二市場",
         "name_en": "Second Market",
         "line": "239",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2922"
       },
@@ -2367,7 +2373,7 @@
         "name": "佳佳商場",
         "name_en": "Jiajia Market",
         "line": "239",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2518"
       },
@@ -2387,7 +2393,7 @@
         "name": "大同社區",
         "name_en": "Datong Community",
         "line": "239",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1495"
       },
@@ -2407,7 +2413,7 @@
         "name": "龍潭國中",
         "name_en": "Longtan Junior High School",
         "line": "239",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6398"
       },
@@ -2427,7 +2433,7 @@
         "name": "富華街四",
         "name_en": "Fuhua St. IV",
         "line": "239",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "842"
       },
@@ -2447,7 +2453,7 @@
         "name": "富華街三",
         "name_en": "Fuhua St. III",
         "line": "239",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "837"
       },
@@ -2467,7 +2473,7 @@
         "name": "富華街二",
         "name_en": "Fuhua St. II",
         "line": "239",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "836"
       },
@@ -2487,7 +2493,7 @@
         "name": "富華街一",
         "name_en": "Fuhua St. I",
         "line": "239",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "833"
       },
@@ -2507,7 +2513,7 @@
         "name": "富華民生路口",
         "name_en": "Fuhua Minsheng Road Intersection",
         "line": "239",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2532"
       },
@@ -2527,7 +2533,7 @@
         "name": "富華街三林段176巷口",
         "name_en": "Fuhua St. Sanlin Sec. Lane 176 Intersection",
         "line": "239",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5891"
       },
@@ -2547,7 +2553,7 @@
         "name": "富華街三林段395巷口",
         "name_en": "Fuhua St. Sanlin Sec. Lane 395 Intersection",
         "line": "239",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5892"
       },
@@ -2567,7 +2573,7 @@
         "name": "富華街三林段491巷口",
         "name_en": "Fuhua St. Sanlin Sec. Lane 491 Intersection",
         "line": "239",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5893"
       },
@@ -2587,7 +2593,7 @@
         "name": "富華街三林段636巷口",
         "name_en": "Fuhua St. Sanlin Sec. Lane 636 Intersection",
         "line": "239",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5894"
       },
@@ -2607,7 +2613,7 @@
         "name": "富華街三林段777號",
         "name_en": "Fuhua St. Sanlin Sec. No. 777",
         "line": "239",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5895"
       },
@@ -2627,7 +2633,7 @@
         "name": "三角林街800-30號",
         "name_en": "Sanjiaolin St. No. 800-30",
         "line": "239",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5896"
       },
@@ -2647,7 +2653,7 @@
         "name": "澹園",
         "name_en": "Danyuan",
         "line": "239",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4107"
       },
@@ -2667,7 +2673,7 @@
         "name": "石園二村",
         "name_en": "Shiyuan 2nd Village",
         "line": "239",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6458"
       },
@@ -2687,7 +2693,7 @@
         "name": "北水局",
         "name_en": "Northern Region Water Resources Office",
         "line": "239",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1215"
       },
@@ -2707,7 +2713,7 @@
         "name": "佳安市場",
         "name_en": "Jiaan Market",
         "line": "239",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2149"
       },
@@ -2727,7 +2733,7 @@
         "name": "石門水庫教會",
         "name_en": "Shihmen Reservoir Church",
         "line": "239",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5897"
       },
@@ -2747,7 +2753,7 @@
         "name": "石園二村",
         "name_en": "Shiyuan 2nd Village",
         "line": "239",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2533"
       },
@@ -2767,7 +2773,7 @@
         "name": "里界",
         "name_en": "Li jie",
         "line": "239",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "63"
       },
@@ -2787,7 +2793,7 @@
         "name": "民族龍門街口",
         "name_en": "Minzu St. and Longmen St. Intersection",
         "line": "239",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3970"
       },
@@ -2807,7 +2813,7 @@
         "name": "金山社區",
         "name_en": "Jinshan Community",
         "line": "239",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4106"
       },
@@ -2827,7 +2833,7 @@
         "name": "民族路311巷口",
         "name_en": "Minzu Rd. Lane 311 Intersection",
         "line": "239",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4045"
       },
@@ -2847,7 +2853,7 @@
         "name": "逸園",
         "name_en": "Yiyuan",
         "line": "239",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4104"
       },
@@ -2867,7 +2873,7 @@
         "name": "建國路70巷口",
         "name_en": "Jiangou Rd. Lane 70 Intersection",
         "line": "239",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4060"
       },
@@ -2887,7 +2893,7 @@
         "name": "建國路180巷口",
         "name_en": "Jiangou Rd. Lane 180 Intersection",
         "line": "239",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4061"
       },
@@ -2907,7 +2913,7 @@
         "name": "民生建國路口",
         "name_en": "Minsheng Rd. and Jianguo Rd. Intersection",
         "line": "239",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3995"
       },
@@ -2927,7 +2933,7 @@
         "name": "民生路141巷口",
         "name_en": "Minsheng Rd. Lane 141 Intersection",
         "line": "239",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5898"
       },
@@ -2947,7 +2953,7 @@
         "name": "民生路200號",
         "name_en": "Minsheng Road No. 200",
         "line": "239",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5899"
       },
@@ -2967,7 +2973,7 @@
         "name": "富華街一",
         "name_en": "Fuhua St. I",
         "line": "239",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "834"
       },
@@ -2987,7 +2993,7 @@
         "name": "富華街二",
         "name_en": "Fuhua St. II",
         "line": "239",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "835"
       },
@@ -3007,7 +3013,7 @@
         "name": "富華街三",
         "name_en": "Fuhua St. III",
         "line": "239",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "838"
       },
@@ -3027,7 +3033,7 @@
         "name": "富華街四",
         "name_en": "Fuhua St. IV",
         "line": "239",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "841"
       },
@@ -3047,7 +3053,7 @@
         "name": "龍潭國中",
         "name_en": "Longtan Junior High School",
         "line": "239",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6399"
       },
@@ -3067,7 +3073,7 @@
         "name": "大同社區",
         "name_en": "Datong Community",
         "line": "239",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1492"
       },
@@ -3087,7 +3093,7 @@
         "name": "佳佳商場",
         "name_en": "Jiajia Market",
         "line": "239",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2519"
       },
@@ -3107,7 +3113,7 @@
         "name": "龍星國小",
         "name_en": "Long Sing Elementary School",
         "line": "239",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4055"
       },
@@ -3127,7 +3133,7 @@
         "name": "第二市場",
         "name_en": "Second Market",
         "line": "239",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2921"
       },
@@ -3147,7 +3153,7 @@
         "name": "中正北龍路口",
         "name_en": "Zhongzheng Beilong Road Intersection",
         "line": "239",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4058"
       },
@@ -3167,7 +3173,7 @@
         "name": "桃客龍潭新站",
         "name_en": "Taoyuan Bus Longtan New Station",
         "line": "239",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6218"
       },

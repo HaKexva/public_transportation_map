@@ -6,13 +6,14 @@
     "name": "8繞金城市區",
     "name_en": "8繞金城市區",
     "ref": "8繞金城市區",
-    "color": "#86198f",
+    "color": "#3730a3",
     "city_id": "KinmenCounty",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.kinmen.gov.tw/api/route/891/map/249/image",
     "operator_id": "0001",
     "operator": "金門",
-    "operator_en": "City Bus and Ferry Management Office, Kinmen County"
+    "operator_en": "City Bus and Ferry Management Office, Kinmen County",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "8繞金城市區",
         "name": "8繞金城市區",
         "name_en": "8繞金城市區",
-        "color": "#86198f",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -843,6 +845,10 @@
           [
             118.31994,
             24.43323
+          ],
+          [
+            118.32005,
+            24.4329
           ]
         ]
       }
@@ -855,7 +861,7 @@
         "name": "金城站",
         "name_en": "Jincheng Station",
         "line": "8繞金城市區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "0"
       },
@@ -875,7 +881,7 @@
         "name": "衛生所",
         "name_en": "Health Center",
         "line": "8繞金城市區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "58"
       },
@@ -895,7 +901,7 @@
         "name": "中正國小",
         "name_en": "ZhongZheng Elementary School",
         "line": "8繞金城市區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "59"
       },
@@ -915,7 +921,7 @@
         "name": "金城國中",
         "name_en": "Jincheng Junior High School",
         "line": "8繞金城市區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "61"
       },
@@ -935,7 +941,7 @@
         "name": "體育館",
         "name_en": "Gymnasium",
         "line": "8繞金城市區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "62"
       },
@@ -955,7 +961,7 @@
         "name": "北堤路",
         "name_en": "Beiti Rd.",
         "line": "8繞金城市區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "63"
       },
@@ -975,7 +981,7 @@
         "name": "迴龍廟",
         "name_en": "Hueilong Temple",
         "line": "8繞金城市區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "64"
       },
@@ -995,7 +1001,7 @@
         "name": "燦坤一",
         "name_en": "TsannKuen 1",
         "line": "8繞金城市區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "65"
       },
@@ -1015,7 +1021,7 @@
         "name": "縣議會",
         "name_en": "County Council",
         "line": "8繞金城市區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "66"
       },
@@ -1035,7 +1041,7 @@
         "name": "金山路口",
         "name_en": "Jinshan Rd.",
         "line": "8繞金城市區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "67"
       },
@@ -1055,7 +1061,7 @@
         "name": "議會山莊",
         "name_en": "Yihuei Village",
         "line": "8繞金城市區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "68"
       },
@@ -1075,7 +1081,7 @@
         "name": "頂后垵一",
         "name_en": "DinghouAn 1",
         "line": "8繞金城市區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "415"
       },
@@ -1095,7 +1101,7 @@
         "name": "頂后垵",
         "name_en": "Dinghou-an",
         "line": "8繞金城市區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "416"
       },
@@ -1115,7 +1121,7 @@
         "name": "和平新村",
         "name_en": "Hupingxincun",
         "line": "8繞金城市區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "417"
       },
@@ -1135,7 +1141,7 @@
         "name": "環島南路",
         "name_en": "uandao S. Rd.",
         "line": "8繞金城市區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "418"
       },
@@ -1155,7 +1161,7 @@
         "name": "后湖村莊",
         "name_en": "Huohu Village",
         "line": "8繞金城市區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "194"
       },
@@ -1175,7 +1181,7 @@
         "name": "泗湖路口",
         "name_en": "Sihu Rd.",
         "line": "8繞金城市區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "215"
       },
@@ -1195,7 +1201,7 @@
         "name": "泗湖",
         "name_en": "Sihu",
         "line": "8繞金城市區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "216"
       },
@@ -1215,7 +1221,7 @@
         "name": "小西門",
         "name_en": "Xiaoximen",
         "line": "8繞金城市區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "217"
       },
@@ -1235,7 +1241,7 @@
         "name": "歐厝一",
         "name_en": "Oucuo 1",
         "line": "8繞金城市區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "218"
       },
@@ -1255,7 +1261,7 @@
         "name": "歐厝二",
         "name_en": "Oucuo 2",
         "line": "8繞金城市區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "219"
       },
@@ -1275,7 +1281,7 @@
         "name": "東沙一",
         "name_en": "Dongsha 1",
         "line": "8繞金城市區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "220"
       },
@@ -1295,7 +1301,7 @@
         "name": "東沙",
         "name_en": "Dongsha",
         "line": "8繞金城市區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "221"
       },
@@ -1315,7 +1321,7 @@
         "name": "珠山一",
         "name_en": "Zhushan 1",
         "line": "8繞金城市區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "222"
       },
@@ -1335,7 +1341,7 @@
         "name": "珠山",
         "name_en": "Zhushan",
         "line": "8繞金城市區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "223"
       },
@@ -1355,7 +1361,7 @@
         "name": "燕南山",
         "name_en": "Yannanshan",
         "line": "8繞金城市區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "224"
       },
@@ -1375,7 +1381,7 @@
         "name": "東社",
         "name_en": "Dongshe",
         "line": "8繞金城市區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "225"
       },
@@ -1395,7 +1401,7 @@
         "name": "官裡",
         "name_en": "Guanli",
         "line": "8繞金城市區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "226"
       },
@@ -1415,7 +1421,7 @@
         "name": "小西門重劃區",
         "name_en": "Siaosimen Re-delimit Area",
         "line": "8繞金城市區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "419"
       },
@@ -1435,7 +1441,7 @@
         "name": "小西門",
         "name_en": "Xiaoximen",
         "line": "8繞金城市區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "420"
       },
@@ -1455,7 +1461,7 @@
         "name": "和平新村",
         "name_en": "Hupingxincun",
         "line": "8繞金城市區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "421"
       },
@@ -1475,7 +1481,7 @@
         "name": "頂后垵",
         "name_en": "Dinghou-an",
         "line": "8繞金城市區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "422"
       },
@@ -1495,7 +1501,7 @@
         "name": "庵前",
         "name_en": "Anqian",
         "line": "8繞金城市區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "423"
       },
@@ -1515,7 +1521,7 @@
         "name": "莒光樓",
         "name_en": "Juguang Tower",
         "line": "8繞金城市區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "230"
       },
@@ -1535,7 +1541,7 @@
         "name": "燦坤",
         "name_en": "TsannKuen",
         "line": "8繞金城市區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "231"
       },
@@ -1555,7 +1561,7 @@
         "name": "東門",
         "name_en": "Dongmen",
         "line": "8繞金城市區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "345"
       },
@@ -1575,7 +1581,7 @@
         "name": "金城站",
         "name_en": "Jincheng Station",
         "line": "8繞金城市區",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "0"
       },

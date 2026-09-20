@@ -6,12 +6,13 @@
     "name": "安坑6線",
     "name_en": "安坑6線",
     "ref": "安坑6線",
-    "color": "#15803d",
+    "color": "#DC2626",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.gov.taipei/File/Get/57153ef1-6a93-4353-a6dd-9458bae99fc4?v=639248448865181726",
     "operator_id": "16185",
-    "operator": "指南客運"
+    "operator": "指南客運",
+    "loop": true
   },
   "features": [
     {
@@ -21,8 +22,9 @@
         "ref": "安坑6線",
         "name": "安坑6線",
         "name_en": "安坑6線",
-        "color": "#15803d",
-        "direction": 0
+        "color": "#DC2626",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -562,6 +564,10 @@
           [
             121.489278235284,
             24.9459673212189
+          ],
+          [
+            121.489385331354,
+            24.9461056536422
           ]
         ]
       }
@@ -574,7 +580,7 @@
         "name": "輕軌雙城站",
         "name_en": "LRT Shuangcheng Sta.",
         "line": "安坑6線",
-        "color": "#15803d",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "1165609345"
       },
@@ -594,7 +600,7 @@
         "name": "安坑輕軌機廠",
         "name_en": "LRT Depot",
         "line": "安坑6線",
-        "color": "#15803d",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "1165609346",
         "stop_role": "depot"
@@ -615,7 +621,7 @@
         "name": "頂好社區",
         "name_en": "Dinghao Community",
         "line": "安坑6線",
-        "color": "#15803d",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "72225"
       },
@@ -635,7 +641,7 @@
         "name": "安泰路60巷口",
         "name_en": "Lane 60 Antai Rd. Entrance",
         "line": "安坑6線",
-        "color": "#15803d",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "1165609347"
       },
@@ -655,7 +661,7 @@
         "name": "璦丁堡社區",
         "name_en": "Aidingbao Community",
         "line": "安坑6線",
-        "color": "#15803d",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "1165609177"
       },
@@ -675,7 +681,7 @@
         "name": "安泰路19巷口",
         "name_en": "Lane 19 Antai Rd. Entrance",
         "line": "安坑6線",
-        "color": "#15803d",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "1165609348"
       },
@@ -695,7 +701,7 @@
         "name": "安泰安康路口",
         "name_en": "Antai & Ankang Intersection",
         "line": "安坑6線",
-        "color": "#15803d",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "1165609349"
       },
@@ -715,7 +721,7 @@
         "name": "二城",
         "name_en": "Ercheng",
         "line": "安坑6線",
-        "color": "#15803d",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "1000375"
       },
@@ -735,7 +741,7 @@
         "name": "中央印製廠",
         "name_en": "Central Engraving & Printing Plant",
         "line": "安坑6線",
-        "color": "#15803d",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "1000376"
       },
@@ -755,7 +761,7 @@
         "name": "雙城安康路口",
         "name_en": "Shuangcheng & Ankang Intersection",
         "line": "安坑6線",
-        "color": "#15803d",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "1165604171"
       },
@@ -775,7 +781,7 @@
         "name": "喜洋洋社區活動中心",
         "name_en": "Xiyangyang Community Activity Center",
         "line": "安坑6線",
-        "color": "#15803d",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "1165609350"
       },
@@ -795,7 +801,7 @@
         "name": "裕合四街口",
         "name_en": "Yuhe 4th St. Entrance",
         "line": "安坑6線",
-        "color": "#15803d",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "1165609351"
       },
@@ -815,7 +821,7 @@
         "name": "和成路12巷",
         "name_en": "Lane 12 Hecheng Rd.",
         "line": "安坑6線",
-        "color": "#15803d",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "1165609352"
       },
@@ -835,7 +841,7 @@
         "name": "輕軌雙城站",
         "name_en": "LRT Shuangcheng Sta.",
         "line": "安坑6線",
-        "color": "#15803d",
+        "color": "#DC2626",
         "direction": 0,
         "station_id": "1165609345"
       },

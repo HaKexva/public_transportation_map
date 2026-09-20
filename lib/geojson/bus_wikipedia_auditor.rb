@@ -55,11 +55,9 @@ module Geojson
     private
 
     def local_refs_by_city
-      path = Rails.root.join("public/geojson/routes.json")
       grouped = Hash.new { |hash, key| hash[key] = [] }
-      return grouped unless path.exist?
 
-      JSON.parse(path.read).fetch("bus", []).each do |route|
+      Geojson::RoutesManifestWriter.bus_entries.each do |route|
         grouped[route["city_id"]] << normalize_ref(route["ref"])
       end
       grouped.transform_values { |refs| refs.compact.uniq.sort }

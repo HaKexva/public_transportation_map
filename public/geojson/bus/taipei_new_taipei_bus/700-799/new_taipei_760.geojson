@@ -6,12 +6,13 @@
     "name": "760",
     "name_en": "760",
     "ref": "760",
-    "color": "#7c3aed",
+    "color": "#16A34A",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.gov.taipei/File/Get/34523356-2946-4240-a587-bf30e8af1b81?v=639248448702709881",
     "operator_id": "16179",
-    "operator": "三重客運"
+    "operator": "三重客運",
+    "loop": true
   },
   "features": [
     {
@@ -21,8 +22,9 @@
         "ref": "760",
         "name": "760",
         "name_en": "760",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#16A34A",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -650,6 +652,10 @@
           [
             121.361890291033,
             25.0668262380888
+          ],
+          [
+            121.361684340213,
+            25.0668683790625
           ]
         ]
       }
@@ -662,7 +668,7 @@
         "name": "林口轉運站",
         "name_en": "Linkou Bus Station",
         "line": "760",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "1165606862"
       },
@@ -682,7 +688,7 @@
         "name": "文化北路源泉街口",
         "name_en": "Wenhua N. Rd. & Yuanquan St. Intersection",
         "line": "760",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "1165610549"
       },
@@ -702,7 +708,7 @@
         "name": "羅馬經典社區",
         "name_en": "Luoma Jingdian Community",
         "line": "760",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "1165603999"
       },
@@ -722,7 +728,7 @@
         "name": "竹城松賀社區",
         "name_en": "Zhucheng Songhe Community",
         "line": "760",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "74282"
       },
@@ -742,7 +748,7 @@
         "name": "京華御墅社區",
         "name_en": "Jinghua Yushu Community",
         "line": "760",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "74062"
       },
@@ -762,7 +768,7 @@
         "name": "未來家社區",
         "name_en": "FutureFamilyCommunity",
         "line": "760",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "1165603514"
       },
@@ -782,7 +788,7 @@
         "name": "南勢國小",
         "name_en": "Nanshi Elementary School",
         "line": "760",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "73814"
       },
@@ -802,7 +808,7 @@
         "name": "光裕",
         "name_en": "Guangyu",
         "line": "760",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "74060"
       },
@@ -822,7 +828,7 @@
         "name": "大拇指便利店",
         "name_en": "Thumb Convenience Store",
         "line": "760",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "73895"
       },
@@ -842,7 +848,7 @@
         "name": "忠福路南勢三街口",
         "name_en": "Zhongfu Rd. & Nanshi 3rd St. Intersection",
         "line": "760",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "1165606915"
       },
@@ -862,7 +868,7 @@
         "name": "忠福路南勢一街口",
         "name_en": "Zhongfu Rd. & Nanshi 1st St. Intersection",
         "line": "760",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "1165606916"
       },
@@ -882,7 +888,7 @@
         "name": "文化北路",
         "name_en": "Wenhua N. Rd.",
         "line": "760",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "73942"
       },
@@ -902,7 +908,7 @@
         "name": "新北特殊教育學校",
         "name_en": "Taipei School of Special Education(Jiatianxia Community)",
         "line": "760",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "73925"
       },
@@ -922,7 +928,7 @@
         "name": "仁愛路二段文化北路一段口",
         "name_en": "Renai Rd. Sec. 2 & Wenhua N. Rd. Sec. 1 Intersection",
         "line": "760",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "73861"
       },
@@ -942,7 +948,7 @@
         "name": "鴻福園社區",
         "name_en": "Hongfuyuan Community",
         "line": "760",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "1165603998"
       },
@@ -962,7 +968,7 @@
         "name": "富麗達社區",
         "name_en": "Fulida Community",
         "line": "760",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "1165604002"
       },
@@ -982,7 +988,7 @@
         "name": "竹城埼玉社區",
         "name_en": "Zhucheng Qiyu Community",
         "line": "760",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "1165604000"
       },
@@ -1002,7 +1008,7 @@
         "name": "民族忠孝路口",
         "name_en": "Minzu & Zhongxiao Intersection",
         "line": "760",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "1165604010"
       },
@@ -1022,7 +1028,7 @@
         "name": "文化三路忠孝路口",
         "name_en": "Wenhua 3rd & Zhongxiao Intersection",
         "line": "760",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "73938"
       },
@@ -1042,7 +1048,7 @@
         "name": "未來城社區",
         "name_en": "FutureTownCommunity",
         "line": "760",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "73984"
       },
@@ -1062,7 +1068,7 @@
         "name": "巴黎香頌社區",
         "name_en": "BaliXiangsongCommunity",
         "line": "760",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "74053"
       },
@@ -1082,7 +1088,7 @@
         "name": "行政園區",
         "name_en": "Administrative Park",
         "line": "760",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "74169"
       },
@@ -1102,7 +1108,7 @@
         "name": "林口轉運站",
         "name_en": "Linkou Bus Station",
         "line": "760",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "1165606862"
       },

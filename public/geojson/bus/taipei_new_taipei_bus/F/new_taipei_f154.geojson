@@ -6,13 +6,14 @@
     "name": "F154",
     "name_en": "F154",
     "ref": "F154",
-    "color": "#0B7A3E",
+    "color": "#6B8F9A",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.gov.taipei/File/Get/ce74d7eb-ba58-4ff1-b694-9eb61a4703f9?v=639248448784382774",
     "operator_id": "16231",
     "operator": "石門區公所",
-    "operator_en": "Shimen District Office"
+    "operator_en": "Shimen District Office",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "F154",
         "name": "F154",
         "name_en": "F154",
-        "color": "#0B7A3E",
-        "direction": 0
+        "color": "#6B8F9A",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -2595,6 +2597,10 @@
           [
             121.545847489469,
             25.2892422160418
+          ],
+          [
+            121.5458434202,
+            25.2892438437493
           ]
         ]
       }
@@ -2607,7 +2613,7 @@
         "name": "老梅",
         "name_en": "Laomei",
         "line": "F154",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75539"
       },
@@ -2627,7 +2633,7 @@
         "name": "燈台口",
         "name_en": "Dengtaikou",
         "line": "F154",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75511"
       },
@@ -2647,7 +2653,7 @@
         "name": "珊瑚貝殼廟",
         "name_en": "Shanhu Beike Temple",
         "line": "F154",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75487"
       },
@@ -2667,7 +2673,7 @@
         "name": "楓林路",
         "name_en": "Fenglin Rd.",
         "line": "F154",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165610505"
       },
@@ -2687,7 +2693,7 @@
         "name": "老梅",
         "name_en": "Laomei",
         "line": "F154",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75538"
       },
@@ -2707,7 +2713,7 @@
         "name": "大丘田",
         "name_en": "Daqiutian",
         "line": "F154",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75524"
       },
@@ -2727,7 +2733,7 @@
         "name": "樹仔下",
         "name_en": "Shuzaixia",
         "line": "F154",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75513"
       },
@@ -2747,7 +2753,7 @@
         "name": "豬槽潭",
         "name_en": "Zhucaotan",
         "line": "F154",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75567"
       },
@@ -2767,7 +2773,7 @@
         "name": "青山橋",
         "name_en": "Qingshan Bridge",
         "line": "F154",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75569"
       },
@@ -2787,7 +2793,7 @@
         "name": "青山瀑布",
         "name_en": "Qingshan Waterfall",
         "line": "F154",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75570"
       },
@@ -2807,7 +2813,7 @@
         "name": "尖山湖頂",
         "name_en": "Jianshan Huding",
         "line": "F154",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75571"
       },
@@ -2827,7 +2833,7 @@
         "name": "順天聖母廟",
         "name_en": "Shuntian Shengmu Temple",
         "line": "F154",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165610507"
       },
@@ -2847,7 +2853,7 @@
         "name": "出磺口",
         "name_en": "Chukuangkou",
         "line": "F154",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75528"
       },
@@ -2867,7 +2873,7 @@
         "name": "九芎林",
         "name_en": "Jiuqionlin",
         "line": "F154",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165604887"
       },
@@ -2887,7 +2893,7 @@
         "name": "石門分校",
         "name_en": "Shimen Campus",
         "line": "F154",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75530"
       },
@@ -2907,7 +2913,7 @@
         "name": "石門區公所",
         "name_en": "Shimen District office",
         "line": "F154",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75534"
       },
@@ -2927,7 +2933,7 @@
         "name": "山溪活動中心",
         "name_en": "Shanxi Activity Center",
         "line": "F154",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165610508"
       },
@@ -2947,7 +2953,7 @@
         "name": "老梅",
         "name_en": "Laomei",
         "line": "F154",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75539"
       },

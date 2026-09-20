@@ -104,10 +104,22 @@ const STATION_BOARD_ROUTE_ALIASES = {
 const BUS_BAND_GAP_PX = 5
 const BUS_BAND_MIN_ZOOM = 12
 const BUS_DIRECTION_HALF_GAP_PX = 5
+const BUS_OVERLAP_METERS = 40
+const BUS_CLICK_HIT_METERS = 35
+const BUS_BAND_PEER_SAMPLE = 14
 const BUS_ARROW_MIN_ZOOM = 14
 const BUS_ARROW_EDGE_PAD_M = 40
 const BUS_ARROW_BASE_SPACING_M = 200
 const LAYER_LOAD_CONCURRENCY = 6
+const BUS_BULK_LOAD_CONCURRENCY = 8
+const BUS_BULK_DEFER_THRESHOLD = 8
+const BUS_BULK_FIT_BOUNDS_MAX = 24
+const BUS_BULK_IMMEDIATE_LOAD = 64
+const BUS_IDLE_BATCH = 16
+const BUS_IDLE_DELAY_MS = 0
+const BUS_SHARE_ROUTE_CAP = 24
+const BUS_OVERLAP_PEER_LIMIT = 36
+const PREFETCH_NEIGHBOR_ROUTE_LIMIT = 8
 const VEHICLE_MIN_ZOOM = 5
 const VEHICLE_TAG_ZOOM = 10
 const STATION_LABEL_MIN_ZOOM = 14
@@ -221,6 +233,7 @@ export default class extends Controller {
     initialRouteId: String,
     autoDefaultLayers: { type: Boolean, default: false },
     routesManifestUrl: { type: String, default: "/geojson/routes.json" },
+    busManifestUrl: { type: String, default: "/geojson/bus/manifest.json" },
     metroDepotsUrl: { type: String, default: "/geojson/metro_depots.json" },
     busDepotsUrl: { type: String, default: "/geojson/bus_depots.json" },
     outOfStationTransfersUrl: { type: String, default: "/geojson/out_of_station_transfers.json" }
@@ -356,6 +369,10 @@ export default class extends Controller {
     this.shareTimer = null
     this.pendingShare = null
     this.applyingShare = false
+    this.suppressShareUrl = false
+    this.busLoadQueue = []
+    this.busLoadPumping = false
+    this.bulkLayerLoadActive = false
     this.viewRegion = this.readViewRegion()
     this.regionSwitching = false
     this.alertBannerEl = null
@@ -426,6 +443,8 @@ export default class extends Controller {
     this.nearbyPanelEl?.remove()
     this.explorePanelEl?.remove()
     if (this.shareTimer) clearTimeout(this.shareTimer)
+    this.cancelBusLayerLoadQueue()
+    this.busLoadPumping = false
     if (this.map && this.refreshVehiclesOnView) {
       this.map.off("zoomend", this.refreshVehiclesOnView)
       this.map.off("moveend", this.refreshVehiclesOnView)
@@ -749,6 +768,7 @@ export default class extends Controller {
     if (this.initialRouteIdValue) return true
     if (new URLSearchParams(window.location.search).get("route")) return true
     if (this.pendingShare?.routes?.length) return true
+    if (this.pendingShare?.busGroups?.length) return true
     return false
   }
 
@@ -778,8 +798,12 @@ export default class extends Controller {
 
     if (this.visibleRouteLayerIds().length > 0) return false
 
-    if (this.pendingShare?.routes?.length) {
-      const shareRoutes = this.pendingShare.routes.filter((routeId) => Boolean(this.findRoute(routeId)))
+    if (this.pendingShare?.routes?.length || this.pendingShare?.busGroups?.length) {
+      await this.ensureBusManifest()
+      const groupRoutes = (this.pendingShare.busGroups || []).flatMap((group) => this.routeIdsForBusGroup(group))
+      const shareRoutes = [ ...(this.pendingShare.routes || []), ...groupRoutes ]
+        .filter((routeId, index, list) => routeId && list.indexOf(routeId) === index)
+        .filter((routeId) => Boolean(this.findRoute(routeId)))
       if (shareRoutes.length > 0) {
         const busShare = shareRoutes.every((routeId) => Boolean(this.findRoute(routeId)?.city_id))
         if (busShare) await this.applyTransportMode("bus", { persist: false, loadRail: false })
@@ -853,6 +877,7 @@ export default class extends Controller {
 
     try {
       if (mode === "bus") {
+        await this.ensureBusManifest()
         this.visibleRouteLayerIds()
           .filter((routeId) => !this.routeIsBus(routeId))
           .forEach((routeId) => this.hideLayerWithCheckbox(routeId))
@@ -1080,20 +1105,36 @@ export default class extends Controller {
   }
 
   async prefetchRegionGeoJSON(regionIds) {
+    const candidates = []
     for (const regionId of regionIds) {
-      const urls = this.routeIdsForViewRegion(regionId)
-        .map((routeId) => this.findRoute(routeId))
-        .map((route) => route?.file || route?.url)
-        .filter((url) => url && !this.geoJSONCache[url])
-
-      for (const url of urls) {
-        try {
-          await this.fetchGeoJSON(url)
-        } catch (_error) {
-          // prefetch is best-effort
-        }
+      for (const routeId of this.routeIdsForViewRegion(regionId)) {
+        const route = this.findRoute(routeId)
+        if (!route || route.city_id) continue // never prefetch bus
+        const url = route.file || route.url
+        if (!url || this.geoJSONCache[url]) continue
+        candidates.push({ routeId, url, priority: this.prefetchRoutePriority(route) })
       }
     }
+
+    const limited = candidates
+      .sort((a, b) => a.priority - b.priority || a.routeId.localeCompare(b.routeId))
+      .slice(0, PREFETCH_NEIGHBOR_ROUTE_LIMIT)
+
+    for (const { url } of limited) {
+      try {
+        await this.fetchGeoJSON(url)
+      } catch (_error) {
+        // prefetch is best-effort
+      }
+    }
+  }
+
+  prefetchRoutePriority(route) {
+    const id = String(route?.id || "")
+    if (id === "taiwan_hsr") return 0
+    if (id.includes("metro") || [ "circular", "airport_mrt", "airport_mrt_express" ].includes(id)) return 1
+    if (id.includes("western_trunk") || id.includes("mountain_line") || id.includes("sea_line")) return 2
+    return 3
   }
 
   async bootVehicles() {
@@ -1205,6 +1246,8 @@ export default class extends Controller {
 
   async openRouteDetail(routeId) {
     if (!routeId) return
+
+    if (!this.findRoute(routeId)) await this.ensureBusManifest()
 
     if (this.routeIsBus(routeId) && this.transportMode !== "bus") {
       await this.applyTransportMode("bus", { persist: true, loadRail: false })
@@ -1382,15 +1425,62 @@ export default class extends Controller {
       const response = await fetch(this.routesManifestUrlValue, { cache: "no-cache" })
       if (!response.ok) throw new Error("routes manifest missing")
       this.routesManifest = await response.json()
+      this.busManifestLoaded = Array.isArray(this.routesManifest?.bus)
       const { colorsByPrefix, routesByLineRef } = this.buildLineColorMap()
       this.lineColorsByPrefix = colorsByPrefix
       this.routesByLineRef = routesByLineRef
+
+      // Bus catalog is split out of the rail manifest for first paint — load when needed.
+      if (this.transportMode === "bus" || this.initialRouteNeedsBusManifest()) {
+        await this.ensureBusManifest()
+      }
     } catch (error) {
       console.error("Failed to load routes manifest", error)
       this.routesManifest = {}
+      this.busManifestLoaded = false
       this.lineColorsByPrefix = {}
       this.routesByLineRef = {}
     }
+  }
+
+  initialRouteNeedsBusManifest() {
+    const routeId = this.initialRouteIdValue
+    if (!routeId) return false
+    // Bus ids are not in the rail-only manifest yet; any share/deeplink may need bus.
+    if (String(routeId).includes("_") && !this.findRoute(routeId)) return true
+    const share = this.pendingShare?.routes || []
+    return share.some((id) => !this.findRoute(id))
+  }
+
+  async ensureBusManifest() {
+    if (this.busManifestLoaded) return this.routesManifest?.bus || []
+    if (this.busManifestPromise) return this.busManifestPromise
+
+    this.busManifestPromise = (async () => {
+      try {
+        const response = await fetch(this.busManifestUrlValue, { cache: "no-cache" })
+        if (!response.ok) throw new Error("bus manifest missing")
+        const payload = await response.json()
+        const buses = Array.isArray(payload?.bus) ? payload.bus : (Array.isArray(payload) ? payload : [])
+        this.routesManifest = this.routesManifest || {}
+        this.routesManifest.bus = buses
+        this.busManifestLoaded = true
+        const { colorsByPrefix, routesByLineRef } = this.buildLineColorMap()
+        this.lineColorsByPrefix = colorsByPrefix
+        this.routesByLineRef = routesByLineRef
+        return buses
+      } catch (error) {
+        console.error("Failed to load bus manifest", error)
+        this.routesManifest = this.routesManifest || {}
+        this.routesManifest.bus = this.routesManifest.bus || []
+        this.busManifestLoaded = true
+        return this.routesManifest.bus
+      } finally {
+        this.busManifestPromise = null
+      }
+    })()
+
+    return this.busManifestPromise
   }
 
   routesToLoad(layerId) {
@@ -1827,6 +1917,8 @@ export default class extends Controller {
     if (/\.(?:jpe?g|png|gif|webp|pdf)(?:\?|#|$)/i.test(text)) return text
     if (/\/File\/Get\//i.test(text)) return text
     if (/\/strapi\/uploads\//i.test(text)) return text
+    // Kinmen uses both /cms/api/.../image and /api/route/.../map/.../image
+    if (/\/(?:cms\/)?api\/route\/.+\/(?:map\/.+\/)?image/i.test(text)) return text
     if (/\/cms\/api\/.+\/(?:image|map)/i.test(text)) return text
     if (/\/MISUploadData\/Schematic\//i.test(text)) return text
     if (/\/resources\/PathPic\//i.test(text)) return text
@@ -2440,7 +2532,7 @@ export default class extends Controller {
     }
   }
 
-  handleCollapsibleOpened(event) {
+  async handleCollapsibleOpened(event) {
     const fold = event.target
     if (!(fold instanceof HTMLElement)) return
     // City/region folds nest many band buckets — only hydrate the fold that
@@ -2449,14 +2541,16 @@ export default class extends Controller {
       return
     }
 
+    await this.ensureBusManifest()
     fold.querySelectorAll('[data-map-target~="busRouteBucket"]').forEach((bucket) => {
       this.hydrateBusRouteBucket(bucket)
     })
   }
 
-  hydrateBusBucketsMatching(tokens) {
+  async hydrateBusBucketsMatching(tokens) {
     if (!this.hasBusRouteBucketTarget) return
 
+    await this.ensureBusManifest()
     this.busRouteBucketTargets.forEach((bucket) => {
       const ids = this.routeIdsFromParam(bucket.dataset.routeIds)
       const anyMatch = ids.some((routeId) => {
@@ -2786,57 +2880,195 @@ export default class extends Controller {
     }
 
     this.setLayerControlsDisabled(true)
+    const bulk = routeIds.length >= BUS_BULK_DEFER_THRESHOLD
+    const busHeavy = bulk && routeIds.some((routeId) => this.findRoute(routeId)?.city_id)
+    const concurrency = busHeavy ? BUS_BULK_LOAD_CONCURRENCY : LAYER_LOAD_CONCURRENCY
 
     try {
       if (visible) {
-        await this.mapPool(routeIds, LAYER_LOAD_CONCURRENCY, async (routeId) => {
-          const trackBoot = this.booting && !quietBoot
-          if (trackBoot) {
-            const route = this.findRoute(routeId)
-            this.startBootTask(`route:${routeId}`, this.routeDisplayName(route) || routeId)
+        this.bulkLayerLoadActive = busHeavy
+        this.suppressShareUrl = busHeavy
+        try {
+          if (busHeavy) {
+            routeIds.forEach((routeId) => {
+              this.layerVisible[routeId] = true
+              const checkbox = this.checkboxForLayer(routeId)
+              if (checkbox) checkbox.checked = true
+            })
+            const immediate = routeIds.slice(0, BUS_BULK_IMMEDIATE_LOAD)
+            const deferred = routeIds.slice(BUS_BULK_IMMEDIATE_LOAD)
+            this.prefetchBusRouteGeoJSON(deferred)
+            await this.mapPool(immediate, concurrency, async (routeId) => {
+              await this.showLayer(routeId, {
+                fitBounds: false,
+                manageControl: false,
+                deferSideEffects: true
+              })
+            }, { yieldEvery: 8, yieldMs: 0 })
+            this.enqueueBusLayerLoads(deferred)
+          } else {
+            await this.mapPool(routeIds, concurrency, async (routeId) => {
+              const trackBoot = this.booting && !quietBoot
+              if (trackBoot) {
+                const route = this.findRoute(routeId)
+                this.startBootTask(`route:${routeId}`, this.routeDisplayName(route) || routeId)
+              }
+              try {
+                await this.showLayer(routeId, {
+                  fitBounds: false,
+                  manageControl: false,
+                  deferSideEffects: false
+                })
+                if (trackBoot) this.finishBootTask(`route:${routeId}`)
+              } catch (error) {
+                if (trackBoot) this.finishBootTask(`route:${routeId}`, "error")
+                throw error
+              }
+            })
           }
-          try {
-            await this.showLayer(routeId, { fitBounds: false, manageControl: false })
-            if (trackBoot) this.finishBootTask(`route:${routeId}`)
-          } catch (error) {
-            if (trackBoot) this.finishBootTask(`route:${routeId}`, "error")
-            throw error
-          }
-        })
+        } finally {
+          this.bulkLayerLoadActive = false
+        }
 
         afterSync?.()
 
-        if (fitBounds) {
+        if (busHeavy) {
+          this.applyRouteEmphasis()
+          this.refreshStationLabels()
+          this.scheduleBusArrowRefresh()
+        }
+
+        if (fitBounds && routeIds.length <= BUS_BULK_FIT_BOUNDS_MAX) {
           this.fitVisibleRouteBounds()
         }
       } else {
-        routeIds.forEach((routeId) => {
-          this.hideLayerWithCheckbox(routeId, this.checkboxForLayer(routeId))
-        })
+        this.bulkLayerLoadActive = busHeavy
+        this.suppressShareUrl = busHeavy
+        this.cancelBusLayerLoadQueue(routeIds)
+        try {
+          routeIds.forEach((routeId) => {
+            this.hideLayerWithCheckbox(routeId, this.checkboxForLayer(routeId), { deferSideEffects: busHeavy })
+          })
+        } finally {
+          this.bulkLayerLoadActive = false
+        }
 
         afterSync?.()
+
+        if (busHeavy) {
+          this.applyRouteEmphasis()
+          this.refreshStationLabels()
+          this.scheduleBusArrowRefresh()
+        }
       }
 
-      this.updateOutOfStationTransfers()
-      this.updateMetroDepots()
-      this.updateBusDepots()
-      if (this.simulationAt && !this.booting) {
-        this.ensureScheduleSnapshots(this.visibleRouteLayerIds())
-        this.scheduleVehicleRefresh()
-        this.scheduleShareUrlUpdate()
+      if (!busHeavy) {
+        this.updateOutOfStationTransfers()
+        this.updateMetroDepots()
+        this.updateBusDepots()
+        if (this.simulationAt && !this.booting) {
+          this.ensureScheduleSnapshots(this.visibleRouteLayerIds())
+          this.scheduleVehicleRefresh()
+        }
       }
     } finally {
+      this.suppressShareUrl = false
       this.setLayerControlsDisabled(false)
+      if (!this.booting) this.scheduleShareUrlUpdate()
     }
   }
 
-  async mapPool(items, concurrency, worker) {
+  enqueueBusLayerLoads(routeIds) {
+    if (!this.busLoadQueue) this.busLoadQueue = []
+    const pending = new Set(this.busLoadQueue)
+    routeIds.forEach((routeId) => {
+      if (!routeId || pending.has(routeId)) return
+      pending.add(routeId)
+      this.busLoadQueue.push(routeId)
+    })
+    this.prefetchBusRouteGeoJSON(routeIds)
+    this.pumpBusLoadQueue()
+  }
+
+  prefetchBusRouteGeoJSON(routeIds) {
+    ;(routeIds || []).forEach((routeId) => {
+      const route = this.findRoute(routeId)
+      const url = route?.file || route?.url
+      if (!url || this.geoJSONCache[url]) return
+      void this.fetchGeoJSON(url).catch(() => {})
+    })
+  }
+
+  cancelBusLayerLoadQueue(routeIds = null) {
+    if (!this.busLoadQueue?.length) return
+    if (!routeIds) {
+      this.busLoadQueue = []
+      return
+    }
+    const drop = new Set(routeIds)
+    this.busLoadQueue = this.busLoadQueue.filter((routeId) => !drop.has(routeId))
+  }
+
+  pumpBusLoadQueue() {
+    if (this.busLoadPumping) return
+    this.busLoadPumping = true
+
+    const tick = async () => {
+      try {
+        const batch = []
+        while (batch.length < BUS_IDLE_BATCH && this.busLoadQueue?.length) {
+          const routeId = this.busLoadQueue.shift()
+          if (!routeId) break
+          if (!this.layerVisible[routeId]) continue
+          const group = this.layerGroups[routeId]
+          if (group && group.getLayers().length > 0) continue
+          batch.push(routeId)
+        }
+
+        if (batch.length > 0) {
+          // Keep the network warm for whatever is still waiting.
+          this.prefetchBusRouteGeoJSON(this.busLoadQueue.slice(0, BUS_IDLE_BATCH * 2))
+          await this.mapPool(batch, BUS_BULK_LOAD_CONCURRENCY, async (routeId) => {
+            try {
+              await this.showLayer(routeId, {
+                fitBounds: false,
+                manageControl: false,
+                deferSideEffects: true
+              })
+            } catch (error) {
+              console.warn("Deferred bus layer load failed", routeId, error)
+            }
+          }, { yieldEvery: 8, yieldMs: 0 })
+        }
+      } finally {
+        if (this.busLoadQueue?.length) {
+          if (BUS_IDLE_DELAY_MS > 0) setTimeout(tick, BUS_IDLE_DELAY_MS)
+          else requestAnimationFrame(() => { void tick() })
+        } else {
+          this.busLoadPumping = false
+          this.applyRouteEmphasis()
+          this.refreshStationLabels()
+          this.scheduleBusArrowRefresh()
+          this.scheduleShareUrlUpdate()
+        }
+      }
+    }
+
+    queueMicrotask(() => { void tick() })
+  }
+
+  async mapPool(items, concurrency, worker, { yieldEvery = 0, yieldMs = 0 } = {}) {
     const queue = items.slice()
+    let completed = 0
     const runners = Array.from({ length: Math.min(concurrency, Math.max(queue.length, 1)) }, async () => {
       while (queue.length > 0) {
         const item = queue.shift()
         if (item === undefined) return
         await worker(item)
+        completed += 1
+        if (yieldEvery > 0 && completed % yieldEvery === 0) {
+          await new Promise((resolve) => setTimeout(resolve, yieldMs))
+        }
       }
     })
 
@@ -2981,9 +3213,29 @@ export default class extends Controller {
   }
 
   routeIdsFromParam(value) {
+    if (Array.isArray(value)) return value.map((id) => String(id).trim()).filter(Boolean)
+
     return String(value || "")
       .split(",")
       .map((id) => id.trim())
+      .filter(Boolean)
+  }
+
+  routeIdsForBusGroup(group) {
+    const key = String(group || "").trim()
+    if (!key) return []
+
+    const buses = Array.isArray(this.routesManifest?.bus) ? this.routesManifest.bus : []
+    if (key === "GreaterTaipei") {
+      return buses
+        .filter((route) => route?.city_id === "Taipei" || route?.city_id === "NewTaipei")
+        .map((route) => route.id)
+        .filter(Boolean)
+    }
+
+    return buses
+      .filter((route) => route?.city_id === key)
+      .map((route) => route.id)
       .filter(Boolean)
   }
 
@@ -2991,38 +3243,56 @@ export default class extends Controller {
     if (!this.hasRouteGroupCheckboxTarget) return
 
     this.routeGroupCheckboxTargets.forEach((checkbox) => {
-      const routeIds = this.routeIdsFromParam(checkbox.dataset.mapRouteIdsParam)
+      const group = checkbox.dataset.mapBusGroupParam
+      const routeIds = group
+        ? this.routeIdsForBusGroup(group)
+        : this.routeIdsFromParam(checkbox.dataset.mapRouteIdsParam)
       this.syncRouteGroupCheckbox(checkbox, routeIds)
     })
   }
 
   async toggleRouteGroup(event) {
     event.preventDefault()
+    event.stopPropagation()
 
     const checkbox = event.currentTarget
-    const visible = checkbox.checked
-    const routeIds = this.routeIdsFromParam(event.params.routeIds)
+    const visible = Boolean(checkbox.checked)
 
     if (!this.mapReady || !this.map) {
       checkbox.checked = false
       return
     }
 
+    await this.ensureBusManifest()
+
+    const group = event.params.busGroup || checkbox.dataset.mapBusGroupParam
+    const routeIds = group
+      ? this.routeIdsForBusGroup(group)
+      : this.routeIdsFromParam(event.params.routeIds || checkbox.dataset.mapRouteIdsParam)
+
     if (routeIds.length === 0) {
       checkbox.checked = false
       return
     }
 
+    // Disabling the active checkbox mid-change can revert checked state in some browsers.
     this.setLayerControlsDisabled(true)
+    checkbox.disabled = false
+    checkbox.checked = visible
 
     try {
       await this.setRouteLayersVisible(routeIds, visible, {
-        fitBounds: visible,
+        fitBounds: visible && routeIds.length <= BUS_BULK_FIT_BOUNDS_MAX,
         afterSync: () => {
           this.syncRouteGroupCheckboxes()
           this.syncAllTransitCheckboxes()
         }
       })
+      checkbox.checked = visible
+        ? routeIds.every((routeId) => this.layerVisible[routeId])
+        : false
+      checkbox.indeterminate = visible && !checkbox.checked &&
+        routeIds.some((routeId) => this.layerVisible[routeId])
     } finally {
       this.setLayerControlsDisabled(false)
     }
@@ -3981,7 +4251,7 @@ export default class extends Controller {
     }
   }
 
-  async showLayer(layerId, { checkbox = null, fitBounds = true, manageControl = true } = {}) {
+  async showLayer(layerId, { checkbox = null, fitBounds = true, manageControl = true, deferSideEffects = false } = {}) {
     const control = checkbox || this.checkboxForLayer(layerId)
     if (!this.mapReady || !this.map) return
 
@@ -3992,11 +4262,13 @@ export default class extends Controller {
       if (control) control.checked = true
       if (!this.map.hasLayer(group)) group.addTo(this.map)
       if (fitBounds) this.fitLayerBounds(layerId)
-      this.updateOutOfStationTransfers()
-      this.applyRouteEmphasis()
-      this.refreshStationLabels()
-      this.scheduleBusArrowRefresh()
-      if (this.simulationAt) this.scheduleVehicleRefresh()
+      if (!deferSideEffects) {
+        this.updateOutOfStationTransfers()
+        this.applyRouteEmphasis()
+        this.refreshStationLabels()
+        this.scheduleBusArrowRefresh()
+        if (this.simulationAt) this.scheduleVehicleRefresh()
+      }
       return
     }
 
@@ -4023,11 +4295,14 @@ export default class extends Controller {
 
       loadedGroup.addTo(this.map)
       if (fitBounds) this.fitLayerBounds(layerId)
-      this.updateOutOfStationTransfers()
-      this.applyRouteEmphasis()
-      this.refreshStationLabels()
-      this.scheduleBusArrowRefresh()
-      if (this.simulationAt) this.scheduleVehicleRefresh()
+      if (!deferSideEffects) {
+        this.updateOutOfStationTransfers()
+        this.applyRouteEmphasis()
+        this.refreshStationLabels()
+        this.scheduleBusArrowRefresh()
+        if (this.routeIsBus(layerId)) this.scheduleBusOverlapRefresh()
+        if (this.simulationAt) this.scheduleVehicleRefresh()
+      }
     } catch (error) {
       console.error("Failed to load layer", layerId, error)
       this.hideLayer(layerId)
@@ -4037,10 +4312,10 @@ export default class extends Controller {
     }
   }
 
-  hideLayerWithCheckbox(layerId, checkbox = null) {
+  hideLayerWithCheckbox(layerId, checkbox = null, { deferSideEffects = false } = {}) {
     const control = checkbox || this.checkboxForLayer(layerId)
     this.bumpLayerGeneration(layerId)
-    this.hideLayer(layerId)
+    this.hideLayer(layerId, { deferSideEffects })
     if (control) {
       control.checked = false
       control.disabled = false
@@ -4052,7 +4327,7 @@ export default class extends Controller {
     checkbox.checked = false
   }
 
-  hideLayer(layerId) {
+  hideLayer(layerId, { deferSideEffects = false } = {}) {
     this.layerVisible[layerId] = false
 
     const group = this.layerGroups[layerId]
@@ -4063,7 +4338,7 @@ export default class extends Controller {
     }
 
     group.clearLayers()
-    if (this.simulationAt) this.scheduleVehicleRefresh()
+    if (this.simulationAt && !deferSideEffects) this.scheduleVehicleRefresh()
 
     this.clearStationCoordinatesForRoutes(this.routesToLoad(layerId))
 
@@ -4076,17 +4351,21 @@ export default class extends Controller {
     })
 
     this.clearStationLabelsForLayer(layerId)
-    this.updateOutOfStationTransfers()
-    this.applyRouteEmphasis()
-    this.refreshStationLabels()
-    this.scheduleBusArrowRefresh()
+    if (!deferSideEffects) {
+      this.updateOutOfStationTransfers()
+      this.applyRouteEmphasis()
+      this.refreshStationLabels()
+      this.scheduleBusArrowRefresh()
+      if (this.routeIsBus(layerId)) this.scheduleBusOverlapRefresh()
+    }
   }
 
   async loadLayer(layerId, generation, { skipTraRefresh = false } = {}) {
     const group = this.layerGroups[layerId]
     if (!group) return
 
-    this.refreshTraSharedStationOwners()
+    // TRA ownership scan is unrelated to city-bus layers; skip it on bulk bus loads.
+    if (!this.routeIsBus(layerId)) this.refreshTraSharedStationOwners()
 
     const metroRoutes = this.routesToLoad(layerId)
     const routes = metroRoutes.length > 0 ? metroRoutes : (this.routesManifest[layerId] || [])
@@ -4642,22 +4921,25 @@ export default class extends Controller {
     const busBandsActive = zoom >= BUS_BAND_MIN_ZOOM
     // Rebuild whenever zoom changes enough that screen-fixed meter offsets drift.
     const zoomKey = this.parallelOffsetZoomKeyFor(zoom)
-    if (
-      this.parallelTracksActive === parallelActive &&
-      this.busBandsActive === busBandsActive &&
-      this.parallelOffsetZoomKey === zoomKey
-    ) return
+    const modeChanged =
+      this.parallelTracksActive !== parallelActive ||
+      this.busBandsActive !== busBandsActive
+    const zoomKeyChanged = this.parallelOffsetZoomKey !== zoomKey
+    if (!modeChanged && !zoomKeyChanged) return
 
     this.parallelTracksActive = parallelActive
     this.busBandsActive = busBandsActive
     this.parallelOffsetZoomKey = zoomKey
+    this.invalidateBusBandPeerCache()
 
     if (this.parallelTracksRefreshTimer) clearTimeout(this.parallelTracksRefreshTimer)
 
+    // Mode toggles need a quick rebuild; pixel-gap drift can wait and coalesce.
+    const delay = modeChanged ? 80 : 350
     this.parallelTracksRefreshTimer = setTimeout(() => {
       this.parallelTracksRefreshTimer = null
-      this.refreshVisibleParallelLayers()
-    }, 80)
+      this.refreshVisibleParallelLayers({ modeChanged })
+    }, delay)
   }
 
   parallelOffsetZoomKeyFor(zoom) {
@@ -4679,14 +4961,19 @@ export default class extends Controller {
     return meters
   }
 
-  async refreshVisibleParallelLayers() {
+  async refreshVisibleParallelLayers({ modeChanged = true } = {}) {
     if (!this.mapReady || !this.map) return
 
+    const busBandsActive = this.busBandsActive
     const layerIds = this.visibleRouteLayerIds().filter((layerId) => {
       return this.routesToLoad(layerId).some((route) => {
-        return this.routeUsesParallelTracks(route) ||
-          this.routeUsesBusBands(route) ||
-          Boolean(route?.city_id)
+        if (PARALLEL_TRACK_ROUTE_IDS.has(route?.id)) return true
+        if (this.routeUsesBusBands(route)) return true
+        // Direction-split city buses: rebuild when band mode flips, or while bands
+        // are on so screen-fixed gaps stay correct. Never rebuild every bus on
+        // unrelated zoom ticks below BUS_BAND_MIN_ZOOM.
+        if (route?.city_id) return modeChanged || busBandsActive
+        return false
       })
     })
     if (layerIds.length === 0) return
@@ -4868,24 +5155,45 @@ export default class extends Controller {
   }
 
   routeUsesBusBands(route) {
-    return route?.city_id === "Keelung"
+    // Side-by-side offset for any visible city bus that shares corridor with peers.
+    return Boolean(route?.city_id)
   }
 
-  visibleKeelungBusRoutes() {
+  visibleBusBandRoutes() {
     return this.visibleRouteLayerIds()
       .map((layerId) => this.findRoute(layerId))
       .filter((route) => this.routeUsesBusBands(route))
       .sort((left, right) => String(left.id).localeCompare(String(right.id)))
   }
 
+  // Kept for any older call sites / readability.
+  visibleKeelungBusRoutes() {
+    return this.visibleBusBandRoutes().filter((route) => route.city_id === "Keelung")
+  }
+
+  invalidateBusBandPeerCache() {
+    this.busBandPeerCache = null
+  }
+
+  scheduleBusOverlapRefresh() {
+    this.invalidateBusBandPeerCache()
+    if ((this.map?.getZoom() ?? 12) < BUS_BAND_MIN_ZOOM) return
+    if (this.visibleBusBandRoutes().length > BUS_OVERLAP_PEER_LIMIT) return
+
+    if (this.busOverlapRefreshTimer) clearTimeout(this.busOverlapRefreshTimer)
+    this.busOverlapRefreshTimer = setTimeout(() => {
+      this.busOverlapRefreshTimer = null
+      if (this.visibleBusBandRoutes().length > BUS_OVERLAP_PEER_LIMIT) return
+      // Force rebuild so newly visible peers get side-by-side offsets.
+      this.refreshVisibleParallelLayers({ modeChanged: true })
+    }, 140)
+  }
+
   busBandOffsetMeters(route) {
     if (!this.routeUsesBusBands(route)) return 0
     if ((this.map?.getZoom() ?? 12) < BUS_BAND_MIN_ZOOM) return 0
 
-    const peers = this.visibleKeelungBusRoutes().filter((other) => {
-      if (other.id === route.id) return true
-      return this.routeBoundsOverlap(route.id, other.id)
-    })
+    const peers = this.busBandPeersFor(route)
     if (peers.length < 2) return 0
 
     const index = peers.findIndex((entry) => entry.id === route.id)
@@ -4893,6 +5201,192 @@ export default class extends Controller {
 
     const spacing = this.screenGapMeters(BUS_BAND_GAP_PX)
     return (index - ((peers.length - 1) / 2)) * spacing
+  }
+
+  busBandPeersFor(route) {
+    const cache = this.ensureBusBandPeerCache()
+    return cache.peersById[route.id] || [ route ]
+  }
+
+  ensureBusBandPeerCache() {
+    const routes = this.visibleBusBandRoutes()
+    const key = `${this.parallelOffsetZoomKeyFor(this.map?.getZoom() ?? 12)}:${routes.map((route) => route.id).join(",")}`
+    if (this.busBandPeerCache?.key === key) return this.busBandPeerCache
+
+    // Too many visible buses: skip O(n^2) corridor peer graph (prevents freezes).
+    if (routes.length > BUS_OVERLAP_PEER_LIMIT) {
+      this.busBandPeerCache = {
+        key,
+        peersById: Object.fromEntries(routes.map((route) => [ route.id, [ route ] ]))
+      }
+      return this.busBandPeerCache
+    }
+
+    this.busBandPeerCache = {
+      key,
+      peersById: this.buildBusBandPeerMap(routes)
+    }
+    return this.busBandPeerCache
+  }
+
+  buildBusBandPeerMap(routes) {
+    const peersById = {}
+    routes.forEach((route) => {
+      peersById[route.id] = [ route ]
+    })
+    if (routes.length < 2) return peersById
+
+    const samplesById = {}
+    const boundsById = {}
+    routes.forEach((route) => {
+      const lines = this.rawBusRouteLines(route)
+      samplesById[route.id] = this.samplePolylinePoints(lines, BUS_BAND_PEER_SAMPLE)
+      boundsById[route.id] = this.boundsFromLonLatPoints(samplesById[route.id])
+    })
+
+    const parent = Object.fromEntries(routes.map((route) => [ route.id, route.id ]))
+    const find = (id) => {
+      if (parent[id] !== id) parent[id] = find(parent[id])
+      return parent[id]
+    }
+    const unite = (left, right) => {
+      const a = find(left)
+      const b = find(right)
+      if (a !== b) parent[b] = a
+    }
+
+    for (let i = 0; i < routes.length; i += 1) {
+      for (let j = i + 1; j < routes.length; j += 1) {
+        const left = routes[i]
+        const right = routes[j]
+        if (!this.lonLatBoundsOverlap(boundsById[left.id], boundsById[right.id])) continue
+        if (!this.busRoutesShareCorridor(samplesById[left.id], this.rawBusRouteLines(right)) &&
+          !this.busRoutesShareCorridor(samplesById[right.id], this.rawBusRouteLines(left))) {
+          continue
+        }
+        unite(left.id, right.id)
+      }
+    }
+
+    const groups = {}
+    routes.forEach((route) => {
+      const root = find(route.id)
+      if (!groups[root]) groups[root] = []
+      groups[root].push(route)
+    })
+
+    Object.values(groups).forEach((group) => {
+      group.sort((left, right) => String(left.id).localeCompare(String(right.id)))
+      group.forEach((route) => {
+        peersById[route.id] = group
+      })
+    })
+
+    return peersById
+  }
+
+  rawBusRouteLines(route) {
+    const file = route?.file || route?.url
+    const data = file ? this.geoJSONDataByUrl[file] : null
+    if (!data) return []
+    return this.extractRouteTracks(data, { includeDepot: false })
+  }
+
+  samplePolylinePoints(lines, count) {
+    const points = []
+    const line = (lines || []).reduce((best, current) => {
+      if (!Array.isArray(current) || current.length < 2) return best
+      if (!best || current.length > best.length) return current
+      return best
+    }, null)
+    if (!line) return points
+
+    const n = Math.max(2, Math.min(count, line.length))
+    for (let i = 0; i < n; i += 1) {
+      const index = Math.round((i / (n - 1)) * (line.length - 1))
+      points.push(line[index])
+    }
+    return points
+  }
+
+  boundsFromLonLatPoints(points) {
+    if (!points?.length) return null
+    let minLon = Infinity
+    let maxLon = -Infinity
+    let minLat = Infinity
+    let maxLat = -Infinity
+    points.forEach(([ lon, lat ]) => {
+      if (!Number.isFinite(lon) || !Number.isFinite(lat)) return
+      minLon = Math.min(minLon, lon)
+      maxLon = Math.max(maxLon, lon)
+      minLat = Math.min(minLat, lat)
+      maxLat = Math.max(maxLat, lat)
+    })
+    if (!Number.isFinite(minLon)) return null
+    return { minLon, maxLon, minLat, maxLat }
+  }
+
+  lonLatBoundsOverlap(left, right, padDegrees = 0.0004) {
+    if (!left || !right) return true
+    return !(
+      left.maxLon + padDegrees < right.minLon - padDegrees ||
+      right.maxLon + padDegrees < left.minLon - padDegrees ||
+      left.maxLat + padDegrees < right.minLat - padDegrees ||
+      right.maxLat + padDegrees < left.minLat - padDegrees
+    )
+  }
+
+  busRoutesShareCorridor(samplePoints, lines) {
+    if (!samplePoints?.length || !lines?.length) return false
+    let hits = 0
+    samplePoints.forEach((point) => {
+      const [ lon, lat ] = point
+      if (!Number.isFinite(lon) || !Number.isFinite(lat)) return
+      const distance = this.distancePointToLinesMeters(lon, lat, lines)
+      if (distance <= BUS_OVERLAP_METERS) hits += 1
+    })
+    // Require a few shared samples so brief crossings do not count as corridor peers.
+    return hits >= Math.min(3, Math.max(2, Math.floor(samplePoints.length / 4)))
+  }
+
+  distancePointToLinesMeters(lon, lat, lines) {
+    let best = Infinity
+    ;(lines || []).forEach((line) => {
+      const distance = this.distancePointToPolylineMeters(lon, lat, line)
+      if (distance < best) best = distance
+    })
+    return best
+  }
+
+  distancePointToPolylineMeters(lon, lat, line) {
+    if (!Array.isArray(line) || line.length < 2) return Infinity
+    let best = Infinity
+    for (let i = 0; i < line.length - 1; i += 1) {
+      const start = line[i]
+      const finish = line[i + 1]
+      const projection = this.projectLonLatOnSegment(lon, lat, start, finish)
+      const meters = this.lonLatDistanceMeters(lon, lat, projection.projectedX, projection.projectedY)
+      if (meters < best) best = meters
+    }
+    return best
+  }
+
+  lonLatDistanceMeters(lon1, lat1, lon2, lat2) {
+    const dlon = (lon2 - lon1) * 111320 * Math.cos((lat1 * Math.PI) / 180)
+    const dlat = (lat2 - lat1) * 110540
+    return Math.hypot(dlon, dlat)
+  }
+
+  busRoutesNearLatLng(latlng, maxMeters = BUS_CLICK_HIT_METERS) {
+    if (!latlng) return []
+    const lon = Number(latlng.lng)
+    const lat = Number(latlng.lat)
+    if (!Number.isFinite(lon) || !Number.isFinite(lat)) return []
+
+    return this.visibleBusBandRoutes().filter((route) => {
+      const lines = this.rawBusRouteLines(route)
+      return this.distancePointToLinesMeters(lon, lat, lines) <= maxMeters
+    })
   }
 
   scheduleBusArrowRefresh() {
@@ -5064,6 +5558,10 @@ export default class extends Controller {
   offsetLineStringCoordinates(coordinates, offsetMeters) {
     if (!coordinates || coordinates.length < 2 || offsetMeters === 0) return coordinates
 
+    if (this.isNearlyClosedRing(coordinates)) {
+      return this.offsetClosedRingCoordinates(coordinates, offsetMeters)
+    }
+
     if (coordinates.length === 2) {
       const bearing = this.bearingDegrees(
         coordinates[0][1], coordinates[0][0],
@@ -5099,6 +5597,65 @@ export default class extends Controller {
     ))
 
     return result
+  }
+
+  // Loop / circular buses: keep the ring closed after lateral offset so the
+  // turnaround depot does not open into a visible gap.
+  offsetClosedRingCoordinates(coordinates, offsetMeters) {
+    const ring = this.uniqueRingCoordinates(coordinates)
+    if (ring.length < 3) {
+      const bearing = this.bearingDegrees(
+        coordinates[0][1], coordinates[0][0],
+        coordinates[1][1], coordinates[1][0]
+      )
+      return coordinates.map((coordinate) => this.offsetCoordinate(coordinate, bearing + 90, offsetMeters))
+    }
+
+    const count = ring.length
+    const normals = []
+    for (let index = 0; index < count; index += 1) {
+      const start = ring[index]
+      const end = ring[(index + 1) % count]
+      normals.push(this.bearingDegrees(start[1], start[0], end[1], end[0]) + 90)
+    }
+
+    const maxMiter = Math.max(25, Math.abs(offsetMeters) * 4)
+    const result = []
+    for (let index = 0; index < count; index += 1) {
+      const prevNormal = normals[(index - 1 + count) % count]
+      const nextNormal = normals[index]
+      const prevPoint = ring[(index - 1 + count) % count]
+      const point = ring[index]
+      const nextPoint = ring[(index + 1) % count]
+      const prevA = this.offsetCoordinate(prevPoint, prevNormal, offsetMeters)
+      const prevB = this.offsetCoordinate(point, prevNormal, offsetMeters)
+      const nextA = this.offsetCoordinate(point, nextNormal, offsetMeters)
+      const nextB = this.offsetCoordinate(nextPoint, nextNormal, offsetMeters)
+      const miter = this.intersectOffsetEdges(prevA, prevB, nextA, nextB, maxMiter)
+      result.push(miter || nextA)
+    }
+
+    result.push(result[0].slice())
+    return result
+  }
+
+  uniqueRingCoordinates(coordinates) {
+    if (!coordinates?.length) return []
+    const first = coordinates[0]
+    const last = coordinates[coordinates.length - 1]
+    if (first[0] === last[0] && first[1] === last[1]) {
+      return coordinates.slice(0, -1)
+    }
+    return coordinates.slice()
+  }
+
+  isNearlyClosedRing(coordinates, maxMeters = 80) {
+    if (!coordinates || coordinates.length < 4) return false
+    const first = coordinates[0]
+    const last = coordinates[coordinates.length - 1]
+    if (!first || !last) return false
+    if (first[0] === last[0] && first[1] === last[1]) return true
+    return this.lonLatDistanceMeters(first[0], first[1], last[0], last[1]) <= maxMeters
   }
 
   intersectOffsetEdges(a0, a1, b0, b1, maxMiterMeters) {
@@ -5931,7 +6488,22 @@ export default class extends Controller {
           window.L.DomEvent.stop(event)
         }
         layer.closePopup?.()
-        this.openRouteInfoPanel({ routeId, latlng: event?.latlng })
+        const latlng = event?.latlng
+        const nearby = this.busRoutesNearLatLng(latlng)
+        const byId = new Map()
+        nearby.forEach((route) => {
+          if (route?.id) byId.set(route.id, route)
+        })
+        if (!byId.has(routeId)) {
+          const clicked = this.findRoute(routeId)
+          if (clicked) byId.set(routeId, clicked)
+        }
+        const routes = Array.from(byId.values())
+        if (routes.length > 1) {
+          this.openMultiRouteInfoPanel({ routes, latlng, primaryRouteId: routeId })
+        } else {
+          this.openRouteInfoPanel({ routeId, latlng })
+        }
       })
     }
   }
@@ -5948,10 +6520,26 @@ export default class extends Controller {
     const href = `/routes/${encodeURIComponent(routeId)}`
     const openLabel = this.escapeHtml(this.t("popup.open_route_map"))
     const systemId = route?.system_id || ""
-    const cityLabel = route?.city_id ? this.escapeHtml(String(route.city_id)) : ""
+    const cityLabel = route?.city_id
+      ? this.escapeHtml(this.t(`map.bus.cities.${route.city_id}`) || String(route.city_id))
+      : ""
     const systemLabel = systemId
       ? this.escapeHtml(systemId.replaceAll("_", " "))
       : cityLabel
+    const operator = this.escapeHtml(this.routeOperatorLabel(route) || "")
+    const via = this.escapeHtml(route?.via || "")
+    const terminals = this.busRouteTerminalLabels(routeId)
+
+    const detailBits = []
+    if (operator) {
+      detailBits.push(`<div class="route-info-panel__row"><span class="route-info-panel__label">${this.escapeHtml(this.t("explore.route_operator"))}</span><span>${operator}</span></div>`)
+    }
+    if (via) {
+      detailBits.push(`<div class="route-info-panel__row"><span class="route-info-panel__label">${this.escapeHtml(this.t("explore.route_via"))}</span><span>${via}</span></div>`)
+    }
+    if (terminals) {
+      detailBits.push(`<div class="route-info-panel__row"><span class="route-info-panel__label">${this.escapeHtml(this.t("explore.route_terminals"))}</span><span>${this.escapeHtml(terminals)}</span></div>`)
+    }
 
     panel.hidden = false
     panel.innerHTML = `
@@ -5965,6 +6553,7 @@ export default class extends Controller {
           ${ref ? `<span class="route-info-panel__ref">${this.escapeHtml(ref)}</span>` : ""}
           ${systemLabel ? `<span class="route-info-panel__system">${systemLabel}</span>` : ""}
         </div>
+        ${detailBits.length ? `<div class="route-info-panel__details">${detailBits.join("")}</div>` : ""}
         <a class="map-float-panel__action" href="${href}" data-turbo-frame="_top">${openLabel}</a>
       </div>
     `
@@ -5975,6 +6564,88 @@ export default class extends Controller {
     if (latlng && this.map?.panTo && this.map.getBounds && !this.map.getBounds().pad(-0.2).contains(latlng)) {
       this.map.panTo(latlng, { animate: true })
     }
+  }
+
+  openMultiRouteInfoPanel({ routes = [], latlng = null, primaryRouteId = null } = {}) {
+    this.ensureExploreUi()
+    const panel = this.stationBoardEl
+    const list = Array.from(routes || []).filter((route) => route?.id)
+    if (!panel || list.length === 0) return
+    if (list.length === 1) {
+      this.openRouteInfoPanel({ routeId: list[0].id, latlng })
+      return
+    }
+
+    const title = this.escapeHtml(this.t("explore.route_overlap_title"))
+    const openLabel = this.escapeHtml(this.t("popup.open_route_map"))
+    const cards = list.map((route) => {
+      const routeId = route.id
+      const name = this.escapeHtml(this.routeDisplayName(route) || routeId)
+      const ref = this.escapeHtml(route.ref || "")
+      const color = this.escapeHtml(this.routeDisplayColor(route) || route.color || "#64748b")
+      const operator = this.escapeHtml(this.routeOperatorLabel(route) || "")
+      const via = this.escapeHtml(route.via || "")
+      const href = `/routes/${encodeURIComponent(routeId)}`
+      const active = routeId === primaryRouteId ? " is-primary" : ""
+      const meta = [ operator, via ].filter(Boolean).join(" · ")
+      return `<div class="route-overlap-card${active}" data-overlap-route="${this.escapeHtml(routeId)}">
+        <div class="route-overlap-card__meta">
+          <span class="route-info-panel__swatch" style="background:${color}"></span>
+          ${ref ? `<span class="route-info-panel__ref">${ref}</span>` : ""}
+          <span class="route-overlap-card__name">${name}</span>
+        </div>
+        ${meta ? `<div class="route-overlap-card__sub">${meta}</div>` : ""}
+        <div class="route-overlap-card__actions">
+          <button type="button" class="route-overlap-card__detail" data-overlap-detail="${this.escapeHtml(routeId)}">${this.escapeHtml(this.t("explore.route_overlap_detail"))}</button>
+          <a class="map-float-panel__action" href="${href}" data-turbo-frame="_top">${openLabel}</a>
+        </div>
+      </div>`
+    }).join("")
+
+    panel.hidden = false
+    panel.innerHTML = `
+      <div class="map-float-panel__head">
+        <strong>${title}</strong>
+        <button type="button" class="map-float-panel__close" data-station-board-close>&times;</button>
+      </div>
+      <div class="route-overlap-panel">${cards}</div>
+    `
+    panel.querySelector("[data-station-board-close]")?.addEventListener("click", () => {
+      panel.hidden = true
+    })
+    panel.querySelectorAll("[data-overlap-detail]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const routeId = button.getAttribute("data-overlap-detail")
+        if (routeId) this.openRouteInfoPanel({ routeId, latlng })
+      })
+    })
+
+    if (latlng && this.map?.panTo && this.map.getBounds && !this.map.getBounds().pad(-0.2).contains(latlng)) {
+      this.map.panTo(latlng, { animate: true })
+    }
+  }
+
+  routeOperatorLabel(route) {
+    if (!route) return ""
+    if (this.isEnglishLocale()) {
+      return route.operator_en || route.operator || ""
+    }
+    return route.operator || route.operator_en || ""
+  }
+
+  busRouteTerminalLabels(routeId) {
+    const route = this.findRoute(routeId)
+    const file = route?.file || route?.url
+    const data = file ? this.geoJSONDataByUrl[file] : null
+    if (!data) return ""
+
+    const stations = (data.features || []).filter((feature) => feature?.properties?.feature_type === "station")
+    if (stations.length < 2) return ""
+
+    const first = stations[0]?.properties?.name || stations[0]?.properties?.ref
+    const last = stations[stations.length - 1]?.properties?.name || stations[stations.length - 1]?.properties?.ref
+    if (!first || !last || first === last) return ""
+    return `${first} → ${last}`
   }
 
   visitRouteMap(routeId) {
@@ -8207,8 +8878,8 @@ export default class extends Controller {
   }
 
   async lookupBusThroughRoutes(feature, routeId) {
+    await this.ensureBusManifest()
     const route = this.findRoute(routeId)
-    const index = await this.loadBusStopIndexForRoute(route)
     const current = this.busRouteChipEntry(route) || {
       id: routeId,
       ref: route?.ref || feature?.properties?.line || routeId,
@@ -8216,7 +8887,34 @@ export default class extends Controller {
       color: route?.color || feature?.properties?.color
     }
 
-    const matched = this.matchBusStopIndexRoutes(index, feature)
+    let matched = []
+    const cityId = route?.city_id
+    if (cityId) {
+      try {
+        const coords = feature?.geometry?.coordinates || []
+        const params = new URLSearchParams({ city_id: cityId })
+        const stationId = feature?.properties?.station_id
+        if (stationId) params.set("station_id", stationId)
+        if (feature?.properties?.name) params.set("name", feature.properties.name)
+        if (Number.isFinite(Number(coords[0]))) params.set("lon", String(coords[0]))
+        if (Number.isFinite(Number(coords[1]))) params.set("lat", String(coords[1]))
+
+        const response = await fetch(`/api/bus_through_routes?${params}`)
+        if (response.ok) {
+          const data = await response.json()
+          matched = Array.isArray(data.routes) ? data.routes : []
+        }
+      } catch (error) {
+        console.warn("Failed to load bus through-routes", error)
+      }
+    }
+
+    // Fallback to local index if API unavailable (e.g. offline cache).
+    if (matched.length === 0) {
+      const index = await this.loadBusStopIndexForRoute(route)
+      matched = this.matchBusStopIndexRoutes(index, feature)
+    }
+
     const byId = new Map()
     ;[ current, ...matched ].forEach((entry) => {
       if (!entry?.id) return
@@ -8639,25 +9337,27 @@ export default class extends Controller {
     })
   }
 
-  renderStationInfo(exits, stationName, { loading, error, accessibility } = {}) {
+  renderStationInfo(exits, stationName, { loading, error, accessibility, facilities } = {}) {
     const title = this.escapeHtml(this.t("explore.station_info_title", { name: stationName || "" }))
     let body = ""
     if (loading) {
       body = `<div class="station-board__empty">${this.escapeHtml(this.t("explore.station_info_loading"))}</div>`
     } else if (error) {
       body = `<div class="station-board__empty">${this.escapeHtml(this.t("explore.station_info_error"))}</div>`
-    } else if (!exits || exits.length === 0) {
+    } else if ((!exits || exits.length === 0) && (!facilities || facilities.length === 0)) {
       body = `<div class="station-board__empty">${this.escapeHtml(this.t("explore.station_info_empty"))}</div>`
     } else {
       const accessBits = []
-      if (accessibility?.elevator) accessBits.push(this.t("explore.access_elevator"))
+      if (accessibility?.elevator || accessibility?.facility_elevator) accessBits.push(this.t("explore.access_elevator"))
       if (accessibility?.escalator) accessBits.push(this.t("explore.access_escalator"))
       if (accessibility?.stair) accessBits.push(this.t("explore.access_stair"))
+      if (accessibility?.toilet) accessBits.push(this.t("explore.facility_toilet"))
+      if (accessibility?.information) accessBits.push(this.t("explore.facility_information"))
       const accessHtml = accessBits.length
         ? `<div class="station-info__access">${accessBits.map((label) => `<span class="station-info__chip">${this.escapeHtml(label)}</span>`).join("")}</div>`
         : ""
 
-      const items = exits.map((exit) => {
+      const exitItems = (exits || []).map((exit) => {
         const flags = []
         if (exit.elevator) flags.push(this.t("explore.access_elevator"))
         if (exit.escalator) flags.push(this.t("explore.access_escalator"))
@@ -8669,7 +9369,21 @@ export default class extends Controller {
         </div>`
       }).join("")
 
-      body = `${accessHtml}<div class="station-info__exits">${items}</div>`
+      const facilityHtml = (facilities || []).map((group) => {
+        const label = this.escapeHtml(this.facilityKindLabel(group.kind))
+        const items = (group.items || []).map((item) => {
+          const text = [ item.floor, item.description ].filter(Boolean).join(" · ")
+          return `<div class="station-info__exit-meta">${this.escapeHtml(text)}</div>`
+        }).join("")
+        return `<div class="station-info__facility">
+          <div class="station-info__exit-name">${label}</div>
+          ${items}
+        </div>`
+      }).join("")
+
+      body = `${accessHtml}
+        ${exitItems ? `<div class="station-info__exits">${exitItems}</div>` : ""}
+        ${facilityHtml ? `<div class="station-info__facilities">${facilityHtml}</div>` : ""}`
     }
 
     return `<div class="station-info">
@@ -8693,14 +9407,22 @@ export default class extends Controller {
       }
       const data = await response.json()
       const exits = Array.isArray(data.exits) ? data.exits : []
+      const facilities = Array.isArray(data.facilities) ? data.facilities : []
       host.innerHTML = this.renderStationInfo(exits, stationName, {
-        error: Boolean(data.error) && exits.length === 0,
-        accessibility: data.accessibility
+        error: Boolean(data.error) && exits.length === 0 && facilities.length === 0,
+        accessibility: data.accessibility,
+        facilities
       })
     } catch (error) {
       console.warn("Failed to load station info", error)
       host.innerHTML = this.renderStationInfo([], stationName, { error: true })
     }
+  }
+
+  facilityKindLabel(kind) {
+    const key = `explore.facility_${kind}`
+    const label = this.t(key)
+    return label === key ? kind : label
   }
 
   busStopFeatureForRef(routeId, ref) {
@@ -8775,15 +9497,16 @@ export default class extends Controller {
   readShareParams() {
     const params = new URLSearchParams(window.location.search)
     const routes = String(params.get("routes") || "").split(",").map((id) => id.trim()).filter(Boolean)
+    const busGroups = String(params.get("bus") || "").split(",").map((id) => id.trim()).filter(Boolean)
     const lat = Number.parseFloat(params.get("lat"))
     const lng = Number.parseFloat(params.get("lng"))
     const z = Number.parseFloat(params.get("z"))
     return {
-      at: params.get("at"),
       lat: Number.isFinite(lat) ? lat : null,
       lng: Number.isFinite(lng) ? lng : null,
       z: Number.isFinite(z) ? z : null,
       routes,
+      busGroups,
       follow: params.get("follow")
     }
   }
@@ -8794,7 +9517,6 @@ export default class extends Controller {
 
     this.applyingShare = true
     try {
-      if (share.at) this.setScrubberAt(share.at)
       if (Number.isFinite(share.lat) && Number.isFinite(share.lng) && this.map) {
         this.map.setView([ share.lat, share.lng ], share.z || this.map.getZoom(), { animate: false })
       }
@@ -8821,24 +9543,29 @@ export default class extends Controller {
   }
 
   scheduleShareUrlUpdate() {
-    if (this.applyingShare || this.booting) return
+    if (this.applyingShare || this.booting || this.suppressShareUrl) return
     if (this.shareTimer) clearTimeout(this.shareTimer)
     this.shareTimer = setTimeout(() => this.writeShareUrl(), 400)
   }
 
   writeShareUrl() {
-    if (!this.map || this.applyingShare) return
+    if (!this.map || this.applyingShare || this.suppressShareUrl) return
     const center = this.map.getCenter()
     const params = new URLSearchParams(window.location.search)
-    if (this.simulationAt) params.set("at", this.simulationAt)
+    // Simulation time lives in the scrubber only — never pin it into the address bar.
+    params.delete("at")
     if (center) {
       params.set("lat", center.lat.toFixed(5))
       params.set("lng", center.lng.toFixed(5))
     }
     params.set("z", String(Math.round((this.map.getZoom() ?? 11) * 10) / 10))
-    const routes = this.visibleRouteLayerIds()
-    if (routes.length) params.set("routes", routes.join(","))
+
+    const encoded = this.encodeShareLayers()
+    if (encoded.busGroups.length) params.set("bus", encoded.busGroups.join(","))
+    else params.delete("bus")
+    if (encoded.routes.length) params.set("routes", encoded.routes.join(","))
     else params.delete("routes")
+
     if (this.followedTrainNumber || this.followedVehicleKey) {
       params.set("follow", this.followedTrainNumber || this.followedVehicleKey)
     } else {
@@ -8848,6 +9575,44 @@ export default class extends Controller {
     const next = `${window.location.pathname}?${params.toString()}`
     const current = `${window.location.pathname}${window.location.search}`
     if (next !== current) window.history.replaceState({}, "", next)
+  }
+
+  encodeShareLayers() {
+    const visible = this.visibleRouteLayerIds()
+    const coveredBusIds = new Set()
+    const busGroups = []
+
+    const candidateGroups = [
+      "GreaterTaipei",
+      ...Array.from(new Set(
+        (this.routesManifest?.bus || [])
+          .map((route) => route?.city_id)
+          .filter((cityId) => cityId && cityId !== "Taipei" && cityId !== "NewTaipei")
+      )).sort()
+    ]
+
+    candidateGroups.forEach((group) => {
+      const ids = this.routeIdsForBusGroup(group)
+      if (ids.length === 0) return
+      if (!ids.every((routeId) => this.layerVisible[routeId])) return
+      busGroups.push(group)
+      ids.forEach((routeId) => coveredBusIds.add(routeId))
+    })
+
+    const routes = []
+    visible.forEach((routeId) => {
+      const route = this.findRoute(routeId)
+      if (route?.city_id && coveredBusIds.has(routeId)) return
+      routes.push(routeId)
+    })
+
+    // Never dump thousands of bus ids into the address bar.
+    const rail = routes.filter((routeId) => !this.findRoute(routeId)?.city_id)
+    const bus = routes.filter((routeId) => this.findRoute(routeId)?.city_id)
+    return {
+      busGroups,
+      routes: [ ...rail, ...bus.slice(0, BUS_SHARE_ROUTE_CAP) ]
+    }
   }
 
   async loadCrossings() {

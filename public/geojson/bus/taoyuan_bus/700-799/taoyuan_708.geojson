@@ -6,13 +6,14 @@
     "name": "708",
     "name_en": "708",
     "ref": "708",
-    "color": "#7c3aed",
+    "color": "#16A34A",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/708/map/1809/image",
     "operator_id": "9",
     "operator": "三重客運",
-    "operator_en": "San Chung Bus Co., Ltd."
+    "operator_en": "San Chung Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "708",
         "name": "708",
         "name_en": "708",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#16A34A",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1359,6 +1361,10 @@
           [
             121.37418,
             25.05292
+          ],
+          [
+            121.37433,
+            25.05303
           ]
         ]
       }
@@ -1371,7 +1377,7 @@
         "name": "華亞園區",
         "name_en": "Gongxi Station(Hwa Ya Technology Park)",
         "line": "708",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6652"
       },
@@ -1391,7 +1397,7 @@
         "name": "桃園酒廠",
         "name_en": "Taooyuan Sake Brewery",
         "line": "708",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6557"
       },
@@ -1411,7 +1417,7 @@
         "name": "長庚醫院",
         "name_en": "Chang-Gung Memorial Hospital",
         "line": "708",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6869"
       },
@@ -1431,7 +1437,7 @@
         "name": "醫學大樓",
         "name_en": "Medical Building",
         "line": "708",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "4472"
       },
@@ -1451,7 +1457,7 @@
         "name": "華夏大飯店",
         "name_en": "Highness Hotel",
         "line": "708",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "3515"
       },
@@ -1471,7 +1477,7 @@
         "name": "桃園長庚轉運站",
         "name_en": "Taoyuan Chang Gung Bus Terminal",
         "line": "708",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6713"
       },
@@ -1491,7 +1497,7 @@
         "name": "文化二路八德路口",
         "name_en": "Wenhua 2nd Rd. and Bade Rd. Intersection",
         "line": "708",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6493"
       },
@@ -1511,7 +1517,7 @@
         "name": "長榮",
         "name_en": "Evergreen",
         "line": "708",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "4370"
       },
@@ -1531,7 +1537,7 @@
         "name": "南崁",
         "name_en": "NanKan",
         "line": "708",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "4578"
       },
@@ -1551,7 +1557,7 @@
         "name": "台茂",
         "name_en": "Taimall",
         "line": "708",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "3744"
       },
@@ -1571,7 +1577,7 @@
         "name": "下南崁",
         "name_en": "Xianankan",
         "line": "708",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "1373"
       },
@@ -1591,7 +1597,7 @@
         "name": "長榮南山路口",
         "name_en": "Changrong and Nanshan Rd. Intersection",
         "line": "708",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "5328"
       },
@@ -1611,7 +1617,7 @@
         "name": "六福油管路口",
         "name_en": "Liufu Youguan Rd. Intersection",
         "line": "708",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6627"
       },
@@ -1631,7 +1637,7 @@
         "name": "六福中山路口",
         "name_en": "Liufu and Zhongshan Rd. Intersection",
         "line": "708",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "3308"
       },
@@ -1651,7 +1657,7 @@
         "name": "長榮花園",
         "name_en": "Changrong Garden",
         "line": "708",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "5330"
       },
@@ -1671,7 +1677,7 @@
         "name": "中山長春路口",
         "name_en": "Jhongshan Jhangchun Rd. Intersection",
         "line": "708",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "2091"
       },
@@ -1691,7 +1697,7 @@
         "name": "竹城采都",
         "name_en": "Jhucheng Caidou",
         "line": "708",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "5271"
       },
@@ -1711,7 +1717,7 @@
         "name": "吉林仁愛路口",
         "name_en": "Jilin and Renai Road Intersection",
         "line": "708",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6175"
       },
@@ -1731,7 +1737,7 @@
         "name": "羊稠活動中心",
         "name_en": "Yangchou Activity Center",
         "line": "708",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "2768"
       },
@@ -1751,7 +1757,7 @@
         "name": "羊稠活動中心",
         "name_en": "Yangchou Activity Center",
         "line": "708",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "2769"
       },
@@ -1771,7 +1777,7 @@
         "name": "長榮花園",
         "name_en": "Changrong Garden",
         "line": "708",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "5331"
       },
@@ -1791,7 +1797,7 @@
         "name": "六福中山路口",
         "name_en": "Liufu and Zhongshan Rd. Intersection",
         "line": "708",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "3309"
       },
@@ -1811,7 +1817,7 @@
         "name": "六福油管路口",
         "name_en": "Liufu Youguan Rd. Intersection",
         "line": "708",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6626"
       },
@@ -1831,7 +1837,7 @@
         "name": "長榮南山路口",
         "name_en": "Changrong and Nanshan Rd. Intersection",
         "line": "708",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "5329"
       },
@@ -1851,7 +1857,7 @@
         "name": "下南崁",
         "name_en": "Xianankan",
         "line": "708",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "1372"
       },
@@ -1871,7 +1877,7 @@
         "name": "台茂",
         "name_en": "Taimall",
         "line": "708",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "7078"
       },
@@ -1891,7 +1897,7 @@
         "name": "南崁",
         "name_en": "NanKan",
         "line": "708",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "4579"
       },
@@ -1911,7 +1917,7 @@
         "name": "長榮",
         "name_en": "Evergreen",
         "line": "708",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "4371"
       },
@@ -1931,7 +1937,7 @@
         "name": "捷運林口站(龜山一路)",
         "name_en": "MRT Linkou Station (Guishan 1st Rd.)",
         "line": "708",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "5332"
       },
@@ -1951,7 +1957,7 @@
         "name": "桃園長庚轉運站",
         "name_en": "Taoyuan Chang Gung Bus Terminal",
         "line": "708",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6713"
       },
@@ -1971,7 +1977,7 @@
         "name": "華夏大飯店",
         "name_en": "Highness Hotel",
         "line": "708",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "3516"
       },
@@ -1991,7 +1997,7 @@
         "name": "醫學大樓",
         "name_en": "Medical Building",
         "line": "708",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "4473"
       },
@@ -2011,7 +2017,7 @@
         "name": "長庚醫院",
         "name_en": "Chang-Gung Memorial Hospital",
         "line": "708",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "5064"
       },
@@ -2031,7 +2037,7 @@
         "name": "捷運長庚醫院站",
         "name_en": "MRT Chang-Gung Memorial Hospital Station",
         "line": "708",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6683"
       },
@@ -2051,7 +2057,7 @@
         "name": "管理中心",
         "name_en": "Management Center",
         "line": "708",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6684"
       },
@@ -2071,7 +2077,7 @@
         "name": "桃園酒廠",
         "name_en": "Taooyuan Sake Brewery",
         "line": "708",
-        "color": "#7c3aed",
+        "color": "#16A34A",
         "direction": 0,
         "station_id": "6556"
       },

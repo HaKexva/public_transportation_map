@@ -6,13 +6,14 @@
     "name": "L113",
     "name_en": "L113",
     "ref": "L113",
-    "color": "#b91c1c",
+    "color": "#b45309",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/51130/map/975/image",
     "operator_id": "1",
     "operator": "桃園客運",
-    "operator_en": "Taoyuan Bus Co., Ltd."
+    "operator_en": "Taoyuan Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "L113",
         "name": "L113",
         "name_en": "L113",
-        "color": "#b91c1c",
-        "direction": 0
+        "color": "#b45309",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1267,6 +1269,10 @@
           [
             121.28121,
             24.92563
+          ],
+          [
+            121.28121,
+            24.9257
           ]
         ]
       }
@@ -1279,7 +1285,7 @@
         "name": "深耕十期社區",
         "name_en": "Shengeng Community, Phase 10",
         "line": "L113",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3812"
       },
@@ -1299,7 +1305,7 @@
         "name": "鎮南宮",
         "name_en": "Zhen Nan  Temple",
         "line": "L113",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4404"
       },
@@ -1319,7 +1325,7 @@
         "name": "八德區公所(農會)",
         "name_en": "Bade District Office (Farmers Assoc.)",
         "line": "L113",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3584"
       },
@@ -1339,7 +1345,7 @@
         "name": "八德國中",
         "name_en": "BaDe Junior High School",
         "line": "L113",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1732"
       },
@@ -1359,7 +1365,7 @@
         "name": "興豐友聯街口",
         "name_en": "Singfong and Youlian St. Intersection",
         "line": "L113",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2516"
       },
@@ -1379,7 +1385,7 @@
         "name": "聯福巷",
         "name_en": "Lianfu Ln.",
         "line": "L113",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1730"
       },
@@ -1399,7 +1405,7 @@
         "name": "更寮腳(興豐路)",
         "name_en": "Gengliaojiao(Xingfeng Road)",
         "line": "L113",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1728"
       },
@@ -1419,7 +1425,7 @@
         "name": "興豐路口",
         "name_en": "Xingfeng Road Intersection",
         "line": "L113",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1210"
       },
@@ -1439,7 +1445,7 @@
         "name": "松柏林",
         "name_en": "Songbolin",
         "line": "L113",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5837"
       },
@@ -1459,7 +1465,7 @@
         "name": "大興路685巷",
         "name_en": "Daxing Rd., Ln. 658",
         "line": "L113",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5839"
       },
@@ -1479,7 +1485,7 @@
         "name": "世紀社區",
         "name_en": "Shiji Community",
         "line": "L113",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3606"
       },
@@ -1499,7 +1505,7 @@
         "name": "大興社區",
         "name_en": "Daxing Community",
         "line": "L113",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5841"
       },
@@ -1519,7 +1525,7 @@
         "name": "榮興路口",
         "name_en": "Rongxing  St. Intersection",
         "line": "L113",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5843"
       },
@@ -1539,7 +1545,7 @@
         "name": "榮興南路永興宮",
         "name_en": "Rongxing S. Rd. Yongxing Temple",
         "line": "L113",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4309"
       },
@@ -1559,7 +1565,7 @@
         "name": "榮興路533巷",
         "name_en": "Rongxing Rd., Ln. 533",
         "line": "L113",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5845"
       },
@@ -1579,7 +1585,7 @@
         "name": "福祿貝爾社區",
         "name_en": "Fulubaier Community",
         "line": "L113",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5847"
       },
@@ -1599,7 +1605,7 @@
         "name": "八德安養中心",
         "name_en": "Bade Veterans Nursing & Domiciliary Center",
         "line": "L113",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5849"
       },
@@ -1619,7 +1625,7 @@
         "name": "榮民之家",
         "name_en": "Veterans Home",
         "line": "L113",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1212"
       },
@@ -1639,7 +1645,7 @@
         "name": "八德生態公園",
         "name_en": "Bade Ecology Park",
         "line": "L113",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5850"
       },
@@ -1659,7 +1665,7 @@
         "name": "竹篙厝",
         "name_en": "Zhugaocuo",
         "line": "L113",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2696"
       },
@@ -1679,7 +1685,7 @@
         "name": "興豐中油站",
         "name_en": "Xinfeng Petrol Station",
         "line": "L113",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5852"
       },
@@ -1699,7 +1705,7 @@
         "name": "瑞聯社區",
         "name_en": "Ruilian Community",
         "line": "L113",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1218"
       },
@@ -1719,7 +1725,7 @@
         "name": "建安街",
         "name_en": "Jian-an St.",
         "line": "L113",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5854"
       },
@@ -1739,7 +1745,7 @@
         "name": "世裕修車廠",
         "name_en": "Shiyu Garage",
         "line": "L113",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5856"
       },
@@ -1759,7 +1765,7 @@
         "name": "八德幼兒園",
         "name_en": "Bade Nursery school",
         "line": "L113",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5858"
       },
@@ -1779,7 +1785,7 @@
         "name": "後庄街",
         "name_en": "Houzhuang St.",
         "line": "L113",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5860"
       },
@@ -1799,7 +1805,7 @@
         "name": "後庄街26巷",
         "name_en": "Houzhuang St., Ln. 26",
         "line": "L113",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5862"
       },
@@ -1819,7 +1825,7 @@
         "name": "富榮街",
         "name_en": "Furong St.",
         "line": "L113",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5864"
       },
@@ -1839,7 +1845,7 @@
         "name": "和平路772巷",
         "name_en": "Heping Rd., Ln. 772",
         "line": "L113",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5835"
       },
@@ -1859,7 +1865,7 @@
         "name": "大安國小",
         "name_en": "Daan Elementary School",
         "line": "L113",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1923"
       },
@@ -1879,7 +1885,7 @@
         "name": "大安社區活動中心",
         "name_en": "Daan Community Activity Center",
         "line": "L113",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4311"
       },
@@ -1899,7 +1905,7 @@
         "name": "惠爾得",
         "name_en": "Taiwan Felt Company, Ltd.",
         "line": "L113",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5866"
       },
@@ -1919,7 +1925,7 @@
         "name": "八德地政事務所",
         "name_en": "Land Affairs Office of Bade District",
         "line": "L113",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6173"
       },
@@ -1939,7 +1945,7 @@
         "name": "大成國中",
         "name_en": "Dacheng Junior High School",
         "line": "L113",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1924"
       },
@@ -1959,7 +1965,7 @@
         "name": "大千公園",
         "name_en": "Daqian Park",
         "line": "L113",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5868"
       },
@@ -1979,7 +1985,7 @@
         "name": "大福街福德宮",
         "name_en": "Dafu St. Fude Temple",
         "line": "L113",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5873"
       },
@@ -1999,7 +2005,7 @@
         "name": "大福街53巷",
         "name_en": "Dafu St., Ln.53",
         "line": "L113",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5875"
       },
@@ -2019,7 +2025,7 @@
         "name": "Love7大樓",
         "name_en": "Love7 Building",
         "line": "L113",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5877"
       },
@@ -2039,7 +2045,7 @@
         "name": "桃德路安福宮",
         "name_en": "Taode Rd., Anfu Temple",
         "line": "L113",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5879"
       },
@@ -2059,7 +2065,7 @@
         "name": "桃德路99巷",
         "name_en": "Taode Rd., Ln.99",
         "line": "L113",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5881"
       },
@@ -2079,7 +2085,7 @@
         "name": "桃德路49巷",
         "name_en": "Taode Rd., Ln.49",
         "line": "L113",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5883"
       },
@@ -2099,7 +2105,7 @@
         "name": "永福西街",
         "name_en": "Yungfu West St.",
         "line": "L113",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2080"
       },
@@ -2119,7 +2125,7 @@
         "name": "八德區綜合大樓",
         "name_en": "Bade District Multifunction Building",
         "line": "L113",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5677"
       },
@@ -2139,7 +2145,7 @@
         "name": "陸光活動中心",
         "name_en": "Luguang Activity Center",
         "line": "L113",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5679"
       },
@@ -2159,7 +2165,7 @@
         "name": "大湳站(G04)",
         "name_en": "Danan Station(G04)",
         "line": "L113",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1723"
       },
@@ -2179,7 +2185,7 @@
         "name": "大湳市場",
         "name_en": "Danan Market",
         "line": "L113",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3766"
       },
@@ -2199,7 +2205,7 @@
         "name": "過路坡",
         "name_en": "Guolupo",
         "line": "L113",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5070"
       },
@@ -2219,7 +2225,7 @@
         "name": "打鐵店",
         "name_en": "Datiedian",
         "line": "L113",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2071"
       },
@@ -2239,7 +2245,7 @@
         "name": "藝墅天地",
         "name_en": "Yishutiandi",
         "line": "L113",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4321"
       },
@@ -2259,7 +2265,7 @@
         "name": "大千社區",
         "name_en": "Dachian Community",
         "line": "L113",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1194"
       },
@@ -2279,7 +2285,7 @@
         "name": "富榮",
         "name_en": "Furong",
         "line": "L113",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3"
       },
@@ -2299,7 +2305,7 @@
         "name": "大庄",
         "name_en": "Dazhuang",
         "line": "L113",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1196"
       },
@@ -2319,7 +2325,7 @@
         "name": "大雅新城",
         "name_en": "Daya Village",
         "line": "L113",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1202"
       },
@@ -2339,7 +2345,7 @@
         "name": "建國仁德一路口",
         "name_en": "Jianguo and Rende 1st Rd.",
         "line": "L113",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2065"
       },
@@ -2359,7 +2365,7 @@
         "name": "崙子",
         "name_en": "Lunzi",
         "line": "L113",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1204"
       },
@@ -2379,7 +2385,7 @@
         "name": "崙子路口",
         "name_en": "Lunzi Rd. Intersection",
         "line": "L113",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1206"
       },
@@ -2399,7 +2405,7 @@
         "name": "八德教養院",
         "name_en": "Bade Home for the Disabled",
         "line": "L113",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1208"
       },
@@ -2419,7 +2425,7 @@
         "name": "八德區公所(三元宮)",
         "name_en": "Bade District Office (Sanyuan Temple)",
         "line": "L113",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2063"
       },
@@ -2439,7 +2445,7 @@
         "name": "興仁里",
         "name_en": "Xingren Village",
         "line": "L113",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3806"
       },
@@ -2459,7 +2465,7 @@
         "name": "興仁路(成功大道)",
         "name_en": "Xingren Rd.(Chenggong Avenue)",
         "line": "L113",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "5685"
       },

@@ -6,10 +6,11 @@
     "name": "105",
     "name_en": "105",
     "ref": "105",
-    "color": "#9f1239",
+    "color": "#115e59",
     "city_id": "Keelung",
     "source": "TDX Bus Shape / StopOfRoute",
-    "official_map_url": "https://web.taiwanbus.tw/MISUploadData/Schematic/file/0361.jpg"
+    "official_map_url": "https://web.taiwanbus.tw/MISUploadData/Schematic/file/0361.jpg",
+    "loop": true
   },
   "features": [
     {
@@ -19,8 +20,9 @@
         "ref": "105",
         "name": "105",
         "name_en": "105",
-        "color": "#9f1239",
-        "direction": 0
+        "color": "#115e59",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -2368,7 +2370,7 @@
         "name": "基隆轉運站",
         "name_en": "Keelung Transit Station",
         "line": "105",
-        "color": "#9f1239",
+        "color": "#115e59",
         "direction": 0,
         "station_id": "143441"
       },
@@ -2388,7 +2390,7 @@
         "name": "民治里活動中心",
         "name_en": "Minzhi Village Activity Center",
         "line": "105",
-        "color": "#9f1239",
+        "color": "#115e59",
         "direction": 0,
         "station_id": "141126"
       },
@@ -2408,7 +2410,7 @@
         "name": "孝二路",
         "name_en": "Xiao 2nd Rd.",
         "line": "105",
-        "color": "#9f1239",
+        "color": "#115e59",
         "direction": 0,
         "station_id": "141358"
       },
@@ -2428,7 +2430,7 @@
         "name": "仁五路(東和大樓)",
         "name_en": "Ren 5th Rd.",
         "line": "105",
-        "color": "#9f1239",
+        "color": "#115e59",
         "direction": 0,
         "station_id": "140629"
       },
@@ -2448,7 +2450,7 @@
         "name": "仁二路(二信循環站)",
         "name_en": "Ren 2nd Rd. (Erxin Loop Station )",
         "line": "105",
-        "color": "#9f1239",
+        "color": "#115e59",
         "direction": 0,
         "station_id": "140620"
       },
@@ -2468,7 +2470,7 @@
         "name": "市政府(柯達飯店)",
         "name_en": "Keelung City Government (K Hotel)",
         "line": "105",
-        "color": "#9f1239",
+        "color": "#115e59",
         "direction": 0,
         "station_id": "140850"
       },
@@ -2488,7 +2490,7 @@
         "name": "信五路口",
         "name_en": "Xin 5th Rd. Intersection",
         "line": "105",
-        "color": "#9f1239",
+        "color": "#115e59",
         "direction": 0,
         "station_id": "140846"
       },
@@ -2508,7 +2510,7 @@
         "name": "信七路口",
         "name_en": "Xin 7th Rd. Intersection",
         "line": "105",
-        "color": "#9f1239",
+        "color": "#115e59",
         "direction": 0,
         "station_id": "140843"
       },
@@ -2528,7 +2530,7 @@
         "name": "就業中心",
         "name_en": "Keelung Employment Service Station",
         "line": "105",
-        "color": "#9f1239",
+        "color": "#115e59",
         "direction": 0,
         "station_id": "140840"
       },
@@ -2548,7 +2550,7 @@
         "name": "中船路",
         "name_en": "Zhongchuan Rd.",
         "line": "105",
-        "color": "#9f1239",
+        "color": "#115e59",
         "direction": 0,
         "station_id": "140829"
       },
@@ -2568,7 +2570,7 @@
         "name": "北屋新城",
         "name_en": "Beiwuxincheng",
         "line": "105",
-        "color": "#9f1239",
+        "color": "#115e59",
         "direction": 0,
         "station_id": "140825"
       },
@@ -2588,7 +2590,7 @@
         "name": "復興館",
         "name_en": "Fuxingguan",
         "line": "105",
-        "color": "#9f1239",
+        "color": "#115e59",
         "direction": 0,
         "station_id": "140823"
       },
@@ -2608,7 +2610,7 @@
         "name": "海門天險",
         "name_en": "Haimentiansian",
         "line": "105",
-        "color": "#9f1239",
+        "color": "#115e59",
         "direction": 0,
         "station_id": "140822"
       },
@@ -2628,7 +2630,7 @@
         "name": "中正區行政大樓",
         "name_en": "Administration Building of Zhongzheng District",
         "line": "105",
-        "color": "#9f1239",
+        "color": "#115e59",
         "direction": 0,
         "station_id": "140734"
       },
@@ -2648,7 +2650,7 @@
         "name": "正豐街",
         "name_en": "Zhengfeng St.",
         "line": "105",
-        "color": "#9f1239",
+        "color": "#115e59",
         "direction": 0,
         "station_id": "140732"
       },
@@ -2668,7 +2670,7 @@
         "name": "正榮街口",
         "name_en": "Zhengrong St. Intersection",
         "line": "105",
-        "color": "#9f1239",
+        "color": "#115e59",
         "direction": 0,
         "station_id": "140731"
       },
@@ -2688,7 +2690,7 @@
         "name": "正榮街",
         "name_en": "Zhengrong St.",
         "line": "105",
-        "color": "#9f1239",
+        "color": "#115e59",
         "direction": 0,
         "station_id": "140975"
       },
@@ -2708,7 +2710,7 @@
         "name": "正濱國中",
         "name_en": "Zhengbin Junior High School",
         "line": "105",
-        "color": "#9f1239",
+        "color": "#115e59",
         "direction": 0,
         "station_id": "140976"
       },
@@ -2728,7 +2730,7 @@
         "name": "三軍總醫院基隆分院",
         "name_en": "Tri-Service General Hospital of Keelung",
         "line": "105",
-        "color": "#9f1239",
+        "color": "#115e59",
         "direction": 0,
         "station_id": "140986"
       },
@@ -2748,7 +2750,7 @@
         "name": "建心新城",
         "name_en": "Jianxinxincheng",
         "line": "105",
-        "color": "#9f1239",
+        "color": "#115e59",
         "direction": 0,
         "station_id": "140987"
       },
@@ -2768,7 +2770,7 @@
         "name": "天主堂",
         "name_en": "Church",
         "line": "105",
-        "color": "#9f1239",
+        "color": "#115e59",
         "direction": 0,
         "station_id": "140905"
       },
@@ -2788,7 +2790,7 @@
         "name": "中正區行政大樓",
         "name_en": "Administration Building of Zhongzheng District",
         "line": "105",
-        "color": "#9f1239",
+        "color": "#115e59",
         "direction": 0,
         "station_id": "140733"
       },
@@ -2808,7 +2810,7 @@
         "name": "海門天險",
         "name_en": "Haimentiansian",
         "line": "105",
-        "color": "#9f1239",
+        "color": "#115e59",
         "direction": 0,
         "station_id": "140821"
       },
@@ -2828,7 +2830,7 @@
         "name": "中船路",
         "name_en": "Zhongchuan Rd.",
         "line": "105",
-        "color": "#9f1239",
+        "color": "#115e59",
         "direction": 0,
         "station_id": "140827"
       },
@@ -2848,7 +2850,7 @@
         "name": "信七路口",
         "name_en": "Xin 7th Rd. Intersection",
         "line": "105",
-        "color": "#9f1239",
+        "color": "#115e59",
         "direction": 0,
         "station_id": "140842"
       },
@@ -2868,7 +2870,7 @@
         "name": "信五路口",
         "name_en": "Xin 5th Rd. Intersection",
         "line": "105",
-        "color": "#9f1239",
+        "color": "#115e59",
         "direction": 0,
         "station_id": "140845"
       },
@@ -2888,7 +2890,7 @@
         "name": "市政府(柯達飯店)",
         "name_en": "Keelung City Government (K Hotel)",
         "line": "105",
-        "color": "#9f1239",
+        "color": "#115e59",
         "direction": 0,
         "station_id": "140849"
       },

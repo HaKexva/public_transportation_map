@@ -6,13 +6,14 @@
     "name": "紅3中芸接駁線",
     "name_en": "紅3中芸接駁線",
     "ref": "紅3中芸接駁線",
-    "color": "#9a3412",
+    "color": "#115e59",
     "city_id": "Kaohsiung",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ibus.tbkc.gov.tw/cms/api/route/2113/map/1853/image",
     "operator_id": "10360",
     "operator": "港都客運",
-    "operator_en": "Great-City-Life Bus Co., Ltd."
+    "operator_en": "Great-City-Life Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,7 +23,7 @@
         "ref": "紅3中芸接駁線",
         "name": "紅3中芸接駁線",
         "name_en": "紅3中芸接駁線",
-        "color": "#9a3412",
+        "color": "#115e59",
         "direction": 1
       },
       "geometry": {
@@ -470,8 +471,9 @@
         "ref": "紅3中芸接駁線",
         "name": "紅3中芸接駁線",
         "name_en": "紅3中芸接駁線",
-        "color": "#9a3412",
-        "direction": 0
+        "color": "#115e59",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -935,6 +937,10 @@
           [
             120.3929,
             22.5
+          ],
+          [
+            120.3927,
+            22.49999
           ]
         ]
       }
@@ -947,7 +953,7 @@
         "name": "新光人壽",
         "name_en": "Shin Kong Life Insurance",
         "line": "紅3中芸接駁線",
-        "color": "#9a3412",
+        "color": "#115e59",
         "direction": 0,
         "station_id": "1533"
       },
@@ -967,7 +973,7 @@
         "name": "西溪路",
         "name_en": "Sisi Rd.",
         "line": "紅3中芸接駁線",
-        "color": "#9a3412",
+        "color": "#115e59",
         "direction": 0,
         "station_id": "2140"
       },
@@ -987,7 +993,7 @@
         "name": "中芸國小(側門)",
         "name_en": "Zhong-Yun Elementary School(side door)",
         "line": "紅3中芸接駁線",
-        "color": "#9a3412",
+        "color": "#115e59",
         "direction": 0,
         "station_id": "2161"
       },
@@ -1007,7 +1013,7 @@
         "name": "鳳芸站",
         "name_en": "Fongyun Station",
         "line": "紅3中芸接駁線",
-        "color": "#9a3412",
+        "color": "#115e59",
         "direction": 0,
         "station_id": "2141"
       },
@@ -1027,7 +1033,7 @@
         "name": "漁港公園",
         "name_en": "Fish Port Park",
         "line": "紅3中芸接駁線",
-        "color": "#9a3412",
+        "color": "#115e59",
         "direction": 0,
         "station_id": "4331"
       },
@@ -1047,7 +1053,7 @@
         "name": "北汕二路",
         "name_en": "Beishan 2nd Rd.",
         "line": "紅3中芸接駁線",
-        "color": "#9a3412",
+        "color": "#115e59",
         "direction": 0,
         "station_id": "932"
       },
@@ -1067,7 +1073,7 @@
         "name": "汕尾",
         "name_en": "Shanwei",
         "line": "紅3中芸接駁線",
-        "color": "#9a3412",
+        "color": "#115e59",
         "direction": 0,
         "station_id": "2144"
       },
@@ -1087,7 +1093,7 @@
         "name": "北汕里",
         "name_en": "Beishan Village",
         "line": "紅3中芸接駁線",
-        "color": "#9a3412",
+        "color": "#115e59",
         "direction": 0,
         "station_id": "934"
       },
@@ -1107,7 +1113,7 @@
         "name": "中芸",
         "name_en": "Jhongyun",
         "line": "紅3中芸接駁線",
-        "color": "#9a3412",
+        "color": "#115e59",
         "direction": 0,
         "station_id": "5614"
       },
@@ -1127,7 +1133,7 @@
         "name": "國泰人壽",
         "name_en": "Cathay Life Insurance Co., Ltd.",
         "line": "紅3中芸接駁線",
-        "color": "#9a3412",
+        "color": "#115e59",
         "direction": 0,
         "station_id": "4236"
       },
@@ -1147,7 +1153,7 @@
         "name": "鳳林路一段",
         "name_en": "Fonglin Rd. Sec. 1",
         "line": "紅3中芸接駁線",
-        "color": "#9a3412",
+        "color": "#115e59",
         "direction": 0,
         "station_id": "4275"
       },
@@ -1167,7 +1173,7 @@
         "name": "林園高中",
         "name_en": "Linyuan Senior High School",
         "line": "紅3中芸接駁線",
-        "color": "#9a3412",
+        "color": "#115e59",
         "direction": 0,
         "station_id": "6118"
       },
@@ -1187,7 +1193,7 @@
         "name": "林園區公所",
         "name_en": "Linyuan District Office",
         "line": "紅3中芸接駁線",
-        "color": "#9a3412",
+        "color": "#115e59",
         "direction": 0,
         "station_id": "225"
       },
@@ -1207,7 +1213,7 @@
         "name": "田厝路",
         "name_en": "Tiancuo Rd.",
         "line": "紅3中芸接駁線",
-        "color": "#9a3412",
+        "color": "#115e59",
         "direction": 0,
         "station_id": "6119"
       },
@@ -1227,7 +1233,7 @@
         "name": "新光人壽",
         "name_en": "Shin Kong Life Insurance",
         "line": "紅3中芸接駁線",
-        "color": "#9a3412",
+        "color": "#115e59",
         "direction": 0,
         "station_id": "1533"
       },

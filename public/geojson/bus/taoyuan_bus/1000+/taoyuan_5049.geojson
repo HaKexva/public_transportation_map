@@ -6,13 +6,14 @@
     "name": "5049",
     "name_en": "5049",
     "ref": "5049",
-    "color": "#b91c1c",
+    "color": "#b45309",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/5049/map/1151/image",
     "operator_id": "1",
     "operator": "桃園客運",
-    "operator_en": "Taoyuan Bus Co., Ltd."
+    "operator_en": "Taoyuan Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "5049",
         "name": "5049",
         "name_en": "5049",
-        "color": "#b91c1c",
-        "direction": 0
+        "color": "#b45309",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -459,6 +461,10 @@
           [
             121.21053,
             24.86672
+          ],
+          [
+            121.21036,
+            24.86682
           ]
         ]
       }
@@ -471,7 +477,7 @@
         "name": "桃客龍潭新站",
         "name_en": "Taoyuan Bus Longtan New Station",
         "line": "5049",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6217"
       },
@@ -491,7 +497,7 @@
         "name": "中正北龍路口",
         "name_en": "Zhongzheng Beilong Road Intersection",
         "line": "5049",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4059"
       },
@@ -511,7 +517,7 @@
         "name": "第二市場",
         "name_en": "Second Market",
         "line": "5049",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2922"
       },
@@ -531,7 +537,7 @@
         "name": "佳佳商場",
         "name_en": "Jiajia Market",
         "line": "5049",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2518"
       },
@@ -551,7 +557,7 @@
         "name": "大同社區",
         "name_en": "Datong Community",
         "line": "5049",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1495"
       },
@@ -571,7 +577,7 @@
         "name": "龍潭國中",
         "name_en": "Longtan Junior High School",
         "line": "5049",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "844"
       },
@@ -591,7 +597,7 @@
         "name": "雙連街口",
         "name_en": "Shuanglian Street Intersection",
         "line": "5049",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4044"
       },
@@ -611,7 +617,7 @@
         "name": "上華",
         "name_en": "Shanghua",
         "line": "5049",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4042"
       },
@@ -631,7 +637,7 @@
         "name": "龍吟街口",
         "name_en": "Longyin St. Intersection",
         "line": "5049",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1345"
       },
@@ -651,7 +657,7 @@
         "name": "三角林",
         "name_en": "Sanjiaolin",
         "line": "5049",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4040"
       },
@@ -671,7 +677,7 @@
         "name": "桃園市客家文化館",
         "name_en": "Taoyuan City Hakka Museum",
         "line": "5049",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3298"
       },
@@ -691,7 +697,7 @@
         "name": "逸園",
         "name_en": "Yiyuan",
         "line": "5049",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4103"
       },
@@ -711,7 +717,7 @@
         "name": "金山社區",
         "name_en": "Jinshan Community",
         "line": "5049",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4105"
       },
@@ -731,7 +737,7 @@
         "name": "里界",
         "name_en": "Li jie",
         "line": "5049",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "62"
       },
@@ -751,7 +757,7 @@
         "name": "澹園",
         "name_en": "Danyuan",
         "line": "5049",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4108"
       },
@@ -771,7 +777,7 @@
         "name": "澹園",
         "name_en": "Danyuan",
         "line": "5049",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4107"
       },
@@ -791,7 +797,7 @@
         "name": "里界",
         "name_en": "Li jie",
         "line": "5049",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "63"
       },
@@ -811,7 +817,7 @@
         "name": "金山社區",
         "name_en": "Jinshan Community",
         "line": "5049",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4106"
       },
@@ -831,7 +837,7 @@
         "name": "逸園",
         "name_en": "Yiyuan",
         "line": "5049",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4104"
       },
@@ -851,7 +857,7 @@
         "name": "桃園市客家文化館",
         "name_en": "Taoyuan City Hakka Museum",
         "line": "5049",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "3299"
       },
@@ -871,7 +877,7 @@
         "name": "三角林",
         "name_en": "Sanjiaolin",
         "line": "5049",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4039"
       },
@@ -891,7 +897,7 @@
         "name": "龍吟街口",
         "name_en": "Longyin St. Intersection",
         "line": "5049",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1346"
       },
@@ -911,7 +917,7 @@
         "name": "上華",
         "name_en": "Shanghua",
         "line": "5049",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4041"
       },
@@ -931,7 +937,7 @@
         "name": "雙連街口",
         "name_en": "Shuanglian Street Intersection",
         "line": "5049",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4043"
       },
@@ -951,7 +957,7 @@
         "name": "龍潭國中",
         "name_en": "Longtan Junior High School",
         "line": "5049",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "843"
       },
@@ -971,7 +977,7 @@
         "name": "大同社區",
         "name_en": "Datong Community",
         "line": "5049",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "1492"
       },
@@ -991,7 +997,7 @@
         "name": "佳佳商場",
         "name_en": "Jiajia Market",
         "line": "5049",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2519"
       },
@@ -1011,7 +1017,7 @@
         "name": "龍星國小",
         "name_en": "Long Sing Elementary School",
         "line": "5049",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4055"
       },
@@ -1031,7 +1037,7 @@
         "name": "第二市場",
         "name_en": "Second Market",
         "line": "5049",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "2921"
       },
@@ -1051,7 +1057,7 @@
         "name": "中正北龍路口",
         "name_en": "Zhongzheng Beilong Road Intersection",
         "line": "5049",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "4058"
       },
@@ -1071,7 +1077,7 @@
         "name": "桃客龍潭新站",
         "name_en": "Taoyuan Bus Longtan New Station",
         "line": "5049",
-        "color": "#b91c1c",
+        "color": "#b45309",
         "direction": 0,
         "station_id": "6218"
       },

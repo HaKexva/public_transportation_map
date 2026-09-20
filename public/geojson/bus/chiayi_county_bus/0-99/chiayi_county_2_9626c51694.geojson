@@ -6,12 +6,13 @@
     "name": "幸福朴子2路",
     "name_en": "幸福朴子2路",
     "ref": "幸福朴子2路",
-    "color": "#0369a1",
+    "color": "#1e3a8a",
     "city_id": "ChiayiCounty",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://web.taiwanbus.tw/MISUploadData/Schematic/file/0289.jpg",
     "operator_id": "115",
-    "operator": "台一大車隊"
+    "operator": "台一大車隊",
+    "loop": true
   },
   "features": [
     {
@@ -21,8 +22,9 @@
         "ref": "幸福朴子2路",
         "name": "幸福朴子2路",
         "name_en": "幸福朴子2路",
-        "color": "#0369a1",
-        "direction": 0
+        "color": "#1e3a8a",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -1758,6 +1760,10 @@
           [
             120.24851,
             23.45874
+          ],
+          [
+            120.24849,
+            23.45873
           ]
         ]
       }
@@ -1769,8 +1775,9 @@
         "ref": "幸福朴子2路",
         "name": "幸福朴子2路",
         "name_en": "幸福朴子2路",
-        "color": "#0369a1",
-        "direction": 1
+        "color": "#1e3a8a",
+        "direction": 1,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -3278,6 +3285,10 @@
           [
             120.24847,
             23.45871
+          ],
+          [
+            120.24846,
+            23.45871
           ]
         ]
       }
@@ -3290,7 +3301,7 @@
         "name": "朴子轉運站",
         "name_en": "Puzi Bus Station",
         "line": "幸福朴子2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "138920"
       },
@@ -3310,7 +3321,7 @@
         "name": "朴子加油站",
         "name_en": "Puzi Gas Station",
         "line": "幸福朴子2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "140383"
       },
@@ -3330,7 +3341,7 @@
         "name": "朴子國中",
         "name_en": "Puzi Junior High School",
         "line": "幸福朴子2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "140384"
       },
@@ -3350,7 +3361,7 @@
         "name": "圓光寺",
         "name_en": "YuanKuang Temple",
         "line": "幸福朴子2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "140409"
       },
@@ -3370,7 +3381,7 @@
         "name": "順天宮",
         "name_en": "ShunTian Temple",
         "line": "幸福朴子2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "140386"
       },
@@ -3390,7 +3401,7 @@
         "name": "文化北路口",
         "name_en": "Wenhua North Road Intersection",
         "line": "幸福朴子2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "140387"
       },
@@ -3410,7 +3421,7 @@
         "name": "第一市場",
         "name_en": "1st Market",
         "line": "幸福朴子2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "140410"
       },
@@ -3430,7 +3441,7 @@
         "name": "配天宮",
         "name_en": "PeiTian Temple",
         "line": "幸福朴子2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "140389"
       },
@@ -3450,7 +3461,7 @@
         "name": "老人會館",
         "name_en": "Elder Person Activity Hall",
         "line": "幸福朴子2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "140408"
       },
@@ -3470,7 +3481,7 @@
         "name": "刺繡文化館",
         "name_en": "Embroidery Cultural Museum",
         "line": "幸福朴子2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "140391"
       },
@@ -3490,7 +3501,7 @@
         "name": "朴子農會",
         "name_en": "Pozi Farmers&#39; Association",
         "line": "幸福朴子2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "140399"
       },
@@ -3510,7 +3521,7 @@
         "name": "朴子市場",
         "name_en": "Puzi Market",
         "line": "幸福朴子2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "138923"
       },
@@ -3530,7 +3541,7 @@
         "name": "果菜市場",
         "name_en": "Wholesale Market",
         "line": "幸福朴子2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "138922"
       },
@@ -3550,7 +3561,7 @@
         "name": "朴子天主堂",
         "name_en": "Puzi Catholic Church",
         "line": "幸福朴子2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "142469"
       },
@@ -3570,7 +3581,7 @@
         "name": "東石國中",
         "name_en": "Tungshih Junior High School",
         "line": "幸福朴子2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "138950"
       },
@@ -3590,7 +3601,7 @@
         "name": "天星新村1",
         "name_en": "Tianxing Village 1",
         "line": "幸福朴子2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "140397"
       },
@@ -3610,7 +3621,7 @@
         "name": "巧聖道院",
         "name_en": "Ciaosheng Taoist Temple",
         "line": "幸福朴子2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "140411"
       },
@@ -3630,7 +3641,7 @@
         "name": "新吉庄德安宮",
         "name_en": "Xinjizhuang DeAn Temple",
         "line": "幸福朴子2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "140396"
       },
@@ -3650,7 +3661,7 @@
         "name": "大槺榔",
         "name_en": "Dakanglang",
         "line": "幸福朴子2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "142457"
       },
@@ -3670,7 +3681,7 @@
         "name": "開基祖廟",
         "name_en": "KaiChi Matsu Temple",
         "line": "幸福朴子2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 0,
         "station_id": "142470"
       },
@@ -3690,7 +3701,7 @@
         "name": "朴子轉運站",
         "name_en": "Puzi Bus Station",
         "line": "幸福朴子2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "138920"
       },
@@ -3710,7 +3721,7 @@
         "name": "開基祖廟",
         "name_en": "KaiChi Matsu Temple",
         "line": "幸福朴子2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "140393"
       },
@@ -3730,7 +3741,7 @@
         "name": "大槺榔",
         "name_en": "Dakanglang",
         "line": "幸福朴子2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "140394"
       },
@@ -3750,7 +3761,7 @@
         "name": "巧聖道院",
         "name_en": "Ciaosheng Taoist Temple",
         "line": "幸福朴子2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "140411"
       },
@@ -3770,7 +3781,7 @@
         "name": "新吉庄德安宮",
         "name_en": "Xinjizhuang DeAn Temple",
         "line": "幸福朴子2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "140396"
       },
@@ -3790,7 +3801,7 @@
         "name": "天星新村1",
         "name_en": "Tianxing Village 1",
         "line": "幸福朴子2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "140397"
       },
@@ -3810,7 +3821,7 @@
         "name": "東石國中",
         "name_en": "Tungshih Junior High School",
         "line": "幸福朴子2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "140398"
       },
@@ -3830,7 +3841,7 @@
         "name": "朴子天主堂",
         "name_en": "Puzi Catholic Church",
         "line": "幸福朴子2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "140392"
       },
@@ -3850,7 +3861,7 @@
         "name": "果菜市場",
         "name_en": "Wholesale Market",
         "line": "幸福朴子2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "138921"
       },
@@ -3870,7 +3881,7 @@
         "name": "朴子市場",
         "name_en": "Puzi Market",
         "line": "幸福朴子2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "138924"
       },
@@ -3890,7 +3901,7 @@
         "name": "朴子農會",
         "name_en": "Pozi Farmers&#39; Association",
         "line": "幸福朴子2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "140412"
       },
@@ -3910,7 +3921,7 @@
         "name": "刺繡文化館",
         "name_en": "Embroidery Cultural Museum",
         "line": "幸福朴子2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "142458"
       },
@@ -3930,7 +3941,7 @@
         "name": "老人會館",
         "name_en": "Elder Person Activity Hall",
         "line": "幸福朴子2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "140390"
       },
@@ -3950,7 +3961,7 @@
         "name": "配天宮",
         "name_en": "PeiTian Temple",
         "line": "幸福朴子2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "142459"
       },
@@ -3970,7 +3981,7 @@
         "name": "第一市場",
         "name_en": "1st Market",
         "line": "幸福朴子2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "140388"
       },
@@ -3990,7 +4001,7 @@
         "name": "文化北路口",
         "name_en": "Wenhua North Road Intersection",
         "line": "幸福朴子2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "142460"
       },
@@ -4010,7 +4021,7 @@
         "name": "順天宮",
         "name_en": "ShunTian Temple",
         "line": "幸福朴子2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "142461"
       },
@@ -4030,7 +4041,7 @@
         "name": "圓光寺",
         "name_en": "YuanKuang Temple",
         "line": "幸福朴子2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "140385"
       },
@@ -4050,7 +4061,7 @@
         "name": "朴子國中",
         "name_en": "Puzi Junior High School",
         "line": "幸福朴子2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "142462"
       },
@@ -4070,7 +4081,7 @@
         "name": "朴子加油站",
         "name_en": "Puzi Gas Station",
         "line": "幸福朴子2路",
-        "color": "#0369a1",
+        "color": "#1e3a8a",
         "direction": 1,
         "station_id": "142463"
       },

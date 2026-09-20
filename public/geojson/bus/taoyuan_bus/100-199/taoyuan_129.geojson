@@ -6,13 +6,14 @@
     "name": "129",
     "name_en": "129",
     "ref": "129",
-    "color": "#7c3aed",
+    "color": "#be123c",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "http://ebus.tycg.gov.tw/cms/api/route/12900/map/2289/image",
     "operator_id": "6",
     "operator": "亞通客運",
-    "operator_en": "Yatung Bus Co., Ltd."
+    "operator_en": "Yatung Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "129",
         "name": "129",
         "name_en": "129",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#be123c",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -575,6 +577,10 @@
           [
             121.26478,
             25.01946
+          ],
+          [
+            121.26466,
+            25.01941
           ]
         ]
       }
@@ -587,7 +593,7 @@
         "name": "上興路口",
         "name_en": "ShangShing Road Intersection",
         "line": "129",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1538"
       },
@@ -607,7 +613,7 @@
         "name": "大竹消防隊",
         "name_en": "Dajhu Fire Brigade",
         "line": "129",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1539"
       },
@@ -627,7 +633,7 @@
         "name": "上興興中街口",
         "name_en": "Shangxing and Xingzhong St. Intersection",
         "line": "129",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "3565"
       },
@@ -647,7 +653,7 @@
         "name": "京彩故鄉",
         "name_en": "JingTsaiGuShiang",
         "line": "129",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1540"
       },
@@ -667,7 +673,7 @@
         "name": "大福路口",
         "name_en": "Dafu Rd. Intersection",
         "line": "129",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1541"
       },
@@ -687,7 +693,7 @@
         "name": "胡厝",
         "name_en": "Hucuo",
         "line": "129",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1543"
       },
@@ -707,7 +713,7 @@
         "name": "蘆竹親子館(大竹)",
         "name_en": "Luzhu Parent-child Center(Dazhu)",
         "line": "129",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "3654"
       },
@@ -727,7 +733,7 @@
         "name": "大竹",
         "name_en": "Dazhu",
         "line": "129",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "3651"
       },
@@ -747,7 +753,7 @@
         "name": "上大竹",
         "name_en": "Shangdaju",
         "line": "129",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "3649"
       },
@@ -767,7 +773,7 @@
         "name": "宏邦大鎮",
         "name_en": "HungBangDaJen",
         "line": "129",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1962"
       },
@@ -787,7 +793,7 @@
         "name": "八股坡",
         "name_en": "BaGuPo",
         "line": "129",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1959"
       },
@@ -807,7 +813,7 @@
         "name": "富吉",
         "name_en": "FuJi",
         "line": "129",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "2011"
       },
@@ -827,7 +833,7 @@
         "name": "八角店",
         "name_en": "BaJiauDian",
         "line": "129",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1951"
       },
@@ -847,7 +853,7 @@
         "name": "三和公司",
         "name_en": "Sanho Enterprise Co. Ltd.",
         "line": "129",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1537"
       },
@@ -867,7 +873,7 @@
         "name": "十三號坡",
         "name_en": "Shi san hao po",
         "line": "129",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1535"
       },
@@ -887,7 +893,7 @@
         "name": "星見橋",
         "name_en": "Xingjian bridge",
         "line": "129",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1531"
       },
@@ -907,7 +913,7 @@
         "name": "中埔國小",
         "name_en": "Zhongpu Elementary School",
         "line": "129",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1529"
       },
@@ -927,7 +933,7 @@
         "name": "埔子",
         "name_en": "Puzi",
         "line": "129",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1527"
       },
@@ -947,7 +953,7 @@
         "name": "永安北路",
         "name_en": "Yungan North Road",
         "line": "129",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "391"
       },
@@ -967,7 +973,7 @@
         "name": "南埔里活動中心",
         "name_en": "Nanpuli Activity Center",
         "line": "129",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "389"
       },
@@ -987,7 +993,7 @@
         "name": "永安溫州街口",
         "name_en": "Yongan Wunjhou St. Intersection",
         "line": "129",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "387"
       },
@@ -1007,7 +1013,7 @@
         "name": "蓮華寺",
         "name_en": "Lianhua Temple",
         "line": "129",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "385"
       },
@@ -1027,7 +1033,7 @@
         "name": "力行路口",
         "name_en": "Lixing Road Intersection",
         "line": "129",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "383"
       },
@@ -1047,7 +1053,7 @@
         "name": "民安路口",
         "name_en": "Minan Road Intersection",
         "line": "129",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "381"
       },
@@ -1067,7 +1073,7 @@
         "name": "九崁店",
         "name_en": "JiouKanDian",
         "line": "129",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "379"
       },
@@ -1087,7 +1093,7 @@
         "name": "永安路口",
         "name_en": "Yongan Road Intersection",
         "line": "129",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "375"
       },
@@ -1107,7 +1113,7 @@
         "name": "博愛路口",
         "name_en": "Boai Road Intersection",
         "line": "129",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1112"
       },
@@ -1127,7 +1133,7 @@
         "name": "民族路口",
         "name_en": "Minzu Road Intersection",
         "line": "129",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1113"
       },
@@ -1147,7 +1153,7 @@
         "name": "桃花園飯店",
         "name_en": "Tao Garden Hotel",
         "line": "129",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1948"
       },
@@ -1167,7 +1173,7 @@
         "name": "復興中正路口(桃園火車站)",
         "name_en": "Fuxing and Zhongzheng Rd. Int.(Taoyuan Station)",
         "line": "129",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1340"
       },
@@ -1187,7 +1193,7 @@
         "name": "復興中正路口",
         "name_en": "Fuxing and Zhongzheng Road Intersection",
         "line": "129",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1341"
       },
@@ -1207,7 +1213,7 @@
         "name": "桃園郵局",
         "name_en": "Taoyuan Post Office",
         "line": "129",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "357"
       },
@@ -1227,7 +1233,7 @@
         "name": "永和市場",
         "name_en": "Yonghe Market",
         "line": "129",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "370"
       },
@@ -1247,7 +1253,7 @@
         "name": "成功國小",
         "name_en": "ChengGung Elementary School",
         "line": "129",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "372"
       },
@@ -1267,7 +1273,7 @@
         "name": "永安路口",
         "name_en": "Yongan Road Intersection",
         "line": "129",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "374"
       },
@@ -1287,7 +1293,7 @@
         "name": "九崁店",
         "name_en": "JiouKanDian",
         "line": "129",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "378"
       },
@@ -1307,7 +1313,7 @@
         "name": "民安路口",
         "name_en": "Minan Road Intersection",
         "line": "129",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "380"
       },
@@ -1327,7 +1333,7 @@
         "name": "力行路口",
         "name_en": "Lixing Road Intersection",
         "line": "129",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "382"
       },
@@ -1347,7 +1353,7 @@
         "name": "蓮華寺",
         "name_en": "LianHua Temple",
         "line": "129",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "384"
       },
@@ -1367,7 +1373,7 @@
         "name": "永安溫州街口",
         "name_en": "Yongan Wunjhou St. Intersection",
         "line": "129",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "386"
       },
@@ -1387,7 +1393,7 @@
         "name": "南埔里活動中心",
         "name_en": "Nanpuli Activity Center",
         "line": "129",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "388"
       },
@@ -1407,7 +1413,7 @@
         "name": "永安北路",
         "name_en": "Yungan North Road",
         "line": "129",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "390"
       },
@@ -1427,7 +1433,7 @@
         "name": "埔子",
         "name_en": "Puzi",
         "line": "129",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1526"
       },
@@ -1447,7 +1453,7 @@
         "name": "中埔國小",
         "name_en": "Zhongpu Elementary School",
         "line": "129",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1528"
       },
@@ -1467,7 +1473,7 @@
         "name": "星見橋",
         "name_en": "Xingjian bridge",
         "line": "129",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1530"
       },
@@ -1487,7 +1493,7 @@
         "name": "十三號坡",
         "name_en": "Shi san hao po",
         "line": "129",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1532"
       },
@@ -1507,7 +1513,7 @@
         "name": "三和公司",
         "name_en": "Sanho Enterprise Co. Ltd.",
         "line": "129",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1536"
       },
@@ -1527,7 +1533,7 @@
         "name": "八角店",
         "name_en": "BaJiauDian",
         "line": "129",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1950"
       },
@@ -1547,7 +1553,7 @@
         "name": "富吉",
         "name_en": "FuJi",
         "line": "129",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "2010"
       },
@@ -1567,7 +1573,7 @@
         "name": "八股坡",
         "name_en": "BaGuPo",
         "line": "129",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1958"
       },
@@ -1587,7 +1593,7 @@
         "name": "宏邦大鎮",
         "name_en": "HungBangDaJen",
         "line": "129",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1961"
       },
@@ -1607,7 +1613,7 @@
         "name": "上大竹",
         "name_en": "Shangdaju",
         "line": "129",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "3648"
       },
@@ -1627,7 +1633,7 @@
         "name": "大竹",
         "name_en": "Dazhu",
         "line": "129",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "3650"
       },
@@ -1647,7 +1653,7 @@
         "name": "蘆竹親子館(大竹)",
         "name_en": "Luzhu Parent-child Center(Dazhu)",
         "line": "129",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "3653"
       },
@@ -1667,7 +1673,7 @@
         "name": "胡厝",
         "name_en": "Hucuo",
         "line": "129",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1544"
       },
@@ -1687,7 +1693,7 @@
         "name": "大福路口",
         "name_en": "Dafu Rd. Intersection",
         "line": "129",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "1542"
       },
@@ -1707,7 +1713,7 @@
         "name": "京采故鄉",
         "name_en": "JingTsaiGuShiang",
         "line": "129",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6957"
       },
@@ -1727,7 +1733,7 @@
         "name": "上興興中街口",
         "name_en": "Shangxing and Xingzhong St. Intersection",
         "line": "129",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "7011"
       },
@@ -1747,7 +1753,7 @@
         "name": "大竹消防隊",
         "name_en": "Dazhu Fire Brigade",
         "line": "129",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "6535"
       },
@@ -1767,7 +1773,7 @@
         "name": "上興路口",
         "name_en": "ShangShing Road Intersection",
         "line": "129",
-        "color": "#7c3aed",
+        "color": "#be123c",
         "direction": 0,
         "station_id": "7020"
       },

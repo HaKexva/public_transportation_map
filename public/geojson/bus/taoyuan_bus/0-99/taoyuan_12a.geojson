@@ -6,12 +6,13 @@
     "name": "12A",
     "name_en": "12A",
     "ref": "12A",
-    "color": "#1e3a8a",
+    "color": "#ea580c",
     "city_id": "Taoyuan",
     "source": "TDX Bus Shape / StopOfRoute",
     "operator_id": "4",
     "operator": "統聯客運",
-    "operator_en": "United Highway Bus Co., Ltd."
+    "operator_en": "United Highway Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -21,8 +22,9 @@
         "ref": "12A",
         "name": "12A",
         "name_en": "12A",
-        "color": "#1e3a8a",
-        "direction": 0
+        "color": "#ea580c",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -542,6 +544,10 @@
           [
             121.28126,
             24.93557
+          ],
+          [
+            121.28097,
+            24.93564
           ]
         ]
       }
@@ -554,7 +560,7 @@
         "name": "溪濱公園",
         "name_en": "Xibin Park",
         "line": "12A",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4536"
       },
@@ -574,7 +580,7 @@
         "name": "建德長興路口",
         "name_en": "Jiande and Changxing Road Intersection",
         "line": "12A",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4494"
       },
@@ -594,7 +600,7 @@
         "name": "建德興豐路口(G01)",
         "name_en": "Jiande Xingfeng Intersection (G01)",
         "line": "12A",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "3809"
       },
@@ -614,7 +620,7 @@
         "name": "深耕十期社區",
         "name_en": "Shengeng Community,Phase 10",
         "line": "12A",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "3811"
       },
@@ -634,7 +640,7 @@
         "name": "豐德中正路口",
         "name_en": "Fengde Zhongzheng Intersection",
         "line": "12A",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "3813"
       },
@@ -654,7 +660,7 @@
         "name": "遠雄艾菲爾",
         "name_en": "Far Glory Eiffel",
         "line": "12A",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "3804"
       },
@@ -674,7 +680,7 @@
         "name": "墨爾本社區",
         "name_en": "Melbourne Community",
         "line": "12A",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "1350"
       },
@@ -694,7 +700,7 @@
         "name": "介壽豐德路口",
         "name_en": "Jieshou Fengde Intersection",
         "line": "12A",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "1256"
       },
@@ -714,7 +720,7 @@
         "name": "忠誠新村",
         "name_en": "Zhongcheng Village",
         "line": "12A",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "1254"
       },
@@ -734,7 +740,7 @@
         "name": "瑞祥",
         "name_en": "Ruixiang",
         "line": "12A",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "3464"
       },
@@ -754,7 +760,7 @@
         "name": "更寮腳(介壽路)",
         "name_en": "Gengliaojiao (Jieshou Road)",
         "line": "12A",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "1252"
       },
@@ -774,7 +780,7 @@
         "name": "瑞發家園",
         "name_en": "Ruifa Homeland",
         "line": "12A",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "3172"
       },
@@ -794,7 +800,7 @@
         "name": "瑞豐國小(桃園防災教育館)",
         "name_en": "Ruifeng Elementary School Taoyuan Disaster Prevention Education Hall",
         "line": "12A",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "1250"
       },
@@ -814,7 +820,7 @@
         "name": "松柏園",
         "name_en": "Pine and Cypress Garden",
         "line": "12A",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "6960"
       },
@@ -834,7 +840,7 @@
         "name": "欣桃社區",
         "name_en": "Xintao Community",
         "line": "12A",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "1248"
       },
@@ -854,7 +860,7 @@
         "name": "梅花社區",
         "name_en": "Meihua Community",
         "line": "12A",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "1244"
       },
@@ -874,7 +880,7 @@
         "name": "麻園站(G03)",
         "name_en": "Mayuan Station G03",
         "line": "12A",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4198"
       },
@@ -894,7 +900,7 @@
         "name": "鴻昌社區",
         "name_en": "Hongchang Community",
         "line": "12A",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "1242"
       },
@@ -914,7 +920,7 @@
         "name": "瑞祥社區",
         "name_en": "Ruixiang Community",
         "line": "12A",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "1273"
       },
@@ -934,7 +940,7 @@
         "name": "大湳站(G04)",
         "name_en": "Danan Station G04",
         "line": "12A",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "1724"
       },
@@ -954,7 +960,7 @@
         "name": "陸光四村",
         "name_en": "Luguang 4th Village",
         "line": "12A",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "1257"
       },
@@ -974,7 +980,7 @@
         "name": "介壽大智路口",
         "name_en": "Jieshou & Dazhi Rd. Intersection",
         "line": "12A",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "3144"
       },
@@ -994,7 +1000,7 @@
         "name": "大義里",
         "name_en": "Dayi Neighborhood",
         "line": "12A",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "1259"
       },
@@ -1014,7 +1020,7 @@
         "name": "大成龍門社區",
         "name_en": "Dacheng Longmen Community",
         "line": "12A",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "1271"
       },
@@ -1034,7 +1040,7 @@
         "name": "八德轉運站",
         "name_en": "Bade Bus Station",
         "line": "12A",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "6882"
       },
@@ -1054,7 +1060,7 @@
         "name": "桃園長庚轉運站",
         "name_en": "Taoyuan Chang Gung Bus Terminal",
         "line": "12A",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "6713"
       },
@@ -1074,7 +1080,7 @@
         "name": "大成龍門社區",
         "name_en": "Dacheng Longmen Community",
         "line": "12A",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "1272"
       },
@@ -1094,7 +1100,7 @@
         "name": "大義里",
         "name_en": "Dayi Neighborhood",
         "line": "12A",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "1260"
       },
@@ -1114,7 +1120,7 @@
         "name": "介壽大智路口",
         "name_en": "Jieshou & Dazhi Rd. Intersection",
         "line": "12A",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "7014"
       },
@@ -1134,7 +1140,7 @@
         "name": "陸光四村",
         "name_en": "The 4th village of Lu guang",
         "line": "12A",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "1258"
       },
@@ -1154,7 +1160,7 @@
         "name": "大湳站(G04)",
         "name_en": "Danan Station G04",
         "line": "12A",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "1723"
       },
@@ -1174,7 +1180,7 @@
         "name": "瑞祥社區",
         "name_en": "Ruixiang Community",
         "line": "12A",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "1274"
       },
@@ -1194,7 +1200,7 @@
         "name": "鴻昌社區",
         "name_en": "Hongchang Community",
         "line": "12A",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "1241"
       },
@@ -1214,7 +1220,7 @@
         "name": "麻園站(G03)",
         "name_en": "Mayuan Station G03",
         "line": "12A",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4199"
       },
@@ -1234,7 +1240,7 @@
         "name": "梅花社區",
         "name_en": "Meihua Community",
         "line": "12A",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "1243"
       },
@@ -1254,7 +1260,7 @@
         "name": "欣桃社區",
         "name_en": "Xintao Community",
         "line": "12A",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "1247"
       },
@@ -1274,7 +1280,7 @@
         "name": "松柏園",
         "name_en": "Pine and Cypress Garden",
         "line": "12A",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "6961"
       },
@@ -1294,7 +1300,7 @@
         "name": "瑞豐國小(桃園防災教育館)",
         "name_en": "Ruifeng Elementary School Taoyuan Disaster Prevention Education Hall",
         "line": "12A",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "1249"
       },
@@ -1314,7 +1320,7 @@
         "name": "瑞發家園",
         "name_en": "Ruifa Homeland",
         "line": "12A",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "3171"
       },
@@ -1334,7 +1340,7 @@
         "name": "更寮腳(介壽路)",
         "name_en": "Gengliaojiao (Jieshou Road)",
         "line": "12A",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "1251"
       },
@@ -1354,7 +1360,7 @@
         "name": "瑞祥",
         "name_en": "Ruixiang",
         "line": "12A",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "3463"
       },
@@ -1374,7 +1380,7 @@
         "name": "忠誠新村",
         "name_en": "Zhongcheng Village",
         "line": "12A",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "1253"
       },
@@ -1394,7 +1400,7 @@
         "name": "介壽豐德路口",
         "name_en": "Jieshou Fengde Intersection",
         "line": "12A",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "1255"
       },
@@ -1414,7 +1420,7 @@
         "name": "墨爾本社區",
         "name_en": "Melbourne Community",
         "line": "12A",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "1351"
       },
@@ -1434,7 +1440,7 @@
         "name": "遠雄艾菲爾",
         "name_en": "Far Glory Eiffel",
         "line": "12A",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "3803"
       },
@@ -1454,7 +1460,7 @@
         "name": "豐德中正路口",
         "name_en": "Fengde Zhongzheng Intersection",
         "line": "12A",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "3814"
       },
@@ -1474,7 +1480,7 @@
         "name": "深耕十期社區",
         "name_en": "Shengeng Community, Phase 10",
         "line": "12A",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "3812"
       },
@@ -1494,7 +1500,7 @@
         "name": "建德興豐路口(G01)",
         "name_en": "Jiande Xingfeng intersection (G01)",
         "line": "12A",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "3810"
       },
@@ -1514,7 +1520,7 @@
         "name": "建德長興路口",
         "name_en": "Jiande and Changxing Road Intersection",
         "line": "12A",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4495"
       },
@@ -1534,7 +1540,7 @@
         "name": "溪濱公園",
         "name_en": "Xibin Park",
         "line": "12A",
-        "color": "#1e3a8a",
+        "color": "#ea580c",
         "direction": 0,
         "station_id": "4537"
       },

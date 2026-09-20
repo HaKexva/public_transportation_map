@@ -6,13 +6,14 @@
     "name": "台灣好行-D線-榕園太湖線",
     "name_en": "台灣好行-D線-榕園太湖線",
     "ref": "台灣好行-D線-榕園太湖線",
-    "color": "#86198f",
+    "color": "#3730a3",
     "city_id": "KinmenCounty",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.kinmen.gov.tw/extend/route20230601/d.png",
     "operator_id": "0001",
     "operator": "金門",
-    "operator_en": "City Bus and Ferry Management Office, Kinmen County"
+    "operator_en": "City Bus and Ferry Management Office, Kinmen County",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "台灣好行-D線-榕園太湖線",
         "name": "台灣好行-D線-榕園太湖線",
         "name_en": "台灣好行-D線-榕園太湖線",
-        "color": "#86198f",
-        "direction": 0
+        "color": "#3730a3",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -571,6 +573,10 @@
           [
             118.41401,
             24.44243
+          ],
+          [
+            118.41378,
+            24.4422
           ]
         ]
       }
@@ -583,7 +589,7 @@
         "name": "山外站",
         "name_en": "Shanwai Station",
         "line": "台灣好行-D線-榕園太湖線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "29"
       },
@@ -603,7 +609,7 @@
         "name": "八二三戰史館、榕園及俞大維紀念館",
         "name_en": "August 23rd Artillery Battle Museum,Banyan Park, Mr.Yu Da-wei Memorial Hall",
         "line": "台灣好行-D線-榕園太湖線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "911"
       },
@@ -623,7 +629,7 @@
         "name": "特約茶室展示館",
         "name_en": "Military Brothel Exhibition Hall",
         "line": "台灣好行-D線-榕園太湖線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "912"
       },
@@ -643,7 +649,7 @@
         "name": "瓊林聚落",
         "name_en": "Qionglin",
         "line": "台灣好行-D線-榕園太湖線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "154"
       },
@@ -663,7 +669,7 @@
         "name": "自行車故事館",
         "name_en": "Bicycle Story House",
         "line": "台灣好行-D線-榕園太湖線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "913"
       },
@@ -683,7 +689,7 @@
         "name": "陳景蘭洋樓",
         "name_en": "Chen jinglan's Western Style House",
         "line": "台灣好行-D線-榕園太湖線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "914"
       },
@@ -703,7 +709,7 @@
         "name": "山外站",
         "name_en": "Shanwai Station",
         "line": "台灣好行-D線-榕園太湖線",
-        "color": "#86198f",
+        "color": "#3730a3",
         "direction": 0,
         "station_id": "29"
       },

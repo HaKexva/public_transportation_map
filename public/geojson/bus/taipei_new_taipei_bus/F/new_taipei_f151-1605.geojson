@@ -6,13 +6,14 @@
     "name": "F151-1605",
     "name_en": "F151-1605",
     "ref": "F151-1605",
-    "color": "#0B7A3E",
+    "color": "#6B8F9A",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://ebus.gov.taipei/File/Get/de440cb3-7dd5-422b-af3f-75a737a3675a?v=639248448777504878",
     "operator_id": "16231",
     "operator": "石門區公所",
-    "operator_en": "Shimen District Office"
+    "operator_en": "Shimen District Office",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "F151-1605",
         "name": "F151-1605",
         "name_en": "F151-1605",
-        "color": "#0B7A3E",
-        "direction": 0
+        "color": "#6B8F9A",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -2607,6 +2609,10 @@
           [
             121.567685727044,
             25.291844620476
+          ],
+          [
+            121.567445328241,
+            25.291842583198
           ]
         ]
       }
@@ -2619,7 +2625,7 @@
         "name": "石門區公所",
         "name_en": "Shimen District office",
         "line": "F151-1605",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75534"
       },
@@ -2639,7 +2645,7 @@
         "name": "尖子鹿",
         "name_en": "Yide St. Intersection",
         "line": "F151-1605",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75601"
       },
@@ -2659,7 +2665,7 @@
         "name": "茄苳腳",
         "name_en": "Jiadongjiao",
         "line": "F151-1605",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165609215"
       },
@@ -2679,7 +2685,7 @@
         "name": "內阿里磅50號",
         "name_en": "Nei Alibang No. 50",
         "line": "F151-1605",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165610513"
       },
@@ -2699,7 +2705,7 @@
         "name": "十塊厝",
         "name_en": "Shikuaicuo",
         "line": "F151-1605",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "75583"
       },
@@ -2719,7 +2725,7 @@
         "name": "茄苳腳",
         "name_en": "Jiadongjiao",
         "line": "F151-1605",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165609216"
       },
@@ -2739,7 +2745,7 @@
         "name": "石門區公所",
         "name_en": "Shimen District office",
         "line": "F151-1605",
-        "color": "#0B7A3E",
+        "color": "#6B8F9A",
         "direction": 0,
         "station_id": "1165610481"
       },

@@ -6,13 +6,14 @@
     "name": "508",
     "name_en": "508",
     "ref": "508",
-    "color": "#7c3aed",
+    "color": "#2563eb",
     "city_id": "PingtungCounty",
     "source": "TDX Bus Shape / StopOfRoute",
     "official_map_url": "https://web.taiwanbus.tw/MISUploadData/Schematic/file/0734.jpg",
     "operator_id": "29",
     "operator": "屏東客運",
-    "operator_en": "Pingtung Bus Co., Ltd."
+    "operator_en": "Pingtung Bus Co., Ltd.",
+    "loop": true
   },
   "features": [
     {
@@ -22,8 +23,9 @@
         "ref": "508",
         "name": "508",
         "name_en": "508",
-        "color": "#7c3aed",
-        "direction": 0
+        "color": "#2563eb",
+        "direction": 0,
+        "loop": true
       },
       "geometry": {
         "type": "LineString",
@@ -8243,7 +8245,7 @@
         "name": "屏東轉運站",
         "name_en": "Pingtung Bus Station",
         "line": "508",
-        "color": "#7c3aed",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "139463"
       },
@@ -8263,7 +8265,7 @@
         "name": "谷川大橋遊憩區",
         "name_en": "Guchuan Bridge Lookout &amp; Guchuan Tourist Information Center",
         "line": "508",
-        "color": "#7c3aed",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "139464"
       },
@@ -8283,7 +8285,7 @@
         "name": "神山部落(霧台鄉公所)",
         "name_en": "Shen-Shan Tribe Village (Wutai Village Office)",
         "line": "508",
-        "color": "#7c3aed",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "139465"
       },
@@ -8303,7 +8305,7 @@
         "name": "霧台部落",
         "name_en": "Wutai Tribe Village",
         "line": "508",
-        "color": "#7c3aed",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "139466"
       },
@@ -8323,7 +8325,7 @@
         "name": "禮納里部落",
         "name_en": "Rinari Tribe Village",
         "line": "508",
-        "color": "#7c3aed",
+        "color": "#2563eb",
         "direction": 0,
         "station_id": "139468"
       },
