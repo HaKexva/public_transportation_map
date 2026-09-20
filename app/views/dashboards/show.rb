@@ -301,6 +301,7 @@ module Views
               data: {
                 map_target: "transportModeChip",
                 transport_mode: mode[:id],
+                action: "click->map#selectTransportMode",
                 turbo_action: "advance"
               }
             ) { mode[:label] }

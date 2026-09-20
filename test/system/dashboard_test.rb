@@ -188,7 +188,7 @@ class DashboardTest < ApplicationSystemTestCase
     assert_no_selector ".is-booting"
     assert_selector "#layer-wenhu_line:not([disabled])", visible: :all, wait: 5
     assert_selector "#layer-bannan:not([disabled])", visible: :all, wait: 5
-    assert_selector "#layer-keelung_101_zhongzheng:not(:checked)", visible: :all
+    assert_selector ".map-transport-mode__chip", text: "公車"
   end
 
   test "filters sidebar routes from the search box" do
@@ -273,8 +273,8 @@ class DashboardTest < ApplicationSystemTestCase
     assert_no_text "全部路線"
     assert_selector ".layer-category-chip", text: "捷運與輕軌"
     assert_selector ".layer-category-chip", text: "台鐵"
-    assert_selector ".layer-category-chip", text: "公車"
     assert_selector ".layer-category-chip", text: "其他"
+    assert_selector ".map-transport-mode__chip", text: "公車"
     assert_no_selector ".layer-category-chip", text: "全部"
     assert_text "捷運"
     assert_no_text "即將推出"
@@ -293,15 +293,9 @@ class DashboardTest < ApplicationSystemTestCase
   end
 
   test "nests city hundreds and highway operator folds on the bus layer" do
-    visit root_path
+    visit bus_map_path
     assert_selector ".map-boot-overlay[hidden]", visible: :all, wait: 30
 
-    assert_selector ".map-transport-mode__chip--active", text: "軌道運輸"
-    assert_equal "/", URI.parse(current_url).path
-
-    find(".map-transport-mode__chip", text: "公車").click
-
-    assert_selector ".map-boot-overlay[hidden]", visible: :all, wait: 30
     assert_equal "/bus", URI.parse(current_url).path
     assert_selector ".map-transport-mode__chip--active", text: "公車"
     assert_selector ".map-region-switcher.is-hidden", visible: :all
@@ -1089,13 +1083,16 @@ class DashboardTest < ApplicationSystemTestCase
     assert_selector ".map-boot-overlay[hidden]", visible: :all, wait: 30
     assert_selector "#map-layers-panel-body", visible: :visible
 
-    find(".map-ui-panel__toggle", visible: :all).click
+    toggle = find(".map-ui-panel__toggle[aria-controls='map-layers-panel-body']", visible: :all)
+    toggle.click
     assert_selector ".map-split-layout--sidebar-collapsed", wait: 5
     assert_selector "#map-layers-panel-body", visible: :hidden
+    assert_selector ".map-ui-panel__toggle[aria-expanded='false']", visible: :all
 
-    find(".map-ui-panel__toggle", visible: :all).click
+    find(".map-ui-panel__toggle[aria-controls='map-layers-panel-body']", visible: :all).click
     assert_no_selector ".map-split-layout--sidebar-collapsed", wait: 5
     assert_selector "#map-layers-panel-body", visible: :visible
+    assert_selector ".map-ui-panel__toggle[aria-expanded='true']", visible: :all
   end
 
   private

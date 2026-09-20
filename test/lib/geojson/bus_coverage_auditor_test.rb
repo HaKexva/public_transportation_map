@@ -19,7 +19,11 @@ class GeojsonBusCoverageAuditorTest < ActiveSupport::TestCase
 
   setup do
     @output_dir = Rails.root.join("tmp/test_bus_coverage_#{SecureRandom.hex(4)}")
-    @route_file = Rails.root.join("public/geojson/bus/miaoli_county_101.geojson")
+    @route_file = Geojson::BusLayout.geojson_path(
+      city_id: "MiaoliCounty",
+      slug: "miaoli_county_101",
+      ref: "101"
+    )
     @had_route_file = @route_file.exist?
     @route_backup = @had_route_file ? @route_file.read : nil
   end

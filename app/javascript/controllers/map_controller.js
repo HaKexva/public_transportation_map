@@ -574,8 +574,11 @@ export default class extends Controller {
     const L = window.L
     const mapElement = this.hasMapTarget ? this.mapTarget : this.element
 
+    // System tests assert SVG path/className selectors; Canvas paints vectors
+    // without those DOM nodes. Keep Canvas in production for bus-layer scale.
+    const preferCanvas = document.querySelector('meta[name="rails-env"]')?.content !== "test"
     this.map = L.map(mapElement, {
-      preferCanvas: true,
+      preferCanvas,
       zoomControl: true,
       scrollWheelZoom: true,
       dragging: true,
@@ -871,6 +874,7 @@ export default class extends Controller {
   async selectTransportMode(event) {
     const mode = event.currentTarget?.dataset?.transportMode
     if (!TRANSPORT_MODES.includes(mode)) return
+    event.preventDefault?.()
     // Prefer real page navigation between / and /bus.
     const path = this.transportModePath(mode)
     if (window.location.pathname !== path) {

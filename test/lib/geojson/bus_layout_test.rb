@@ -18,7 +18,7 @@ class GeojsonBusLayoutTest < ActiveSupport::TestCase
     assert_equal "public/geojson/bus/keelung_bus/1000+/keelung_1717.geojson", four_digit.relative_path_from(Rails.root).to_s
 
     tourist = Geojson::BusLayout.geojson_path(city_id: "Keelung", slug: "keelung_r66", ref: "R66")
-    assert_includes tourist.to_s, "R, T"
+    assert_includes tourist.to_s, "/keelung_bus/r-t/"
   end
 
   test "skips band subfolders for counties with fewer than ten routes" do
@@ -32,7 +32,7 @@ class GeojsonBusLayoutTest < ActiveSupport::TestCase
     skip "needs taichung data" unless Geojson::BusLayout.route_counts["Taichung"].to_i >= Geojson::BusLayout::MIN_ROUTES_FOR_BANDS
 
     path = Geojson::BusLayout.geojson_path(city_id: "Taichung", slug: "taichung_huang1", ref: "黃1")
-    assert_includes path.to_s, "/taichung_bus/黃/"
+    assert_includes path.to_s, "/taichung_bus/huang/"
   end
 
   test "infers city id from slug prefix" do
