@@ -297,9 +297,12 @@ class DashboardTest < ApplicationSystemTestCase
     assert_selector ".map-boot-overlay[hidden]", visible: :all, wait: 30
 
     assert_selector ".map-transport-mode__chip--active", text: "軌道運輸"
+    assert_equal "/", URI.parse(current_url).path
 
     find(".map-transport-mode__chip", text: "公車").click
 
+    assert_selector ".map-boot-overlay[hidden]", visible: :all, wait: 30
+    assert_equal "/bus", URI.parse(current_url).path
     assert_selector ".map-transport-mode__chip--active", text: "公車"
     assert_selector ".map-region-switcher.is-hidden", visible: :all
     assert_selector ".bus-fold__trigger", text: "大台北"

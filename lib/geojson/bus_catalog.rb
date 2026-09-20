@@ -203,28 +203,53 @@ module Geojson
       "#{band}-#{band + 99}"
     end
 
+    # On-disk folder names must stay ASCII (git, URLs, shells). Labels stay in i18n.
     SPECIAL_BAND_DIRS = {
-      keelung_tr: "R, T",
-      color_hong: "紅",
-      color_lan: "藍",
-      color_lu: "綠",
-      color_zong: "棕",
-      color_ju: "橘",
-      color_huang: "黃",
-      xiao: "小",
-      ankeng: "安坑",
-      f_series: "F",
-      neike_commuter: "內科通勤",
-      neike_express: "內科快線",
-      nangang_soft: "南軟",
-      commuter: "通勤",
-      trunk: "幹線",
-      civic_minibus: "市民小巴",
-      maokong: "貓空",
-      beishi: "北士科",
-      huaien: "懷恩專車",
-      named_line: "路線",
+      keelung_tr: "r-t",
+      color_hong: "hong",
+      color_lan: "lan",
+      color_lu: "lu",
+      color_zong: "zong",
+      color_ju: "ju",
+      color_huang: "huang",
+      xiao: "xiao",
+      ankeng: "ankeng",
+      f_series: "f",
+      neike_commuter: "neike-commuter",
+      neike_express: "neike-express",
+      nangang_soft: "nangang-soft",
+      commuter: "commuter",
+      trunk: "trunk",
+      civic_minibus: "civic-minibus",
+      maokong: "maokong",
+      beishi: "beishi",
+      huaien: "huaien",
+      named_line: "named",
       OTHER_BAND => "other"
+    }.freeze
+
+    # Pre-ASCII folder names still found in older checkouts / caches.
+    LEGACY_BAND_DIRS = {
+      "R, T" => "r-t",
+      "紅" => "hong",
+      "藍" => "lan",
+      "綠" => "lu",
+      "棕" => "zong",
+      "橘" => "ju",
+      "黃" => "huang",
+      "小" => "xiao",
+      "安坑" => "ankeng",
+      "F" => "f",
+      "內科通勤" => "neike-commuter",
+      "內科快線" => "neike-express",
+      "南軟" => "nangang-soft",
+      "通勤" => "commuter",
+      "幹線" => "trunk",
+      "市民小巴" => "civic-minibus",
+      "貓空" => "maokong",
+      "北士科" => "beishi",
+      "懷恩專車" => "huaien",
+      "路線" => "named"
     }.freeze
 
     def browse_band_dir(ref, city_id: nil)
@@ -237,6 +262,22 @@ module Geojson
       else
         "other"
       end
+    end
+
+    def browse_band_key(band)
+      case band
+      when Integer then band.to_s
+      when Symbol then band.to_s
+      else OTHER_BAND.to_s
+      end
+    end
+
+    def parse_browse_band_key(value)
+      text = value.to_s.strip
+      return nil if text.blank?
+      return text.to_i if text.match?(/\A\d+\z/)
+
+      text.to_sym
     end
 
     def special_band?(band)

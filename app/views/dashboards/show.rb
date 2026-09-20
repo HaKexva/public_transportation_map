@@ -3,8 +3,9 @@
 module Views
   module Dashboards
     class Show < Views::Base
-      def initialize(routes_manifest: {})
+      def initialize(routes_manifest: {}, transport_mode: "rail")
         @routes_manifest = routes_manifest
+        @transport_mode = transport_mode.to_s.presence_in(%w[rail bus]) || "rail"
         super()
       end
 
@@ -22,6 +23,7 @@ module Views
           data: {
             controller: "map split-pane",
             map_auto_default_layers_value: "false",
+            map_transport_mode_value: @transport_mode,
             map_routes_manifest_url_value: static_geojson_url("geojson/routes.json"),
             map_metro_depots_url_value: static_geojson_url("geojson/metro_depots.json"),
             map_bus_depots_url_value: static_geojson_url("geojson/bus_depots.json"),
@@ -283,23 +285,23 @@ module Views
           aria: { label: t("map.transport_modes.aria") }
         ) do
           [
-            { id: "rail", label: t("map.transport_modes.rail") },
-            { id: "bus", label: t("map.transport_modes.bus") }
+            { id: "rail", label: t("map.transport_modes.rail"), href: root_path },
+            { id: "bus", label: t("map.transport_modes.bus"), href: bus_map_path }
           ].each do |mode|
-            active = mode[:id] == "rail"
+            active = mode[:id] == @transport_mode
 
-            button(
-              type: :button,
+            a(
+              href: mode[:href],
               class: [
                 "map-transport-mode__chip",
                 active ? "map-transport-mode__chip--active" : nil
               ].compact.join(" "),
               role: "tab",
-              aria: { selected: active, pressed: active },
+              aria: { selected: active, pressed: active, current: (active ? "page" : nil) }.compact,
               data: {
                 map_target: "transportModeChip",
                 transport_mode: mode[:id],
-                action: "click->map#selectTransportMode"
+                turbo_action: "advance"
               }
             ) { mode[:label] }
           end
@@ -564,7 +566,7 @@ module Views
                 bus_hint: t("map.transport_modes.bus_hint")
               }
             ) do
-              t("map.transport_modes.rail_hint")
+              @transport_mode == "bus" ? t("map.transport_modes.bus_hint") : t("map.transport_modes.rail_hint")
             end
           end
 
@@ -826,6 +828,7 @@ module Views
         city_id = city.respond_to?(:id) ? city.id : city.to_s
         label = bus_hundreds_band_label(band)
         sorted_routes = Geojson::BusCatalog.sort_routes(routes)
+        band_key = Geojson::BusCatalog.browse_band_key(band)
 
         render RubyUI::Collapsible.new(
           open: false,
@@ -833,7 +836,9 @@ module Views
           data: {
             map_target: "layerSearchGroup",
             category: "bus",
-            search_text: bus_hundreds_search_text(city_id, label, sorted_routes)
+            search_text: bus_hundreds_search_text(city_id, label, sorted_routes),
+            bus_city: city_id,
+            bus_band: band_key
           }
         ) do
           div(class: "flex items-center gap-2") do
@@ -847,15 +852,16 @@ module Views
               end
             end
             render_compact_select_all(
-              id: "bus-#{city_id}-#{band}",
+              id: "bus-#{city_id}-#{band_key}",
               action: "click->map#stopCheckboxEvent change->map#toggleRouteGroup",
-              route_ids_param: bus_route_ids_param(sorted_routes),
+              bus_city_param: city_id,
+              bus_band_param: band_key,
               label: t("map.select_all_bus_band", label: label)
             )
           end
 
           render RubyUI::CollapsibleContent.new(class: "hidden") do
-            render_bus_route_bucket(sorted_routes)
+            render_bus_route_bucket(city_id: city_id, band_key: band_key)
           end
         end
       end
@@ -875,7 +881,9 @@ module Views
           data: {
             map_target: "layerSearchGroup",
             category: "bus",
-            search_text: bus_operator_search_text(city, operator, operator_routes)
+            search_text: bus_operator_search_text(city, operator, operator_routes),
+            bus_city: city.id,
+            bus_operator: operator["id"]
           }
         ) do
           div(class: "flex items-center gap-2") do
@@ -892,7 +900,8 @@ module Views
               render_compact_select_all(
                 id: "bus-#{city.id}-#{operator['id']}",
                 action: "click->map#stopCheckboxEvent change->map#toggleRouteGroup",
-                route_ids_param: bus_route_ids_param(operator_routes),
+                bus_city_param: city.id,
+                bus_operator_param: operator["id"],
                 label: t("map.select_all_bus_band", label: label)
               )
             end
@@ -902,7 +911,7 @@ module Views
             if operator_routes.empty?
               p(class: "bus-fold__empty px-1 py-1.5 text-xs text-muted-foreground") { t("map.bus.empty") }
             else
-              render_bus_route_bucket(operator_routes)
+              render_bus_route_bucket(city_id: city.id, operator_id: operator["id"])
             end
           end
         end
@@ -922,15 +931,14 @@ module Views
       end
 
       # Defer ~thousands of bus checkbox rows until a band/operator fold opens.
-      # Eager HTML was multi‑MB and left the map controller unable to finish boot.
-      def render_bus_route_bucket(routes)
-        div(
-          class: "flex flex-col gap-0.5",
-          data: {
-            map_target: "busRouteBucket",
-            route_ids: bus_route_ids_param(routes)
-          }
-        ) do
+      # Scope keys (city/band/operator) stay tiny; route ids resolve from the bus manifest.
+      def render_bus_route_bucket(city_id: nil, band_key: nil, operator_id: nil)
+        data = { map_target: "busRouteBucket" }
+        data[:bus_city] = city_id if city_id.present?
+        data[:bus_band] = band_key if band_key.present?
+        data[:bus_operator] = operator_id if operator_id.present?
+
+        div(class: "flex flex-col gap-0.5", data: data) do
           p(
             class: "bus-fold__loading px-2 py-2 text-xs text-muted-foreground",
             data: { bus_bucket_placeholder: true }
@@ -954,14 +962,29 @@ module Views
         end
       end
 
-      def render_compact_select_all(id:, action:, label:, metro_system_param: nil, route_ids_param: nil, bus_group_param: nil)
+      def render_compact_select_all(
+        id:,
+        action:,
+        label:,
+        metro_system_param: nil,
+        route_ids_param: nil,
+        bus_group_param: nil,
+        bus_city_param: nil,
+        bus_band_param: nil,
+        bus_operator_param: nil
+      )
+        scoped = route_ids_param.present? || bus_group_param.present? ||
+          bus_city_param.present? || bus_band_param.present? || bus_operator_param.present?
         checkbox_data = {
-          map_target: (route_ids_param.present? || bus_group_param.present?) ? "layerCheckbox routeGroupCheckbox" : "layerCheckbox",
+          map_target: scoped ? "layerCheckbox routeGroupCheckbox" : "layerCheckbox",
           action: action
         }
         checkbox_data[:map_metro_system_param] = metro_system_param if metro_system_param
         checkbox_data[:map_route_ids_param] = route_ids_param if route_ids_param.present?
         checkbox_data[:map_bus_group_param] = bus_group_param if bus_group_param.present?
+        checkbox_data[:map_bus_city_param] = bus_city_param if bus_city_param.present?
+        checkbox_data[:map_bus_band_param] = bus_band_param if bus_band_param.present?
+        checkbox_data[:map_bus_operator_param] = bus_operator_param if bus_operator_param.present?
 
         label(class: "inline-flex shrink-0 cursor-pointer items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground") do
           input(
@@ -1202,7 +1225,7 @@ module Views
         t("map.bus.bands.#{band}")
       end
 
-      def bus_hundreds_search_text(city, label, routes)
+      def bus_hundreds_search_text(city, label, _routes)
         city_id = city.respond_to?(:id) ? city.id : city.to_s
         city_label = if city_id == "GreaterTaipei"
           t("map.bus.regions.greater_taipei")
@@ -1214,8 +1237,7 @@ module Views
           city_label,
           city_id,
           label,
-          label.to_s.tr("–", "-"),
-          *Array(routes).filter_map { |route| route["ref"] }
+          label.to_s.tr("–", "-")
         ].compact.join(" ")
       end
 
@@ -1227,8 +1249,7 @@ module Views
           operator["name"],
           operator["name_en"],
           operator["id"],
-          *ranges,
-          *Array(routes).filter_map { |route| route["ref"] }
+          *ranges
         ].compact.join(" ")
       end
 

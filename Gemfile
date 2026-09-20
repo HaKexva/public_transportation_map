@@ -65,6 +65,8 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
+  # CVE-2026-85396: path traversal in Zip::Entry#extract before 3.4.0
+  gem "rubyzip", ">= 3.4.0"
 end
 
 gem "ruby_ui", "~> 1.3", group: :development, require: false

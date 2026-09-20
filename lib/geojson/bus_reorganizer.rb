@@ -39,7 +39,9 @@ module Geojson
         next already_placed << slug if pathname == target
 
         if target.exist? && pathname != target
-          skipped << "#{slug} (target exists: #{target.relative_path_from(Rails.root.join('public'))})"
+          # Canonical ASCII path already has the file (e.g. F/ → f/); drop the stray copy.
+          FileUtils.rm(pathname)
+          moved << "#{slug} (removed duplicate)"
           next
         end
 

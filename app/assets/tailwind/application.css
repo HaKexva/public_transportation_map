@@ -384,6 +384,9 @@
 
 .map-transport-mode__chip {
   appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   min-width: 4.5rem;
   border: 0;
   border-radius: 0.45rem;
@@ -393,6 +396,7 @@
   font-size: 0.85rem;
   font-weight: 700;
   line-height: 1.2;
+  text-decoration: none;
   cursor: pointer;
 }
 
@@ -406,9 +410,12 @@
   color: var(--foreground);
 }
 
-.map-transport-mode__chip:disabled {
+.map-transport-mode__chip:disabled,
+.map-transport-mode__chip.is-switching,
+.map-transport-mode__chip[aria-disabled="true"] {
   opacity: 0.55;
   cursor: wait;
+  pointer-events: none;
 }
 
 .map-region-switcher {

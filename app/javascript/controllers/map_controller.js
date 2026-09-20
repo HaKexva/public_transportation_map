@@ -6,7 +6,6 @@ import { buildChainage, longestTrackLine, nearestDistance, pointAtDistance } fro
 
 const LEAFLET_BOUNDS = [ [ 21.85, 118.15 ], [ 26.45, 122.25 ] ]
 const VIEW_REGION_STORAGE_KEY = "map-view-region"
-const TRANSPORT_MODE_STORAGE_KEY = "map-transport-mode"
 const TRANSPORT_MODES = [ "rail", "bus" ]
 const VIEW_REGION_IDS = [ "north", "central", "south", "east" ]
 const VIEW_REGIONS = {
@@ -232,6 +231,7 @@ export default class extends Controller {
   static values = {
     initialRouteId: String,
     autoDefaultLayers: { type: Boolean, default: false },
+    transportMode: { type: String, default: "rail" },
     routesManifestUrl: { type: String, default: "/geojson/routes.json" },
     busManifestUrl: { type: String, default: "/geojson/bus/manifest.json" },
     metroDepotsUrl: { type: String, default: "/geojson/metro_depots.json" },
@@ -833,33 +833,53 @@ export default class extends Controller {
   }
 
   initialTransportMode() {
+    const fromPath = this.transportModeFromPath()
+    if (fromPath) return fromPath
+
+    if (this.hasTransportModeValue && TRANSPORT_MODES.includes(this.transportModeValue)) {
+      return this.transportModeValue
+    }
+
     const routeId = this.initialRouteIdValue || new URLSearchParams(window.location.search).get("route")
     if (routeId && this.findRoute(routeId)?.city_id) return "bus"
 
     const shareRoutes = this.pendingShare?.routes || []
     if (shareRoutes.length > 0 && shareRoutes.every((id) => this.findRoute(id)?.city_id)) return "bus"
+    if (this.pendingShare?.busGroups?.length) return "bus"
 
-    try {
-      const stored = window.localStorage?.getItem(TRANSPORT_MODE_STORAGE_KEY)
-      if (TRANSPORT_MODES.includes(stored)) return stored
-    } catch (_error) {
-      // ignore storage
-    }
     return "rail"
   }
 
-  persistTransportMode(mode) {
-    try {
-      window.localStorage?.setItem(TRANSPORT_MODE_STORAGE_KEY, mode)
-    } catch (_error) {
-      // ignore storage
-    }
+  transportModeFromPath() {
+    const path = window.location.pathname.replace(/\/+$/, "") || "/"
+    if (path === "/bus") return "bus"
+    if (path === "/" || path === "/rail") return "rail"
+    return null
+  }
+
+  transportModePath(mode = this.transportMode) {
+    return mode === "bus" ? "/bus" : "/"
+  }
+
+  syncTransportModePath(mode = this.transportMode) {
+    const path = this.transportModePath(mode)
+    if (window.location.pathname === path) return
+    const next = `${path}${window.location.search}`
+    window.history.replaceState({}, "", next)
   }
 
   async selectTransportMode(event) {
     const mode = event.currentTarget?.dataset?.transportMode
     if (!TRANSPORT_MODES.includes(mode)) return
-    await this.applyTransportMode(mode, { persist: true })
+    // Prefer real page navigation between / and /bus.
+    const path = this.transportModePath(mode)
+    if (window.location.pathname !== path) {
+      const url = `${path}${window.location.search}`
+      if (window.Turbo?.visit) window.Turbo.visit(url)
+      else window.location.assign(url)
+      return
+    }
+    await this.applyTransportMode(mode)
   }
 
   async applyTransportMode(mode, { persist = false, loadRail = true } = {}) {
@@ -867,12 +887,13 @@ export default class extends Controller {
     if (mode === this.transportMode && !this.transportModeSwitching) {
       this.syncTransportModeChrome()
       this.filterLayers()
+      this.syncTransportModePath(mode)
       return
     }
 
     this.transportModeSwitching = true
     this.transportMode = mode
-    if (persist) this.persistTransportMode(mode)
+    this.syncTransportModePath(mode)
     this.syncTransportModeChrome()
 
     try {
@@ -916,7 +937,11 @@ export default class extends Controller {
         chip.classList.toggle("map-transport-mode__chip--active", active)
         chip.setAttribute("aria-selected", active ? "true" : "false")
         chip.setAttribute("aria-pressed", active ? "true" : "false")
-        chip.disabled = this.transportModeSwitching
+        if (active) chip.setAttribute("aria-current", "page")
+        else chip.removeAttribute("aria-current")
+        // Mode chips are links; avoid the invalid `disabled` property on anchors.
+        chip.setAttribute("aria-disabled", this.transportModeSwitching ? "true" : "false")
+        chip.classList.toggle("is-switching", this.transportModeSwitching)
       })
     }
 
@@ -2552,8 +2577,8 @@ export default class extends Controller {
 
     await this.ensureBusManifest()
     this.busRouteBucketTargets.forEach((bucket) => {
-      const ids = this.routeIdsFromParam(bucket.dataset.routeIds)
-      const anyMatch = ids.some((routeId) => {
+      const routeIds = this.routeIdsForBusBucket(bucket)
+      const anyMatch = routeIds.some((routeId) => {
         const route = this.findRoute(routeId)
         if (!route) return false
         const text = this.normalizeSearchQuery(this.busRouteSearchBlob(route))
@@ -2576,11 +2601,24 @@ export default class extends Controller {
     ].filter(Boolean).join(" ")
   }
 
+  routeIdsForBusBucket(bucket) {
+    if (!(bucket instanceof HTMLElement)) return []
+
+    const city = bucket.dataset.busCity
+    const band = bucket.dataset.busBand
+    const operatorId = bucket.dataset.busOperator
+    if (city || band || operatorId) {
+      return this.routeIdsForBusScope({ city, band, operatorId })
+    }
+
+    return this.routeIdsFromParam(bucket.dataset.routeIds)
+  }
+
   hydrateBusRouteBucket(bucket) {
     if (!(bucket instanceof HTMLElement)) return
     if (bucket.dataset.hydrated === "true") return
 
-    const routeIds = this.routeIdsFromParam(bucket.dataset.routeIds)
+    const routeIds = this.routeIdsForBusBucket(bucket)
     if (routeIds.length === 0) {
       bucket.dataset.hydrated = "true"
       bucket.replaceChildren()
@@ -3239,16 +3277,108 @@ export default class extends Controller {
       .filter(Boolean)
   }
 
+  routeIdsForBusScope({ city = null, band = null, operatorId = null } = {}) {
+    const cityKey = String(city || "").trim()
+    const bandKey = band == null || band === "" ? null : String(band).trim()
+    const operatorKey = operatorId == null || operatorId === "" ? null : String(operatorId).trim()
+    if (!cityKey && !bandKey && !operatorKey) return []
+
+    const buses = Array.isArray(this.routesManifest?.bus) ? this.routesManifest.bus : []
+    return buses
+      .filter((route) => {
+        if (!route?.id) return false
+        if (cityKey === "GreaterTaipei") {
+          if (route.city_id !== "Taipei" && route.city_id !== "NewTaipei") return false
+        } else if (cityKey && route.city_id !== cityKey) {
+          return false
+        }
+        if (operatorKey && String(route.operator_id || "") !== operatorKey) return false
+        if (bandKey != null) {
+          const routeBand = this.busBrowseBandKey(route.ref, route.city_id)
+          if (String(routeBand) !== bandKey) return false
+        }
+        return true
+      })
+      .map((route) => route.id)
+  }
+
+  busBrowseBandKey(ref, cityId = null) {
+    const band = this.busBrowseBand(ref, cityId)
+    if (typeof band === "number") return String(band)
+    return String(band || "other")
+  }
+
+  busBrowseBand(ref, cityId = null) {
+    const text = String(ref || "").trim()
+    if (!text) return "other"
+
+    if (cityId === "Keelung" && /^[RT]/i.test(text)) return "keelung_tr"
+
+    const colorBands = {
+      "紅": "color_hong",
+      "藍": "color_lan",
+      "綠": "color_lu",
+      "棕": "color_zong",
+      "橘": "color_ju",
+      "黃": "color_huang"
+    }
+    for (const [prefix, band] of Object.entries(colorBands)) {
+      if (text.startsWith(prefix)) return band
+    }
+
+    if (/^小\d/.test(text)) return "xiao"
+    if (text.startsWith("安坑")) return "ankeng"
+    if (/^F\d/i.test(text)) return "f_series"
+    if (text.includes("南軟")) return "nangang_soft"
+    if (text.includes("內科快線")) return "neike_express"
+    if (text.includes("內科通勤")) return "neike_commuter"
+    if (/^通勤/.test(text)) return "commuter"
+    if (text.includes("市民小巴")) return "civic_minibus"
+    if (text.includes("幹線")) return "trunk"
+    if (text.includes("貓空")) return "maokong"
+    if (text.startsWith("北士科")) return "beishi"
+    if (text.includes("懷恩")) return "huaien"
+
+    const stripped = text.replace(/（[^）]*）|\([^)]*\)$/u, "")
+    if (/線$/u.test(stripped)) return "named_line"
+
+    if (this.busOdPlaceLabel(text)) return "other"
+    const number = text.match(/\d+/)?.[0]
+    if (!number) return "other"
+    const value = Number.parseInt(number, 10)
+    if (!Number.isFinite(value)) return "other"
+    if (value >= 1000) return 1000
+    return Math.floor(value / 100) * 100
+  }
+
+  busOdPlaceLabel(ref) {
+    const text = String(ref || "").trim()
+    if (!/[-－—]/.test(text)) return false
+    if (/^[\dA-Za-z]/.test(text)) return false
+    return true
+  }
+
   syncRouteGroupCheckboxes() {
     if (!this.hasRouteGroupCheckboxTarget) return
 
     this.routeGroupCheckboxTargets.forEach((checkbox) => {
-      const group = checkbox.dataset.mapBusGroupParam
-      const routeIds = group
-        ? this.routeIdsForBusGroup(group)
-        : this.routeIdsFromParam(checkbox.dataset.mapRouteIdsParam)
+      const routeIds = this.routeIdsForRouteGroupCheckbox(checkbox)
       this.syncRouteGroupCheckbox(checkbox, routeIds)
     })
+  }
+
+  routeIdsForRouteGroupCheckbox(checkbox) {
+    const group = checkbox.dataset.mapBusGroupParam
+    if (group) return this.routeIdsForBusGroup(group)
+
+    const city = checkbox.dataset.mapBusCityParam
+    const band = checkbox.dataset.mapBusBandParam
+    const operatorId = checkbox.dataset.mapBusOperatorParam
+    if (city || band || operatorId) {
+      return this.routeIdsForBusScope({ city, band, operatorId })
+    }
+
+    return this.routeIdsFromParam(checkbox.dataset.mapRouteIdsParam)
   }
 
   async toggleRouteGroup(event) {
@@ -3266,9 +3396,14 @@ export default class extends Controller {
     await this.ensureBusManifest()
 
     const group = event.params.busGroup || checkbox.dataset.mapBusGroupParam
+    const city = event.params.busCity || checkbox.dataset.mapBusCityParam
+    const band = event.params.busBand || checkbox.dataset.mapBusBandParam
+    const operatorId = event.params.busOperator || checkbox.dataset.mapBusOperatorParam
     const routeIds = group
       ? this.routeIdsForBusGroup(group)
-      : this.routeIdsFromParam(event.params.routeIds || checkbox.dataset.mapRouteIdsParam)
+      : (city || band || operatorId)
+        ? this.routeIdsForBusScope({ city, band, operatorId })
+        : this.routeIdsFromParam(event.params.routeIds || checkbox.dataset.mapRouteIdsParam)
 
     if (routeIds.length === 0) {
       checkbox.checked = false
@@ -9572,7 +9707,9 @@ export default class extends Controller {
       params.delete("follow")
     }
 
-    const next = `${window.location.pathname}?${params.toString()}`
+    const path = this.transportModePath()
+    const query = params.toString()
+    const next = query ? `${path}?${query}` : path
     const current = `${window.location.pathname}${window.location.search}`
     if (next !== current) window.history.replaceState({}, "", next)
   }

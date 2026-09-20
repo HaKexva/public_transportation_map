@@ -19,7 +19,7 @@ Do **not** hand-edit `routes.json` for new lines. Rebuild it with catalogs + rak
 | `kaohsiung_metro` | `kaohsiung_metro/` | Kaohsiung Metro / LRT |
 | `hsr` | `hsr/` | Taiwan High Speed Rail |
 | `tra` | `tra/` | Taiwan Railway |
-| `bus` | `bus/` | City buses + highway coaches (`InterCity`) from TDX; city folders like `bus/kaohsiung_bus/`, `bus/keelung_bus/100-199/` |
+| `bus` | `bus/` | City buses + highway coaches (`InterCity`) from TDX; city folders like `bus/kaohsiung_bus/`, `bus/keelung_bus/100-199/`. Special bands use ASCII dirs (`hong`, `trunk`, `f`, `r-t`, …) — never Chinese folder names. |
 | `other` | `other/` | Sugar railways, ropeways, forest railways, etc. |
 
 Station and track geometry primarily come from [OpenStreetMap](https://www.openstreetmap.org/) (© contributors, ODbL), with NLSC / fallback caches under `lib/geojson/fallback_tracks/` when needed. Bus geometry comes from TDX Shape / StopOfRoute.

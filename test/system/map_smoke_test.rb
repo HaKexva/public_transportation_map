@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require "application_system_test_case"
 
 class MapSmokeTest < ApplicationSystemTestCase
@@ -15,9 +16,10 @@ class MapSmokeTest < ApplicationSystemTestCase
     assert_selector ".route-stop-item", minimum: 5, wait: 20
     assert_no_selector ".route-page.is-booting", wait: 10
 
-    visit root_path
+    visit bus_map_path
     assert_selector ".map-boot-overlay[hidden]", visible: :all, wait: 30
-    find(".map-transport-mode__chip", text: "公車").click
+    assert_equal "/bus", URI.parse(current_url).path
+    assert_selector ".map-transport-mode__chip--active", text: "公車"
     find(".bus-fold__trigger", text: "基隆市").click
     find(".bus-fold__trigger", text: "100-199").click
     assert_selector "[data-map-target~='busRouteBucket'][data-hydrated='true']", wait: 10
