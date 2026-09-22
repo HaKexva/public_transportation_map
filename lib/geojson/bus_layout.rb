@@ -59,7 +59,25 @@ module Geojson
     module_function
 
     def bus_root
-      Rails.root.join("public/geojson", ROOT)
+      @bus_root_override || Rails.root.join("public/geojson", ROOT)
+    end
+
+    def bus_root=(path)
+      @bus_root_override = path && Pathname.new(path)
+      reset_route_counts!
+    end
+
+    # Temporarily redirect on-disk bus GeoJSON (for isolated parallel tests).
+    # Pass route_counts: to seed uses_bands? without scanning the temp tree.
+    def with_bus_root(path, route_counts: nil)
+      previous_root = @bus_root_override
+      previous_counts = @route_counts
+      self.bus_root = path
+      @route_counts = route_counts unless route_counts.nil?
+      yield
+    ensure
+      @bus_root_override = previous_root
+      @route_counts = previous_counts
     end
 
     def subdir_for(city_id)
@@ -89,7 +107,8 @@ module Geojson
         data = JSON.parse(File.read(path))
         city = data.dig("properties", "city_id")
         counts[city] += 1 if city.present?
-      rescue JSON::ParserError
+      rescue Errno::ENOENT, JSON::ParserError
+        # Parallel tests may delete files between Dir.glob and File.read.
         nil
       end
       counts

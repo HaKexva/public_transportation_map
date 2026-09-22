@@ -142,7 +142,7 @@ module Geojson
         .reject { |key| key == city_key }
         .select { |key| key.start_with?("#{city_key}_") }
 
-      Dir.glob(Rails.root.join("public/geojson/bus/**/*.geojson")).filter_map do |path|
+      Dir.glob(Geojson::BusLayout.bus_root.join("**/*.geojson")).filter_map do |path|
         slug = File.basename(path, ".geojson")
         next unless slug == city_key || slug.start_with?("#{city_key}_")
         next if sibling_prefixes.any? { |prefix| slug == prefix || slug.start_with?("#{prefix}_") }
@@ -175,7 +175,7 @@ module Geojson
     end
 
     def thin_geometry_gaps
-      Dir.glob(Rails.root.join("public/geojson/bus/**/*.geojson")).filter_map do |path|
+      Dir.glob(Geojson::BusLayout.bus_root.join("**/*.geojson")).filter_map do |path|
         data = JSON.parse(File.read(path))
         stations = Array(data["features"]).count { |feature| feature.dig("properties", "feature_type") == "station" }
         routes = Array(data["features"]).count { |feature| feature.dig("properties", "feature_type") == "route" }
@@ -190,7 +190,7 @@ module Geojson
           slug: props["id"].presence || File.basename(path, ".geojson"),
           kind: :thin_geometry
         )
-      rescue JSON::ParserError
+      rescue Errno::ENOENT, JSON::ParserError
         nil
       end.sort_by { |gap| [ gap.city_id.to_s, gap.slug.to_s ] }
     end

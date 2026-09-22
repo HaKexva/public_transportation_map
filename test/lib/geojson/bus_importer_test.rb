@@ -17,6 +17,24 @@ class GeojsonBusImporterTest < ActiveSupport::TestCase
     end
   end
 
+  setup do
+    @isolated_bus_root = Rails.root.join("tmp/bus_importer_test_#{Process.pid}_#{SecureRandom.hex(4)}")
+    FileUtils.mkdir_p(@isolated_bus_root)
+    @previous_bus_root = Geojson::BusLayout.instance_variable_get(:@bus_root_override)
+    @previous_route_counts = Geojson::BusLayout.instance_variable_get(:@route_counts)
+    # Isolate writes so parallel CI workers do not clobber keelung_901 / shared bus files.
+    Geojson::BusLayout.bus_root = @isolated_bus_root
+    seeded = Hash.new(0)
+    seeded["Keelung"] = Geojson::BusLayout::MIN_ROUTES_FOR_BANDS
+    Geojson::BusLayout.instance_variable_set(:@route_counts, seeded)
+  end
+
+  teardown do
+    Geojson::BusLayout.instance_variable_set(:@bus_root_override, @previous_bus_root)
+    Geojson::BusLayout.instance_variable_set(:@route_counts, @previous_route_counts)
+    FileUtils.rm_rf(@isolated_bus_root) if @isolated_bus_root
+  end
+
   test "matches 1xx and 2xx names including letter suffixes" do
     keelung = Geojson::BusCatalog.find("Keelung")
     assert Geojson::BusImporter.series_match?("101", series: "1", city: keelung)

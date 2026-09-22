@@ -40,4 +40,34 @@ class GeojsonBusLayoutTest < ActiveSupport::TestCase
     assert_equal "NewTaipei", Geojson::BusLayout.city_id_for_slug("new_taipei_920")
     assert_equal "InterCity", Geojson::BusLayout.city_id_for_slug("inter_city_1820")
   end
+
+  test "with_bus_root isolates path resolution and restores afterward" do
+    root = Rails.root.join("tmp/bus_layout_root_#{SecureRandom.hex(4)}")
+    FileUtils.mkdir_p(root)
+    default_root = Geojson::BusLayout.bus_root
+
+    Geojson::BusLayout.with_bus_root(root, route_counts: Hash.new(0).merge("Keelung" => 50)) do
+      path = Geojson::BusLayout.geojson_path(city_id: "Keelung", slug: "keelung_901", ref: "901")
+      assert_equal root.join("keelung_bus/900-999/keelung_901.geojson"), path
+      assert Geojson::BusLayout.uses_bands?("Keelung")
+    end
+
+    assert_equal default_root, Geojson::BusLayout.bus_root
+  ensure
+    FileUtils.rm_rf(root) if root
+  end
+
+  test "compute_route_counts skips files deleted mid-scan" do
+    root = Rails.root.join("tmp/bus_layout_counts_#{SecureRandom.hex(4)}")
+    FileUtils.mkdir_p(root)
+    ghost = root.join("miaoli_bus/miaoli_county_ghost.geojson")
+    FileUtils.mkdir_p(ghost.dirname)
+    File.symlink("/nonexistent/bus-ghost-#{SecureRandom.hex(4)}", ghost)
+
+    Geojson::BusLayout.with_bus_root(root) do
+      assert_equal 0, Geojson::BusLayout.compute_route_counts["MiaoliCounty"]
+    end
+  ensure
+    FileUtils.rm_rf(root) if root
+  end
 end

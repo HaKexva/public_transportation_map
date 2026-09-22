@@ -19,22 +19,19 @@ class GeojsonBusCoverageAuditorTest < ActiveSupport::TestCase
 
   setup do
     @output_dir = Rails.root.join("tmp/test_bus_coverage_#{SecureRandom.hex(4)}")
-    @route_file = Geojson::BusLayout.geojson_path(
-      city_id: "MiaoliCounty",
-      slug: "miaoli_county_101",
-      ref: "101"
-    )
-    @had_route_file = @route_file.exist?
-    @route_backup = @had_route_file ? @route_file.read : nil
+    @isolated_bus_root = Rails.root.join("tmp/test_bus_coverage_root_#{SecureRandom.hex(4)}")
+    FileUtils.mkdir_p(@isolated_bus_root)
+    @previous_bus_root = Geojson::BusLayout.instance_variable_get(:@bus_root_override)
+    @previous_route_counts = Geojson::BusLayout.instance_variable_get(:@route_counts)
+    # Empty isolated root: Miaoli routes look "not imported" without deleting shared fixtures.
+    Geojson::BusLayout.bus_root = @isolated_bus_root
   end
 
   teardown do
+    Geojson::BusLayout.instance_variable_set(:@bus_root_override, @previous_bus_root)
+    Geojson::BusLayout.instance_variable_set(:@route_counts, @previous_route_counts)
     FileUtils.rm_rf(@output_dir)
-    if @had_route_file
-      File.write(@route_file, @route_backup)
-    else
-      FileUtils.rm_f(@route_file)
-    end
+    FileUtils.rm_rf(@isolated_bus_root) if @isolated_bus_root
   end
 
   test "flags TDX routes without shape and routes with shape not yet imported" do
@@ -51,8 +48,6 @@ class GeojsonBusCoverageAuditorTest < ActiveSupport::TestCase
       ],
       Geojson::BusImporter.stop_of_route_path_for(city) => []
     )
-
-    FileUtils.rm_f(@route_file)
 
     report = Geojson::BusCoverageAuditor.audit!(
       city_ids: [ "MiaoliCounty" ],
@@ -86,6 +81,19 @@ class GeojsonBusCoverageAuditorTest < ActiveSupport::TestCase
       Geojson::BusImporter.route_path_for(city) => [],
       Geojson::BusImporter.shape_path_for(city) => [],
       Geojson::BusImporter.stop_of_route_path_for(city) => []
+    )
+
+    # Sibling county fixtures must not be attributed to the city prefix.
+    FileUtils.mkdir_p(@isolated_bus_root.join("chiayi_county_bus"))
+    File.write(
+      @isolated_bus_root.join("chiayi_county_bus/chiayi_county_7202.geojson"),
+      JSON.pretty_generate(
+        {
+          "type" => "FeatureCollection",
+          "properties" => { "id" => "chiayi_county_7202", "city_id" => "ChiayiCounty" },
+          "features" => []
+        }
+      )
     )
 
     report = Geojson::BusCoverageAuditor.audit!(
