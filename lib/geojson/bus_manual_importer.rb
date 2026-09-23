@@ -11,8 +11,12 @@ module Geojson
 
     Result = Data.define(:updated_slugs, :skipped, :imported_geometry)
 
-    def self.import!(rewrite_manifest: true)
-      new.import!(rewrite_manifest: rewrite_manifest)
+    def self.import!(rewrite_manifest: true, annotations: ANNOTATIONS)
+      new(annotations:).import!(rewrite_manifest:)
+    end
+
+    def initialize(annotations: ANNOTATIONS)
+      @annotations = Pathname.new(annotations)
     end
 
     def import!(rewrite_manifest: true)
@@ -68,9 +72,9 @@ module Geojson
     end
 
     def import_markdown_annotations(updated:, skipped:)
-      return unless ANNOTATIONS.exist?
+      return unless @annotations.exist?
 
-      ANNOTATIONS.read.each_line do |line|
+      @annotations.read.each_line do |line|
         next unless (match = line.match(/\(`([^`]+)`\).+<-\s*(https?:\/\/\S+)/))
 
         slug = match[1]

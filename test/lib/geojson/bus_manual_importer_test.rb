@@ -4,8 +4,18 @@ require "test_helper"
 
 class GeojsonBusManualImporterTest < ActiveSupport::TestCase
   setup do
-    @route_file = Rails.root.join("public/geojson/bus/kaohsiung_bus/kaohsiung_h21.geojson")
-    @backup = @route_file.exist? ? @route_file.read : nil
+    token = "#{Process.pid}_#{SecureRandom.hex(4)}"
+    @isolated_bus_root = Rails.root.join("tmp/bus_manual_importer_#{token}")
+    FileUtils.mkdir_p(@isolated_bus_root)
+    @previous_bus_root = Geojson::BusLayout.instance_variable_get(:@bus_root_override)
+    @previous_route_counts = Geojson::BusLayout.instance_variable_get(:@route_counts)
+    Geojson::BusLayout.bus_root = @isolated_bus_root
+
+    @route_file = Geojson::BusLayout.geojson_path(
+      city_id: "Kaohsiung",
+      slug: "kaohsiung_h21",
+      ref: "H21"
+    )
     FileUtils.mkdir_p(@route_file.dirname)
     File.write(
       @route_file,
@@ -22,8 +32,7 @@ class GeojsonBusManualImporterTest < ActiveSupport::TestCase
       )
     )
 
-    @annotations = Rails.root.join("docs/bus_data_gaps/missing_official_maps.md")
-    @annotations_backup = @annotations.read if @annotations.exist?
+    @annotations = Rails.root.join("tmp/bus_manual_annotations_#{token}.md")
     File.write(
       @annotations,
       <<~MARKDOWN
@@ -34,21 +43,14 @@ class GeojsonBusManualImporterTest < ActiveSupport::TestCase
   end
 
   teardown do
-    if @backup
-      File.write(@route_file, @backup)
-    else
-      FileUtils.rm_f(@route_file)
-    end
-
-    if @annotations_backup
-      File.write(@annotations, @annotations_backup)
-    else
-      FileUtils.rm_f(@annotations)
-    end
+    Geojson::BusLayout.instance_variable_set(:@bus_root_override, @previous_bus_root)
+    Geojson::BusLayout.instance_variable_set(:@route_counts, @previous_route_counts)
+    FileUtils.rm_rf(@isolated_bus_root) if @isolated_bus_root
+    FileUtils.rm_f(@annotations) if @annotations
   end
 
   test "applies annotated official map urls to on-disk geojson" do
-    result = Geojson::BusManualImporter.import!(rewrite_manifest: false)
+    result = Geojson::BusManualImporter.import!(rewrite_manifest: false, annotations: @annotations)
 
     assert_includes result.updated_slugs, "kaohsiung_h21"
     data = JSON.parse(@route_file.read)
@@ -64,7 +66,7 @@ class GeojsonBusManualImporterTest < ActiveSupport::TestCase
       MARKDOWN
     )
 
-    result = Geojson::BusManualImporter.import!(rewrite_manifest: false)
+    result = Geojson::BusManualImporter.import!(rewrite_manifest: false, annotations: @annotations)
 
     assert_includes result.updated_slugs, "kaohsiung_h21"
     data = JSON.parse(@route_file.read)
