@@ -14,49 +14,55 @@ module Geojson
         name: "新店機廠",
         routes: %w[songshan_xindian xiaobitan_branch],
         track_on: "xiaobitan_branch",
-        # Next to 小碧潭 station throat.
-        lon: 121.53148,
-        lat: 24.97128,
+        # Yard body south of 小碧潭 elevated throat (not the station platform).
+        lon: 121.5316,
+        lat: 24.9696,
         grade: "三級"
       },
       {
         id: "sanying_depot",
         name: "三峽機廠",
         routes: %w[sanying_line],
-        lon: 121.3805,
-        lat: 24.9345,
+        # Wiki / southern yard body south of 龍埔路 (not west of landuse).
+        lon: 121.38319,
+        lat: 24.93397,
         grade: "五級"
       },
       { id: "nangang_depot", name: "南港機廠", routes: %w[bannan], lon: 121.59836, lat: 25.05034, grade: "三級" },
       { id: "tucheng_depot", name: "土城機廠", routes: %w[bannan], lon: 121.4415, lat: 24.98674, grade: "四級" },
       { id: "zhonghe_depot", name: "中和機廠", routes: %w[zhonghe_xinlu], lon: 121.508814, lat: 24.990250, grade: "一級" },
-      { id: "xinzhuang_depot", name: "新莊機廠", routes: %w[zhonghe_xinlu], lon: 121.410, lat: 25.0215, grade: "三級" },
-      { id: "luzhou_depot", name: "蘆洲機廠", routes: %w[zhonghe_xinlu], lon: 121.4670, lat: 25.0900, grade: "四級" },
-      # Marker on the NW yard rectangle (screenshot 21.33.31 red box); spur tip may differ.
-      { id: "muzha_depot", name: "木柵機廠", routes: %w[wenhu_line], lon: 121.5848, lat: 25.00135, grade: "中運量" },
+      { id: "xinzhuang_depot", name: "新莊機廠", routes: %w[zhonghe_xinlu], lon: 121.4080, lat: 25.0212, grade: "三級" },
+      # OSM/wiki yard body NW of 蘆洲 (環堤大道), not the passenger tip.
+      { id: "luzhou_depot", name: "蘆洲機廠", routes: %w[zhonghe_xinlu], lon: 121.47044, lat: 25.09673, grade: "四級" },
+      # OSM landuse=railway「台北捷運木柵機廠」centroid (way 71266521); spur tip may differ.
+      { id: "muzha_depot", name: "木柵機廠", routes: %w[wenhu_line], lon: 121.5857, lat: 25.00057, grade: "中運量" },
       # Marker on the north yard along 環東大道 (screenshot 21.32.49 red box).
       { id: "neihu_depot", name: "內湖機廠", routes: %w[wenhu_line], lon: 121.6194, lat: 25.06037, grade: "中運量" },
       { id: "qingpu_depot", name: "青埔機廠", routes: %w[airport_mrt], lon: 121.216552, lat: 25.014589, grade: "主機廠" },
       { id: "shisizhang_depot", name: "十四張機廠", routes: %w[circular ankeng_lrt], lon: 121.5288, lat: 24.9852, grade: "輕軌" },
-      { id: "ankeng_depot", name: "安坑機廠", routes: %w[ankeng_lrt], lon: 121.4860, lat: 24.9450, grade: "輕軌" },
-      # Yard body west of V11 崁頂 (screenshot 11.14.52).
-      { id: "danhai_depot", name: "淡海車廠", routes: %w[danhai_lrt], lon: 121.4332, lat: 25.2007, grade: "輕軌" },
+      # OSM landuse「新北捷運安坑機廠」centroid; spur from SE yard exit (not 安一路 throat).
+      { id: "ankeng_depot", name: "安坑機廠", routes: %w[ankeng_lrt], lon: 121.48660, lat: 24.94466, grade: "輕軌" },
+      # Yard body NW of V11 崁頂 (OSM landuse「新北捷運淡海機廠」centroid).
+      { id: "danhai_depot", name: "淡海車廠", routes: %w[danhai_lrt], lon: 121.43306, lat: 25.20313, grade: "輕軌" },
       { id: "kaohsiung_north_depot", name: "北機廠", routes: %w[red_line], lon: 120.3026, lat: 22.7767, grade: "三級" },
-      { id: "kaohsiung_south_depot", name: "南機廠", routes: %w[red_line], lon: 120.3308, lat: 22.5843, grade: "三級" },
-      { id: "kaohsiung_daliao_depot", name: "大寮機廠", routes: %w[orange_line], lon: 120.392, lat: 22.624, grade: "主機廠" },
+      { id: "kaohsiung_south_depot", name: "南機廠", routes: %w[red_line], lon: 120.33057, lat: 22.58453, grade: "三級" },
+      { id: "kaohsiung_daliao_depot", name: "大寮機廠", routes: %w[orange_line], lon: 120.39072, lat: 22.62487, grade: "主機廠" },
       { id: "kaohsiung_circular_depot", name: "前鎮機廠", routes: %w[circular_lrt], lon: 120.326042, lat: 22.608478, grade: "輕軌" },
       { id: "kaohsiung_gushan_stabling", name: "鼓山駐車場", routes: %w[circular_lrt], lon: 120.281088, lat: 22.642035, grade: "輕軌" },
       { id: "taichung_beitun_depot", name: "北屯機廠", routes: %w[green_line], lon: 120.7120, lat: 24.1890, grade: "五級" },
-      { id: "hsr_yanchao_depot", name: "燕巢總機廠", routes: %w[taiwan_hsr], lon: 120.3465, lat: 22.7648, grade: "總機廠" },
-      { id: "hsr_wuri_depot", name: "烏日維修基地", routes: %w[taiwan_hsr], lon: 120.6125, lat: 24.1100, grade: "維修基地" },
+      { id: "hsr_yanchao_depot", name: "燕巢總機廠", routes: %w[taiwan_hsr], lon: 120.3458, lat: 22.7662, grade: "總機廠" },
+      # Yard body SE of 高鐵台中 / west of TRA is wrong; sit in the east spur yard south of the station.
+      { id: "hsr_wuri_depot", name: "烏日維修基地", routes: %w[taiwan_hsr], lon: 120.6193, lat: 24.0949, grade: "維修基地" },
       { id: "hsr_liujia_depot", name: "六家維修基地", routes: %w[taiwan_hsr], lon: 121.039, lat: 24.807, grade: "維修基地" },
       { id: "hsr_taibao_depot", name: "太保維修基地", routes: %w[taiwan_hsr], lon: 120.32375, lat: 23.4755, grade: "維修基地" },
       { id: "hsr_zuoying_depot", name: "左營維修基地", routes: %w[taiwan_hsr], lon: 120.315, lat: 22.694, grade: "維修基地" },
-      { id: "tra_shulin_depot", name: "樹林調車場", routes: %w[western_trunk_north], lon: 121.418, lat: 24.988, grade: "調車場" },
-      { id: "tra_qidu_depot", name: "七堵機務段", routes: %w[western_trunk_north yilan_line], track_on: "western_trunk_north", lon: 121.716, lat: 25.096, grade: "機務段" },
+      # Yard body SW of 樹林 (OSM yard tracks 60–110 m south of the main line), not on the main line.
+      { id: "tra_shulin_depot", name: "樹林調車場", routes: %w[western_trunk_north], lon: 121.4066, lat: 24.9801, grade: "調車場" },
+      # Yard body NE of 七堵 (wiki 七堵調車場 ~121.7203, 25.0985), not the west throat.
+      { id: "tra_qidu_depot", name: "七堵機務段", routes: %w[western_trunk_north], track_on: "western_trunk_north", lon: 121.7203, lat: 25.0985, grade: "機務段" },
       # North sidings (screenshot 19.53.33); not the south X.
       { id: "tra_fugang_depot", name: "富岡機廠", routes: %w[western_trunk_north], lon: 121.0725, lat: 24.9328, grade: "機廠" },
-      { id: "tra_changhua_depot", name: "彰化機務段", routes: %w[mountain_line sea_line western_trunk_south], track_on: "mountain_line", lon: 120.540171, lat: 24.085948, grade: "機務段" },
+      { id: "tra_changhua_depot", name: "彰化機務段", routes: %w[mountain_line sea_line western_trunk_south], track_on: "mountain_line", lon: 120.54045, lat: 24.08610, grade: "機務段" },
       {
         id: "tra_chaozhou_depot",
         name: "潮州機廠",
@@ -68,7 +74,8 @@ module Geojson
         grade: "機廠"
       },
       { id: "tra_hualien_depot", name: "花蓮機務段", routes: %w[beihui_line taidong_line], lon: 121.603036, lat: 23.995747, grade: "機務段" },
-      { id: "tra_taitung_depot", name: "臺東機務分段", routes: %w[taidong_line], lon: 121.1224316, lat: 22.7934597, grade: "機務段" },
+      # Yard body south of 臺東; spur peels like platform tracks without looping the passenger tip.
+      { id: "tra_taitung_depot", name: "臺東機務分段", routes: %w[taidong_line], lon: 121.12204, lat: 22.79084, grade: "機務段" },
       { id: "tra_yilan_depot", name: "宜蘭機務分段", routes: %w[yilan_line], lon: 121.762, lat: 24.751, grade: "機務段" }
     ].freeze
 

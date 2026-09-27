@@ -3,21 +3,27 @@
 require "test_helper"
 
 class MetroLineBuilderSanyingTest < ActiveSupport::TestCase
-  test "sanying line includes all twelve stations in order" do
+  test "sanying depot spur follows yard approach and ends at facility body" do
     path = Rails.root.join("public/geojson/new_taipei_metro/sanying_line.geojson")
-    skip "run bin/rails geojson:new_taipei_metro first" unless path.exist?
+    skip "rebuild sanying_line.geojson first" unless path.exist?
 
     data = JSON.parse(path.read)
-    stations = data["features"].select { |feature| feature.dig("properties", "feature_type") == "station" }
+    spur = data.fetch("features").find { |feature| feature.dig("properties", "depot_id") == "sanying_depot" }
+    assert spur, "expected 三峽機廠支線"
 
-    refs = stations.map { |feature| feature.dig("properties", "ref") }
-    assert_equal (1..12).map { |index| format("LB%02d", index) }, refs
+    coords = spur.dig("geometry", "coordinates")
+    assert_operator coords.length, :>=, 10
+    assert_operator Geojson::TrackGeometry.path_length_meters(coords), :>, 400
 
-    assert_equal "頂埔", stations.first.dig("properties", "name")
-    assert_equal "鶯桃福德", stations.last.dig("properties", "name")
-    assert_equal "#6DB7D0", stations.first.dig("properties", "color")
+    # Must not end at the old west-of-landuse stub.
+    refute_in_delta 121.3805, coords.last[0], 0.0005
 
-    refute stations.any? { |feature| feature.dig("properties", "station_role").present? },
-           "routes should not mark origin/destination terminals"
+    assert_in_delta 121.38319, coords.last[0], 0.001
+    assert_in_delta 24.93397, coords.last[1], 0.001
+    assert_operator coords.first[1], :>, coords.last[1], "spur should run south into the yard"
+
+    depot = Geojson::MetroDepotCatalog::DEPOTS.find { |entry| entry[:id] == "sanying_depot" }
+    assert_in_delta 121.38319, depot[:lon], 0.00001
+    assert_in_delta 24.93397, depot[:lat], 0.00001
   end
 end

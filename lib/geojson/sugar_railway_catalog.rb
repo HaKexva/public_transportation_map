@@ -57,10 +57,11 @@ module Geojson
     ].freeze
 
     # 烏樹林五分車（新港東線）：烏樹林上車 → 新頂埤折返 → 內埕下車（台糖 FAQ／維基）。
+    # Station prefix is WSL (not WS) so it does not collide with TRA 縱貫南段 route ref WS.
     WUSHULIN_FALLBACK_STATIONS = [
-      { ref: "WS01", name: "內埕", lon: 120.373465, lat: 23.3283759 },
-      { ref: "WS02", name: "烏樹林", lon: 120.3737764, lat: 23.3286636 },
-      { ref: "WS03", name: "新頂埤", lon: 120.3625596, lat: 23.3413741 }
+      { ref: "WSL01", name: "內埕", lon: 120.373465, lat: 23.3283759 },
+      { ref: "WSL02", name: "烏樹林", lon: 120.3737764, lat: 23.3286636 },
+      { ref: "WSL03", name: "新頂埤", lon: 120.3625596, lat: 23.3413741 }
     ].freeze
 
     # Station loop → north connector → junction → Xingangdong Line to Xindingpi.
@@ -68,7 +69,7 @@ module Geojson
       151002559, 532967414, 532967413, 267615661
     ].freeze
 
-    # 花蓮觀光糖廠遊園小火車：漪漣園旁上車 → 園區導覽 → 花糖文物館（部落格／愛呷宜花東）。
+    # 花蓮觀光糖廠遊園小火車：漪漣園 ↔ 花糖文物館（園區短程遺跡；OSM 全廠區迴圈約 2.3 km 需裁切）。
     GUANGFU_FALLBACK_STATIONS = [
       { ref: "GF01", name: "漪漣園", lon: 121.4200843, lat: 23.6585627 },
       { ref: "GF02", name: "花糖文物館", lon: 121.4205619, lat: 23.6594686 }
@@ -120,7 +121,7 @@ module Geojson
         ref: "WSL",
         color: "#B45309",
         way_ids: WUSHULIN_WAY_IDS,
-        station_ref_prefix: "WS"
+        station_ref_prefix: "WSL"
       ),
       MetroLine.sugar(
         slug: "guangfu_sugar_railway",

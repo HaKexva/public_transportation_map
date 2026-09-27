@@ -109,6 +109,48 @@ class MetroLineBuilderTaichungTest < ActiveSupport::TestCase
     assert spur, "expected 北屯機廠支線 on 綠線 GeoJSON"
     assert_equal "北屯機廠支線", spur.dig("properties", "name")
     assert_operator spur.dig("geometry", "coordinates").length, :>=, 3
+
+    spur_coords = spur.dig("geometry", "coordinates")
+    assert spur_coords.none? { |lon, lat| lat < 24.1885 && lon > 120.7095 },
+      "depot spur must not traverse the 103a–103 dual-track corner"
+  end
+
+  test "green line keeps long terminal stubs past 103a and 119" do
+    path = Rails.root.join("public/geojson/taichung_metro/green_line.geojson")
+    skip "run bin/rails geojson:taichung_metro first" unless path.exist?
+
+    data = JSON.parse(path.read)
+    route = data["features"].find { |feature| feature.dig("properties", "feature_type") == "route" }
+    coordinates = route.dig("geometry", "coordinates")
+    stations = data["features"].select { |feature| feature.dig("properties", "feature_type") == "station" }
+    s103a = stations.find { |feature| feature.dig("properties", "ref") == "103a" }
+    s119 = stations.find { |feature| feature.dig("properties", "ref") == "119" }
+
+    builder = Geojson::MetroLineBuilder.new(Geojson::TaichungMetroCatalog::LINES.first)
+    i103a = builder.send(:nearest_coordinate_index, coordinates, s103a["geometry"]["coordinates"])
+    i119 = builder.send(:nearest_coordinate_index, coordinates, s119["geometry"]["coordinates"])
+
+    north_m = Geojson::TrackGeometry.path_length_meters(coordinates[0..i103a])
+    south_m = Geojson::TrackGeometry.path_length_meters(coordinates[i119..])
+
+    assert_operator north_m, :>=, 800, "expected long stub north of 北屯總站, got #{north_m.round}m"
+    assert_operator south_m, :>=, 400, "expected long stub west of 高鐵臺中站, got #{south_m.round}m"
+    assert_operator coordinates.first[1], :>=, 24.192, "northern tip should reach extended 尾軌"
+    assert_operator coordinates.last[0], :<=, 120.6100, "southern tip should reach extended 尾軌"
+  end
+
+  test "green line draws one passenger track through 103a-103" do
+    path = Rails.root.join("public/geojson/taichung_metro/green_line.geojson")
+    skip "run bin/rails geojson:taichung_metro first" unless path.exist?
+
+    data = JSON.parse(path.read)
+    routes = data["features"].select { |feature| feature.dig("properties", "feature_type") == "route" }
+    assert_equal 1, routes.length
+
+    spur = data["features"].find { |feature| feature.dig("properties", "depot_id") == "taichung_beitun_depot" }
+    assert spur
+    assert spur.dig("geometry", "coordinates").none? { |_lon, lat| lat < 24.1885 },
+      "北屯機廠支線 must stay north of the 103a–103 corner"
   end
 
   test "103a sorts before 103 for taichung station numbering" do
