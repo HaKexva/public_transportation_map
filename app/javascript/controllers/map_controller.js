@@ -236,7 +236,8 @@ export default class extends Controller {
     busManifestUrl: { type: String, default: "/geojson/bus/manifest.json" },
     metroDepotsUrl: { type: String, default: "/geojson/metro_depots.json" },
     busDepotsUrl: { type: String, default: "/geojson/bus_depots.json" },
-    outOfStationTransfersUrl: { type: String, default: "/geojson/out_of_station_transfers.json" }
+    outOfStationTransfersUrl: { type: String, default: "/geojson/out_of_station_transfers.json" },
+    cartoApiKey: { type: String, default: "" }
   }
 
   static targets = [
@@ -2750,7 +2751,9 @@ export default class extends Controller {
 
   cartoBasemapUrl() {
     const dark = document.documentElement.classList.contains("dark")
-    return dark ? CARTO_DARK_BASEMAP_URL : CARTO_LIGHT_BASEMAP_URL
+    const url = dark ? CARTO_DARK_BASEMAP_URL : CARTO_LIGHT_BASEMAP_URL
+    const key = this.hasCartoApiKeyValue ? this.cartoApiKeyValue.trim() : ""
+    return key ? `${url}?key=${encodeURIComponent(key)}` : url
   }
 
   readBasemapStyle() {

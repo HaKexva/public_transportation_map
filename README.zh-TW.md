@@ -91,6 +91,7 @@ bin/rails tailwindcss:build
 | 變數 | 用途 |
 | --- | --- |
 | `GOOGLE_MAPS_API_KEY` | 保留供未來 Google Maps 整合。目前預設使用 Leaflet + CARTO/OSM。 |
+| `CARTO_API_KEY` | CARTO 底圖（淺色／深色）金鑰，會以 `?key=` 附在圖磚網址。未設定時圖磚會顯示「API KEY REQUIRED」浮水印。可至 [CARTO](https://carto.com/basemaps) 免費申請。 |
 | `TDX_CLIENT_ID` / `TDX_CLIENT_SECRET` | [TDX](https://tdx.transportdata.tw) 憑證。匯入高鐵／捷運時刻表與即時誤點／GPS 時需要。台鐵每日時刻改從台鐵 ODS 匯入，不必金鑰。 |
 
 靜態時刻表存在 Postgres。台鐵用 ODS 每日 JSON（今天起最多 14 天）；高鐵用 TDX 當日時刻表；捷運站別時刻會縫成多站車次。軌道幾何仍是 OSM GeoJSON。
