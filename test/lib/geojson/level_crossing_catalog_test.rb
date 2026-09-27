@@ -37,18 +37,27 @@ class LevelCrossingCatalogTest < ActiveSupport::TestCase
     Transit::GeojsonStationCoords.clear_cache!
   end
 
-  test "writes estimated mid-corridor crossing features" do
+  test "snaps OSM level crossings onto TRA geometry and drops far ones" do
+    nodes = [
+      { "id" => 1, "lat" => 25.0001, "lon" => 121.0149, "tags" => { "railway" => "level_crossing", "name" => "測試路" } },
+      { "id" => 2, "lat" => 25.0000, "lon" => 121.0240, "tags" => { "railway" => "level_crossing" } },
+      { "id" => 3, "lat" => 25.0100, "lon" => 121.0150, "tags" => { "railway" => "level_crossing" } }
+    ]
+
     count = Geojson::LevelCrossingCatalog.refresh!(
       output: @output,
-      route_ids: [ @route.route_id ]
+      route_ids: [ @route.route_id ],
+      fetcher: -> { nodes }
     )
-    assert_operator count, :>=, 1
+    assert_equal 2, count
 
     data = JSON.parse(@output.read)
     assert_equal "FeatureCollection", data["type"]
-    feature = data["features"].find { |row| row.dig("properties", "route_id") == @route.route_id }
-    assert feature, "expected a crossing on #{@route.route_id}"
-    assert feature.dig("properties", "estimate")
-    assert_equal "Point", feature.dig("geometry", "type")
+    named, unnamed = data["features"].sort_by { |row| row.dig("properties", "id") }
+    assert_equal "osm:1", named.dig("properties", "id")
+    assert_equal "測試路", named.dig("properties", "name")
+    assert_equal @route.route_id, named.dig("properties", "route_id")
+    assert_equal [ 121.0149, 25.0001 ], named.dig("geometry", "coordinates")
+    assert_equal "丙附近平交道", unnamed.dig("properties", "name")
   end
 end

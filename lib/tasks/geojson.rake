@@ -396,9 +396,9 @@ namespace :geojson do
     puts "Closed/merged loop geometry in #{updated} bus GeoJSON files"
   end
 
-  desc "Estimate TRA level-crossing points from corridor midpoints (not third-party dumps)"
+  desc "Build TRA level crossings from OSM railway=level_crossing nodes snapped to TRA geometry"
   task level_crossings: :environment do
     count = Geojson::LevelCrossingCatalog.refresh!
-    puts "Wrote #{count} estimated level crossings"
+    puts "Wrote #{count} level crossings"
   end
 end

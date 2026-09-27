@@ -154,6 +154,7 @@ const BOARD_PERIODS = [
 const SCHEDULE_FETCH_CHUNK = 8
 const SCHEDULE_FETCH_RETRY_MS = 15_000
 const HOP_CHAINAGE_MAX_OFFSET_KM = 0.4
+const CROSSING_MAX_OFFSET_KM = 0.08
 const SKYTRAIN_NORTH_STATION_ORDER = [ "ST1N", "ST2N" ]
 const SKYTRAIN_SOUTH_STATION_ORDER = [ "ST1S", "ST2S" ]
 const TRA_BRANCH_ROUTE_IDS = new Set([
@@ -9992,9 +9993,9 @@ export default class extends Controller {
 
   crossingPopupHtml(feature) {
     const name = feature.properties?.name || this.t("explore.crossing")
-    const d = Number(feature.properties?.d)
     const routeId = feature.properties?.route_id
-    const rows = this.crossingPassRows(routeId, d)
+    const [ lng, lat ] = feature.geometry?.coordinates || []
+    const rows = this.crossingPassRows(routeId, { lat, lng })
     const list = rows.length
       ? rows.map((row) => {
         const mins = Math.max(0, Math.round(row.wait))
@@ -10012,22 +10013,34 @@ export default class extends Controller {
     </div>`
   }
 
-  crossingPassRows(routeId, distanceKm, windowMinutes = STATION_BOARD_MINUTES) {
+  // Timetable-estimated passes of `point` ({ lat, lng }) on a route: each hop is
+  // projected on its own track line so branch-line crossings work too.
+  crossingPassRows(routeId, point, windowMinutes = STATION_BOARD_MINUTES, maxOffsetKm = CROSSING_MAX_OFFSET_KM) {
     const atMin = this.minutesSinceMidnightFromIso(this.simulationAt)
-    if (!Number.isFinite(atMin) || !Number.isFinite(distanceKm)) return []
+    if (!Number.isFinite(atMin) || !Number.isFinite(point?.lat) || !Number.isFinite(point?.lng)) return []
 
     const snap = this.scheduleSnapshots[routeId]
     if (!snap) return []
+
+    const projections = new Map()
+    const projectOn = (chainage) => {
+      if (!projections.has(chainage)) projections.set(chainage, nearestProjection(chainage, point.lng, point.lat))
+      return projections.get(chainage)
+    }
 
     const rows = []
     snap.trips?.forEach((trip) => {
       const path = trip.path || []
       for (let i = 0; i < path.length - 1; i += 1) {
-        const a = this.stationKmOnRoute(routeId, path[i].r)
-        const b = this.stationKmOnRoute(routeId, path[i + 1].r)
-        if (!Number.isFinite(a) || !Number.isFinite(b)) continue
+        const hop = this.hopChainageFor(routeId, path[i].r, path[i + 1].r)
+        if (!hop) continue
+        const projection = projectOn(hop.chainage)
+        if (!projection || projection.offsetKm > maxOffsetKm) continue
+        const a = hop.fromKm
+        const b = hop.toKm
         const lo = Math.min(a, b)
         const hi = Math.max(a, b)
+        const distanceKm = projection.km
         if (distanceKm < lo || distanceKm > hi || hi === lo) continue
         const frac = (distanceKm - a) / (b - a)
         const dep = Number(path[i].d)
@@ -10046,6 +10059,7 @@ export default class extends Controller {
           route_id: routeId,
           wait
         })
+        break
       }
     })
     return rows.sort((a, b) => a.wait - b.wait).slice(0, 10)
@@ -10114,7 +10128,7 @@ export default class extends Controller {
       if (!point) return
       const distM = this.haversineMeters(latlng.lat, latlng.lng, point.lat, point.lng)
       if (distM > NEARBY_RADIUS_M) return
-      this.crossingPassRows(routeId, d).forEach((row) => {
+      this.crossingPassRows(routeId, point).forEach((row) => {
         rows.push({ ...row, meters: Math.round(distM) })
       })
     })
