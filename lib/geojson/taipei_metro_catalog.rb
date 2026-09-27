@@ -2,6 +2,11 @@
 
 module Geojson
   module TaipeiMetroCatalog
+    # OSM relation 4250357 dropped the 公館 stop_position in 2026-09.
+    SONGSHAN_XINDIAN_FALLBACK_STATIONS = [
+      { ref: "G07", name: "公館", lon: 121.5341665, lat: 25.0148176 }
+    ].freeze
+
     # Same-system in-station transfers (shown as two-color markers).
     # lon/lat: single point between line geometries at the transfer concourse.
     IN_STATION_TRANSFERS_BY_NAME = {
@@ -30,7 +35,18 @@ module Geojson
         lon: 121.51702320022838,
         lat: 25.04804218211409
       },
-      "南港展覽館" => { combined_ref: "BR24;BL23", lon: 121.6175958, lat: 25.055012 }
+      # Shared lon/lat is the concourse midpoint; per-ref pins each platform on its own track.
+      "南港展覽館" => {
+        combined_ref: "BR24;BL23",
+        lon: 121.6175597,
+        lat: 25.0549734,
+        coordinates_by_ref: {
+          # OSM BR24 stop on the Wenhu passenger way (not the BL/BR midpoint stub).
+          "BR24" => { lon: 121.6179004, lat: 25.055378 },
+          # OSM BL23 station on the Bannan corridor.
+          "BL23" => { lon: 121.6172189, lat: 25.0545687 }
+        }
+      }
     }.freeze
 
     TRANSFER_STATION_REFS_BY_NAME = IN_STATION_TRANSFERS_BY_NAME.transform_values { |entry| entry[:combined_ref] }.freeze

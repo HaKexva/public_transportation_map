@@ -135,10 +135,19 @@ class MetroDepotCatalogTest < ActiveSupport::TestCase
     hsr = depots.find { |entry| entry[:id] == "hsr_wuri_depot" }
     assert_equal %w[taiwan_hsr], hsr[:routes]
     assert hsr[:track_links].any? { |link| link[:route_id] == "taiwan_hsr" }
+    wuri_link = hsr[:track_links].sole
+    assert_operator wuri_link[:coordinates].last[0], :>, 120.617
+    assert_operator wuri_link[:coordinates].last[1], :<, 24.100
+    refute wuri_link[:coordinates].any? { |_lon, lat| lat > 24.105 },
+           "烏日基地支線不應差到高鐵台中站旁的台鐵軌道"
 
     yanchao = depots.find { |entry| entry[:id] == "hsr_yanchao_depot" }
     assert_operator yanchao[:lat], :>, 22.7635
     assert_operator yanchao[:lat], :<, 22.77
+    assert_in_delta 120.3458, yanchao[:lon], 0.001
+    yanchao_link = yanchao[:track_links].sole
+    assert_operator yanchao_link[:coordinates].first[0], :>, 120.350
+    assert_operator yanchao_link[:coordinates].last[1], :>, yanchao_link[:coordinates].first[1]
 
     north_depot = depots.find { |entry| entry[:id] == "kaohsiung_north_depot" }
     gangshan_hospital_lat = 22.7807473

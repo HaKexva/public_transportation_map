@@ -282,6 +282,24 @@
       "type": "Feature",
       "properties": {
         "feature_type": "station",
+        "ref": "G03;G03A",
+        "name": "七張",
+        "name_en": "Qizhang",
+        "color": "#CEDC00",
+        "line": "小碧潭支線"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5429203,
+          24.9750221
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
         "ref": "G03A",
         "name": "小碧潭",
         "line": "小碧潭支線",
@@ -308,24 +326,20 @@
         "type": "LineString",
         "coordinates": [
           [
-            121.53204219042422,
-            24.971085949723147
+            121.53231,
+            24.97101
+          ],
+          [
+            121.5319,
+            24.9705
+          ],
+          [
+            121.5316,
+            24.97
           ],
           [
             121.5316,
             24.9696
-          ],
-          [
-            121.5313,
-            24.97
-          ],
-          [
-            121.531,
-            24.9706
-          ],
-          [
-            121.53148,
-            24.97128
           ]
         ]
       }

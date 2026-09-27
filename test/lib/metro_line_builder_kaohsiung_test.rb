@@ -68,6 +68,84 @@ class MetroLineBuilderKaohsiungTest < ActiveSupport::TestCase
     end
   end
 
+  test "red line R4A sits near the passenger centerline and Xiaogang stub is short" do
+    path = Rails.root.join("public/geojson/kaohsiung_metro/red_line.geojson")
+    skip "run bin/rails geojson:kaohsiung_metro first" unless path.exist?
+
+    data = JSON.parse(path.read)
+    route = data["features"].find { |feature| feature.dig("properties", "feature_type") == "route" }
+    coordinates = route.dig("geometry", "coordinates")
+    stations = data["features"].select { |feature| feature.dig("properties", "feature_type") == "station" }
+
+    r4a = stations.find { |feature| feature.dig("properties", "ref") == "R4A" }
+    r3 = stations.find { |feature| feature.dig("properties", "ref") == "R3" }
+    assert r4a && r3
+
+    builder = Geojson::MetroLineBuilder.new(Geojson::KaohsiungMetroCatalog::LINES.find { |line| line.slug == "red_line" })
+    i4a = builder.send(:nearest_coordinate_index, coordinates, r4a["geometry"]["coordinates"])
+    i3 = builder.send(:nearest_coordinate_index, coordinates, r3["geometry"]["coordinates"])
+
+    r4a_distance = Geojson::TrackGeometry.planar_distance_meters(
+      coordinates[i4a][0], coordinates[i4a][1],
+      r4a["geometry"]["coordinates"][0], r4a["geometry"]["coordinates"][1]
+    )
+    stub_m = Geojson::TrackGeometry.path_length_meters(coordinates[i3..])
+
+    assert_operator r4a_distance, :<, 55, "R4A should sit near dual-track/NLSC centerline (was #{r4a_distance.round(1)}m)"
+    assert_operator stub_m, :<=, 110, "小港 stub should be short (was #{stub_m.round(1)}m)"
+  end
+
+  test "red line south depot spur peels near R4A into the yard body" do
+    path = Rails.root.join("public/geojson/kaohsiung_metro/red_line.geojson")
+    skip "run bin/rails geojson:kaohsiung_metro first" unless path.exist?
+
+    data = JSON.parse(path.read)
+    spur = data["features"].find { |feature| feature.dig("properties", "depot_id") == "kaohsiung_south_depot" }
+    assert spur, "expected 南機廠支線"
+
+    coords = spur.dig("geometry", "coordinates")
+    assert_operator coords.length, :>=, 3
+    assert_in_delta 120.33057, coords.last[0], 0.001
+    assert_in_delta 22.58453, coords.last[1], 0.001
+    assert_operator coords.first[1], :<, 22.5815, "spur should peel near R4A, not deep in the yard"
+  end
+
+  test "orange line O2-O4 corridor is dense and daliao depot spur goes north into the yard" do
+    path = Rails.root.join("public/geojson/kaohsiung_metro/orange_line.geojson")
+    skip "run bin/rails geojson:kaohsiung_metro first" unless path.exist?
+
+    data = JSON.parse(path.read)
+    route = data["features"].find { |feature| feature.dig("properties", "feature_type") == "route" }
+    coordinates = route.dig("geometry", "coordinates")
+    stations = data["features"].select { |feature| feature.dig("properties", "feature_type") == "station" }
+
+    o2 = stations.find { |feature| feature.dig("properties", "ref") == "O2" }
+    o4 = stations.find { |feature| feature.dig("properties", "ref") == "O4" }
+    assert o2 && o4
+
+    builder = Geojson::MetroLineBuilder.new(
+      Geojson::KaohsiungMetroCatalog::LINES.find { |line| line.slug == "orange_line" }
+    )
+    i2 = builder.send(:nearest_coordinate_index, coordinates, o2["geometry"]["coordinates"])
+    i4 = builder.send(:nearest_coordinate_index, coordinates, o4["geometry"]["coordinates"])
+    lo, hi = [ i2, i4 ].minmax
+    max_step = (lo...hi).map do |index|
+      Geojson::TrackGeometry.planar_distance_meters(
+        coordinates[index][0], coordinates[index][1],
+        coordinates[index + 1][0], coordinates[index + 1][1]
+      )
+    end.max
+
+    assert_operator max_step, :<, 50, "O2–O4 should not use sparse 300m chords (was #{max_step.round(1)}m)"
+
+    spur = data["features"].find { |feature| feature.dig("properties", "depot_id") == "kaohsiung_daliao_depot" }
+    assert spur, "expected 大寮機廠支線"
+    coords = spur.dig("geometry", "coordinates")
+    assert_operator coords.last[1], :>, coords.first[1], "spur should run north into the yard"
+    assert_in_delta 120.39072, coords.last[0], 0.002
+    assert_in_delta 22.62487, coords.last[1], 0.002
+  end
+
   def min_distance_to_lines_meters(lon, lat, line_strings)
     line_strings.flat_map do |coordinates|
       coordinates.each_cons(2).map do |start, finish|

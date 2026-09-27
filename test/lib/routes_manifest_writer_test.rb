@@ -92,6 +92,9 @@ class RoutesManifestWriterTest < ActiveSupport::TestCase
     assert_equal "WSL", wushulin["ref"]
     assert_equal "WS", western_south["ref"]
     assert_not_equal wushulin["ref"], western_south["ref"]
+    assert_includes Array(wushulin["station_names"]), "WSL01"
+    assert_includes Array(wushulin["station_names"]), "烏樹林"
+    refute_includes Array(wushulin["station_names"]), "WS01"
   ensure
     path.delete if path.exist?
   end

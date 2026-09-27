@@ -44,4 +44,31 @@ class MetroLineBuilderDanhaiTest < ActiveSupport::TestCase
     refute stations.any? { |feature| feature.dig("properties", "station_role").present? },
            "routes should not mark origin/destination terminals"
   end
+
+  test "danhai depot spur enters yard northwest of 崁頂 not west of the platform" do
+    path = Rails.root.join("public/geojson/new_taipei_metro/danhai_lrt.geojson")
+    data = JSON.parse(path.read)
+
+    kanding = data.fetch("features").find { |feature|
+      feature.dig("properties", "feature_type") == "station" &&
+        feature.dig("properties", "ref") == "V11"
+    }
+    spur = data.fetch("features").find { |feature| feature.dig("properties", "depot_id") == "danhai_depot" }
+    assert kanding
+    assert spur, "expected 淡海車廠支線"
+
+    station = kanding.dig("geometry", "coordinates")
+    coords = spur.dig("geometry", "coordinates")
+    tip = coords.last
+
+    assert_operator tip[1], :>, station[1] + 0.0015, "spur must run north into the yard"
+    assert_operator tip[0], :<, station[0] - 0.001, "spur must run west into the yard body"
+    assert_in_delta 121.43306, tip[0], 0.0008
+    assert_in_delta 25.20313, tip[1], 0.0008
+    refute coords.any? { |_lon, lat| lat > 25.2035 }, "should not loop through the NW yard nose"
+
+    depot = Geojson::MetroDepotCatalog::DEPOTS.find { |entry| entry[:id] == "danhai_depot" }
+    assert_in_delta 121.43306, depot[:lon], 0.00001
+    assert_in_delta 25.20313, depot[:lat], 0.00001
+  end
 end

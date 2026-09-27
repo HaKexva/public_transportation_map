@@ -110,6 +110,17 @@ class MetroLineBuilderTaipeiTransfersTest < ActiveSupport::TestCase
     assert_equal "R08;G10", cks[:ref]
   end
 
+  test "returns the station list even when no off-line transfer stations are rejected" do
+    line = Geojson::TaipeiMetroCatalog::LINES.find { |entry| entry.slug == "songshan_xindian" }
+    builder = Geojson::MetroLineBuilder.new(line)
+    stations = [ { ref: "G01", name: "新店", lon: 121.5376, lat: 24.9581 } ]
+
+    result = builder.send(:apply_taipei_in_station_transfers!, stations)
+
+    assert_same stations, result
+    assert_includes result.map { |station| station[:name] }, "新店"
+  end
+
   test "songshan xindian geojson lists 古亭 and 中正紀念堂 between 台電大樓 and 小南門" do
     data = JSON.parse(Rails.root.join("public/geojson/taipei_metro/songshan_xindian.geojson").read)
     stations = data.fetch("features").select do |feature|
@@ -174,6 +185,81 @@ class MetroLineBuilderTaipeiTransfersTest < ActiveSupport::TestCase
     assert_not_includes names, "古亭"
   end
 
+  test "xinbeitou branch includes 北投 junction and 新北投 terminus" do
+    line = Geojson::TaipeiMetroCatalog::LINES.find { |entry| entry.slug == "xinbeitou_branch" }
+    builder = Geojson::MetroLineBuilder.new(line)
+    stations = [ { ref: "R22A", name: "新北投", lon: 121.50317, lat: 25.13689 } ]
+    builder.send(:apply_taipei_in_station_transfers!, stations)
+
+    names = stations.map { |station| station[:name] }
+    assert_includes names, "新北投"
+    assert_includes names, "北投"
+    beitou = stations.find { |station| station[:name] == "北投" }
+    assert_equal "R22;R22A", beitou[:ref]
+  end
+
+  test "xinbeitou branch geojson lists 北投 and 新北投" do
+    data = JSON.parse(Rails.root.join("public/geojson/taipei_metro/xinbeitou_branch.geojson").read)
+    stations = data.fetch("features").select { |feature| feature.dig("properties", "feature_type") == "station" }
+    names = stations.map { |feature| feature.dig("properties", "name") }
+
+    assert_includes names, "北投"
+    assert_includes names, "新北投"
+
+    beitou = stations.find { |feature| feature.dig("properties", "name") == "北投" }
+    assert_equal "R22;R22A", beitou.dig("properties", "ref")
+
+    route = data.fetch("features").find { |feature| feature.dig("properties", "feature_type") == "route" }
+    coords = route.dig("geometry", "coordinates")
+    lon, lat = beitou.dig("geometry", "coordinates")
+    dist = [
+      Geojson::TrackGeometry.planar_distance_meters(lon, lat, coords.first[0], coords.first[1]),
+      Geojson::TrackGeometry.planar_distance_meters(lon, lat, coords.last[0], coords.last[1])
+    ].min
+    assert_operator dist, :<, 5, "北投 should sit on a xinbeitou branch route end"
+  end
+
+  test "xiaobitan branch includes 七張 junction and 小碧潭 terminus" do
+    line = Geojson::TaipeiMetroCatalog::LINES.find { |entry| entry.slug == "xiaobitan_branch" }
+    builder = Geojson::MetroLineBuilder.new(line)
+    stations = [ { ref: "G03A", name: "小碧潭", lon: 121.5305976, lat: 24.9717591 } ]
+    builder.send(:apply_taipei_in_station_transfers!, stations)
+
+    names = stations.map { |station| station[:name] }
+    assert_includes names, "小碧潭"
+    assert_includes names, "七張"
+    qizhang = stations.find { |station| station[:name] == "七張" }
+    assert_equal "G03;G03A", qizhang[:ref]
+  end
+
+  test "xiaobitan branch geojson lists 七張 and 小碧潭" do
+    data = JSON.parse(Rails.root.join("public/geojson/taipei_metro/xiaobitan_branch.geojson").read)
+    stations = data.fetch("features").select { |feature| feature.dig("properties", "feature_type") == "station" }
+    names = stations.map { |feature| feature.dig("properties", "name") }
+
+    assert_includes names, "七張"
+    assert_includes names, "小碧潭"
+
+    qizhang = stations.find { |feature| feature.dig("properties", "name") == "七張" }
+    assert_equal "G03;G03A", qizhang.dig("properties", "ref")
+
+    route = data.fetch("features").find { |feature| feature.dig("properties", "feature_type") == "route" }
+    coords = route.dig("geometry", "coordinates")
+    lon, lat = qizhang.dig("geometry", "coordinates")
+    dist = [
+      Geojson::TrackGeometry.planar_distance_meters(lon, lat, coords.first[0], coords.first[1]),
+      Geojson::TrackGeometry.planar_distance_meters(lon, lat, coords.last[0], coords.last[1])
+    ].min
+    assert_operator dist, :<, 5, "七張 should sit on a xiaobitan branch route end"
+
+    spur = data.fetch("features").find { |feature| feature.dig("properties", "depot_id") == "xindian_depot" }
+    assert spur
+    spur_coords = spur.dig("geometry", "coordinates")
+    # One-way into the yard; must not return north and close a 口-shaped loop.
+    assert_operator spur_coords.last[1], :<, spur_coords.first[1]
+    refute spur_coords.each_cons(2).any? { |a, b| b[1] > a[1] + 0.00005 }
+  end
+
   test "tamsui xinyi geojson extends past 象山 to 廣慈/奉天宮 with eastern tail" do
     data = JSON.parse(Rails.root.join("public/geojson/taipei_metro/tamsui_xinyi.geojson").read)
     stations = data.fetch("features").select { |feature| feature.dig("properties", "feature_type") == "station" }
@@ -183,8 +269,8 @@ class MetroLineBuilderTaipeiTransfersTest < ActiveSupport::TestCase
 
     assert guangci, "expected R01 廣慈/奉天宮"
     assert_equal "廣慈/奉天宮", guangci.dig("properties", "name")
-    assert_in_delta 121.58188, guangci.dig("geometry", "coordinates", 0), 0.0005
-    assert_in_delta 25.03747, guangci.dig("geometry", "coordinates", 1), 0.0005
+    assert_in_delta 121.58217, guangci.dig("geometry", "coordinates", 0), 0.0005
+    assert_in_delta 25.03745, guangci.dig("geometry", "coordinates", 1), 0.0005
 
     coords = route.dig("geometry", "coordinates")
     max_lon = coords.map { |point| point[0] }.max
@@ -223,10 +309,10 @@ class MetroLineBuilderTaipeiTransfersTest < ActiveSupport::TestCase
     assert_operator mid[1], :<, 25.0365, "Xiangshan–Guangci segment should follow 信義路六段/福德街"
     assert_operator mid[1], :>, 25.0325
 
-    # Tail along 中坡南路, ending at 玉成公園外側 (not through park interior).
+    # Tail along 中坡南路, ending at 玉成公園外側 (OSM yard tip).
     tip = coords.first
-    assert_in_delta 121.58548, tip[0], 0.0015
-    assert_in_delta 25.04156, tip[1], 0.0015
+    assert_in_delta 121.58559, tip[0], 0.0015
+    assert_in_delta 25.04167, tip[1], 0.0015
     assert_operator tip[1], :<, 25.0425, "tail must not cross into 玉成公園"
     assert_operator tip[1], :>, 25.0405
 
@@ -288,7 +374,12 @@ class MetroLineBuilderTaipeiTransfersTest < ActiveSupport::TestCase
   end
 
   test "injects 南港展覽館 transfer on wenhu and bannan lines" do
-    %w[wenhu_line bannan].each do |slug|
+    expected = Geojson::TaipeiMetroCatalog::IN_STATION_TRANSFERS_BY_NAME.fetch("南港展覽館")
+
+    {
+      "wenhu_line" => "BR24",
+      "bannan" => "BL23"
+    }.each do |slug, platform_ref|
       line = Geojson::TaipeiMetroCatalog::LINES.find { |entry| entry.slug == slug }
       builder = Geojson::MetroLineBuilder.new(line)
       stations = []
@@ -297,8 +388,39 @@ class MetroLineBuilderTaipeiTransfersTest < ActiveSupport::TestCase
 
       station = stations.find { |entry| entry[:name] == "南港展覽館" }
       assert station, "expected 南港展覽館 on #{slug}"
-      assert_equal "BR24;BL23", station[:ref]
+      assert_equal platform_ref, station[:ref]
+      platform = expected.fetch(:coordinates_by_ref).fetch(platform_ref)
+      assert_in_delta platform[:lon], station[:lon], 0.00001
+      assert_in_delta platform[:lat], station[:lat], 0.00001
+      assert station[:position_anchored]
     end
+  end
+
+  test "wenhu line geojson pins 南港展覽館 on the Wenhu track" do
+    data = JSON.parse(Rails.root.join("public/geojson/taipei_metro/wenhu_line.geojson").read)
+    stations = data.fetch("features").select do |feature|
+      feature.dig("properties", "feature_type") == "station"
+    end
+    nangang = stations.find { |feature| feature.dig("properties", "name") == "南港展覽館" }
+    assert nangang
+
+    expected = Geojson::TaipeiMetroCatalog::IN_STATION_TRANSFERS_BY_NAME
+      .fetch("南港展覽館")
+      .fetch(:coordinates_by_ref)
+      .fetch("BR24")
+    lon, lat = nangang.dig("geometry", "coordinates")
+    assert_in_delta expected[:lon], lon, 0.00005
+    assert_in_delta expected[:lat], lat, 0.00005
+
+    main = data.fetch("features").find do |feature|
+      feature.dig("properties", "feature_type") == "route"
+    end
+    coords = main.dig("geometry", "coordinates")
+    dist = [
+      Geojson::TrackGeometry.planar_distance_meters(lon, lat, coords.first[0], coords.first[1]),
+      Geojson::TrackGeometry.planar_distance_meters(lon, lat, coords.last[0], coords.last[1])
+    ].min
+    assert_operator dist, :<, 5, "南港展覽館 should sit on a Wenhu route end"
   end
 
   test "wenhu line geojson includes 忠孝復興 between BR09 and BR11" do
