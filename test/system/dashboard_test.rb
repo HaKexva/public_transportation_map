@@ -572,6 +572,37 @@ class DashboardTest < ApplicationSystemTestCase
     assert_no_current_path(/[?&]at=/, wait: 5)
   end
 
+  test "level crossing predicts timetable passes along the hop track" do
+    visit root_path
+    assert_selector ".map-boot-overlay[hidden]", visible: :all, wait: 30
+
+    rows = page.evaluate_script(<<~JS)
+      (() => {
+        const el = document.querySelector('[data-controller~="map"]')
+        const controller = window.Stimulus.getControllerForElementAndIdentifier(el, "map")
+        const now = controller.minutesSinceMidnightFromIso(controller.simulationAt)
+        const coords = { A: [ 25.0, 121.0 ], D: [ 25.0, 121.03 ] }
+        controller.stationCoordForRef = (ref) => coords[ref] || null
+        controller.vehicleTracksByRouteId["test_crossing_line"] = [ [ [ 121.0, 25.0 ], [ 121.03, 25.0 ] ] ]
+        controller.scheduleSnapshots["test_crossing_line"] = {
+          route_id: "test_crossing_line",
+          trips: [
+            { id: "trip:x", train_number: "1234", path: [ { r: "A", a: now, d: now + 2 }, { r: "D", a: now + 32, d: now + 33 } ] }
+          ]
+        }
+        return {
+          on: controller.crossingPassRows("test_crossing_line", { lat: 25.0, lng: 121.015 }),
+          off: controller.crossingPassRows("test_crossing_line", { lat: 25.01, lng: 121.015 })
+        }
+      })()
+    JS
+
+    assert_equal 1, rows["on"].length
+    assert_equal "1234", rows["on"].first["train_number"]
+    assert_in_delta 17.0, rows["on"].first["wait"], 0.2
+    assert_empty rows["off"]
+  end
+
   test "shows and hides Wenhu line when the line checkbox is toggled" do
     visit root_path
 
