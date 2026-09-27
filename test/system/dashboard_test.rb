@@ -431,9 +431,10 @@ class DashboardTest < ApplicationSystemTestCase
       controller.showAllTransit()
     JS
 
-    assert_selector "#layer-wenhu_line:checked", visible: :all, wait: 15
-    assert_selector "#layer-taiwan_hsr:checked", visible: :all, wait: 15
-    assert_selector "#layer-maokong_gondola:checked", visible: :all, wait: 15
+    # Checkboxes sync only after every rail route has loaded, which is slow on shared CI runners.
+    assert_selector "#layer-wenhu_line:checked", visible: :all, wait: 45
+    assert_selector "#layer-taiwan_hsr:checked", visible: :all, wait: 45
+    assert_selector "#layer-maokong_gondola:checked", visible: :all, wait: 45
     assert_selector ".leaflet-overlay-pane path.leaflet-interactive", wait: 15, minimum: 5
   end
 
@@ -1061,10 +1062,9 @@ class DashboardTest < ApplicationSystemTestCase
       checkbox.dispatchEvent(new Event("change", { bubbles: true }))
     JS
 
-    assert_selector ".out-of-station-transfer-line--passage", wait: 15, minimum: 1, visible: :all
-
-    spans = out_of_station_passage_spans
-    zuoying = spans.find { |span| span["minLat"].between?(22.5, 22.85) && span["maxLat"] < 23.2 }
+    zuoying_span = ->(span) { span["minLat"].between?(22.5, 22.85) && span["maxLat"] < 23.2 }
+    spans = wait_for_passage_spans { |current| current.any?(&zuoying_span) }
+    zuoying = spans.find(&zuoying_span)
     assert zuoying, "expected a Zuoying-local HSR–紅線 passage, got #{spans.inspect}"
     refute island_spanning_passage?(spans), "Kaohsiung 紅線 R16 must not snap to 士林, got #{spans.inspect}"
   end
@@ -1440,13 +1440,24 @@ class DashboardTest < ApplicationSystemTestCase
     assert_selector "#map-layers-panel-body", visible: :hidden
     assert_selector ".map-ui-panel__toggle[aria-expanded='false']", visible: :all
 
-    find(".map-ui-panel__toggle[aria-controls='map-layers-panel-body']", visible: :all).click
+    # The toggle slides with the collapsing sidebar; a pointer click mid-transition can miss it.
+    page.execute_script("document.querySelector(\".map-ui-panel__toggle[aria-controls='map-layers-panel-body']\").click()")
     assert_no_selector ".map-split-layout--sidebar-collapsed", wait: 5
     assert_selector "#map-layers-panel-body", visible: :visible
     assert_selector ".map-ui-panel__toggle[aria-expanded='true']", visible: :all
   end
 
   private
+
+    def wait_for_passage_spans(timeout: 15)
+      deadline = Process.clock_gettime(Process::CLOCK_MONOTONIC) + timeout
+      loop do
+        spans = out_of_station_passage_spans
+        return spans if yield(spans) || Process.clock_gettime(Process::CLOCK_MONOTONIC) > deadline
+
+        sleep 0.2
+      end
+    end
 
     def out_of_station_passage_spans
       page.evaluate_script(<<~JS)
