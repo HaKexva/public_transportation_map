@@ -54,10 +54,17 @@ export class VehicleCanvasLayer {
 
     const size = this._map.getSize()
     const dpr = window.devicePixelRatio || 1
-    this._canvas.width = Math.round(size.x * dpr)
-    this._canvas.height = Math.round(size.y * dpr)
-    this._canvas.style.width = `${size.x}px`
-    this._canvas.style.height = `${size.y}px`
+    // Assigning canvas width/height reallocates the backing store; only do it
+    // when the viewport actually changes, not on every animation frame.
+    if (size.x !== this._sizeX || size.y !== this._sizeY || dpr !== this._dpr) {
+      this._sizeX = size.x
+      this._sizeY = size.y
+      this._dpr = dpr
+      this._canvas.width = Math.round(size.x * dpr)
+      this._canvas.height = Math.round(size.y * dpr)
+      this._canvas.style.width = `${size.x}px`
+      this._canvas.style.height = `${size.y}px`
+    }
     this._ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
     this._ctx.clearRect(0, 0, size.x, size.y)
 

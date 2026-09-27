@@ -475,6 +475,33 @@ class DashboardTest < ApplicationSystemTestCase
     assert_in_delta 0.075, result["afterProgress"], 0.04
   end
 
+  test "canvas trains stay off the DOM and still open popups" do
+    visit root_path
+    assert_selector ".map-boot-overlay[hidden]", visible: :all, wait: 30
+
+    counts = page.evaluate_script(<<~JS)
+      (() => {
+        const el = document.querySelector('[data-controller~="map"]')
+        const controller = window.Stimulus.getControllerForElementAndIdentifier(el, "map")
+        controller.syncVehicleMarkers([{
+          id: "test-gps-1", route_id: "taiwan_hsr", system_id: "hsr", train_number: "0999",
+          destination_name: "左營", position_source: "tdx_gps", lat: 25.0478, lng: 121.5170
+        }])
+        controller.handleCanvasVehicleSelect({ id: "test-gps-1" })
+        return {
+          markers: Object.keys(controller.vehicleMarkersById).length,
+          domIcons: document.querySelectorAll(".vehicle-marker-icon").length
+        }
+      })()
+    JS
+
+    assert_equal 1, counts["markers"]
+    assert_equal 0, counts["domIcons"]
+    find(".leaflet-popup [data-vehicle-follow]").click
+    assert_no_selector ".leaflet-popup", wait: 5
+    assert_selector ".vehicle-follow-bar:not([hidden])", wait: 5
+  end
+
   test "shows and hides Wenhu line when the line checkbox is toggled" do
     visit root_path
 

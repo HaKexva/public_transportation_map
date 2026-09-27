@@ -7381,7 +7381,7 @@ export default class extends Controller {
         claimedMarkerIds.add(id)
         existing.setLatLng(latlng)
         existing._vehicleData = vehicle
-        existing.setIcon(this.vehicleIconFor(vehicle, latlng))
+        if (!this.vehicleCanvas) existing.setIcon(this.vehicleIconFor(vehicle, latlng))
         this.setVehicleMarkerVisible(existing, onPath !== false)
         if (this.followedMarker === existing) {
           this.followedVehicleKey = this.vehicleFollowKey(vehicle) || this.followedVehicleKey
@@ -7394,7 +7394,9 @@ export default class extends Controller {
       const marker = this.createVehicleMarker(vehicle, latlng)
       marker._markerId = id
       this.vehicleMarkersById[id] = marker
-      this.vehicleGroup.addLayer(marker)
+      // Canvas mode draws every train in one layer; markers stay off-map as
+      // data holders for follow/popup so hundreds of DOM nodes never move per frame.
+      if (!this.vehicleCanvas) this.vehicleGroup.addLayer(marker)
       this.setVehicleMarkerVisible(marker, onPath !== false)
       claimedMarkerIds.add(id)
     })
@@ -8817,9 +8819,13 @@ export default class extends Controller {
 
   handleCanvasVehicleSelect(entry) {
     const marker = this.vehicleMarkersById[String(entry.id)]
-    if (marker) {
-      marker.openPopup()
-      return
+    if (marker && this.map) {
+      const popup = marker.getPopup()
+      if (popup) {
+        popup.setLatLng(marker.getLatLng()).openOn(this.map)
+        this.bindVehiclePopupActions(marker)
+        return
+      }
     }
     if (entry.vehicle) this.startFollowingVehicle(entry.vehicle)
   }
@@ -8834,33 +8840,31 @@ export default class extends Controller {
     this._tileWarmAt = now
 
     const zoom = Math.round(this.map.getZoom() ?? 12)
-    const template = this.tileLayer._url
-    if (!template) return
+    if (typeof this.tileLayer.getTileUrl !== "function") return
 
     const projected = this.map.project(latlng, zoom)
     const vehicle = this.followedMarker?._vehicleData
     const bearing = vehicle ? this.vehicleBearingDegrees(vehicle, latlng) : 0
     const rad = (bearing * Math.PI) / 180
-    const ahead = 280
-    const centers = [
-      [ Math.floor(projected.x / 256), Math.floor(projected.y / 256) ],
-      [
+    // Faster playback covers more ground before the next warm-up tick.
+    const reach = Math.min(4, Math.max(1, this.simulationSpeed / 15))
+    const centers = [ [ Math.floor(projected.x / 256), Math.floor(projected.y / 256) ] ]
+    for (let step = 1; step <= Math.ceil(reach); step += 1) {
+      const ahead = 280 * step
+      centers.push([
         Math.floor((projected.x + Math.sin(rad) * ahead) / 256),
         Math.floor((projected.y - Math.cos(rad) * ahead) / 256)
-      ]
-    ]
+      ])
+    }
 
-    const L = window.L
+    this._warmedTiles ||= new Set()
+    if (this._warmedTiles.size > 2000) this._warmedTiles.clear()
     centers.forEach(([ cx, cy ]) => {
       for (let dx = -1; dx <= 1; dx += 1) {
         for (let dy = -1; dy <= 1; dy += 1) {
-          const url = L.Util.template(template, {
-            s: [ "a", "b", "c" ][(Math.abs(cx + dx) + Math.abs(cy + dy)) % 3],
-            x: cx + dx,
-            y: cy + dy,
-            z: zoom,
-            r: ""
-          })
+          const url = this.tileLayer.getTileUrl({ x: cx + dx, y: cy + dy, z: zoom })
+          if (!url || this._warmedTiles.has(url)) continue
+          this._warmedTiles.add(url)
           const img = new Image()
           img.referrerPolicy = "no-referrer"
           img.src = url
