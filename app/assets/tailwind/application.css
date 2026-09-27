@@ -1905,6 +1905,24 @@
   font-size: 0.8rem;
 }
 
+.map-alert-banner__text {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  gap: 0.2rem 0.5rem;
+  min-width: 0;
+}
+
+.map-alert-banner__text small {
+  flex-basis: 100%;
+  opacity: 0.8;
+}
+
+.map-alert-banner__item a {
+  white-space: nowrap;
+  text-decoration: underline;
+}
+
 .map-float-panel {
   position: absolute;
   z-index: 33;
