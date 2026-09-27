@@ -38,7 +38,7 @@ gem "kamal", require: false
 gem "thruster", require: false
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-gem "image_processing", "~> 2.0"
+gem "image_processing", "~> 2.1"
 
 group :development, :test do
   gem "dotenv-rails"
@@ -69,12 +69,12 @@ group :test do
   gem "rubyzip", ">= 3.4.0"
 end
 
-gem "ruby_ui", "~> 1.3", group: :development, require: false
+gem "ruby_ui", "~> 1.6", group: :development, require: false
 
 gem "phlex-rails", "~> 2.4"
 
 gem "tailwind_merge", "~> 1.5"
 
-gem "rouge", "~> 5.0"
+gem "rouge", "~> 5.1"
 
 gem "tailwindcss-rails", "~> 4.6"
