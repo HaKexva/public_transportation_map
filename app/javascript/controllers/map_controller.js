@@ -153,6 +153,7 @@ const BOARD_PERIODS = [
 ]
 const SCHEDULE_FETCH_CHUNK = 8
 const SCHEDULE_FETCH_RETRY_MS = 15_000
+const ALERT_REFRESH_MS = 2 * 60 * 1000
 const HOP_CHAINAGE_MAX_OFFSET_KM = 0.4
 const CROSSING_MAX_OFFSET_KM = 0.08
 const SKYTRAIN_NORTH_STATION_ORDER = [ "ST1N", "ST2N" ]
@@ -450,6 +451,8 @@ export default class extends Controller {
     this.stopFollowingVehicle({ silent: true })
     this.vehicleCanvas?.remove()
     this.vehicleCanvas = null
+    if (this.alertRefreshTimer) clearInterval(this.alertRefreshTimer)
+    this.alertRefreshTimer = null
     this.alertBannerEl?.remove()
     this.exploreToolsEl?.remove()
     this.stationBoardEl?.remove()
@@ -694,6 +697,7 @@ export default class extends Controller {
     this.restoreRelaxMode()
     this.loadStoredPins()
     this.loadAlerts()
+    this.alertRefreshTimer = setInterval(() => this.loadAlerts(), ALERT_REFRESH_MS)
     this.loadCrossings()
 
     this.ensureAllLayerGroups()
@@ -10290,7 +10294,12 @@ export default class extends Controller {
     el.hidden = false
     el.innerHTML = visible.map((alert) => `
       <div class="map-alert-banner__item" data-alert-id="${this.escapeHtml(alert.id)}">
-        <span>${this.escapeHtml(alert.title || alert.message || "")}</span>
+        <span class="map-alert-banner__text">
+          ${alert.operator ? `<strong>${this.escapeHtml(alert.operator)}</strong>` : ""}
+          <span>${this.escapeHtml(alert.title || alert.message || "")}</span>
+          ${alert.message && alert.title ? `<small>${this.escapeHtml(alert.message)}</small>` : ""}
+        </span>
+        ${this.safeAlertUrl(alert.url) ? `<a href="${this.escapeHtml(this.safeAlertUrl(alert.url))}" target="_blank" rel="noopener">${this.escapeHtml(this.t("explore.alert_details"))}</a>` : ""}
         <button type="button" data-alert-dismiss="${this.escapeHtml(alert.id)}">&times;</button>
       </div>
     `).join("")
@@ -10300,6 +10309,15 @@ export default class extends Controller {
         this.renderAlertBanner(alerts)
       })
     })
+  }
+
+  safeAlertUrl(url) {
+    try {
+      const parsed = new URL(String(url || ""))
+      return parsed.protocol === "https:" || parsed.protocol === "http:" ? parsed.href : null
+    } catch (_error) {
+      return null
+    }
   }
 
   rideStamps() {

@@ -658,6 +658,30 @@ class DashboardTest < ApplicationSystemTestCase
     JS
   end
 
+  test "metro alert banner shows operator disruptions and can be dismissed" do
+    visit root_path
+    assert_selector ".map-boot-overlay[hidden]", visible: :all, wait: 30
+
+    page.execute_script(<<~JS)
+      const el = document.querySelector('[data-controller~="map"]')
+      const controller = window.Stimulus.getControllerForElementAndIdentifier(el, "map")
+      controller.renderAlertBanner([
+        { id: "TRTC:42", operator: "台北捷運", title: "淡水信義線部分區間暫停營運", message: "北投至淡水間暫停營運", url: "https://www.metro.taipei/" },
+        { id: "TYMC:9", operator: "桃園捷運", title: "列車延誤", url: "javascript:alert(1)" }
+      ])
+    JS
+
+    within ".map-alert-banner" do
+      assert_text "台北捷運"
+      assert_text "北投至淡水間暫停營運"
+      assert_selector "[data-alert-id='TRTC:42'] a[href='https://www.metro.taipei/']"
+      assert_no_selector "[data-alert-id='TYMC:9'] a"
+      find("[data-alert-dismiss='TRTC:42']").click
+      assert_no_selector "[data-alert-id='TRTC:42']"
+      assert_selector "[data-alert-id='TYMC:9']"
+    end
+  end
+
   test "shows and hides Wenhu line when the line checkbox is toggled" do
     visit root_path
 
