@@ -2273,6 +2273,18 @@ body.map-relax-mode .map-explore-tools > button[data-tool="explore"] {
   background: color-mix(in oklch, #0f172a 18%, var(--background));
 }
 
+.leaflet-tile-pane {
+  transition: filter 1.2s ease;
+}
+
+body.map-relax-night .leaflet-tile-pane {
+  filter: brightness(0.55) saturate(0.6) hue-rotate(-12deg);
+}
+
+.vehicle-follow-bar__group.is-active {
+  background: color-mix(in oklch, var(--primary) 18%, var(--background));
+}
+
 @media (max-width: 767px) {
   .map-explore-tools {
     top: auto;
