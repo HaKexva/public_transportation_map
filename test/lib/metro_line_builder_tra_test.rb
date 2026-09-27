@@ -99,6 +99,14 @@ class MetroLineBuilderTraTest < ActiveSupport::TestCase
       .any? { |f| f.dig("properties", "depot_id") == "tra_changhua_depot" }
     refute JSON.parse(south_path.read).fetch("features")
       .any? { |f| f.dig("properties", "depot_id") == "tra_changhua_depot" }
+
+    changhua_spur = mountain.fetch("features").find { |f| f.dig("properties", "depot_id") == "tra_changhua_depot" }
+    spur_coords = changhua_spur.dig("geometry", "coordinates")
+    assert_operator spur_coords.length, :<, 12, "expected a short throat into 扇形車庫"
+    assert_operator spur_coords.last[1], :>, spur_coords.first[1]
+    assert_in_delta 120.54045, spur_coords.last[0], 0.0003
+    assert_in_delta 24.08610, spur_coords.last[1], 0.0003
+    refute Geojson::TrackGeometry.depot_spur_has_long_closing_chord?(spur_coords)
   end
 
   test "sea and neiwan lines follow station order along route geometry" do
@@ -128,6 +136,31 @@ class MetroLineBuilderTraTest < ActiveSupport::TestCase
         previous_index = index
       end
     end
+  end
+
+  test "neiwan line follows the north bulge between beixinzhu and qianjia" do
+    path = Rails.root.join("public/geojson/tra/neiwan_line.geojson")
+    skip "run bin/rails geojson:tra_offline first" unless path.exist?
+
+    data = JSON.parse(path.read)
+    coords = data["features"].find { |f| f.dig("properties", "feature_type") == "route" }
+      .dig("geometry", "coordinates")
+    stations = data["features"].select { |f| f.dig("properties", "feature_type") == "station" }
+    named = stations.to_h { |feature| [ feature.dig("properties", "name"), feature.dig("geometry", "coordinates") ] }
+
+    beixinzhu = named.fetch("北新竹")
+    qianjia = named.fetch("千甲")
+    ia = coords.each_with_index.min_by do |point, _idx|
+      Geojson::TrackGeometry.planar_distance_meters(beixinzhu[0], beixinzhu[1], point[0], point[1])
+    end.last
+    ib = coords.each_with_index.min_by do |point, _idx|
+      Geojson::TrackGeometry.planar_distance_meters(qianjia[0], qianjia[1], point[0], point[1])
+    end.last
+    segment = coords[[ ia, ib ].min..[ ia, ib ].max]
+    max_lat = segment.map { |point| point[1] }.max
+
+    # Real 內灣線 arcs north to ~24.8114; the collapsed ESE chord stayed ~24.809.
+    assert_operator max_lat, :>, 24.8108, "北新竹–千甲 should follow the north bulge, not a south chord"
   end
 
   test "western trunk north geojson is continuous from keelung to zhunan" do
@@ -190,6 +223,32 @@ class MetroLineBuilderTraTest < ActiveSupport::TestCase
     assert_operator shelf, :<, 8, "新富 to 新豐 must not be clamped onto lat 24.931"
   end
 
+  test "western trunk north uses the southern Xin Wudu tunnel between Baifu and Wudu" do
+    path = Rails.root.join("public/geojson/tra/western_trunk_north.geojson")
+    skip "run bin/rails geojson:tra_offline first" unless path.exist?
+
+    data = JSON.parse(path.read)
+    coords = data["features"].find { |feature| feature.dig("properties", "feature_type") == "route" }
+      .dig("geometry", "coordinates")
+    stations = data["features"].select { |feature| feature.dig("properties", "feature_type") == "station" }
+    named = stations.to_h { |feature| [ feature.dig("properties", "name"), feature.dig("geometry", "coordinates") ] }
+
+    baifu = named.fetch("百福")
+    wudu = named.fetch("五堵")
+    ib = coords.each_with_index.min_by do |point, _idx|
+      Geojson::TrackGeometry.planar_distance_meters(baifu[0], baifu[1], point[0], point[1])
+    end.last
+    iw = coords.each_with_index.min_by do |point, _idx|
+      Geojson::TrackGeometry.planar_distance_meters(wudu[0], wudu[1], point[0], point[1])
+    end.last
+    lo, hi = [ ib, iw ].minmax
+    segment = coords[lo..hi]
+    max_lat = segment.map { |point| point[1] }.max
+
+    # Northern 西正線 / old-tunnel freight bulge peaks ~25.0834; 新五堵隧道 stays ~25.0824.
+    assert_operator max_lat, :<, 25.0828, "百福–五堵 should follow 新五堵隧道, not the northern freight corridor"
+  end
+
   test "western trunk south geojson is continuous from changhua to sankuai" do
     path = Rails.root.join("public/geojson/tra/western_trunk_south.geojson")
     skip "run bin/rails geojson:tra first" unless path.exist?
@@ -216,6 +275,23 @@ class MetroLineBuilderTraTest < ActiveSupport::TestCase
     assert Geojson::TrackGeometry.planar_distance_meters(
       coords.first[0], coords.first[1], start_coords[0], start_coords[1]
     ) < 500
+
+    douliu = stations.find { |feature| feature.dig("properties", "name") == "斗六" }
+    assert douliu
+    lon, lat = douliu.dig("geometry", "coordinates")
+    _, _, distance = Geojson::TrackGeometry.nearest_on_line_strings(lon, lat, [ coords ])
+    assert_operator distance, :<, 5
+
+    index = coords.each_with_index.min_by { |point, _i|
+      Geojson::TrackGeometry.planar_distance_meters(point[0], point[1], lon, lat)
+    }.last
+    before = coords[index - 1]
+    at = coords[index]
+    after = coords[index + 1]
+    inbound = Math.atan2(at[0] - before[0], at[1] - before[1])
+    outbound = Math.atan2(after[0] - at[0], after[1] - at[1])
+    turn = ((outbound - inbound) * 180.0 / Math::PI + 540) % 360 - 180
+    assert_operator turn.abs, :<, 5, "斗六 north approach should align onto the track without a sharp kink"
   end
 
   test "mountain line geojson is continuous from zhunan to changhua" do
@@ -509,18 +585,18 @@ class MetroLineBuilderTraTest < ActiveSupport::TestCase
 
     assert_operator coords.length, :>, 80,
                     "expected coastal track geometry, not a shortcut chord between terminals"
-    assert_operator Geojson::TrackGeometry.path_length_meters(coords), :>, 7_000
+    assert_operator Geojson::TrackGeometry.path_length_meters(coords), :>, 6_000
 
     port = stations.find { |feature| feature.dig("properties", "name") == "花蓮港" }
     port_lon, port_lat = port.dig("geometry", "coordinates")
 
-    # Screenshot 2026-07-27 13.59.24: coastal tail continues south of 花蓮港 toward 美崙海濱.
-    assert_operator coords.map { |point| point[1] }.min, :<, port_lat - 0.005
-
-    # Screenshot 19.48.15: northern coastal stub toward 環保公園 (separate route feature or main).
-    all_coords = routes.flat_map { |feature| feature.dig("geometry", "coordinates") }
-    assert_operator all_coords.map { |point| point[1] }.max, :>, port_lat + 0.01
-    assert_operator all_coords.map { |point| point[0] }.max, :>, port_lon
+    assert_equal 1, routes.length, "花蓮港 should not keep north/south coastal overrun stubs"
+    assert Geojson::TrackGeometry.planar_distance_meters(
+      coords.last[0], coords.last[1], port_lon, port_lat
+    ) < 100, "route should end at 花蓮港 without sticking past the station"
+    assert_operator coords.map { |point| point[1] }.min, :>, port_lat - 0.0015,
+                    "no long south coastal tail past 花蓮港"
+    assert_operator coords.map { |point| point[1] }.max, :<, port_lat + 0.04
 
     stations.each do |station|
       lon, lat = station.dig("geometry", "coordinates")
@@ -648,10 +724,17 @@ class MetroLineBuilderTraTest < ActiveSupport::TestCase
     assert_equal 0, gaps
 
     start_station = stations.first
+    finish_station = stations.last
     start_coords = start_station.dig("geometry", "coordinates")
+    finish_coords = finish_station.dig("geometry", "coordinates")
     assert Geojson::TrackGeometry.planar_distance_meters(
       coords.first[0], coords.first[1], start_coords[0], start_coords[1]
     ) < 500
+    assert Geojson::TrackGeometry.planar_distance_meters(
+      coords.last[0], coords.last[1], finish_coords[0], finish_coords[1]
+    ) < 200, "route must reach 沙崙 through the north approach curve, not stop early"
+    assert_operator coords.map { |point| point[1] }.max, :>, 22.920,
+                    "沙崙 approach must continue north past the pre-station bend"
   end
 
   test "pingxi line geojson aligns stations on track from sandiaoling to jingtong" do
@@ -727,12 +810,27 @@ class MetroLineBuilderTraTest < ActiveSupport::TestCase
     stations = data["features"].select { |f| f.dig("properties", "feature_type") == "station" }
     names = stations.map { |feature| feature.dig("properties", "name") }
 
-    assert_equal 11, names.length
+    assert_equal 12, names.length
     assert_equal "枋寮", names.first
     assert_equal "臺東", names.last
     assert_equal "加祿", names[1]
     assert_equal "內獅", names[2]
-    assert_equal "康樂", names[9]
+    assert_equal "枋野", names[4]
+    assert_equal "康樂", names[10]
+
+    zhiben = stations.find { |feature| feature.dig("properties", "name") == "知本" }
+    assert zhiben
+    lon, lat = zhiben.dig("geometry", "coordinates")
+    index = coords.each_with_index.min_by { |point, _i|
+      Geojson::TrackGeometry.planar_distance_meters(point[0], point[1], lon, lat)
+    }.last
+    before = coords[index - 1]
+    at = coords[index]
+    after = coords[index + 1]
+    inbound = Math.atan2(at[0] - before[0], at[1] - before[1])
+    outbound = Math.atan2(after[0] - at[0], after[1] - at[1])
+    turn = ((outbound - inbound) * 180.0 / Math::PI + 540) % 360 - 180
+    assert_operator turn.abs, :<, 15, "知本 should not force a sharp track kink"
 
     gaps = coords.each_cons(2).count do |(start, finish)|
       Geojson::TrackGeometry.planar_distance_meters(start[0], start[1], finish[0], finish[1]) > 2_000
@@ -803,7 +901,7 @@ class MetroLineBuilderTraTest < ActiveSupport::TestCase
     ) < 500
   end
 
-  test "yilan line geojson is continuous from badu to suao" do
+  test "yilan line geojson is continuous from badu to suao via xinma and suaoxin" do
     path = Rails.root.join("public/geojson/tra/yilan_line.geojson")
     skip "run bin/rails geojson:tra first" unless path.exist?
 
@@ -813,13 +911,26 @@ class MetroLineBuilderTraTest < ActiveSupport::TestCase
     stations = data["features"].select { |f| f.dig("properties", "feature_type") == "station" }
     names = stations.map { |feature| feature.dig("properties", "name") }
 
-    assert_equal 24, names.length
+    assert_equal 26, names.length
     assert_equal "八堵", names.first
     assert_equal "蘇澳", names.last
     assert_equal "暖暖", names[1]
     assert_equal "冬山", names[22]
-    refute_includes names, "新馬"
-    refute_includes names, "蘇澳新"
+    assert_equal "新馬", names[23]
+    assert_equal "蘇澳新", names[24]
+    refute data["features"].any? { |f| f.dig("properties", "depot_id") == "tra_qidu_depot" }
+
+    previous_index = -1
+    stations.each do |station|
+      lon, lat = station.dig("geometry", "coordinates")
+      index = coords.each_with_index.min_by do |point, _idx|
+        Geojson::TrackGeometry.planar_distance_meters(lon, lat, point[0], point[1])
+      end[1]
+
+      assert index >= previous_index,
+             "#{station.dig("properties", "name")} should follow 八堵→蘇澳 station order along the route"
+      previous_index = index
+    end
 
     gaps = coords.each_cons(2).count do |(start, finish)|
       Geojson::TrackGeometry.planar_distance_meters(start[0], start[1], finish[0], finish[1]) > 2_000
@@ -836,6 +947,10 @@ class MetroLineBuilderTraTest < ActiveSupport::TestCase
     assert Geojson::TrackGeometry.planar_distance_meters(
       coords.last[0], coords.last[1], finish_coords[0], finish_coords[1]
     ) < 500
+    # 八堵 (920) must not be snapped onto the Suao southern tip.
+    assert Geojson::TrackGeometry.planar_distance_meters(
+      coords.first[0], coords.first[1], finish_coords[0], finish_coords[1]
+    ) > 5_000
   end
 
   test "beihui line geojson is continuous from hualien to suaoxin" do
@@ -870,6 +985,22 @@ class MetroLineBuilderTraTest < ActiveSupport::TestCase
     assert Geojson::TrackGeometry.planar_distance_meters(
       coords.last[0], coords.last[1], finish_coords[0], finish_coords[1]
     ) < 500
+
+    # 和仁–和平：新和平隧道 centerline (not a chord west of the tunnel body).
+    heren = stations.find { |feature| feature.dig("properties", "name") == "和仁" }
+      .dig("geometry", "coordinates")
+    heping = stations.find { |feature| feature.dig("properties", "name") == "和平" }
+      .dig("geometry", "coordinates")
+    ia = coords.each_with_index.min_by do |point, _idx|
+      Geojson::TrackGeometry.planar_distance_meters(heren[0], heren[1], point[0], point[1])
+    end.last
+    ib = coords.each_with_index.min_by do |point, _idx|
+      Geojson::TrackGeometry.planar_distance_meters(heping[0], heping[1], point[0], point[1])
+    end.last
+    segment = coords[[ ia, ib ].min..[ ia, ib ].max]
+    sample = segment.min_by { |_lon, lat| (lat - 24.260).abs }
+    assert_in_delta 121.73797, sample[0], 0.0004,
+                    "和仁–和平 mid-tunnel should follow NLSC 新和平隧道, not a west chord"
   end
 
   test "each tra line geojson has no gaps larger than 2km" do

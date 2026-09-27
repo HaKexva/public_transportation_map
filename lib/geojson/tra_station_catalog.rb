@@ -58,13 +58,19 @@ module Geojson
       { ref: "5080", name: "鎮安", lon: 120.5111516, lat: 22.4579911 }
     ].freeze
 
+    SOUTH_LINK_FALLBACK_STATIONS = [
+      # Signal / staffed non-passenger station between 枋山 and 大武.
+      { ref: "5170", name: "枋野", lon: 120.7170739, lat: 22.2809633 }
+    ].freeze
+
     def self.cached_stations
       cached = CACHE_PATH.exist? ? JSON.parse(CACHE_PATH.read) : []
       by_ref = cached.each_with_object({}) { |entry, index| index[entry["ref"]] = entry }
 
       (
         TAIDONG_CENTRAL_FALLBACK_STATIONS + TAIDONG_SOUTHERN_FALLBACK_STATIONS + PINGTUNG_FALLBACK_STATIONS +
-          YILAN_FALLBACK_STATIONS + HUALIEN_PORT_FALLBACK_STATIONS + TAICHUNG_PORT_FALLBACK_STATIONS
+          SOUTH_LINK_FALLBACK_STATIONS + YILAN_FALLBACK_STATIONS + HUALIEN_PORT_FALLBACK_STATIONS +
+          TAICHUNG_PORT_FALLBACK_STATIONS
       ).each do |entry|
         by_ref[entry[:ref]] ||= {
           "ref" => entry[:ref], "name" => entry[:name], "lon" => entry[:lon], "lat" => entry[:lat]

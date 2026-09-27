@@ -97,20 +97,32 @@ module Geojson
 
       clip_xiaobitan_yard_loop!(@route_features) if @line.slug == "xiaobitan_branch"
       clip_danhai_north_stub!(@route_features) if @line.slug == "danhai_lrt"
+      apply_zhonghe_xinlu_geometry_fixes!(@route_features) if @line.slug == "zhonghe_xinlu"
+      clip_ankeng_depot_yard_loop!(@route_features) if @line.slug == "ankeng_lrt"
+      clip_guangfu_sugar_factory_loop!(@route_features) if @line.slug == "guangfu_sugar_railway"
 
       stations = fetch_stations_for_line
       apply_taichung_station_coordinates!(stations) if @line.system_id == "taichung_metro"
       align_stations_to_routes!(stations, @route_features)
       trim_metro_terminal_stubs!(@route_features, stations) if trim_metro_terminal_stubs?
+      extend_green_line_terminal_stubs!(@route_features) if @line.slug == "green_line"
+      apply_taichung_green_geometry_fixes!(@route_features) if @line.slug == "green_line"
+      apply_kaohsiung_red_geometry_fixes!(@route_features, stations) if @line.slug == "red_line"
+      apply_kaohsiung_orange_geometry_fixes!(@route_features) if @line.slug == "orange_line"
       extend_airport_mrt_to_terminals!(@route_features, stations) if @line.slug == "airport_mrt"
       extend_tamsui_xinyi_eastern_extension!(@route_features, stations) if @line.slug == "tamsui_xinyi"
+      extend_wenhu_muzha_depot_throat!(@route_features, stations) if @line.slug == "wenhu_line"
+      densify_route_features!(@route_features, max_step_m: 22) if @line.slug == "tamsui_xinyi"
       align_stations_to_routes!(stations, @route_features) if @line.slug == "airport_mrt" || @line.slug == "tamsui_xinyi"
       extend_routes_for_depots!(@route_features)
       align_tra_junction_station!(stations) if @line.system_id == "tra"
       apply_tra_route_terminals!(@route_features, stations) if @line.system_id == "tra"
       reorder_tra_stations!(stations) if tra_station_ordered_line?
       stitch_tra_route_features! if @line.system_id == "tra"
+      apply_western_trunk_north_geometry_fixes!(@route_features) if @line.slug == "western_trunk_north"
       clip_western_trunk_fugang_depot_spur!(@route_features) if @line.slug == "western_trunk_north"
+      apply_beihui_line_geometry_fixes!(@route_features) if @line.slug == "beihui_line"
+      apply_neiwan_line_geometry_fixes!(@route_features) if @line.slug == "neiwan_line"
 
       collection = {
         type: "FeatureCollection",
@@ -244,6 +256,12 @@ module Geojson
       route_features = []
       coordinates = if @line.slug == "airport_mrt"
         airport_mrt_centerline_coordinates
+      elsif @line.slug == "red_line"
+        kaohsiung_red_centerline_coordinates
+      elsif @line.slug == "orange_line"
+        kaohsiung_orange_centerline_coordinates
+      elsif @line.slug == "green_line"
+        taichung_green_centerline_coordinates
       else
         longest_route_coordinates
       end
@@ -334,6 +352,129 @@ module Geojson
       return chains.first if chains.length == 1
 
       TrackGeometry.average_parallel_line_strings(chains[0], chains[1])
+    end
+
+    # Dual-track OSM red-line relations diverge ~100m at the R4–R4A bend; average them.
+    def kaohsiung_red_centerline_coordinates
+      chains = @line.relation_ids.filter_map do |relation_id|
+        ways = OsmRouteExtractor.new(relation_id: relation_id).fetch_way_elements
+        next if ways.empty?
+
+        OsmRouteExtractor.new(relation_id: relation_id)
+          .stitch_line_strings(ways)
+          .max_by { |chain| TrackGeometry.path_length_meters(chain) }
+      end
+
+      if chains.length >= 2
+        return TrackGeometry.average_parallel_line_strings(
+          chains[0], chains[1], sample_m: 40, max_pair_m: 120
+        )
+      end
+
+      fallback = Rails.root.join("lib/geojson/fallback_tracks/kaohsiung_red_centerline.json")
+      if fallback.exist?
+        payload = JSON.parse(fallback.read)
+        coords = payload["coordinates"] || payload
+        return coords if coords.is_a?(Array) && coords.length >= 2
+      end
+
+      chains.first
+    end
+
+    # Dual-track OSM orange-line average; fallback cached when Overpass is unavailable.
+    def kaohsiung_orange_centerline_coordinates
+      chains = @line.relation_ids.filter_map do |relation_id|
+        ways = OsmRouteExtractor.new(relation_id: relation_id).fetch_way_elements
+        next if ways.empty?
+
+        OsmRouteExtractor.new(relation_id: relation_id)
+          .stitch_line_strings(ways)
+          .max_by { |chain| TrackGeometry.path_length_meters(chain) }
+      end
+
+      if chains.length >= 2
+        return TrackGeometry.average_parallel_line_strings(
+          chains[0], chains[1], sample_m: 35, max_pair_m: 100
+        )
+      end
+
+      fallback = Rails.root.join("lib/geojson/fallback_tracks/kaohsiung_orange_centerline.json")
+      if fallback.exist?
+        payload = JSON.parse(fallback.read)
+        coords = payload["coordinates"] || payload
+        return coords if coords.is_a?(Array) && coords.length >= 2
+      end
+
+      chains.first
+    end
+
+    # Keep a short 小港 stub (~90m); replace R5–R4 with NLSC passenger corridor.
+    def apply_kaohsiung_red_geometry_fixes!(route_features, stations)
+      patch_path = Rails.root.join("lib/geojson/fallback_tracks/kaohsiung_red_r4_r4a_patch.json")
+      patch = patch_path.exist? ? JSON.parse(patch_path.read)["coordinates"] : nil
+
+      xiaogang = stations.find { |station| station[:ref].to_s.split(";").include?("R3") }
+
+      route_features.each do |feature|
+        next unless feature.dig(:properties, :feature_type) == "route"
+
+        coordinates = feature.dig(:geometry, :coordinates)
+        next unless coordinates.is_a?(Array) && coordinates.length >= 2
+
+        # Orient north → south so 小港 is at the southern tip.
+        if coordinates.first[1] < coordinates.last[1]
+          coordinates = coordinates.reverse
+        end
+
+        if patch.is_a?(Array) && patch.length >= 2
+          coordinates = splice_coordinate_patch(
+            coordinates,
+            patch,
+            from: patch.first,
+            to: patch.last
+          )
+        end
+
+        if xiaogang
+          coordinates = trim_route_tip_beyond_station(
+            coordinates,
+            station: [ xiaogang[:lon], xiaogang[:lat] ],
+            beyond_m: 90,
+            at_start: false
+          )
+        end
+
+        feature[:geometry][:coordinates] = coordinates
+      end
+    end
+
+    # Replace sparse O2–O4 OSM chords (O3 cancelled gap) with NLSC passenger corridor.
+    def apply_kaohsiung_orange_geometry_fixes!(route_features)
+      patch_path = Rails.root.join("lib/geojson/fallback_tracks/kaohsiung_orange_o2_o4_patch.json")
+      return unless patch_path.exist?
+
+      patch = JSON.parse(patch_path.read)["coordinates"]
+      return unless patch.is_a?(Array) && patch.length >= 2
+
+      route_features.each do |feature|
+        next unless feature.dig(:properties, :feature_type) == "route"
+
+        coordinates = feature.dig(:geometry, :coordinates)
+        next unless coordinates.is_a?(Array) && coordinates.length >= 2
+
+        # Orient west → east (O1 / 哈瑪星 first).
+        if coordinates.first[0] > coordinates.last[0]
+          coordinates = coordinates.reverse
+        end
+
+        coordinates = splice_coordinate_patch(
+          coordinates,
+          patch,
+          from: patch.first,
+          to: patch.last
+        )
+        feature[:geometry][:coordinates] = TrackGeometry.densify_coordinates(coordinates, max_step_m: 40)
+      end
     end
 
     TRA_CHAIN_GAP_MAIN_M = 2_000
@@ -466,12 +607,37 @@ module Geojson
         coordinates = features.first.dig(:geometry, :coordinates)
         if coordinates && tra_corridor_has_long_straight_run?(coordinates, min_length_m: 2_000)
           features = []
+        elsif coordinates && tra_corridor_misses_ordered_terminus?(features, station_refs)
+          features = []
         end
       end
       return features if features.any?
 
       fallback = tra_track_fallback_coordinates
       finish_tra_route_feature(fallback.dup) if fallback
+    end
+
+    # OSM/NLSC fragments can leave the longest piece short of the ordered terminus
+    # (沙崙 tip was dropped after a >250m densify gap).
+    def tra_corridor_misses_ordered_terminus?(features, station_refs)
+      finish_ref = station_refs.last
+      finish = self.class.tra_station_by_ref[finish_ref]
+      return false unless finish
+
+      endpoints = features.filter_map do |feature|
+        coordinates = feature.dig(:geometry, :coordinates)
+        next unless coordinates.is_a?(Array) && coordinates.length >= 2
+
+        [ coordinates.first, coordinates.last ]
+      end.flatten(1)
+      return true if endpoints.empty?
+
+      nearest = endpoints.min_by do |point|
+        TrackGeometry.planar_distance_meters(point[0], point[1], finish[:lon], finish[:lat])
+      end
+      TrackGeometry.planar_distance_meters(
+        nearest[0], nearest[1], finish[:lon], finish[:lat]
+      ) > 500
     end
 
     def extract_tra_station_ordered_corridor(chain, station_refs)
@@ -1002,22 +1168,22 @@ module Geojson
 
       dedupe_tra_coordinates!(corridor)
       orient_tra_line!(corridor)
-      densified = TrackGeometry.densify_coordinates(corridor, max_step_m: 200)
-      features = [ route_feature(densified) ]
 
-      # Coastal stub north of 花蓮港 toward 環保公園 / 大本 (screenshot 19.48.15).
-      north_path = Rails.root.join("lib/geojson/fallback_tracks/tra/hualien_port_north_stub.json")
-      if north_path.exist?
-        north = JSON.parse(north_path.read)
-        if north.is_a?(Array) && north.length >= 2
-          north_coords = TrackGeometry.densify_coordinates(north, max_step_m: 50)
-          features << route_feature(north_coords, branch_index: 1, relation_index: 0).tap do |feature|
-            feature[:properties][:name] = "#{@line.name}（北段尾軌）"
-          end
-        end
+      port = self.class.tra_station_by_ref["6256"]
+      if port
+        # End at 花蓮港; do not keep the coastal freight tails past the station
+        # (south toward 美崙海濱 / north toward 環保公園).
+        corridor = trim_route_tip_beyond_station(
+          corridor,
+          station: [ port[:lon], port[:lat] ],
+          beyond_m: 80,
+          at_start: false
+        )
+        corridor[-1] = [ port[:lon], port[:lat] ] if corridor.length >= 2
       end
 
-      features
+      densified = TrackGeometry.densify_coordinates(corridor, max_step_m: 200)
+      [ route_feature(densified) ]
     end
 
     def build_taichung_port_line_route_features
@@ -1048,8 +1214,7 @@ module Geojson
       return nil unless beipu
 
       corridor = fallback.dup
-      # 北埔 at the inland end; coastal tail south of 花蓮港 toward 美崙海濱
-      # (screenshot 2026-07-27 13.59.24).
+      # 北埔 at the inland end; passenger tip ends at 花蓮港 (no coastal overrun).
       if tra_endpoint_gap(corridor.first, [ beipu[:lon], beipu[:lat] ]) >
           tra_endpoint_gap(corridor.last, [ beipu[:lon], beipu[:lat] ])
         corridor.reverse!
@@ -1584,13 +1749,16 @@ module Geojson
 
     def orient_tra_line!(coordinates, relation_index: 0)
       return if coordinates.length < 2
-      return if @line.slug.in?(%w[yilan_line shenao_line])
 
+      # Prefer named terminals so ref order (e.g. 八堵 920 → 蘇澳 7120) wins over
+      # numeric/geographic heuristics that can attach 920 to the Suao end.
       partial = TRA_PARTIAL_TERMINAL_REFS[@line.slug]
       if partial&.dig(:start) && partial[:finish]
         orient_tra_line_by_station_terminals!(coordinates, partial[:start], partial[:finish])
         return
       end
+
+      return if @line.slug == "shenao_line"
 
       case tra_line_orientation(relation_index)
       when :north_to_south
@@ -1691,21 +1859,39 @@ module Geojson
       end
 
       if @line.slug == "xiaobitan_branch"
-        stations = stations_from_relations.presence ||
-          OsmRouteExtractor.new(relation_id: @line.relation_ids.first).fetch_stations(ref_prefix: "G03")
+        branch = stations_from_relations
+        if branch.any?
+          branch = branch.select do |station|
+            station[:ref].to_s.split(";").include?("G03A") || station[:name] == "小碧潭"
+          end
+        end
 
-        return stations.select { |station| station[:ref]&.end_with?("A") }
+        if branch.empty?
+          branch = OsmRouteExtractor.new(relation_id: @line.relation_ids.first)
+            .fetch_stations(ref_prefix: "G03")
+            .select { |station| station[:ref].to_s.split(";").include?("G03A") || station[:name] == "小碧潭" }
+        end
+
+        # Junction transfer 七張 (G03;G03A) must appear on the branch map, not only on 松山新店線.
+        return apply_taipei_in_station_transfers!(branch)
       end
 
       if @line.slug == "xinbeitou_branch"
         branch = stations_from_relations
-        branch = branch.select { |station| station[:ref] == "R22A" } if branch.any?
+        if branch.any?
+          branch = branch.select do |station|
+            station[:ref].to_s.split(";").include?("R22A") || station[:name] == "新北投"
+          end
+        end
 
-        return branch if branch.any?
+        if branch.empty?
+          branch = OsmRouteExtractor.new(relation_id: @line.relation_ids.first)
+            .fetch_stations(ref_prefix: "R")
+            .select { |station| station[:ref].to_s.split(";").include?("R22A") || station[:name] == "新北投" }
+        end
 
-        return OsmRouteExtractor.new(relation_id: @line.relation_ids.first)
-          .fetch_stations(ref_prefix: "R")
-          .select { |station| station[:ref] == "R22A" }
+        # Junction transfer 北投 (R22;R22A) must appear on the branch map, not only on 淡水信義線.
+        return apply_taipei_in_station_transfers!(branch)
       end
 
       stations = stations_from_relations
@@ -1718,6 +1904,7 @@ module Geojson
       if @line.slug == "songshan_xindian"
         stations = reject_stray_songshan_stations(stations)
         stations = stations.reject { |station| station[:ref] == "G03A" }
+        stations = merge_stations(stations, TaipeiMetroCatalog::SONGSHAN_XINDIAN_FALLBACK_STATIONS)
         return apply_taipei_in_station_transfers!(stations)
       end
 
@@ -1780,11 +1967,150 @@ module Geojson
       JSON.parse(path.read)
     end
 
+    # Dual-track OSM green-line average; fallback cached when Overpass is unavailable.
+    def taichung_green_centerline_coordinates
+      chains = @line.relation_ids.filter_map do |relation_id|
+        ways = OsmRouteExtractor.new(relation_id: relation_id).fetch_way_elements
+        next if ways.empty?
+
+        OsmRouteExtractor.new(relation_id: relation_id)
+          .stitch_line_strings(ways)
+          .max_by { |chain| TrackGeometry.path_length_meters(chain) }
+      end
+
+      if chains.length >= 2
+        return TrackGeometry.average_parallel_line_strings(
+          chains[0], chains[1], sample_m: 30, max_pair_m: 80
+        )
+      end
+
+      fallback = Rails.root.join("lib/geojson/fallback_tracks/taichung_green_centerline.json")
+      if fallback.exist?
+        payload = JSON.parse(fallback.read)
+        coords = payload["coordinates"] || payload
+        return coords if coords.is_a?(Array) && coords.length >= 2
+      end
+
+      chains.first
+    end
+
+    # Single centerline through the 103a–103 bend (drop dual-track spaghetti).
+    def apply_taichung_green_geometry_fixes!(route_features)
+      patch_path = Rails.root.join("lib/geojson/fallback_tracks/green_line_103a_103_patch.json")
+      return unless patch_path.exist?
+
+      patch = JSON.parse(patch_path.read)["coordinates"]
+      return unless patch.is_a?(Array) && patch.length >= 2
+
+      route_features.each do |feature|
+        next unless feature.dig(:properties, :feature_type) == "route"
+
+        coordinates = feature.dig(:geometry, :coordinates)
+        next unless coordinates.is_a?(Array) && coordinates.length >= 2
+
+        if coordinates.first[1] < coordinates.last[1]
+          coordinates = coordinates.reverse
+        end
+
+        coordinates = splice_coordinate_patch(
+          coordinates,
+          patch,
+          from: patch.first,
+          to: patch.last
+        )
+        feature[:geometry][:coordinates] = TrackGeometry.densify_coordinates(coordinates, max_step_m: 35)
+      end
+    end
+
+    # OSM passenger relations omit named 尾軌 beyond 北屯總站 / 高鐵臺中站.
+    def extend_green_line_terminal_stubs!(route_features)
+      path = Rails.root.join("lib/geojson/fallback_tracks/green_line_terminal_stubs.json")
+      return unless path.exist?
+
+      stubs = JSON.parse(path.read)
+      north = stubs["north"] || []
+      south = stubs["south"] || []
+      return if north.length < 2 && south.length < 2
+
+      route_features.each do |feature|
+        next unless feature.dig(:properties, :feature_type) == "route"
+
+        coordinates = feature.dig(:geometry, :coordinates)
+        next unless coordinates.is_a?(Array) && coordinates.length >= 2
+
+        # Orient north → south (103a end first).
+        if coordinates.first[1] < coordinates.last[1]
+          coordinates = coordinates.reverse
+        end
+
+        if north.length >= 2
+          tip = north.last
+          idx = nearest_coordinate_index(coordinates, tip)
+          coordinates = north + coordinates.drop([ idx, 0 ].max + 1) if idx
+        end
+
+        if south.length >= 2
+          tip = south.first
+          idx = nearest_coordinate_index(coordinates, tip)
+          coordinates = coordinates.take(idx + 1) + south.drop(1) if idx
+        end
+
+        feature[:geometry][:coordinates] = TrackGeometry.densify_coordinates(coordinates, max_step_m: 40)
+      end
+    end
+
+    # Keep a short passenger stub past 動物園 into the 木柵機廠 throat (OSM way 194634022).
+    WENHU_MUZHA_DEPOT_THROAT = [ 121.579821, 24.9985593 ].freeze
+
+    def extend_wenhu_muzha_depot_throat!(route_features, stations)
+      zoo = stations.find { |station| station[:ref].to_s.split(";").include?("BR01") || station[:name] == "動物園" }
+      return unless zoo
+
+      zoo_point = [ zoo[:lon], zoo[:lat] ]
+      throat = WENHU_MUZHA_DEPOT_THROAT
+
+      route_features.each do |feature|
+        next unless feature.dig(:properties, :feature_type) == "route"
+
+        coordinates = feature.dig(:geometry, :coordinates)
+        next unless coordinates.is_a?(Array) && coordinates.length >= 2
+
+        start_dist = TrackGeometry.planar_distance_meters(
+          coordinates.first[0], coordinates.first[1], zoo_point[0], zoo_point[1]
+        )
+        finish_dist = TrackGeometry.planar_distance_meters(
+          coordinates.last[0], coordinates.last[1], zoo_point[0], zoo_point[1]
+        )
+        next if [ start_dist, finish_dist ].min > 30
+
+        if start_dist <= finish_dist
+          feature[:geometry][:coordinates] = TrackGeometry.dedupe_coordinates([ throat ] + coordinates)
+        else
+          feature[:geometry][:coordinates] = TrackGeometry.dedupe_coordinates(coordinates + [ throat ])
+        end
+      end
+    end
+
+    def densify_route_features!(route_features, max_step_m:)
+      route_features.each do |feature|
+        next unless feature.dig(:properties, :feature_type) == "route"
+
+        coordinates = feature.dig(:geometry, :coordinates)
+        next unless coordinates.is_a?(Array) && coordinates.length >= 2
+
+        feature[:geometry][:coordinates] = TrackGeometry.densify_coordinates(
+          coordinates,
+          max_step_m: max_step_m
+        )
+      end
+    end
+
     def apply_taipei_in_station_transfers!(stations)
       transfers = TaipeiMetroCatalog::IN_STATION_TRANSFERS_BY_NAME
       inject_missing_in_station_transfers!(stations, transfers)
       stations.replace(apply_in_station_transfers(stations, transfers))
       reject_transfer_stations_not_on_line!(stations, transfers)
+      stations
     end
 
     # OSM sometimes attaches other lines' stops to the Songshan–Xindian relation.
@@ -1873,6 +2199,93 @@ module Geojson
       end
     end
 
+    # Prefer 新五堵隧道 (中/東正線) between 百福 and 五堵; NLSC may follow the
+    # northern 西正線 / old-tunnel corridor through the freight yard bulge.
+    def apply_western_trunk_north_geometry_fixes!(route_features)
+      path = Rails.root.join("lib/geojson/fallback_tracks/tra/western_trunk_north_geometry_patches.json")
+      return unless path.exist?
+
+      patches = JSON.parse(path.read)
+      baifu_wudu = patches["baifu_wudu_southern_tunnel"]
+      return unless baifu_wudu.is_a?(Array) && baifu_wudu.length >= 4
+
+      baifu = [ 121.694768, 25.0781714 ]
+      wudu = [ 121.6676308, 25.0779051 ]
+
+      route_features.each do |feature|
+        next unless feature.dig(:properties, :feature_type) == "route"
+
+        coordinates = feature.dig(:geometry, :coordinates)
+        next unless coordinates.is_a?(Array) && coordinates.length >= 2
+
+        coordinates = splice_coordinate_patch(
+          coordinates,
+          baifu_wudu,
+          from: baifu,
+          to: wudu
+        )
+        feature[:geometry][:coordinates] = TrackGeometry.densify_coordinates(coordinates, max_step_m: 40)
+      end
+    end
+
+    # Prefer NLSC 新和平隧道 centerline between 和仁 and 和平; sparse OSM ways
+    # densify into a chord that drifts ~100m west of the real tunnel.
+    def apply_beihui_line_geometry_fixes!(route_features)
+      path = Rails.root.join("lib/geojson/fallback_tracks/tra/beihui_line_geometry_patches.json")
+      return unless path.exist?
+
+      patches = JSON.parse(path.read)
+      heping_heren = patches["heping_heren_tunnel"]
+      return unless heping_heren.is_a?(Array) && heping_heren.length >= 4
+
+      heren = [ 121.71253614483483, 24.241534505947076 ]
+      heping = [ 121.75478266336383, 24.297817989551326 ]
+
+      route_features.each do |feature|
+        next unless feature.dig(:properties, :feature_type) == "route"
+
+        coordinates = feature.dig(:geometry, :coordinates)
+        next unless coordinates.is_a?(Array) && coordinates.length >= 2
+
+        coordinates = splice_coordinate_patch(
+          coordinates,
+          heping_heren,
+          from: heren,
+          to: heping
+        )
+        feature[:geometry][:coordinates] = TrackGeometry.densify_coordinates(coordinates, max_step_m: 40)
+      end
+    end
+
+    # Prefer OSM 內灣線 north bulge between 北新竹 and 千甲; NLSC/OSM merge can
+    # collapse that arc into an ESE chord ~300m south of the real tracks.
+    def apply_neiwan_line_geometry_fixes!(route_features)
+      path = Rails.root.join("lib/geojson/fallback_tracks/tra/neiwan_line_geometry_patches.json")
+      return unless path.exist?
+
+      patches = JSON.parse(path.read)
+      beixinzhu_qianjia = patches["beixinzhu_qianjia"]
+      return unless beixinzhu_qianjia.is_a?(Array) && beixinzhu_qianjia.length >= 4
+
+      beixinzhu = [ 120.98384089173743, 24.80854518154384 ]
+      qianjia = [ 121.00341, 24.8066166 ]
+
+      route_features.each do |feature|
+        next unless feature.dig(:properties, :feature_type) == "route"
+
+        coordinates = feature.dig(:geometry, :coordinates)
+        next unless coordinates.is_a?(Array) && coordinates.length >= 2
+
+        coordinates = splice_coordinate_patch(
+          coordinates,
+          beixinzhu_qianjia,
+          from: beixinzhu,
+          to: qianjia
+        )
+        feature[:geometry][:coordinates] = TrackGeometry.densify_coordinates(coordinates, max_step_m: 40)
+      end
+    end
+
     # OSM relation 台北捷運小碧潭支線(順向): 七張 → south/west elevated loop → 小碧潭.
     # Do not substitute a riverside E-W chord (screenshot 2026-07-27 14.12.41), and do not
     # extend a NW overrun into 中央路133巷 past the station.
@@ -1944,6 +2357,209 @@ module Geojson
         end
 
         feature[:geometry][:coordinates] = TrackGeometry.densify_coordinates(filtered, max_step_m: 40)
+      end
+    end
+
+    # OSM way 202547164 is the full historic factory yard loop (~2.3 km).
+    # Keep only the short remnant between 花糖文物館 and 漪漣園 (~100–250 m).
+    def clip_guangfu_sugar_factory_loop!(route_features)
+      museum = SugarRailwayCatalog::GUANGFU_FALLBACK_STATIONS.find { |station| station[:ref] == "GF02" }
+      pond = SugarRailwayCatalog::GUANGFU_FALLBACK_STATIONS.find { |station| station[:ref] == "GF01" }
+      return unless museum && pond
+
+      pad_m = 80.0
+
+      route_features.each do |feature|
+        next unless feature.dig(:properties, :feature_type) == "route"
+
+        coordinates = feature.dig(:geometry, :coordinates)
+        next unless coordinates.is_a?(Array) && coordinates.length >= 2
+
+        i_museum = nearest_coordinate_index(coordinates, [ museum[:lon], museum[:lat] ])
+        i_pond = nearest_coordinate_index(coordinates, [ pond[:lon], pond[:lat] ])
+        next if i_museum.nil? || i_pond.nil?
+
+        lo, hi = [ i_museum, i_pond ].minmax
+        direct_len = hi - lo
+        wrap_len = coordinates.length - direct_len
+        # Yard loop is nearly closed; never take the long way around the factory.
+        next if wrap_len < direct_len
+
+        keep_from = lo
+        acc = 0.0
+        (lo - 1).downto(0) do |index|
+          step = TrackGeometry.planar_distance_meters(
+            coordinates[index + 1][0], coordinates[index + 1][1],
+            coordinates[index][0], coordinates[index][1]
+          )
+          break if step > pad_m
+
+          acc += step
+          keep_from = index
+          break if acc >= pad_m
+        end
+
+        keep_to = hi
+        acc = 0.0
+        hi.upto(coordinates.length - 2) do |index|
+          step = TrackGeometry.planar_distance_meters(
+            coordinates[index][0], coordinates[index][1],
+            coordinates[index + 1][0], coordinates[index + 1][1]
+          )
+          break if step > pad_m
+
+          acc += step
+          keep_to = index + 1
+          break if acc >= pad_m
+        end
+
+        segment = coordinates[keep_from..keep_to]
+        next if segment.length < 2
+
+        feature[:geometry][:coordinates] = TrackGeometry.densify_coordinates(segment, max_step_m: 25)
+      end
+    end
+
+    # OSM stitches the 安坑機廠 yard loop onto the passenger tip; keep only the SE exit toward 雙城.
+    def clip_ankeng_depot_yard_loop!(route_features)
+      patch_path = Rails.root.join("lib/geojson/fallback_tracks/ankeng_depot_geometry_patch.json")
+      junction = if patch_path.exist?
+        JSON.parse(patch_path.read).fetch("junction")
+      else
+        { "lon" => 121.4878174, "lat" => 24.9434738 }
+      end
+      junction_lon = junction["lon"] || junction[:lon]
+      junction_lat = junction["lat"] || junction[:lat]
+
+      route_features.each do |feature|
+        next unless feature.dig(:properties, :feature_type) == "route"
+
+        coordinates = feature.dig(:geometry, :coordinates)
+        next unless coordinates.is_a?(Array) && coordinates.length >= 2
+
+        # Orient so 十四張 (NE) is the far end.
+        if coordinates.first[1] > coordinates.last[1]
+          coordinates = coordinates.reverse
+        end
+
+        idx = nearest_coordinate_index(coordinates, [ junction_lon, junction_lat ])
+        next if idx.nil?
+
+        # Drop the yard loop west/south of the SE exit; keep junction → 十四張.
+        trimmed = coordinates.drop(idx)
+        next if trimmed.length < 2
+
+        trimmed = [ [ junction_lon, junction_lat ] ] + trimmed.drop(1)
+        feature[:geometry][:coordinates] = TrackGeometry.densify_coordinates(trimmed, max_step_m: 40)
+      end
+    end
+
+    # Cached corridor patches: wider 民權松江 turn, straightened 徐匯–三民, and terminal tips
+    # that stop short of 蘆洲/新莊機廠 (those continue as depot_spur features).
+    def apply_zhonghe_xinlu_geometry_fixes!(route_features)
+      path = Rails.root.join("lib/geojson/fallback_tracks/zhonghe_xinlu_geometry_patches.json")
+      return unless path.exist?
+
+      patches = JSON.parse(path.read)
+      turn = patches["minquan_songjiang_turn"]
+      xujian_sanmin = patches["xujian_sanmin"]
+
+      route_features.each do |feature|
+        next unless feature.dig(:properties, :feature_type) == "route"
+
+        coordinates = feature.dig(:geometry, :coordinates)
+        next unless coordinates.is_a?(Array) && coordinates.length >= 2
+
+        coordinates = splice_coordinate_patch(
+          coordinates,
+          turn,
+          from: [ 121.5289298, 25.0625508 ],
+          to: [ 121.53312, 25.05938 ]
+        ) if turn.is_a?(Array) && turn.length >= 4
+
+        if xujian_sanmin.is_a?(Array) && xujian_sanmin.length >= 4 && coordinates.first[1] > 25.08
+          coordinates = splice_coordinate_patch(
+            coordinates,
+            xujian_sanmin,
+            from: [ 121.4802034, 25.080294 ],
+            to: [ 121.4732429, 25.0854517 ]
+          )
+        end
+
+        # 蘆洲支線: drop deep yard north of a short stub past O54.
+        if coordinates.first[1] > 25.08
+          coordinates = trim_route_tip_beyond_station(
+            coordinates,
+            station: [ 121.46509424179602, 25.09125852030004 ],
+            beyond_m: 100,
+            at_start: coordinates.first[1] > 25.091
+          )
+        end
+
+        # 新莊線: keep only a short 迴龍 stub; yard continues as 新莊機廠支線.
+        if coordinates.first[0] < 121.42
+          coordinates = trim_route_tip_beyond_station(
+            coordinates,
+            station: [ 121.4119268323969, 25.02202627295023 ],
+            beyond_m: 100,
+            at_start: true
+          )
+        end
+
+        feature[:geometry][:coordinates] = TrackGeometry.densify_coordinates(coordinates, max_step_m: 40)
+      end
+    end
+
+    def splice_coordinate_patch(coordinates, patch, from:, to:)
+      start_idx = nearest_coordinate_index(coordinates, from)
+      end_idx = nearest_coordinate_index(coordinates, to)
+      return coordinates if start_idx.nil? || end_idx.nil?
+
+      lo, hi = [ start_idx, end_idx ].minmax
+      oriented = patch
+      if TrackGeometry.planar_distance_meters(oriented.first[0], oriented.first[1], coordinates[lo][0], coordinates[lo][1]) >
+          TrackGeometry.planar_distance_meters(oriented.last[0], oriented.last[1], coordinates[lo][0], coordinates[lo][1])
+        oriented = oriented.reverse
+      end
+      coordinates.take(lo) + oriented + coordinates.drop(hi + 1)
+    end
+
+    def nearest_coordinate_index(coordinates, point)
+      return nil if coordinates.empty?
+
+      coordinates.each_with_index.min_by do |coord, _idx|
+        TrackGeometry.planar_distance_meters(coord[0], coord[1], point[0], point[1])
+      end.last
+    end
+
+    def trim_route_tip_beyond_station(coordinates, station:, beyond_m:, at_start:)
+      idx = nearest_coordinate_index(coordinates, station)
+      return coordinates if idx.nil?
+
+      if at_start
+        keep_from = idx
+        acc = 0.0
+        (idx - 1).downto(0) do |j|
+          acc += TrackGeometry.planar_distance_meters(
+            coordinates[j + 1][0], coordinates[j + 1][1],
+            coordinates[j][0], coordinates[j][1]
+          )
+          keep_from = j
+          break if acc >= beyond_m
+        end
+        coordinates.drop(keep_from)
+      else
+        keep_to = idx
+        acc = 0.0
+        idx.upto(coordinates.length - 2) do |j|
+          acc += TrackGeometry.planar_distance_meters(
+            coordinates[j][0], coordinates[j][1],
+            coordinates[j + 1][0], coordinates[j + 1][1]
+          )
+          keep_to = j + 1
+          break if acc >= beyond_m
+        end
+        coordinates.take(keep_to + 1)
       end
     end
 
@@ -2262,6 +2878,10 @@ module Geojson
           coordinates = route.dig(:geometry, :coordinates)
           next unless coordinates.is_a?(Array) && coordinates.length >= 2
 
+          if partial[:start] && partial[:finish]
+            orient_tra_line_by_station_terminals!(coordinates, partial[:start], partial[:finish])
+          end
+
           extend_tra_named_terminals_at_ends!(
             coordinates,
             start_ref: index.zero? ? partial[:start] : nil,
@@ -2430,16 +3050,16 @@ module Geojson
       4400 4410 4420 4430 4440 4450 4460 4470 5000 5010 5020 5030 5040 5050 5060 5070 5080
       5090 5100 5110 5120
     ].freeze
-    SOUTH_LINK_STATION_REFS = %w[5120 5130 5140 5160 5190 5200 5210 5220 5230 5240 6000].freeze
+    SOUTH_LINK_STATION_REFS = %w[5120 5130 5140 5160 5170 5190 5200 5210 5220 5230 5240 6000].freeze
     BEIHUI_STATION_REFS = %w[7000 7010 7020 7030 7040 7050 7060 7070 7080 7090 7100 7110 7130].freeze
     TAIDONG_STATION_REFS = %w[
       6000 6010 6020 6030 6040 6050 6060 6070 6080 6090 6100 6110 6120 6130 6140 6150 6160
       6170 6180 6190 6200 6210 6220 6230 6240 6250 7000
     ].freeze
-    # Passenger Yilan Line lists 八堵→蘇澳; 新馬 (7140) / 蘇澳新 (7130) stay on 北迴線.
+    # Passenger Yilan Line: 八堵→…→冬山→新馬→蘇澳新→蘇澳 (refs are not monotonic).
     YILAN_STATION_REFS = %w[
       920 7390 7380 7360 7350 7320 7310 7300 7290 7280 7270 7260 7250 7240 7230 7220 7210 7200
-      7190 7180 7170 7160 7150 7120
+      7190 7180 7170 7160 7150 7140 7130 7120
     ].freeze
 
     TRA_STATION_ORDERED_LINES = {
@@ -2477,9 +3097,7 @@ module Geojson
     def reorder_tra_stations!(stations)
       if tra_station_ordered_line?
         order = tra_station_order_refs.each_with_index.to_h
-        if @line.slug == "sea_line"
-          stations.select! { |station| order.key?(canonical_tra_station_ref(station[:ref])) }
-        end
+        stations.select! { |station| order.key?(canonical_tra_station_ref(station[:ref])) }
         stations.sort_by! { |station| order.fetch(canonical_tra_station_ref(station[:ref]), order.length) }
         return
       end
@@ -2564,11 +3182,13 @@ module Geojson
         next unless line_ref
 
         coords = transfer_coordinates_for_line_ref(transfer, line_ref)
+        platform_coords = transfer.dig(:coordinates_by_ref, line_ref)
         stations << {
           ref: line_ref,
           name: name,
           lon: coords[:lon],
-          lat: coords[:lat]
+          lat: coords[:lat],
+          position_anchored: platform_coords.present?
         }
       end
 
@@ -2626,11 +3246,13 @@ module Geojson
           line: @line,
           coordinates_by_ref: transfer[:coordinates_by_ref]
         )
+        platform_coords = line_ref && transfer.dig(:coordinates_by_ref, line_ref)
 
         station.merge(
           ref: display_ref.presence || line_ref || transfer[:combined_ref],
           lon: coords[:lon],
-          lat: coords[:lat]
+          lat: coords[:lat],
+          position_anchored: platform_coords.present? || station[:position_anchored]
         )
       end
     end
