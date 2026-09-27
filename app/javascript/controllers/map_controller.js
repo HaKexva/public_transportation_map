@@ -2,7 +2,7 @@
 import { Controller } from "@hotwired/stimulus"
 import { VehicleCanvasLayer } from "transit/vehicle_canvas_layer"
 import { motionKind, easedProgress, speedKmh } from "transit/motion_profile"
-import { buildChainage, longestTrackLine, nearestDistance, pointAtDistance } from "transit/track_chainage"
+import { buildChainage, longestTrackLine, nearestDistance, nearestProjection, pointAtDistance } from "transit/track_chainage"
 
 const LEAFLET_BOUNDS = [ [ 21.85, 118.15 ], [ 26.45, 122.25 ] ]
 const VIEW_REGION_STORAGE_KEY = "map-view-region"
@@ -153,6 +153,7 @@ const BOARD_PERIODS = [
 ]
 const SCHEDULE_FETCH_CHUNK = 8
 const SCHEDULE_FETCH_RETRY_MS = 15_000
+const HOP_CHAINAGE_MAX_OFFSET_KM = 0.4
 const SKYTRAIN_NORTH_STATION_ORDER = [ "ST1N", "ST2N" ]
 const SKYTRAIN_SOUTH_STATION_ORDER = [ "ST1S", "ST2S" ]
 const TRA_BRANCH_ROUTE_IDS = new Set([
@@ -298,6 +299,9 @@ export default class extends Controller {
     this.routesByLineRef = {}
     this.routeTracksByRouteId = {}
     this.vehicleTracksByRouteId = {}
+    this.routeChainage = {}
+    this.hopChainage = {}
+    this.stationKmCache?.clear()
     this.outOfStationTransfers = []
     this.outOfStationEndpointKeys = new Set()
     this.transferKindByEndpointKey = new Map()
@@ -362,6 +366,7 @@ export default class extends Controller {
     this.serverVehicles = []
     this.liveOverlayByKey = {}
     this.routeChainage = {}
+    this.hopChainage = {}
     this.vehicleCanvas = null
     this.crossingGroup = null
     this.crossingsVisible = false
@@ -481,6 +486,9 @@ export default class extends Controller {
     this.routesByLineRef = {}
     this.routeTracksByRouteId = {}
     this.vehicleTracksByRouteId = {}
+    this.routeChainage = {}
+    this.hopChainage = {}
+    this.stationKmCache?.clear()
     this.outOfStationTransfers = []
     this.outOfStationEndpointKeys = new Set()
     this.transferKindByEndpointKey = new Map()
@@ -4492,6 +4500,8 @@ export default class extends Controller {
         delete this.routeTracksByRouteId[route.id]
         delete this.vehicleTracksByRouteId[route.id]
         delete this.routeChainage[route.id]
+        delete this.hopChainage[route.id]
+        this.stationKmCache?.clear()
       }
     })
 
@@ -5022,6 +5032,9 @@ export default class extends Controller {
     this.routeTracksByRouteId[routeId] = this.extractRouteTracks(data, { includeDepot: true })
     // Vehicle motion must follow the passenger main line, never depot spurs.
     this.vehicleTracksByRouteId[routeId] = this.extractRouteTracks(data, { includeDepot: false })
+    delete this.routeChainage[routeId]
+    delete this.hopChainage[routeId]
+    this.stationKmCache?.clear()
   }
 
   extractRouteTracks(data, { includeDepot = true } = {}) {
@@ -7036,25 +7049,60 @@ export default class extends Controller {
       if (!Number.isFinite(nextArrival)) continue
       if (!this.withinSegmentMinutes(atMin, departure, nextArrival)) continue
 
-      const linear = this.segmentProgressMinutes(atMin, departure, nextArrival)
-      return {
-        fromRef: stop.r,
-        toRef: next.r,
-        fromName: stop.n,
-        toName: next.n,
-        fromKm: Number(stop.km),
-        toKm: Number(next.km),
-        progress: this.easedHopProgress(linear, vehicle),
-        linear,
-        stopped: false,
-        departure,
-        arrival: nextArrival,
-        motionDeparture: departure,
-        motionArrival: nextArrival
-      }
+      return this.movingPlacementOnStopPath(path, i, atMin, vehicle)
     }
 
     return null
+  }
+
+  // Through stops (`t`) are only pass times: ease once over the span between
+  // real halts, then map the eased clock back onto the sub-segment it lands in.
+  movingPlacementOnStopPath(path, index, atMin, vehicle) {
+    let spanStart = index
+    while (spanStart > 0 && path[spanStart].t) spanStart -= 1
+    let spanEnd = index + 1
+    while (spanEnd < path.length - 1 && path[spanEnd].t) spanEnd += 1
+
+    const spanDeparture = Number(path[spanStart].d)
+    const spanArrival = Number(path[spanEnd].a)
+    const spanMinutes = this.wrappedMinuteSpan(spanDeparture, spanArrival)
+    const linear = this.segmentProgressMinutes(atMin, spanDeparture, spanArrival)
+    const easedOffset = this.easedHopProgress(linear, vehicle) * spanMinutes
+
+    let hop = index
+    let hopProgress = this.segmentProgressMinutes(atMin, Number(path[index].d), Number(path[index + 1].a))
+    if (spanMinutes > 0 && (spanStart !== index || spanEnd !== index + 1)) {
+      for (let j = spanStart; j < spanEnd; j += 1) {
+        const startOffset = this.wrappedMinuteSpan(spanDeparture, Number(path[j].d))
+        const endOffset = j + 1 === spanEnd ? spanMinutes : this.wrappedMinuteSpan(spanDeparture, Number(path[j + 1].a))
+        if (easedOffset <= endOffset || j + 1 === spanEnd) {
+          hop = j
+          const width = endOffset - startOffset
+          hopProgress = width > 0 ? Math.max(0, Math.min(1, (easedOffset - startOffset) / width)) : 1
+          break
+        }
+      }
+    } else {
+      hopProgress = spanMinutes > 0 ? easedOffset / spanMinutes : hopProgress
+    }
+
+    const stop = path[hop]
+    const next = path[hop + 1]
+    return {
+      fromRef: stop.r,
+      toRef: next.r,
+      fromName: stop.n,
+      toName: next.n,
+      spanFromRef: path[spanStart].r,
+      spanToRef: path[spanEnd].r,
+      progress: hopProgress,
+      linear,
+      stopped: false,
+      departure: Number(stop.d),
+      arrival: Number(next.a),
+      motionDeparture: spanDeparture,
+      motionArrival: spanArrival
+    }
   }
 
   applyVehiclePlacement(vehicle, placement) {
@@ -7070,10 +7118,19 @@ export default class extends Controller {
     vehicle.motion_departure_minutes = placement.motionDeparture
     vehicle.motion_arrival_minutes = placement.motionArrival
     vehicle.linear_progress = placement.linear ?? placement.progress
-    if (Number.isFinite(placement.fromKm)) vehicle.from_km = placement.fromKm
-    else delete vehicle.from_km
-    if (Number.isFinite(placement.toKm)) vehicle.to_km = placement.toKm
-    else delete vehicle.to_km
+    const hop = placement.stopped ? null : this.hopChainageFor(vehicle.route_id, placement.fromRef, placement.toRef)
+    if (hop) {
+      vehicle.from_km = hop.fromKm
+      vehicle.to_km = hop.toKm
+    } else {
+      delete vehicle.from_km
+      delete vehicle.to_km
+    }
+    const span = placement.spanFromRef
+      ? this.hopChainageFor(vehicle.route_id, placement.spanFromRef, placement.spanToRef)
+      : null
+    if (span) vehicle.span_km = Math.abs(span.toKm - span.fromKm)
+    else delete vehicle.span_km
 
     const fromCoord = this.stationCoordForRef(placement.fromRef, vehicle.route_id)
     const toCoord = this.stationCoordForRef(placement.toRef, vehicle.route_id)
@@ -8645,44 +8702,88 @@ export default class extends Controller {
 
   stationKmOnRoute(routeId, ref) {
     const chainage = this.ensureRouteChainage(routeId)
+    if (!chainage) return null
+    const key = `${routeId}|${ref}`
+    this.stationKmCache ||= new Map()
+    if (this.stationKmCache.has(key)) return this.stationKmCache.get(key)
+
     const coord = this.stationCoordForRef(ref, routeId)
-    if (!chainage || !coord) return null
-    return nearestDistance(chainage, coord[1], coord[0])
+    const projection = coord ? nearestProjection(chainage, coord[1], coord[0]) : null
+    const km = projection && projection.offsetKm <= HOP_CHAINAGE_MAX_OFFSET_KM ? projection.km : null
+    this.stationKmCache.set(key, km)
+    return km
+  }
+
+  // Branchy routes carry several track lines; pick the one both hop stations
+  // sit on so trains never get projected onto the trunk from a branch.
+  hopChainageFor(routeId, fromRef, toRef) {
+    if (!routeId || !fromRef || !toRef) return null
+    let entry = this.hopChainage[routeId]
+    if (!entry) {
+      const chainages = (this.vehicleTracksFor(routeId) || [])
+        .filter((line) => Array.isArray(line) && line.length >= 2)
+        .map((line) => buildChainage(line))
+        .filter(Boolean)
+      if (chainages.length === 0) return null
+      entry = { chainages, projections: new Map(), hops: new Map() }
+      this.hopChainage[routeId] = entry
+    }
+
+    const hopKey = `${fromRef}|${toRef}`
+    if (entry.hops.has(hopKey)) return entry.hops.get(hopKey)
+
+    const project = (ref) => {
+      if (entry.projections.has(ref)) return entry.projections.get(ref)
+      const coord = this.stationCoordForRef(ref, routeId)
+      const list = coord
+        ? entry.chainages.map((chainage) => nearestProjection(chainage, coord[1], coord[0]))
+        : null
+      entry.projections.set(ref, list)
+      return list
+    }
+
+    const fromList = project(fromRef)
+    const toList = project(toRef)
+    let best = null
+    if (fromList && toList) {
+      entry.chainages.forEach((chainage, index) => {
+        const from = fromList[index]
+        const to = toList[index]
+        if (!from || !to) return
+        if (from.offsetKm > HOP_CHAINAGE_MAX_OFFSET_KM || to.offsetKm > HOP_CHAINAGE_MAX_OFFSET_KM) return
+        const score = from.offsetKm + to.offsetKm
+        if (!best || score < best.score) best = { chainage, fromKm: from.km, toKm: to.km, score }
+      })
+    }
+
+    entry.hops.set(hopKey, best)
+    return best
   }
 
   chainagePointForVehicle(vehicle, progress) {
-    let fromKm = Number(vehicle.from_km)
-    let toKm = Number(vehicle.to_km)
-    if (!Number.isFinite(fromKm)) fromKm = this.stationKmOnRoute(vehicle.route_id, vehicle.from_station_ref)
-    if (!Number.isFinite(toKm)) toKm = this.stationKmOnRoute(vehicle.route_id, vehicle.to_station_ref)
-    if (!Number.isFinite(fromKm) || !Number.isFinite(toKm)) return null
-
-    const chainage = this.ensureRouteChainage(vehicle.route_id)
-    if (!chainage) return null
-    const km = fromKm + ((toKm - fromKm) * Math.max(0, Math.min(1, progress)))
-    return pointAtDistance(chainage, km)
+    const hop = this.hopChainageFor(vehicle.route_id, vehicle.from_station_ref, vehicle.to_station_ref)
+    if (!hop) return null
+    const km = hop.fromKm + ((hop.toKm - hop.fromKm) * Math.max(0, Math.min(1, progress)))
+    return pointAtDistance(hop.chainage, km)
   }
 
   followJourneyKm(vehicle) {
     const path = Array.isArray(vehicle?.path) ? vehicle.path : []
-    const start = Number(path[0]?.km)
-    let now = Number.isFinite(vehicle.from_km) && Number.isFinite(vehicle.to_km)
-      ? vehicle.from_km + ((vehicle.to_km - vehicle.from_km) * (vehicle.progress || 0))
-      : Number.NaN
-    if (!Number.isFinite(start) || !Number.isFinite(now)) {
-      const startKm = this.stationKmOnRoute(vehicle.route_id, path[0]?.r)
-      const nowKm = this.stationKmOnRoute(vehicle.route_id, vehicle.from_station_ref)
-      if (!Number.isFinite(startKm) || !Number.isFinite(nowKm)) return null
-      return Math.abs(nowKm - startKm)
-    }
-    return Math.abs(now - start)
+    const startKm = this.stationKmOnRoute(vehicle.route_id, path[0]?.r)
+    const fromKm = this.stationKmOnRoute(vehicle.route_id, vehicle.from_station_ref)
+    if (!Number.isFinite(startKm) || !Number.isFinite(fromKm)) return null
+
+    const toKm = this.stationKmOnRoute(vehicle.route_id, vehicle.to_station_ref)
+    const progress = Math.max(0, Math.min(1, Number(vehicle.progress) || 0))
+    const nowKm = Number.isFinite(toKm) ? fromKm + ((toKm - fromKm) * progress) : fromKm
+    return Math.abs(nowKm - startKm)
   }
 
   followSpeedKmh(vehicle) {
     if (vehicle?.status === "stopped") return 0
-    const hopKm = Number.isFinite(vehicle.from_km) && Number.isFinite(vehicle.to_km)
-      ? Math.abs(vehicle.to_km - vehicle.from_km)
-      : null
+    const hopKm = Number.isFinite(vehicle.span_km)
+      ? vehicle.span_km
+      : (Number.isFinite(vehicle.from_km) && Number.isFinite(vehicle.to_km) ? Math.abs(vehicle.to_km - vehicle.from_km) : null)
     const hopMinutes = this.wrappedMinuteSpan(
       Number(vehicle.motion_departure_minutes),
       Number(vehicle.motion_arrival_minutes)
@@ -9878,8 +9979,8 @@ export default class extends Controller {
     snap.trips?.forEach((trip) => {
       const path = trip.path || []
       for (let i = 0; i < path.length - 1; i += 1) {
-        const a = Number(path[i].km)
-        const b = Number(path[i + 1].km)
+        const a = this.stationKmOnRoute(routeId, path[i].r)
+        const b = this.stationKmOnRoute(routeId, path[i + 1].r)
         if (!Number.isFinite(a) || !Number.isFinite(b)) continue
         const lo = Math.min(a, b)
         const hi = Math.max(a, b)

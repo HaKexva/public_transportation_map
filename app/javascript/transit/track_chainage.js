@@ -56,6 +56,11 @@ export function pointAtDistance(chainage, distanceKm) {
 }
 
 export function nearestDistance(chainage, lng, lat) {
+  return nearestProjection(chainage, lng, lat)?.km ?? null
+}
+
+// { km: distance along the line, offsetKm: perpendicular distance to it }
+export function nearestProjection(chainage, lng, lat) {
   if (!chainage?.line || !chainage?.cum) return null
 
   const { line, cum } = chainage
@@ -80,5 +85,5 @@ export function nearestDistance(chainage, lng, lat) {
     bestD = cum[i] + ((cum[i + 1] - cum[i]) * t)
   }
 
-  return bestD
+  return bestD == null ? null : { km: bestD, offsetKm: bestDist }
 }

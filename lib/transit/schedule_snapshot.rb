@@ -69,8 +69,6 @@ module Transit
         path = densifier.densify(route, ordered).map { |stop| compact_stop(route, stop) }
         next if path.length < 2
 
-        attach_chainage!(route, path)
-
         continuation = continuation_for(route, calendar_ids)&.lookup(
           trip_id: trip_id,
           train_number: info[:train_number],
@@ -148,7 +146,6 @@ module Transit
           payload[:n] = station.name if station.name.present?
           payload
         end
-        attach_chainage!(route, path)
 
         {
           id: "headway:#{route.route_id}:#{direction}:#{departure.round(2)}",
@@ -203,23 +200,6 @@ module Transit
       payload[:n] = name if name.present? && !name.include?(";")
       payload[:t] = true if stop[:through]
       payload
-    end
-
-    def attach_chainage!(route, path)
-      chainage = TrackChainage.for_route(route)
-      return path unless chainage
-
-      @station_km ||= {}
-      path.each do |stop|
-        key = [ route.id, stop[:r] ]
-        unless @station_km.key?(key)
-          coord = GeojsonStationCoords.lookup(route, stop[:r])
-          km = coord && TrackChainage.nearest_distance(chainage, coord[1], coord[0])
-          @station_km[key] = km&.round(4)
-        end
-        stop[:km] = @station_km[key] if @station_km[key]
-      end
-      path
     end
 
     def minutes_since_midnight(time_or_nil)
