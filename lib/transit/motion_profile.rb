@@ -7,18 +7,47 @@ module Transit
     PROFILES = {
       "hsr" => { accel: 0.22, decel: 0.22 },
       "express" => { accel: 0.28, decel: 0.28 },
-      "local" => { accel: 0.34, decel: 0.34 }
+      "juguang" => { accel: 0.31, decel: 0.31 },
+      "local" => { accel: 0.34, decel: 0.34 },
+      "constant" => { accel: 0.0, decel: 0.0 }
     }.freeze
 
-    EXPRESS_TYPES = /自強|太魯閣|普悠瑪|EMU|express|limited|taroko|puyuma|temu|tc/i
+    # TDX TrainTypeCode (1 太魯閣, 2 普悠瑪, 3 自強, 4 莒光, 5 復興, 6 區間, 7 普快,
+    # 10 區間快, 11 自強3000) and ODS CarClass prefixes (110x 自強, 111x 莒光, ...).
+    TRA_TYPE_CODES = {
+      1 => "express", 2 => "express", 3 => "express", 11 => "express",
+      4 => "juguang",
+      5 => "local", 6 => "local", 7 => "local", 10 => "local"
+    }.freeze
+    TRA_CAR_CLASS_PREFIXES = [
+      [ /\A110/, "express" ],
+      [ /\A111/, "juguang" ],
+      [ /\A11[2-4]/, "local" ]
+    ].freeze
+    EXPRESS_TYPES = /自強|太魯閣|普悠瑪|express|limited|taroko|puyuma/i
+    JUGUANG_TYPES = /莒光|chu-?kuang/i
+    LOCAL_TYPES = /區間|復興|普快|local|commuter/i
     HSR_TYPES = /hsr|高鐵/i
+    METRO_SYSTEMS = /metro|mrt|light_rail/i
 
     def self.kind_for(system_id:, trip_type: nil)
-      blob = "#{system_id} #{trip_type}"
-      return "hsr" if system_id.to_s == "hsr" || blob.match?(HSR_TYPES)
-      return "express" if blob.match?(EXPRESS_TYPES)
+      system = system_id.to_s
+      type = trip_type.to_s.strip
+      return "hsr" if system == "hsr" || type.match?(HSR_TYPES)
 
-      "local"
+      if type.match?(/\A\d+\z/)
+        coded = TRA_TYPE_CODES[type.to_i]
+        return coded if coded
+
+        prefix = TRA_CAR_CLASS_PREFIXES.find { |pattern, _| type.match?(pattern) }
+        return prefix.last if prefix
+      end
+      return "express" if type.match?(EXPRESS_TYPES)
+      return "juguang" if type.match?(JUGUANG_TYPES)
+      return "local" if type.match?(LOCAL_TYPES)
+
+      # Metro hops are always station to station; other unknown types move at constant speed.
+      system.match?(METRO_SYSTEMS) ? "local" : "constant"
     end
 
     def self.eased_progress(linear, kind: "local")
@@ -33,6 +62,8 @@ module Transit
         0.0
       elsif t >= 1
         1.0
+      elsif accel <= 0 && decel <= 0
+        t
       elsif t < cruise_start
         # s = 0.5 a t^2; normalize so full hop integrates to 1
         (t / accel) * (t / accel) * distance_share(accel, cruise_end, decel, :accel)

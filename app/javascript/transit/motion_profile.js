@@ -1,17 +1,47 @@
 const PROFILES = {
   hsr: { accel: 0.22, decel: 0.22 },
   express: { accel: 0.28, decel: 0.28 },
-  local: { accel: 0.34, decel: 0.34 }
+  juguang: { accel: 0.31, decel: 0.31 },
+  local: { accel: 0.34, decel: 0.34 },
+  constant: { accel: 0, decel: 0 }
 }
 
-const EXPRESS_TYPES = /自強|太魯閣|普悠瑪|EMU|express|limited|taroko|puyuma|temu|tc/i
+// TDX TrainTypeCode (1 太魯閣, 2 普悠瑪, 3 自強, 4 莒光, 5 復興, 6 區間, 7 普快,
+// 10 區間快, 11 自強3000) and ODS CarClass prefixes (110x 自強, 111x 莒光, ...).
+const TRA_TYPE_CODES = {
+  1: "express", 2: "express", 3: "express", 11: "express",
+  4: "juguang",
+  5: "local", 6: "local", 7: "local", 10: "local"
+}
+const TRA_CAR_CLASS_PREFIXES = [
+  [ /^110/, "express" ],
+  [ /^111/, "juguang" ],
+  [ /^11[2-4]/, "local" ]
+]
+const EXPRESS_TYPES = /自強|太魯閣|普悠瑪|express|limited|taroko|puyuma/i
+const JUGUANG_TYPES = /莒光|chu-?kuang/i
+const LOCAL_TYPES = /區間|復興|普快|local|commuter/i
 const HSR_TYPES = /hsr|高鐵/i
+const METRO_SYSTEMS = /metro|mrt|light_rail/i
 
 export function motionKind(systemId, tripType) {
-  const blob = `${systemId || ""} ${tripType || ""}`
-  if (String(systemId) === "hsr" || HSR_TYPES.test(blob)) return "hsr"
-  if (EXPRESS_TYPES.test(blob)) return "express"
-  return "local"
+  const system = String(systemId || "")
+  const type = String(tripType ?? "").trim()
+  if (system === "hsr" || HSR_TYPES.test(type)) return "hsr"
+
+  if (/^\d+$/.test(type)) {
+    const code = Number(type)
+    if (TRA_TYPE_CODES[code]) return TRA_TYPE_CODES[code]
+    const match = TRA_CAR_CLASS_PREFIXES.find(([ pattern ]) => pattern.test(type))
+    if (match) return match[1]
+  }
+  if (EXPRESS_TYPES.test(type)) return "express"
+  if (JUGUANG_TYPES.test(type)) return "juguang"
+  if (LOCAL_TYPES.test(type)) return "local"
+
+  // Metro hops are always station to station; other unknown types move at constant speed.
+  if (METRO_SYSTEMS.test(system)) return "local"
+  return "constant"
 }
 
 function distanceShare(accel, cruiseEnd, decel, part) {
@@ -34,6 +64,7 @@ export function easedProgress(linear, kind = "local") {
 
   if (t <= 0) return 0
   if (t >= 1) return 1
+  if (accel <= 0 && decel <= 0) return t
 
   if (t < cruiseStart) {
     const u = t / accel
