@@ -138,7 +138,7 @@ const RIDE_STAMP_STORAGE_KEY = "map-ride-stamps"
 const RELAX_MODE_STORAGE_KEY = "map-relax-mode"
 const LIVE_OVERLAY_WINDOW_MS = 15 * 60 * 1000
 const NEARBY_RADIUS_M = 1500
-const STATION_BOARD_MINUTES = 180
+const STATION_BOARD_MINUTES = 60
 const TAIPEI_OFFSET_MS = 8 * 60 * 60 * 1000
 const BOARD_PERIODS = [
   { id: "upcoming", from: null, until: null },
@@ -8926,7 +8926,7 @@ export default class extends Controller {
     const sorter = period.from != null
       ? (a, b) => (a.departure_minutes ?? a.arrival_minutes ?? 0) - (b.departure_minutes ?? b.arrival_minutes ?? 0)
       : (a, b) => a.wait - b.wait
-    return rows.sort(sorter).slice(0, period.from != null ? 80 : 12)
+    return rows.sort(sorter).slice(0, period.from != null ? 80 : 40)
   }
 
   stationBoardRouteIds(routeId) {
@@ -9424,6 +9424,9 @@ export default class extends Controller {
     if (fallback.length > 0) {
       host.innerHTML = this.renderStationBoard(fallback, stationName)
       this.bindStationBoardActions(host)
+      // The local snapshot is the board's source of truth; the server only
+      // fills in for lines whose snapshot has no timetable trips.
+      if (this.stationBoardRouteIds(routeId).every((id) => this.snapshotHasTrips(id))) return
     }
 
     const stops = await this.fetchStationBoard(ref, routeId)
@@ -9532,6 +9535,14 @@ export default class extends Controller {
       const root = host.closest(".map-station-board-panel, .leaflet-popup") || host
       await this.hydrateStationBoard(root, host.dataset.ref, host.dataset.route, host.dataset.name)
     }
+  }
+
+  stationBoardClockMatchesSimulation() {
+    this.ensureStationBoardClock()
+    if (this.stationBoardPeriod && this.stationBoardPeriod !== "upcoming") return false
+    if (this.stationBoardDate !== this.taipeiDateString(this.simulationAt)) return false
+    const simMinutes = this.minutesSinceMidnightFromIso(this.simulationAt)
+    return Number.isFinite(simMinutes) && Math.abs(simMinutes - this.stationBoardMinutes) <= 2
   }
 
   jumpScrubberToBoardTime(minutes) {
@@ -9734,7 +9745,11 @@ export default class extends Controller {
 
   followTripFromBoard(tripId, trainNumber, routeId, minutes, destinationName = null) {
     const parsedMinutes = Number.parseFloat(minutes)
-    if (Number.isFinite(parsedMinutes)) this.jumpScrubberToBoardTime(parsedMinutes)
+    // Upcoming rows are already running or about to depart: follow in place and
+    // let the pending follow adopt the train. Only browsing another time jumps.
+    if (Number.isFinite(parsedMinutes) && !this.stationBoardClockMatchesSimulation()) {
+      this.jumpScrubberToBoardTime(parsedMinutes)
+    }
 
     const marker = this.findVehicleMarkerForBoardFollow({
       tripId,

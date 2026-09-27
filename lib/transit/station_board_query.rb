@@ -3,7 +3,7 @@
 module Transit
   class StationBoardQuery
     CLOCK_ZONE = ActiveSupport::TimeZone["Taipei"]
-    WINDOW_MINUTES = 180
+    WINDOW_MINUTES = 60
     MAX_ROWS = 32
     PERIOD_MAX_ROWS = 100
     ALL_DAY_MAX_ROWS = 160
