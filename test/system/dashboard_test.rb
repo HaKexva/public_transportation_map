@@ -438,6 +438,44 @@ class DashboardTest < ApplicationSystemTestCase
     assert_selector ".leaflet-overlay-pane path.leaflet-interactive", wait: 15, minimum: 5
   end
 
+  test "express trains do not slow down at through stations" do
+    visit root_path
+    assert_selector ".map-boot-overlay[hidden]", visible: :all, wait: 30
+
+    result = page.evaluate_script(<<~JS)
+      (() => {
+        const el = document.querySelector('[data-controller~="map"]')
+        const controller = window.Stimulus.getControllerForElementAndIdentifier(el, "map")
+        const path = [
+          { r: "A", a: 600, d: 600 },
+          { r: "B", a: 610, d: 610, t: true },
+          { r: "C", a: 620, d: 620 }
+        ]
+        const vehicle = { system_id: "tra", trip_type: "3" }
+        const at = (minute) => controller.placementOnStopPath(path, minute, vehicle)
+        const before = at(609.5)
+        const after = at(610.5)
+        return {
+          beforeRef: before.fromRef,
+          afterRef: after.fromRef,
+          beforeProgress: before.progress,
+          afterProgress: after.progress,
+          spanFrom: after.spanFromRef,
+          spanTo: after.spanToRef
+        }
+      })()
+    JS
+
+    assert_equal "A", result["beforeRef"]
+    assert_equal "B", result["afterRef"]
+    assert_equal "A", result["spanFrom"]
+    assert_equal "C", result["spanTo"]
+    # Mid-span the train cruises through B instead of braking into it:
+    # per-hop easing would put it at >0.99 / <0.01 either side of the pass.
+    assert_in_delta 0.925, result["beforeProgress"], 0.04
+    assert_in_delta 0.075, result["afterProgress"], 0.04
+  end
+
   test "shows and hides Wenhu line when the line checkbox is toggled" do
     visit root_path
 

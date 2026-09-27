@@ -4,6 +4,10 @@ module Transit
   # Inserts through-stations so express trips follow the corridor instead of
   # chord-jumping between booked stops.
   class ScheduleDensifier
+    def initialize(coord_lookup: GeojsonStationCoords.method(:lookup))
+      @coord_lookup = coord_lookup
+    end
+
     def densify(route, ordered_stops)
       stops = Array(ordered_stops)
       return stops if stops.length < 2 || route.nil?
@@ -27,15 +31,14 @@ module Transit
         densified << left
         next if right_idx <= left_idx + 1
 
-        span = right_idx - left_idx
-        left_arr = left[:arrival].to_f
         left_dep = left[:departure].to_f
         right_arr = right[:arrival].to_f
         travel = wrap_delta(left_dep, right_arr)
         next if travel <= 0
 
+        fractions = distance_fractions(route, corridor, left_idx, right_idx)
         ((left_idx + 1)...right_idx).each do |idx|
-          frac = (idx - left_idx).to_f / span
+          frac = fractions[idx - left_idx]
           pass = wrap_add(left_dep, travel * frac)
           station = corridor[idx]
           densified << {
@@ -52,6 +55,40 @@ module Transit
     end
 
     private
+
+    # Fraction of the left->right distance reached at each corridor index, so
+    # pass times follow station spacing; falls back to even spacing when any
+    # station lacks coordinates.
+    def distance_fractions(route, corridor, left_idx, right_idx)
+      span = right_idx - left_idx
+      even = (0..span).map { |step| step.to_f / span }
+      coords = (left_idx..right_idx).map { |idx| station_coord(route, corridor[idx].station_ref) }
+      return even if coords.any?(&:nil?)
+
+      cumulative = [ 0.0 ]
+      coords.each_cons(2) { |a, b| cumulative << (cumulative.last + haversine_km(a, b)) }
+      total = cumulative.last
+      return even unless total.positive?
+
+      cumulative.map { |km| km / total }
+    end
+
+    def station_coord(route, ref)
+      @station_coords ||= {}
+      key = [ route.id, ref ]
+      return @station_coords[key] if @station_coords.key?(key)
+
+      @station_coords[key] = @coord_lookup.call(route, ref)
+    end
+
+    def haversine_km(a, b)
+      lat1 = a[0].to_f * Math::PI / 180.0
+      lat2 = b[0].to_f * Math::PI / 180.0
+      dlat = lat2 - lat1
+      dlng = (b[1].to_f - a[1].to_f) * Math::PI / 180.0
+      h = Math.sin(dlat / 2)**2 + (Math.cos(lat1) * Math.cos(lat2) * Math.sin(dlng / 2)**2)
+      2 * 6371.0 * Math.asin([ Math.sqrt(h), 1.0 ].min)
+    end
 
     def route_stations(route)
       scope = route.transit_route_stations

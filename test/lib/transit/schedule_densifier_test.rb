@@ -41,6 +41,24 @@ class ScheduleDensifierTest < ActiveSupport::TestCase
     assert_equal result[1][:arrival], result[1][:departure]
   end
 
+  test "spaces through-station pass times by distance" do
+    # A..E on one meridian; B sits 1 km from A, the rest are 3 km apart.
+    lat_per_km = 1.0 / 111.195
+    coords = { "A" => 0.0, "B" => 1.0, "C" => 4.0, "D" => 7.0, "E" => 10.0 }
+      .transform_values { |km| [ 24.0 + (km * lat_per_km), 121.0 ] }
+    stops = [
+      { station_ref: "A", arrival: 600.0, departure: 600.0 },
+      { station_ref: "E", arrival: 640.0, departure: 640.0 }
+    ]
+
+    densifier = Transit::ScheduleDensifier.new(coord_lookup: ->(_route, ref) { coords[ref] })
+    result = densifier.densify(@route, stops)
+
+    assert_in_delta 604.0, result[1][:arrival], 0.05
+    assert_in_delta 616.0, result[2][:arrival], 0.05
+    assert_in_delta 628.0, result[3][:arrival], 0.05
+  end
+
   test "leaves already-dense local trips unchanged" do
     stops = [
       { station_ref: "A", arrival: 600.0, departure: 601.0 },
