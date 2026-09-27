@@ -502,6 +502,50 @@ class DashboardTest < ApplicationSystemTestCase
     assert_selector ".vehicle-follow-bar:not([hidden])", wait: 5
   end
 
+  test "station board lists the next hour locally and follows without jumping the clock" do
+    visit root_path
+    assert_selector ".map-boot-overlay[hidden]", visible: :all, wait: 30
+
+    before = page.evaluate_script(<<~JS)
+      (() => {
+        const el = document.querySelector('[data-controller~="map"]')
+        const controller = window.Stimulus.getControllerForElementAndIdentifier(el, "map")
+        const now = controller.minutesSinceMidnightFromIso(controller.simulationAt)
+        const at = (offset) => (now + offset) % 1440
+        controller.scheduleSnapshots["taiwan_hsr"] = {
+          date: controller.simulationDateString(),
+          route_id: "taiwan_hsr",
+          system_id: "hsr",
+          trips: [
+            { id: "trip:soon", train_number: "0123", destination_name: "左營",
+              path: [ { r: "02", a: at(10), d: at(11) }, { r: "03", a: at(20), d: at(21) } ] },
+            { id: "trip:later", train_number: "0999", destination_name: "左營",
+              path: [ { r: "02", a: at(90), d: at(91) }, { r: "03", a: at(100), d: at(101) } ] }
+          ]
+        }
+        controller.scheduleDate = controller.simulationDateString()
+        controller.openStationBoard({ routeId: "taiwan_hsr", ref: "02", name: "台北" })
+        return controller.simulationAt
+      })()
+    JS
+
+    assert_selector ".station-board__row[data-follow-trip='trip:soon']", wait: 5
+    assert_no_selector ".station-board__row[data-follow-trip='trip:later']"
+
+    find(".station-board__row[data-follow-trip='trip:soon']").click
+
+    after = page.evaluate_script(<<~JS)
+      (() => {
+        const el = document.querySelector('[data-controller~="map"]')
+        const controller = window.Stimulus.getControllerForElementAndIdentifier(el, "map")
+        return { at: controller.simulationAt, pending: controller.pendingFollowTripId, followed: controller.followedVehicleKey }
+      })()
+    JS
+
+    assert_in_delta Time.iso8601(before).to_f, Time.iso8601(after["at"]).to_f, 120
+    assert(after["pending"] == "trip:soon" || after["followed"].to_s.include?("0123"), "expected a pending or active follow for trip:soon, got #{after.inspect}")
+  end
+
   test "shows and hides Wenhu line when the line checkbox is toggled" do
     visit root_path
 
