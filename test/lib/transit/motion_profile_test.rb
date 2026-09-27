@@ -10,6 +10,24 @@ class MotionProfileTest < ActiveSupport::TestCase
     assert_equal "local", Transit::MotionProfile.kind_for(system_id: "taipei_metro", trip_type: nil)
   end
 
+  test "classifies TDX and ODS numeric TRA codes" do
+    %w[1 2 3 11 1101 1108].each do |code|
+      assert_equal "express", Transit::MotionProfile.kind_for(system_id: "tra", trip_type: code), code
+    end
+    %w[4 1110 1115].each do |code|
+      assert_equal "juguang", Transit::MotionProfile.kind_for(system_id: "tra", trip_type: code), code
+    end
+    %w[5 6 7 10 1131 1140].each do |code|
+      assert_equal "local", Transit::MotionProfile.kind_for(system_id: "tra", trip_type: code), code
+    end
+  end
+
+  test "unknown types move at constant speed" do
+    assert_equal "constant", Transit::MotionProfile.kind_for(system_id: "tra", trip_type: nil)
+    assert_equal "constant", Transit::MotionProfile.kind_for(system_id: "sugar_railway", trip_type: "freight")
+    assert_in_delta 0.37, Transit::MotionProfile.eased_progress(0.37, kind: "constant"), 1e-9
+  end
+
   test "eased progress stays monotonic between 0 and 1" do
     prev = -0.01
     21.times do |i|
