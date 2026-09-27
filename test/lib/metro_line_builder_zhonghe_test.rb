@@ -93,7 +93,7 @@ class MetroLineBuilderZhongheTest < ActiveSupport::TestCase
     end
 
     t = (((point[0] - a[0]) * dx) + ((point[1] - a[1]) * dy)) / (dx * dx + dy * dy)
-    t = [[ t, 0.0 ].max, 1.0 ].min
+    t = [ [ t, 0.0 ].max, 1.0 ].min
     proj = [ a[0] + t * dx, a[1] + t * dy ]
     Geojson::TrackGeometry.planar_distance_meters(point[0], point[1], proj[0], proj[1])
   end
