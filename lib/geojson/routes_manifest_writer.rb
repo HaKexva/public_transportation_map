@@ -171,13 +171,42 @@ module Geojson
     def enrich_entry(entry, file_path, include_stations: true)
       return entry unless include_stations
 
-      station_names = station_names_for(file_path)
+      data = JSON.parse(File.read(file_path))
+      station_names = station_names_for(data)
       entry[:station_names] = station_names if station_names.any?
+      bbox = bbox_for(data)
+      entry[:bbox] = bbox if bbox
+      entry
+    rescue JSON::ParserError, Errno::ENOENT
       entry
     end
 
-    def station_names_for(file_path)
-      data = JSON.parse(File.read(file_path))
+    # [min_lng, min_lat, max_lng, max_lat] so the map can pick nearby routes without loading every file.
+    def bbox_for(data)
+      lngs = []
+      lats = []
+      Array(data["features"]).each do |feature|
+        each_position(feature.dig("geometry", "coordinates")) do |lng, lat|
+          lngs << lng
+          lats << lat
+        end
+      end
+      return nil if lngs.empty?
+
+      [ lngs.min, lats.min, lngs.max, lats.max ].map { |value| value.round(4) }
+    end
+
+    def each_position(coordinates, &block)
+      return unless coordinates.is_a?(Array)
+
+      if coordinates.first.is_a?(Numeric)
+        yield coordinates[0].to_f, coordinates[1].to_f if coordinates.length >= 2
+      else
+        coordinates.each { |child| each_position(child, &block) }
+      end
+    end
+
+    def station_names_for(data)
       names = []
 
       Array(data["features"]).each do |feature|
@@ -190,8 +219,6 @@ module Geojson
       end
 
       names.reject(&:empty?).uniq
-    rescue JSON::ParserError, Errno::ENOENT
-      []
     end
   end
 end

@@ -603,6 +603,60 @@ class DashboardTest < ApplicationSystemTestCase
     assert_empty rows["off"]
   end
 
+  test "nearby pin lists hidden lines within range and can be removed" do
+    visit root_path
+    assert_selector ".map-boot-overlay[hidden]", visible: :all, wait: 30
+
+    result = page.evaluate_script(<<~JS)
+      (() => {
+        const el = document.querySelector('[data-controller~="map"]')
+        const controller = window.Stimulus.getControllerForElementAndIdentifier(el, "map")
+        const now = controller.minutesSinceMidnightFromIso(controller.simulationAt)
+        const coords = { A: [ 22.0, 122.5 ], D: [ 22.0, 122.53 ] }
+        controller.stationCoordForRef = (ref) => coords[ref] || null
+        controller.routesManifest.other.push({ id: "test_pin_line", bbox: [ 122.5, 22.0, 122.53, 22.0 ] })
+        controller.routeTracksByRouteId["test_pin_line"] = [ [ [ 122.5, 22.0 ], [ 122.53, 22.0 ] ] ]
+        controller.vehicleTracksByRouteId["test_pin_line"] = [ [ [ 122.5, 22.0 ], [ 122.53, 22.0 ] ] ]
+        controller.scheduleSnapshots["test_pin_line"] = {
+          date: controller.simulationDateString(),
+          route_id: "test_pin_line",
+          trips: [
+            { id: "trip:soon", train_number: "501", path: [ { r: "A", a: now, d: now + 2 }, { r: "D", a: now + 32, d: now + 33 } ] },
+            { id: "trip:late", train_number: "502", path: [ { r: "A", a: now + 90, d: now + 92 }, { r: "D", a: now + 122, d: now + 123 } ] }
+          ]
+        }
+        const near = { lat: 22.005, lng: 122.515 }
+        return {
+          visible: controller.layerVisible["test_pin_line"] || false,
+          candidates: controller.nearbyRouteIds(near),
+          far: controller.nearbyRouteIds({ lat: 22.1, lng: 122.515 }),
+          rows: controller.nearbyTrainRows(near)
+        }
+      })()
+    JS
+
+    assert_not result["visible"]
+    assert_includes result["candidates"], "test_pin_line"
+    assert_not_includes result["far"], "test_pin_line"
+    assert_equal [ "501" ], result["rows"].map { |row| row["train_number"] }
+    assert_in_delta 556, result["rows"].first["meters"], 20
+
+    page.execute_script(<<~JS)
+      const el = document.querySelector('[data-controller~="map"]')
+      const controller = window.Stimulus.getControllerForElementAndIdentifier(el, "map")
+      controller.dropNearbyPin({ lat: 22.005, lng: 122.515 })
+    JS
+    assert_selector "[data-follow-train='501']", wait: 5
+    find("[data-nearby-save]").click
+    assert_equal 1, page.evaluate_script("JSON.parse(localStorage.getItem('map-nearby-pins')).length")
+
+    find("[data-nearby-remove]").click
+    assert_equal 0, page.evaluate_script("JSON.parse(localStorage.getItem('map-nearby-pins')).length")
+    assert_equal 0, page.evaluate_script(<<~JS)
+      window.Stimulus.getControllerForElementAndIdentifier(document.querySelector('[data-controller~="map"]'), "map").nearbyPins.length
+    JS
+  end
+
   test "shows and hides Wenhu line when the line checkbox is toggled" do
     visit root_path
 

@@ -2,7 +2,7 @@
 import { Controller } from "@hotwired/stimulus"
 import { VehicleCanvasLayer } from "transit/vehicle_canvas_layer"
 import { motionKind, easedProgress, speedKmh } from "transit/motion_profile"
-import { buildChainage, longestTrackLine, nearestDistance, nearestProjection, pointAtDistance } from "transit/track_chainage"
+import { buildChainage, longestTrackLine, nearestProjection, pointAtDistance } from "transit/track_chainage"
 
 const LEAFLET_BOUNDS = [ [ 21.85, 118.15 ], [ 26.45, 122.25 ] ]
 const VIEW_REGION_STORAGE_KEY = "map-view-region"
@@ -10111,21 +10111,62 @@ export default class extends Controller {
     })
   }
 
-  nearbyTrainRows(latlng) {
+  nearbyRouteIds(latlng) {
+    if (!latlng) return []
+    const padLat = NEARBY_RADIUS_M / 111320
+    const padLng = padLat / Math.max(0.2, Math.cos(latlng.lat * Math.PI / 180))
+    return this.routeLayerIds().filter((routeId) => {
+      const bbox = this.findRoute(routeId)?.bbox
+      if (!Array.isArray(bbox) || bbox.length !== 4) return this.layerVisible[routeId]
+      const [ minLng, minLat, maxLng, maxLat ] = bbox
+      return latlng.lng >= minLng - padLng && latlng.lng <= maxLng + padLng &&
+        latlng.lat >= minLat - padLat && latlng.lat <= maxLat + padLat
+    })
+  }
+
+  async ensureNearbyRouteData(routeIds) {
+    await Promise.all(routeIds.map(async (routeId) => {
+      if (this.routeTracksByRouteId[routeId]) return
+      const route = this.findRoute(routeId)
+      const url = route?.file || route?.url
+      if (!url) return
+      try {
+        const data = await this.fetchGeoJSON(url)
+        if (this.routeTracksByRouteId[routeId]) return
+        const displayData = this.displayGeoJSON(data, route)
+        this.cacheRouteTracks(routeId, displayData)
+        this.indexStationCoordinates(routeId, displayData)
+      } catch (_error) {
+        // a missing line only drops its rows from the panel
+      }
+    }))
+    await this.ensureScheduleSnapshots(routeIds)
+  }
+
+  nearestTrackPoint(routeId, latlng) {
+    let best = null
+    this.vehicleTracksFor(routeId).forEach((line) => {
+      const chainage = buildChainage(line)
+      if (!chainage) return
+      const projection = nearestProjection(chainage, latlng.lng, latlng.lat)
+      if (!projection || (best && projection.offsetKm >= best.offsetKm)) return
+      const point = pointAtDistance(chainage, projection.km)
+      if (point) best = { point, offsetKm: projection.offsetKm }
+    })
+    return best
+  }
+
+  nearbyTrainRows(latlng, routeIds = this.nearbyRouteIds(latlng)) {
     const atMin = this.minutesSinceMidnightFromIso(this.simulationAt)
     if (!Number.isFinite(atMin) || !latlng) return []
 
     const rows = []
-    this.visibleRouteLayerIds().forEach((routeId) => {
-      const chainage = this.ensureRouteChainage(routeId)
-      if (!chainage) return
-      const d = nearestDistance(chainage, latlng.lng, latlng.lat)
-      if (!Number.isFinite(d)) return
-      const point = pointAtDistance(chainage, d)
-      if (!point) return
-      const distM = this.haversineMeters(latlng.lat, latlng.lng, point.lat, point.lng)
+    routeIds.forEach((routeId) => {
+      const nearest = this.nearestTrackPoint(routeId, latlng)
+      if (!nearest) return
+      const distM = this.haversineMeters(latlng.lat, latlng.lng, nearest.point.lat, nearest.point.lng)
       if (distM > NEARBY_RADIUS_M) return
-      this.crossingPassRows(routeId, point).forEach((row) => {
+      this.crossingPassRows(routeId, nearest.point).forEach((row) => {
         rows.push({ ...row, meters: Math.round(distM) })
       })
     })
@@ -10133,11 +10174,20 @@ export default class extends Controller {
     return rows.sort((a, b) => a.wait - b.wait).slice(0, 12)
   }
 
-  openNearbyPanel(pin) {
+  async openNearbyPanel(pin) {
     this.ensureExploreUi()
     const panel = this.nearbyPanelEl
     if (!panel) return
-    const rows = this.nearbyTrainRows({ lat: pin.lat, lng: pin.lng })
+    const latlng = { lat: pin.lat, lng: pin.lng }
+    const routeIds = this.nearbyRouteIds(latlng)
+    this.activeNearbyPin = pin
+    if (routeIds.some((routeId) => !this.routeTracksByRouteId[routeId] || !this.scheduleSnapshots[routeId])) {
+      panel.hidden = false
+      panel.innerHTML = `<div class="station-board__empty">${this.escapeHtml(this.t("explore.nearby_loading"))}</div>`
+      await this.ensureNearbyRouteData(routeIds)
+      if (this.activeNearbyPin !== pin) return
+    }
+    const rows = this.nearbyTrainRows(latlng, routeIds)
     const list = rows.length
       ? rows.map((row) => {
         const mins = Math.max(0, Math.round(row.wait))
@@ -10157,6 +10207,7 @@ export default class extends Controller {
       <div class="station-board__note">${this.escapeHtml(this.t("explore.timetable_estimate"))}</div>
       ${list}
       <button type="button" class="map-float-panel__action" data-nearby-save>${this.escapeHtml(pin.saved ? this.t("explore.pin_saved") : this.t("explore.save_pin"))}</button>
+      <button type="button" class="map-float-panel__action" data-nearby-remove>${this.escapeHtml(this.t("explore.remove_pin"))}</button>
     `
     panel.querySelector("[data-nearby-close]")?.addEventListener("click", () => { panel.hidden = true })
     panel.querySelector("[data-nearby-save]")?.addEventListener("click", (event) => {
@@ -10164,7 +10215,16 @@ export default class extends Controller {
       this.persistPins()
       event.currentTarget.textContent = this.t("explore.pin_saved")
     })
+    panel.querySelector("[data-nearby-remove]")?.addEventListener("click", () => this.removeNearbyPin(pin))
     this.bindStationBoardActions(panel)
+  }
+
+  removeNearbyPin(pin) {
+    this.nearbyPins = this.nearbyPins.filter((entry) => entry !== pin)
+    if (pin.saved) this.persistPins()
+    this.renderNearbyPins()
+    if (this.activeNearbyPin === pin) this.activeNearbyPin = null
+    if (this.nearbyPanelEl) this.nearbyPanelEl.hidden = true
   }
 
   persistPins() {
