@@ -152,6 +152,7 @@ const BOARD_PERIODS = [
   { id: "night", from: 21 * 60, until: 24 * 60, jump: 21 * 60 }
 ]
 const SCHEDULE_FETCH_CHUNK = 8
+const SCHEDULE_FETCH_RETRY_MS = 15_000
 const SKYTRAIN_NORTH_STATION_ORDER = [ "ST1N", "ST2N" ]
 const SKYTRAIN_SOUTH_STATION_ORDER = [ "ST1S", "ST2S" ]
 const TRA_BRANCH_ROUTE_IDS = new Set([
@@ -350,6 +351,9 @@ export default class extends Controller {
     this.scheduleSnapshots = {}
     this.scheduleDate = null
     this.scheduleFetchController = null
+    this.scheduleFetchDate = null
+    this.scheduleInflight = new Map()
+    this.scheduleRetryAfter = new Map()
     this.stationBoardFetchController = null
     this.stationBoardFetchControllers = new Map()
     this.stationBoardRefreshTimer = null
@@ -428,6 +432,8 @@ export default class extends Controller {
     if (this.stationLabelRefreshTimer) clearTimeout(this.stationLabelRefreshTimer)
     if (this.vehicleFetchController) this.vehicleFetchController.abort()
     if (this.scheduleFetchController) this.scheduleFetchController.abort()
+    this.scheduleFetchDate = null
+    this.scheduleInflight = new Map()
     if (this.stationBoardFetchController) this.stationBoardFetchController.abort()
     if (this.stationBoardFetchControllers) {
       this.stationBoardFetchControllers.forEach((controller) => controller.abort())
@@ -8442,29 +8448,68 @@ export default class extends Controller {
     const date = this.simulationDateString()
     if (!date) return
 
+    // Scrub events call this many times per second; only a date change may
+    // cancel in-flight requests, otherwise concurrent callers share them.
+    if (this.scheduleFetchDate !== date) {
+      if (this.scheduleFetchController) this.scheduleFetchController.abort()
+      this.scheduleFetchController = new AbortController()
+      this.scheduleFetchDate = date
+      this.scheduleInflight = new Map()
+      this.scheduleRetryAfter = new Map()
+    }
+
     const wanted = Array.from(new Set(routeIds)).filter(Boolean)
-    const missing = wanted.filter((id) => this.scheduleSnapshots[id]?.date !== date)
+    const now = Date.now()
+    const pending = new Set()
+    const missing = []
     wanted.forEach((id) => {
       if (this.scheduleSnapshots[id] && this.scheduleSnapshots[id].date !== date) {
         delete this.scheduleSnapshots[id]
       }
+      if (this.scheduleSnapshots[id]) return
+
+      const inflight = this.scheduleInflight.get(id)
+      if (inflight) {
+        pending.add(inflight)
+      } else if ((this.scheduleRetryAfter.get(id) || 0) <= now) {
+        missing.push(id)
+      }
     })
-    if (missing.length === 0) return
 
-    if (this.scheduleFetchController) this.scheduleFetchController.abort()
-    this.scheduleFetchController = new AbortController()
-    const { signal } = this.scheduleFetchController
+    if (missing.length > 0) {
+      const request = this.fetchScheduleSnapshots(date, missing, this.scheduleFetchController.signal)
+      missing.forEach((id) => this.scheduleInflight.set(id, request))
+      pending.add(request)
+    }
+    if (pending.size === 0) return
 
-    try {
-      for (let index = 0; index < missing.length; index += SCHEDULE_FETCH_CHUNK) {
-        const chunk = missing.slice(index, index + SCHEDULE_FETCH_CHUNK)
-        const params = new URLSearchParams({ date })
-        chunk.forEach((id) => params.append("route_ids[]", id))
+    await Promise.all(pending)
+  }
 
+  async fetchScheduleSnapshots(date, routeIds, signal) {
+    const settle = (ids, { failed = false } = {}) => {
+      if (this.scheduleFetchDate !== date) return
+      ids.forEach((id) => {
+        this.scheduleInflight.delete(id)
+        if (failed) this.scheduleRetryAfter.set(id, Date.now() + SCHEDULE_FETCH_RETRY_MS)
+      })
+    }
+
+    for (let index = 0; index < routeIds.length; index += SCHEDULE_FETCH_CHUNK) {
+      const chunk = routeIds.slice(index, index + SCHEDULE_FETCH_CHUNK)
+      const params = new URLSearchParams({ date })
+      chunk.forEach((id) => params.append("route_ids[]", id))
+
+      try {
         const response = await fetch(`/api/schedules?${params}`, { signal })
-        if (!response.ok) return
+        if (!response.ok) {
+          settle(routeIds.slice(index), { failed: true })
+          return
+        }
 
         const data = await response.json()
+        if (signal.aborted || this.scheduleFetchDate !== date) return
+
         const loaded = new Set()
         ;(data.routes || []).forEach((route) => {
           this.scheduleSnapshots[route.route_id] = { date: data.date, ...route }
@@ -8473,13 +8518,16 @@ export default class extends Controller {
         chunk.forEach((id) => {
           if (!loaded.has(id)) this.scheduleSnapshots[id] = { date, route_id: id, trips: [] }
         })
+        settle(chunk)
         this.scheduleDate = date
         this.refreshLocalFleet({ resync: true })
         if (this.booting) await this.yieldToPaint()
+      } catch (error) {
+        if (error?.name === "AbortError") return
+        console.warn("schedules fetch failed", error)
+        settle(routeIds.slice(index), { failed: true })
+        return
       }
-    } catch (error) {
-      if (error?.name === "AbortError") return
-      console.warn("schedules fetch failed", error)
     }
   }
 
@@ -8509,7 +8557,7 @@ export default class extends Controller {
           color: snap.color,
           path: trip.path,
           continues_as: trip.continues_as,
-          position_source: overlay?.position_source || "timetable",
+          position_source: overlay?.position_source || trip.position_source || "timetable",
           delay_seconds: overlay?.delay_seconds || 0,
           delay_source: overlay?.delay_source || "none",
           lat: overlay?.lat,
