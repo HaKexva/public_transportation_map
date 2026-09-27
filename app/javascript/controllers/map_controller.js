@@ -740,6 +740,7 @@ export default class extends Controller {
 
     this.mapReady = true
     this.syncPanelToggleStates()
+    if (this.pendingShare?.at) this.setScrubberAt(this.pendingShare.at)
     this.syncSimulationFromScrubber()
 
     // Keep the full-screen boot veil until deep-linked route / share layers are
@@ -9815,10 +9816,20 @@ export default class extends Controller {
       lat: Number.isFinite(lat) ? lat : null,
       lng: Number.isFinite(lng) ? lng : null,
       z: Number.isFinite(z) ? z : null,
+      at: this.parseShareAt(params.get("at")),
       routes,
       busGroups,
       follow: params.get("follow")
     }
+  }
+
+  // Accepts ISO timestamps; values without an offset are Taipei wall-clock.
+  parseShareAt(value) {
+    const raw = String(value || "").trim()
+    if (!raw) return null
+    const zoned = /([zZ]|[+-]\d{2}:?\d{2})$/.test(raw) ? raw : `${raw}+08:00`
+    const date = new Date(zoned)
+    return Number.isNaN(date.getTime()) ? null : date.toISOString()
   }
 
   async applyShareParams() {
@@ -9831,8 +9842,9 @@ export default class extends Controller {
         this.map.setView([ share.lat, share.lng ], share.z || this.map.getZoom(), { animate: false })
       }
       if (share.follow) {
-        this.pendingFollowTripId = share.follow.startsWith("trip:") ? share.follow : null
-        this.pendingFollowTrainNumber = share.follow
+        const isTrip = share.follow.startsWith("trip:")
+        this.pendingFollowTripId = isTrip ? share.follow : null
+        this.pendingFollowTrainNumber = isTrip ? null : share.follow
         this.tryAdoptPendingFollowVehicle()
       }
     } finally {
@@ -9860,10 +9872,24 @@ export default class extends Controller {
 
   writeShareUrl() {
     if (!this.map || this.applyingShare || this.suppressShareUrl) return
+    const next = this.shareUrlPath()
+    const current = `${window.location.pathname}${window.location.search}`
+    if (next !== current) window.history.replaceState({}, "", next)
+  }
+
+  // The live address bar never pins simulation time (a reload should return to
+  // now); only copied share links carry `at`.
+  shareUrlPath({ includeTime = false } = {}) {
     const center = this.map.getCenter()
     const params = new URLSearchParams(window.location.search)
-    // Simulation time lives in the scrubber only — never pin it into the address bar.
     params.delete("at")
+    if (includeTime && this.simulationAt) {
+      const at = new Date(this.simulationAt)
+      if (!Number.isNaN(at.getTime())) {
+        at.setUTCSeconds(0, 0)
+        params.set("at", at.toISOString().replace(/\.000Z$/, "Z"))
+      }
+    }
     if (center) {
       params.set("lat", center.lat.toFixed(5))
       params.set("lng", center.lng.toFixed(5))
@@ -9876,17 +9902,13 @@ export default class extends Controller {
     if (encoded.routes.length) params.set("routes", encoded.routes.join(","))
     else params.delete("routes")
 
-    if (this.followedTrainNumber || this.followedVehicleKey) {
-      params.set("follow", this.followedTrainNumber || this.followedVehicleKey)
-    } else {
-      params.delete("follow")
-    }
+    const follow = String(this.followedTrainNumber || "").trim() || this.followedVehicleKey
+    if (follow) params.set("follow", follow)
+    else params.delete("follow")
 
     const path = this.transportModePath()
     const query = params.toString()
-    const next = query ? `${path}?${query}` : path
-    const current = `${window.location.pathname}${window.location.search}`
-    if (next !== current) window.history.replaceState({}, "", next)
+    return query ? `${path}?${query}` : path
   }
 
   encodeShareLayers() {
@@ -10158,7 +10180,9 @@ export default class extends Controller {
 
   async copyShareUrl() {
     this.writeShareUrl()
-    const url = window.location.href
+    const url = this.map
+      ? `${window.location.origin}${this.shareUrlPath({ includeTime: true })}`
+      : window.location.href
     try {
       await navigator.clipboard?.writeText(url)
     } catch (_error) {
