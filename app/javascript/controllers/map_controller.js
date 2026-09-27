@@ -154,6 +154,12 @@ const BOARD_PERIODS = [
 const SCHEDULE_FETCH_CHUNK = 8
 const SCHEDULE_FETCH_RETRY_MS = 15_000
 const ALERT_REFRESH_MS = 2 * 60 * 1000
+const RIDE_STAMP_MIN_KM = 1
+const RELAX_HOP_DELAY_MS = 2500
+const GROUP_VIEW_REFRESH_MS = 1500
+const GROUP_VIEW_MAX_ZOOM = 14
+const NIGHT_START_HOUR = 18
+const NIGHT_END_HOUR = 6
 const HOP_CHAINAGE_MAX_OFFSET_KM = 0.4
 const CROSSING_MAX_OFFSET_KM = 0.08
 const SKYTRAIN_NORTH_STATION_ORDER = [ "ST1N", "ST2N" ]
@@ -377,6 +383,10 @@ export default class extends Controller {
     this.nearbyPins = []
     this.nearbyPinGroup = null
     this.exploreRelax = false
+    this.relaxHopTimer = null
+    this.rideTracker = null
+    this.groupView = false
+    this._groupViewAt = 0
     this.shareTimer = null
     this.pendingShare = null
     this.applyingShare = false
@@ -452,6 +462,10 @@ export default class extends Controller {
     this.vehicleCanvas = null
     if (this.alertRefreshTimer) clearInterval(this.alertRefreshTimer)
     this.alertRefreshTimer = null
+    if (this.relaxHopTimer) clearTimeout(this.relaxHopTimer)
+    this.relaxHopTimer = null
+    this.rideTracker = null
+    document.body.classList.remove("map-relax-night")
     this.alertBannerEl?.remove()
     this.exploreToolsEl?.remove()
     this.stationBoardEl?.remove()
@@ -6953,6 +6967,7 @@ export default class extends Controller {
 
   refreshLocalFleet({ now = performance.now(), resync = false } = {}) {
     if (!this.simulationAt) return
+    this.syncRelaxDaylight()
 
     const date = this.simulationDateString()
     if (date && date !== this.scheduleDate) {
@@ -7505,14 +7520,8 @@ export default class extends Controller {
     this.vehicleMarkersById = {}
     this._localFleetIds = null
     if (this.followedVehicleKey) {
-      if (!this.followHandoffPending()) {
-        this.recordRideStamp({
-          route_id: this.followedRouteId,
-          train_number: this.followedTrainNumber,
-          destination_name: this.followedDestination
-        })
-        this.followMissed = true
-      }
+      // Markers vanish here on zoom-out or layer clears, not when a ride ends.
+      if (!this.followHandoffPending()) this.followMissed = true
       this.syncFollowBar()
     }
   }
@@ -7621,6 +7630,7 @@ export default class extends Controller {
     const key = this.vehicleFollowKey(vehicle)
     if (!key) return
 
+    this.completeRide()
     this.clearFollowHandoffState()
     this.followedMarker = marker || Object.values(this.vehicleMarkersById).find((item) => (
       item._vehicleData === vehicle || this.vehicleFollowKey(item._vehicleData) === key
@@ -7645,6 +7655,7 @@ export default class extends Controller {
   }
 
   stopFollowingVehicle({ silent = false } = {}) {
+    this.rideTracker = null
     this.followedMarker = null
     this.followedVehicleKey = null
     this.followedSoftId = null
@@ -7766,22 +7777,20 @@ export default class extends Controller {
 
     const marker = this.findFollowedMarker()
     if (!marker) {
+      if (fromSync) this.completeRide()
       if (this.followHandoffPending()) {
         if (fromSync) this.syncFollowBar()
         return
       }
       if (fromSync && !this.followMissed) {
-        this.recordRideStamp({
-          route_id: this.followedRouteId,
-          train_number: this.followedTrainNumber,
-          destination_name: this.followedDestination
-        })
         this.followMissed = true
         this.syncFollowBar()
+        this.scheduleRelaxHop()
       }
       return
     }
 
+    this.trackRideProgress(marker._vehicleData)
     this.maybeArmFollowHandoff(marker._vehicleData)
 
     if (this.followMissed) {
@@ -7791,7 +7800,91 @@ export default class extends Controller {
       this.syncFollowBar()
     }
 
-    if (this.followCameraLocked) this.centerOnFollowedVehicle()
+    if (this.followCameraLocked && !this.updateGroupView()) this.centerOnFollowedVehicle()
+  }
+
+  trackRideProgress(vehicle) {
+    if (!vehicle || !this.followedVehicleKey) return
+    const key = String(vehicle.id || vehicle.soft_id || "")
+    const trainNumber = String(vehicle.train_number || "")
+    const tracker = this.rideTracker
+    const sameRide = tracker && (
+      tracker.key === key ||
+      (trainNumber && tracker.train_number === trainNumber && tracker.route_id === vehicle.route_id)
+    )
+    if (!sameRide) {
+      if (tracker) this.completeRide()
+      this.rideTracker = {
+        key,
+        route_id: vehicle.route_id,
+        train_number: trainNumber || null,
+        label: this.vehicleLabel(vehicle),
+        destination_name: vehicle.destination_name || null,
+        startKm: null,
+        lastKm: null,
+        reachedTerminal: false
+      }
+    }
+
+    const ride = this.rideTracker
+    const km = this.followJourneyKm(vehicle)
+    if (Number.isFinite(km)) {
+      if (!Number.isFinite(ride.startKm)) ride.startKm = km
+      ride.lastKm = km
+    }
+    const path = Array.isArray(vehicle.path) ? vehicle.path : []
+    const terminal = path[path.length - 1]?.r
+    ride.reachedTerminal = Boolean(terminal) &&
+      (vehicle.to_station_ref === terminal || vehicle.from_station_ref === terminal)
+  }
+
+  // Only a ride followed until its terminal earns a stamp, carrying the distance actually ridden.
+  completeRide() {
+    const ride = this.rideTracker
+    this.rideTracker = null
+    if (!ride?.reachedTerminal) return null
+    if (!Number.isFinite(ride.startKm) || !Number.isFinite(ride.lastKm)) return null
+    const km = Math.abs(ride.lastKm - ride.startKm)
+    if (km < RIDE_STAMP_MIN_KM) return null
+    return this.recordRideStamp({ ...ride, km })
+  }
+
+  updateGroupView({ force = false } = {}) {
+    if (!this.groupView || !this.map || !this.followedVehicleKey) return false
+    const now = performance.now()
+    if (!force && now - this._groupViewAt < GROUP_VIEW_REFRESH_MS) return true
+
+    const routeId = this.followedRouteId
+    const latlngs = Object.values(this.vehicleMarkersById)
+      .filter((marker) => !routeId || marker._vehicleData?.route_id === routeId)
+      .map((marker) => marker.getLatLng())
+      .filter(Boolean)
+    if (latlngs.length < 2) return false
+
+    this._groupViewAt = now
+    const bounds = window.L.latLngBounds(latlngs).pad(0.15)
+    const zoom = Math.max(VEHICLE_MIN_ZOOM, Math.min(GROUP_VIEW_MAX_ZOOM, this.map.getBoundsZoom(bounds)))
+    this._autoPan = true
+    this.ignoreMapViewEvents = true
+    try {
+      this.map.setView(bounds.getCenter(), zoom, { animate: false })
+    } finally {
+      this.ignoreMapViewEvents = false
+      this._autoPan = false
+    }
+    return true
+  }
+
+  toggleGroupView() {
+    this.groupView = !this.groupView
+    this._groupViewAt = 0
+    if (this.groupView) {
+      this.followCameraLocked = true
+      if (!this.updateGroupView({ force: true })) this.centerOnFollowedVehicle({ force: true })
+    } else {
+      this.centerOnFollowedVehicle({ force: true, zoom: true })
+    }
+    this.syncFollowBar()
   }
 
   centerOnFollowedVehicle({ force = false, zoom = false } = {}) {
@@ -7855,6 +7948,7 @@ export default class extends Controller {
           <span class="vehicle-follow-bar__meta"></span>
         </div>
         <button type="button" class="vehicle-follow-bar__btn vehicle-follow-bar__recenter" hidden></button>
+        <button type="button" class="vehicle-follow-bar__btn vehicle-follow-bar__group"></button>
         <button type="button" class="vehicle-follow-bar__btn vehicle-follow-bar__stop"></button>
       </div>
       <div class="vehicle-follow-bar__handoff" hidden>
@@ -7873,6 +7967,9 @@ export default class extends Controller {
 
     el.querySelector(".vehicle-follow-bar__stop")?.addEventListener("click", () => {
       this.stopFollowingVehicle()
+    })
+    el.querySelector(".vehicle-follow-bar__group")?.addEventListener("click", () => {
+      this.toggleGroupView()
     })
     el.querySelector(".vehicle-follow-bar__recenter")?.addEventListener("click", () => {
       this.followCameraLocked = true
@@ -7924,6 +8021,12 @@ export default class extends Controller {
     if (titleEl) titleEl.textContent = title
     if (dotEl) dotEl.style.background = color
     if (stopBtn) stopBtn.textContent = this.t("time_scrubber.unfollow")
+    const groupBtn = el.querySelector(".vehicle-follow-bar__group")
+    if (groupBtn) {
+      groupBtn.textContent = this.groupView ? this.t("time_scrubber.follow_single") : this.t("time_scrubber.follow_group")
+      groupBtn.classList.toggle("is-active", this.groupView)
+      groupBtn.hidden = Boolean(this.followMissed)
+    }
 
     if (recenterBtn) {
       recenterBtn.hidden = this.followCameraLocked || this.followMissed
@@ -10327,33 +10430,55 @@ export default class extends Controller {
     }
   }
 
-  recordRideStamp(vehicle) {
-    if (!vehicle) return
+  recordRideStamp(ride) {
+    if (!ride) return null
     const stamps = this.rideStamps()
-    const date = this.simulationDateString()
     const entry = {
-      date,
-      route_id: vehicle.route_id,
-      train_number: vehicle.train_number || vehicle.label,
-      destination_name: vehicle.destination_name,
-      km: this.followJourneyKm(vehicle)
+      date: this.simulationDateString(),
+      route_id: ride.route_id,
+      trip_id: ride.key || null,
+      train_number: ride.train_number || ride.label || null,
+      destination_name: ride.destination_name || null,
+      km: Number.isFinite(ride.km) ? Math.round(ride.km * 10) / 10 : null
     }
-    const key = `${entry.date}:${entry.route_id}:${entry.train_number}`
-    if (stamps.some((stamp) => `${stamp.date}:${stamp.route_id}:${stamp.train_number}` === key)) return
+    const stampKey = (stamp) => `${stamp.date}:${stamp.route_id}:${stamp.trip_id || stamp.train_number}`
+    const key = stampKey(entry)
+    if (stamps.some((stamp) => stampKey(stamp) === key)) return null
     stamps.unshift(entry)
     try {
       window.localStorage?.setItem(RIDE_STAMP_STORAGE_KEY, JSON.stringify(stamps.slice(0, 80)))
     } catch (_error) {
       // ignore
     }
+    if (this.explorePanelEl && !this.explorePanelEl.hidden) this.renderExplorePanel()
+    this.flashExploreNotice(this.t("explore.stamp_earned", { train: entry.train_number || "" }))
+    return entry
   }
 
   randomHopTrain() {
-    const vehicles = this.buildLocalVehicles()
-    if (vehicles.length === 0) return
-    const pick = vehicles[Math.floor(Math.random() * vehicles.length)]
-    const marker = this.vehicleMarkersById[String(pick.id)]
-    this.startFollowingVehicle(pick, marker || null)
+    const current = this.followedMarker
+    const candidates = Object.values(this.vehicleMarkersById).filter((marker) => {
+      const vehicle = marker._vehicleData
+      return vehicle && marker !== current && vehicle.status !== "stopped"
+    })
+    const pool = candidates.length
+      ? candidates
+      : Object.values(this.vehicleMarkersById).filter((marker) => marker._vehicleData && marker !== current)
+    if (pool.length === 0) return false
+    const pick = pool[Math.floor(Math.random() * pool.length)]
+    this.startFollowingVehicle(pick._vehicleData, pick)
+    return true
+  }
+
+  scheduleRelaxHop(delay = RELAX_HOP_DELAY_MS) {
+    if (!this.exploreRelax) return
+    if (this.relaxHopTimer) clearTimeout(this.relaxHopTimer)
+    this.relaxHopTimer = setTimeout(() => {
+      this.relaxHopTimer = null
+      if (!this.exploreRelax) return
+      if (this.followedVehicleKey && !this.followMissed) return
+      if (!this.randomHopTrain()) this.scheduleRelaxHop(delay * 2)
+    }, delay)
   }
 
   toggleRelaxMode() {
@@ -10367,6 +10492,13 @@ export default class extends Controller {
     if (this.exploreRelax && this.basemapStyle !== "carto") {
       this.setBasemapStyle({ target: { value: "carto" } })
     }
+    if (this.exploreRelax) {
+      if (!this.followedVehicleKey || this.followMissed) this.scheduleRelaxHop(0)
+    } else if (this.relaxHopTimer) {
+      clearTimeout(this.relaxHopTimer)
+      this.relaxHopTimer = null
+    }
+    this.syncRelaxDaylight()
     this.syncExploreToolState()
   }
 
@@ -10377,6 +10509,23 @@ export default class extends Controller {
       this.exploreRelax = false
     }
     document.body.classList.toggle("map-relax-mode", this.exploreRelax)
+    this.syncRelaxDaylight()
+    this.syncExploreToolState()
+    if (this.exploreRelax && !this.pendingShare?.follow) this.scheduleRelaxHop(RELAX_HOP_DELAY_MS * 2)
+  }
+
+  isSimulatedNight() {
+    const minutes = this.minutesSinceMidnightFromIso(this.simulationAt)
+    if (!Number.isFinite(minutes)) return false
+    const hour = Math.floor(minutes / 60) % 24
+    return hour >= NIGHT_START_HOUR || hour < NIGHT_END_HOUR
+  }
+
+  syncRelaxDaylight() {
+    const night = this.exploreRelax && this.isSimulatedNight()
+    if (this._relaxNight === night) return
+    this._relaxNight = night
+    document.body.classList.toggle("map-relax-night", night)
   }
 
   toggleExplorePanel() {
@@ -10388,9 +10537,12 @@ export default class extends Controller {
 
   renderExplorePanel() {
     const stamps = this.rideStamps()
+    const totalKm = stamps.reduce((sum, stamp) => sum + (Number.isFinite(stamp.km) ? stamp.km : 0), 0)
+    const routeCount = new Set(stamps.map((stamp) => stamp.route_id).filter(Boolean)).size
     const items = stamps.slice(0, 12).map((stamp) => {
       const km = Number.isFinite(stamp.km) ? ` · ${Number(stamp.km).toFixed(1)}km` : ""
-      return `<li>${this.escapeHtml(stamp.date || "")} · ${this.escapeHtml(stamp.train_number || stamp.route_id || "")}${this.escapeHtml(km)}</li>`
+      const destination = stamp.destination_name ? ` → ${stamp.destination_name}` : ""
+      return `<li>${this.escapeHtml(stamp.date || "")} · ${this.escapeHtml(stamp.train_number || stamp.route_id || "")}${this.escapeHtml(destination)}${this.escapeHtml(km)}</li>`
     }).join("") || `<li>${this.escapeHtml(this.t("explore.stamps_empty"))}</li>`
 
     this.explorePanelEl.innerHTML = `
@@ -10399,6 +10551,7 @@ export default class extends Controller {
         <button type="button" class="map-float-panel__close" data-explore-close>&times;</button>
       </div>
       <p class="station-board__note">${this.escapeHtml(this.t("explore.stamps_count", { count: stamps.length }))}</p>
+      <p class="station-board__note" data-explore-stats>${this.escapeHtml(this.t("explore.stamps_stats", { km: totalKm.toFixed(1), routes: routeCount }))}</p>
       <ul class="explore-stamp-list">${items}</ul>
       <div class="map-float-panel__actions">
         <button type="button" class="map-float-panel__action" data-explore-random>${this.escapeHtml(this.t("explore.random_train"))}</button>
@@ -10430,7 +10583,11 @@ export default class extends Controller {
     if (!this.exploreToolsEl) return
     this.exploreToolsEl.querySelector("[data-tool='pin']")?.classList.toggle("is-active", this.pinMode)
     this.exploreToolsEl.querySelector("[data-tool='crossings']")?.classList.toggle("is-active", this.crossingsVisible)
-    this.exploreToolsEl.querySelector("[data-tool='relax']")?.classList.toggle("is-active", this.exploreRelax)
+    const relaxButton = this.exploreToolsEl.querySelector("[data-tool='relax']")
+    if (relaxButton) {
+      relaxButton.classList.toggle("is-active", this.exploreRelax)
+      relaxButton.textContent = this.exploreRelax ? this.t("explore.relax_off") : this.t("explore.relax_on")
+    }
   }
 
   ensureExploreUi() {
@@ -10452,6 +10609,7 @@ export default class extends Controller {
       <button type="button" data-tool="pin">${this.escapeHtml(this.t("explore.pin"))}</button>
       <button type="button" data-tool="crossings">${this.escapeHtml(this.t("explore.crossings"))}</button>
       <button type="button" data-tool="explore">${this.escapeHtml(this.t("explore.title"))}</button>
+      <button type="button" data-tool="relax">${this.escapeHtml(this.t("explore.relax_on"))}</button>
       <span class="map-explore-tools__note" hidden></span>
     `
     tools.addEventListener("click", (event) => {
@@ -10462,6 +10620,10 @@ export default class extends Controller {
       if (tool === "pin") this.togglePinMode()
       if (tool === "crossings") this.toggleCrossings()
       if (tool === "explore") this.toggleExplorePanel()
+      if (tool === "relax") {
+        this.toggleRelaxMode()
+        if (this.explorePanelEl && !this.explorePanelEl.hidden) this.renderExplorePanel()
+      }
     })
     host.appendChild(tools)
     this.exploreToolsEl = tools

@@ -681,6 +681,104 @@ class DashboardTest < ApplicationSystemTestCase
     end
   end
 
+  test "ride stamps need a ride to the terminal and record the distance ridden" do
+    visit root_path
+    assert_selector ".map-boot-overlay[hidden]", visible: :all, wait: 30
+
+    result = page.evaluate_script(<<~JS)
+      (() => {
+        const el = document.querySelector('[data-controller~="map"]')
+        const controller = window.Stimulus.getControllerForElementAndIdentifier(el, "map")
+        localStorage.removeItem("map-ride-stamps")
+        controller.followJourneyKm = (vehicle) => vehicle.km
+        const path = [ { r: "A" }, { r: "B" }, { r: "C" } ]
+        const ride = (id, steps) => {
+          controller.followedVehicleKey = id
+          steps.forEach((step) => controller.trackRideProgress({ id, route_id: "test_line", train_number: id, destination_name: "C", path, ...step }))
+          return controller.completeRide()
+        }
+        const partial = ride("101", [ { from_station_ref: "A", to_station_ref: "B", km: 2 }, { from_station_ref: "A", to_station_ref: "B", km: 6 } ])
+        const full = ride("102", [ { from_station_ref: "A", to_station_ref: "B", km: 3 }, { from_station_ref: "B", to_station_ref: "C", km: 15.26 } ])
+        const duplicate = ride("102", [ { from_station_ref: "A", to_station_ref: "B", km: 3 }, { from_station_ref: "B", to_station_ref: "C", km: 15 } ])
+        controller.followedVehicleKey = null
+        return { partial, full, duplicate, stored: JSON.parse(localStorage.getItem("map-ride-stamps")) }
+      })()
+    JS
+
+    assert_nil result["partial"]
+    assert_nil result["duplicate"]
+    assert_equal "102", result["full"]["train_number"]
+    assert_in_delta 12.3, result["full"]["km"], 0.01
+    assert_equal [ "102" ], result["stored"].map { |stamp| stamp["train_number"] }
+
+    find(".map-explore-tools [data-tool='explore']").click
+    assert_selector "[data-explore-stats]", text: "12.3"
+  end
+
+  test "relax mode toolbar toggles night tint from the simulated clock" do
+    visit root_path
+    assert_selector ".map-boot-overlay[hidden]", visible: :all, wait: 30
+
+    page.execute_script(<<~JS)
+      const el = document.querySelector('[data-controller~="map"]')
+      const controller = window.Stimulus.getControllerForElementAndIdentifier(el, "map")
+      controller.randomHopTrain = () => false
+      controller.simulationAt = "2026-09-27T14:30:00Z"
+    JS
+
+    find(".map-explore-tools [data-tool='relax']").click
+    assert_selector "body.map-relax-mode.map-relax-night"
+    assert_selector ".map-explore-tools [data-tool='relax'].is-active"
+
+    page.execute_script(<<~JS)
+      const el = document.querySelector('[data-controller~="map"]')
+      const controller = window.Stimulus.getControllerForElementAndIdentifier(el, "map")
+      controller.simulationAt = "2026-09-27T04:00:00Z"
+      controller.syncRelaxDaylight()
+    JS
+    assert_no_selector "body.map-relax-night"
+
+    find(".map-explore-tools [data-tool='relax']").click
+    assert_no_selector "body.map-relax-mode"
+  ensure
+    page.execute_script("localStorage.removeItem('map-relax-mode')")
+  end
+
+  test "group view frames every train on the followed line" do
+    visit root_path
+    assert_selector ".map-boot-overlay[hidden]", visible: :all, wait: 30
+
+    result = page.evaluate_script(<<~JS)
+      (() => {
+        const el = document.querySelector('[data-controller~="map"]')
+        const controller = window.Stimulus.getControllerForElementAndIdentifier(el, "map")
+        const fake = (lat, lng, routeId) => ({ getLatLng: () => window.L.latLng(lat, lng), _vehicleData: { route_id: routeId } })
+        controller.vehicleMarkersById = {
+          a: fake(25.0, 121.5, "test_group"),
+          b: fake(24.8, 121.0, "test_group"),
+          c: fake(22.6, 120.3, "other_line")
+        }
+        controller.followedVehicleKey = "a"
+        controller.followedRouteId = "test_group"
+        controller.groupView = true
+        const framed = controller.updateGroupView({ force: true })
+        const bounds = controller.map.getBounds()
+        controller.groupView = false
+        controller.followedVehicleKey = null
+        controller.vehicleMarkersById = {}
+        return {
+          framed,
+          containsLine: bounds.contains([ 25.0, 121.5 ]) && bounds.contains([ 24.8, 121.0 ]),
+          containsOther: bounds.contains([ 22.6, 120.3 ])
+        }
+      })()
+    JS
+
+    assert result["framed"]
+    assert result["containsLine"]
+    assert_not result["containsOther"]
+  end
+
   test "shows and hides Wenhu line when the line checkbox is toggled" do
     visit root_path
 
