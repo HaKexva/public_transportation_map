@@ -91,6 +91,7 @@ Copy `.env.example` to `.env`. All variables are optional for local development.
 | Variable | Purpose |
 | --- | --- |
 | `GOOGLE_MAPS_API_KEY` | Reserved for future Google Maps integration. The app uses Leaflet + CARTO/OSM by default. |
+| `CARTO_API_KEY` | Key for the CARTO light/dark basemaps, appended to tile URLs as `?key=`. Without it, tiles show an "API KEY REQUIRED" watermark. Free at [CARTO](https://carto.com/basemaps). |
 | `TDX_CLIENT_ID` / `TDX_CLIENT_SECRET` | [TDX](https://tdx.transportdata.tw) credentials. Required to import HSR / metro timetables and for live delay/GPS. TRA daily schedules import from 台鐵 ODS without a key. |
 
 Static timetables live in Postgres. TRA uses 台鐵 ODS daily JSON (today through 14 days). HSR uses TDX `DailyTimetable`. Metro station boards are stitched into multi-stop trips. Track geometry stays OSM GeoJSON.
