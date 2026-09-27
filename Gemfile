@@ -69,7 +69,7 @@ group :test do
   gem "rubyzip", ">= 3.4.0"
 end
 
-gem "ruby_ui", "~> 1.3", group: :development, require: false
+gem "ruby_ui", "~> 1.6", group: :development, require: false
 
 gem "phlex-rails", "~> 2.4"
 
