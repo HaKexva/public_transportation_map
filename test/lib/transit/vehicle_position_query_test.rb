@@ -233,9 +233,9 @@ class VehicleDensifyPlacementTest < ActiveSupport::TestCase
       destination_name: "E"
     )
     TripStopTime.create!(schedule_trip: trip, station_ref: "A", stop_sequence: 1,
-                         arrival_time: Time.utc(2000, 1, 1, 10, 0, 0), departure_time: Time.utc(2000, 1, 1, 10, 1, 0))
+                         arrival_time: Time.zone.local(2000, 1, 1, 10, 0, 0), departure_time: Time.zone.local(2000, 1, 1, 10, 1, 0))
     TripStopTime.create!(schedule_trip: trip, station_ref: "E", stop_sequence: 2,
-                         arrival_time: Time.utc(2000, 1, 1, 10, 40, 0), departure_time: Time.utc(2000, 1, 1, 10, 41, 0))
+                         arrival_time: Time.zone.local(2000, 1, 1, 10, 40, 0), departure_time: Time.zone.local(2000, 1, 1, 10, 41, 0))
 
     at = Time.find_zone!("Asia/Taipei").local(2026, 8, 10, 10, 20, 0)
     vehicles = Transit::VehiclePositionQuery.new(at: at, route_ids: [ route.route_id ], datasets: [ dataset ]).call

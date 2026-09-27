@@ -199,6 +199,6 @@ class TrainContinuationTest < ActiveSupport::TestCase
 
   def parse_clock(value)
     hour, min = value.split(":").map(&:to_i)
-    Time.utc(2000, 1, 1, hour, min, 0)
+    Time.zone.local(2000, 1, 1, hour, min, 0)
   end
 end

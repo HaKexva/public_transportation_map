@@ -53,6 +53,31 @@ module Transit
       compute_vehicles(service_date_for(@at))
     end
 
+    def ordered_route_stations(route, direction)
+      preferred = route.transit_route_stations.for_direction(direction).ordered.to_a
+      base =
+        if preferred.any?
+          preferred
+        else
+          route.transit_route_stations.for_direction("both").ordered.to_a
+        end
+
+      sorted = sort_stations_along_line(route, base)
+      return sorted.reverse if direction.to_s == "inbound" || direction.to_s == "reverse"
+
+      sorted
+    end
+
+    def opposite_direction(direction)
+      case direction.to_s
+      when "outbound" then "inbound"
+      when "inbound" then "outbound"
+      when "forward" then "reverse"
+      when "reverse" then "forward"
+      else nil
+      end
+    end
+
     private
 
     MULTI_STOP_SYSTEMS = %w[tra hsr sugar_railway other].freeze
@@ -612,7 +637,7 @@ module Transit
         route: route,
         direction: direction,
         station_records: station_records,
-        departure_anchor: Time.utc(2000, 1, 1, 6, 0, 0),
+        departure_anchor: CLOCK_ZONE.local(2000, 1, 1, 6, 0, 0),
         id_prefix: "synth:#{route.id}:#{direction}",
         spacing_minutes: DEFAULT_LOOP_SPACING_MINUTES,
         position_source: "schedule_unavailable"
@@ -687,16 +712,6 @@ module Transit
       route.route_id.to_s.split("_").first.to_s[0, 4].upcase.presence || "TRA"
     end
 
-    def opposite_direction(direction)
-      case direction.to_s
-      when "outbound" then "inbound"
-      when "inbound" then "outbound"
-      when "forward" then "reverse"
-      when "reverse" then "forward"
-      else nil
-      end
-    end
-
     def headway_rule_containing_time(headway_rules, at_minutes)
       headway_rules.find do |rule|
         start_min = minutes_since_midnight(rule.starts_at)
@@ -708,21 +723,6 @@ module Transit
           at_minutes >= start_min || at_minutes <= end_min
         end
       end
-    end
-
-    def ordered_route_stations(route, direction)
-      preferred = route.transit_route_stations.for_direction(direction).ordered.to_a
-      base =
-        if preferred.any?
-          preferred
-        else
-          route.transit_route_stations.for_direction("both").ordered.to_a
-        end
-
-      sorted = sort_stations_along_line(route, base)
-      return sorted.reverse if direction.to_s == "inbound" || direction.to_s == "reverse"
-
-      sorted
     end
 
     def sort_stations_along_line(route, stations)
@@ -798,8 +798,11 @@ module Transit
       # We can't rely on simple BETWEEN for cyclic time windows; build wrap-safe expression:
       # - if start <= end -> BETWEEN
       # - else -> >= start OR <= end
-      start_min = minutes_since_midnight(start_time)
-      end_min = minutes_since_midnight(end_time)
+      # Compare in the stored (UTC) clock the database sees, not Taipei minutes.
+      start_utc = start_time.utc
+      end_utc = end_time.utc
+      start_min = start_utc.hour * 60 + start_utc.min
+      end_min = end_utc.hour * 60 + end_utc.min
 
       if start_min <= end_min
         "COALESCE(trip_stop_times.departure_time, trip_stop_times.arrival_time) BETWEEN :start_time AND :end_time"
@@ -827,24 +830,16 @@ module Transit
     def minutes_since_midnight(time_or_nil)
       return 0 unless time_or_nil
 
-      # Schedule `time` columns are stored without timezone and round-trip as
-      # TimeWithZone on dummy date 2000-01-01 tagged UTC — those hour/min values
-      # already are Taiwan wall-clock and must not be shifted to Taipei again.
-      if time_or_nil.is_a?(ActiveSupport::TimeWithZone) && time_or_nil.year != 2000
-        t = time_or_nil.in_time_zone(CLOCK_ZONE)
-        return t.hour * 60 + t.min + (t.sec / 60.0)
-      end
-
-      t = time_or_nil.respond_to?(:utc) ? time_or_nil.utc : time_or_nil
+      # Importers write Taipei wall-clock through Time.zone, so `time` columns hold
+      # UTC clock values; always read them back in Taipei.
+      t = time_or_nil.respond_to?(:in_time_zone) ? time_or_nil.in_time_zone(CLOCK_ZONE) : time_or_nil
       t.hour * 60 + t.min + (t.sec / 60.0)
     end
 
+    # Taipei minutes -> the UTC clock value PostgreSQL stores in `time` columns.
     def time_of_day_from_minutes(minutes)
       m = minutes.to_i
-      hour = m / 60
-      min = m % 60
-      # Use UTC Time so PostgreSQL `time without time zone` comparisons keep clock values.
-      Time.utc(2000, 1, 1, hour, min, 0)
+      CLOCK_ZONE.local(2000, 1, 1, m / 60, m % 60, 0).utc
     end
   end
 end

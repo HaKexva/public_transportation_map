@@ -155,12 +155,9 @@ module Transit
     def minutes_since_midnight(time_or_nil)
       return nil unless time_or_nil
 
-      if time_or_nil.is_a?(ActiveSupport::TimeWithZone) && time_or_nil.year != 2000
-        t = time_or_nil.in_time_zone(CLOCK_ZONE)
-        return t.hour * 60 + t.min + (t.sec / 60.0)
-      end
-
-      t = time_or_nil.respond_to?(:utc) ? time_or_nil.utc : time_or_nil
+      # Importers write Taipei wall-clock through Time.zone, so `time` columns hold
+      # UTC clock values; always read them back in Taipei.
+      t = time_or_nil.respond_to?(:in_time_zone) ? time_or_nil.in_time_zone(CLOCK_ZONE) : time_or_nil
       t.hour * 60 + t.min + (t.sec / 60.0)
     end
   end

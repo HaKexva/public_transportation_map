@@ -63,6 +63,50 @@ class ScheduleSnapshotTest < ActiveSupport::TestCase
     assert_equal [], payload[:routes]
   end
 
+  test "expands headway rules into trips for routes without stop times" do
+    route = TransitRoute.create!(
+      system_id: "taipei_metro",
+      route_id: "test_headway_line",
+      name: "測試班距線",
+      line_ref: "HW",
+      color: "#C48C31",
+      geojson_path: "/geojson/does-not-exist.geojson"
+    )
+    %w[HW01 HW02 HW03].each_with_index do |ref, index|
+      TransitRouteStation.create!(
+        transit_route: route,
+        station_ref: ref,
+        name: "班#{index + 1}",
+        stop_sequence: index + 1,
+        direction: TransitRoute::DIRECTION_BOTH
+      )
+    end
+    HeadwayRule.create!(
+      schedule_dataset: @dataset,
+      transit_route: route,
+      service_calendar: @calendar,
+      direction: "outbound",
+      starts_at: parse_clock("06:00"),
+      ends_at: parse_clock("07:00"),
+      interval_seconds: 600
+    )
+
+    payload = Transit::ScheduleSnapshot.new(date: Date.new(2026, 8, 4), route_ids: [ "test_headway_line" ]).call
+    trips = payload[:routes].first[:trips]
+
+    outbound = trips.select { |trip| trip[:direction] == "outbound" }
+    inbound = trips.select { |trip| trip[:direction] == "inbound" }
+    assert_equal 6, outbound.length
+    assert_equal 6, inbound.length
+    assert_equal %w[HW01 HW02 HW03], outbound.first[:path].map { |stop| stop[:r] }
+    assert_equal %w[HW03 HW02 HW01], inbound.first[:path].map { |stop| stop[:r] }
+    assert_in_delta 360.0, outbound.first[:path].first[:a], 0.01
+    assert_in_delta 364.0, outbound.first[:path].last[:a], 0.01
+    assert_in_delta 410.0, outbound.last[:path].first[:d], 0.01
+    assert_equal "headway_estimate", outbound.first[:position_source]
+    assert_equal "班3", outbound.first[:destination_name]
+  end
+
   test "returns empty payload without route ids" do
     payload = Transit::ScheduleSnapshot.new(date: Date.new(2026, 8, 4), route_ids: []).call
     assert_equal [], payload[:routes]
@@ -82,6 +126,6 @@ class ScheduleSnapshotTest < ActiveSupport::TestCase
 
   def parse_clock(value)
     hour, min = value.split(":").map(&:to_i)
-    Time.utc(2000, 1, 1, hour, min, 0)
+    Time.zone.local(2000, 1, 1, hour, min, 0)
   end
 end
