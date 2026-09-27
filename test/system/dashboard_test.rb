@@ -719,22 +719,31 @@ class DashboardTest < ApplicationSystemTestCase
     visit root_path
     assert_selector ".map-boot-overlay[hidden]", visible: :all, wait: 30
 
-    page.execute_script(<<~JS)
-      const el = document.querySelector('[data-controller~="map"]')
-      const controller = window.Stimulus.getControllerForElementAndIdentifier(el, "map")
-      controller.randomHopTrain = () => false
-      controller.simulationAt = "2026-09-27T14:30:00Z"
+    # The playing scrubber keeps rewriting simulationAt, so check the hour rule
+    # synchronously and pin the night flag for the toolbar interaction.
+    nights = page.evaluate_script(<<~JS)
+      (() => {
+        const el = document.querySelector('[data-controller~="map"]')
+        const controller = window.Stimulus.getControllerForElementAndIdentifier(el, "map")
+        const original = controller.simulationAt
+        const at = (iso) => { controller.simulationAt = iso; return controller.isSimulatedNight() }
+        const result = [ at("2026-09-27T14:30:00Z"), at("2026-09-27T04:00:00Z"), at("2026-09-26T21:30:00Z"), at("2026-09-26T22:30:00Z") ]
+        controller.simulationAt = original
+        controller.randomHopTrain = () => false
+        window.__relaxNight = true
+        controller.isSimulatedNight = () => window.__relaxNight
+        return result
+      })()
     JS
+    assert_equal [ true, false, true, false ], nights
 
     find(".map-explore-tools [data-tool='relax']").click
     assert_selector "body.map-relax-mode.map-relax-night"
     assert_selector ".map-explore-tools [data-tool='relax'].is-active"
 
     page.execute_script(<<~JS)
-      const el = document.querySelector('[data-controller~="map"]')
-      const controller = window.Stimulus.getControllerForElementAndIdentifier(el, "map")
-      controller.simulationAt = "2026-09-27T04:00:00Z"
-      controller.syncRelaxDaylight()
+      window.__relaxNight = false
+      window.Stimulus.getControllerForElementAndIdentifier(document.querySelector('[data-controller~="map"]'), "map").syncRelaxDaylight()
     JS
     assert_no_selector "body.map-relax-night"
 
