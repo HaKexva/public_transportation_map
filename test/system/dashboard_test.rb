@@ -546,6 +546,32 @@ class DashboardTest < ApplicationSystemTestCase
     assert(after["pending"] == "trip:soon" || after["followed"].to_s.include?("0123"), "expected a pending or active follow for trip:soon, got #{after.inspect}")
   end
 
+  test "share links restore the simulation time and carry it when copied" do
+    visit root_path(at: "2026-08-04T08:15", lat: 25.0478, lng: 121.517, z: 13)
+    assert_selector ".map-boot-overlay[hidden]", visible: :all, wait: 30
+
+    state = page.evaluate_script(<<~JS)
+      (() => {
+        const el = document.querySelector('[data-controller~="map"]')
+        const controller = window.Stimulus.getControllerForElementAndIdentifier(el, "map")
+        controller.followedTrainNumber = "0123"
+        return {
+          at: controller.simulationAt,
+          share: controller.shareUrlPath({ includeTime: true })
+        }
+      })()
+    JS
+
+    assert_equal "2026-08-04T00:15:00.000Z", state["at"]
+    share = Rack::Utils.parse_query(URI.parse(state["share"]).query)
+    assert_equal "2026-08-04T00:15:00Z", share["at"]
+    assert_equal "0123", share["follow"]
+    assert_equal "13", share["z"]
+
+    # The live address bar drops `at` so a reload returns to the present.
+    assert_no_current_path(/[?&]at=/, wait: 5)
+  end
+
   test "shows and hides Wenhu line when the line checkbox is toggled" do
     visit root_path
 
