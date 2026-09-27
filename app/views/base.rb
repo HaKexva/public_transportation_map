@@ -17,6 +17,10 @@ class Views::Base < Components::Base
     "/#{relative_path.delete_prefix("/")}?v=#{version}"
   end
 
+  def carto_api_key
+    ENV["CARTO_API_KEY"].to_s.strip
+  end
+
   def english_locale?
     I18n.locale.to_s == "en"
   end
