@@ -271,7 +271,7 @@ module Transit
       train_number = train_info[train_number_key].to_s.presence
       return @stats[:skipped] += 1 if train_number.blank?
 
-      mapped_stops = map_stop_times(system_id: system_id, stop_times: stop_times)
+      mapped_stops = dedupe_stops(map_stop_times(system_id: system_id, stop_times: stop_times))
       return @stats[:skipped] += 1 if mapped_stops.length < 2
 
       route ||= @route_resolver.resolve(system_id: system_id, station_refs: mapped_stops.map { |stop| stop[:station_ref] })
@@ -297,16 +297,37 @@ module Transit
       trip.update!(notes: notes) if trip.notes != notes
       return if trip.trip_stop_times.exists?
 
-      mapped_stops.each_with_index do |stop, index|
-        TripStopTime.create!(
-          schedule_trip: trip,
-          station_ref: stop[:station_ref],
-          stop_sequence: index + 1,
-          arrival_time: stop[:arrival_time],
-          departure_time: stop[:departure_time]
-        )
+      ScheduleTrip.transaction(requires_new: true) do
+        mapped_stops.each_with_index do |stop, index|
+          TripStopTime.create!(
+            schedule_trip: trip,
+            station_ref: stop[:station_ref],
+            stop_sequence: index + 1,
+            arrival_time: stop[:arrival_time],
+            departure_time: stop[:departure_time]
+          )
+        end
       end
       @stats[:trips] += 1
+    rescue ActiveRecord::RecordInvalid => e
+      log_progress("skip #{system_id} train #{train_number}: #{e.record.class} #{e.record.errors.full_messages.join(', ')}")
+      trip&.destroy! if trip&.persisted? && !trip.trip_stop_times.exists?
+      @stats[:skipped] += 1
+    end
+
+    # Station refs must be unique per trip: merge back-to-back repeats and
+    # stop a looping run just before it revisits a station.
+    def dedupe_stops(stops)
+      stops.each_with_object([]) do |stop, result|
+        previous = result.last
+        if previous && previous[:station_ref] == stop[:station_ref]
+          previous[:departure_time] = stop[:departure_time] || previous[:departure_time]
+        elsif result.any? { |kept| kept[:station_ref] == stop[:station_ref] }
+          break result
+        else
+          result << stop.dup
+        end
+      end
     end
 
     def map_stop_times(system_id:, stop_times:)

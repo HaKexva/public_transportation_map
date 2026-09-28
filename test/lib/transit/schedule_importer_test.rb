@@ -72,6 +72,31 @@ class TransitScheduleImporterTest < ActiveSupport::TestCase
     assert_includes refs.last, "1020"
   end
 
+  test "merges repeated stops and cuts looping TRA runs instead of aborting" do
+    stop = ->(code, name, arr, dep) { { "StationID" => code, "StationName" => { "Zh_tw" => name }, "ArrivalTime" => arr, "DepartureTime" => dep } }
+    looping = {
+      "TrainInfo" => { "TrainNo" => "9901", "Direction" => 0, "TrainTypeCode" => "6", "TripHeadSign" => "臺北" },
+      "StopTimes" => [
+        stop.call("1000", "臺北", "08:00", "08:02"),
+        stop.call("1000", "臺北", "08:03", "08:05"),
+        stop.call("1010", "萬華", "08:10", "08:11"),
+        stop.call("1020", "板橋", "08:20", "08:21"),
+        stop.call("1010", "萬華", "08:30", "08:31")
+      ]
+    }
+    ods_client = FakeTraOdsClient.new(days: [ { date: Date.new(2026, 8, 24), trains: [ looping ] } ])
+
+    result = Transit::ScheduleImporter.new(client: @client, systems: %w[tra], ods_client: ods_client).import!
+
+    trip = ScheduleTrip.find_by!(schedule_dataset: result.dataset, train_number: "9901")
+    stops = trip.ordered_stop_times
+    assert_equal 3, stops.size
+    assert_equal "08:00", stops.first.arrival_time.strftime("%H:%M")
+    assert_equal "08:05", stops.first.departure_time.strftime("%H:%M")
+    assert_includes stops.last.station_ref, "1020"
+    assert result.dataset.active?
+  end
+
   test "imports THSR daily timetable trips" do
     result = Transit::ScheduleImporter.new(client: @client, systems: %w[hsr], ods_client: @ods_client).import!
 
