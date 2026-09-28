@@ -92,8 +92,15 @@ module Transit
       dates = (0..6).map { |offset| Time.zone.today + offset }
 
       dates.each do |date|
-        path = date == Time.zone.today ? "v2/Rail/THSR/DailyTimetable/Today" : "v2/Rail/THSR/DailyTimetable/#{date}"
-        entries = @client.fetch_all(path)
+        path = date == Time.zone.today ? "v2/Rail/THSR/DailyTimetable/Today" : "v2/Rail/THSR/DailyTimetable/TrainDate/#{date}"
+        begin
+          entries = @client.fetch_all(path)
+        rescue TdxClient::RequestError => e
+          raise if date == Time.zone.today
+
+          log_progress("skip THSR #{date}: #{e.message.truncate(120)}")
+          next
+        end
         calendar = ensure_date_calendar!(dataset, date)
         entries.each do |wrapper|
           train_info = wrapper["DailyTrainInfo"] || wrapper["TrainInfo"]
