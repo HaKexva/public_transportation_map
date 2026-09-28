@@ -7,11 +7,18 @@ class FakeTdxClient
     true
   end
 
-  def initialize(fixtures)
+  attr_reader :paths
+
+  def initialize(fixtures, missing: [])
     @fixtures = fixtures
+    @missing = missing
+    @paths = []
   end
 
   def fetch_all(path, query: {}, page_size: 1_000)
+    @paths << path
+    raise Transit::TdxClient::RequestError, "TDX 404 for #{path}" if @missing.any? { |pattern| path.match?(pattern) }
+
     key = case path
     when %r{v2/Rail/THSR/DailyTimetable} then :thsr
     when %r{v2/Rail/Metro/Frequency/} then :metro_frequency
@@ -105,6 +112,16 @@ class TransitScheduleImporterTest < ActiveSupport::TestCase
     assert trip.trip_stop_times.exists?(station_ref: "02")
     assert trip.trip_stop_times.exists?(station_ref: "12")
     assert_match(/\Adate_/, trip.service_calendar.code)
+  end
+
+  test "requests THSR dates by TrainDate and skips unpublished future dates" do
+    last_date = Time.zone.today + 6
+    client = FakeTdxClient.new(@fixtures, missing: [ %r{TrainDate/#{last_date}\z} ])
+
+    result = Transit::ScheduleImporter.new(client: client, systems: %w[hsr], ods_client: @ods_client).import!
+
+    assert_includes client.paths, "v2/Rail/THSR/DailyTimetable/TrainDate/#{Time.zone.today + 1}"
+    assert result.dataset.active?
   end
 
   test "stitches metro station boards into multi-stop trips" do
