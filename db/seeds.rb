@@ -10,7 +10,7 @@ unless Rails.env.test?
   Transit::SugarRailwayScheduleSeeder.seed!
 
   if Rails.env.production? && Transit::TdxClient.configured? && !ScheduleDataset.tdx.active.exists?
-    Transit::ImportSchedulesJob.perform_later
+    Transit::ImportSchedulesJob.perform_later(force: true)
   end
 
   # Fallback until a TDX snapshot exists (SampleScheduleSeeder no-ops once TDX is active).

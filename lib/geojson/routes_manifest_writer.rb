@@ -127,12 +127,18 @@ module Geojson
         entry = {
           id: slug,
           file: "/#{relative}",
-          name: properties["name"].presence || data["name"].presence || properties["ref"],
-          name_en: properties["name_en"].presence || name_en_from_bus_file(data),
+          name: Geojson::BusServiceDays.display_name(
+            properties["name"].presence || data["name"].presence || properties["ref"],
+            properties["service_window"]
+          ),
+          name_en: Geojson::BusServiceDays.display_name_en(
+            properties["name_en"].presence || name_en_from_bus_file(data),
+            properties["service_window"]
+          ),
           ref: properties["ref"],
           color: properties["color"].presence || color_from_bus_file(data)
         }
-        %w[city_id operator_id operator operator_en official_map_url via].each do |key|
+        %w[city_id operator_id operator operator_en official_map_url via via_en merged_refs off_days daily_trips detour_hours].each do |key|
           entry[key.to_sym] = properties[key] if properties[key].present?
         end
         enrich_entry(entry, file_path, include_stations: false)

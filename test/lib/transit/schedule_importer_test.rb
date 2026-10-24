@@ -33,6 +33,10 @@ class FakeTraOdsClient
   def fetch_daily_timetables(**)
     @days
   end
+
+  def each_daily_timetable(**)
+    @days.each { |day| yield day }
+  end
 end
 
 class TransitScheduleImporterTest < ActiveSupport::TestCase
@@ -102,6 +106,96 @@ class TransitScheduleImporterTest < ActiveSupport::TestCase
     assert_equal 1, ScheduleDataset.tdx.count
     assert manual.reload.active?
     refute demo.reload.active?
+  end
+end
+
+class TransitScheduleImporterGuardTest < ActiveSupport::TestCase
+  setup do
+    @route = TransitRoute.create!(system_id: "tra", route_id: "western_trunk_guard", line_ref: "W", name: "西部幹線")
+    @ods = FakeTraOdsClient.new(
+      days: [
+        {
+          date: Date.new(2026, 8, 24),
+          trains: [
+            {
+              "TrainInfo" => { "TrainNo" => "133", "Direction" => 0, "TrainTypeCode" => "1131", "TripHeadSign" => "板橋", "Note" => "備註" },
+              "StopTimes" => [
+                { "StationID" => "1000", "StationName" => { "Zh_tw" => "臺北" }, "ArrivalTime" => "06:00", "DepartureTime" => "06:00" },
+                { "StationID" => "1010", "StationName" => { "Zh_tw" => "板橋" }, "ArrivalTime" => "06:10", "DepartureTime" => "06:12" }
+              ]
+            }
+          ]
+        }
+      ]
+    )
+  end
+
+  test "inserts stop times in bulk" do
+    without_catalog do
+      result = Transit::ScheduleImporter.new(client: quiet_client, systems: %w[tra], ods_client: @ods).import!
+      trip = result.dataset.schedule_trips.find_by!(train_number: "133")
+      assert_equal 2, trip.trip_stop_times.count
+      assert_equal "06:12", trip.trip_stop_times.order(:stop_sequence).last.departure_time.strftime("%H:%M")
+    end
+  end
+
+  test "drops a partial dataset when a later system fails" do
+    TransitRoute.create!(system_id: "hsr", route_id: "taiwan_hsr", line_ref: "THSR", name: "高鐵")
+    client = quiet_client
+    def client.fetch_all(*)
+      raise Transit::TdxClient::RequestError, "unauthorized_client"
+    end
+
+    without_catalog do
+      assert_no_difference([ "ScheduleDataset.count", "TripStopTime.count" ]) do
+        assert_raises(Transit::TdxClient::RequestError) do
+          Transit::ScheduleImporter.new(client: client, systems: %w[tra hsr], ods_client: @ods).import!
+        end
+      end
+    end
+  end
+
+  test "checks the TDX token before downloading TRA" do
+    client = quiet_client
+    def client.probe!
+      raise Transit::TdxClient::RequestError, "Invalid client credentials"
+    end
+    def @ods.each_daily_timetable(**)
+      raise "ODS should not be fetched"
+    end
+
+    without_catalog do
+      assert_no_difference("ScheduleDataset.count") do
+        assert_raises(Transit::TdxClient::RequestError) do
+          Transit::ScheduleImporter.new(client: client, systems: %w[tra hsr], ods_client: @ods).import!
+        end
+      end
+    end
+  end
+
+  private
+
+  def quiet_client
+    client = FakeTdxClient.new({})
+    def client.probe!
+      true
+    end
+    client
+  end
+
+  def without_catalog
+    catalog = Transit::CatalogSync.method(:sync!)
+    stations = Transit::StationRefResolver.instance_method(:resolve_ref)
+    routes = Transit::RouteResolver.instance_method(:resolve)
+    route = @route
+    Transit::CatalogSync.define_singleton_method(:sync!) { nil }
+    Transit::StationRefResolver.define_method(:resolve_ref) { |tdx_station_id:, **| tdx_station_id }
+    Transit::RouteResolver.define_method(:resolve) { |**| route }
+    yield
+  ensure
+    Transit::CatalogSync.define_singleton_method(:sync!, catalog)
+    Transit::StationRefResolver.define_method(:resolve_ref, stations)
+    Transit::RouteResolver.define_method(:resolve, routes)
   end
 end
 

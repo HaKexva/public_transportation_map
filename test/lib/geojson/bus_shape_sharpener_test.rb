@@ -68,6 +68,26 @@ class GeojsonBusShapeSharpenerTest < ActiveSupport::TestCase
     assert_operator sharpened.length, :>=, 4
   end
 
+  test "leaves a real road bend traced by several vertices unchanged" do
+    # East, then a 90° bend of 40 m radius sampled every 15°, then north.
+    origin = [ 121.7400, 25.1300 ]
+    arc = (0..6).map do |step|
+      angle = (-90.0 + (15.0 * step)) * Math::PI / 180.0
+      offset(origin, 40.0 * Math.cos(angle), 40.0 + (40.0 * Math.sin(angle)))
+    end
+    line = [ offset(origin, -60.0, 0.0), *arc, offset(origin, 40.0, 100.0) ]
+
+    assert_equal line, Geojson::BusShapeSharpener.sharpen(line)
+  end
+
+  test "leaves corners on a winding road unchanged" do
+    # Zig-zag switchbacks: each corner looks like a junction cut, but the road keeps turning.
+    line = [ [ 0, 0 ], [ 30, 0 ], [ 40, 10 ], [ 40, 40 ], [ 30, 50 ], [ 0, 50 ], [ -10, 60 ], [ -10, 90 ] ]
+      .map { |x, y| offset([ 121.7400, 25.1300 ], x.to_f, y.to_f) }
+
+    assert_equal line, Geojson::BusShapeSharpener.sharpen(line)
+  end
+
   test "keeps an already-crisp right angle" do
     line = [
       [ 121.7400, 25.1300 ],
@@ -83,6 +103,13 @@ class GeojsonBusShapeSharpenerTest < ActiveSupport::TestCase
   end
 
   private
+
+  def offset(origin, east_m, north_m)
+    [
+      origin[0] + (east_m / (111_320 * Math.cos(origin[1] * Math::PI / 180.0))),
+      origin[1] + (north_m / 110_540)
+    ]
+  end
 
   def meters_between(left, right)
     dlon = (right[0] - left[0]) * 111_320 * Math.cos(left[1] * Math::PI / 180.0)

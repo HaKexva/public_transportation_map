@@ -138,10 +138,11 @@ module Geojson
             feature_type: "station",
             ref: station[:ref],
             name: station[:name],
+            name_en: Geojson::StationNamesEn.lookup(station[:name]),
             line: "機場捷運直達車",
             color: COLOR,
             express_service: true
-          },
+          }.compact,
           geometry: {
             type: "Point",
             coordinates: station[:coordinates]

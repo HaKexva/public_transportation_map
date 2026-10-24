@@ -42,49 +42,59 @@ module Views
 
       def render_header
         header(class: "route-page__header shrink-0 border-b border-border/60 bg-background/95 px-4 py-3 backdrop-blur-sm") do
-          div(class: "flex items-start gap-3") do
+          div(class: "flex items-center gap-3") do
             a(
               href: root_path,
-              class: "route-page__back mt-0.5 shrink-0 text-sm text-muted-foreground transition-colors hover:text-foreground"
+              class: "route-page__back shrink-0 whitespace-nowrap rounded-md px-2 py-1 text-sm text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
             ) { t("route.back") }
 
             span(
-              class: "mt-1 size-3 shrink-0 rounded-full",
+              class: "size-3 shrink-0 rounded-full",
               style: "background-color: #{route_color}"
             )
 
             div(class: "min-w-0 flex-1") do
-              render RubyUI::Text.new(as: "p", size: "1", weight: "muted") { @system_label }
-              h1(class: "text-lg font-semibold leading-tight") { display_name }
-              p(class: "mt-1 text-xs text-muted-foreground", data: { map_target: "routeStopsMeta" }) { "" }
-              render_route_view_switcher
+              render RubyUI::Text.new(as: "p", size: "1", weight: "muted", class: "truncate") { @system_label }
+              h1(class: "truncate text-lg font-semibold leading-tight") { display_name }
             end
 
-            span(class: "shrink-0 rounded bg-muted px-2 py-1 text-xs font-medium text-muted-foreground") do
-              @route["ref"]
+            div(class: "flex shrink-0 items-center gap-2") do
+              if (ref = localized_route_ref(@route)).present?
+                span(class: "rounded bg-muted px-2 py-1 text-xs font-medium text-muted-foreground") { ref }
+              end
+              if (off_days = Array(@route["off_days"])).any?
+                span(class: "route-off-days-badge") { t("js.bus.off_days.#{off_days.uniq.sort.join('_')}") }
+              end
+              render_route_layer_checkbox
+              render_locale_toggle
             end
+          end
 
-            input(
-              type: "checkbox",
-              id: "layer-#{@route['id']}",
-              class: layer_checkbox_classes,
-              checked: true,
-              aria: { label: t("route.show_on_map", name: display_name) },
-              data: {
-                map_target: "layerCheckbox",
-                action: "change->map#toggleLayer",
-                map_layer_param: @route["id"]
-              }
-            )
-
-            render_locale_toggle
+          div(class: "route-page__subbar mt-2 flex flex-wrap items-center gap-x-3 gap-y-2") do
+            render_route_view_switcher
+            p(class: "text-xs text-muted-foreground", data: { map_target: "routeStopsMeta" }) { "" }
           end
         end
       end
 
+      def render_route_layer_checkbox
+        input(
+          type: "checkbox",
+          id: "layer-#{@route['id']}",
+          class: layer_checkbox_classes,
+          checked: true,
+          aria: { label: t("route.show_on_map", name: display_name) },
+          data: {
+            map_target: "layerCheckbox",
+            action: "change->map#toggleLayer",
+            map_layer_param: @route["id"]
+          }
+        )
+      end
+
       def render_stops_section
         section(
-          class: "route-page__stops flex max-h-[45vh] min-h-0 w-full shrink-0 flex-col overflow-hidden border-b border-border/60 md:max-h-none md:w-[22rem] md:border-r md:border-b-0",
+          class: "route-page__stops flex max-h-[34vh] min-h-0 w-full shrink-0 flex-col overflow-hidden border-b border-border/60 md:max-h-none md:w-[22rem] md:border-r md:border-b-0",
           data: { map_target: "routeStopsSection" }
         ) do
           div(class: "shrink-0 border-b border-border/40 px-4 py-2") do

@@ -15,6 +15,14 @@ module Geojson
     FILLET_LEG_FRACTION = 0.35
     MIN_FILLET_RADIUS_M = 2.0
     ARC_SAMPLES = 6
+    # Junction fillets are tight; a bend traced by wider-radius vertices is a real
+    # road curve (mountain switchbacks) and must keep its shape.
+    MAX_SOURCE_RADIUS_M = 25.0
+    MIN_CURVE_VERTEX_TURN_DEG = 10.0
+    # Curve-sized turning along the approaches; winding roads bend continuously,
+    # while city grids turn mostly at junctions (≥ MIN_TURN_DEG, not counted).
+    WINDING_SPAN_M = 120.0
+    MAX_WINDING_DEG = 60.0
 
     def self.sharpen(coordinates)
       new.sharpen(coordinates)
@@ -64,6 +72,9 @@ module Geojson
       return nil if segment_length_m(line[start_i - 1], line[start_i]) < MIN_LEG_M
 
       inbound_bearing = bearing_degrees(line[start_i - 1], line[start_i])
+      winding_before = winding_degrees(line, start_i - 1, -1)
+      return nil if winding_before > MAX_WINDING_DEG
+
       best = nil
 
       (start_i...(line.length - 1)).each do |end_i|
@@ -77,6 +88,8 @@ module Geojson
 
         corner = miter_corner(line[start_i - 1], line[start_i], line[end_i], line[end_i + 1])
         next unless corner && finite_point?(corner)
+        next if road_curve?(line, start_i, end_i)
+        next if winding_before + winding_degrees(line, end_i + 1, 1) > MAX_WINDING_DEG
 
         cut_depth = fillet_depth_m(line, start_i, end_i, corner)
         # Already a crisp single vertex near 90° with almost no cut — leave it.
@@ -141,6 +154,53 @@ module Geojson
       end
       samples << pout
       samples
+    end
+
+    # A real road bend spreads its turn over several vertices of wide radius;
+    # a junction cut turns only at the chord ends (or on a tight fillet).
+    def road_curve?(line, start_i, end_i)
+      radii = (start_i..end_i).filter_map do |index|
+        turn = signed_turn_degrees(bearing_degrees(line[index - 1], line[index]), bearing_degrees(line[index], line[index + 1])).abs
+        circumradius_m(line[index - 1], line[index], line[index + 1]) if turn >= MIN_CURVE_VERTEX_TURN_DEG
+      end
+      return false if radii.length < 3
+
+      radii.sort[radii.length / 2] > MAX_SOURCE_RADIUS_M
+    end
+
+    def circumradius_m(a, b, c)
+      ab = meters_between(a, b)
+      bc = meters_between(b, c)
+      ca = meters_between(c, a)
+      lat0 = b[1]
+      ax, ay = to_local_meters(a, lat0)
+      bx, by = to_local_meters(b, lat0)
+      cx, cy = to_local_meters(c, lat0)
+      double_area = ((bx - ax) * (cy - ay) - (by - ay) * (cx - ax)).abs
+      return Float::INFINITY if double_area < 1e-9
+
+      (ab * bc * ca) / (2.0 * double_area)
+    end
+
+    # Sum of turning at the vertices within WINDING_SPAN_M walking away from
+    # `index` (step -1 = backwards along the approach, +1 = forwards along the exit).
+    def winding_degrees(line, index, step)
+      total = 0.0
+      walked = 0.0
+      current = index
+      loop do
+        previous = current - step
+        following = current + step
+        break if following.negative? || following >= line.length || previous.negative? || previous >= line.length
+
+        walked += segment_length_m(line[current], line[following])
+        break if walked > WINDING_SPAN_M
+
+        turn = signed_turn_degrees(bearing_degrees(line[previous], line[current]), bearing_degrees(line[current], line[following])).abs
+        total += turn if turn >= MIN_CURVE_VERTEX_TURN_DEG && turn < MIN_TURN_DEG
+        current = following
+      end
+      total
     end
 
     def fillet_depth_m(line, start_i, end_i, corner)

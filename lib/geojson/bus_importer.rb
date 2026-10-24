@@ -18,13 +18,14 @@ module Geojson
       #166534 #b45309 #1e40af #86198f #115e59 #9a3412
     ].freeze
 
-    def self.import!(city_id:, series: nil, client: nil, rewrite_manifest: true, prune_stale: false)
+    def self.import!(city_id:, series: nil, client: nil, rewrite_manifest: true, prune_stale: false, only_slugs: nil)
       new(
         city_id: city_id,
         series: series,
         client: client,
         rewrite_manifest: rewrite_manifest,
-        prune_stale: prune_stale
+        prune_stale: prune_stale,
+        only_slugs: only_slugs
       ).import!
     end
 
@@ -34,18 +35,19 @@ module Geojson
       new(city_id:, client:, rewrite_manifest:, prune_stale: false).import_route_uids!(route_uids)
     end
 
-    def initialize(city_id:, series: nil, client: nil, rewrite_manifest: true, prune_stale: false)
+    def initialize(city_id:, series: nil, client: nil, rewrite_manifest: true, prune_stale: false, only_slugs: nil)
       @city = Geojson::BusCatalog.find(city_id)
       raise ArgumentError, "Unknown bus city: #{city_id}" unless @city
 
       @series = series.to_s.presence
       @client = client
       @rewrite_manifest = rewrite_manifest
-      @prune_stale = prune_stale
+      @prune_stale = prune_stale && only_slugs.nil?
+      @only_slugs = only_slugs&.map(&:to_s)&.to_set
     end
 
     def import!
-      client = @client || Transit::TdxClient.new
+      client = @client || Transit::TdxClient.new(ignore_breaker: true)
       if client.respond_to?(:configured?) && !client.configured?
         raise Transit::TdxClient::ConfigurationError, "TDX_CLIENT_ID and TDX_CLIENT_SECRET are required"
       end
@@ -61,6 +63,8 @@ module Geojson
       stops_by_uid = Array(stop_of_routes).group_by { |row| row["RouteUID"].to_s }
 
       self.class.grouped_routes(routes, city: @city, series: @series).each do |slug, group, distinguish_via, unlabeled_via|
+        next if @only_slugs && !@only_slugs.include?(slug)
+
         collections = group.filter_map do |route|
           uid = route["RouteUID"].to_s
           shape_rows = filter_variant_rows(shapes_by_uid[uid] || [], route)
@@ -84,6 +88,7 @@ module Geojson
       end
 
       prune_stale_city_files!(built) if @prune_stale
+      merge_night_routes!
       rewrite_bus_indexes! if @rewrite_manifest && built.any?
       Result.new(routes: built, skipped: skipped)
     end
@@ -132,8 +137,17 @@ module Geojson
         end
       end
 
+      merge_night_routes!
       rewrite_bus_indexes! if @rewrite_manifest && built.any?
       Result.new(routes: built.uniq, skipped: skipped)
+    end
+
+    def merge_night_routes!
+      subdir = Geojson::BusLayout.subdir_for(@city.id)
+      return if subdir.blank?
+
+      dir = Geojson::BusLayout.bus_root.join(subdir)
+      Geojson::BusNightMerger.process_city_dir!(dir) if dir.exist?
     end
 
     def rewrite_bus_indexes!
@@ -179,12 +193,87 @@ module Geojson
         distinguish_via = via_labels.uniq.size > 1
         unlabeled_via = distinguish_via ? unlabeled_trunk_via(via_labels) : nil
 
-        numbered.group_by { |route| slug_for(route, city:, distinguish_via:, unlabeled_via:) }.each do |slug, group|
+        numbered.flat_map { |route| detour_variants(route) }
+          .group_by { |route| slug_for(route, city:, distinguish_via:, unlabeled_via:) }.each do |slug, group|
           groups << [ slug, group, distinguish_via, unlabeled_via ]
         end
       end
 
       groups
+    end
+
+    DETOUR_PATTERN = /繞駛|繞經/
+    # SubRoutes to draw as their own variant that the 繞駛/繞經 pattern misses,
+    # by full SubRouteName: trip extensions (237經政大校區 loops through the
+    # campus; 237不經政大校區 is the base, shown as 本線), 經/不經 detours
+    # (903經三總 / 903不經三總), short detour labels (249繞崁頂) and branches
+    # run by another operator (306(大都會) ends at 舊莊 instead of 凌雲五村).
+    # main_label names the remaining plain variant.
+    SUBROUTE_SPLITS = {
+      "237經政大校區" => { label: "延駛政大校區", main_label: "本線" },
+      "249繞崁頂" => { label: "繞駛崁頂" },
+      "306(大都會)" => { label: "往舊莊", operator_id: "800" },
+      "903經三總" => { label: "繞駛三總", main_label: "不繞駛三總" },
+      "521經三總" => { label: "繞駛三總", main_label: "不繞駛三總" },
+      "藍20經三總" => { label: "繞駛三總", main_label: "不繞駛三總" }
+    }.freeze
+    NAMED_LABEL_PATTERN = /繞駛|繞經|延駛|\A本線\z|\A往/
+
+    def self.subroute_split(label)
+      SUBROUTE_SPLITS.find { |_name, split| split[:label] == label }
+    end
+
+    # SubRouteNames split away from the plain variant named main_label.
+    def self.split_names_for_main(main_label)
+      SUBROUTE_SPLITS.select { |_name, split| split[:main_label] == main_label }.keys
+    end
+
+    # City routes that run a 繞駛 detour on some trips publish it as a separate
+    # SubRoute (e.g. 33 / 33繞駛大道路). Draw each as its own route so the
+    # detour does not get merged into the plain path.
+    def self.detour_variants(route)
+      subs = Array(route["SubRoutes"])
+      detours = subs.select { |sub| detour_label(sub, route) }
+      return [ route ] if detours.empty?
+
+      # When the unlabelled SubRoutes don't run both ways (e.g. a one-way
+      # side service), the single "不繞駛" label is the plain route.
+      directions = ->(rows) { rows.map { |sub| sub["Direction"].to_s }.uniq.sort }
+      if directions.(subs - detours) != directions.(subs)
+        plain = detours.select { |sub| detour_label(sub, route).match?(/\A[不無]/) }
+        plain_labels = plain.map { |sub| detour_label(sub, route) }.uniq
+        detours -= plain if plain_labels.length == 1
+      end
+
+      main_uids = (subs - detours).map { |sub| sub["SubRouteUID"].to_s }.reject(&:blank?).uniq
+      variants = []
+      if main_uids.any?
+        main = route.merge("_import_sub_uids" => main_uids, "_import_blank_sub" => true)
+        main_label = detours.filter_map { |sub| subroute_split(detour_label(sub, route))&.last&.dig(:main_label) }.first
+        main["_import_main_label"] = main_label if main_label
+        variants << main
+      end
+      detours.group_by { |sub| detour_label(sub, route) }.each do |label, rows|
+        variants << route.merge(
+          "_import_sub_uids" => rows.map { |row| row["SubRouteUID"].to_s }.reject(&:blank?).uniq,
+          "_import_detour" => label
+        )
+      end
+      variants
+    end
+
+    def self.detour_label(sub, route)
+      name = route_name_zh(sub.merge("RouteName" => sub["SubRouteName"])).strip
+      parent = route_name_zh(route).strip
+      return unless name.start_with?(parent) && name != parent
+      return SUBROUTE_SPLITS.dig(name, :label) if SUBROUTE_SPLITS.key?(name)
+
+      label = name.delete_prefix(parent).strip
+      label = label[/[(（]([^()（）]*#{DETOUR_PATTERN}[^()（）]*)[)）]/, 1] || label
+      label = label.sub(/(?:去程|返程|往程|回程)半?\z/, "").strip
+
+      # Timetable notes ("平0550 假0600無繞駛") are not a separate path.
+      label if label.match?(DETOUR_PATTERN) && !label.match?(/[平假]\s*\d{3,4}/)
     end
 
     # Highway coaches often encode A–J detours as SubRoutes with their own shapes.
@@ -274,12 +363,21 @@ module Geojson
         (unlabeled_via.present? && via_label == unlabeled_via) ? nil : via_label
       end
       via_slug = variant_slug(via)
-      [ city.id.underscore, ref, via_slug ].compact_blank.join("_")
+      detour = route["_import_detour"].to_s
+      detour_slug = Digest::SHA1.hexdigest(detour)[0, 10] if detour.present?
+      [ city.id.underscore, ref, via_slug, detour_slug ].compact_blank.join("_")
     end
 
     VIA_EN = {
       "祥豐街" => "Xiangfeng St.",
-      "中正路" => "Zhongzheng Rd."
+      "中正路" => "Zhongzheng Rd.",
+      "大道路" => "Dadao Rd.",
+      "本線" => "Main Line",
+      "崁頂" => "Kanding",
+      "往舊莊" => "to Jiuzhuang",
+      "不繞駛三總" => "skips Tri-Service General Hospital",
+      "三總" => "Tri-Service General Hospital",
+      "延駛政大校區" => "extended to NCCU Campus"
     }.freeze
 
     def self.series_match?(route_name, series:, city: nil)
@@ -493,14 +591,19 @@ module Geojson
 
     def build_collection(route, shapes, stop_of_routes, distinguish_via: false, unlabeled_via: nil)
       ref = route_ref(route)
-      via = variant_via(route, distinguish_via:, unlabeled_via:) || intercity_detour_via(route)
+      via = variant_via(route, distinguish_via:, unlabeled_via:) || intercity_detour_via(route) ||
+        route["_import_detour"].presence || route["_import_main_label"]
       slug = route_slug(route, distinguish_via:, unlabeled_via:)
       operator = operator_for(route)
       color = Geojson::BusOperatorColors.for_route(ref: ref, name: operator[:name], id: operator[:id]) ||
         route_color(operator[:name].presence || operator[:id].presence || slug)
       name = display_name(ref, via)
-      name_en = display_name_en(ref, via)
+      name_en = Geojson::BusNamesEn.name_en(display_name_en(ref, via), ref: ref, city_id: @city.id)
       official_map_url = official_map_url_for(route)
+
+      if @city.kind != :intercity || route["_import_blank_sub"] || route["_import_detour"]
+        shapes, stop_of_routes = primary_subroute_rows(Array(shapes), Array(stop_of_routes), name: zh_name(route["RouteName"]))
+      end
 
       # shapes / stop_of_routes are already scoped to this RouteUID by the caller.
       line_features = Array(shapes).filter_map do |shape|
@@ -512,6 +615,18 @@ module Geojson
 
         loop_stops = loop_stops_for_shape?(Array(stop_of_routes), shape["Direction"])
         coordinates = Geojson::BusShapeSharpener.sharpen(coordinates)
+        unless loop_stops
+          opposite_direction = Array(stop_of_routes).map { |row| row["Direction"] }.uniq
+            .find { |value| value.to_s != shape["Direction"].to_s }
+          coordinates = Geojson::BusShapeTrimmer.trim_to_stops(
+            coordinates,
+            stop_points_for_direction(Array(stop_of_routes), shape["Direction"]),
+            end_point: stop_points_for_direction(Array(stop_of_routes), opposite_direction).first
+          )
+          if route["_import_detour"]
+            coordinates = clip_to_terminals(coordinates, stop_points_for_direction(Array(stop_of_routes), shape["Direction"]))
+          end
+        end
         coordinates = Geojson::BusLoopCloser.close_loop_coordinates(coordinates, force: loop_stops)
 
         properties = {
@@ -537,6 +652,10 @@ module Geojson
       return nil if line_features.empty?
 
       line_features = snap_corridor_line_features(line_features)
+      if line_features.length == 2
+        joined = Geojson::BusShapeTrimmer.join_termini(*line_features.map { |feature| feature.dig(:geometry, :coordinates) })
+        line_features.zip(joined).each { |feature, coords| feature[:geometry][:coordinates] = coords }
+      end
       station_features = station_features_for(Array(stop_of_routes), name: name, color: color)
 
       properties = {
@@ -549,12 +668,16 @@ module Geojson
         source: "TDX Bus Shape / StopOfRoute"
       }
       properties[:loop] = true if line_features.any? { |feature| feature.dig(:properties, :loop) || feature.dig("properties", "loop") }
-      properties[:via] = via if via.present?
+      if via.present?
+        properties[:via] = via
+        properties[:via_en] = Geojson::BusNamesEn.translate(via)
+      end
       properties[:official_map_url] = official_map_url if official_map_url.present?
       unless keelung?
         properties[:operator_id] = operator[:id] if operator[:id].present?
         properties[:operator] = operator[:name] if operator[:name].present?
-        properties[:operator_en] = operator[:name_en] if operator[:name_en].present?
+        operator_en = operator[:name_en].presence || Geojson::BusNamesEn.operator_en(operator[:name])
+        properties[:operator_en] = operator_en if operator_en.present?
       end
 
       {
@@ -564,6 +687,67 @@ module Geojson
         properties: properties,
         features: line_features + station_features
       }
+    end
+
+    # A split variant still spans several SubRoutes (short turns, extensions,
+    # duplicate shapes without a SubRouteUID). Draw one path per direction: the
+    # SubRoute with the most stops, with its own shape or the best-fitting one.
+    def primary_subroute_rows(shapes, stop_of_routes, name: nil)
+      shape_km = shapes.to_h { |shape|
+        line = Geojson::BusLoopCloser.merge_line_strings(self.class.parse_wkt_lines(shape["Geometry"] || shape["geometry"]))
+        [ [ shape["SubRouteUID"].to_s, shape["Direction"].to_s ], Geojson::BusShapeTrimmer.path_length(line) ]
+      }
+      stop_rows = stop_of_routes.group_by { |row| row["Direction"].to_s }.values.map { |rows|
+        exact = rows.select { |row| name.present? && zh_name(row["SubRouteName"]).to_s.strip == name.strip }
+        (exact.presence || rows).max_by { |row|
+          [ Array(row["Stops"]).length, shape_km[[ row["SubRouteUID"].to_s, row["Direction"].to_s ]] || 0 ]
+        }
+      }
+      shape_rows = shapes.group_by { |shape| shape["Direction"].to_s }.map { |direction, rows|
+        primary = stop_rows.find { |row| row["Direction"].to_s == direction }
+        next rows.first unless primary
+
+        own = rows.find { |shape| shape["SubRouteUID"].to_s.present? && shape["SubRouteUID"].to_s == primary["SubRouteUID"].to_s }
+        own || rows.min_by { |shape| shape_stop_misfit(shape, primary) }
+      }
+      [ shape_rows, stop_rows ]
+    end
+
+    TERMINAL_OVERSHOOT_METERS = 300
+    TERMINAL_SNAP_METERS = 150
+
+    # A short-turn variant can borrow the full route's shape; cut whatever
+    # runs past its first / last stop.
+    def clip_to_terminals(line, stops)
+      return line if line.length < 3 || stops.length < 2
+
+      nearest = ->(point, range) {
+        range.min_by { |index| Geojson::BusLoopCloser.meters_between(line[index], point) }
+      }
+      half = line.length / 2
+      if Geojson::BusLoopCloser.meters_between(line.last, stops.last) > TERMINAL_OVERSHOOT_METERS
+        index = nearest.(stops.last, half...line.length)
+        line = line[0..index] if Geojson::BusLoopCloser.meters_between(line[index], stops.last) <= TERMINAL_SNAP_METERS
+      end
+      if Geojson::BusLoopCloser.meters_between(line.first, stops.first) > TERMINAL_OVERSHOOT_METERS
+        index = nearest.(stops.first, 0...[ half, line.length - 2 ].min)
+        line = line[index..] if Geojson::BusLoopCloser.meters_between(line[index], stops.first) <= TERMINAL_SNAP_METERS
+      end
+      line
+    end
+
+    def shape_stop_misfit(shape, stop_row)
+      line = Geojson::BusLoopCloser.merge_line_strings(self.class.parse_wkt_lines(shape["Geometry"] || shape["geometry"]))
+      return Float::INFINITY if line.length < 2
+
+      stops = stop_points_for_direction([ stop_row ], stop_row["Direction"])
+      return Float::INFINITY if stops.empty?
+
+      distances = stops.map { |stop|
+        line.each_cons(2).map { |a, b| Geojson::BusShapeTrimmer.project(stop, a, b)[:distance] }.min
+      }
+      misfit = distances.sum / distances.length
+      misfit + (Geojson::BusShapeTrimmer.path_length(line) / 1_000_000.0)
     end
 
     def merge_collections(collections, slug)
@@ -599,6 +783,16 @@ module Geojson
       first = stop_identity(stops.first)
       last = stop_identity(stops.last)
       first.present? && first == last
+    end
+
+    def stop_points_for_direction(stop_of_routes, direction)
+      rows = stop_of_routes.select { |row| row["Direction"].to_s == direction.to_s }
+      rows.flat_map { |row| Array(row["Stops"]) }.filter_map do |stop|
+        position = stop["StopPosition"] || {}
+        lon = position["PositionLon"] || position["lon"]
+        lat = position["PositionLat"] || position["lat"]
+        [ lon.to_f, lat.to_f ] if lon.present? && lat.present?
+      end
     end
 
     def stop_identity(stop)
@@ -701,6 +895,19 @@ module Geojson
         operator_id: collection.dig(:properties, :operator_id),
         operator_name: collection.dig(:properties, :operator)
       )
+      collection = collection.deep_stringify_keys
+      Geojson::BusTerminalAccess.process_collection!(collection)
+      Geojson::BusShapePatches.process_collection!(collection)
+      Geojson::BusRoundabouts.process_collection!(collection)
+      Geojson::BusRoadSnapper.process_collection!(collection)
+      Geojson::BusTerminusHandoff.process_collection!(collection)
+      Geojson::BusCornerRounder.process_collection!(collection)
+      if path.exist?
+        previous = JSON.parse(path.read)["properties"] || {}
+        %w[merged_refs off_days service_window].each do |key|
+          collection["properties"][key] = previous[key] if previous[key].present?
+        end
+      end
       FileUtils.mkdir_p(path.dirname)
       File.write(path, "#{JSON.pretty_generate(collection)}\n")
       puts "Wrote #{path}"
@@ -733,7 +940,7 @@ module Geojson
       return ref if via.blank?
 
       label = via.to_s.sub(/\A經/, "")
-      return "#{ref}（#{label}）" if @city.kind == :intercity
+      return "#{ref}（#{label}）" if @city.kind == :intercity || label.match?(NAMED_LABEL_PATTERN)
 
       "#{ref}（經#{label}）"
     end
@@ -741,8 +948,12 @@ module Geojson
     def display_name_en(ref, via)
       return ref if via.blank?
 
+      if (detour = via.to_s[/\A(?:繞駛|繞經)(.+)\z/, 1])
+        return "#{ref} (detour via #{self.class.variant_label_en(detour)})"
+      end
+
       label = self.class.variant_label_en(via)
-      return "#{ref} (#{label})" if @city.kind == :intercity
+      return "#{ref} (#{label})" if @city.kind == :intercity || via.to_s.match?(NAMED_LABEL_PATTERN)
 
       "#{ref} (via #{label})"
     end
@@ -787,9 +998,22 @@ module Geojson
 
     def filter_variant_rows(rows, route)
       uids = Array(route["_import_sub_uids"]).map(&:to_s).reject(&:blank?)
-      return rows if uids.empty?
+      return rows if uids.empty? && !route["_import_blank_sub"]
 
-      rows.select { |row| uids.include?(row["SubRouteUID"].to_s) }
+      kept = rows.select { |row|
+        uid = row["SubRouteUID"].to_s
+        uids.include?(uid) || (route["_import_blank_sub"] && uid.blank?)
+      }
+      return kept unless route["_import_detour"]
+
+      # Detour shapes may only be published without a SubRouteUID. That is
+      # only safe when the other SubRoutes carry their own shapes; otherwise
+      # the blank shapes are the plain route.
+      others = rows.any? { |row| row["SubRouteUID"].to_s.present? && !uids.include?(row["SubRouteUID"].to_s) }
+      return kept unless others
+
+      covered = kept.map { |row| row["Direction"].to_s }
+      kept + rows.select { |row| row["SubRouteUID"].to_s.blank? && !covered.include?(row["Direction"].to_s) }
     end
 
     # e.g. "臺北→竹東[繞駛關西市區]" → "繞駛關西市區"
@@ -837,7 +1061,9 @@ module Geojson
     end
 
     def operator_for(route)
-      operator = Array(route["Operators"]).first || {}
+      operators = Array(route["Operators"])
+      split_operator = self.class.subroute_split(route["_import_detour"])&.last&.dig(:operator_id)
+      operator = operators.find { |row| split_operator && row["OperatorID"].to_s == split_operator } || operators.first || {}
       {
         id: operator["OperatorID"].to_s.presence,
         name: zh_name(operator["OperatorName"]).presence || operator["OperatorID"].to_s,

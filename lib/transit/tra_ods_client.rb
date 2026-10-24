@@ -20,20 +20,43 @@ module Transit
       @http_get = http_get
     end
 
-    def fetch_daily_timetables(from_date: Date.current, days: DEFAULT_DAYS, min_days: MIN_DAYS)
+    def fetch_daily_timetables(from_date: Date.current, days: DEFAULT_DAYS, min_days: MIN_DAYS, dates: nil)
+      days_out = []
+      each_daily_timetable(from_date:, days:, min_days:, dates:) { |day| days_out << day }
+      days_out
+    end
+
+    # Yields one day at a time so the caller can persist and drop that day's JSON
+    # before the next download. `dates` fetches only those days and skips any
+    # the ODS list has not published yet.
+    def each_daily_timetable(from_date: Date.current, days: DEFAULT_DAYS, min_days: MIN_DAYS, dates: nil)
       by_date = parse_list_page(http_get(LIST_URL))
-      selected = pick_days(by_date, from_date, days)
-      if selected.length < min_days
-        raise Error, "ODS list published #{selected.length} days from #{from_date} (need ≥#{min_days})"
+      selected = if dates
+        Array(dates).filter_map do |date|
+          date_str = date.strftime("%Y%m%d")
+          resource_id = by_date[date_str]
+          next if resource_id.blank?
+
+          [ date_str, resource_id ]
+        end
+      else
+        pick_days(by_date, from_date, days).tap do |picked|
+          if picked.length < min_days
+            raise Error, "ODS list published #{picked.length} days from #{from_date} (need ≥#{min_days})"
+          end
+        end
       end
+      return if selected.empty?
 
       stations = fetch_station_index
-      selected.map do |date_str, resource_id|
+      selected.each do |date_str, resource_id|
         payload = JSON.parse(http_get(format(SCHEDULE_URL_TEMPLATE, resource_id)))
-        {
-          date: Date.iso8601("#{date_str[0, 4]}-#{date_str[4, 2]}-#{date_str[6, 2]}"),
-          trains: normalize_trains(payload, stations)
-        }
+        yield(
+          {
+            date: Date.iso8601("#{date_str[0, 4]}-#{date_str[4, 2]}-#{date_str[6, 2]}"),
+            trains: normalize_trains(payload, stations)
+          }
+        )
       end
     end
 

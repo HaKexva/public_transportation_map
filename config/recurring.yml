@@ -10,10 +10,32 @@
 #     schedule: at 5am every day
 
 production:
+  # Keeps the current timetable. Only fetches 連假 dates that are not stored yet.
   import_transit_schedules:
     class: Transit::ImportSchedulesJob
     queue: default
     schedule: at 3:30am every day
+  refresh_bus_tdx_snapshot:
+    class: Transit::RefreshBusSnapshotJob
+    queue: default
+    schedule: at 4:30am every day
+  refresh_bus_vehicles:
+    class: Transit::RefreshBusVehiclesJob
+    queue: default
+    schedule: at 5:15am every day
+  collect_bus_sightings:
+    class: Transit::CollectBusSightingsJob
+    queue: default
+    schedule: every 10 minutes
+  collect_bus_sightings_tdx:
+    class: Transit::CollectBusSightingsJob
+    queue: default
+    args: [ true ]
+    schedule: every hour at minute 25
+  refresh_station_info:
+    class: Transit::RefreshStationInfoJob
+    queue: default
+    schedule: at 5am every Monday
   clear_solid_queue_finished_jobs:
     command: "SolidQueue::Job.clear_finished_in_batches(sleep_between_batches: 0.3)"
     schedule: every hour at minute 12

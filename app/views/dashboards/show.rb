@@ -75,8 +75,10 @@ module Views
               aria: { label: t("map.map_aria") }
             )
             render_mobile_map_toolbar
-            render_transport_mode_switcher
-            render_region_switcher
+            div(class: "map-top-controls") do
+              render_transport_mode_switcher
+              render_region_switcher
+            end
             render_time_scrubber
             render_boot_overlay
             render_dashboard_route_inspector
@@ -250,11 +252,11 @@ module Views
       end
 
       def render_basemap_select
-        div(class: "map-basemap-select shrink-0") do
+        div(class: "map-basemap-select min-w-0") do
           label(for: "map-basemap-select", class: "sr-only") { t("map.basemap_label") }
           select(
             id: "map-basemap-select",
-            class: "map-basemap-select__control h-8 rounded-lg border border-border bg-background px-2 text-xs text-foreground shadow-xs",
+            class: "map-basemap-select__control h-8 w-full min-w-0 rounded-md border border-border bg-background px-2 text-xs font-medium text-foreground shadow-xs",
             aria: { label: t("map.basemap_label") },
             data: {
               map_target: "basemapSelect",
@@ -337,10 +339,14 @@ module Views
           class: "route-inspector pointer-events-auto absolute bottom-4 right-4 z-[500] hidden max-h-[70vh] w-[min(22rem,calc(100%-2rem))] flex-col overflow-hidden rounded-xl border border-border bg-background/95 shadow-lg backdrop-blur-sm",
           data: { map_target: "routeStopsPanel" }
         ) do
-          div(class: "shrink-0 border-b border-border/50 px-3 py-2") do
+          div(class: "route-inspector__handle shrink-0 border-b border-border/50 px-3 py-2") do
             p(class: "truncate text-sm font-medium", data: { map_target: "routeStopsTitle" }) { "" }
             p(class: "text-xs text-muted-foreground", data: { map_target: "routeStopsMeta" }) { "" }
-            render_route_view_switcher
+            render_route_view_switcher(views: [
+              [ "map", t("route.view_modes.stops") ],
+              [ "official", t("route.view_modes.route_map") ],
+              [ "details", t("route.view_modes.details") ]
+            ])
           end
           div(
             class: "flex min-h-0 flex-1 flex-col overflow-hidden",
@@ -355,6 +361,10 @@ module Views
               class: "hidden px-3 py-6 text-center text-sm text-muted-foreground",
               data: { map_target: "routeStopsEmpty" }
             ) { t("route.no_stops") }
+            div(
+              class: "route-inspector__details hidden min-h-0 flex-1 overflow-y-auto p-3",
+              data: { map_target: "routeDetailsPanel" }
+            )
           end
         end
       end
@@ -514,15 +524,17 @@ module Views
       end
 
       def render_header
-        render RubyUI::CardHeader.new(class: "space-y-3 pb-3") do
+        render RubyUI::CardHeader.new(class: "map-ui-panel__header-inner space-y-3 p-4 pb-3") do
           div(class: "flex items-center justify-between gap-2") do
             div(class: "map-ui-panel__title-block min-w-0") do
               div(class: "flex items-center gap-2") do
-                render_map_icon
-                render RubyUI::CardTitle.new(class: "text-lg leading-tight") { t("map.title") }
+                span(class: "map-ui-panel__logo", aria: { hidden: true }) { render_map_icon }
+                render RubyUI::CardTitle.new(class: "truncate text-[15px] font-semibold leading-tight tracking-tight") { t("map.title") }
               end
             end
-            div(class: "flex shrink-0 items-center gap-2") do
+            div(class: "flex shrink-0 items-center gap-1") do
+              render_locale_toggle
+              render_theme_toggle
               button(
                 type: "button",
                 class: "map-ui-panel__toggle hidden md:inline-flex",
@@ -535,19 +547,18 @@ module Views
               ) do
                 render_chevron_icon
               end
-              render_locale_toggle
             end
           end
-          div(class: "map-sidebar-actions flex flex-wrap items-center justify-end gap-2") do
+          div(class: "map-sidebar-actions grid grid-cols-3 gap-2") do
             render RubyUI::Button.new(
               variant: :outline,
               size: :sm,
               type: :button,
+              class: "w-full",
               data: { action: "click->map#resetViewport" }
             ) { t("map.reset_viewport") }
-            render_legend_open_button(class_name: "", id: "map-legend-trigger")
+            render_legend_open_button(class_name: "w-full", id: "map-legend-trigger")
             render_basemap_select
-            render_theme_toggle
           end
         end
       end
@@ -557,6 +568,7 @@ module Views
           div(class: "route-search-toolbar shrink-0 space-y-2 border-b border-border/60 px-3 py-3") do
             render_layer_search
             render_category_chips
+            render_bus_filters
             render RubyUI::Text.new(
               as: "p",
               size: "1",
@@ -583,7 +595,7 @@ module Views
         default_id = chips.first&.dig(:id)
 
         div(
-          class: "layer-category-chips flex flex-wrap gap-1.5",
+          class: "layer-category-chips flex gap-1.5",
           role: "tablist",
           aria: { label: t("map.categories_aria") },
           data: { default_category: default_id, map_target: "railCategoryChips" }
@@ -594,7 +606,7 @@ module Views
             button(
               type: "button",
               class: [
-                "layer-category-chip inline-flex items-center rounded-md border px-3 py-1.5 text-sm font-semibold transition-colors",
+                "layer-category-chip inline-flex shrink-0 items-center rounded-full border px-3 py-1 text-[13px] font-semibold transition-colors",
                 active ? "layer-category-chip--active" : nil
               ].compact.join(" "),
               role: "tab",
@@ -607,6 +619,73 @@ module Views
             ) { chip[:label] }
           end
         end
+      end
+
+      BUS_TYPE_FILTERS = %w[general trunk express minibus shuttle intercity].freeze
+      BUS_COLOR_FILTERS = %w[紅 藍 綠 棕 橘 黃].freeze
+
+      def render_bus_filters
+        div(
+          class: [
+            "bus-filters grid grid-cols-2 gap-1.5",
+            @transport_mode == "bus" ? nil : "hidden"
+          ].compact.join(" "),
+          data: { map_target: "busFilters" }
+        ) do
+          render_bus_filter_select(:city, bus_city_filter_options)
+          render_bus_filter_select(:operator, bus_operator_filter_options)
+          render_bus_filter_select(:type, BUS_TYPE_FILTERS.map { |id| { value: id, label: t("map.bus.filters.types.#{id}") } })
+          render_bus_filter_select(:color, BUS_COLOR_FILTERS.map { |color| { value: color, label: t("map.bus.filters.colors.#{color}") } })
+        end
+      end
+
+      def render_bus_filter_select(kind, options)
+        select_id = "bus-filter-#{kind}"
+        div(class: "min-w-0") do
+          label(for: select_id, class: "sr-only") { t("map.bus.filters.#{kind}") }
+          select(
+            id: select_id,
+            class: "h-8 w-full min-w-0 rounded-lg border border-border bg-background px-2 text-xs text-foreground shadow-xs",
+            aria: { label: t("map.bus.filters.#{kind}") },
+            data: {
+              map_target: "busFilter",
+              bus_filter: kind,
+              action: "change->map#changeBusFilter"
+            }
+          ) do
+            option(value: "") { t("map.bus.filters.all_#{kind}") }
+            options.each do |entry|
+              option(value: entry[:value], data: entry[:data] || {}) { entry[:label] }
+            end
+          end
+        end
+      end
+
+      def bus_city_filter_options
+        Geojson::BusCatalog.cities.map do |city|
+          { value: city.id, label: t("map.bus.cities.#{city.id}") }
+        end
+      end
+
+      def bus_operator_filter_options
+        bus_routes
+          .select { |route| route["operator"].present? }
+          .group_by { |route| route["operator"] }
+          .map { |name, routes|
+            {
+              value: name,
+              label: "#{bus_operator_label(routes.first)} (#{routes.size})",
+              data: { cities: routes.map { |route| route["city_id"] }.uniq.join(" ") },
+              count: routes.size
+            }
+          }
+          .sort_by { |entry| [ -entry[:count], entry[:value] ] }
+      end
+
+      def bus_operator_label(route)
+        return route["operator"] unless english_locale?
+
+        route["operator_en"].presence || route["operator"]
       end
 
       def category_available?(category_id)
@@ -744,7 +823,8 @@ module Views
           data: {
             map_target: "layerSearchGroup",
             category: "bus",
-            search_text: bus_greater_taipei_search_text(city_routes, bands)
+            search_text: bus_greater_taipei_search_text(city_routes, bands),
+            bus_city: "GreaterTaipei"
           }
         ) do
           div(class: "flex items-center gap-2 px-1") do
@@ -789,7 +869,8 @@ module Views
           data: {
             map_target: "layerSearchGroup",
             category: "bus",
-            search_text: bus_city_search_text(city, operators, city_routes)
+            search_text: bus_city_search_text(city, operators, city_routes),
+            bus_city: city.id
           }
         ) do
           div(class: "flex items-center gap-2 px-1") do
@@ -1075,8 +1156,11 @@ module Views
             span(class: "min-w-0 flex-1") do
               span(class: "flex items-center gap-2") do
                 span(class: "truncate text-sm font-medium leading-tight") { display_name }
-                span(class: "shrink-0 rounded bg-muted px-1.5 py-0.5 text-[10px] font-medium text-muted-foreground") do
-                  route["ref"]
+                if (ref = localized_route_ref(route)).present?
+                  span(class: "shrink-0 rounded bg-muted px-1.5 py-0.5 text-[10px] font-medium text-muted-foreground") { ref }
+                end
+                if (off_days = Array(route["off_days"])).any?
+                  span(class: "route-off-days-badge shrink-0") { t("js.bus.off_days.#{off_days.uniq.sort.join('_')}") }
                 end
               end
               if subtitle.present?
@@ -1115,7 +1199,12 @@ module Views
         parts << t("map.route_notes.danhai_lrt") if route["id"] == "danhai_lrt"
         parts << t("map.route_notes.taoyuan_airport_skytrain") if route["id"] == "taoyuan_airport_skytrain"
         if route["via"].present? && route["name"].to_s.exclude?(route["via"])
-          parts << (route["via"].start_with?("經") ? route["via"] : "經#{route["via"]}")
+          parts << if english_locale?
+            via = route["via_en"].presence || route["via"]
+            via.match?(/\A(via|detour via|extended to|skips)\b/i) ? via : "#{t('js.explore.route_via')} #{via}"
+          else
+            route["via"].match?(/\A經|繞駛|繞經/) ? route["via"] : "經#{route["via"]}"
+          end
         end
         parts.compact.join(" · ")
       end

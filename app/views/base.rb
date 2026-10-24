@@ -25,6 +25,16 @@ class Views::Base < Components::Base
     I18n.locale.to_s == "en"
   end
 
+  # Route-number badge. Chinese refs (紅1, 幸福來義10路) read as the English name
+  # without its via part, and are dropped when that just repeats the name.
+  def localized_route_ref(route)
+    ref = route["ref"].to_s
+    return ref unless english_locale? && ref.match?(/\p{Han}/) && route["name_en"].present?
+
+    short = route["name_en"].sub(/\s*\([^()]*\)\s*\z/, "")
+    short unless short == localized_route_name(route)
+  end
+
   def localized_route_name(route)
     if english_locale?
       route["name_en"].presence || route["name"]
@@ -56,21 +66,22 @@ class Views::Base < Components::Base
     end
   end
 
-  def render_route_view_switcher
+  def render_route_view_switcher(views: nil)
+    views ||= [
+      [ "map", t("route.view_modes.map") ],
+      [ "official", t("route.view_modes.official") ]
+    ]
     nav(
       class: "route-view-switcher mt-2 inline-flex rounded-lg border border-border bg-muted/60 p-0.5",
       role: "tablist",
       aria: { label: t("route.view_modes.aria") }
     ) do
-      [
-        [ "map", t("route.view_modes.map") ],
-        [ "official", t("route.view_modes.official") ]
-      ].each do |view, label|
+      views.each do |view, label|
         selected = view == "map"
         button(
           type: "button",
           class: [
-            "rounded-md px-2.5 py-1 text-xs font-medium",
+            "whitespace-nowrap rounded-md px-2.5 py-1 text-xs font-medium",
             selected ? "bg-background text-foreground shadow-xs" : "text-muted-foreground"
           ].join(" "),
           role: "tab",

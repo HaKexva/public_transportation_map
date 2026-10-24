@@ -558,7 +558,8 @@ class DashboardTest < ApplicationSystemTestCase
         controller.followedTrainNumber = "0123"
         return {
           at: controller.simulationAt,
-          share: controller.shareUrlPath({ includeTime: true })
+          share: controller.shareUrlPath({ share: true }),
+          live: controller.shareUrlPath()
         }
       })()
     JS
@@ -568,6 +569,11 @@ class DashboardTest < ApplicationSystemTestCase
     assert_equal "2026-08-04T00:15:00Z", share["at"]
     assert_equal "0123", share["follow"]
     assert_equal "13", share["z"]
+
+    live = Rack::Utils.parse_query(URI.parse(state["live"]).query)
+    assert_nil live["follow"]
+    assert_nil live["routes"]
+    assert_nil live["bus"]
 
     # The live address bar drops `at` so a reload returns to the present.
     assert_no_current_path(/[?&]at=/, wait: 5)

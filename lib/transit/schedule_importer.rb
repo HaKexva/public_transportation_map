@@ -3,9 +3,17 @@
 module Transit
   class ScheduleImporter
     Result = Data.define(:dataset, :trips, :headways, :skipped)
+    STOP_TIME_BATCH = 1_000
+    OVERLAY_DESCRIPTIONS = %w[連假 颱風假].freeze
 
-    def self.import!(client: TdxClient.new, systems: %w[tra hsr metro], dataset: nil, ods_client: nil)
+    def self.import!(client: TdxClient.new(ignore_breaker: true), systems: %w[tra hsr metro], dataset: nil, ods_client: nil)
       new(client: client, systems: systems, ods_client: ods_client).import!(dataset: dataset)
+    end
+
+    # Writes only the given dates onto an existing dataset. Used for a 連假,
+    # so the weekly timetable on the surrounding days stays as it is.
+    def self.import_dates!(dataset:, dates:, description: "連假", client: TdxClient.new(ignore_breaker: true), systems: %w[tra hsr], ods_client: nil)
+      new(client: client, systems: systems, ods_client: ods_client).import_dates!(dataset:, dates:, description:)
     end
 
     def initialize(client:, systems:, ods_client: nil)
@@ -16,16 +24,22 @@ module Transit
       @route_resolver = RouteResolver.new
       @metro_stitcher = MetroTripStitcher.new
       @stats = { trips: 0, headways: 0, skipped: 0 }
+      @pending_stop_times = []
     end
 
     def import!(dataset: nil)
       needs_tdx = (@systems & %w[hsr metro]).any?
-      if needs_tdx && !@client.configured?
-        raise TdxClient::ConfigurationError, "Set TDX_CLIENT_ID and TDX_CLIENT_SECRET to import HSR/metro schedules"
+      if needs_tdx
+        unless @client.configured?
+          raise TdxClient::ConfigurationError, "Set TDX_CLIENT_ID and TDX_CLIENT_SECRET to import HSR/metro schedules"
+        end
+
+        @client.probe! if @client.respond_to?(:probe!)
       end
 
       CatalogSync.sync!
 
+      created_dataset = dataset.nil?
       dataset ||= ScheduleDataset.create!(
         name: "時刻表 #{Time.zone.today}",
         source: "tdx",
@@ -37,6 +51,7 @@ module Transit
         import_tra!(dataset) if @systems.include?("tra")
         import_hsr!(dataset) if @systems.include?("hsr")
         import_metro!(dataset) if @systems.include?("metro")
+        flush_stop_times!
 
         if @stats[:trips].zero? && @stats[:headways].zero? && dataset.schedule_trips.none? && dataset.headway_rules.none?
           raise TdxClient::RequestError, "Schedule import produced no trips or headways"
@@ -46,13 +61,34 @@ module Transit
         ScheduleDataset.discard_replaced!(source: "tdx", keep_id: dataset.id)
         deactivate_demo_metro_dataset!
       rescue TdxClient::Error, TraOdsClient::Error, ActiveRecord::ActiveRecordError, JSON::ParserError
-        if dataset.persisted? && !dataset.active? && dataset.schedule_trips.none? && dataset.headway_rules.none?
-          dataset.destroy!
-        end
+        ScheduleDataset.delete_dataset!(dataset) if created_dataset && dataset.persisted? && !dataset.active?
         raise
       end
 
       Result.new(dataset: dataset, trips: @stats[:trips], headways: @stats[:headways], skipped: @stats[:skipped])
+    end
+
+    def import_dates!(dataset:, dates:, description: "連假")
+      raise ArgumentError, "date import needs an existing dataset" unless dataset&.persisted?
+
+      @date_description = description
+
+      dates = Array(dates).map(&:to_date).uniq.sort
+      return Result.new(dataset:, trips: 0, headways: 0, skipped: 0) if dates.empty?
+
+      if @systems.include?("hsr")
+        unless @client.configured?
+          raise TdxClient::ConfigurationError, "Set TDX_CLIENT_ID and TDX_CLIENT_SECRET to import HSR schedules"
+        end
+
+        @client.probe! if @client.respond_to?(:probe!)
+      end
+
+      import_tra_dates!(dataset, dates) if @systems.include?("tra")
+      import_hsr!(dataset, dates:, holiday: true) if @systems.include?("hsr")
+      flush_stop_times!
+      log_progress("holiday dates #{dates.map(&:iso8601).join(', ')}: #{@stats[:trips]} trips")
+      Result.new(dataset:, trips: @stats[:trips], headways: @stats[:headways], skipped: @stats[:skipped])
     end
 
     private
@@ -63,8 +99,18 @@ module Transit
 
     def import_tra!(dataset)
       log_progress("TRA ODS daily timetable")
-      @ods_client.fetch_daily_timetables.each do |day|
-        calendar = ensure_date_calendar!(dataset, day[:date])
+      each_ods_day { |day| import_tra_day!(dataset, day) }
+    end
+
+    def import_tra_dates!(dataset, dates)
+      log_progress("TRA ODS holiday dates #{dates.map(&:iso8601).join(', ')}")
+      each_ods_day(dates:) { |day| import_tra_day!(dataset, day, description: @date_description) }
+    end
+
+    def import_tra_day!(dataset, day, description: "單日營運日曆")
+      with_date_transaction do
+        calendar = ensure_date_calendar!(dataset, day[:date], description:)
+        replace_calendar_trips!(calendar) if OVERLAY_DESCRIPTIONS.include?(description)
         Array(day[:trains]).each do |entry|
           train_info = entry["TrainInfo"] || entry
           stop_times = entry["StopTimes"]
@@ -83,19 +129,30 @@ module Transit
             notes_prefix: "ODS TRA"
           )
         end
+        flush_stop_times!
       end
     end
 
-    def import_hsr!(dataset)
-      log_progress("THSR DailyTimetable")
+    def import_hsr!(dataset, dates: nil, holiday: false)
+      dates ||= (0..6).map { |offset| Time.zone.today + offset }
+      log_progress(holiday ? "THSR #{@date_description} dates #{dates.map(&:iso8601).join(', ')}" : "THSR DailyTimetable")
       route = TransitRoute.find_by_manifest!(system_id: "hsr", route_id: "taiwan_hsr")
-      dates = (0..6).map { |offset| Time.zone.today + offset }
+      description = holiday ? @date_description : "單日營運日曆"
 
       dates.each do |date|
         path = date == Time.zone.today ? "v2/Rail/THSR/DailyTimetable/Today" : "v2/Rail/THSR/DailyTimetable/#{date}"
         entries = @client.fetch_all(path)
-        calendar = ensure_date_calendar!(dataset, date)
-        entries.each do |wrapper|
+        with_date_transaction do
+          calendar = ensure_date_calendar!(dataset, date, description:)
+          replace_calendar_trips!(calendar) if OVERLAY_DESCRIPTIONS.include?(description)
+          import_hsr_entries!(dataset, route, calendar, entries)
+          flush_stop_times!
+        end
+      end
+    end
+
+    def import_hsr_entries!(dataset, route, calendar, entries)
+      entries.each do |wrapper|
           train_info = wrapper["DailyTrainInfo"] || wrapper["TrainInfo"]
           stop_times = wrapper["StopTimes"]
           next if train_info.blank? || stop_times.blank?
@@ -114,7 +171,6 @@ module Transit
             notes_prefix: "TDX HSR"
           )
         end
-      end
     end
 
     def import_metro!(dataset)
@@ -226,18 +282,7 @@ module Transit
         trip_record.trip_type = trip.trip_type
         trip_record.notes = "TDX 捷運縫合班次"
       end
-      return if record.trip_stop_times.exists?
-
-      trip.stops.each_with_index do |stop, index|
-        TripStopTime.create!(
-          schedule_trip: record,
-          station_ref: stop[:station_ref],
-          stop_sequence: index + 1,
-          arrival_time: stop[:arrival_time],
-          departure_time: stop[:departure_time]
-        )
-      end
-      @stats[:trips] += 1
+      append_stop_times!(record, trip.stops, fresh: record.previously_new_record?)
     end
 
     def persist_single_stop_metro_trips!(dataset, route, calendar, direction, boards)
@@ -254,16 +299,11 @@ module Transit
           trip_record.trip_type = board[:trip_type]
           trip_record.notes = "TDX 捷運站別時刻"
         end
-        next if trip.trip_stop_times.exists?
-
-        TripStopTime.create!(
-          schedule_trip: trip,
-          station_ref: board[:station_ref],
-          stop_sequence: 1,
-          arrival_time: board[:arrival_time],
-          departure_time: board[:departure_time]
+        append_stop_times!(
+          trip,
+          [ { station_ref: board[:station_ref], arrival_time: board[:arrival_time], departure_time: board[:departure_time] } ],
+          fresh: trip.previously_new_record?
         )
-        @stats[:trips] += 1
       end
     end
 
@@ -294,19 +334,63 @@ module Transit
         trip_record.trip_type = trip_type
         trip_record.notes = notes
       end
+      fresh = trip.previously_new_record?
       trip.update!(notes: notes) if trip.notes != notes
-      return if trip.trip_stop_times.exists?
+      append_stop_times!(trip, mapped_stops, fresh:)
+    end
 
-      mapped_stops.each_with_index do |stop, index|
-        TripStopTime.create!(
-          schedule_trip: trip,
+    def append_stop_times!(trip, stops, fresh:)
+      return if stops.blank?
+      return if !fresh && trip.trip_stop_times.exists?
+
+      now = Time.current
+      stops.each_with_index do |stop, index|
+        @pending_stop_times << {
+          schedule_trip_id: trip.id,
           station_ref: stop[:station_ref],
           stop_sequence: index + 1,
           arrival_time: stop[:arrival_time],
-          departure_time: stop[:departure_time]
-        )
+          departure_time: stop[:departure_time],
+          created_at: now,
+          updated_at: now
+        }
       end
       @stats[:trips] += 1
+      flush_stop_times! if @pending_stop_times.size >= STOP_TIME_BATCH
+    end
+
+    def flush_stop_times!
+      return if @pending_stop_times.empty?
+
+      TripStopTime.insert_all(@pending_stop_times)
+      @pending_stop_times = []
+    end
+
+    def each_ods_day(dates: nil, &block)
+      if @ods_client.respond_to?(:each_daily_timetable)
+        if dates
+          @ods_client.each_daily_timetable(dates:, min_days: 0, &block)
+        else
+          @ods_client.each_daily_timetable(&block)
+        end
+      else
+        @ods_client.fetch_daily_timetables.each(&block)
+      end
+    end
+
+    def with_date_transaction
+      ScheduleDataset.transaction { yield }
+    rescue StandardError
+      @pending_stop_times = []
+      raise
+    end
+
+    def replace_calendar_trips!(calendar)
+      trip_ids = ScheduleTrip.where(service_calendar_id: calendar.id).pluck(:id)
+      return if trip_ids.empty?
+
+      TripStopTime.where(schedule_trip_id: trip_ids).delete_all
+      ScheduleTrip.where(id: trip_ids).delete_all
     end
 
     def map_stop_times(system_id:, stop_times:)
@@ -336,12 +420,14 @@ module Transit
       end
     end
 
-    def ensure_date_calendar!(dataset, date)
+    def ensure_date_calendar!(dataset, date, description: "單日營運日曆")
       code = "date_#{date.iso8601}"
-      dataset.service_calendars.find_or_create_by!(code: code) do |calendar|
-        calendar.name = date.strftime("%Y-%m-%d")
-        calendar.description = "單日營運日曆"
+      calendar = dataset.service_calendars.find_or_create_by!(code: code) do |row|
+        row.name = date.strftime("%Y-%m-%d")
+        row.description = description
       end
+      calendar.update!(description:) if calendar.description != description
+      calendar
     end
 
     def metro_route(entry, line_id)

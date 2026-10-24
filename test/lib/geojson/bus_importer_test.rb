@@ -66,6 +66,144 @@ class GeojsonBusImporterTest < ActiveSupport::TestCase
     refute Geojson::BusImporter.series_match?("4081", series: "1", city: keelung)
   end
 
+  test "splits 繞駛 SubRoutes into their own route variant" do
+    route = {
+      "RouteUID" => "TPE11821",
+      "RouteName" => { "Zh_tw" => "33" },
+      "SubRoutes" => [
+        { "SubRouteUID" => "TPE118210", "SubRouteName" => { "Zh_tw" => "33" }, "Direction" => 0 },
+        { "SubRouteUID" => "TPE162167", "SubRouteName" => { "Zh_tw" => "33繞駛大道路" }, "Direction" => 0 }
+      ]
+    }
+
+    main, detour = Geojson::BusImporter.detour_variants(route)
+    city = Geojson::BusCatalog.find("Taipei")
+
+    assert_equal [ "TPE118210" ], main["_import_sub_uids"]
+    assert main["_import_blank_sub"]
+    assert_equal [ "TPE162167" ], detour["_import_sub_uids"]
+    assert_equal "繞駛大道路", detour["_import_detour"]
+    assert_equal "taipei_33", Geojson::BusImporter.slug_for(main, city:)
+    assert_not_equal "taipei_33", Geojson::BusImporter.slug_for(detour, city:)
+  end
+
+  test "normalizes detour labels across directions and ignores timetable notes" do
+    sub = ->(name) { { "SubRouteUID" => name, "SubRouteName" => { "Zh_tw" => name } } }
+    route = ->(parent, *names) { { "RouteName" => { "Zh_tw" => parent }, "SubRoutes" => names.map(&sub) } }
+
+    yellow = route.("黃2", "黃2", "黃2新營→王爺宮(繞駛工研院南分院)", "黃2王爺宮→新營(繞駛工研院南分院)")
+    assert_equal [ nil, "繞駛工研院南分院" ], Geojson::BusImporter.detour_variants(yellow).map { |v| v["_import_detour"] }
+
+    north = route.("北環幹線", "北環幹線繞駛士科路去程半", "北環幹線不繞駛士科路去程半", "北環幹線繞駛士科路返程半")
+    main, detour = Geojson::BusImporter.detour_variants(north)
+    assert_equal [ "北環幹線不繞駛士科路去程半" ], main["_import_sub_uids"]
+    assert_equal "繞駛士科路", detour["_import_detour"]
+
+    directed = ->(parent, pairs) {
+      { "RouteName" => { "Zh_tw" => parent },
+        "SubRoutes" => pairs.map { |name, direction| sub.(name).merge("Direction" => direction) } }
+    }
+    dog = directed.("北環幹線", [ [ "北環幹線狗狗公車去程半", 0 ], [ "北環幹線繞駛士科路去程半", 0 ],
+      [ "北環幹線不繞駛士科路去程半", 0 ], [ "北環幹線不繞駛士科路返程半", 1 ] ])
+    main, detour = Geojson::BusImporter.detour_variants(dog)
+    assert_equal [ "北環幹線狗狗公車去程半", "北環幹線不繞駛士科路去程半", "北環幹線不繞駛士科路返程半" ], main["_import_sub_uids"]
+    assert_equal "繞駛士科路", detour["_import_detour"]
+
+    labelled = directed.("551", [ [ "551不繞駛行善路經金龍寺", 0 ], [ "551不繞駛行善路經金龍寺", 1 ],
+      [ "551不繞駛行善路不經金龍寺", 0 ], [ "551不繞駛行善路不經金龍寺", 1 ] ])
+    assert_equal [ "不繞駛行善路經金龍寺", "不繞駛行善路不經金龍寺" ], Geojson::BusImporter.detour_variants(labelled).map { |v| v["_import_detour"] }
+
+    minibus = route.("小16", "小16", "小16平0550 假0600無繞駛")
+    assert_equal 1, Geojson::BusImporter.detour_variants(minibus).size
+  end
+
+  test "splits a campus extension into 本線 and 延駛 variants" do
+    sub = ->(name, direction) { { "SubRouteUID" => "#{name}#{direction}", "SubRouteName" => { "Zh_tw" => name }, "Direction" => direction } }
+    route = { "RouteName" => { "Zh_tw" => "237" },
+              "SubRoutes" => [ sub.("237不經政大校區", 0), sub.("237不經政大校區", 1), sub.("237經政大校區", 0), sub.("237經政大校區", 1) ] }
+    main, extension = Geojson::BusImporter.detour_variants(route)
+    city = Geojson::BusCatalog.find("Taipei")
+
+    assert_equal [ "237不經政大校區0", "237不經政大校區1" ], main["_import_sub_uids"]
+    assert_equal "本線", main["_import_main_label"]
+    assert_equal "延駛政大校區", extension["_import_detour"]
+    assert_equal "taipei_237", Geojson::BusImporter.slug_for(main, city:)
+    assert_match(/\Ataipei_237_\h{10}\z/, Geojson::BusImporter.slug_for(extension, city:))
+  end
+
+  test "splits 經三總 / 不經三總 into 繞駛 and 不繞駛 variants" do
+    sub = ->(name, direction) { { "SubRouteUID" => "#{name}#{direction}", "SubRouteName" => { "Zh_tw" => name }, "Direction" => direction } }
+    route = { "RouteName" => { "Zh_tw" => "903" },
+              "SubRoutes" => [ sub.("903不經三總", 0), sub.("903不經三總", 1), sub.("903經三總", 0), sub.("903經三總", 1) ] }
+    main, detour = Geojson::BusImporter.detour_variants(route)
+    rows = [ { "SubRouteName" => "903不經三總" }, { "SubRouteName" => "903經三總" } ]
+    own = ->(name, via) { Geojson::BusServiceDays.own_rows(rows, ref: "903", name:, via:).map { |row| row["SubRouteName"] } }
+
+    assert_equal "不繞駛三總", main["_import_main_label"]
+    assert_equal "繞駛三總", detour["_import_detour"]
+    assert_equal [ "903不經三總" ], own.("903（不繞駛三總）", "不繞駛三總")
+    assert_equal [ "903經三總" ], own.("903（繞駛三總）", "繞駛三總")
+  end
+
+  test "splits a branch run by another operator and keeps its operator" do
+    sub = ->(name, direction) { { "SubRouteUID" => "#{name}#{direction}", "SubRouteName" => { "Zh_tw" => name }, "Direction" => direction } }
+    route = { "RouteName" => { "Zh_tw" => "306" },
+              "Operators" => [ { "OperatorID" => "400", "OperatorName" => { "Zh_tw" => "三重客運" } },
+                               { "OperatorID" => "800", "OperatorName" => { "Zh_tw" => "大都會客運" } } ],
+              "SubRoutes" => [ sub.("306(三重)", 0), sub.("306(三重)", 1), sub.("306(大都會)", 0), sub.("306(大都會)", 1) ] }
+    main, branch = Geojson::BusImporter.detour_variants(route)
+    importer = Geojson::BusImporter.new(city_id: "Taipei", client: Object.new)
+    rows = [ { "SubRouteName" => "306(三重)" }, { "SubRouteName" => "306(大都會)" } ]
+
+    assert_equal "往舊莊", branch["_import_detour"]
+    assert_equal "三重客運", importer.send(:operator_for, main)[:name]
+    assert_equal "大都會客運", importer.send(:operator_for, branch)[:name]
+    assert_equal [ "306(三重)" ], Geojson::BusServiceDays.own_rows(rows, ref: "306", name: "306").map { |row| row["SubRouteName"] }
+    assert_equal [ "306(大都會)" ], Geojson::BusServiceDays.own_rows(rows, ref: "306", name: "306（往舊莊）", via: "往舊莊").map { |row| row["SubRouteName"] }
+  end
+
+  test "splits a short 繞 label listed as a detour" do
+    sub = ->(name, direction) { { "SubRouteUID" => "#{name}#{direction}", "SubRouteName" => { "Zh_tw" => name }, "Direction" => direction } }
+    route = { "RouteName" => { "Zh_tw" => "249" },
+              "SubRoutes" => [ sub.("249", 0), sub.("249", 1), sub.("249繞崁頂", 0), sub.("249繞崁頂", 1) ] }
+    main, detour = Geojson::BusImporter.detour_variants(route)
+
+    assert_nil main["_import_main_label"]
+    assert_equal "繞駛崁頂", detour["_import_detour"]
+    assert_equal [ "249" ], Geojson::BusServiceDays.own_rows([ { "SubRouteName" => "249" }, { "SubRouteName" => "249繞崁頂" } ],
+      ref: "249", name: "249", via: nil).map { |row| row["SubRouteName"] }
+    assert_equal [ "249繞崁頂" ], Geojson::BusServiceDays.own_rows([ { "SubRouteName" => "249" }, { "SubRouteName" => "249繞崁頂" } ],
+      ref: "249", name: "249（繞駛崁頂）", via: "繞駛崁頂").map { |row| row["SubRouteName"] }
+  end
+
+  test "keeps one SubRoute path per direction for split variants" do
+    stop = ->(lon) { { "StopPosition" => { "PositionLon" => lon, "PositionLat" => 25.0 } } }
+    stops = [
+      { "SubRouteUID" => "S1", "Direction" => 0, "Stops" => [ stop.(121.50), stop.(121.51) ] },
+      { "SubRouteUID" => "S2", "Direction" => 0, "Stops" => [ stop.(121.50), stop.(121.51), stop.(121.52) ] }
+    ]
+    shapes = [
+      { "SubRouteUID" => "S1", "Direction" => 0, "Geometry" => "LINESTRING(121.50 25.0, 121.51 25.0)" },
+      { "SubRouteUID" => "", "Direction" => 0, "Geometry" => "LINESTRING(121.50 25.0, 121.52 25.0)" },
+      { "SubRouteUID" => "", "Direction" => 0, "Geometry" => "LINESTRING(121.50 25.01, 121.52 25.01)" }
+    ]
+
+    kept_shapes, kept_stops = Geojson::BusImporter.new(city_id: "Taipei").send(:primary_subroute_rows, shapes, stops)
+
+    assert_equal [ "S2" ], kept_stops.map { |row| row["SubRouteUID"] }
+    assert_equal [ shapes[1] ], kept_shapes
+  end
+
+  test "clips a borrowed shape that runs past the variant's last stop" do
+    line = (0..40).map { |i| [ 121.5 + (i * 0.001), 25.0 ] }
+    stops = [ [ 121.5, 25.0 ], [ 121.51, 25.0 ], [ 121.52, 25.0 ] ]
+
+    clipped = Geojson::BusImporter.new(city_id: "Taipei").send(:clip_to_terminals, line, stops)
+
+    assert_equal line.first, clipped.first
+    assert_equal [ 121.52, 25.0 ], clipped.last
+  end
+
   test "ref_slug keeps color-coded and Chinese route names distinct" do
     assert_equal "32", Geojson::BusImporter.ref_slug("32")
     assert_equal "hong32", Geojson::BusImporter.ref_slug("紅32")

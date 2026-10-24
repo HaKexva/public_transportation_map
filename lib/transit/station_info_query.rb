@@ -1,22 +1,19 @@
 # frozen_string_literal: true
 
 module Transit
-  # Station exits / accessibility extras from TDX StationExit + StationFacility.
+  # Station exits / accessibility extras from the stored TDX StationExit +
+  # StationFacility rows (station_infos, see StationInfoImporter).
   class StationInfoQuery
-    CACHE_TTL = 12.hours
-    METRO_EXIT_SYSTEMS = %w[TRTC KRTC TYMC TMRT NTMC].freeze
-    METRO_FACILITY_SYSTEMS = %w[TRTC KRTC TYMC TMRT NTMC].freeze
+    METRO_SYSTEMS = %w[TRTC KRTC TYMC TMRT NTMC].freeze
 
-    def initialize(station_ref:, route_id: nil, client: nil)
+    def initialize(station_ref:, route_id: nil)
       @station_ref = station_ref.to_s.strip
       @route_id = route_id.to_s.strip.presence
-      @client = client || Transit::TdxClient.new
     end
 
     def call
       refs = station_refs
       return empty_payload(error: "missing_ref") if refs.empty?
-      return empty_payload(error: "tdx_unconfigured") unless @client.configured?
 
       route = @route_id ? RouteCatalog.find(@route_id) : nil
       system_id = route&.dig("system_id").to_s
@@ -53,8 +50,6 @@ module Transit
         accessibility: accessibility_summary(exits).merge(facility_summary[:accessibility]),
         source: exits.any? || facility_summary[:groups].any? ? source_label(exits, facility_summary[:groups]) : nil
       }
-    rescue Transit::TdxClient::Error => error
-      empty_payload(error: error.message)
     end
 
     private
@@ -89,73 +84,38 @@ module Transit
     end
 
     def fetch_metro_exits(ref, system_id)
-      systems = MetroSystemRegistry.tdx_rail_systems_for_route(@route_id)
-      systems = MetroSystemRegistry.tdx_rail_systems_for_system(system_id) if systems.empty?
-      systems = METRO_EXIT_SYSTEMS if systems.empty?
-
-      systems.flat_map do |rail_system|
-        next [] unless METRO_EXIT_SYSTEMS.include?(rail_system)
-
-        rows = cached_exits("metro", rail_system, ref) do
-          path = "v2/Rail/Metro/StationExit/#{rail_system}"
-          query = {
-            "$filter" => "StationID eq '#{escape_odata(ref)}'",
-            "$format" => "JSON"
-          }
-          Transit::ResponseDecoder.list(@client.get_json(path, query: query))
-        end
-        rows.map { |row| serialize_exit(row, rail_system) }
+      metro_systems(system_id).flat_map do |rail_system|
+        stored(rail_system, ref).flat_map { |info| info.exits.map { |row| serialize_exit(row, rail_system) } }
       end
     end
 
     def fetch_tra_exits(ref)
-      candidates = tra_station_id_candidates(ref)
-      candidates.flat_map do |station_id|
-        rows = cached_exits("tra", "TRA", station_id) do
-          path = "v3/Rail/TRA/StationExit"
-          query = {
-            "$filter" => "StationID eq '#{escape_odata(station_id)}'",
-            "$format" => "JSON"
-          }
-          Transit::ResponseDecoder.list(@client.get_json(path, query: query))
-        end
-        rows.map { |row| serialize_exit(row, "TRA") }
+      tra_station_id_candidates(ref).flat_map do |station_id|
+        stored("TRA", station_id).flat_map { |info| info.exits.map { |row| serialize_exit(row, "TRA") } }
       end
     end
 
     def fetch_metro_facilities(ref, system_id)
-      systems = MetroSystemRegistry.tdx_rail_systems_for_route(@route_id)
-      systems = MetroSystemRegistry.tdx_rail_systems_for_system(system_id) if systems.empty?
-      systems = METRO_FACILITY_SYSTEMS if systems.empty?
-
-      systems.flat_map do |rail_system|
-        next [] unless METRO_FACILITY_SYSTEMS.include?(rail_system)
-
-        rows = cached_facilities("metro", rail_system, ref) do
-          path = "v2/Rail/Metro/StationFacility/#{rail_system}"
-          query = {
-            "$filter" => "StationID eq '#{escape_odata(ref)}'",
-            "$format" => "JSON"
-          }
-          Transit::ResponseDecoder.list(@client.get_json(path, query: query))
-        end
-        rows.flat_map { |row| serialize_facility_row(row) }
+      metro_systems(system_id).flat_map do |rail_system|
+        stored(rail_system, ref).flat_map { |info| info.facilities.flat_map { |row| serialize_facility_row(row) } }
       end
     end
 
     def fetch_tra_facilities(ref)
-      candidates = tra_station_id_candidates(ref)
-      candidates.flat_map do |station_id|
-        rows = cached_facilities("tra", "TRA", station_id) do
-          path = "v3/Rail/TRA/StationFacility"
-          query = {
-            "$filter" => "StationID eq '#{escape_odata(station_id)}'",
-            "$format" => "JSON"
-          }
-          Transit::ResponseDecoder.list(@client.get_json(path, query: query))
-        end
-        rows.flat_map { |row| serialize_facility_row(row) }
+      tra_station_id_candidates(ref).flat_map do |station_id|
+        stored("TRA", station_id).flat_map { |info| info.facilities.flat_map { |row| serialize_facility_row(row) } }
       end
+    end
+
+    def metro_systems(system_id)
+      systems = MetroSystemRegistry.tdx_rail_systems_for_route(@route_id)
+      systems = MetroSystemRegistry.tdx_rail_systems_for_system(system_id) if systems.empty?
+      systems = METRO_SYSTEMS if systems.empty?
+      systems & METRO_SYSTEMS
+    end
+
+    def stored(system, station_id)
+      StationInfo.where(system:, station_id:).to_a
     end
 
     def tra_station_id_candidates(ref)
@@ -163,16 +123,6 @@ module Transit
       return [ ref ] if digits.blank?
 
       [ digits, digits.rjust(4, "0") ].uniq
-    end
-
-    def cached_exits(kind, system, station_id)
-      key = [ "station_info/exits/v1", kind, system, station_id ]
-      Rails.cache.fetch(key, expires_in: CACHE_TTL) { yield }
-    end
-
-    def cached_facilities(kind, system, station_id)
-      key = [ "station_info/facilities/v1", kind, system, station_id ]
-      Rails.cache.fetch(key, expires_in: CACHE_TTL) { yield }
     end
 
     def serialize_exit(row, rail_system)
@@ -277,10 +227,6 @@ module Transit
         stair: exits.any? { |exit| exit[:stair] },
         exit_count: exits.length
       }
-    end
-
-    def escape_odata(value)
-      value.to_s.gsub("'", "''")
     end
   end
 end

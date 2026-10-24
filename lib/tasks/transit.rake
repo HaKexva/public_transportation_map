@@ -1,6 +1,55 @@
 # frozen_string_literal: true
 
 namespace :transit do
+  desc "Load the old tmp/tdx_bus snapshot files into bus_route_timetables"
+  task import_bus_snapshot_files: :environment do
+    puts "Imported #{Transit::BusTdxSnapshot.import_files!} bus route timetables"
+  end
+
+  desc "Refresh the registered bus fleet (大臺北 open data + TDX Vehicle)"
+  task refresh_bus_vehicles: :environment do
+    result = Transit::BusFleet.refresh_vehicles!
+    puts "Stored #{result[:vehicles]} buses (#{result[:failed].join(', ').presence || 'no failures'})"
+  end
+
+  desc "Record which buses are running which routes now (TDX=1 to include TDX cities)"
+  task collect_bus_sightings: :environment do
+    result = Transit::BusFleet.collect_sightings!(tdx: ENV["TDX"].present?)
+    puts "Recorded #{result[:sightings]} route/bus sightings (#{result[:failed].join(', ').presence || 'no failures'})"
+  end
+
+  desc "List bus plate series per operator with their mapped model (writes tmp/bus_fleet_series.csv)"
+  task bus_fleet_series: :environment do
+    require "csv"
+    operators = Array(RouteCatalog.manifest["bus"]).each_with_object({}) { |route, names| names[[ route["city_id"], route["operator_id"].to_s ]] ||= route["operator"] }
+    operator_name = lambda do |city_id, operator_id|
+      operators[[ city_id, operator_id ]] ||
+        (Geojson::BusCatalog.greater_taipei_city?(city_id) && Geojson::BusCatalog::GREATER_TAIPEI_CITY_IDS.filter_map { |id| operators[[ id, operator_id ]] }.first)
+    end
+    seen = BusRouteVehicleSighting.distinct.pluck(:plate).to_set
+    groups = BusVehicle.all.group_by { |vehicle| [ vehicle.city_id.to_s, vehicle.operator_id.to_s, Transit::BusVehicleModels.series(vehicle.plate) ] }
+    path = Rails.root.join("tmp/bus_fleet_series.csv")
+    rows = groups.filter_map do |(city_id, operator_id, series), vehicles|
+      next unless series
+
+      sample = vehicles.first
+      [ city_id, operator_id, operator_name.call(city_id, operator_id), series, vehicles.size, vehicles.count { |vehicle| seen.include?(vehicle.plate) },
+        Transit::BusFleet::VEHICLE_CLASSES[sample.vehicle_class], vehicles.count(&:electric), vehicles.count(&:low_floor),
+        vehicles.first(3).map(&:plate).join(" "), Transit::BusVehicleModels.lookup(sample.plate, operator_id, city_id) ]
+    end.sort_by { |row| [ row[0], row[1], -row[4] ] }
+    CSV.open(path, "w") do |csv|
+      csv << %w[city_id operator_id operator series vehicles seen_on_routes class electric low_floor examples model]
+      rows.each { |row| csv << row }
+    end
+    puts "Wrote #{rows.size} series to #{path} (#{rows.count { |row| row.last.nil? }} without a model)"
+  end
+
+  desc "Refresh station exits / facilities from TDX into station_infos"
+  task refresh_station_info: :environment do
+    result = Transit::StationInfoImporter.import!
+    puts "Stored #{result[:stations]} stations (#{result[:failed].join(', ').presence || 'no failures'})"
+  end
+
   desc "Sync transit routes and station order from routes.json and GeoJSON"
   task sync_catalog: :environment do
     result = Transit::CatalogSync.sync!
@@ -61,6 +110,10 @@ namespace :transit do
     end
 
     dataset = ENV["DATASET_ID"].presence && ScheduleDataset.find(ENV["DATASET_ID"])
+    inactive = ScheduleDataset.where(source: "tdx", active: false)
+    inactive = inactive.where.not(id: dataset.id) if dataset
+    removed = ScheduleDataset.discard_ids!(inactive.pluck(:id))
+    puts "Discarded #{removed} inactive TDX datasets" if removed.positive?
 
     unless dataset
       other = Transit::OtherTransitScheduleSeeder.seed!

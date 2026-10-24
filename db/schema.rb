@@ -10,9 +10,47 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_08_16_093000) do
+ActiveRecord::Schema[8.1].define(version: 2026_10_09_130000) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
+
+  create_table "bus_route_timetables", force: :cascade do |t|
+    t.string "city_id", null: false
+    t.datetime "created_at", null: false
+    t.jsonb "fares", default: [], null: false
+    t.datetime "fetched_at", null: false
+    t.string "route_name", null: false
+    t.jsonb "routes", default: [], null: false
+    t.jsonb "schedules", default: [], null: false
+    t.datetime "updated_at", null: false
+    t.index ["city_id", "route_name"], name: "index_bus_route_timetables_on_city_id_and_route_name", unique: true
+  end
+
+  create_table "bus_route_vehicle_sightings", force: :cascade do |t|
+    t.datetime "first_seen_at", null: false
+    t.datetime "last_seen_at", null: false
+    t.string "plate", null: false
+    t.string "route_id", null: false
+    t.integer "sightings", default: 1, null: false
+    t.index ["last_seen_at"], name: "index_bus_route_vehicle_sightings_on_last_seen_at"
+    t.index ["route_id", "plate"], name: "index_bus_route_vehicle_sightings_on_route_id_and_plate", unique: true
+  end
+
+  create_table "bus_vehicles", force: :cascade do |t|
+    t.string "city_id"
+    t.datetime "created_at", null: false
+    t.boolean "electric", default: false, null: false
+    t.datetime "fetched_at", null: false
+    t.boolean "hybrid", default: false, null: false
+    t.boolean "low_floor", default: false, null: false
+    t.string "operator_id"
+    t.string "plate", null: false
+    t.boolean "ramp", default: false, null: false
+    t.datetime "updated_at", null: false
+    t.integer "vehicle_class"
+    t.integer "vehicle_type"
+    t.index ["plate"], name: "index_bus_vehicles_on_plate", unique: true
+  end
 
   create_table "headway_rules", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -73,6 +111,17 @@ ActiveRecord::Schema[8.1].define(version: 2026_08_16_093000) do
     t.datetime "updated_at", null: false
     t.index ["schedule_dataset_id", "code"], name: "index_service_calendars_on_schedule_dataset_id_and_code", unique: true
     t.index ["schedule_dataset_id"], name: "index_service_calendars_on_schedule_dataset_id"
+  end
+
+  create_table "station_infos", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.jsonb "exits", default: [], null: false
+    t.jsonb "facilities", default: [], null: false
+    t.datetime "fetched_at", null: false
+    t.string "station_id", null: false
+    t.string "system", null: false
+    t.datetime "updated_at", null: false
+    t.index ["system", "station_id"], name: "index_station_infos_on_system_and_station_id", unique: true
   end
 
   create_table "transit_route_stations", force: :cascade do |t|
