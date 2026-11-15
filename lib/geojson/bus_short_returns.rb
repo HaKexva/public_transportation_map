@@ -37,7 +37,7 @@ module Geojson
       slug = "#{properties["id"]}_#{Digest::SHA1.hexdigest(entry[:via])[0, 10]}"
       out_path = File.join(File.dirname(path), "#{slug}.geojson")
 
-      short = Marshal.load(Marshal.dump(data))
+      short = data.deep_dup
       return false unless clip_return!(short, entry)
 
       write_labels!(short, slug:, entry:)

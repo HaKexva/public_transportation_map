@@ -132,7 +132,7 @@ module Geojson
         return true
       end
 
-      plain = Marshal.load(Marshal.dump(data))
+      plain = data.deep_dup
       return false unless cut_campus!(plain, router)
 
       drop_inside_skips!(data)
@@ -464,7 +464,7 @@ module Geojson
     end
 
     def write_labels!(data, slug:, via:, via_en:, hours:, span:, keep_trips: false)
-      data = Marshal.load(Marshal.dump(data))
+      data = data.deep_dup
       properties = data["properties"]
       ref = properties["ref"]
       english_ref = properties["name_en"].to_s.sub(/\s*\(.*\z/, "").presence || ref
