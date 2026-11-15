@@ -61,7 +61,7 @@ module Transit
       Entry.new(
         tdx_rail_system: "TMRT",
         system_id: "taichung_metro",
-        line_map: { "1" => "green_line" }
+        line_map: { "G" => "green_line", "1" => "green_line" }
       )
     ].freeze
 

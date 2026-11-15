@@ -20,10 +20,24 @@ class TransitCatalogSyncTest < ActiveSupport::TestCase
 
   test "sync is idempotent" do
     first = Transit::CatalogSync.sync!
+    ids_before = TransitRouteStation.order(:id).pluck(:id)
     second = Transit::CatalogSync.sync!
 
     assert_equal first.routes, second.routes
     assert_equal first.stations, second.stations
     assert_equal first.routes, TransitRoute.count
+    assert_equal ids_before, TransitRouteStation.order(:id).pluck(:id)
+  end
+
+  test "rewrites a route's stations when they drift from the geojson" do
+    Transit::CatalogSync.sync!
+    bannan = TransitRoute.find_by_manifest!(system_id: "taipei_metro", route_id: "bannan")
+    station = bannan.transit_route_stations.ordered.first
+    expected_name = station.name
+    station.update_columns(name: "舊站名")
+
+    Transit::CatalogSync.sync!
+
+    assert_equal expected_name, bannan.transit_route_stations.ordered.first.name
   end
 end

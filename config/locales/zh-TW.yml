@@ -6,6 +6,17 @@ zh-TW:
     zh_tw: "中文"
     en: "English"
     toggle: "切換語言"
+  activerecord:
+    errors:
+      messages:
+        record_invalid: "驗證失敗：%{errors}"
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      blank: "不能為空白"
+      taken: "已經被使用"
+      invalid: "是無效的"
+      required: "必須存在"
   systems:
     taipei_metro: "台北捷運"
     new_taipei_metro: "新北捷運"

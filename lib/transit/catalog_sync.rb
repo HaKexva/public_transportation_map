@@ -46,16 +46,23 @@ module Transit
       stations = extract_stations(route, JSON.parse(path.read))
       return 0 if stations.empty?
 
-      TransitRouteStation.where(transit_route: route, direction: TransitRoute::DIRECTION_BOTH).delete_all
+      existing = TransitRouteStation.where(transit_route: route, direction: TransitRoute::DIRECTION_BOTH)
+      wanted = stations.map { |station| [ station.fetch(:ref), station.fetch(:name), station[:name_en] ] }
+      return stations.length if existing.order(:stop_sequence).pluck(:station_ref, :name, :name_en) == wanted
 
-      stations.each_with_index do |station, index|
-        TransitRouteStation.create!(
-          transit_route: route,
-          station_ref: station.fetch(:ref),
-          name: station.fetch(:name),
-          name_en: station[:name_en],
-          stop_sequence: index + 1,
-          direction: TransitRoute::DIRECTION_BOTH
+      TransitRouteStation.transaction do
+        existing.delete_all
+        TransitRouteStation.insert_all!(
+          wanted.each_with_index.map do |(ref, name, name_en), index|
+            {
+              transit_route_id: route.id,
+              station_ref: ref,
+              name: name,
+              name_en: name_en,
+              stop_sequence: index + 1,
+              direction: TransitRoute::DIRECTION_BOTH
+            }
+          end
         )
       end
 

@@ -140,8 +140,15 @@ module Transit
       description = holiday ? @date_description : "單日營運日曆"
 
       dates.each do |date|
-        path = date == Time.zone.today ? "v2/Rail/THSR/DailyTimetable/Today" : "v2/Rail/THSR/DailyTimetable/#{date}"
-        entries = @client.fetch_all(path)
+        path = date == Time.zone.today ? "v2/Rail/THSR/DailyTimetable/Today" : "v2/Rail/THSR/DailyTimetable/TrainDate/#{date}"
+        begin
+          entries = @client.fetch_all(path)
+        rescue TdxClient::RequestError => e
+          raise if date == Time.zone.today
+
+          log_progress("skip THSR #{date}: #{e.message.truncate(120)}")
+          next
+        end
         with_date_transaction do
           calendar = ensure_date_calendar!(dataset, date, description:)
           replace_calendar_trips!(calendar) if OVERLAY_DESCRIPTIONS.include?(description)
@@ -153,24 +160,24 @@ module Transit
 
     def import_hsr_entries!(dataset, route, calendar, entries)
       entries.each do |wrapper|
-          train_info = wrapper["DailyTrainInfo"] || wrapper["TrainInfo"]
-          stop_times = wrapper["StopTimes"]
-          next if train_info.blank? || stop_times.blank?
+        train_info = wrapper["DailyTrainInfo"] || wrapper["TrainInfo"]
+        stop_times = wrapper["StopTimes"]
+        next if train_info.blank? || stop_times.blank?
 
-          import_rail_trip!(
-            dataset: dataset,
-            system_id: "hsr",
-            route: route,
-            train_info: train_info,
-            stop_times: stop_times,
-            calendar: calendar,
-            train_number_key: "TrainNo",
-            direction_key: "Direction",
-            trip_type_key: "TrainType",
-            destination_key: "TripHeadSign",
-            notes_prefix: "TDX HSR"
-          )
-        end
+        import_rail_trip!(
+          dataset: dataset,
+          system_id: "hsr",
+          route: route,
+          train_info: train_info,
+          stop_times: stop_times,
+          calendar: calendar,
+          train_number_key: "TrainNo",
+          direction_key: "Direction",
+          trip_type_key: "TrainType",
+          destination_key: "TripHeadSign",
+          notes_prefix: "TDX HSR"
+        )
+      end
     end
 
     def import_metro!(dataset)
@@ -311,7 +318,7 @@ module Transit
       train_number = train_info[train_number_key].to_s.presence
       return @stats[:skipped] += 1 if train_number.blank?
 
-      mapped_stops = map_stop_times(system_id: system_id, stop_times: stop_times)
+      mapped_stops = dedupe_stops(map_stop_times(system_id: system_id, stop_times: stop_times))
       return @stats[:skipped] += 1 if mapped_stops.length < 2
 
       route ||= @route_resolver.resolve(system_id: system_id, station_refs: mapped_stops.map { |stop| stop[:station_ref] })
@@ -391,6 +398,21 @@ module Transit
 
       TripStopTime.where(schedule_trip_id: trip_ids).delete_all
       ScheduleTrip.where(id: trip_ids).delete_all
+    end
+
+    # Station refs must be unique per trip: merge back-to-back repeats and
+    # stop a looping run just before it revisits a station.
+    def dedupe_stops(stops)
+      stops.each_with_object([]) do |stop, result|
+        previous = result.last
+        if previous && previous[:station_ref] == stop[:station_ref]
+          previous[:departure_time] = stop[:departure_time] || previous[:departure_time]
+        elsif result.any? { |kept| kept[:station_ref] == stop[:station_ref] }
+          break result
+        else
+          result << stop.dup
+        end
+      end
     end
 
     def map_stop_times(system_id:, stop_times:)
