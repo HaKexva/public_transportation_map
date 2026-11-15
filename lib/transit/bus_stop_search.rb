@@ -93,7 +93,7 @@ module Transit
       named = []
       mentioned = []
       self.class.index(bus_root: @bus_root).each do |stop|
-        next if @city_id && !stop.cities.include?(@city_id)
+        next unless city_match?(stop)
 
         rank = rank_for(stop, needle)
         next unless rank
@@ -114,6 +114,15 @@ module Transit
     end
 
     private
+
+    # Sidebar browse uses GreaterTaipei as a fold over Taipei + NewTaipei.
+    # Stop poles store the concrete city ids, never the fold name.
+    def city_match?(stop)
+      return true if @city_id.blank?
+      return stop.cities.intersect?(Geojson::BusCatalog::GREATER_TAIPEI_CITY_IDS) if @city_id == "GreaterTaipei"
+
+      stop.cities.include?(@city_id)
+    end
 
     def rank_for(stop, needle)
       return 0 if stop.norm_name == needle || (stop.norm_en.present? && stop.norm_en == needle)

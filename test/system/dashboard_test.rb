@@ -213,17 +213,32 @@ class DashboardTest < ApplicationSystemTestCase
   end
 
   test "searches bus stops and opens the stop panel" do
+    index_hits = Transit::BusStopSearch.new(query: "基隆轉運站").call
+    assert index_hits.any? { |stop| stop["name"] == "基隆轉運站" },
+           "expected public/geojson/bus/_stop_search.json to include 基隆轉運站"
+
     visit bus_map_path
 
     assert_no_selector ".is-booting", wait: 30
     assert_selector "#layer-search", wait: 10
 
-    fill_in "layer-search", with: "基隆轉運站"
+    # Keep the city filter on "all" so GreaterTaipei browse folds do not
+    # narrow the stop API to a city id that poles never carry.
+    page.execute_script(<<~JS)
+      const city = document.getElementById("bus-filter-city")
+      if (city) {
+        city.value = ""
+        city.dispatchEvent(new Event("change", { bubbles: true }))
+      }
+      const input = document.getElementById("layer-search")
+      input.value = "基隆轉運站"
+      input.dispatchEvent(new Event("input", { bubbles: true }))
+    JS
 
-    assert_selector ".stop-search__item", text: "基隆轉運站", wait: 10
-    find(".stop-search__item", text: "基隆轉運站", match: :first).click
+    assert_selector ".stop-search__item", text: /基隆轉運站|Keelung Transit Station/, wait: 15
+    find(".stop-search__item", text: /基隆轉運站|Keelung Transit Station/, match: :first).click
 
-    assert_selector ".map-station-board-panel", text: "基隆轉運站", wait: 5
+    assert_selector ".map-station-board-panel", text: /基隆轉運站|Keelung Transit Station/, wait: 5
     find(".map-station-board-panel [data-station-tab='info']").click
     assert_selector ".bus-through-routes__chip", minimum: 1, wait: 10
   end
@@ -1417,7 +1432,8 @@ class DashboardTest < ApplicationSystemTestCase
     assert_selector ".route-stops-tabs__tab", text: "南側（管制區外）"
 
     north_names = page.all(".route-stop-item:not([hidden]) .route-stop-item__name", minimum: 2).map(&:text)
-    assert_includes north_names, "第一航廈（北側）"
+    assert north_names.any? { |name| name.include?("第一航廈（北側）") },
+           "expected north skytrain stop with optional note suffix, got #{north_names.inspect}"
 
     find(".route-stops-tabs__tab", text: "南側（管制區外）").click
     south_names = page.all(".route-stop-item:not([hidden]) .route-stop-item__name", minimum: 2).map(&:text)

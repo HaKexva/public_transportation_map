@@ -2160,7 +2160,10 @@ export default class extends Controller {
     if (!this.hasLayerSearchInputTarget) return
 
     const query = this.layerSearchInputTarget.value.trim()
-    const city = this.transportMode === "bus" ? (this.busFilterState().city || "") : ""
+    // GreaterTaipei is a browse fold; the stop index stores Taipei/NewTaipei.
+    // Omit the fold id so the API expands it (or searches all cities).
+    let city = this.transportMode === "bus" ? (this.busFilterState().city || "") : ""
+    if (city === "GreaterTaipei") city = ""
     if (!this.stopQueryReady(query)) {
       this.clearStopSearch()
       return

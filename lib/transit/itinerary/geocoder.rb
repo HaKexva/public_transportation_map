@@ -29,7 +29,12 @@ module Transit
           region: "tw",
           components: "country:TW"
         )
-        payload = JSON.parse(Net::HTTP.get(uri))
+        response = Net::HTTP.start(uri.host, uri.port, use_ssl: true, open_timeout: 5, read_timeout: 5) do |http|
+          http.request(Net::HTTP::Get.new(uri))
+        end
+        return [] unless response.is_a?(Net::HTTPSuccess)
+
+        payload = JSON.parse(response.body)
         return [] unless payload["status"] == "OK"
 
         Array(payload["results"]).first(limit).filter_map { |result| serialize(result, query) }

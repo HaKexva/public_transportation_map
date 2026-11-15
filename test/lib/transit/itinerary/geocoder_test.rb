@@ -91,10 +91,12 @@ class Transit::ItineraryGeocoderTest < ActiveSupport::TestCase
   private
 
   def stub_geocode(payload)
-    original = Net::HTTP.method(:get)
-    Net::HTTP.define_singleton_method(:get) { |_uri| JSON.generate(payload) }
+    response = Net::HTTPSuccess.new("1.1", "200", "OK")
+    response.define_singleton_method(:body) { JSON.generate(payload) }
+    original = Net::HTTP.method(:start)
+    Net::HTTP.define_singleton_method(:start) { |*_args, **_kwargs, &_block| response }
     yield
   ensure
-    Net::HTTP.define_singleton_method(:get, original)
+    Net::HTTP.define_singleton_method(:start, original)
   end
 end
