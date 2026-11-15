@@ -58,6 +58,14 @@ class TransitBusStopSearchTest < ActiveSupport::TestCase
     assert_equal [ "板橋公車站" ], new_taipei
   end
 
+  test "GreaterTaipei matches Taipei and NewTaipei poles" do
+    names = search("車站", city_id: "GreaterTaipei").map { |stop| stop["name"] }
+
+    assert_includes names, "臺北車站"
+    assert_includes names, "板橋公車站"
+    assert_not_includes names, "基隆車站"
+  end
+
   test "keeps both cities when a pole has both stop ids" do
     stop = search("板橋公車站").first
 
