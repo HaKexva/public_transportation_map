@@ -2857,7 +2857,8 @@ export default class extends Controller {
           segment: feature.properties?.segment,
           direction: feature.properties?.direction,
           platform: feature.properties?.platform,
-          note: feature.properties?.note || null,
+          // Angle stations already fold the no-passenger note into `name`.
+          note: feature.properties?.feature_type === "angle_station" ? null : (feature.properties?.note || null),
           timed_skip: feature.properties?.timed_skip || null,
           latlng
         }

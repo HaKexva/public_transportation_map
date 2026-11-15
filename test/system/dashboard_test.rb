@@ -262,7 +262,7 @@ class DashboardTest < ApplicationSystemTestCase
     assert_text "台灣大眾運輸地圖"
     click_button "圖例"
     assert_selector "#map-legend", text: "圖例", wait: 5
-    assert_text "普通車（藍）與直達車（紫）並排"
+    assert_text "普通車（藍）、直達車（紫）並排"
     assert_text "離島銜接"
     assert_text "渡輪"
     assert_text "飛機"
@@ -713,6 +713,7 @@ class DashboardTest < ApplicationSystemTestCase
         const coords = { A: [ 22.0, 122.5 ], D: [ 22.0, 122.53 ] }
         controller.stationCoordForRef = (ref) => coords[ref] || null
         controller.routesManifest.other.push({ id: "test_pin_line", bbox: [ 122.5, 22.0, 122.53, 22.0 ] })
+        controller.routeIndexCache = null
         controller.routeTracksByRouteId["test_pin_line"] = [ [ [ 122.5, 22.0 ], [ 122.53, 22.0 ] ] ]
         controller.vehicleTracksByRouteId["test_pin_line"] = [ [ [ 122.5, 22.0 ], [ 122.53, 22.0 ] ] ]
         controller.scheduleSnapshots["test_pin_line"] = {
@@ -1010,9 +1011,14 @@ class DashboardTest < ApplicationSystemTestCase
     end
 
     page.execute_script(<<~JS)
-      const checkbox = document.getElementById("layer-new_taipei_metro")
-      checkbox.checked = true
-      checkbox.dispatchEvent(new Event("change", { bubbles: true }))
+      const show = (id) => {
+        const checkbox = document.getElementById(`layer-${id}`)
+        checkbox.checked = true
+        checkbox.dispatchEvent(new Event("change", { bubbles: true }))
+      }
+      // 環狀線 is under 新北捷運; 安坑輕軌 lives under 台北捷運 in the manifest.
+      show("new_taipei_metro")
+      show("ankeng_lrt")
     JS
 
     assert_selector "#layer-circular:checked", visible: :all, wait: 15
@@ -1407,15 +1413,16 @@ class DashboardTest < ApplicationSystemTestCase
 
   test "skytrain route page lists north and south sections" do
     visit route_path("taoyuan_airport_skytrain")
-    assert_selector ".route-stop-item", minimum: 4, wait: 10
+    assert_selector ".route-stops-tabs__tab", text: "北側（管制區內）", wait: 10
+    assert_selector ".route-stops-tabs__tab", text: "南側（管制區外）"
 
-    assert_selector ".route-stops-section-heading", text: "北側（管制區內）"
-    assert_selector ".route-stops-section-heading", text: "南側（管制區外）"
+    north_names = page.all(".route-stop-item:not([hidden]) .route-stop-item__name", minimum: 2).map(&:text)
+    assert_includes north_names, "第一航廈（北側）"
 
-    names = page.all(".route-stop-item__name", minimum: 4).map(&:text)
-    assert_includes names, "第一航廈（北側）"
-    assert names.any? { |name| name.include?("第二航廈（南側）") },
-           "expected south skytrain stop with optional 停駛 suffix, got #{names.inspect}"
+    find(".route-stops-tabs__tab", text: "南側（管制區外）").click
+    south_names = page.all(".route-stop-item:not([hidden]) .route-stop-item__name", minimum: 2).map(&:text)
+    assert south_names.any? { |name| name.include?("第二航廈（南側）") },
+           "expected south skytrain stop with optional 停駛 suffix, got #{south_names.inspect}"
   end
 
   test "airport mrt express layer toggle uses purple line color" do
