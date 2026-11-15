@@ -61,7 +61,7 @@
 
 需要先裝好：
 
-- Ruby **3.4.8**（版本寫在 `.ruby-version`）
+- Ruby **3.4.12**（版本寫在 `.ruby-version`）
 - PostgreSQL
 - Chrome / Chromium（只有跑系統測試才需要）
 
@@ -208,7 +208,7 @@ Bus routes come from TDX. Some counties have incomplete data, and I keep notes o
 
 You'll need:
 
-- Ruby **3.4.8** (see `.ruby-version`)
+- Ruby **3.4.12** (see `.ruby-version`)
 - PostgreSQL
 - Chrome / Chromium (only for system tests)
 
