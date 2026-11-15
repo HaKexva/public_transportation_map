@@ -22,7 +22,11 @@ class TransitBusRouteDetailsQueryTest < ActiveSupport::TestCase
       schedules: [
         {
           "RouteUID" => "TPE10841", "RouteName" => { "Zh_tw" => "0東" }, "SubRouteName" => { "Zh_tw" => "0東" }, "Direction" => 0,
-          "Timetables" => [ trip("06:00"), trip("06:20"), trip("07:00"), trip("09:00", %w[Sunday]) ]
+          "Timetables" => [ trip("06:00"), trip("06:20"), trip("07:00"), trip("09:00", %w[Saturday Sunday]) ]
+        },
+        {
+          "RouteUID" => "TPE10841", "RouteName" => { "Zh_tw" => "0東" }, "SubRouteName" => { "Zh_tw" => "0東狗狗公車" }, "Direction" => 0,
+          "Timetables" => [ trip("09:20"), trip("13:00") ]
         }
       ],
       fares: [
@@ -62,9 +66,50 @@ class TransitBusRouteDetailsQueryTest < ActiveSupport::TestCase
     weekday = payload[:schedules].first[:weekday]
     assert_equal %w[06:00 06:20 07:00], weekday[:departures]
     assert_equal({ min: 20, max: 40, median: 40 }, weekday[:headway])
-    assert_equal %w[09:00], payload[:schedules].first[:holiday][:departures]
+    assert_equal %w[09:00], payload[:schedules].first[:weekend][:departures]
+    assert_nil payload[:schedules].first[:saturday]
+    assert_nil payload[:schedules].first[:sunday]
+    dog = payload[:schedules].find { |row| row[:dog_bus] }
+    assert_equal 0, dog[:direction]
+    assert_equal %w[09:20 13:00], dog[:weekday][:departures]
+    refute payload[:schedules].first[:weekday][:departures].intersect?(%w[09:20 13:00])
+
+    Transit::BusTdxSnapshot.write_city!(
+      "Taipei",
+      schedules: [
+        {
+          "RouteUID" => "TPE10841", "RouteName" => { "Zh_tw" => "0東" }, "SubRouteName" => { "Zh_tw" => "0東" }, "Direction" => 0,
+          "Timetables" => [ trip("06:00"), trip("08:00", %w[Saturday]), trip("09:00", %w[Sunday]) ]
+        }
+      ],
+      routes: [ { "RouteUID" => "TPE10841", "RouteName" => { "Zh_tw" => "0東" }, "SubRoutes" => [] } ],
+      fares: []
+    )
+    split = run_query[:schedules].first
+    assert_nil split[:weekend]
+    assert_equal %w[08:00], split[:saturday][:departures]
+    assert_equal %w[09:00], split[:sunday][:departures]
+    assert_nil run_query[:schedules].find { |row| row[:dog_bus] }
 
     assert_equal "section", payload[:fare][:pricing]
+
+    night = Transit::BusRouteDetailsQuery.new(route_id: ROUTE["id"], route: ROUTE.merge("ref" => "39夜").dup)
+    Transit::BusTdxSnapshot.write_city!(
+      "Taipei",
+      schedules: [
+        {
+          "RouteUID" => "TPE10841", "RouteName" => { "Zh_tw" => "39夜" }, "SubRouteName" => { "Zh_tw" => "39夜" }, "Direction" => 0,
+          "Timetables" => [ trip("00:05"), trip("23:30") ]
+        }
+      ],
+      routes: [ { "RouteUID" => "TPE10841", "RouteName" => { "Zh_tw" => "39夜" }, "SubRoutes" => [] } ],
+      fares: []
+    )
+    night_payload = night.call
+    night_day = night_payload[:schedules].first[:weekday]
+    assert_equal %w[23:30 00:05], night_day[:departures]
+    assert_equal 2, night_day[:departure_count]
+    assert_equal({ min: 35, max: 35, median: 35 }, night_day[:headway])
     assert_equal [ { fare_class: "adult", price: 15 }, { fare_class: "senior", price: 8 } ], payload[:fare][:prices]
     assert_equal [ { direction: 0, from: "新益里", to: "忠孝敦化路口" } ], payload[:fare][:buffer_zones]
   end

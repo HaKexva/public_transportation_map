@@ -13,7 +13,11 @@
     "operator_id": "19",
     "operator": "中鹿客運",
     "operator_en": "Chung-Lu Bus Co., Ltd.",
-    "daily_trips": 18
+    "daily_trips": 18,
+    "departure": "中台新村",
+    "destination": "干城站",
+    "departure_en": "Zhongtai Community",
+    "destination_en": "Gancheng Station"
   },
   "features": [
     {
@@ -3084,7 +3088,8 @@
         "line": "30",
         "color": "#db2777",
         "direction": 0,
-        "station_id": "3842"
+        "station_id": "3842",
+        "platform": "第1月台"
       },
       "geometry": {
         "type": "Point",

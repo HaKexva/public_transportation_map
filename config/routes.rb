@@ -18,8 +18,9 @@ Rails.application.routes.draw do
       constraints: { slug: /[^\/]+\.geojson/ },
       format: false
 
-  root "dashboards#show", defaults: { transport_mode: "rail" }
-  get "bus", to: "dashboards#show", defaults: { transport_mode: "bus" }, as: :bus_map
+  root "dashboards#show", defaults: { page_mode: "lookup", transport_mode: "rail" }
+  get "bus", to: "dashboards#show", defaults: { page_mode: "lookup", transport_mode: "bus" }, as: :bus_map
+  get "plan", to: "dashboards#show", defaults: { page_mode: "plan", transport_mode: "rail" }, as: :plan_map
   get "rail", to: redirect("/")
 
   resources :routes, only: [ :show ], param: :id
@@ -33,6 +34,10 @@ Rails.application.routes.draw do
     resources :bus_route_details, only: [ :index ]
     resources :bus_route_arrivals, only: [ :index ]
     resources :bus_through_routes, only: [ :index ]
+    resources :bus_stops, only: [ :index ]
+    resources :itineraries, only: [ :create ] do
+      get :places, on: :collection
+    end
     resources :alerts, only: [ :index ]
   end
 end

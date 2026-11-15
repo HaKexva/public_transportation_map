@@ -1,10 +1,10 @@
 {
   "type": "FeatureCollection",
-  "name": "28（不繞駛三總）",
+  "name": "28（08:00前、21:30後不繞駛三總）",
   "properties": {
     "id": "taipei_28",
-    "name": "28（不繞駛三總）",
-    "name_en": "28 (skips Tri-Service General Hospital)",
+    "name": "28（08:00前、21:30後不繞駛三總）",
+    "name_en": "28 (before 08:00 and after 21:30, skips Tri-Service General Hospital)",
     "ref": "28",
     "color": "#DC2626",
     "city_id": "Taipei",
@@ -13,10 +13,15 @@
     "operator_id": "5100",
     "operator": "指南客運",
     "operator_en": "Zhinan Bus Co., Ltd.",
-    "via": "不繞駛三總",
-    "via_en": "skips Tri-Service General Hospital",
+    "via": "08:00前、21:30後不繞駛三總",
+    "via_en": "before 08:00 and after 21:30, skips Tri-Service General Hospital",
     "detour_hours": "08:00-21:30",
-    "daily_trips": 4
+    "daily_trips": 4,
+    "campus_span": "outside",
+    "departure": "明水路一",
+    "destination": "捷運台北101/世貿站(信義)",
+    "departure_en": "Mingshui Rd. 1",
+    "destination_en": "MRT Taipei 101 / World Trade Center Sta. (XinYi)"
   },
   "features": [
     {
@@ -24,8 +29,8 @@
       "properties": {
         "feature_type": "route",
         "ref": "28",
-        "name": "28（不繞駛三總）",
-        "name_en": "28 (skips Tri-Service General Hospital)",
+        "name": "28（08:00前、21:30後不繞駛三總）",
+        "name_en": "28 (before 08:00 and after 21:30, skips Tri-Service General Hospital)",
         "color": "#DC2626",
         "direction": 0,
         "corners_rounded": true
@@ -2109,8 +2114,8 @@
       "properties": {
         "feature_type": "route",
         "ref": "28",
-        "name": "28（不繞駛三總）",
-        "name_en": "28 (skips Tri-Service General Hospital)",
+        "name": "28（08:00前、21:30後不繞駛三總）",
+        "name_en": "28 (before 08:00 and after 21:30, skips Tri-Service General Hospital)",
         "color": "#DC2626",
         "direction": 1,
         "corners_rounded": true
@@ -4144,7 +4149,7 @@
         "ref": "TPE27186",
         "name": "明水路一",
         "name_en": "Mingshui Rd. 1",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "1264"
@@ -4164,7 +4169,7 @@
         "ref": "TPE27187",
         "name": "明水路二",
         "name_en": "Mingshui Rd. 2",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "1267"
@@ -4184,7 +4189,7 @@
         "ref": "TPE27188",
         "name": "明水路三",
         "name_en": "Mingshui Rd. 3",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "1268"
@@ -4204,7 +4209,7 @@
         "ref": "TPE27189",
         "name": "大直抽水站",
         "name_en": "Dazhi Pumping Sta.",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "1177"
@@ -4224,7 +4229,7 @@
         "ref": "TPE27190",
         "name": "永安里",
         "name_en": "Yongan Village",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "4185"
@@ -4244,7 +4249,7 @@
         "ref": "TPE27191",
         "name": "捷運大直站",
         "name_en": "MRT Dazhi Station",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "4187"
@@ -4264,7 +4269,7 @@
         "ref": "TPE27192",
         "name": "植福宮",
         "name_en": "Zhifu Temple",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "1212"
@@ -4284,7 +4289,7 @@
         "ref": "TPE27193",
         "name": "自強隧道(大直教會)",
         "name_en": "Zihqiang Tunnel (Dazhi Church)",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "1255"
@@ -4304,7 +4309,7 @@
         "ref": "TPE27194",
         "name": "自強隧道",
         "name_en": "Zihqiang Tunnel",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "1254"
@@ -4324,7 +4329,7 @@
         "ref": "TPE27195",
         "name": "捷運劍南路站",
         "name_en": "MRT Jiannan Rd. Station ",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "1000117"
@@ -4344,7 +4349,7 @@
         "ref": "TPE27196",
         "name": "美麗華",
         "name_en": "Miramar",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "1000127"
@@ -4364,7 +4369,7 @@
         "ref": "TPE27197",
         "name": "文湖國小",
         "name_en": "Wenhu Elementary School",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "1008"
@@ -4384,7 +4389,7 @@
         "ref": "TPE27198",
         "name": "治磐新村",
         "name_en": "Zhipan New Village",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "8521"
@@ -4404,7 +4409,7 @@
         "ref": "TPE27199",
         "name": "捷運西湖站",
         "name_en": "MRT Xihu Station",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "1000698"
@@ -4424,7 +4429,7 @@
         "ref": "TPE27200",
         "name": "恕德家商",
         "name_en": "Shude High School of Commerce and Home Economics",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "1075"
@@ -4444,7 +4449,7 @@
         "ref": "TPE27201",
         "name": "麗山街",
         "name_en": "Lishan St.",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "8410"
@@ -4464,7 +4469,7 @@
         "ref": "TPE27202",
         "name": "捷運港墘站(內湖高工)",
         "name_en": "MRT Gangqian Station (Neihu Vocational High School)",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "997"
@@ -4484,7 +4489,7 @@
         "ref": "TPE27203",
         "name": "西湖圖書館(湖光教會)",
         "name_en": "Xihu Library (Huguang Church)",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "1165604813"
@@ -4504,7 +4509,7 @@
         "ref": "TPE27204",
         "name": "內湖國小",
         "name_en": "Neihu Elementary School",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "999"
@@ -4524,7 +4529,7 @@
         "ref": "TPE27205",
         "name": "達人高中(臺灣戲曲學院)",
         "name_en": "Da Ren Catholic High School (National Taiwan College of Performing Arts)",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "1133"
@@ -4544,7 +4549,7 @@
         "ref": "TPE27206",
         "name": "內湖派出所",
         "name_en": "Neihu Police Substation",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "993"
@@ -4564,7 +4569,7 @@
         "ref": "TPE27207",
         "name": "成功路三段",
         "name_en": "Chenggong Rd. Sec. 3",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "1029"
@@ -4584,7 +4589,7 @@
         "ref": "TPE27208",
         "name": "方濟中學",
         "name_en": "St. Francis High School",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "1012"
@@ -4604,7 +4609,7 @@
         "ref": "TPE27209",
         "name": "將軍嶺",
         "name_en": "Jiangjun Ling",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "50501"
@@ -4624,7 +4629,7 @@
         "ref": "TPE27211",
         "name": "國防醫學中心",
         "name_en": "National Defense Medical Center",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "1080"
@@ -4644,7 +4649,7 @@
         "ref": "TPE27212",
         "name": "湖興",
         "name_en": "Huxing",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "1107"
@@ -4664,7 +4669,7 @@
         "ref": "TPE27213",
         "name": "上灣仔",
         "name_en": "Shangwanzi",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "985"
@@ -4684,7 +4689,7 @@
         "ref": "TPE223783",
         "name": "成功路二段(交流道)",
         "name_en": "Chenggong Rd. Sec. 2(Interchange)",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "1165610511"
@@ -4704,7 +4709,7 @@
         "ref": "TPE27214",
         "name": "石潭公園(成功)",
         "name_en": "Shitan Park (Chenggong)",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "50433"
@@ -4724,7 +4729,7 @@
         "ref": "TPE27215",
         "name": "南港分局(向陽)",
         "name_en": "Nangang Police Dist. (Xiangyang)",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "1647"
@@ -4744,7 +4749,7 @@
         "ref": "TPE27216",
         "name": "玉成國小",
         "name_en": "Yucheng Elementary School",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "4000"
@@ -4764,7 +4769,7 @@
         "ref": "TPE27217",
         "name": "西新里(新新公園)",
         "name_en": "Xixin Village (Xinxin Park)",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "50015"
@@ -4784,7 +4789,7 @@
         "ref": "TPE27218",
         "name": "南港路三段",
         "name_en": "Nangang Rd. Sec. 3",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "4001"
@@ -4804,7 +4809,7 @@
         "ref": "TPE27219",
         "name": "松山磚廠",
         "name_en": "Songshan Brick Factory",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "50014"
@@ -4824,7 +4829,7 @@
         "ref": "TPE27220",
         "name": "玉成里",
         "name_en": "Yucheng Village",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "15103"
@@ -4844,7 +4849,7 @@
         "ref": "TPE27221",
         "name": "松山車站(八德)",
         "name_en": "Songshan Rail Sta. (Bade)",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "15104"
@@ -4864,7 +4869,7 @@
         "ref": "TPE27222",
         "name": "松山農會",
         "name_en": "Songshan Farmers Association",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "16001"
@@ -4884,7 +4889,7 @@
         "ref": "TPE27223",
         "name": "饒河街觀光夜市(八德)",
         "name_en": "Raohe St. Night Market",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "1602"
@@ -4904,7 +4909,7 @@
         "ref": "TPE27224",
         "name": "市民基隆路口",
         "name_en": "Civic Blvd. and Keelung Intersection",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "1569"
@@ -4924,7 +4929,7 @@
         "ref": "TPE27225",
         "name": "松山高中(基隆路)",
         "name_en": "Songshan High School (Keelung Rd.)",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "2095"
@@ -4944,7 +4949,7 @@
         "ref": "TPE181845",
         "name": "市政府(松高)",
         "name_en": "Taipei City Hall (Songgao Rd.)",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "2066"
@@ -4964,7 +4969,7 @@
         "ref": "TPE27226",
         "name": "市政府(松智)",
         "name_en": "Taipei City Hall (Songzhi)",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "6722"
@@ -4984,7 +4989,7 @@
         "ref": "TPE163425",
         "name": "101國際購物中心",
         "name_en": "Taipei 101(Songzhi)",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "2028"
@@ -5004,7 +5009,7 @@
         "ref": "TPE163426",
         "name": "捷運台北101/世貿站(信義)",
         "name_en": "MRT Taipei 101 / World Trade Center Sta. (XinYi)",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "6928"
@@ -5024,7 +5029,7 @@
         "ref": "TPE163427",
         "name": "捷運台北101/世貿站(市府)",
         "name_en": "MRT Taipei 101 / World Trade Center Sta. (City Hall Rd.)",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "2029"
@@ -5044,7 +5049,7 @@
         "ref": "TPE27228",
         "name": "市政府(市府)",
         "name_en": "Taipei City Hall",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "2063"
@@ -5064,7 +5069,7 @@
         "ref": "TPE27229",
         "name": "松山高中(基隆路)",
         "name_en": "Songshan High School (Keelung Rd.)",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "15119"
@@ -5084,7 +5089,7 @@
         "ref": "TPE27230",
         "name": "市民基隆路口",
         "name_en": "Civic Blvd. and Keelung Intersection",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "1565"
@@ -5104,7 +5109,7 @@
         "ref": "TPE27231",
         "name": "饒河街觀光夜市(八德)",
         "name_en": "Raohe St. Night Market",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "1600"
@@ -5124,7 +5129,7 @@
         "ref": "TPE27232",
         "name": "松山農會",
         "name_en": "Songshan Farmers Association",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "1534"
@@ -5144,7 +5149,7 @@
         "ref": "TPE27233",
         "name": "松山車站(八德)",
         "name_en": "Songshan Rail Sta. (Bade)",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "1530"
@@ -5164,7 +5169,7 @@
         "ref": "TPE27234",
         "name": "玉成里",
         "name_en": "Yucheng Village",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "1515"
@@ -5184,7 +5189,7 @@
         "ref": "TPE27235",
         "name": "松山磚廠",
         "name_en": "Songshan Brick Factory",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "1634"
@@ -5204,7 +5209,7 @@
         "ref": "TPE27236",
         "name": "南港路三段",
         "name_en": "Nangang Rd. Sec. 3",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "1684"
@@ -5224,7 +5229,7 @@
         "ref": "TPE27237",
         "name": "西新里(新新公園)",
         "name_en": "Xixin Village (Xinxin Park)",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "1614"
@@ -5244,7 +5249,7 @@
         "ref": "TPE27238",
         "name": "玉成國小",
         "name_en": "Yucheng Elementary School",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "1624"
@@ -5264,7 +5269,7 @@
         "ref": "TPE27239",
         "name": "南港分局(向陽)",
         "name_en": "Nangang Police Dist. (Xiangyang)",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "1646"
@@ -5284,7 +5289,7 @@
         "ref": "TPE27240",
         "name": "石潭公園(成功)",
         "name_en": "Shitan Park (Chenggong)",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "50434"
@@ -5304,7 +5309,7 @@
         "ref": "TPE223784",
         "name": "成功路二段(交流道)",
         "name_en": "Chenggong Rd. Sec. 2(Interchange)",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "1165610510"
@@ -5324,7 +5329,7 @@
         "ref": "TPE27241",
         "name": "上灣仔",
         "name_en": "Shangwanzi",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "8663"
@@ -5344,7 +5349,7 @@
         "ref": "TPE27242",
         "name": "湖興",
         "name_en": "Huxing",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "8664"
@@ -5364,7 +5369,7 @@
         "ref": "TPE27243",
         "name": "國防醫學中心",
         "name_en": "National Defense Medical Center",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "339"
@@ -5384,7 +5389,7 @@
         "ref": "TPE27245",
         "name": "將軍嶺",
         "name_en": "Jiangjun Ling",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "50500"
@@ -5404,7 +5409,7 @@
         "ref": "TPE27246",
         "name": "方濟中學",
         "name_en": "St. Francis High School",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "3996"
@@ -5424,7 +5429,7 @@
         "ref": "TPE27247",
         "name": "成功路三段",
         "name_en": "Chenggong Rd. Sec. 3",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "8520"
@@ -5444,7 +5449,7 @@
         "ref": "TPE27248",
         "name": "內湖派出所",
         "name_en": "Neihu Police Substation",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "994"
@@ -5464,7 +5469,7 @@
         "ref": "TPE27249",
         "name": "達人高中(臺灣戲曲學院)",
         "name_en": "Da Ren Catholic High School (National Taiwan College of Performing Arts)",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "8633"
@@ -5484,7 +5489,7 @@
         "ref": "TPE27250",
         "name": "內湖國小",
         "name_en": "Neihu Elementary School",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "8634"
@@ -5504,7 +5509,7 @@
         "ref": "TPE27251",
         "name": "西湖圖書館(湖光教會)",
         "name_en": "Xihu Library (Huguang Church)",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "1000499"
@@ -5524,7 +5529,7 @@
         "ref": "TPE27252",
         "name": "捷運港墘站(內湖高工)",
         "name_en": "MRT Gangqian Station (Neihu Vocational High School)",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "8527"
@@ -5544,7 +5549,7 @@
         "ref": "TPE27253",
         "name": "麗山國中",
         "name_en": "Lishan Jr. High School",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "4084"
@@ -5564,7 +5569,7 @@
         "ref": "TPE27254",
         "name": "麗山街",
         "name_en": "Lishan St.",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "1153"
@@ -5584,7 +5589,7 @@
         "ref": "TPE27255",
         "name": "恕德家商",
         "name_en": "Shude High School of Commerce and Home Economics",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "50515"
@@ -5604,7 +5609,7 @@
         "ref": "TPE27256",
         "name": "捷運西湖站",
         "name_en": "MRT Xihu Station",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "1000723"
@@ -5624,7 +5629,7 @@
         "ref": "TPE27257",
         "name": "治磐新村",
         "name_en": "Zhipan New Village",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "194"
@@ -5644,7 +5649,7 @@
         "ref": "TPE27258",
         "name": "文湖國小",
         "name_en": "Wenhu Elementary School",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "8670"
@@ -5664,7 +5669,7 @@
         "ref": "TPE27259",
         "name": "美麗華",
         "name_en": "Miramar",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "1322"
@@ -5684,7 +5689,7 @@
         "ref": "TPE57003",
         "name": "捷運劍南路站",
         "name_en": "MRT Jiannan Rd. Station ",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "1000695"
@@ -5704,7 +5709,7 @@
         "ref": "TPE27260",
         "name": "明水路一",
         "name_en": "Mingshui Rd. 1",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "1264"
@@ -5724,7 +5729,7 @@
         "ref": "TPE27261",
         "name": "明水路二",
         "name_en": "Mingshui Rd. 2",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "1267"
@@ -5744,7 +5749,7 @@
         "ref": "TPE27262",
         "name": "明水路三",
         "name_en": "Mingshui Rd. 3",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "1268"
@@ -5764,7 +5769,7 @@
         "ref": "TPE27263",
         "name": "大直抽水站",
         "name_en": "Dazhi Pumping Sta.",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "1177"
@@ -5784,7 +5789,7 @@
         "ref": "TPE27264",
         "name": "永安里",
         "name_en": "Yongan Village",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "4185"
@@ -5804,7 +5809,7 @@
         "ref": "TPE27265",
         "name": "捷運大直站",
         "name_en": "MRT Dazhi Station",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "4187"
@@ -5824,7 +5829,7 @@
         "ref": "TPE27266",
         "name": "植福宮",
         "name_en": "Zhifu Temple",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "1212"
@@ -5844,7 +5849,7 @@
         "ref": "TPE59273",
         "name": "自強隧道(大直教會)",
         "name_en": "Zihqiang Tunnel (Dazhi Church)",
-        "line": "28（不繞駛三總）",
+        "line": "28（08:00前、21:30後不繞駛三總）",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "1255"

@@ -13,7 +13,13 @@
     "operator_id": "16176",
     "operator": "臺北客運",
     "operator_en": "Taipei Bus Co., Ltd.",
-    "daily_trips": 41
+    "daily_trips": 41,
+    "departure": "三峽一站",
+    "destination": "市政府(松壽)",
+    "departure_en": "Sanxia Stop 1",
+    "destination_en": "Taipei City Hall (SongShou)",
+    "service_note": "平日 09:00 前三峽一站發車往程不停景觀萬坪公園(公厝仔)；假日改走逸仙路、松高路，不停市政府(市府)",
+    "service_note_en": "Weekdays: outbound trips from Sanxia Stop 1 before 09:00 skip Landscape Wanping Park (Gongcuozai); Holidays: via Yixian Rd. and Songgao Rd.; skips Taipei City Hall (City Hall Rd.)"
   },
   "features": [
     {
@@ -4544,7 +4550,16 @@
         "line": "939",
         "color": "#F97316",
         "direction": 0,
-        "station_id": "1165610584"
+        "station_id": "1165610584",
+        "timed_skip": {
+          "days": "weekday",
+          "windows": [
+            [
+              "06:00",
+              "09:00"
+            ]
+          ]
+        }
       },
       "geometry": {
         "type": "Point",
@@ -4764,7 +4779,11 @@
         "line": "939",
         "color": "#F97316",
         "direction": 0,
-        "station_id": "2063"
+        "station_id": "2063",
+        "timed_skip": {
+          "days": "holiday",
+          "windows": []
+        }
       },
       "geometry": {
         "type": "Point",

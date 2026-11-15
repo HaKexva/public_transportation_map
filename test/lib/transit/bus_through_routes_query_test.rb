@@ -115,4 +115,66 @@ class Transit::BusThroughRoutesQueryTest < ActiveSupport::TestCase
     assert_equal [ "A", "intercity_bus:I", "B" ], result.groups.map { |group| group[:id] }
     assert_equal [ "intercity_1815" ], result.groups[1][:routes].map { |row| row["id"] }
   end
+
+  test "hides a highway-coach twin already folded into the city shelter" do
+    index = JSON.parse(File.read(@root.join("keelung_bus/_stop_routes.json")))
+    index["stations"]["KLS"] = [
+      { "id" => "keelung_101", "ref" => "101" },
+      { "id" => "intercity_1061", "ref" => "1061" }
+    ]
+    index["groups"] = {
+      "KLS" => {
+        "name" => "海洋廣場",
+        "lat" => 25.1280,
+        "lon" => 121.7400,
+        "stops" => %w[KEE1 THB1],
+        "shelter_peers" => [ { "subdir" => "intercity_bus", "key" => "IC1" } ]
+      },
+      "KLN" => { "name" => "海洋廣場", "lat" => 25.1284, "lon" => 121.7400, "stops" => [ "KEE2" ] }
+    }
+    File.write(@root.join("keelung_bus/_stop_routes.json"), JSON.generate(index))
+    FileUtils.mkdir_p(@root.join("intercity_bus"))
+    File.write(@root.join("intercity_bus/_stop_routes.json"), JSON.generate(
+      "stations" => { "IC1" => [ { "id" => "intercity_1061" }, { "id" => "keelung_101" } ] },
+      "groups" => {
+        "IC1" => {
+          "name" => "海洋廣場",
+          "lat" => 25.12801,
+          "lon" => 121.74001,
+          "stops" => %w[KEE1 THB1],
+          "shelter_of" => { "subdir" => "keelung_bus", "key" => "KLS" }
+        }
+      }
+    ))
+
+    result = Transit::BusThroughRoutesQuery.new(
+      city_id: "Keelung", station_id: "KLS", name: "海洋廣場", lat: 25.1280, lon: 121.7400, bus_root: @root
+    ).call
+
+    assert_equal %w[intercity_1061 keelung_101], result.routes.map { |row| row["id"] }.sort
+    assert_equal [ "KLS", "KLN" ], result.groups.map { |group| group[:id] }
+    assert result.groups.none? { |group| group[:id].to_s.include?("intercity") }
+  end
+
+  test "matches a stop group id from search" do
+    index = JSON.parse(File.read(@root.join("keelung_bus/_stop_routes.json")))
+    index["groups"] = {
+      "KLS" => { "name" => "基隆車站", "lat" => 25.1318, "lon" => 121.7394, "stops" => [ "KEE1" ] },
+      "NEAR" => { "name" => "基隆車站", "lat" => 25.1322, "lon" => 121.7398, "stops" => [ "KEE2" ] }
+    }
+    File.write(@root.join("keelung_bus/_stop_routes.json"), JSON.generate(index))
+
+    result = Transit::BusThroughRoutesQuery.new(
+      city_id: "Keelung",
+      group_id: "KLS",
+      name: "基隆車站",
+      lat: 25.1318,
+      lon: 121.7394,
+      bus_root: @root
+    ).call
+
+    assert_nil result.error
+    assert_equal [ "keelung_101" ], result.routes.map { |row| row["id"] }
+    assert_equal "KLS", result.groups.find { |group| group[:current] }[:id]
+  end
 end

@@ -51,6 +51,8 @@ module Geojson
 
     TRANSFER_STATION_REFS_BY_NAME = IN_STATION_TRANSFERS_BY_NAME.transform_values { |entry| entry[:combined_ref] }.freeze
 
+    # Sidebar order under 台北捷運: 棕→紅→綠→橘→藍, then 安坑／三鶯／先導
+    # (those three are appended in RoutesManifestWriter::EXTRA_MANIFEST_ENTRIES).
     LINES = [
       MetroLine.taipei(
         slug: "wenhu_line",
@@ -81,15 +83,6 @@ module Geojson
         branch_of: "tamsui_xinyi"
       ),
       MetroLine.taipei(
-        slug: "bannan",
-        name: "板南線",
-        name_en: "Bannan Line",
-        ref: "BL",
-        color: "#007EC7",
-        relation_ids: [ 9437776 ],
-        station_ref_prefix: "BL"
-      ),
-      MetroLine.taipei(
         slug: "songshan_xindian",
         name: "松山新店線",
         name_en: "Songshan–Xindian Line",
@@ -116,6 +109,15 @@ module Geojson
         color: "#F8B61C",
         relation_ids: [ 4250354, 4250355 ],
         station_ref_prefix: "O"
+      ),
+      MetroLine.taipei(
+        slug: "bannan",
+        name: "板南線",
+        name_en: "Bannan Line",
+        ref: "BL",
+        color: "#007EC7",
+        relation_ids: [ 9437776 ],
+        station_ref_prefix: "BL"
       ),
       MetroLine.taipei(
         slug: "circular",

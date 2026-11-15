@@ -6,7 +6,7 @@ require "uri"
 
 module Geojson
   # Fills blank 經度／緯度 of hand-added depots in BusDepotWriter::STATIONS_PATH by
-  # geocoding the address written in their 備註 column (Google Geocoding API).
+  # geocoding the address column (Google Geocoding API).
   class BusDepotGeocoder
     ENDPOINT = "https://maps.googleapis.com/maps/api/geocode/json"
     APPROXIMATE_NOTE = "・座標約略，請確認"
@@ -31,7 +31,7 @@ module Geojson
       manual.depots.each do |row|
         next if BusDepotWriter.auto_code?(row["code"]) || row["lon"].present? || row["lat"].present?
 
-        address = self.class.address_from_note(row["note"])
+        address = self.class.address_from_note(row["address"].presence || row["note"])
         next if address.blank?
 
         hit = @lookup.call(address)
@@ -42,7 +42,9 @@ module Geojson
 
         row["lon"] = hit[:lon].round(6).to_s
         row["lat"] = hit[:lat].round(6).to_s
-        row["note"] = "#{row['note']}#{APPROXIMATE_NOTE}" if hit[:approximate] && !row["note"].include?(APPROXIMATE_NOTE)
+        if hit[:approximate] && !row["note"].to_s.include?("座標約略")
+          row["note"] = [ row["note"].presence, APPROXIMATE_NOTE.delete_prefix("・") ].compact.join("・")
+        end
         filled << row["code"]
       end
 

@@ -13,7 +13,11 @@
     "operator_id": "1",
     "operator": "台中客運",
     "operator_en": "Taichung Bus Co., Ltd.",
-    "daily_trips": 31
+    "daily_trips": 31,
+    "departure": "臺中車站(民族路口)",
+    "destination": "嶺東三站",
+    "departure_en": "Taichung Station(Minzu Intersection)",
+    "destination_en": "Lingdong 3rd Stop"
   },
   "features": [
     {
@@ -1992,7 +1996,8 @@
         "line": "27",
         "color": "#6b21a8",
         "direction": 0,
-        "station_id": "3842"
+        "station_id": "3842",
+        "platform": "第1月台"
       },
       "geometry": {
         "type": "Point",
@@ -3672,7 +3677,8 @@
         "line": "27",
         "color": "#6b21a8",
         "direction": 1,
-        "station_id": "3842"
+        "station_id": "3842",
+        "platform": "第1月台"
       },
       "geometry": {
         "type": "Point",

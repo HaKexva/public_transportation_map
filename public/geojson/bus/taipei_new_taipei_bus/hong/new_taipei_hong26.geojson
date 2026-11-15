@@ -1,19 +1,24 @@
 {
   "type": "FeatureCollection",
-  "name": "紅26",
+  "name": "紅26（本線）",
   "properties": {
     "id": "new_taipei_hong26",
-    "name": "紅26",
-    "name_en": "R26",
+    "name": "紅26（本線）",
+    "name_en": "R26 (Main Line)",
     "ref": "紅26",
     "color": "#DC2626",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
-    "official_map_url": "https://ebus.gov.taipei/File/Get/92635c3d-d2c5-49c9-8b5e-3193b71433ef?v=639267188049911102",
+    "via": "本線",
+    "via_en": "Main Line",
+    "official_map_url": "https://ebus.gov.taipei/File/Get/92635c3d-d2c5-49c9-8b5e-3193b71433ef?v=639302447954758374",
+    "departure": "情人橋",
+    "departure_en": "Lover's Bridge",
+    "destination": "捷運淡水站",
+    "destination_en": "MRT Tamsui Sta.",
     "operator_id": "16185",
     "operator": "指南客運",
-    "operator_en": "Zhinan Bus Co., Ltd.",
-    "daily_trips": 101
+    "operator_en": "Zhinan Bus Co., Ltd."
   },
   "features": [
     {
@@ -21,8 +26,8 @@
       "properties": {
         "feature_type": "route",
         "ref": "紅26",
-        "name": "紅26",
-        "name_en": "R26",
+        "name": "紅26（本線）",
+        "name_en": "R26 (Main Line)",
         "color": "#DC2626",
         "direction": 0,
         "corners_rounded": true
@@ -31,40 +36,40 @@
         "type": "LineString",
         "coordinates": [
           [
-            121.411565554625,
-            25.1845986334548
+            121.411471379913,
+            25.1842842114559
           ],
           [
-            121.4114928,
-            25.1843587
+            121.4114641,
+            25.1842621
           ],
           [
-            121.4114884,
-            25.1843324
+            121.4114632,
+            25.1842572
           ],
           [
-            121.4114909,
-            25.1843058
+            121.4114636,
+            25.1842523
           ],
           [
-            121.4115002,
-            25.1842806
+            121.4114652,
+            25.1842476
           ],
           [
-            121.4115158,
-            25.1842581
+            121.411468,
+            25.1842434
           ],
           [
-            121.4115367,
-            25.1842395
+            121.4114719,
+            25.1842399
           ],
           [
-            121.4115618,
-            25.1842259
+            121.4114766,
+            25.1842374
           ],
           [
-            121.4115897,
-            25.1842181
+            121.4114817,
+            25.1842359
           ],
           [
             121.4126271701787,
@@ -1051,7 +1056,7 @@
             25.1678902
           ],
           [
-            121.4463345,
+            121.4463344,
             25.1676753
           ],
           [
@@ -1102,8 +1107,8 @@
       "properties": {
         "feature_type": "route",
         "ref": "紅26",
-        "name": "紅26",
-        "name_en": "R26",
+        "name": "紅26（本線）",
+        "name_en": "R26 (Main Line)",
         "color": "#DC2626",
         "direction": 1,
         "corners_rounded": true
@@ -2018,50 +2023,6 @@
           [
             121.411471379913,
             25.1842842114559
-          ],
-          [
-            121.41147167633471,
-            25.184285717807807
-          ],
-          [
-            121.4114953,
-            25.1842819
-          ],
-          [
-            121.4115016,
-            25.1842816
-          ],
-          [
-            121.4115077,
-            25.1842828
-          ],
-          [
-            121.4115133,
-            25.1842854
-          ],
-          [
-            121.411518,
-            25.1842892
-          ],
-          [
-            121.4115215,
-            25.184294
-          ],
-          [
-            121.4115235,
-            25.1842995
-          ],
-          [
-            121.4115823,
-            25.1845747
-          ],
-          [
-            121.41158658862018,
-            25.184594930157818
-          ],
-          [
-            121.411565554625,
-            25.1845986334548
           ]
         ]
       }
@@ -2073,7 +2034,7 @@
         "ref": "NWT141152",
         "name": "情人橋",
         "name_en": "Lover's Bridge",
-        "line": "紅26",
+        "line": "紅26（本線）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "74892"
@@ -2093,7 +2054,7 @@
         "ref": "NWT198856",
         "name": "漁人碼頭",
         "name_en": "Fisherman's Wharf",
-        "line": "紅26",
+        "line": "紅26（本線）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "74898"
@@ -2113,7 +2074,7 @@
         "ref": "NWT205226",
         "name": "輕軌淡水漁人碼頭站",
         "name_en": "LRT Tamsui Fisherman's Wharf Station",
-        "line": "紅26",
+        "line": "紅26（本線）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "1165605856"
@@ -2133,7 +2094,7 @@
         "ref": "NWT219740",
         "name": "紅十字會",
         "name_en": "Red Cross",
-        "line": "紅26",
+        "line": "紅26（本線）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "1165610117"
@@ -2153,7 +2114,7 @@
         "ref": "NWT180959",
         "name": "淡海中正路口",
         "name_en": "Danhai & Zhongzheng Intersection",
-        "line": "紅26",
+        "line": "紅26（本線）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "74882"
@@ -2173,7 +2134,7 @@
         "ref": "NWT141155",
         "name": "淡海",
         "name_en": "Danhai",
-        "line": "紅26",
+        "line": "紅26（本線）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "18061"
@@ -2193,7 +2154,7 @@
         "ref": "NWT141156",
         "name": "淡海市民活動中心",
         "name_en": "DanHai Community Activity Center",
-        "line": "紅26",
+        "line": "紅26（本線）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "18063"
@@ -2213,7 +2174,7 @@
         "ref": "NWT141157",
         "name": "天生國小",
         "name_en": "Tiansheng Elementary School",
-        "line": "紅26",
+        "line": "紅26（本線）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "18065"
@@ -2233,7 +2194,7 @@
         "ref": "NWT141158",
         "name": "淡江新村",
         "name_en": "Danjiang New Residentail Quarter",
-        "line": "紅26",
+        "line": "紅26（本線）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "18067"
@@ -2253,7 +2214,7 @@
         "ref": "NWT211944",
         "name": "世界觀",
         "name_en": "Shijieguan",
-        "line": "紅26",
+        "line": "紅26（本線）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "74901"
@@ -2273,7 +2234,7 @@
         "ref": "NWT141160",
         "name": "油車口",
         "name_en": "Youchekou",
-        "line": "紅26",
+        "line": "紅26（本線）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "18069"
@@ -2293,7 +2254,7 @@
         "ref": "NWT141161",
         "name": "滬尾藝文園區(忠烈祠)",
         "name_en": "Huwei Cultural and Arts Park(Martyrs' Shrine)",
-        "line": "紅26",
+        "line": "紅26（本線）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "18071"
@@ -2313,7 +2274,7 @@
         "ref": "NWT141162",
         "name": "獸醫研究所",
         "name_en": "VeterInary Research Institute",
-        "line": "紅26",
+        "line": "紅26（本線）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "18073"
@@ -2333,7 +2294,7 @@
         "ref": "NWT141163",
         "name": "紅毛城(真理大學)",
         "name_en": "Fort San Domingo(Aletheia University)",
-        "line": "紅26",
+        "line": "紅26（本線）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "18075"
@@ -2353,7 +2314,7 @@
         "ref": "NWT141164",
         "name": "小白宮(淡水分局)",
         "name_en": "Little White House (Danshui Precinct)",
-        "line": "紅26",
+        "line": "紅26（本線）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "180707"
@@ -2373,7 +2334,7 @@
         "ref": "NWT141165",
         "name": "淡水圖書館",
         "name_en": "Tamsui Liberry",
-        "line": "紅26",
+        "line": "紅26（本線）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "180709"
@@ -2393,7 +2354,7 @@
         "ref": "NWT141166",
         "name": "重建街口",
         "name_en": "Chongjian St. Intersection",
-        "line": "紅26",
+        "line": "紅26（本線）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "180711"
@@ -2413,7 +2374,7 @@
         "ref": "NWT141167",
         "name": "永樂巷口(中山市場)",
         "name_en": "Yongle Lane Intersection(Zhongshan Market)",
-        "line": "紅26",
+        "line": "紅26（本線）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "148"
@@ -2433,7 +2394,7 @@
         "ref": "NWT141168",
         "name": "華南銀行",
         "name_en": "Huanan bank",
-        "line": "紅26",
+        "line": "紅26（本線）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "430"
@@ -2453,7 +2414,7 @@
         "ref": "NWT141169",
         "name": "捷運淡水站",
         "name_en": "MRT Tamsui Sta.",
-        "line": "紅26",
+        "line": "紅26（本線）",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "3842"
@@ -2473,7 +2434,7 @@
         "ref": "NWT141170",
         "name": "捷運淡水站",
         "name_en": "MRT Tamsui Sta.",
-        "line": "紅26",
+        "line": "紅26（本線）",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "74746"
@@ -2493,7 +2454,7 @@
         "ref": "NWT141171",
         "name": "永樂巷口(中山市場)",
         "name_en": "Yongle Lane Intersection(Zhongshan Market)",
-        "line": "紅26",
+        "line": "紅26（本線）",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "14662"
@@ -2513,7 +2474,7 @@
         "ref": "NWT141172",
         "name": "重建街口",
         "name_en": "JhongJian St. Entrance",
-        "line": "紅26",
+        "line": "紅26（本線）",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "180712"
@@ -2533,7 +2494,7 @@
         "ref": "NWT141173",
         "name": "淡水圖書館",
         "name_en": "Tamsui Liberry",
-        "line": "紅26",
+        "line": "紅26（本線）",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "180710"
@@ -2553,7 +2514,7 @@
         "ref": "NWT141174",
         "name": "小白宮(淡水分局)",
         "name_en": "Little White House (Danshui Precinct)",
-        "line": "紅26",
+        "line": "紅26（本線）",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "180708"
@@ -2573,7 +2534,7 @@
         "ref": "NWT141175",
         "name": "紅毛城(真理大學)",
         "name_en": "Fort Santo Domingo (Aletheia U.)",
-        "line": "紅26",
+        "line": "紅26（本線）",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "180706"
@@ -2593,7 +2554,7 @@
         "ref": "NWT141176",
         "name": "獸醫研究所",
         "name_en": "VeterInary Research Institute",
-        "line": "紅26",
+        "line": "紅26（本線）",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "18074"
@@ -2613,7 +2574,7 @@
         "ref": "NWT141177",
         "name": "滬尾藝文園區(忠烈祠)",
         "name_en": "Huwei Cultural and Arts Park(Martyrs' Shrine)",
-        "line": "紅26",
+        "line": "紅26（本線）",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "18072"
@@ -2633,7 +2594,7 @@
         "ref": "NWT141178",
         "name": "油車口",
         "name_en": "YouCheKou",
-        "line": "紅26",
+        "line": "紅26（本線）",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "18070"
@@ -2653,7 +2614,7 @@
         "ref": "NWT141179",
         "name": "淡江新村",
         "name_en": "Danjiang New Residentail Quarter",
-        "line": "紅26",
+        "line": "紅26（本線）",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "18068"
@@ -2673,7 +2634,7 @@
         "ref": "NWT141180",
         "name": "天生國小",
         "name_en": "Tiansheng Elementary School",
-        "line": "紅26",
+        "line": "紅26（本線）",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "18066"
@@ -2693,7 +2654,7 @@
         "ref": "NWT141181",
         "name": "淡海市民活動中心",
         "name_en": "DanHai Community Activity Center",
-        "line": "紅26",
+        "line": "紅26（本線）",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "18064"
@@ -2713,7 +2674,7 @@
         "ref": "NWT163215",
         "name": "淡海",
         "name_en": "DanHai",
-        "line": "紅26",
+        "line": "紅26（本線）",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "18062"
@@ -2733,7 +2694,7 @@
         "ref": "NWT180960",
         "name": "淡海中正路口",
         "name_en": "Danhai & Zhongzheng Intersection",
-        "line": "紅26",
+        "line": "紅26（本線）",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "74881"
@@ -2753,7 +2714,7 @@
         "ref": "NWT219741",
         "name": "紅十字會",
         "name_en": "Red Cross",
-        "line": "紅26",
+        "line": "紅26（本線）",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "1165610118"
@@ -2773,7 +2734,7 @@
         "ref": "NWT205227",
         "name": "輕軌淡水漁人碼頭站",
         "name_en": "LRT Tamsui Fisherman's Wharf Station",
-        "line": "紅26",
+        "line": "紅26（本線）",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "1165605855"
@@ -2793,7 +2754,7 @@
         "ref": "NWT198857",
         "name": "漁人碼頭",
         "name_en": "Fisherman's Wharf",
-        "line": "紅26",
+        "line": "紅26（本線）",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "75272"
@@ -2813,7 +2774,7 @@
         "ref": "NWT163218",
         "name": "情人橋",
         "name_en": "Lover's Bridge",
-        "line": "紅26",
+        "line": "紅26（本線）",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "74892"

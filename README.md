@@ -79,8 +79,9 @@ bin/dev
 | `DATABASE_URL` | 正式環境必填。本機沒設的話會用 `DB_HOST`、`DB_USERNAME` 這些預設值連本機 Postgres |
 | `CARTO_API_KEY` | CARTO 底圖用。沒填的話圖磚上會有「API KEY REQUIRED」浮水印，可以去 [CARTO](https://carto.com/basemaps) 免費申請 |
 | `TDX_CLIENT_ID` / `TDX_CLIENT_SECRET` | 匯入高鐵、捷運時刻表，還有即時誤點、公車到站都要用。去 [TDX](https://tdx.transportdata.tw) 註冊就有 |
+| `TDX_ENABLED` | 設成 `0` 會暫停所有對外 TDX 呼叫（即時／通阻／匯入），憑證可留著。沒設則預設開啟 |
 | `SECRET_KEY_BASE` 或 `RAILS_MASTER_KEY` | 正式環境擇一設定，詳細寫在 `.env.example` |
-| `GOOGLE_MAPS_API_KEY` | 先留著，目前沒用到 |
+| `GOOGLE_MAPS_API_KEY` | Google 地圖底圖／街景。Cloud Console 要**啟用 Billing**，並開啟 Maps JavaScript API（街景也走這支）。沒開 billing 時圖上會出現灰色「For development purposes only」浮水印。這把 key 會出現在瀏覽器的腳本網址裡 |
 
 ### 時刻表
 
@@ -216,8 +217,9 @@ You can leave all of these empty for local dev. You'll just be missing some feat
 | `DATABASE_URL` | Required in production. Locally it falls back to `DB_HOST`, `DB_USERNAME`, etc. against your local Postgres |
 | `CARTO_API_KEY` | CARTO basemap tiles. Without it you get an "API KEY REQUIRED" watermark. Free at [CARTO](https://carto.com/basemaps) |
 | `TDX_CLIENT_ID` / `TDX_CLIENT_SECRET` | Needed for HSR / metro timetables, live delays, and bus arrivals. Sign up at [TDX](https://tdx.transportdata.tw) |
+| `TDX_ENABLED` | Set to `0` to pause every outbound TDX call (live / alerts / imports) without deleting credentials. Defaults to on when unset |
 | `SECRET_KEY_BASE` or `RAILS_MASTER_KEY` | Set one of them in production. Details are in `.env.example` |
-| `GOOGLE_MAPS_API_KEY` | Reserved, not used right now |
+| `GOOGLE_MAPS_API_KEY` | Google Maps basemap / Street View. Enable **billing** on the Cloud project and Maps JavaScript API (Street View uses it too). Without billing, tiles show a gray “For development purposes only” watermark. The key is visible in the browser script URL |
 
 ### Timetables
 

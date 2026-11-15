@@ -12,7 +12,11 @@
     "official_map_url": "https://ebus.gov.taipei/File/Get/a262769a-db80-457c-91ca-f2e1a37d0724?v=639267188529579077",
     "operator_id": "16186",
     "operator": "淡水客運",
-    "operator_en": "Tamshui Bus Co., Ltd."
+    "operator_en": "Tamshui Bus Co., Ltd.",
+    "departure": "捷運淡水站",
+    "destination": "渡船頭",
+    "departure_en": "MRT Tamsui Sta.",
+    "destination_en": "Ferryboats' Dock"
   },
   "features": [
     {
@@ -3907,7 +3911,8 @@
         "line": "115",
         "color": "#DC2626",
         "direction": 0,
-        "station_id": "3842"
+        "station_id": "3842",
+        "platform": "第1月台"
       },
       "geometry": {
         "type": "Point",
@@ -4669,7 +4674,8 @@
         "line": "115",
         "color": "#DC2626",
         "direction": 1,
-        "station_id": "3842"
+        "station_id": "3842",
+        "platform": "第1月台"
       },
       "geometry": {
         "type": "Point",

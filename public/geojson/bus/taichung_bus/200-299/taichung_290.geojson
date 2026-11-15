@@ -13,7 +13,11 @@
     "operator_id": "1",
     "operator": "台中客運",
     "operator_en": "Taichung Bus Co., Ltd.",
-    "daily_trips": 24
+    "daily_trips": 24,
+    "departure": "干城站",
+    "destination": "梧棲中正田徑場",
+    "departure_en": "Gancheng Station",
+    "destination_en": "Wuqi-Zhongzheng Track and Field"
   },
   "features": [
     {
@@ -4368,7 +4372,8 @@
         "line": "290",
         "color": "#6b21a8",
         "direction": 0,
-        "station_id": "3842"
+        "station_id": "3842",
+        "platform": "第1月台"
       },
       "geometry": {
         "type": "Point",
@@ -7308,7 +7313,8 @@
         "line": "290",
         "color": "#6b21a8",
         "direction": 1,
-        "station_id": "3842"
+        "station_id": "3842",
+        "platform": "第1月台"
       },
       "geometry": {
         "type": "Point",

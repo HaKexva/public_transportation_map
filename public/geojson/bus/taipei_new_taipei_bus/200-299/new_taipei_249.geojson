@@ -13,7 +13,11 @@
     "operator_id": "16181",
     "operator": "欣欣客運",
     "operator_en": "Shin-Shin Bus Co., Ltd.",
-    "daily_trips": 62
+    "daily_trips": 62,
+    "departure": "無極宮",
+    "destination": "臺北車站(開封)",
+    "departure_en": "Wuji Temple",
+    "destination_en": "Taipei Main Station (Kaifeng)"
   },
   "features": [
     {
@@ -3551,6 +3555,66 @@
         "coordinates": [
           121.511386912259,
           25.024227684318
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "NWT218643",
+        "name": "崁頂",
+        "name_en": "Kanding",
+        "line": "249",
+        "color": "#9333EA",
+        "direction": 1,
+        "station_id": "1779"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.513072,
+          25.02502148
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "NWT218644",
+        "name": "螢橋國小",
+        "name_en": "Yingqiao Elementary School",
+        "line": "249",
+        "color": "#9333EA",
+        "direction": 1,
+        "station_id": "2018"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5148181,
+          25.02600956
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_type": "station",
+        "ref": "NWT218645",
+        "name": "重慶南路三段(中正橋)",
+        "name_en": "Chongqing S. Road Sec. 3 (Zhongzheng Bridge)",
+        "line": "249",
+        "color": "#9333EA",
+        "direction": 1,
+        "station_id": "1920"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.516528,
+          25.024804
         ]
       }
     },

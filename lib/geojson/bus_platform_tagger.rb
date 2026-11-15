@@ -7,6 +7,12 @@ module Geojson
   module BusPlatformTagger
     PLATFORM_PATTERN = /(?:第|交)?[0-9０-９一二三四五六七八九十A-Z]+(?:號[0-9０-９]+)*號?月台/
 
+    # TDX StopAddress for some transfer bays never says 月台. StationID → label
+    # from the operator / council (捷運淡水站 currently has only 第1月台).
+    STATION_ID_PLATFORMS = {
+      "3842" => "第1月台"
+    }.freeze
+
     module_function
 
     def platform_from(address)
@@ -31,14 +37,29 @@ module Geojson
       end
     end
 
+    def platform_for(properties, platforms)
+      return nil if properties["name"].to_s.include?("月台")
+
+      if platforms.key?(properties["ref"])
+        platforms[properties["ref"]]
+      else
+        STATION_ID_PLATFORMS[properties["station_id"].to_s]
+      end
+    end
+
     def tag_collection!(data, platforms)
       changed = false
       Array(data["features"]).each do |feature|
         properties = feature["properties"] || {}
         next unless properties["feature_type"] == "station"
 
-        platform = platforms[properties["ref"]]
-        platform = nil if properties["name"].to_s.include?("月台")
+        platform = platform_for(properties, platforms)
+        # Full TDX sync may clear a StopUID that no longer has 月台 in its
+        # address. StationID fallbacks only fill gaps — never wipe an existing
+        # address-derived platform when the StopUID was absent from `platforms`.
+        if platform.nil? && !platforms.key?(properties["ref"]) && properties["platform"].present?
+          next
+        end
         next if properties["platform"] == platform
 
         platform ? properties["platform"] = platform : properties.delete("platform")

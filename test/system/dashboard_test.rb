@@ -39,7 +39,7 @@ class DashboardTest < ApplicationSystemTestCase
   test "navigates to dedicated route page from dashboard" do
     visit root_path
 
-    assert_selector ".map-boot-overlay[hidden]", visible: :all, wait: 30
+    assert_no_selector ".is-booting", wait: 30
     assert_selector "a[href='#{route_path('wenhu_line')}']", visible: :all, wait: 5
     page.execute_script(<<~JS)
       const link = document.querySelector("a[href='#{route_path('wenhu_line')}']")
@@ -177,15 +177,11 @@ class DashboardTest < ApplicationSystemTestCase
     assert indices.index("O11") < indices.index("O12")
   end
 
-  test "shows a loading list until the map is ready" do
+  test "map becomes ready without a network loading overlay" do
     visit root_path
 
-    assert_selector ".map-boot-overlay", visible: :all
-    assert_selector ".map-boot-overlay__item", visible: :all, minimum: 4, wait: 10
-    assert_selector ".map-boot-overlay__bar", visible: :all
-
-    assert_selector ".map-boot-overlay[hidden]", visible: :all, wait: 30
-    assert_no_selector ".is-booting"
+    assert_no_selector ".map-boot-overlay", visible: :all
+    assert_no_selector ".is-booting", wait: 30
     assert_selector "#layer-wenhu_line:not([disabled])", visible: :all, wait: 5
     assert_selector "#layer-bannan:not([disabled])", visible: :all, wait: 5
     assert_selector ".map-transport-mode__chip", text: "公車"
@@ -194,7 +190,7 @@ class DashboardTest < ApplicationSystemTestCase
   test "filters sidebar routes from the search box" do
     visit root_path
 
-    assert_selector ".map-boot-overlay[hidden]", visible: :all, wait: 30
+    assert_no_selector ".is-booting", wait: 30
     assert_selector "#layer-search", wait: 10
     assert_selector "#layer-wenhu_line", visible: :all
     assert_selector "#layer-circular", visible: :all
@@ -216,15 +212,20 @@ class DashboardTest < ApplicationSystemTestCase
     assert_no_selector "#layer-wenhu_line", visible: :visible
   end
 
-  test "shows four region viewpoint chips on the dashboard" do
-    visit root_path
+  test "searches bus stops and opens the stop panel" do
+    visit bus_map_path
 
-    assert_selector ".map-region-switcher", wait: 10
-    assert_selector "[data-map-target='regionChip']", count: 4
-    assert_selector "[data-region-id='north'][aria-pressed='true']"
-    assert_selector "[data-region-id='central']"
-    assert_selector "[data-region-id='south']"
-    assert_selector "[data-region-id='east']"
+    assert_no_selector ".is-booting", wait: 30
+    assert_selector "#layer-search", wait: 10
+
+    fill_in "layer-search", with: "基隆轉運站"
+
+    assert_selector ".stop-search__item", text: "基隆轉運站", wait: 10
+    find(".stop-search__item", text: "基隆轉運站", match: :first).click
+
+    assert_selector ".map-station-board-panel", text: "基隆轉運站", wait: 5
+    find(".map-station-board-panel [data-station-tab='info']").click
+    assert_selector ".bus-through-routes__chip", minimum: 1, wait: 10
   end
 
   test "shows the map on the home page" do
@@ -232,7 +233,7 @@ class DashboardTest < ApplicationSystemTestCase
 
     assert_selector "#taiwan-region-map"
     assert_selector ".leaflet-container", wait: 5
-    assert_selector ".map-boot-overlay[hidden]", visible: :all, wait: 30
+    assert_no_selector ".is-booting", wait: 30
     assert_button "圖例"
 
     split_layout = page.evaluate_script(<<~JS)
@@ -261,7 +262,10 @@ class DashboardTest < ApplicationSystemTestCase
     assert_text "台灣大眾運輸地圖"
     click_button "圖例"
     assert_selector "#map-legend", text: "圖例", wait: 5
-    assert_text "普通車"
+    assert_text "普通車（藍）與直達車（紫）並排"
+    assert_text "離島銜接"
+    assert_text "渡輪"
+    assert_text "飛機"
     assert_text "轉乘連線"
     assert_text "聯通道／共構轉乘"
     assert_text "站外轉乘（有優惠）"
@@ -274,7 +278,12 @@ class DashboardTest < ApplicationSystemTestCase
     assert_selector ".layer-category-chip", text: "捷運與輕軌"
     assert_selector ".layer-category-chip", text: "台鐵"
     assert_selector ".layer-category-chip", text: "其他"
-    assert_selector ".map-transport-mode__chip", text: "公車"
+    assert_selector ".map-page-mode__chip--active", text: "查詢線路"
+    assert_selector ".map-page-mode__chip", text: "規劃路線"
+    assert_selector ".map-top-controls .map-transport-mode__chip--active", text: "軌道運輸"
+    assert_selector ".map-top-controls .map-transport-mode__chip", text: "公車"
+    assert_selector "#layer-search"
+    assert_no_selector "#itinerary-origin"
     assert_no_selector ".layer-category-chip", text: "全部"
     assert_text "捷運"
     assert_no_text "即將推出"
@@ -294,11 +303,11 @@ class DashboardTest < ApplicationSystemTestCase
 
   test "nests city hundreds and highway operator folds on the bus layer" do
     visit bus_map_path
-    assert_selector ".map-boot-overlay[hidden]", visible: :all, wait: 30
+    assert_no_selector ".is-booting", wait: 30
 
     assert_equal "/bus", URI.parse(current_url).path
     assert_selector ".map-transport-mode__chip--active", text: "公車"
-    assert_selector ".map-region-switcher.is-hidden", visible: :all
+    assert_no_selector ".map-region-switcher"
     assert_selector ".bus-fold__trigger", text: "大台北"
     assert_selector ".bus-fold__trigger", text: "公路客運"
     assert_no_selector ".bus-fold__trigger", text: "臺北市"
@@ -329,8 +338,10 @@ class DashboardTest < ApplicationSystemTestCase
     assert_selector ".bus-fold__trigger", text: "200-299"
     assert_selector ".bus-fold__trigger", text: "紅線接駁"
     assert_selector ".bus-fold__trigger", text: "藍線接駁"
-    assert_selector ".bus-fold__trigger", text: "內科通勤"
-    assert_selector ".bus-fold__trigger", text: "內科快線"
+    assert_selector ".bus-fold__trigger", text: "內科"
+    assert_no_selector ".bus-fold__trigger", text: "內科通勤"
+    assert_no_selector ".bus-fold__trigger", text: "內科快線"
+    assert_selector ".bus-fold__trigger", text: "臺北觀光巴士"
     assert_selector ".bus-fold__trigger", text: "南軟專車"
     assert_selector ".bus-fold__trigger", text: "通勤"
     assert_selector ".bus-fold__trigger", text: "幹線"
@@ -342,6 +353,78 @@ class DashboardTest < ApplicationSystemTestCase
     find(".bus-fold__trigger", text: "桃園市").click
     assert_selector ".bus-fold__trigger", text: "100-199"
     assert_no_selector ".bus-fold--operator"
+    within ".bus-fold:not(.bus-fold--band)[data-bus-city='Taoyuan']" do
+      assert_selector ".bus-fold__trigger", text: "幹線公車", exact_text: true
+      assert_no_selector ".bus-fold__trigger", text: "0-99"
+      assert_selector ".bus-fold__trigger", text: "觀光公車"
+      assert_selector ".bus-fold__trigger", text: "市民免費公車"
+      assert_selector ".bus-fold__trigger", text: "幸福巴士"
+      assert_selector ".bus-fold__trigger", text: "捷運接駁"
+      assert_selector ".bus-fold__trigger", text: "環線"
+      assert_selector ".bus-fold__trigger", text: "地區線"
+      assert_no_selector ".bus-fold__trigger", text: "紅線接駁"
+      assert_no_selector ".bus-fold__trigger", text: "綠線接駁"
+      assert_no_selector ".bus-fold__trigger", text: "黃線接駁"
+    end
+    find(".bus-fold--band[data-bus-city='Taoyuan'][data-bus-band='taoyuan_free'] .bus-fold__trigger").click
+    assert_selector ".bus-fold--band[data-bus-band='taoyuan_free'] [data-hydrated='true']", wait: 10
+    within ".bus-fold--band[data-bus-city='Taoyuan'][data-bus-band='taoyuan_free']" do
+      assert_selector "[data-route-id='taoyuan_l110']", visible: :all
+    end
+    find(".bus-fold--band[data-bus-city='Taoyuan'][data-bus-band='taoyuan_xingfu'] .bus-fold__trigger").click
+    assert_selector ".bus-fold--band[data-bus-band='taoyuan_xingfu'] [data-hydrated='true']", wait: 10
+    within ".bus-fold--band[data-bus-city='Taoyuan'][data-bus-band='taoyuan_xingfu']" do
+      assert_selector "[data-route-id='taoyuan_t100']", visible: :all
+    end
+    find(".bus-fold--band[data-bus-city='Taoyuan'][data-bus-band='taoyuan_tourist'] .bus-fold__trigger").click
+    assert_selector ".bus-fold--band[data-bus-band='taoyuan_tourist'] [data-hydrated='true']", wait: 10
+    within ".bus-fold--band[data-bus-city='Taoyuan'][data-bus-band='taoyuan_tourist']" do
+      assert_selector "[data-route-id='taoyuan_501']", visible: :all
+      assert_selector "[data-route-id='taoyuan_502']", visible: :all
+      assert_selector "[data-route-id='taoyuan_502_106b16cbec']", visible: :all
+      assert_selector "[data-route-id='taoyuan_506']", visible: :all
+      assert_no_selector "[data-route-id='taoyuan_5010']", visible: :all
+    end
+    find(".bus-fold--band[data-bus-city='Taoyuan'][data-bus-band='metro_feeder'] .bus-fold__trigger").click
+    assert_selector ".bus-fold--band[data-bus-band='metro_feeder'] [data-hydrated='true']", wait: 10
+    within ".bus-fold--band[data-bus-city='Taoyuan'][data-bus-band='metro_feeder']" do
+      assert_selector "[data-route-id='taoyuan_gr']", visible: :all
+      assert_selector "[data-route-id='taoyuan_gr2']", visible: :all
+      assert_selector "[data-route-id='taoyuan_br']", visible: :all
+      assert_no_selector "[data-route-id='taoyuan_hong_fa81f2878b']", visible: :all
+    end
+    find(".bus-fold--band[data-bus-city='Taoyuan'][data-bus-band='taoyuan_trunk'] .bus-fold__trigger").click
+    assert_selector ".bus-fold--band[data-bus-band='taoyuan_trunk'] [data-hydrated='true']", wait: 10
+    within ".bus-fold--band[data-bus-city='Taoyuan'][data-bus-band='taoyuan_trunk']" do
+      assert_text "1（台一幹線）"
+      assert_text "11A（中山長興幹線）"
+      assert_text "12A（大湳長庚幹線）"
+      assert_text "13（龍壽南竹幹線）"
+      assert_text "15（中園大竹幹線）"
+      assert_text "16（大龍竹幹線）"
+      assert_equal "13A", find("[data-route-id='taoyuan_13a'] .text-sm.font-medium").text
+    end
+    find(".bus-fold--band[data-bus-city='Taoyuan'][data-bus-band='loop_line'] .bus-fold__trigger").click
+    assert_selector ".bus-fold--band[data-bus-band='loop_line'] [data-hydrated='true']", wait: 10
+    within ".bus-fold--band[data-bus-city='Taoyuan'][data-bus-band='loop_line']" do
+      assert_selector "[data-route-id='taoyuan_nl']", visible: :all
+      assert_selector "[data-route-id='taoyuan_sl']", visible: :all
+    end
+    find(".bus-fold--band[data-bus-city='Taoyuan'][data-bus-band='named_line'] .bus-fold__trigger").click
+    assert_selector ".bus-fold--band[data-bus-band='named_line'] [data-hydrated='true']", wait: 10
+    within ".bus-fold--band[data-bus-city='Taoyuan'][data-bus-band='named_line']" do
+      assert_text "紅線"
+      assert_text "綠線"
+      assert_text "黃線"
+    end
+
+    click_button "圖例"
+    assert_selector "#map-legend", text: "班次密度", wait: 5
+    assert_text "行車方向"
+    assert_text "去回程分開"
+    assert_text "選取的站牌"
+    assert_text "公車調度站"
+    assert_no_text "聯通道／共構轉乘"
   end
 
   test "switches basemap from the dropdown without breaking the map" do
@@ -350,6 +433,7 @@ class DashboardTest < ApplicationSystemTestCase
     assert_selector "#map-basemap-select"
 
     select "衛星", from: "map-basemap-select"
+    assert_selector ".leaflet-tile-pane img.leaflet-tile", wait: 5
     sat_state = page.evaluate_script(<<~JS)
       (() => {
         const select = document.getElementById("map-basemap-select")
@@ -371,6 +455,13 @@ class DashboardTest < ApplicationSystemTestCase
     select "台灣圖資", from: "map-basemap-select"
     assert_selector ".leaflet-container"
     assert_equal "nlsc", page.find("#map-basemap-select").value
+
+    if page.has_css?("#map-basemap-select option[value='google']", visible: :all)
+      select "Google 地圖", from: "map-basemap-select"
+      assert_equal "google", page.find("#map-basemap-select").value
+      assert_selector ".leaflet-google-mutant", visible: :all, wait: 15
+      assert_selector ".leaflet-tile-pane .leaflet-tile img", wait: 15
+    end
   end
 
   test "uses map-first layout with layers sheet on narrow screens" do
@@ -440,7 +531,7 @@ class DashboardTest < ApplicationSystemTestCase
 
   test "express trains do not slow down at through stations" do
     visit root_path
-    assert_selector ".map-boot-overlay[hidden]", visible: :all, wait: 30
+    assert_no_selector ".is-booting", wait: 30
 
     result = page.evaluate_script(<<~JS)
       (() => {
@@ -478,7 +569,7 @@ class DashboardTest < ApplicationSystemTestCase
 
   test "canvas trains stay off the DOM and still open popups" do
     visit root_path
-    assert_selector ".map-boot-overlay[hidden]", visible: :all, wait: 30
+    assert_no_selector ".is-booting", wait: 30
 
     counts = page.evaluate_script(<<~JS)
       (() => {
@@ -505,7 +596,7 @@ class DashboardTest < ApplicationSystemTestCase
 
   test "station board lists the next hour locally and follows without jumping the clock" do
     visit root_path
-    assert_selector ".map-boot-overlay[hidden]", visible: :all, wait: 30
+    assert_no_selector ".is-booting", wait: 30
 
     before = page.evaluate_script(<<~JS)
       (() => {
@@ -549,7 +640,7 @@ class DashboardTest < ApplicationSystemTestCase
 
   test "share links restore the simulation time and carry it when copied" do
     visit root_path(at: "2026-08-04T08:15", lat: 25.0478, lng: 121.517, z: 13)
-    assert_selector ".map-boot-overlay[hidden]", visible: :all, wait: 30
+    assert_no_selector ".is-booting", wait: 30
 
     state = page.evaluate_script(<<~JS)
       (() => {
@@ -581,7 +672,7 @@ class DashboardTest < ApplicationSystemTestCase
 
   test "level crossing predicts timetable passes along the hop track" do
     visit root_path
-    assert_selector ".map-boot-overlay[hidden]", visible: :all, wait: 30
+    assert_no_selector ".is-booting", wait: 30
 
     rows = page.evaluate_script(<<~JS)
       (() => {
@@ -612,7 +703,7 @@ class DashboardTest < ApplicationSystemTestCase
 
   test "nearby pin lists hidden lines within range and can be removed" do
     visit root_path
-    assert_selector ".map-boot-overlay[hidden]", visible: :all, wait: 30
+    assert_no_selector ".is-booting", wait: 30
 
     result = page.evaluate_script(<<~JS)
       (() => {
@@ -666,7 +757,7 @@ class DashboardTest < ApplicationSystemTestCase
 
   test "metro alert banner shows operator disruptions and can be dismissed" do
     visit root_path
-    assert_selector ".map-boot-overlay[hidden]", visible: :all, wait: 30
+    assert_no_selector ".is-booting", wait: 30
 
     page.execute_script(<<~JS)
       const el = document.querySelector('[data-controller~="map"]')
@@ -690,7 +781,7 @@ class DashboardTest < ApplicationSystemTestCase
 
   test "ride stamps need a ride to the terminal and record the distance ridden" do
     visit root_path
-    assert_selector ".map-boot-overlay[hidden]", visible: :all, wait: 30
+    assert_no_selector ".is-booting", wait: 30
 
     result = page.evaluate_script(<<~JS)
       (() => {
@@ -724,7 +815,7 @@ class DashboardTest < ApplicationSystemTestCase
 
   test "relax mode toolbar toggles night tint from the simulated clock" do
     visit root_path
-    assert_selector ".map-boot-overlay[hidden]", visible: :all, wait: 30
+    assert_no_selector ".is-booting", wait: 30
 
     # The playing scrubber keeps rewriting simulationAt, so check the hour rule
     # synchronously and pin the night flag for the toolbar interaction.
@@ -762,7 +853,7 @@ class DashboardTest < ApplicationSystemTestCase
 
   test "group view frames every train on the followed line" do
     visit root_path
-    assert_selector ".map-boot-overlay[hidden]", visible: :all, wait: 30
+    assert_no_selector ".is-booting", wait: 30
 
     result = page.evaluate_script(<<~JS)
       (() => {
@@ -998,7 +1089,7 @@ class DashboardTest < ApplicationSystemTestCase
 
   test "shows out-of-station transfer link between hsr and taichung green line at HSR Taichung" do
     visit root_path
-    assert_selector ".map-boot-overlay[hidden]", visible: :all, wait: 30
+    assert_no_selector ".is-booting", wait: 30
 
     within "#taiwan-region-map" do
       assert_selector ".leaflet-tile-pane", wait: 10
@@ -1041,7 +1132,7 @@ class DashboardTest < ApplicationSystemTestCase
 
   test "does not link hsr zuoying passage to taipei shilin R16" do
     visit root_path
-    assert_selector ".map-boot-overlay[hidden]", visible: :all, wait: 30
+    assert_no_selector ".is-booting", wait: 30
 
     within "#taiwan-region-map" do
       assert_selector ".leaflet-tile-pane", wait: 10
@@ -1077,7 +1168,7 @@ class DashboardTest < ApplicationSystemTestCase
 
   test "shows co-located cross-system passage link at tainan when hsr and shalun line are visible" do
     visit root_path
-    assert_selector ".map-boot-overlay[hidden]", visible: :all, wait: 30
+    assert_no_selector ".is-booting", wait: 30
 
     within "#taiwan-region-map" do
       assert_selector ".leaflet-tile-pane", wait: 10
@@ -1121,7 +1212,7 @@ class DashboardTest < ApplicationSystemTestCase
 
   test "shows cross-system passage link at kaohsiung when tra and red line are visible" do
     visit root_path
-    assert_selector ".map-boot-overlay[hidden]", visible: :all, wait: 30
+    assert_no_selector ".is-booting", wait: 30
 
     within "#taiwan-region-map" do
       assert_selector ".leaflet-tile-pane", wait: 10
@@ -1177,7 +1268,7 @@ class DashboardTest < ApplicationSystemTestCase
         checkbox.dispatchEvent(new Event("change", { bubbles: true }))
       }
       show("tamsui_xinyi")
-      show("danhai_lrt")
+      show("danhai_lushan")
     JS
 
     assert_selector ".out-of-station-transfer-line", wait: 10, minimum: 1
@@ -1214,9 +1305,11 @@ class DashboardTest < ApplicationSystemTestCase
     end
 
     page.execute_script(<<~JS)
-      const checkbox = document.getElementById("layer-danhai_lrt")
-      checkbox.checked = true
-      checkbox.dispatchEvent(new Event("change", { bubbles: true }))
+      ;["danhai_lushan", "danhai_lanhai"].forEach((id) => {
+        const checkbox = document.getElementById(`layer-${id}`)
+        checkbox.checked = true
+        checkbox.dispatchEvent(new Event("change", { bubbles: true }))
+      })
     JS
 
     assert_selector ".leaflet-overlay-pane path.leaflet-interactive", wait: 10, minimum: 1
@@ -1365,9 +1458,11 @@ class DashboardTest < ApplicationSystemTestCase
   test "danhai lrt layer toggle uses coral line color" do
     visit root_path
 
-    row = find(".route-search-item[data-route-id='danhai_lrt']", visible: :all)
-    dot = row.find("span[style*='background-color']", match: :first, visible: :all)
-    assert_match(/rgb\(237,\s*107,\s*70\)/i, dot[:style])
+    %w[danhai_lushan danhai_lanhai].each do |route_id|
+      row = find(".route-search-item[data-route-id='#{route_id}']", visible: :all)
+      dot = row.find("span[style*='background-color']", match: :first, visible: :all)
+      assert_match(/rgb\(237,\s*107,\s*70\)/i, dot[:style])
+    end
   end
 
   test "airport mrt map shows blue commuter and purple express solid lines" do
@@ -1437,7 +1532,7 @@ class DashboardTest < ApplicationSystemTestCase
 
   test "sidebar collapse button hides and restores the layers panel on desktop" do
     visit root_path
-    assert_selector ".map-boot-overlay[hidden]", visible: :all, wait: 30
+    assert_no_selector ".is-booting", wait: 30
     assert_selector "#map-layers-panel-body", visible: :visible
 
     toggle = find(".map-ui-panel__toggle[aria-controls='map-layers-panel-body']", visible: :all)

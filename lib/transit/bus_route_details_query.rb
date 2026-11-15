@@ -9,7 +9,8 @@ module Transit
     MAX_DEPARTURES = 240
 
     WEEKDAYS = %w[Monday Tuesday Wednesday Thursday Friday].freeze
-    WEEKEND = %w[Saturday Sunday].freeze
+    SATURDAY = %w[Saturday].freeze
+    SUNDAY = %w[Sunday].freeze
 
     ROUTE_TYPES = { 11 => "city", 12 => "highway", 13 => "freeway", 14 => "shuttle" }.freeze
     FARE_CLASSES = {
@@ -49,6 +50,9 @@ module Transit
 
     # [schedules, route, fares] from the daily TDX snapshot.
     def snapshot_rows
+      combined = Geojson::BusTerminusLines.combined_snapshot(@city.id, @route)
+      return combined if combined
+
       candidate_names.each do |name|
         snapshot = Transit::BusTdxSnapshot.read(@city.id, name)
         next unless snapshot && (snapshot["schedules"].any? || snapshot["routes"].any?)
@@ -66,10 +70,11 @@ module Transit
       hours = service_hours(subroutes)
       route_schedules = preferred(schedules) { |row| zh(row["SubRouteName"]) }
       if (detour_hours = @route["detour_hours"]).present?
-        inside = Geojson::BusTimedDetours.detour?(@route["via"])
+        inside = Geojson::BusTimedDetours.inside_hours?(@route)
         route_schedules = Geojson::BusServiceDays.clip_rows(route_schedules, detour_hours, inside:)
       end
       timetable = serialize_schedules(route_schedules)
+      timetable.concat(dog_bus_schedules(schedules))
       merged.each do |label, merged_hours, merged_timetable|
         hours.concat(merged_hours.map { |row| row.merge(label:) })
         timetable.concat(merged_timetable.map { |row| row.merge(label:) })
@@ -110,9 +115,22 @@ module Transit
     end
 
     def candidate_names
-      names = [ @route["ref"].to_s ]
+      names = [ @route["tdx_ref"], @route["ref"] ].map(&:to_s)
       names << @route["ref"].to_s.sub(/[A-J]\z/i, "") if @city.kind == :intercity
       names.uniq.reject(&:blank?)
+    end
+
+    # Pet-friendly 狗狗公車 trips are their own SubRoute under the same TDX
+    # route. Keep them out of the main timetable, then append a labelled block.
+    def dog_bus_schedules(schedules)
+      ref = @route["ref"].to_s
+      dogs = Array(schedules).select { |row|
+        name = zh(row["SubRouteName"])
+        name.include?("狗狗") && (ref.blank? || name.include?(ref))
+      }
+      return [] if dogs.empty?
+
+      serialize_schedules(dogs).map { |row| row.merge(dog_bus: true) }
     end
 
     # Prefer rows for this variant (237本線 / 237延駛政大校區), then the exact
@@ -147,10 +165,16 @@ module Transit
       rows.group_by { |row| row["Direction"].to_i }.sort.map do |direction, direction_rows|
         frequencies = direction_rows.flat_map { |row| Array(row["Frequencys"]) }
         timetables = direction_rows.flat_map { |row| Array(row["Timetables"]) }
+        saturday = service_block(frequencies, timetables, SATURDAY)
+        sunday = service_block(frequencies, timetables, SUNDAY)
+        # Same Saturday and Sunday pattern → one 週末 block; otherwise keep them apart
+        # so 週末 is never confused with TDX 例假日 hours (HolidayFirstBusTime).
         {
           direction: direction,
           weekday: service_block(frequencies, timetables, WEEKDAYS),
-          holiday: service_block(frequencies, timetables, WEEKEND)
+          weekend: (saturday if saturday && saturday == sunday),
+          saturday: (saturday if saturday && saturday != sunday),
+          sunday: (sunday if sunday && saturday != sunday)
         }.compact
       end
     end
@@ -165,10 +189,10 @@ module Transit
         }
       }.uniq.sort_by { |band| band[:start].to_s }
 
-      departures = timetables.select { |row| runs_on?(row, days) }.filter_map { |trip|
+      departures = Geojson::BusServiceDays.operating_order(timetables.select { |row| runs_on?(row, days) }.filter_map { |trip|
         first = Array(trip["StopTimes"]).min_by { |stop| stop["StopSequence"].to_i }
         clock(first&.dig("DepartureTime") || first&.dig("ArrivalTime"))
-      }.uniq.sort
+      }.uniq)
 
       return nil if bands.empty? && departures.empty?
 
@@ -177,7 +201,8 @@ module Transit
       if departures.any?
         block[:departures] = departures.first(MAX_DEPARTURES)
         block[:departure_count] = departures.size
-        gaps = departures.map { |time| minutes(time) }.each_cons(2).map { |a, b| b - a }.select(&:positive?)
+        span = Geojson::BusServiceDays.operating_span(departures)
+        gaps = span.each_cons(2).map { |a, b| b - a }.select(&:positive?)
         block[:headway] = { min: gaps.min, max: gaps.max, median: gaps.sort[gaps.size / 2] } if gaps.any?
       end
       block
@@ -237,11 +262,6 @@ module Transit
 
       text = "#{text[0, 2]}:#{text[2, 2]}" if text.match?(/\A\d{4}\z/)
       text.match?(/\A\d{1,2}:\d{2}\z/) ? text.rjust(5, "0") : nil
-    end
-
-    def minutes(time)
-      hours, mins = time.split(":").map(&:to_i)
-      (hours * 60) + mins
     end
 
     def zh(value)

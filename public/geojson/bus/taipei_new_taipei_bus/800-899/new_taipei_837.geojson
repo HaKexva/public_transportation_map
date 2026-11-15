@@ -13,7 +13,11 @@
     "operator_id": "16186",
     "operator": "淡水客運",
     "operator_en": "Tamshui Bus Co., Ltd.",
-    "daily_trips": 28
+    "daily_trips": 28,
+    "departure": "新春街",
+    "destination": "新天母社區",
+    "departure_en": "Xinchun St.",
+    "destination_en": "New Tianmu Community"
   },
   "features": [
     {
@@ -4737,7 +4741,8 @@
         "line": "837",
         "color": "#DC2626",
         "direction": 0,
-        "station_id": "3842"
+        "station_id": "3842",
+        "platform": "第1月台"
       },
       "geometry": {
         "type": "Point",

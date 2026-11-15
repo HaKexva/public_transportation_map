@@ -1,22 +1,27 @@
 {
   "type": "FeatureCollection",
-  "name": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+  "name": "551（不繞駛行善路經金龍禪寺）",
   "properties": {
     "id": "taipei_551_13578c9c8d_1652fe7623",
-    "name": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
-    "name_en": "551 (skips Xingshan Road via Jinlong Temple, detour via Tri-Service General Hospital)",
+    "name": "551（不繞駛行善路經金龍禪寺）",
+    "name_en": "551 (skips Xingshan Road via Jinlong Temple)",
     "ref": "551",
     "color": "#EAB308",
     "city_id": "Taipei",
     "source": "TDX Bus Shape / StopOfRoute",
-    "via": "不繞駛行善路經金龍禪寺、繞駛三總",
+    "via": "不繞駛行善路經金龍禪寺",
     "official_map_url": "https://ebus.gov.taipei/File/Get/67e43160-098a-43c4-95bd-44f262d73eea?v=639267187507915065",
     "operator_id": "1100",
     "operator": "大南汽車",
     "operator_en": "Danan Bus Co., Ltd.",
-    "via_en": "skips Xingshan Road via Jinlong Temple, detour via Tri-Service General Hospital",
+    "via_en": "skips Xingshan Road via Jinlong Temple",
     "detour_hours": "08:00-21:30",
-    "daily_trips": 2
+    "daily_trips": 2,
+    "campus_span": "inside",
+    "departure": "行善行愛路口",
+    "destination": "捷運昆陽站",
+    "departure_en": "Xingshan & Xingai Intersection",
+    "destination_en": "MRT Kunyang"
   },
   "features": [
     {
@@ -24,8 +29,8 @@
       "properties": {
         "feature_type": "route",
         "ref": "551",
-        "name": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
-        "name_en": "551 (skips Xingshan Road via Jinlong Temple, detour via Tri-Service General Hospital)",
+        "name": "551（不繞駛行善路經金龍禪寺）",
+        "name_en": "551 (skips Xingshan Road via Jinlong Temple)",
         "color": "#EAB308",
         "direction": 0,
         "corners_rounded": true
@@ -2021,8 +2026,8 @@
       "properties": {
         "feature_type": "route",
         "ref": "551",
-        "name": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
-        "name_en": "551 (skips Xingshan Road via Jinlong Temple, detour via Tri-Service General Hospital)",
+        "name": "551（不繞駛行善路經金龍禪寺）",
+        "name_en": "551 (skips Xingshan Road via Jinlong Temple)",
         "color": "#EAB308",
         "direction": 1,
         "corners_rounded": true
@@ -4600,7 +4605,7 @@
         "ref": "TPE197091",
         "name": "行善行愛路口",
         "name_en": "Xingshan & Xingai Intersection",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "4672"
@@ -4620,7 +4625,7 @@
         "ref": "TPE220203",
         "name": "行善石潭路口",
         "name_en": "Xingshan and Shitan Intersection",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "4821"
@@ -4640,7 +4645,7 @@
         "ref": "TPE40981",
         "name": "麗寶大樓",
         "name_en": "Libao Building",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "8603"
@@ -4660,7 +4665,7 @@
         "ref": "TPE40982",
         "name": "公館山",
         "name_en": "Gongguanshan",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "8621"
@@ -4680,7 +4685,7 @@
         "ref": "TPE40983",
         "name": "瑞光路",
         "name_en": "Ruiguang Rd.",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "1000897"
@@ -4700,7 +4705,7 @@
         "ref": "TPE40984",
         "name": "內湖運動中心",
         "name_en": "Neihu Sports Center",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "8612"
@@ -4720,7 +4725,7 @@
         "ref": "TPE59005",
         "name": "港墘派出所",
         "name_en": "Gangqian Police Station",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "1001465"
@@ -4740,7 +4745,7 @@
         "ref": "TPE40985",
         "name": "港墘",
         "name_en": "Kangqian",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "424"
@@ -4760,7 +4765,7 @@
         "ref": "TPE40986",
         "name": "麗山高中(港墘)",
         "name_en": "Lishan High School (Gangqian)",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "8631"
@@ -4780,7 +4785,7 @@
         "ref": "TPE40987",
         "name": "西湖園",
         "name_en": "Xihuyuan",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "1040"
@@ -4800,7 +4805,7 @@
         "ref": "TPE40988",
         "name": "碧湖山莊",
         "name_en": "Bihu Shanzhuang",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "1136"
@@ -4820,7 +4825,7 @@
         "ref": "TPE40989",
         "name": "金龍寺",
         "name_en": "Jinlong Temple",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "1069"
@@ -4840,7 +4845,7 @@
         "ref": "TPE40990",
         "name": "金龍隧道口",
         "name_en": "Jinlong Tunnel Entrance",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "1068"
@@ -4860,7 +4865,7 @@
         "ref": "TPE40991",
         "name": "碧湖國小(金龍)",
         "name_en": "Bihu Elementary School (Jinlong)",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "1135"
@@ -4880,7 +4885,7 @@
         "ref": "TPE40992",
         "name": "貿商三村",
         "name_en": "Maoshang Village 3",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "1111"
@@ -4900,7 +4905,7 @@
         "ref": "TPE200214",
         "name": "金龍路口",
         "name_en": "Jinlong Rd. Entrance",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "50449"
@@ -4920,7 +4925,7 @@
         "ref": "TPE40993",
         "name": "捷運內湖站",
         "name_en": "MRT Neihu Sta.",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "1071"
@@ -4940,7 +4945,7 @@
         "ref": "TPE40994",
         "name": "湖光市場",
         "name_en": "Huguang Market",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "1103"
@@ -4960,7 +4965,7 @@
         "ref": "TPE40995",
         "name": "成功路三段",
         "name_en": "Chenggong Rd. Sec. 3",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "1029"
@@ -4980,7 +4985,7 @@
         "ref": "TPE40996",
         "name": "方濟中學",
         "name_en": "St. Francis High School",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "1012"
@@ -5000,7 +5005,7 @@
         "ref": "TPE40997",
         "name": "將軍嶺",
         "name_en": "Jiangjun Ling",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "50501"
@@ -5020,7 +5025,7 @@
         "ref": "TPE40998",
         "name": "三總內湖站",
         "name_en": "Tri-Service General Hospital",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "980"
@@ -5040,7 +5045,7 @@
         "ref": "TPE40999",
         "name": "國防醫學中心",
         "name_en": "National Defense Medical Center",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "1080"
@@ -5060,7 +5065,7 @@
         "ref": "TPE41000",
         "name": "湖興",
         "name_en": "Huxing",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "1107"
@@ -5080,7 +5085,7 @@
         "ref": "TPE41001",
         "name": "上灣仔",
         "name_en": "Shangwanzi",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "985"
@@ -5100,7 +5105,7 @@
         "ref": "TPE223795",
         "name": "成功路二段(交流道)",
         "name_en": "Chenggong Rd. Sec. 2(Interchange)",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "1165610511"
@@ -5120,7 +5125,7 @@
         "ref": "TPE41002",
         "name": "石潭公園(成功)",
         "name_en": "Shitan Park (Chenggong)",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "50433"
@@ -5140,7 +5145,7 @@
         "ref": "TPE152670",
         "name": "南港分局(重陽)",
         "name_en": "Nangang Police Dist. (Chongyang)",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "8627"
@@ -5160,7 +5165,7 @@
         "ref": "TPE152671",
         "name": "中國電視公司",
         "name_en": "China Television Company",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "1612"
@@ -5180,7 +5185,7 @@
         "ref": "TPE152672",
         "name": "東新國小",
         "name_en": "Dongxin Elementary School",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "1640"
@@ -5200,7 +5205,7 @@
         "ref": "TPE152673",
         "name": "興華路",
         "name_en": "Xinghua Rd.",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "1715"
@@ -5220,7 +5225,7 @@
         "ref": "TPE152675",
         "name": "南港車站",
         "name_en": "Nangang Rail Sta.",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "4847"
@@ -5240,7 +5245,7 @@
         "ref": "TPE152674",
         "name": "南港行政中心(南港車站)",
         "name_en": "Nangang Dist. Admin. Center(Nangang Rail Sta.)",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "1651"
@@ -5260,7 +5265,7 @@
         "ref": "TPE152676",
         "name": "台肥新村",
         "name_en": "Taifei New Village",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "50017"
@@ -5280,7 +5285,7 @@
         "ref": "TPE152680",
         "name": "南港路二段178巷口",
         "name_en": "Nangang Rd. Sec.2 Lane 178 Entrance",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "50018"
@@ -5300,7 +5305,7 @@
         "ref": "TPE152677",
         "name": "東明里/臺北流行音樂中心",
         "name_en": "Dongming Village / Taipei Music Center",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "50016"
@@ -5320,7 +5325,7 @@
         "ref": "TPE152678",
         "name": "土地公廟",
         "name_en": "Tudigong Temple",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "1000254"
@@ -5340,7 +5345,7 @@
         "ref": "TPE41004",
         "name": "南港高中",
         "name_en": "Nangang High School",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "1000314"
@@ -5360,7 +5365,7 @@
         "ref": "TPE41005",
         "name": "捷運昆陽站",
         "name_en": "MRT Kunyang",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "1165604839"
@@ -5380,7 +5385,7 @@
         "ref": "TPE59106",
         "name": "捷運昆陽站",
         "name_en": "MRT Kunyang",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "1165604773"
@@ -5400,7 +5405,7 @@
         "ref": "TPE41024",
         "name": "南港高中",
         "name_en": "Nangang High School",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "1000319"
@@ -5420,7 +5425,7 @@
         "ref": "TPE152681",
         "name": "土地公廟",
         "name_en": "Tudigong Temple",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "1000270"
@@ -5440,7 +5445,7 @@
         "ref": "TPE152682",
         "name": "東明里/臺北流行音樂中心",
         "name_en": "Dongming Village / Taipei Music Center",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "1635"
@@ -5460,7 +5465,7 @@
         "ref": "TPE152683",
         "name": "南港路二段178巷口",
         "name_en": "Nangang Rd. Sec.2 Lane 178 Entrance",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "1685"
@@ -5480,7 +5485,7 @@
         "ref": "TPE152684",
         "name": "台肥新村",
         "name_en": "Taifei New Village",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "1000271"
@@ -5500,7 +5505,7 @@
         "ref": "TPE152686",
         "name": "南港車站",
         "name_en": "Nangang Rail Sta.",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "4847"
@@ -5520,7 +5525,7 @@
         "ref": "TPE152685",
         "name": "南港行政中心(南港車站)",
         "name_en": "Nangang Dist. Admin. Center(Nangang Rail Sta.)",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "1651"
@@ -5540,7 +5545,7 @@
         "ref": "TPE152687",
         "name": "興華路",
         "name_en": "Xinghua Rd.",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "50105"
@@ -5560,7 +5565,7 @@
         "ref": "TPE152688",
         "name": "東新國小",
         "name_en": "Dongxin Elementary School",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "1000899"
@@ -5580,7 +5585,7 @@
         "ref": "TPE152689",
         "name": "中國電視公司",
         "name_en": "China Television Company.",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "1165603314"
@@ -5600,7 +5605,7 @@
         "ref": "TPE152690",
         "name": "南港分局(重陽)",
         "name_en": "Nangang Police Dist. (Chongyang)",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "1698"
@@ -5620,7 +5625,7 @@
         "ref": "TPE41025",
         "name": "南港分局(向陽)",
         "name_en": "Nangang Police Dist. (Xiangyang)",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "1646"
@@ -5640,7 +5645,7 @@
         "ref": "TPE41026",
         "name": "石潭公園(成功)",
         "name_en": "Shitan Park (Chenggong)",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "50434"
@@ -5660,7 +5665,7 @@
         "ref": "TPE223796",
         "name": "成功路二段(交流道)",
         "name_en": "Chenggong Rd. Sec. 2(Interchange)",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "1165610510"
@@ -5680,7 +5685,7 @@
         "ref": "TPE41027",
         "name": "上灣仔",
         "name_en": "Shangwanzi",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "8663"
@@ -5700,7 +5705,7 @@
         "ref": "TPE41028",
         "name": "湖興",
         "name_en": "Huxing",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "8664"
@@ -5720,7 +5725,7 @@
         "ref": "TPE41029",
         "name": "國防醫學中心",
         "name_en": "National Defense Medical Center",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "339"
@@ -5740,7 +5745,7 @@
         "ref": "TPE58018",
         "name": "三總內湖站",
         "name_en": "Tri-Service General Hospital",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "8677"
@@ -5760,7 +5765,7 @@
         "ref": "TPE41030",
         "name": "將軍嶺",
         "name_en": "Jiangjun Ling",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "50500"
@@ -5780,7 +5785,7 @@
         "ref": "TPE41031",
         "name": "方濟中學",
         "name_en": "St. Francis High School",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "3996"
@@ -5800,7 +5805,7 @@
         "ref": "TPE41032",
         "name": "成功路三段",
         "name_en": "Chenggong Rd. Sec. 3",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "8520"
@@ -5820,7 +5825,7 @@
         "ref": "TPE41033",
         "name": "湖光市場",
         "name_en": "Huguang Market",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "8537"
@@ -5840,7 +5845,7 @@
         "ref": "TPE41034",
         "name": "捷運內湖站",
         "name_en": "MRT Neihu Sta.",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "8538"
@@ -5860,7 +5865,7 @@
         "ref": "TPE221861",
         "name": "金龍路口",
         "name_en": "Jinlong Rd. Entrance",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "270"
@@ -5880,7 +5885,7 @@
         "ref": "TPE41035",
         "name": "貿商三村",
         "name_en": "Maoshang Village 3",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "8541"
@@ -5900,7 +5905,7 @@
         "ref": "TPE41036",
         "name": "碧湖國小(金龍)",
         "name_en": "Bihu Elementary School (Jinlong)",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "8542"
@@ -5920,7 +5925,7 @@
         "ref": "TPE41037",
         "name": "金龍隧道口",
         "name_en": "Jinlong Tunnel Entrance",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "1064"
@@ -5940,7 +5945,7 @@
         "ref": "TPE41038",
         "name": "金龍寺",
         "name_en": "Jinlong Temple",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "1069"
@@ -5960,7 +5965,7 @@
         "ref": "TPE152507",
         "name": "金龍禪寺",
         "name_en": "Jinlong Temple",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "20419"
@@ -5980,7 +5985,7 @@
         "ref": "TPE155718",
         "name": "武身廟",
         "name_en": "Wushen Temple",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "20339"
@@ -6000,7 +6005,7 @@
         "ref": "TPE41039",
         "name": "碧湖山莊",
         "name_en": "Bihu Shanzhuang",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "8543"
@@ -6020,7 +6025,7 @@
         "ref": "TPE41040",
         "name": "西湖園",
         "name_en": "Xihuyuan",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "8544"
@@ -6040,7 +6045,7 @@
         "ref": "TPE41041",
         "name": "麗山高中(港墘)",
         "name_en": "Lishan High School (Gangqian)",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "1150"
@@ -6060,7 +6065,7 @@
         "ref": "TPE41042",
         "name": "港墘",
         "name_en": "Gangqian 1",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "1105"
@@ -6080,7 +6085,7 @@
         "ref": "TPE59006",
         "name": "港墘派出所",
         "name_en": "Gangqian Police Station",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "4657"
@@ -6100,7 +6105,7 @@
         "ref": "TPE41044",
         "name": "瑞光路",
         "name_en": "Ruiguang Rd.",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "1132"
@@ -6120,7 +6125,7 @@
         "ref": "TPE41045",
         "name": "公館山",
         "name_en": "Gongguanshan",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "1006"
@@ -6140,7 +6145,7 @@
         "ref": "TPE41046",
         "name": "麗寶大樓",
         "name_en": "Libao Building",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "1156"
@@ -6160,7 +6165,7 @@
         "ref": "TPE197092",
         "name": "行善石潭路口",
         "name_en": "Xingshan and Shitan Intersection",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "1165606689"
@@ -6180,7 +6185,7 @@
         "ref": "TPE220204",
         "name": "行善行愛路口",
         "name_en": "Xingshan & Xingai Intersection",
-        "line": "551（不繞駛行善路經金龍禪寺、繞駛三總）",
+        "line": "551（不繞駛行善路經金龍禪寺）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "4673"

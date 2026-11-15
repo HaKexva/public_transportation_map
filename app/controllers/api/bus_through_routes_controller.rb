@@ -9,7 +9,8 @@ module Api
         name: params[:name],
         lat: params[:lat],
         lon: params[:lon],
-        platform: params[:platform]
+        platform: params[:platform],
+        group_id: params[:group_id]
       ).call
 
       render json: { routes: payload.routes, groups: payload.groups, error: payload.error }.compact

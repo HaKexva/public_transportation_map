@@ -17,7 +17,11 @@
       "sunday"
     ],
     "operator_en": "Zhinan Bus Co., Ltd.",
-    "daily_trips": 2
+    "daily_trips": 2,
+    "departure": "淡海",
+    "destination": "丹鳳一",
+    "departure_en": "Danhai",
+    "destination_en": "Danfeng 1"
   },
   "features": [
     {
@@ -3628,7 +3632,8 @@
         "line": "883",
         "color": "#DC2626",
         "direction": 0,
-        "station_id": "3842"
+        "station_id": "3842",
+        "platform": "第1月台"
       },
       "geometry": {
         "type": "Point",

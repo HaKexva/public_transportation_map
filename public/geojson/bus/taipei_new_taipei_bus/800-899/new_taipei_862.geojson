@@ -13,7 +13,15 @@
     "operator_id": "16186",
     "operator": "淡水客運",
     "operator_en": "Tamshui Bus Co., Ltd.",
-    "daily_trips": 30
+    "daily_trips": 30,
+    "operator_id_2": "16190",
+    "operator_2": "基隆客運",
+    "operator_2_en": "Keelung Bus Co., Ltd.",
+    "color_2": "#1d4ed8",
+    "departure": "基隆轉運站",
+    "destination": "捷運淡水站",
+    "departure_en": "Keelung Transit Station",
+    "destination_en": "MRT Tamsui Sta."
   },
   "features": [
     {
@@ -13436,7 +13444,8 @@
         "line": "862",
         "color": "#DC2626",
         "direction": 0,
-        "station_id": "3842"
+        "station_id": "3842",
+        "platform": "第1月台"
       },
       "geometry": {
         "type": "Point",
@@ -13456,7 +13465,8 @@
         "line": "862",
         "color": "#DC2626",
         "direction": 1,
-        "station_id": "3842"
+        "station_id": "3842",
+        "platform": "第1月台"
       },
       "geometry": {
         "type": "Point",

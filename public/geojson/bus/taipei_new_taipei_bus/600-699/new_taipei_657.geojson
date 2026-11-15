@@ -1,15 +1,21 @@
 {
   "type": "FeatureCollection",
-  "name": "657",
+  "name": "657（本線）",
   "properties": {
     "id": "new_taipei_657",
-    "name": "657",
-    "name_en": "657",
+    "name": "657（本線）",
+    "name_en": "657 (Main Line)",
     "ref": "657",
     "color": "#F97316",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
-    "official_map_url": "https://ebus.gov.taipei/File/Get/afb537de-c871-404b-85b5-6af22e8902d8?v=639267187904964177",
+    "via": "本線",
+    "via_en": "Main Line",
+    "official_map_url": "https://ebus.gov.taipei/File/Get/afb537de-c871-404b-85b5-6af22e8902d8?v=639295087178860324",
+    "departure": "四海站",
+    "departure_en": "Sihai Stop",
+    "destination": "捷運江子翠站",
+    "destination_en": "Jiangcui Junior High School",
     "operator_id": "16176",
     "operator": "臺北客運",
     "operator_en": "Taipei Bus Co., Ltd.",
@@ -21,8 +27,8 @@
       "properties": {
         "feature_type": "route",
         "ref": "657",
-        "name": "657",
-        "name_en": "657",
+        "name": "657（本線）",
+        "name_en": "657 (Main Line)",
         "color": "#F97316",
         "direction": 0,
         "corners_rounded": true
@@ -2042,8 +2048,8 @@
       "properties": {
         "feature_type": "route",
         "ref": "657",
-        "name": "657",
-        "name_en": "657",
+        "name": "657（本線）",
+        "name_en": "657 (Main Line)",
         "color": "#F97316",
         "direction": 1,
         "corners_rounded": true
@@ -3064,36 +3070,36 @@
             24.9689248
           ],
           [
-            121.4592506910698,
-            24.96770241019032
+            121.45924673029545,
+            24.96767713924522
           ],
           [
-            121.45925043577483,
-            24.9676955406546
+            121.45924666284478,
+            24.967669089378155
           ],
           [
-            121.45925180498432,
-            24.96768874992303
+            121.45924894490469,
+            24.96766128306623
           ],
           [
-            121.45925473969389,
-            24.967682386093177
+            121.45925341700848,
+            24.96765431098149
           ],
           [
-            121.45925910295134,
-            24.96767674614185
+            121.4592597576178,
+            24.967648674407645
           ],
           [
-            121.45926469113924,
-            24.967672093265094
+            121.45926751085119,
+            24.967644778606928
           ],
           [
-            121.45927116023378,
-            24.96766867817245
+            121.45927609630813,
+            24.96764290578554
           ],
           [
-            121.45933850375,
-            24.9676416774476
+            121.459335707421,
+            24.9676374829542
           ],
           [
             121.459332911092,
@@ -3109,7 +3115,7 @@
         "ref": "NWT217354",
         "name": "四海站",
         "name_en": "Sihai Stop",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "72611"
@@ -3129,7 +3135,7 @@
         "ref": "NWT15947",
         "name": "少年觀護所",
         "name_en": "Juvenile Detention and Classification House",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "3193"
@@ -3149,7 +3155,7 @@
         "ref": "NWT15948",
         "name": "清化里",
         "name_en": "Qinghua Village",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "10128"
@@ -3169,7 +3175,7 @@
         "ref": "NWT15949",
         "name": "宏國德霖科技大學",
         "name_en": "Hungkuo Delin University of Technology",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "10129"
@@ -3189,7 +3195,7 @@
         "ref": "NWT15950",
         "name": "清和里",
         "name_en": "Qinghe Village",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "10130"
@@ -3209,7 +3215,7 @@
         "ref": "NWT15951",
         "name": "青山路",
         "name_en": "Qingshan Rd.",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "3209"
@@ -3229,7 +3235,7 @@
         "ref": "NWT15952",
         "name": "仁愛路口",
         "name_en": "Renai Rd. Entrance",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "3191"
@@ -3249,7 +3255,7 @@
         "ref": "NWT15953",
         "name": "手信坊文化館",
         "name_en": "Shu Shin Bou Wagashi Museum",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "3222"
@@ -3269,7 +3275,7 @@
         "ref": "NWT15954",
         "name": "清水高中",
         "name_en": "Qingshui Junior High School",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "10118"
@@ -3289,7 +3295,7 @@
         "ref": "NWT15955",
         "name": "明德路",
         "name_en": "Mingde Rd.",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "10115"
@@ -3309,7 +3315,7 @@
         "ref": "NWT15956",
         "name": "金城路口",
         "name_en": "Jincheng Rd. Entrance",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "1001065"
@@ -3329,7 +3335,7 @@
         "ref": "NWT15957",
         "name": "看守所",
         "name_en": "Detention Center",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "10108"
@@ -3349,7 +3355,7 @@
         "ref": "NWT15958",
         "name": "四汴頭",
         "name_en": "Sibiantou",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "1000485"
@@ -3369,7 +3375,7 @@
         "ref": "NWT15959",
         "name": "益華紡織",
         "name_en": "Yihua Textile",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "70715"
@@ -3389,7 +3395,7 @@
         "ref": "NWT57730",
         "name": "信義路",
         "name_en": "Xinyi Rd.",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "1000660"
@@ -3409,7 +3415,7 @@
         "ref": "NWT15960",
         "name": "板橋後站",
         "name_en": "Old Banqiao Sta.",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "1000487"
@@ -3429,7 +3435,7 @@
         "ref": "NWT15961",
         "name": "重慶國小",
         "name_en": "Chongqing Elementary School",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "1000488"
@@ -3449,7 +3455,7 @@
         "ref": "NWT15962",
         "name": "五權街口",
         "name_en": "Wuquan St. Entrance",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "87"
@@ -3469,7 +3475,7 @@
         "ref": "NWT15963",
         "name": "壽德新村",
         "name_en": "Shoude New Village",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "60055"
@@ -3489,7 +3495,7 @@
         "ref": "NWT15964",
         "name": "重慶國中",
         "name_en": "Chongqing Junior High School",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "1000491"
@@ -3509,7 +3515,7 @@
         "ref": "NWT15965",
         "name": "重慶忠孝路口",
         "name_en": "Chongqing & Zhongxiao Rd. Intersection",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "1000653"
@@ -3529,7 +3535,7 @@
         "ref": "NWT15966",
         "name": "忠孝路",
         "name_en": "Zhongxiao Rd.",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "1000656"
@@ -3549,7 +3555,7 @@
         "ref": "NWT15967",
         "name": "中興醫院",
         "name_en": "Zhongxing Hospital",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "1000492"
@@ -3569,7 +3575,7 @@
         "ref": "NWT15968",
         "name": "福星里",
         "name_en": "Fuxing Village",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "2666"
@@ -3589,7 +3595,7 @@
         "ref": "NWT15969",
         "name": "鄉雲里",
         "name_en": "Xiangyun Village",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "6012"
@@ -3609,7 +3615,7 @@
         "ref": "NWT15970",
         "name": "後站商圈",
         "name_en": "Old Banqiao Sta. Shopping Circle",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "2636"
@@ -3629,7 +3635,7 @@
         "ref": "NWT15971",
         "name": "介壽公園",
         "name_en": "Jieshou Park",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "1001063"
@@ -3649,7 +3655,7 @@
         "ref": "NWT15972",
         "name": "民族區運路口",
         "name_en": "Minzu & Quyun Intersection",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "2573"
@@ -3669,7 +3675,7 @@
         "ref": "NWT15973",
         "name": "電信訓練所",
         "name_en": "Telecommunications Training Center",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "14235"
@@ -3689,7 +3695,7 @@
         "ref": "NWT15974",
         "name": "國泰街口",
         "name_en": "Guotai St. Entrance",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "6186"
@@ -3709,7 +3715,7 @@
         "ref": "NWT15975",
         "name": "瑞穗里",
         "name_en": "Ruisui Village",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "14212"
@@ -3729,7 +3735,7 @@
         "ref": "NWT15976",
         "name": "海山高中",
         "name_en": "Haishan High School",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "60025"
@@ -3749,7 +3755,7 @@
         "ref": "NWT15977",
         "name": "漢生路",
         "name_en": "Hansheng Rd.",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "14215"
@@ -3769,7 +3775,7 @@
         "ref": "NWT15978",
         "name": "縣民大道口",
         "name_en": "Xianmin Blvd. Intersection",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "14214"
@@ -3789,7 +3795,7 @@
         "ref": "NWT15979",
         "name": "新民里",
         "name_en": "Xinmin Village",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "14213"
@@ -3809,7 +3815,7 @@
         "ref": "NWT15980",
         "name": "中山國中",
         "name_en": "Zhongshan Junior High School",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "2559"
@@ -3829,7 +3835,7 @@
         "ref": "NWT15982",
         "name": "致理科技大學",
         "name_en": "Chihlee University of Technology",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "2638"
@@ -3849,7 +3855,7 @@
         "ref": "NWT218125",
         "name": "捷運新埔站",
         "name_en": "MRT Xinpu Sta.",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "70638"
@@ -3869,7 +3875,7 @@
         "ref": "NWT218126",
         "name": "捷運新埔民生站",
         "name_en": "MRT Xinpu Minsheng Sta.",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "1165605301"
@@ -3889,7 +3895,7 @@
         "ref": "NWT218127",
         "name": "大漢橋",
         "name_en": "Dahan Bridge",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "70641"
@@ -3909,7 +3915,7 @@
         "ref": "NWT218128",
         "name": "長江路口",
         "name_en": "Changjiang Rd. Entrance",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "70636"
@@ -3929,7 +3935,7 @@
         "ref": "NWT218130",
         "name": "華江九路口",
         "name_en": "Huajiang 9th Rd. Entrance",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "1165609825"
@@ -3949,7 +3955,7 @@
         "ref": "NWT218131",
         "name": "溪頭公園",
         "name_en": "Xitou Park",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "1165609826"
@@ -3969,7 +3975,7 @@
         "ref": "NWT218132",
         "name": "華江六路口",
         "name_en": "Huajiang 6th Rd. Entrance",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "1165609827"
@@ -3989,7 +3995,7 @@
         "ref": "NWT218133",
         "name": "稚匯公園",
         "name_en": "Zhihui Park",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "1165609828"
@@ -4009,7 +4015,7 @@
         "ref": "NWT218134",
         "name": "華江二路口",
         "name_en": "Huajiang 2nd Rd. Entrance",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "1165609829"
@@ -4029,7 +4035,7 @@
         "ref": "NWT218135",
         "name": "華江三路",
         "name_en": "Huajiang 3rd Rd.",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "1165609830"
@@ -4049,7 +4055,7 @@
         "ref": "NWT210433",
         "name": "龍一駕訓班",
         "name_en": "Lunyi Drivi",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "1165607015"
@@ -4069,7 +4075,7 @@
         "ref": "NWT148854",
         "name": "華江橋",
         "name_en": "Huajiang Bridge",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "3897"
@@ -4089,7 +4095,7 @@
         "ref": "NWT148855",
         "name": "江翠國小(文化路)",
         "name_en": "MRT Jiangzicui Sta.",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "3898"
@@ -4109,7 +4115,7 @@
         "ref": "NWT148856",
         "name": "捷運江子翠站",
         "name_en": "Jiangcui Junior High School",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "1165603214"
@@ -4129,7 +4135,7 @@
         "ref": "NWT178049",
         "name": "江翠國中",
         "name_en": "MRT Jiangzicui Sta.",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "3899"
@@ -4149,7 +4155,7 @@
         "ref": "NWT148857",
         "name": "捷運新埔站(文化路)",
         "name_en": "MRT Xinpu Sta.(Wenhua Rd.)",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "3901"
@@ -4169,7 +4175,7 @@
         "ref": "NWT16032",
         "name": "致理科技大學",
         "name_en": "Chihlee University of Technology",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "3904"
@@ -4189,7 +4195,7 @@
         "ref": "NWT16034",
         "name": "中山國中",
         "name_en": "Zhongshan Junior High School",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "3902"
@@ -4209,7 +4215,7 @@
         "ref": "NWT16036",
         "name": "新民里",
         "name_en": "Xinmin Village",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "2672"
@@ -4229,7 +4235,7 @@
         "ref": "NWT16038",
         "name": "縣民大道口",
         "name_en": "Xianmin Blvd. Intersection",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "2697"
@@ -4249,7 +4255,7 @@
         "ref": "NWT16040",
         "name": "漢生路",
         "name_en": "Hansheng Rd.",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "2689"
@@ -4269,7 +4275,7 @@
         "ref": "NWT16042",
         "name": "海山高中",
         "name_en": "Haishan High School",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "2644"
@@ -4289,7 +4295,7 @@
         "ref": "NWT57640",
         "name": "海山國小",
         "name_en": "Haishan Elementary School",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "2645"
@@ -4309,7 +4315,7 @@
         "ref": "NWT16044",
         "name": "瑞穗里",
         "name_en": "Ruisui Village",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "14210"
@@ -4329,7 +4335,7 @@
         "ref": "NWT16046",
         "name": "國泰街口",
         "name_en": "Guotai St. Entrance",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "2688"
@@ -4349,7 +4355,7 @@
         "ref": "NWT16048",
         "name": "電信訓練所",
         "name_en": "Telecommunications Training Center",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "2681"
@@ -4369,7 +4375,7 @@
         "ref": "NWT16050",
         "name": "民族區運路口",
         "name_en": "Minzu & Quyun Intersection",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "4013"
@@ -4389,7 +4395,7 @@
         "ref": "NWT16052",
         "name": "板橋外站",
         "name_en": "Banqiao Bus Terminal Extension",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "4014"
@@ -4409,7 +4415,7 @@
         "ref": "NWT16054",
         "name": "後站商圈",
         "name_en": "Old Banqiao Sta. Shopping Circle",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "2637"
@@ -4429,7 +4435,7 @@
         "ref": "NWT16056",
         "name": "鄉雲里",
         "name_en": "Xiangyun Village",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "6013"
@@ -4449,7 +4455,7 @@
         "ref": "NWT16058",
         "name": "福星里",
         "name_en": "Fuxing Village",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "2691"
@@ -4469,7 +4475,7 @@
         "ref": "NWT16060",
         "name": "中興醫院",
         "name_en": "Zhongxing Hospital",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "1000493"
@@ -4489,7 +4495,7 @@
         "ref": "NWT16062",
         "name": "忠孝路",
         "name_en": "Zhongxiao Rd.",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "1000659"
@@ -4509,7 +4515,7 @@
         "ref": "NWT16064",
         "name": "重慶忠孝路口",
         "name_en": "Chongqing & Zhongxiao Rd. Intersection",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "1000654"
@@ -4529,7 +4535,7 @@
         "ref": "NWT16066",
         "name": "重慶國中",
         "name_en": "Chongqing Junior High School",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "2639"
@@ -4549,7 +4555,7 @@
         "ref": "NWT16070",
         "name": "五權街口",
         "name_en": "Wuquan St. Entrance",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "60012"
@@ -4569,7 +4575,7 @@
         "ref": "NWT16072",
         "name": "重慶國小",
         "name_en": "Chongqing Elementary School",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "1000494"
@@ -4589,7 +4595,7 @@
         "ref": "NWT16074",
         "name": "板橋後站",
         "name_en": "Old Banqiao Sta.",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "1000495"
@@ -4609,7 +4615,7 @@
         "ref": "NWT16076",
         "name": "益華紡織",
         "name_en": "Yihua Textile",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "2649"
@@ -4629,7 +4635,7 @@
         "ref": "NWT16078",
         "name": "四汴頭",
         "name_en": "Sibiantou",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "1000497"
@@ -4649,7 +4655,7 @@
         "ref": "NWT16080",
         "name": "看守所",
         "name_en": "Detention Center",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "3216"
@@ -4669,7 +4675,7 @@
         "ref": "NWT16082",
         "name": "金城路口",
         "name_en": "Jincheng Rd. Entrance",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "10125"
@@ -4689,7 +4695,7 @@
         "ref": "NWT16084",
         "name": "明德路",
         "name_en": "Mingde Rd.",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "72593"
@@ -4709,7 +4715,7 @@
         "ref": "NWT16086",
         "name": "清水高中",
         "name_en": "Qingshui Junior High School",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "1001066"
@@ -4729,7 +4735,7 @@
         "ref": "NWT16088",
         "name": "手信坊文化館",
         "name_en": "Shu Shin Bou Wagashi Museum",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "10123"
@@ -4749,7 +4755,7 @@
         "ref": "NWT16090",
         "name": "仁愛路口",
         "name_en": "Renai Rd. Entrance",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "10122"
@@ -4769,7 +4775,7 @@
         "ref": "NWT16092",
         "name": "青山路",
         "name_en": "Qingshan Rd.",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "10121"
@@ -4789,7 +4795,7 @@
         "ref": "NWT16094",
         "name": "清和里",
         "name_en": "Qinghe Village",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "3234"
@@ -4809,7 +4815,7 @@
         "ref": "NWT16096",
         "name": "宏國德霖科技大學",
         "name_en": "Hungkuo Delin University of Technology",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "3248"
@@ -4829,7 +4835,7 @@
         "ref": "NWT16098",
         "name": "清化里",
         "name_en": "Qinghua Village",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "3230"
@@ -4849,7 +4855,7 @@
         "ref": "NWT16100",
         "name": "少年觀護所",
         "name_en": "Juvenile Detention and Classification House",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "3192"
@@ -4869,7 +4875,7 @@
         "ref": "NWT191753",
         "name": "四海站",
         "name_en": "Sihai Stop",
-        "line": "657",
+        "line": "657（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "72611"

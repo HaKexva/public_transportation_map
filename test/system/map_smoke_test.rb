@@ -5,7 +5,7 @@ require "application_system_test_case"
 class MapSmokeTest < ApplicationSystemTestCase
   test "checkboxes stops official map and route pages work" do
     visit root_path
-    assert_selector ".map-boot-overlay[hidden]", visible: :all, wait: 30
+    assert_no_selector ".is-booting", wait: 30
     assert_no_selector ".map-split-layout.is-booting"
 
     find("#layer-wenhu_line", visible: :all).check
@@ -17,7 +17,7 @@ class MapSmokeTest < ApplicationSystemTestCase
     assert_no_selector ".route-page.is-booting", wait: 10
 
     visit bus_map_path
-    assert_selector ".map-boot-overlay[hidden]", visible: :all, wait: 30
+    assert_no_selector ".is-booting", wait: 30
     assert_equal "/bus", URI.parse(current_url).path
     assert_selector ".map-transport-mode__chip--active", text: "公車"
     find(".bus-fold__trigger", text: "基隆市").click

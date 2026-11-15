@@ -13,7 +13,11 @@
     "operator_id": "130",
     "operator": "捷乘客運",
     "operator_en": "Jiecheng Bus",
-    "daily_trips": 21
+    "daily_trips": 21,
+    "departure": "勝利八街總站",
+    "destination": "陽明交大(博愛校區)",
+    "departure_en": "Shengli 8th Street Terminus",
+    "destination_en": "NYCU(Boai Cam-pus)"
   },
   "features": [
     {
@@ -5997,7 +6001,8 @@
         "line": "快捷9號",
         "color": "#1e3a8a",
         "direction": 0,
-        "station_id": "130969"
+        "station_id": "130969",
+        "platform": "第5號月台"
       },
       "geometry": {
         "type": "Point",
@@ -6737,7 +6742,8 @@
         "line": "快捷9號",
         "color": "#1e3a8a",
         "direction": 1,
-        "station_id": "130969"
+        "station_id": "130969",
+        "platform": "第5號月台"
       },
       "geometry": {
         "type": "Point",

@@ -148,6 +148,10 @@ module Geojson
 
     def find_geojson(slug)
       matches = Dir.glob(bus_root.join("**/#{slug}.geojson"))
+      if matches.empty?
+        modern = Geojson::BusImporter.modernize_variant_slug(slug)
+        matches = Dir.glob(bus_root.join("**/#{modern}.geojson")) if modern != slug.to_s
+      end
       return nil if matches.empty?
 
       Pathname.new(matches.min_by { |path| path.count("/") })

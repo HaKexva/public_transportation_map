@@ -13,7 +13,11 @@
     "operator_id": "1",
     "operator": "台中客運",
     "operator_en": "Taichung Bus Co., Ltd.",
-    "daily_trips": 6
+    "daily_trips": 6,
+    "departure": "警察電台",
+    "destination": "舊正社區停車場",
+    "departure_en": "Police Radio Station",
+    "destination_en": "Jiuzheng Community Parking Lot"
   },
   "features": [
     {
@@ -3016,7 +3020,8 @@
         "line": "107延",
         "color": "#6b21a8",
         "direction": 0,
-        "station_id": "3842"
+        "station_id": "3842",
+        "platform": "第1月台"
       },
       "geometry": {
         "type": "Point",

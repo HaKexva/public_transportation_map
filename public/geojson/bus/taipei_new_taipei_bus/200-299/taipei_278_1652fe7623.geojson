@@ -1,10 +1,10 @@
 {
   "type": "FeatureCollection",
-  "name": "278（繞駛三總）",
+  "name": "278",
   "properties": {
     "id": "taipei_278_1652fe7623",
-    "name": "278（繞駛三總）",
-    "name_en": "278 (detour via Tri-Service General Hospital)",
+    "name": "278",
+    "name_en": "278",
     "ref": "278",
     "color": "#9333EA",
     "city_id": "Taipei",
@@ -13,10 +13,13 @@
     "operator_id": "700",
     "operator": "欣欣客運",
     "operator_en": "Shin-Shin Bus Co., Ltd.",
-    "via": "繞駛三總",
-    "via_en": "detour via Tri-Service General Hospital",
     "detour_hours": "08:00-21:30",
-    "daily_trips": 20
+    "daily_trips": 20,
+    "campus_span": "inside",
+    "departure": "景福街",
+    "destination": "捷運內湖站",
+    "departure_en": "Jingfu St.",
+    "destination_en": "MRT Neihu Sta."
   },
   "features": [
     {
@@ -24,8 +27,8 @@
       "properties": {
         "feature_type": "route",
         "ref": "278",
-        "name": "278（繞駛三總）",
-        "name_en": "278 (detour via Tri-Service General Hospital)",
+        "name": "278",
+        "name_en": "278",
         "color": "#9333EA",
         "direction": 0,
         "corners_rounded": true
@@ -2189,8 +2192,8 @@
       "properties": {
         "feature_type": "route",
         "ref": "278",
-        "name": "278（繞駛三總）",
-        "name_en": "278 (detour via Tri-Service General Hospital)",
+        "name": "278",
+        "name_en": "278",
         "color": "#9333EA",
         "direction": 1,
         "corners_rounded": true
@@ -4688,7 +4691,7 @@
         "ref": "TPE22247",
         "name": "景福街",
         "name_en": "Jingfu St.",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "1000669"
@@ -4708,7 +4711,7 @@
         "ref": "TPE22248",
         "name": "溪口國小",
         "name_en": "Xikou Elementary School",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "1165608485"
@@ -4728,7 +4731,7 @@
         "ref": "TPE22249",
         "name": "捷運景美站",
         "name_en": "MRT Jingmei",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "3368"
@@ -4748,7 +4751,7 @@
         "ref": "TPE22250",
         "name": "財政園區",
         "name_en": "Ministry of Finance Park",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "1000808"
@@ -4768,7 +4771,7 @@
         "ref": "TPE22251",
         "name": "萬隆",
         "name_en": "Wanlong",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "1000234"
@@ -4788,7 +4791,7 @@
         "ref": "TPE22252",
         "name": "捷運萬隆站",
         "name_en": "MRT Wanlong",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "1000235"
@@ -4808,7 +4811,7 @@
         "ref": "TPE22253",
         "name": "武功國小(羅斯福)",
         "name_en": "Wugong Elementary School (Roosevelt)",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "244"
@@ -4828,7 +4831,7 @@
         "ref": "TPE22254",
         "name": "師大分部",
         "name_en": "National Taiwan Normal University Branch",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "1000036"
@@ -4848,7 +4851,7 @@
         "ref": "TPE22255",
         "name": "捷運公館站",
         "name_en": "MRT Gongguan Sta.",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "1990"
@@ -4868,7 +4871,7 @@
         "ref": "TPE22256",
         "name": "台電大樓",
         "name_en": "Taipower Building",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "2230"
@@ -4888,7 +4891,7 @@
         "ref": "TPE22257",
         "name": "捷運台電大樓站",
         "name_en": "MRT Taipower Building Sta.",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "2297"
@@ -4908,7 +4911,7 @@
         "ref": "TPE22258",
         "name": "羅斯福浦城街口",
         "name_en": "Roosevelt and Pucheng Intersection",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "2360"
@@ -4928,7 +4931,7 @@
         "ref": "TPE22259",
         "name": "羅斯福金門街口",
         "name_en": "Roosevelt and Kinmen St. Intersection",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "1000049"
@@ -4948,7 +4951,7 @@
         "ref": "TPE22260",
         "name": "捷運古亭站(和平)",
         "name_en": "MRT Guting Sta. (Heping)",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "2311"
@@ -4968,7 +4971,7 @@
         "ref": "TPE22261",
         "name": "師大",
         "name_en": "National Taiwan Normal U.",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "2289"
@@ -4988,7 +4991,7 @@
         "ref": "TPE22262",
         "name": "師大綜合大樓",
         "name_en": "NTNU Union Building 1",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "2291"
@@ -5008,7 +5011,7 @@
         "ref": "TPE22263",
         "name": "溫州街口",
         "name_en": "Wenzhou St. Entrance",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "3914"
@@ -5028,7 +5031,7 @@
         "ref": "TPE22264",
         "name": "大安森林公園",
         "name_en": "Daan Park",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "2190"
@@ -5048,7 +5051,7 @@
         "ref": "TPE22265",
         "name": "龍門國中(和平)",
         "name_en": "Longmen Jr. High School (Heping)",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "2345"
@@ -5068,7 +5071,7 @@
         "ref": "TPE22266",
         "name": "復興南路口",
         "name_en": "Fuxing S. Rd. Entrance",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "2327"
@@ -5088,7 +5091,7 @@
         "ref": "TPE22267",
         "name": "國立臺北教育大學",
         "name_en": "National Taipei University of Education Experiment Elementary School",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "2300"
@@ -5108,7 +5111,7 @@
         "ref": "TPE22268",
         "name": "臥龍街",
         "name_en": "Wolong St.",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "2267"
@@ -5128,7 +5131,7 @@
         "ref": "TPE22269",
         "name": "成功國宅",
         "name_en": "Chenggong Public Housing",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "13101"
@@ -5148,7 +5151,7 @@
         "ref": "TPE22270",
         "name": "大安國中",
         "name_en": "Daan Junior High School",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "2186"
@@ -5168,7 +5171,7 @@
         "ref": "TPE22271",
         "name": "信義敦化路口",
         "name_en": "Xinyi & Dunhua Intersection",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "13102"
@@ -5188,7 +5191,7 @@
         "ref": "TPE22272",
         "name": "仁愛國中(外交學院)",
         "name_en": "Renai Junior High School(Institute of Diplomacy)",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "4170"
@@ -5208,7 +5211,7 @@
         "ref": "TPE22273",
         "name": "安和敦化路口",
         "name_en": "Anhe-Dunhua Intersection",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "2211"
@@ -5228,7 +5231,7 @@
         "ref": "TPE22274",
         "name": "捷運忠孝敦化站",
         "name_en": "MRT Zhongxiao Dunhua Sta.",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "2259"
@@ -5248,7 +5251,7 @@
         "ref": "TPE22275",
         "name": "市民大道口",
         "name_en": "Civic Boulevard Entrance",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "13104"
@@ -5268,7 +5271,7 @@
         "ref": "TPE22276",
         "name": "臺視",
         "name_en": "TTV Enterprise Co.",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "1499"
@@ -5288,7 +5291,7 @@
         "ref": "TPE22277",
         "name": "美仁里",
         "name_en": "Meiren Village",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "1560"
@@ -5308,7 +5311,7 @@
         "ref": "TPE22278",
         "name": "榮民服務處",
         "name_en": "Veterans Service Center",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "1590"
@@ -5328,7 +5331,7 @@
         "ref": "TPE22279",
         "name": "南京新村",
         "name_en": "Nanjing New Village",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "1551"
@@ -5348,7 +5351,7 @@
         "ref": "TPE22280",
         "name": "三軍總醫院松山分院",
         "name_en": "Tri-Servics General Hospital Songshan Branch",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "1563"
@@ -5368,7 +5371,7 @@
         "ref": "TPE22281",
         "name": "長壽公園",
         "name_en": "Changshou Park",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "1522"
@@ -5388,7 +5391,7 @@
         "ref": "TPE22282",
         "name": "健康新城",
         "name_en": "Jiankang New Village",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "1562"
@@ -5408,7 +5411,7 @@
         "ref": "TPE22283",
         "name": "三民健康路口(西松高中)",
         "name_en": "Sanmin and Jiankang Intersection (Xisong High School)",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "50006"
@@ -5428,7 +5431,7 @@
         "ref": "TPE22284",
         "name": "三民路",
         "name_en": "Sanmin Rd.",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "10404"
@@ -5448,7 +5451,7 @@
         "ref": "TPE22285",
         "name": "新東街口",
         "name_en": "Xindong St. Entrance",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "1588"
@@ -5468,7 +5471,7 @@
         "ref": "TPE22286",
         "name": "民生國中",
         "name_en": "Minsheng Junior High School",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "1000026"
@@ -5488,7 +5491,7 @@
         "ref": "TPE22287",
         "name": "新益里",
         "name_en": "Xinyi Village",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "1504"
@@ -5508,7 +5511,7 @@
         "ref": "TPE22288",
         "name": "民權大橋",
         "name_en": "Minquan Bridge",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "1017"
@@ -5528,7 +5531,7 @@
         "ref": "TPE22289",
         "name": "時報廣場",
         "name_en": "China Times Daily News Square",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "1077"
@@ -5548,7 +5551,7 @@
         "ref": "TPE22290",
         "name": "三民國中",
         "name_en": "Sanmin Junior High School",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "966"
@@ -5568,7 +5571,7 @@
         "ref": "TPE22291",
         "name": "內湖行政大樓",
         "name_en": "Neihu Admin. Building",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "991"
@@ -5588,7 +5591,7 @@
         "ref": "TPE22292",
         "name": "國防醫學中心",
         "name_en": "National Defense Medical Center",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "339"
@@ -5608,7 +5611,7 @@
         "ref": "TPE22293",
         "name": "三總內湖站",
         "name_en": "Tri-Service General Hospital",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "8677"
@@ -5628,7 +5631,7 @@
         "ref": "TPE22294",
         "name": "將軍嶺",
         "name_en": "Jiangjun Ling",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "50500"
@@ -5648,7 +5651,7 @@
         "ref": "TPE22295",
         "name": "方濟中學",
         "name_en": "St. Francis High School",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "3996"
@@ -5668,7 +5671,7 @@
         "ref": "TPE198458",
         "name": "成功路三段",
         "name_en": "Chenggong Rd. Sec. 3",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "8520"
@@ -5688,7 +5691,7 @@
         "ref": "TPE22301",
         "name": "湖光市場",
         "name_en": "Huguang Market",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "8537"
@@ -5708,7 +5711,7 @@
         "ref": "TPE22302",
         "name": "捷運內湖站",
         "name_en": "MRT Neihu Sta.",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "8538"
@@ -5728,7 +5731,7 @@
         "ref": "TPE221555",
         "name": "金龍路口",
         "name_en": "Jinlong Rd. Entrance",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "270"
@@ -5748,7 +5751,7 @@
         "ref": "TPE22313",
         "name": "碧湖國小",
         "name_en": "Bihu Elementary School",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "1137"
@@ -5768,7 +5771,7 @@
         "ref": "TPE22314",
         "name": "內湖派出所",
         "name_en": "Neihu Police Substation",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "994"
@@ -5788,7 +5791,7 @@
         "ref": "TPE22315",
         "name": "達人高中(臺灣戲曲學院)",
         "name_en": "Da Ren Catholic High School (National Taiwan College of Performing Arts)",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "8633"
@@ -5808,7 +5811,7 @@
         "ref": "TPE22316",
         "name": "內湖國小",
         "name_en": "Neihu Elementary School",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "8634"
@@ -5828,7 +5831,7 @@
         "ref": "TPE57082",
         "name": "西湖圖書館(湖光教會)",
         "name_en": "Xihu Library (Huguang Church)",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "1165604812"
@@ -5848,7 +5851,7 @@
         "ref": "TPE57083",
         "name": "西湖圖書館(湖光教會)",
         "name_en": "Xihu Library (Huguang Church)",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "1041"
@@ -5868,7 +5871,7 @@
         "ref": "TPE22317",
         "name": "湖光國宅",
         "name_en": "Huguang Public Housing",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "1104"
@@ -5888,7 +5891,7 @@
         "ref": "TPE57084",
         "name": "捷運文德站(碧湖公園)",
         "name_en": "MRT Wende Sta. (Bihu Park)",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "4083"
@@ -5908,7 +5911,7 @@
         "ref": "TPE22318",
         "name": "內湖高中",
         "name_en": "Neihu High School",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "998"
@@ -5928,7 +5931,7 @@
         "ref": "TPE22319",
         "name": "方濟中學",
         "name_en": "St. Francis High School",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "1012"
@@ -5948,7 +5951,7 @@
         "ref": "TPE22320",
         "name": "將軍嶺",
         "name_en": "Jiangjun Ling",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "50501"
@@ -5968,7 +5971,7 @@
         "ref": "TPE22321",
         "name": "三總內湖站",
         "name_en": "Tri-Service General Hospital",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "980"
@@ -5988,7 +5991,7 @@
         "ref": "TPE22322",
         "name": "國防醫學中心",
         "name_en": "National Defense Medical Center",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "1080"
@@ -6008,7 +6011,7 @@
         "ref": "TPE22323",
         "name": "內湖行政大樓",
         "name_en": "Neihu Admin. Building",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "8667"
@@ -6028,7 +6031,7 @@
         "ref": "TPE22324",
         "name": "三民國中",
         "name_en": "Sanmin Junior High School",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "8666"
@@ -6048,7 +6051,7 @@
         "ref": "TPE22325",
         "name": "時報廣場",
         "name_en": "China Times Daily News Square",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "8601"
@@ -6068,7 +6071,7 @@
         "ref": "TPE22326",
         "name": "民權大橋",
         "name_en": "Minquan Bridge",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "8602"
@@ -6088,7 +6091,7 @@
         "ref": "TPE22327",
         "name": "新益里",
         "name_en": "Xinyi Village",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "1503"
@@ -6108,7 +6111,7 @@
         "ref": "TPE22328",
         "name": "民生國中",
         "name_en": "Minsheng Junior High School",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "1507"
@@ -6128,7 +6131,7 @@
         "ref": "TPE22329",
         "name": "新東街口",
         "name_en": "Xindong St. Entrance",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "60133"
@@ -6148,7 +6151,7 @@
         "ref": "TPE22330",
         "name": "三民路",
         "name_en": "Sanmin Rd.",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "1492"
@@ -6168,7 +6171,7 @@
         "ref": "TPE22331",
         "name": "三民健康路口(西松高中)",
         "name_en": "Sanmin and Jiankang Intersection (Xisong High School)",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "1489"
@@ -6188,7 +6191,7 @@
         "ref": "TPE22332",
         "name": "健康新城",
         "name_en": "Jiankang New Village",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "1000019"
@@ -6208,7 +6211,7 @@
         "ref": "TPE22333",
         "name": "長壽公園",
         "name_en": "Changshou Park",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "1000020"
@@ -6228,7 +6231,7 @@
         "ref": "TPE22334",
         "name": "三軍總醫院松山分院",
         "name_en": "Tri-Servics General Hospital Songshan Branch",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "1000021"
@@ -6248,7 +6251,7 @@
         "ref": "TPE22335",
         "name": "南京新村",
         "name_en": "Nanjing New Village",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "60135"
@@ -6268,7 +6271,7 @@
         "ref": "TPE22336",
         "name": "博仁醫院",
         "name_en": "Po Jen Hospital",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "1578"
@@ -6288,7 +6291,7 @@
         "ref": "TPE22337",
         "name": "臺北市區監理所(光復)",
         "name_en": "Taipei City Motor Vehicles Office (Guangfu)",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "1593"
@@ -6308,7 +6311,7 @@
         "ref": "TPE22338",
         "name": "捷運國父紀念館站(光復)",
         "name_en": "MRT Sun Yat-sen Memorial Hall Sta. (Guangfu)",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "4162"
@@ -6328,7 +6331,7 @@
         "ref": "TPE22339",
         "name": "交通部觀光署",
         "name_en": "Tourism Administration, MOTC",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "3930"
@@ -6348,7 +6351,7 @@
         "ref": "TPE22340",
         "name": "阿波羅大廈",
         "name_en": "Apollo Building",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "3931"
@@ -6368,7 +6371,7 @@
         "ref": "TPE22341",
         "name": "捷運忠孝敦化站",
         "name_en": "MRT Zhongxiao Dunhua Sta.",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "372"
@@ -6388,7 +6391,7 @@
         "ref": "TPE22342",
         "name": "頂好市場",
         "name_en": "Dinghao Market",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "3932"
@@ -6408,7 +6411,7 @@
         "ref": "TPE22343",
         "name": "懷生國中",
         "name_en": "Huaisheng Junior High School",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "2351"
@@ -6428,7 +6431,7 @@
         "ref": "TPE22344",
         "name": "聯合醫院仁愛院區",
         "name_en": "TCUH, Renai Branch",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "2349"
@@ -6448,7 +6451,7 @@
         "ref": "TPE22345",
         "name": "東豐復興路口",
         "name_en": "Dongfeng & Fuxing Intersection",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "2257"
@@ -6468,7 +6471,7 @@
         "ref": "TPE22346",
         "name": "大安高工(捷運大安站)",
         "name_en": "Daan Vocational High School (MRT Daan Sta.)",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "2183"
@@ -6488,7 +6491,7 @@
         "ref": "TPE22347",
         "name": "開平餐飲學校",
         "name_en": "Kaiping Culinary School",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "2330"
@@ -6508,7 +6511,7 @@
         "ref": "TPE22348",
         "name": "捷運科技大樓站",
         "name_en": "MRT Technology Building Sta.",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "1000231"
@@ -6528,7 +6531,7 @@
         "ref": "TPE22349",
         "name": "復興南路口",
         "name_en": "Fuxing S. Rd. Entrance",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "6021"
@@ -6548,7 +6551,7 @@
         "ref": "TPE22350",
         "name": "國北教大實小",
         "name_en": "National Taipei University of Education Experiment Elementary School",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "2299"
@@ -6568,7 +6571,7 @@
         "ref": "TPE22351",
         "name": "龍門國中(和平)",
         "name_en": "Longmen Jr. High School (Heping)",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "3942"
@@ -6588,7 +6591,7 @@
         "ref": "TPE22352",
         "name": "大安森林公園",
         "name_en": "Daan Park",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "2192"
@@ -6608,7 +6611,7 @@
         "ref": "TPE22353",
         "name": "溫州街口",
         "name_en": "Wenzhou St. Entrance",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "6024"
@@ -6628,7 +6631,7 @@
         "ref": "TPE22354",
         "name": "師大綜合大樓",
         "name_en": "NTNU Union Building 1",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "2292"
@@ -6648,7 +6651,7 @@
         "ref": "TPE22355",
         "name": "師大",
         "name_en": "National Taiwan Normal U.",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "6025"
@@ -6668,7 +6671,7 @@
         "ref": "TPE22356",
         "name": "捷運古亭站(和平)",
         "name_en": "MRT Guting Sta. (Heping)",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "3943"
@@ -6688,7 +6691,7 @@
         "ref": "TPE22357",
         "name": "羅斯福金門街口",
         "name_en": "Roosevelt and Kinmen St. Intersection",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "1000044"
@@ -6708,7 +6711,7 @@
         "ref": "TPE22358",
         "name": "羅斯福浦城街口",
         "name_en": "Roosevelt and Pucheng Intersection",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "2359"
@@ -6728,7 +6731,7 @@
         "ref": "TPE22359",
         "name": "捷運台電大樓站",
         "name_en": "MRT Taipower Building Sta.",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "2353"
@@ -6748,7 +6751,7 @@
         "ref": "TPE22360",
         "name": "台電大樓",
         "name_en": "Taipower Building",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "2231"
@@ -6768,7 +6771,7 @@
         "ref": "TPE22361",
         "name": "捷運公館站",
         "name_en": "MRT Gongguan Sta.",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "1991"
@@ -6788,7 +6791,7 @@
         "ref": "TPE22362",
         "name": "師大分部",
         "name_en": "National Taiwan Normal University Branch",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "2430"
@@ -6808,7 +6811,7 @@
         "ref": "TPE22363",
         "name": "武功國小(羅斯福)",
         "name_en": "Wugong Elementary School (Roosevelt)",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "2412"
@@ -6828,7 +6831,7 @@
         "ref": "TPE22364",
         "name": "捷運萬隆站",
         "name_en": "MRT Wanlong",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "2450"
@@ -6848,7 +6851,7 @@
         "ref": "TPE22365",
         "name": "萬隆",
         "name_en": "Wanlong",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "2503"
@@ -6868,7 +6871,7 @@
         "ref": "TPE22366",
         "name": "財政園區",
         "name_en": "Ministry of Finance Park",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "1000807"
@@ -6888,7 +6891,7 @@
         "ref": "TPE22367",
         "name": "捷運景美站",
         "name_en": "MRT Jingmei",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "2445"
@@ -6908,7 +6911,7 @@
         "ref": "TPE22368",
         "name": "溪口國小",
         "name_en": "Xikou Elementary School",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "1165608487"
@@ -6928,7 +6931,7 @@
         "ref": "TPE22369",
         "name": "景福街",
         "name_en": "Jingfu St.",
-        "line": "278（繞駛三總）",
+        "line": "278",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "2466"

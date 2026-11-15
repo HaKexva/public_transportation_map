@@ -16,7 +16,11 @@
     "off_days": [
       "sunday"
     ],
-    "daily_trips": 2
+    "daily_trips": 2,
+    "departure": "三芝國中",
+    "destination": "捷運淡水站",
+    "departure_en": "Sanzhi Junior High School",
+    "destination_en": "MRT Tamsui Station"
   },
   "features": [
     {
@@ -5395,7 +5399,8 @@
         "line": "F139行經101線",
         "color": "#6B8F9A",
         "direction": 0,
-        "station_id": "3842"
+        "station_id": "3842",
+        "platform": "第1月台"
       },
       "geometry": {
         "type": "Point",
@@ -5415,7 +5420,8 @@
         "line": "F139行經101線",
         "color": "#6B8F9A",
         "direction": 1,
-        "station_id": "3842"
+        "station_id": "3842",
+        "platform": "第1月台"
       },
       "geometry": {
         "type": "Point",

@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require "digest"
+
 module Geojson
   module BusCatalog
     City = Data.define(:id, :tdx_city, :kind)
@@ -36,6 +38,25 @@ module Geojson
     GREATER_TAIPEI_CITY_IDS = %w[Taipei NewTaipei].freeze
     OTHER_BAND = :other
 
+    # Taoyuan Metro feeders. The city's 紅線／綠線／黃線 are ordinary named routes.
+    # Published refs are BR, GR, and GR2; GR1 is accepted for the same green feeder.
+    TAOYUAN_METRO_FEEDER = /\A(?:BR|GR\d*)\z/
+    TAOYUAN_LOOP = /\A(?:NL|SL)\z/
+    TAOYUAN_COLOR_LINE = /\A[紅綠黃]線\z/
+    # Numbered 1–100 are trunk buses. Suffixes inherit the base name; 13A is a
+    # separate route (南竹－開南大學) and does not carry 龍壽南竹幹線.
+    TAOYUAN_TRUNK_NAMES = {
+      "1" => "台一幹線",
+      "11" => "中山長興幹線",
+      "12" => "大湳長庚幹線",
+      "13" => "龍壽南竹幹線",
+      "15" => "中園大竹幹線",
+      "16" => "大龍竹幹線"
+    }.freeze
+    TAOYUAN_TRUNK_NAME_EXCEPTIONS = %w[13A].freeze
+    # 501–506 only. 5010 and the rest of the 5xxx coaches stay in 1000+.
+    TAOYUAN_TOURIST = /\A50[1-6](?!\d)/
+
     # Color-coded MRT feeder routes (捷運接駁五色 / 高雄等彩線).
     COLOR_PREFIX_BANDS = {
       "紅" => :color_hong,
@@ -49,6 +70,12 @@ module Geojson
     # Thematic bands after pure numeric hundreds (0–99, 100–199, …).
     SPECIAL_BAND_ORDER = [
       :keelung_tr,
+      :taoyuan_trunk,
+      :taoyuan_tourist,
+      :metro_feeder,
+      :loop_line,
+      :taoyuan_free,
+      :taoyuan_xingfu,
       :color_hong,
       :color_lan,
       :color_lu,
@@ -58,8 +85,8 @@ module Geojson
       :xiao,
       :ankeng,
       :f_series,
-      :neike_commuter,
-      :neike_express,
+      :neike,
+      :taipei_tourist,
       :nangang_soft,
       :commuter,
       :trunk,
@@ -68,6 +95,7 @@ module Geojson
       :beishi,
       :huaien,
       :named_line,
+      :leapfrog,
       OTHER_BAND
     ].freeze
 
@@ -94,14 +122,21 @@ module Geojson
 
       Array(routes).each do |route|
         city_id = route["city_id"].to_s
-        operator_id = route["operator_id"].to_s
-        next if city_id.empty? || operator_id.empty?
+        next if city_id.empty?
 
-        grouped[city_id][operator_id] ||= {
-          "id" => operator_id,
-          "name" => route["operator"].to_s.presence || operator_id,
-          "name_en" => route["operator_en"].to_s.presence
-        }
+        [
+          [ route["operator_id"], route["operator"], route["operator_en"] ],
+          [ route["operator_id_2"], route["operator_2"], route["operator_2_en"] ]
+        ].each do |operator_id, name, name_en|
+          operator_id = operator_id.to_s
+          next if operator_id.empty?
+
+          grouped[city_id][operator_id] ||= {
+            "id" => operator_id,
+            "name" => name.to_s.presence || operator_id,
+            "name_en" => name_en.to_s.presence
+          }
+        end
       end
 
       grouped.transform_values do |operators|
@@ -122,7 +157,7 @@ module Geojson
         next false if city_allow.any? && !city_allow.include?(route["city_id"].to_s)
         next true if operator_allow.empty?
 
-        operator_allow.include?(route["operator_id"].to_s)
+        operator_allow.include?(route["operator_id"].to_s) || operator_allow.include?(route["operator_id_2"].to_s)
       end
     end
 
@@ -159,30 +194,68 @@ module Geojson
         return :keelung_tr
       end
 
-      COLOR_PREFIX_BANDS.each do |prefix, band|
-        return band if text.start_with?(prefix)
+      if city_id.to_s == "Taoyuan" && text.match?(TAOYUAN_METRO_FEEDER)
+        return :metro_feeder
+      end
+
+      return :loop_line if city_id.to_s == "Taoyuan" && text.match?(TAOYUAN_LOOP)
+
+      unless city_id.to_s == "Taoyuan" && text.match?(TAOYUAN_COLOR_LINE)
+        COLOR_PREFIX_BANDS.each do |prefix, band|
+          return band if text.start_with?(prefix)
+        end
       end
 
       return :xiao if text.match?(/\A小\d/)
       return :ankeng if text.start_with?("安坑")
       return :f_series if text.match?(/\AF\d/i)
       return :nangang_soft if text.include?("南軟")
-      return :neike_express if text.include?("內科快線")
-      return :neike_commuter if text.include?("內科通勤")
-      return :commuter if text.match?(/\A通勤/)
+      return :neike if text.include?("內科快線") || text.include?("內科通勤")
+      return :taipei_tourist if text.match?(/臺?北觀光巴士/)
+      return :commuter if text.match?(/\A通勤/) || text.include?("雙園巴士")
       return :civic_minibus if text.include?("市民小巴")
       return :trunk if text.include?("幹線")
+      return :taoyuan_trunk if city_id.to_s == "Taoyuan" && taoyuan_trunk_route?(text)
+      return :taoyuan_tourist if city_id.to_s == "Taoyuan" && text.match?(TAOYUAN_TOURIST)
+      return :taoyuan_free if city_id.to_s == "Taoyuan" && text.match?(/\AL/i)
+      return :taoyuan_xingfu if city_id.to_s == "Taoyuan" && text.match?(/\AT/i)
       return :maokong if text.include?("貓空")
       return :beishi if text.start_with?("北士科")
       return :huaien if text.include?("懷恩")
+      return :leapfrog if text.include?("跳蛙")
       # Named “xx線” (吉林線、大樹線、三鶯2線(原812)…); OD labels like 三峽-內科 stay elsewhere.
+      # Numbered expresses that keep a trailing 線 in the TDX name (982直達新埔線)
+      # stay with their hundreds band, not 地區線.
       stripped = text.sub(/（[^）]*）|\([^)]*\)\z/, "")
-      return :named_line if stripped.match?(/線\z/)
-      # Place-to-place refs (汐止-台北101) may embed digits that are not route numbers.
-      return OTHER_BAND if od_place_label?(text)
+      return :named_line if stripped.match?(/線\z/) && !stripped.match?(/\A\d/)
+      # Place-to-place leapfrog refs (汐止-台北101) may embed digits that are not route numbers.
+      return :leapfrog if od_place_label?(text)
       return OTHER_BAND if route_number(text).nil?
 
       hundreds_band(text)
+    end
+
+    def taoyuan_trunk_route?(ref)
+      number = ref.to_s[/\A(\d+)/, 1]&.to_i
+      number&.between?(1, 100) || false
+    end
+
+    # Trunk name for a Taoyuan 1–100 ref, or nil when the route has none.
+    def taoyuan_trunk_name(ref)
+      text = ref.to_s.strip
+      return nil if text.empty? || TAOYUAN_TRUNK_NAME_EXCEPTIONS.include?(text)
+
+      named = TAOYUAN_TRUNK_NAMES[text]
+      return named if named
+
+      base = text[/\A\d+/]
+      return nil if base.blank? || base == text
+
+      TAOYUAN_TRUNK_NAMES[base]
+    end
+
+    def taoyuan_trunk_names_payload
+      { "names" => TAOYUAN_TRUNK_NAMES, "exceptions" => TAOYUAN_TRUNK_NAME_EXCEPTIONS }
     end
 
     # OD labels use hyphens between places; numbered/letter-coded refs keep hundreds bands
@@ -206,6 +279,12 @@ module Geojson
     # On-disk folder names must stay ASCII (git, URLs, shells). Labels stay in i18n.
     SPECIAL_BAND_DIRS = {
       keelung_tr: "r-t",
+      taoyuan_trunk: "taoyuan-trunk",
+      taoyuan_tourist: "taoyuan-tourist",
+      taoyuan_free: "taoyuan-free",
+      taoyuan_xingfu: "taoyuan-xingfu",
+      metro_feeder: "metro-feeder",
+      loop_line: "loop",
       color_hong: "hong",
       color_lan: "lan",
       color_lu: "lu",
@@ -215,8 +294,8 @@ module Geojson
       xiao: "xiao",
       ankeng: "ankeng",
       f_series: "f",
-      neike_commuter: "neike-commuter",
-      neike_express: "neike-express",
+      neike: "neike",
+      taipei_tourist: "taipei-tourist",
       nangang_soft: "nangang-soft",
       commuter: "commuter",
       trunk: "trunk",
@@ -225,6 +304,7 @@ module Geojson
       beishi: "beishi",
       huaien: "huaien",
       named_line: "named",
+      leapfrog: "leapfrog",
       OTHER_BAND => "other"
     }.freeze
 
@@ -240,8 +320,11 @@ module Geojson
       "小" => "xiao",
       "安坑" => "ankeng",
       "F" => "f",
-      "內科通勤" => "neike-commuter",
-      "內科快線" => "neike-express",
+      "內科通勤" => "neike",
+      "內科快線" => "neike",
+      "內科" => "neike",
+      "臺北觀光巴士" => "taipei-tourist",
+      "台北觀光巴士" => "taipei-tourist",
       "南軟" => "nangang-soft",
       "通勤" => "commuter",
       "幹線" => "trunk",
@@ -249,7 +332,9 @@ module Geojson
       "貓空" => "maokong",
       "北士科" => "beishi",
       "懷恩專車" => "huaien",
-      "路線" => "named"
+      "路線" => "named",
+      "跳蛙" => "leapfrog",
+      "跳蛙公車" => "leapfrog"
     }.freeze
 
     def browse_band_dir(ref, city_id: nil)
@@ -285,8 +370,10 @@ module Geojson
     end
 
     def browse_band_sort_key(band)
-      # Keep Keelung T/R where 0–99 used to appear (before 100–199).
+      # Keep Keelung T/R and Taoyuan trunk buses where 0–99 used to appear.
       return [ 0, -1 ] if band == :keelung_tr
+      return [ 0, 0 ] if band == :taoyuan_trunk
+      return [ 0, 499 ] if band == :taoyuan_tourist
 
       case band
       when Integer
@@ -304,8 +391,31 @@ module Geojson
         .sort_by { |band, _routes| browse_band_sort_key(band) }
     end
 
+    # Digest used by BusTimedDetours / 經三總 importer splits for the campus path.
+    CAMPUS_DETOUR_SLUG = Digest::SHA1.hexdigest("繞駛三總")[0, 10].freeze
+
+    # 繞駛三總 (campus inside) above the timed / 不經三總 sibling in the sidebar.
+    def campus_span_rank(route)
+      case route["campus_span"]
+      when "inside" then 0
+      when "outside" then 2
+      else
+        via = route["via"].to_s
+        id = route["id"].to_s
+        if via.include?("不繞駛三總")
+          2
+        elsif via.include?("繞駛三總") || id.end_with?("_#{CAMPUS_DETOUR_SLUG}") || id.include?("_#{CAMPUS_DETOUR_SLUG}_")
+          0
+        else
+          1
+        end
+      end
+    end
+
     def sort_routes(routes)
-      Array(routes).sort_by { |route| [ route["ref"].to_s[/\d+/].to_i, route["ref"].to_s, route["id"].to_s ] }
+      Array(routes).sort_by do |route|
+        [ route["ref"].to_s[/\d+/].to_i, route["ref"].to_s, campus_span_rank(route), route["id"].to_s ]
+      end
     end
 
     # Highway-coach operators are assigned numeric blocks (國光 18xx, 和欣 75xx…).

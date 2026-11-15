@@ -22,6 +22,13 @@ module Geojson
     SPUR_MAX_SWEEP_DEG = 90.0
     ON_RING_METERS = 3.0
 
+    # 動物園圓環 (新光路二段). The mapped ring runs out to the northwest
+    # junction and back, so a bus that follows it kinks off the circle.
+    ZOO_CENTER = [ 121.5832526, 25.0003928 ].freeze
+    ZOO_RADIUS = 23.0
+    ZOO_BULGE_INNER = 25.0
+    ZOO_BULGE_OUTER = 37.0
+
     module_function
 
     def roundabouts
@@ -137,7 +144,80 @@ module Geojson
         end
         index = last + 1
       end
-      changed ? result : line
+      result = changed ? result : line
+      zoo_roundabout?(roundabout) ? pull_zoo_bulge(result) : result
+    end
+
+    def zoo_roundabout?(roundabout)
+      meters_between(roundabout[:center], ZOO_CENTER) < 5
+    end
+
+    # Vertices swung out to the northwest junction go back onto the short arc.
+    def pull_zoo_bulge(line)
+      return line if line.length < 3
+
+      indexes = line.each_index.select { |index| zoo_bulge?(line[index]) }
+      return line if indexes.empty?
+
+      ranges = []
+      range_start = indexes.first
+      previous = indexes.first
+      indexes.drop(1).each do |index|
+        if index == previous + 1
+          previous = index
+        else
+          ranges << (range_start..previous)
+          range_start = previous = index
+        end
+      end
+      ranges << (range_start..previous)
+
+      result = line
+      ranges.reverse_each do |range|
+        before_index = range.begin - 1
+        after_index = range.end + 1
+        next if before_index.negative? || after_index >= result.length
+
+        arc = zoo_arc(result[before_index], result[after_index])
+        result = result[0...range.begin] + arc + result[after_index..]
+      end
+      result
+    end
+
+    def zoo_bulge?(point)
+      radius = zoo_radius(point)
+      return false unless radius.between?(ZOO_BULGE_INNER, ZOO_BULGE_OUTER)
+
+      angle = zoo_angle(point)
+      angle >= 120.0 || angle <= -170.0
+    end
+
+    def zoo_arc(from_point, to_point)
+      sweep = (zoo_angle(to_point) - zoo_angle(from_point)) % 360.0
+      sweep -= 360.0 if sweep > 180.0
+      steps = (ZOO_RADIUS * sweep.abs * Math::PI / 180.0 / DENSIFY_METERS).ceil
+      return [] if steps < 2
+
+      (1...steps).map { |step| zoo_point(zoo_angle(from_point) + (sweep * step / steps)) }
+    end
+
+    def zoo_point(angle_deg)
+      radians = angle_deg * Math::PI / 180.0
+      kx = 111_320 * Math.cos(ZOO_CENTER[1] * Math::PI / 180.0)
+      [
+        (ZOO_CENTER[0] + (ZOO_RADIUS * Math.cos(radians) / kx)).round(7),
+        (ZOO_CENTER[1] + (ZOO_RADIUS * Math.sin(radians) / 110_540)).round(7)
+      ]
+    end
+
+    def zoo_radius(point)
+      kx = 111_320 * Math.cos(ZOO_CENTER[1] * Math::PI / 180.0)
+      Math.hypot((point[0] - ZOO_CENTER[0]) * kx, (point[1] - ZOO_CENTER[1]) * 110_540)
+    end
+
+    def zoo_angle(point)
+      kx = 111_320 * Math.cos(ZOO_CENTER[1] * Math::PI / 180.0)
+      Math.atan2((point[1] - ZOO_CENTER[1]) * 110_540, (point[0] - ZOO_CENTER[0]) * kx) * 180.0 / Math::PI
     end
 
     # Ring from the entry bearing counter-clockwise to the exit bearing.

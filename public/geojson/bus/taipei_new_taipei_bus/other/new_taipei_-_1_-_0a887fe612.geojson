@@ -17,7 +17,11 @@
       "sunday"
     ],
     "operator_en": "Tamshui Bus Co., Ltd.",
-    "daily_trips": 2
+    "daily_trips": 2,
+    "departure": "新市站",
+    "destination": "南港車站",
+    "departure_en": "Xinshi Station",
+    "destination_en": "Nangang Rail Sta."
   },
   "features": [
     {
@@ -2163,7 +2167,8 @@
         "line": "淡水-國道1號-南港車站",
         "color": "#DC2626",
         "direction": 0,
-        "station_id": "3842"
+        "station_id": "3842",
+        "platform": "第1月台"
       },
       "geometry": {
         "type": "Point",

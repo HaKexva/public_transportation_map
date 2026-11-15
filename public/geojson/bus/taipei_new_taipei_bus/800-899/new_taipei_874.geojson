@@ -13,7 +13,11 @@
     "operator_id": "16186",
     "operator": "淡水客運",
     "operator_en": "Tamshui Bus Co., Ltd.",
-    "daily_trips": 2
+    "daily_trips": 2,
+    "departure": "捷運淡水站",
+    "destination": "大湖工業區",
+    "departure_en": "MRT Tamsui Sta.",
+    "destination_en": "Dahu Industrial District"
   },
   "features": [
     {
@@ -2304,7 +2308,8 @@
         "line": "874",
         "color": "#DC2626",
         "direction": 0,
-        "station_id": "3842"
+        "station_id": "3842",
+        "platform": "第1月台"
       },
       "geometry": {
         "type": "Point",
@@ -3984,7 +3989,8 @@
         "line": "874",
         "color": "#DC2626",
         "direction": 1,
-        "station_id": "3842"
+        "station_id": "3842",
+        "platform": "第1月台"
       },
       "geometry": {
         "type": "Point",

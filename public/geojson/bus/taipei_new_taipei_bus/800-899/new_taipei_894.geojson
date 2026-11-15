@@ -13,7 +13,11 @@
     "operator_id": "16186",
     "operator": "淡水客運",
     "operator_en": "Tamshui Bus Co., Ltd.",
-    "daily_trips": 61
+    "daily_trips": 61,
+    "departure": "勤家捷奏社區",
+    "destination": "捷運淡水站",
+    "departure_en": "Qinjiajiezou  Community",
+    "destination_en": "MRT Tamsui Sta."
   },
   "features": [
     {
@@ -2532,7 +2536,8 @@
         "line": "894",
         "color": "#DC2626",
         "direction": 0,
-        "station_id": "3842"
+        "station_id": "3842",
+        "platform": "第1月台"
       },
       "geometry": {
         "type": "Point",

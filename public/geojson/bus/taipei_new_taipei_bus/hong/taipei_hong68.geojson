@@ -1,15 +1,21 @@
 {
   "type": "FeatureCollection",
-  "name": "紅68",
+  "name": "紅68（本線）",
   "properties": {
     "id": "taipei_hong68",
-    "name": "紅68",
-    "name_en": "R68",
+    "name": "紅68（本線）",
+    "name_en": "R68 (Main Line)",
     "ref": "紅68",
     "color": "#F97316",
     "city_id": "Taipei",
     "source": "TDX Bus Shape / StopOfRoute",
-    "official_map_url": "https://ebus.gov.taipei/File/Get/1f74ddea-06f3-481c-a279-58442c6278af?v=639267187775305222",
+    "via": "本線",
+    "via_en": "Main Line",
+    "official_map_url": "https://ebus.gov.taipei/File/Get/1f74ddea-06f3-481c-a279-58442c6278af?v=639302465456114098",
+    "departure": "洲美里",
+    "departure_en": "Zhoumei Village",
+    "destination": "捷運芝山站(福華)",
+    "destination_en": "MRT Zhishan Sta. (Fuhua)",
     "operator_id": "200",
     "operator": "首都客運",
     "operator_en": "Capital Bus Co., Ltd.",
@@ -17,7 +23,8 @@
       "saturday",
       "sunday"
     ],
-    "daily_trips": 3
+    "service_note": "部分班次須提前預約",
+    "service_note_en": "Some trips require advance booking"
   },
   "features": [
     {
@@ -25,8 +32,8 @@
       "properties": {
         "feature_type": "route",
         "ref": "紅68",
-        "name": "紅68",
-        "name_en": "R68",
+        "name": "紅68（本線）",
+        "name_en": "R68 (Main Line)",
         "color": "#F97316",
         "direction": 0,
         "corners_rounded": true
@@ -523,8 +530,156 @@
             25.10193147400647
           ],
           [
-            121.52285600000012,
-            25.102699999999903
+            121.5228582,
+            25.10268
+          ],
+          [
+            121.5228572,
+            25.1026842
+          ],
+          [
+            121.5228551,
+            25.1026881
+          ],
+          [
+            121.522852,
+            25.1026914
+          ],
+          [
+            121.5228482,
+            25.102694
+          ],
+          [
+            121.5228438,
+            25.1026957
+          ],
+          [
+            121.5228391,
+            25.1026964
+          ],
+          [
+            121.5228344,
+            25.1026961
+          ],
+          [
+            121.5228294,
+            25.1026957
+          ],
+          [
+            121.5228245,
+            25.1026963
+          ],
+          [
+            121.5228199,
+            25.1026979
+          ],
+          [
+            121.5228158,
+            25.1027004
+          ],
+          [
+            121.5228124,
+            25.1027037
+          ],
+          [
+            121.5228099,
+            25.1027076
+          ],
+          [
+            121.5228084,
+            25.1027119
+          ],
+          [
+            121.5227833,
+            25.1028268
+          ],
+          [
+            121.5227737,
+            25.1028807
+          ],
+          [
+            121.5227698,
+            25.1029078
+          ],
+          [
+            121.5225976,
+            25.103969
+          ],
+          [
+            121.5225822,
+            25.1040727
+          ],
+          [
+            121.5225647,
+            25.1041602
+          ],
+          [
+            121.5225379,
+            25.1042738
+          ],
+          [
+            121.5224696,
+            25.104578
+          ],
+          [
+            121.522455,
+            25.1046306
+          ],
+          [
+            121.5224002,
+            25.1048231
+          ],
+          [
+            121.5223856,
+            25.1048787
+          ],
+          [
+            121.5223842,
+            25.1048892
+          ],
+          [
+            121.5223854,
+            25.1048996
+          ],
+          [
+            121.522389,
+            25.1049096
+          ],
+          [
+            121.5223951,
+            25.1049186
+          ],
+          [
+            121.5224031,
+            25.1049261
+          ],
+          [
+            121.5224519,
+            25.1049648
+          ],
+          [
+            121.5227,
+            25.1051734
+          ],
+          [
+            121.5230783,
+            25.1054898
+          ],
+          [
+            121.523279,
+            25.1056676
+          ],
+          [
+            121.5232856,
+            25.1056734
+          ],
+          [
+            121.52346756040951,
+            25.105789959434617
+          ],
+          [
+            121.5234657781898,
+            25.105792273096835
           ]
         ]
       }
@@ -534,8 +689,8 @@
       "properties": {
         "feature_type": "route",
         "ref": "紅68",
-        "name": "紅68",
-        "name_en": "R68",
+        "name": "紅68（本線）",
+        "name_en": "R68 (Main Line)",
         "color": "#F97316",
         "direction": 1,
         "corners_rounded": true
@@ -544,48 +699,8 @@
         "type": "LineString",
         "coordinates": [
           [
-            121.52285600000012,
-            25.102699999999903
-          ],
-          [
-            121.52242057480616,
-            25.104860097837573
-          ],
-          [
-            121.52241864952335,
-            25.104878250112108
-          ],
-          [
-            121.52242010671172,
-            25.104896573757312
-          ],
-          [
-            121.52242493133991,
-            25.10491441092516
-          ],
-          [
-            121.52243298522889,
-            25.104931250753012
-          ],
-          [
-            121.52244403771252,
-            25.10494661094237
-          ],
-          [
-            121.52245746394766,
-            25.104959796029725
-          ],
-          [
-            121.5229754,
-            25.1053874
-          ],
-          [
-            121.5234915,
-            25.1057579
-          ],
-          [
-            121.5240584,
-            25.1060602
+            121.5234657781898,
+            25.105792273096835
           ],
           [
             121.5246327,
@@ -1121,7 +1236,7 @@
         "ref": "TPE198204",
         "name": "洲美里",
         "name_en": "Zhoumei Village",
-        "line": "紅68",
+        "line": "紅68（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "1001350"
@@ -1141,7 +1256,7 @@
         "ref": "TPE199465",
         "name": "洲美街219號",
         "name_en": "No.219 Zhoumei St.",
-        "line": "紅68",
+        "line": "紅68（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "1165604796"
@@ -1161,7 +1276,7 @@
         "ref": "TPE198205",
         "name": "洲美國小",
         "name_en": "Zhoumei Elementary School",
-        "line": "紅68",
+        "line": "紅68（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "1165609896"
@@ -1181,7 +1296,7 @@
         "ref": "TPE196865",
         "name": "福美站",
         "name_en": "Fu Mei Stop",
-        "line": "紅68",
+        "line": "紅68（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "1165604734"
@@ -1201,7 +1316,7 @@
         "ref": "TPE196866",
         "name": "三王宮",
         "name_en": "Sanwang Temple",
-        "line": "紅68",
+        "line": "紅68（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "1165604736"
@@ -1221,7 +1336,7 @@
         "ref": "TPE208434",
         "name": "福美承平路口",
         "name_en": "FuMei ChengPing Intersection",
-        "line": "紅68",
+        "line": "紅68（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "1165606676"
@@ -1241,7 +1356,7 @@
         "ref": "TPE223202",
         "name": "福國承信路口",
         "name_en": "Fuguo ChengXin Intersection",
-        "line": "紅68",
+        "line": "紅68（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "1165610459"
@@ -1261,7 +1376,7 @@
         "ref": "TPE196867",
         "name": "捷運芝山站(福華)",
         "name_en": "MRT Zhishan Sta. (Fuhua)",
-        "line": "紅68",
+        "line": "紅68（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "1165604714"
@@ -1281,7 +1396,7 @@
         "ref": "TPE196868",
         "name": "中山北路口(德行)",
         "name_en": "Zhongshan N. Rd. Entrance (Dexing)",
-        "line": "紅68",
+        "line": "紅68（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "610"
@@ -1301,7 +1416,7 @@
         "ref": "TPE196869",
         "name": "士林電機(中山德行路口)",
         "name_en": "Shilin Electric and Engineering Corp. (Zhongshan & Dexing Rd. Intersection)",
-        "line": "紅68",
+        "line": "紅68（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "50633"
@@ -1321,7 +1436,7 @@
         "ref": "TPE196870",
         "name": "德行(中山忠誠路口)",
         "name_en": "Dexing (Zhongshan & Zhongcheng Rd. Intersection)",
-        "line": "紅68",
+        "line": "紅68（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "922"
@@ -1341,7 +1456,7 @@
         "ref": "TPE196871",
         "name": "捷運芝山站(福國)",
         "name_en": "MRT Zhishan Sta. (Fuguo)",
-        "line": "紅68",
+        "line": "紅68（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "50667"
@@ -1361,7 +1476,7 @@
         "ref": "TPE213193",
         "name": "福國承信路口",
         "name_en": "Fuguo ChengXin Intersection",
-        "line": "紅68",
+        "line": "紅68（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "1165608875"
@@ -1381,7 +1496,7 @@
         "ref": "TPE208435",
         "name": "福美承平路口",
         "name_en": "FuMei ChengPing Intersection",
-        "line": "紅68",
+        "line": "紅68（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "1165606675"
@@ -1401,7 +1516,7 @@
         "ref": "TPE196872",
         "name": "三王宮",
         "name_en": "Sanwang Temple",
-        "line": "紅68",
+        "line": "紅68（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "1165604737"
@@ -1421,7 +1536,7 @@
         "ref": "TPE196873",
         "name": "福美站",
         "name_en": "Fu Mei Stop",
-        "line": "紅68",
+        "line": "紅68（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "1165604735"
@@ -1441,7 +1556,7 @@
         "ref": "TPE198206",
         "name": "洲美國小",
         "name_en": "Zhoumei Elementary School",
-        "line": "紅68",
+        "line": "紅68（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "1165609895"
@@ -1461,7 +1576,7 @@
         "ref": "TPE221865",
         "name": "洲美街219號",
         "name_en": "No.219 Zhoumei St.",
-        "line": "紅68",
+        "line": "紅68（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "1165610359"
@@ -1481,7 +1596,7 @@
         "ref": "TPE198207",
         "name": "洲美里",
         "name_en": "Zhoumei Village",
-        "line": "紅68",
+        "line": "紅68（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "1001350"

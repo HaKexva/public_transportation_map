@@ -17,6 +17,16 @@ class GeojsonBusServiceDaysTest < ActiveSupport::TestCase
     assert_nil Geojson::BusServiceDays.daily_trips([])
   end
 
+  test "a night bus after midnight stays on the same operating day" do
+    trip = ->(time) { { "ServiceDay" => WEEKDAYS, "StopTimes" => [ { "DepartureTime" => time } ] } }
+    rows = [ { "Direction" => 0, "Timetables" => [ trip.call("23:30"), trip.call("00:05"), trip.call("24:05") ] } ]
+
+    assert_equal %w[23:30 00:05 24:05], Geojson::BusServiceDays.operating_order(%w[00:05 24:05 23:30])
+    assert_equal [ 1410, 1445 ], Geojson::BusServiceDays.operating_span(%w[00:05 23:30])
+    assert_equal 2, Geojson::BusServiceDays.daily_trips(rows)
+    assert_equal %w[00:10 06:00], Geojson::BusServiceDays.operating_order(%w[00:10 06:00])
+  end
+
   test "picks the timetable rows of a 本線 or 延駛 variant" do
     rows = [ { "SubRouteName" => { "Zh_tw" => "237不經政大校區" } }, { "SubRouteName" => { "Zh_tw" => "237經政大校區" } } ]
     own = ->(name, via) { Geojson::BusServiceDays.own_rows(rows, ref: "237", name:, via:).map { |row| row.dig("SubRouteName", "Zh_tw") } }
@@ -56,6 +66,7 @@ class GeojsonBusServiceDaysTest < ActiveSupport::TestCase
     window = Geojson::BusServiceDays.service_window(trips("22:30"), trips("05:30", "21:30"))
 
     assert_equal({ "after" => "22:30" }, window)
+    assert_equal({ "after" => "23:30" }, Geojson::BusServiceDays.service_window(trips("00:05", "23:30"), trips("06:00", "21:00")))
     assert_equal "216（22:30後不繞駛榮總院區）", Geojson::BusServiceDays.display_name("216（不繞駛榮總院區）", window)
     assert_equal "5（06:00前）", Geojson::BusServiceDays.display_name("5", { "before" => "06:00" })
   end

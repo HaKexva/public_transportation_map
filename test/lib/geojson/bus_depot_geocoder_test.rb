@@ -40,7 +40,8 @@ class GeojsonBusDepotGeocoderTest < ActiveSupport::TestCase
     parsed = Geojson::BusDepotWriter.parse_manual(@manual)
     depots = parsed.depots.index_by { |row| row["code"] }
     assert_equal [ "121.389123", "25.0712" ], depots["N1"].values_at("lon", "lat")
-    assert_equal "臺北市北投區關渡路口・座標約略，請確認", depots["N2"]["note"]
+    assert_equal "臺北市北投區關渡路口", depots["N2"]["address"]
+    assert_equal "座標約略，請確認", depots["N2"]["note"]
     assert_equal "", depots["N3"]["lon"]
     assert_equal [ "N1" ], parsed.routes.map { |row| row["depot_code"] }
   end

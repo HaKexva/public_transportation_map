@@ -133,7 +133,7 @@ class GeojsonBusDepotWriterTest < ActiveSupport::TestCase
     stations = @root.join(Geojson::BusDepotWriter::STATIONS_BASENAME)
 
     assert_equal 1, Geojson::BusDepotWriter.write_missing!(path: @out, bus_root: @root, manual_path: manual)
-    assert_match(/\| SDEPOT1 \| 暖暖分站\(調度站\) \| 121\.74 \| 25\.1 \| 自動偵測・1 條路線・\[地圖\]/, File.read(stations))
+    assert_match(/\| SDEPOT1 \| 暖暖分站\(調度站\) \| 121\.74 \| 25\.1 \|  \|  \| 自動偵測・1 條路線・\[地圖\]/, File.read(stations))
 
     File.write(manual, File.read(manual).sub("| 605 |  | 某站 | 某站 |  |", "| 605 |  | 某站 | 某站 | SDEPOT1 |"))
 
@@ -273,7 +273,7 @@ class GeojsonBusDepotWriterTest < ActiveSupport::TestCase
       { "city" => "keelung_bus", "route_id" => "keelung_102", "route_name" => "102", "depot_code" => "#" }
     ]
     depot_rows = [
-      { "city" => "keelung_bus", "code" => "N1", "name" => "八堵調度站", "note" => "基隆市某路1號" },
+      { "city" => "keelung_bus", "code" => "N1", "name" => "八堵調度站", "note" => "基隆市某路1號・電話 (02)2426-1234" },
       { "city" => "keelung_bus", "code" => "N2", "name" => "未用站" }
     ]
     File.write(manual, Geojson::BusDepotWriter.manual_markdown(depot_rows:, route_rows:))
@@ -286,12 +286,13 @@ class GeojsonBusDepotWriterTest < ActiveSupport::TestCase
     moved = Geojson::BusDepotWriter.parse_manual(confirmed)
     assert_equal [ [ "keelung_101", "N1" ] ], moved.routes.map { |row| row.values_at("route_id", "depot_code") }
     assert_empty moved.depots
-    assert_equal [ [ "N1", "基隆市某路1號" ], [ "N2", "" ] ],
-      Geojson::BusDepotWriter.parse_manual(stations).depots.map { |row| row.values_at("code", "note") }
+    assert_equal [ [ "N1", "基隆市某路1號", "(02)2426-1234" ], [ "N2", "", "" ] ],
+      Geojson::BusDepotWriter.parse_manual(stations).depots.map { |row| row.values_at("code", "address", "phone") }
 
     assert_equal 0, Geojson::BusDepotWriter.write_missing!(path: @out, bus_root: @root, manual_path: manual)
     depots = JSON.parse(File.read(@out))
-    assert_equal [ [ "八堵調度站", [ "keelung_101" ], "基隆市某路1號" ] ], depots.map { |depot| depot.values_at("name", "routes", "address") }
+    assert_equal [ [ "八堵調度站", [ "keelung_101" ], "基隆市某路1號", "(02)2426-1234" ] ],
+      depots.map { |depot| depot.values_at("name", "routes", "address", "phone") }
     assert_equal [ "keelung_102" ], Geojson::BusDepotWriter.parse_manual(manual).routes.map { |row| row["route_id"] }
     assert_equal %w[N1 N2], Geojson::BusDepotWriter.parse_manual(stations).depots.map { |row| row["code"] }
   end

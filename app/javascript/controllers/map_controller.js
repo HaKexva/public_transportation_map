@@ -6,6 +6,7 @@ import { buildChainage, longestTrackLine, nearestProjection, pointAtDistance } f
 
 const LEAFLET_BOUNDS = [ [ 21.85, 118.15 ], [ 26.45, 122.25 ] ]
 const VIEW_REGION_STORAGE_KEY = "map-view-region"
+const MAP_CAMERA_STORAGE_KEY = "map-camera"
 const TRANSPORT_MODES = [ "rail", "bus" ]
 const VIEW_REGION_IDS = [ "north", "central", "south", "east" ]
 const VIEW_REGIONS = {
@@ -65,6 +66,7 @@ const LAYER_COLORS = {
   train: "#dc2626",
   hsr: "#DB5325",
   ferry: "#0891b2",
+  flight: "#7c3aed",
 }
 
 const MAX_SNAP_DISTANCE_METERS = 350
@@ -90,38 +92,95 @@ const PARALLEL_TRACK_HALF_GAP_PX = 6
 const PARALLEL_TRACK_ROUTE_IDS = new Set([
   "airport_mrt",
   "airport_mrt_express",
-  "danhai_lrt",
+  "danhai_lushan",
+  "danhai_lanhai",
   "taoyuan_airport_skytrain"
 ])
+const DANHAI_LAYER_IDS = new Set([ "danhai_lushan", "danhai_lanhai" ])
+const DANHAI_SCHEDULE_ROUTE_ID = "danhai_lrt"
 // Keep dual tracks on at most zooms; gap is screen-fixed so it stays readable when zoomed out.
 const PARALLEL_TRACK_MIN_ZOOM = 10
 // Schedule trips for express live under airport_mrt (trip_type=express).
+// Danhai segment layers share trips under danhai_lrt.
 const STATION_BOARD_ROUTE_ALIASES = {
   airport_mrt_express: [ "airport_mrt" ],
-  airport_mrt: [ "airport_mrt" ]
+  airport_mrt: [ "airport_mrt" ],
+  danhai_lushan: [ DANHAI_SCHEDULE_ROUTE_ID ],
+  danhai_lanhai: [ DANHAI_SCHEDULE_ROUTE_ID ]
+}
+const VEHICLE_ROUTE_ALIASES = {
+  danhai_lushan: [ DANHAI_SCHEDULE_ROUTE_ID ],
+  danhai_lanhai: [ DANHAI_SCHEDULE_ROUTE_ID ]
 }
 const BUS_BAND_GAP_PX = 5
 const BUS_BAND_MIN_ZOOM = 12
 const BUS_DIRECTION_HALF_GAP_PX = 5
-// Weekday trips (busier direction) at which a bus line is drawn faintest /
-// in full colour; log scale in between.
-const BUS_FREQUENCY_FAINT_TRIPS = 2
-const BUS_FREQUENCY_FULL_TRIPS = 120
-const BUS_FREQUENCY_MAX_FADE = 0.65
+// A screen-fixed gap is tens of metres once zoomed out, which swings a line
+// off a narrow deck (中山橋) and across the river. Keep the shift on the road.
+const BUS_OFFSET_MAX_METERS = 16
+// Leaflet drops vertices closer than this many pixels. A roundabout then
+// collapses into a triangle once it is small on screen, so route lines keep
+// every vertex.
+const ROUTE_LINE_SMOOTH_FACTOR = 0
+// Points this close to one circle are a roundabout. Offset changes the radius
+// only; a smaller ring has to stay that circle.
+const ROUNDABOUT_FIT_METERS = 2
+const ROUNDABOUT_MIN_RADIUS_METERS = 18
+const ROUNDABOUT_MAX_RADIUS_METERS = 120
+const ROUNDABOUT_MIN_SWEEP_DEG = 70
+// Weekday trips (busier direction): few trips wash toward the basemap (淺),
+// many keep the operator colour (實). Log scale between these anchors.
+const BUS_FREQUENCY_FAINT_TRIPS = 4
+const BUS_FREQUENCY_FULL_TRIPS = 64
+const BUS_FREQUENCY_MAX_FADE = 0.88
+// Joint routes: solid colour_1 under dashed colour_2. Canvas has no dashOffset,
+// so the second ink must sit opaque on top rather than share a zebra offset.
+const BUS_JOINT_DASH = "14 11"
 const BUS_OVERLAP_METERS = 40
 const BUS_CLICK_HIT_METERS = 35
 const BUS_BAND_PEER_SAMPLE = 14
 const BUS_ARROW_MIN_ZOOM = 14
 const BUS_ARROW_EDGE_PAD_M = 40
 const BUS_ARROW_BASE_SPACING_M = 200
+// One-way loops / single-direction corridors need arrows the whole way;
+// keep those sparse so a circulator does not look like a zipper.
+const BUS_ARROW_LONG_RUN_M = 450
+const BUS_ARROW_LONG_SPACING_M = 950
+const BUS_ARROW_VERY_LONG_RUN_M = 1800
+const BUS_ARROW_VERY_LONG_SPACING_M = 1500
+// Freeway / tunnel / system-interchange ramps: long one-way stretches with no
+// nearby stops. Direction is obvious — suppress arrows entirely.
+const BUS_ARROW_HIGHWAY_RUN_M = 700
+const BUS_ARROW_HIGHWAY_STOP_GAP_M = 350
 // Opposite direction within this distance counts as the same street.
 const BUS_ARROW_SHARED_M = 35
+// Dual carriageways / tunnel bores sit farther apart but still face each other —
+// treat antiparallel opposite runs in this band as shared (no arrows).
+const BUS_ARROW_CORRIDOR_M = 200
+const BUS_ARROW_ANTIPARALLEL_DEG = 45
 // The line passing its own path again (out-and-back spur, figure 8).
 const BUS_ARROW_SELF_OVERLAP_M = 20
 const BUS_ARROW_SELF_GAP_M = 150
 const BUS_ARROW_SAMPLE_M = 30
 const BUS_ARROW_MIN_RUN_M = 30
 const BUS_ARROW_INDEX_CELL_M = 50
+// Corridors where travel direction is already obvious — no arrows.
+// [minLon, minLat, maxLon, maxLat]
+const BUS_ARROW_SUPPRESS_BOXES = [
+  // 建國高架（建國南北路 elevated, roughly 和平–圓山）
+  [ 121.5355, 25.0250, 121.5398, 25.0760 ],
+  // 公車專用道（臺北市主要幹道）
+  [ 121.5320, 25.0420, 121.5348, 25.0685 ], // 松江路
+  [ 121.5100, 25.0512, 121.5660, 25.0538 ], // 南京東／西路
+  [ 121.5100, 25.0612, 121.5660, 25.0638 ], // 民權東／西路
+  [ 121.5145, 25.0368, 121.5660, 25.0390 ], // 仁愛路
+  [ 121.5145, 25.0322, 121.5660, 25.0348 ], // 信義路
+  [ 121.5120, 25.0480, 121.5155, 25.0760 ], // 重慶北路
+  [ 121.5070, 25.0315, 121.5105, 25.0455 ], // 中華路
+  [ 121.5280, 25.0195, 121.5345, 25.0430 ], // 新生南路
+  [ 121.5480, 25.0325, 121.5508, 25.0530 ], // 敦化南路（南向專用道）
+  [ 121.5220, 25.0065, 121.5425, 25.0335 ]  // 羅斯福路
+]
 const LAYER_LOAD_CONCURRENCY = 6
 const BUS_BULK_LOAD_CONCURRENCY = 8
 const BUS_BULK_DEFER_THRESHOLD = 8
@@ -143,6 +202,8 @@ const CARTO_LIGHT_BASEMAP_URL = "https://{s}.basemaps.cartocdn.com/light_nolabel
 const CARTO_DARK_BASEMAP_URL = "https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png"
 const ESRI_SAT_BASEMAP_URL = "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
 const NLSC_BASEMAP_URL = "https://wmts.nlsc.gov.tw/wmts/EMAP/default/GoogleMapsCompatible/{z}/{y}/{x}"
+const GOOGLE_MUTANT_URL = "https://unpkg.com/leaflet.gridlayer.googlemutant@0.16.0/dist/Leaflet.GoogleMutant.js"
+const GOOGLE_DEFAULTED_STORAGE_KEY = "map-basemap-google-defaulted"
 const CARTO_BASEMAP_ATTRIBUTION = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>'
 const ESRI_SAT_BASEMAP_ATTRIBUTION = "Tiles &copy; Esri &mdash; Source: Esri, Maxar, Earthstar Geographics"
 const NLSC_BASEMAP_ATTRIBUTION_NAMES = { zh: "內政部國土測繪中心", en: "National Land Surveying and Mapping Center" }
@@ -260,13 +321,16 @@ export default class extends Controller {
   static values = {
     initialRouteId: String,
     autoDefaultLayers: { type: Boolean, default: false },
+    pageMode: { type: String, default: "lookup" },
     transportMode: { type: String, default: "rail" },
     routesManifestUrl: { type: String, default: "/geojson/routes.json" },
     busManifestUrl: { type: String, default: "/geojson/bus/manifest.json" },
     metroDepotsUrl: { type: String, default: "/geojson/metro_depots.json" },
     busDepotsUrl: { type: String, default: "/geojson/bus_depots.json" },
     outOfStationTransfersUrl: { type: String, default: "/geojson/out_of_station_transfers.json" },
-    cartoApiKey: { type: String, default: "" }
+    cartoApiKey: { type: String, default: "" },
+    googleMapsApiKey: { type: String, default: "" },
+    taoyuanTrunkNames: { type: Object, default: {} }
   }
 
   static targets = [
@@ -279,29 +343,35 @@ export default class extends Controller {
     "layerSearchGroup",
     "layerSearchEmpty",
     "layerSearchClear",
+    "stopSearch",
+    "stopSearchList",
+    "itineraryPlanner",
+    "itineraryOrigin",
+    "itineraryDestination",
+    "itineraryDepart",
+    "itineraryOriginList",
+    "itineraryDestinationList",
+    "itineraryStatus",
+    "itineraryResults",
     "categoryChip",
+    "pageModeChip",
     "transportModeChip",
     "railCategoryChips",
     "busFilters",
     "busFilter",
-    "regionSwitcher",
     "searchHint",
     "busRouteBucket",
     "routeBrowser",
     "routeResults",
     "routeStopsPanel",
+    "routeStopsPath",
     "routeStopsTitle",
     "routeStopsMeta",
     "routeStopsList",
     "routeStopsEmpty",
     "basemapSelect",
-    "bootOverlay",
-    "bootStatus",
-    "bootProgressBar",
-    "bootCount",
-    "bootList",
-    "regionChip",
     "routeGroupCheckbox",
+    "cancelRouteDisplay",
     "routeViewTab",
     "routeMapSection",
     "routeOfficialPanel",
@@ -353,6 +423,8 @@ export default class extends Controller {
     this.transportMode = "rail"
     this.transportModeSwitching = false
     this.basemapStyle = this.readBasemapStyle()
+    this.onGoogleAuthFailure = () => this.fallbackFromGoogleBasemap()
+    document.addEventListener("google-maps:auth-failure", this.onGoogleAuthFailure)
     this.simulationAt = null
     this.simulationPlaying = false
     this.simulationSpeed = 1
@@ -403,6 +475,11 @@ export default class extends Controller {
     this.crossingsVisible = false
     this.crossingFeatures = []
     this.pinMode = false
+    this.streetViewPickMode = false
+    this.streetViewPanelEl = null
+    this.streetViewPanorama = null
+    this.streetViewMarker = null
+    this.streetViewRequest = 0
     this.nearbyPins = []
     this.nearbyPinGroup = null
     this.exploreRelax = false
@@ -437,7 +514,6 @@ export default class extends Controller {
     this.startBootTask("leaflet", this.t("boot.leaflet"))
     this.waitForLeaflet(0)
     this.initializeCategoryFilter()
-    this.syncRegionChips()
     this.onSimulationTime = (event) => this.handleSimulationTime(event)
     this.onSimulationSpeed = (event) => this.handleSimulationSpeed(event)
     window.addEventListener("map:simulation-time", this.onSimulationTime)
@@ -474,6 +550,7 @@ export default class extends Controller {
       this.map.off("moveend", this.refreshStationLabelsOnView)
     }
     if (this.onThemeChanged) window.removeEventListener("theme:changed", this.onThemeChanged)
+    if (this.onGoogleAuthFailure) document.removeEventListener("google-maps:auth-failure", this.onGoogleAuthFailure)
     if (this.onSimulationTime) window.removeEventListener("map:simulation-time", this.onSimulationTime)
     if (this.onSimulationSpeed) window.removeEventListener("map:simulation-speed", this.onSimulationSpeed)
     if (this.vehicleRefreshTimer) clearTimeout(this.vehicleRefreshTimer)
@@ -488,6 +565,12 @@ export default class extends Controller {
       this.stationBoardFetchControllers.clear()
     }
     if (this.stationBoardRefreshTimer) clearTimeout(this.stationBoardRefreshTimer)
+    if (this.stopSearchTimer) clearTimeout(this.stopSearchTimer)
+    this.stopSearchAbort?.abort()
+    this.itineraryAbort?.abort()
+    if (this.itinerarySuggestTimer) clearTimeout(this.itinerarySuggestTimer)
+    if (this.map && this._onItineraryMapClick) this.map.off("click", this._onItineraryMapClick)
+    this.itineraryLayer?.remove()
     this.stopVehicleAnimationLoop()
     this.stopFollowingVehicle({ silent: true })
     this.vehicleCanvas?.remove()
@@ -503,6 +586,14 @@ export default class extends Controller {
     this.stationBoardEl?.remove()
     this.nearbyPanelEl?.remove()
     this.explorePanelEl?.remove()
+    this.closeStreetView({ silent: true })
+    this.streetViewPanelEl?.remove()
+    this.streetViewPanelEl = null
+    if (this.map && this._onStreetViewPickClick) {
+      this.map.off("click", this._onStreetViewPickClick)
+      this._onStreetViewPickClick = null
+    }
+    this.map?.getContainer()?.classList.remove("map--street-view-pick")
     if (this.shareTimer) clearTimeout(this.shareTimer)
     this.cancelBusLayerLoadQueue()
     this.busLoadPumping = false
@@ -514,18 +605,26 @@ export default class extends Controller {
       this.map.off("dragstart", this.onFollowMapDrag)
       this.onFollowMapDrag = null
     }
+    if (this.map && this.onMobileMapDrag) {
+      this.map.off("dragstart", this.onMobileMapDrag)
+      this.onMobileMapDrag = null
+    }
+    this.resetMobileSheetOffset?.()
     this.followBarEl?.remove()
     this.followBarEl = null
     this.element?.classList.remove("map-split-layout--layers-open")
     document.body.classList.remove("overflow-hidden")
     this.themeObserver?.disconnect()
     this.themeObserver = null
+    // Capture camera before the map is torn down so a hard refresh can restore it.
+    this.persistMapCamera()
     this.map?.remove()
     this.map = null
     this.mapReady = false
     this.booting = false
     this.bootTasks = []
     this.tileLayer = null
+    this.googleLayer = null
     this.layerGroups = {}
     this.layerVisible = this.trackedLayerVisibility()
     this.layerLoadGeneration = {}
@@ -595,7 +694,27 @@ export default class extends Controller {
   }
 
   routeDisplayName(route) {
-    return this.localizedName(route?.name, route?.name_en || route?.nameEn)
+    const name = this.localizedName(route?.name, route?.name_en || route?.nameEn)
+    if (route?.city_id !== "Taoyuan") return name
+
+    const note = this.taoyuanTrunkName(route?.ref)
+    if (!note || String(name || "").includes(note)) return name
+    const base = name || route.ref || ""
+    return base ? `${base}（${note}）` : note
+  }
+
+  taoyuanTrunkName(ref) {
+    const payload = this.hasTaoyuanTrunkNamesValue ? this.taoyuanTrunkNamesValue : null
+    const names = payload?.names
+    if (!names) return ""
+
+    const text = String(ref || "").trim()
+    if (!text || (payload.exceptions || []).includes(text)) return ""
+    if (names[text]) return names[text]
+
+    const base = text.match(/^\d+/)?.[0]
+    if (!base || base === text) return ""
+    return names[base] || ""
   }
 
   featureDisplayName(feature) {
@@ -656,12 +775,14 @@ export default class extends Controller {
       wheelPxPerZoomLevel: 80,
       wheelDebounceTime: 40
     })
+    this.itineraryLayer = L.layerGroup().addTo(this.map)
 
     this.tileLayer = L.tileLayer(this.primaryBasemapUrl(), {
       ...this.primaryBasemapOptions(),
       updateWhenZooming: true,
       keepBuffer: 2
     }).addTo(this.map)
+    this.applyBasemap()
     this.syncPrimaryBasemapClass()
     this.finishBootTask("leaflet")
 
@@ -741,6 +862,7 @@ export default class extends Controller {
     this.crossingGroup = L.layerGroup()
     this.nearbyPinGroup = L.layerGroup().addTo(this.map)
     this.pendingShare = this.readShareParams()
+    this.mergeStoredCameraIntoShare()
     this.transportMode = this.initialTransportMode()
     this.ensureExploreUi()
     this.restoreRelaxMode()
@@ -755,7 +877,15 @@ export default class extends Controller {
 
     this.ensureAllLayerGroups()
 
-    this.fitRegionBounds({ animate: false })
+    if (this.shareHasCamera()) {
+      this.map.setView(
+        [ this.pendingShare.lat, this.pendingShare.lng ],
+        this.pendingShare.z || this.map.getZoom() || 12,
+        { animate: false }
+      )
+    } else {
+      this.fitRegionBounds({ animate: false })
+    }
     this.map.zoomControl.setPosition("topright")
     this.parallelTracksActive = (this.map.getZoom() ?? 12) >= PARALLEL_TRACK_MIN_ZOOM
     this.busBandsActive = (this.map.getZoom() ?? 12) >= BUS_BAND_MIN_ZOOM
@@ -787,6 +917,13 @@ export default class extends Controller {
       this.syncFollowBar()
     }
     this.map.on("dragstart", this.onFollowMapDrag)
+
+    // Free map space on phones: collapse the expanded time panel when panning.
+    this.onMobileMapDrag = () => {
+      if (!window.matchMedia("(max-width: 767px)").matches) return
+      window.dispatchEvent(new CustomEvent("map:collapse-time-scrubber"))
+    }
+    this.map.on("dragstart", this.onMobileMapDrag)
 
     this.ensureFollowBar()
 
@@ -820,6 +957,7 @@ export default class extends Controller {
       // Unlock UI before vehicle/schedule fetches. Waiting on /api/schedules
       // kept every checkbox and route control dead for tens of seconds.
       this.completeBoot()
+      this.openPlanSidebarIfNeeded()
       this.schedulePrefetchNeighborRegions()
       this.scheduleShareUrlUpdate()
       if (!systemsBooted) {
@@ -927,6 +1065,12 @@ export default class extends Controller {
     return "rail"
   }
 
+  pageModeFromPath() {
+    const path = window.location.pathname.replace(/\/+$/, "") || "/"
+    if (path === "/plan") return "plan"
+    return "lookup"
+  }
+
   transportModeFromPath() {
     const path = window.location.pathname.replace(/\/+$/, "") || "/"
     if (path === "/bus") return "bus"
@@ -939,6 +1083,7 @@ export default class extends Controller {
   }
 
   syncTransportModePath(mode = this.transportMode) {
+    if (this.pageModeFromPath() === "plan") return
     const path = this.transportModePath(mode)
     if (window.location.pathname === path) return
     const next = `${path}${window.location.search}`
@@ -1031,15 +1176,18 @@ export default class extends Controller {
       this.busFiltersTarget.classList.toggle("hidden", this.transportMode !== "bus")
     }
 
-    if (this.hasRegionSwitcherTarget) {
-      this.regionSwitcherTarget.classList.toggle("is-hidden", this.transportMode === "bus")
-    }
-
     if (this.hasSearchHintTarget) {
       const hint = this.transportMode === "bus"
         ? this.searchHintTarget.dataset.busHint
         : this.searchHintTarget.dataset.railHint
       if (hint) this.searchHintTarget.textContent = hint
+    }
+
+    if (this.hasLayerSearchInputTarget) {
+      const placeholder = this.transportMode === "bus"
+        ? this.layerSearchInputTarget.dataset.busPlaceholder
+        : this.layerSearchInputTarget.dataset.railPlaceholder
+      if (placeholder) this.layerSearchInputTarget.placeholder = placeholder
     }
   }
 
@@ -1124,6 +1272,42 @@ export default class extends Controller {
     return Number.isFinite(this.pendingShare?.lat) && Number.isFinite(this.pendingShare?.lng)
   }
 
+  mergeStoredCameraIntoShare() {
+    if (this.shareHasCamera()) return
+    try {
+      const raw = window.sessionStorage?.getItem(MAP_CAMERA_STORAGE_KEY)
+      if (!raw) return
+      const stored = JSON.parse(raw)
+      const lat = Number(stored?.lat)
+      const lng = Number(stored?.lng)
+      const z = Number(stored?.z)
+      if (!Number.isFinite(lat) || !Number.isFinite(lng)) return
+      this.pendingShare = {
+        ...(this.pendingShare || {}),
+        lat,
+        lng,
+        z: Number.isFinite(z) ? z : null
+      }
+    } catch (_error) {
+      // ignore storage
+    }
+  }
+
+  persistMapCamera() {
+    if (!this.map) return
+    try {
+      const center = this.map.getCenter()
+      if (!center) return
+      window.sessionStorage?.setItem(MAP_CAMERA_STORAGE_KEY, JSON.stringify({
+        lat: center.lat,
+        lng: center.lng,
+        z: this.map.getZoom()
+      }))
+    } catch (_error) {
+      // ignore storage
+    }
+  }
+
   fitRegionBounds({ animate = true } = {}) {
     if (!this.map) return
 
@@ -1146,34 +1330,11 @@ export default class extends Controller {
     return Array.from(new Set(ids))
   }
 
-  syncRegionChips() {
-    if (!this.hasRegionChipTarget) return
-
-    this.regionChipTargets.forEach((chip) => {
-      const active = chip.dataset.regionId === this.viewRegion
-      chip.setAttribute("aria-pressed", active ? "true" : "false")
-      chip.classList.toggle("map-region-switcher__chip--active", active)
-      chip.disabled = this.regionSwitching
-    })
-  }
-
-  async selectViewRegion(event) {
-    const regionId = event.currentTarget?.dataset?.regionId
-    if (!VIEW_REGION_IDS.includes(regionId)) return
-    if (regionId === this.viewRegion) {
-      this.fitRegionBounds()
-      return
-    }
-
-    await this.applyViewRegion(regionId, { persist: true })
-  }
-
   async applyViewRegion(regionId, { persist = false } = {}) {
     if (!VIEW_REGION_IDS.includes(regionId) || this.regionSwitching) return
 
     this.viewRegion = regionId
     if (persist) this.persistViewRegion(regionId)
-    this.syncRegionChips()
     this.fitRegionBounds()
 
     if (!this.mapReady || !this.autoDefaultLayersValue) return
@@ -1181,7 +1342,6 @@ export default class extends Controller {
     if (this.transportMode === "bus") return
 
     this.regionSwitching = true
-    this.syncRegionChips()
     const keep = new Set(this.routeIdsForViewRegion(regionId))
     this.visibleRouteLayerIds().forEach((routeId) => {
       if (!keep.has(routeId)) this.hideLayerWithCheckbox(routeId)
@@ -1193,7 +1353,6 @@ export default class extends Controller {
       this.schedulePrefetchNeighborRegions()
     } finally {
       this.regionSwitching = false
-      this.syncRegionChips()
     }
   }
 
@@ -1252,13 +1411,14 @@ export default class extends Controller {
     const ids = Array.from(new Set(routeIds || [])).filter(Boolean)
     if (ids.length === 0) return
 
-    await this.ensureScheduleSnapshots(ids)
+    const scheduleIds = this.vehicleApiRouteIds(ids)
+    await this.ensureScheduleSnapshots(scheduleIds)
     this.refreshLocalFleet({ resync: true })
 
     const nearLive = this.isNearLiveClock()
     const serverRouteIds = nearLive
-      ? ids
-      : ids.filter((id) => !this.snapshotHasTrips(id))
+      ? scheduleIds
+      : scheduleIds.filter((id) => !this.snapshotHasTrips(id))
     if (serverRouteIds.length === 0) return
 
     await this.fetchServerVehiclesInChunks(serverRouteIds, { nearLive, incremental: true })
@@ -1266,8 +1426,6 @@ export default class extends Controller {
 
   dockBootHud() {
     this.element.classList.add("is-booting-map")
-    if (this.hasBootOverlayTarget) this.bootOverlayTarget.classList.add("map-boot-overlay--hud")
-    this.renderBootProgress()
   }
 
   queueBootTask(id, label) {
@@ -1279,7 +1437,6 @@ export default class extends Controller {
     } else {
       this.bootTasks.push({ id, label, status: "pending" })
     }
-    this.renderBootProgress()
   }
 
   startBootTask(id, label) {
@@ -1291,47 +1448,14 @@ export default class extends Controller {
     } else {
       this.bootTasks.push({ id, label, status: "loading" })
     }
-    this.renderBootProgress()
   }
 
   finishBootTask(id, status = "done") {
     const task = this.bootTasks?.find((entry) => entry.id === id)
     if (task) task.status = status === "error" ? "error" : "done"
-    this.renderBootProgress()
   }
 
-  renderBootProgress() {
-    const tasks = this.bootTasks || []
-    const done = tasks.filter((task) => task.status === "done" || task.status === "error").length
-    const total = tasks.length
-    const percent = total === 0 ? 0 : Math.round((done / total) * 100)
-    const current = tasks.find((task) => task.status === "loading")
-      || tasks.find((task) => task.status === "pending")
-
-    if (this.hasBootProgressBarTarget) {
-      this.bootProgressBarTarget.style.width = `${percent}%`
-    }
-    if (this.hasBootCountTarget) {
-      this.bootCountTarget.textContent = this.t("boot.count", { done, total })
-    }
-    if (this.hasBootStatusTarget) {
-      this.bootStatusTarget.textContent = current?.label || (total > 0 && done === total ? this.t("boot.ready") : this.t("boot.starting"))
-    }
-    if (this.hasBootListTarget) {
-      this.bootListTarget.replaceChildren(...tasks.map((task) => {
-        const item = document.createElement("li")
-        item.className = `map-boot-overlay__item map-boot-overlay__item--${task.status}`
-        item.textContent = task.label
-        return item
-      }))
-      const currentItem = this.bootListTarget.querySelector(".map-boot-overlay__item--loading")
-        || this.bootListTarget.querySelector(".map-boot-overlay__item--pending")
-        || this.bootListTarget.lastElementChild
-      currentItem?.scrollIntoView({ block: "nearest" })
-    }
-  }
-
-  completeBoot({ failed = false } = {}) {
+  completeBoot() {
     if (this.bootWatchdog) {
       clearTimeout(this.bootWatchdog)
       this.bootWatchdog = null
@@ -1340,13 +1464,6 @@ export default class extends Controller {
     this.element.classList.remove("is-booting")
     this.element.classList.remove("is-booting-map")
     this.element.setAttribute("aria-busy", "false")
-    if (this.hasBootStatusTarget) {
-      this.bootStatusTarget.textContent = failed ? this.t("boot.failed") : this.t("boot.ready")
-    }
-    if (this.hasBootOverlayTarget) {
-      this.bootOverlayTarget.hidden = true
-      this.bootOverlayTarget.setAttribute("aria-busy", "false")
-    }
     if (this.mapReady) this.setLayerControlsDisabled(false)
     if (this.mapReady && this.simulationAt) this.scheduleVehicleRefresh()
   }
@@ -1375,6 +1492,7 @@ export default class extends Controller {
 
     await this.displayRouteStops(routeId)
     this.refreshStationLabels()
+    this.syncRouteDisplayButton()
   }
 
   allLayerIds() {
@@ -1498,6 +1616,14 @@ export default class extends Controller {
     }
   }
 
+  expandTransferEndpointRouteIds(routeId) {
+    if (DANHAI_LAYER_IDS.has(routeId) || routeId === DANHAI_SCHEDULE_ROUTE_ID) {
+      return [ ...DANHAI_LAYER_IDS ]
+    }
+
+    return routeId ? [ routeId ] : []
+  }
+
   buildOutOfStationEndpointKeys(transfers) {
     const keys = new Set()
 
@@ -1505,8 +1631,10 @@ export default class extends Controller {
       transfer.endpoints?.forEach((endpoint) => {
         if (!endpoint.route_id || !endpoint.ref) return
 
-        this.transferStationRefs(endpoint.ref).forEach((stationRef) => {
-          keys.add(this.stationKey(endpoint.route_id, stationRef))
+        this.expandTransferEndpointRouteIds(endpoint.route_id).forEach((routeId) => {
+          this.transferStationRefs(endpoint.ref).forEach((stationRef) => {
+            keys.add(this.stationKey(routeId, stationRef))
+          })
         })
       })
     })
@@ -1522,8 +1650,10 @@ export default class extends Controller {
       transfer.endpoints?.forEach((endpoint) => {
         if (!endpoint.route_id || !endpoint.ref) return
 
-        this.transferStationRefs(endpoint.ref).forEach((stationRef) => {
-          kindByKey.set(this.stationKey(endpoint.route_id, stationRef), kind)
+        this.expandTransferEndpointRouteIds(endpoint.route_id).forEach((routeId) => {
+          this.transferStationRefs(endpoint.ref).forEach((stationRef) => {
+            kindByKey.set(this.stationKey(routeId, stationRef), kind)
+          })
         })
       })
     })
@@ -1738,15 +1868,60 @@ export default class extends Controller {
     this.element.classList.add("map-split-layout--layers-open")
     document.body.classList.add("overflow-hidden")
     this.syncMobileSidebarAria(true)
+    this.resetMobileSheetOffset()
     this.invalidateMapSize()
     if (this.hasLayerSearchInputTarget) this.layerSearchInputTarget.focus()
+    else if (this.hasItineraryOriginTarget) this.itineraryOriginTarget.focus()
   }
 
   closeMobileLayers() {
     this.element.classList.remove("map-split-layout--layers-open")
     document.body.classList.remove("overflow-hidden")
     this.syncMobileSidebarAria(false)
+    this.resetMobileSheetOffset()
     this.invalidateMapSize()
+  }
+
+  // Swipe the grabber down to dismiss the layers bottom sheet on phones.
+  startMobileSheetDrag(event) {
+    if (!window.matchMedia("(max-width: 767px)").matches) return
+    if (!this.element.classList.contains("map-split-layout--layers-open")) return
+    if (event.button !== undefined && event.button !== 0) return
+    if (!this.hasLayersSidebarTarget) return
+
+    const sidebar = this.layersSidebarTarget
+    const startY = event.clientY
+    let deltaY = 0
+    sidebar.classList.add("map-sheet--dragging")
+    event.currentTarget?.setPointerCapture?.(event.pointerId)
+
+    const onMove = (moveEvent) => {
+      deltaY = Math.max(0, moveEvent.clientY - startY)
+      sidebar.style.transform = `translateY(${deltaY}px)`
+    }
+    const onUp = () => {
+      sidebar.classList.remove("map-sheet--dragging")
+      event.currentTarget?.removeEventListener?.("pointermove", onMove)
+      event.currentTarget?.removeEventListener?.("pointerup", onUp)
+      event.currentTarget?.removeEventListener?.("pointercancel", onUp)
+
+      const dismiss = deltaY > Math.min(140, sidebar.clientHeight * 0.28)
+      if (dismiss) {
+        this.closeMobileLayers()
+      } else {
+        this.resetMobileSheetOffset()
+      }
+    }
+
+    event.currentTarget?.addEventListener?.("pointermove", onMove)
+    event.currentTarget?.addEventListener?.("pointerup", onUp)
+    event.currentTarget?.addEventListener?.("pointercancel", onUp)
+  }
+
+  resetMobileSheetOffset() {
+    if (!this.hasLayersSidebarTarget) return
+    this.layersSidebarTarget.style.removeProperty("transform")
+    this.layersSidebarTarget.classList.remove("map-sheet--dragging")
   }
 
   syncMobileSidebarAria(open) {
@@ -1882,8 +2057,16 @@ export default class extends Controller {
       }
     })
 
+    this.scheduleStopSearch()
+
     const busCategoryOpen = mode === "bus" && !hasQuery && !narrowBusFilter
-    const showEmpty = visibleItemCount === 0 && (hasQuery || Boolean(category) || mode === "bus") && !busCategoryOpen
+    const stopSearchPending = Boolean(this.stopSearchTimer) ||
+      (Boolean(this.stopSearchKey) && !this.stopSearchSettled)
+    const showEmpty = visibleItemCount === 0 &&
+      (hasQuery || Boolean(category) || mode === "bus") &&
+      !busCategoryOpen &&
+      !(this.stopSearchHitCount > 0) &&
+      !stopSearchPending
 
     if (this.hasLayerSearchClearTarget) {
       this.layerSearchClearTarget.classList.toggle("hidden", !hasQuery)
@@ -1935,7 +2118,7 @@ export default class extends Controller {
     if (!filters.city && !filters.operator && !filters.type && !filters.color) return true
     if (!route) return false
     if (filters.city && route.city_id !== filters.city) return false
-    if (filters.operator && route.operator !== filters.operator) return false
+    if (filters.operator && route.operator !== filters.operator && route.operator_2 !== filters.operator) return false
     if (filters.type && this.busRouteType(route) !== filters.type) return false
     if (filters.color && this.busRouteColorSeries(route) !== filters.color) return false
     return true
@@ -1964,6 +2147,215 @@ export default class extends Controller {
     this.layerSearchInputTarget.value = ""
     this.filterLayers()
     this.layerSearchInputTarget.focus()
+  }
+
+  stopQueryReady(query) {
+    const compact = String(query || "").trim().toLowerCase().replace(/\s+/g, "").replace(/臺/g, "台")
+    if ([ ...compact ].length < 2) return false
+    if (/^[a-z0-9]+$/.test(compact) && compact.length < 3) return false
+    return true
+  }
+
+  scheduleStopSearch() {
+    if (!this.hasLayerSearchInputTarget) return
+
+    const query = this.layerSearchInputTarget.value.trim()
+    const city = this.transportMode === "bus" ? (this.busFilterState().city || "") : ""
+    if (!this.stopQueryReady(query)) {
+      this.clearStopSearch()
+      return
+    }
+
+    const key = `${query}\0${city}`
+    if (key === this.stopSearchKey && (this.stopSearchSettled || this.stopSearchTimer || this.stopSearchAbort)) return
+
+    if (this.stopSearchTimer) clearTimeout(this.stopSearchTimer)
+    this.stopSearchKey = key
+    this.stopSearchSettled = false
+    this.stopSearchTimer = setTimeout(() => {
+      this.stopSearchTimer = null
+      this.fetchStopSearch(query, city, key)
+    }, 180)
+  }
+
+  clearStopSearch() {
+    if (this.stopSearchTimer) clearTimeout(this.stopSearchTimer)
+    this.stopSearchTimer = null
+    this.stopSearchAbort?.abort()
+    this.stopSearchAbort = null
+    this.stopSearchKey = ""
+    this.stopSearchSettled = false
+    this.stopSearchHitCount = 0
+    this.stopSearchHits = []
+    this.hideStopSearch()
+  }
+
+  hideStopSearch() {
+    if (!this.hasStopSearchTarget) return
+    this.stopSearchTarget.classList.add("hidden")
+    this.stopSearchTarget.hidden = true
+    if (this.hasStopSearchListTarget) this.stopSearchListTarget.replaceChildren()
+    this.layerSearchInputTarget?.setAttribute("aria-expanded", "false")
+  }
+
+  focusStopSearch(event) {
+    const button = this.hasStopSearchListTarget
+      ? this.stopSearchListTarget.querySelector(".stop-search__item")
+      : null
+    if (!button) return
+    event.preventDefault()
+    button.focus()
+  }
+
+  async fetchStopSearch(query, city, key) {
+    this.stopSearchAbort?.abort()
+    const controller = new AbortController()
+    this.stopSearchAbort = controller
+    this.renderStopSearchStatus(this.t("bus.stop_search_loading"))
+
+    try {
+      const params = new URLSearchParams({ q: query })
+      if (city) params.set("city_id", city)
+      const response = await fetch(`/api/bus_stops?${params}`, { signal: controller.signal })
+      if (this.stopSearchKey !== key) return
+      if (!response.ok) throw new Error(`stop search ${response.status}`)
+      const data = await response.json()
+      const stops = Array.isArray(data.stops) ? data.stops : []
+      const places = Array.isArray(data.places) ? data.places : []
+      this.stopSearchHits = stops
+      this.stopSearchHitCount = stops.length + places.length
+      this.stopSearchSettled = true
+      this.renderStopSearchResults(stops, places)
+      this.filterLayers()
+    } catch (error) {
+      if (error?.name === "AbortError") return
+      if (this.stopSearchKey !== key) return
+      console.warn("Failed to search bus stops", error)
+      this.stopSearchHits = []
+      this.stopSearchHitCount = 0
+      this.stopSearchSettled = true
+      this.hideStopSearch()
+      this.filterLayers()
+    }
+  }
+
+  renderStopSearchStatus(text) {
+    if (!this.hasStopSearchTarget || !this.hasStopSearchListTarget) return
+    this.bindStopSearchKeys()
+    const status = document.createElement("li")
+    status.className = "stop-search__status"
+    status.textContent = text
+    this.stopSearchListTarget.replaceChildren(status)
+    this.stopSearchTarget.classList.remove("hidden")
+    this.stopSearchTarget.hidden = false
+    this.layerSearchInputTarget?.setAttribute("aria-expanded", "true")
+  }
+
+  renderStopSearchResults(stops, places = []) {
+    if (!this.hasStopSearchTarget || !this.hasStopSearchListTarget) return
+    this.stopSearchListTarget.replaceChildren()
+    if (!stops.length && !places.length) {
+      this.hideStopSearch()
+      return
+    }
+
+    this.bindStopSearchKeys()
+    stops.forEach((stop) => this.appendStopSearchItem(stop))
+    if (places.length) {
+      const heading = document.createElement("li")
+      heading.className = "stop-search__status"
+      heading.textContent = this.t("bus.stop_search_places")
+      this.stopSearchListTarget.append(heading)
+      places.forEach((place) => this.appendStopSearchItem(place))
+    }
+    this.stopSearchTarget.classList.remove("hidden")
+    this.stopSearchTarget.hidden = false
+    this.layerSearchInputTarget?.setAttribute("aria-expanded", "true")
+  }
+
+  appendStopSearchItem(stop) {
+    const button = document.createElement("button")
+    button.type = "button"
+    button.className = "stop-search__item"
+    button.setAttribute("role", "option")
+    const name = document.createElement("span")
+    name.className = "stop-search__name"
+    name.textContent = stop.label || stop.name || ""
+    button.append(name)
+    const metaText = stop.kind === "place"
+      ? (stop.city || "")
+      : [ stop.city, stop.place ].filter(Boolean).join(" · ")
+    if (metaText) {
+      const meta = document.createElement("span")
+      meta.className = "stop-search__meta"
+      meta.textContent = metaText
+      button.append(meta)
+    }
+    button.addEventListener("click", () => this.selectSearchedStop(stop))
+    const item = document.createElement("li")
+    item.append(button)
+    this.stopSearchListTarget.append(item)
+  }
+
+  bindStopSearchKeys() {
+    if (this.stopSearchKeysBound || !this.hasStopSearchListTarget) return
+    this.stopSearchKeysBound = true
+    this.stopSearchListTarget.addEventListener("keydown", (event) => {
+      if (event.key !== "ArrowDown" && event.key !== "ArrowUp") return
+      const buttons = [ ...this.stopSearchListTarget.querySelectorAll(".stop-search__item") ]
+      const index = buttons.indexOf(document.activeElement)
+      const next = buttons[index + (event.key === "ArrowDown" ? 1 : -1)]
+      if (!next) return
+      event.preventDefault()
+      next.focus()
+    })
+  }
+
+  async selectSearchedStop(stop) {
+    if (!stop) return
+    if (this.element.classList.contains("map-split-layout--layers-open")) this.closeMobileLayers()
+
+    const lat = Number(stop.lat)
+    const lon = Number(stop.lon)
+    const isPlace = stop.kind === "place" || (!stop.group_id && !stop.stop_uid)
+
+    if (!isPlace) {
+      if (this.transportMode !== "bus") await this.applyTransportMode("bus")
+      this.openSearchedBusStop(stop)
+    } else {
+      this.clearBusStopGroupHighlight()
+    }
+
+    if (!this.map || !Number.isFinite(lat) || !Number.isFinite(lon)) return
+
+    const latlng = [ lat, lon ]
+    this.map.setView(latlng, Math.max(this.map.getZoom() || 0, isPlace ? 16 : 17), { animate: true })
+    this.highlightBusStopGroup(latlng)
+  }
+
+  openSearchedBusStop(stop) {
+    this.ensureExploreUi()
+    const panel = this.stationBoardEl
+    if (!panel) return
+    panel.hidden = false
+    this.clearBusStopGroupHighlight()
+
+    const feature = {
+      type: "Feature",
+      properties: {
+        name: stop.name,
+        name_en: stop.name_en,
+        station_id: stop.station_id || null,
+        platform: stop.platform || null,
+        platform_en: stop.platform_en || null,
+        ref: stop.stop_uid,
+        city_id: stop.city_id,
+        city_ids: Array.isArray(stop.city_ids) ? stop.city_ids : [],
+        group_id: stop.group_id
+      },
+      geometry: { type: "Point", coordinates: [ Number(stop.lon), Number(stop.lat) ] }
+    }
+    this.openBusStopPanel(feature, null, stop.label || stop.name)
   }
 
   expandLayerSearchGroup(group) {
@@ -2323,8 +2715,8 @@ export default class extends Controller {
   }
 
   buildStationSectionsFromGeoJSON(geojson, manifestRoute, routeId) {
-    if (manifestRoute?.id === "danhai_lrt") {
-      return this.buildDanhaiStationSections(geojson, routeId)
+    if (DANHAI_LAYER_IDS.has(manifestRoute?.id)) {
+      return this.buildDanhaiStationSections(geojson, routeId, manifestRoute.id)
     }
 
     if (manifestRoute?.id === "taoyuan_airport_skytrain") {
@@ -2355,16 +2747,14 @@ export default class extends Controller {
     return [ { label: null, stations: ordered } ]
   }
 
-  buildDanhaiStationSections(geojson, routeId) {
+  buildDanhaiStationSections(geojson, routeId, layerId = routeId) {
     const stations = this.extractPassengerStationFeatures(geojson, routeId)
+    const segment = layerId === "danhai_lanhai" ? "lanhai" : "lushan"
+    const label = segment === "lanhai" ? this.t("sections.lanhai") : this.t("sections.lushan")
+    const segmentStations = stations.filter((station) => !station.segment || station.segment === segment)
 
-    return [
-      { key: "lushan", label: this.t("sections.lushan") },
-      { key: "lanhai", label: this.t("sections.lanhai") }
-    ].map(({ key, label }) => {
-      const segmentStations = stations.filter((station) => station.segment === key)
-      return { label, stations: this.sortDanhaiStationsForList(segmentStations, key) }
-    }).filter((section) => section.stations.length > 0)
+    return [ { label, stations: this.sortDanhaiStationsForList(segmentStations, segment) } ]
+      .filter((section) => section.stations.length > 0)
   }
 
   buildSkytrainStationSections(geojson, routeId) {
@@ -2467,6 +2857,8 @@ export default class extends Controller {
           segment: feature.properties?.segment,
           direction: feature.properties?.direction,
           platform: feature.properties?.platform,
+          note: feature.properties?.note || null,
+          timed_skip: feature.properties?.timed_skip || null,
           latlng
         }
       })
@@ -2711,6 +3103,12 @@ export default class extends Controller {
   }
 
   renderRouteStopsPanel(route, sections) {
+    if (this.hasRouteStopsPathTarget) {
+      const path = this.busBrowsePath(route)
+      this.routeStopsPathTarget.textContent = path
+      this.routeStopsPathTarget.classList.toggle("hidden", !path)
+    }
+
     if (this.hasRouteStopsTitleTarget) {
       this.routeStopsTitleTarget.textContent = this.routeDisplayName(route) || this.t("stops.title_fallback")
     }
@@ -2718,9 +3116,9 @@ export default class extends Controller {
     const stationCount = sections.reduce((total, section) => total + section.stations.length, 0)
 
     if (this.hasRouteStopsMetaTarget) {
-      const ref = route?.ref ? ` · ${route.ref}` : ""
+      const ref = this.routeRefBadge(route)
       this.routeStopsMetaTarget.textContent = stationCount > 0
-        ? `${this.t("stops.count", { count: stationCount })}${ref}`
+        ? `${this.t("stops.count", { count: stationCount })}${ref ? ` · ${ref}` : ""}`
         : ""
     }
     this.renderRouteVariants(route)
@@ -2762,9 +3160,12 @@ export default class extends Controller {
         this.routeStopsListTarget.append(heading)
       }
 
-      section.stations.forEach((station) => {
+      section.stations.forEach((station, stopIndex) => {
         sequence += 1
-        const item = this.buildRouteStopItem(route, station, sequence)
+        const boardingRole = route?.city_id === "InterCity"
+          ? (stopIndex === 0 ? "board" : (stopIndex === section.stations.length - 1 ? "alight" : null))
+          : null
+        const item = this.buildRouteStopItem(route, boardingRole ? { ...station, boarding_role: boardingRole } : station, sequence)
         if (tabs) {
           item.dataset.stopsSection = String(index)
           item.hidden = !visibleSections.includes(index)
@@ -2804,9 +3205,13 @@ export default class extends Controller {
     if (family.length < 2) return []
 
     return family.slice().sort((left, right) => {
-      if (left.ref === base) return -1
-      if (right.ref === base) return 1
-      return String(left.ref).localeCompare(String(right.ref), "zh-Hant")
+      const leftMain = left.ref === base
+      const rightMain = right.ref === base
+      if (leftMain !== rightMain) return leftMain ? -1 : 1
+      return this.busCampusSpanRank(left) - this.busCampusSpanRank(right) ||
+        String(left.ref).localeCompare(String(right.ref), "zh-Hant") ||
+        String(left.name || "").localeCompare(String(right.name || ""), "zh-Hant") ||
+        String(left.id).localeCompare(String(right.id))
     })
   }
 
@@ -3059,6 +3464,10 @@ export default class extends Controller {
     nameEl.className = "route-stop-item__name"
     nameEl.textContent = this.stationDisplayName(station)
     if (station.platform) nameEl.append(this.buildPlatformBadge(station.platform))
+    if (station.note) nameEl.append(this.buildPlatformBadge(station.note))
+    const boardingRole = this.intercityBoardingRole(route, station)
+    if (boardingRole) nameEl.append(this.buildBoardingRoleBadge(boardingRole))
+    if (station.timed_skip) nameEl.append(this.buildTimedSkipBadge(station.timed_skip))
 
     const refEl = document.createElement("span")
     refEl.className = "route-stop-item__ref"
@@ -3079,6 +3488,43 @@ export default class extends Controller {
     }
     item.append(button)
     return item
+  }
+
+  intercityBoardingRole(route, station) {
+    if (route?.city_id !== "InterCity") return null
+    if (station?.boarding_role === "board" || station?.boarding_role === "alight") return station.boarding_role
+    return null
+  }
+
+  buildBoardingRoleBadge(role) {
+    const badge = document.createElement("span")
+    badge.className = "bus-platform-badge bus-boarding-role-badge"
+    badge.textContent = role === "alight" ? this.t("bus.alight_stop") : this.t("bus.board_stop")
+    return badge
+  }
+
+  buildTimedSkipBadge(timedSkip) {
+    const badge = document.createElement("span")
+    badge.className = "bus-platform-badge bus-platform-badge--timed-skip"
+    badge.textContent = this.t("bus.timed_skip_stop")
+    const detail = this.timedSkipDetailText(timedSkip)
+    if (detail) badge.title = detail
+    return badge
+  }
+
+  timedSkipDetailText(timedSkip) {
+    if (!timedSkip) return ""
+    const windows = Array.isArray(timedSkip.windows)
+      ? timedSkip.windows.map((pair) => Array.isArray(pair) ? pair.join("–") : String(pair)).filter(Boolean)
+      : []
+    if (timedSkip.days === "holiday" && !windows.length) return this.t("bus.timed_skip_holiday")
+    if (!windows.length) return this.t("bus.timed_skip_stop")
+    const daysKey = timedSkip.days === "daily"
+      ? "bus.timed_skip_days_daily"
+      : timedSkip.days === "holiday"
+        ? "bus.timed_skip_days_holiday"
+        : "bus.timed_skip_days_weekday"
+    return this.t("bus.timed_skip_windows", { days: this.t(daysKey), windows: windows.join("、") })
   }
 
   buildPlatformBadge(platform) {
@@ -3177,8 +3623,15 @@ export default class extends Controller {
       route.id,
       route.operator,
       route.operator_en,
+      route.operator_2,
+      route.operator_2_en,
       route.city_id,
-      route.via
+      route.via,
+      route.departure,
+      route.destination,
+      route.departure_en,
+      route.destination_en,
+      route.city_id === "Taoyuan" ? this.taoyuanTrunkName(route.ref) : ""
     ].filter(Boolean).join(" ")
   }
 
@@ -3236,6 +3689,22 @@ export default class extends Controller {
     this.syncRouteGroupCheckboxes()
   }
 
+  // SHA1("繞駛三總")[0,10] — campus path ids from timed detours / 經三總 splits.
+  static CAMPUS_DETOUR_SLUG = "1652fe7623"
+
+  // 0 = 繞駛三總 (draw / list first), 2 = timed / 不經三總 sibling.
+  busCampusSpanRank(route) {
+    const span = route?.campus_span
+    if (span === "inside") return 0
+    if (span === "outside") return 2
+    const via = String(route?.via || "")
+    const id = String(route?.id || "")
+    const slug = this.constructor.CAMPUS_DETOUR_SLUG
+    if (via.includes("不繞駛三總")) return 2
+    if (via.includes("繞駛三總") || id.endsWith(`_${slug}`) || id.includes(`_${slug}_`)) return 0
+    return 1
+  }
+
   compareBusRoutes(left, right) {
     const leftRef = String(left.ref || "")
     const rightRef = String(right.ref || "")
@@ -3250,7 +3719,26 @@ export default class extends Controller {
     }
 
     return leftRef.localeCompare(rightRef, "zh-Hant", { numeric: true }) ||
+      this.busCampusSpanRank(left) - this.busCampusSpanRank(right) ||
       String(left.id).localeCompare(String(right.id), "zh-Hant", { numeric: true })
+  }
+
+  // When both campus paths are on the map, keep 繞駛三總 above 不繞駛.
+  restackBusCampusLayers() {
+    if (!this.map || !this.layerGroups) return
+
+    const stack = []
+    this.visibleRouteLayerIds().forEach((layerId) => {
+      const route = this.findRoute(layerId)
+      const group = this.layerGroups[layerId]
+      if (!route?.city_id || !group || !this.map.hasLayer(group)) return
+      stack.push({ group, rank: this.busCampusSpanRank(route) })
+    })
+    if (stack.length < 2) return
+
+    // bringToFront last wins — outside first, inside last.
+    stack.sort((left, right) => right.rank - left.rank)
+    stack.forEach(({ group }) => group.bringToFront())
   }
 
   buildBusRouteSearchRow(route) {
@@ -3287,33 +3775,44 @@ export default class extends Controller {
 
     const swatch = document.createElement("span")
     swatch.className = "mt-1.5 size-2.5 shrink-0 rounded-full"
-    swatch.style.backgroundColor = color
+    this.paintFrequencySwatch(swatch, color, route)
 
     const textWrap = document.createElement("span")
     textWrap.className = "min-w-0 flex-1"
 
     const titleRow = document.createElement("span")
-    titleRow.className = "flex items-center gap-2"
+    titleRow.className = "flex min-w-0 items-center gap-1.5 overflow-hidden"
 
     const nameEl = document.createElement("span")
-    nameEl.className = "truncate text-sm font-medium leading-tight"
+    nameEl.className = "shrink-0 text-sm font-medium leading-tight"
     nameEl.textContent = displayName
+    titleRow.append(nameEl)
 
-    const refEl = document.createElement("span")
-    refEl.className = "shrink-0 rounded bg-muted px-1.5 py-0.5 text-[10px] font-medium text-muted-foreground"
-    refEl.textContent = route.ref || ""
-
-    titleRow.append(nameEl, refEl)
-    const offDays = this.busOffDaysLabel(route.off_days)
-    if (offDays) {
-      const badge = document.createElement("span")
-      badge.className = "route-off-days-badge shrink-0"
-      badge.textContent = offDays
-      titleRow.append(badge)
+    const termini = this.busTerminiLabel(route)
+    if (termini) {
+      const terminiEl = document.createElement("span")
+      terminiEl.className = "route-termini min-w-0 truncate"
+      terminiEl.textContent = termini
+      terminiEl.title = termini
+      titleRow.append(terminiEl)
+      open.setAttribute("aria-label", this.t("open_route_map_for", { name: `${displayName} ${termini}` }))
     }
+    const refLabel = this.routeRefBadge(route)
+    if (refLabel) {
+      const refEl = document.createElement("span")
+      refEl.className = "shrink-0 rounded bg-muted px-1.5 py-0.5 text-[10px] font-medium text-muted-foreground"
+      refEl.textContent = refLabel
+      titleRow.append(refEl)
+    }
+    const noteLabels = [
+      this.busOneWayLabel(route),
+      this.busOffDaysLabel(route.off_days),
+      this.busServiceNoteLabel(route)
+    ].filter(Boolean)
+    if (noteLabels.length) titleRow.append(this.buildRouteNotesMarquee(noteLabels))
     textWrap.append(titleRow)
 
-    if (route.via) {
+    if (route.via && !this.routeViaRepeatsName(route)) {
       const via = document.createElement("span")
       via.className = "mt-0.5 line-clamp-2 text-xs leading-snug text-muted-foreground"
       via.textContent = this.routeViaText(route)
@@ -3323,6 +3822,16 @@ export default class extends Controller {
     open.append(swatch, textWrap)
     item.append(checkbox, open)
     return item
+  }
+
+  busOneWayLabel(route) {
+    if (!route || route.loop) return null
+    return route.one_way ? this.t("bus.one_way") : null
+  }
+
+  busOneWayBadgeHtml(route) {
+    const label = this.busOneWayLabel(route)
+    return label ? `<span class="route-off-days-badge">${this.escapeHtml(label)}</span>` : ""
   }
 
   busOffDaysLabel(offDays) {
@@ -3337,12 +3846,58 @@ export default class extends Controller {
     return label ? `<span class="route-off-days-badge">${this.escapeHtml(label)}</span>` : ""
   }
 
-  busDetourHoursBadgeHtml(route) {
+  busServiceNoteLabel(route) {
+    if (!route) return null
+    const note = this.isEnglishLocale() ? route.service_note_en : route.service_note
+    return note ? String(note) : null
+  }
+
+  busServiceNoteBadgeHtml(route) {
+    const label = this.busServiceNoteLabel(route)
+    return label ? `<span class="route-off-days-badge">${this.escapeHtml(label)}</span>` : ""
+  }
+
+  busDetourHoursLabel(route) {
     const [ from, to ] = String(route?.detour_hours || "").split("-")
-    if (!from || !to) return ""
-    const label = String(route.via || "").split("、").pop()
+    if (!from || !to) return null
+    if (route?.campus_span === "inside") return null
+    const via = String(route?.via || "")
+    if (via.includes("前、") && via.includes("後不繞")) return null
+    const label = via.split("、").pop()
     const key = label.startsWith("不") ? "bus.detour_hours.plain" : "bus.detour_hours.detour"
-    return `<span class="route-off-days-badge">${this.escapeHtml(this.t(key, { from, to }))}</span>`
+    return this.t(key, { from, to })
+  }
+
+  busDetourHoursBadgeHtml(route) {
+    const label = this.busDetourHoursLabel(route)
+    return label ? `<span class="route-off-days-badge">${this.escapeHtml(label)}</span>` : ""
+  }
+
+  buildRouteNotesMarquee(labels) {
+    const host = document.createElement("span")
+    host.className = "route-notes-marquee min-w-0"
+    host.dataset.controller = "route-notes-marquee"
+    const track = document.createElement("span")
+    track.className = "route-notes-marquee__track"
+    track.dataset.routeNotesMarqueeTarget = "track"
+    const group = document.createElement("span")
+    group.className = "route-notes-marquee__group"
+    group.dataset.routeNotesMarqueeTarget = "group"
+    labels.forEach((label) => {
+      const badge = document.createElement("span")
+      badge.className = "route-off-days-badge shrink-0"
+      badge.textContent = label
+      group.append(badge)
+    })
+    track.append(group)
+    host.append(track)
+    return host
+  }
+
+  routeNotesMarqueeHtml(labels) {
+    const badges = labels.filter(Boolean)
+    if (!badges.length) return ""
+    return `<span class="route-notes-marquee" data-controller="route-notes-marquee"><span class="route-notes-marquee__track" data-route-notes-marquee-target="track"><span class="route-notes-marquee__group" data-route-notes-marquee-target="group">${badges.map((label) => `<span class="route-off-days-badge">${this.escapeHtml(label)}</span>`).join("")}</span></span></span>`
   }
 
   layerCheckboxClassName() {
@@ -3377,10 +3932,24 @@ export default class extends Controller {
     return key ? `${url}?key=${encodeURIComponent(key)}` : url
   }
 
+  googleMapsAvailable() {
+    return this.hasGoogleMapsApiKeyValue && this.googleMapsApiKeyValue.trim() !== ""
+  }
+
   readBasemapStyle() {
+    const available = this.googleMapsAvailable()
     try {
       const stored = window.localStorage?.getItem(BASEMAP_MODE_STORAGE_KEY)
-      if (stored === "sat" || stored === "carto" || stored === "nlsc") return stored
+      if (stored === "google") return available ? "google" : "nlsc"
+      if (stored === "sat" || stored === "carto") return stored
+      if (stored === "nlsc") {
+        if (available && window.localStorage.getItem(GOOGLE_DEFAULTED_STORAGE_KEY) !== "1") {
+          window.localStorage.setItem(GOOGLE_DEFAULTED_STORAGE_KEY, "1")
+          window.localStorage.setItem(BASEMAP_MODE_STORAGE_KEY, "google")
+          return "google"
+        }
+        return "nlsc"
+      }
 
       const legacyMode = window.localStorage?.getItem(LEGACY_BASEMAP_MODE_STORAGE_KEY)
       if (legacyMode === "sat") return "sat"
@@ -3388,9 +3957,9 @@ export default class extends Controller {
       const legacyNlsc = window.localStorage?.getItem(LEGACY_NLSC_ENABLED_STORAGE_KEY)
       if (legacyNlsc === "0") return "carto"
 
-      return "nlsc"
+      return available ? "google" : "nlsc"
     } catch (_error) {
-      return "nlsc"
+      return available ? "google" : "nlsc"
     }
   }
 
@@ -3400,8 +3969,8 @@ export default class extends Controller {
 
   primaryBasemapUrl() {
     if (this.basemapStyle === "sat") return ESRI_SAT_BASEMAP_URL
-    if (this.basemapStyle === "nlsc") return NLSC_BASEMAP_URL
-    return this.cartoBasemapUrl()
+    if (this.basemapStyle === "carto") return this.cartoBasemapUrl()
+    return NLSC_BASEMAP_URL
   }
 
   primaryBasemapOptions() {
@@ -3412,18 +3981,18 @@ export default class extends Controller {
       }
     }
 
-    if (this.basemapStyle === "nlsc") {
+    if (this.basemapStyle === "carto") {
       return {
-        maxZoom: 19,
-        maxNativeZoom: 19,
-        attribution: `&copy; <a href="https://maps.nlsc.gov.tw/" target="_blank" rel="noopener">${NLSC_BASEMAP_ATTRIBUTION_NAMES[this.isEnglishLocale() ? "en" : "zh"]}</a>`
+        subdomains: "abcd",
+        maxZoom: 20,
+        attribution: CARTO_BASEMAP_ATTRIBUTION
       }
     }
 
     return {
-      subdomains: "abcd",
-      maxZoom: 20,
-      attribution: CARTO_BASEMAP_ATTRIBUTION
+      maxZoom: 19,
+      maxNativeZoom: 19,
+      attribution: `&copy; <a href="https://maps.nlsc.gov.tw/" target="_blank" rel="noopener">${NLSC_BASEMAP_ATTRIBUTION_NAMES[this.isEnglishLocale() ? "en" : "zh"]}</a>`
     }
   }
 
@@ -3462,29 +4031,185 @@ export default class extends Controller {
     this.basemapSelectTarget.value = this.basemapStyle
   }
 
+  googleStylesKey() {
+    return document.documentElement.classList.contains("dark") ? "dark" : "light"
+  }
+
+  googleBasemapStyles() {
+    const styles = [
+      { featureType: "transit", stylers: [ { visibility: "off" } ] },
+      { featureType: "poi", stylers: [ { visibility: "off" } ] }
+    ]
+    if (this.googleStylesKey() !== "dark") return styles
+
+    return styles.concat([
+      { elementType: "geometry", stylers: [ { color: "#1d2c4d" } ] },
+      { elementType: "labels.text.fill", stylers: [ { color: "#8ec3b9" } ] },
+      { elementType: "labels.text.stroke", stylers: [ { color: "#1a3646" } ] },
+      { featureType: "road", elementType: "geometry", stylers: [ { color: "#304a7d" } ] },
+      { featureType: "road", elementType: "labels.text.fill", stylers: [ { color: "#98a5be" } ] },
+      { featureType: "water", elementType: "geometry", stylers: [ { color: "#0e1626" } ] }
+    ])
+  }
+
+  preferGoogleRasterMap() {
+    const maps = window.google?.maps
+    if (!maps?.Map || maps.Map.__rasterWrapped) return
+
+    const OriginalMap = maps.Map
+    function RasterMap(element, options = {}) {
+      const renderingType = maps.RenderingType?.RASTER || "RASTER"
+      return new OriginalMap(element, { renderingType, ...options })
+    }
+    RasterMap.prototype = OriginalMap.prototype
+    RasterMap.__rasterWrapped = true
+    maps.Map = RasterMap
+  }
+
+  loadGoogleMaps() {
+    if (window.google?.maps?.Map) {
+      this.preferGoogleRasterMap()
+      return Promise.resolve()
+    }
+
+    const key = this.googleMapsApiKeyValue.trim()
+    this.bindGoogleAuthFailure()
+    window.__googleMapsLoad ||= new Promise((resolve, reject) => {
+      const callback = `__googleMapsReady_${Date.now()}`
+      const lang = (document.documentElement.lang || "zh-TW").toLowerCase().startsWith("en") ? "en" : "zh-TW"
+      window[callback] = () => {
+        delete window[callback]
+        resolve()
+      }
+      const script = document.createElement("script")
+      script.src = `https://maps.googleapis.com/maps/api/js?key=${encodeURIComponent(key)}&v=weekly&language=${lang}&region=TW&callback=${encodeURIComponent(callback)}`
+      script.async = true
+      script.onerror = () => {
+        window.__googleMapsLoad = null
+        reject(new Error("Google Maps failed to load"))
+      }
+      document.head.appendChild(script)
+    })
+
+    return window.__googleMapsLoad.then(() => this.preferGoogleRasterMap())
+  }
+
+  bindGoogleAuthFailure() {
+    if (window.__googleMapsAuthBound) return
+    window.__googleMapsAuthBound = true
+    const previous = window.gm_authFailure
+    window.gm_authFailure = () => {
+      if (typeof previous === "function") previous()
+      window.__googleMapsAuthFailed = true
+      document.dispatchEvent(new CustomEvent("google-maps:auth-failure"))
+    }
+  }
+
+  fallbackFromGoogleBasemap() {
+    if (this.basemapStyle !== "google" || !this.map) return
+    this.basemapRequest = (this.basemapRequest || 0) + 1
+    this.basemapStyle = "nlsc"
+    try {
+      window.localStorage?.setItem(BASEMAP_MODE_STORAGE_KEY, "nlsc")
+    } catch (_error) {
+      // ignore storage failures
+    }
+    if (this.googleLayer && this.map.hasLayer(this.googleLayer)) this.map.removeLayer(this.googleLayer)
+    this.syncPrimaryBasemap()
+    this.ensureRasterBasemap()
+    this.syncBasemapSelect()
+    this.map.getContainer()?.classList.toggle("map-basemap--satellite", false)
+  }
+
+  loadGoogleMutant() {
+    if (window.L?.gridLayer?.googleMutant) return Promise.resolve()
+
+    window.__googleMutantLoad ||= new Promise((resolve, reject) => {
+      const script = document.createElement("script")
+      script.src = GOOGLE_MUTANT_URL
+      script.async = true
+      script.onload = () => resolve()
+      script.onerror = () => {
+        window.__googleMutantLoad = null
+        reject(new Error("Google Mutant failed to load"))
+      }
+      document.head.appendChild(script)
+    })
+
+    return window.__googleMutantLoad
+  }
+
+  ensureRasterBasemap() {
+    if (!this.map || !this.tileLayer) return
+    if (!this.map.hasLayer(this.tileLayer)) this.tileLayer.addTo(this.map)
+    this.tileLayer.bringToBack()
+  }
+
+  async applyBasemap() {
+    const request = (this.basemapRequest = (this.basemapRequest || 0) + 1)
+
+    if (this.basemapStyle !== "google") {
+      if (this.googleLayer && this.map?.hasLayer(this.googleLayer)) this.map.removeLayer(this.googleLayer)
+      this.syncPrimaryBasemap()
+      this.ensureRasterBasemap()
+      return
+    }
+
+    try {
+      await this.loadGoogleMaps()
+      await this.loadGoogleMutant()
+      if (request !== this.basemapRequest || !this.map || this.basemapStyle !== "google") return
+      if (window.__googleMapsAuthFailed) throw new Error("Google Maps rejected the key")
+
+      const stylesKey = this.googleStylesKey()
+      if (!this.googleLayer || this.googleLayerStylesKey !== stylesKey) {
+        if (this.googleLayer && this.map.hasLayer(this.googleLayer)) this.map.removeLayer(this.googleLayer)
+        this.googleLayer = window.L.gridLayer.googleMutant({
+          type: "roadmap",
+          maxZoom: 19,
+          styles: this.googleBasemapStyles()
+        })
+        this.googleLayerStylesKey = stylesKey
+      }
+      if (this.tileLayer && this.map.hasLayer(this.tileLayer)) this.map.removeLayer(this.tileLayer)
+      if (!this.map.hasLayer(this.googleLayer)) this.googleLayer.addTo(this.map)
+      this.googleLayer.bringToBack()
+    } catch (_error) {
+      if (request !== this.basemapRequest || !this.map) return
+      this.fallbackFromGoogleBasemap()
+    }
+  }
+
   setBasemapStyle(event) {
     const style = event?.target?.value
     if (!style || style === this.basemapStyle) return
-    if (style !== "nlsc" && style !== "carto" && style !== "sat") return
+    if (style !== "nlsc" && style !== "carto" && style !== "sat" && style !== "google") return
+    if (style === "google" && !this.googleMapsAvailable()) return
 
     this.basemapStyle = style
 
     try {
       window.localStorage?.setItem(BASEMAP_MODE_STORAGE_KEY, this.basemapStyle)
+      if (style !== "google") window.localStorage?.setItem(GOOGLE_DEFAULTED_STORAGE_KEY, "1")
     } catch (_error) {
       // ignore storage failures
     }
 
-    this.syncPrimaryBasemap()
+    this.applyBasemap()
     this.syncBasemapSelect()
     this.applyRouteEmphasis()
+    this.refreshFrequencySwatches()
+    this.scheduleBusArrowRefresh()
     this.map?.getContainer()?.classList.toggle("map-basemap--satellite", this.basemapStyle === "sat")
   }
 
   applyThemeBasemap() {
     if (this.basemapStyle === "carto") this.syncPrimaryBasemap()
+    if (this.basemapStyle === "google") this.applyBasemap()
     this.syncPrimaryBasemapClass()
     this.applyRouteEmphasis()
+    this.refreshFrequencySwatches()
+    this.scheduleBusArrowRefresh()
   }
 
   watchThemeChanges() {
@@ -3918,7 +4643,7 @@ export default class extends Controller {
         } else if (cityKey && route.city_id !== cityKey) {
           return false
         }
-        if (operatorKey && String(route.operator_id || "") !== operatorKey) return false
+        if (operatorKey && String(route.operator_id || "") !== operatorKey && String(route.operator_id_2 || "") !== operatorKey) return false
         if (bandKey != null) {
           const routeBand = this.busBrowseBandKey(route.ref, route.city_id)
           if (String(routeBand) !== bandKey) return false
@@ -3934,41 +4659,87 @@ export default class extends Controller {
     return String(band || "other")
   }
 
+  busBrowsePath(route) {
+    const cityId = route?.city_id
+    if (!cityId) return ""
+
+    const ui = window.MAP_BUS_UI || {}
+    const parts = []
+
+    if (cityId === "InterCity") {
+      parts.push(ui.cities?.InterCity || cityId)
+      const operator = this.localizedName(route.operator, route.operator_en)
+      if (operator) parts.push(operator)
+    } else {
+      parts.push(ui.cities?.[cityId] || cityId)
+      const band = this.busBrowseBand(route.ref, cityId)
+      const bandLabel = this.busBrowseBandLabel(band)
+      if (bandLabel) parts.push(bandLabel)
+    }
+
+    return parts.filter(Boolean).join(" › ")
+  }
+
+  busBrowseBandLabel(band) {
+    const ui = window.MAP_BUS_UI || {}
+    if (typeof band === "number") {
+      if (band === 0) return "0-99"
+      if (band >= 1000) return "1000+"
+      return `${band}-${band + 99}`
+    }
+    if (!band || band === "other") return ui.other_band || ""
+    return ui.bands?.[band] || ui.other_band || String(band)
+  }
+
   busBrowseBand(ref, cityId = null) {
     const text = String(ref || "").trim()
     if (!text) return "other"
 
     if (cityId === "Keelung" && /^[RT]/i.test(text)) return "keelung_tr"
+    if (cityId === "Taoyuan" && /^(?:BR|GR\d*)$/.test(text)) return "metro_feeder"
+    if (cityId === "Taoyuan" && /^(?:NL|SL)$/.test(text)) return "loop_line"
 
-    const colorBands = {
-      "紅": "color_hong",
-      "藍": "color_lan",
-      "綠": "color_lu",
-      "棕": "color_zong",
-      "橘": "color_ju",
-      "黃": "color_huang"
-    }
-    for (const [prefix, band] of Object.entries(colorBands)) {
-      if (text.startsWith(prefix)) return band
+    const taoyuanColorLine = cityId === "Taoyuan" && /^[紅綠黃]線$/.test(text)
+    if (!taoyuanColorLine) {
+      const colorBands = {
+        "紅": "color_hong",
+        "藍": "color_lan",
+        "綠": "color_lu",
+        "棕": "color_zong",
+        "橘": "color_ju",
+        "黃": "color_huang"
+      }
+      for (const [prefix, band] of Object.entries(colorBands)) {
+        if (text.startsWith(prefix)) return band
+      }
     }
 
     if (/^小\d/.test(text)) return "xiao"
     if (text.startsWith("安坑")) return "ankeng"
     if (/^F\d/i.test(text)) return "f_series"
     if (text.includes("南軟")) return "nangang_soft"
-    if (text.includes("內科快線")) return "neike_express"
-    if (text.includes("內科通勤")) return "neike_commuter"
-    if (/^通勤/.test(text)) return "commuter"
+    if (text.includes("內科快線") || text.includes("內科通勤")) return "neike"
+    if (/臺?北觀光巴士/.test(text)) return "taipei_tourist"
+    if (/^通勤/.test(text) || text.includes("雙園巴士")) return "commuter"
     if (text.includes("市民小巴")) return "civic_minibus"
     if (text.includes("幹線")) return "trunk"
+    if (cityId === "Taoyuan" && /^\d+/.test(text)) {
+      const number = Number.parseInt(text, 10)
+      if (number >= 1 && number <= 100) return "taoyuan_trunk"
+    }
+    if (cityId === "Taoyuan" && /^50[1-6](?!\d)/.test(text)) return "taoyuan_tourist"
+    if (cityId === "Taoyuan" && /^L/i.test(text)) return "taoyuan_free"
+    if (cityId === "Taoyuan" && /^T/i.test(text)) return "taoyuan_xingfu"
     if (text.includes("貓空")) return "maokong"
     if (text.startsWith("北士科")) return "beishi"
     if (text.includes("懷恩")) return "huaien"
+    if (text.includes("跳蛙")) return "leapfrog"
 
     const stripped = text.replace(/（[^）]*）|\([^)]*\)$/u, "")
-    if (/線$/u.test(stripped)) return "named_line"
+    // 982直達新埔線 keeps a trailing 線 in TDX but belongs with 900–999, not 地區線.
+    if (/線$/u.test(stripped) && !/^\d/u.test(stripped)) return "named_line"
 
-    if (this.busOdPlaceLabel(text)) return "other"
+    if (this.busOdPlaceLabel(text)) return "leapfrog"
     const number = text.match(/\d+/)?.[0]
     if (!number) return "other"
     const value = Number.parseInt(number, 10)
@@ -4154,6 +4925,9 @@ export default class extends Controller {
 
   indexStationCoordinates(routeId, data) {
     const L = window.L
+    const aliasIds = DANHAI_LAYER_IDS.has(routeId)
+      ? [ routeId, DANHAI_SCHEDULE_ROUTE_ID ]
+      : [ routeId ]
 
     ;(data.features || []).forEach((feature) => {
       if (feature.properties?.feature_type !== "station") return
@@ -4165,12 +4939,14 @@ export default class extends Controller {
       const latlng = L.latLng(coordinates[1], coordinates[0])
       const name = this.featureDisplayName(feature)
 
-      this.coordinateIndexRefs(routeId, ref).forEach((stationRef) => {
-        this.stationCoordinatesByKey[this.stationKey(routeId, stationRef)] = latlng
-        if (name) this.stationNameByKey[this.stationKey(routeId, stationRef)] = name
-      })
-      this.transferStationRefs(ref).forEach((stationRef) => {
-        if (name) this.stationNameByKey[this.stationKey(routeId, stationRef)] ||= name
+      aliasIds.forEach((indexRouteId) => {
+        this.coordinateIndexRefs(indexRouteId, ref).forEach((stationRef) => {
+          this.stationCoordinatesByKey[this.stationKey(indexRouteId, stationRef)] = latlng
+          if (name) this.stationNameByKey[this.stationKey(indexRouteId, stationRef)] = name
+        })
+        this.transferStationRefs(ref).forEach((stationRef) => {
+          if (name) this.stationNameByKey[this.stationKey(indexRouteId, stationRef)] ||= name
+        })
       })
     })
   }
@@ -5024,6 +5800,58 @@ export default class extends Controller {
       }
       void this.refreshVisibleParallelLayers()
     }
+    this.syncRouteDisplayButton()
+  }
+
+  async cancelRouteDisplay(event) {
+    event?.preventDefault?.()
+    const routeId = this.selectedRouteId || this.initialRouteIdValue
+    if (!routeId || !this.mapReady || !this.map) return
+
+    const visible = Boolean(this.layerVisible[routeId])
+    const checkbox = this.checkboxForLayer(routeId)
+    if (checkbox) {
+      checkbox.checked = !visible
+      await this.toggleLayer({ preventDefault() {}, currentTarget: checkbox, params: { layer: routeId } })
+      return
+    }
+
+    if (visible) {
+      this.hideLayerWithCheckbox(routeId)
+      if (this.selectedRouteId === routeId) {
+        this.selectedRouteId = null
+        this.syncRouteSelectionUI()
+        this.setRouteBrowserStopsOpen(false)
+        this.applyRouteEmphasis()
+      }
+      this.updateOutOfStationTransfers()
+      void this.refreshVisibleParallelLayers()
+    } else {
+      await this.showLayer(routeId, { fitBounds: true })
+      if (this.layerVisible[routeId]) {
+        this.selectedRouteId = routeId
+        this.syncRouteSelectionUI()
+        await this.displayRouteStops(routeId)
+      }
+    }
+    this.syncRouteDisplayButton()
+  }
+
+  syncRouteDisplayButton() {
+    if (!this.hasCancelRouteDisplayTarget) return
+
+    const routeId = this.selectedRouteId || this.initialRouteIdValue
+    const visible = Boolean(routeId) && Boolean(this.layerVisible[routeId])
+    this.cancelRouteDisplayTargets.forEach((button) => {
+      const hideLabel = button.dataset.labelHide
+      const showLabel = button.dataset.labelShow
+      if (showLabel) {
+        button.hidden = false
+        button.textContent = visible ? hideLabel : showLabel
+      } else {
+        button.hidden = !visible
+      }
+    })
   }
 
   async showLayer(layerId, { checkbox = null, fitBounds = true, manageControl = true, deferSideEffects = false } = {}) {
@@ -5126,6 +5954,7 @@ export default class extends Controller {
         this.stationKmCache?.clear()
       }
     })
+    if (DANHAI_LAYER_IDS.has(layerId)) this.mergeDanhaiScheduleTracks()
 
     this.clearStationLabelsForLayer(layerId)
     if (!deferSideEffects) {
@@ -5184,6 +6013,7 @@ export default class extends Controller {
     const displayData = this.displayGeoJSON(data, route)
     const renderData = this.cloneGeoJSONForRender(this.geoJSONForMapRender(displayData, route))
     this.clearTerminalRolesFromGeoJSON(renderData)
+    this.tagIntercityBoardingRoles(renderData, route)
 
     this.cacheRouteTracks(route.id, displayData)
     this.indexStationCoordinates(route.id, displayData)
@@ -5195,9 +6025,12 @@ export default class extends Controller {
           return this.hiddenStationMarker(latlng)
         }
 
-        return this.stationMarker(feature, latlng, color, routeRef, route.id)
+        const markerLatLng = this.intercityBoardingLatLng(feature, latlng, route)
+        return this.stationMarker(feature, markerLatLng, color, routeRef, route.id)
       },
       onEachFeature: (feature, layer) => {
+        if (layer.options) layer.options.smoothFactor = ROUTE_LINE_SMOOTH_FACTOR
+
         if (route.id === "airport_mrt" || route.id === "airport_mrt_express") {
           const lineStyle = this.styleForFeature(feature, color, route)
           if (lineStyle.color && typeof layer.setStyle === "function") layer.setStyle(lineStyle)
@@ -5210,6 +6043,7 @@ export default class extends Controller {
 
     if (!this.isLayerGenerationCurrent(layerId, generation) || !this.layerVisible[layerId]) return
 
+    this.addJointColorOverlay(geoLayer, route)
     group.addLayer(geoLayer)
 
     if (layerId === "airport_mrt") this.bringAirportMrtCommuterLinesToFront(group)
@@ -5217,6 +6051,42 @@ export default class extends Controller {
 
   clearTerminalRolesFromGeoJSON(data) {
     ;(data?.features || []).forEach((feature) => this.clearTerminalStationRoles([ feature ]))
+  }
+
+  // Highway coaches: first stop of a direction is 上客, last is 下客.
+  tagIntercityBoardingRoles(data, route) {
+    if (route?.city_id !== "InterCity") return
+
+    const byDirection = new Map()
+    ;(data?.features || []).forEach((feature) => {
+      if (feature.properties?.feature_type !== "station") return
+      const direction = String(feature.properties?.direction ?? "")
+      if (!byDirection.has(direction)) byDirection.set(direction, [])
+      byDirection.get(direction).push(feature)
+    })
+
+    byDirection.forEach((stations) => {
+      if (stations.length === 0) return
+      stations[0].properties = { ...stations[0].properties, boarding_role: "board" }
+      if (stations.length > 1) {
+        stations[stations.length - 1].properties = {
+          ...stations[stations.length - 1].properties,
+          boarding_role: "alight"
+        }
+      }
+    })
+  }
+
+  // Keep colocated 上客／下客 tips readable when TDX parks both on one point.
+  intercityBoardingLatLng(feature, latlng, route) {
+    if (route?.city_id !== "InterCity" || feature?.properties?.boarding_role !== "alight") return latlng
+    if (!latlng || typeof latlng.lat !== "number") return latlng
+
+    const L = window.L
+    const meters = 18
+    const lat = latlng.lat + (meters / 110540)
+    const lng = latlng.lng + (meters / (111320 * Math.cos((latlng.lat * Math.PI) / 180)))
+    return L.latLng(lat, lng)
   }
 
   clearTerminalStationRoles(stations) {
@@ -5285,10 +6155,6 @@ export default class extends Controller {
 
   geoJSONForMapRender(data, route) {
     let features = data.features || []
-
-    if (route?.id === "danhai_lrt") {
-      features = this.deduplicateDanhaiStationFeatures(features)
-    }
 
     if (route?.id === "airport_mrt_express") {
       features = features.filter((feature) => feature.properties?.feature_type !== "station")
@@ -5573,12 +6439,33 @@ export default class extends Controller {
 
     if (route.id === "airport_mrt") return AIRPORT_MRT_COMMUTER_COLOR
     if (route.id === "airport_mrt_express") return EXPRESS_LINE_COLOR
-    if (route.id === "danhai_lrt") return DANHAI_LRT_COLOR
+    if (DANHAI_LAYER_IDS.has(route.id)) return DANHAI_LRT_COLOR
 
     return route.color || null
   }
 
-  styleForFeature(feature, color, route = null) {
+  addJointColorOverlay(geoLayer, route) {
+    const color2 = route?.color_2
+    if (!color2 || typeof geoLayer?.eachLayer !== "function") return
+
+    const primary = this.routeDisplayColor(route) || route.color
+    if (primary && String(primary).toLowerCase() === String(color2).toLowerCase()) return
+
+    const L = window.L
+    const partners = []
+    geoLayer.eachLayer((layer) => {
+      if (!this.isRouteLineFeature(layer.feature) || typeof layer.getLatLngs !== "function") return
+
+      const style = this.styleForFeature(layer.feature, color2, route, { forceColor: color2, joint: true })
+      const partner = L.polyline(layer.getLatLngs(), { ...style, interactive: false })
+      partner.feature = layer.feature
+      partner.options.jointColor = true
+      partners.push(partner)
+    })
+    partners.forEach((partner) => geoLayer.addLayer(partner))
+  }
+
+  styleForFeature(feature, color, route = null, options = null) {
     if (feature.geometry?.type !== "LineString" && feature.geometry?.type !== "MultiLineString") {
       return {}
     }
@@ -5615,7 +6502,7 @@ export default class extends Controller {
       }
     }
 
-    if (route?.id === "danhai_lrt") {
+    if (DANHAI_LAYER_IDS.has(route?.id)) {
       return {
         className: `${haloBoost ? "route-line--halo" : ""}${dimmed ? " route-line--dimmed" : ""}`.trim(),
         color: DANHAI_LRT_COLOR,
@@ -5637,35 +6524,121 @@ export default class extends Controller {
       }
     }
 
-    const baseColor = feature.properties?.color || this.routeDisplayColor(route) || color
+    const baseColor = options?.forceColor || feature.properties?.color || this.routeDisplayColor(route) || color
+    const emphasized = route?.id === emphasisId
+    const jointOverlay = Boolean(options?.joint)
+    const dualRoute = Boolean(route?.color_2)
+    // Frequency wash stays on the stroke even when selected — emphasis is
+    // weight/halo only. Otherwise arrows + sidebar swatches look pale while
+    // the polyline snaps back to full operator ink.
+    // Dual-colour routes keep ink more opaque so colour_2 dashes read as a
+    // second solid stripe instead of muddy transparency over colour_1.
+    let opacity = this.frequencyLineOpacity(route, dimFactor)
+    if (emphasized) opacity = Math.max(0.85, this.frequencyLineOpacity(route, 1)) * dimFactor
+    if (dualRoute) opacity = Math.max(opacity, 0.9 * dimFactor)
+    if (jointOverlay) opacity = Math.min(1, Math.max(0.95, opacity))
+
     return {
-      className: `${haloBoost ? "route-line--halo" : ""}${dimmed ? " route-line--dimmed" : ""}`.trim(),
-      color: route?.id === emphasisId ? baseColor : this.frequencyShadedColor(baseColor, route),
-      weight: 5 + haloBoost,
-      opacity: 0.9 * dimFactor,
-      lineCap: "round",
+      className: `${haloBoost ? "route-line--halo" : ""}${dimmed ? " route-line--dimmed" : ""}${jointOverlay ? " route-line--joint" : ""}`.trim(),
+      color: this.frequencyShadedColor(baseColor, route),
+      weight: (emphasized ? 6 : this.frequencyLineWeight(route)) + haloBoost,
+      opacity,
+      dashArray: jointOverlay ? BUS_JOINT_DASH : null,
+      lineCap: jointOverlay ? "butt" : "round",
       lineJoin: "round"
     }
   }
 
-  // Frequent buses keep their colour; sparse ones fade toward the basemap.
+  // 0 = 班次少／淺, 1 = 班次多／實. Null for rail (not shaded by trip counts).
+  frequencyLevel(route) {
+    if (!route?.city_id) return null
+
+    const trips = Number(route.daily_trips)
+    // Unknown trip counts stay mid-pale so they do not read as trunks.
+    if (!(trips > 0)) return 0.35
+
+    return Math.min(1, Math.max(0,
+      Math.log(trips / BUS_FREQUENCY_FAINT_TRIPS) / Math.log(BUS_FREQUENCY_FULL_TRIPS / BUS_FREQUENCY_FAINT_TRIPS)
+    ))
+  }
+
+  frequencyLineWeight(route) {
+    const level = this.frequencyLevel(route)
+    if (level == null) return 5
+
+    // Thin when sparse, thicker when frequent (3px → 6px).
+    return 3 + (level * 3)
+  }
+
+  frequencyLineOpacity(route, dimFactor = 1) {
+    const level = this.frequencyLevel(route)
+    if (level == null) return 0.9 * dimFactor
+
+    // Sparse lines also drop opacity so "淺" reads on busy corridors.
+    return (0.45 + (level * 0.45)) * dimFactor
+  }
+
+  // 班次少 → fade toward the basemap (淺); 班次多 → keep operator colour (實).
   frequencyShadedColor(color, route) {
     if (!route?.city_id || typeof color !== "string") return color
 
-    const trips = Number(route.daily_trips)
-    const level = trips > 0
-      ? Math.min(1, Math.max(0, Math.log(trips / BUS_FREQUENCY_FAINT_TRIPS) / Math.log(BUS_FREQUENCY_FULL_TRIPS / BUS_FREQUENCY_FAINT_TRIPS)))
-      : 0.5
+    const level = this.frequencyLevel(route)
+    if (level == null) return color
+
     const fade = Math.round((1 - level) * BUS_FREQUENCY_MAX_FADE * 20) / 20
     if (fade <= 0) return color
 
-    const dark = document.documentElement.classList.contains("dark")
-    const key = `${color}|${fade}|${dark ? "d" : "l"}`
+    const dark = document.documentElement.classList.contains("dark") || this.basemapStyle === "sat"
+    const wash = dark ? "#111827" : "#ffffff"
+    const key = `${color}|${fade}|${wash}`
     this.frequencyColorCache ||= new Map()
     if (!this.frequencyColorCache.has(key)) {
-      this.frequencyColorCache.set(key, this.mixHexColors(color, dark ? "#111827" : "#ffffff", fade))
+      this.frequencyColorCache.set(key, this.mixHexColors(color, wash, fade))
     }
     return this.frequencyColorCache.get(key)
+  }
+
+  paintFrequencySwatch(element, color, route) {
+    if (!element) return
+
+    const second = route?.color_2 || ""
+    element.dataset.frequencySwatch = "1"
+    element.dataset.frequencyColor = color || ""
+    if (second) element.dataset.frequencyColor2 = second
+    else delete element.dataset.frequencyColor2
+    if (route?.city_id) {
+      element.dataset.frequencyCity = route.city_id
+      if (route.daily_trips != null && route.daily_trips !== "") element.dataset.frequencyTrips = String(route.daily_trips)
+    }
+    this.applySwatchColors(element, color, second, route)
+  }
+
+  applySwatchColors(element, color, second, route) {
+    const shaded = this.frequencyShadedColor(color, route)
+    const shaded2 = second ? this.frequencyShadedColor(second, route) : ""
+    if (shaded2) {
+      element.style.backgroundColor = ""
+      element.style.backgroundImage = `linear-gradient(90deg, ${shaded} 50%, ${shaded2} 50%)`
+    } else {
+      element.style.backgroundImage = ""
+      element.style.backgroundColor = shaded
+    }
+  }
+
+  refreshFrequencySwatches() {
+    this.element.querySelectorAll("[data-frequency-swatch]").forEach((element) => {
+      const color = element.dataset.frequencyColor
+      if (!color) return
+
+      const route = element.dataset.frequencyCity
+        ? {
+          city_id: element.dataset.frequencyCity,
+          daily_trips: element.dataset.frequencyTrips,
+          color_2: element.dataset.frequencyColor2
+        }
+        : { color_2: element.dataset.frequencyColor2 }
+      this.applySwatchColors(element, color, element.dataset.frequencyColor2, route)
+    })
   }
 
   mixHexColors(color, toward, amount) {
@@ -5705,18 +6678,47 @@ export default class extends Controller {
       if (!group || !route) return
 
       const color = this.routeDisplayColor(route) || LAYER_COLORS[layerId] || "#666666"
+      const stopColor = this.frequencyShadedColor(color, route)
 
       group.eachLayer((geoLayer) => {
         if (typeof geoLayer.eachLayer !== "function") return
 
         geoLayer.eachLayer((layer) => {
           if (!layer.feature || typeof layer.setStyle !== "function") return
-          if (!this.isRouteLineFeature(layer.feature) && layer.feature.properties?.feature_type !== "depot_spur") return
 
-          layer.setStyle(this.styleForFeature(layer.feature, color, route))
+          const featureType = layer.feature.properties?.feature_type
+          // Bus stop dots share the frequency wash; leave rail markers alone
+          // (they keep per-line / transfer colours from first paint).
+          if (route.city_id && featureType === "station") {
+            const jointColors = this.jointBusStopColors(route, color)
+            if (jointColors && layer.options?.jointStop && typeof layer.setIcon === "function") {
+              layer.setIcon(this.jointBusStopIcon(jointColors.map((ink) => this.frequencyShadedColor(ink, route))))
+              return
+            }
+            if (layer.options?.fillColor != null) {
+              layer.setStyle({ fillColor: stopColor })
+              return
+            }
+          }
+
+          if (!this.isRouteLineFeature(layer.feature) && featureType !== "depot_spur") return
+
+          const joint = layer.options?.jointColor
+          const lineColor = joint ? route.color_2 : color
+          if (!lineColor) return
+
+          layer.setStyle(this.styleForFeature(
+            layer.feature,
+            lineColor,
+            route,
+            joint ? { forceColor: lineColor, joint: true } : null
+          ))
         })
       })
     })
+
+    this.restackBusCampusLayers()
+    this.scheduleBusArrowRefresh()
   }
 
   stationColorForRoute(routeId, feature, stationRef, fallbackColor) {
@@ -5724,7 +6726,7 @@ export default class extends Controller {
     if (routeId === "airport_mrt_express") {
       return feature.properties?.express_service ? EXPRESS_LINE_COLOR : AIRPORT_MRT_COMMUTER_COLOR
     }
-    if (routeId === "danhai_lrt") return DANHAI_LRT_COLOR
+    if (DANHAI_LAYER_IDS.has(routeId) || routeId === DANHAI_SCHEDULE_ROUTE_ID) return DANHAI_LRT_COLOR
 
     return feature.properties?.color || this.colorForStationRef(stationRef) || fallbackColor
   }
@@ -5746,6 +6748,32 @@ export default class extends Controller {
     delete this.routeChainage[routeId]
     delete this.hopChainage[routeId]
     this.stationKmCache?.clear()
+
+    // Timetable vehicles still use danhai_lrt; merge segment tracks under that id.
+    if (DANHAI_LAYER_IDS.has(routeId)) this.mergeDanhaiScheduleTracks()
+  }
+
+  mergeDanhaiScheduleTracks() {
+    const tracks = []
+    DANHAI_LAYER_IDS.forEach((layerId) => {
+      const lines = this.vehicleTracksByRouteId[layerId]
+      if (lines?.length) tracks.push(...lines)
+    })
+    if (tracks.length === 0) {
+      delete this.vehicleTracksByRouteId[DANHAI_SCHEDULE_ROUTE_ID]
+      delete this.routeTracksByRouteId[DANHAI_SCHEDULE_ROUTE_ID]
+      return
+    }
+
+    this.vehicleTracksByRouteId[DANHAI_SCHEDULE_ROUTE_ID] = tracks
+    const withDepot = []
+    DANHAI_LAYER_IDS.forEach((layerId) => {
+      const lines = this.routeTracksByRouteId[layerId]
+      if (lines?.length) withDepot.push(...lines)
+    })
+    this.routeTracksByRouteId[DANHAI_SCHEDULE_ROUTE_ID] = withDepot
+    delete this.routeChainage[DANHAI_SCHEDULE_ROUTE_ID]
+    delete this.hopChainage[DANHAI_SCHEDULE_ROUTE_ID]
   }
 
   extractRouteTracks(data, { includeDepot = true } = {}) {
@@ -5926,11 +6954,8 @@ export default class extends Controller {
     if (route.id === "airport_mrt") return -halfOffset
     if (route.id === "airport_mrt_express") return halfOffset
 
-    if (route.id === "danhai_lrt") {
-      const segment = feature.properties?.segment
-      if (segment === "lushan") return -halfOffset
-      if (segment === "lanhai") return halfOffset
-    }
+    if (route.id === "danhai_lushan") return -halfOffset
+    if (route.id === "danhai_lanhai") return halfOffset
 
     if (route.id === "taoyuan_airport_skytrain") {
       const segment = feature.properties?.segment
@@ -6023,7 +7048,7 @@ export default class extends Controller {
       if (type !== "route" && type !== "station") return feature
 
       // A lone direction stays on the street centreline.
-      const offset = bandOffset + (onlyDirection == null ? this.busDirectionOffsetMeters(feature) : 0)
+      const offset = this.clampBusOffset(bandOffset + (onlyDirection == null ? this.busDirectionOffsetMeters(feature) : 0))
       if (!offset) return feature
 
       const bearingLine = type === "route"
@@ -6097,6 +7122,11 @@ export default class extends Controller {
 
   routeUsesBusDirectionBands(route) {
     return Boolean(route?.city_id) && (this.map?.getZoom() ?? 12) >= BUS_BAND_MIN_ZOOM
+  }
+
+  clampBusOffset(meters) {
+    if (!Number.isFinite(meters)) return 0
+    return Math.max(-BUS_OFFSET_MAX_METERS, Math.min(BUS_OFFSET_MAX_METERS, meters))
   }
 
   busDirectionOffsetMeters(feature) {
@@ -6383,25 +7413,59 @@ export default class extends Controller {
     if (busRoutes.length === 0) return
 
     const spacing = Math.max(180, 120 + (busRoutes.length * 20))
+    // One-way-only routes use a 「單向」 badge; map arrows only mark ambiguous
+    // urban one-way stretches (not freeway / 建國高架 / 公車專用道).
+    const emphasisId = this.emphasizedRouteId()
 
     busRoutes.forEach((route) => {
+      if (route.one_way) return
+
       const file = route.file || route.url
       const data = file ? this.geoJSONDataByUrl[file] : null
       if (!data) return
 
       const displayData = this.displayGeoJSON(data, route)
-      const color = this.routeDisplayColor(route) || route.color || "#666666"
+      const baseInk = this.routeDisplayColor(route) || route.color || "#666666"
+      const primary = this.frequencyShadedColor(baseInk, route)
+      const secondary = route.color_2 && String(route.color_2).toLowerCase() !== String(baseInk).toLowerCase()
+        ? this.frequencyShadedColor(route.color_2, route)
+        : null
+      const arrowColors = secondary ? [ primary, secondary ] : [ primary ]
       const lines = (displayData.features || [])
         .filter((feature) => feature.properties?.feature_type === "route" && feature.geometry?.type === "LineString")
         .map((feature) => ({ coordinates: feature.geometry.coordinates, direction: String(feature.properties?.direction ?? "") }))
       if (lines.length === 0) return
 
+      const emphasized = route.id === emphasisId || busRoutes.length === 1
       const index = this.busArrowSegmentIndex(lines)
+      const stopsByDirection = this.busArrowStopsByDirection(displayData)
       lines.forEach((line, lineIndex) => {
         const needsArrow = (lng, lat, along) => this.busArrowNeeded(index, lineIndex, lng, lat, along)
-        this.addBusArrowsAlongLine(line.coordinates, color, spacing, L, group, needsArrow)
+        this.addBusArrowsAlongLine(line.coordinates, arrowColors, spacing, L, group, needsArrow, {
+          emphasized,
+          stopPoints: stopsByDirection.get(line.direction) || []
+        })
       })
     })
+  }
+
+  busArrowSuppressCorridor(lng, lat) {
+    return BUS_ARROW_SUPPRESS_BOXES.some(([ minLon, minLat, maxLon, maxLat ]) =>
+      lng >= minLon && lng <= maxLon && lat >= minLat && lat <= maxLat
+    )
+  }
+
+  busArrowStopsByDirection(displayData) {
+    const byDirection = new Map()
+    for (const feature of displayData?.features || []) {
+      if (feature.properties?.feature_type !== "station" || feature.geometry?.type !== "Point") continue
+      const direction = String(feature.properties?.direction ?? "")
+      const coordinates = feature.geometry.coordinates
+      if (!Array.isArray(coordinates) || coordinates.length < 2) continue
+      if (!byDirection.has(direction)) byDirection.set(direction, [])
+      byDirection.get(direction).push(coordinates)
+    }
+    return byDirection
   }
 
   // Segments of every direction of one route, bucketed on a local metre grid.
@@ -6435,16 +7499,22 @@ export default class extends Controller {
   }
 
   // Arrows only where direction is not obvious: a stretch the opposite
-  // direction does not share (loops, one-way streets, single-direction
-  // routes), or where the line comes back over its own path.
+  // direction does not share (loops, one-way streets), or where the line
+  // comes back over its own path. No arrows on 建國高架 / 公車專用道, or when
+  // the opposite run is nearby and antiparallel (dual carriageway / tunnel).
   busArrowNeeded(index, lineIndex, lng, lat, along) {
+    if (this.busArrowSuppressCorridor(lng, lat)) return false
+
     const [ x, y ] = index.toXY([ lng, lat ])
     const ownDirection = index.directions[lineIndex]
-    const reach = Math.ceil(BUS_ARROW_SHARED_M / index.cell)
+    const reach = Math.ceil(BUS_ARROW_CORRIDOR_M / index.cell)
     const cx = Math.floor(x / index.cell)
     const cy = Math.floor(y / index.cell)
     let shared = false
+    let ownBearing = null
+    let ownBearingDistance = Infinity
     const seen = new Set()
+    const candidates = []
 
     for (let dx = -reach; dx <= reach; dx += 1) {
       for (let dy = -reach; dy <= reach; dy += 1) {
@@ -6457,17 +7527,43 @@ export default class extends Controller {
             ? Math.max(0, Math.min(1, (((x - segment.ax) * vx) + ((y - segment.ay) * vy)) / (segment.length ** 2)))
             : 0
           const distance = Math.hypot(x - (segment.ax + (vx * t)), y - (segment.ay + (vy * t)))
+          const bearing = Math.atan2(vx, vy) * 180 / Math.PI
           if (segment.lineIndex === lineIndex) {
             const elsewhere = Math.abs(segment.along + (segment.length * t) - along) > BUS_ARROW_SELF_GAP_M
             if (elsewhere && distance <= BUS_ARROW_SELF_OVERLAP_M) return true
-          } else if (segment.direction !== ownDirection && distance <= BUS_ARROW_SHARED_M) {
-            shared = true
+            if (distance < ownBearingDistance && segment.length > 1) {
+              ownBearingDistance = distance
+              ownBearing = bearing
+            }
+          } else if (segment.direction !== ownDirection) {
+            candidates.push({ distance, bearing })
           }
         }
       }
     }
 
+    for (const candidate of candidates) {
+      if (candidate.distance <= BUS_ARROW_SHARED_M) {
+        shared = true
+        break
+      }
+      if (
+        candidate.distance <= BUS_ARROW_CORRIDOR_M &&
+        ownBearing != null &&
+        this.busArrowAntiparallel(ownBearing, candidate.bearing)
+      ) {
+        shared = true
+        break
+      }
+    }
+
     return !shared
+  }
+
+  busArrowAntiparallel(a, b) {
+    let diff = Math.abs(a - b) % 360
+    if (diff > 180) diff = 360 - diff
+    return Math.abs(diff - 180) <= BUS_ARROW_ANTIPARALLEL_DEG
   }
 
   layerLineDrawn(layerId) {
@@ -6475,23 +7571,30 @@ export default class extends Controller {
     return Boolean(group && this.map.hasLayer(group) && group.getLayers().length > 0)
   }
 
-  addBusArrowsAlongLine(coordinates, color, spacing, L, group, needsArrow = null) {
+  addBusArrowsAlongLine(coordinates, colors, spacing, L, group, needsArrow = null, { emphasized = false, stopPoints = [] } = {}) {
     if (!coordinates || coordinates.length < 2) return
+
+    const palette = (Array.isArray(colors) ? colors : [ colors ]).filter(Boolean)
+    if (palette.length === 0) return
 
     const total = this.polylineLengthMeters(coordinates)
     if (total < (BUS_ARROW_EDGE_PAD_M * 2) + 40) return
 
     const step = Math.max(spacing, BUS_ARROW_BASE_SPACING_M * 0.75)
+    const arrowClass = emphasized ? "bus-route-arrow bus-route-arrow--emphasized" : "bus-route-arrow"
+    const size = emphasized ? 16 : 12
+    const stopAlongs = this.busArrowStopAlongs(coordinates, stopPoints)
 
-    this.busArrowDistances(coordinates, total, step, needsArrow).forEach((distance) => {
+    this.busArrowDistances(coordinates, total, step, needsArrow, stopAlongs).forEach((distance, index) => {
       const sample = this.pointAndBearingAlongPolyline(coordinates, distance)
       if (!sample) return
 
+      const color = palette[index % palette.length]
       const icon = L.divIcon({
         className: "bus-route-arrow-wrap",
-        html: `<div class="bus-route-arrow" style="--bus-arrow-color:${this.escapeHtml(color)};--bus-arrow-bearing:${sample.bearing.toFixed(1)}deg" aria-hidden="true"></div>`,
-        iconSize: [ 12, 12 ],
-        iconAnchor: [ 6, 6 ]
+        html: `<div class="${arrowClass}" style="--bus-arrow-color:${this.escapeHtml(color)};--bus-arrow-bearing:${sample.bearing.toFixed(1)}deg" aria-hidden="true"></div>`,
+        iconSize: [ size, size ],
+        iconAnchor: [ size / 2, size / 2 ]
       })
 
       group.addLayer(L.marker(L.latLng(sample.lat, sample.lng), {
@@ -6503,9 +7606,41 @@ export default class extends Controller {
     })
   }
 
+  // Along-track metres of each stop projected onto the line (nearest vertex).
+  busArrowStopAlongs(coordinates, stopPoints) {
+    if (!stopPoints?.length || !coordinates?.length) return []
+
+    return stopPoints.map(([ lng, lat ]) => {
+      let best = 0
+      let bestDistance = Infinity
+      let along = 0
+      for (let i = 0; i < coordinates.length; i += 1) {
+        const [ plng, plat ] = coordinates[i]
+        const distance = this.haversineMeters(lat, lng, plat, plng)
+        if (distance < bestDistance) {
+          bestDistance = distance
+          best = along
+        }
+        if (i < coordinates.length - 1) {
+          along += this.haversineMeters(plat, plng, coordinates[i + 1][1], coordinates[i + 1][0])
+        }
+      }
+      return best
+    })
+  }
+
+  busArrowRunFarFromStops(from, to, stopAlongs) {
+    if (!stopAlongs.length) return true
+    // Ignore stops that only touch the ends of the run (city → freeway → city).
+    const innerFrom = from + BUS_ARROW_HIGHWAY_STOP_GAP_M
+    const innerTo = to - BUS_ARROW_HIGHWAY_STOP_GAP_M
+    if (innerTo <= innerFrom) return false
+    return stopAlongs.every((along) => along < innerFrom || along > innerTo)
+  }
+
   // Positions along the line: evenly spaced, but only inside runs where
   // needsArrow holds; a short run still gets one arrow at its middle.
-  busArrowDistances(coordinates, total, step, needsArrow) {
+  busArrowDistances(coordinates, total, step, needsArrow, stopAlongs = []) {
     const start = BUS_ARROW_EDGE_PAD_M
     const end = total - BUS_ARROW_EDGE_PAD_M
     if (!needsArrow) {
@@ -6544,9 +7679,21 @@ export default class extends Controller {
 
     return runs
       .filter((entry) => entry.to - entry.from >= BUS_ARROW_MIN_RUN_M)
+      .filter((entry) => {
+        const length = entry.to - entry.from
+        // Freeway / tunnel / interchange: long, no stops nearby → no arrows.
+        return !(length >= BUS_ARROW_HIGHWAY_RUN_M &&
+          this.busArrowRunFarFromStops(entry.from, entry.to, stopAlongs))
+      })
       .flatMap((entry) => {
         const length = entry.to - entry.from
-        const count = Math.max(1, Math.floor(length / step))
+        // Long urban one-way / loop runs thin out so a circulator is not packed.
+        const runStep = length >= BUS_ARROW_VERY_LONG_RUN_M
+          ? Math.max(step, BUS_ARROW_VERY_LONG_SPACING_M)
+          : length >= BUS_ARROW_LONG_RUN_M
+            ? Math.max(step, BUS_ARROW_LONG_SPACING_M)
+            : step
+        const count = Math.max(1, Math.floor(length / runStep))
         const gap = length / count
         return Array.from({ length: count }, (_, i) => entry.from + (gap * (i + 0.5)))
       })
@@ -6650,12 +7797,22 @@ export default class extends Controller {
     if (!coordinates || coordinates.length < 2 || offsetMeters === 0) return coordinates
 
     if (this.isNearlyClosedRing(coordinates)) {
+      const circular = this.offsetCircularRing(coordinates, offsetMeters)
+      if (circular) return circular
+
       const simplified = this.simplifyLineMeters(coordinates, Math.abs(offsetMeters) * 0.3)
       return this.removeOffsetLoops(this.offsetClosedRingCoordinates(simplified, offsetMeters), Math.abs(offsetMeters) * 4)
     }
 
-    // Turnaround loops (small roundabouts, terminal circles) about the size of
-    // the offset balloon or knot when shifted; draw those on the road itself.
+    const arcs = this.circularArcRanges(coordinates)
+    if (arcs.length) return this.offsetAroundCircularArcs(coordinates, arcs, offsetMeters)
+
+    return this.offsetLineAvoidingTightLoops(coordinates, offsetMeters)
+  }
+
+  // Turnaround loops about the size of the offset balloon or knot when shifted;
+  // draw those on the road itself. Circular arcs are handled before this.
+  offsetLineAvoidingTightLoops(coordinates, offsetMeters) {
     const loops = this.tightLoopRanges(coordinates, Math.abs(offsetMeters))
     if (loops.length === 0) return this.offsetOpenStretch(coordinates, offsetMeters)
 
@@ -6670,6 +7827,194 @@ export default class extends Controller {
       result.push(...this.offsetOpenStretch(coordinates.slice(cursor), offsetMeters))
     }
     return result
+  }
+
+  offsetAroundCircularArcs(coordinates, arcs, offsetMeters) {
+    const pieces = []
+    let cursor = 0
+    arcs.forEach((arc) => {
+      if (arc.first > cursor) {
+        pieces.push({
+          circular: false,
+          points: this.offsetLineAvoidingTightLoops(coordinates.slice(cursor, arc.first + 1), offsetMeters)
+        })
+      }
+      pieces.push({
+        circular: true,
+        points: this.placeOnCircle(coordinates.slice(arc.first, arc.last + 1), arc.fit, offsetMeters)
+      })
+      cursor = arc.last
+    })
+    if (cursor < coordinates.length - 1) {
+      pieces.push({
+        circular: false,
+        points: this.offsetLineAvoidingTightLoops(coordinates.slice(cursor), offsetMeters)
+      })
+    }
+
+    const result = []
+    pieces.forEach((piece) => {
+      if (!piece.points?.length) return
+      if (!result.length) {
+        result.push(...piece.points)
+        return
+      }
+      // Keep the circle's vertex where the road and the ring meet.
+      if (piece.circular) result.pop()
+      else piece.points = piece.points.slice(1)
+      result.push(...piece.points)
+    })
+    return result
+  }
+
+  // Closed ring that is already a circle: scale about its center.
+  offsetCircularRing(coordinates, offsetMeters) {
+    const ring = this.uniqueRingCoordinates(coordinates)
+    if (ring.length < 6) return null
+
+    const kx = 111320 * Math.cos(ring[0][1] * Math.PI / 180)
+    const ky = 110540
+    let sx = 0
+    let sy = 0
+    ring.forEach(([ lng, lat ]) => {
+      sx += lng * kx
+      sy += lat * ky
+    })
+    const ux = sx / ring.length
+    const uy = sy / ring.length
+    const radii = ring.map(([ lng, lat ]) => Math.hypot((lng * kx) - ux, (lat * ky) - uy))
+    const radius = radii.reduce((sum, value) => sum + value, 0) / radii.length
+    const deviation = Math.max(...radii.map((value) => Math.abs(value - radius)))
+    if (!this.circleFitUsable({ radius })) return null
+    if (deviation > Math.max(ROUNDABOUT_FIT_METERS, radius * 0.08)) return null
+
+    return this.placeOnCircle(coordinates, { ux, uy, kx, ky, radius }, offsetMeters)
+  }
+
+  circularArcRanges(coordinates) {
+    const ranges = []
+    const count = coordinates.length
+    if (count < 6) return ranges
+
+    const kx = 111320 * Math.cos(coordinates[0][1] * Math.PI / 180)
+    const ky = 110540
+    let index = 0
+    while (index <= count - 6) {
+      let fit = this.circleFromThree(coordinates[index], coordinates[index + 2], coordinates[index + 4], kx, ky)
+      if (!this.circleFitUsable(fit)) {
+        index += 1
+        continue
+      }
+
+      let last = index + 4
+      while (last + 1 < count && this.distanceToCircle(coordinates[last + 1], fit) <= ROUNDABOUT_FIT_METERS) {
+        const next = last + 1
+        if ((next - index) % 4 !== 0) {
+          last = next
+          continue
+        }
+
+        const mid = coordinates[index + Math.floor((next - index) / 2)]
+        const refit = this.circleFromThree(coordinates[index], mid, coordinates[next], kx, ky)
+        if (!this.circleFitUsable(refit) || this.maxDistanceToCircle(coordinates, index, next, refit) > ROUNDABOUT_FIT_METERS) break
+        fit = refit
+        last = next
+      }
+
+      const mid = coordinates[index + Math.floor((last - index) / 2)]
+      const finalFit = this.circleFromThree(coordinates[index], mid, coordinates[last], kx, ky)
+      if (this.circleFitUsable(finalFit) &&
+        this.maxDistanceToCircle(coordinates, index, last, finalFit) <= ROUNDABOUT_FIT_METERS &&
+        last - index >= 5 &&
+        this.arcSweepDegrees(coordinates, index, last, finalFit) >= ROUNDABOUT_MIN_SWEEP_DEG) {
+        ranges.push({ first: index, last, fit: finalFit })
+        index = last
+      } else {
+        index += 1
+      }
+    }
+    return ranges
+  }
+
+  placeOnCircle(coordinates, fit, offsetMeters) {
+    const outward = this.circleOutwardMeters(coordinates, fit, offsetMeters)
+    const nextRadius = Math.max(1, fit.radius + outward)
+    const { ux, uy, kx, ky } = fit
+    return coordinates.map(([ lng, lat ]) => {
+      const x = (lng * kx) - ux
+      const y = (lat * ky) - uy
+      const radius = Math.hypot(x, y)
+      if (radius < 0.01) return [ lng, lat ]
+      const scale = nextRadius / radius
+      return [ (ux + (x * scale)) / kx, (uy + (y * scale)) / ky ]
+    })
+  }
+
+  // Positive offset sits to the right of travel. That moves out from the
+  // center when the center is on the left (counter-clockwise around the ring).
+  circleOutwardMeters(coordinates, fit, offsetMeters) {
+    const start = coordinates[0]
+    let next = coordinates[1]
+    for (let index = 2; index < coordinates.length; index += 1) {
+      const step = Math.hypot((next[0] - start[0]) * fit.kx, (next[1] - start[1]) * fit.ky)
+      if (step >= 1) break
+      next = coordinates[index]
+    }
+    const travelX = (next[0] - start[0]) * fit.kx
+    const travelY = (next[1] - start[1]) * fit.ky
+    const toCenterX = fit.ux - (start[0] * fit.kx)
+    const toCenterY = fit.uy - (start[1] * fit.ky)
+    const centerOnLeft = ((travelX * toCenterY) - (travelY * toCenterX)) >= 0
+    return centerOnLeft ? offsetMeters : -offsetMeters
+  }
+
+  circleFromThree(a, b, c, kx, ky) {
+    const ax = a[0] * kx
+    const ay = a[1] * ky
+    const bx = b[0] * kx
+    const by = b[1] * ky
+    const cx = c[0] * kx
+    const cy = c[1] * ky
+    const det = 2 * ((ax * (by - cy)) + (bx * (cy - ay)) + (cx * (ay - by)))
+    if (Math.abs(det) < 1e-6) return null
+
+    const a2 = (ax * ax) + (ay * ay)
+    const b2 = (bx * bx) + (by * by)
+    const c2 = (cx * cx) + (cy * cy)
+    const ux = ((a2 * (by - cy)) + (b2 * (cy - ay)) + (c2 * (ay - by))) / det
+    const uy = ((a2 * (cx - bx)) + (b2 * (ax - cx)) + (c2 * (bx - ax))) / det
+    return { ux, uy, kx, ky, radius: Math.hypot(ax - ux, ay - uy) }
+  }
+
+  circleFitUsable(fit) {
+    return Boolean(fit) && fit.radius >= ROUNDABOUT_MIN_RADIUS_METERS && fit.radius <= ROUNDABOUT_MAX_RADIUS_METERS
+  }
+
+  distanceToCircle(point, fit) {
+    return Math.abs(Math.hypot((point[0] * fit.kx) - fit.ux, (point[1] * fit.ky) - fit.uy) - fit.radius)
+  }
+
+  maxDistanceToCircle(coordinates, first, last, fit) {
+    let worst = 0
+    for (let index = first; index <= last; index += 1) {
+      worst = Math.max(worst, this.distanceToCircle(coordinates[index], fit))
+    }
+    return worst
+  }
+
+  arcSweepDegrees(coordinates, first, last, fit) {
+    const angle = (point) => Math.atan2((point[1] * fit.ky) - fit.uy, (point[0] * fit.kx) - fit.ux)
+    let sweep = 0
+    let previous = angle(coordinates[first])
+    for (let index = first + 1; index <= last; index += 1) {
+      const next = angle(coordinates[index])
+      let delta = next - previous
+      if (delta > Math.PI) delta -= Math.PI * 2
+      if (delta < -Math.PI) delta += Math.PI * 2
+      sweep += delta
+      previous = next
+    }
+    return Math.abs(sweep) * 180 / Math.PI
   }
 
   offsetOpenStretch(coordinates, offsetMeters) {
@@ -7213,7 +8558,8 @@ export default class extends Controller {
       if (!transfer.routes?.includes(routeId)) return false
 
       const matchesEndpoint = transfer.endpoints?.some((endpoint) => {
-        if (endpoint.route_id !== routeId) return false
+        const endpointRoutes = this.expandTransferEndpointRouteIds(endpoint.route_id)
+        if (!endpointRoutes.includes(routeId) && endpoint.route_id !== routeId) return false
 
         return this.transferStationRefs(endpoint.ref).includes(stationRef)
       })
@@ -7221,20 +8567,25 @@ export default class extends Controller {
       if (!matchesEndpoint) return false
 
       return transfer.routes.some((linkedRouteId) => {
-        return linkedRouteId !== routeId && this.layerVisible[linkedRouteId]
+        if (linkedRouteId === routeId) return false
+        if (DANHAI_LAYER_IDS.has(routeId) && DANHAI_LAYER_IDS.has(linkedRouteId)) return false
+
+        return this.layerVisible[linkedRouteId]
       })
     })
   }
 
   stationMarker(feature, latlng, color, routeRef, routeId) {
     const L = window.L
+    const route = this.findRoute(routeId)
+    const paint = (lineColor) => this.frequencyShadedColor(lineColor, route)
 
     if (feature.properties?.feature_type !== "station" && feature.properties?.feature_type !== "angle_station") {
       return L.marker(latlng)
     }
 
     if (feature.properties?.feature_type === "angle_station" || feature.properties?.passenger_service === false) {
-      const lineColor = feature.properties?.color || this.routeDisplayColor(this.findRoute(routeId)) || color
+      const lineColor = paint(feature.properties?.color || this.routeDisplayColor(route) || color)
       const linePrefix = this.linePrefixForStationRef(feature.properties?.ref) || routeRef
       const position = this.snapToTracks(latlng, linePrefix)
 
@@ -7256,7 +8607,7 @@ export default class extends Controller {
     const stationRefs = this.transferStationRefs(stationRef)
     const primaryStationRef = stationRefs[0]
     const linePrefix = this.linePrefixForStationRef(primaryStationRef) || routeRef
-    const lineColor = this.stationColorForRoute(routeId, feature, primaryStationRef, color)
+    const lineColor = paint(this.stationColorForRoute(routeId, feature, primaryStationRef, color))
     const outOfStation = this.isOutOfStationEndpoint(routeId, stationRef)
     const usesRouteTrackSnap = routeId === "airport_mrt" || routeId === "airport_mrt_express" || routeId === "circular_lrt"
     const position = outOfStation
@@ -7267,9 +8618,25 @@ export default class extends Controller {
 
     if (outOfStation) return this.outOfStationMarkerAt(position, lineColor)
 
+    const jointColors = this.jointBusStopColors(route, color)
+    if (jointColors) {
+      return this.jointBusStopMarkerAt(position, jointColors.map(paint))
+    }
+
     if (this.isTerminalStation(feature)) return this.terminalMarkerAt(position, lineColor)
 
     return this.circleMarkerAt(position, lineColor)
+  }
+
+  // Joint-operator bus: two brand colours on one stop, matching the dual line ink.
+  jointBusStopColors(route, fallbackColor = null) {
+    if (!route?.city_id || !route.color_2) return null
+
+    const primary = this.routeDisplayColor(route) || fallbackColor || route.color
+    if (!primary) return null
+    if (String(route.color_2).toLowerCase() === String(primary).toLowerCase()) return null
+
+    return [ primary, route.color_2 ]
   }
 
   registerStationLabel(feature, layer, route) {
@@ -7277,7 +8644,7 @@ export default class extends Controller {
     if (featureType !== "station" && featureType !== "angle_station") return
     if (featureType === "station" && feature.properties?.passenger_service === false) return
 
-    const name = this.featureDisplayName(feature)
+    const name = this.stationLabelName(feature)
     if (!name) return
 
     const latlng = layer.getLatLng?.()
@@ -7300,6 +8667,15 @@ export default class extends Controller {
       latlng,
       priority
     })
+  }
+
+  stationLabelName(feature) {
+    const name = this.featureDisplayName(feature)
+    if (!name) return ""
+
+    const platform = (this.isEnglishLocale() && feature.properties?.platform_en) || feature.properties?.platform
+    if (!platform || name.includes(platform)) return name
+    return `${name} ${platform}`
   }
 
   stationLabelPriority(feature, routeId, stationRef) {
@@ -7367,7 +8743,7 @@ export default class extends Controller {
 
     candidates.forEach((entry) => {
       const point = this.map.latLngToContainerPoint(entry.latlng)
-      const width = Math.min(12 + entry.name.length * 11, 160)
+      const width = Math.min(12 + entry.name.length * 12, 240)
       const height = 16
       const box = {
         left: point.x + 8,
@@ -7449,6 +8825,35 @@ export default class extends Controller {
       }),
       pane: this.stationMarkerPane,
       zIndexOffset: 500
+    })
+  }
+
+  jointBusStopMarkerAt(latlng, colors) {
+    const L = window.L
+
+    return L.marker(latlng, {
+      icon: this.jointBusStopIcon(colors),
+      pane: this.stationMarkerPane,
+      jointStop: true,
+      interactive: true,
+      keyboard: false
+    })
+  }
+
+  jointBusStopIcon(colors) {
+    const L = window.L
+    const [ leftColor, rightColor ] = colors
+    const safeLeft = this.escapeHtml(leftColor || "#666666")
+    const safeRight = this.escapeHtml(rightColor || leftColor || "#666666")
+    const diameter = Math.max(this.stationMarkerRadius() * 2, 8)
+    const box = diameter + 3
+    const html = `<div class="bus-joint-stop-marker" style="width:${diameter}px;height:${diameter}px" aria-hidden="true"><div class="bus-joint-stop-marker__half" style="background-color:${safeLeft}"></div><div class="bus-joint-stop-marker__half" style="background-color:${safeRight}"></div></div>`
+
+    return L.divIcon({
+      className: "bus-joint-stop-icon",
+      html,
+      iconSize: [ box, box ],
+      iconAnchor: [ box / 2, box / 2 ]
     })
   }
 
@@ -7674,8 +9079,10 @@ export default class extends Controller {
     if (!name) return
 
     const ref = feature.properties?.ref
-    const line = routeId === "danhai_lrt"
-      ? this.danhaiLineLabel(feature)
+    const line = DANHAI_LAYER_IDS.has(routeId)
+      ? (feature.properties?.line || (
+        routeId === "danhai_lanhai" ? this.t("sections.lanhai") : this.t("sections.lushan")
+      ))
       : routeId === "taoyuan_airport_skytrain"
         ? this.skytrainLineLabel(feature)
         : feature.properties?.line
@@ -7683,6 +9090,12 @@ export default class extends Controller {
     const subtitle = line ? `<br><span style="opacity:0.8">${line}</span>` : ""
     const terminalLabel = this.terminalStationLabel(feature)
     const terminalNote = terminalLabel ? `<br><span style="opacity:0.8">${terminalLabel}</span>` : ""
+    const boardingRole = feature.properties?.boarding_role
+    const boardingRoleNote = boardingRole === "board"
+      ? `<br><span style="opacity:0.8">${this.t("bus.board_stop")}</span>`
+      : boardingRole === "alight"
+        ? `<br><span style="opacity:0.8">${this.t("bus.alight_stop")}</span>`
+        : ""
     const transferKind = ref ? this.transferKindByEndpointKey?.get(this.stationKey(routeId, ref)) : null
     const transferNote = transferKind
       ? `<br><span style="opacity:0.8">${this.transferNoteForKind(transferKind)}</span>`
@@ -7708,7 +9121,7 @@ export default class extends Controller {
       feature.properties?.passenger_service === false
       ? `<br><span style="opacity:0.8">${this.t("popup.no_passenger")}</span>`
       : ""
-    const popup = `<strong>${this.escapeHtml(label)}</strong>${subtitle}${terminalNote}${boardingAreaNote}${noPassengerServiceNote}${directionNote}${transferNote}${expressNote}`
+    const popup = `<strong>${this.escapeHtml(label)}</strong>${subtitle}${terminalNote}${boardingRoleNote}${boardingAreaNote}${noPassengerServiceNote}${directionNote}${transferNote}${expressNote}`
     const isBus = this.routeIsBus(routeId)
 
     layer.bindPopup(() => {
@@ -7742,11 +9155,12 @@ export default class extends Controller {
   bindRouteLinePopup(layer, routeId) {
     const route = this.findRoute(routeId)
     const name = this.escapeHtml(this.routeDisplayName(route) || routeId)
+    const termini = this.escapeHtml(this.busTerminiLabel(route))
     const href = `/routes/${encodeURIComponent(routeId)}`
     const actionLabel = this.escapeHtml(this.t("popup.open_route_map"))
     const popup = `
       <div class="map-route-popup">
-        <span class="map-route-popup__name">${name}</span>
+        <span class="map-route-popup__name">${name}${termini ? ` <span class="route-termini">${termini}</span>` : ""}</span>
         <a class="map-route-popup__action" href="${href}" data-turbo-frame="_top">${actionLabel}</a>
       </div>
     `
@@ -7801,6 +9215,13 @@ export default class extends Controller {
     await this.displayRouteStops(routeId)
   }
 
+  routeViaRepeatsName(route) {
+    const name = String(this.routeDisplayName(route) || "")
+    if (!name || !route?.via) return false
+    if (name.includes(String(route.via))) return true
+    return Boolean(route.via_en) && name.includes(String(route.via_en))
+  }
+
   routeViaText(route) {
     if (this.isEnglishLocale() && route.via_en) {
       return /^(via|detour via|extended to|skips)\b/i.test(route.via_en) ? route.via_en : `${this.t("explore.route_via")} ${route.via_en}`
@@ -7815,10 +9236,10 @@ export default class extends Controller {
     const operator = this.routeOperatorLabel(route)
     const terminals = this.busRouteTerminalLabels(routeId)
     if (operator) rows.push(row("explore.route_operator", operator))
-    if (route?.via && this.isEnglishLocale() && route.via_en) {
+    if (route?.via && !this.routeViaRepeatsName(route) && this.isEnglishLocale() && route.via_en) {
       const detour = route.via_en.match(/^detour via (.+)$/i)?.[1]
       rows.push(detour ? row("explore.route_detour", detour) : row("explore.route_via", route.via_en.replace(/^via /i, "")))
-    } else if (route?.via) {
+    } else if (route?.via && !this.routeViaRepeatsName(route)) {
       const detour = route.via.match(/^(?:繞駛|繞經)(.+)$/)?.[1]
       rows.push(detour ? row("explore.route_detour", detour) : row("explore.route_via", route.via.replace(/^經由?/, "")))
     }
@@ -7836,8 +9257,19 @@ export default class extends Controller {
     const details = route.city_id
       ? `<div class="bus-route-details" data-bus-route-details="${this.escapeHtml(route.id)}"><p class="bus-route-details__status">${this.escapeHtml(this.t("bus_detail.loading"))}</p></div>`
       : ""
+    const staticNotes = [
+      this.busOneWayLabel(route),
+      this.busServiceNoteLabel(route),
+      this.busDetourHoursLabel(route)
+    ].filter(Boolean)
+    const noteLabels = [
+      this.busOneWayLabel(route),
+      this.busOffDaysLabel(route.off_days),
+      this.busServiceNoteLabel(route),
+      this.busDetourHoursLabel(route)
+    ].filter(Boolean)
     panel.innerHTML = `<div class="route-info-panel">
-      <div class="route-info-panel__off-days"><span data-route-off-days>${this.busOffDaysBadgeHtml(route.off_days)}</span>${this.busDetourHoursBadgeHtml(route)}</div>
+      <div class="route-info-panel__off-days" data-route-notes-host data-static-notes="${this.escapeHtml(JSON.stringify(staticNotes))}">${this.routeNotesMarqueeHtml(noteLabels)}</div>
       ${rows.length ? `<div class="route-info-panel__details">${rows.join("")}</div>` : ""}
       ${details}
     </div>`
@@ -7859,8 +9291,15 @@ export default class extends Controller {
       if (!target) return
       if (details?.error) delete this.busRouteDetailsCache[routeId]
       target.innerHTML = this.renderBusRouteDetails(details)
-      const offDaysHost = panel.querySelector("[data-route-off-days]")
-      if (offDaysHost && Array.isArray(details?.off_days)) offDaysHost.innerHTML = this.busOffDaysBadgeHtml(details.off_days)
+      const notesHost = panel.querySelector("[data-route-notes-host]")
+      if (notesHost && Array.isArray(details?.off_days)) {
+        let staticNotes = []
+        try { staticNotes = JSON.parse(notesHost.dataset.staticNotes || "[]") } catch (_error) { staticNotes = [] }
+        const oneWay = staticNotes.find((label) => label === this.t("bus.one_way"))
+        const rest = staticNotes.filter((label) => label !== oneWay)
+        const noteLabels = [ oneWay, this.busOffDaysLabel(details.off_days), ...rest ].filter(Boolean)
+        notesHost.innerHTML = this.routeNotesMarqueeHtml(noteLabels)
+      }
     } catch (_error) {
       delete this.busRouteDetailsCache[routeId]
       const target = host()
@@ -7887,9 +9326,10 @@ export default class extends Controller {
 
     const hours = (details.service_hours || []).map((row) => {
       const weekday = row.first && row.last ? `${row.first}–${row.last}` : ""
+      // TDX HolidayFirst/LastBusTime is the 例假日 window (weekends + national holidays).
       const holiday = row.holiday_first && row.holiday_last ? `${row.holiday_first}–${row.holiday_last}` : ""
       const holidayNote = holiday && holiday !== weekday
-        ? `（${esc(this.t("bus_detail.holiday"))} ${esc(holiday)}）`
+        ? `（${esc(this.t("bus_detail.statutory_holiday"))} ${esc(holiday)}）`
         : ""
       return weekday || holiday
         ? `<div class="bus-route-details__row"><span>${esc(directionLabel(row.direction, row.label))}</span><span>${esc(weekday || holiday)}${holidayNote}</span></div>`
@@ -7926,8 +9366,20 @@ export default class extends Controller {
         : ""
     }
     const schedules = (details.schedules || []).map((row) => {
-      const body = block(this.t("bus_detail.weekday"), row.weekday) + block(this.t("bus_detail.holiday"), row.holiday)
-      return body ? `<div class="bus-route-details__direction"><strong>${esc(directionLabel(row.direction, row.label))}</strong>${body}</div>` : ""
+      const body = block(this.t("bus_detail.weekday"), row.weekday) +
+        block(this.t("bus_detail.weekend"), row.weekend) +
+        block(this.t("bus_detail.saturday"), row.saturday) +
+        block(this.t("bus_detail.sunday"), row.sunday)
+      if (!body) return ""
+
+      const label = row.dog_bus ? this.t("bus_detail.dog_bus") : row.label
+      const badge = row.dog_bus
+        ? `<span class="bus-route-details__dog-badge">${esc(this.t("bus_detail.dog_bus"))}</span>`
+        : ""
+      const title = row.dog_bus
+        ? `${badge}<strong>${esc(directionLabel(row.direction))}</strong>`
+        : `<strong>${esc(directionLabel(row.direction, label))}</strong>`
+      return `<div class="bus-route-details__direction${row.dog_bus ? " bus-route-details__direction--dog" : ""}">${title}${body}</div>`
     }).join("")
 
     const fare = details.fare || {}
@@ -7993,17 +9445,28 @@ export default class extends Controller {
     const cards = list.map((route) => {
       const routeId = route.id
       const name = this.escapeHtml(this.routeDisplayName(route) || routeId)
+      const termini = this.escapeHtml(this.busTerminiLabel(route))
       const ref = this.escapeHtml(route.ref || "")
-      const color = this.escapeHtml(this.routeDisplayColor(route) || route.color || "#64748b")
+      const baseColor = this.routeDisplayColor(route) || route.color || "#64748b"
+      const shaded = this.frequencyShadedColor(baseColor, route)
+      const shaded2 = route.color_2 ? this.frequencyShadedColor(route.color_2, route) : ""
+      const color = this.escapeHtml(shaded)
+      const swatchStyle = shaded2
+        ? `background-image:linear-gradient(90deg, ${color} 50%, ${this.escapeHtml(shaded2)} 50%)`
+        : `background:${color}`
       const operator = this.escapeHtml(this.routeOperatorLabel(route) || "")
       const via = this.escapeHtml(route.via || "")
       const active = routeId === primaryRouteId ? " is-primary" : ""
       const meta = [ operator, via ].filter(Boolean).join(" · ")
+      const shade = route.city_id
+        ? ` data-frequency-swatch="1" data-frequency-color="${this.escapeHtml(baseColor)}"${route.color_2 ? ` data-frequency-color-2="${this.escapeHtml(route.color_2)}"` : ""} data-frequency-city="${this.escapeHtml(route.city_id)}"${route.daily_trips != null && route.daily_trips !== "" ? ` data-frequency-trips="${this.escapeHtml(String(route.daily_trips))}"` : ""}`
+        : ""
       return `<button type="button" class="route-overlap-card${active}" data-overlap-route="${this.escapeHtml(routeId)}">
         <span class="route-overlap-card__meta">
-          <span class="route-info-panel__swatch" style="background:${color}"></span>
+          <span class="route-info-panel__swatch" style="${swatchStyle}"${shade}></span>
           ${ref ? `<span class="route-info-panel__ref">${ref}</span>` : ""}
           <span class="route-overlap-card__name">${name}</span>
+          ${termini ? `<span class="route-termini">${termini}</span>` : ""}
         </span>
         ${meta ? `<span class="route-overlap-card__sub">${meta}</span>` : ""}
       </button>`
@@ -8036,25 +9499,25 @@ export default class extends Controller {
 
   routeOperatorLabel(route) {
     if (!route) return ""
-    if (this.isEnglishLocale()) {
-      return route.operator_en || route.operator || ""
-    }
-    return route.operator || route.operator_en || ""
+    const names = this.isEnglishLocale()
+      ? [ route.operator_en || route.operator, route.operator_2_en || route.operator_2 ]
+      : [ route.operator || route.operator_en, route.operator_2 || route.operator_2_en ]
+    const sep = this.isEnglishLocale() ? ", " : "、"
+    return names.filter(Boolean).join(sep)
+  }
+
+  busTerminiLabel(route) {
+    if (!route?.city_id) return ""
+
+    const from = this.localizedName(route.departure, route.departure_en)
+    const to = this.localizedName(route.destination, route.destination_en)
+    if (!from || !to || from === to) return from || ""
+
+    return this.isEnglishLocale() ? `${from} – ${to}` : `${from}－${to}`
   }
 
   busRouteTerminalLabels(routeId) {
-    const route = this.findRoute(routeId)
-    const file = route?.file || route?.url
-    const data = file ? this.geoJSONDataByUrl[file] : null
-    if (!data) return ""
-
-    const stations = (data.features || []).filter((feature) => feature?.properties?.feature_type === "station")
-    if (stations.length < 2) return ""
-
-    const first = stations[0]?.properties?.name || stations[0]?.properties?.ref
-    const last = stations[stations.length - 1]?.properties?.name || stations[stations.length - 1]?.properties?.ref
-    if (!first || !last || first === last) return ""
-    return `${first} → ${last}`
+    return this.busTerminiLabel(this.findRoute(routeId))
   }
 
   visitRouteMap(routeId) {
@@ -8219,7 +9682,7 @@ export default class extends Controller {
     if (date && date !== this.scheduleDate) {
       this.scheduleSnapshots = {}
       this.scheduleDate = date
-      this.ensureScheduleSnapshots(this.visibleRouteLayerIds())
+      this.ensureScheduleSnapshots(this.vehicleApiRouteIds(this.visibleRouteLayerIds()))
     }
 
     const vehicles = this.buildLocalVehicles()
@@ -8499,13 +9962,14 @@ export default class extends Controller {
       return
     }
 
-    await this.ensureScheduleSnapshots(routeIds)
+    const scheduleIds = this.vehicleApiRouteIds(routeIds)
+    await this.ensureScheduleSnapshots(scheduleIds)
     this.refreshLocalFleet()
 
     const nearLive = this.isNearLiveClock()
     const serverRouteIds = nearLive
-      ? routeIds
-      : routeIds.filter((id) => !this.snapshotHasTrips(id))
+      ? scheduleIds
+      : scheduleIds.filter((id) => !this.snapshotHasTrips(id))
 
     if (!nearLive && serverRouteIds.length === 0) {
       this.liveOverlayByKey = {}
@@ -9365,7 +10829,10 @@ export default class extends Controller {
     if (next.route_id) this.followedRouteId = next.route_id
 
     if (next.route_id && !this.layerVisible[next.route_id]) {
-      await this.setRouteLayersVisible([next.route_id], true, { fitBounds: false })
+      const showIds = next.route_id === DANHAI_SCHEDULE_ROUTE_ID
+        ? [ "danhai_lushan" ]
+        : [ next.route_id ]
+      await this.setRouteLayersVisible(showIds, true, { fitBounds: false })
     }
 
     if (!this.tryAdoptPendingFollowVehicle()) {
@@ -9890,7 +11357,7 @@ export default class extends Controller {
       this.scheduleRetryAfter = new Map()
     }
 
-    const wanted = Array.from(new Set(routeIds)).filter(Boolean)
+    const wanted = this.vehicleApiRouteIds(routeIds)
     const now = Date.now()
     const pending = new Set()
     const missing = []
@@ -9963,17 +11430,28 @@ export default class extends Controller {
     }
   }
 
+  scheduleSnapshotForLayer(routeId) {
+    for (const scheduleId of this.vehicleApiRouteIds([ routeId ])) {
+      const snap = this.scheduleSnapshots[scheduleId]
+      if (snap?.trips?.length) return snap
+    }
+
+    return this.scheduleSnapshots[routeId] || null
+  }
+
   buildLocalVehicles() {
     const atMin = this.minutesSinceMidnightFromIso(this.simulationAt)
     if (!Number.isFinite(atMin)) return []
 
     const vehicles = []
-    const coveredRouteIds = new Set()
+    const coveredScheduleIds = new Set()
     this.visibleRouteLayerIds().forEach((routeId) => {
-      const snap = this.scheduleSnapshots[routeId]
+      const snap = this.scheduleSnapshotForLayer(routeId)
       if (!snap?.trips?.length) return
 
-      coveredRouteIds.add(routeId)
+      const scheduleKey = snap.route_id || routeId
+      if (coveredScheduleIds.has(scheduleKey)) return
+      coveredScheduleIds.add(scheduleKey)
       snap.trips.forEach((trip) => {
         const overlay = this.liveOverlayFor(trip, snap)
         const vehicle = {
@@ -9986,7 +11464,7 @@ export default class extends Controller {
           trip_type: trip.trip_type,
           route_id: snap.route_id,
           system_id: snap.system_id,
-          color: snap.color,
+          color: snap.color || DANHAI_LRT_COLOR,
           path: trip.path,
           continues_as: trip.continues_as,
           position_source: overlay?.position_source || trip.position_source || "timetable",
@@ -10001,9 +11479,10 @@ export default class extends Controller {
     })
 
     this.visibleRouteLayerIds().forEach((routeId) => {
-      if (coveredRouteIds.has(routeId)) return
+      const scheduleIds = new Set(this.vehicleApiRouteIds([ routeId ]))
+      if ([ ...scheduleIds ].some((id) => coveredScheduleIds.has(id))) return
       ;(this.serverVehicles || []).forEach((raw) => {
-        if (raw.route_id !== routeId) return
+        if (!scheduleIds.has(raw.route_id) && raw.route_id !== routeId) return
         const vehicle = { ...raw }
         if (!this.placeVehicleOnPath(vehicle, atMin)) return
         vehicles.push(vehicle)
@@ -10207,7 +11686,7 @@ export default class extends Controller {
   }
 
   warmFollowTiles() {
-    if (!this.map || !this.tileLayer || this.simulationSpeed < 10) return
+    if (!this.map || !this.tileLayer || !this.map.hasLayer(this.tileLayer) || this.simulationSpeed < 10) return
     const latlng = this.followLastLatLng || this.followedMarker?.getLatLng()
     if (!latlng) return
 
@@ -10308,6 +11787,12 @@ export default class extends Controller {
     return STATION_BOARD_ROUTE_ALIASES[id] || [ id ]
   }
 
+  vehicleApiRouteIds(routeIds) {
+    return [ ...new Set(
+      Array.from(routeIds || []).flatMap((routeId) => VEHICLE_ROUTE_ALIASES[routeId] || [ routeId ])
+    ) ]
+  }
+
   formatClockMinutes(minutes) {
     if (!Number.isFinite(minutes)) return null
     const wrapped = ((minutes % 1440) + 1440) % 1440
@@ -10401,8 +11886,9 @@ export default class extends Controller {
     return `<div data-station-board data-bus-board="1" data-ref="${this.escapeHtml(ref || "")}" data-route="${this.escapeHtml(routeId || "")}" data-name="${this.escapeHtml(name)}">${this.renderBusArrivals([], name, { loading: true })}</div>`
   }
 
-  renderBusArrivals(arrivals, stationName, { loading, error } = {}) {
-    const title = this.escapeHtml(this.t("explore.board_title", { name: stationName || "" }))
+  renderBusArrivals(arrivals, stationName, { loading, error, platform = null } = {}) {
+    const titleName = platform ? `${stationName || ""} ${platform}`.trim() : (stationName || "")
+    const title = this.escapeHtml(this.t("explore.board_title", { name: titleName }))
     let body = ""
     if (loading) {
       body = `<div class="station-board__empty">${this.escapeHtml(this.t("explore.board_loading"))}</div>`
@@ -10411,25 +11897,29 @@ export default class extends Controller {
     } else if (!arrivals || arrivals.length === 0) {
       body = `<div class="station-board__empty">${this.escapeHtml(this.t("bus.arrivals_empty"))}</div>`
     } else {
-      const items = arrivals.map((row) => {
+      const sorted = [ ...arrivals ].sort((a, b) => {
+        const aSec = Number.isFinite(a?.estimate_seconds) ? a.estimate_seconds : Number.POSITIVE_INFINITY
+        const bSec = Number.isFinite(b?.estimate_seconds) ? b.estimate_seconds : Number.POSITIVE_INFINITY
+        if (aSec !== bSec) return aSec - bSec
+        return String(a?.route_name || "").localeCompare(String(b?.route_name || ""), "zh-Hant")
+      })
+      const items = sorted.map((row) => {
         const eta = this.formatBusArrivalEta(row)
-        const dest = row.destination_name ? ` → ${row.destination_name}` : ""
-        const direction = row.direction === 0 || row.direction === "0"
-          ? this.t("sections.outbound")
-          : row.direction === 1 || row.direction === "1"
-            ? this.t("sections.inbound")
-            : ""
-        const meta = [ direction, row.plate ].filter(Boolean).join(" · ")
-        return `<div class="station-board__row station-board__row--static">
+        const route = row.route_name || ""
+        const dest = row.destination_name || ""
+        const plate = row.plate || ""
+        return `<div class="station-board__row station-board__row--static station-board__row--bus">
           <span class="station-board__time">${this.escapeHtml(eta)}</span>
-          <span><strong>${this.escapeHtml(row.route_name || "")}</strong>${this.escapeHtml(dest)}</span>
-          <span class="station-board__meta">${this.escapeHtml(meta)}</span>
+          <span class="station-board__route">${this.escapeHtml(route)}</span>
+          <span class="station-board__toward">${dest ? this.escapeHtml(`${this.t("bus.arrivals_toward")}${this.isEnglishLocale() ? " " : ""}${dest}`) : ""}</span>
+          <span class="station-board__plate">${this.escapeHtml(plate)}</span>
         </div>`
       }).join("")
       body = `<div class="station-board__cols station-board__cols--bus-head">
         <span>${this.escapeHtml(this.t("bus.arrivals_eta"))}</span>
         <span>${this.escapeHtml(this.t("bus.arrivals_route"))}</span>
-        <span></span>
+        <span>${this.escapeHtml(this.t("bus.arrivals_toward"))}</span>
+        <span>${this.escapeHtml(this.t("bus.arrivals_plate"))}</span>
       </div>
       ${items}`
     }
@@ -10464,22 +11954,33 @@ export default class extends Controller {
       : direction === 1 || direction === "1"
         ? this.t("sections.inbound")
         : null
-    const routeName = this.escapeHtml(this.routeDisplayName(route) || feature?.properties?.line || routeId || "")
-    const href = `/routes/${encodeURIComponent(routeId)}`
+    const routeName = route ? this.escapeHtml(this.routeDisplayName(route) || feature?.properties?.line || routeId || "") : ""
+    const href = routeId ? `/routes/${encodeURIComponent(routeId)}` : ""
     const openLabel = this.escapeHtml(this.t("popup.open_route_map"))
 
     const meta = []
-    const platform = feature?.properties?.platform
+    const platform = (this.isEnglishLocale() && feature?.properties?.platform_en) || feature?.properties?.platform
     if (platform) meta.push(`<span class="bus-platform-badge">${this.escapeHtml(platform)}</span>`)
+    if (feature?.properties?.note) {
+      meta.push(`<span class="bus-platform-badge">${this.escapeHtml(feature.properties.note)}</span>`)
+    }
+    if (feature?.properties?.timed_skip) {
+      const detail = this.escapeHtml(this.timedSkipDetailText(feature.properties.timed_skip))
+      meta.push(`<span class="bus-platform-badge bus-platform-badge--timed-skip" title="${detail}">${this.escapeHtml(this.t("bus.timed_skip_stop"))}</span>`)
+    }
     if (directionLabel) meta.push(`<span>${this.escapeHtml(directionLabel)}</span>`)
-    if (routeName) {
+    if (route && routeName) {
       meta.push(`<a class="bus-stop-info__route-link" href="${href}" data-turbo-frame="_top" data-route-preview="${this.escapeHtml(routeId)}">${routeName}</a>`)
     }
+
+    const action = route
+      ? `<a class="bus-stop-info__action" href="${href}" data-turbo-frame="_top">${openLabel}</a>`
+      : ""
 
     return `<div class="bus-stop-info">
       <div class="bus-stop-info__name">${name}</div>
       ${meta.length ? `<div class="bus-stop-info__meta">${meta.join('<span class="bus-stop-info__sep">·</span>')}</div>` : ""}
-      <a class="bus-stop-info__action" href="${href}" data-turbo-frame="_top">${openLabel}</a>
+      ${action}
     </div>`
   }
 
@@ -10513,14 +12014,19 @@ export default class extends Controller {
     const sink = {}
     const routes = await this.lookupBusThroughRoutes(feature, routeId, sink)
     const groups = sink.groups || []
-    const current = groups.find((group) => group.current)
+    const { displayGroups } = groups.length >= 2
+      ? this.consolidateBusStopGroups(groups)
+      : { displayGroups: groups }
+    const current = displayGroups.find((group) => group.current) || displayGroups[0] || null
     this.renderBusStopGroups(root, groups, { feature, routeId, name })
-    if (throughHost) throughHost.innerHTML = this.renderBusThroughRoutes(routes, routeId)
-    if (arrivalsHost) await this.hydrateBusArrivals(arrivalsHost, feature, routeId, name, routes, current)
+    const boardRoutes = current?.routes?.length ? current.routes : routes
+    if (throughHost) throughHost.innerHTML = this.renderBusThroughRoutes(boardRoutes, routeId)
+    if (arrivalsHost) await this.hydrateBusArrivals(arrivalsHost, feature, routeId, name, boardRoutes, current)
   }
 
   // Several same-name stop groups nearby (opposite kerbs, bays around a
-  // terminal): let the rider pick which one the board is about.
+  // terminal): let the rider pick which one the board is about. Multi-bay
+  // hubs (板橋公車站、淡水轉運站…) get a dedicated platform switcher.
   renderBusStopGroups(root, groups, { feature, routeId, name }) {
     const host = root?.querySelector?.("[data-bus-stop-groups]")
     if (!host) return
@@ -10531,38 +12037,74 @@ export default class extends Controller {
       return
     }
 
-    const places = groups.map((group) => this.busStopGroupPlace(group))
-    const labels = groups.map((group, index) => `${this.busStopGroupName(group)}|${places[index]}`)
-    const wheres = groups.map((group, index) => {
+    const { platforms, others, displayGroups } = this.consolidateBusStopGroups(groups)
+    const platformMode = platforms.length >= 2
+    const places = displayGroups.map((group) => this.busStopGroupPlace(group))
+    const labels = displayGroups.map((group, index) => `${this.busStopGroupName(group)}|${places[index]}`)
+    const wheres = displayGroups.map((group, index) => {
+      if (platformMode && this.busStopGroupPlatform(group)) {
+        return this.busStopGroupPlace(group) || this.t("bus.stop_group_routes", { count: (group.routes || []).length })
+      }
       const place = places[index]
       const unique = place && labels.indexOf(labels[index]) === labels.lastIndexOf(labels[index])
       return (unique && place) || (group.current
         ? this.t("bus.stop_group_here")
         : this.t("bus.stop_group_offset", { direction: this.compassLabel(group.bearing), meters: group.distance_m }))
     })
-    const chips = groups.map((group, index) => {
-      const where = wheres[index]
-      const stopName = group.name && group.name !== name
-        ? `<span class="bus-stop-groups__name">${this.escapeHtml(this.busStopGroupName(group))}</span>`
-        : ""
-      const count = this.t("bus.stop_group_routes", { count: (group.routes || []).length })
-      const platform = this.busStopGroupPlatform(group)
-      return `<button type="button" class="bus-stop-groups__chip${group.current ? " is-active" : ""}" data-stop-group="${this.escapeHtml(group.id)}" aria-pressed="${group.current ? "true" : "false"}">
-        ${platform ? `<span class="bus-platform-badge">${this.escapeHtml(platform)}</span>` : ""}${stopName}<span class="bus-stop-groups__where">${this.escapeHtml(where)}</span>
-        <span class="bus-stop-groups__count">${this.escapeHtml(count)}</span>
-      </button>`
-    }).join("")
+
+    let html = ""
+    if (platformMode) {
+      const platformChips = platforms.map((group) => {
+        const platform = this.busStopGroupPlatform(group)
+        const count = this.t("bus.stop_group_routes", { count: (group.routes || []).length })
+        return `<button type="button" class="bus-stop-groups__chip bus-stop-groups__chip--platform${group.current ? " is-active" : ""}" data-stop-group="${this.escapeHtml(group.id)}" aria-pressed="${group.current ? "true" : "false"}">
+          <span class="bus-platform-badge">${this.escapeHtml(platform)}</span>
+          <span class="bus-stop-groups__count">${this.escapeHtml(count)}</span>
+        </button>`
+      }).join("")
+      html += `<div class="bus-stop-groups__title">${this.escapeHtml(this.t("bus.platforms_title"))}</div>
+        <div class="bus-stop-groups__list bus-stop-groups__list--platforms">${platformChips}</div>`
+      if (others.length) {
+        const otherChips = others.map((group, index) => {
+          const where = wheres[platforms.length + index]
+          const stopName = group.name && group.name !== name
+            ? `<span class="bus-stop-groups__name">${this.escapeHtml(this.busStopGroupName(group))}</span>`
+            : ""
+          const count = this.t("bus.stop_group_routes", { count: (group.routes || []).length })
+          return `<button type="button" class="bus-stop-groups__chip${group.current ? " is-active" : ""}" data-stop-group="${this.escapeHtml(group.id)}" aria-pressed="${group.current ? "true" : "false"}">
+            ${stopName}<span class="bus-stop-groups__where">${this.escapeHtml(where)}</span>
+            <span class="bus-stop-groups__count">${this.escapeHtml(count)}</span>
+          </button>`
+        }).join("")
+        html += `<div class="bus-stop-groups__title" style="margin-top:0.35rem">${this.escapeHtml(this.t("bus.platforms_other"))}</div>
+          <div class="bus-stop-groups__list">${otherChips}</div>`
+      }
+    } else {
+      const chips = displayGroups.map((group, index) => {
+        const where = wheres[index]
+        const stopName = group.name && group.name !== name
+          ? `<span class="bus-stop-groups__name">${this.escapeHtml(this.busStopGroupName(group))}</span>`
+          : ""
+        const count = this.t("bus.stop_group_routes", { count: (group.routes || []).length })
+        const platform = this.busStopGroupPlatform(group)
+        return `<button type="button" class="bus-stop-groups__chip${group.current ? " is-active" : ""}" data-stop-group="${this.escapeHtml(group.id)}" aria-pressed="${group.current ? "true" : "false"}">
+          ${platform ? `<span class="bus-platform-badge">${this.escapeHtml(platform)}</span>` : ""}${stopName}<span class="bus-stop-groups__where">${this.escapeHtml(where)}</span>
+          <span class="bus-stop-groups__count">${this.escapeHtml(count)}</span>
+        </button>`
+      }).join("")
+      html = `<div class="bus-stop-groups__title">${this.escapeHtml(this.t("bus.stop_groups_title", { count: displayGroups.length }))}</div>
+        <div class="bus-stop-groups__list">${chips}</div>`
+    }
 
     host.hidden = false
-    host.innerHTML = `<div class="bus-stop-groups__title">${this.escapeHtml(this.t("bus.stop_groups_title", { count: groups.length }))}</div>
-      <div class="bus-stop-groups__list">${chips}</div>`
+    host.innerHTML = html
 
     const activate = (group) => {
       host.querySelectorAll("[data-stop-group]").forEach((chip) => {
         const active = chip.dataset.stopGroup === group.id
         chip.classList.toggle("is-active", active)
         chip.setAttribute("aria-pressed", active ? "true" : "false")
-        if (active) chip.scrollIntoView?.({ block: "nearest" })
+        if (active) chip.scrollIntoView?.({ inline: "nearest", block: "nearest" })
       })
       this.styleBusStopGroupMarkers(group.id)
       void this.selectBusStopGroup(root, group, { feature, routeId, name })
@@ -10570,11 +12112,97 @@ export default class extends Controller {
 
     host.querySelectorAll("[data-stop-group]").forEach((chip) => {
       chip.addEventListener("click", () => {
-        const group = groups.find((entry) => entry.id === chip.dataset.stopGroup)
+        const group = displayGroups.find((entry) => entry.id === chip.dataset.stopGroup)
         if (group) activate(group)
       })
     })
-    this.showBusStopGroupMarkers(groups, wheres, activate)
+    this.showBusStopGroupMarkers(displayGroups, wheres, activate)
+
+    const current = displayGroups.find((group) => group.current) || displayGroups[0]
+    if (current) this.syncBusStopPanelHead(root, name, this.busStopGroupPlatform(current))
+  }
+
+  // Merge poles that share a platform bay (e.g. OSM “第四月台” road twin).
+  consolidateBusStopGroups(groups) {
+    const platforms = []
+    const others = []
+    const byPlatform = new Map()
+
+    groups.forEach((group) => {
+      const platform = this.busStopGroupPlatform(group)
+      if (!platform) {
+        others.push(group)
+        return
+      }
+      const existing = byPlatform.get(platform)
+      if (!existing) {
+        const copy = {
+          ...group,
+          platform,
+          routes: [ ...(group.routes || []) ],
+          stop_uids: [ ...(group.stop_uids || []) ],
+          memberIds: [ group.id ]
+        }
+        byPlatform.set(platform, copy)
+        platforms.push(copy)
+        return
+      }
+      existing.memberIds.push(group.id)
+      existing.stop_uids = [ ...new Set([ ...(existing.stop_uids || []), ...(group.stop_uids || []) ]) ]
+      const seen = new Set((existing.routes || []).map((route) => route.id))
+      ;(group.routes || []).forEach((route) => {
+        if (!route?.id || seen.has(route.id)) return
+        seen.add(route.id)
+        existing.routes.push(route)
+      })
+      if (group.current) {
+        existing.current = true
+        existing.id = group.id
+        existing.lat = group.lat
+        existing.lon = group.lon
+        existing.distance_m = group.distance_m
+      }
+      if ((group.routes || []).length > (existing.routes || []).length && !existing.current) {
+        existing.lat = group.lat
+        existing.lon = group.lon
+      }
+    })
+
+    platforms.sort((a, b) => this.platformSortKey(this.busStopGroupPlatform(a)) - this.platformSortKey(this.busStopGroupPlatform(b))
+      || String(this.busStopGroupPlatform(a)).localeCompare(String(this.busStopGroupPlatform(b)), "zh-Hant"))
+
+    if (!platforms.some((group) => group.current) && platforms.length && !others.some((group) => group.current)) {
+      platforms[0].current = true
+    }
+
+    return { platforms, others, displayGroups: [ ...platforms, ...others ] }
+  }
+
+  platformFromText(text) {
+    const match = String(text || "").match(/(?:第|交)?[0-9０-９一二三四五六七八九十A-Z]+(?:號[0-9０-９]+)*號?月台/)
+    return match?.[0] || null
+  }
+
+  platformSortKey(label) {
+    const text = String(label || "")
+    const numerals = { 一: 1, 二: 2, 三: 3, 四: 4, 五: 5, 六: 6, 七: 7, 八: 8, 九: 9, 十: 10 }
+    const match = text.match(/第([0-9０-９]+|[一二三四五六七八九十]+|[A-Z])/)
+    if (!match) return 999
+    const token = match[1]
+    if (/^[A-Z]$/.test(token)) return 100 + token.charCodeAt(0)
+    if (numerals[token] != null) return numerals[token]
+    const digits = token.replace(/[０-９]/g, (ch) => String.fromCharCode(ch.charCodeAt(0) - 0xFEE0))
+    const num = Number(digits)
+    return Number.isFinite(num) ? num : 999
+  }
+
+  syncBusStopPanelHead(root, name, platform = null) {
+    const strong = root?.querySelector?.(".map-float-panel__head strong")
+    if (!strong) return
+    const label = name || ""
+    strong.replaceChildren()
+    strong.append(document.createTextNode(label))
+    if (platform) strong.append(this.buildPlatformBadge(platform))
   }
 
   // Every candidate pole from the picker, so the rider can see where each one is.
@@ -10627,6 +12255,14 @@ export default class extends Controller {
     this.busStopGroupMarkers = null
   }
 
+  // Gray route-number badge. Hidden when a bus route's number is already its name.
+  routeRefBadge(route) {
+    const ref = String(route?.ref || "")
+    if (!ref) return ""
+    if (route?.city_id && ref === (this.routeDisplayName(route) || "")) return ""
+    return ref
+  }
+
   // Route number for chips; Chinese refs (紅1, 小黃公車701) use the English name minus its via part.
   routeShortLabel(route) {
     const ref = route?.ref || ""
@@ -10635,25 +12271,38 @@ export default class extends Controller {
   }
 
   busStopGroupName(group) {
-    return (this.isEnglishLocale() && group?.name_en) || group?.name || ""
+    const name = (this.isEnglishLocale() && group?.name_en) || group?.name || ""
+    return this.displayRareHan(name)
   }
 
   busStopGroupPlatform(group) {
-    return (this.isEnglishLocale() && group?.platform_en) || group?.platform || null
+    if (this.isEnglishLocale() && group?.platform_en) return group.platform_en
+    return group?.platform || this.platformFromText(group?.name) || this.platformFromText(group?.road) || null
   }
 
   busStopGroupPlace(group) {
     const english = this.isEnglishLocale()
     // OSM names the bay itself (板橋公車站第四月台); the platform badge already says it.
-    const road = group.platform && /月台/.test(group.road || "") ? null : ((english && group.road_en) || group.road)
-    const toward = (english && group.toward_en) || group.toward
+    const roadRaw = group.platform && /月台/.test(group.road || "") ? null : ((english && group.road_en) || group.road)
+    const towardRaw = (english && group.toward_en) || group.toward
+    const road = this.displayRareHan(roadRaw)
+    const toward = this.displayRareHan(towardRaw)
     if (road && toward) return this.t("bus.stop_group_road_toward", { road, toward })
     if (toward) return this.t("bus.stop_group_toward", { toward })
     return road || null
   }
 
+  // CJK Ext. C 𫙮 (U+2B66E) and similar chars most UI fonts cannot draw.
+  // Match Geojson::RareHan — 瑞芳𫙮魚坑 → 傑魚坑 on local signs.
+  displayRareHan(text) {
+    if (!text) return text
+    return String(text).replaceAll("\u{2B66E}", "傑")
+  }
+
   async selectBusStopGroup(root, group, { feature, routeId, name }) {
     const latlng = [ group.lat, group.lon ]
+    const platform = this.busStopGroupPlatform(group)
+    this.syncBusStopPanelHead(root, name || this.busStopGroupName(group), platform)
     this.highlightBusStopGroup(latlng)
     if (this.map && !this.map.getBounds().pad(-0.15).contains(latlng)) this.map.panTo(latlng, { animate: true })
 
@@ -10662,7 +12311,7 @@ export default class extends Controller {
     const arrivalsHost = root.querySelector("[data-bus-arrivals-host]")
     if (arrivalsHost) {
       const stopName = this.busStopGroupName(group) || name
-      arrivalsHost.innerHTML = this.renderBusArrivals([], stopName, { loading: true })
+      arrivalsHost.innerHTML = this.renderBusArrivals([], stopName, { loading: true, platform })
       await this.hydrateBusArrivals(arrivalsHost, feature, routeId, stopName, group.routes || [], group)
     }
   }
@@ -10697,7 +12346,7 @@ export default class extends Controller {
     const name = stationName || feature?.properties?.name || host.dataset.name || feature?.properties?.ref || ""
     const stopUid = feature?.properties?.ref || host.dataset.ref
     const route = this.findRoute(routeId)
-    const cityId = route?.city_id
+    const cityId = route?.city_id || feature?.properties?.city_id
     if (!stopUid || !cityId) {
       host.innerHTML = this.renderBusArrivals([], name, { error: true })
       return
@@ -10709,7 +12358,11 @@ export default class extends Controller {
       if (stopName) {
         const peers = (throughRoutes || []).map((entry) => this.findRoute(entry.id) || entry)
         const routeNames = [ ...new Set([ route?.ref, ...peers.map((peer) => peer?.ref) ].filter(Boolean)) ]
-        const cityIds = [ ...new Set(peers.map((peer) => peer?.city_id).filter((id) => id && id !== cityId)) ]
+        const featureCities = Array.isArray(feature?.properties?.city_ids) ? feature.properties.city_ids : []
+        const cityIds = [ ...new Set([
+          ...peers.map((peer) => peer?.city_id),
+          ...featureCities
+        ].filter((id) => id && id !== cityId)) ]
         params.set("stop_name", stopName)
         params.set("route_names", routeNames.join(","))
         if (cityIds.length) params.set("city_ids", cityIds.join(","))
@@ -10722,31 +12375,39 @@ export default class extends Controller {
       }
       const data = await response.json()
       const arrivals = Array.isArray(data.arrivals) ? data.arrivals : []
-      host.innerHTML = this.renderBusArrivals(arrivals, name, { error: Boolean(data.error) && arrivals.length === 0 })
+      const platform = this.busStopGroupPlatform(stopGroup)
+      host.innerHTML = this.renderBusArrivals(arrivals, name, {
+        error: Boolean(data.error) && arrivals.length === 0,
+        platform
+      })
     } catch (error) {
       console.warn("Failed to load bus arrivals", error)
-      host.innerHTML = this.renderBusArrivals([], name, { error: true })
+      host.innerHTML = this.renderBusArrivals([], name, {
+        error: true,
+        platform: this.busStopGroupPlatform(stopGroup)
+      })
     }
   }
 
   async lookupBusThroughRoutes(feature, routeId, sink = null) {
     await this.ensureBusManifest()
     const route = this.findRoute(routeId)
-    const current = this.busRouteChipEntry(route) || {
+    const current = this.busRouteChipEntry(route) || (routeId ? {
       id: routeId,
       ref: route?.ref || feature?.properties?.line || routeId,
       name: this.routeDisplayName(route) || routeId,
       color: route?.color || feature?.properties?.color
-    }
+    } : null)
 
     let matched = []
-    const cityId = route?.city_id
+    const cityId = route?.city_id || feature?.properties?.city_id
     if (cityId) {
       try {
         const coords = feature?.geometry?.coordinates || []
         const params = new URLSearchParams({ city_id: cityId })
         const stationId = feature?.properties?.station_id
         if (stationId) params.set("station_id", stationId)
+        if (feature?.properties?.group_id) params.set("group_id", feature.properties.group_id)
         if (feature?.properties?.platform) params.set("platform", feature.properties.platform)
         if (feature?.properties?.name) params.set("name", feature.properties.name)
         if (Number.isFinite(Number(coords[0]))) params.set("lon", String(coords[0]))
@@ -10889,9 +12550,20 @@ export default class extends Controller {
       const href = `/routes/${encodeURIComponent(route.id)}`
       const towardList = (this.isEnglishLocale() && route.toward_en) || route.toward
       const towards = Array.isArray(towardList) ? towardList.filter(Boolean) : []
-      const towardText = towards.length
-        ? this.t("bus.stop_group_toward", { toward: towards.join(this.t("list_sep")) })
-        : route.terminus ? this.t("bus.route_terminus") : ""
+      const towardJoined = towards.join(this.t("list_sep"))
+      const intercityRoles = Boolean(route.board || route.alight)
+      let towardText = ""
+      if (intercityRoles && route.board && route.alight && towardJoined) {
+        towardText = this.t("bus.board_and_alight", { toward: towardJoined })
+      } else if (intercityRoles && route.board && towardJoined) {
+        towardText = this.t("bus.board_toward", { toward: towardJoined })
+      } else if (intercityRoles && route.alight && !towardJoined) {
+        towardText = this.t("bus.alight_stop")
+      } else if (towardJoined) {
+        towardText = this.t("bus.stop_group_toward", { toward: towardJoined })
+      } else if (route.terminus) {
+        towardText = this.t("bus.route_terminus")
+      }
       const toward = towardText ? `<span class="bus-through-routes__toward">${this.escapeHtml(towardText)}</span>` : ""
       return `<a class="bus-through-routes__chip${active}" href="${href}" data-turbo-frame="_top" data-route-preview="${this.escapeHtml(route.id)}" style="--route-color:${color}" title="${fullName}">${label}${toward}</a>`
     }).join("")
@@ -11161,6 +12833,46 @@ export default class extends Controller {
     else this.simulationAt = iso
   }
 
+  openBusStopPanel(feature, routeId, name) {
+    const panel = this.stationBoardEl
+    if (!panel) return
+
+    const tabTimetable = this.escapeHtml(this.t("explore.tab_timetable"))
+    const tabInfo = this.escapeHtml(this.t("explore.tab_station_info"))
+    const platformLabel = (this.isEnglishLocale() && feature?.properties?.platform_en) || feature?.properties?.platform
+
+    panel.innerHTML = `
+      <div class="map-float-panel__head">
+        <strong>${this.escapeHtml(name || feature?.properties?.ref || "")}${this.platformBadgeHtml(platformLabel)}</strong>
+        <div class="map-float-panel__head-actions">
+          <button type="button" class="map-float-panel__text-action" data-street-view-open>${this.escapeHtml(this.t("explore.street_view"))}</button>
+          <button type="button" class="map-float-panel__close" data-station-board-close>&times;</button>
+        </div>
+      </div>
+      <div class="bus-stop-groups" data-bus-stop-groups hidden></div>
+      <div class="station-panel__tabs" role="tablist">
+        <button type="button" class="station-panel__tab is-active" role="tab" aria-selected="true" data-station-tab="timetable">${tabTimetable}</button>
+        <button type="button" class="station-panel__tab" role="tab" aria-selected="false" data-station-tab="info">${tabInfo}</button>
+      </div>
+      <div class="station-panel__pane" data-station-pane="timetable">
+        ${this.busArrivalsShell(feature, routeId, name)}
+      </div>
+      <div class="station-panel__pane" data-station-pane="info" hidden>
+        ${this.busStopInfoHtml(feature, routeId, name)}
+        ${this.busThroughRoutesShell(feature, routeId)}
+      </div>
+    `
+    panel.querySelector("[data-station-board-close]")?.addEventListener("click", () => {
+      panel.hidden = true
+      this.clearBusStopGroupHighlight()
+    })
+    panel.querySelector("[data-street-view-open]")?.addEventListener("click", () => {
+      this.openStreetViewFromStation({ feature, routeId, ref: feature?.properties?.ref, name, title: name })
+    })
+    this.bindStationPanelTabs(panel)
+    this.hydrateBusStopPopup(panel, feature, routeId, name)
+  }
+
   openStationBoard({ routeId, ref, name }) {
     this.ensureExploreUi()
     const panel = this.stationBoardEl
@@ -11178,37 +12890,17 @@ export default class extends Controller {
           ? [ this.stationCoordsByRouteRef[routeId][ref].lng, this.stationCoordsByRouteRef[routeId][ref].lat ]
           : [] }
       }
-      panel.innerHTML = `
-        <div class="map-float-panel__head">
-          <strong>${this.escapeHtml(name || ref || "")}${this.platformBadgeHtml(feature.properties?.platform)}</strong>
-          <button type="button" class="map-float-panel__close" data-station-board-close>&times;</button>
-        </div>
-        <div class="bus-stop-groups" data-bus-stop-groups hidden></div>
-        <div class="station-panel__tabs" role="tablist">
-          <button type="button" class="station-panel__tab is-active" role="tab" aria-selected="true" data-station-tab="timetable">${tabTimetable}</button>
-          <button type="button" class="station-panel__tab" role="tab" aria-selected="false" data-station-tab="info">${tabInfo}</button>
-        </div>
-        <div class="station-panel__pane" data-station-pane="timetable">
-          ${this.busArrivalsShell(feature, routeId, name)}
-        </div>
-        <div class="station-panel__pane" data-station-pane="info" hidden>
-          ${this.busStopInfoHtml(feature, routeId, name)}
-          ${this.busThroughRoutesShell(feature, routeId)}
-        </div>
-      `
-      panel.querySelector("[data-station-board-close]")?.addEventListener("click", () => {
-        panel.hidden = true
-        this.clearBusStopGroupHighlight()
-      })
-      this.bindStationPanelTabs(panel)
-      this.hydrateBusStopPopup(panel, feature, routeId, name)
+      this.openBusStopPanel(feature, routeId, name)
       return
     }
 
     panel.innerHTML = `
       <div class="map-float-panel__head">
         <strong>${this.escapeHtml(name || ref || "")}</strong>
-        <button type="button" class="map-float-panel__close" data-station-board-close>&times;</button>
+        <div class="map-float-panel__head-actions">
+          <button type="button" class="map-float-panel__text-action" data-street-view-open>${this.escapeHtml(this.t("explore.street_view"))}</button>
+          <button type="button" class="map-float-panel__close" data-station-board-close>&times;</button>
+        </div>
       </div>
       <div class="station-panel__tabs" role="tablist">
         <button type="button" class="station-panel__tab is-active" role="tab" aria-selected="true" data-station-tab="timetable">${tabTimetable}</button>
@@ -11225,6 +12917,9 @@ export default class extends Controller {
     `
     panel.querySelector("[data-station-board-close]")?.addEventListener("click", () => {
       panel.hidden = true
+    })
+    panel.querySelector("[data-street-view-open]")?.addEventListener("click", () => {
+      this.openStreetViewFromStation({ routeId, ref, name, title: name })
     })
     this.bindStationPanelTabs(panel)
     this.hydrateStationBoard(panel, ref, routeId, name)
@@ -11478,6 +13173,7 @@ export default class extends Controller {
 
   writeShareUrl() {
     if (!this.map || this.applyingShare || this.suppressShareUrl) return
+    this.persistMapCamera()
     const next = this.shareUrlPath()
     const current = `${window.location.pathname}${window.location.search}`
     if (next !== current) window.history.replaceState({}, "", next)
@@ -11515,7 +13211,8 @@ export default class extends Controller {
       if (follow) params.set("follow", follow)
     }
 
-    const path = this.transportModePath()
+    // Stay on /plan when planning; never rewrite that path to / or /bus.
+    const path = this.pageModeFromPath() === "plan" ? "/plan" : this.transportModePath()
     const query = params.toString()
     return query ? `${path}?${query}` : path
   }
@@ -11674,6 +13371,7 @@ export default class extends Controller {
   }
 
   togglePinMode() {
+    if (this.streetViewPickMode) this.setStreetViewPickMode(false)
     this.pinMode = !this.pinMode
     this.syncExploreToolState()
     if (this.pinMode) {
@@ -11709,6 +13407,245 @@ export default class extends Controller {
       this._onMapPinClick = null
     }
     this.syncExploreToolState()
+  }
+
+  toggleStreetViewPickMode() {
+    this.setStreetViewPickMode(!this.streetViewPickMode)
+  }
+
+  setStreetViewPickMode(enabled) {
+    if (enabled && this.pinMode) this.togglePinMode()
+    const next = !!enabled
+    this.streetViewPickMode = next
+    this.map?.getContainer()?.classList.toggle("map--street-view-pick", next)
+    if (next) {
+      if (!this._onStreetViewPickClick) {
+        this._onStreetViewPickClick = (event) => {
+          const latlng = event?.latlng
+          if (!latlng) return
+          this.setStreetViewPickMode(false)
+          this.openStreetView({ lat: latlng.lat, lng: latlng.lng })
+        }
+        this.map?.on("click", this._onStreetViewPickClick)
+      }
+    } else if (this._onStreetViewPickClick) {
+      this.map?.off("click", this._onStreetViewPickClick)
+      this._onStreetViewPickClick = null
+      this.clearStreetViewPickNote()
+    }
+    this.syncExploreToolState()
+  }
+
+  streetViewExternalUrl(lat, lng) {
+    return `https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=${encodeURIComponent(lat)},${encodeURIComponent(lng)}`
+  }
+
+  latLngForStreetView({ lat, lng, feature, routeId, ref } = {}) {
+    if (Number.isFinite(lat) && Number.isFinite(lng)) return { lat: Number(lat), lng: Number(lng) }
+
+    const coords = feature?.geometry?.coordinates
+    if (Array.isArray(coords) && coords.length >= 2) {
+      const [ lon, latitude ] = coords
+      if (Number.isFinite(lon) && Number.isFinite(latitude)) return { lat: latitude, lng: lon }
+    }
+
+    const cached = routeId && ref ? this.stationCoordsByRouteRef[routeId]?.[ref] : null
+    if (cached && Number.isFinite(cached.lat) && Number.isFinite(cached.lng)) {
+      return { lat: cached.lat, lng: cached.lng }
+    }
+
+    return null
+  }
+
+  openStreetViewFromStation(options = {}) {
+    const point = this.latLngForStreetView(options)
+    if (!point) return
+    this.openStreetView({ ...point, title: options.title || options.name || this.t("explore.street_view_title") })
+  }
+
+  async openStreetView({ lat, lng, title = null } = {}) {
+    if (!Number.isFinite(lat) || !Number.isFinite(lng)) return
+    this.ensureExploreUi()
+    this.setStreetViewPickMode(false)
+
+    const panel = this.streetViewPanelEl
+    if (!panel) return
+
+    const label = title || this.t("explore.street_view_title")
+    const external = this.streetViewExternalUrl(lat, lng)
+    const request = (this.streetViewRequest = (this.streetViewRequest || 0) + 1)
+
+    panel.hidden = false
+    panel.innerHTML = `
+      <div class="map-float-panel__head">
+        <strong>${this.escapeHtml(label)}</strong>
+        <button type="button" class="map-float-panel__close" data-street-view-close>&times;</button>
+      </div>
+      <div class="map-street-view-panel__status">${this.escapeHtml(this.t("explore.street_view_loading"))}</div>
+      <div class="map-street-view-panel__canvas" data-street-view-canvas hidden></div>
+      <div class="map-float-panel__actions">
+        <a class="map-float-panel__action" href="${this.escapeHtml(external)}" target="_blank" rel="noopener noreferrer">${this.escapeHtml(this.t("explore.street_view_open_external"))}</a>
+      </div>
+    `
+    panel.querySelector("[data-street-view-close]")?.addEventListener("click", () => this.closeStreetView())
+    this.placeStreetViewMarker(lat, lng)
+
+    if (!this.googleMapsAvailable()) {
+      this.setStreetViewStatus(panel, this.t("explore.street_view_open_external"))
+      return
+    }
+
+    try {
+      await this.loadGoogleMaps()
+      if (request !== this.streetViewRequest) return
+      if (window.__googleMapsAuthFailed) throw new Error("Google Maps auth failed")
+
+      const maps = window.google?.maps
+      if (!maps?.StreetViewService || !maps?.StreetViewPanorama) throw new Error("Street View unavailable")
+
+      const service = new maps.StreetViewService()
+      const result = await new Promise((resolve) => {
+        service.getPanorama({ location: { lat, lng }, radius: 80 }, (data, status) => {
+          resolve({ data, status })
+        })
+      })
+      if (request !== this.streetViewRequest) return
+
+      if (result.status !== "OK" || !result.data?.location) {
+        this.setStreetViewStatus(panel, this.t("explore.street_view_unavailable"))
+        return
+      }
+
+      const canvas = panel.querySelector("[data-street-view-canvas]")
+      const status = panel.querySelector(".map-street-view-panel__status")
+      if (!canvas) return
+      if (status) status.hidden = true
+      canvas.hidden = false
+
+      const panoLocation = result.data.location.latLng
+      const panoLat = typeof panoLocation.lat === "function" ? panoLocation.lat() : panoLocation.lat
+      const panoLng = typeof panoLocation.lng === "function" ? panoLocation.lng() : panoLocation.lng
+      const heading = this.bearingDegrees(panoLat, panoLng, lat, lng)
+
+      if (this.streetViewPanorama) {
+        this.unbindStreetViewPanoramaListeners()
+        this.streetViewPanorama.setVisible(false)
+        this.streetViewPanorama = null
+      }
+      this.streetViewPanorama = new maps.StreetViewPanorama(canvas, {
+        pano: result.data.location.pano,
+        position: panoLocation,
+        pov: { heading, pitch: 0 },
+        zoom: 0,
+        addressControl: true,
+        fullscreenControl: true,
+        motionTracking: false,
+        motionTrackingControl: false
+      })
+      this.streetViewPanorama.setVisible(true)
+      this.placeStreetViewMarker(panoLat, panoLng, heading)
+      this.bindStreetViewPanoramaListeners()
+    } catch (_error) {
+      if (request !== this.streetViewRequest) return
+      this.setStreetViewStatus(panel, this.t("explore.street_view_error"))
+    }
+  }
+
+  bindStreetViewPanoramaListeners() {
+    const pano = this.streetViewPanorama
+    const maps = window.google?.maps
+    if (!pano || !maps?.event) return
+
+    this.unbindStreetViewPanoramaListeners()
+    this._streetViewPanoListeners = [
+      maps.event.addListener(pano, "position_changed", () => this.syncStreetViewMarkerFromPanorama()),
+      maps.event.addListener(pano, "pov_changed", () => this.syncStreetViewMarkerFromPanorama())
+    ]
+  }
+
+  unbindStreetViewPanoramaListeners() {
+    const maps = window.google?.maps
+    if (maps?.event && Array.isArray(this._streetViewPanoListeners)) {
+      this._streetViewPanoListeners.forEach((listener) => {
+        try { maps.event.removeListener(listener) } catch (_error) { /* ignore */ }
+      })
+    }
+    this._streetViewPanoListeners = null
+  }
+
+  syncStreetViewMarkerFromPanorama() {
+    const pano = this.streetViewPanorama
+    if (!pano) return
+    const position = pano.getPosition?.()
+    const pov = pano.getPov?.()
+    if (!position) return
+    const lat = typeof position.lat === "function" ? position.lat() : position.lat
+    const lng = typeof position.lng === "function" ? position.lng() : position.lng
+    const heading = Number.isFinite(pov?.heading) ? pov.heading : this.streetViewHeading
+    this.placeStreetViewMarker(lat, lng, heading)
+  }
+
+  bearingDegrees(fromLat, fromLng, toLat, toLng) {
+    if (![ fromLat, fromLng, toLat, toLng ].every(Number.isFinite)) return 0
+    const toRad = Math.PI / 180
+    const φ1 = fromLat * toRad
+    const φ2 = toLat * toRad
+    const Δλ = (toLng - fromLng) * toRad
+    const y = Math.sin(Δλ) * Math.cos(φ2)
+    const x = Math.cos(φ1) * Math.sin(φ2) - Math.sin(φ1) * Math.cos(φ2) * Math.cos(Δλ)
+    return (Math.atan2(y, x) * 180 / Math.PI + 360) % 360
+  }
+
+  setStreetViewStatus(panel, message) {
+    const status = panel?.querySelector?.(".map-street-view-panel__status")
+    const canvas = panel?.querySelector?.("[data-street-view-canvas]")
+    if (canvas) canvas.hidden = true
+    if (status) {
+      status.hidden = false
+      status.textContent = message
+    }
+  }
+
+  placeStreetViewMarker(lat, lng, heading = null) {
+    if (!this.map || !window.L || !Number.isFinite(lat) || !Number.isFinite(lng)) return
+    if (Number.isFinite(heading)) this.streetViewHeading = heading
+    const deg = Number.isFinite(this.streetViewHeading) ? this.streetViewHeading : 0
+    const html = `<div class="map-street-view-peg" style="--heading: ${deg}deg" title="${this.escapeHtml(this.t("explore.street_view"))}"><div class="map-street-view-peg__cone"></div><div class="map-street-view-peg__dot"></div></div>`
+    const icon = window.L.divIcon({
+      className: "map-street-view-peg-icon",
+      html,
+      iconSize: [ 40, 40 ],
+      iconAnchor: [ 20, 20 ]
+    })
+    if (this.streetViewMarker) {
+      this.streetViewMarker.setLatLng([ lat, lng ])
+      this.streetViewMarker.setIcon(icon)
+      return
+    }
+    this.streetViewMarker = window.L.marker([ lat, lng ], {
+      icon,
+      pane: "vehicles",
+      interactive: false,
+      keyboard: false
+    }).addTo(this.map)
+  }
+
+  closeStreetView({ silent = false } = {}) {
+    this.streetViewRequest = (this.streetViewRequest || 0) + 1
+    this.unbindStreetViewPanoramaListeners()
+    if (this.streetViewPanorama) {
+      try { this.streetViewPanorama.setVisible(false) } catch (_error) { /* ignore */ }
+      this.streetViewPanorama = null
+    }
+    if (this.streetViewMarker) {
+      this.streetViewMarker.remove()
+      this.streetViewMarker = null
+    }
+    this.streetViewHeading = null
+    if (this.streetViewPanelEl) {
+      this.streetViewPanelEl.hidden = true
+      if (!silent) this.streetViewPanelEl.innerHTML = ""
+    }
   }
 
   renderNearbyPins() {
@@ -12087,11 +14024,26 @@ export default class extends Controller {
   syncExploreToolState() {
     if (!this.exploreToolsEl) return
     this.exploreToolsEl.querySelector("[data-tool='pin']")?.classList.toggle("is-active", this.pinMode)
+    this.exploreToolsEl.querySelector("[data-tool='street-view']")?.classList.toggle("is-active", this.streetViewPickMode)
     this.exploreToolsEl.querySelector("[data-tool='crossings']")?.classList.toggle("is-active", this.crossingsVisible)
     const relaxButton = this.exploreToolsEl.querySelector("[data-tool='relax']")
     if (relaxButton) {
       relaxButton.classList.toggle("is-active", this.exploreRelax)
       relaxButton.textContent = this.exploreRelax ? this.t("explore.relax_off") : this.t("explore.relax_on")
+    }
+    const note = this.exploreToolsEl.querySelector(".map-explore-tools__note")
+    if (note && this.streetViewPickMode) {
+      note.hidden = false
+      note.textContent = this.t("explore.street_view_pick")
+    }
+  }
+
+  clearStreetViewPickNote() {
+    const note = this.exploreToolsEl?.querySelector?.(".map-explore-tools__note")
+    if (!note) return
+    if (note.textContent === this.t("explore.street_view_pick")) {
+      note.hidden = true
+      note.textContent = ""
     }
   }
 
@@ -12112,6 +14064,7 @@ export default class extends Controller {
     tools.innerHTML = `
       <button type="button" data-tool="share">${this.escapeHtml(this.t("explore.share"))}</button>
       <button type="button" data-tool="pin">${this.escapeHtml(this.t("explore.pin"))}</button>
+      <button type="button" data-tool="street-view">${this.escapeHtml(this.t("explore.street_view"))}</button>
       <button type="button" data-tool="crossings">${this.escapeHtml(this.t("explore.crossings"))}</button>
       <button type="button" data-tool="explore">${this.escapeHtml(this.t("explore.title"))}</button>
       <button type="button" data-tool="relax">${this.escapeHtml(this.t("explore.relax_on"))}</button>
@@ -12123,6 +14076,7 @@ export default class extends Controller {
       const tool = button.dataset.tool
       if (tool === "share") this.copyShareUrl()
       if (tool === "pin") this.togglePinMode()
+      if (tool === "street-view") this.toggleStreetViewPickMode()
       if (tool === "crossings") this.toggleCrossings()
       if (tool === "explore") this.toggleExplorePanel()
       if (tool === "relax") {
@@ -12151,6 +14105,1072 @@ export default class extends Controller {
     explore.hidden = true
     host.appendChild(explore)
     this.explorePanelEl = explore
+
+    const streetView = document.createElement("div")
+    streetView.className = "map-float-panel map-street-view-panel"
+    streetView.hidden = true
+    host.appendChild(streetView)
+    this.streetViewPanelEl = streetView
+    this.enableFloatingDrag(streetView, ".map-float-panel__head")
+  }
+
+  itineraryLabels() {
+    if (!this.hasItineraryPlannerTarget) return {}
+    if (!this._itineraryLabels) {
+      try {
+        this._itineraryLabels = JSON.parse(this.itineraryPlannerTarget.dataset.labels || "{}")
+      } catch (_error) {
+        this._itineraryLabels = {}
+      }
+    }
+    return this._itineraryLabels
+  }
+
+  itineraryLabel(key, vars = {}) {
+    const labels = this.itineraryLabels()
+    const raw = key.split(".").reduce((node, part) => node && node[part], labels)
+    if (typeof raw !== "string") return ""
+    return raw.replace(/%\{(\w+)\}/g, (_match, name) => vars[name] ?? "")
+  }
+
+  suggestItineraryPlace(event) {
+    const input = event.currentTarget
+    if (event.type === "input") {
+      delete input.dataset.lat
+      delete input.dataset.lon
+    }
+    const list = this.itineraryListFor(input)
+    const query = input.value.trim()
+    if (!list || query.length < 2) {
+      this.hideItineraryList(list)
+      return
+    }
+    if (this.itinerarySuggestTimer) clearTimeout(this.itinerarySuggestTimer)
+    this.itinerarySuggestTimer = setTimeout(() => this.fetchItineraryPlaces(input, list, query), 200)
+  }
+
+  itineraryListFor(input) {
+    if (this.hasItineraryOriginTarget && input === this.itineraryOriginTarget) return this.itineraryOriginListTarget
+    if (this.hasItineraryDestinationTarget && input === this.itineraryDestinationTarget) return this.itineraryDestinationListTarget
+    return null
+  }
+
+  hideItineraryList(list) {
+    if (!list) return
+    list.replaceChildren()
+    list.classList.add("hidden")
+  }
+
+  async fetchItineraryPlaces(input, list, query) {
+    this.itineraryAbort?.abort()
+    const controller = new AbortController()
+    this.itineraryAbort = controller
+    try {
+      const response = await fetch(`/api/itineraries/places?q=${encodeURIComponent(query)}`, { signal: controller.signal })
+      if (!response.ok) return
+      const body = await response.json()
+      this.renderItinerarySuggestions(input, list, body.places || [])
+    } catch (error) {
+      if (error.name !== "AbortError") this.hideItineraryList(list)
+    }
+  }
+
+  renderItinerarySuggestions(input, list, places) {
+    list.replaceChildren()
+    if (!places.length) {
+      list.classList.add("hidden")
+      return
+    }
+    places.forEach((place) => {
+      const item = document.createElement("li")
+      const button = document.createElement("button")
+      button.type = "button"
+      button.className = "itinerary-suggest__item"
+      const label = place.label || place.name || ""
+      const name = document.createElement("span")
+      name.className = "itinerary-suggest__name"
+      name.textContent = label
+      button.appendChild(name)
+      if (place.detail) {
+        const detail = document.createElement("span")
+        detail.className = "itinerary-suggest__detail"
+        detail.textContent = place.detail
+        button.appendChild(detail)
+      }
+      button.addEventListener("click", () => {
+        input.value = label
+        input.dataset.lat = place.lat
+        input.dataset.lon = place.lon
+        if (place.kind) input.dataset.kind = place.kind
+        else delete input.dataset.kind
+        this.hideItineraryList(list)
+      })
+      item.appendChild(button)
+      list.appendChild(item)
+    })
+    list.classList.remove("hidden")
+  }
+
+  itineraryPlace(input) {
+    if (input.dataset.lat && input.dataset.lon) {
+      return { lat: Number(input.dataset.lat), lon: Number(input.dataset.lon), name: input.value }
+    }
+    return { query: input.value.trim() }
+  }
+
+  openPlanSidebarIfNeeded() {
+    if (this.pageModeFromPath() !== "plan") return
+    this.warmItineraryGraph()
+    if (!window.matchMedia("(max-width: 767px)").matches) return
+    this.openMobileLayers()
+  }
+
+  warmItineraryGraph() {
+    if (this._itineraryGraphWarm) return
+    this._itineraryGraphWarm = true
+    // Touch the places endpoint so Graph.current is loaded before the user plans.
+    fetch("/api/itineraries/places?q=%E5%8F%B0", { headers: { Accept: "application/json" } }).catch(() => {})
+  }
+
+  async planItinerary(event) {
+    event.preventDefault()
+    if (!this.hasItineraryOriginTarget || !this.hasItineraryStatusTarget) return
+    const labels = this.itineraryLabels()
+    if (this.hasItineraryOriginListTarget) this.hideItineraryList(this.itineraryOriginListTarget)
+    if (this.hasItineraryDestinationListTarget) this.hideItineraryList(this.itineraryDestinationListTarget)
+    this.itineraryStatusTarget.textContent = labels.working || ""
+    this.itineraryResultsTarget?.replaceChildren()
+    const token = document.querySelector("meta[name='csrf-token']")?.content
+    try {
+      const response = await fetch("/api/itineraries", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          "X-CSRF-Token": token || ""
+        },
+        body: JSON.stringify({
+          origin: this.itineraryPlace(this.itineraryOriginTarget),
+          destination: this.itineraryPlace(this.itineraryDestinationTarget),
+          depart_at: this.hasItineraryDepartTarget ? this.itineraryDepartTarget.value : ""
+        })
+      })
+      const body = await response.json()
+      if (!response.ok) {
+        this.itineraryStatusTarget.textContent = labels.failed || ""
+        this.clearItinerary()
+        return
+      }
+      this.itineraryPayload = body.itineraries || []
+      this.itineraryCorridor = body.corridor || { stages: [], segments: [] }
+      this.itinerarySelectedIndex = Number.isInteger(this.itineraryCorridor.default_option)
+        ? this.itineraryCorridor.default_option
+        : 0
+      this.itineraryStagePicks = this.defaultItineraryStagePicks(this.itinerarySelectedIndex)
+      if (!this.itineraryPayload.length) {
+        this.itineraryStatusTarget.textContent = body.notice || labels.empty || ""
+        this.clearItinerary()
+        return
+      }
+      this.itineraryStatusTarget.textContent = body.notice || ""
+      this.renderItineraryResults()
+      this.drawItinerary(this.itinerarySelectedIndex, { fit: true })
+    } catch (_error) {
+      this.itineraryStatusTarget.textContent = labels.failed || ""
+    }
+  }
+
+  itineraryStages() {
+    const stages = this.itineraryCorridor?.stages
+    if (Array.isArray(stages) && stages.length) return stages
+    return []
+  }
+
+  defaultItineraryStagePicks(itineraryIndex) {
+    const picks = {}
+    this.itineraryStages().forEach((stage, stageIndex) => {
+      if (this.isStageCoveredByPicks(stage.id, picks)) return
+      const options = this.compatibleStageOptions(stageIndex, picks)
+      const match = options.find((option) => (option.itinerary_indexes || []).includes(itineraryIndex))
+      picks[stage.id] = (match || options[0])?.id
+    })
+    return picks
+  }
+
+  isStageCoveredByPicks(stageId, picks = this.itineraryStagePicks) {
+    return Boolean(this.coveringStageOption(stageId, picks))
+  }
+
+  coveringStageOption(stageId, picks = this.itineraryStagePicks) {
+    for (const stage of this.itineraryStages()) {
+      if (stage.id === stageId) break
+      const option = this.itineraryStageOptionById(stage, picks?.[stage.id])
+      const covers = option?.covers || []
+      if (covers.length > 1 && covers.includes(stageId)) return option
+    }
+    return null
+  }
+
+  itineraryStageOptionById(stage, optionId) {
+    return (stage?.options || []).find((option) => option.id === optionId) || null
+  }
+
+  selectedStageOptions(upToStageId = null) {
+    const picks = []
+    for (const stage of this.itineraryStages()) {
+      if (this.isStageCoveredByPicks(stage.id)) {
+        if (upToStageId && stage.id === upToStageId) break
+        continue
+      }
+      const option = this.itineraryStageOptionById(stage, this.itineraryStagePicks?.[stage.id])
+      if (option) picks.push({ stage, option })
+      if (upToStageId && stage.id === upToStageId) break
+    }
+    return picks
+  }
+
+  itineraryHubsMatch(left, right) {
+    if (!left || !right) return true
+    return left === right
+  }
+
+  stageOptions(stageIndex) {
+    return this.itineraryStages()[stageIndex]?.options || []
+  }
+
+  optionContinuesFromPicks(option, parentIds) {
+    if (!parentIds.length) return true
+    if (Array.isArray(option.continues_from) && option.continues_from.length) {
+      return option.continues_from.some((id) => parentIds.includes(id))
+    }
+    return parentIds.some((parentId) => {
+      const parent = this.findStageOptionById(parentId)
+      if (!parent) return false
+      if (this.itineraryHubsMatch(parent.hub, option.from_hub)) return true
+      const prevIndexes = new Set(parent.itinerary_indexes || [])
+      return (option.itinerary_indexes || []).some((index) => prevIndexes.has(index))
+    })
+  }
+
+  // Options that fit the current upstream pick (for defaults / auto-retarget).
+  // The UI still lists every option — B-2 stays visible even when A-1 only feeds B-1.
+  compatibleStageOptions(stageIndex, picks = this.itineraryStagePicks) {
+    const stage = this.itineraryStages()[stageIndex]
+    if (!stage) return []
+    if (stageIndex === 0) return stage.options || []
+
+    const parentIds = this.selectedParentOptionIds(stageIndex, picks)
+    if (!parentIds.length) return stage.options || []
+
+    return (stage.options || []).filter((option) => this.optionContinuesFromPicks(option, parentIds))
+  }
+
+  selectedParentOptionIds(stageIndex, picks = this.itineraryStagePicks) {
+    const stages = this.itineraryStages()
+    const ids = []
+    for (let index = 0; index < stageIndex; index += 1) {
+      const stage = stages[index]
+      if (this.isStageCoveredByPicks(stage.id, picks)) continue
+      const option = this.itineraryStageOptionById(stage, picks?.[stage.id])
+      if (option?.id) ids.push(option.id)
+    }
+    // Nearest selected ancestor is enough for continues_from checks.
+    return ids.length ? [ ids[ids.length - 1] ] : []
+  }
+
+  findStageOptionById(optionId) {
+    for (const stage of this.itineraryStages()) {
+      const option = this.itineraryStageOptionById(stage, optionId)
+      if (option) return option
+    }
+    return null
+  }
+
+  itineraryCompatibleIndexes(upToStageId = null) {
+    const picks = this.selectedStageOptions(upToStageId)
+    if (!picks.length) return new Set((this.itineraryPayload || []).map((_, index) => index))
+
+    let indexes = null
+    picks.forEach(({ option }) => {
+      const set = new Set(option.itinerary_indexes || [])
+      indexes = indexes
+        ? new Set([ ...indexes ].filter((index) => set.has(index)))
+        : set
+    })
+    return indexes || new Set()
+  }
+
+  resolveSelectedItinerary() {
+    const picks = this.selectedStageOptions()
+    if (!picks.length) return this.itineraryPayload?.[this.itinerarySelectedIndex] || null
+
+    const intersection = [ ...this.itineraryCompatibleIndexes() ]
+    if (intersection.length) {
+      this.itineraryStitched = null
+      const preferred = intersection.includes(this.itinerarySelectedIndex)
+        ? this.itinerarySelectedIndex
+        : intersection[0]
+      return this.itineraryPayload[preferred]
+    }
+
+    this.itineraryStitched = this.stitchStageOptions(picks.map((row) => row.option))
+    return this.itineraryStitched
+  }
+
+  stitchStageOptions(options) {
+    const legs = options.flatMap((option) =>
+      (option.legs || []).map((leg) => this.cloneItineraryLeg(leg))
+    )
+    this.cascadeStitchedTimes(legs)
+    const depart = legs[0]?.board_at
+    const arrive = legs[legs.length - 1]?.alight_at
+    const rides = legs.filter((leg) => leg.kind === "ride")
+    return {
+      profile: "mix",
+      depart_at: depart,
+      arrive_at: arrive,
+      duration_minutes: Math.max(0, this.itineraryDeltaMinutes(depart, arrive)),
+      transfers: Math.max(0, rides.length - 1),
+      walk_minutes: legs.reduce((sum, leg) => sum + (leg.kind === "walk" ? Number(leg.minutes) || 0 : 0), 0),
+      legs
+    }
+  }
+
+  cloneItineraryLeg(leg) {
+    return {
+      ...leg,
+      from: leg.from && typeof leg.from === "object" ? { ...leg.from } : { name: leg.from },
+      to: leg.to && typeof leg.to === "object" ? { ...leg.to } : { name: leg.to },
+      geometry: Array.isArray(leg.geometry) ? leg.geometry.map((point) => [ ...point ]) : leg.geometry,
+      stops: Array.isArray(leg.stops) ? leg.stops.map((stop) => ({ ...stop })) : leg.stops,
+      departures: Array.isArray(leg.departures) ? leg.departures.map((row) => ({ ...row })) : leg.departures
+    }
+  }
+
+  cascadeStitchedTimes(legs) {
+    for (let index = 1; index < legs.length; index += 1) {
+      const previous = legs[index - 1]
+      const leg = legs[index]
+      const readyIso = this.shiftItineraryIso(previous.alight_at, leg.kind === "walk" ? 0 : 2)
+      const ready = Date.parse(readyIso)
+      if (Number.isNaN(ready)) continue
+
+      if (leg.kind === "walk") {
+        const walk = Math.max(0, Number(leg.minutes) || this.itineraryDeltaMinutes(leg.board_at, leg.alight_at))
+        leg.board_at = previous.alight_at
+        leg.alight_at = this.shiftItineraryIso(previous.alight_at, walk)
+        leg.minutes = walk
+        continue
+      }
+
+      if (Array.isArray(leg.departures) && leg.departures.length) {
+        const nextIndex = leg.departures.findIndex((row) => Date.parse(row.board_at) >= ready)
+        const chosenIndex = nextIndex >= 0 ? nextIndex : leg.departures.length - 1
+        const trip = leg.departures[chosenIndex]
+        const delta = this.itineraryDeltaMinutes(leg.board_at, trip.board_at)
+        leg.board_at = trip.board_at
+        leg.alight_at = trip.alight_at
+        if (trip.train_number) leg.train_number = trip.train_number
+        leg.departures.forEach((row, tripIndex) => { row.chosen = tripIndex === chosenIndex })
+        if (Array.isArray(leg.stops) && delta) {
+          leg.stops.forEach((stop) => { stop.time = this.shiftItineraryIso(stop.time, delta) })
+        }
+        continue
+      }
+
+      const span = Math.max(0, Number(leg.minutes) || this.itineraryDeltaMinutes(leg.board_at, leg.alight_at))
+      if (Date.parse(leg.board_at) < ready) {
+        leg.board_at = readyIso
+        leg.alight_at = this.shiftItineraryIso(readyIso, span)
+      }
+    }
+  }
+
+  pickItineraryStageOption(stageId, optionId) {
+    this.itineraryStagePicks = { ...(this.itineraryStagePicks || {}), [stageId]: optionId }
+    const stages = this.itineraryStages()
+    const stageIndex = stages.findIndex((stage) => stage.id === stageId)
+    const chosen = this.itineraryStageOptionById(stages[stageIndex], optionId)
+    if (stageIndex > 0 && chosen) this.alignUpstreamPicksToOption(stageIndex, chosen)
+
+    stages.forEach((stage, index) => {
+      if (index <= stageIndex) return
+      if (this.isStageCoveredByPicks(stage.id)) {
+        delete this.itineraryStagePicks[stage.id]
+        return
+      }
+      const options = this.compatibleStageOptions(index)
+      const current = this.itineraryStageOptionById(stage, this.itineraryStagePicks[stage.id])
+      if (current && options.some((option) => option.id === current.id)) return
+      if (options[0]) this.itineraryStagePicks[stage.id] = options[0].id
+      else delete this.itineraryStagePicks[stage.id]
+    })
+
+    const intersection = [ ...this.itineraryCompatibleIndexes() ]
+    const nextIndex = intersection.includes(this.itinerarySelectedIndex)
+      ? this.itinerarySelectedIndex
+      : (intersection[0] ?? this.selectedStageOptions()[0]?.option?.itinerary_indexes?.[0] ?? this.itinerarySelectedIndex)
+    this.renderItineraryResults()
+    this.drawItinerary(nextIndex, { fit: false })
+  }
+
+  // Choosing B-2 while A-1 is selected flips A to a parent listed on continues_from.
+  alignUpstreamPicksToOption(stageIndex, option) {
+    const parents = Array.isArray(option.continues_from) ? option.continues_from : []
+    if (!parents.length) return
+    if (this.optionContinuesFromPicks(option, this.selectedParentOptionIds(stageIndex))) return
+
+    const stages = this.itineraryStages()
+    for (let index = stageIndex - 1; index >= 0; index -= 1) {
+      const stage = stages[index]
+      if (this.isStageCoveredByPicks(stage.id)) continue
+      const match = (stage.options || []).find((row) => parents.includes(row.id))
+      if (!match) continue
+      this.itineraryStagePicks[stage.id] = match.id
+      this.alignUpstreamPicksToOption(index, match)
+      return
+    }
+  }
+
+  renderItineraryResults() {
+    if (!this.hasItineraryResultsTarget) return
+    const labels = this.itineraryLabels()
+    const selected = this.itinerarySelectedIndex
+    const stages = this.itineraryStages()
+    const foldState = this.itineraryFoldState()
+    this.itineraryResultsTarget.replaceChildren()
+
+    if (stages.length) {
+      this.renderCorridorStages(stages, selected, labels, foldState)
+      return
+    }
+
+    this.itineraryPayload.forEach((itinerary, index) => {
+      const item = document.createElement("li")
+      item.className = "itinerary-result-card"
+      const fold = document.createElement("details")
+      fold.className = "itinerary-result-fold"
+      fold.open = index === selected
+      const summary = document.createElement("summary")
+      summary.className = "itinerary-result-fold__summary"
+      if (index === selected) summary.classList.add("is-active")
+      const title = document.createElement("span")
+      title.className = "itinerary-result__title"
+      const profile = labels.profiles?.[itinerary.profile] || ""
+      const later = itinerary.later && labels.later ? `${labels.later} · ` : ""
+      title.textContent = `${later}${profile} · ${this.itineraryLabel("minutes", { count: itinerary.duration_minutes })}`
+      summary.appendChild(title)
+      const when = document.createElement("span")
+      when.className = "itinerary-result__when"
+      const arriveClock = this.itineraryClock(itinerary.arrive_at)
+      if (arriveClock) {
+        when.textContent = `${this.itineraryClock(itinerary.depart_at)} → ${this.itineraryLabel("arrive", { time: arriveClock })}`
+        summary.appendChild(when)
+      }
+      fold.appendChild(summary)
+      const detail = document.createElement("div")
+      detail.className = "itinerary-detail"
+      detail.dataset.index = String(index)
+      if (index === selected) this.fillItinerarySegmentDetail(detail, index, labels)
+      fold.appendChild(detail)
+      summary.addEventListener("click", (event) => {
+        if (this.itinerarySelectedIndex !== index) {
+          event.preventDefault()
+          this.drawItinerary(index, { fit: false })
+        }
+      })
+      item.appendChild(fold)
+      this.itineraryResultsTarget.appendChild(item)
+    })
+  }
+
+  renderCorridorStages(stages, selected, labels, foldState) {
+    stages.forEach((stage, stageIndex) => {
+      const covered = this.isStageCoveredByPicks(stage.id)
+      const options = this.stageOptions(stageIndex)
+      const linkedIds = covered
+        ? new Set()
+        : new Set(this.compatibleStageOptions(stageIndex).map((option) => option.id))
+      const pickedId = this.itineraryStagePicks?.[stage.id]
+      let picked = options.find((option) => option.id === pickedId)
+      if (!covered && picked && linkedIds.size && !linkedIds.has(picked.id)) {
+        picked = options.find((option) => linkedIds.has(option.id)) || picked
+      }
+      if (!covered && !picked) picked = options[0]
+      if (!covered && picked && this.itineraryStagePicks?.[stage.id] !== picked.id) {
+        this.itineraryStagePicks = { ...(this.itineraryStagePicks || {}), [stage.id]: picked.id }
+      }
+
+      const wrap = document.createElement("li")
+      const choice = options.length > 1
+      wrap.className = `itinerary-segment itinerary-segment--stage${choice ? " itinerary-segment--choice" : " itinerary-segment--shared"}${covered ? " is-covered" : ""}`
+      wrap.dataset.stageId = stage.id
+      if (covered) wrap.dataset.covered = "true"
+
+      // Spanned stages (B under A+B) stay visible but inactive; D/E/F/… always remain.
+      if (covered) {
+        const coverPick = this.coveringStageOption(stage.id)
+        const header = this.itinerarySegmentHeader({
+          id: stage.id,
+          title: stage.title
+        })
+        wrap.appendChild(header)
+        const note = document.createElement("p")
+        note.className = "itinerary-segment__legs"
+        note.textContent = coverPick
+          ? this.itineraryLabel("stage_covered", { id: coverPick.id })
+          : stage.title
+        if (note.textContent) wrap.appendChild(note)
+        this.itineraryResultsTarget.appendChild(wrap)
+        return
+      }
+
+      const displayId = picked?.covers?.length > 1 ? picked.id : stage.id
+      if (!choice) {
+        const header = this.itinerarySegmentHeader({ id: displayId, title: stage.title })
+        wrap.appendChild(header)
+        const summary = document.createElement("p")
+        summary.className = "itinerary-segment__legs"
+        summary.textContent = this.itineraryLegNames(picked?.legs)
+        if (summary.textContent) wrap.appendChild(summary)
+        this.itineraryResultsTarget.appendChild(wrap)
+        return
+      }
+
+      wrap.appendChild(this.itinerarySegmentHeader({ id: stage.id, title: stage.title }))
+      const fold = document.createElement("details")
+      fold.className = "itinerary-options-fold"
+      fold.dataset.role = "itinerary-options"
+      fold.dataset.stageId = stage.id
+      const openKey = `options:${stage.id}`
+      fold.open = foldState[openKey] ?? true
+      const summary = document.createElement("summary")
+      summary.className = "itinerary-options-fold__summary"
+      summary.dataset.role = "itinerary-options-summary"
+      this.refreshItineraryStageSummary(summary, stage, picked, labels)
+      fold.appendChild(summary)
+
+      const list = document.createElement("ul")
+      list.className = "itinerary-options"
+      options.forEach((option) => {
+        const item = document.createElement("li")
+        item.className = "itinerary-options__item"
+        item.appendChild(this.itineraryStageOptionButton(
+          stage,
+          option,
+          picked?.id === option.id,
+          labels,
+          linkedIds.size ? linkedIds.has(option.id) : true
+        ))
+        list.appendChild(item)
+      })
+      fold.appendChild(list)
+      wrap.appendChild(fold)
+      this.itineraryResultsTarget.appendChild(wrap)
+    })
+
+    const detailItem = document.createElement("li")
+    detailItem.className = "itinerary-segment itinerary-segment--detail"
+    const detailFold = document.createElement("details")
+    detailFold.className = "itinerary-detail-fold"
+    detailFold.dataset.role = "itinerary-detail-fold"
+    detailFold.open = foldState.detail ?? true
+    const detailSummary = document.createElement("summary")
+    detailSummary.className = "itinerary-detail-fold__summary"
+    detailSummary.textContent = labels.details || ""
+    detailFold.appendChild(detailSummary)
+    const detail = document.createElement("div")
+    detail.className = "itinerary-detail"
+    detail.dataset.role = "itinerary-detail"
+    this.fillItinerarySegmentDetail(detail, selected, labels, this.resolveSelectedItinerary())
+    detailFold.appendChild(detail)
+    detailItem.appendChild(detailFold)
+    this.itineraryResultsTarget.appendChild(detailItem)
+  }
+
+  itineraryFoldState() {
+    if (!this.hasItineraryResultsTarget) return {}
+    const state = {}
+    this.itineraryResultsTarget.querySelectorAll('[data-role="itinerary-options"]').forEach((fold) => {
+      if (fold.dataset.stageId) state[`options:${fold.dataset.stageId}`] = fold.open
+    })
+    const detail = this.itineraryResultsTarget.querySelector('[data-role="itinerary-detail-fold"]')
+    if (detail) state.detail = detail.open
+    return state
+  }
+
+  itineraryStageOptionButton(stage, option, active, labels = {}, linked = true) {
+    const button = document.createElement("button")
+    button.type = "button"
+    button.className = `itinerary-segment__button${active ? " is-active" : ""}${linked ? "" : " is-unlinked"}`
+    button.dataset.stageId = stage.id || ""
+    button.dataset.optionId = option.id || ""
+    button.dataset.indexes = (option.itinerary_indexes || []).join(",")
+    button.appendChild(this.itinerarySegmentHeader({ id: option.id, title: option.title }))
+    if (Array.isArray(option.continues_from) && option.continues_from.length) {
+      const cont = document.createElement("span")
+      cont.className = "itinerary-segment__continues"
+      const ids = option.continues_from.join(labels.list_sep || "、")
+      cont.textContent = labels.continues_from
+        ? this.itineraryLabel("continues_from", { ids })
+        : `接續 ${ids}`
+      button.appendChild(cont)
+    }
+    const summary = document.createElement("span")
+    summary.className = "itinerary-segment__legs"
+    summary.textContent = this.itineraryLegNames(option.legs)
+    if (summary.textContent) button.appendChild(summary)
+    button.addEventListener("click", () => this.pickItineraryStageOption(stage.id, option.id))
+    return button
+  }
+
+  itineraryLegNames(legs) {
+    return (legs || [])
+      .filter((leg) => leg.kind === "ride")
+      .map((leg) => leg.name)
+      .filter(Boolean)
+      .join(" → ")
+  }
+
+  refreshItineraryStageSummary(node, stage, picked, labels) {
+    if (!node) return
+    const title = document.createElement("span")
+    title.className = "itinerary-options-fold__title"
+    title.textContent = labels.options || ""
+    const pickedLabel = document.createElement("span")
+    pickedLabel.className = "itinerary-options-fold__picked"
+    const label = picked ? [ picked.id, picked.title ].filter(Boolean).join(" ") : stage.title
+    pickedLabel.textContent = labels.options_selected
+      ? this.itineraryLabel("options_selected", { label })
+      : label
+    node.replaceChildren(title, pickedLabel)
+    if (!picked) return
+    const meta = document.createElement("span")
+    meta.className = "itinerary-options-fold__meta"
+    meta.textContent = this.itineraryLegNames(picked.legs)
+    if (meta.textContent) node.appendChild(meta)
+  }
+
+  itinerarySegmentHeader(segment) {
+    const header = document.createElement("div")
+    header.className = "itinerary-segment__header"
+    const badge = document.createElement("span")
+    badge.className = "itinerary-segment__id"
+    badge.textContent = segment.id || ""
+    const title = document.createElement("span")
+    title.className = "itinerary-segment__title"
+    title.textContent = segment.title || ""
+    header.append(badge, title)
+    return header
+  }
+
+  fillItinerarySegmentDetail(node, itineraryIndex, labels, itinerary = null) {
+    node.replaceChildren()
+    const trip = itinerary || this.itineraryPayload[itineraryIndex]
+    ;(trip?.legs || []).forEach((leg, legIndex) => {
+      node.appendChild(this.itineraryLegDetail(leg, labels, itineraryIndex, legIndex))
+    })
+  }
+
+  renderItineraryDetail(index) {
+    if (!this.hasItineraryResultsTarget) return
+    const labels = this.itineraryLabels()
+    const stages = this.itineraryStages()
+    if (stages.length) {
+      const detail = this.itineraryResultsTarget.querySelector('[data-role="itinerary-detail"]')
+      if (detail) this.fillItinerarySegmentDetail(detail, index, labels, this.resolveSelectedItinerary())
+      this.itineraryResultsTarget.querySelectorAll(".itinerary-segment__button").forEach((button) => {
+        const stageId = button.dataset.stageId
+        button.classList.toggle("is-active", Boolean(stageId) && button.dataset.optionId === this.itineraryStagePicks?.[stageId])
+      })
+      stages.forEach((stage, stageIndex) => {
+        const fold = this.itineraryResultsTarget.querySelector(
+          `[data-role="itinerary-options"][data-stage-id="${stage.id}"]`
+        )
+        if (!fold) return
+        const pickId = this.itineraryStagePicks?.[stage.id]
+        const picked = this.compatibleStageOptions(stageIndex).find((option) => option.id === pickId)
+          || this.itineraryStageOptionById(stage, pickId)
+        this.refreshItineraryStageSummary(
+          fold.querySelector('[data-role="itinerary-options-summary"]'),
+          stage,
+          picked,
+          labels
+        )
+      })
+      return
+    }
+
+    this.itineraryResultsTarget.querySelectorAll(".itinerary-result-fold").forEach((fold) => {
+      const detail = fold.querySelector(".itinerary-detail")
+      const selected = detail?.dataset.index === String(index)
+      fold.open = selected
+      fold.querySelector("summary")?.classList.toggle("is-active", selected)
+      if (!selected || !detail) return
+      detail.replaceChildren()
+      const itinerary = this.itineraryPayload[index]
+      ;(itinerary?.legs || []).forEach((leg, legIndex) => {
+        detail.appendChild(this.itineraryLegDetail(leg, labels, index, legIndex))
+      })
+    })
+  }
+
+  itineraryLegDetail(leg, labels, itineraryIndex, legIndex) {
+    const block = document.createElement("section")
+    block.className = "itinerary-leg"
+    const heading = document.createElement("p")
+    heading.className = "itinerary-leg__title"
+    const train = leg.train_number ? ` ${leg.train_number}` : ""
+    heading.textContent = `${this.itineraryClock(leg.board_at)} ${leg.name || ""}${train}`.trim()
+    block.appendChild(heading)
+    const places = document.createElement("p")
+    places.className = "itinerary-leg__places"
+    places.textContent = `${leg.from?.name || ""} → ${leg.to?.name || ""} · ${this.itineraryClock(leg.alight_at)}`
+    block.appendChild(places)
+    if (leg.headway_minutes) {
+      const headway = document.createElement("p")
+      headway.className = "itinerary-leg__note"
+      headway.textContent = this.itineraryLabel("headway_every", { count: leg.headway_minutes })
+      block.appendChild(headway)
+    }
+    if (Array.isArray(leg.stops) && leg.stops.length) {
+      const fold = document.createElement("details")
+      fold.className = "itinerary-stops-fold"
+      const caption = document.createElement("summary")
+      caption.className = "itinerary-stops-fold__summary"
+      caption.textContent = labels.stops || ""
+      fold.appendChild(caption)
+      const list = document.createElement("ol")
+      list.className = "itinerary-stops"
+      leg.stops.forEach((stop) => {
+        const item = document.createElement("li")
+        item.textContent = `${this.itineraryClock(stop.time)} ${stop.name || ""}`.trim()
+        list.appendChild(item)
+      })
+      fold.appendChild(list)
+      block.appendChild(fold)
+    }
+    if (Array.isArray(leg.departures) && leg.departures.length > 1) {
+      const caption = document.createElement("p")
+      caption.className = "itinerary-leg__note"
+      caption.textContent = labels.trains || ""
+      block.appendChild(caption)
+      const list = document.createElement("div")
+      list.className = "itinerary-trains"
+      list.setAttribute("role", "list")
+      leg.departures.forEach((trip, tripIndex) => {
+        const item = document.createElement("button")
+        item.type = "button"
+        item.className = `itinerary-train${trip.chosen ? " is-chosen" : ""}`
+        item.setAttribute("role", "listitem")
+        const number = trip.train_number ? `${trip.train_number} ` : ""
+        item.textContent = `${number}${this.itineraryClock(trip.board_at)}–${this.itineraryClock(trip.alight_at)}`
+        item.addEventListener("click", (event) => {
+          event.stopPropagation()
+          this.selectItineraryDeparture(itineraryIndex, legIndex, tripIndex)
+        })
+        list.appendChild(item)
+      })
+      block.appendChild(list)
+      if (leg.departures_omitted) {
+        const more = document.createElement("p")
+        more.className = "itinerary-leg__note"
+        more.textContent = this.itineraryLabel("more_trains", { count: leg.departures_omitted })
+        block.appendChild(more)
+      }
+    }
+    return block
+  }
+
+  selectItineraryDeparture(itineraryIndex, legIndex, tripIndex) {
+    const itinerary = this.itineraryPayload?.[itineraryIndex]
+    const leg = itinerary?.legs?.[legIndex]
+    const trip = leg?.departures?.[tripIndex]
+    if (!itinerary || !leg || !trip || trip.chosen) return
+
+    const delta = this.itineraryDeltaMinutes(leg.board_at, trip.board_at)
+    leg.board_at = trip.board_at
+    leg.alight_at = trip.alight_at
+    if (trip.train_number) leg.train_number = trip.train_number
+    else delete leg.train_number
+    leg.departures.forEach((row, index) => { row.chosen = index === tripIndex })
+    if (Array.isArray(leg.stops) && delta) {
+      leg.stops.forEach((stop) => {
+        stop.time = this.shiftItineraryIso(stop.time, delta)
+      })
+    }
+    this.cascadeItineraryTimes(itinerary, legIndex)
+    itinerary.arrive_at = itinerary.legs[itinerary.legs.length - 1]?.alight_at || itinerary.arrive_at
+    itinerary.duration_minutes = Math.max(
+      0,
+      this.itineraryDeltaMinutes(itinerary.depart_at, itinerary.arrive_at)
+    )
+    this.itinerarySelectedIndex = itineraryIndex
+    const scrollRoot = this.itineraryScrollRoot()
+    const scrollTop = scrollRoot?.scrollTop ?? 0
+    this.renderItineraryResults()
+    if (scrollRoot) scrollRoot.scrollTop = scrollTop
+    this.drawItinerary(itineraryIndex, { fit: false })
+  }
+
+  itineraryScrollRoot() {
+    const start = this.itineraryResultsTarget
+    if (!start) return null
+    let node = start
+    while (node && node !== document.body) {
+      const style = window.getComputedStyle(node)
+      if (/(auto|scroll)/.test(style.overflowY) && node.scrollHeight > node.clientHeight + 1) {
+        return node
+      }
+      node = node.parentElement
+    }
+    return start
+  }
+
+  cascadeItineraryTimes(itinerary, fromLegIndex) {
+    const legs = itinerary.legs || []
+    for (let index = fromLegIndex + 1; index < legs.length; index += 1) {
+      const previous = legs[index - 1]
+      const leg = legs[index]
+      const readyMs = Date.parse(previous.alight_at)
+      if (Number.isNaN(readyMs)) break
+
+      if (leg.kind === "walk") {
+        const walk = Math.max(0, Number(leg.minutes) || 0)
+        leg.board_at = previous.alight_at
+        leg.alight_at = this.shiftItineraryIso(previous.alight_at, walk)
+        continue
+      }
+
+      const transferReady = this.shiftItineraryIso(previous.alight_at, 2)
+      const ready = Date.parse(transferReady)
+      if (Array.isArray(leg.departures) && leg.departures.length) {
+        const nextIndex = leg.departures.findIndex((row) => Date.parse(row.board_at) >= ready)
+        const chosenIndex = nextIndex >= 0 ? nextIndex : leg.departures.length - 1
+        const trip = leg.departures[chosenIndex]
+        const delta = this.itineraryDeltaMinutes(leg.board_at, trip.board_at)
+        leg.board_at = trip.board_at
+        leg.alight_at = trip.alight_at
+        if (trip.train_number) leg.train_number = trip.train_number
+        else delete leg.train_number
+        leg.departures.forEach((row, rowIndex) => { row.chosen = rowIndex === chosenIndex })
+        if (Array.isArray(leg.stops) && delta) {
+          leg.stops.forEach((stop) => {
+            stop.time = this.shiftItineraryIso(stop.time, delta)
+          })
+        }
+        continue
+      }
+
+      if (leg.headway_minutes > 0) {
+        const every = Number(leg.headway_minutes)
+        const ride = Math.max(0, Number(leg.minutes) || 0)
+        let boardMinutes = this.itineraryMinutesOf(transferReady)
+        const rem = boardMinutes % every
+        if (rem) boardMinutes += every - rem
+        const boardAt = this.itineraryIsoFromMinutes(transferReady, boardMinutes)
+        const delta = this.itineraryDeltaMinutes(leg.board_at, boardAt)
+        leg.board_at = boardAt
+        leg.alight_at = this.shiftItineraryIso(boardAt, ride)
+        if (Array.isArray(leg.stops) && delta) {
+          leg.stops.forEach((stop) => {
+            stop.time = this.shiftItineraryIso(stop.time, delta)
+          })
+        }
+      }
+    }
+  }
+
+  itineraryDeltaMinutes(from, to) {
+    const start = Date.parse(from)
+    const end = Date.parse(to)
+    if (Number.isNaN(start) || Number.isNaN(end)) return 0
+    return Math.round((end - start) / 60000)
+  }
+
+  itineraryMinutesOf(value) {
+    if (typeof value !== "string" || value.length < 16) return 0
+    return Number(value.slice(11, 13)) * 60 + Number(value.slice(14, 16))
+  }
+
+  itineraryIsoFromMinutes(template, minutes) {
+    if (typeof template !== "string" || template.length < 16) return template
+    const days = Math.floor(minutes / 1440)
+    const clock = ((minutes % 1440) + 1440) % 1440
+    let date = template.slice(0, 10)
+    if (days) {
+      const base = Date.parse(`${date}T00:00:00Z`)
+      date = new Date(base + days * 86400000).toISOString().slice(0, 10)
+    }
+    const hh = String(Math.floor(clock / 60)).padStart(2, "0")
+    const mm = String(clock % 60).padStart(2, "0")
+    return `${date}T${hh}:${mm}${template.slice(16)}`
+  }
+
+  shiftItineraryIso(value, deltaMinutes) {
+    if (!deltaMinutes || typeof value !== "string" || value.length < 16) return value
+    return this.itineraryIsoFromMinutes(value, this.itineraryMinutesOf(value) + deltaMinutes)
+  }
+
+  itineraryClock(value) {
+    return typeof value === "string" && value.length >= 16 ? value.slice(11, 16) : ""
+  }
+
+  drawItinerary(index, { fit = true } = {}) {
+    this.itinerarySelectedIndex = index
+    const itinerary = this.itineraryStages().length
+      ? (this.resolveSelectedItinerary() || this.itineraryPayload?.[index])
+      : this.itineraryPayload?.[index]
+    if (!itinerary || !this.map || !window.L) return
+    const L = window.L
+    this.clearItinerary()
+    this.itineraryLayer = L.layerGroup().addTo(this.map)
+    const bounds = []
+    const legs = itinerary.legs || []
+    legs.forEach((leg) => {
+      const latlngs = this.itineraryLegLatLngs(leg)
+      if (latlngs.length < 2) return
+      const walk = leg.kind === "walk"
+      const line = L.polyline(latlngs, {
+        color: walk ? "#0f766e" : (leg.color || "#2563eb"),
+        weight: walk ? 4 : 5,
+        opacity: walk ? 0.95 : 0.9,
+        dashArray: walk ? "5 9" : null,
+        lineCap: "round",
+        lineJoin: "round",
+        className: walk ? "itinerary-line itinerary-line--walk" : "itinerary-line"
+      })
+      this.itineraryLayer.addLayer(line)
+      latlngs.forEach((point) => bounds.push(point))
+    })
+    this.drawItineraryEndpoints(legs, bounds)
+    this.itineraryResultsTarget?.querySelectorAll(".itinerary-result").forEach((button) => {
+      button.classList.toggle("itinerary-result--active", button.dataset.index === String(index))
+    })
+    this.renderItineraryDetail(index)
+    if (fit && bounds.length) this.map.fitBounds(bounds, { padding: [ 48, 48 ], maxZoom: 15 })
+  }
+
+  itineraryLegLatLngs(leg) {
+    const fromGeometry = (leg.geometry || []).filter((point) => Array.isArray(point) && point.length >= 2)
+    if (fromGeometry.length >= 2) return fromGeometry
+    const from = leg.from
+    const to = leg.to
+    if (from?.lat != null && from?.lon != null && to?.lat != null && to?.lon != null) {
+      return [ [ from.lat, from.lon ], [ to.lat, to.lon ] ]
+    }
+    return []
+  }
+
+  drawItineraryEndpoints(legs, bounds) {
+    if (!this.itineraryLayer || !window.L || !legs.length) return
+    const L = window.L
+    const labels = this.itineraryLabels()
+    const first = legs[0]
+    const last = legs[legs.length - 1]
+    const origin = this.itineraryPointLatLng(first?.from) || this.itineraryLegLatLngs(first)[0]
+    const destination = this.itineraryPointLatLng(last?.to)
+      || this.itineraryLegLatLngs(last).slice(-1)[0]
+    if (origin) {
+      bounds.push(origin)
+      this.itineraryLayer.addLayer(this.itineraryEndpointMarker(origin, {
+        kind: "origin",
+        name: first?.from?.name || labels.origin || "",
+        label: "A"
+      }))
+    }
+    if (destination) {
+      bounds.push(destination)
+      this.itineraryLayer.addLayer(this.itineraryEndpointMarker(destination, {
+        kind: "destination",
+        name: last?.to?.name || labels.destination || "",
+        label: "B"
+      }))
+    }
+
+    // Transfer / board points between rides (skip pure walk endpoints already covered).
+    legs.forEach((leg, index) => {
+      if (leg.kind !== "ride") return
+      const board = this.itineraryPointLatLng(leg.from)
+      const alight = this.itineraryPointLatLng(leg.to)
+      if (board && index > 0) {
+        this.itineraryLayer.addLayer(L.circleMarker(board, {
+          radius: 5,
+          color: "#fff",
+          weight: 2,
+          fillColor: leg.color || "#2563eb",
+          fillOpacity: 1,
+          className: "itinerary-transfer"
+        }).bindTooltip(leg.from?.name || "", { direction: "top", opacity: 0.9 }))
+      }
+      if (alight && index < legs.length - 1) {
+        this.itineraryLayer.addLayer(L.circleMarker(alight, {
+          radius: 5,
+          color: "#fff",
+          weight: 2,
+          fillColor: leg.color || "#2563eb",
+          fillOpacity: 1,
+          className: "itinerary-transfer"
+        }).bindTooltip(leg.to?.name || "", { direction: "top", opacity: 0.9 }))
+      }
+    })
+  }
+
+  itineraryPointLatLng(point) {
+    if (point?.lat == null || point?.lon == null) return null
+    return [ Number(point.lat), Number(point.lon) ]
+  }
+
+  itineraryEndpointMarker(latlng, { kind, name, label }) {
+    const L = window.L
+    return L.marker(latlng, {
+      interactive: true,
+      keyboard: false,
+      zIndexOffset: kind === "destination" ? 650 : 600,
+      icon: L.divIcon({
+        className: `itinerary-endpoint itinerary-endpoint--${kind}`,
+        html: `<span class="itinerary-endpoint__badge">${label}</span><span class="itinerary-endpoint__name">${this.escapeHtml(name)}</span>`,
+        iconSize: [ 120, 28 ],
+        iconAnchor: [ 14, 14 ]
+      })
+    }).bindTooltip(name, { direction: "top", opacity: 0.95 })
+  }
+
+  clearItinerary() {
+    this.itineraryLayer?.clearLayers()
+  }
+
+  pickItineraryPoint(event) {
+    if (!this.map) return
+    this.itineraryPickField = event.currentTarget.dataset.itineraryPick === "destination" ? "destination" : "origin"
+    if (this.hasItineraryStatusTarget) this.itineraryStatusTarget.textContent = this.itineraryLabels().picking || ""
+    if (!this._onItineraryMapClick) {
+      this._onItineraryMapClick = (mapEvent) => this.applyItineraryMapClick(mapEvent.latlng)
+      this.map.on("click", this._onItineraryMapClick)
+    }
+  }
+
+  applyItineraryMapClick(latlng) {
+    if (!latlng) return
+    const input = this.itineraryPickField === "destination" ? this.itineraryDestinationTarget : this.itineraryOriginTarget
+    if (!input) return
+    input.value = this.itineraryLabels().map_point || ""
+    input.dataset.lat = String(latlng.lat)
+    input.dataset.lon = String(latlng.lng)
+    if (this._onItineraryMapClick) {
+      this.map.off("click", this._onItineraryMapClick)
+      this._onItineraryMapClick = null
+    }
+    if (this.hasItineraryStatusTarget) this.itineraryStatusTarget.textContent = ""
+  }
+
+  locateItineraryOrigin() {
+    if (!navigator.geolocation || !this.hasItineraryOriginTarget) return
+    navigator.geolocation.getCurrentPosition((position) => {
+      this.itineraryOriginTarget.value = this.itineraryLabels().map_point || ""
+      this.itineraryOriginTarget.dataset.lat = String(position.coords.latitude)
+      this.itineraryOriginTarget.dataset.lon = String(position.coords.longitude)
+    })
   }
 }
 

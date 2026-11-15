@@ -1,20 +1,23 @@
 {
   "type": "FeatureCollection",
-  "name": "593",
+  "name": "593-沙崙",
   "properties": {
     "id": "new_taipei_593",
-    "name": "593",
-    "name_en": "593",
+    "name": "593-沙崙",
+    "name_en": "593-Shalun",
     "ref": "593",
     "color": "#DC2626",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "loop": true,
-    "official_map_url": "https://ebus.gov.taipei/File/Get/c0d05e43-5526-44be-8a19-8c36866fe97d?v=639267188134377004",
+    "official_map_url": "https://ebus.gov.taipei/File/Get/c0d05e43-5526-44be-8a19-8c36866fe97d?v=639291655205463825",
+    "departure": "捷運淡水站",
+    "departure_en": "MRT Tamsui Sta.",
+    "destination": "沙崙",
+    "destination_en": "Shalun",
     "operator_id": "16186",
     "operator": "淡水客運",
-    "operator_en": "Tamshui Bus Co., Ltd.",
-    "daily_trips": 12
+    "operator_en": "Tamshui Bus Co., Ltd."
   },
   "features": [
     {
@@ -22,8 +25,8 @@
       "properties": {
         "feature_type": "route",
         "ref": "593",
-        "name": "593",
-        "name_en": "593",
+        "name": "593-沙崙",
+        "name_en": "593-Shalun",
         "color": "#DC2626",
         "direction": 0,
         "loop": true,
@@ -1270,10 +1273,11 @@
         "ref": "NWT157099",
         "name": "捷運淡水站",
         "name_en": "MRT Tamsui Sta.",
-        "line": "593",
+        "line": "593-沙崙",
         "color": "#DC2626",
         "direction": 0,
-        "station_id": "3842"
+        "station_id": "3842",
+        "platform": "第1月台"
       },
       "geometry": {
         "type": "Point",
@@ -1290,7 +1294,7 @@
         "ref": "NWT157100",
         "name": "永樂巷口(中山市場)",
         "name_en": "Yongle Lane Intersection(Zhongshan Market)",
-        "line": "593",
+        "line": "593-沙崙",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "14662"
@@ -1310,7 +1314,7 @@
         "ref": "NWT157101",
         "name": "重建街口",
         "name_en": "JhongJian St. Entrance",
-        "line": "593",
+        "line": "593-沙崙",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "180712"
@@ -1330,7 +1334,7 @@
         "ref": "NWT187016",
         "name": "淡水圖書館",
         "name_en": "Tamsui Liberry",
-        "line": "593",
+        "line": "593-沙崙",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "180710"
@@ -1350,7 +1354,7 @@
         "ref": "NWT187017",
         "name": "小白宮(淡水分局)",
         "name_en": "Little White House (Danshui Precinct)",
-        "line": "593",
+        "line": "593-沙崙",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "180708"
@@ -1370,7 +1374,7 @@
         "ref": "NWT157103",
         "name": "紅毛城(真理大學)",
         "name_en": "Fort Santo Domingo (Aletheia U.)",
-        "line": "593",
+        "line": "593-沙崙",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "180706"
@@ -1390,7 +1394,7 @@
         "ref": "NWT157104",
         "name": "獸醫研究所",
         "name_en": "VeterInary Research Institute",
-        "line": "593",
+        "line": "593-沙崙",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "18074"
@@ -1410,7 +1414,7 @@
         "ref": "NWT157105",
         "name": "滬尾藝文園區(忠烈祠)",
         "name_en": "Huwei Cultural and Arts Park(Martyrs' Shrine)",
-        "line": "593",
+        "line": "593-沙崙",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "18072"
@@ -1430,7 +1434,7 @@
         "ref": "NWT157106",
         "name": "油車口",
         "name_en": "YouCheKou",
-        "line": "593",
+        "line": "593-沙崙",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "18070"
@@ -1450,7 +1454,7 @@
         "ref": "NWT157108",
         "name": "淡江新村",
         "name_en": "Danjiang New Residentail Quarter",
-        "line": "593",
+        "line": "593-沙崙",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "18068"
@@ -1470,7 +1474,7 @@
         "ref": "NWT157109",
         "name": "天生國小",
         "name_en": "TianSheng Elementary School",
-        "line": "593",
+        "line": "593-沙崙",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "18066"
@@ -1490,7 +1494,7 @@
         "ref": "NWT157110",
         "name": "大河文明",
         "name_en": "Dahewenming",
-        "line": "593",
+        "line": "593-沙崙",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "74889"
@@ -1510,7 +1514,7 @@
         "ref": "NWT157111",
         "name": "果嶺大道",
         "name_en": "Green Avenue",
-        "line": "593",
+        "line": "593-沙崙",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "75193"
@@ -1530,7 +1534,7 @@
         "ref": "NWT157112",
         "name": "天生社區",
         "name_en": "Tiansheng Community",
-        "line": "593",
+        "line": "593-沙崙",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "75172"
@@ -1550,7 +1554,7 @@
         "ref": "NWT157113",
         "name": "大庄福德廟",
         "name_en": "Dazhuang Fude Temple",
-        "line": "593",
+        "line": "593-沙崙",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "75166"
@@ -1570,7 +1574,7 @@
         "ref": "NWT157114",
         "name": "中正新民街口",
         "name_en": "Zhongzheng & Xinmin Intersection",
-        "line": "593",
+        "line": "593-沙崙",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "1165605885"
@@ -1590,7 +1594,7 @@
         "ref": "NWT157115",
         "name": "美人嶼社區",
         "name_en": "Meirenyu Community",
-        "line": "593",
+        "line": "593-沙崙",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "74877"
@@ -1610,7 +1614,7 @@
         "ref": "NWT157116",
         "name": "電信料庫",
         "name_en": "Telecommunications Materials",
-        "line": "593",
+        "line": "593-沙崙",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "75271"
@@ -1630,7 +1634,7 @@
         "ref": "NWT157117",
         "name": "沙崙里",
         "name_en": "Shalun Village",
-        "line": "593",
+        "line": "593-沙崙",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "74871"
@@ -1650,7 +1654,7 @@
         "ref": "NWT157120",
         "name": "淡海市民活動中心",
         "name_en": "DanHai Community Activity Center",
-        "line": "593",
+        "line": "593-沙崙",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "18063"
@@ -1670,7 +1674,7 @@
         "ref": "NWT157121",
         "name": "淡江豪景",
         "name_en": "Tamkang Haojing",
-        "line": "593",
+        "line": "593-沙崙",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "74880"
@@ -1690,7 +1694,7 @@
         "ref": "NWT224410",
         "name": "淡水轉運站",
         "name_en": "Tamsui Bus Station",
-        "line": "593",
+        "line": "593-沙崙",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "1165610553",
@@ -1711,7 +1715,7 @@
         "ref": "NWT157123",
         "name": "一信幼稚園",
         "name_en": "Yixin Kindergarten",
-        "line": "593",
+        "line": "593-沙崙",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "74887"
@@ -1731,7 +1735,7 @@
         "ref": "NWT157124",
         "name": "油車口",
         "name_en": "Youchekou",
-        "line": "593",
+        "line": "593-沙崙",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "18069"
@@ -1751,7 +1755,7 @@
         "ref": "NWT205453",
         "name": "滬尾藝文園區(忠烈祠)",
         "name_en": "Huwei Cultural and Arts Park(Martyrs' Shrine)",
-        "line": "593",
+        "line": "593-沙崙",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "18071"
@@ -1771,7 +1775,7 @@
         "ref": "NWT157125",
         "name": "獸醫研究所",
         "name_en": "VeterInary Research Institute",
-        "line": "593",
+        "line": "593-沙崙",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "18073"
@@ -1791,7 +1795,7 @@
         "ref": "NWT157126",
         "name": "紅毛城(真理大學)",
         "name_en": "Fort Santo Domingo (Aletheia U.)",
-        "line": "593",
+        "line": "593-沙崙",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "18075"
@@ -1811,7 +1815,7 @@
         "ref": "NWT157127",
         "name": "電力公司(滬尾漁港)",
         "name_en": "Taiwan Power Company(Huwei Fishing Harbor)",
-        "line": "593",
+        "line": "593-沙崙",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "74751"
@@ -1831,7 +1835,7 @@
         "ref": "NWT157128",
         "name": "郵局(滬尾偕醫館)",
         "name_en": "Post Office(Hobe MacKay Hospital)",
-        "line": "593",
+        "line": "593-沙崙",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "74961"
@@ -1851,7 +1855,7 @@
         "ref": "NWT157129",
         "name": "馬偕花園(客船碼頭)",
         "name_en": "Mackay Garden(Passenger Wharf))",
-        "line": "593",
+        "line": "593-沙崙",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "74761"
@@ -1871,7 +1875,7 @@
         "ref": "NWT157130",
         "name": "福佑宮(渡船頭)",
         "name_en": "Fuyou Temple(Ferry Pier)",
-        "line": "593",
+        "line": "593-沙崙",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "74762"
@@ -1891,7 +1895,7 @@
         "ref": "NWT157131",
         "name": "金色水岸口",
         "name_en": "Tamsui's Gold Coast Entrance",
-        "line": "593",
+        "line": "593-沙崙",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "74737"
@@ -1911,7 +1915,7 @@
         "ref": "NWT157132",
         "name": "淡水區農會",
         "name_en": "Tamsui Farmers Association",
-        "line": "593",
+        "line": "593-沙崙",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "75039"
@@ -1931,10 +1935,11 @@
         "ref": "NWT157133",
         "name": "捷運淡水站",
         "name_en": "MRT Tamsui Sta.",
-        "line": "593",
+        "line": "593-沙崙",
         "color": "#DC2626",
         "direction": 0,
-        "station_id": "3842"
+        "station_id": "3842",
+        "platform": "第1月台"
       },
       "geometry": {
         "type": "Point",

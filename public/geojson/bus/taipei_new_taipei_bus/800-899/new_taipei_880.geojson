@@ -13,7 +13,11 @@
     "operator_id": "16185",
     "operator": "指南客運",
     "operator_en": "Zhinan Bus Co., Ltd.",
-    "daily_trips": 62
+    "daily_trips": 62,
+    "departure": "指南客運樹林站",
+    "destination": "新市站",
+    "departure_en": "Zhinan Bus Company Shulin Station",
+    "destination_en": "Xinshi Station"
   },
   "features": [
     {
@@ -5761,7 +5765,8 @@
         "line": "880",
         "color": "#DC2626",
         "direction": 1,
-        "station_id": "3842"
+        "station_id": "3842",
+        "platform": "第1月台"
       },
       "geometry": {
         "type": "Point",

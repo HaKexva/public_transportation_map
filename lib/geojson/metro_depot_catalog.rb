@@ -43,7 +43,7 @@ module Geojson
       # OSM landuse「新北捷運安坑機廠」centroid; spur from SE yard exit (not 安一路 throat).
       { id: "ankeng_depot", name: "安坑機廠", routes: %w[ankeng_lrt], lon: 121.48660, lat: 24.94466, grade: "輕軌" },
       # Yard body NW of V11 崁頂 (OSM landuse「新北捷運淡海機廠」centroid).
-      { id: "danhai_depot", name: "淡海車廠", routes: %w[danhai_lrt], lon: 121.43306, lat: 25.20313, grade: "輕軌" },
+      { id: "danhai_depot", name: "淡海車廠", routes: %w[danhai_lushan danhai_lanhai], lon: 121.43306, lat: 25.20313, grade: "輕軌", track_on: "danhai_lushan" },
       { id: "kaohsiung_north_depot", name: "北機廠", routes: %w[red_line], lon: 120.3026, lat: 22.7767, grade: "三級" },
       { id: "kaohsiung_south_depot", name: "南機廠", routes: %w[red_line], lon: 120.33057, lat: 22.58453, grade: "三級" },
       { id: "kaohsiung_daliao_depot", name: "大寮機廠", routes: %w[orange_line], lon: 120.39072, lat: 22.62487, grade: "主機廠" },

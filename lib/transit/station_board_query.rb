@@ -11,7 +11,10 @@ module Transit
     # Express geometry is a separate map layer, but TDX trips are stored on airport_mrt.
     ROUTE_ALIASES = {
       "airport_mrt_express" => %w[airport_mrt],
-      "airport_mrt" => %w[airport_mrt]
+      "airport_mrt" => %w[airport_mrt],
+      # Segment map layers; TDX / timetable trips stay on danhai_lrt.
+      "danhai_lushan" => %w[danhai_lrt],
+      "danhai_lanhai" => %w[danhai_lrt]
     }.freeze
 
     def self.expand_route_ids(route_ids)

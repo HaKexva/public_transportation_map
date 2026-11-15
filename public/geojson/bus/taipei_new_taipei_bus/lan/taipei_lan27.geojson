@@ -1,10 +1,10 @@
 {
   "type": "FeatureCollection",
-  "name": "藍27（不繞駛三總）",
+  "name": "藍27（08:00前、21:30後不繞駛三總）",
   "properties": {
     "id": "taipei_lan27",
-    "name": "藍27（不繞駛三總）",
-    "name_en": "BL27 (skips Tri-Service General Hospital)",
+    "name": "藍27（08:00前、21:30後不繞駛三總）",
+    "name_en": "BL27 (before 08:00 and after 21:30, skips Tri-Service General Hospital)",
     "ref": "藍27",
     "color": "#EAB308",
     "city_id": "Taipei",
@@ -13,10 +13,15 @@
     "operator_id": "1100",
     "operator": "大南汽車",
     "operator_en": "Danan Bus Co., Ltd.",
-    "via": "不繞駛三總",
-    "via_en": "skips Tri-Service General Hospital",
+    "via": "08:00前、21:30後不繞駛三總",
+    "via_en": "before 08:00 and after 21:30, skips Tri-Service General Hospital",
     "detour_hours": "08:00-21:30",
-    "daily_trips": 10
+    "daily_trips": 10,
+    "campus_span": "outside",
+    "departure": "行善行愛路口",
+    "destination": "捷運市政府站",
+    "departure_en": "Xingshan & Xingai Intersection",
+    "destination_en": "MRT Taipei City Hall Sta."
   },
   "features": [
     {
@@ -24,8 +29,8 @@
       "properties": {
         "feature_type": "route",
         "ref": "藍27",
-        "name": "藍27（不繞駛三總）",
-        "name_en": "BL27 (skips Tri-Service General Hospital)",
+        "name": "藍27（08:00前、21:30後不繞駛三總）",
+        "name_en": "BL27 (before 08:00 and after 21:30, skips Tri-Service General Hospital)",
         "color": "#EAB308",
         "direction": 0,
         "corners_rounded": true
@@ -1297,8 +1302,8 @@
       "properties": {
         "feature_type": "route",
         "ref": "藍27",
-        "name": "藍27（不繞駛三總）",
-        "name_en": "BL27 (skips Tri-Service General Hospital)",
+        "name": "藍27（08:00前、21:30後不繞駛三總）",
+        "name_en": "BL27 (before 08:00 and after 21:30, skips Tri-Service General Hospital)",
         "color": "#EAB308",
         "direction": 1,
         "corners_rounded": true
@@ -2592,7 +2597,7 @@
         "ref": "TPE197093",
         "name": "行善行愛路口",
         "name_en": "Xingshan & Xingai Intersection",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "4672"
@@ -2612,7 +2617,7 @@
         "ref": "TPE220237",
         "name": "行善石潭路口",
         "name_en": "Xingshan and Shitan Intersection",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "4821"
@@ -2632,7 +2637,7 @@
         "ref": "TPE15981",
         "name": "三民國中",
         "name_en": "Sanmin Junior High School",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "966"
@@ -2652,7 +2657,7 @@
         "ref": "TPE15983",
         "name": "內湖行政大樓",
         "name_en": "Neihu Admin. Building",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "991"
@@ -2672,7 +2677,7 @@
         "ref": "TPE15985",
         "name": "國防醫學中心",
         "name_en": "National Defense Medical Center",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "339"
@@ -2692,7 +2697,7 @@
         "ref": "TPE15989",
         "name": "將軍嶺",
         "name_en": "Jiangjun Ling",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "50500"
@@ -2712,7 +2717,7 @@
         "ref": "TPE15991",
         "name": "方濟中學",
         "name_en": "St. Francis High School",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "3996"
@@ -2732,7 +2737,7 @@
         "ref": "TPE15993",
         "name": "成功路三段",
         "name_en": "Chenggong Rd. Sec. 3",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "8520"
@@ -2752,7 +2757,7 @@
         "ref": "TPE15995",
         "name": "湖光市場",
         "name_en": "Huguang Market",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "8537"
@@ -2772,7 +2777,7 @@
         "ref": "TPE15997",
         "name": "捷運內湖站",
         "name_en": "MRT Neihu Sta.",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "8538"
@@ -2792,7 +2797,7 @@
         "ref": "TPE221862",
         "name": "金龍路口",
         "name_en": "Jinlong Rd. Entrance",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "270"
@@ -2812,7 +2817,7 @@
         "ref": "TPE15999",
         "name": "貿商三村",
         "name_en": "Maoshang Village 3",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "8541"
@@ -2832,7 +2837,7 @@
         "ref": "TPE16001",
         "name": "碧湖國小(金龍)",
         "name_en": "Bihu Elementary School (Jinlong)",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "8542"
@@ -2852,7 +2857,7 @@
         "ref": "TPE16003",
         "name": "金龍隧道口",
         "name_en": "Jinlong Tunnel Entrance",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "1064"
@@ -2872,7 +2877,7 @@
         "ref": "TPE16005",
         "name": "金龍寺",
         "name_en": "Jinlong Temple",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "1069"
@@ -2892,7 +2897,7 @@
         "ref": "TPE16007",
         "name": "碧湖山莊",
         "name_en": "Bihu Shanzhuang",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "8543"
@@ -2912,7 +2917,7 @@
         "ref": "TPE16009",
         "name": "西湖園",
         "name_en": "Xihuyuan",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "8544"
@@ -2932,7 +2937,7 @@
         "ref": "TPE16011",
         "name": "麗山高中(環山)",
         "name_en": "Lishan High School (Huanshan)",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "8607"
@@ -2952,7 +2957,7 @@
         "ref": "TPE16013",
         "name": "麗山新村",
         "name_en": "Lishan New Village",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "8545"
@@ -2972,7 +2977,7 @@
         "ref": "TPE16015",
         "name": "環山路",
         "name_en": "Huanshan Rd.",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "8608"
@@ -2992,7 +2997,7 @@
         "ref": "TPE16017",
         "name": "德明財經科技大學(環山)",
         "name_en": "Takming U. of Science and Technology (Huanshan Rd.)",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "8609"
@@ -3012,7 +3017,7 @@
         "ref": "TPE16019",
         "name": "西湖國中",
         "name_en": "Xihu Junior High School",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "50511"
@@ -3032,7 +3037,7 @@
         "ref": "TPE16021",
         "name": "內湖基湖路口",
         "name_en": "Neihu and Jihu Intersection",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "1001"
@@ -3052,7 +3057,7 @@
         "ref": "TPE16023",
         "name": "基湖路口",
         "name_en": "Jihu Rd. Entrance",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "8404"
@@ -3072,7 +3077,7 @@
         "ref": "TPE16027",
         "name": "瑞光港墘路口",
         "name_en": "Ruiguang & Gangqian Intersection",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "1165608385"
@@ -3092,7 +3097,7 @@
         "ref": "TPE16029",
         "name": "瑞光路",
         "name_en": "Ruiguang Rd.",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "1132"
@@ -3112,7 +3117,7 @@
         "ref": "TPE16031",
         "name": "公館山",
         "name_en": "Gongguanshan",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "1006"
@@ -3132,7 +3137,7 @@
         "ref": "TPE16033",
         "name": "麗寶大樓",
         "name_en": "Libao Building",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "1156"
@@ -3152,7 +3157,7 @@
         "ref": "TPE16035",
         "name": "時報廣場",
         "name_en": "China Times Daily News Square",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "8601"
@@ -3172,7 +3177,7 @@
         "ref": "TPE16037",
         "name": "民權大橋",
         "name_en": "Minquan Bridge",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "8602"
@@ -3192,7 +3197,7 @@
         "ref": "TPE16039",
         "name": "新益里",
         "name_en": "Xinyi Village",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "1503"
@@ -3212,7 +3217,7 @@
         "ref": "TPE16041",
         "name": "民生國中",
         "name_en": "Minsheng Junior High School",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "1507"
@@ -3232,7 +3237,7 @@
         "ref": "TPE16043",
         "name": "新東里",
         "name_en": "Xindong Village",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "1587"
@@ -3252,7 +3257,7 @@
         "ref": "TPE16045",
         "name": "發電所(西松高中)",
         "name_en": "Power Sta. (Xisong High School)",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "1583"
@@ -3272,7 +3277,7 @@
         "ref": "TPE16047",
         "name": "南松山(塔悠)",
         "name_en": "Nansongshan (Tayou)",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "1000221"
@@ -3292,7 +3297,7 @@
         "ref": "TPE16049",
         "name": "寶清基隆路口",
         "name_en": "Baoqing and Keelung Intersection",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "1568"
@@ -3312,7 +3317,7 @@
         "ref": "TPE16051",
         "name": "市民基隆路口",
         "name_en": "Civic Blvd. and Keelung Intersection",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "1569"
@@ -3332,7 +3337,7 @@
         "ref": "TPE16053",
         "name": "松山高中(基隆路)",
         "name_en": "Songshan High School (Keelung Rd.)",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "2095"
@@ -3352,7 +3357,7 @@
         "ref": "TPE16055",
         "name": "捷運市政府站",
         "name_en": "MRT Taipei City Hall Sta.",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 0,
         "station_id": "2150"
@@ -3372,7 +3377,7 @@
         "ref": "TPE16057",
         "name": "松山高中(基隆路)",
         "name_en": "Songshan High School (Keelung Rd.)",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "15119"
@@ -3392,7 +3397,7 @@
         "ref": "TPE58017",
         "name": "市民基隆路口",
         "name_en": "Civic Blvd. and Keelung Intersection",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "1565"
@@ -3412,7 +3417,7 @@
         "ref": "TPE16061",
         "name": "南松山(塔悠)",
         "name_en": "Nansongshan (Tayou)",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "1000216"
@@ -3432,7 +3437,7 @@
         "ref": "TPE16063",
         "name": "發電所(西松高中)",
         "name_en": "Power Sta. (Xisong High School)",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "1000217"
@@ -3452,7 +3457,7 @@
         "ref": "TPE16065",
         "name": "新東里",
         "name_en": "Xindong Village",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "1000218"
@@ -3472,7 +3477,7 @@
         "ref": "TPE16067",
         "name": "民生國中",
         "name_en": "Minsheng Junior High School",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "1000026"
@@ -3492,7 +3497,7 @@
         "ref": "TPE16069",
         "name": "新益里",
         "name_en": "Xinyi Village",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "1504"
@@ -3512,7 +3517,7 @@
         "ref": "TPE16071",
         "name": "民權大橋",
         "name_en": "Minquan Bridge",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "1017"
@@ -3532,7 +3537,7 @@
         "ref": "TPE16073",
         "name": "時報廣場",
         "name_en": "China Times Daily News Square",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "1077"
@@ -3552,7 +3557,7 @@
         "ref": "TPE16075",
         "name": "麗寶大樓",
         "name_en": "Libao Building",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "8603"
@@ -3572,7 +3577,7 @@
         "ref": "TPE16077",
         "name": "公館山",
         "name_en": "Gongguanshan",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "8621"
@@ -3592,7 +3597,7 @@
         "ref": "TPE16079",
         "name": "瑞光路",
         "name_en": "Ruiguang Rd.",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "1000897"
@@ -3612,7 +3617,7 @@
         "ref": "TPE16083",
         "name": "仁寶大樓",
         "name_en": "Renbao Bldg.",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "1000896"
@@ -3632,7 +3637,7 @@
         "ref": "TPE16085",
         "name": "基湖路口",
         "name_en": "Jihu Rd. Entrance",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "8403"
@@ -3652,7 +3657,7 @@
         "ref": "TPE16087",
         "name": "內湖基湖路口",
         "name_en": "Neihu and Jihu Intersection",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "8402"
@@ -3672,7 +3677,7 @@
         "ref": "TPE16089",
         "name": "西湖國中",
         "name_en": "Xihu Junior High School",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "1039"
@@ -3692,7 +3697,7 @@
         "ref": "TPE16091",
         "name": "德明財經科技大學(環山)",
         "name_en": "TakMing Collage (HuanShan)",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "1144"
@@ -3712,7 +3717,7 @@
         "ref": "TPE16093",
         "name": "環山路",
         "name_en": "Huanshan Rd.",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "1147"
@@ -3732,7 +3737,7 @@
         "ref": "TPE16095",
         "name": "麗山新村",
         "name_en": "Lishan New Village",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "1155"
@@ -3752,7 +3757,7 @@
         "ref": "TPE16097",
         "name": "麗山高中(環山)",
         "name_en": "Lishan High School (Huanshan)",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "1149"
@@ -3772,7 +3777,7 @@
         "ref": "TPE16099",
         "name": "西湖園",
         "name_en": "Xihuyuan",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "1040"
@@ -3792,7 +3797,7 @@
         "ref": "TPE16101",
         "name": "碧湖山莊",
         "name_en": "Bihu Shanzhuang",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "1136"
@@ -3812,7 +3817,7 @@
         "ref": "TPE16103",
         "name": "金龍寺",
         "name_en": "Jinlong Temple",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "1069"
@@ -3832,7 +3837,7 @@
         "ref": "TPE16105",
         "name": "金龍隧道口",
         "name_en": "Jinlong Tunnel Entrance",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "1068"
@@ -3852,7 +3857,7 @@
         "ref": "TPE16107",
         "name": "碧湖國小(金龍)",
         "name_en": "Bihu Elementary School (Jinlong)",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "1135"
@@ -3872,7 +3877,7 @@
         "ref": "TPE16109",
         "name": "貿商三村",
         "name_en": "Maoshang Village 3",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "1111"
@@ -3892,7 +3897,7 @@
         "ref": "TPE200215",
         "name": "金龍路口",
         "name_en": "Jinlong Rd. Entrance",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "50449"
@@ -3912,7 +3917,7 @@
         "ref": "TPE16111",
         "name": "捷運內湖站",
         "name_en": "MRT Neihu Sta.",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "1071"
@@ -3932,7 +3937,7 @@
         "ref": "TPE16113",
         "name": "湖光市場",
         "name_en": "Huguang Market",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "1103"
@@ -3952,7 +3957,7 @@
         "ref": "TPE16115",
         "name": "成功路三段",
         "name_en": "Chenggong Rd. Sec. 3",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "1029"
@@ -3972,7 +3977,7 @@
         "ref": "TPE16117",
         "name": "方濟中學",
         "name_en": "St. Francis High School",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "1012"
@@ -3992,7 +3997,7 @@
         "ref": "TPE16119",
         "name": "將軍嶺",
         "name_en": "Jiangjun Ling",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "50501"
@@ -4012,7 +4017,7 @@
         "ref": "TPE16123",
         "name": "國防醫學中心",
         "name_en": "National Defense Medical Center",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "1080"
@@ -4032,7 +4037,7 @@
         "ref": "TPE16125",
         "name": "內湖行政大樓",
         "name_en": "Neihu Admin. Building",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "8667"
@@ -4052,7 +4057,7 @@
         "ref": "TPE220286",
         "name": "民權東路6段56巷",
         "name_en": "Ln. 56, Sec. 6, Minquan E. Rd.",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "1165610222"
@@ -4072,7 +4077,7 @@
         "ref": "TPE197094",
         "name": "行善石潭路口",
         "name_en": "Xingshan and Shitan Intersection",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "1165606689"
@@ -4092,7 +4097,7 @@
         "ref": "TPE220238",
         "name": "行善行愛路口",
         "name_en": "Xingshan & Xingai Intersection",
-        "line": "藍27（不繞駛三總）",
+        "line": "藍27（08:00前、21:30後不繞駛三總）",
         "color": "#EAB308",
         "direction": 1,
         "station_id": "4673"

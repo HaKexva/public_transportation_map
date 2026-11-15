@@ -21,26 +21,81 @@ class Views::Base < Components::Base
     ENV["CARTO_API_KEY"].to_s.strip
   end
 
+  def google_maps_api_key
+    GoogleMaps.api_key.to_s.strip
+  end
+
   def english_locale?
     I18n.locale.to_s == "en"
   end
 
   # Route-number badge. Chinese refs (紅1, 幸福來義10路) read as the English name
   # without its via part, and are dropped when that just repeats the name.
+  # A bus whose number is already the route name does not need the gray badge.
   def localized_route_ref(route)
     ref = route["ref"].to_s
+    name = localized_route_name(route).to_s
+    return if route["city_id"].present? && ref.present? && ref == name
     return ref unless english_locale? && ref.match?(/\p{Han}/) && route["name_en"].present?
 
     short = route["name_en"].sub(/\s*\([^()]*\)\s*\z/, "")
-    short unless short == localized_route_name(route)
+    short unless short == name
   end
 
   def localized_route_name(route)
-    if english_locale?
+    name = if english_locale?
       route["name_en"].presence || route["name"]
     else
       route["name"]
     end
+    return name unless route["city_id"].to_s == "Taoyuan"
+
+    note = Geojson::BusCatalog.taoyuan_trunk_name(route["ref"])
+    return name if note.blank? || name.to_s.include?(note)
+
+    "#{name}（#{note}）"
+  end
+
+  # Official bus caption, beside the route number: 起站－迄站.
+  def bus_termini_label(route)
+    return if route["city_id"].blank?
+
+    from, to = if english_locale?
+      [ route["departure_en"].presence || route["departure"], route["destination_en"].presence || route["destination"] ]
+    else
+      [ route["departure"], route["destination"] ]
+    end
+    return if from.blank? || to.blank?
+    return from if from == to
+
+    english_locale? ? "#{from} – #{to}" : "#{from}－#{to}"
+  end
+
+  # Parent folds above a bus route in the layer list, e.g. 新北市 › 900-999.
+  def bus_browse_path_parts(route)
+    city_id = route["city_id"].to_s
+    return [] if city_id.blank?
+
+    parts = []
+    if city_id == "InterCity"
+      parts << t("map.bus.cities.InterCity")
+      operator = english_locale? ? route["operator_en"].presence || route["operator"] : route["operator"]
+      parts << operator if operator.present?
+    else
+      parts << t("map.bus.cities.#{city_id}", default: city_id)
+      band = Geojson::BusCatalog.browse_band(route["ref"], city_id: city_id)
+      band_label = if band.is_a?(Integer)
+        Geojson::BusCatalog.hundreds_band_label(band)
+      elsif band.present?
+        t("map.bus.bands.#{band}", default: t("map.bus.other_band"))
+      end
+      parts << band_label if band_label.present?
+    end
+    parts.compact
+  end
+
+  def bus_browse_path(route)
+    bus_browse_path_parts(route).join(" › ").presence
   end
 
   def render_locale_toggle
@@ -64,6 +119,21 @@ class Views::Base < Components::Base
         aria: { hidden: true, pressed: (current == "en").to_s }
       ) { "EN" }
     end
+  end
+
+  def render_cancel_route_display_button(toggle: false)
+    data = {
+      map_target: "cancelRouteDisplay",
+      action: "click->map#cancelRouteDisplay",
+      label_hide: t("route.cancel_display")
+    }
+    data[:label_show] = t("route.show_route") if toggle
+
+    button(
+      type: "button",
+      class: "route-display-cancel shrink-0 whitespace-nowrap rounded-md border border-border bg-background px-2 py-1 text-xs font-medium text-foreground transition-colors hover:bg-accent",
+      data: data
+    ) { t("route.cancel_display") }
   end
 
   def render_route_view_switcher(views: nil)
@@ -123,26 +193,7 @@ class Views::Base < Components::Base
     end
   end
 
-  def render_boot_overlay
-    div(
-      class: "map-boot-overlay",
-      data: { map_target: "bootOverlay" },
-      role: "status",
-      aria: { busy: "true", live: "polite", label: t("map.boot.aria") }
-    ) do
-      div(class: "map-boot-overlay__card") do
-        h2(class: "map-boot-overlay__title") { t("map.boot.title") }
-        p(class: "map-boot-overlay__status", data: { map_target: "bootStatus" }) { t("map.boot.starting") }
-        div(class: "map-boot-overlay__track", aria: { hidden: true }) do
-          div(class: "map-boot-overlay__bar", data: { map_target: "bootProgressBar" })
-        end
-        p(class: "map-boot-overlay__count", data: { map_target: "bootCount" }) { t("map.boot.count", done: 0, total: 0) }
-        ul(class: "map-boot-overlay__list", data: { map_target: "bootList" })
-      end
-    end
-  end
-
-  def render_time_scrubber(empty_hint_key: "map.time_scrubber.empty_hint")
+  def render_time_scrubber
     div(
       class: "time-scrubber time-scrubber--collapsed",
       data: {
@@ -295,12 +346,6 @@ class Views::Base < Components::Base
         end
 
         p(class: "time-scrubber__data-note") { t("map.time_scrubber.data_note") }
-
-        p(
-          class: "time-scrubber__hint",
-          hidden: true,
-          data: { time_scrubber_target: "hint" }
-        ) { t(empty_hint_key) }
 
         div(class: "time-scrubber__footer") do
           span(class: "time-scrubber__stats", data: { time_scrubber_target: "vehicleCount" }) { t("map.time_scrubber.vehicle_count", count: 0) }

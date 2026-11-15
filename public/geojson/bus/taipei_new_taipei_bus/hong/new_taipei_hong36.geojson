@@ -13,7 +13,11 @@
     "operator_id": "16186",
     "operator": "淡水客運",
     "operator_en": "Tamshui Bus Co., Ltd.",
-    "daily_trips": 101
+    "daily_trips": 101,
+    "departure": "東宇花園城",
+    "destination": "捷運淡水站",
+    "departure_en": "DongyuGardenCity",
+    "destination_en": "MRT Tamsui Sta."
   },
   "features": [
     {
@@ -1876,7 +1880,8 @@
         "line": "紅36",
         "color": "#DC2626",
         "direction": 0,
-        "station_id": "3842"
+        "station_id": "3842",
+        "platform": "第1月台"
       },
       "geometry": {
         "type": "Point",

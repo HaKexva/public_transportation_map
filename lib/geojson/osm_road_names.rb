@@ -30,7 +30,7 @@ module Geojson
       return nil if candidates.empty?
 
       aligned = candidates.select { |_name, _distance, diff| diff && diff <= ALIGNED_DEGREES }
-      (aligned.presence || candidates).min_by { |_name, distance, _diff| distance }.first
+      Geojson::RareHan.display((aligned.presence || candidates).min_by { |_name, distance, _diff| distance }.first)
     end
 
     def self.bearing(from, to)

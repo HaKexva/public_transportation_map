@@ -1,20 +1,23 @@
 {
   "type": "FeatureCollection",
-  "name": "594",
+  "name": "594-淡江大學",
   "properties": {
     "id": "new_taipei_594",
-    "name": "594",
-    "name_en": "594",
+    "name": "594-淡江大學",
+    "name_en": "594-Tamkang University",
     "ref": "594",
     "color": "#DC2626",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
     "loop": true,
-    "official_map_url": "https://ebus.gov.taipei/File/Get/6dfc2acd-9444-498c-85c3-1f224c8d1fa9?v=639267188128052760",
+    "official_map_url": "https://ebus.gov.taipei/File/Get/6dfc2acd-9444-498c-85c3-1f224c8d1fa9?v=639291655254005086",
+    "departure": "捷運淡水站",
+    "departure_en": "MRT Tamsui Sta.",
+    "destination": "淡江大學",
+    "destination_en": "Tamkang University",
     "operator_id": "16186",
     "operator": "淡水客運",
-    "operator_en": "Tamshui Bus Co., Ltd.",
-    "daily_trips": 7
+    "operator_en": "Tamshui Bus Co., Ltd."
   },
   "features": [
     {
@@ -22,8 +25,8 @@
       "properties": {
         "feature_type": "route",
         "ref": "594",
-        "name": "594",
-        "name_en": "594",
+        "name": "594-淡江大學",
+        "name_en": "594-Tamkang University",
         "color": "#DC2626",
         "direction": 0,
         "loop": true,
@@ -1746,10 +1749,11 @@
         "ref": "NWT156936",
         "name": "捷運淡水站",
         "name_en": "MRT Tamsui Sta.",
-        "line": "594",
+        "line": "594-淡江大學",
         "color": "#DC2626",
         "direction": 0,
-        "station_id": "3842"
+        "station_id": "3842",
+        "platform": "第1月台"
       },
       "geometry": {
         "type": "Point",
@@ -1766,7 +1770,7 @@
         "ref": "NWT156937",
         "name": "永樂巷口(中山市場)",
         "name_en": "Yongle Lane Intersection(Zhongshan Market)",
-        "line": "594",
+        "line": "594-淡江大學",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "14662"
@@ -1786,7 +1790,7 @@
         "ref": "NWT156938",
         "name": "中興里活動中心",
         "name_en": "Zhongxin Village Activity Center",
-        "line": "594",
+        "line": "594-淡江大學",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "75134"
@@ -1806,7 +1810,7 @@
         "ref": "NWT156939",
         "name": "英專路122巷口",
         "name_en": "Yingzhuan Rd. 122th. Lane Entrance",
-        "line": "594",
+        "line": "594-淡江大學",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "75091"
@@ -1826,7 +1830,7 @@
         "ref": "NWT156940",
         "name": "鄧公國小",
         "name_en": "Denggong Elementary School",
-        "line": "594",
+        "line": "594-淡江大學",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "74646"
@@ -1846,7 +1850,7 @@
         "ref": "NWT184347",
         "name": "祕密花園",
         "name_en": "Secret Garden",
-        "line": "594",
+        "line": "594-淡江大學",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "75104"
@@ -1866,7 +1870,7 @@
         "ref": "NWT156941",
         "name": "淡江大學城",
         "name_en": "Tamkang University City",
-        "line": "594",
+        "line": "594-淡江大學",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "74704"
@@ -1886,7 +1890,7 @@
         "ref": "NWT156942",
         "name": "淡大運動場",
         "name_en": "Tamkang Stadium",
-        "line": "594",
+        "line": "594-淡江大學",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "75100"
@@ -1906,7 +1910,7 @@
         "ref": "NWT210993",
         "name": "淡江大學",
         "name_en": "Tamkang University",
-        "line": "594",
+        "line": "594-淡江大學",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "4886"
@@ -1926,7 +1930,7 @@
         "ref": "NWT156943",
         "name": "海景天下社區",
         "name_en": "Haijing Tainxia Community",
-        "line": "594",
+        "line": "594-淡江大學",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "74814"
@@ -1946,7 +1950,7 @@
         "ref": "NWT180853",
         "name": "巧克力花園",
         "name_en": "chocolate garden",
-        "line": "594",
+        "line": "594-淡江大學",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "74765"
@@ -1966,7 +1970,7 @@
         "ref": "NWT180854",
         "name": "黃帝神宮",
         "name_en": "Huangdi Temple",
-        "line": "594",
+        "line": "594-淡江大學",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "74790"
@@ -1986,7 +1990,7 @@
         "ref": "NWT186994",
         "name": "松濤學園",
         "name_en": "Songtao  campus Sta.",
-        "line": "594",
+        "line": "594-淡江大學",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "1165604474"
@@ -2006,7 +2010,7 @@
         "ref": "NWT186995",
         "name": "淡江學園",
         "name_en": "Tamkang campus",
-        "line": "594",
+        "line": "594-淡江大學",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "1165604475"
@@ -2026,7 +2030,7 @@
         "ref": "NWT186996",
         "name": "淡江大學城",
         "name_en": "Tamkang University City",
-        "line": "594",
+        "line": "594-淡江大學",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "74983"
@@ -2046,7 +2050,7 @@
         "ref": "NWT186997",
         "name": "鄧公國小",
         "name_en": "Denggong Elementary School",
-        "line": "594",
+        "line": "594-淡江大學",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "74652"
@@ -2066,7 +2070,7 @@
         "ref": "NWT208523",
         "name": "鄧公里",
         "name_en": "Denggong Village",
-        "line": "594",
+        "line": "594-淡江大學",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "74645"
@@ -2086,10 +2090,11 @@
         "ref": "NWT156952",
         "name": "捷運淡水站",
         "name_en": "MRT Tamsui Sta.",
-        "line": "594",
+        "line": "594-淡江大學",
         "color": "#DC2626",
         "direction": 0,
-        "station_id": "3842"
+        "station_id": "3842",
+        "platform": "第1月台"
       },
       "geometry": {
         "type": "Point",

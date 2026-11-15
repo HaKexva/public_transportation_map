@@ -13,7 +13,11 @@
     "operator_id": "16179",
     "operator": "三重客運",
     "operator_en": "San Chung Bus Co., Ltd.",
-    "daily_trips": 52
+    "daily_trips": 52,
+    "departure": "三重客運淡水站",
+    "destination": "萬坪公園",
+    "departure_en": "Sanchong Bus Tamsui Sta.",
+    "destination_en": "Wanping Park"
   },
   "features": [
     {
@@ -6297,7 +6301,8 @@
         "line": "857",
         "color": "#16A34A",
         "direction": 0,
-        "station_id": "3842"
+        "station_id": "3842",
+        "platform": "第1月台"
       },
       "geometry": {
         "type": "Point",
@@ -7603,8 +7608,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          121.462239,
-          25.012817
+          121.462466,
+          25.0126374
         ]
       }
     },

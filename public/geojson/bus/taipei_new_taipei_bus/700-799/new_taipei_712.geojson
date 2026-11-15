@@ -13,7 +13,11 @@
     "operator_id": "16179",
     "operator": "三重客運",
     "operator_en": "San Chung Bus Co., Ltd.",
-    "daily_trips": 26
+    "daily_trips": 26,
+    "departure": "俊興俊安街口",
+    "destination": "捷運亞東醫院站",
+    "departure_en": "Junxing & Jun'an Intersection",
+    "destination_en": "MRT Far Eastern Hospital Station"
   },
   "features": [
     {
@@ -715,12 +719,8 @@
             24.9983348536804
           ],
           [
-            121.453561863677,
-            25.0013505106798
-          ],
-          [
-            121.453536136098,
-            25.0013500297905
+            121.45292771196709,
+            24.999453651451145
           ]
         ]
       }
@@ -739,18 +739,6 @@
       "geometry": {
         "type": "LineString",
         "coordinates": [
-          [
-            121.453536136098,
-            25.0013500297905
-          ],
-          [
-            121.453298817213,
-            25.0006258104568
-          ],
-          [
-            121.45294464222,
-            24.9995856468323
-          ],
           [
             121.452529153838,
             24.9983492803603

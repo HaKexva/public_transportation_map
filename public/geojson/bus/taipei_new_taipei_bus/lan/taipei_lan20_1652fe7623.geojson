@@ -1,10 +1,10 @@
 {
   "type": "FeatureCollection",
-  "name": "藍20（繞駛三總）",
+  "name": "藍20",
   "properties": {
     "id": "taipei_lan20_1652fe7623",
-    "name": "藍20（繞駛三總）",
-    "name_en": "BL20 Shuttle (detour via Tri-Service General Hospital)",
+    "name": "藍20",
+    "name_en": "BL20 Shuttle",
     "ref": "藍20",
     "color": "#DC2626",
     "city_id": "Taipei",
@@ -13,9 +13,12 @@
     "operator_id": "5300",
     "operator": "光華巴士",
     "operator_en": "Kuang-Hua Bus Co., Ltd.",
-    "via": "繞駛三總",
-    "via_en": "detour via Tri-Service General Hospital",
-    "daily_trips": 18
+    "daily_trips": 13,
+    "campus_span": "inside",
+    "departure": "南港高工一",
+    "destination": "大直美堤花園三",
+    "departure_en": "Nangang Vocational High School 1",
+    "destination_en": "Dazhi Meiti Garden 3"
   },
   "features": [
     {
@@ -23,8 +26,8 @@
       "properties": {
         "feature_type": "route",
         "ref": "藍20",
-        "name": "藍20（繞駛三總）",
-        "name_en": "BL20 Shuttle (detour via Tri-Service General Hospital)",
+        "name": "藍20",
+        "name_en": "BL20 Shuttle",
         "color": "#DC2626",
         "direction": 0,
         "corners_rounded": true
@@ -1952,8 +1955,8 @@
       "properties": {
         "feature_type": "route",
         "ref": "藍20",
-        "name": "藍20（繞駛三總）",
-        "name_en": "BL20 Shuttle (detour via Tri-Service General Hospital)",
+        "name": "藍20",
+        "name_en": "BL20 Shuttle",
         "color": "#DC2626",
         "direction": 1,
         "corners_rounded": true
@@ -4295,7 +4298,7 @@
         "ref": "TPE202640",
         "name": "南港高工一",
         "name_en": "Nangang Vocational High School 1",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "1662"
@@ -4315,7 +4318,7 @@
         "ref": "TPE202641",
         "name": "南港車站",
         "name_en": "Nangang Rail Sta.",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "4848"
@@ -4335,7 +4338,7 @@
         "ref": "TPE202642",
         "name": "南港機廠",
         "name_en": "Nangang Depot",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "4650"
@@ -4355,7 +4358,7 @@
         "ref": "TPE57426",
         "name": "捷運昆陽站",
         "name_en": "MRT Kunyang",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "1697"
@@ -4375,7 +4378,7 @@
         "ref": "TPE57435",
         "name": "捷運昆陽站",
         "name_en": "MRT Kunyang",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "1165604773"
@@ -4395,7 +4398,7 @@
         "ref": "TPE57434",
         "name": "南港高中",
         "name_en": "Nangang High School",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "1000319"
@@ -4415,7 +4418,7 @@
         "ref": "TPE57433",
         "name": "南港分局(向陽)",
         "name_en": "Nangang Police Dist. (Xiangyang)",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "1646"
@@ -4435,7 +4438,7 @@
         "ref": "TPE57432",
         "name": "石潭公園(成功)",
         "name_en": "Shitan Park (Chenggong)",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "50434"
@@ -4455,7 +4458,7 @@
         "ref": "TPE223728",
         "name": "成功路二段(交流道)",
         "name_en": "Chenggong Rd. Sec. 2(Interchange)",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "1165610510"
@@ -4475,7 +4478,7 @@
         "ref": "TPE57431",
         "name": "上灣仔",
         "name_en": "Shangwanzi",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "8663"
@@ -4495,7 +4498,7 @@
         "ref": "TPE57445",
         "name": "湖興",
         "name_en": "Huxing",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "8664"
@@ -4515,7 +4518,7 @@
         "ref": "TPE57444",
         "name": "國防醫學中心",
         "name_en": "National Defense Medical Center",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "339"
@@ -4535,7 +4538,7 @@
         "ref": "TPE57443",
         "name": "三總內湖站",
         "name_en": "Tri-Service General Hospital",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "8677"
@@ -4555,7 +4558,7 @@
         "ref": "TPE57442",
         "name": "將軍嶺",
         "name_en": "Jiangjun Ling",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "50500"
@@ -4575,7 +4578,7 @@
         "ref": "TPE57441",
         "name": "方濟中學",
         "name_en": "St. Francis High School",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "3996"
@@ -4595,7 +4598,7 @@
         "ref": "TPE57451",
         "name": "內湖高中",
         "name_en": "Neihu High School",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "8523"
@@ -4615,7 +4618,7 @@
         "ref": "TPE57450",
         "name": "捷運文德站(碧湖公園)",
         "name_en": "MRT Wende Sta. (Bihu Park)",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "1109"
@@ -4635,7 +4638,7 @@
         "ref": "TPE57449",
         "name": "湖光國宅",
         "name_en": "Huguang Public Housing",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "8415"
@@ -4655,7 +4658,7 @@
         "ref": "TPE57461",
         "name": "西湖圖書館(湖光教會)",
         "name_en": "Xihu Library (Huguang Church)",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "1000499"
@@ -4675,7 +4678,7 @@
         "ref": "TPE57460",
         "name": "港墘",
         "name_en": "Kangqian",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "424"
@@ -4695,7 +4698,7 @@
         "ref": "TPE57459",
         "name": "麗山高中(港墘)",
         "name_en": "Lishan High School (Gangqian)",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "8631"
@@ -4715,7 +4718,7 @@
         "ref": "TPE57458",
         "name": "麗山高中(環山)",
         "name_en": "Lishan High School (Huanshan)",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "8607"
@@ -4735,7 +4738,7 @@
         "ref": "TPE57457",
         "name": "麗山新村",
         "name_en": "Lishan New Village",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "8545"
@@ -4755,7 +4758,7 @@
         "ref": "TPE57471",
         "name": "環山路",
         "name_en": "Huanshan Rd.",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "8608"
@@ -4775,7 +4778,7 @@
         "ref": "TPE57470",
         "name": "德明財經科技大學(環山)",
         "name_en": "Takming U. of Science and Technology (Huanshan Rd.)",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "8609"
@@ -4795,7 +4798,7 @@
         "ref": "TPE57469",
         "name": "西湖國中",
         "name_en": "Xihu Junior High School",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "50511"
@@ -4815,7 +4818,7 @@
         "ref": "TPE57468",
         "name": "治磐新村",
         "name_en": "Zhipan New Village",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "194"
@@ -4835,7 +4838,7 @@
         "ref": "TPE57467",
         "name": "文湖國小",
         "name_en": "Wenhu Elementary School",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "8670"
@@ -4855,7 +4858,7 @@
         "ref": "TPE59866",
         "name": "美麗華",
         "name_en": "Miramar",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "1322"
@@ -4875,7 +4878,7 @@
         "ref": "TPE57482",
         "name": "敬業四路",
         "name_en": "Jingye 4th Rd.",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "8665"
@@ -4895,7 +4898,7 @@
         "ref": "TPE57481",
         "name": "大直美堤花園二",
         "name_en": "Dazhi Meiti Garden 2",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "9407"
@@ -4915,7 +4918,7 @@
         "ref": "TPE225145",
         "name": "大直美堤花園三",
         "name_en": "Dazhi Meiti Garden 3",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 0,
         "station_id": "1333"
@@ -4935,7 +4938,7 @@
         "ref": "TPE57475",
         "name": "敬業三路一",
         "name_en": "Jingye 3rd Rd. 1",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "1371"
@@ -4955,7 +4958,7 @@
         "ref": "TPE57480",
         "name": "大直美堤花園三",
         "name_en": "Dazhi Meiti Garden 3",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "8653"
@@ -4975,7 +4978,7 @@
         "ref": "TPE57472",
         "name": "敬業四路",
         "name_en": "Jingye 4th Rd.",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "1000227"
@@ -4995,7 +4998,7 @@
         "ref": "TPE59864",
         "name": "美麗華",
         "name_en": "Miramar",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "1000127"
@@ -5015,7 +5018,7 @@
         "ref": "TPE57466",
         "name": "文湖國小",
         "name_en": "Wenhu Elementary School",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "1008"
@@ -5035,7 +5038,7 @@
         "ref": "TPE57465",
         "name": "治磐新村",
         "name_en": "Zhipan New Village",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "8521"
@@ -5055,7 +5058,7 @@
         "ref": "TPE57464",
         "name": "西湖國中",
         "name_en": "Xihu Junior High School",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "1039"
@@ -5075,7 +5078,7 @@
         "ref": "TPE57463",
         "name": "德明財經科技大學(環山)",
         "name_en": "TakMing Collage (HuanShan)",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "1144"
@@ -5095,7 +5098,7 @@
         "ref": "TPE57462",
         "name": "環山路",
         "name_en": "Huanshan Rd.",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "1147"
@@ -5115,7 +5118,7 @@
         "ref": "TPE57456",
         "name": "麗山新村",
         "name_en": "Lishan New Village",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "1155"
@@ -5135,7 +5138,7 @@
         "ref": "TPE57455",
         "name": "麗山高中(環山)",
         "name_en": "Lishan High School (Huanshan)",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "1149"
@@ -5155,7 +5158,7 @@
         "ref": "TPE59865",
         "name": "麗山高中(港墘)",
         "name_en": "Lishan High School (Gangqian)",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "1150"
@@ -5175,7 +5178,7 @@
         "ref": "TPE57453",
         "name": "港墘",
         "name_en": "Kangqian",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "1105"
@@ -5195,7 +5198,7 @@
         "ref": "TPE57452",
         "name": "西湖圖書館(湖光教會)",
         "name_en": "Xihu Library (Huguang Church)",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "1041"
@@ -5215,7 +5218,7 @@
         "ref": "TPE57448",
         "name": "湖光國宅",
         "name_en": "Huguang Public Housing",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "1104"
@@ -5235,7 +5238,7 @@
         "ref": "TPE57447",
         "name": "捷運文德站(碧湖公園)",
         "name_en": "MRT Wende Sta. (Bihu Park)",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "4083"
@@ -5255,7 +5258,7 @@
         "ref": "TPE57446",
         "name": "內湖高中",
         "name_en": "Neihu High School",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "998"
@@ -5275,7 +5278,7 @@
         "ref": "TPE57440",
         "name": "方濟中學",
         "name_en": "St. Francis High School",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "1012"
@@ -5295,7 +5298,7 @@
         "ref": "TPE57439",
         "name": "將軍嶺",
         "name_en": "Jiangjun Ling",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "50501"
@@ -5315,7 +5318,7 @@
         "ref": "TPE57438",
         "name": "三總內湖站",
         "name_en": "Tri-Service General Hospital",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "980"
@@ -5335,7 +5338,7 @@
         "ref": "TPE57437",
         "name": "國防醫學中心",
         "name_en": "National Defense Medical Center",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "1080"
@@ -5355,7 +5358,7 @@
         "ref": "TPE57436",
         "name": "湖興",
         "name_en": "Huxing",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "1107"
@@ -5375,7 +5378,7 @@
         "ref": "TPE57430",
         "name": "上灣仔",
         "name_en": "Shangwanzi",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "985"
@@ -5395,7 +5398,7 @@
         "ref": "TPE223729",
         "name": "成功路二段(交流道)",
         "name_en": "Chenggong Rd. Sec. 2(Interchange)",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "1165610511"
@@ -5415,7 +5418,7 @@
         "ref": "TPE57429",
         "name": "石潭公園(成功)",
         "name_en": "Shitan Park (Chenggong)",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "50433"
@@ -5435,7 +5438,7 @@
         "ref": "TPE57428",
         "name": "南港分局(向陽)",
         "name_en": "Nangang Police Dist. (Xiangyang)",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "1647"
@@ -5455,7 +5458,7 @@
         "ref": "TPE57427",
         "name": "南港高中",
         "name_en": "Nangang High School",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "1000314"
@@ -5475,7 +5478,7 @@
         "ref": "TPE202637",
         "name": "捷運昆陽站",
         "name_en": "MRT Kunyang",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "1697"
@@ -5495,7 +5498,7 @@
         "ref": "TPE202638",
         "name": "捷運昆陽站",
         "name_en": "MRT Kunyang",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "1165604773"
@@ -5515,7 +5518,7 @@
         "ref": "TPE224080",
         "name": "衛生福利部",
         "name_en": "Ministry of Health and Welfare",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "1165604495"
@@ -5535,7 +5538,7 @@
         "ref": "TPE202643",
         "name": "南港機廠",
         "name_en": "Nangang Depot",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "4651"
@@ -5555,7 +5558,7 @@
         "ref": "TPE202644",
         "name": "南港車站",
         "name_en": "Nangang Rail Sta.",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "4847"
@@ -5575,7 +5578,7 @@
         "ref": "TPE202645",
         "name": "南港高工一",
         "name_en": "Nangang Vocational High School 1",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "1165604591"
@@ -5595,7 +5598,7 @@
         "ref": "TPE202646",
         "name": "南港高工(重陽)",
         "name_en": "Nangang Vocational High School (Chongyang)",
-        "line": "藍20（繞駛三總）",
+        "line": "藍20",
         "color": "#DC2626",
         "direction": 1,
         "station_id": "1001375"

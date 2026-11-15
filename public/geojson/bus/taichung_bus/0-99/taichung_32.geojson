@@ -13,7 +13,11 @@
     "operator_id": "19",
     "operator": "中鹿客運",
     "operator_en": "Chung-Lu Bus Co., Ltd.",
-    "daily_trips": 8
+    "daily_trips": 8,
+    "departure": "大鵬新城",
+    "destination": "東英二街長福路口",
+    "departure_en": "Dapeng Community",
+    "destination_en": "Dongying 2nd-Changfu Intersection"
   },
   "features": [
     {
@@ -2772,7 +2776,8 @@
         "line": "32",
         "color": "#db2777",
         "direction": 0,
-        "station_id": "3842"
+        "station_id": "3842",
+        "platform": "第1月台"
       },
       "geometry": {
         "type": "Point",
@@ -3272,7 +3277,8 @@
         "line": "32",
         "color": "#db2777",
         "direction": 1,
-        "station_id": "3842"
+        "station_id": "3842",
+        "platform": "第1月台"
       },
       "geometry": {
         "type": "Point",

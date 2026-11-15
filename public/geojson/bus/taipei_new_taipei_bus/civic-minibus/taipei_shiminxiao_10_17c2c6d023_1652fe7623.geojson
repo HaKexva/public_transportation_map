@@ -1,10 +1,10 @@
 {
   "type": "FeatureCollection",
-  "name": "市民小巴10（繞駛三總）",
+  "name": "市民小巴10",
   "properties": {
     "id": "taipei_shiminxiao_10_17c2c6d023_1652fe7623",
-    "name": "市民小巴10（繞駛三總）",
-    "name_en": "M10 (detour via Tri-Service General Hospital)",
+    "name": "市民小巴10",
+    "name_en": "M10",
     "ref": "市民小巴10",
     "color": "#F97316",
     "city_id": "Taipei",
@@ -17,10 +17,13 @@
       "saturday",
       "sunday"
     ],
-    "via": "繞駛三總",
-    "via_en": "detour via Tri-Service General Hospital",
     "detour_hours": "08:00-21:30",
-    "daily_trips": 1
+    "daily_trips": 1,
+    "campus_span": "inside",
+    "departure": "新湖舊宗路口",
+    "destination": "三民國中",
+    "departure_en": "Xinhu and Jiuzong Intersection",
+    "destination_en": "Sanmin Junior High School"
   },
   "features": [
     {
@@ -28,8 +31,8 @@
       "properties": {
         "feature_type": "route",
         "ref": "市民小巴10",
-        "name": "市民小巴10（繞駛三總）",
-        "name_en": "M10 (detour via Tri-Service General Hospital)",
+        "name": "市民小巴10",
+        "name_en": "M10",
         "color": "#F97316",
         "direction": 0,
         "corners_rounded": true
@@ -1065,8 +1068,8 @@
       "properties": {
         "feature_type": "route",
         "ref": "市民小巴10",
-        "name": "市民小巴10（繞駛三總）",
-        "name_en": "M10 (detour via Tri-Service General Hospital)",
+        "name": "市民小巴10",
+        "name_en": "M10",
         "color": "#F97316",
         "direction": 1,
         "corners_rounded": true
@@ -2200,7 +2203,7 @@
         "ref": "TPE174334",
         "name": "新湖舊宗路口",
         "name_en": "Xinhu and Jiuzong Intersection",
-        "line": "市民小巴10（繞駛三總）",
+        "line": "市民小巴10",
         "color": "#F97316",
         "direction": 0,
         "station_id": "20231"
@@ -2220,7 +2223,7 @@
         "ref": "TPE57198",
         "name": "新湖民善街口(一)",
         "name_en": "Xinhu and Minshan Intersection (1)",
-        "line": "市民小巴10（繞駛三總）",
+        "line": "市民小巴10",
         "color": "#F97316",
         "direction": 0,
         "station_id": "1000835"
@@ -2240,7 +2243,7 @@
         "ref": "TPE57199",
         "name": "行善路",
         "name_en": "Xingshan Rd.",
-        "line": "市民小巴10（繞駛三總）",
+        "line": "市民小巴10",
         "color": "#F97316",
         "direction": 0,
         "station_id": "1035"
@@ -2260,7 +2263,7 @@
         "ref": "TPE59850",
         "name": "潭美國小(舊宗)",
         "name_en": "Tanmei Elementary School (Jiuzong)",
-        "line": "市民小巴10（繞駛三總）",
+        "line": "市民小巴10",
         "color": "#F97316",
         "direction": 0,
         "station_id": "1000215"
@@ -2280,7 +2283,7 @@
         "ref": "TPE57200",
         "name": "週美里",
         "name_en": "Zhoumei Village",
-        "line": "市民小巴10（繞駛三總）",
+        "line": "市民小巴10",
         "color": "#F97316",
         "direction": 0,
         "station_id": "50428"
@@ -2300,7 +2303,7 @@
         "ref": "TPE57201",
         "name": "新明路",
         "name_en": "Xinming Rd.",
-        "line": "市民小巴10（繞駛三總）",
+        "line": "市民小巴10",
         "color": "#F97316",
         "direction": 0,
         "station_id": "50430"
@@ -2320,7 +2323,7 @@
         "ref": "TPE57202",
         "name": "台北企業總部園區",
         "name_en": "T.CBD",
-        "line": "市民小巴10（繞駛三總）",
+        "line": "市民小巴10",
         "color": "#F97316",
         "direction": 0,
         "station_id": "975"
@@ -2340,7 +2343,7 @@
         "ref": "TPE57203",
         "name": "新明成功路口",
         "name_en": "Xinming and Chenggong Intersection",
-        "line": "市民小巴10（繞駛三總）",
+        "line": "市民小巴10",
         "color": "#F97316",
         "direction": 0,
         "station_id": "1146"
@@ -2360,7 +2363,7 @@
         "ref": "TPE57204",
         "name": "石潭公園(成功)",
         "name_en": "Shitan Park (Chenggong)",
-        "line": "市民小巴10（繞駛三總）",
+        "line": "市民小巴10",
         "color": "#F97316",
         "direction": 0,
         "station_id": "50434"
@@ -2380,7 +2383,7 @@
         "ref": "TPE223799",
         "name": "成功路二段(交流道)",
         "name_en": "Chenggong Rd. Sec. 2(Interchange)",
-        "line": "市民小巴10（繞駛三總）",
+        "line": "市民小巴10",
         "color": "#F97316",
         "direction": 0,
         "station_id": "1165610510"
@@ -2400,7 +2403,7 @@
         "ref": "TPE57205",
         "name": "上灣仔",
         "name_en": "Shangwanzi",
-        "line": "市民小巴10（繞駛三總）",
+        "line": "市民小巴10",
         "color": "#F97316",
         "direction": 0,
         "station_id": "8663"
@@ -2420,7 +2423,7 @@
         "ref": "TPE57206",
         "name": "湖興",
         "name_en": "Huxing",
-        "line": "市民小巴10（繞駛三總）",
+        "line": "市民小巴10",
         "color": "#F97316",
         "direction": 0,
         "station_id": "8664"
@@ -2440,7 +2443,7 @@
         "ref": "TPE57207",
         "name": "國防醫學中心",
         "name_en": "National Defense Medical Center",
-        "line": "市民小巴10（繞駛三總）",
+        "line": "市民小巴10",
         "color": "#F97316",
         "direction": 0,
         "station_id": "339"
@@ -2460,7 +2463,7 @@
         "ref": "TPE57208",
         "name": "三總內湖站",
         "name_en": "Tri-Service General Hospital",
-        "line": "市民小巴10（繞駛三總）",
+        "line": "市民小巴10",
         "color": "#F97316",
         "direction": 0,
         "station_id": "980"
@@ -2480,7 +2483,7 @@
         "ref": "TPE57209",
         "name": "內湖行政大樓",
         "name_en": "Neihu Admin. Building",
-        "line": "市民小巴10（繞駛三總）",
+        "line": "市民小巴10",
         "color": "#F97316",
         "direction": 0,
         "station_id": "8667"
@@ -2500,7 +2503,7 @@
         "ref": "TPE57210",
         "name": "三民國中",
         "name_en": "Sanmin Junior High School",
-        "line": "市民小巴10（繞駛三總）",
+        "line": "市民小巴10",
         "color": "#F97316",
         "direction": 0,
         "station_id": "1165606195"
@@ -2520,7 +2523,7 @@
         "ref": "TPE57211",
         "name": "三民國中",
         "name_en": "Sanmin Junior High School",
-        "line": "市民小巴10（繞駛三總）",
+        "line": "市民小巴10",
         "color": "#F97316",
         "direction": 1,
         "station_id": "966"
@@ -2540,7 +2543,7 @@
         "ref": "TPE57212",
         "name": "內湖行政大樓",
         "name_en": "Neihu Admin. Building",
-        "line": "市民小巴10（繞駛三總）",
+        "line": "市民小巴10",
         "color": "#F97316",
         "direction": 1,
         "station_id": "991"
@@ -2560,7 +2563,7 @@
         "ref": "TPE57213",
         "name": "三總內湖站",
         "name_en": "Tri-Service General Hospital",
-        "line": "市民小巴10（繞駛三總）",
+        "line": "市民小巴10",
         "color": "#F97316",
         "direction": 1,
         "station_id": "8677"
@@ -2580,7 +2583,7 @@
         "ref": "TPE57214",
         "name": "國防醫學中心",
         "name_en": "National Defense Medical Center",
-        "line": "市民小巴10（繞駛三總）",
+        "line": "市民小巴10",
         "color": "#F97316",
         "direction": 1,
         "station_id": "1080"
@@ -2600,7 +2603,7 @@
         "ref": "TPE57215",
         "name": "湖興",
         "name_en": "Huxing",
-        "line": "市民小巴10（繞駛三總）",
+        "line": "市民小巴10",
         "color": "#F97316",
         "direction": 1,
         "station_id": "1107"
@@ -2620,7 +2623,7 @@
         "ref": "TPE57216",
         "name": "上灣仔",
         "name_en": "Shangwanzi",
-        "line": "市民小巴10（繞駛三總）",
+        "line": "市民小巴10",
         "color": "#F97316",
         "direction": 1,
         "station_id": "985"
@@ -2640,7 +2643,7 @@
         "ref": "TPE223800",
         "name": "成功路二段(交流道)",
         "name_en": "Chenggong Rd. Sec. 2(Interchange)",
-        "line": "市民小巴10（繞駛三總）",
+        "line": "市民小巴10",
         "color": "#F97316",
         "direction": 1,
         "station_id": "1165610511"
@@ -2660,7 +2663,7 @@
         "ref": "TPE57217",
         "name": "石潭公園(成功)",
         "name_en": "Shitan Park (Chenggong)",
-        "line": "市民小巴10（繞駛三總）",
+        "line": "市民小巴10",
         "color": "#F97316",
         "direction": 1,
         "station_id": "50433"
@@ -2680,7 +2683,7 @@
         "ref": "TPE57218",
         "name": "新明成功路口",
         "name_en": "Xinming and Chenggong Intersection",
-        "line": "市民小巴10（繞駛三總）",
+        "line": "市民小巴10",
         "color": "#F97316",
         "direction": 1,
         "station_id": "50432"
@@ -2700,7 +2703,7 @@
         "ref": "TPE57219",
         "name": "台北企業總部園區",
         "name_en": "T.CBD",
-        "line": "市民小巴10（繞駛三總）",
+        "line": "市民小巴10",
         "color": "#F97316",
         "direction": 1,
         "station_id": "50431"
@@ -2720,7 +2723,7 @@
         "ref": "TPE57220",
         "name": "新明路",
         "name_en": "Xinming Rd.",
-        "line": "市民小巴10（繞駛三總）",
+        "line": "市民小巴10",
         "color": "#F97316",
         "direction": 1,
         "station_id": "1121"
@@ -2740,7 +2743,7 @@
         "ref": "TPE57221",
         "name": "週美里",
         "name_en": "Zhoumei Village",
-        "line": "市民小巴10（繞駛三總）",
+        "line": "市民小巴10",
         "color": "#F97316",
         "direction": 1,
         "station_id": "50429"
@@ -2760,7 +2763,7 @@
         "ref": "TPE174335",
         "name": "舊宗路一段(行善)",
         "name_en": "Jiuzong Rd. Sec.1 (Xingshan)",
-        "line": "市民小巴10（繞駛三總）",
+        "line": "市民小巴10",
         "color": "#F97316",
         "direction": 1,
         "station_id": "20241"
@@ -2780,7 +2783,7 @@
         "ref": "TPE57222",
         "name": "行善路",
         "name_en": "Xingshan Rd.",
-        "line": "市民小巴10（繞駛三總）",
+        "line": "市民小巴10",
         "color": "#F97316",
         "direction": 1,
         "station_id": "1000280"
@@ -2800,7 +2803,7 @@
         "ref": "TPE57223",
         "name": "新湖民善街口(一)",
         "name_en": "Xinhu and Minshan Intersection (1)",
-        "line": "市民小巴10（繞駛三總）",
+        "line": "市民小巴10",
         "color": "#F97316",
         "direction": 1,
         "station_id": "1000281"
@@ -2820,7 +2823,7 @@
         "ref": "TPE174336",
         "name": "新湖舊宗路口",
         "name_en": "Xinhu and Jiuzong Intersection",
-        "line": "市民小巴10（繞駛三總）",
+        "line": "市民小巴10",
         "color": "#F97316",
         "direction": 1,
         "station_id": "20232"

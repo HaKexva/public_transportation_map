@@ -12,7 +12,11 @@
     "operator_id": "19",
     "operator": "中鹿客運",
     "operator_en": "Chung-Lu Bus Co., Ltd.",
-    "daily_trips": 5
+    "daily_trips": 5,
+    "departure": "臺中區監理所(遊園路)",
+    "destination": "干城站",
+    "departure_en": "Taichung Motor Vehicles Office(Youyuan Road)",
+    "destination_en": "Gancheng Station"
   },
   "features": [
     {
@@ -3503,7 +3507,8 @@
         "line": "30延",
         "color": "#db2777",
         "direction": 0,
-        "station_id": "3842"
+        "station_id": "3842",
+        "platform": "第1月台"
       },
       "geometry": {
         "type": "Point",

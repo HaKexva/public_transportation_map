@@ -13,7 +13,13 @@
     "operator_id": "700",
     "operator": "欣欣客運",
     "operator_en": "Shin-Shin Bus Co., Ltd.",
-    "daily_trips": 15
+    "daily_trips": 15,
+    "departure": "景福街",
+    "destination": "客家文化主題公園(師大路)",
+    "departure_en": "Jingfu St.",
+    "destination_en": "Taipei City Hakka Cultural Park（Shida Rd.）",
+    "service_note": "每日 07:00–09:00、17:00–19:00 不停自來水處(辛亥)",
+    "service_note_en": "Daily 07:00–09:00 and 17:00–19:00: no stop at Taipei Water Department (Xinhai)"
   },
   "features": [
     {
@@ -2800,7 +2806,20 @@
         "line": "棕12",
         "color": "#9333EA",
         "direction": 0,
-        "station_id": "15107"
+        "station_id": "15107",
+        "timed_skip": {
+          "days": "daily",
+          "windows": [
+            [
+              "07:00",
+              "09:00"
+            ],
+            [
+              "17:00",
+              "19:00"
+            ]
+          ]
+        }
       },
       "geometry": {
         "type": "Point",
@@ -3220,7 +3239,20 @@
         "line": "棕12",
         "color": "#9333EA",
         "direction": 1,
-        "station_id": "2248"
+        "station_id": "2248",
+        "timed_skip": {
+          "days": "daily",
+          "windows": [
+            [
+              "07:00",
+              "09:00"
+            ],
+            [
+              "17:00",
+              "19:00"
+            ]
+          ]
+        }
       },
       "geometry": {
         "type": "Point",

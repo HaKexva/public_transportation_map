@@ -15,11 +15,12 @@ module Transit
     # Any pole this close is a stop the rider could equally walk to.
     NEARBY_RADIUS_METERS = 150
     MAX_GROUPS = 24
-    INTERCITY_SUBDIR = "intercity_bus"
+    INTERCITY_SUBDIR = Geojson::BusStopIndexWriter::INTERCITY_SUBDIR
 
-    def initialize(city_id:, station_id: nil, name: nil, lat: nil, lon: nil, platform: nil, bus_root: nil)
+    def initialize(city_id:, station_id: nil, name: nil, lat: nil, lon: nil, platform: nil, group_id: nil, bus_root: nil)
       @city_id = city_id.to_s.presence
       @station_id = station_id.to_s.presence
+      @group_id = group_id.to_s.presence
       @platform = platform.to_s.presence
       @name = name.to_s.presence
       @lat = lat.nil? ? nil : Float(lat)
@@ -77,9 +78,12 @@ module Transit
       return [] unless origin
 
       base = self.class.base_name(@name)
+      current_group = index.dig("groups", current_key) || origin
       candidates = [ [ subdir, index ], *neighbour_indexes(subdir, origin) ].flat_map do |source, source_index|
         (source_index["groups"] || {}).filter_map do |key, group|
           current = source == subdir && key == current_key
+          next if !current && shared_shelter_peer?(current_group, source, key)
+
           distance = distance_meters(origin, group)
           next unless current || related_group?(group["name"], base, distance)
 
@@ -107,6 +111,17 @@ module Transit
             routes: source_index.dig("stations", key) || source_index.dig("clusters", key) || []
           }
         end
+    end
+
+    # Index writer folds highway-coach poles into the city shelter; don't offer
+    # that twin as a separate "nearby stop" picker row.
+    def shared_shelter_peer?(current_group, source, key)
+      of = current_group["shelter_of"]
+      return true if of.is_a?(Hash) && of["subdir"].to_s == source.to_s && of["key"].to_s == key.to_s
+
+      Array(current_group["shelter_peers"]).any? do |peer|
+        peer.is_a?(Hash) && peer["subdir"].to_s == source.to_s && peer["key"].to_s == key.to_s
+      end
     end
 
     def related_group?(name, base, distance)
@@ -144,6 +159,8 @@ module Transit
     end
 
     def current_group_key(groups)
+      return @group_id if @group_id.present? && groups.key?(@group_id)
+
       platform_station = platform_station_id
       return platform_station if platform_station && groups.key?(platform_station)
       return @station_id if @station_id.present? && groups.key?(@station_id)
@@ -202,6 +219,14 @@ module Transit
     end
 
     def match_routes(index)
+      if @group_id.present?
+        listed = index.dig("stations", @group_id)
+        return listed if listed.is_a?(Array)
+
+        listed = index.dig("clusters", @group_id)
+        return listed if listed.is_a?(Array)
+      end
+
       stations = index["stations"] || {}
       platform_station = platform_station_id
       return stations[platform_station] if platform_station && stations[platform_station].is_a?(Array)

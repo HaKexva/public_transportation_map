@@ -13,7 +13,11 @@
     "operator_id": "130",
     "operator": "捷乘客運",
     "operator_en": "Jiecheng Bus",
-    "daily_trips": 4
+    "daily_trips": 4,
+    "departure": "新埔站",
+    "destination": "高鐵新竹站",
+    "departure_en": "Xinpu Station",
+    "destination_en": "HSR Hsinchu Station"
   },
   "features": [
     {
@@ -3488,7 +3492,8 @@
         "line": "0557",
         "color": "#1e3a8a",
         "direction": 0,
-        "station_id": "130969"
+        "station_id": "130969",
+        "platform": "第5號月台"
       },
       "geometry": {
         "type": "Point",
@@ -3508,7 +3513,8 @@
         "line": "0557",
         "color": "#1e3a8a",
         "direction": 1,
-        "station_id": "130969"
+        "station_id": "130969",
+        "platform": "第5號月台"
       },
       "geometry": {
         "type": "Point",

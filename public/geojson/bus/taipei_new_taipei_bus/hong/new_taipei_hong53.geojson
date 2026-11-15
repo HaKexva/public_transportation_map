@@ -17,7 +17,11 @@
       "sunday"
     ],
     "operator_en": "Tamshui Bus Co., Ltd.",
-    "daily_trips": 10
+    "daily_trips": 10,
+    "departure": "新市站",
+    "destination": "捷運淡水站",
+    "departure_en": "Xinshi Station",
+    "destination_en": "MRT Tamsui Sta."
   },
   "features": [
     {
@@ -2132,7 +2136,8 @@
         "line": "紅53",
         "color": "#DC2626",
         "direction": 0,
-        "station_id": "3842"
+        "station_id": "3842",
+        "platform": "第1月台"
       },
       "geometry": {
         "type": "Point",

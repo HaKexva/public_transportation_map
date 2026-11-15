@@ -1,24 +1,26 @@
 {
   "type": "FeatureCollection",
-  "name": "903（繞駛三總）",
+  "name": "903",
   "properties": {
     "id": "taipei_903_1652fe7623",
-    "name": "903（繞駛三總）",
-    "name_en": "903 (detour via Tri-Service General Hospital)",
+    "name": "903",
+    "name_en": "903",
     "ref": "903",
     "color": "#9333EA",
     "city_id": "Taipei",
     "source": "TDX Bus Shape / StopOfRoute",
-    "official_map_url": "https://ebus.gov.taipei/File/Get/cd22242f-811a-4e9d-a7ad-7ce8574c797d?v=639267187416574131",
+    "campus_span": "inside",
+    "official_map_url": "https://ebus.gov.taipei/File/Get/cd22242f-811a-4e9d-a7ad-7ce8574c797d?v=639299425906931198",
+    "departure": "忠三街口",
+    "departure_en": "Zhong 3rd St. Entrance",
+    "destination": "頂好市場",
+    "destination_en": "Dinghao Market",
     "operator_id": "700",
     "operator": "欣欣客運",
     "operator_en": "Shin-Shin Bus Co., Ltd.",
-    "via": "繞駛三總",
-    "via_en": "detour via Tri-Service General Hospital",
     "off_days": [
       "sunday"
-    ],
-    "daily_trips": 14
+    ]
   },
   "features": [
     {
@@ -26,8 +28,8 @@
       "properties": {
         "feature_type": "route",
         "ref": "903",
-        "name": "903（繞駛三總）",
-        "name_en": "903 (detour via Tri-Service General Hospital)",
+        "name": "903",
+        "name_en": "903",
         "color": "#9333EA",
         "direction": 0,
         "corners_rounded": true
@@ -632,72 +634,20 @@
             25.07087
           ],
           [
-            121.5921045,
-            25.070871
+            121.592082,
+            25.070872
           ],
           [
-            121.5920823,
-            25.0708733
+            121.591977,
+            25.070903
           ],
           [
-            121.5920606,
-            25.0708783
+            121.591995,
+            25.071488
           ],
           [
-            121.5920295,
-            25.0708875
-          ],
-          [
-            121.5920124,
-            25.0708949
-          ],
-          [
-            121.591998,
-            25.070906
-          ],
-          [
-            121.5919871,
-            25.07092
-          ],
-          [
-            121.5919804,
-            25.0709362
-          ],
-          [
-            121.5919785,
-            25.0709533
-          ],
-          [
-            121.5919933,
-            25.0714338
-          ],
-          [
-            121.5919975,
-            25.0714582
-          ],
-          [
-            121.5920083,
-            25.0714807
-          ],
-          [
-            121.592025,
-            25.0715001
-          ],
-          [
-            121.5920465,
-            25.071515
-          ],
-          [
-            121.5920621,
-            25.0715232
-          ],
-          [
-            121.5920956,
-            25.0715446
-          ],
-          [
-            121.5921245,
-            25.071571
+            121.592098,
+            25.071542
           ],
           [
             121.592151,
@@ -708,144 +658,64 @@
             25.071628
           ],
           [
-            121.5921915,
-            25.071659
+            121.592208,
+            25.07169
           ],
           [
-            121.592217,
-            25.0717235
+            121.592226,
+            25.071757
           ],
           [
-            121.592227,
-            25.0717915
+            121.592228,
+            25.071827
           ],
           [
-            121.592227,
-            25.0717924
+            121.592214,
+            25.071895
           ],
           [
-            121.592221,
-            25.071861
+            121.592185,
+            25.071959
           ],
           [
-            121.5921995,
-            25.071927
-          ],
-          [
-            121.5921934,
-            25.0719405
-          ],
-          [
-            121.5921725,
-            25.0719755
-          ],
-          [
-            121.5921447,
-            25.0720064
+            121.59216,
+            25.071992
           ],
           [
             121.592128,
             25.072022
           ],
           [
-            121.5920725,
-            25.0720705
-          ],
-          [
-            121.5919525,
-            25.0721572
+            121.592017,
+            25.072119
           ],
           [
             121.5916,
             25.072366
           ],
           [
-            121.5915745,
-            25.072381
-          ],
-          [
-            121.591565,
-            25.0723852
-          ],
-          [
-            121.5915547,
-            25.0723871
-          ],
-          [
-            121.5915441,
-            25.0723868
-          ],
-          [
-            121.591534,
-            25.072384
-          ],
-          [
-            121.5915249,
-            25.0723792
+            121.591549,
+            25.072396
           ],
           [
             121.591237,
             25.072178
           ],
           [
-            121.5910814,
-            25.0720692
+            121.591041,
+            25.072041
           ],
           [
-            121.5910579,
-            25.0720486
+            121.591016,
+            25.071951
           ],
           [
-            121.59104,
-            25.0720238
-          ],
-          [
-            121.5910285,
-            25.071996
-          ],
-          [
-            121.5910235,
-            25.0719842
-          ],
-          [
-            121.5910156,
-            25.0719739
-          ],
-          [
-            121.5910051,
-            25.0719656
-          ],
-          [
-            121.5909928,
-            25.0719599
-          ],
-          [
-            121.5909794,
-            25.071957
-          ],
-          [
-            121.5909656,
-            25.0719571
-          ],
-          [
-            121.5909585,
-            25.071958
-          ],
-          [
-            121.590843,
-            25.0719664
+            121.590901,
+            25.071965
           ],
           [
             121.590261,
             25.071981
-          ],
-          [
-            121.5901109,
-            25.0719852
-          ],
-          [
-            121.5900286,
-            25.0719788
           ],
           [
             121.58995,
@@ -1234,6 +1104,74 @@
           [
             121.546692631446,
             25.0416308397796
+          ],
+          [
+            121.54669288586267,
+            25.041641492925194
+          ],
+          [
+            121.5466372,
+            25.0416426
+          ],
+          [
+            121.5462584,
+            25.0416518
+          ],
+          [
+            121.5461604,
+            25.0416532
+          ],
+          [
+            121.5460265,
+            25.041655
+          ],
+          [
+            121.5452562,
+            25.0416689
+          ],
+          [
+            121.5444525,
+            25.04167
+          ],
+          [
+            121.5439715,
+            25.0416782
+          ],
+          [
+            121.543901,
+            25.0416812
+          ],
+          [
+            121.543885,
+            25.0416838
+          ],
+          [
+            121.5438703,
+            25.0416901
+          ],
+          [
+            121.5438578,
+            25.0416995
+          ],
+          [
+            121.5438483,
+            25.0417116
+          ],
+          [
+            121.5438426,
+            25.0417254
+          ],
+          [
+            121.5438409,
+            25.0417402
+          ],
+          [
+            121.54384235557403,
+            25.04179642292542
+          ],
+          [
+            121.54386663030078,
+            25.041795892140794
           ]
         ]
       }
@@ -1243,8 +1181,8 @@
       "properties": {
         "feature_type": "route",
         "ref": "903",
-        "name": "903（繞駛三總）",
-        "name_en": "903 (detour via Tri-Service General Hospital)",
+        "name": "903",
+        "name_en": "903",
         "color": "#9333EA",
         "direction": 1,
         "corners_rounded": true
@@ -1252,34 +1190,6 @@
       "geometry": {
         "type": "LineString",
         "coordinates": [
-          [
-            121.546692631446,
-            25.0416308397796
-          ],
-          [
-            121.54398297063834,
-            25.041684452747013
-          ],
-          [
-            121.54395218868132,
-            25.041688786666874
-          ],
-          [
-            121.54392367859685,
-            25.041700269462044
-          ],
-          [
-            121.54389941451808,
-            25.041718112994065
-          ],
-          [
-            121.54388106108166,
-            25.041741093107753
-          ],
-          [
-            121.54386987742475,
-            25.04176763325283
-          ],
           [
             121.54386663030078,
             25.041795892140794
@@ -1898,7 +1808,7 @@
           ],
           [
             121.6010644,
-            25.0671685
+            25.0671684
           ],
           [
             121.6012089,
@@ -2350,7 +2260,7 @@
         "ref": "TPE22518",
         "name": "忠三街口",
         "name_en": "Zhong 3rd St. Entrance",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "1165603309"
@@ -2370,7 +2280,7 @@
         "ref": "TPE22519",
         "name": "康湖隧道口(白馬山莊)",
         "name_en": "Kanghu Tunnel(White Horse Villa)",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "1025"
@@ -2390,7 +2300,7 @@
         "ref": "TPE22520",
         "name": "五分埤",
         "name_en": "Wufenpi",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "1000201"
@@ -2410,7 +2320,7 @@
         "ref": "TPE22521",
         "name": "東湖國中",
         "name_en": "Donghu Junior High School",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "1055"
@@ -2430,7 +2340,7 @@
         "ref": "TPE22522",
         "name": "康樂街",
         "name_en": "Kangle St.",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "1000203"
@@ -2450,7 +2360,7 @@
         "ref": "TPE22523",
         "name": "東湖社區",
         "name_en": "Donghu Community",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "50444"
@@ -2470,7 +2380,7 @@
         "ref": "TPE22524",
         "name": "東湖國小",
         "name_en": "Donghu Elementary School",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "8531"
@@ -2490,7 +2400,7 @@
         "ref": "TPE22525",
         "name": "五分社區",
         "name_en": "Wufen Community",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "5441"
@@ -2510,7 +2420,7 @@
         "ref": "TPE22526",
         "name": "明湖國中",
         "name_en": "Minghu Junior High School",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "8534"
@@ -2530,7 +2440,7 @@
         "ref": "TPE22527",
         "name": "明湖國小(公共電視台)",
         "name_en": "Minghu Elementary School (PTS)",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "50442"
@@ -2550,7 +2460,7 @@
         "ref": "TPE22528",
         "name": "捷運葫洲站(康寧大學)",
         "name_en": "MRT Huzhou Sta. (University of Kang Ning)",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "1165606697"
@@ -2570,7 +2480,7 @@
         "ref": "TPE22529",
         "name": "民權隧道",
         "name_en": "Minquan Tunnel",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "50443"
@@ -2590,7 +2500,7 @@
         "ref": "TPE22530",
         "name": "民權隧道二",
         "name_en": "Minquan Tunnel 2",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "8675"
@@ -2610,7 +2520,7 @@
         "ref": "TPE22531",
         "name": "民權東路六段(民權敦品)",
         "name_en": "Minquan E. Rd. Sec. 6 (Minquan Dunpin)",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "8674"
@@ -2630,7 +2540,7 @@
         "ref": "TPE22532",
         "name": "國防醫學大學",
         "name_en": "National Defense Medical University",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "8673"
@@ -2650,7 +2560,7 @@
         "ref": "TPE29228",
         "name": "三總內湖站",
         "name_en": "Tri-Service General Hospital",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "980"
@@ -2670,7 +2580,7 @@
         "ref": "TPE29229",
         "name": "國防醫學中心",
         "name_en": "National Defense Medical Center",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "1080"
@@ -2690,7 +2600,7 @@
         "ref": "TPE22534",
         "name": "內湖行政大樓",
         "name_en": "Neihu Admin. Building",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "8667"
@@ -2710,7 +2620,7 @@
         "ref": "TPE22535",
         "name": "三民國中",
         "name_en": "Sanmin Junior High School",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "8666"
@@ -2730,7 +2640,7 @@
         "ref": "TPE22536",
         "name": "時報廣場",
         "name_en": "China Times Daily News Square",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "8601"
@@ -2750,7 +2660,7 @@
         "ref": "TPE22537",
         "name": "民權大橋",
         "name_en": "Minquan Bridge",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "8602"
@@ -2770,7 +2680,7 @@
         "ref": "TPE22538",
         "name": "三民國小",
         "name_en": "Sanmin Elementary School",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "10403"
@@ -2790,7 +2700,7 @@
         "ref": "TPE22539",
         "name": "民權國小",
         "name_en": "Minquan Elementary School",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "8650"
@@ -2810,7 +2720,7 @@
         "ref": "TPE22540",
         "name": "中華航空",
         "name_en": "China Airlines",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "8604"
@@ -2830,7 +2740,7 @@
         "ref": "TPE22541",
         "name": "民生敦化路口",
         "name_en": "Minsheng & Dunhua Intersection",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "13106"
@@ -2850,7 +2760,7 @@
         "ref": "TPE22542",
         "name": "長春敦化路口",
         "name_en": "Changchun & Dunhua Roads",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "1298"
@@ -2870,7 +2780,7 @@
         "ref": "TPE22543",
         "name": "臺北小巨蛋",
         "name_en": "Taipei Arena",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "13107"
@@ -2890,7 +2800,7 @@
         "ref": "TPE22544",
         "name": "八德敦化路口",
         "name_en": "Bade & Dunhua Intersection",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "1488"
@@ -2910,7 +2820,7 @@
         "ref": "TPE22545",
         "name": "市民敦化路口",
         "name_en": "Civic Blvd. and Dunhua Intersection",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "13109"
@@ -2930,7 +2840,7 @@
         "ref": "TPE22546",
         "name": "頂好市場",
         "name_en": "Dinghao Market",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "3932"
@@ -2950,7 +2860,7 @@
         "ref": "TPE22547",
         "name": "捷運忠孝復興站",
         "name_en": "MRT Zhongxiao Fuxing Sta.",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "6993"
@@ -2970,7 +2880,7 @@
         "ref": "TPE22548",
         "name": "復興南路(中崙里)",
         "name_en": "Fuxing S. Rd. (Zhonglun Village)",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "6992"
@@ -2990,7 +2900,7 @@
         "ref": "TPE22549",
         "name": "芝麻大廈",
         "name_en": "Zhima Building",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "1000237"
@@ -3010,7 +2920,7 @@
         "ref": "TPE152691",
         "name": "捷運南京復興站",
         "name_en": "MRT Nanjing Fuxing Station",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "20258"
@@ -3030,7 +2940,7 @@
         "ref": "TPE22551",
         "name": "南京敦化路口(小巨蛋)",
         "name_en": "Nanjing & Dunhua Intersection (Taipei Arena)",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "50001"
@@ -3050,7 +2960,7 @@
         "ref": "TPE22552",
         "name": "臺北小巨蛋",
         "name_en": "Taipei Arena",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "13105"
@@ -3070,7 +2980,7 @@
         "ref": "TPE22553",
         "name": "長庚醫院",
         "name_en": "Chang-Gung Memorial Hospital",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "1544"
@@ -3090,7 +3000,7 @@
         "ref": "TPE22554",
         "name": "富錦街口",
         "name_en": "Fujin St. Entrance",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "1580"
@@ -3110,7 +3020,7 @@
         "ref": "TPE22555",
         "name": "民權東路口",
         "name_en": "Minquan E. Rd. Entrance",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "4158"
@@ -3130,7 +3040,7 @@
         "ref": "TPE22556",
         "name": "中華航空",
         "name_en": "China Airlines",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "1496"
@@ -3150,7 +3060,7 @@
         "ref": "TPE22557",
         "name": "民權公園",
         "name_en": "Minquan Park",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "1511"
@@ -3170,7 +3080,7 @@
         "ref": "TPE22558",
         "name": "民權國小",
         "name_en": "Minquan Elementary School",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "1514"
@@ -3190,7 +3100,7 @@
         "ref": "TPE22559",
         "name": "三民國小",
         "name_en": "Sanmin Elementary School",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "8671"
@@ -3210,7 +3120,7 @@
         "ref": "TPE22560",
         "name": "民權大橋",
         "name_en": "Minquan Bridge",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "1017"
@@ -3230,7 +3140,7 @@
         "ref": "TPE22561",
         "name": "時報廣場",
         "name_en": "China Times Daily News Square",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "1077"
@@ -3250,7 +3160,7 @@
         "ref": "TPE22562",
         "name": "三民國中",
         "name_en": "Sanmin Junior High School",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "966"
@@ -3270,7 +3180,7 @@
         "ref": "TPE22563",
         "name": "內湖行政大樓",
         "name_en": "Neihu Admin. Building",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "991"
@@ -3290,7 +3200,7 @@
         "ref": "TPE29230",
         "name": "國防醫學中心",
         "name_en": "National Defense Medical Center",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "339"
@@ -3310,7 +3220,7 @@
         "ref": "TPE29231",
         "name": "三總內湖站(急診部)",
         "name_en": "Tri-Service General Hospital (ER)",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "4996"
@@ -3330,7 +3240,7 @@
         "ref": "TPE22565",
         "name": "臺北市網球中心",
         "name_en": "Taipei Tennis Center",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "1081"
@@ -3350,7 +3260,7 @@
         "ref": "TPE22566",
         "name": "民權東路六段(民權敦品)",
         "name_en": "Minquan E. Rd. Sec. 6 (Minquan Dunpin)",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "1019"
@@ -3370,7 +3280,7 @@
         "ref": "TPE22567",
         "name": "民權隧道二",
         "name_en": "Minquan Tunnel 2",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "1024"
@@ -3390,7 +3300,7 @@
         "ref": "TPE22568",
         "name": "民權隧道",
         "name_en": "Minquan Tunnel",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "149"
@@ -3410,7 +3320,7 @@
         "ref": "TPE22569",
         "name": "捷運葫洲站(康寧大學)",
         "name_en": "MRT Huzhou Sta. (University of Kang Ning)",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "1165606698"
@@ -3430,7 +3340,7 @@
         "ref": "TPE22570",
         "name": "明湖國小(公共電視台)",
         "name_en": "Minghu Elementary School (PTS)",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "1049"
@@ -3450,7 +3360,7 @@
         "ref": "TPE22572",
         "name": "五分社區",
         "name_en": "Wufen Community",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "986"
@@ -3470,7 +3380,7 @@
         "ref": "TPE22573",
         "name": "東湖國小",
         "name_en": "Donghu Elementary School",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "8530"
@@ -3490,7 +3400,7 @@
         "ref": "TPE22574",
         "name": "東湖社區",
         "name_en": "Donghu Community",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "1044"
@@ -3510,7 +3420,7 @@
         "ref": "TPE22575",
         "name": "康樂街",
         "name_en": "Kangle St.",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "1000734"
@@ -3530,7 +3440,7 @@
         "ref": "TPE22576",
         "name": "東湖國中",
         "name_en": "Donghu Junior High School",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "1000677"
@@ -3550,7 +3460,7 @@
         "ref": "TPE22577",
         "name": "五分埤",
         "name_en": "Wufenpi",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "1000211"
@@ -3570,7 +3480,7 @@
         "ref": "TPE22578",
         "name": "康湖隧道口(白馬山莊)",
         "name_en": "Kanghu Tunnel(White Horse Villa)",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "50445"
@@ -3590,7 +3500,7 @@
         "ref": "TPE22579",
         "name": "忠三街口",
         "name_en": "Zhong 3rd St. Entrance",
-        "line": "903（繞駛三總）",
+        "line": "903",
         "color": "#9333EA",
         "direction": 1,
         "station_id": "1000212"
@@ -3603,6 +3513,5 @@
         ]
       }
     }
-  ],
-  "id": "taipei_903_1652fe7623"
+  ]
 }

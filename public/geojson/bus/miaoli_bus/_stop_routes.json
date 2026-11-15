@@ -9,10 +9,10 @@
         "toward": [
           "雪霸國家公園管理處"
         ],
-        "terminus": true,
         "toward_en": [
           "Shei-pa National Park Headquarters"
-        ]
+        ],
+        "terminus": true
       }
     ],
     "134252": [
@@ -57,6 +57,30 @@
           "Shei-pa National Park Headquarters",
           "Jhunan Science Park"
         ]
+      },
+      {
+        "id": "inter_city_5804",
+        "ref": "5804",
+        "name": "5804（尚順、昌隆廣場）",
+        "color": "#0e7490",
+        "toward": [
+          "竹南東站"
+        ],
+        "toward_en": [
+          "Zhunan East Road"
+        ]
+      },
+      {
+        "id": "inter_city_5805a",
+        "ref": "5805A",
+        "name": "5805A（台灣好行）",
+        "color": "#0e7490",
+        "toward": [
+          "南庄遊客中心"
+        ],
+        "toward_en": [
+          "Nanjhuang Tourist Center"
+        ]
       }
     ],
     "134255": [
@@ -84,6 +108,30 @@
         ],
         "toward_en": [
           "Shei-pa National Park Headquarters"
+        ]
+      },
+      {
+        "id": "inter_city_5804",
+        "ref": "5804",
+        "name": "5804（尚順、昌隆廣場）",
+        "color": "#0e7490",
+        "toward": [
+          "竹南東站"
+        ],
+        "toward_en": [
+          "Zhunan East Road"
+        ]
+      },
+      {
+        "id": "inter_city_5805a",
+        "ref": "5805A",
+        "name": "5805A（台灣好行）",
+        "color": "#0e7490",
+        "toward": [
+          "竹南東站"
+        ],
+        "toward_en": [
+          "Zhunan East Road"
         ]
       }
     ],
@@ -268,6 +316,78 @@
         ],
         "toward_en": [
           "Shei-pa National Park Headquarters"
+        ]
+      },
+      {
+        "id": "inter_city_5658",
+        "ref": "5658",
+        "name": "5658（銅鑼）",
+        "color": "#0e7490",
+        "toward": [
+          "新雞隆"
+        ],
+        "toward_en": [
+          "Xinjilong"
+        ]
+      },
+      {
+        "id": "inter_city_5664",
+        "ref": "5664",
+        "name": "5664（銅鑼）",
+        "color": "#0e7490",
+        "toward": [
+          "三義"
+        ],
+        "toward_en": [
+          "Sanyi"
+        ]
+      },
+      {
+        "id": "inter_city_5664a",
+        "ref": "5664A",
+        "name": "5664A（延駛至八櫃）",
+        "color": "#0e7490",
+        "toward": [
+          "國民住宅"
+        ],
+        "toward_en": [
+          "Public Housing"
+        ]
+      },
+      {
+        "id": "inter_city_5664b",
+        "ref": "5664B",
+        "name": "5664B（繞駛苗栗高中）",
+        "color": "#0e7490",
+        "toward": [
+          "西湖口"
+        ],
+        "toward_en": [
+          "Xihukou"
+        ]
+      },
+      {
+        "id": "inter_city_5814",
+        "ref": "5814",
+        "name": "5814（山腳）",
+        "color": "#0e7490",
+        "toward": [
+          "大甲站"
+        ],
+        "toward_en": [
+          "Dajia Station"
+        ]
+      },
+      {
+        "id": "inter_city_5815",
+        "ref": "5815",
+        "name": "5815（五湖）",
+        "color": "#0e7490",
+        "toward": [
+          "彎瓦"
+        ],
+        "toward_en": [
+          "Wanwa"
         ]
       }
     ],
@@ -634,6 +754,30 @@
         "toward_en": [
           "Jhunan Science Park"
         ]
+      },
+      {
+        "id": "inter_city_5804",
+        "ref": "5804",
+        "name": "5804（尚順、昌隆廣場）",
+        "color": "#0e7490",
+        "toward": [
+          "南庄站"
+        ],
+        "toward_en": [
+          "Nanzhuang Station"
+        ]
+      },
+      {
+        "id": "inter_city_5805a",
+        "ref": "5805A",
+        "name": "5805A（台灣好行）",
+        "color": "#0e7490",
+        "toward": [
+          "南庄遊客中心"
+        ],
+        "toward_en": [
+          "Nanjhuang Tourist Center"
+        ]
       }
     ],
     "134361": [
@@ -689,10 +833,10 @@
         "toward": [
           "雪霸國家公園管理處"
         ],
-        "terminus": true,
         "toward_en": [
           "Shei-pa National Park Headquarters"
-        ]
+        ],
+        "terminus": true
       }
     ],
     "24.7070|120.9152|國家衛生研究院": [
@@ -1391,12 +1535,19 @@
       "lat": 24.69091,
       "lon": 120.90221,
       "stops": [
-        "MIA297585"
+        "MIA297585",
+        "THB302233"
       ],
       "road": "中興路",
       "road_en": "Zhongxing Road",
       "toward": "頭份運動公園",
-      "toward_en": "Toufen Sports Park"
+      "toward_en": "Toufen Sports Park",
+      "shelter_peers": [
+        {
+          "subdir": "intercity_bus",
+          "key": "137807"
+        }
+      ]
     },
     "134255": {
       "name": "頭份運動公園",
@@ -1417,12 +1568,19 @@
       "lat": 24.690588,
       "lon": 120.886181,
       "stops": [
-        "MIA297698"
+        "MIA297698",
+        "THB302231"
       ],
       "road": "公園路",
       "road_en": "Gongyuan Road",
       "toward": "竹南火車站(東站)",
-      "toward_en": "TRA Zhunan Station (East)"
+      "toward_en": "TRA Zhunan Station (East)",
+      "shelter_peers": [
+        {
+          "subdir": "intercity_bus",
+          "key": "137806"
+        }
+      ]
     },
     "134256": {
       "name": "竹南火車站(東站)",
@@ -1585,12 +1743,20 @@
       "lat": 24.54556,
       "lon": 120.81187,
       "stops": [
-        "MIA297599"
+        "MIA297599",
+        "THB236589",
+        "THB99721"
       ],
       "road": "尖豐公路",
       "road_en": "Jianfeng Highway",
       "toward": "苗栗工藝園區",
-      "toward_en": "Miaoli Crafts Park"
+      "toward_en": "Miaoli Crafts Park",
+      "shelter_peers": [
+        {
+          "subdir": "intercity_bus",
+          "key": "30413"
+        }
+      ]
     },
     "134269": {
       "name": "苗栗工藝園區",
@@ -1912,12 +2078,19 @@
       "lat": 24.69057,
       "lon": 120.88603,
       "stops": [
-        "MIA297699"
+        "MIA297699",
+        "THB302230"
       ],
       "road": "公園路",
       "road_en": "Gongyuan Road",
       "toward": "頭份運動公園",
-      "toward_en": "Toufen Sports Park"
+      "toward_en": "Toufen Sports Park",
+      "shelter_peers": [
+        {
+          "subdir": "intercity_bus",
+          "key": "137805"
+        }
+      ]
     },
     "134361": {
       "name": "頭份運動公園",

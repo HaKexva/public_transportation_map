@@ -32,6 +32,14 @@ class GeojsonBusOperatorColorsTest < ActiveSupport::TestCase
     assert_nil Geojson::BusOperatorColors.for_route(name: "新店區公所")
   end
 
+  test "a joint route keeps a second color only when the brands differ" do
+    assert_equal "#7CB342", Geojson::BusOperatorColors.second_color("首都客運", "大都會客運")
+    assert_equal "#F97316", Geojson::BusOperatorColors.second_color("大都會客運", "首都客運")
+    assert_nil Geojson::BusOperatorColors.second_color("中興巴士", "光華巴士")
+    assert_nil Geojson::BusOperatorColors.second_color("臺北客運", "首都客運")
+    assert_nil Geojson::BusOperatorColors.second_color("淡水客運", "首都客運", ref: "F12")
+  end
+
   test "apply_to_geojson updates collection and feature colors" do
     data = {
       "properties" => { "ref" => "綠2", "operator" => "大南汽車", "color" => "#9a3412" },

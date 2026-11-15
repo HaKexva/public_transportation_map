@@ -12,7 +12,11 @@
     "official_map_url": "http://ibus.tbkc.gov.tw/cms/api/route/382/map/1125/image",
     "operator_id": "10360",
     "operator": "港都客運",
-    "operator_en": "Great-City-Life Bus Co., Ltd."
+    "operator_en": "Great-City-Life Bus Co., Ltd.",
+    "departure": "左營南站",
+    "destination": "榮總側門",
+    "departure_en": "Zuoying South Station",
+    "destination_en": "the side entrance of Kaohsiung Veterans General Hospital"
   },
   "features": [
     {
@@ -3851,7 +3855,8 @@
         "line": "38C(返繞鼓山三路)",
         "color": "#115e59",
         "direction": 1,
-        "station_id": "3842"
+        "station_id": "3842",
+        "platform": "第1月台"
       },
       "geometry": {
         "type": "Point",

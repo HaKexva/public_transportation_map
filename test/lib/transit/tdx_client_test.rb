@@ -93,4 +93,21 @@ class Transit::TdxClientTest < ActiveSupport::TestCase
 
     assert_equal({ "token" => 1, "v2/Bus/EstimatedTimeOfArrival" => 2 }, Transit::TdxClient.usage)
   end
+
+  test "TDX_ENABLED=0 makes the client look unconfigured" do
+    previous = ENV["TDX_ENABLED"]
+    ENV["TDX_ENABLED"] = "0"
+    client, calls = build([])
+
+    refute client.configured?
+    refute Transit::TdxClient.configured?
+    error = assert_raises(Transit::TdxClient::ConfigurationError) do
+      client.get_json("v2/Rail/Metro/Alert/TRTC")
+    end
+    assert_match(/TDX_ENABLED=0/, error.message)
+    assert_empty calls
+  ensure
+    ENV["TDX_ENABLED"] = previous
+  end
 end
+

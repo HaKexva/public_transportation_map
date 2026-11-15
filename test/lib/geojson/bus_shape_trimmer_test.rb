@@ -75,4 +75,16 @@ class GeojsonBusShapeTrimmerTest < ActiveSupport::TestCase
     assert_equal outbound.last, joined_in.first
     assert_equal inbound, joined_in.drop(1).first(inbound.length)
   end
+
+  test "joins a same-direction cul-de-sac overshoot at the terminus" do
+    # Both directions head east on the approach; inbound ends one step past outbound's start.
+    outbound = OUT[2..]
+    inbound = OUT[0..3]
+
+    joined_out, joined_in = Geojson::BusShapeTrimmer.join_termini(outbound, inbound)
+
+    assert_equal inbound.last, joined_out.first
+    assert_equal inbound.last, joined_in.last
+    assert_in_delta 0.0, Geojson::BusShapeTrimmer.meters_between(joined_in.last, joined_out.first), 1e-6
+  end
 end

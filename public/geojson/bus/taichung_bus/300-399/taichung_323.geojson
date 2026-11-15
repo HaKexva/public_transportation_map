@@ -13,7 +13,11 @@
     "operator_id": "1",
     "operator": "台中客運",
     "operator_en": "Taichung Bus Co., Ltd.",
-    "daily_trips": 25
+    "daily_trips": 25,
+    "departure": "彩虹眷村(嶺東南路)",
+    "destination": "新建國市場(6號門)",
+    "departure_en": "Rainbow Village(Lingdong S. Road)",
+    "destination_en": "New Jianguo Market(Gate 6)"
   },
   "features": [
     {
@@ -3876,7 +3880,8 @@
         "line": "323",
         "color": "#6b21a8",
         "direction": 0,
-        "station_id": "3842"
+        "station_id": "3842",
+        "platform": "第1月台"
       },
       "geometry": {
         "type": "Point",
@@ -4236,7 +4241,8 @@
         "line": "323",
         "color": "#6b21a8",
         "direction": 1,
-        "station_id": "3842"
+        "station_id": "3842",
+        "platform": "第1月台"
       },
       "geometry": {
         "type": "Point",

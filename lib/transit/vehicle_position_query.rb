@@ -30,15 +30,30 @@ module Transit
       "wenhu_line" => "BR",
       "circular" => "Y",
       "danhai_lrt" => "V",
+      "danhai_lushan" => "V",
+      "danhai_lanhai" => "V",
       "ankeng_lrt" => "K",
       "sanying_line" => "LB",
       "airport_mrt" => "A",
       "airport_mrt_express" => "A"
     }.freeze
 
+    # Segment map layers share timetable trips under danhai_lrt.
+    ROUTE_ALIASES = {
+      "danhai_lushan" => %w[danhai_lrt],
+      "danhai_lanhai" => %w[danhai_lrt]
+    }.freeze
+
+    def self.expand_route_ids(route_ids)
+      Array(route_ids).flat_map { |id|
+        key = id.to_s
+        ROUTE_ALIASES.fetch(key, [ key ])
+      }.map(&:to_s).reject(&:blank?).uniq
+    end
+
     def initialize(at:, route_ids:, datasets: ScheduleDataset.active.to_a)
       @at = at.in_time_zone(CLOCK_ZONE)
-      @route_ids = Array(route_ids).map(&:to_s).reject(&:blank?)
+      @route_ids = self.class.expand_route_ids(route_ids)
       @datasets = datasets
       @live_meta = { applied: false, tra: false, metro: false, gps: false }
     end

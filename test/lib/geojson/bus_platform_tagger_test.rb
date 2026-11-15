@@ -29,4 +29,29 @@ class Geojson::BusPlatformTaggerTest < ActiveSupport::TestCase
     assert_nil data["features"][1]["properties"]["platform"]
     assert_not Geojson::BusPlatformTagger.tag_collection!(data, { "NWT1" => "第四月台" })
   end
+
+  test "tags 捷運淡水站 transfer bay by StationID when TDX address omits 月台" do
+    data = {
+      "features" => [
+        { "properties" => { "feature_type" => "station", "ref" => "NWT224362", "station_id" => "3842", "name" => "捷運淡水站" } },
+        { "properties" => { "feature_type" => "station", "ref" => "NWT27934", "station_id" => "3845", "name" => "捷運淡水站" } }
+      ]
+    }
+
+    assert Geojson::BusPlatformTagger.tag_collection!(data, {})
+    assert_equal "第1月台", data["features"][0]["properties"]["platform"]
+    assert_nil data["features"][1]["properties"]["platform"]
+    assert_not Geojson::BusPlatformTagger.tag_collection!(data, {})
+  end
+
+  test "station-id fallback does not wipe address-derived platforms when StopUID is absent" do
+    data = {
+      "features" => [
+        { "properties" => { "feature_type" => "station", "ref" => "NWT1", "name" => "新北板橋公車站", "platform" => "第四月台" } }
+      ]
+    }
+
+    assert_not Geojson::BusPlatformTagger.tag_collection!(data, {})
+    assert_equal "第四月台", data["features"][0]["properties"]["platform"]
+  end
 end

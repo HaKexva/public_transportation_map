@@ -17,7 +17,11 @@
       "saturday",
       "sunday"
     ],
-    "daily_trips": 3
+    "daily_trips": 3,
+    "departure": "淡江大學",
+    "destination": "捷運劍潭站(中山)",
+    "departure_en": "Tamkang University",
+    "destination_en": "MRT Jiantan Sta. (Zhongshan)"
   },
   "features": [
     {
@@ -4528,7 +4532,8 @@
         "line": "308",
         "color": "#DC2626",
         "direction": 0,
-        "station_id": "3842"
+        "station_id": "3842",
+        "platform": "第1月台"
       },
       "geometry": {
         "type": "Point",

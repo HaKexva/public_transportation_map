@@ -13,8 +13,54 @@ class RoutesManifestWriterTest < ActiveSupport::TestCase
 
     assert_not_includes taipei_ids, "circular"
     assert_includes new_taipei_ids, "circular"
-    assert_includes new_taipei_ids, "ankeng_lrt"
-    assert_includes new_taipei_ids, "sanying_line"
+    assert_not_includes new_taipei_ids, "danhai_lrt"
+    assert_includes new_taipei_ids, "danhai_lushan"
+    assert_includes new_taipei_ids, "danhai_lanhai"
+  ensure
+    path.delete if path.exist?
+  end
+
+  test "taipei metro lists 棕紅綠橘藍 then 安坑 三鶯 and pilot buses" do
+    path = Rails.root.join("tmp", "routes_manifest_test_#{name}.json")
+    Geojson::RoutesManifestWriter.write!(path: path)
+
+    manifest = JSON.parse(path.read)
+    taipei_ids = manifest.fetch("taipei_metro").map { |entry| entry["id"] }
+    new_taipei_ids = manifest.fetch("new_taipei_metro").map { |entry| entry["id"] }
+
+    expected_prefix = %w[
+      wenhu_line tamsui_xinyi xinbeitou_branch
+      songshan_xindian xiaobitan_branch
+      zhonghe_xinlu bannan
+      ankeng_lrt sanying_line
+      new_taipei_985_xiandao_d20c01d95e
+      new_taipei_629_xiandao_447f13f5ac
+      new_taipei_lan_2_xiandao_03ad35aed7
+    ]
+    assert_equal expected_prefix, taipei_ids.first(expected_prefix.length)
+    assert_not_includes new_taipei_ids, "ankeng_lrt"
+    assert_not_includes new_taipei_ids, "sanying_line"
+  ensure
+    path.delete if path.exist?
+  end
+
+  test "new taipei metro manifest lists danhai green mountain and blue coast layers" do
+    path = Rails.root.join("tmp", "routes_manifest_test_#{name}.json")
+    Geojson::RoutesManifestWriter.write!(path: path)
+
+    manifest = JSON.parse(path.read)
+    new_taipei = manifest.fetch("new_taipei_metro")
+    lushan = new_taipei.find { |entry| entry["id"] == "danhai_lushan" }
+    lanhai = new_taipei.find { |entry| entry["id"] == "danhai_lanhai" }
+
+    assert lushan, "expected danhai_lushan in manifest"
+    assert lanhai, "expected danhai_lanhai in manifest"
+    assert_equal "/geojson/new_taipei_metro/danhai_lushan.geojson", lushan["file"]
+    assert_equal "/geojson/new_taipei_metro/danhai_lanhai.geojson", lanhai["file"]
+    assert_equal "danhai_lrt", lushan["branch_of"]
+    assert_equal "danhai_lrt", lanhai["branch_of"]
+    assert_equal "綠山線", lushan["name"]
+    assert_equal "藍海線", lanhai["name"]
   ensure
     path.delete if path.exist?
   end

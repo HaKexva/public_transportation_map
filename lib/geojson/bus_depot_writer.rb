@@ -19,6 +19,8 @@ module Geojson
       "name" => "場站名稱",
       "lon" => "經度",
       "lat" => "緯度",
+      "address" => "地址",
+      "phone" => "電話",
       "note" => "備註"
     }.freeze
     ROUTE_COLUMNS = {
@@ -79,11 +81,12 @@ module Geojson
       - `S`／`A` 開頭是從站牌自動偵測到的場站，可點「地圖」確認位置；`bin/rails geojson:bus_depots_missing` 會重新整理這些列。
       - 各縣市依客運分表（依場站名稱開頭的客運名；沒有客運名的放「其他」），手動代碼在前、自動偵測在後。
       - 清單裡沒有的場站，請在該縣市任一表格最後自己加一列：代碼自訂（例：`N1`，全檔不可重複，不可用 `S`／`A` 開頭），
-        填場站名稱與經緯度（WGS84，例：`121.5170`、`25.0478`；Google 地圖複製的順序是「緯度, 經度」，請分開填），備註可留空。
+        填場站名稱與經緯度（WGS84，例：`121.5170`、`25.0478`；Google 地圖複製的順序是「緯度, 經度」，請分開填）。地址、電話、備註可留空。
         重新整理時會自動歸到對應客運的表。
+      - 基隆市公車獨立成「基隆市」一節，代碼用 `K` 開頭（例：`K1`），不和台北新北的 `N` 代碼混用。
       - 經緯度也可以直接貼 Google 地圖的 Plus Code（貼在「經度」欄，例：`7QQ32GX8+4R` 或 `2GX8+4R 台北市`），
-        跑 `bin/rails geojson:bus_depots_stations` 會換成經緯度，原代碼留在備註。短代碼依後面的縣市名、備註地址或同縣市其他場站推算。
-      - 經緯度可留空、備註填地址：路線指定照樣生效，只是地圖上要等有座標才會畫出。
+        跑 `bin/rails geojson:bus_depots_stations` 會換成經緯度。短代碼依後面的縣市名、地址或同縣市其他場站推算。
+      - 經緯度可留空、地址欄填地址：路線指定照樣生效，只是地圖上要等有座標才會畫出。
         之後可跑 `bin/rails geojson:bus_depots_geocode` 依地址自動補座標（需 Google Geocoding API）。
     MARKDOWN
     OPERATOR_PREFIX = /\A(.+?(?:客運|巴士|汽車))(?=.)/
@@ -245,7 +248,8 @@ module Geojson
         next row if cell.nil?
 
         code = Geojson::PlusCode.extract(cell)
-        reference = county_center(cell.to_s.sub(/\A\S+/, "")) || county_center(row["note"]) || reference_for&.call(row["city"])
+        reference = county_center(cell.to_s.sub(/\A\S+/, "")) ||
+          county_center(row["address"]) || county_center(row["note"]) || reference_for&.call(row["city"])
         lon, lat = Geojson::PlusCode.decode(code, reference:)
         if lon.nil?
           warn "Plus Code #{code} for #{row['code']} needs a full code or a county name after it"
@@ -255,6 +259,33 @@ module Geojson
         note = [ row["note"].presence, "Plus Code #{code}" ].compact.join("・")
         row.merge("lon" => lon.to_s, "lat" => lat.to_s, "note" => note)
       end
+    end
+
+    # Older rows kept 「地址・電話 02-…」 in 備註. Street addresses move to 地址,
+    # phone numbers to 電話; auto-detected notes and map links stay in 備註.
+    def self.normalize_depot_contact(row)
+      address = row["address"].to_s.strip
+      phone = row["phone"].to_s.strip
+      note = row["note"].to_s.strip
+      if address.blank? && phone.blank?
+        address, phone, note = split_depot_contact(note)
+      end
+      row.merge("address" => address, "phone" => phone, "note" => note)
+    end
+
+    def self.split_depot_contact(note)
+      text = note.to_s.strip
+      return [ "", "", "" ] if text.blank?
+      return [ "", "", text ] if text.include?("自動偵測") || text.include?("[地圖]")
+
+      if (match = text.match(/\A(.*?)(?:・)?電話\s*(.+)\z/))
+        return [ match[1].strip, match[2].strip, "" ]
+      end
+      if text.match?(/[市縣區鄉鎮].{0,80}(?:路|街|巷|號|里)/)
+        return [ text, "", "" ]
+      end
+
+      [ "", "", text ]
     end
 
     def self.county_center(text)
@@ -287,14 +318,27 @@ module Geojson
 
         cells = line.strip.delete_prefix("|").delete_suffix("|")
           .split(/(?<!\\)\|/).map { |cell| cell.strip.gsub("\\|", "|") }
-        if (header = [ DEPOT_COLUMNS, ROUTE_COLUMNS ].find { |set| set.values == cells })
-          columns = header
+        if cells == ROUTE_COLUMNS.values
+          columns = ROUTE_COLUMNS
+          next
+        end
+        if cells.include?("代碼") && cells.include?("場站名稱") && cells.exclude?("路線")
+          columns = cells
           next
         end
         next if columns.nil? || cells.all? { |cell| cell.match?(/\A:?-+:?\z/) } || cells.all?(&:blank?)
 
-        row = columns.keys.zip(cells.values_at(0...columns.length).map(&:to_s)).to_h.merge("city" => city)
-        (columns.equal?(DEPOT_COLUMNS) ? depots : routes) << row
+        if columns.is_a?(Array)
+          row = { "city" => city }
+          columns.each_with_index do |label, index|
+            key = DEPOT_COLUMNS.key(label)
+            row[key] = cells[index].to_s if key
+          end
+          depots << normalize_depot_contact(row)
+        else
+          row = columns.keys.zip(cells.values_at(0...columns.length).map(&:to_s)).to_h.merge("city" => city)
+          routes << row
+        end
       end
       Manual.new(depots: depots, routes: routes)
     end
@@ -444,11 +488,16 @@ module Geojson
             buckets[key]
           end
         bucket["name"] ||= row["name"]
-        bucket["address"] ||= row["note"].presence
+        bucket["address"] ||= row["address"].presence
+        bucket["phone"] ||= row["phone"].presence
         key_by_code[row["code"]] = key
       end
 
       manual.routes.each do |row|
+        if self.class.route_row_deferred?(row)
+          buckets.each_value { |bucket| bucket["routes"].delete(row["route_id"]) }
+          next
+        end
         next unless self.class.route_row_filled?(row)
 
         keys = self.class.depot_codes(row).filter_map do |code|
@@ -477,6 +526,7 @@ module Geojson
           "lon" => lon&.round(6),
           "lat" => lat&.round(6),
           "address" => bucket["address"],
+          "phone" => bucket["phone"],
           "station_ids" => bucket["station_ids"].uniq.sort,
           "grade" => "調度站"
         }.compact

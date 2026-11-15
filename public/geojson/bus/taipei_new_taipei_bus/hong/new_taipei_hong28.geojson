@@ -13,7 +13,11 @@
     "operator_id": "16186",
     "operator": "淡水客運",
     "operator_en": "Tamshui Bus Co., Ltd.",
-    "daily_trips": 90
+    "daily_trips": 90,
+    "departure": "淡江大學",
+    "destination": "鄧公里",
+    "departure_en": "Tamkang University",
+    "destination_en": "Denggong Village"
   },
   "features": [
     {
@@ -880,7 +884,8 @@
         "line": "紅28",
         "color": "#DC2626",
         "direction": 1,
-        "station_id": "3842"
+        "station_id": "3842",
+        "platform": "第1月台"
       },
       "geometry": {
         "type": "Point",

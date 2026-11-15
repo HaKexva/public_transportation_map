@@ -17,7 +17,11 @@
       "saturday",
       "sunday"
     ],
-    "daily_trips": 3
+    "daily_trips": 3,
+    "departure": "干城站",
+    "destination": "梧棲中正田徑場",
+    "departure_en": "Gancheng Station",
+    "destination_en": "Wuqi-Zhongzheng Track and Field"
   },
   "features": [
     {
@@ -4436,7 +4440,8 @@
         "line": "290繞",
         "color": "#6b21a8",
         "direction": 0,
-        "station_id": "3842"
+        "station_id": "3842",
+        "platform": "第1月台"
       },
       "geometry": {
         "type": "Point",
@@ -7416,7 +7421,8 @@
         "line": "290繞",
         "color": "#6b21a8",
         "direction": 1,
-        "station_id": "3842"
+        "station_id": "3842",
+        "platform": "第1月台"
       },
       "geometry": {
         "type": "Point",

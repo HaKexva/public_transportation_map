@@ -17,7 +17,11 @@
       "saturday",
       "sunday"
     ],
-    "daily_trips": 2
+    "daily_trips": 2,
+    "departure": "中科實驗高中(平和路)",
+    "destination": "干城站",
+    "departure_en": "Experimental High School(Pinghe Road)",
+    "destination_en": "Gancheng Station"
   },
   "features": [
     {
@@ -3656,7 +3660,8 @@
         "line": "45延1",
         "color": "#db2777",
         "direction": 0,
-        "station_id": "3842"
+        "station_id": "3842",
+        "platform": "第1月台"
       },
       "geometry": {
         "type": "Point",

@@ -13,7 +13,13 @@
     "operator_id": "700",
     "operator": "欣欣客運",
     "operator_en": "Shin-Shin Bus Co., Ltd.",
-    "daily_trips": 10
+    "daily_trips": 10,
+    "departure": "景福街",
+    "destination": "青年公園(青年)",
+    "departure_en": "Jingfu St.",
+    "destination_en": "Youth Park (Qingnian)",
+    "service_note": "每日 07:00–09:00、17:00–19:00 不停自來水處(辛亥)",
+    "service_note_en": "Daily 07:00–09:00 and 17:00–19:00: no stop at Taipei Water Department (Xinhai)"
   },
   "features": [
     {
@@ -3144,7 +3150,20 @@
         "line": "棕22",
         "color": "#9333EA",
         "direction": 0,
-        "station_id": "15107"
+        "station_id": "15107",
+        "timed_skip": {
+          "days": "daily",
+          "windows": [
+            [
+              "07:00",
+              "09:00"
+            ],
+            [
+              "17:00",
+              "19:00"
+            ]
+          ]
+        }
       },
       "geometry": {
         "type": "Point",
@@ -3924,7 +3943,20 @@
         "line": "棕22",
         "color": "#9333EA",
         "direction": 1,
-        "station_id": "2248"
+        "station_id": "2248",
+        "timed_skip": {
+          "days": "daily",
+          "windows": [
+            [
+              "07:00",
+              "09:00"
+            ],
+            [
+              "17:00",
+              "19:00"
+            ]
+          ]
+        }
       },
       "geometry": {
         "type": "Point",

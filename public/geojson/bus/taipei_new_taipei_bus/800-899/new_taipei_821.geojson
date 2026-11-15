@@ -13,7 +13,11 @@
     "operator_id": "16189",
     "operator": "中興巴士",
     "operator_en": "Zhongxing Bus",
-    "daily_trips": 6
+    "daily_trips": 6,
+    "departure": "三芝",
+    "destination": "天文科學館",
+    "departure_en": "Sanzhi",
+    "destination_en": "Astronomical Museum"
   },
   "features": [
     {
@@ -6552,7 +6556,8 @@
         "line": "821",
         "color": "#DC2626",
         "direction": 0,
-        "station_id": "3842"
+        "station_id": "3842",
+        "platform": "第1月台"
       },
       "geometry": {
         "type": "Point",

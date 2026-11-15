@@ -40,6 +40,30 @@ module Geojson
       BY_OPERATOR_NAME[normalized]
     end
 
+    # Brand color, or the stable palette color used for operators without one.
+    def color_for(name: nil, id: nil, ref: nil)
+      for_route(ref: ref, name: name, id: id) || palette_color(name)
+    end
+
+    def palette_color(name)
+      return if name.blank?
+
+      index = Digest::SHA1.hexdigest(name.to_s)[0, 8].to_i(16)
+      BusImporter::PALETTE[index % BusImporter::PALETTE.length]
+    end
+
+    # Second color only when the two operators' colors actually differ.
+    # Same-brand partners (中興／光華, 臺北客運／首都客運) stay one color.
+    def second_color(primary, partner, ref: nil)
+      return if new_bus_ref?(ref)
+
+      first = color_for(name: primary, ref: ref)
+      other = color_for(name: partner, ref: ref)
+      return if first.blank? || other.blank? || first.casecmp?(other)
+
+      other
+    end
+
     def new_bus_ref?(ref)
       ref.to_s.strip.match?(/\AF/i)
     end

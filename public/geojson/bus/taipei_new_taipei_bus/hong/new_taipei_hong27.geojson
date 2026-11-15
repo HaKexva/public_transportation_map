@@ -13,7 +13,11 @@
     "operator_id": "16185",
     "operator": "指南客運",
     "operator_en": "Zhinan Bus Co., Ltd.",
-    "daily_trips": 126
+    "daily_trips": 126,
+    "departure": "淡江大學",
+    "destination": "捷運淡水站",
+    "departure_en": "Tamkang University",
+    "destination_en": "MRT Tamsui Sta."
   },
   "features": [
     {
@@ -820,7 +824,8 @@
         "line": "紅27",
         "color": "#DC2626",
         "direction": 0,
-        "station_id": "3842"
+        "station_id": "3842",
+        "platform": "第1月台"
       },
       "geometry": {
         "type": "Point",

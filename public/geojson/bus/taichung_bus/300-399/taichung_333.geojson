@@ -13,7 +13,11 @@
     "operator_id": "25",
     "operator": "睿奕交通",
     "operator_en": "Ruiyi Transport",
-    "daily_trips": 24
+    "daily_trips": 24,
+    "departure": "臺中國際機場1月台",
+    "destination": "臺中車站(A月台)",
+    "departure_en": "Taichung Airport (Platform 1)",
+    "destination_en": "Taichung Station(Platform A)"
   },
   "features": [
     {
@@ -3468,7 +3472,8 @@
         "line": "333",
         "color": "#0891b2",
         "direction": 0,
-        "station_id": "3842"
+        "station_id": "3842",
+        "platform": "第1月台"
       },
       "geometry": {
         "type": "Point",
@@ -3568,7 +3573,8 @@
         "line": "333",
         "color": "#0891b2",
         "direction": 1,
-        "station_id": "3842"
+        "station_id": "3842",
+        "platform": "第1月台"
       },
       "geometry": {
         "type": "Point",

@@ -13,7 +13,11 @@
     "operator_id": "1",
     "operator": "台中客運",
     "operator_en": "Taichung Bus Co., Ltd.",
-    "daily_trips": 20
+    "daily_trips": 20,
+    "departure": "臺中都會公園",
+    "destination": "臺中車站(A月台)",
+    "departure_en": "Taichung Metro Park",
+    "destination_en": "Taichung Station(Platform A)"
   },
   "features": [
     {
@@ -2816,7 +2820,8 @@
         "line": "324",
         "color": "#6b21a8",
         "direction": 0,
-        "station_id": "3842"
+        "station_id": "3842",
+        "platform": "第1月台"
       },
       "geometry": {
         "type": "Point",
@@ -2996,7 +3001,8 @@
         "line": "324",
         "color": "#6b21a8",
         "direction": 1,
-        "station_id": "3842"
+        "station_id": "3842",
+        "platform": "第1月台"
       },
       "geometry": {
         "type": "Point",

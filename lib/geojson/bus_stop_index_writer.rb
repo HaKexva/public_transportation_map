@@ -9,6 +9,10 @@ module Geojson
   class BusStopIndexWriter
     INDEX_FILENAME = "_stop_routes.json"
     BOUNDS_FILENAME = "_stop_index_bounds.json"
+    INTERCITY_SUBDIR = "intercity_bus"
+    # Same name + this close is one shelter (highway coach sharing a city pole).
+    # Opposite kerbs are usually ≥15 m, so stay under that.
+    SHELTER_MERGE_METERS = 12
 
     Result = Data.define(:cities, :stations, :clusters)
 
@@ -66,9 +70,21 @@ module Geojson
           following = stations[(index + 1)..].find { |other| other.dig("properties", "direction").to_s == direction }
           next_names[feature] = following&.dig("properties", "name")
         end
-        destinations = stations.each_with_object({}) do |feature, last|
+        # Board 「往〜」 from the last StopOfRoute name (official bay / pole),
+        # not the abbreviated Route 起迄站名 (樹林 vs 樹林藝文綜合行政大樓).
+        last_stops = stations.each_with_object({}) do |feature, last|
           last[feature.dig("properties", "direction").to_s] = feature.dig("properties", "name")
         end
+        first_stops = stations.each_with_object({}) do |feature, first|
+          direction = feature.dig("properties", "direction").to_s
+          first[direction] ||= feature.dig("properties", "name")
+        end
+        last_stops_en = stations.each_with_object({}) do |feature, last|
+          props = feature["properties"] || {}
+          direction = props["direction"].to_s
+          last[direction] = props["name_en"].presence if props["name"].to_s == last_stops[direction]
+        end
+        intercity = city_id.to_s == "InterCity" || subdir == INTERCITY_SUBDIR
 
         stations.each do |feature|
           props = feature["properties"] || {}
@@ -83,13 +99,23 @@ module Geojson
           station_id = self.class.platform_key(station_id, platform) if station_id.present?
           cluster = Geojson::BusStopClustering.cluster_key(name:, lon:, lat:)
 
-          destination = destinations[props["direction"].to_s]
-          stop_route = if destination.blank?
+          direction = props["direction"].to_s
+          last_stop = last_stops[direction]
+          first_stop = first_stops[direction]
+          stop_route = if last_stop.blank?
             route.dup
-          elsif destination == name
+          elsif last_stop == name
             route.merge("terminus" => true)
           else
-            route.merge("toward" => [ destination ])
+            entry = route.merge("toward" => [ last_stop ])
+            toward_en = last_stops_en[direction].presence || stop_names_en[last_stop]
+            entry["toward_en"] = [ toward_en ] if toward_en.present?
+            entry
+          end
+          # Highway coaches separate 上客 (board) from 下客 (alight) at termini.
+          if intercity
+            stop_route = stop_route.merge("board" => true) if first_stop == name
+            stop_route = stop_route.merge("alight" => true) if last_stop == name
           end
           city_index = by_subdir[subdir]
           if station_id.present?
@@ -113,18 +139,23 @@ module Geojson
 
       stations = 0
       clusters = 0
-      by_subdir.each do |subdir, payload|
+      by_subdir.each_value do |payload|
         stations += payload["stations"].size
         clusters += payload["clusters"].size
         sort_routes!(payload)
         finalize_groups!(payload)
         add_english_towards!(payload)
+      end
+      merge_shared_shelters!(by_subdir)
+      by_subdir.each do |subdir, payload|
+        sort_routes!(payload)
         path = self.class.index_path_for(subdir, bus_root: @bus_root)
         FileUtils.mkdir_p(path.dirname)
         File.write(path, "#{JSON.pretty_generate(payload)}\n")
         puts "Wrote #{path}"
       end
       write_bounds!(by_subdir)
+      Geojson::BusStopSearchIndex.write_groups!(by_subdir, bus_root: @bus_root)
 
       Result.new(cities: by_subdir.keys.sort, stations:, clusters:)
     end
@@ -146,6 +177,99 @@ module Geojson
 
     private
 
+    # Highway coaches often stop at the same shelter as city buses. Fold those
+    # poles together so through-routes, arrivals, and search show one board.
+    def merge_shared_shelters!(by_subdir)
+      intercity = by_subdir[INTERCITY_SUBDIR]
+      return unless intercity.is_a?(Hash)
+
+      by_name = Hash.new { |hash, key| hash[key] = [] }
+      by_subdir.each do |subdir, payload|
+        next if subdir == INTERCITY_SUBDIR
+
+        (payload["groups"] || {}).each do |key, group|
+          by_name[group["name"].to_s] << [ subdir, key.to_s, group ]
+        end
+      end
+
+      (intercity["groups"] || {}).each do |ic_key, ic_group|
+        name = ic_group["name"].to_s
+        next if name.blank?
+
+        match = by_name[name]
+          .select { |_subdir, _key, group| shelter_pair?(group, ic_group) }
+          .min_by { |_subdir, _key, group| shelter_distance_meters(group, ic_group) }
+        next unless match
+
+        subdir, city_key, city_group = match
+        link_shelters!(
+          by_subdir[subdir], city_key, city_group,
+          intercity, ic_key.to_s, ic_group,
+          peer_subdir: INTERCITY_SUBDIR, host_subdir: subdir
+        )
+      end
+    end
+
+    def shelter_pair?(left, right)
+      return false unless platforms_compatible?(left["platform"], right["platform"])
+
+      shelter_distance_meters(left, right) <= SHELTER_MERGE_METERS
+    end
+
+    def platforms_compatible?(left, right)
+      a = left.to_s.presence
+      b = right.to_s.presence
+      a.nil? || b.nil? || a == b
+    end
+
+    def shelter_distance_meters(from, to)
+      lat_scale = 111_320.0
+      lon_scale = lat_scale * Math.cos(from["lat"].to_f * Math::PI / 180)
+      Math.hypot(
+        (to["lat"].to_f - from["lat"].to_f) * lat_scale,
+        (to["lon"].to_f - from["lon"].to_f) * lon_scale
+      )
+    end
+
+    def link_shelters!(host_payload, host_key, host_group, peer_payload, peer_key, peer_group, peer_subdir:, host_subdir:)
+      merge_group_stops!(host_group, peer_group)
+      merge_group_stops!(peer_group, host_group)
+      merge_group_routes!(host_payload, host_key, peer_payload, peer_key)
+      merge_group_routes!(peer_payload, peer_key, host_payload, host_key)
+
+      peers = Array(host_group["shelter_peers"])
+      peer_ref = { "subdir" => peer_subdir, "key" => peer_key }
+      host_group["shelter_peers"] = (peers + [ peer_ref ]).uniq unless peers.include?(peer_ref)
+      peer_group["shelter_of"] = { "subdir" => host_subdir, "key" => host_key }
+    end
+
+    def merge_group_stops!(into, from)
+      into["stops"] = (Array(into["stops"]) | Array(from["stops"])).map(&:to_s).reject(&:blank?).uniq.sort
+    end
+
+    def merge_group_routes!(into_payload, into_key, from_payload, from_key)
+      from_routes = routes_for(from_payload, from_key)
+      return if from_routes.empty?
+
+      into_list = ensure_route_list!(into_payload, into_key)
+      from_routes.each { |route| merge_stop_route!(into_list, route) }
+    end
+
+    def routes_for(payload, key)
+      payload.dig("stations", key) || payload.dig("clusters", key) || []
+    end
+
+    def ensure_route_list!(payload, key)
+      return payload["stations"][key] if payload["stations"].key?(key)
+      return payload["clusters"][key] if payload["clusters"].key?(key)
+
+      if key.include?("|")
+        payload["clusters"][key] ||= []
+      else
+        payload["stations"][key] ||= []
+      end
+    end
+
     def write_bounds!(by_subdir)
       bounds = by_subdir.sort.to_h.filter_map do |subdir, payload|
         groups = payload["groups"].values
@@ -159,13 +283,19 @@ module Geojson
     end
 
     # A route serving one pole in both directions heads for both termini.
+    # Keep board/alight so highway-coach 上客／下客 stay distinct after merge.
     def merge_stop_route!(list, entry)
       existing = list.find { |row| row["id"] == entry["id"] }
       return Geojson::BusStopClustering.merge_route!(list, entry.dup) unless existing
 
       towards = Array(existing["toward"]) | Array(entry["toward"])
-      Geojson::BusStopClustering.merge_route!(list, entry.except("toward"))
+      towards_en = Array(existing["toward_en"]) | Array(entry["toward_en"])
+      Geojson::BusStopClustering.merge_route!(list, entry.except("toward", "toward_en", "terminus", "board", "alight"))
       existing["toward"] = towards if towards.any?
+      existing["toward_en"] = towards_en if towards_en.any?
+      existing["terminus"] = true if existing["terminus"] || entry["terminus"]
+      existing["board"] = true if existing["board"] || entry["board"]
+      existing["alight"] = true if existing["alight"] || entry["alight"]
     end
 
     def relative_subdir(path)
@@ -208,9 +338,10 @@ module Geojson
         road = @road_names&.road_at(lon, lat, heading)
         # OSM's bay names at 新北板橋公車站 disagree with TDX (and the signs).
         road = nil if group["platform"] && road.to_s.include?("月台")
+        road = Geojson::RareHan.display(road) if road
         toward = group["toward"].max_by { |stop_name, count| [ count, stop_name ] }&.first
         {
-          "name" => group["name"],
+          "name" => Geojson::RareHan.display(group["name"]),
           "name_en" => stop_names_en[group["name"]],
           "platform" => group["platform"],
           "platform_en" => self.class.platform_en(group["platform"]),
@@ -219,7 +350,7 @@ module Geojson
           "stops" => group["stops"].sort,
           "road" => road,
           "road_en" => english_road(road),
-          "toward" => toward,
+          "toward" => toward && Geojson::RareHan.display(toward),
           "toward_en" => stop_names_en[toward]
         }.compact
       end
@@ -242,6 +373,7 @@ module Geojson
           routes.each do |route|
             towards = Array(route["toward"])
             next if towards.empty?
+            next if Array(route["toward_en"]).any?
 
             route["toward_en"] = towards.map { |stop| stop_names_en[stop] || stop }
           end

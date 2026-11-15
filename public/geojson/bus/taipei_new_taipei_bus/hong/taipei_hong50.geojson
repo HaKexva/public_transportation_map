@@ -1,19 +1,24 @@
 {
   "type": "FeatureCollection",
-  "name": "紅50",
+  "name": "紅50（本線）",
   "properties": {
     "id": "taipei_hong50",
-    "name": "紅50",
-    "name_en": "R50",
+    "name": "紅50（本線）",
+    "name_en": "R50 (Main Line)",
     "ref": "紅50",
     "color": "#F97316",
     "city_id": "Taipei",
     "source": "TDX Bus Shape / StopOfRoute",
-    "official_map_url": "https://ebus.gov.taipei/File/Get/47c2414f-7d1f-4fed-a1d1-4c7caaa7777c?v=639267187730008556",
+    "via": "本線",
+    "via_en": "Main Line",
+    "official_map_url": "https://ebus.gov.taipei/File/Get/47c2414f-7d1f-4fed-a1d1-4c7caaa7777c?v=639302458263578487",
+    "departure": "行善石潭路口",
+    "departure_en": "Xingshan and Shitan Intersection",
+    "destination": "捷運圓山站",
+    "destination_en": "MRT Yuanshan Sta.",
     "operator_id": "200",
     "operator": "首都客運",
-    "operator_en": "Capital Bus Co., Ltd.",
-    "daily_trips": 25
+    "operator_en": "Capital Bus Co., Ltd."
   },
   "features": [
     {
@@ -21,8 +26,8 @@
       "properties": {
         "feature_type": "route",
         "ref": "紅50",
-        "name": "紅50",
-        "name_en": "R50",
+        "name": "紅50（本線）",
+        "name_en": "R50 (Main Line)",
         "color": "#F97316",
         "direction": 0,
         "corners_rounded": true
@@ -670,8 +675,8 @@
       "properties": {
         "feature_type": "route",
         "ref": "紅50",
-        "name": "紅50",
-        "name_en": "R50",
+        "name": "紅50（本線）",
+        "name_en": "R50 (Main Line)",
         "color": "#F97316",
         "direction": 1,
         "corners_rounded": true
@@ -1597,7 +1602,7 @@
         "ref": "TPE180863",
         "name": "行善石潭路口",
         "name_en": "Xingshan and Shitan Intersection",
-        "line": "紅50",
+        "line": "紅50（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "1165606689"
@@ -1617,7 +1622,7 @@
         "ref": "TPE58966",
         "name": "行善行愛路口",
         "name_en": "Xingshan & Xingai Intersection",
-        "line": "紅50",
+        "line": "紅50（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "4673"
@@ -1637,7 +1642,7 @@
         "ref": "TPE58967",
         "name": "行愛路77巷口",
         "name_en": "Xingai Rd. Lane 77 Entrance",
-        "line": "紅50",
+        "line": "紅50（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "1000285"
@@ -1657,7 +1662,7 @@
         "ref": "TPE58968",
         "name": "行愛路",
         "name_en": "Xingai Rd.",
-        "line": "紅50",
+        "line": "紅50（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "1000286"
@@ -1677,7 +1682,7 @@
         "ref": "TPE124955",
         "name": "行忠行愛路口",
         "name_en": "Xingzhong & Renai Intersection",
-        "line": "紅50",
+        "line": "紅50（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "4796"
@@ -1697,7 +1702,7 @@
         "ref": "TPE58969",
         "name": "三民國小",
         "name_en": "Sanmin Elementary School",
-        "line": "紅50",
+        "line": "紅50（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "10403"
@@ -1717,7 +1722,7 @@
         "ref": "TPE58970",
         "name": "民權國小",
         "name_en": "Minquan Elementary School",
-        "line": "紅50",
+        "line": "紅50（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "8650"
@@ -1737,7 +1742,7 @@
         "ref": "TPE58971",
         "name": "中華航空",
         "name_en": "China Airlines",
-        "line": "紅50",
+        "line": "紅50（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "8604"
@@ -1757,7 +1762,7 @@
         "ref": "TPE59157",
         "name": "民權敦化路口",
         "name_en": "Minquan and Dunhua Intersection",
-        "line": "紅50",
+        "line": "紅50（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "60134"
@@ -1777,7 +1782,7 @@
         "ref": "TPE59158",
         "name": "民權復興路口",
         "name_en": "Minquan and Fuxing Intersection",
-        "line": "紅50",
+        "line": "紅50（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "1000329"
@@ -1797,7 +1802,7 @@
         "ref": "TPE163437",
         "name": "榮星花園(民權)",
         "name_en": "Rongxing Garden (MinQuan)",
-        "line": "紅50",
+        "line": "紅50（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "20265"
@@ -1817,7 +1822,7 @@
         "ref": "TPE59159",
         "name": "榮星花園",
         "name_en": "Rongxing Garden",
-        "line": "紅50",
+        "line": "紅50（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "1000773"
@@ -1837,7 +1842,7 @@
         "ref": "TPE124956",
         "name": "第二果菜市場",
         "name_en": "The Second Wholesale Fruit and Vegetable Market",
-        "line": "紅50",
+        "line": "紅50（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "20264"
@@ -1857,7 +1862,7 @@
         "ref": "TPE59160",
         "name": "新生公園",
         "name_en": "Xinsheng Park",
-        "line": "紅50",
+        "line": "紅50（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "4101"
@@ -1877,7 +1882,7 @@
         "ref": "TPE59161",
         "name": "大同大學",
         "name_en": "Tatung U.",
-        "line": "紅50",
+        "line": "紅50（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "16261"
@@ -1897,7 +1902,7 @@
         "ref": "TPE59162",
         "name": "捷運圓山站",
         "name_en": "MRT Yuanshan Sta.",
-        "line": "紅50",
+        "line": "紅50（本線）",
         "color": "#F97316",
         "direction": 0,
         "station_id": "1462"
@@ -1917,7 +1922,7 @@
         "ref": "TPE59163",
         "name": "捷運圓山站",
         "name_en": "MRT Yuanshan Sta.",
-        "line": "紅50",
+        "line": "紅50（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "1462"
@@ -1937,7 +1942,7 @@
         "ref": "TPE59164",
         "name": "大同大學",
         "name_en": "Tatung U.",
-        "line": "紅50",
+        "line": "紅50（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "1000901"
@@ -1957,7 +1962,7 @@
         "ref": "TPE109814",
         "name": "新生公園",
         "name_en": "Xinsheng Park",
-        "line": "紅50",
+        "line": "紅50（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "1361"
@@ -1977,7 +1982,7 @@
         "ref": "TPE192042",
         "name": "新生公園(建國)",
         "name_en": "Xinsheng Park (Jianguo)",
-        "line": "紅50",
+        "line": "紅50（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "1165604553"
@@ -1997,7 +2002,7 @@
         "ref": "TPE109815",
         "name": "第二果菜市場",
         "name_en": "The Second Wholesale Fruit and Vegetable Market",
-        "line": "紅50",
+        "line": "紅50（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "6666"
@@ -2017,7 +2022,7 @@
         "ref": "TPE109816",
         "name": "榮星花園",
         "name_en": "Rongxing Garden",
-        "line": "紅50",
+        "line": "紅50（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "1000766"
@@ -2037,7 +2042,7 @@
         "ref": "TPE109817",
         "name": "民權龍江路口",
         "name_en": "Minquan and Longjiang Intersection",
-        "line": "紅50",
+        "line": "紅50（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "1000186"
@@ -2057,7 +2062,7 @@
         "ref": "TPE109818",
         "name": "民權復興路口",
         "name_en": "Minquan and Fuxing Intersection",
-        "line": "紅50",
+        "line": "紅50（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "1000326"
@@ -2077,7 +2082,7 @@
         "ref": "TPE109819",
         "name": "民權敦化路口",
         "name_en": "Minquan and Dunhua Intersection",
-        "line": "紅50",
+        "line": "紅50（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "1244"
@@ -2097,7 +2102,7 @@
         "ref": "TPE109820",
         "name": "民權東路口",
         "name_en": "Minquan E. Rd. Entrance",
-        "line": "紅50",
+        "line": "紅50（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "4158"
@@ -2117,7 +2122,7 @@
         "ref": "TPE109821",
         "name": "中華航空",
         "name_en": "China Airlines",
-        "line": "紅50",
+        "line": "紅50（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "1496"
@@ -2137,7 +2142,7 @@
         "ref": "TPE109822",
         "name": "民權公園",
         "name_en": "Minquan Park",
-        "line": "紅50",
+        "line": "紅50（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "1511"
@@ -2157,7 +2162,7 @@
         "ref": "TPE109823",
         "name": "民權國小",
         "name_en": "Minquan Elementary School",
-        "line": "紅50",
+        "line": "紅50（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "1514"
@@ -2177,7 +2182,7 @@
         "ref": "TPE109824",
         "name": "三民國小",
         "name_en": "Sanmin Elementary School",
-        "line": "紅50",
+        "line": "紅50（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "8671"
@@ -2197,7 +2202,7 @@
         "ref": "TPE206003",
         "name": "民權大橋",
         "name_en": "Minquan Bridge",
-        "line": "紅50",
+        "line": "紅50（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "1017"
@@ -2217,7 +2222,7 @@
         "ref": "TPE109825",
         "name": "行忠行愛路口",
         "name_en": "Xingzhong & Renai Intersection",
-        "line": "紅50",
+        "line": "紅50（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "1032"
@@ -2237,7 +2242,7 @@
         "ref": "TPE109826",
         "name": "行愛路",
         "name_en": "Xingai Rd.",
-        "line": "紅50",
+        "line": "紅50（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "1036"
@@ -2257,7 +2262,7 @@
         "ref": "TPE109827",
         "name": "行愛路77巷口",
         "name_en": "Xingai Rd. Lane 77 Entrance",
-        "line": "紅50",
+        "line": "紅50（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "1037"
@@ -2277,7 +2282,7 @@
         "ref": "TPE109828",
         "name": "行善行愛路口",
         "name_en": "Xingshan & Xingai Intersection",
-        "line": "紅50",
+        "line": "紅50（本線）",
         "color": "#F97316",
         "direction": 1,
         "station_id": "4672"

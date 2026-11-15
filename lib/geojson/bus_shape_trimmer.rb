@@ -186,14 +186,19 @@ module Geojson
     # At a dead-end terminus the next direction usually starts a little way back
     # along the same street; extending the arriving line back there draws a
     # hook, so start the departing line at the dead end instead.
+    # Cul-de-sac overshoot: both directions head the same way and arriving
+    # ended past departing's start — same hook, even though the link is a U-turn.
     def connect(arriving, departing)
       gap = meters_between(arriving.last, departing.first)
       return [ arriving, departing ] if gap.zero? || gap > JOIN_GAP_METERS
 
       link = bearing(arriving.last, departing.first)
-      if turn_degrees(end_heading(arriving), link) <= MAX_JOIN_TURN_DEGREES
+      arriving_heading = end_heading(arriving)
+      departing_heading = start_heading(departing)
+      if turn_degrees(arriving_heading, link) <= MAX_JOIN_TURN_DEGREES
         [ arriving + [ departing.first ], departing ]
-      elsif turn_degrees(link, start_heading(departing)) <= MAX_JOIN_TURN_DEGREES
+      elsif turn_degrees(link, departing_heading) <= MAX_JOIN_TURN_DEGREES ||
+          turn_degrees(arriving_heading, departing_heading) <= MAX_JOIN_TURN_DEGREES
         [ arriving, [ arriving.last ] + departing ]
       else
         [ arriving, departing ]

@@ -13,7 +13,11 @@
     "operator_id": "16186",
     "operator": "淡水客運",
     "operator_en": "Tamshui Bus Co., Ltd.",
-    "daily_trips": 58
+    "daily_trips": 58,
+    "departure": "三芝",
+    "destination": "捷運淡水站",
+    "departure_en": "Sanzhi",
+    "destination_en": "MRT Tamsui Sta."
   },
   "features": [
     {
@@ -3840,7 +3844,8 @@
         "line": "860",
         "color": "#DC2626",
         "direction": 0,
-        "station_id": "3842"
+        "station_id": "3842",
+        "platform": "第1月台"
       },
       "geometry": {
         "type": "Point",

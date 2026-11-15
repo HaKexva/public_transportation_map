@@ -17,7 +17,11 @@
       "sunday"
     ],
     "operator_en": "Tamshui Bus Co., Ltd.",
-    "daily_trips": 33
+    "daily_trips": 33,
+    "departure": "淡江大學",
+    "destination": "鄧公里",
+    "departure_en": "Tamkang University",
+    "destination_en": "Denggong Village"
   },
   "features": [
     {
@@ -644,7 +648,8 @@
         "line": "紅28直",
         "color": "#DC2626",
         "direction": 1,
-        "station_id": "3842"
+        "station_id": "3842",
+        "platform": "第1月台"
       },
       "geometry": {
         "type": "Point",

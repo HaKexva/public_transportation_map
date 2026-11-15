@@ -125,6 +125,14 @@ namespace :transit do
     systems = ENV.fetch("SYSTEMS", "tra,hsr,metro").split(",").map(&:strip).reject(&:empty?)
     result = Transit::ScheduleImporter.import!(systems: systems, dataset: dataset)
     puts "Imported TDX dataset ##{result.dataset.id}: #{result.trips} trips, #{result.headways} headway rules (#{result.skipped} skipped)"
+    graph = Transit::Itinerary::Compiler.write!
+    puts "Itinerary graph: #{graph.stops.size} stops, #{graph.routes.size} routes"
+  end
+
+  desc "Compile bus, metro, ferry, flight, and rail schedules into storage/itinerary_graph.json"
+  task compile_itinerary_graph: :environment do
+    graph = Transit::Itinerary::Compiler.write!
+    puts "Itinerary graph: #{graph.stops.size} stops, #{graph.routes.size} routes → #{Transit::Itinerary::Graph.path}"
   end
 
   desc "Sync catalog and load sample + other + sugar railway schedules"

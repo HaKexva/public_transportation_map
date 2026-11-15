@@ -1,10 +1,10 @@
 {
   "type": "FeatureCollection",
-  "name": "617（不繞駛三總）",
+  "name": "617（08:00前、21:30後不繞駛三總）",
   "properties": {
     "id": "taipei_617",
-    "name": "617（不繞駛三總）",
-    "name_en": "617 (skips Tri-Service General Hospital)",
+    "name": "617（08:00前、21:30後不繞駛三總）",
+    "name_en": "617 (before 08:00 and after 21:30, skips Tri-Service General Hospital)",
     "ref": "617",
     "color": "#16A34A",
     "city_id": "Taipei",
@@ -13,10 +13,15 @@
     "operator_id": "400",
     "operator": "三重客運",
     "operator_en": "San Chung Bus Co., Ltd.",
-    "via": "不繞駛三總",
-    "via_en": "skips Tri-Service General Hospital",
+    "via": "08:00前、21:30後不繞駛三總",
+    "via_en": "before 08:00 and after 21:30, skips Tri-Service General Hospital",
     "detour_hours": "08:00-21:30",
-    "daily_trips": 16
+    "daily_trips": 16,
+    "campus_span": "outside",
+    "departure": "泰林仁德路口",
+    "destination": "康寧社區",
+    "departure_en": "Tailin & Rende Rd. Intersection",
+    "destination_en": "Kangning Community"
   },
   "features": [
     {
@@ -24,8 +29,8 @@
       "properties": {
         "feature_type": "route",
         "ref": "617",
-        "name": "617（不繞駛三總）",
-        "name_en": "617 (skips Tri-Service General Hospital)",
+        "name": "617（08:00前、21:30後不繞駛三總）",
+        "name_en": "617 (before 08:00 and after 21:30, skips Tri-Service General Hospital)",
         "color": "#16A34A",
         "direction": 0,
         "corners_rounded": true
@@ -1721,8 +1726,8 @@
       "properties": {
         "feature_type": "route",
         "ref": "617",
-        "name": "617（不繞駛三總）",
-        "name_en": "617 (skips Tri-Service General Hospital)",
+        "name": "617（08:00前、21:30後不繞駛三總）",
+        "name_en": "617 (before 08:00 and after 21:30, skips Tri-Service General Hospital)",
         "color": "#16A34A",
         "direction": 1,
         "corners_rounded": true
@@ -3380,7 +3385,7 @@
         "ref": "TPE182901",
         "name": "泰林仁德路口",
         "name_en": "Tailin & Rende Rd. Intersection",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 0,
         "station_id": "3610"
@@ -3400,7 +3405,7 @@
         "ref": "TPE182904",
         "name": "捷運泰山站",
         "name_en": "MRT Taishan Sta.",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 0,
         "station_id": "73618"
@@ -3420,7 +3425,7 @@
         "ref": "TPE182905",
         "name": "行政院新莊聯合辦公大樓(中平路)",
         "name_en": "Xinzhuang Joint Office Tower Executive Yuan(Zhongping Rd.)",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 0,
         "station_id": "73617"
@@ -3440,7 +3445,7 @@
         "ref": "TPE187482",
         "name": "捷運新莊副都心站(中央路)",
         "name_en": "MRT Xinzhuang Fuduxin (Zhongyang Rd.) Sta.",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 0,
         "station_id": "1165603246"
@@ -3460,7 +3465,7 @@
         "ref": "TPE191768",
         "name": "中信國小",
         "name_en": "Zhongxin Elementary School",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 0,
         "station_id": "1165604547"
@@ -3480,7 +3485,7 @@
         "ref": "TPE21337",
         "name": "中原路",
         "name_en": "Zhongyuan Rd.",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 0,
         "station_id": "3504"
@@ -3500,7 +3505,7 @@
         "ref": "TPE170269",
         "name": "中原中平路口",
         "name_en": "Zhongyuan & Zhongping Intersection",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 0,
         "station_id": "20261"
@@ -3520,7 +3525,7 @@
         "ref": "TPE21338",
         "name": "中平國中",
         "name_en": "Zhongping Junior High School",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 0,
         "station_id": "3497"
@@ -3540,7 +3545,7 @@
         "ref": "TPE21339",
         "name": "新莊高中(新莊文藝中心)",
         "name_en": "Xinzhuang High School(Xinzhuang Culture & Arts Center)",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 0,
         "station_id": "3573"
@@ -3560,7 +3565,7 @@
         "ref": "TPE152356",
         "name": "新莊高中(幸福路)",
         "name_en": "Xinzhuang High School(Xingfu Rd.)",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 0,
         "station_id": "8207"
@@ -3580,7 +3585,7 @@
         "ref": "TPE21340",
         "name": "中和街口",
         "name_en": "Zhonghe St. Entrance",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 0,
         "station_id": "3500"
@@ -3600,7 +3605,7 @@
         "ref": "TPE21341",
         "name": "中港",
         "name_en": "Zhonggang",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 0,
         "station_id": "3507"
@@ -3620,7 +3625,7 @@
         "ref": "TPE21342",
         "name": "聯邦社區",
         "name_en": "Lianbang Community",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 0,
         "station_id": "50605"
@@ -3640,7 +3645,7 @@
         "ref": "TPE152357",
         "name": "中華中原路口",
         "name_en": "Zhonghua & Zhongyuan Intersection",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 0,
         "station_id": "20389"
@@ -3660,7 +3665,7 @@
         "ref": "TPE21343",
         "name": "中原路一",
         "name_en": "Zhongyuan Rd. 1",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 0,
         "station_id": "3505"
@@ -3680,7 +3685,7 @@
         "ref": "TPE21344",
         "name": "頭前國中(中原路)",
         "name_en": "Touqian Junior High School(Zhongyuan Rd.)",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 0,
         "station_id": "3599"
@@ -3700,7 +3705,7 @@
         "ref": "TPE152358",
         "name": "頭前國中",
         "name_en": "Touqian Junior High School",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 0,
         "station_id": "3600"
@@ -3720,7 +3725,7 @@
         "ref": "TPE21345",
         "name": "思源新北大道路口",
         "name_en": "Siyuan Rd. & New Taipei Blvd. Intersection",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 0,
         "station_id": "3733"
@@ -3740,7 +3745,7 @@
         "ref": "TPE150956",
         "name": "新北大道思源路口",
         "name_en": "New Taipei Blvd.&Siyuan Rd. Intersection",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 0,
         "station_id": "1000962"
@@ -3760,7 +3765,7 @@
         "ref": "TPE21346",
         "name": "新北大道化成路口",
         "name_en": "New Taipei Blvd. & Huacheng Intersection",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 0,
         "station_id": "1000842"
@@ -3780,7 +3785,7 @@
         "ref": "TPE21347",
         "name": "新北大道中興路口",
         "name_en": "Zhongshan Rd and Zhongxing Rd Intersection",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 0,
         "station_id": "3495"
@@ -3800,7 +3805,7 @@
         "ref": "TPE21348",
         "name": "新北大道中華路口",
         "name_en": "New Taipei Blvd. & Zhonghua Intersection",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 0,
         "station_id": "3978"
@@ -3820,7 +3825,7 @@
         "ref": "TPE21349",
         "name": "三重區公所(新北大道)",
         "name_en": "Sanchong City Office(New Taipei Blvd.)",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 0,
         "station_id": "13210"
@@ -3840,7 +3845,7 @@
         "ref": "TPE21350",
         "name": "聯合醫院(三重院區)",
         "name_en": "New Taipei City Hospital(Sanchong Branch)",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 0,
         "station_id": "13209"
@@ -3860,7 +3865,7 @@
         "ref": "TPE21351",
         "name": "大同路口",
         "name_en": "Datong Rd. Entrance",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 0,
         "station_id": "3387"
@@ -3880,7 +3885,7 @@
         "ref": "TPE21353",
         "name": "天台廣場",
         "name_en": "Guoyuan Theater",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 0,
         "station_id": "1000843"
@@ -3900,7 +3905,7 @@
         "ref": "TPE21352",
         "name": "捷運台北橋站",
         "name_en": "MRT Taipei Bridge Sta.",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 0,
         "station_id": "60059"
@@ -3920,7 +3925,7 @@
         "ref": "TPE168606",
         "name": "三重派出所(重新路)",
         "name_en": "Sanchong Police Station (Chongxin Rd.)",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 0,
         "station_id": "20263"
@@ -3940,7 +3945,7 @@
         "ref": "TPE29486",
         "name": "捷運民權西路站",
         "name_en": "MRT Minquan W. Rd. Station",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 0,
         "station_id": "1000398"
@@ -3960,7 +3965,7 @@
         "ref": "TPE21354",
         "name": "民權中山路口",
         "name_en": "Minquan and Zhongshan Intersection",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 0,
         "station_id": "1235"
@@ -3980,7 +3985,7 @@
         "ref": "TPE21355",
         "name": "捷運中山國小站",
         "name_en": "MRT Zhongshan Elementary School Sta.",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 0,
         "station_id": "4098"
@@ -4000,7 +4005,7 @@
         "ref": "TPE21356",
         "name": "民權吉林路口",
         "name_en": "Minquan and Jilin Intersection",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 0,
         "station_id": "1000112"
@@ -4020,7 +4025,7 @@
         "ref": "TPE21357",
         "name": "民權松江路口",
         "name_en": "Minquan and Songjiang Intersection",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 0,
         "station_id": "1239"
@@ -4040,7 +4045,7 @@
         "ref": "TPE21358",
         "name": "民權建國路口",
         "name_en": "Minquan & Jianguo Intersection",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 0,
         "station_id": "1242"
@@ -4060,7 +4065,7 @@
         "ref": "TPE29487",
         "name": "民權龍江路口",
         "name_en": "Minquan and Longjiang Intersection",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 0,
         "station_id": "1000186"
@@ -4080,7 +4085,7 @@
         "ref": "TPE21359",
         "name": "民權復興路口",
         "name_en": "Minquan and Fuxing Intersection",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 0,
         "station_id": "1000326"
@@ -4100,7 +4105,7 @@
         "ref": "TPE21360",
         "name": "民權敦化路口",
         "name_en": "Minquan and Dunhua Intersection",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 0,
         "station_id": "1244"
@@ -4120,7 +4125,7 @@
         "ref": "TPE57977",
         "name": "民權東路口",
         "name_en": "Minquan E. Rd. Entrance",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 0,
         "station_id": "4158"
@@ -4140,7 +4145,7 @@
         "ref": "TPE21361",
         "name": "中華航空",
         "name_en": "China Airlines",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 0,
         "station_id": "1496"
@@ -4160,7 +4165,7 @@
         "ref": "TPE57978",
         "name": "民權公園",
         "name_en": "Minquan Park",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 0,
         "station_id": "1511"
@@ -4180,7 +4185,7 @@
         "ref": "TPE21362",
         "name": "民權國小",
         "name_en": "Minquan Elementary School",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 0,
         "station_id": "1514"
@@ -4200,7 +4205,7 @@
         "ref": "TPE21363",
         "name": "三民國小",
         "name_en": "Sanmin Elementary School",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 0,
         "station_id": "8671"
@@ -4220,7 +4225,7 @@
         "ref": "TPE21364",
         "name": "民權大橋",
         "name_en": "Minquan Bridge",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 0,
         "station_id": "1017"
@@ -4240,7 +4245,7 @@
         "ref": "TPE21365",
         "name": "時報廣場",
         "name_en": "China Times Daily News Square",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 0,
         "station_id": "1077"
@@ -4260,7 +4265,7 @@
         "ref": "TPE21366",
         "name": "三民國中",
         "name_en": "Sanmin Junior High School",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 0,
         "station_id": "966"
@@ -4280,7 +4285,7 @@
         "ref": "TPE21367",
         "name": "內湖行政大樓",
         "name_en": "Neihu Admin. Building",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 0,
         "station_id": "991"
@@ -4300,7 +4305,7 @@
         "ref": "TPE21368",
         "name": "國防醫學中心",
         "name_en": "National Defense Medical Center",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 0,
         "station_id": "339"
@@ -4320,7 +4325,7 @@
         "ref": "TPE21369",
         "name": "將軍嶺",
         "name_en": "Jiangjun Ling",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 0,
         "station_id": "50500"
@@ -4340,7 +4345,7 @@
         "ref": "TPE21370",
         "name": "方濟中學",
         "name_en": "St. Francis High School",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 0,
         "station_id": "3996"
@@ -4360,7 +4365,7 @@
         "ref": "TPE21371",
         "name": "成功路三段",
         "name_en": "Chenggong Rd. Sec. 3",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 0,
         "station_id": "8520"
@@ -4380,7 +4385,7 @@
         "ref": "TPE21372",
         "name": "湖光市場",
         "name_en": "Huguang Market",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 0,
         "station_id": "8537"
@@ -4400,7 +4405,7 @@
         "ref": "TPE21373",
         "name": "捷運內湖站",
         "name_en": "MRT Neihu Sta.",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 0,
         "station_id": "8538"
@@ -4420,7 +4425,7 @@
         "ref": "TPE57945",
         "name": "秀湖",
         "name_en": "Xiuhu",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 0,
         "station_id": "1000732"
@@ -4440,7 +4445,7 @@
         "ref": "TPE21374",
         "name": "大湖",
         "name_en": "Dahu",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 0,
         "station_id": "968"
@@ -4460,7 +4465,7 @@
         "ref": "TPE21375",
         "name": "捷運大湖公園站",
         "name_en": "MRT Dahu Park Sta.",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 0,
         "station_id": "3998"
@@ -4480,7 +4485,7 @@
         "ref": "TPE29488",
         "name": "大湖公園",
         "name_en": "Dahu Park",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 0,
         "station_id": "8524"
@@ -4500,7 +4505,7 @@
         "ref": "TPE21376",
         "name": "黃石公廟",
         "name_en": "Huangshigong Temple",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 0,
         "station_id": "4009"
@@ -4520,7 +4525,7 @@
         "ref": "TPE21377",
         "name": "康寧醫院",
         "name_en": "Kangning Hospital",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 0,
         "station_id": "1094"
@@ -4540,7 +4545,7 @@
         "ref": "TPE59474",
         "name": "康寧社區",
         "name_en": "Kangning Community",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 0,
         "station_id": "3999"
@@ -4560,7 +4565,7 @@
         "ref": "TPE21378",
         "name": "民權隧道",
         "name_en": "Minquan Tunnel",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 1,
         "station_id": "50443"
@@ -4580,7 +4585,7 @@
         "ref": "TPE21379",
         "name": "民權隧道二",
         "name_en": "Minquan Tunnel 2",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 1,
         "station_id": "8675"
@@ -4600,7 +4605,7 @@
         "ref": "TPE59475",
         "name": "民權東路六段(民權敦品)",
         "name_en": "Minquan E. Rd. Sec. 6 (Minquan Dunpin)",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 1,
         "station_id": "8674"
@@ -4620,7 +4625,7 @@
         "ref": "TPE21380",
         "name": "國防醫學大學",
         "name_en": "National Defense Medical University",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 1,
         "station_id": "8673"
@@ -4640,7 +4645,7 @@
         "ref": "TPE138440",
         "name": "福華商場",
         "name_en": "Fuhua Market",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 1,
         "station_id": "8672"
@@ -4660,7 +4665,7 @@
         "ref": "TPE21384",
         "name": "內湖行政大樓",
         "name_en": "Neihu Admin. Building",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 1,
         "station_id": "8667"
@@ -4680,7 +4685,7 @@
         "ref": "TPE21385",
         "name": "三民國中",
         "name_en": "Sanmin Junior High School",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 1,
         "station_id": "8666"
@@ -4700,7 +4705,7 @@
         "ref": "TPE21386",
         "name": "時報廣場",
         "name_en": "China Times Daily News Square",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 1,
         "station_id": "8601"
@@ -4720,7 +4725,7 @@
         "ref": "TPE21387",
         "name": "民權大橋",
         "name_en": "Minquan Bridge",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 1,
         "station_id": "8602"
@@ -4740,7 +4745,7 @@
         "ref": "TPE21388",
         "name": "三民國小",
         "name_en": "Sanmin Elementary School",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 1,
         "station_id": "10403"
@@ -4760,7 +4765,7 @@
         "ref": "TPE21389",
         "name": "民權國小",
         "name_en": "Minquan Elementary School",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 1,
         "station_id": "8650"
@@ -4780,7 +4785,7 @@
         "ref": "TPE21390",
         "name": "中華航空",
         "name_en": "China Airlines",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 1,
         "station_id": "8604"
@@ -4800,7 +4805,7 @@
         "ref": "TPE21393",
         "name": "民權敦化路口",
         "name_en": "Minquan and Dunhua Intersection",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 1,
         "station_id": "60134"
@@ -4820,7 +4825,7 @@
         "ref": "TPE21394",
         "name": "民權復興路口",
         "name_en": "Minquan and Fuxing Intersection",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 1,
         "station_id": "1000329"
@@ -4840,7 +4845,7 @@
         "ref": "TPE29489",
         "name": "民權龍江路口",
         "name_en": "Minquan and Longjiang Intersection",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 1,
         "station_id": "1000184"
@@ -4860,7 +4865,7 @@
         "ref": "TPE21395",
         "name": "民權建國路口",
         "name_en": "Minquan & Jianguo Intersection",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 1,
         "station_id": "4081"
@@ -4880,7 +4885,7 @@
         "ref": "TPE21396",
         "name": "民權松江路口",
         "name_en": "Minquan and Songjiang Intersection",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 1,
         "station_id": "1240"
@@ -4900,7 +4905,7 @@
         "ref": "TPE21397",
         "name": "民權吉林路口",
         "name_en": "Minquan and Jilin Intersection",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 1,
         "station_id": "1000162"
@@ -4920,7 +4925,7 @@
         "ref": "TPE21398",
         "name": "捷運中山國小站",
         "name_en": "MRT Zhongshan Elementary School Sta.",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 1,
         "station_id": "1165603308"
@@ -4940,7 +4945,7 @@
         "ref": "TPE21399",
         "name": "民權中山路口",
         "name_en": "Minquan and Zhongshan Intersection",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 1,
         "station_id": "1236"
@@ -4960,7 +4965,7 @@
         "ref": "TPE21400",
         "name": "捷運民權西路站",
         "name_en": "MRT Minquan W. Rd. Station",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 1,
         "station_id": "1000393"
@@ -4980,7 +4985,7 @@
         "ref": "TPE21401",
         "name": "民權大龍街口",
         "name_en": "Minquan & Dalong Intersection",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 1,
         "station_id": "1427"
@@ -5000,7 +5005,7 @@
         "ref": "TPE148554",
         "name": "三重派出所(重新路)",
         "name_en": "Sanchong Police Station (Chongxin Rd.)",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 1,
         "station_id": "3488"
@@ -5020,7 +5025,7 @@
         "ref": "TPE21402",
         "name": "捷運台北橋站",
         "name_en": "MRT Taipei Bridge Sta.",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 1,
         "station_id": "13200"
@@ -5040,7 +5045,7 @@
         "ref": "TPE21403",
         "name": "天台廣場",
         "name_en": "Tiantai Square",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 1,
         "station_id": "3452"
@@ -5060,7 +5065,7 @@
         "ref": "TPE21404",
         "name": "大同路口",
         "name_en": "Datong Rd. Entrance",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 1,
         "station_id": "1000149"
@@ -5080,7 +5085,7 @@
         "ref": "TPE21405",
         "name": "聯合醫院(三重院區)",
         "name_en": "New Taipei City Hospital(Sanchong Branch)",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 1,
         "station_id": "13212"
@@ -5100,7 +5105,7 @@
         "ref": "TPE21406",
         "name": "三重區公所(新北大道)",
         "name_en": "Sanchong City Office(New Taipei Blvd.)",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 1,
         "station_id": "3394"
@@ -5120,7 +5125,7 @@
         "ref": "TPE21407",
         "name": "新北大道中華路口",
         "name_en": "New Taipei Blvd. & Zhonghua Intersection",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 1,
         "station_id": "3979"
@@ -5140,7 +5145,7 @@
         "ref": "TPE21408",
         "name": "新北大道重光街口",
         "name_en": "New Taipei Blvd. & Chongguang Intersection",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 1,
         "station_id": "3494"
@@ -5160,7 +5165,7 @@
         "ref": "TPE21409",
         "name": "新北大道化成路口",
         "name_en": "New Taipei Blvd. & Huacheng Intersection",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 1,
         "station_id": "4141"
@@ -5180,7 +5185,7 @@
         "ref": "TPE21410",
         "name": "思源新北大道路口",
         "name_en": "Siyuan Rd. & New Taipei Blvd. Intersection",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 1,
         "station_id": "3551"
@@ -5200,7 +5205,7 @@
         "ref": "TPE148744",
         "name": "頭前國中",
         "name_en": "Touqian Junior High School",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 1,
         "station_id": "3598"
@@ -5220,7 +5225,7 @@
         "ref": "TPE21411",
         "name": "頭前國中(中原路)",
         "name_en": "Touqian Junior High School(Zhongyuan Rd.)",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 1,
         "station_id": "50607"
@@ -5240,7 +5245,7 @@
         "ref": "TPE21412",
         "name": "中原路一",
         "name_en": "Zhongyuan Rd. 1",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 1,
         "station_id": "3506"
@@ -5260,7 +5265,7 @@
         "ref": "TPE152359",
         "name": "中華中原路口",
         "name_en": "Zhonghua & Zhongyuan Intersection",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 1,
         "station_id": "20388"
@@ -5280,7 +5285,7 @@
         "ref": "TPE21413",
         "name": "聯邦社區",
         "name_en": "Lianbang Community",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 1,
         "station_id": "3603"
@@ -5300,7 +5305,7 @@
         "ref": "TPE21414",
         "name": "中港",
         "name_en": "Zhonggang",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 1,
         "station_id": "30035"
@@ -5320,7 +5325,7 @@
         "ref": "TPE21415",
         "name": "中和街口",
         "name_en": "Zhonghe St. Entrance",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 1,
         "station_id": "8208"
@@ -5340,7 +5345,7 @@
         "ref": "TPE152360",
         "name": "新莊高中(幸福路)",
         "name_en": "Xinzhuang High School(Xingfu Rd.)",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 1,
         "station_id": "3572"
@@ -5360,7 +5365,7 @@
         "ref": "TPE21416",
         "name": "新莊高中(新莊文藝中心)",
         "name_en": "Xinzhuang High School(Xinzhuang Culture & Arts Center)",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 1,
         "station_id": "8206"
@@ -5380,7 +5385,7 @@
         "ref": "TPE21417",
         "name": "中平國中",
         "name_en": "Zhongping Junior High School",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 1,
         "station_id": "8205"
@@ -5400,7 +5405,7 @@
         "ref": "TPE21418",
         "name": "中原路",
         "name_en": "Zhongyuan Rd.",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 1,
         "station_id": "3503"
@@ -5420,7 +5425,7 @@
         "ref": "TPE191769",
         "name": "中信國小",
         "name_en": "Zhongxin Elementary School",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 1,
         "station_id": "1165604546"
@@ -5440,7 +5445,7 @@
         "ref": "TPE187483",
         "name": "捷運新莊副都心站(中央路)",
         "name_en": "MRT Xinzhuang Fuduxin (Zhongyang Rd.) Sta.",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 1,
         "station_id": "1165603329"
@@ -5460,7 +5465,7 @@
         "ref": "TPE182906",
         "name": "行政院新莊聯合辦公大樓(中平路)",
         "name_en": "Xinzhuang Joint Office Tower Executive Yuan(Zhongping Rd.)",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 1,
         "station_id": "1165603323"
@@ -5480,7 +5485,7 @@
         "ref": "TPE185163",
         "name": "捷運泰山站",
         "name_en": "MRT Taishan Station",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 1,
         "station_id": "73619"
@@ -5500,7 +5505,7 @@
         "ref": "TPE182907",
         "name": "捷運泰山站(泰林路)",
         "name_en": "MRT Taishan Station(Tailin Rd.)",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 1,
         "station_id": "36072"
@@ -5520,7 +5525,7 @@
         "ref": "TPE182909",
         "name": "泰林仁德路口",
         "name_en": "Tailin & Rende Rd. Intersection",
-        "line": "617（不繞駛三總）",
+        "line": "617（08:00前、21:30後不繞駛三總）",
         "color": "#16A34A",
         "direction": 1,
         "station_id": "36074"

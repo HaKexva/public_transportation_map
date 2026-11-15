@@ -13,7 +13,11 @@
     "operator_id": "19",
     "operator": "中鹿客運",
     "operator_en": "Chung-Lu Bus Co., Ltd.",
-    "daily_trips": 27
+    "daily_trips": 27,
+    "departure": "中科管理局(中科路)",
+    "destination": "干城站",
+    "departure_en": "Central Taiwan Science Park(Zhongke Road)",
+    "destination_en": "Gancheng Station"
   },
   "features": [
     {
@@ -3536,7 +3540,8 @@
         "line": "45",
         "color": "#db2777",
         "direction": 0,
-        "station_id": "3842"
+        "station_id": "3842",
+        "platform": "第1月台"
       },
       "geometry": {
         "type": "Point",

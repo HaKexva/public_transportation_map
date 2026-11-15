@@ -13,7 +13,15 @@
     "operator_id": "15",
     "operator": "中台灣客運",
     "operator_en": "Ct Bus Co., Ltd.",
-    "daily_trips": 6
+    "daily_trips": 6,
+    "operator_id_2": "3",
+    "operator_2": "統聯客運",
+    "operator_2_en": "United Highway Bus Co., Ltd.",
+    "color_2": "#1e3a8a",
+    "departure": "橫山",
+    "destination": "高鐵臺中站(第18月台)",
+    "departure_en": "Hengshan",
+    "destination_en": "HSR Taichung Station(Platform 18)"
   },
   "features": [
     {
@@ -4304,7 +4312,8 @@
         "line": "37",
         "color": "#0B7A3E",
         "direction": 0,
-        "station_id": "3842"
+        "station_id": "3842",
+        "platform": "第1月台"
       },
       "geometry": {
         "type": "Point",
@@ -5584,7 +5593,8 @@
         "line": "37",
         "color": "#0B7A3E",
         "direction": 1,
-        "station_id": "3842"
+        "station_id": "3842",
+        "platform": "第1月台"
       },
       "geometry": {
         "type": "Point",

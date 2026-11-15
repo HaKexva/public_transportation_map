@@ -13,7 +13,15 @@
     "operator_id": "15",
     "operator": "中台灣客運",
     "operator_en": "Ct Bus Co., Ltd.",
-    "daily_trips": 4
+    "daily_trips": 4,
+    "operator_id_2": "3",
+    "operator_2": "統聯客運",
+    "operator_2_en": "United Highway Bus Co., Ltd.",
+    "color_2": "#1e3a8a",
+    "departure": "愛麗絲國際大飯店",
+    "destination": "水湳轉運中心",
+    "departure_en": "Aeris International Hotel",
+    "destination_en": "Shuinan Transit Center"
   },
   "features": [
     {
@@ -3212,7 +3220,8 @@
         "line": "25",
         "color": "#0B7A3E",
         "direction": 0,
-        "station_id": "3842"
+        "station_id": "3842",
+        "platform": "第1月台"
       },
       "geometry": {
         "type": "Point",
@@ -5092,7 +5101,8 @@
         "line": "25",
         "color": "#0B7A3E",
         "direction": 1,
-        "station_id": "3842"
+        "station_id": "3842",
+        "platform": "第1月台"
       },
       "geometry": {
         "type": "Point",

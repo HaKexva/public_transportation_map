@@ -34,6 +34,13 @@ module Transit
         new.configured?
       end
 
+      # Master switch for every outbound TDX call. Live ETA, metro alerts,
+      # schedule imports, and rake tasks all gate on configured?, which is
+      # false while this is off. Default on; set TDX_ENABLED=0 to pause.
+      def enabled?
+        ActiveModel::Type::Boolean.new.cast(ENV.fetch("TDX_ENABLED", "true"))
+      end
+
       # Breaker, rate-limit and usage state shared by every process. A
       # per-process (memory) or no-op (null) Rails.cache cannot share it, so
       # fall back to a small file store under tmp/.
@@ -118,20 +125,20 @@ module Transit
     end
 
     def configured?
-      @client_id.present? && @client_secret.present?
+      self.class.enabled? && @client_id.present? && @client_secret.present?
     end
 
     # Hits the token endpoint before a long import. Dead credentials raise
     # RequestError here instead of after hours of timetable writes.
     def probe!
-      raise ConfigurationError, "TDX_CLIENT_ID and TDX_CLIENT_SECRET are required" unless configured?
+      raise ConfigurationError, disabled_message unless configured?
 
       access_token
       true
     end
 
     def fetch_all(path, query: {}, page_size: DEFAULT_PAGE_SIZE)
-      raise ConfigurationError, "TDX_CLIENT_ID and TDX_CLIENT_SECRET are required" unless configured?
+      raise ConfigurationError, disabled_message unless configured?
 
       records = []
       skip = 0
@@ -152,6 +159,8 @@ module Transit
     end
 
     def get_json(path, query: {})
+      raise ConfigurationError, disabled_message unless configured?
+
       check_breaker!
       uri = URI.join("#{API_BASE}/", path.delete_prefix("/"))
       uri.query = URI.encode_www_form(query) if query.present?
@@ -165,6 +174,14 @@ module Transit
     end
 
     private
+
+    def disabled_message
+      if !self.class.enabled?
+        "TDX is paused (TDX_ENABLED=0). Set TDX_ENABLED=1 to resume."
+      else
+        "TDX_CLIENT_ID and TDX_CLIENT_SECRET are required"
+      end
+    end
 
     def credentials_client_id
       Rails.application.credentials.dig(:tdx, :client_id)

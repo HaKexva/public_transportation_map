@@ -9,11 +9,17 @@
     "color": "#DC2626",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
-    "official_map_url": "https://ebus.gov.taipei/File/Get/1e8d1ad1-0528-46aa-bb52-f30c5c87edae?v=639267188533045298",
+    "official_map_url": "https://ebus.gov.taipei/File/Get/1e8d1ad1-0528-46aa-bb52-f30c5c87edae?v=639301149763663629",
+    "departure": "捷運淡水站",
+    "departure_en": "MRT Tamsui Sta.",
+    "destination": "第一航廈(下客站)",
+    "destination_en": "Taoyuan Airport Terminal 1",
     "operator_id": "16185",
     "operator": "指南客運",
     "operator_en": "Zhinan Bus Co., Ltd.",
-    "daily_trips": 10
+    "operator_id_2": "16186",
+    "operator_2": "淡水客運",
+    "operator_2_en": "Tamshui Bus Co., Ltd."
   },
   "features": [
     {
@@ -30,6 +36,10 @@
       "geometry": {
         "type": "LineString",
         "coordinates": [
+          [
+            121.446737270429,
+            25.1673675412666
+          ],
           [
             121.446112032641,
             25.1678633846504
@@ -97,6 +107,26 @@
           [
             121.447191,
             25.1676288
+          ],
+          [
+            121.447073,
+            25.167697
+          ],
+          [
+            121.44668,
+            25.167921
+          ],
+          [
+            121.446076,
+            25.168222
+          ],
+          [
+            121.445663,
+            25.168438
+          ],
+          [
+            121.445282,
+            25.168639
           ],
           [
             121.4450734,
@@ -1091,7 +1121,7 @@
             25.1251114
           ],
           [
-            121.338063,
+            121.3380629,
             25.1246781
           ],
           [
@@ -2087,7 +2117,7 @@
             25.0803825
           ],
           [
-            121.2343676,
+            121.2343675,
             25.0803456
           ],
           [
@@ -2200,8 +2230,8 @@
         "type": "LineString",
         "coordinates": [
           [
-            121.236685331735,
-            25.0807002049653
+            121.236656490793,
+            25.0807488835925
           ],
           [
             121.23606010920942,
@@ -4044,8 +4074,7 @@
         "line": "990",
         "color": "#DC2626",
         "direction": 0,
-        "station_id": "1165610553",
-        "platform": "第二月台"
+        "station_id": "1165610553"
       },
       "geometry": {
         "type": "Point",
@@ -4265,8 +4294,7 @@
         "line": "990",
         "color": "#DC2626",
         "direction": 1,
-        "station_id": "1165610553",
-        "platform": "第二月台"
+        "station_id": "1165610553"
       },
       "geometry": {
         "type": "Point",

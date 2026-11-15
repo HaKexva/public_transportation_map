@@ -28,6 +28,12 @@ namespace :geojson do
       system_id: "new_taipei_metro",
       lines: Geojson::NewTaipeiMetroCatalog::LINES
     )
+    Geojson::DanhaiSegmentWriter.write!
+  end
+
+  desc "Split Danhai LRT into Green Mountain / Blue Coast map layers"
+  task danhai_segments: :environment do
+    Geojson::DanhaiSegmentWriter.write!
   end
 
   desc "Rebuild Taoyuan Metro line GeoJSON files from OpenStreetMap"
@@ -204,7 +210,10 @@ namespace :geojson do
     city = ENV.fetch("CITY", "Keelung")
     series = ENV["SERIES"].presence
     result = Geojson::BusImporter.import!(city_id: city, series: series, prune_stale: series.blank?)
-    Geojson::RoutesManifestWriter.write! if Geojson::BusTimedDetours.apply!.positive?
+    detours = Geojson::BusTimedDetours.apply!
+    shorts = Geojson::BusShortReturns.apply!
+    skips = Geojson::BusTimedSkips.apply!
+    Geojson::RoutesManifestWriter.write! if (detours + shorts + skips).positive?
     suffix = series.present? ? " (#{series}xx)" : ""
     puts "Imported #{result.routes.length} bus routes for #{city}#{suffix}"
     puts "Skipped (no shape): #{result.skipped.join(', ')}" if result.skipped.any?
@@ -248,10 +257,19 @@ namespace :geojson do
     end
 
     Geojson::BusTimedDetours.apply!
+    Geojson::BusShortReturns.apply!
+    Geojson::BusTimedSkips.apply!
     Geojson::RoutesManifestWriter.write!
     Geojson::BusStopIndexWriter.write!
     Geojson::BusDepotWriter.write!
     puts "Done. Imported #{totals[:routes]} routes across #{cities.map(&:id).join(', ')} (skipped #{totals[:skipped]})"
+  end
+
+  desc "Split published short-return variants (e.g. 531 返程至新明成功路口)"
+  task bus_short_returns: :environment do
+    updated = Geojson::BusShortReturns.apply!
+    Geojson::RoutesManifestWriter.write! if updated.positive?
+    puts "Wrote #{updated} short-return bus variants"
   end
 
   desc "Audit bus coverage: TDX Route/Shape vs local GeoJSON (CITY=MiaoliCounty or omit for all; OUT=tmp/bus_coverage)"
@@ -462,6 +480,8 @@ namespace :geojson do
     end
     Geojson::RoutesManifestWriter.write!
     puts "Updated weekend/holiday service flags in #{updated} bus GeoJSON files"
+    graph = Transit::Itinerary::Compiler.write!
+    puts "Itinerary graph: #{graph.stops.size} stops, #{graph.routes.size} routes"
   end
 
   desc "Split routes that enter 三總內湖院區 only at set hours into 繞駛三總 / 不繞駛三總 variants"
@@ -469,6 +489,13 @@ namespace :geojson do
     updated = Geojson::BusTimedDetours.apply!
     Geojson::RoutesManifestWriter.write! if updated.positive?
     puts "Split #{updated} bus routes into 繞駛三總 / 不繞駛三總 variants"
+  end
+
+  desc "Tag stops that are skipped only in published time windows (e.g. 823)"
+  task bus_timed_skips: :environment do
+    updated = Geojson::BusTimedSkips.apply!
+    Geojson::RoutesManifestWriter.write! if updated.positive?
+    puts "Annotated timed skip stops on #{updated} bus routes"
   end
 
   desc "Round the corners of bus route lines once (CITY=dir substring to limit)"

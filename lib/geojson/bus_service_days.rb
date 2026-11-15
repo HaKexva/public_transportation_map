@@ -11,6 +11,10 @@ module Geojson
   module BusServiceDays
     WEEKDAY_KEYS = %w[Monday Tuesday Wednesday Thursday Friday].freeze
     OFF_DAY_KEYS = { "saturday" => "Saturday", "sunday" => "Sunday", "holiday" => "NationalHolidays" }.freeze
+    # 夜間公車把過午夜的班次記在同一個 ServiceDay（23:30 與 00:05 都算週三）。
+    # 00:00–03:00 接在 24:00 之後，不算隔天早上的第一班。
+    NIGHT_ROLLOVER_MINUTES = 3 * 60
+    NIGHT_FROM_MINUTES = 12 * 60
 
     module_function
 
@@ -33,8 +37,9 @@ module Geojson
     # the trips implied by Frequencys headway bands. nil without data.
     def daily_trips(rows)
       per_direction = Array(rows).group_by { |row| row["Direction"].to_i }.values.map do |direction_rows|
-        trips = direction_rows.flat_map { |row| Array(row["Timetables"]) }.select { |trip| weekday?(trip) }
-          .filter_map { |trip| trip.dig("StopTimes", 0, "DepartureTime") }.uniq.size
+        times = direction_rows.flat_map { |row| Array(row["Timetables"]) }.select { |trip| weekday?(trip) }
+          .filter_map { |trip| trip.dig("StopTimes", 0, "DepartureTime") }
+        trips = count_departures(times)
         bands = direction_rows.flat_map { |row| Array(row["Frequencys"]) }.select { |band| weekday?(band) }
           .uniq { |band| band.values_at("StartTime", "EndTime", "MinHeadwayMins", "MaxHeadwayMins") }
         trips + bands.sum { |band| band_trips(band) }
@@ -61,6 +66,40 @@ module Geojson
     def clock_minutes(value)
       hours, minutes = value.to_s.scan(/\d+/).first(2).map(&:to_i)
       hours && minutes ? (hours * 60) + minutes : nil
+    end
+
+    # Clock order, except a night service's after-midnight trips follow 24:00.
+    # 23:30 then 00:05 is 35 minutes, not a 00:05 first bus and a 23-hour gap.
+    def operating_order(times)
+      pairs = Array(times).filter_map { |time| minutes = clock_minutes(time) and [ time, minutes ] }
+      overnight = overnight_service?(pairs.map(&:last))
+      pairs.sort_by { |_, minutes| operating_minute(minutes, overnight) }.map(&:first)
+    end
+
+    def count_departures(times)
+      pairs = Array(times).filter_map { |time| minutes = clock_minutes(time) and [ time, minutes ] }
+      return 0 if pairs.empty?
+
+      overnight = overnight_service?(pairs.map(&:last))
+      pairs.map { |_, minutes| operating_minute(minutes, overnight) }.uniq.size
+    end
+
+    def operating_span(times)
+      ordered = operating_order(times)
+      return [] if ordered.empty?
+
+      overnight = overnight_service?(ordered.filter_map { |time| clock_minutes(time) })
+      ordered.filter_map { |time| minutes = clock_minutes(time) and operating_minute(minutes, overnight) }
+    end
+
+    def overnight_service?(minutes)
+      minutes.any? { |value| value >= NIGHT_FROM_MINUTES } &&
+        minutes.any? { |value| value < NIGHT_ROLLOVER_MINUTES } &&
+        minutes.all? { |value| value >= NIGHT_FROM_MINUTES || value < NIGHT_ROLLOVER_MINUTES }
+    end
+
+    def operating_minute(minutes, overnight)
+      overnight && minutes < NIGHT_ROLLOVER_MINUTES ? minutes + (24 * 60) : minutes
     end
 
     # Schedule rows cut to the trips leaving inside (or outside) "08:00-21:30":
@@ -127,7 +166,7 @@ module Geojson
         city = Geojson::BusCatalog.find(properties["city_id"])
         next false unless city
 
-        ref = properties["ref"].to_s
+        ref = Geojson::BusImporter.schedule_ref(properties)
         by_name = [ ref, ref.sub(/[A-J]\z/i, "") ].uniq.to_h do |name|
           [ name, Transit::BusTdxSnapshot.read(city.id, name)&.dig("schedules").presence ]
         end.compact
@@ -138,7 +177,7 @@ module Geojson
     def apply!(path, by_name, city)
       data = JSON.parse(File.read(path))
       properties = data["properties"] ||= {}
-      ref = properties["ref"].to_s
+      ref = Geojson::BusImporter.schedule_ref(properties)
       names = [ ref ]
       names << ref.sub(/[A-J]\z/i, "") if city.kind == :intercity
       rows = names.uniq.filter_map { |name| by_name[name] }.first
@@ -152,7 +191,7 @@ module Geojson
       main = rows.select { |row| zh(row["SubRouteName"]) == ref }
       own = variant.presence || main
       if detour_hours
-        inside = Geojson::BusTimedDetours.detour?(properties["via"])
+        inside = Geojson::BusTimedDetours.inside_hours?(properties)
         own = clip_rows(own.presence || rows, detour_hours, inside:)
       end
       off = off_days(own.presence || rows)
@@ -169,13 +208,17 @@ module Geojson
 
     # TDX rows (Schedule, SubRoutes, fares) for one drawn variant: its own
     # SubRouteName, the raw name of a relabelled SubRoute ("237延駛政大校區" is
-    # "237經政大校區", "249繞駛崁頂" is "249繞崁頂"), for a plain variant
-    # (本線, 不繞駛三總) everything except the SubRoutes split from it, and for a plain route with no row of its own name
+    # "237經政大校區", "249不繞崁頂" is "249繞崁頂"), for a plain variant
+    # (本線, and 經三總 kept as the plain route) everything except the SubRoutes split from it, and for a plain route with no row of its own name
     # (306(三重) beside 306(大都會)) everything except the split SubRoutes.
     def own_rows(rows, ref:, name:, via: nil)
       splits = Geojson::BusImporter::SUBROUTE_SPLITS
       names = via.present? ? Geojson::BusImporter.split_names_for_main(via) : []
       return rows.reject { |row| names.include?(zh(row["SubRouteName"])) } if names.any?
+
+      if (pair_names = Geojson::BusImporter.path_pair_subroute_names(via))
+        return rows.select { |row| pair_names.include?(zh(row["SubRouteName"])) }
+      end
 
       raw = Geojson::BusImporter.subroute_split(via)&.first
       wanted = [ subroute_name(name.presence || ref), raw ].compact
@@ -194,14 +237,16 @@ module Geojson
     # A variant that only runs after the main route's last departure (or
     # before its first): { "after" => "22:30" } / { "before" => "06:00" }.
     def service_window(variant_rows, main_rows)
-      variant = departure_times(variant_rows)
-      main = departure_times(main_rows)
+      variant = operating_order(departure_times(variant_rows))
+      main = operating_order(departure_times(main_rows))
       return nil if variant.empty? || main.empty?
 
-      if variant.min > main.max
-        { "after" => variant.min }
-      elsif variant.max < main.min
-        { "before" => variant.max }
+      variant_span = operating_span(variant)
+      main_span = operating_span(main)
+      if variant_span.first > main_span.last
+        { "after" => variant.first }
+      elsif variant_span.last < main_span.first
+        { "before" => variant.last }
       end
     end
 

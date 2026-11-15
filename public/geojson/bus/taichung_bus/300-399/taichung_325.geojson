@@ -13,7 +13,11 @@
     "operator_id": "1",
     "operator": "台中客運",
     "operator_en": "Taichung Bus Co., Ltd.",
-    "daily_trips": 5
+    "daily_trips": 5,
+    "departure": "大肚車站(華山路)",
+    "destination": "第一廣場",
+    "departure_en": "Dadu Station(Huashan Road)",
+    "destination_en": "First Square"
   },
   "features": [
     {
@@ -3332,7 +3336,8 @@
         "line": "325",
         "color": "#6b21a8",
         "direction": 0,
-        "station_id": "3842"
+        "station_id": "3842",
+        "platform": "第1月台"
       },
       "geometry": {
         "type": "Point",
@@ -3492,7 +3497,8 @@
         "line": "325",
         "color": "#6b21a8",
         "direction": 1,
-        "station_id": "3842"
+        "station_id": "3842",
+        "platform": "第1月台"
       },
       "geometry": {
         "type": "Point",

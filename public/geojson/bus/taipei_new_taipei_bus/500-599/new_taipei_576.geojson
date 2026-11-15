@@ -1,19 +1,24 @@
 {
   "type": "FeatureCollection",
-  "name": "576",
+  "name": "576（不繞駛民權路）",
   "properties": {
     "id": "new_taipei_576",
-    "name": "576",
-    "name_en": "576",
+    "name": "576（不繞駛民權路）",
+    "name_en": "576 (skips Minquan Rd.)",
     "ref": "576",
     "color": "#9333EA",
     "city_id": "NewTaipei",
     "source": "TDX Bus Shape / StopOfRoute",
-    "official_map_url": "https://ebus.gov.taipei/File/Get/6daad9ef-e111-4b5a-a1bf-193c0b97ce82?v=639267188408434655",
+    "via": "不繞駛民權路",
+    "via_en": "skips Minquan Rd.",
+    "official_map_url": "https://ebus.gov.taipei/File/Get/6daad9ef-e111-4b5a-a1bf-193c0b97ce82?v=639291640208786216",
+    "departure": "新和國小(新和街)",
+    "departure_en": "Xinhe Elementary School(Xinhe St.)",
+    "destination": "天山公園",
+    "destination_en": "Tianshan Park",
     "operator_id": "16181",
     "operator": "欣欣客運",
-    "operator_en": "Shin-Shin Bus Co., Ltd.",
-    "daily_trips": 8
+    "operator_en": "Shin-Shin Bus Co., Ltd."
   },
   "features": [
     {
@@ -21,8 +26,8 @@
       "properties": {
         "feature_type": "route",
         "ref": "576",
-        "name": "576",
-        "name_en": "576",
+        "name": "576（不繞駛民權路）",
+        "name_en": "576 (skips Minquan Rd.)",
         "color": "#9333EA",
         "direction": 0,
         "corners_rounded": true
@@ -2036,7 +2041,7 @@
         "ref": "NWT201759",
         "name": "新和國小(新和街)",
         "name_en": "Xinhe Elementary School(Xinhe St.)",
-        "line": "576",
+        "line": "576（不繞駛民權路）",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "1165604855"
@@ -2056,7 +2061,7 @@
         "ref": "NWT201760",
         "name": "名揚社區",
         "name_en": "Mingyang Community",
-        "line": "576",
+        "line": "576（不繞駛民權路）",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "1165604178"
@@ -2076,7 +2081,7 @@
         "ref": "NWT201761",
         "name": "天山公園",
         "name_en": "Tianshan Park",
-        "line": "576",
+        "line": "576（不繞駛民權路）",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "1165604179"
@@ -2096,7 +2101,7 @@
         "ref": "NWT201762",
         "name": "永平A站",
         "name_en": "Yongping A",
-        "line": "576",
+        "line": "576（不繞駛民權路）",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "1165604180"
@@ -2116,7 +2121,7 @@
         "ref": "NWT201763",
         "name": "永平B站",
         "name_en": "Yongping B",
-        "line": "576",
+        "line": "576（不繞駛民權路）",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "1165604181"
@@ -2136,7 +2141,7 @@
         "ref": "NWT201764",
         "name": "輕軌新和國小站(水工大樓)",
         "name_en": "LRT Xinhe Elementary School Sta.(Hydraulic building)",
-        "line": "576",
+        "line": "576（不繞駛民權路）",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "2918"
@@ -2156,7 +2161,7 @@
         "ref": "NWT201765",
         "name": "永平里",
         "name_en": "Yongping Village",
-        "line": "576",
+        "line": "576（不繞駛民權路）",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "2897"
@@ -2176,7 +2181,7 @@
         "ref": "NWT201766",
         "name": "陽光運動公園(新店花市)",
         "name_en": "Yangguang Park (Xindian Flower Market)",
-        "line": "576",
+        "line": "576（不繞駛民權路）",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "2944"
@@ -2196,7 +2201,7 @@
         "ref": "NWT201767",
         "name": "安和路二段",
         "name_en": "Anhe Rd. Sec. 2",
-        "line": "576",
+        "line": "576（不繞駛民權路）",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "2899"
@@ -2216,7 +2221,7 @@
         "ref": "NWT201768",
         "name": "石頭厝",
         "name_en": "Shitoucuo",
-        "line": "576",
+        "line": "576（不繞駛民權路）",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "2894"
@@ -2236,7 +2241,7 @@
         "ref": "NWT201769",
         "name": "輕軌陽光運動公園站",
         "name_en": "LRT Sunshine Sports Park Sta.",
-        "line": "576",
+        "line": "576（不繞駛民權路）",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "2916"
@@ -2256,7 +2261,7 @@
         "ref": "NWT205077",
         "name": "光華街口",
         "name_en": "Guanghua St. Entrance",
-        "line": "576",
+        "line": "576（不繞駛民權路）",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "72246"
@@ -2276,7 +2281,7 @@
         "ref": "NWT201770",
         "name": "十四份",
         "name_en": "Shisifen",
-        "line": "576",
+        "line": "576（不繞駛民權路）",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "2850"
@@ -2294,9 +2299,9 @@
       "properties": {
         "feature_type": "station",
         "ref": "NWT201771",
-        "name": "及人中學",
-        "name_en": "Chi Jen High School",
-        "line": "576",
+        "name": "中信高中",
+        "name_en": "CTBC International School",
+        "line": "576（不繞駛民權路）",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "2882"
@@ -2316,7 +2321,7 @@
         "ref": "NWT201772",
         "name": "輕軌安康站",
         "name_en": "LRT Ankang Sta.",
-        "line": "576",
+        "line": "576（不繞駛民權路）",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "1165609335"
@@ -2336,7 +2341,7 @@
         "ref": "NWT201773",
         "name": "光華新村(安康路)",
         "name_en": "Guanghua New Village(Ankang Rd.)",
-        "line": "576",
+        "line": "576（不繞駛民權路）",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "2896"
@@ -2356,7 +2361,7 @@
         "ref": "NWT201774",
         "name": "安華路口",
         "name_en": "Anhua Rd. Intersection",
-        "line": "576",
+        "line": "576（不繞駛民權路）",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "20310"
@@ -2376,7 +2381,7 @@
         "ref": "NWT201775",
         "name": "下城社區",
         "name_en": "Xiacheng Community",
-        "line": "576",
+        "line": "576（不繞駛民權路）",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "2858"
@@ -2396,7 +2401,7 @@
         "ref": "NWT201776",
         "name": "胡璉故居紀念館",
         "name_en": "The HU-LIAN House Memorial Hall",
-        "line": "576",
+        "line": "576（不繞駛民權路）",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "2857"
@@ -2416,7 +2421,7 @@
         "ref": "NWT201777",
         "name": "頂城",
         "name_en": "Dingcheng",
-        "line": "576",
+        "line": "576（不繞駛民權路）",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "2934"
@@ -2436,7 +2441,7 @@
         "ref": "NWT201778",
         "name": "大坪頂",
         "name_en": "Dapingding",
-        "line": "576",
+        "line": "576（不繞駛民權路）",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "2855"
@@ -2456,7 +2461,7 @@
         "ref": "NWT201779",
         "name": "溪頭",
         "name_en": "Xitou",
-        "line": "576",
+        "line": "576（不繞駛民權路）",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "2679"
@@ -2476,7 +2481,7 @@
         "ref": "NWT201780",
         "name": "碧潭橋頭",
         "name_en": "Bitan Bridge",
-        "line": "576",
+        "line": "576（不繞駛民權路）",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "60071"
@@ -2496,7 +2501,7 @@
         "ref": "NWT201781",
         "name": "檳榔路",
         "name_en": "Binlang Rd.",
-        "line": "576",
+        "line": "576（不繞駛民權路）",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "2981"
@@ -2516,7 +2521,7 @@
         "ref": "NWT201782",
         "name": "捷運新店區公所站(北新)",
         "name_en": "MRT Xindian City Hall Sta.(Beixin)",
-        "line": "576",
+        "line": "576（不繞駛民權路）",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "30100"
@@ -2536,7 +2541,7 @@
         "ref": "NWT201783",
         "name": "捷運七張站",
         "name_en": "MRT Qizhang Sta.",
-        "line": "576",
+        "line": "576（不繞駛民權路）",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "30102"
@@ -2556,7 +2561,7 @@
         "ref": "NWT204376",
         "name": "新店郵局",
         "name_en": "Xindian Post Office",
-        "line": "576",
+        "line": "576（不繞駛民權路）",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "30103"
@@ -2576,7 +2581,7 @@
         "ref": "NWT212114",
         "name": "寶強路口",
         "name_en": "Baoqiang Rd.",
-        "line": "576",
+        "line": "576（不繞駛民權路）",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "60063"
@@ -2596,7 +2601,7 @@
         "ref": "NWT212115",
         "name": "寶橋路口",
         "name_en": "Baoqiao Rd. Entrance",
-        "line": "576",
+        "line": "576（不繞駛民權路）",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "2987"
@@ -2616,7 +2621,7 @@
         "ref": "NWT212116",
         "name": "寶興路口",
         "name_en": "Baoxing Rd. Entrance",
-        "line": "576",
+        "line": "576（不繞駛民權路）",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "2989"
@@ -2636,7 +2641,7 @@
         "ref": "NWT212117",
         "name": "中興路二段",
         "name_en": "Zhongxing Rd. Sec. 2",
-        "line": "576",
+        "line": "576（不繞駛民權路）",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "2880"
@@ -2656,7 +2661,7 @@
         "ref": "NWT212118",
         "name": "中正路",
         "name_en": "Zhongzheng Rd.",
-        "line": "576",
+        "line": "576（不繞駛民權路）",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "72026"
@@ -2676,7 +2681,7 @@
         "ref": "NWT201789",
         "name": "捷運新店區公所站(北新)",
         "name_en": "MRT Xindian Dist. Office Sta.",
-        "line": "576",
+        "line": "576（不繞駛民權路）",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "2928"
@@ -2696,7 +2701,7 @@
         "ref": "NWT201790",
         "name": "檳榔路",
         "name_en": "Binlang Rd.",
-        "line": "576",
+        "line": "576（不繞駛民權路）",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "2982"
@@ -2716,7 +2721,7 @@
         "ref": "NWT201791",
         "name": "碧潭橋頭",
         "name_en": "Bitan Bridge",
-        "line": "576",
+        "line": "576（不繞駛民權路）",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "2956"
@@ -2736,7 +2741,7 @@
         "ref": "NWT201792",
         "name": "溪頭",
         "name_en": "Xitou",
-        "line": "576",
+        "line": "576（不繞駛民權路）",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "2950"
@@ -2756,7 +2761,7 @@
         "ref": "NWT201793",
         "name": "大坪頂",
         "name_en": "Dapingding",
-        "line": "576",
+        "line": "576（不繞駛民權路）",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "1001047"
@@ -2776,7 +2781,7 @@
         "ref": "NWT201794",
         "name": "頂城",
         "name_en": "Dingcheng",
-        "line": "576",
+        "line": "576（不繞駛民權路）",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "1001048"
@@ -2796,7 +2801,7 @@
         "ref": "NWT201795",
         "name": "胡璉故居紀念館",
         "name_en": "The HU-LIAN House Memorial Hall",
-        "line": "576",
+        "line": "576（不繞駛民權路）",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "1001049"
@@ -2816,7 +2821,7 @@
         "ref": "NWT201796",
         "name": "下城社區",
         "name_en": "Xiacheng Community",
-        "line": "576",
+        "line": "576（不繞駛民權路）",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "1001050"
@@ -2836,7 +2841,7 @@
         "ref": "NWT201797",
         "name": "安華路口",
         "name_en": "Anhua Rd. Intersection",
-        "line": "576",
+        "line": "576（不繞駛民權路）",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "20309"
@@ -2856,7 +2861,7 @@
         "ref": "NWT201798",
         "name": "光華新村(安康路)",
         "name_en": "Guanghua New Village(Ankang Rd.)",
-        "line": "576",
+        "line": "576（不繞駛民權路）",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "1000706"
@@ -2876,7 +2881,7 @@
         "ref": "NWT201800",
         "name": "雅美",
         "name_en": "Yamei",
-        "line": "576",
+        "line": "576（不繞駛民權路）",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "1165604182"
@@ -2896,7 +2901,7 @@
         "ref": "NWT201801",
         "name": "安康高中",
         "name_en": "An Kang High School",
-        "line": "576",
+        "line": "576（不繞駛民權路）",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "1165604183"
@@ -2916,7 +2921,7 @@
         "ref": "NWT201802",
         "name": "桃李春風",
         "name_en": "Taolichunfeng",
-        "line": "576",
+        "line": "576（不繞駛民權路）",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "1165604184"
@@ -2936,7 +2941,7 @@
         "ref": "NWT201803",
         "name": "安民街218號",
         "name_en": "No.218 Anmin St.",
-        "line": "576",
+        "line": "576（不繞駛民權路）",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "1165604185"
@@ -2956,7 +2961,7 @@
         "ref": "NWT201804",
         "name": "別墅天廈",
         "name_en": "No.332 Anmin St.",
-        "line": "576",
+        "line": "576（不繞駛民權路）",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "1165604186"
@@ -2976,7 +2981,7 @@
         "ref": "NWT201805",
         "name": "祝你幸福",
         "name_en": "Zhunixingfu",
-        "line": "576",
+        "line": "576（不繞駛民權路）",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "1165604187"
@@ -2996,7 +3001,7 @@
         "ref": "NWT201806",
         "name": "陽光運動公園(新店花市)",
         "name_en": "Yangguang Park (Xindian Flower Market)",
-        "line": "576",
+        "line": "576（不繞駛民權路）",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "1000974"
@@ -3016,7 +3021,7 @@
         "ref": "NWT201807",
         "name": "永平里",
         "name_en": "Yongping Village",
-        "line": "576",
+        "line": "576（不繞駛民權路）",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "2898"
@@ -3036,7 +3041,7 @@
         "ref": "NWT201808",
         "name": "輕軌新和國小站(水工大樓)",
         "name_en": "LRT Xinhe Elementary School Sta.(Hydraulic building)",
-        "line": "576",
+        "line": "576（不繞駛民權路）",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "1000308"
@@ -3056,7 +3061,7 @@
         "ref": "NWT201809",
         "name": "新和國小(新和街)",
         "name_en": "Xinhe Elementary School(Xinhe St.)",
-        "line": "576",
+        "line": "576（不繞駛民權路）",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "1165604855"
@@ -3076,7 +3081,7 @@
         "ref": "NWT201810",
         "name": "名揚社區",
         "name_en": "Mingyang Community",
-        "line": "576",
+        "line": "576（不繞駛民權路）",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "1165604178"
@@ -3096,7 +3101,7 @@
         "ref": "NWT201811",
         "name": "天山公園",
         "name_en": "Tianshan Park",
-        "line": "576",
+        "line": "576（不繞駛民權路）",
         "color": "#9333EA",
         "direction": 0,
         "station_id": "1165604179"

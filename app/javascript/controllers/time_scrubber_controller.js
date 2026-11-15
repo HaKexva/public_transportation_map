@@ -21,7 +21,6 @@ export default class extends Controller {
     "speedSelect",
     "expandButton",
     "details",
-    "hint",
     "vehicleCount",
     "badge",
     "periodButton"
@@ -45,6 +44,8 @@ export default class extends Controller {
 
     this.restorePosition()
     window.addEventListener("resize", this.onWindowResize)
+    this.onCollapseRequest = () => this.collapseForMap()
+    window.addEventListener("map:collapse-time-scrubber", this.onCollapseRequest)
     this.syncExpanded()
     this.syncSpeedSelect()
     this.syncLabels()
@@ -61,6 +62,7 @@ export default class extends Controller {
     this.clearEmitTimer()
     this.stopPanelDrag()
     window.removeEventListener("resize", this.onWindowResize)
+    window.removeEventListener("map:collapse-time-scrubber", this.onCollapseRequest)
     if (this._bootEmitTimer) {
       clearTimeout(this._bootEmitTimer)
       this._bootEmitTimer = null
@@ -143,6 +145,7 @@ export default class extends Controller {
   handleWindowResize() {
     if (this.compactQuery.matches) {
       this.clearInlinePosition()
+      this.collapseForMap()
     } else if (this.panelTarget.style.left) {
       this.clampPosition()
     } else {
@@ -228,6 +231,9 @@ export default class extends Controller {
   }
 
   loadExpanded() {
+    // Phones always start collapsed so the map keeps usable height.
+    if (window.matchMedia(COMPACT_VIEWPORT_QUERY).matches) return false
+
     try {
       const raw = localStorage.getItem(STORAGE_KEY_EXPANDED)
       if (raw === "1" || raw === "true") return true
@@ -240,11 +246,21 @@ export default class extends Controller {
   }
 
   persistExpanded() {
+    // Keep desktop preference intact while using the phone layout.
+    if (this.compactQuery?.matches) return
+
     try {
       localStorage.setItem(STORAGE_KEY_EXPANDED, this.expanded ? "1" : "0")
     } catch (_error) {
       // ignore
     }
+  }
+
+  collapseForMap() {
+    if (!this.expanded) return
+    if (!this.compactQuery?.matches) return
+    this.expanded = false
+    this.syncExpanded()
   }
 
   // --- Time controls ---
@@ -522,10 +538,6 @@ export default class extends Controller {
   setVehicleSummary({ count = 0, live = false } = {}) {
     if (this.hasVehicleCountTarget) {
       this.vehicleCountTarget.textContent = this.t("time_scrubber.vehicle_count", { count })
-    }
-
-    if (this.hasHintTarget) {
-      this.hintTarget.hidden = count > 0
     }
 
     if (this.hasBadgeTarget) {

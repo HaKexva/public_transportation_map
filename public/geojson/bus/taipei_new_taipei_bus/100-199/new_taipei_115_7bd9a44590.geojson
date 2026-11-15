@@ -17,7 +17,11 @@
       "sunday"
     ],
     "operator_en": "Tamshui Bus Co., Ltd.",
-    "daily_trips": 7
+    "daily_trips": 7,
+    "departure": "捷運淡水站",
+    "destination": "渡船頭",
+    "departure_en": "MRT Tamsui Sta.",
+    "destination_en": "Ferryboats' Dock"
   },
   "features": [
     {
@@ -3184,7 +3188,8 @@
         "line": "115平日",
         "color": "#DC2626",
         "direction": 0,
-        "station_id": "3842"
+        "station_id": "3842",
+        "platform": "第1月台"
       },
       "geometry": {
         "type": "Point",
@@ -3726,7 +3731,8 @@
         "line": "115平日",
         "color": "#DC2626",
         "direction": 1,
-        "station_id": "3842"
+        "station_id": "3842",
+        "platform": "第1月台"
       },
       "geometry": {
         "type": "Point",
