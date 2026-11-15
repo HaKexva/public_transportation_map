@@ -406,7 +406,7 @@ module Transit
           sequence_cache = {}
           patterns = []
           BusRouteTimetable.find_each do |row|
-            entry = manifest[[ row.city_id.to_s, row.route_name.to_s]]
+            entry = manifest[[ row.city_id.to_s, row.route_name.to_s ]]
             geojson = entry && entry["file"]
             sequence = {}
             if geojson.present? && sequence_needed?(row.schedules)

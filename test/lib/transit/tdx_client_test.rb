@@ -110,4 +110,3 @@ class Transit::TdxClientTest < ActiveSupport::TestCase
     ENV["TDX_ENABLED"] = previous
   end
 end
-
