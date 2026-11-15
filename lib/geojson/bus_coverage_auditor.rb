@@ -68,7 +68,7 @@ module Geojson
     end
 
     def resolve_client
-      client = @client || Transit::TdxClient.new
+      client = @client || Transit::TdxClient.new(ignore_breaker: true)
       if client.respond_to?(:configured?) && !client.configured?
         raise Transit::TdxClient::ConfigurationError, "TDX_CLIENT_ID and TDX_CLIENT_SECRET are required"
       end

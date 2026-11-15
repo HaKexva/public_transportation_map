@@ -94,4 +94,36 @@ class ServiceCalendarResolverTest < ActiveSupport::TestCase
     assert_includes ids, live_cal.id
     refute_includes ids, stale_cal.id
   end
+
+  test "reuses the weekly date calendar and keeps a holiday date to itself" do
+    active = ScheduleDataset.create!(name: "ods", source: "tdx", active: true)
+    template = ServiceCalendar.create!(
+      schedule_dataset: active, code: "date_2026-07-27", name: "2026-07-27", description: "單日營運日曆"
+    )
+    holiday = ServiceCalendar.create!(
+      schedule_dataset: active, code: "date_2026-08-03", name: "2026-08-03", description: "連假"
+    )
+
+    holiday_ids = Transit::ServiceCalendarResolver.calendar_ids_for_date(Date.new(2026, 8, 3))
+    assert_includes holiday_ids, holiday.id
+    refute_includes holiday_ids, template.id
+
+    later_ids = Transit::ServiceCalendarResolver.calendar_ids_for_date(Date.new(2026, 8, 10))
+    assert_includes later_ids, template.id
+    refute_includes later_ids, holiday.id
+  end
+
+  test "a typhoon date stays off the weekly template" do
+    active = ScheduleDataset.create!(name: "ods", source: "tdx", active: true)
+    template = ServiceCalendar.create!(
+      schedule_dataset: active, code: "date_2026-10-19", name: "2026-10-19", description: "單日營運日曆"
+    )
+    typhoon = ServiceCalendar.create!(
+      schedule_dataset: active, code: "date_2026-10-26", name: "2026-10-26", description: "颱風假"
+    )
+
+    ids = Transit::ServiceCalendarResolver.calendar_ids_for_date(Date.new(2026, 11, 2))
+    assert_includes ids, template.id
+    refute_includes ids, typhoon.id
+  end
 end

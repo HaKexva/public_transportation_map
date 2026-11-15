@@ -8,10 +8,12 @@ module Api
         station_id: params[:station_id],
         name: params[:name],
         lat: params[:lat],
-        lon: params[:lon]
+        lon: params[:lon],
+        platform: params[:platform],
+        group_id: params[:group_id]
       ).call
 
-      render json: { routes: payload.routes, error: payload.error }.compact
+      render json: { routes: payload.routes, groups: payload.groups, error: payload.error }.compact
     end
   end
 end

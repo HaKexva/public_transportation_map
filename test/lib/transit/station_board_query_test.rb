@@ -162,4 +162,10 @@ class Api::StationBoardsControllerTest < ActionDispatch::IntegrationTest
     assert_equal [ "airport_mrt" ], Transit::StationBoardQuery.expand_route_ids([ "airport_mrt_express" ])
     assert_equal [ "airport_mrt", "board_test_line" ], Transit::StationBoardQuery.expand_route_ids([ "airport_mrt_express", "board_test_line" ])
   end
+
+  test "expands danhai segment layers to danhai_lrt schedule trips" do
+    assert_equal [ "danhai_lrt" ], Transit::StationBoardQuery.expand_route_ids([ "danhai_lushan" ])
+    assert_equal [ "danhai_lrt" ], Transit::StationBoardQuery.expand_route_ids([ "danhai_lanhai" ])
+    assert_equal [ "danhai_lrt" ], Transit::StationBoardQuery.expand_route_ids(%w[danhai_lushan danhai_lanhai])
+  end
 end

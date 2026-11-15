@@ -3685,6 +3685,7 @@ module Geojson
             feature_type: angle_station ? "angle_station" : "station",
             ref: ref,
             name: station[:name],
+            name_en: Geojson::StationNamesEn.lookup(station[:name]),
             line: station[:line] || @line.name,
             color: station[:color] || @line.color,
             segment: station[:segment],

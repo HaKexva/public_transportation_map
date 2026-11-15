@@ -1,4 +1,6 @@
 ENV["RAILS_ENV"] ||= "test"
+# Local .env may pause TDX for quota; tests still need the client online.
+ENV["TDX_ENABLED"] = "true"
 require_relative "../config/environment"
 require "rails/test_help"
 

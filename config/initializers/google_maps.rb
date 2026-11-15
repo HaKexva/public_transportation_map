@@ -1,7 +1,12 @@
 # frozen_string_literal: true
 
 # Taiwan main island, Penghu, Kinmen, and Matsu.
-# Enable "Maps JavaScript API" (not only Maps Embed API) in Google Cloud Console.
+# The Leaflet basemap loads this key in the browser through the Maps JavaScript API.
+# Billing must be enabled on the Cloud project — otherwise tiles/Street View show
+# “For development purposes only”. Enable "Maps JavaScript API" (Street View
+# panorama uses it; optionally also Street View Static API) and restrict the key
+# by HTTP referrer. Sidebar landmark search also calls Geocoding API server-side
+# with the same key — enable Geocoding API (IP restriction is fine).
 module GoogleMaps
   CENTER = { lat: 24.15, lng: 120.2 }.freeze
   ZOOM = 6

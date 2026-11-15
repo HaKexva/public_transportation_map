@@ -163,7 +163,6 @@ export default class extends Controller {
     resizer.removeAttribute("aria-hidden")
     resizer.setAttribute("tabindex", "0")
     resizer.setAttribute("aria-orientation", "vertical")
-    resizer.setAttribute("aria-label", "調整側欄與地圖寬度")
     resizer.setAttribute("aria-valuemin", String(MIN_WIDTH_PX))
     resizer.setAttribute("aria-valuemax", String(Math.round(window.innerWidth * MAX_WIDTH_RATIO)))
     resizer.setAttribute("aria-valuenow", String(Math.round(this.currentWidth())))

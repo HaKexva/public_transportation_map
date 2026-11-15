@@ -1,0 +1,18 @@
+# 公車常見車款對照表（官方資料沒有廠牌車款，需手動維護）
+#
+# 每筆：
+#   model:        顯示名稱，例如 "成運 MB120NSE"
+#   city_id:      縣市（可省略或給陣列），例如 Taipei、NewTaipei、Taichung；業者代碼只在同縣市內唯一
+#   operator_id:  業者代碼（可省略或給陣列）；與 routes manifest 的 operator_id 相同
+#   plates:       車牌系列，"EAL-" 比對開頭、"-U3" 比對結尾、完整車牌只比對該車
+#
+# 尚未對照的車牌系列可用：
+#   bin/rails transit:bus_fleet_series   # 輸出 tmp/bus_fleet_series.csv
+#
+# 範例：
+# models:
+#   - model: "成運 MB120NSE"
+#     city_id: Taipei
+#     operator_id: "100"
+#     plates: [ "EAL-", "EAM-" ]
+models: []

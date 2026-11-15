@@ -19,7 +19,9 @@ module Views
             map_metro_depots_url_value: static_geojson_url("geojson/metro_depots.json"),
             map_bus_depots_url_value: static_geojson_url("geojson/bus_depots.json"),
             map_out_of_station_transfers_url_value: static_geojson_url("geojson/out_of_station_transfers.json"),
-            map_carto_api_key_value: carto_api_key
+            map_carto_api_key_value: carto_api_key,
+            map_google_maps_api_key_value: google_maps_api_key,
+            map_taoyuan_trunk_names_value: Geojson::BusCatalog.taoyuan_trunk_names_payload.to_json
           },
           aria: { busy: "true" }
         ) do
@@ -28,9 +30,6 @@ module Views
             render_stops_section
             render_map_section
           end
-          # Cover the whole page (stops + map). Overlay inside the map pane left
-          # the empty stops list visible with no blocker while GeoJSON loads.
-          render_boot_overlay
         end
       end
 
@@ -42,49 +41,82 @@ module Views
 
       def render_header
         header(class: "route-page__header shrink-0 border-b border-border/60 bg-background/95 px-4 py-3 backdrop-blur-sm") do
-          div(class: "flex items-start gap-3") do
+          div(class: "flex items-center gap-3") do
             a(
               href: root_path,
-              class: "route-page__back mt-0.5 shrink-0 text-sm text-muted-foreground transition-colors hover:text-foreground"
+              class: "route-page__back shrink-0 whitespace-nowrap rounded-md px-2 py-1 text-sm text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
             ) { t("route.back") }
 
             span(
-              class: "mt-1 size-3 shrink-0 rounded-full",
-              style: "background-color: #{route_color}"
+              class: "size-3 shrink-0 rounded-full",
+              style: route_swatch_style
             )
 
             div(class: "min-w-0 flex-1") do
-              render RubyUI::Text.new(as: "p", size: "1", weight: "muted") { @system_label }
-              h1(class: "text-lg font-semibold leading-tight") { display_name }
-              p(class: "mt-1 text-xs text-muted-foreground", data: { map_target: "routeStopsMeta" }) { "" }
-              render_route_view_switcher
-            end
-
-            span(class: "shrink-0 rounded bg-muted px-2 py-1 text-xs font-medium text-muted-foreground") do
-              @route["ref"]
-            end
-
-            input(
-              type: "checkbox",
-              id: "layer-#{@route['id']}",
-              class: layer_checkbox_classes,
-              checked: true,
-              aria: { label: t("route.show_on_map", name: display_name) },
-              data: {
-                map_target: "layerCheckbox",
-                action: "change->map#toggleLayer",
-                map_layer_param: @route["id"]
+              render RubyUI::Text.new(as: "p", size: "1", weight: "muted", class: "truncate") {
+                bus_browse_path(@route).presence || @system_label
               }
-            )
+              h1(class: "flex min-w-0 items-baseline gap-2 text-lg font-semibold leading-tight") do
+                span(class: "truncate") { display_name }
+                if (termini = bus_termini_label(@route)).present?
+                  span(class: "route-termini min-w-0 truncate", title: termini) { termini }
+                end
+              end
+            end
 
-            render_locale_toggle
+            div(class: "flex min-w-0 shrink-0 items-center gap-2") do
+              if (ref = localized_route_ref(@route)).present?
+                span(class: "rounded bg-muted px-2 py-1 text-xs font-medium text-muted-foreground") { ref }
+              end
+              note_badges = []
+              if (off_days = Array(@route["off_days"])).any?
+                note_badges << t("js.bus.off_days.#{off_days.uniq.sort.join('_')}")
+              end
+              if (service_note = I18n.locale.to_s.start_with?("en") ? @route["service_note_en"] : @route["service_note"]).present?
+                note_badges << service_note
+              end
+              if note_badges.any?
+                span(class: "route-notes-marquee max-w-[min(16rem,40vw)]", data: { controller: "route-notes-marquee" }) do
+                  span(class: "route-notes-marquee__track", data: { route_notes_marquee_target: "track" }) do
+                    span(class: "route-notes-marquee__group", data: { route_notes_marquee_target: "group" }) do
+                      note_badges.each do |label|
+                        span(class: "route-off-days-badge") { label }
+                      end
+                    end
+                  end
+                end
+              end
+              render_route_layer_checkbox
+              render_locale_toggle
+            end
+          end
+
+          div(class: "route-page__subbar mt-2 flex flex-wrap items-center gap-x-3 gap-y-2") do
+            render_route_view_switcher
+            render_cancel_route_display_button(toggle: true)
+            p(class: "text-xs text-muted-foreground", data: { map_target: "routeStopsMeta" }) { "" }
           end
         end
       end
 
+      def render_route_layer_checkbox
+        input(
+          type: "checkbox",
+          id: "layer-#{@route['id']}",
+          class: layer_checkbox_classes,
+          checked: true,
+          aria: { label: t("route.show_on_map", name: display_name) },
+          data: {
+            map_target: "layerCheckbox",
+            action: "change->map#toggleLayer",
+            map_layer_param: @route["id"]
+          }
+        )
+      end
+
       def render_stops_section
         section(
-          class: "route-page__stops flex max-h-[45vh] min-h-0 w-full shrink-0 flex-col overflow-hidden border-b border-border/60 md:max-h-none md:w-[22rem] md:border-r md:border-b-0",
+          class: "route-page__stops flex max-h-[34vh] min-h-0 w-full shrink-0 flex-col overflow-hidden border-b border-border/60 md:max-h-none md:w-[22rem] md:border-r md:border-b-0",
           data: { map_target: "routeStopsSection" }
         ) do
           div(class: "shrink-0 border-b border-border/40 px-4 py-2") do
@@ -117,10 +149,17 @@ module Views
               role: "region",
               aria: { label: t("route.map_aria", name: display_name) }
             )
-            render_time_scrubber(empty_hint_key: "route.vehicles_empty_hint")
+            render_time_scrubber
           end
           render_official_route_panel
         end
+      end
+
+      def route_swatch_style
+        second = @route["color_2"].presence
+        return "background-color: #{route_color}" if second.blank?
+
+        "background-image: linear-gradient(90deg, #{route_color} 50%, #{second} 50%)"
       end
 
       def route_color

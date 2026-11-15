@@ -132,7 +132,7 @@ module Geojson
     end
 
     def client
-      @client ||= Transit::TdxClient.new
+      @client ||= Transit::TdxClient.new(ignore_breaker: true)
     end
 
     def sync_tdx_routes!(updated, skipped)

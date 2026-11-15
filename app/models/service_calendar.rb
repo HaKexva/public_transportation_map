@@ -5,7 +5,7 @@ class ServiceCalendar < ApplicationRecord
     "weekday" => "平日",
     "saturday" => "週六",
     "sunday" => "週日",
-    "holiday" => "國定假日"
+    "holiday" => "例假日"
   }.freeze
 
   belongs_to :schedule_dataset

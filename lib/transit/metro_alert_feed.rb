@@ -4,8 +4,9 @@ module Transit
   # Operator service alerts from TDX Rail/Metro/Alert. TDX has no 新北捷運
   # (NTMC) feed, so that operator is omitted rather than scraped.
   class MetroAlertFeed
-    CACHE_KEY = "metro_alert_feed/v1"
-    CACHE_TTL = 2.minutes
+    CACHE_KEY = "metro_alert_feed/v2"
+    CACHE_TTL = 10.minutes
+    STALE_TTL = 6.hours
     NORMAL_STATUS = 1
     NORMAL_TITLE = "正常營運"
 
@@ -29,21 +30,18 @@ module Transit
     def call
       return [] unless @client.configured?
 
-      @cache.fetch(CACHE_KEY, expires_in: CACHE_TTL, race_condition_ttl: 30.seconds) { fetch_alerts }
+      OPERATORS.flat_map { |operator| operator_alerts(operator) }
     end
 
     private
 
-    def fetch_alerts
-      OPERATORS.flat_map { |operator| operator_alerts(operator) }
-    end
-
+    # A failing operator keeps showing its last known alerts.
     def operator_alerts(operator)
-      payload = @client.get_json("v2/Rail/Metro/Alert/#{operator[:code]}", query: { "$format" => "JSON" })
-      Array(payload.is_a?(Hash) ? payload["Alerts"] : payload).filter_map { |alert| serialize(alert, operator) }
-    rescue Transit::TdxClient::Error, JSON::ParserError, SocketError, Timeout::Error, SystemCallError => error
-      Rails.logger.warn("metro alert feed #{operator[:code]} failed: #{error.message}")
-      []
+      result = Transit::StaleCache.fetch([ CACHE_KEY, operator[:code] ], expires_in: CACHE_TTL, stale_for: STALE_TTL, cache: @cache) do
+        payload = @client.get_json("v2/Rail/Metro/Alert/#{operator[:code]}", query: { "$format" => "JSON" })
+        Array(payload.is_a?(Hash) ? payload["Alerts"] : payload).filter_map { |alert| serialize(alert, operator) }
+      end
+      result.value || []
     end
 
     def serialize(alert, operator)

@@ -89,11 +89,37 @@ module Transit
       bit = weekday_bit_index(date)
       scope = ServiceCalendar.where(schedule_dataset_id: dataset_ids)
 
-      date_ids = scope.where(code: date_code_for(date)).pluck(:id)
+      date_ids = date_calendar_ids(scope, date)
       # Match sd_ fingerprints whose weekday bit is set (Postgres regex).
       sd_ids = scope.where("code ~ ?", "^sd_.{#{bit}}1").pluck(:id)
+      # A 連假 uses the holiday service pattern already stored on the dataset.
+      # Day-before and day-after patterns stay unused.
+      if TaiwanHolidayCalendar.long_weekend?(date)
+        sd_ids |= scope.where("code ~ ?", "^sd_.{7}1").pluck(:id)
+      end
+      if TyphoonClosures.closed?(date)
+        sd_ids |= scope.where("code ~ ?", "^sd_.{10}1").pluck(:id)
+      end
       simple_ids = scope.where(code: simple).pluck(:id)
       (date_ids + sd_ids + simple_ids).uniq
+    end
+
+    # An exact date calendar (a 連假 overlay, or that day's own file) wins.
+    # Otherwise reuse the latest non-holiday calendar for the same weekday.
+    def date_calendar_ids(scope, date)
+      exact = scope.where(code: date_code_for(date)).pluck(:id)
+      return exact if exact.any?
+
+      rows = scope.where("code LIKE ? ESCAPE '\\'", "date\\_%")
+        .where("description IS NULL OR description NOT IN (?)", ScheduleImporter::OVERLAY_DESCRIPTIONS)
+        .pluck(:id, :code)
+      same_weekday = rows.select do |_id, code|
+        Date.iso8601(code.delete_prefix("date_")).wday == date.wday
+      rescue Date::Error
+        false
+      end
+      best = same_weekday.max_by { |_id, code| code }
+      best ? [ best.first ] : []
     end
 
     def dataset_ids_for(datasets)

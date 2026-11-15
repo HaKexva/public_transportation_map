@@ -24,14 +24,31 @@ class ScheduleDataset < ApplicationRecord
   end
 
   def self.discard_replaced!(source:, keep_id:)
-    ids = where(source: source).where.not(id: keep_id).pluck(:id)
-    return if ids.empty?
+    discard_ids!(where(source: source).where.not(id: keep_id).pluck(:id))
+  end
 
-    trip_ids = ScheduleTrip.where(schedule_dataset_id: ids).pluck(:id)
-    TripStopTime.where(schedule_trip_id: trip_ids).in_batches.delete_all if trip_ids.any?
-    ScheduleTrip.where(schedule_dataset_id: ids).delete_all
+  # Drops failed imports that never activated. The live dataset stays.
+  def self.discard_inactive!(source:)
+    ids = where(source: source, active: false).pluck(:id)
+    discard_ids!(ids)
+    ids.size
+  end
+
+  def self.delete_dataset!(dataset)
+    return unless dataset&.persisted?
+
+    discard_ids!([ dataset.id ])
+  end
+
+  def self.discard_ids!(ids)
+    return 0 if ids.empty?
+
+    trips = ScheduleTrip.where(schedule_dataset_id: ids)
+    TripStopTime.where(schedule_trip_id: trips.select(:id)).in_batches.delete_all
+    trips.delete_all
     HeadwayRule.where(schedule_dataset_id: ids).delete_all
     ServiceCalendar.where(schedule_dataset_id: ids).delete_all
     where(id: ids).delete_all
+    ids.size
   end
 end

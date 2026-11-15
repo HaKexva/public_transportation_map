@@ -10,7 +10,7 @@ module Transit
   class LiveVehicleOverlay
     CLOCK_ZONE = ActiveSupport::TimeZone["Taipei"]
     NEAR_NOW_SECONDS = 120
-    CACHE_TTL = 50.seconds
+    CACHE_TTL = 90.seconds
     STALE_TTL = 5.minutes
 
     # TDX LiveBoard systems that actually publish ETA boards.
@@ -40,7 +40,7 @@ module Transit
       @at = at.in_time_zone(CLOCK_ZONE)
       @route_ids = Array(route_ids).map(&:to_s).reject(&:blank?).to_set
       @client = client
-      @meta = { applied: false, tra: false, metro: false, gps: false }
+      @meta = { applied: false, tra: false, metro: false, gps: false, stale: false }
     end
 
     attr_reader :meta
@@ -384,21 +384,9 @@ module Transit
     end
 
     def cached_fetch(key)
-      cache_key = "tdx_live/#{key}"
-      stale_key = "#{cache_key}/stale"
-
-      fresh = Rails.cache.read(cache_key)
-      return fresh if fresh
-
-      begin
-        value = Array(yield)
-        Rails.cache.write(cache_key, value, expires_in: CACHE_TTL)
-        Rails.cache.write(stale_key, value, expires_in: STALE_TTL)
-        value
-      rescue TdxClient::Error, StandardError => e
-        Rails.logger.warn("[LiveVehicleOverlay] fetch #{key} failed: #{e.message}")
-        Rails.cache.read(stale_key) || []
-      end
+      result = StaleCache.fetch("tdx_live/#{key}", expires_in: CACHE_TTL, stale_for: STALE_TTL) { Array(yield) }
+      @meta[:stale] = true if result.stale?
+      result.value || []
     end
 
     def attach_coords(route, vehicle)

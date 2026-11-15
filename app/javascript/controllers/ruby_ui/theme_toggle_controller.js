@@ -65,7 +65,7 @@ export default class extends Controller {
 
     if (this.hasDarkButtonTarget) {
       this.darkButtonTarget.setAttribute("aria-pressed", String(isDark))
-      this.darkButtonTarget.classList.toggle("hidden", isDark)
+      this.darkButtonTarget.classList.toggle("hidden", !isDark)
     }
   }
 }

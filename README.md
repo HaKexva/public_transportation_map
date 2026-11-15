@@ -8,22 +8,31 @@
 
 ## 中文
 
-這是一份有公車、火車、捷運、高鐵以及其他交通工具的路線圖與時刻表查詢，包含了公車、軌道運輸兩大頁面。
+這是一份有公車、火車、捷運、高鐵以及其他交通工具的路線圖與時刻表查詢。上方可以切換**規劃路線**、**查詢線路**、**軌道運輸**、**公車**。
 
 範圍涵蓋台灣本島、澎湖、金門、馬祖，打開就能用，不用登入。
 
+![規劃路線](docs/screenshots/route-planning.jpg)
+
+![查詢線路](docs/screenshots/route-search.jpg)
+
 ### 可以做什麼
 
-**軌道運輸頁（`/`）**
+**規劃路線（`/plan`）**
 
-- 台鐵、高鐵、各地捷運與輕軌（台北、新北、桃園、台中、高雄）、糖鐵、渡輪，還有纜車、林鐵、觀光鐵道這類放在「其他」裡的路線，都可以勾選顯示在地圖上
+- 輸入出發地、目的地（地址、站名，或在地圖上點選），選出發時間後規劃轉乘
+- 可用目前位置，或在地圖上直接設起迄點
+
+**查詢線路（`/`）**
+
+- 搜尋路線、代碼或站名，勾選要顯示的捷運、台鐵、高鐵、糖鐵、渡輪與其他路線
 - 依照時刻表推算列車現在跑到哪，有 TDX 金鑰的話會再疊上即時誤點
 - 點車站可以看接下來 60 分鐘的時刻表，點列車可以跟著它跑完全程（也有群車視角）
 - 跟隨列車跑完全程可以蒐集「完乘章」，累積公里數和搭過的路線
 - 附近列車、平交道、捷運營運異常公告
 - 放空模式：什麼都不用按，就看著車在地圖上跑
 
-**公車頁（`/bus`）**
+**公車（`/bus`）**
 
 - 各縣市公車和公路客運的路線圖，可以依縣市、客運業者、路線類型、顏色系列篩選
 - 站牌到站時間、經過同一站的其他路線
@@ -79,8 +88,9 @@ bin/dev
 | `DATABASE_URL` | 正式環境必填。本機沒設的話會用 `DB_HOST`、`DB_USERNAME` 這些預設值連本機 Postgres |
 | `CARTO_API_KEY` | CARTO 底圖用。沒填的話圖磚上會有「API KEY REQUIRED」浮水印，可以去 [CARTO](https://carto.com/basemaps) 免費申請 |
 | `TDX_CLIENT_ID` / `TDX_CLIENT_SECRET` | 匯入高鐵、捷運時刻表，還有即時誤點、公車到站都要用。去 [TDX](https://tdx.transportdata.tw) 註冊就有 |
+| `TDX_ENABLED` | 設成 `0` 會暫停所有對外 TDX 呼叫（即時／通阻／匯入），憑證可留著。沒設則預設開啟 |
 | `SECRET_KEY_BASE` 或 `RAILS_MASTER_KEY` | 正式環境擇一設定，詳細寫在 `.env.example` |
-| `GOOGLE_MAPS_API_KEY` | 先留著，目前沒用到 |
+| `GOOGLE_MAPS_API_KEY` | Google 地圖底圖／街景。Cloud Console 要**啟用 Billing**，並開啟 Maps JavaScript API（街景也走這支）。沒開 billing 時圖上會出現灰色「For development purposes only」浮水印。這把 key 會出現在瀏覽器的腳本網址裡 |
 
 ### 時刻表
 
@@ -95,7 +105,7 @@ bin/dev
 bin/rails transit:import_schedules
 ```
 
-正式環境每天台北時間凌晨 3:30 會自動跑一次。即時看板的資料不會存進資料庫。
+平常日沿用這份週班表，不會每天整包重抓。正式環境每天台北時間凌晨 3:30 只檢查接下來的連假，以及人事行政總處公布的颱風停班日，缺了那些日期才補進現有班表；前後的日子不動。要整份更新時再跑上面的指令。即時看板的資料不會存進資料庫。
 
 ### 更新地圖資料
 
@@ -145,22 +155,31 @@ bin/rails test:system   # 需要 headless Chrome
 
 ## English
 
-This is a route map and timetable lookup for buses, trains, metro, high speed rail, and a bunch of other transit in Taiwan. It has two main pages: one for buses and one for rail.
+This is a route map and timetable lookup for buses, trains, metro, high speed rail, and a bunch of other transit in Taiwan. Use the top tabs to switch between **Plan a trip**, **Browse lines**, **Rail**, and **Bus**.
 
 It covers Taiwan, Penghu, Kinmen, and Matsu. Just open it, no sign-in needed.
 
+![Plan a trip](docs/screenshots/route-planning.jpg)
+
+![Browse lines](docs/screenshots/route-search.jpg)
+
 ### What it does
 
-**Rail page (`/`)**
+**Plan a trip (`/plan`)**
 
-- Toggle TRA, HSR, every metro and light rail system (Taipei, New Taipei, Taoyuan, Taichung, Kaohsiung), the Taiwan Sugar Railway, ferries, and an "other" group with cable cars, forest railways, and heritage lines
+- Enter origin and destination (address, station name, or pick on the map), choose a departure time, and get a transfer plan
+- Use your current location, or set the endpoints by clicking the map
+
+**Browse lines (`/`)**
+
+- Search by route, code, or stop name; toggle metro, TRA, HSR, sugar railway, ferry, and other lines on the map
 - Trains move on the map based on the timetable, with live delays layered on top if you have a TDX key
 - Click a station for the next 60 minutes of departures, or click a train and follow it to the end of its run (there's a group view too)
 - Finish following a train and you get a "ride stamp". It keeps track of total distance and which lines you've ridden
 - Nearby trains, level crossings, and metro service alerts
 - Relax mode: don't click anything, just watch the trains go
 
-**Bus page (`/bus`)**
+**Bus (`/bus`)**
 
 - City buses and intercity coaches across the country, filterable by city, operator, route type, and color series
 - Stop arrival times, plus other routes that serve the same stop
@@ -216,8 +235,9 @@ You can leave all of these empty for local dev. You'll just be missing some feat
 | `DATABASE_URL` | Required in production. Locally it falls back to `DB_HOST`, `DB_USERNAME`, etc. against your local Postgres |
 | `CARTO_API_KEY` | CARTO basemap tiles. Without it you get an "API KEY REQUIRED" watermark. Free at [CARTO](https://carto.com/basemaps) |
 | `TDX_CLIENT_ID` / `TDX_CLIENT_SECRET` | Needed for HSR / metro timetables, live delays, and bus arrivals. Sign up at [TDX](https://tdx.transportdata.tw) |
+| `TDX_ENABLED` | Set to `0` to pause every outbound TDX call (live / alerts / imports) without deleting credentials. Defaults to on when unset |
 | `SECRET_KEY_BASE` or `RAILS_MASTER_KEY` | Set one of them in production. Details are in `.env.example` |
-| `GOOGLE_MAPS_API_KEY` | Reserved, not used right now |
+| `GOOGLE_MAPS_API_KEY` | Google Maps basemap / Street View. Enable **billing** on the Cloud project and Maps JavaScript API (Street View uses it too). Without billing, tiles show a gray “For development purposes only” watermark. The key is visible in the browser script URL |
 
 ### Timetables
 
@@ -232,7 +252,7 @@ Timetables are stored in the database:
 bin/rails transit:import_schedules
 ```
 
-Production runs this automatically every day at 3:30 AM Taipei time. Live board data isn't saved to the database.
+The weekly timetable stays in place. Production checks at 3:30 AM Taipei time and imports only a coming long holiday, or a typhoon day announced by the DGPA, into the current dataset. The days before and after are left alone. Run the command above for a full refresh. Live board data isn't saved to the database.
 
 ### Refreshing map data
 

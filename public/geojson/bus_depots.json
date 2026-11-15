@@ -1,94 +1,398 @@
 [
   {
-    "id": "bus_depot_sid_140984",
+    "id": "bus_depot_25.08_121.69_",
     "name": "七堵分站",
     "routes": [
-      "keelung_503_0eb4b29e2b",
-      "keelung_503_fa39357bf4",
-      "keelung_606_0bb8f07f86",
+      "keelung_402",
+      "keelung_403",
+      "keelung_406",
+      "keelung_503_5112f848ca",
       "keelung_701_9c903308da",
       "keelung_701_c1570e8e12",
       "keelung_702",
       "keelung_703"
     ],
-    "lon": 121.710168,
-    "lat": 25.097375,
-    "station_ids": [
-      "140984"
-    ],
+    "lon": 121.693539,
+    "lat": 25.077924,
+    "address": "基隆市七堵區崇孝街11-4號",
+    "phone": "(02)2456-0241",
+    "station_ids": [],
     "grade": "調度站"
   },
   {
-    "id": "bus_depot_sid_1165604674",
+    "id": "bus_depot_25.06_121.44_",
+    "name": "三重客運中港站",
+    "routes": [
+      "new_taipei_-_37e18e1325",
+      "new_taipei_520",
+      "new_taipei_835",
+      "new_taipei_859",
+      "new_taipei_859_4945dbf445",
+      "new_taipei_958",
+      "new_taipei_959",
+      "taipei_508",
+      "taipei_617",
+      "taipei_617_1652fe7623",
+      "taipei_617sub",
+      "taipei_622",
+      "taipei_neiketongqinzhuanche12"
+    ],
+    "lon": 121.435188,
+    "lat": 25.058438,
+    "address": "新北市泰山區泰林路二段66號（設有電動輪椅充電區）",
+    "phone": "(02)8531-5346",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.09_121.43_",
+    "name": "三重客運五股二站",
+    "routes": [
+      "new_taipei_-_sh_fbe01a77f7",
+      "new_taipei_638",
+      "new_taipei_638sub",
+      "new_taipei_783",
+      "new_taipei_805",
+      "new_taipei_822",
+      "new_taipei_ju19",
+      "new_taipei_ju19sub"
+    ],
+    "lon": 121.428563,
+    "lat": 25.092938,
+    "address": "新北市五股區民義路一段220巷16號旁",
+    "phone": "(02)8292-7990",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.09_121.43_",
     "name": "三重客運五股站",
     "routes": [
+      "new_taipei_637",
+      "new_taipei_640",
+      "new_taipei_640a",
+      "new_taipei_785",
+      "new_taipei_ju20",
       "taipei_641"
     ],
-    "lon": 121.428434,
-    "lat": 25.090746,
-    "station_ids": [
-      "1165604674"
-    ],
+    "lon": 121.428313,
+    "lat": 25.090438,
+    "address": "新北市五股區民義路一段247之2號",
+    "phone": "(02)2292-1629",
+    "station_ids": [],
     "grade": "調度站"
   },
   {
-    "id": "bus_depot_sid_1165608566",
+    "id": "bus_depot_25.05_121.52_",
+    "name": "三重客運交九站",
+    "routes": [
+      "inter_city_9003"
+    ],
+    "lon": 121.517938,
+    "lat": 25.049188,
+    "address": "臺北市大同區市民大道一段209號一樓（臺北轉運站9號窗口）",
+    "phone": "(02)2556-0905",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.01_121.42_",
+    "name": "三重客運俊興站",
+    "routes": [
+      "new_taipei_636",
+      "new_taipei_712",
+      "new_taipei_712sub",
+      "new_taipei_898",
+      "taoyuan_608"
+    ],
+    "lon": 121.416438,
+    "lat": 25.011313,
+    "address": "新北市樹林區俊興街89號",
+    "phone": "(02)8200-0511",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.14_121.39_",
+    "name": "三重客運八里站",
+    "routes": [
+      "new_taipei_704",
+      "new_taipei_704sh",
+      "new_taipei_704sh_244bdbc151",
+      "new_taipei_927",
+      "new_taipei_927_850cb8c5d8",
+      "new_taipei_928"
+    ],
+    "lon": 121.394063,
+    "lat": 25.140438,
+    "address": "新北市八里區中華路三段68號",
+    "phone": "(02)2610-2141",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.05_121.37_",
+    "name": "三重客運公西站",
+    "routes": [
+      "new_taipei_-_bfe6503be7",
+      "new_taipei_760",
+      "new_taipei_786",
+      "new_taipei_786sh",
+      "new_taipei_854",
+      "new_taipei_967",
+      "new_taipei_967_962863e337",
+      "new_taipei_967_bfe7286f44",
+      "new_taipei_967sub",
+      "taoyuan_603",
+      "taoyuan_606",
+      "taoyuan_607"
+    ],
+    "lon": 121.374313,
+    "lat": 25.052938,
+    "address": "桃園市龜山區復興三路56號",
+    "phone": "(03)328-3280",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.06_121.59_",
+    "name": "三重客運南港站",
+    "routes": [
+      "inter_city_9005",
+      "inter_city_9005a",
+      "taipei_128",
+      "taipei_645",
+      "taipei_645_1652fe7623",
+      "taipei_645sub",
+      "taipei_645sub_1652fe7623",
+      "taipei_hong31",
+      "taipei_lan26",
+      "taipei_neike_2_4f335ba6ca",
+      "taipei_neiketongqinzhuanche18",
+      "taipei_neiketongqinzhuanche19",
+      "taipei_shiminxiao_9_992fa4817e"
+    ],
+    "lon": 121.592188,
+    "lat": 25.061063,
+    "address": "臺北市南港區重陽路203巷臨12號",
+    "phone": "(02)2651-8473、(02)2785-0898",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_24.98_121.44_",
+    "name": "三重客運土城站",
+    "routes": [
+      "new_taipei_-_2b78445d95",
+      "new_taipei_810",
+      "taipei_265_477b23e7ce",
+      "taipei_265_b546ecd2cd",
+      "taipei_265sh"
+    ],
+    "lon": 121.444688,
+    "lat": 24.980313,
+    "address": "新北市土城區中央路一段365巷12號",
+    "phone": "(02)2261-4734",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.07_121.40_",
+    "name": "三重客運師大站",
+    "routes": [
+      "new_taipei_-_f569516de3",
+      "new_taipei_936",
+      "new_taipei_936a"
+    ],
+    "lon": 121.397188,
+    "lat": 25.067313,
+    "address": "新北市林口區林口里仁愛路一段2-27號",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.00_121.43_",
     "name": "三重客運新莊站",
     "routes": [
-      "taipei_299"
+      "new_taipei_960",
+      "new_taipei_985_xiandao_d20c01d95e",
+      "new_taipei_ju22",
+      "taipei_-_fb80343c8e",
+      "taipei_299",
+      "taipei_513"
     ],
-    "lon": 121.427621,
-    "lat": 25.004889,
-    "station_ids": [
-      "1165608566"
-    ],
+    "lon": 121.427688,
+    "lat": 25.004563,
+    "address": "新北市樹林區俊英街57號（隔壁）",
+    "phone": "(02)2202-8871",
+    "station_ids": [],
     "grade": "調度站"
   },
   {
-    "id": "bus_depot_sid_75269",
+    "id": "bus_depot_25.09_121.39_",
+    "name": "三重客運林口站",
+    "routes": [
+      "new_taipei_-_0e2a828a4c",
+      "new_taipei_-_7299cb354f",
+      "new_taipei_-_f2dd07a2d1",
+      "new_taipei_-_sh_fb9f32cf33",
+      "new_taipei_945",
+      "new_taipei_946",
+      "new_taipei_946sub",
+      "new_taipei_966",
+      "new_taipei_966a",
+      "new_taipei_966sub"
+    ],
+    "lon": 121.386422,
+    "lat": 25.088604,
+    "address": "新北市林口區中華路9號",
+    "phone": "(02)8601-9827",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_24.98_121.41_",
+    "name": "三重客運樹林站",
+    "routes": [
+      "new_taipei_639",
+      "new_taipei_858",
+      "new_taipei_ju26",
+      "new_taipei_lan38",
+      "new_taipei_xiao_-_9f09a78c9c"
+    ],
+    "lon": 121.414563,
+    "lat": 24.984313,
+    "address": "新北市樹林區中山路二段82巷2號",
+    "phone": "(02)2681-5303",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.20_121.43_",
     "name": "三重客運淡水站",
     "routes": [
       "new_taipei_857",
       "new_taipei_hong23"
     ],
-    "lon": 121.42826,
-    "lat": 25.197763,
-    "station_ids": [
-      "75269"
-    ],
+    "lon": 121.428438,
+    "lat": 25.197688,
+    "address": "新北市淡水區新市三路一段302號右側100公尺",
+    "phone": "(02)2805-4701",
+    "station_ids": [],
     "grade": "調度站"
   },
   {
-    "id": "bus_depot_sid_6662",
+    "id": "bus_depot_25.09_121.47_",
+    "name": "三重客運蘆洲一站",
+    "routes": [
+      "new_taipei_-_51349aee13",
+      "new_taipei_-_5bfd62c319",
+      "new_taipei_899",
+      "taipei_225",
+      "taipei_225sh",
+      "taipei_261",
+      "taipei_306",
+      "taipei_508sh",
+      "taipei_hong9",
+      "taipei_neiketongqinzhuanche6",
+      "taipei_shiminxiao_12_6becaa605b",
+      "taipei_tongqin9"
+    ],
+    "lon": 121.465563,
+    "lat": 25.089313,
+    "address": "新北市蘆洲區中正路333號（設有電動輪椅充電區）",
+    "phone": "(02)2282-1429",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.09_121.46_",
+    "name": "三重客運蘆洲二站",
+    "routes": [
+      "new_taipei_-_c0b0b046fb",
+      "new_taipei_806",
+      "new_taipei_811",
+      "new_taipei_ju25",
+      "new_taipei_lan1",
+      "taipei_221",
+      "taipei_232",
+      "taipei_232_68f0d59b7e",
+      "taipei_ganxian_ae0a6f178c"
+    ],
+    "lon": 121.464438,
+    "lat": 25.088313,
+    "address": "新北市蘆洲區光明路136號左側",
+    "phone": "(02)2285-5311",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.02_121.39_",
     "name": "三重客運迴龍站",
     "routes": [
-      "taoyuan_607"
+      "new_taipei_635",
+      "new_taipei_ju21",
+      "new_taipei_lan37",
+      "taipei_111",
+      "taipei_615"
     ],
-    "lon": 121.39453,
-    "lat": 25.01578,
-    "station_ids": [
-      "6662"
-    ],
+    "lon": 121.394563,
+    "lat": 25.015813,
+    "address": "桃園市龜山區萬壽路一段553號",
+    "phone": "(02)8200-0511",
+    "station_ids": [],
     "grade": "調度站"
   },
   {
-    "id": "bus_depot_24.95_121.22_",
+    "id": "bus_depot_sid_110050",
     "name": "中壢客運中壢總站",
     "routes": [
       "inter_city_1862",
       "inter_city_1862a",
-      "inter_city_2022",
-      "inter_city_9001"
+      "inter_city_2022"
     ],
     "lon": 121.224258,
     "lat": 24.953458,
-    "station_ids": [],
+    "station_ids": [
+      "110050"
+    ],
     "grade": "調度站"
   },
   {
     "id": "bus_depot_sid_126",
     "name": "中壢客運中壢總站",
     "routes": [
+      "taoyuan_15"
+    ],
+    "lon": 121.224161,
+    "lat": 24.953365,
+    "station_ids": [
+      "126"
+    ],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_24.99_121.31_",
+    "name": "中壢客運桃園站",
+    "routes": [
+      "inter_city_9009",
+      "inter_city_9069",
+      "inter_city_9069a",
+      "taoyuan_130",
+      "taoyuan_5301"
+    ],
+    "lon": 121.313449,
+    "lat": 24.990713,
+    "address": "桃園市桃園區復興路160號",
+    "phone": "03-3340700",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_24.95_121.22_",
+    "name": "中壢客運總站",
+    "routes": [
+      "inter_city_9001",
       "taoyuan_112n",
       "taoyuan_122",
       "taoyuan_133",
@@ -100,9 +404,9 @@
     ],
     "lon": 121.224161,
     "lat": 24.953365,
-    "station_ids": [
-      "126"
-    ],
+    "address": "桃園市中壢區建國路100號",
+    "phone": "03-4255722（公車）、03-4260831（國道）",
+    "station_ids": [],
     "grade": "調度站"
   },
   {
@@ -143,13 +447,337 @@
     "grade": "調度站"
   },
   {
-    "id": "bus_depot_sid_140750",
+    "id": "bus_depot_25.26_121.50_",
+    "name": "中興巴士三芝站",
+    "routes": [
+      "new_taipei_821"
+    ],
+    "lon": 121.502313,
+    "lat": 25.261313,
+    "address": "新北市三芝區淡金路二段38號",
+    "phone": "02-2636-3636",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.07_121.47_",
+    "name": "中興巴士三重站",
+    "routes": [
+      "new_taipei_-_efe6c1e4e4",
+      "new_taipei_-neike_b07580adb3",
+      "new_taipei_815",
+      "new_taipei_816",
+      "new_taipei_933",
+      "taipei_227",
+      "taipei_227sh",
+      "taipei_600"
+    ],
+    "lon": 121.472688,
+    "lat": 25.073813,
+    "address": "新北市蘆洲區國道路二段68號旁",
+    "phone": "02-2987-9547",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_24.99_121.48_",
+    "name": "中興巴士中和站",
+    "routes": [
+      "taipei_214",
+      "taipei_214_6db3b9a960",
+      "taipei_311",
+      "taipei_311sh",
+      "taipei_950",
+      "taipei_neiketongqinzhuanche2",
+      "taipei_neiketongqinzhuanche8",
+      "taipei_tongqinzhuanche_94321b516d"
+    ],
+    "lon": 121.476313,
+    "lat": 24.991563,
+    "address": "新北市中和區連城路631-1號",
+    "phone": "02-2225-9630／02-2225-9629",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.10_121.50_",
+    "name": "中興巴士北士科站",
+    "routes": [
+      "taipei_1_2bd9a0f0f8",
+      "taipei_1_eca13052da",
+      "taipei_2_25b770c6ca",
+      "taipei_557",
+      "taipei_hong12",
+      "taipei_neiketongqinzhuanche17"
+    ],
+    "lon": 121.499688,
+    "lat": 25.100563,
+    "address": "台北市北投區福國路與洲美街交叉口南側",
+    "phone": "02-2820-2588",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.11_121.54_",
+    "name": "中興巴士天母站",
+    "routes": [
+      "taipei_203",
+      "taipei_279",
+      "taipei_280",
+      "taipei_280_91bd5ce192",
+      "taipei_602",
+      "taipei_hong15"
+    ],
+    "lon": 121.540438,
+    "lat": 25.114188,
+    "address": "臺北市士林區士東路臨353巷臨2-1號",
+    "phone": "02-2831-0736",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.10_121.55_",
+    "name": "中興巴士故宮站",
+    "routes": [
+      "taipei_300",
+      "taipei_304_da7db2b839",
+      "taipei_304_fb54de97d8",
+      "taipei_hong30",
+      "taipei_tongqin30"
+    ],
+    "lon": 121.549063,
+    "lat": 25.099063,
+    "address": "臺北市士林區故宮路7巷14號",
+    "phone": "02-2882-2126",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.08_121.67_",
+    "name": "中興巴士汐止站",
+    "routes": [
+      "new_taipei_-_a0e3178808",
+      "new_taipei_591",
+      "new_taipei_951",
+      "new_taipei_lan15",
+      "taipei_605",
+      "taipei_605_4bfc17c0b2",
+      "taipei_605_62bccd6b14",
+      "taipei_605sub",
+      "taipei_668",
+      "taipei_675",
+      "taipei_711"
+    ],
+    "lon": 121.665938,
+    "lat": 25.076688,
+    "address": "新北市汐止區鄉長路1段273號（鄉長路一段55巷旁）",
+    "phone": "02-2642-2625",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.07_121.42_",
+    "name": "中興巴士泰山站",
+    "routes": [
+      "new_taipei_-_70cbc4e211",
+      "new_taipei_-_f38c2a1f64",
+      "new_taipei_820",
+      "new_taipei_918",
+      "new_taipei_918_0b16410a23",
+      "new_taipei_918_4766080266",
+      "new_taipei_918_c19a1e3806",
+      "new_taipei_918_deba7b9f01",
+      "new_taipei_918sh",
+      "taipei_616",
+      "taipei_616_7b322da8fb"
+    ],
+    "lon": 121.423063,
+    "lat": 25.065313,
+    "address": "新北市泰山區泰山路111之1號旁",
+    "phone": "02-2909-5695",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_24.99_121.48_",
+    "name": "光華巴士中和站",
+    "routes": [
+      "new_taipei_813",
+      "new_taipei_813sh"
+    ],
+    "lon": 121.475063,
+    "lat": 24.991563,
+    "address": "新北市中和區連城路534-2號",
+    "phone": "02-2226-5942",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.10_121.50_",
+    "name": "光華巴士北士科站",
+    "routes": [
+      "inter_city_9006",
+      "taipei_1_2bd9a0f0f8",
+      "taipei_250",
+      "taipei_2_25b770c6ca",
+      "taipei_683",
+      "taipei_ganxian_74d6143a47",
+      "taipei_ganxian_74d6143a47_be0d037487",
+      "taipei_neiketongqinzhuanche17",
+      "taipei_shiminxiao_8_c83da1a975"
+    ],
+    "lon": 121.499688,
+    "lat": 25.100563,
+    "address": "台北市北投區福國路與洲美街交叉口南側",
+    "phone": "02-2820-2588",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.06_121.63_",
+    "name": "光華巴士北峰站",
+    "routes": [
+      "new_taipei_677",
+      "new_taipei_677sub",
+      "new_taipei_lan21",
+      "new_taipei_lan21sub",
+      "new_taipei_lan23",
+      "new_taipei_lan39",
+      "taipei_203",
+      "taipei_hong2"
+    ],
+    "lon": 121.629188,
+    "lat": 25.064938,
+    "address": "新北市汐止區福德二路170號旁",
+    "phone": "02-8693-2251",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.12_121.54_",
+    "name": "光華巴士天東站",
+    "routes": [
+      "taipei_1_eca13052da",
+      "taipei_206",
+      "taipei_279",
+      "taipei_ganxian_fb870e9339",
+      "taipei_shiminxiao_11_6b48682055"
+    ],
+    "lon": 121.539188,
+    "lat": 25.116188,
+    "address": "臺北市士林區東山路27號",
+    "phone": "02-2872-1527",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.11_121.54_",
+    "name": "光華巴士天西站",
+    "routes": [
+      "taipei_224",
+      "taipei_hong19",
+      "taipei_neiketongqinzhuanche15",
+      "taipei_shiminxiao_16_e12597e4c1"
+    ],
+    "lon": 121.539813,
+    "lat": 25.113813,
+    "address": "台北市士林區中山北路七段187號",
+    "phone": "02-2871-0872",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.10_121.55_",
+    "name": "光華巴士故宮站",
+    "routes": [
+      "taipei_268",
+      "taipei_lan7",
+      "taipei_lan7sub",
+      "taipei_neike_2_4f335ba6ca",
+      "taipei_neiketongqinzhuanche8",
+      "taipei_tongqin30"
+    ],
+    "lon": 121.549063,
+    "lat": 25.099063,
+    "address": "臺北市士林區故宮路7巷14號",
+    "phone": "02-2882-2126",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.06_121.60_",
+    "name": "光華巴士東湖站",
+    "routes": [
+      "taipei_240_01d8f12a68",
+      "taipei_247",
+      "taipei_247sh",
+      "taipei_267",
+      "taipei_521",
+      "taipei_521_1652fe7623",
+      "taipei_600",
+      "taipei_681",
+      "taipei_lan20",
+      "taipei_lan20_1652fe7623",
+      "taipei_tongqinzhuanche_d0300d8317"
+    ],
+    "lon": 121.601438,
+    "lat": 25.061063,
+    "address": "臺北市內湖區潭美街579號旁",
+    "phone": "02-2794-2659",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.10_121.51_",
+    "name": "光華巴士洲美站",
+    "routes": [
+      "taipei_246",
+      "taipei_hong3",
+      "taipei_hong3sh"
+    ],
+    "lon": 121.508813,
+    "lat": 25.100438,
+    "address": "台北市北投區福美路與承平路口（東南側）",
+    "phone": "02-2823-0188",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.11_121.47_",
+    "name": "光華巴士海專站",
+    "routes": [
+      "taipei_215",
+      "taipei_hong10",
+      "taipei_hong10sh",
+      "taipei_tongqin28"
+    ],
+    "lon": 121.468183,
+    "lat": 25.108931,
+    "address": "台北市士林區延平北路九段285號",
+    "phone": "02-2810-8193",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.01_121.56_",
+    "name": "光華巴士麟光站",
+    "routes": [
+      "taipei_680",
+      "taipei_72"
+    ],
+    "lon": 121.563313,
+    "lat": 25.013438,
+    "address": "臺北市信義區和平東路三段625號",
+    "phone": "02-2733-9729",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.14_121.79_",
     "name": "八斗子分站",
     "routes": [
       "keelung_103_xiangfeng",
       "keelung_103_zhongzheng",
-      "keelung_107",
-      "keelung_108",
       "keelung_203_1475bab86e",
       "keelung_203_5756201e00",
       "keelung_203_d0269a6042",
@@ -157,23 +785,7 @@
     ],
     "lon": 121.790565,
     "lat": 25.143455,
-    "station_ids": [
-      "140750"
-    ],
-    "grade": "調度站"
-  },
-  {
-    "id": "bus_depot_sid_141318",
-    "name": "八斗子分站",
-    "routes": [
-      "keelung_108",
-      "keelung_108_1c4f09c9fd"
-    ],
-    "lon": 121.790768,
-    "lat": 25.143521,
-    "station_ids": [
-      "141318"
-    ],
+    "station_ids": [],
     "grade": "調度站"
   },
   {
@@ -219,20 +831,52 @@
     "grade": "調度站"
   },
   {
-    "id": "bus_depot_sid_141021",
-    "name": "四腳亭分站",
+    "id": "bus_depot_25.16_121.77_",
+    "name": "和平島分站",
     "routes": [
-      "keelung_601"
+      "keelung_101_xiangfeng",
+      "keelung_101_zhongzheng"
     ],
-    "lon": 121.763109,
-    "lat": 25.098562,
-    "station_ids": [
-      "141021"
-    ],
+    "lon": 121.7715,
+    "lat": 25.157016,
+    "address": "基隆市中正區和一路2巷8-1號",
+    "phone": "(02)2463-1940",
+    "station_ids": [],
     "grade": "調度站"
   },
   {
-    "id": "bus_depot_24.99_121.31_",
+    "id": "bus_depot_25.10_121.76_",
+    "name": "四腳亭分站",
+    "routes": [
+      "keelung_601",
+      "keelung_605",
+      "keelung_605_8c59175bfb",
+      "keelung_605_e3feb41584"
+    ],
+    "lon": 121.763109,
+    "lat": 25.098562,
+    "address": "新北市瑞芳區粗坑口路12號",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.09_121.44_",
+    "name": "國光客運五股站",
+    "routes": [
+      "new_taipei_578",
+      "new_taipei_579",
+      "new_taipei_582",
+      "new_taipei_582_sh_be1a5d699a",
+      "new_taipei_583",
+      "new_taipei_597"
+    ],
+    "lon": 121.438563,
+    "lat": 25.086063,
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_sid_139243",
     "name": "國光客運桃園停車場",
     "routes": [
       "inter_city_1816",
@@ -242,11 +886,27 @@
     ],
     "lon": 121.312957,
     "lat": 24.986848,
+    "station_ids": [
+      "139243"
+    ],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_24.67_121.76_",
+    "name": "國光客運羅東站",
+    "routes": [
+      "new_taipei_780",
+      "new_taipei_781",
+      "new_taipei_782",
+      "yilan_county_781"
+    ],
+    "lon": 121.755938,
+    "lat": 24.671313,
     "station_ids": [],
     "grade": "調度站"
   },
   {
-    "id": "bus_depot_24.14_120.69_",
+    "id": "bus_depot_sid_136713",
     "name": "國光客運臺中車站",
     "routes": [
       "inter_city_1805",
@@ -265,7 +925,9 @@
     ],
     "lon": 120.685721,
     "lat": 24.14138,
-    "station_ids": [],
+    "station_ids": [
+      "136713"
+    ],
     "grade": "調度站"
   },
   {
@@ -282,7 +944,20 @@
     "grade": "調度站"
   },
   {
-    "id": "bus_depot_23.97_120.96_",
+    "id": "bus_depot_25.13_121.71_",
+    "name": "國家新城分站",
+    "routes": [
+      "keelung_501"
+    ],
+    "lon": 121.713734,
+    "lat": 25.127366,
+    "address": "基隆市安樂區安和二街15號",
+    "phone": "(02)2431-2909",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_sid_119065",
     "name": "埔里總站",
     "routes": [
       "inter_city_6650",
@@ -313,7 +988,9 @@
     ],
     "lon": 120.96243,
     "lat": 23.96853,
-    "station_ids": [],
+    "station_ids": [
+      "119065"
+    ],
     "grade": "調度站"
   },
   {
@@ -343,6 +1020,96 @@
     "grade": "調度站"
   },
   {
+    "id": "bus_depot_24.98_121.44_",
+    "name": "基隆客運土城站",
+    "routes": [
+      "new_taipei_lan41",
+      "new_taipei_lan41_1c09d85e48"
+    ],
+    "lon": 121.440563,
+    "lat": 24.982063,
+    "address": "新北市土城區中華路一段182號",
+    "phone": "02-2260-2333",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.13_121.72_",
+    "name": "基隆客運基二站",
+    "routes": [
+      "new_taipei_787",
+      "new_taipei_787_sh_4ba5b99838",
+      "new_taipei_788_374d82ac11",
+      "new_taipei_788_40f82c3a32",
+      "new_taipei_788_a768632f64",
+      "new_taipei_788sh",
+      "new_taipei_789sh_09b19af9cd",
+      "new_taipei_789sh_6f85091afe"
+    ],
+    "lon": 121.715188,
+    "lat": 25.130563,
+    "address": "基隆市安樂區樂利三街12號",
+    "phone": "02-2432-3185",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.13_121.71_",
+    "name": "基隆客運基隆站",
+    "routes": [
+      "inter_city_1031",
+      "inter_city_1032",
+      "inter_city_9006",
+      "new_taipei_789_aa4e48de35",
+      "new_taipei_791_4da37448e4",
+      "new_taipei_791_5f95db6f85",
+      "new_taipei_791_66d27ce661",
+      "new_taipei_791_bb5a3b51fd",
+      "new_taipei_791sh"
+    ],
+    "lon": 121.714188,
+    "lat": 25.126938,
+    "address": "基隆市安樂區樂利三街213號（國家新城）",
+    "phone": "02-2432-3721",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.11_121.79_",
+    "name": "基隆客運瑞芳站",
+    "routes": [
+      "inter_city_1061",
+      "inter_city_1061a",
+      "inter_city_1062",
+      "new_taipei_-_12113d55e3",
+      "new_taipei_-_1ba6aa9fb8",
+      "new_taipei_-_6fee7034ba",
+      "new_taipei_-_acbeab5b2c",
+      "new_taipei_-_f75f1a9d25",
+      "new_taipei_-huang_b5c45029b7",
+      "new_taipei_-neike_34c705cce7",
+      "new_taipei_788_374d82ac11",
+      "new_taipei_788_40f82c3a32",
+      "new_taipei_788_a768632f64",
+      "new_taipei_788sh",
+      "new_taipei_808",
+      "new_taipei_826",
+      "new_taipei_827",
+      "new_taipei_856_-huang_b816305e59",
+      "new_taipei_886_0f0db4fc17",
+      "new_taipei_886_2441bedf1c",
+      "new_taipei_886_6c10723776",
+      "new_taipei_886sh",
+      "new_taipei_891"
+    ],
+    "lon": 121.790813,
+    "lat": 25.110063,
+    "address": "新北市瑞芳區傑魚坑路198號",
+    "phone": "02-2497-2055",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
     "id": "bus_depot_sid_1165609515",
     "name": "基隆客運瑞芳站",
     "routes": [
@@ -354,6 +1121,199 @@
     "station_ids": [
       "1165609515"
     ],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.22_121.63_",
+    "name": "基隆客運金山站",
+    "routes": [
+      "inter_city_1068",
+      "new_taipei_-_sh_7a011675d4"
+    ],
+    "lon": 121.625438,
+    "lat": 25.220313,
+    "address": "新北市金山區南勢112號",
+    "phone": "02-2498-2155",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.13_121.74_",
+    "name": "基隆市公車調度室",
+    "routes": [
+      "keelung_105",
+      "keelung_306_8739a7c456",
+      "keelung_306_d448ba90a0",
+      "keelung_502",
+      "keelung_506"
+    ],
+    "lon": 121.73867,
+    "lat": 25.13128,
+    "address": "基隆市仁愛區港西街2號",
+    "phone": "(02)2425-1768",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.06_121.58_",
+    "name": "大南汽車內湖站",
+    "routes": [
+      "taipei_551_11e78cdf86",
+      "taipei_551_13578c9c8d",
+      "taipei_551_13578c9c8d_1652fe7623",
+      "taipei_551_7d2c57a13d",
+      "taipei_551_7d2c57a13d_1652fe7623",
+      "taipei_551_9ba7de609e",
+      "taipei_551_9ba7de609e_1652fe7623",
+      "taipei_lan27",
+      "taipei_lan27_1652fe7623",
+      "taipei_neike_2_4f335ba6ca",
+      "taipei_neiketongqinzhuanche20",
+      "taipei_shiminxiao_15_415a3cf568",
+      "taipei_shiminxiao_6_d264069a6c",
+      "taipei_zong20"
+    ],
+    "lon": 121.580813,
+    "lat": 25.060938,
+    "address": "臺北市內湖區新湖二路345號",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.14_121.49_",
+    "name": "大南汽車北投站",
+    "routes": [
+      "taipei_129",
+      "taipei_216",
+      "taipei_216_854b3b66ae",
+      "taipei_218",
+      "taipei_218_50a2957c05",
+      "taipei_218sh",
+      "taipei_230",
+      "taipei_529",
+      "taipei_602",
+      "taipei_ganxian_b47a29c4f9",
+      "taipei_neiketongqinzhuanche16",
+      "taipei_shiminxiao_2_312a97db16",
+      "taipei_tongqin27",
+      "taipei_tongqinzhuanche_c3e77c0b9b",
+      "taipei_xiao14",
+      "taipei_xiao21",
+      "taipei_xiao22",
+      "taipei_xiao25",
+      "taipei_xiao26",
+      "taipei_xiao28",
+      "taipei_xiao36",
+      "taipei_xiao39",
+      "taipei_xiao6",
+      "taipei_xiao7",
+      "taipei_xiao8",
+      "taipei_xiao8sh",
+      "taipei_xiao9_-_afc37f9d7b",
+      "taipei_xiao9sh"
+    ],
+    "lon": 121.491563,
+    "lat": 25.143938,
+    "address": "臺北市北投區秀山路30號旁停車場",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_24.97_121.46_",
+    "name": "大南汽車土城站",
+    "routes": [
+      "new_taipei_1_a6735b75ed",
+      "new_taipei_731",
+      "new_taipei_839",
+      "new_taipei_839_4adae7ab8b",
+      "new_taipei_lu9",
+      "new_taipei_lu9_8f26fd0eec",
+      "new_taipei_lu9_xiao_9a3bca423d",
+      "taipei_265_f6bb7e6ef0",
+      "taipei_265sh"
+    ],
+    "lon": 121.459438,
+    "lat": 24.967938,
+    "address": "新北市土城區明德路一段389之1號",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.12_121.47_",
+    "name": "大南汽車關渡站",
+    "routes": [
+      "taipei_223",
+      "taipei_223_e75bc54834",
+      "taipei_288",
+      "taipei_302",
+      "taipei_302sh",
+      "taipei_550",
+      "taipei_hong35",
+      "taipei_hong35sh",
+      "taipei_hong55",
+      "taipei_hong55sh",
+      "taipei_xiao23"
+    ],
+    "lon": 121.469938,
+    "lat": 25.122188,
+    "address": "臺北市北投區關渡路口",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.06_121.45_",
+    "name": "大有巴士新莊站",
+    "routes": [
+      "taipei_257",
+      "taipei_neiketongqinzhuanche11"
+    ],
+    "lon": 121.447313,
+    "lat": 25.059188,
+    "address": "新北市泰山區泰林路一段6-1號",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.06_121.61_",
+    "name": "大有巴士興中站",
+    "routes": [
+      "taipei_88",
+      "taipei_88sh",
+      "taipei_ganxian_74d6143a47",
+      "taipei_ganxian_74d6143a47_be0d037487",
+      "taipei_lan25"
+    ],
+    "lon": 121.606438,
+    "lat": 25.058688,
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.04_121.63_",
+    "name": "大有巴士舊莊站",
+    "routes": [
+      "taipei_212",
+      "taipei_212_4e93db5f09",
+      "taipei_212_e441102b0e"
+    ],
+    "lon": 121.627062,
+    "lat": 25.036312,
+    "address": "臺北市南港區舊莊街二段17號",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.14_121.70_",
+    "name": "大武崙分站",
+    "routes": [
+      "keelung_505_2b66e93f10",
+      "keelung_505_93d96cc5df",
+      "keelung_505_acceb750cb",
+      "keelung_505_cdf3453c62"
+    ],
+    "lon": 121.704127,
+    "lat": 25.141914,
+    "station_ids": [],
     "grade": "調度站"
   },
   {
@@ -393,11 +1353,15 @@
       "taoyuan_5110a",
       "taoyuan_5112",
       "taoyuan_702",
+      "taoyuan_f913",
+      "taoyuan_f913a",
+      "taoyuan_f913b",
       "taoyuan_l701",
       "taoyuan_l701a",
       "taoyuan_l705",
       "taoyuan_l706",
-      "taoyuan_l712"
+      "taoyuan_l712",
+      "taoyuan_t700"
     ],
     "lon": 121.287885,
     "lat": 24.881172,
@@ -407,29 +1371,332 @@
     "grade": "調度站"
   },
   {
-    "id": "bus_depot_sid_143585",
-    "name": "太魯閣客運場站",
+    "id": "bus_depot_25.00_121.49_",
+    "name": "大都會客運中和站",
     "routes": [
-      "hualien_county_302"
+      "taipei_262",
+      "taipei_262sh",
+      "taipei_297",
+      "taipei_5",
+      "taipei_tongqin11",
+      "taipei_tongqin12"
     ],
-    "lon": 121.641907,
-    "lat": 24.120913,
-    "station_ids": [
-      "143585"
-    ],
+    "lon": 121.491688,
+    "lat": 25.003188,
+    "address": "新北市中和區中山路二段378號",
+    "phone": "02-2248-1968",
+    "station_ids": [],
     "grade": "調度站"
   },
   {
-    "id": "bus_depot_sid_143608",
-    "name": "太魯閣客運場站",
+    "id": "bus_depot_25.07_121.58_",
+    "name": "大都會客運內湖站",
     "routes": [
-      "hualien_county_302"
+      "taipei_0_460fdac227",
+      "taipei_0_460fdac227_1652fe7623",
+      "taipei_222",
+      "taipei_505",
+      "taipei_63",
+      "taipei_neiketongqinzhuanche13",
+      "taipei_neiketongqinzhuanche3",
+      "taipei_shiminxiao_18_a479914355"
     ],
-    "lon": 121.641897,
-    "lat": 24.121109,
-    "station_ids": [
-      "143608"
+    "lon": 121.576813,
+    "lat": 25.067438,
+    "address": "臺北市內湖區民權東路六段11巷6號1樓",
+    "phone": "02-2795-5600",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.03_121.62_",
+    "name": "大都會客運凌雲站",
+    "routes": [
+      "taipei_270",
+      "taipei_270sh",
+      "taipei_tongqinzhuanche_c015a96cf4"
     ],
+    "lon": 121.615063,
+    "lat": 25.034813,
+    "address": "臺北市南港區研究院路三段50號",
+    "phone": "02-2783-0445",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.14_121.79_",
+    "name": "大都會客運基隆站",
+    "routes": [
+      "inter_city_2088",
+      "inter_city_2088a",
+      "inter_city_2088b",
+      "inter_city_2088c"
+    ],
+    "lon": 121.788813,
+    "lat": 25.144438,
+    "address": "基隆市東明路185號",
+    "phone": "02-2466-1378",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.10_121.50_",
+    "name": "大都會客運士林站",
+    "routes": [
+      "taipei_41",
+      "taipei_9"
+    ],
+    "lon": 121.500188,
+    "lat": 25.100813,
+    "address": "臺北市北投區福美路227號",
+    "phone": "02-2833-5706",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.07_121.53_",
+    "name": "大都會客運建北站",
+    "routes": [
+      "taipei_49",
+      "taipei_688",
+      "taipei_ganxian_3033a3c03f"
+    ],
+    "lon": 121.534813,
+    "lat": 25.066813,
+    "address": "臺北市中山區建國北路三段之高架橋下",
+    "phone": "02-2501-3694",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.06_121.45_",
+    "name": "大都會客運新莊站",
+    "routes": [
+      "new_taipei_982",
+      "new_taipei_982_6c65425840",
+      "new_taipei_982_6c65425840_50607ea763",
+      "new_taipei_982sh",
+      "new_taipei_ju17",
+      "taipei_652"
+    ],
+    "lon": 121.454458,
+    "lat": 25.060075,
+    "address": "新北市新莊區昌平街336號",
+    "phone": "02-8521-2772",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.02_121.50_",
+    "name": "大都會客運東園站",
+    "routes": [
+      "taipei_12",
+      "taipei_38",
+      "taipei_38sh",
+      "taipei_630"
+    ],
+    "lon": 121.495938,
+    "lat": 25.015188,
+    "address": "臺北市萬華區萬大路底堤外（華中露營場旁）",
+    "phone": "02-2303-1862",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.08_121.62_",
+    "name": "大都會客運東湖站",
+    "routes": [
+      "taipei_281",
+      "taipei_287sh",
+      "taipei_ganxian_495897528e"
+    ],
+    "lon": 121.623438,
+    "lat": 25.079063,
+    "address": "臺北市內湖區康樂街210號對面",
+    "phone": "02-2631-7001",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.03_121.57_",
+    "name": "大都會客運松德站",
+    "routes": [
+      "taipei_22",
+      "taipei_277",
+      "taipei_37",
+      "taipei_46",
+      "taipei_612",
+      "taipei_ganxian_82e0389e36",
+      "taipei_ganxian_82e0389e36_773e614bd8",
+      "taipei_lan5",
+      "taipei_shiminxiao_17_533a87772b"
+    ],
+    "lon": 121.573938,
+    "lat": 25.031938,
+    "address": "臺北市信義區松德路300號",
+    "phone": "02-2759-0319",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.03_121.58_",
+    "name": "大都會客運松職站",
+    "routes": [
+      "inter_city_1551",
+      "taipei_20",
+      "taipei_286",
+      "taipei_286sub",
+      "taipei_299",
+      "taipei_32",
+      "taipei_33",
+      "taipei_33_17461a8442"
+    ],
+    "lon": 121.579188,
+    "lat": 25.033188,
+    "address": "臺北市信義區松山路650巷巷口",
+    "phone": "02-2727-4574",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.08_121.37_",
+    "name": "大都會客運林口站",
+    "routes": [
+      "new_taipei_-_6e2008d1b3",
+      "new_taipei_-_sh_5a2bce5480",
+      "new_taipei_937",
+      "new_taipei_937a",
+      "new_taipei_937sub"
+    ],
+    "lon": 121.370063,
+    "lat": 25.081688,
+    "address": "新北市林口區文化北路二段與文林六街口",
+    "phone": "02-2609-7932",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.12_121.52_",
+    "name": "大都會客運榮總站",
+    "routes": [
+      "taipei_559",
+      "taipei_559_ef1a106cb0",
+      "taipei_ganxian_87a628dff7"
+    ],
+    "lon": 121.517438,
+    "lat": 25.118313,
+    "address": "臺北市北投區石牌路二段115號1樓",
+    "phone": "02-2821-7597",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.04_121.62_",
+    "name": "大都會客運舊莊站",
+    "routes": [
+      "new_taipei_823",
+      "taipei_276",
+      "taipei_306",
+      "taipei_306sh",
+      "taipei_shiminxiao_6_d264069a6c"
+    ],
+    "lon": 121.622938,
+    "lat": 25.038688,
+    "address": "臺北市南港區舊莊街一段199巷16弄12號",
+    "phone": "02-2651-2945",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.00_121.57_",
+    "name": "大都會客運萬芳站",
+    "routes": [
+      "taipei_0_a632445067",
+      "taipei_109",
+      "taipei_606",
+      "taipei_606tongqin",
+      "taipei_ganxian_a1363961dd",
+      "taipei_ganxian_a1363961dd_7cb6822b21"
+    ],
+    "lon": 121.569813,
+    "lat": 25.002063,
+    "address": "臺北市文山區萬美街一段17號",
+    "phone": "02-2230-3428",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.08_121.47_",
+    "name": "大都會客運蘆洲站",
+    "routes": [
+      "new_taipei_ju18",
+      "new_taipei_ju18_0ab3378f3b",
+      "taipei_14",
+      "taipei_274",
+      "taipei_508sh"
+    ],
+    "lon": 121.469188,
+    "lat": 25.077938,
+    "address": "新北市蘆洲區中山二路301-1號",
+    "phone": "02-2282-0037",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_24.60_121.85_",
+    "name": "大都會客運蘇澳站",
+    "routes": [
+      "inter_city_9028",
+      "inter_city_9028b",
+      "inter_city_9028d",
+      "yilan_county_121"
+    ],
+    "lon": 121.851313,
+    "lat": 24.595313,
+    "address": "宜蘭縣蘇澳鎮太平路5號",
+    "phone": "03-995-5607",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.02_121.56_",
+    "name": "大都會客運麟光站",
+    "routes": [
+      "taipei_685",
+      "taipei_ganxian_a287068f14",
+      "taipei_shiminxiao_7_d0b0a02aa7"
+    ],
+    "lon": 121.560938,
+    "lat": 25.015313,
+    "address": "臺北市大安區和平東路3段530巷巷口",
+    "phone": "02-2733-7164",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.15_121.75_",
+    "name": "太白莊分站",
+    "routes": [
+      "keelung_301",
+      "keelung_301_4f53ad8131",
+      "keelung_301_fdabc68f1e",
+      "keelung_302",
+      "keelung_303_4f234a34dd",
+      "keelung_303_8739a7c456",
+      "keelung_303_9074c1c780",
+      "keelung_303_c504e32b2d",
+      "keelung_304",
+      "keelung_304_02fd309d86",
+      "keelung_304_4f53ad8131",
+      "keelung_304_dc78033278",
+      "keelung_304_e695d91f7e",
+      "keelung_508"
+    ],
+    "lon": 121.745688,
+    "lat": 25.148938,
+    "address": "基隆市中山區中山四路高架橋下",
+    "phone": "(02)2427-7454",
+    "station_ids": [],
     "grade": "調度站"
   },
   {
@@ -446,7 +1713,7 @@
     "grade": "調度站"
   },
   {
-    "id": "bus_depot_22.64_120.30_",
+    "id": "bus_depot_sid_120832",
     "name": "建國客運站",
     "routes": [
       "inter_city_1610",
@@ -455,7 +1722,6 @@
       "inter_city_1610c",
       "inter_city_1610d",
       "inter_city_1610e",
-      "inter_city_1610f",
       "inter_city_1610g",
       "inter_city_1621",
       "inter_city_1621a",
@@ -478,10 +1744,7 @@
       "inter_city_1872a",
       "inter_city_7512",
       "inter_city_7512b",
-      "inter_city_7512c",
-      "inter_city_7512d",
       "inter_city_7512e",
-      "inter_city_7512f",
       "inter_city_7513",
       "inter_city_7513a",
       "inter_city_7513b",
@@ -496,8 +1759,177 @@
       "inter_city_7513k",
       "inter_city_7513l"
     ],
-    "lon": 120.302799,
-    "lat": 22.637668,
+    "lon": 120.304135,
+    "lat": 22.63754,
+    "station_ids": [
+      "120832"
+    ],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_sid_138364",
+    "name": "建國客運站",
+    "routes": [
+      "inter_city_7512",
+      "inter_city_7512c",
+      "inter_city_7512d",
+      "inter_city_7512f"
+    ],
+    "lon": 120.303739,
+    "lat": 22.637781,
+    "station_ids": [
+      "138364"
+    ],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_sid_139552",
+    "name": "建國客運站",
+    "routes": [
+      "inter_city_1610",
+      "inter_city_1610a",
+      "inter_city_1610b",
+      "inter_city_1610c",
+      "inter_city_1610d",
+      "inter_city_1610f",
+      "inter_city_1610g",
+      "inter_city_1621",
+      "inter_city_1621a",
+      "inter_city_1621b",
+      "inter_city_1621c",
+      "inter_city_1621d",
+      "inter_city_1650",
+      "inter_city_1650a",
+      "inter_city_1650d",
+      "inter_city_1651",
+      "inter_city_1651a",
+      "inter_city_1651b",
+      "inter_city_1660",
+      "inter_city_1838",
+      "inter_city_1838a",
+      "inter_city_1862",
+      "inter_city_1862a",
+      "inter_city_1872",
+      "inter_city_1872a"
+    ],
+    "lon": 120.29971,
+    "lat": 22.63793,
+    "station_ids": [
+      "139552"
+    ],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.08_121.44_",
+    "name": "指南客運五股站",
+    "routes": [
+      "new_taipei_580",
+      "new_taipei_797",
+      "new_taipei_801",
+      "new_taipei_803",
+      "new_taipei_938",
+      "taipei_758"
+    ],
+    "lon": 121.435813,
+    "lat": 25.075563,
+    "address": "新北市五股區成泰路1段136號",
+    "phone": "02-2292-7889",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.15_121.41_",
+    "name": "指南客運八里站",
+    "routes": [
+      "new_taipei_963"
+    ],
+    "lon": 121.405833,
+    "lat": 25.153417,
+    "address": "新北市八里區八里大道18號對面",
+    "phone": "02-2610-4393・座標 25°09'12.3\"N 121°24'21.0\"E",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_24.97_121.52_",
+    "name": "指南客運安和站",
+    "routes": [
+      "new_taipei_897",
+      "new_taipei_897sh",
+      "taipei_202",
+      "taipei_208",
+      "taipei_208_0ad75809c1",
+      "taipei_208sh"
+    ],
+    "lon": 121.518188,
+    "lat": 24.966813,
+    "address": "新北市新店區安和路二段1之1號旁",
+    "phone": "02-2212-5247",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.10_121.55_",
+    "name": "指南客運故宮站",
+    "routes": [
+      "taipei_256",
+      "taipei_28",
+      "taipei_28_1652fe7623",
+      "taipei_42",
+      "taipei_42sh"
+    ],
+    "lon": 121.549063,
+    "lat": 25.099063,
+    "address": "臺北市士林區故宮路7巷14號",
+    "phone": "02-2882-2126",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.00_121.59_",
+    "name": "指南客運新光站",
+    "routes": [
+      "new_taipei_-_ef4797b328",
+      "taipei_282",
+      "taipei_530",
+      "taipei_556",
+      "taipei_676",
+      "taipei_679",
+      "taipei_tongqin24"
+    ],
+    "lon": 121.592063,
+    "lat": 24.998813,
+    "address": "臺北市文山區木柵路五段110號",
+    "phone": "02-2230-1101",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.20_121.43_",
+    "name": "指南客運新市站",
+    "routes": [
+      "new_taipei_-_e525690dc6",
+      "new_taipei_988",
+      "taipei_957"
+    ],
+    "lon": 121.429438,
+    "lat": 25.201313,
+    "address": "新北市淡水區崁頂三路後洲路口",
+    "phone": "02-2805-4870",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_24.98_121.32_",
+    "name": "指南客運桃園站",
+    "routes": [
+      "new_taipei_989",
+      "new_taipei_990"
+    ],
+    "lon": 121.318313,
+    "lat": 24.977813,
+    "address": "桃園市桃園區樹仁二街135號",
+    "phone": "03-374-9009",
     "station_ids": [],
     "grade": "調度站"
   },
@@ -508,7 +1940,9 @@
       "new_taipei_799",
       "new_taipei_800",
       "new_taipei_847",
-      "new_taipei_847qu",
+      "new_taipei_847_caf068183b",
+      "new_taipei_847sh",
+      "new_taipei_847sh_bac9134ac3",
       "new_taipei_880"
     ],
     "lon": 121.399619,
@@ -516,6 +1950,175 @@
     "station_ids": [
       "73284"
     ],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.07_121.42_",
+    "name": "指南客運泰山站",
+    "routes": [
+      "new_taipei_838",
+      "new_taipei_ju10"
+    ],
+    "lon": 121.424938,
+    "lat": 25.066188,
+    "address": "新北市泰山區泰山路133號",
+    "phone": "02-2297-8073",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.18_121.45_",
+    "name": "指南客運淡大站",
+    "routes": [
+      "new_taipei_hong27",
+      "taipei_308",
+      "taipei_756"
+    ],
+    "lon": 121.447696,
+    "lat": 25.176472,
+    "address": "新北市淡水區大忠街（淡江大學側門對面）",
+    "phone": "02-2623-8495",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.19_121.42_",
+    "name": "指南客運淡海站",
+    "routes": [
+      "new_taipei_836",
+      "new_taipei_881",
+      "new_taipei_881_901cd4adb4",
+      "new_taipei_883",
+      "new_taipei_hong26",
+      "taipei_757"
+    ],
+    "lon": 121.420063,
+    "lat": 25.186063,
+    "address": "新北市淡水區淡海路245號",
+    "phone": "02-2805-2262",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.01_121.64_",
+    "name": "指南客運深坑站",
+    "routes": [
+      "taipei_660",
+      "taipei_660sh",
+      "taipei_912",
+      "taipei_949"
+    ],
+    "lon": 121.640813,
+    "lat": 25.011313,
+    "address": "新北市深坑區昇高里文山路一段18之2號（新竹貨運旁）",
+    "phone": "0910-983-522",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_24.95_121.48_",
+    "name": "指南客運錦繡站",
+    "routes": [
+      "new_taipei_6_0b59618a22",
+      "new_taipei_ju1",
+      "new_taipei_ju9",
+      "taipei_202sh",
+      "taipei_905",
+      "taipei_905sub",
+      "taipei_neiketongqinzhuanche10"
+    ],
+    "lon": 121.479188,
+    "lat": 24.945688,
+    "address": "新北市新店區錦秀路1號對面",
+    "phone": "02-2214-1721",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.01_121.56_",
+    "name": "指南客運麟光站",
+    "routes": [
+      "taipei_902",
+      "taipei_902sh"
+    ],
+    "lon": 121.563063,
+    "lat": 25.013813,
+    "address": "臺北市信義區和平東路三段625號",
+    "phone": "02-2733-9729",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.07_121.69_",
+    "name": "新北客運五堵站",
+    "routes": [
+      "new_taipei_-_101_f22cec6a3a",
+      "new_taipei_586",
+      "new_taipei_587",
+      "new_taipei_589",
+      "new_taipei_590",
+      "new_taipei_591",
+      "new_taipei_629_xiandao_447f13f5ac",
+      "new_taipei_629sh",
+      "new_taipei_678",
+      "new_taipei_817",
+      "new_taipei_890",
+      "new_taipei_896",
+      "new_taipei_919",
+      "new_taipei_lan22",
+      "taipei_955"
+    ],
+    "lon": 121.686813,
+    "lat": 25.074938,
+    "address": "基隆市七堵區明德三路113號",
+    "phone": "02-2451-2089",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_24.95_121.55_",
+    "name": "新店客運新店站",
+    "routes": [
+      "new_taipei_849",
+      "new_taipei_849_sh_0a715585d9",
+      "new_taipei_923",
+      "new_taipei_930",
+      "new_taipei_lu12",
+      "new_taipei_lu13",
+      "new_taipei_lu3",
+      "new_taipei_lu6",
+      "taipei_644",
+      "taipei_ganxian_eb45bdaee2"
+    ],
+    "lon": 121.545438,
+    "lat": 24.950813,
+    "address": "新北市新店區新烏路一段26巷35-1號",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_24.94_121.48_",
+    "name": "新店客運錦繡站",
+    "routes": [
+      "new_taipei_906",
+      "new_taipei_909",
+      "new_taipei_913",
+      "new_taipei_930_a5e10ce96a",
+      "new_taipei_935",
+      "new_taipei_lu10",
+      "new_taipei_lu15",
+      "new_taipei_lu5",
+      "new_taipei_lu7",
+      "new_taipei_lu8",
+      "taipei_643",
+      "taipei_647",
+      "taipei_648",
+      "taipei_ganxian_6c70f37127"
+    ],
+    "lon": 121.476063,
+    "lat": 24.943438,
+    "address": "新北市新店區安康路三段567號",
+    "station_ids": [],
     "grade": "調度站"
   },
   {
@@ -547,58 +2150,74 @@
     "grade": "調度站"
   },
   {
-    "id": "bus_depot_sid_141051",
-    "name": "暖暖分站(調度站)",
+    "id": "bus_depot_25.10_121.74_",
+    "name": "暖暖分站",
     "routes": [
-      "keelung_602"
+      "keelung_602",
+      "keelung_603_7bb5e180f3"
     ],
-    "lon": 121.737231,
-    "lat": 25.103478,
-    "station_ids": [
-      "141051"
-    ],
+    "lon": 121.736563,
+    "lat": 25.103813,
+    "address": "基隆市暖暖區源遠路29-4號",
+    "phone": "(02)2457-5307",
+    "station_ids": [],
     "grade": "調度站"
   },
   {
-    "id": "bus_depot_sid_1165603334",
-    "name": "東南客運停車場",
-    "routes": [
-      "taipei_207"
-    ],
-    "lon": 121.581041,
-    "lat": 25.063697,
-    "station_ids": [
-      "1165603334"
-    ],
-    "grade": "調度站"
-  },
-  {
-    "id": "bus_depot_sid_4820",
-    "name": "東南客運停車場",
+    "id": "bus_depot_25.06_121.58_",
+    "name": "東南客運內湖站",
     "routes": [
       "taipei_207",
       "taipei_36d3d8af2a",
-      "taipei_950",
+      "taipei_552",
       "taipei_hong29",
-      "taipei_lan26",
+      "taipei_hong29_1652fe7623",
       "taipei_lan50",
+      "taipei_lan51",
       "taipei_neike_1_df81d93887",
       "taipei_neiketongqinzhuanche5",
-      "taipei_neiketongqinzhuanche6",
       "taipei_neiketongqinzhuanche7",
-      "taipei_neiketongqinzhuanche8"
+      "taipei_xiao1",
+      "taipei_xiao12",
+      "taipei_xiao1sh",
+      "taipei_xiao2",
+      "taipei_xiao2sh",
+      "taipei_xiao3",
+      "taipei_xiao5",
+      "taipei_xiao5sh",
+      "taipei_zong10",
+      "taipei_zong19"
     ],
-    "lon": 121.580999,
-    "lat": 25.0636,
-    "station_ids": [
-      "4820"
-    ],
+    "lon": 121.581188,
+    "lat": 25.063938,
+    "address": "臺北市內湖區新湖二路182號（東南客運公司後方）",
+    "station_ids": [],
     "grade": "調度站"
   },
   {
-    "id": "bus_depot_25.01_121.46_",
+    "id": "bus_depot_25.00_121.58_",
+    "name": "東南客運萬芳站",
+    "routes": [
+      "taipei_298",
+      "taipei_lu11",
+      "taipei_xiao10",
+      "taipei_xiao10sh",
+      "taipei_xiao11",
+      "taipei_xiao30",
+      "taipei_zong5"
+    ],
+    "lon": 121.583188,
+    "lat": 25.002688,
+    "address": "臺北市文山區富德段二小段270及270-2號（近國道三號木柵交流道）",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_sid_132373",
     "name": "板橋客運站",
     "routes": [
+      "inter_city_1820",
+      "inter_city_1820a",
       "inter_city_1820b",
       "inter_city_1821",
       "inter_city_1851",
@@ -607,14 +2226,18 @@
     ],
     "lon": 121.46328,
     "lat": 25.01484,
-    "station_ids": [],
+    "station_ids": [
+      "132373"
+    ],
     "grade": "調度站"
   },
   {
-    "id": "bus_depot_25.02_121.47_",
+    "id": "bus_depot_sid_22707",
     "name": "板橋客運站",
     "routes": [
       "inter_city_1660",
+      "inter_city_1820",
+      "inter_city_1820a",
       "inter_city_1820b",
       "inter_city_1821",
       "inter_city_1851",
@@ -634,11 +2257,14 @@
       "inter_city_7505a",
       "inter_city_7505b",
       "inter_city_7505c",
-      "inter_city_7505d"
+      "inter_city_7505d",
+      "inter_city_7505e"
     ],
-    "lon": 121.465174,
-    "lat": 25.015484,
-    "station_ids": [],
+    "lon": 121.465168,
+    "lat": 25.015486,
+    "station_ids": [
+      "22707"
+    ],
     "grade": "調度站"
   },
   {
@@ -724,7 +2350,7 @@
     "grade": "調度站"
   },
   {
-    "id": "bus_depot_24.99_121.31_",
+    "id": "bus_depot_sid_112589",
     "name": "桃客總站",
     "routes": [
       "inter_city_9005",
@@ -733,7 +2359,9 @@
     ],
     "lon": 121.314159,
     "lat": 24.986677,
-    "station_ids": [],
+    "station_ids": [
+      "112589"
+    ],
     "grade": "調度站"
   },
   {
@@ -768,15 +2396,225 @@
     "grade": "調度站"
   },
   {
-    "id": "bus_depot_sid_1165610536",
+    "id": "bus_depot_24.99_121.53_",
+    "name": "欣欣客運中央站",
+    "routes": [
+      "new_taipei_576",
+      "new_taipei_592",
+      "taipei_254",
+      "taipei_254sh",
+      "taipei_672",
+      "taipei_672sh",
+      "taipei_673"
+    ],
+    "lon": 121.534313,
+    "lat": 24.993438,
+    "address": "新北市新店區中正路水源快速道路橋下（青鳥碧瑤高爾夫練習場前）",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_24.98_121.55_",
+    "name": "欣欣客運中興站",
+    "routes": [
+      "new_taipei_lu2_00af9af3fc",
+      "new_taipei_lu2_bc4df13584",
+      "taipei_253",
+      "taipei_671"
+    ],
+    "lon": 121.552313,
+    "lat": 24.983063,
+    "address": "新北市新店區寶橋路235巷250-2號",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.00_121.59_",
+    "name": "欣欣客運富德站",
+    "routes": [
+      "taipei_237",
+      "taipei_237_f72e131813",
+      "taipei_252",
+      "taipei_294",
+      "taipei_295",
+      "taipei_295sub",
+      "taipei_611",
+      "taipei_zong11",
+      "taipei_zong11sub",
+      "taipei_zong15",
+      "taipei_zong18",
+      "taipei_zong21",
+      "taipei_zong3"
+    ],
+    "lon": 121.591688,
+    "lat": 24.998688,
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.00_121.54_",
+    "name": "欣欣客運景德站",
+    "routes": [
+      "new_taipei_290sub",
+      "new_taipei_290sub_cf1f2d8886",
+      "new_taipei_666_4169d7f896",
+      "new_taipei_666_afd2c8b580",
+      "new_taipei_666_f1912afd6d",
+      "new_taipei_819sub",
+      "new_taipei_819sub_fcffb2d4ad",
+      "taipei_278",
+      "taipei_278_1652fe7623",
+      "taipei_278sh",
+      "taipei_52",
+      "taipei_915",
+      "taipei_lan28",
+      "taipei_zong12",
+      "taipei_zong22"
+    ],
+    "lon": 121.535688,
+    "lat": 24.997813,
+    "address": "臺北市文山區景福街137號對面",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_24.98_121.50_",
+    "name": "欣欣客運景新站",
+    "routes": [
+      "new_taipei_249",
+      "new_taipei_249_abd7b4b06a",
+      "new_taipei_895",
+      "new_taipei_895_4945dbf445",
+      "taipei_670"
+    ],
+    "lon": 121.496438,
+    "lat": 24.977563,
+    "address": "新北市中和區興南路3段43號",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.00_121.58_",
+    "name": "欣欣客運木柵一站",
+    "routes": [
+      "taipei_66",
+      "taipei_ganxian_b238d5ff70",
+      "taipei_zong2",
+      "taipei_zong6"
+    ],
+    "lon": 121.583563,
+    "lat": 25.002688,
+    "address": "臺北市文山區木柵路五段18之2號",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.08_121.62_",
+    "name": "欣欣客運東湖站",
+    "routes": [
+      "taipei_53",
+      "taipei_531",
+      "taipei_531_710b9ace3a",
+      "taipei_630",
+      "taipei_646",
+      "taipei_903",
+      "taipei_903_1652fe7623"
+    ],
+    "lon": 121.624063,
+    "lat": 25.078313,
+    "address": "新北市汐止區忠三街5號",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.00_121.62_",
+    "name": "欣欣客運深坑站",
+    "routes": [
+      "new_taipei_819",
+      "taipei_236sh",
+      "taipei_251",
+      "taipei_251sh"
+    ],
+    "lon": 121.615938,
+    "lat": 24.998938,
+    "address": "新北市深坑區北深路三段69號",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.03_121.49_",
+    "name": "欣欣客運華江站",
+    "routes": [
+      "taipei_1",
+      "taipei_18",
+      "taipei_568",
+      "taipei_907",
+      "taipei_907tongqin",
+      "taipei_lan29"
+    ],
+    "lon": 121.488938,
+    "lat": 25.032188,
+    "address": "臺北市萬華區長順街58號",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_sid_7880",
+    "name": "水利會觀音分會平均分站",
+    "routes": [
+      "taoyuan_t602"
+    ],
+    "lon": 121.12225,
+    "lat": 24.980444,
+    "station_ids": [
+      "7880"
+    ],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.26_121.50_",
+    "name": "淡水客運三芝站",
+    "routes": [
+      "new_taipei_-_8cef6a3f63",
+      "new_taipei_-_hong_cdfaab1b80",
+      "new_taipei_853tiaowa",
+      "new_taipei_860",
+      "new_taipei_861",
+      "new_taipei_864",
+      "new_taipei_867sh",
+      "new_taipei_879",
+      "new_taipei_882"
+    ],
+    "lon": 121.502313,
+    "lat": 25.261313,
+    "address": "新北市三芝區淡金路二段38號",
+    "phone": "02-2636-3636",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.15_121.41_",
     "name": "淡水客運八里站",
     "routes": [
       "new_taipei_878",
-      "new_taipei_878qu",
-      "new_taipei_963",
+      "new_taipei_878_b0a5ef7ba0",
+      "new_taipei_878sh",
       "new_taipei_hong13",
       "new_taipei_hong22",
       "taipei_682"
+    ],
+    "lon": 121.405833,
+    "lat": 25.153417,
+    "address": "新北市八里區八里大道18號對面",
+    "phone": "02-2610-4393・座標 25°09'12.3\"N 121°24'21.0\"E",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_sid_1165610536",
+    "name": "淡水客運八里站",
+    "routes": [
+      "new_taipei_hong22_6e17a60f25"
     ],
     "lon": 121.405981,
     "lat": 25.153505,
@@ -786,9 +2624,95 @@
     "grade": "調度站"
   },
   {
-    "id": "bus_depot_sid_141273",
+    "id": "bus_depot_25.20_121.43_",
+    "name": "淡水客運新市站",
+    "routes": [
+      "new_taipei_-_1_-_0a887fe612",
+      "new_taipei_-_1a53438c10",
+      "new_taipei_-_sh_329a880450",
+      "new_taipei_894",
+      "new_taipei_947",
+      "new_taipei_983",
+      "new_taipei_hong37",
+      "new_taipei_hong38",
+      "new_taipei_hong51",
+      "new_taipei_hong53",
+      "new_taipei_lan_2_xiandao_03ad35aed7"
+    ],
+    "lon": 121.429438,
+    "lat": 25.201313,
+    "address": "新北市淡水區後洲路崁頂三路口",
+    "phone": "02-2805-4870",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.18_121.44_",
+    "name": "淡水客運淡水站",
+    "routes": [
+      "new_taipei_115",
+      "new_taipei_595_0432fe48a5",
+      "new_taipei_595_aa5885f352",
+      "new_taipei_595_d89d5cacac",
+      "new_taipei_595_e5bc9c5f35",
+      "new_taipei_631",
+      "new_taipei_631_a22b7cc1ab",
+      "new_taipei_716_-_3190e34ee7_b2701ede2d",
+      "new_taipei_716_-_3190e34ee7_c5a9b62fd5",
+      "new_taipei_837",
+      "new_taipei_837sub",
+      "new_taipei_837sub_62b93d7270",
+      "new_taipei_862",
+      "new_taipei_863",
+      "new_taipei_865",
+      "new_taipei_866",
+      "new_taipei_867",
+      "new_taipei_868",
+      "new_taipei_868_434990c9f5",
+      "new_taipei_869",
+      "new_taipei_870",
+      "new_taipei_871",
+      "new_taipei_872",
+      "new_taipei_872_00cc4c24b0",
+      "new_taipei_872_c9b7b203e7",
+      "new_taipei_873",
+      "new_taipei_874",
+      "new_taipei_875",
+      "new_taipei_876",
+      "new_taipei_877",
+      "new_taipei_hong28",
+      "new_taipei_hong28_48b1a022fa",
+      "new_taipei_hong36",
+      "new_taipei_hong39"
+    ],
+    "lon": 121.438688,
+    "lat": 25.181063,
+    "address": "新北市淡水區新興街126號",
+    "phone": "02-2621-3340",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.22_121.63_",
+    "name": "淡水客運金山站",
+    "routes": [
+      "new_taipei_790",
+      "new_taipei_790_d4a057c5e2",
+      "new_taipei_953",
+      "new_taipei_953sh"
+    ],
+    "lon": 121.625636,
+    "lat": 25.220012,
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.14_121.78_",
     "name": "深美分站",
     "routes": [
+      "keelung_104_xiangfeng",
+      "keelung_104_zhongzheng",
+      "keelung_202",
       "keelung_204_32c0655506",
       "keelung_204_5756201e00",
       "keelung_204_89f616f610",
@@ -796,13 +2720,12 @@
     ],
     "lon": 121.77806,
     "lat": 25.135878,
-    "station_ids": [
-      "141273"
-    ],
+    "address": "基隆市中正區教忠路",
+    "station_ids": [],
     "grade": "調度站"
   },
   {
-    "id": "bus_depot_24.11_120.61_",
+    "id": "bus_depot_sid_143211",
     "name": "烏日客運南站",
     "routes": [
       "inter_city_1621",
@@ -814,6 +2737,40 @@
     ],
     "lon": 120.613607,
     "lat": 24.108732,
+    "station_ids": [
+      "143211"
+    ],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.07_121.44_",
+    "name": "皇家客運五股站",
+    "routes": [
+      "taipei_1717_2441bedf1c",
+      "taipei_1717_55e5dacdfd",
+      "taipei_1717_a33cd0a3c6",
+      "taipei_1717_eb79b1ed17"
+    ],
+    "lon": 121.444197,
+    "lat": 25.070973,
+    "address": "新北市五股區水碓里成泰路一段98巷28-26號",
+    "phone": "(02)8295-7022",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.22_121.65_",
+    "name": "皇家客運加投站",
+    "routes": [
+      "taipei_1717_2441bedf1c",
+      "taipei_1717_55e5dacdfd",
+      "taipei_1717_a33cd0a3c6",
+      "taipei_1717_eb79b1ed17"
+    ],
+    "lon": 121.648937,
+    "lat": 25.217227,
+    "address": "新北市萬里區大鵬里下社路13號",
+    "phone": "(02)2408-2043",
     "station_ids": [],
     "grade": "調度站"
   },
@@ -860,17 +2817,337 @@
     "grade": "調度站"
   },
   {
-    "id": "bus_depot_sid_1165605965",
-    "name": "蘆洲總站",
+    "id": "bus_depot_24.94_121.37_",
+    "name": "臺北客運三峽一站",
     "routes": [
-      "new_taipei_ju25",
-      "taipei_261"
+      "new_taipei_-_0faec48bb6",
+      "new_taipei_-_6ae1dbdaaf",
+      "new_taipei_-neike_ce7f188614",
+      "new_taipei_2_812_779e8e4e31",
+      "new_taipei_702",
+      "new_taipei_707",
+      "new_taipei_778",
+      "new_taipei_779",
+      "new_taipei_807",
+      "new_taipei_889",
+      "new_taipei_908",
+      "new_taipei_908_18554fa1f4",
+      "new_taipei_910",
+      "new_taipei_916",
+      "new_taipei_917",
+      "new_taipei_917_8f931fc3ad",
+      "new_taipei_939",
+      "new_taipei_939sub",
+      "new_taipei_939tiaowa",
+      "new_taipei_940",
+      "new_taipei_941",
+      "new_taipei_941_4c2a97a8ee",
+      "new_taipei_943"
     ],
-    "lon": 121.465175,
-    "lat": 25.090152,
-    "station_ids": [
-      "1165605965"
+    "lon": 121.367313,
+    "lat": 24.937438,
+    "address": "新北市三峽區大勇路32號",
+    "phone": "02-2671-1914",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_24.94_121.38_",
+    "name": "臺北客運三峽二站",
+    "routes": [
+      "new_taipei_-_0f13f8def3",
+      "new_taipei_-_b405d815f6",
+      "new_taipei_705",
+      "new_taipei_705_46f7c199fb",
+      "new_taipei_706",
+      "new_taipei_851",
+      "new_taipei_851_407bb99ed0",
+      "new_taipei_851_c44c7cb66f",
+      "new_taipei_852",
+      "new_taipei_921",
+      "new_taipei_922",
+      "new_taipei_932",
+      "new_taipei_932_9bbfd3254d",
+      "new_taipei_981",
+      "new_taipei_981_385ffa4194",
+      "new_taipei_lan43",
+      "new_taipei_lan43_50459c29d6",
+      "new_taipei_lan45",
+      "new_taipei_lan46"
     ],
+    "lon": 121.379313,
+    "lat": 24.940813,
+    "address": "新北市三峽區三樹路192號旁",
+    "phone": "02-8671-3796",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_24.99_121.49_",
+    "name": "臺北客運中和站",
+    "routes": [
+      "new_taipei_-_71f9fec931",
+      "new_taipei_-_aac7d70bb7",
+      "new_taipei_201",
+      "new_taipei_241",
+      "new_taipei_242",
+      "new_taipei_243",
+      "new_taipei_ju2",
+      "new_taipei_ju3",
+      "new_taipei_lan18",
+      "new_taipei_sh-_fdae34de2b"
+    ],
+    "lon": 121.490938,
+    "lat": 24.990438,
+    "address": "新北市中和區錦和路201號",
+    "phone": "02-2247-7620",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.03_121.61_",
+    "name": "臺北客運中華站",
+    "routes": [
+      "new_taipei_823",
+      "taipei_205"
+    ],
+    "lon": 121.612938,
+    "lat": 25.033313,
+    "address": "臺北市南港區研究院路三段175巷1號",
+    "phone": "02-2653-7067",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.03_121.48_",
+    "name": "臺北客運五福站",
+    "routes": [
+      "new_taipei_lan17",
+      "new_taipei_lan31",
+      "new_taipei_lan33",
+      "taipei_ganxian_004c2f2ec4",
+      "taipei_neike_2_4f335ba6ca"
+    ],
+    "lon": 121.482563,
+    "lat": 25.027438,
+    "address": "新北市板橋區萬板路810號之1",
+    "phone": "02-2251-8420",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_24.99_121.45_",
+    "name": "臺北客運南雅站",
+    "routes": [
+      "new_taipei_51",
+      "new_taipei_57",
+      "new_taipei_845",
+      "new_taipei_99",
+      "new_taipei_lan32"
+    ],
+    "lon": 121.448688,
+    "lat": 24.994563,
+    "address": "新北市板橋區四川路2段130巷39弄3號",
+    "phone": "02-8966-1274",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_24.97_121.46_",
+    "name": "臺北客運四海站",
+    "routes": [
+      "new_taipei_-_ba9589b260",
+      "new_taipei_231",
+      "new_taipei_245",
+      "new_taipei_275",
+      "new_taipei_656",
+      "new_taipei_657",
+      "new_taipei_657_28d551ffa3",
+      "new_taipei_657_f694f2272a",
+      "new_taipei_805",
+      "new_taipei_lan40"
+    ],
+    "lon": 121.459563,
+    "lat": 24.967688,
+    "address": "新北市土城區清水村石門路15號之1",
+    "phone": "02-2262-2268",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_24.96_121.48_",
+    "name": "臺北客運新店站",
+    "routes": [
+      "new_taipei_1_e78285f134",
+      "new_taipei_2_afe972c4d7",
+      "new_taipei_3_cd5e93d983",
+      "new_taipei_5_0881b045da",
+      "new_taipei_624",
+      "new_taipei_624lu_0399e0e8a9",
+      "new_taipei_8",
+      "new_taipei_lu_-_a132754ca4",
+      "new_taipei_zong7",
+      "new_taipei_zong7_6a43ed494c",
+      "new_taipei_zong7lu_0246be9df0",
+      "taipei_zhuanches31_b4dc9cf671",
+      "taipei_zhuanches32_ed32db31cf",
+      "taipei_zhuanches33_fc8198b9e6",
+      "taipei_zhuanches34_7ccc8ac055"
+    ],
+    "lon": 121.483188,
+    "lat": 24.960688,
+    "address": "新北市新店區安祥路102之1號",
+    "phone": "02-2200-3203",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.00_121.59_",
+    "name": "臺北客運木柵站",
+    "routes": [
+      "new_taipei_795_9dcb6ec62c",
+      "new_taipei_795_be4e01ffed",
+      "new_taipei_796"
+    ],
+    "lon": 121.590063,
+    "lat": 25.000563,
+    "address": "臺北市文山區木柵路2段103號",
+    "phone": "02-2939-1078",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_24.99_121.46_",
+    "name": "臺北客運板橋後站",
+    "routes": [
+      "new_taipei_-_faca9ccd48",
+      "new_taipei_577",
+      "new_taipei_667",
+      "new_taipei_806",
+      "taipei_604",
+      "taipei_651",
+      "taipei_neiketongqinzhuanche3",
+      "taipei_tongqinzhuanche_c015a96cf4"
+    ],
+    "lon": 121.459688,
+    "lat": 24.993813,
+    "address": "新北市板橋區和平路16號",
+    "phone": "02-2961-2949",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.08_121.37_",
+    "name": "臺北客運林口站",
+    "routes": [
+      "new_taipei_-_a3c6ae46dd",
+      "new_taipei_-_b6c5388a09",
+      "new_taipei_920",
+      "new_taipei_920a",
+      "new_taipei_920sub",
+      "new_taipei_925",
+      "new_taipei_948"
+    ],
+    "lon": 121.368938,
+    "lat": 25.080438,
+    "address": "新北市林口區文化北路一段568號",
+    "phone": "02-2609-5110",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.00_121.43_",
+    "name": "臺北客運樹林站",
+    "routes": [
+      "new_taipei_-_sh_e8bcea4c17",
+      "new_taipei_701",
+      "new_taipei_793",
+      "new_taipei_843",
+      "new_taipei_848",
+      "new_taipei_lan44",
+      "new_taipei_lan44_b05c3113a6"
+    ],
+    "lon": 121.427688,
+    "lat": 24.995188,
+    "address": "新北市樹林區樹新路28號",
+    "phone": "02-2681-1321",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.01_121.44_",
+    "name": "臺北客運歡仔園站",
+    "routes": [
+      "new_taipei_585",
+      "new_taipei_lan35",
+      "taipei_234",
+      "taipei_neiketongqinzhuanche21"
+    ],
+    "lon": 121.444938,
+    "lat": 25.012063,
+    "address": "新北市板橋區僑中一街150號",
+    "phone": "02-2969-7468",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.07_121.57_",
+    "name": "臺北客運民生站",
+    "routes": [
+      "taipei_307",
+      "taipei_307_c1114d84af"
+    ],
+    "lon": 121.567063,
+    "lat": 25.067813,
+    "address": "臺北市松山區撫遠街419－1號",
+    "phone": "02-2756-0851",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.02_121.45_",
+    "name": "臺北客運江子翠站",
+    "routes": [
+      "new_taipei_658",
+      "new_taipei_ju5",
+      "taipei_310",
+      "taipei_310sh"
+    ],
+    "lon": 121.450313,
+    "lat": 25.022313,
+    "address": "新北市板橋區板城路（藝文二街與香社一路間西側）",
+    "phone": "02-8965-3770",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.11_121.80_",
+    "name": "臺北客運瑞芳站",
+    "routes": [
+      "new_taipei_-_5d609346d0",
+      "new_taipei_-neike_7d28323fd8",
+      "new_taipei_965_-_1ad40e9704"
+    ],
+    "lon": 121.797313,
+    "lat": 25.109938,
+    "address": "新北市瑞芳區中山路302號",
+    "phone": "02-2406-1356",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.09_121.46_",
+    "name": "臺北客運蘆洲站",
+    "routes": [
+      "inter_city_9025",
+      "inter_city_9025a",
+      "new_taipei_264"
+    ],
+    "lon": 121.464438,
+    "lat": 25.088313,
+    "address": "新北市蘆洲區光明路136號左側",
+    "phone": "02-8281-6376",
+    "station_ids": [],
     "grade": "調度站"
   },
   {
@@ -878,21 +3155,11 @@
     "name": "蘆洲總站",
     "routes": [
       "new_taipei_581",
-      "new_taipei_704",
-      "new_taipei_785",
-      "new_taipei_806",
       "new_taipei_f312",
-      "taipei_225",
-      "taipei_225qu",
-      "taipei_232",
-      "taipei_232_68f0d59b7e",
-      "taipei_306",
-      "taipei_508",
-      "taipei_ganxian_ae0a6f178c",
-      "taipei_neiketongqinzhuanche6"
+      "taipei_306_b85408e147"
     ],
     "lon": 121.465972,
-    "lat": 25.089147,
+    "lat": 25.089146,
     "station_ids": [
       "15067"
     ],
@@ -902,25 +3169,9 @@
     "id": "bus_depot_sid_3698",
     "name": "蘆洲總站",
     "routes": [
-      "new_taipei_-_51349aee13",
-      "new_taipei_-_c0b0b046fb",
       "new_taipei_581",
-      "new_taipei_704",
-      "new_taipei_785",
-      "new_taipei_806",
-      "new_taipei_811",
-      "new_taipei_899",
       "new_taipei_f319",
-      "new_taipei_lan1",
-      "taipei_225",
-      "taipei_225qu",
-      "taipei_232",
-      "taipei_232_68f0d59b7e",
-      "taipei_306",
-      "taipei_508",
-      "taipei_508qu",
-      "taipei_ganxian_ae0a6f178c",
-      "taipei_neiketongqinzhuanche6"
+      "taipei_306_b85408e147"
     ],
     "lon": 121.465804,
     "lat": 25.089056,
@@ -934,10 +3185,11 @@
     "name": "陽明山總站",
     "routes": [
       "taipei_108",
-      "taipei_108qu",
+      "taipei_108sh",
       "taipei_260",
-      "taipei_260qu",
-      "taipei_hong5",
+      "taipei_260sh",
+      "taipei_hong5_2441bedf1c",
+      "taipei_hong5_312257b87e",
       "taipei_zhuanche124_aa390c042a"
     ],
     "lon": 121.54603,
@@ -948,7 +3200,7 @@
     "grade": "調度站"
   },
   {
-    "id": "bus_depot_24.69_120.91_",
+    "id": "bus_depot_sid_112650",
     "name": "頭份總站",
     "routes": [
       "inter_city_5801",
@@ -969,6 +3221,351 @@
     ],
     "lon": 120.91074,
     "lat": 24.686377,
+    "station_ids": [
+      "112650"
+    ],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_24.94_121.37_",
+    "name": "首都客運三峽一站",
+    "routes": [
+      "new_taipei_802",
+      "new_taipei_885",
+      "new_taipei_916"
+    ],
+    "lon": 121.367313,
+    "lat": 24.937438,
+    "address": "新北市三峽區大勇路32號",
+    "phone": "02-2671-8558",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.09_121.48_",
+    "name": "首都客運三重一站",
+    "routes": [
+      "new_taipei_62",
+      "new_taipei_ju13",
+      "taipei_226",
+      "taipei_662",
+      "taipei_669"
+    ],
+    "lon": 121.476813,
+    "lat": 25.094813,
+    "address": "新北市蘆洲區復興路323巷188號",
+    "phone": "02-2288-8790",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.09_121.48_",
+    "name": "首都客運三重二站",
+    "routes": [
+      "new_taipei_927",
+      "new_taipei_927_850cb8c5d8",
+      "taipei_39",
+      "taipei_539"
+    ],
+    "lon": 121.483188,
+    "lat": 25.092313,
+    "address": "新北市蘆洲區復興路323巷8號",
+    "phone": "02-2281-9186",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.07_121.47_",
+    "name": "首都客運二重站",
+    "routes": [
+      "new_taipei_ju12",
+      "taipei_211",
+      "taipei_292",
+      "taipei_292sub",
+      "taipei_621"
+    ],
+    "lon": 121.473438,
+    "lat": 25.073688,
+    "address": "新北市蘆洲區國道路二段55號",
+    "phone": "02-2983-0708",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.06_121.58_",
+    "name": "首都客運內湖站",
+    "routes": [
+      "taipei_ganxian_d51720bc80",
+      "taipei_hong50",
+      "taipei_lan10",
+      "taipei_shiminxiao_10_17c2c6d023",
+      "taipei_shiminxiao_10_17c2c6d023_1652fe7623",
+      "taipei_zong1"
+    ],
+    "lon": 121.582313,
+    "lat": 25.061688,
+    "address": "臺北市內湖區新湖一路277號",
+    "phone": "02-8792-5056",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.14_121.79_",
+    "name": "首都客運八斗子站",
+    "routes": [
+      "inter_city_1579",
+      "inter_city_1579a",
+      "inter_city_1579b",
+      "inter_city_1579c"
+    ],
+    "lon": 121.788813,
+    "lat": 25.144438,
+    "address": "基隆市中正區漁港一街碧砂漁港C區停車場",
+    "phone": "02-2469-8140",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.06_121.59_",
+    "name": "首都客運南港站",
+    "routes": [
+      "taipei_ganxian_3d5ac6701e",
+      "taipei_tongqin29"
+    ],
+    "lon": 121.593938,
+    "lat": 25.056063,
+    "address": "臺北市南港區向陽路168號",
+    "phone": "02-2654-7071",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.10_121.50_",
+    "name": "首都客運士林站",
+    "routes": [
+      "taipei_255",
+      "taipei_255sh",
+      "taipei_303",
+      "taipei_303_aba98d38e3",
+      "taipei_303_c8b1831190",
+      "taipei_303sh",
+      "taipei_542",
+      "taipei_68",
+      "taipei_hong33",
+      "taipei_hong57",
+      "taipei_hong68",
+      "taipei_hong7",
+      "taipei_shiminxiao_1_de644318c7",
+      "taipei_tongqin26",
+      "taipei_xiao15",
+      "taipei_xiao15sh",
+      "taipei_xiao16",
+      "taipei_xiao17",
+      "taipei_xiao18",
+      "taipei_xiao19",
+      "taipei_zong13"
+    ],
+    "lon": 121.500188,
+    "lat": 25.100813,
+    "address": "臺北市北投區福美路227號",
+    "phone": "02-2834-5022、02-2831-0722",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.06_121.60_",
+    "name": "首都客運安康站",
+    "routes": [
+      "taipei_ganxian_a4306098f5"
+    ],
+    "lon": 121.602563,
+    "lat": 25.060313,
+    "address": "臺北市內湖區安美街188號",
+    "phone": "02-2794-6277",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.02_121.43_",
+    "name": "首都客運新莊一站",
+    "routes": [
+      "new_taipei_802sh",
+      "new_taipei_842",
+      "new_taipei_845",
+      "new_taipei_99",
+      "new_taipei_lan18",
+      "taipei_618"
+    ],
+    "lon": 121.430438,
+    "lat": 25.020813,
+    "address": "新北市新莊區民安東路117號",
+    "phone": "02-2202-0450",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.02_121.43_",
+    "name": "首都客運新莊二站",
+    "routes": [
+      "new_taipei_982",
+      "new_taipei_982_6c65425840",
+      "new_taipei_982_6c65425840_50607ea763",
+      "new_taipei_982sh",
+      "new_taipei_lan2",
+      "taipei_235",
+      "taipei_663"
+    ],
+    "lon": 121.434563,
+    "lat": 25.019938,
+    "address": "新北市新莊區新樹路293巷8號",
+    "phone": "02-2205-7077",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.02_121.50_",
+    "name": "首都客運東園站",
+    "routes": [
+      "taipei_204",
+      "taipei_lu17"
+    ],
+    "lon": 121.496813,
+    "lat": 25.015188,
+    "address": "臺北市萬華區萬大路504-2號",
+    "phone": "02-2339-5189",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_code_N98",
+    "name": "首都客運板橋前站",
+    "routes": [
+      "taipei_307"
+    ],
+    "address": "新北市板橋區中正路379巷17號",
+    "phone": "02-2966-3307",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.02_121.45_",
+    "name": "首都客運板橋站",
+    "routes": [
+      "new_taipei_952"
+    ],
+    "lon": 121.449313,
+    "lat": 25.018563,
+    "address": "新北市板橋區板城路999號",
+    "phone": "02-2275-0368",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.00_121.29_",
+    "name": "首都客運桃園站",
+    "routes": [
+      "taoyuan_sl"
+    ],
+    "lon": 121.287051,
+    "lat": 25.004283,
+    "address": "桃園市桃園區中成里國際路二段495號對面",
+    "phone": "03-301-0198",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.07_121.57_",
+    "name": "首都客運民生站",
+    "routes": [
+      "taipei_307_c1114d84af"
+    ],
+    "lon": 121.567063,
+    "lat": 25.067813,
+    "address": "臺北市松山區撫遠街419-1號",
+    "phone": "02-2756-0851",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.06_121.62_",
+    "name": "首都客運汐止一站",
+    "routes": [
+      "taipei_lan36"
+    ],
+    "lon": 121.623313,
+    "lat": 25.062813,
+    "address": "新北市汐止區福德二路377號",
+    "phone": "02-8693-3783",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.06_121.63_",
+    "name": "首都客運汐止二站",
+    "routes": [
+      "taipei_284",
+      "taipei_284_1652fe7623"
+    ],
+    "lon": 121.626188,
+    "lat": 25.064813,
+    "address": "新北市汐止區福德二路300號",
+    "phone": "02-8693-1288",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.09_121.50_",
+    "name": "首都客運社子站",
+    "routes": [
+      "taipei_2",
+      "taipei_26",
+      "taipei_536",
+      "taipei_536sh",
+      "taipei_hong7sh"
+    ],
+    "lon": 121.500313,
+    "lat": 25.091813,
+    "address": "臺北市士林區延平北路九段323號",
+    "phone": "02-2810-8566",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_25.06_121.60_",
+    "name": "首都客運經貿站",
+    "routes": [
+      "taipei_ganxian_8c7bdf220c",
+      "taipei_hong25",
+      "taipei_hong25sh",
+      "taipei_neiketongqinzhuanche22"
+    ],
+    "lon": 121.600813,
+    "lat": 25.057688,
+    "address": "臺北市南港區重陽路203巷12號",
+    "phone": "02-2654-6782",
+    "station_ids": [],
+    "grade": "調度站"
+  },
+  {
+    "id": "bus_depot_24.68_121.78_",
+    "name": "首都客運羅東站",
+    "routes": [
+      "inter_city_1570",
+      "inter_city_1570a",
+      "inter_city_1571",
+      "inter_city_1571a",
+      "inter_city_1572",
+      "inter_city_1572a",
+      "inter_city_1572b",
+      "inter_city_1572c",
+      "yilan_county_281",
+      "yilan_county_472",
+      "yilan_county_lu21"
+    ],
+    "lon": 121.779063,
+    "lat": 24.677313,
+    "address": "宜蘭縣羅東鎮羅榮路2號",
+    "phone": "03-955-6585",
     "station_ids": [],
     "grade": "調度站"
   },
@@ -1018,17 +3615,16 @@
     "grade": "調度站"
   },
   {
-    "id": "bus_depot_24.86_121.22_",
+    "id": "bus_depot_sid_105603",
     "name": "龍潭總站",
     "routes": [
-      "inter_city_1851",
-      "inter_city_1852",
-      "inter_city_1852a",
       "inter_city_5350"
     ],
     "lon": 121.22261,
     "lat": 24.86401,
-    "station_ids": [],
+    "station_ids": [
+      "105603"
+    ],
     "grade": "調度站"
   }
 ]

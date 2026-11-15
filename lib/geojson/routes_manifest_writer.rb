@@ -30,10 +30,80 @@ module Geojson
       color: "#FEDB00"
     }.freeze
 
-    # Built separately from the main line (see AirportMrtExpressBuilder).
+    # 安坑／三鶯 geojson lives under new_taipei_metro/ but lists under 台北捷運
+    # after 藍線 (棕→紅→綠→橘→藍→安坑→三鶯→先導公車).
+    ANKENG_MANIFEST_ENTRY = {
+      id: "ankeng_lrt",
+      file: "/geojson/new_taipei_metro/ankeng_lrt.geojson",
+      name: "安坑輕軌",
+      name_en: "Ankeng LRT",
+      ref: "K",
+      color: "#C3B091"
+    }.freeze
+    SANYING_MANIFEST_ENTRY = {
+      id: "sanying_line",
+      file: "/geojson/new_taipei_metro/sanying_line.geojson",
+      name: "三鶯線",
+      name_en: "Sanying Line",
+      ref: "LB",
+      color: "#6DB7D0"
+    }.freeze
+    # MRT pilot buses: keep under 台北捷運 after 三鶯. Omit city_id so selecting
+    # them does not flip the UI into bus mode.
+    TAIPEI_METRO_PILOT_BUS_ENTRIES = [
+      {
+        id: "new_taipei_985_xiandao_d20c01d95e",
+        file: "/geojson/bus/taipei_new_taipei_bus/900-999/new_taipei_985_xiandao_d20c01d95e.geojson",
+        name: "985萬大樹林先導公車",
+        name_en: "985 Wanda–Shulin MRT Pilot Bus",
+        ref: "985",
+        color: "#16A34A"
+      },
+      {
+        id: "new_taipei_629_xiandao_447f13f5ac",
+        file: "/geojson/bus/taipei_new_taipei_bus/600-699/new_taipei_629_xiandao_447f13f5ac.geojson",
+        name: "629汐東捷運先導公車",
+        name_en: "629 Xidong MRT Pilot Bus",
+        ref: "629",
+        color: "#155e75"
+      },
+      {
+        id: "new_taipei_lan_2_xiandao_03ad35aed7",
+        file: "/geojson/bus/taipei_new_taipei_bus/lan/new_taipei_lan_2_xiandao_03ad35aed7.geojson",
+        name: "藍海2線先導公車",
+        name_en: "Blue Coast Line 2 Pilot Bus",
+        ref: "藍海2",
+        color: "#DC2626"
+      }
+    ].freeze
+
+    # Built separately from the main line (see AirportMrtExpressBuilder / DanhaiSegmentWriter).
     EXTRA_MANIFEST_ENTRIES = {
+      "taipei_metro" => [
+        ANKENG_MANIFEST_ENTRY,
+        SANYING_MANIFEST_ENTRY,
+        *TAIPEI_METRO_PILOT_BUS_ENTRIES
+      ],
       "new_taipei_metro" => [
-        CIRCULAR_MANIFEST_ENTRY
+        CIRCULAR_MANIFEST_ENTRY,
+        {
+          id: "danhai_lushan",
+          file: "/geojson/new_taipei_metro/danhai_lushan.geojson",
+          name: "綠山線",
+          name_en: "Green Mountain Line",
+          ref: "V",
+          color: Geojson::NewTaipeiMetroCatalog::DANHAI_COLOR,
+          branch_of: "danhai_lrt"
+        },
+        {
+          id: "danhai_lanhai",
+          file: "/geojson/new_taipei_metro/danhai_lanhai.geojson",
+          name: "藍海線",
+          name_en: "Blue Coast Line",
+          ref: "V",
+          color: Geojson::NewTaipeiMetroCatalog::DANHAI_COLOR,
+          branch_of: "danhai_lrt"
+        }
       ],
       "taoyuan_metro" => [
         {
@@ -46,6 +116,12 @@ module Geojson
           branch_of: "airport_mrt"
         }
       ]
+    }.freeze
+
+    # Combined build artifact; UI layers are danhai_lushan / danhai_lanhai.
+    # 安坑／三鶯 are listed under taipei_metro instead.
+    HIDDEN_MANIFEST_IDS = {
+      "new_taipei_metro" => %w[danhai_lrt ankeng_lrt sanying_line]
     }.freeze
 
     def self.write!(path: MANIFEST_PATH, bus_path: :default)
@@ -79,6 +155,8 @@ module Geojson
       SYSTEMS.each do |system_id, loader|
         entries = Array(loader.call).filter_map { |line| manifest_entry(line) }
         entries.reject! { |entry| entry[:id] == "circular" } if system_id == "taipei_metro"
+        hidden_ids = HIDDEN_MANIFEST_IDS[system_id] || []
+        entries.reject! { |entry| hidden_ids.include?(entry[:id]) }
         extra = EXTRA_MANIFEST_ENTRIES[system_id] || []
         extra.each do |entry|
           next if entries.any? { |existing| existing[:id] == entry[:id] }
@@ -127,18 +205,105 @@ module Geojson
         entry = {
           id: slug,
           file: "/#{relative}",
-          name: properties["name"].presence || data["name"].presence || properties["ref"],
-          name_en: properties["name_en"].presence || name_en_from_bus_file(data),
+          name: Geojson::BusServiceDays.display_name(
+            properties["name"].presence || data["name"].presence || properties["ref"],
+            properties["service_window"]
+          ),
+          name_en: Geojson::BusServiceDays.display_name_en(
+            properties["name_en"].presence || name_en_from_bus_file(data),
+            properties["service_window"]
+          ),
           ref: properties["ref"],
           color: properties["color"].presence || color_from_bus_file(data)
         }
-        %w[city_id operator_id operator operator_en official_map_url via].each do |key|
+        entry[:color_2] = properties["color_2"] if properties["color_2"].present?
+        %w[city_id operator_id operator operator_en operator_id_2 operator_2 operator_2_en official_map_url via via_en tdx_ref merged_refs off_days daily_trips detour_hours campus_span service_note service_note_en].each do |key|
           entry[key.to_sym] = properties[key] if properties[key].present?
         end
+        entry[:loop] = true if properties["loop"]
+        entry[:one_way] = true if one_way_bus?(data, properties)
+        self.class.termini_for(data).each { |key, value| entry[key.to_sym] = value }
         enrich_entry(entry, file_path, include_stations: false)
       rescue JSON::ParserError
         nil
       end
+    end
+
+    # Outbound-only / inbound-only published shape (跳蛙、通勤…). Loops are not
+    # one-way even when they only have a direction-0 ring.
+    def one_way_bus?(data, properties)
+      return false if properties["loop"]
+
+      directions = Array(data["features"]).filter_map { |feature|
+        next unless feature.dig("geometry", "type") == "LineString"
+
+        feature.dig("properties", "direction")
+      }.map { |direction| direction.to_s }.uniq
+      directions.length == 1
+    end
+
+    # eBus/TDX 起迄站名 that differ from the published StopOfRoute ends
+    # (574's board terminus is 信義國小; TDX still lists 板橋 like 573).
+    TERMINI_OVERRIDES = {
+      "new_taipei_574" => {
+        "departure" => "信義國小",
+        "destination" => "南天母廣場",
+        "departure_en" => "Xinyi Elementary School",
+        "destination_en" => "Nantianmu Square"
+      }
+    }.freeze
+
+    # Outbound StopOfRoute poles first; Route 起迄 only for loops / when stops are missing.
+    def self.termini_for(data)
+      properties = data["properties"] || {}
+      override = TERMINI_OVERRIDES[properties["id"].to_s]
+      return override if override
+
+      stations = Array(data["features"]).select { |feature| feature.dig("properties", "feature_type") == "station" }
+      by_direction = stations.group_by { |feature| feature.dig("properties", "direction").to_s }
+      chosen = by_direction["0"].presence || by_direction["1"]
+      if chosen.present?
+        first = chosen.first["properties"] || {}
+        last = chosen.last["properties"] || {}
+        from = first["name"].presence
+        to = last["name"].presence
+        if from.present? && to.present? && from != to
+          return {
+            "departure" => from,
+            "destination" => to,
+            "departure_en" => first["name_en"].presence,
+            "destination_en" => last["name_en"].presence
+          }.compact
+        end
+      end
+
+      official_termini(properties)
+    end
+
+    def self.official_termini(properties)
+      stored = {
+        "departure" => properties["departure"].presence,
+        "destination" => properties["destination"].presence,
+        "departure_en" => properties["departure_en"].presence,
+        "destination_en" => properties["destination_en"].presence
+      }.compact
+      return stored if stored["departure"].present? && stored["destination"].present?
+
+      city_id = properties["city_id"].to_s
+      ref = Geojson::BusImporter.schedule_ref(properties).presence || properties["ref"].to_s
+      return stored if city_id.blank? || ref.blank? || !defined?(Transit::BusTdxSnapshot)
+
+      route = Transit::BusTdxSnapshot.read(city_id, ref)&.dig("routes")&.find { |row|
+        row["DepartureStopNameZh"].present? || row["DestinationStopNameZh"].present?
+      } || Transit::BusTdxSnapshot.read(city_id, ref)&.dig("routes")&.first
+      return stored unless route
+
+      {
+        "departure" => route["DepartureStopNameZh"].presence || stored["departure"],
+        "destination" => route["DestinationStopNameZh"].presence || stored["destination"],
+        "departure_en" => route["DepartureStopNameEn"].presence || stored["departure_en"],
+        "destination_en" => route["DestinationStopNameEn"].presence || stored["destination_en"]
+      }.compact
     end
 
     def name_en_from_bus_file(data)

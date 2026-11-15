@@ -3,10 +3,19 @@
 module Views
   module Dashboards
     class Show < Views::Base
-      def initialize(routes_manifest: {}, transport_mode: "rail")
+      def initialize(routes_manifest: {}, page_mode: "lookup", transport_mode: "rail")
         @routes_manifest = routes_manifest
-        @transport_mode = transport_mode.to_s.presence_in(%w[rail bus]) || "rail"
+        @page_mode = page_mode.to_s.presence_in(%w[lookup plan]) || "lookup"
+        @transport_mode = if @page_mode == "plan"
+          "rail"
+        else
+          transport_mode.to_s.presence_in(%w[rail bus]) || "rail"
+        end
         super()
+      end
+
+      def plan_page?
+        @page_mode == "plan"
       end
 
       METRO_SYSTEM_META = [
@@ -23,12 +32,15 @@ module Views
           data: {
             controller: "map split-pane",
             map_auto_default_layers_value: "false",
+            map_page_mode_value: @page_mode,
             map_transport_mode_value: @transport_mode,
             map_routes_manifest_url_value: static_geojson_url("geojson/routes.json"),
             map_metro_depots_url_value: static_geojson_url("geojson/metro_depots.json"),
             map_bus_depots_url_value: static_geojson_url("geojson/bus_depots.json"),
             map_out_of_station_transfers_url_value: static_geojson_url("geojson/out_of_station_transfers.json"),
-            map_carto_api_key_value: carto_api_key
+            map_carto_api_key_value: carto_api_key,
+            map_google_maps_api_key_value: google_maps_api_key,
+            map_taoyuan_trunk_names_value: Geojson::BusCatalog.taoyuan_trunk_names_payload.to_json
           },
           aria: { busy: "true" }
         ) do
@@ -43,6 +55,11 @@ module Views
             data: { split_pane_target: "sidebar", map_target: "layersSidebar" },
             aria: { label: t("map.layers_aria") }
           ) do
+            div(
+              class: "map-sheet-handle",
+              data: { action: "pointerdown->map#startMobileSheetDrag" },
+              aria: { hidden: true }
+            )
             render_layers_panel
           end
 
@@ -75,10 +92,11 @@ module Views
               aria: { label: t("map.map_aria") }
             )
             render_mobile_map_toolbar
-            render_transport_mode_switcher
-            render_region_switcher
+            div(class: "map-top-controls") do
+              render_page_mode_switcher
+              render_transport_mode_switcher if !plan_page?
+            end
             render_time_scrubber
-            render_boot_overlay
             render_dashboard_route_inspector
           end
 
@@ -184,7 +202,7 @@ module Views
             label: t("map.legend_routes.airport_mrt.label"),
             note: t("map.legend_routes.airport_mrt.note"),
             style: :parallel,
-            colors: [ "#0073B7", "#0073B7" ]
+            colors: [ "#0073B7", "#6A2C91" ]
           },
           {
             label: t("map.legend_routes.danhai_lrt.label"),
@@ -197,6 +215,23 @@ module Views
             note: t("map.legend_routes.skytrain.note"),
             style: :parallel,
             colors: [ "#4F46E5", "#4F46E5" ]
+          }
+        ]
+      end
+
+      def legend_island_lines
+        [
+          {
+            label: t("map.legend_island.ferry.label"),
+            note: t("map.legend_island.ferry.note"),
+            color: "#0891b2",
+            style: :solid
+          },
+          {
+            label: t("map.legend_island.flight.label"),
+            note: t("map.legend_island.flight.note"),
+            color: "#7c3aed",
+            style: :dashed
           }
         ]
       end
@@ -221,9 +256,39 @@ module Views
             note: t("map.legend_markers.airport_mrt_transfer.note")
           },
           { label: t("map.legend_markers.depot"), type: :depot, color: "#64748B" },
-          { label: t("map.legend_markers.bus_dispatch"), type: :bus_dispatch, color: "#2563eb" },
           { label: t("map.legend_markers.out_of_station.label"), type: :out_of_station, color: "#737373", note: t("map.legend_markers.out_of_station.note") },
           { label: t("map.legend_markers.angle_station"), type: :angle_station, color: "#00AFE2" }
+        ]
+      end
+
+      def legend_bus_lines
+        [
+          {
+            label: t("map.legend_bus.direction.label"),
+            note: t("map.legend_bus.direction.note"),
+            style: :arrow,
+            color: "#2563eb"
+          },
+          {
+            label: t("map.legend_bus.both_ways.label"),
+            note: t("map.legend_bus.both_ways.note"),
+            style: :parallel,
+            colors: [ "#2563eb", "#2563eb" ]
+          },
+          {
+            label: t("map.legend_bus.joint.label"),
+            note: t("map.legend_bus.joint.note"),
+            style: :joint,
+            colors: [ "#F97316", "#7CB342" ]
+          }
+        ]
+      end
+
+      def legend_bus_markers
+        [
+          { label: t("map.legend_bus.stop.label"), type: :bus_stop, color: "#2563eb", note: t("map.legend_bus.stop.note") },
+          { label: t("map.legend_bus.selected.label"), type: :bus_stop_selected, note: t("map.legend_bus.selected.note") },
+          { label: t("map.legend_markers.bus_dispatch"), type: :bus_dispatch, color: "#2563eb" }
         ]
       end
 
@@ -236,31 +301,49 @@ module Views
           render RubyUI::DialogContent.new(size: :sm, id: "map-legend") do
             render RubyUI::DialogHeader.new do
               render RubyUI::DialogTitle.new { t("map.legend") }
-              render RubyUI::DialogDescription.new { t("map.legend_description") }
+              render RubyUI::DialogDescription.new do
+                if @transport_mode == "bus"
+                  t("map.legend_description_bus")
+                elsif plan_page?
+                  t("map.legend_description_plan")
+                else
+                  t("map.legend_description")
+                end
+              end
             end
 
             div(class: "map-legend-dialog__body space-y-3") do
-              render_legend_section(t("map.legend_sections.special_routes"), legend_route_lines) { |item| render_legend_line_item(item) }
-              render_legend_section(t("map.legend_sections.transfers"), legend_transfer_lines) { |item| render_legend_line_item(item) }
-              render_legend_section(t("map.legend_sections.stations"), legend_markers) { |item| render_legend_marker_item(item) }
-              p(class: "text-xs text-muted-foreground") { t("map.basemap_legend") }
+              if @transport_mode == "bus"
+                render_legend_frequency
+                render_legend_section(t("map.legend_sections.bus_routes"), legend_bus_lines) { |item| render_legend_line_item(item) }
+                render_legend_section(t("map.legend_sections.bus_stops"), legend_bus_markers) { |item| render_legend_marker_item(item) }
+              else
+                render_legend_section(t("map.legend_sections.special_routes"), legend_route_lines) { |item| render_legend_line_item(item) }
+                render_legend_section(t("map.legend_sections.island_links"), legend_island_lines) { |item| render_legend_line_item(item) }
+                render_legend_section(t("map.legend_sections.transfers"), legend_transfer_lines) { |item| render_legend_line_item(item) }
+                render_legend_section(t("map.legend_sections.stations"), legend_markers) { |item| render_legend_marker_item(item) }
+              end
+              p(class: "text-xs text-muted-foreground") { t(google_maps_api_key.present? ? "map.basemap_legend_google" : "map.basemap_legend") }
             end
           end
         end
       end
 
       def render_basemap_select
-        div(class: "map-basemap-select shrink-0") do
+        div(class: "map-basemap-select min-w-0") do
           label(for: "map-basemap-select", class: "sr-only") { t("map.basemap_label") }
           select(
             id: "map-basemap-select",
-            class: "map-basemap-select__control h-8 rounded-lg border border-border bg-background px-2 text-xs text-foreground shadow-xs",
+            class: "map-basemap-select__control h-8 w-full min-w-0 rounded-md border border-border bg-background px-2 text-xs font-medium text-foreground shadow-xs",
             aria: { label: t("map.basemap_label") },
             data: {
               map_target: "basemapSelect",
               action: "change->map#setBasemapStyle"
             }
           ) do
+            if google_maps_api_key.present?
+              option(value: "google") { t("map.google_basemap") }
+            end
             option(value: "nlsc", selected: true) { t("map.nlsc_basemap") }
             option(value: "carto") { t("map.carto_basemap") }
             option(value: "sat") { t("map.satellite_basemap") }
@@ -277,6 +360,37 @@ module Views
           type: :button,
           data: { action: "click->map#openLegend" }
         ) { t("map.legend") }
+      end
+
+      def render_page_mode_switcher
+        div(
+          class: "map-page-mode",
+          role: "tablist",
+          aria: { label: t("map.page_modes.aria") }
+        ) do
+          lookup_href = (!plan_page? && @transport_mode == "bus") ? bus_map_path : root_path
+          [
+            { id: "plan", label: t("map.page_modes.plan"), href: plan_map_path },
+            { id: "lookup", label: t("map.page_modes.lookup"), href: lookup_href }
+          ].each do |mode|
+            active = mode[:id] == @page_mode
+
+            a(
+              href: mode[:href],
+              class: [
+                "map-page-mode__chip",
+                active ? "map-page-mode__chip--active" : nil
+              ].compact.join(" "),
+              role: "tab",
+              aria: { selected: active, pressed: active, current: (active ? "page" : nil) }.compact,
+              data: {
+                map_target: "pageModeChip",
+                page_mode: mode[:id],
+                turbo_action: "advance"
+              }
+            ) { mode[:label] }
+          end
+        end
       end
 
       def render_transport_mode_switcher
@@ -310,37 +424,25 @@ module Views
         end
       end
 
-      def render_region_switcher
-        div(
-          class: "map-region-switcher",
-          role: "group",
-          aria: { label: t("map.regions.aria") },
-          data: { map_target: "regionSwitcher" }
-        ) do
-          %w[north central south east].each do |region_id|
-            button(
-              type: :button,
-              class: "map-region-switcher__chip",
-              aria: { pressed: region_id == "north" },
-              data: {
-                map_target: "regionChip",
-                region_id: region_id,
-                action: "click->map#selectViewRegion"
-              }
-            ) { t("map.regions.#{region_id}") }
-          end
-        end
-      end
-
       def render_dashboard_route_inspector
         aside(
           class: "route-inspector pointer-events-auto absolute bottom-4 right-4 z-[500] hidden max-h-[70vh] w-[min(22rem,calc(100%-2rem))] flex-col overflow-hidden rounded-xl border border-border bg-background/95 shadow-lg backdrop-blur-sm",
           data: { map_target: "routeStopsPanel" }
         ) do
-          div(class: "shrink-0 border-b border-border/50 px-3 py-2") do
-            p(class: "truncate text-sm font-medium", data: { map_target: "routeStopsTitle" }) { "" }
-            p(class: "text-xs text-muted-foreground", data: { map_target: "routeStopsMeta" }) { "" }
-            render_route_view_switcher
+          div(class: "route-inspector__handle shrink-0 border-b border-border/50 px-3 py-2") do
+            div(class: "flex items-start justify-between gap-2") do
+              div(class: "min-w-0") do
+                p(class: "truncate text-[11px] leading-tight text-muted-foreground", data: { map_target: "routeStopsPath" }) { "" }
+                p(class: "truncate text-sm font-medium", data: { map_target: "routeStopsTitle" }) { "" }
+                p(class: "text-xs text-muted-foreground", data: { map_target: "routeStopsMeta" }) { "" }
+              end
+              render_cancel_route_display_button
+            end
+            render_route_view_switcher(views: [
+              [ "map", t("route.view_modes.stops") ],
+              [ "official", t("route.view_modes.route_map") ],
+              [ "details", t("route.view_modes.details") ]
+            ])
           end
           div(
             class: "flex min-h-0 flex-1 flex-col overflow-hidden",
@@ -355,6 +457,10 @@ module Views
               class: "hidden px-3 py-6 text-center text-sm text-muted-foreground",
               data: { map_target: "routeStopsEmpty" }
             ) { t("route.no_stops") }
+            div(
+              class: "route-inspector__details hidden min-h-0 flex-1 overflow-y-auto p-3",
+              data: { map_target: "routeDetailsPanel" }
+            )
           end
         end
       end
@@ -367,7 +473,7 @@ module Views
             type: :button,
             class: "shadow-md",
             data: { action: "click->map#openMobileLayers" }
-          ) { t("map.layers_button") }
+          ) { plan_page? ? t("map.itinerary.title") : t("map.layers_button") }
           render_legend_open_button(variant: :outline, size: :sm, class_name: "shadow-md", id: "map-legend-trigger-mobile")
           render RubyUI::Button.new(
             variant: :outline,
@@ -376,6 +482,24 @@ module Views
             class: "shadow-md",
             data: { action: "click->map#resetViewport" }
           ) { t("map.reset_viewport") }
+        end
+      end
+
+      def render_legend_frequency
+        div(class: "map-legend-section space-y-2") do
+          render RubyUI::Text.new(as: "p", size: "1", weight: "muted", class: "uppercase tracking-wide") { t("map.legend_sections.frequency") }
+          div(class: "flex items-center gap-3") do
+            span(class: "map-legend-frequency", aria: { hidden: true }) do
+              # Top = 班次少／淺／細; bottom = 班次多／實／粗.
+              span(class: "map-legend-frequency__bar", style: "--frequency-ink: 18%; --frequency-weight: 2px")
+              span(class: "map-legend-frequency__bar", style: "--frequency-ink: 55%; --frequency-weight: 3px")
+              span(class: "map-legend-frequency__bar", style: "--frequency-ink: 100%; --frequency-weight: 5px")
+            end
+            div(class: "min-w-0") do
+              render RubyUI::Text.new(as: "p", size: "2", class: "font-medium leading-tight") { t("map.legend_frequency.label") }
+              render RubyUI::Text.new(as: "p", size: "1", weight: "muted", class: "leading-tight") { t("map.legend_frequency.note") }
+            end
+          end
         end
       end
 
@@ -391,8 +515,14 @@ module Views
       def render_legend_line_item(item)
         div(class: "flex items-center gap-3") do
           span(class: "map-legend-swatch", aria: { hidden: true }) do
-            if item[:style] == :parallel
+            if item[:style] == :arrow
+              span(class: "map-legend-bus-arrow", style: "--bus-arrow-color: #{item[:color]}; --bus-arrow-bearing: 90deg") do
+                span(class: "bus-route-arrow")
+              end
+            elsif item[:style] == :parallel
               render_legend_parallel_lines(item[:colors])
+            elsif item[:style] == :joint
+              render_legend_joint_line(item[:colors])
             else
               span(
                 class: legend_line_swatch_classes(item[:style]),
@@ -417,6 +547,18 @@ module Views
               style: "--legend-line-color: #{color}"
             )
           end
+        end
+      end
+
+      def render_legend_joint_line(colors)
+        primary, secondary = colors
+        div(
+          class: "map-legend-joint-line",
+          aria: { hidden: true },
+          style: "--legend-joint-a: #{primary}; --legend-joint-b: #{secondary}"
+        ) do
+          span(class: "map-legend-joint-line__base")
+          span(class: "map-legend-joint-line__dash")
         end
       end
 
@@ -456,6 +598,10 @@ module Views
             style: "--depot-color: #{item[:color]}",
             aria: { hidden: true }
           )
+        when :bus_stop
+          span(class: "map-legend-bus-stop", style: "--legend-stop-color: #{item[:color]}")
+        when :bus_stop_selected
+          span(class: "map-legend-bus-stop-selected")
         when :bus_dispatch
           div(
             class: "bus-depot-marker map-legend-depot-marker",
@@ -514,18 +660,28 @@ module Views
       end
 
       def render_header
-        render RubyUI::CardHeader.new(class: "space-y-3 pb-3") do
+        render RubyUI::CardHeader.new(class: "map-ui-panel__header-inner space-y-3 p-4 pb-3") do
           div(class: "flex items-center justify-between gap-2") do
             div(class: "map-ui-panel__title-block min-w-0") do
               div(class: "flex items-center gap-2") do
-                render_map_icon
-                render RubyUI::CardTitle.new(class: "text-lg leading-tight") { t("map.title") }
+                span(class: "map-ui-panel__logo", aria: { hidden: true }) { render_map_icon }
+                render RubyUI::CardTitle.new(class: "truncate text-[15px] font-semibold leading-tight tracking-tight") { t("map.title") }
               end
             end
-            div(class: "flex shrink-0 items-center gap-2") do
+            div(class: "flex shrink-0 items-center gap-1") do
+              render_locale_toggle
+              render_theme_toggle
               button(
                 type: "button",
-                class: "map-ui-panel__toggle hidden md:inline-flex",
+                class: "map-ui-panel__toggle map-ui-panel__toggle--mobile-only",
+                aria: { label: t("js.panel.close") },
+                data: { action: "click->map#closeMobileLayers" }
+              ) do
+                render_close_icon
+              end
+              button(
+                type: "button",
+                class: "map-ui-panel__toggle map-ui-panel__toggle--desktop-only",
                 aria: {
                   controls: "map-layers-panel-body",
                   expanded: true,
@@ -535,46 +691,63 @@ module Views
               ) do
                 render_chevron_icon
               end
-              render_locale_toggle
             end
           end
-          div(class: "map-sidebar-actions flex flex-wrap items-center justify-end gap-2") do
+          div(class: "map-sidebar-actions grid grid-cols-3 gap-2") do
             render RubyUI::Button.new(
               variant: :outline,
               size: :sm,
               type: :button,
+              class: "w-full",
               data: { action: "click->map#resetViewport" }
             ) { t("map.reset_viewport") }
-            render_legend_open_button(class_name: "", id: "map-legend-trigger")
+            render_legend_open_button(class_name: "w-full", id: "map-legend-trigger")
             render_basemap_select
-            render_theme_toggle
           end
         end
       end
 
       def render_layer_controls
         render RubyUI::CardContent.new(class: "flex min-h-0 flex-1 flex-col overflow-hidden p-0") do
-          div(class: "route-search-toolbar shrink-0 space-y-2 border-b border-border/60 px-3 py-3") do
-            render_layer_search
-            render_category_chips
-            render RubyUI::Text.new(
-              as: "p",
-              size: "1",
-              weight: "muted",
-              class: "leading-relaxed",
-              data: {
-                map_target: "searchHint",
-                rail_hint: t("map.transport_modes.rail_hint"),
-                bus_hint: t("map.transport_modes.bus_hint")
-              }
-            ) do
-              @transport_mode == "bus" ? t("map.transport_modes.bus_hint") : t("map.transport_modes.rail_hint")
-            end
+          if plan_page?
+            render_plan_controls
+          else
+            render_lookup_controls
           end
+        end
+      end
 
-          div(class: "route-results min-h-0 flex-1 overflow-y-auto px-2 py-2", data: { map_target: "routeResults" }) do
-            searchable_route_groups.each { |group| render_route_search_section(group) }
+      def render_plan_controls
+        div(
+          class: "itinerary-planner min-h-0 flex-1 overflow-y-auto px-3 py-3",
+          data: { map_target: "itineraryPlanner", labels: itinerary_labels.to_json }
+        ) do
+          render_itinerary_planner
+        end
+      end
+
+      def render_lookup_controls
+        div(class: "route-search-toolbar shrink-0 space-y-2 border-b border-border/60 px-3 py-3") do
+          render_layer_search
+          render_category_chips
+          render_bus_filters
+          render RubyUI::Text.new(
+            as: "p",
+            size: "1",
+            weight: "muted",
+            class: "leading-relaxed",
+            data: {
+              map_target: "searchHint",
+              rail_hint: t("map.transport_modes.rail_hint"),
+              bus_hint: t("map.transport_modes.bus_hint")
+            }
+          ) do
+            @transport_mode == "bus" ? t("map.transport_modes.bus_hint") : t("map.transport_modes.rail_hint")
           end
+        end
+
+        div(class: "route-results min-h-0 flex-1 overflow-y-auto px-2 py-2", data: { map_target: "routeResults" }) do
+          searchable_route_groups.each { |group| render_route_search_section(group) }
         end
       end
 
@@ -583,7 +756,7 @@ module Views
         default_id = chips.first&.dig(:id)
 
         div(
-          class: "layer-category-chips flex flex-wrap gap-1.5",
+          class: "layer-category-chips flex gap-1.5",
           role: "tablist",
           aria: { label: t("map.categories_aria") },
           data: { default_category: default_id, map_target: "railCategoryChips" }
@@ -594,7 +767,7 @@ module Views
             button(
               type: "button",
               class: [
-                "layer-category-chip inline-flex items-center rounded-md border px-3 py-1.5 text-sm font-semibold transition-colors",
+                "layer-category-chip inline-flex shrink-0 items-center rounded-full border px-3 py-1 text-[13px] font-semibold transition-colors",
                 active ? "layer-category-chip--active" : nil
               ].compact.join(" "),
               role: "tab",
@@ -607,6 +780,81 @@ module Views
             ) { chip[:label] }
           end
         end
+      end
+
+      BUS_TYPE_FILTERS = %w[general trunk express minibus shuttle intercity].freeze
+      BUS_COLOR_FILTERS = %w[紅 藍 綠 棕 橘 黃].freeze
+
+      def render_bus_filters
+        div(
+          class: [
+            "bus-filters grid grid-cols-2 gap-1.5",
+            @transport_mode == "bus" ? nil : "hidden"
+          ].compact.join(" "),
+          data: { map_target: "busFilters" }
+        ) do
+          render_bus_filter_select(:city, bus_city_filter_options)
+          render_bus_filter_select(:operator, bus_operator_filter_options)
+          render_bus_filter_select(:type, BUS_TYPE_FILTERS.map { |id| { value: id, label: t("map.bus.filters.types.#{id}") } })
+          render_bus_filter_select(:color, BUS_COLOR_FILTERS.map { |color| { value: color, label: t("map.bus.filters.colors.#{color}") } })
+        end
+      end
+
+      def render_bus_filter_select(kind, options)
+        select_id = "bus-filter-#{kind}"
+        div(class: "min-w-0") do
+          label(for: select_id, class: "sr-only") { t("map.bus.filters.#{kind}") }
+          select(
+            id: select_id,
+            class: "h-8 w-full min-w-0 rounded-lg border border-border bg-background px-2 text-xs text-foreground shadow-xs",
+            aria: { label: t("map.bus.filters.#{kind}") },
+            data: {
+              map_target: "busFilter",
+              bus_filter: kind,
+              action: "change->map#changeBusFilter"
+            }
+          ) do
+            option(value: "") { t("map.bus.filters.all_#{kind}") }
+            options.each do |entry|
+              option(value: entry[:value], data: entry[:data] || {}) { entry[:label] }
+            end
+          end
+        end
+      end
+
+      def bus_city_filter_options
+        Geojson::BusCatalog.cities.map do |city|
+          { value: city.id, label: t("map.bus.cities.#{city.id}") }
+        end
+      end
+
+      def bus_operator_filter_options
+        entries = Hash.new { |hash, name| hash[name] = [] }
+        bus_routes.each do |route|
+          entries[route["operator"]] << route if route["operator"].present?
+          next if route["operator_2"].blank? || route["operator_2"] == route["operator"]
+
+          entries[route["operator_2"]] << route.merge(
+            "operator" => route["operator_2"],
+            "operator_en" => route["operator_2_en"]
+          )
+        end
+        entries
+          .map { |name, routes|
+            {
+              value: name,
+              label: "#{bus_operator_label(routes.first)} (#{routes.size})",
+              data: { cities: routes.map { |route| route["city_id"] }.uniq.join(" ") },
+              count: routes.size
+            }
+          }
+          .sort_by { |entry| [ -entry[:count], entry[:value] ] }
+      end
+
+      def bus_operator_label(route)
+        return route["operator"] unless english_locale?
+
+        route["operator_en"].presence || route["operator"]
       end
 
       def category_available?(category_id)
@@ -692,7 +940,7 @@ module Views
       end
 
       def render_section_header(system, select_all: nil)
-        div(class: "route-search-section__header sticky top-0 z-[2] mb-1 flex items-center justify-between gap-2 border-b border-border/50 bg-background px-1 py-1.5") do
+        div(class: "route-search-section__header mb-1 flex items-center justify-between gap-2 border-b border-border/50 bg-background px-1 py-1.5") do
           span(class: "flex min-w-0 items-center gap-2") do
             span(
               class: "size-2.5 shrink-0 rounded-full",
@@ -744,10 +992,11 @@ module Views
           data: {
             map_target: "layerSearchGroup",
             category: "bus",
-            search_text: bus_greater_taipei_search_text(city_routes, bands)
+            search_text: bus_greater_taipei_search_text(city_routes, bands),
+            bus_city: "GreaterTaipei"
           }
         ) do
-          div(class: "flex items-center gap-2 px-1") do
+          div(class: "bus-fold__header flex items-center gap-2 px-1") do
             render RubyUI::CollapsibleTrigger.new(
               class: "bus-fold__trigger flex min-w-0 flex-1 cursor-pointer items-center justify-between gap-2 rounded-md py-1.5 hover:bg-accent/50",
               aria: { expanded: false }
@@ -767,7 +1016,7 @@ module Views
             end
           end
 
-          render RubyUI::CollapsibleContent.new(class: "hidden pl-3") do
+          render RubyUI::CollapsibleContent.new(class: "hidden overflow-visible pl-3") do
             if city_routes.empty?
               p(class: "bus-fold__empty px-1 py-1.5 text-xs text-muted-foreground") { t("map.bus.empty") }
             else
@@ -789,10 +1038,11 @@ module Views
           data: {
             map_target: "layerSearchGroup",
             category: "bus",
-            search_text: bus_city_search_text(city, operators, city_routes)
+            search_text: bus_city_search_text(city, operators, city_routes),
+            bus_city: city.id
           }
         ) do
-          div(class: "flex items-center gap-2 px-1") do
+          div(class: "bus-fold__header flex items-center gap-2 px-1") do
             render RubyUI::CollapsibleTrigger.new(
               class: "bus-fold__trigger flex min-w-0 flex-1 cursor-pointer items-center justify-between gap-2 rounded-md py-1.5 hover:bg-accent/50",
               aria: { expanded: false }
@@ -812,7 +1062,7 @@ module Views
             end
           end
 
-          render RubyUI::CollapsibleContent.new(class: "hidden pl-3") do
+          render RubyUI::CollapsibleContent.new(class: "hidden overflow-visible pl-3") do
             if city_routes.empty?
               p(class: "bus-fold__empty px-1 py-1.5 text-xs text-muted-foreground") { t("map.bus.empty") }
             elsif Geojson::BusCatalog.fold_by_operator?(city.id)
@@ -843,7 +1093,7 @@ module Views
             bus_band: band_key
           }
         ) do
-          div(class: "flex items-center gap-2") do
+          div(class: "bus-fold__header flex items-center gap-2") do
             render RubyUI::CollapsibleTrigger.new(
               class: "bus-fold__trigger flex min-w-0 flex-1 cursor-pointer items-center justify-between gap-2 rounded-md px-1 py-1 hover:bg-accent/50",
               aria: { expanded: false }
@@ -862,7 +1112,7 @@ module Views
             )
           end
 
-          render RubyUI::CollapsibleContent.new(class: "hidden") do
+          render RubyUI::CollapsibleContent.new(class: "hidden overflow-visible") do
             render_bus_route_bucket(city_id: city_id, band_key: band_key)
           end
         end
@@ -888,7 +1138,7 @@ module Views
             bus_operator: operator["id"]
           }
         ) do
-          div(class: "flex items-center gap-2") do
+          div(class: "bus-fold__header flex items-center gap-2") do
             render RubyUI::CollapsibleTrigger.new(
               class: "bus-fold__trigger flex min-w-0 flex-1 cursor-pointer items-center justify-between gap-2 rounded-md px-1 py-1 hover:bg-accent/50",
               aria: { expanded: false }
@@ -909,7 +1159,7 @@ module Views
             end
           end
 
-          render RubyUI::CollapsibleContent.new(class: "hidden") do
+          render RubyUI::CollapsibleContent.new(class: "hidden overflow-visible") do
             if operator_routes.empty?
               p(class: "bus-fold__empty px-1 py-1.5 text-xs text-muted-foreground") { t("map.bus.empty") }
             else
@@ -1003,6 +1253,9 @@ module Views
 
       def render_metro_system_subsection(system)
         routes = system_routes(system[:id])
+        groups = metro_route_groups(system[:id], routes)
+        grouped_ids = groups.flat_map { |group| group[:routes].map { |route| route["id"] } }.to_set
+        loose_routes = routes.reject { |route| grouped_ids.include?(route["id"]) }
 
         div(
           class: "route-search-subsection mb-3",
@@ -1012,7 +1265,7 @@ module Views
             search_text: metro_system_search_text(system)
           }
         ) do
-          div(class: "mb-1 flex items-center justify-between gap-2 px-1 py-1") do
+          div(class: "route-search-subsection__header mb-1 flex items-center justify-between gap-2 px-1 py-1") do
             span(class: "flex min-w-0 items-center gap-2") do
               span(
                 class: "size-2.5 shrink-0 rounded-full",
@@ -1031,7 +1284,65 @@ module Views
           end
 
           div(class: "flex flex-col gap-0.5") do
-            routes.each { |route| render_route_search_row(route, system:) }
+            groups.each { |group| render_metro_route_group(group, system:) }
+            loose_routes.each { |route| render_route_search_row(route, system:) }
+          end
+        end
+      end
+
+      # Nested under a system when branches share a parent that is not itself a map layer
+      # (e.g. 淡海輕軌 → 綠山線 / 藍海線).
+      def metro_route_groups(system_id, routes)
+        return [] unless system_id == "new_taipei_metro"
+
+        children = routes.select { |route| route["branch_of"] == "danhai_lrt" }
+        return [] if children.empty?
+
+        [
+          {
+            id: "danhai_lrt",
+            label: t("map.route_groups.danhai_lrt.label"),
+            color: Geojson::NewTaipeiMetroCatalog::DANHAI_COLOR,
+            routes: children
+          }
+        ]
+      end
+
+      def render_metro_route_group(group, system:)
+        route_ids = group[:routes].map { |route| route["id"] }
+        search_parts = [
+          group[:label],
+          *group[:routes].flat_map { |route| [ route["name"], route["name_en"], route["id"] ] }
+        ]
+
+        div(
+          class: "route-search-group mb-0.5",
+          data: {
+            map_target: "layerSearchGroup",
+            category: "metro",
+            search_text: search_parts.compact.join(" ")
+          }
+        ) do
+          div(class: "route-search-group__header mb-0.5 flex items-center justify-between gap-2 px-1 py-1") do
+            span(class: "flex min-w-0 items-center gap-2") do
+              span(
+                class: "size-2.5 shrink-0 rounded-full",
+                style: "background-color: #{group[:color]}"
+              )
+              render RubyUI::Text.new(as: "span", size: "2", class: "truncate font-medium leading-tight") do
+                group[:label]
+              end
+            end
+            render_compact_select_all(
+              id: group[:id],
+              action: "click->map#stopCheckboxEvent change->map#toggleRouteGroup",
+              route_ids_param: route_ids.join(","),
+              label: t("map.select_all_system", label: group[:label])
+            )
+          end
+
+          div(class: "flex flex-col gap-0.5 pl-3") do
+            group[:routes].each { |route| render_route_search_row(route, system:) }
           end
         end
       end
@@ -1070,13 +1381,35 @@ module Views
           div(class: "route-search-item__link flex min-w-0 flex-1 items-start gap-2 text-left text-foreground") do
             span(
               class: "mt-1.5 size-2.5 shrink-0 rounded-full",
-              style: "background-color: #{route_display_color(route)}"
+              style: route_swatch_style(route),
+              data: frequency_swatch_data(route)
             )
             span(class: "min-w-0 flex-1") do
-              span(class: "flex items-center gap-2") do
-                span(class: "truncate text-sm font-medium leading-tight") { display_name }
-                span(class: "shrink-0 rounded bg-muted px-1.5 py-0.5 text-[10px] font-medium text-muted-foreground") do
-                  route["ref"]
+              span(class: "flex min-w-0 items-center gap-2 overflow-hidden") do
+                span(class: "shrink-0 text-sm font-medium leading-tight") { display_name }
+                if (termini = bus_termini_label(route)).present?
+                  span(class: "route-termini min-w-0 truncate", title: termini) { termini }
+                end
+                if (ref = localized_route_ref(route)).present?
+                  span(class: "shrink-0 rounded bg-muted px-1.5 py-0.5 text-[10px] font-medium text-muted-foreground") { ref }
+                end
+                note_badges = []
+                if (off_days = Array(route["off_days"])).any?
+                  note_badges << t("js.bus.off_days.#{off_days.uniq.sort.join('_')}")
+                end
+                if (service_note = I18n.locale.to_s.start_with?("en") ? route["service_note_en"] : route["service_note"]).present?
+                  note_badges << service_note
+                end
+                if note_badges.any?
+                  span(class: "route-notes-marquee min-w-0", data: { controller: "route-notes-marquee" }) do
+                    span(class: "route-notes-marquee__track", data: { route_notes_marquee_target: "track" }) do
+                      span(class: "route-notes-marquee__group", data: { route_notes_marquee_target: "group" }) do
+                        note_badges.each do |label|
+                          span(class: "route-off-days-badge shrink-0") { label }
+                        end
+                      end
+                    end
+                  end
                 end
               end
               if subtitle.present?
@@ -1112,10 +1445,16 @@ module Views
         parts = []
         parts << t("map.route_notes.airport_mrt") if route["id"] == "airport_mrt"
         parts << t("map.route_notes.airport_mrt_express") if route["id"] == "airport_mrt_express"
-        parts << t("map.route_notes.danhai_lrt") if route["id"] == "danhai_lrt"
+        parts << t("map.route_notes.danhai_lushan") if route["id"] == "danhai_lushan"
+        parts << t("map.route_notes.danhai_lanhai") if route["id"] == "danhai_lanhai"
         parts << t("map.route_notes.taoyuan_airport_skytrain") if route["id"] == "taoyuan_airport_skytrain"
         if route["via"].present? && route["name"].to_s.exclude?(route["via"])
-          parts << (route["via"].start_with?("經") ? route["via"] : "經#{route["via"]}")
+          parts << if english_locale?
+            via = route["via_en"].presence || route["via"]
+            via.match?(/\A(via|detour via|extended to|skips)\b/i) ? via : "#{t('js.explore.route_via')} #{via}"
+          else
+            route["via"].match?(/\A經|繞駛|繞經/) ? route["via"] : "經#{route["via"]}"
+          end
         end
         parts.compact.join(" · ")
       end
@@ -1129,8 +1468,13 @@ module Views
           route["id"]&.tr("_", " "),
           route["operator"],
           route["operator_en"],
+          route["operator_2"],
+          route["operator_2_en"],
           bus_city_label(route["city_id"])
         ]
+        if route["branch_of"] == "danhai_lrt"
+          parts.unshift(t("map.route_groups.danhai_lrt.label"), "Danhai LRT")
+        end
         parts.concat(Array(route["station_names"])) unless route["city_id"]
         parts.compact.join(" ")
       end
@@ -1285,6 +1629,103 @@ module Views
         ].join(" ")
       end
 
+      def itinerary_labels
+        {
+          picking: t("map.itinerary.picking"),
+          map_point: t("map.itinerary.map_point"),
+          empty: t("map.itinerary.empty"),
+          failed: t("map.itinerary.failed"),
+          working: t("map.itinerary.working"),
+          walk: t("map.itinerary.walk"),
+          minutes: t("map.itinerary.minutes"),
+          transfers: t("map.itinerary.transfers"),
+          no_transfer: t("map.itinerary.no_transfer"),
+          later: t("map.itinerary.later"),
+          headway_every: t("map.itinerary.headway_every"),
+          stops: t("map.itinerary.stops"),
+          trains: t("map.itinerary.trains"),
+          more_trains: t("map.itinerary.more_trains"),
+          options: t("map.itinerary.options"),
+          options_selected: t("map.itinerary.options_selected"),
+          continues_from: t("map.itinerary.continues_from"),
+          stage_covered: t("map.itinerary.stage_covered"),
+          list_sep: t("map.list_sep"),
+          details: t("map.itinerary.details"),
+          arrive: t("map.itinerary.arrive"),
+          segment_arrive: t("map.itinerary.segment_arrive"),
+          segment_go: t("map.itinerary.segment_go"),
+          segment_choice: t("map.itinerary.segment_choice"),
+          segment_transfer: t("map.itinerary.segment_transfer"),
+          segment_egress: t("map.itinerary.segment_egress"),
+          profiles: {
+            earliest: t("map.itinerary.profiles.earliest"),
+            fewer_transfers: t("map.itinerary.profiles.fewer_transfers"),
+            less_walking: t("map.itinerary.profiles.less_walking"),
+            alternate: t("map.itinerary.profiles.alternate"),
+            coach: t("map.itinerary.profiles.coach"),
+            mix: t("map.itinerary.profiles.mix"),
+            walk: t("map.itinerary.profiles.walk")
+          },
+          origin: t("map.itinerary.origin"),
+          destination: t("map.itinerary.destination")
+        }
+      end
+
+      def render_itinerary_planner
+        depart = Time.zone.now.change(sec: 0)
+
+        form(class: "itinerary-planner__form", data: { action: "submit->map#planItinerary" }) do
+          label(for: "itinerary-origin", class: "itinerary-planner__label") { t("map.itinerary.origin") }
+          div(class: "relative") do
+            input(
+              id: "itinerary-origin",
+              type: "text",
+              autocomplete: "off",
+              placeholder: t("map.itinerary.origin_placeholder"),
+              class: "itinerary-planner__input",
+              data: {
+                map_target: "itineraryOrigin",
+                action: "input->map#suggestItineraryPlace focus->map#suggestItineraryPlace"
+              }
+            )
+            ul(class: "itinerary-suggest hidden", data: { map_target: "itineraryOriginList" })
+          end
+          label(for: "itinerary-destination", class: "itinerary-planner__label") { t("map.itinerary.destination") }
+          div(class: "relative") do
+            input(
+              id: "itinerary-destination",
+              type: "text",
+              autocomplete: "off",
+              placeholder: t("map.itinerary.destination_placeholder"),
+              class: "itinerary-planner__input",
+              data: {
+                map_target: "itineraryDestination",
+                action: "input->map#suggestItineraryPlace focus->map#suggestItineraryPlace"
+              }
+            )
+            ul(class: "itinerary-suggest hidden", data: { map_target: "itineraryDestinationList" })
+          end
+          label(for: "itinerary-depart", class: "itinerary-planner__label") { t("map.itinerary.depart") }
+          input(
+            id: "itinerary-depart",
+            type: "datetime-local",
+            value: depart.strftime("%Y-%m-%dT%H:%M"),
+            class: "itinerary-planner__input",
+            data: { map_target: "itineraryDepart" }
+          )
+          div(class: "itinerary-planner__actions") do
+            button(type: "submit", class: "itinerary-planner__plan") { t("map.itinerary.plan") }
+            button(type: "button", class: "itinerary-planner__minor", data: { action: "click->map#locateItineraryOrigin" }) { t("map.itinerary.locate") }
+          end
+          div(class: "itinerary-planner__actions") do
+            button(type: "button", class: "itinerary-planner__minor", data: { itinerary_pick: "origin", action: "click->map#pickItineraryPoint" }) { t("map.itinerary.pick_origin") }
+            button(type: "button", class: "itinerary-planner__minor", data: { itinerary_pick: "destination", action: "click->map#pickItineraryPoint" }) { t("map.itinerary.pick_destination") }
+          end
+          p(class: "itinerary-planner__status", data: { map_target: "itineraryStatus" }, aria: { live: "polite" })
+          ol(class: "itinerary-results", data: { map_target: "itineraryResults" })
+        end
+      end
+
       def render_layer_search
         div(class: "layer-search") do
           label(for: "layer-search", class: "sr-only") { t("map.search_label") }
@@ -1295,8 +1736,10 @@ module Views
             input(
               type: "search",
               id: "layer-search",
-              placeholder: t("map.search_placeholder"),
+              placeholder: @transport_mode == "bus" ? t("map.search_placeholder_bus") : t("map.search_placeholder"),
               autocomplete: "off",
+              role: "combobox",
+              aria: { autocomplete: "list", controls: "stop-search-list", expanded: false },
               class: [
                 "flex h-10 w-full rounded-lg border border-border bg-background py-2 pl-9 pr-9 text-sm shadow-xs",
                 "placeholder:text-muted-foreground",
@@ -1304,7 +1747,9 @@ module Views
               ].join(" "),
               data: {
                 map_target: "layerSearchInput",
-                action: "input->map#filterLayers search->map#filterLayers keydown.esc->map#clearLayerSearch"
+                rail_placeholder: t("map.search_placeholder"),
+                bus_placeholder: t("map.search_placeholder_bus"),
+                action: "input->map#filterLayers search->map#filterLayers keydown.esc->map#clearLayerSearch keydown.down->map#focusStopSearch"
               }
             )
             button(
@@ -1316,6 +1761,21 @@ module Views
                 action: "click->map#clearLayerSearch"
               }
             ) { t("map.clear") }
+          end
+          div(
+            id: "stop-search",
+            class: "stop-search hidden",
+            hidden: true,
+            data: { map_target: "stopSearch" }
+          ) do
+            p(class: "stop-search__label") { t("map.stop_search.heading") }
+            ul(
+              id: "stop-search-list",
+              class: "stop-search__list",
+              role: "listbox",
+              aria: { label: t("map.stop_search.heading") },
+              data: { map_target: "stopSearchList" }
+            )
           end
           p(
             class: "hidden px-2 text-xs text-muted-foreground",
@@ -1333,6 +1793,27 @@ module Views
         return "#6A2C91" if route["id"] == "airport_mrt_express"
 
         route["color"]
+      end
+
+      def route_swatch_style(route)
+        color = route_display_color(route)
+        second = route["color_2"].presence
+        return "background-color: #{color}" if second.blank?
+
+        "background-image: linear-gradient(90deg, #{color} 50%, #{second} 50%)"
+      end
+
+      def frequency_swatch_data(route)
+        return {} if route["city_id"].blank?
+
+        data = {
+          frequency_swatch: "1",
+          frequency_color: route_display_color(route),
+          frequency_city: route["city_id"]
+        }
+        data[:frequency_color_2] = route["color_2"] if route["color_2"].present?
+        data[:frequency_trips] = route["daily_trips"] if route["daily_trips"].present?
+        data
       end
 
       def metro_system_search_text(system)
@@ -1396,6 +1877,22 @@ module Views
           class: "map-ui-panel__chevron size-4"
         ) do |s|
           s.path(d: "m6 9 6 6 6-6")
+        end
+      end
+
+      def render_close_icon
+        svg(
+          xmlns: "http://www.w3.org/2000/svg",
+          viewbox: "0 0 24 24",
+          fill: "none",
+          stroke: "currentColor",
+          stroke_width: "2",
+          stroke_linecap: "round",
+          stroke_linejoin: "round",
+          class: "size-4"
+        ) do |s|
+          s.path(d: "M18 6 6 18")
+          s.path(d: "m6 6 12 12")
         end
       end
 

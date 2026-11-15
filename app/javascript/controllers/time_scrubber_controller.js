@@ -8,6 +8,7 @@ const PLAY_SPEEDS = [ 1, 2, 5, 10, 30, 60 ]
 const DEFAULT_PLAY_SPEED = 1
 const CLOCK_TZ = "Asia/Taipei"
 const TAIPEI_OFFSET_MS = 8 * 60 * 60 * 1000
+const COMPACT_VIEWPORT_QUERY = "(max-width: 767px)"
 
 export default class extends Controller {
   static targets = [
@@ -20,7 +21,6 @@ export default class extends Controller {
     "speedSelect",
     "expandButton",
     "details",
-    "hint",
     "vehicleCount",
     "badge",
     "periodButton"
@@ -39,8 +39,13 @@ export default class extends Controller {
 
     this.onPointerMove = this.handlePanelPointerMove.bind(this)
     this.onPointerUp = this.stopPanelDrag.bind(this)
+    this.onWindowResize = this.handleWindowResize.bind(this)
+    this.compactQuery = window.matchMedia(COMPACT_VIEWPORT_QUERY)
 
     this.restorePosition()
+    window.addEventListener("resize", this.onWindowResize)
+    this.onCollapseRequest = () => this.collapseForMap()
+    window.addEventListener("map:collapse-time-scrubber", this.onCollapseRequest)
     this.syncExpanded()
     this.syncSpeedSelect()
     this.syncLabels()
@@ -56,6 +61,8 @@ export default class extends Controller {
     this.stopPlayback()
     this.clearEmitTimer()
     this.stopPanelDrag()
+    window.removeEventListener("resize", this.onWindowResize)
+    window.removeEventListener("map:collapse-time-scrubber", this.onCollapseRequest)
     if (this._bootEmitTimer) {
       clearTimeout(this._bootEmitTimer)
       this._bootEmitTimer = null
@@ -67,6 +74,7 @@ export default class extends Controller {
   startPanelDrag(event) {
     if (event.button !== undefined && event.button !== 0) return
     if (event.target.closest("button, input, select, a, label")) return
+    if (this.compactQuery.matches) return
 
     event.preventDefault()
     this.draggingPanel = true
@@ -112,6 +120,11 @@ export default class extends Controller {
   }
 
   restorePosition() {
+    if (this.compactQuery.matches) {
+      this.clearInlinePosition()
+      return
+    }
+
     try {
       const raw = localStorage.getItem(STORAGE_KEY_POS)
       if (!raw) return
@@ -123,8 +136,41 @@ export default class extends Controller {
       this.panelTarget.style.top = `${pos.top}px`
       this.panelTarget.style.right = "auto"
       this.panelTarget.style.bottom = "auto"
+      requestAnimationFrame(() => this.clampPosition())
     } catch (_error) {
       // ignore
+    }
+  }
+
+  handleWindowResize() {
+    if (this.compactQuery.matches) {
+      this.clearInlinePosition()
+      this.collapseForMap()
+    } else if (this.panelTarget.style.left) {
+      this.clampPosition()
+    } else {
+      this.restorePosition()
+    }
+  }
+
+  clampPosition() {
+    const left = Number.parseFloat(this.panelTarget.style.left)
+    const top = Number.parseFloat(this.panelTarget.style.top)
+    if (!Number.isFinite(left) || !Number.isFinite(top)) return
+
+    const parent = this.panelTarget.offsetParent || document.body
+    const parentRect = parent.getBoundingClientRect()
+    const panelRect = this.panelTarget.getBoundingClientRect()
+    const maxLeft = Math.max(8, parentRect.width - panelRect.width - 8)
+    const maxTop = Math.max(8, parentRect.height - panelRect.height - 8)
+
+    this.panelTarget.style.left = `${Math.min(Math.max(left, 8), maxLeft)}px`
+    this.panelTarget.style.top = `${Math.min(Math.max(top, 8), maxTop)}px`
+  }
+
+  clearInlinePosition() {
+    for (const prop of [ "left", "top", "right", "bottom" ]) {
+      this.panelTarget.style.removeProperty(prop)
     }
   }
 
@@ -185,6 +231,9 @@ export default class extends Controller {
   }
 
   loadExpanded() {
+    // Phones always start collapsed so the map keeps usable height.
+    if (window.matchMedia(COMPACT_VIEWPORT_QUERY).matches) return false
+
     try {
       const raw = localStorage.getItem(STORAGE_KEY_EXPANDED)
       if (raw === "1" || raw === "true") return true
@@ -197,11 +246,21 @@ export default class extends Controller {
   }
 
   persistExpanded() {
+    // Keep desktop preference intact while using the phone layout.
+    if (this.compactQuery?.matches) return
+
     try {
       localStorage.setItem(STORAGE_KEY_EXPANDED, this.expanded ? "1" : "0")
     } catch (_error) {
       // ignore
     }
+  }
+
+  collapseForMap() {
+    if (!this.expanded) return
+    if (!this.compactQuery?.matches) return
+    this.expanded = false
+    this.syncExpanded()
   }
 
   // --- Time controls ---
@@ -479,10 +538,6 @@ export default class extends Controller {
   setVehicleSummary({ count = 0, live = false } = {}) {
     if (this.hasVehicleCountTarget) {
       this.vehicleCountTarget.textContent = this.t("time_scrubber.vehicle_count", { count })
-    }
-
-    if (this.hasHintTarget) {
-      this.hintTarget.hidden = count > 0
     }
 
     if (this.hasBadgeTarget) {

@@ -19,4 +19,21 @@ class TransitImportSchedulesJobTest < ActiveJob::TestCase
     Transit::OtherTransitScheduleSeeder.define_singleton_method(:seed!, other) if other
     Transit::SugarRailwayScheduleSeeder.define_singleton_method(:seed!, sugar) if sugar
   end
+
+  test "does not replace the active timetable when no holiday dates are missing" do
+    dataset = ScheduleDataset.create!(name: "TDX", source: "tdx", active: true, imported_at: 20.days.ago)
+    client = Object.new
+    def client.configured? = true
+    def client.probe!
+      raise "should not call TDX"
+    end
+
+    Transit::TaiwanHolidayCalendar.records = []
+    assert_no_difference("ScheduleTrip.count") do
+      Transit::ImportSchedulesJob.perform_now(client: client)
+    end
+    assert dataset.reload.active?
+  ensure
+    Transit::TaiwanHolidayCalendar.records = nil
+  end
 end

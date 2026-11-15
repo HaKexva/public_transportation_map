@@ -1,6 +1,22 @@
 # frozen_string_literal: true
 
 namespace :geojson do
+  desc "English station names: GENERATE=1 adds new OSM name:en matches to config/station_names_en.yml, then copies them onto station features"
+  task station_names_en: :environment do
+    if ENV["GENERATE"].present?
+      result = Geojson::StationNamesEn.generate!
+      puts "Added #{result[:added]} names"
+      puts "No English name for: #{result[:missing].join('、')}" if result[:missing].any?
+    end
+    puts "Updated #{Geojson::StationNamesEn.apply!} files"
+  end
+
+  desc "Translate bus route names, via labels and operators for the English UI, then rewrite the bus manifest"
+  task bus_names_en: :environment do
+    puts "Updated #{Geojson::BusNamesEn.apply!} bus files"
+    Geojson::RoutesManifestWriter.write!
+  end
+
   desc "Rebuild all Taipei Metro line GeoJSON files from OpenStreetMap"
   task taipei_metro: :environment do
     Geojson::TaipeiMetroImporter.import!
@@ -12,6 +28,12 @@ namespace :geojson do
       system_id: "new_taipei_metro",
       lines: Geojson::NewTaipeiMetroCatalog::LINES
     )
+    Geojson::DanhaiSegmentWriter.write!
+  end
+
+  desc "Split Danhai LRT into Green Mountain / Blue Coast map layers"
+  task danhai_segments: :environment do
+    Geojson::DanhaiSegmentWriter.write!
   end
 
   desc "Rebuild Taoyuan Metro line GeoJSON files from OpenStreetMap"
@@ -129,6 +151,30 @@ namespace :geojson do
     Geojson::BusDepotWriter.write!
   end
 
+  desc "List bus routes without a depot in lib/geojson/bus_depots_manual.md and refresh bus_depots_stations.md (filled rows are kept)"
+  task bus_depots_missing: :environment do
+    Geojson::BusDepotWriter.write_missing!
+  end
+
+  desc "Move assigned routes from bus_depots_manual.md into bus_depots_confirmed.md (no JSON rebuild)"
+  task bus_depots_confirm: :environment do
+    result = Geojson::BusDepotWriter.confirm!
+    puts "Moved #{result.routes} routes into lib/geojson/#{Geojson::BusDepotWriter::CONFIRMED_BASENAME}"
+  end
+
+  desc "Sort bus_depots_stations.md by operator and convert Google Maps Plus Codes in 經度／緯度 to coordinates"
+  task bus_depots_stations: :environment do
+    converted = Geojson::BusDepotWriter.refresh_stations!
+    puts "#{Geojson::BusDepotWriter::STATIONS_BASENAME}: sorted by operator, converted #{converted} Plus Codes"
+  end
+
+  desc "Geocode hand-added bus depots in bus_depots_stations.md whose coordinates are blank (address in 備註)"
+  task bus_depots_geocode: :environment do
+    result = Geojson::BusDepotGeocoder.call
+    puts "#{Geojson::BusDepotWriter::STATIONS_BASENAME}: geocoded #{result.filled.length} depots"
+    puts "  Not found (fill by hand): #{result.failed.join(', ')}" if result.failed.any?
+  end
+
   desc "Refresh cached yard spur geometry for maintenance depots (NLSC open data first, then OSM)"
   task depot_spurs: :environment do
     Geojson::DepotSpurCatalog.refresh_cache!
@@ -164,6 +210,10 @@ namespace :geojson do
     city = ENV.fetch("CITY", "Keelung")
     series = ENV["SERIES"].presence
     result = Geojson::BusImporter.import!(city_id: city, series: series, prune_stale: series.blank?)
+    detours = Geojson::BusTimedDetours.apply!
+    shorts = Geojson::BusShortReturns.apply!
+    skips = Geojson::BusTimedSkips.apply!
+    Geojson::RoutesManifestWriter.write! if (detours + shorts + skips).positive?
     suffix = series.present? ? " (#{series}xx)" : ""
     puts "Imported #{result.routes.length} bus routes for #{city}#{suffix}"
     puts "Skipped (no shape): #{result.skipped.join(', ')}" if result.skipped.any?
@@ -206,10 +256,20 @@ namespace :geojson do
       puts "Skipped (no shape): #{result.skipped.join(', ')}" if result.skipped.any?
     end
 
+    Geojson::BusTimedDetours.apply!
+    Geojson::BusShortReturns.apply!
+    Geojson::BusTimedSkips.apply!
     Geojson::RoutesManifestWriter.write!
     Geojson::BusStopIndexWriter.write!
     Geojson::BusDepotWriter.write!
     puts "Done. Imported #{totals[:routes]} routes across #{cities.map(&:id).join(', ')} (skipped #{totals[:skipped]})"
+  end
+
+  desc "Split published short-return variants (e.g. 531 返程至新明成功路口)"
+  task bus_short_returns: :environment do
+    updated = Geojson::BusShortReturns.apply!
+    Geojson::RoutesManifestWriter.write! if updated.positive?
+    puts "Wrote #{updated} short-return bus variants"
   end
 
   desc "Audit bus coverage: TDX Route/Shape vs local GeoJSON (CITY=MiaoliCounty or omit for all; OUT=tmp/bus_coverage)"
@@ -377,6 +437,86 @@ namespace :geojson do
     puts "Recolored #{updated} bus GeoJSON files (#{branded} brand-mapped, #{other_operators.size} other operators)"
   end
 
+  desc "Tag bus stops at multi-platform terminals with their platform (TDX StopAddress)"
+  task bus_platforms: :environment do
+    updated = Geojson::BusPlatformTagger.refresh!
+    Geojson::BusStopIndexWriter.write! if updated.positive?
+    puts "Tagged platforms in #{updated} bus GeoJSON files"
+  end
+
+  desc "Build drivable OSM road tiles in tmp/osm (downloads the Geofabrik Taiwan extract; needs osmium-tool)"
+  task osm_road_tiles: :environment do
+    puts "Wrote #{Geojson::OsmRoadTiles.build!} road tiles to #{Geojson::OsmRoadTiles.tiles_dir}"
+  end
+
+  desc "Re-drive off-road stretches near bus termini and interchanges along OSM roads (CITY=dir substring to limit)"
+  task bus_road_snap: :environment do
+    abort "Run geojson:osm_road_tiles first" unless Geojson::OsmRoadTiles.available?
+
+    filter = ENV["CITY"].to_s
+    updated = 0
+    Dir.glob(Rails.root.join("public/geojson/bus/**/*.geojson")).sort.each do |path|
+      next if File.basename(path).start_with?("_")
+      next if filter.present? && !path.include?(filter)
+
+      data = JSON.parse(File.read(path))
+      next unless Geojson::BusRoadSnapper.process_collection!(data)
+
+      File.write(path, "#{JSON.pretty_generate(data)}\n")
+      updated += 1
+    rescue JSON::ParserError
+      next
+    end
+    puts "Re-drove terminal/interchange stretches in #{updated} bus GeoJSON files"
+  end
+
+  desc "Flag bus routes suspended at weekends / holidays and late-night variants from TDX Schedule (CITIES=Taipei,Keelung to limit; SNAPSHOT=1 to use bus_route_timetables)"
+  task bus_service_days: :environment do
+    city_ids = ENV["CITIES"].to_s.split(",").map(&:strip).reject(&:blank?).presence
+    updated = if ENV["SNAPSHOT"].present?
+      Geojson::BusServiceDays.apply_snapshot!
+    else
+      Geojson::BusServiceDays.refresh!(city_ids:)
+    end
+    Geojson::RoutesManifestWriter.write!
+    puts "Updated weekend/holiday service flags in #{updated} bus GeoJSON files"
+    graph = Transit::Itinerary::Compiler.write!
+    puts "Itinerary graph: #{graph.stops.size} stops, #{graph.routes.size} routes"
+  end
+
+  desc "Split routes that enter 三總內湖院區 only at set hours into 繞駛三總 / 不繞駛三總 variants"
+  task bus_timed_detours: :environment do
+    updated = Geojson::BusTimedDetours.apply!
+    Geojson::RoutesManifestWriter.write! if updated.positive?
+    puts "Split #{updated} bus routes into 繞駛三總 / 不繞駛三總 variants"
+  end
+
+  desc "Tag stops that are skipped only in published time windows (e.g. 823)"
+  task bus_timed_skips: :environment do
+    updated = Geojson::BusTimedSkips.apply!
+    Geojson::RoutesManifestWriter.write! if updated.positive?
+    puts "Annotated timed skip stops on #{updated} bus routes"
+  end
+
+  desc "Round the corners of bus route lines once (CITY=dir substring to limit)"
+  task bus_round_corners: :environment do
+    filter = ENV["CITY"].to_s
+    updated = 0
+    Dir.glob(Rails.root.join("public/geojson/bus/**/*.geojson")).sort.each do |path|
+      next if File.basename(path).start_with?("_")
+      next if filter.present? && !path.include?(filter)
+
+      data = JSON.parse(File.read(path))
+      next unless Geojson::BusCornerRounder.process_collection!(data)
+
+      File.write(path, "#{JSON.pretty_generate(data)}\n")
+      updated += 1
+    rescue JSON::ParserError
+      next
+    end
+    puts "Rounded corners in #{updated} bus GeoJSON files"
+  end
+
   desc "Merge fragmented bus MULTILINESTRINGs and close circular loop endpoints"
   task bus_close_loops: :environment do
     updated = 0
@@ -394,6 +534,32 @@ namespace :geojson do
 
     Geojson::RoutesManifestWriter.write! if updated.positive?
     puts "Closed/merged loop geometry in #{updated} bus GeoJSON files"
+  end
+
+  desc "Trim round-trip per-direction bus shapes to their stop span and join both directions at termini"
+  task bus_trim_shapes: :environment do
+    updated = 0
+    Dir.glob(Rails.root.join("public/geojson/bus/**/*.geojson")).sort.each do |path|
+      next if File.basename(path).start_with?("_")
+
+      data = JSON.parse(File.read(path))
+      trimmed = Geojson::BusShapeTrimmer.process_collection!(data)
+      extended = Geojson::BusTerminalAccess.process_collection!(data)
+      patched = Geojson::BusShapePatches.process_collection!(data)
+      rounded = Geojson::BusRoundabouts.process_collection!(data)
+      snapped = Geojson::BusRoadSnapper.process_collection!(data)
+      handed_off = Geojson::BusTerminusHandoff.process_collection!(data)
+      smoothed = Geojson::BusCornerRounder.process_collection!(data)
+      next unless trimmed || extended || patched || rounded || snapped || handed_off || smoothed
+
+      File.write(path, "#{JSON.pretty_generate(data)}\n")
+      updated += 1
+      puts "Trimmed #{Pathname.new(path).relative_path_from(Rails.root)}"
+    rescue JSON::ParserError
+      next
+    end
+
+    puts "Trimmed/joined shapes in #{updated} bus GeoJSON files"
   end
 
   desc "Build TRA level crossings from OSM railway=level_crossing nodes snapped to TRA geometry"
